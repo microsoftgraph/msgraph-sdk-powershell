@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mgcommunicationonlinemeetingregistrationcustomquestion
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mgcommunicationonlinemeetingregistrationcustomquestion
 schema: 2.0.0
 ---
 
-# New-MgCommunicationOnlineMeetingRegistrationCustomQuestion
+# New-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion
 
 ## SYNOPSIS
 Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -14,26 +14,26 @@ Create a custom registration question associated with a meetingRegistration obje
 
 ### CreateExpanded (Default)
 ```
-New-MgCommunicationOnlineMeetingRegistrationCustomQuestion -OnlineMeetingId <String>
+New-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion -OnlineMeetingId <String>
  [-AdditionalProperties <Hashtable>] [-AnswerInputType <String>] [-AnswerOptions <String[]>]
  [-DisplayName <String>] [-Id <String>] [-IsRequired] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgCommunicationOnlineMeetingRegistrationCustomQuestion -OnlineMeetingId <String>
+New-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion -OnlineMeetingId <String>
  -BodyParameter <IMicrosoftGraphMeetingRegistrationQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphMeetingRegistrationQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AnswerInputType <String>] [-AnswerOptions <String[]>]
  [-DisplayName <String>] [-Id <String>] [-IsRequired] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -95,7 +95,7 @@ meetingRegistrationQuestion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -220,13 +220,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
 
 ## NOTES
 

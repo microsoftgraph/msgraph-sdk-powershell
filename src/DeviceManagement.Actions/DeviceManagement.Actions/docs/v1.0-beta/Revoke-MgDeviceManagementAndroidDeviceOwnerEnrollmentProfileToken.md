@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/revoke-mgdevicemanagementandroiddeviceownerenrollmentprofiletoken
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/revoke-mgdevicemanagementandroiddeviceownerenrollmentprofiletoken
 schema: 2.0.0
 ---
 
-# Revoke-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken
+# Revoke-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken
 
 ## SYNOPSIS
 Invoke action revokeToken
@@ -14,13 +14,13 @@ Invoke action revokeToken
 
 ### Revoke (Default)
 ```
-Revoke-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken
+Revoke-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken
  -AndroidDeviceOwnerEnrollmentProfileId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentity
 ```
-Revoke-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken
+Revoke-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken
  -InputObject <IDeviceManagementActionsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RevokeViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

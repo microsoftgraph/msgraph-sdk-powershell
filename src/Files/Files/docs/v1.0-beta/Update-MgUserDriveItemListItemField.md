@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/update-mguserdriveitemlistitemfield
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/update-mguserdriveitemlistitemfield
 schema: 2.0.0
 ---
 
-# Update-MgUserDriveItemListItemField
+# Update-MgBetaUserDriveItemListItemField
 
 ## SYNOPSIS
 Update the properties on a **[listItem][]**.
@@ -14,25 +14,25 @@ Update the properties on a **[listItem][]**.
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserDriveItemListItemField -DriveId <String> -DriveItemId <String> -UserId <String>
+Update-MgBetaUserDriveItemListItemField -DriveId <String> -DriveItemId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserDriveItemListItemField -DriveId <String> -DriveItemId <String> -UserId <String>
+Update-MgBetaUserDriveItemListItemField -DriveId <String> -DriveItemId <String> -UserId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserDriveItemListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaUserDriveItemListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserDriveItemListItemField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserDriveItemListItemField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -201,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### System.Collections.Hashtable
 

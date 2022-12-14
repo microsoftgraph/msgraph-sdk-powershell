@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgaccessreviewinstancereviewer
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgaccessreviewinstancereviewer
 schema: 2.0.0
 ---
 
-# Update-MgAccessReviewInstanceReviewer
+# Update-MgBetaAccessReviewInstanceReviewer
 
 ## SYNOPSIS
 Update the navigation property reviewers in accessReviews
@@ -14,7 +14,7 @@ Update the navigation property reviewers in accessReviews
 
 ### UpdateExpanded (Default)
 ```
-Update-MgAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 <String>
+Update-MgBetaAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 <String>
  -AccessReviewReviewerId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 
 
 ### Update
 ```
-Update-MgAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 <String>
+Update-MgBetaAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 <String>
  -AccessReviewReviewerId <String> -BodyParameter <IMicrosoftGraphAccessReviewReviewer> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgAccessReviewInstanceReviewer -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaAccessReviewInstanceReviewer -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAccessReviewReviewer> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgAccessReviewInstanceReviewer -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaAccessReviewInstanceReviewer -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -112,7 +112,7 @@ accessReviewReviewer
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -174,7 +174,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -251,9 +251,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 
 ## OUTPUTS
 

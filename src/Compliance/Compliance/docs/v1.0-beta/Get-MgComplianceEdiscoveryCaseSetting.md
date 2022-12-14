@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycasesetting
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycasesetting
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseSetting
+# Get-MgBetaComplianceEdiscoveryCaseSetting
 
 ## SYNOPSIS
 Read the properties and relationships of an eDiscovery caseSettings object.
@@ -14,13 +14,13 @@ Read the properties and relationships of an eDiscovery caseSettings object.
 
 ### Get (Default)
 ```
-Get-MgComplianceEdiscoveryCaseSetting -CaseId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseSetting -CaseId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,22 +29,22 @@ Read the properties and relationships of an eDiscovery caseSettings object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseSetting Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseSetting -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseSetting -CaseId $caseId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgComplianceEdiscoveryCaseSetting Cmdlet
+### Example 2: Using the Get-MgBetaComplianceEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseSetting -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseSetting -CaseId $caseId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -115,11 +115,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseSettings
 
 ## NOTES
 

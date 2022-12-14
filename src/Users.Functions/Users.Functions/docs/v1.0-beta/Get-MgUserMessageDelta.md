@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermessagedelta
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusermessagedelta
 schema: 2.0.0
 ---
 
-# Get-MgUserMessageDelta
+# Get-MgBetaUserMessageDelta
 
 ## SYNOPSIS
 Get a set of messages that have been added, deleted, or updated in a specified folder.
@@ -16,13 +16,13 @@ This allows you to maintain and synchronize a local store of a user's messages w
 
 ### Delta1 (Default)
 ```
-Get-MgUserMessageDelta -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaUserMessageDelta -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity1
 ```
-Get-MgUserMessageDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaUserMessageDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -71,7 +71,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: DeltaViaIdentity1
 Aliases:
 
@@ -177,11 +177,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
 
 ## NOTES
 

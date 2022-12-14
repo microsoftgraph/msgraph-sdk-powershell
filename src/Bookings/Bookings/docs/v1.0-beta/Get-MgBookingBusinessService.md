@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/get-mgbookingbusinessservice
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/get-mgbookingbusinessservice
 schema: 2.0.0
 ---
 
-# Get-MgBookingBusinessService
+# Get-MgBetaBookingBusinessService
 
 ## SYNOPSIS
 All the services offered by this business.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgBookingBusinessService -BookingBusinessId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaBookingBusinessService -BookingBusinessId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgBookingBusinessService -BookingBusinessId <String> -BookingServiceId <String>
+Get-MgBetaBookingBusinessService -BookingBusinessId <String> -BookingServiceId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgBookingBusinessService -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaBookingBusinessService -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,22 +40,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgBookingBusinessService Cmdlet
+### Example 1: Using the Get-MgBetaBookingBusinessService Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusinessService -BookingBusinessId $bookingBusinessId -BookingServiceId $bookingServiceId
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusinessService -BookingBusinessId $bookingBusinessId -BookingServiceId $bookingServiceId
 ```
 
-This example shows how to use the Get-MgBookingBusinessService Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusinessService Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgBookingBusinessService Cmdlet
+### Example 2: Using the Get-MgBetaBookingBusinessService Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusinessService -BookingBusinessId $bookingBusinessId
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusinessService -BookingBusinessId $bookingBusinessId
 ```
 
-This example shows how to use the Get-MgBookingBusinessService Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusinessService Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -156,7 +156,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -262,11 +262,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingService1
 
 ## NOTES
 

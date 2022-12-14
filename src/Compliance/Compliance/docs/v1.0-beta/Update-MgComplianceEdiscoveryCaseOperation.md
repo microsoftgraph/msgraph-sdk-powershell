@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/update-mgcomplianceediscoverycaseoperation
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/update-mgcomplianceediscoverycaseoperation
 schema: 2.0.0
 ---
 
-# Update-MgComplianceEdiscoveryCaseOperation
+# Update-MgBetaComplianceEdiscoveryCaseOperation
 
 ## SYNOPSIS
 Update the navigation property operations in compliance
@@ -14,7 +14,7 @@ Update the navigation property operations in compliance
 
 ### UpdateExpanded (Default)
 ```
-Update-MgComplianceEdiscoveryCaseOperation -CaseId <String> -CaseOperationId <String> [-Action <String>]
+Update-MgBetaComplianceEdiscoveryCaseOperation -CaseId <String> -CaseOperationId <String> [-Action <String>]
  [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-PercentProgress <Int32>]
  [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgComplianceEdiscoveryCaseOperation -CaseId <String> -CaseOperationId <St
 
 ### Update
 ```
-Update-MgComplianceEdiscoveryCaseOperation -CaseId <String> -CaseOperationId <String>
+Update-MgBetaComplianceEdiscoveryCaseOperation -CaseId <String> -CaseOperationId <String>
  -BodyParameter <IMicrosoftGraphEdiscoveryCaseOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgComplianceEdiscoveryCaseOperation -InputObject <IComplianceIdentity>
+Update-MgBetaComplianceEdiscoveryCaseOperation -InputObject <IComplianceIdentity>
  -BodyParameter <IMicrosoftGraphEdiscoveryCaseOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgComplianceEdiscoveryCaseOperation -InputObject <IComplianceIdentity> [-Action <String>]
+Update-MgBetaComplianceEdiscoveryCaseOperation -InputObject <IComplianceIdentity> [-Action <String>]
  [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-PercentProgress <Int32>]
  [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -84,7 +84,7 @@ caseOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseOperation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -238,7 +238,7 @@ resultInfo
 To construct, please use Get-Help -Online and see NOTES section for RESULTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResultInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -300,9 +300,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseOperation
 
 ## OUTPUTS
 

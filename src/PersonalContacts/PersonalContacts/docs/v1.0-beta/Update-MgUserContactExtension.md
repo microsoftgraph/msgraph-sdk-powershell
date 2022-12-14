@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/update-mgusercontactextension
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/update-mgusercontactextension
 schema: 2.0.0
 ---
 
-# Update-MgUserContactExtension
+# Update-MgBetaUserContactExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in users
@@ -14,25 +14,25 @@ Update the navigation property extensions in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserContactExtension -ContactId <String> -ExtensionId <String> -UserId <String>
+Update-MgBetaUserContactExtension -ContactId <String> -ExtensionId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserContactExtension -ContactId <String> -ExtensionId <String> -UserId <String>
+Update-MgBetaUserContactExtension -ContactId <String> -ExtensionId <String> -UserId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserContactExtension -InputObject <IPersonalContactsIdentity> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaUserContactExtension -InputObject <IPersonalContactsIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserContactExtension -InputObject <IPersonalContactsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserContactExtension -InputObject <IPersonalContactsIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -200,7 +200,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ### System.Collections.Hashtable
 

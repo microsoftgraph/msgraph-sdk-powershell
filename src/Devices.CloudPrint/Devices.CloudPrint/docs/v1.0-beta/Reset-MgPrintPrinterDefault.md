@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/reset-mgprintprinterdefault
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/reset-mgprintprinterdefault
 schema: 2.0.0
 ---
 
-# Reset-MgPrintPrinterDefault
+# Reset-MgBetaPrintPrinterDefault
 
 ## SYNOPSIS
 Invoke action resetDefaults
@@ -14,12 +14,12 @@ Invoke action resetDefaults
 
 ### Reset (Default)
 ```
-Reset-MgPrintPrinterDefault -PrinterId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Reset-MgBetaPrintPrinterDefault -PrinterId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgPrintPrinterDefault -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Reset-MgBetaPrintPrinterDefault -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 

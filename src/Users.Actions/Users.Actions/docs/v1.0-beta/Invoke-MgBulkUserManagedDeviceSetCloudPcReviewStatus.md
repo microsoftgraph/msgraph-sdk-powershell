@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgbulkusermanageddevicesetcloudpcreviewstatus
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgbulkusermanageddevicesetcloudpcreviewstatus
 schema: 2.0.0
 ---
 
-# Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus
+# Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus
 
 ## SYNOPSIS
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
@@ -14,28 +14,28 @@ Set the review status of multiple Cloud PC devices with a single request that in
 
 ### BulkExpanded (Default)
 ```
-Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus -UserId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ManagedDeviceIds <String[]>] [-ReviewStatus <IMicrosoftGraphCloudPcReviewStatus>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Bulk
 ```
-Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus -UserId <String>
+Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus -UserId <String>
  -BodyParameter <IPathsG30KncUsersUserIdManageddevicesMicrosoftGraphBulksetcloudpcreviewstatusPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### BulkViaIdentity
 ```
-Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsG30KncUsersUserIdManageddevicesMicrosoftGraphBulksetcloudpcreviewstatusPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### BulkViaIdentityExpanded
 ```
-Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ManagedDeviceIds <String[]>]
  [-ReviewStatus <IMicrosoftGraphCloudPcReviewStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsG30KncUsersUserIdManageddevicesMicrosoftGraphBulksetcloudpcreviewstatusPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsG30KncUsersUserIdManageddevicesMicrosoftGraphBulksetcloudpcreviewstatusPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Bulk, BulkViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: BulkViaIdentity, BulkViaIdentityExpanded
 Aliases:
 
@@ -114,7 +114,7 @@ cloudPcReviewStatus
 To construct, please use Get-Help -Online and see NOTES section for REVIEWSTATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcReviewStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcReviewStatus
 Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
 Aliases:
 
@@ -176,13 +176,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsG30KncUsersUserIdManageddevicesMicrosoftGraphBulksetcloudpcreviewstatusPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsG30KncUsersUserIdManageddevicesMicrosoftGraphBulksetcloudpcreviewstatusPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
 
 ## NOTES
 

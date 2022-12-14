@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/remove-mgcomplianceediscoverycasecustodianusersource
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/remove-mgcomplianceediscoverycasecustodianusersource
 schema: 2.0.0
 ---
 
-# Remove-MgComplianceEdiscoveryCaseCustodianUserSource
+# Remove-MgBetaComplianceEdiscoveryCaseCustodianUserSource
 
 ## SYNOPSIS
 Delete navigation property userSources for compliance
@@ -14,13 +14,13 @@ Delete navigation property userSources for compliance
 
 ### Delete (Default)
 ```
-Remove-MgComplianceEdiscoveryCaseCustodianUserSource -CaseId <String> -CustodianId <String>
+Remove-MgBetaComplianceEdiscoveryCaseCustodianUserSource -CaseId <String> -CustodianId <String>
  -UserSourceId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgComplianceEdiscoveryCaseCustodianUserSource -InputObject <IComplianceIdentity> [-IfMatch <String>]
+Remove-MgBetaComplianceEdiscoveryCaseCustodianUserSource -InputObject <IComplianceIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property userSources for compliance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgComplianceEdiscoveryCaseCustodianUserSource Cmdlet
+### Example 1: Using the Remove-MgBetaComplianceEdiscoveryCaseCustodianUserSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Remove-MgComplianceEdiscoveryCaseCustodianUserSource -CaseId $caseId -CustodianId $custodianId -UserSourceId $userSourceId
+Import-Module Microsoft.Graph.Beta.Compliance
+Remove-MgBetaComplianceEdiscoveryCaseCustodianUserSource -CaseId $caseId -CustodianId $custodianId -UserSourceId $userSourceId
 ```
 
-This example shows how to use the Remove-MgComplianceEdiscoveryCaseCustodianUserSource Cmdlet.
+This example shows how to use the Remove-MgBetaComplianceEdiscoveryCaseCustodianUserSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

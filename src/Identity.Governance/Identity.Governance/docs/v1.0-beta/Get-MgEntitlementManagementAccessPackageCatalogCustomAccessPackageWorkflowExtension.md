@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackagecatalogcustomaccesspackageworkflowextension
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackagecatalogcustomaccesspackageworkflowextension
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+# Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
 
 ## SYNOPSIS
 Get customAccessPackageWorkflowExtensions from identityGovernance
@@ -14,7 +14,7 @@ Get customAccessPackageWorkflowExtensions from identityGovernance
 
 ### List (Default)
 ```
-Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -AccessPackageCatalogId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtens
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -AccessPackageCatalogId <String> -CustomAccessPackageWorkflowExtensionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -39,22 +39,22 @@ Get customAccessPackageWorkflowExtensions from identityGovernance
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
+### Example 1: Using the Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId -CustomAccessPackageWorkflowExtensionId $customAccessPackageWorkflowExtensionId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId -CustomAccessPackageWorkflowExtensionId $customAccessPackageWorkflowExtensionId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
+### Example 2: Using the Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
 
 ## NOTES
 

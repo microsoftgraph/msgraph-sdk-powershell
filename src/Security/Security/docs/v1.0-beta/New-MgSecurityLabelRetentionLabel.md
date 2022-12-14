@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritylabelretentionlabel
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritylabelretentionlabel
 schema: 2.0.0
 ---
 
-# New-MgSecurityLabelRetentionLabel
+# New-MgBetaSecurityLabelRetentionLabel
 
 ## SYNOPSIS
 Create a new retentionLabel object.
@@ -15,7 +15,7 @@ To create a disposition review stage, include the **actionAfterRetentionPeriod**
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityLabelRetentionLabel [-ActionAfterRetentionPeriod <String>] [-AdditionalProperties <Hashtable>]
+New-MgBetaSecurityLabelRetentionLabel [-ActionAfterRetentionPeriod <String>] [-AdditionalProperties <Hashtable>]
  [-BehaviorDuringRetentionPeriod <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-DefaultRecordBehavior <String>] [-DescriptionForAdmins <String>]
  [-DescriptionForUsers <String>] [-DisplayName <String>]
@@ -28,7 +28,7 @@ New-MgSecurityLabelRetentionLabel [-ActionAfterRetentionPeriod <String>] [-Addit
 
 ### Create
 ```
-New-MgSecurityLabelRetentionLabel -BodyParameter <IMicrosoftGraphSecurityRetentionLabel> [-Confirm] [-WhatIf]
+New-MgBetaSecurityLabelRetentionLabel -BodyParameter <IMicrosoftGraphSecurityRetentionLabel> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -38,31 +38,31 @@ To create a disposition review stage, include the **actionAfterRetentionPeriod**
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSecurityLabelRetentionLabel Cmdlet
+### Example 1: Using the New-MgBetaSecurityLabelRetentionLabel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
-	"@odata.type" = "#microsoft.graph.security.retentionLabel"
+	"@odata.type" = "#Microsoft.Graph.Beta.security.retentionLabel"
 	DisplayName = "String"
 	BehaviorDuringRetentionPeriod = "String"
 	ActionAfterRetentionPeriod = "String"
 	RetentionTrigger = "String"
 	RetentionDuration = @{
-		"@odata.type" = "microsoft.graph.security.retentionDuration"
+		"@odata.type" = "Microsoft.Graph.Beta.security.retentionDuration"
 	}
 	IsInUse = "Boolean"
 	DescriptionForAdmins = "String"
 	DescriptionForUsers = "String"
 	CreatedBy = @{
-		"@odata.type" = "microsoft.graph.identitySet"
+		"@odata.type" = "Microsoft.Graph.Beta.identitySet"
 	}
 	LabelToBeApplied = "String"
 	DefaultRecordBehavior = "String"
 }
-New-MgSecurityLabelRetentionLabel -BodyParameter $params
+New-MgBetaSecurityLabelRetentionLabel -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSecurityLabelRetentionLabel Cmdlet.
+This example shows how to use the New-MgBetaSecurityLabelRetentionLabel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -117,7 +117,7 @@ retentionLabel
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
 Parameter Sets: Create
 Aliases:
 
@@ -133,7 +133,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ Review stages during which reviewers are notified to determine whether a documen
 To construct, please use Get-Help -Online and see NOTES section for DISPOSITIONREVIEWSTAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -288,7 +288,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -334,7 +334,7 @@ retentionEventType
 To construct, please use Get-Help -Online and see NOTES section for RETENTIONEVENTTYPE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -396,11 +396,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
 
 ## NOTES
 

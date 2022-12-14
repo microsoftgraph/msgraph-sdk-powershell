@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/test-mguserinformationprotectionpolicylabelclassificationresult
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/test-mguserinformationprotectionpolicylabelclassificationresult
 schema: 2.0.0
 ---
 
-# Test-MgUserInformationProtectionPolicyLabelClassificationResult
+# Test-MgBetaUserInformationProtectionPolicyLabelClassificationResult
 
 ## SYNOPSIS
 Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
@@ -17,28 +17,28 @@ The API returns an informationProtectionAction that contains one of more of the 
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgUserInformationProtectionPolicyLabelClassificationResult -UserId <String>
+Test-MgBetaUserInformationProtectionPolicyLabelClassificationResult -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ClassificationResults <IMicrosoftGraphClassificationResult[]>]
  [-ContentInfo <IMicrosoftGraphContentInfo>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Evaluate
 ```
-Test-MgUserInformationProtectionPolicyLabelClassificationResult -UserId <String>
+Test-MgBetaUserInformationProtectionPolicyLabelClassificationResult -UserId <String>
  -BodyParameter <IPathsLl6FnzUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentity
 ```
-Test-MgUserInformationProtectionPolicyLabelClassificationResult -InputObject <IUsersActionsIdentity>
+Test-MgBetaUserInformationProtectionPolicyLabelClassificationResult -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsLl6FnzUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentityExpanded
 ```
-Test-MgUserInformationProtectionPolicyLabelClassificationResult -InputObject <IUsersActionsIdentity>
+Test-MgBetaUserInformationProtectionPolicyLabelClassificationResult -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClassificationResults <IMicrosoftGraphClassificationResult[]>]
  [-ContentInfo <IMicrosoftGraphContentInfo>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsLl6FnzUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsLl6FnzUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate, EvaluateViaIdentity
 Aliases:
 
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for CLASSIFICATIONRESULTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphClassificationResult[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphClassificationResult[]
 Parameter Sets: EvaluateExpanded, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -105,7 +105,7 @@ contentInfo
 To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentInfo
 Parameter Sets: EvaluateExpanded, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: EvaluateViaIdentity, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -183,13 +183,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsLl6FnzUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsLl6FnzUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionAction
 
 ## NOTES
 

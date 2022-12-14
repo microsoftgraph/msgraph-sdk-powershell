@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/update-mggroupsitecontenttypecolumnlink
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/update-mggroupsitecontenttypecolumnlink
 schema: 2.0.0
 ---
 
-# Update-MgGroupSiteContentTypeColumnLink
+# Update-MgBetaGroupSiteContentTypeColumnLink
 
 ## SYNOPSIS
 Update the navigation property columnLinks in groups
@@ -14,27 +14,27 @@ Update the navigation property columnLinks in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupSiteContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> -GroupId <String>
+Update-MgBetaGroupSiteContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> -GroupId <String>
  -SiteId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupSiteContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> -GroupId <String>
+Update-MgBetaGroupSiteContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> -GroupId <String>
  -SiteId <String> -BodyParameter <IMicrosoftGraphColumnLink> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupSiteContentTypeColumnLink -InputObject <ISitesIdentity>
+Update-MgBetaGroupSiteContentTypeColumnLink -InputObject <ISitesIdentity>
  -BodyParameter <IMicrosoftGraphColumnLink> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupSiteContentTypeColumnLink -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupSiteContentTypeColumnLink -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Name <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ columnLink
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -234,9 +234,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

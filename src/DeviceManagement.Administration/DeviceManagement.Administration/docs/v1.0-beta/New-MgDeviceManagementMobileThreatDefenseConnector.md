@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementmobilethreatdefenseconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementmobilethreatdefenseconnector
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementMobileThreatDefenseConnector
+# New-MgBetaDeviceManagementMobileThreatDefenseConnector
 
 ## SYNOPSIS
 Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to mobileThreatDefenseConnectors for deviceManage
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementMobileThreatDefenseConnector [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementMobileThreatDefenseConnector [-AdditionalProperties <Hashtable>]
  [-AllowPartnerToCollectIosApplicationMetadata] [-AllowPartnerToCollectIosPersonalApplicationMetadata]
  [-AndroidDeviceBlockedOnMissingPartnerData] [-AndroidEnabled] [-AndroidMobileApplicationManagementEnabled]
  [-Id <String>] [-IosDeviceBlockedOnMissingPartnerData] [-IosEnabled] [-IosMobileApplicationManagementEnabled]
@@ -27,7 +27,7 @@ New-MgDeviceManagementMobileThreatDefenseConnector [-AdditionalProperties <Hasht
 
 ### Create
 ```
-New-MgDeviceManagementMobileThreatDefenseConnector
+New-MgBetaDeviceManagementMobileThreatDefenseConnector
  -BodyParameter <IMicrosoftGraphMobileThreatDefenseConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Entity which represents a connection to Mobile threat defense partner.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileThreatDefenseConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileThreatDefenseConnector
 Parameter Sets: Create
 Aliases:
 
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 Partner state of this tenant.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MobileThreatPartnerTenantState
+Type: Microsoft.Graph.Beta.PowerShell.Support.MobileThreatPartnerTenantState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -396,11 +396,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileThreatDefenseConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileThreatDefenseConnector
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileThreatDefenseConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileThreatDefenseConnector
 
 ## NOTES
 

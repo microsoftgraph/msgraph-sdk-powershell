@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgappcatalogteamappdefinitionbot
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgappcatalogteamappdefinitionbot
 schema: 2.0.0
 ---
 
-# Update-MgAppCatalogTeamAppDefinitionBot
+# Update-MgBetaAppCatalogTeamAppDefinitionBot
 
 ## SYNOPSIS
 Update the navigation property bot in appCatalogs
@@ -14,25 +14,25 @@ Update the navigation property bot in appCatalogs
 
 ### UpdateExpanded (Default)
 ```
-Update-MgAppCatalogTeamAppDefinitionBot -TeamsAppDefinitionId <String> -TeamsAppId <String>
+Update-MgBetaAppCatalogTeamAppDefinitionBot -TeamsAppDefinitionId <String> -TeamsAppId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgAppCatalogTeamAppDefinitionBot -TeamsAppDefinitionId <String> -TeamsAppId <String>
+Update-MgBetaAppCatalogTeamAppDefinitionBot -TeamsAppDefinitionId <String> -TeamsAppId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -94,7 +94,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ### System.Collections.Hashtable
 

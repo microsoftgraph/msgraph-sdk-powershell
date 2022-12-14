@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mgextractinformationprotectionpolicylabel
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/invoke-mgextractinformationprotectionpolicylabel
 schema: 2.0.0
 ---
 
-# Invoke-MgExtractInformationProtectionPolicyLabel
+# Invoke-MgBetaExtractInformationProtectionPolicyLabel
 
 ## SYNOPSIS
 Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
@@ -15,13 +15,13 @@ The contentInfo input is resolved to informationProtectionContentLabel.
 
 ### ExtractExpanded (Default)
 ```
-Invoke-MgExtractInformationProtectionPolicyLabel [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaExtractInformationProtectionPolicyLabel [-AdditionalProperties <Hashtable>]
  [-ContentInfo <IMicrosoftGraphContentInfo>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Extract
 ```
-Invoke-MgExtractInformationProtectionPolicyLabel
+Invoke-MgBetaExtractInformationProtectionPolicyLabel
  -BodyParameter <IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -32,61 +32,61 @@ The contentInfo input is resolved to informationProtectionContentLabel.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgExtractInformationProtectionPolicyLabel Cmdlet
+### Example 1: Using the Invoke-MgBetaExtractInformationProtectionPolicyLabel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ContentInfo = @{
-		"@odata.type" = "#microsoft.graph.contentInfo"
-		"Format@odata.type" = "#microsoft.graph.contentFormat"
+		"@odata.type" = "#Microsoft.Graph.Beta.contentInfo"
+		"Format@odata.type" = "#Microsoft.Graph.Beta.contentFormat"
 		Format = "default"
 		Identifier = $null
-		"State@odata.type" = "#microsoft.graph.contentState"
+		"State@odata.type" = "#Microsoft.Graph.Beta.contentState"
 		State = "rest"
-		"Metadata@odata.type" = "#Collection(microsoft.graph.keyValuePair)"
+		"Metadata@odata.type" = "#Collection(Microsoft.Graph.Beta.keyValuePair)"
 		Metadata = @(
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Enabled"
 				Value = "True"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Method"
 				Value = "Standard"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_SetDate"
 				Value = "1/1/0001 12:00:00 AM"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_SiteId"
 				Value = "cfa4cf1d-a337-4481-aa99-19d8f3d63f7c"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Name"
 				Value = "Top Secret"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_ContentBits"
 				Value = "0"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_ActionId"
 				Value = "00000000-0000-0000-0000-000000000000"
 			}
 		)
 	}
 }
-Invoke-MgExtractInformationProtectionPolicyLabel -BodyParameter $params
+Invoke-MgBetaExtractInformationProtectionPolicyLabel -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgExtractInformationProtectionPolicyLabel Cmdlet.
+This example shows how to use the Invoke-MgBetaExtractInformationProtectionPolicyLabel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Extract
 Aliases:
 
@@ -127,7 +127,7 @@ contentInfo
 To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentInfo
 Parameter Sets: ExtractExpanded
 Aliases:
 
@@ -174,11 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionContentLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionContentLabel
 
 ## NOTES
 

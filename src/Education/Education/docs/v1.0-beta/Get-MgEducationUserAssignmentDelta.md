@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuserassignmentdelta
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationuserassignmentdelta
 schema: 2.0.0
 ---
 
-# Get-MgEducationUserAssignmentDelta
+# Get-MgBetaEducationUserAssignmentDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -14,14 +14,14 @@ Invoke function delta
 
 ### Delta (Default)
 ```
-Get-MgEducationUserAssignmentDelta -EducationUserId <String> [-Count] [-Filter <String>]
+Get-MgBetaEducationUserAssignmentDelta -EducationUserId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgEducationUserAssignmentDelta -InputObject <IEducationIdentity> [-Count] [-Filter <String>]
+Get-MgBetaEducationUserAssignmentDelta -InputObject <IEducationIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeltaViaIdentity
 Aliases:
 
@@ -174,11 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

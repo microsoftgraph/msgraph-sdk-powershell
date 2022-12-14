@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/invoke-mgcheckoutdriveroot
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/invoke-mgcheckoutdriveroot
 schema: 2.0.0
 ---
 
-# Invoke-MgCheckoutDriveRoot
+# Invoke-MgBetaCheckoutDriveRoot
 
 ## SYNOPSIS
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
@@ -14,12 +14,12 @@ Check out a **driveItem** resource to prevent others from editing the document, 
 
 ### Checkout1 (Default)
 ```
-Invoke-MgCheckoutDriveRoot -DriveId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaCheckoutDriveRoot -DriveId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckoutViaIdentity1
 ```
-Invoke-MgCheckoutDriveRoot -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaCheckoutDriveRoot -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: CheckoutViaIdentity1
 Aliases:
 
@@ -111,7 +111,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

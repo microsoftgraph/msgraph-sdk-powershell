@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/copy-mgsiteonenotenotebook
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/copy-mgsiteonenotenotebook
 schema: 2.0.0
 ---
 
-# Copy-MgSiteOnenoteNotebook
+# Copy-MgBetaSiteOnenoteNotebook
 
 ## SYNOPSIS
 Copies a notebook to the Notebooks folder in the destination Documents library.
@@ -16,28 +16,28 @@ For Copy operations, you follow an asynchronous calling pattern:  First call the
 
 ### CopyExpanded (Default)
 ```
-Copy-MgSiteOnenoteNotebook -NotebookId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
+Copy-MgBetaSiteOnenoteNotebook -NotebookId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
  [-GroupId <String>] [-NotebookFolder <String>] [-RenameAs <String>] [-SiteCollectionId <String>]
  [-SiteId1 <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy
 ```
-Copy-MgSiteOnenoteNotebook -NotebookId <String> -SiteId <String>
+Copy-MgBetaSiteOnenoteNotebook -NotebookId <String> -SiteId <String>
  -BodyParameter <IPathsS3Y1MrSitesSiteIdOnenoteNotebooksNotebookIdMicrosoftGraphCopynotebookPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
-Copy-MgSiteOnenoteNotebook -InputObject <ISitesIdentity>
+Copy-MgBetaSiteOnenoteNotebook -InputObject <ISitesIdentity>
  -BodyParameter <IPathsS3Y1MrSitesSiteIdOnenoteNotebooksNotebookIdMicrosoftGraphCopynotebookPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
-Copy-MgSiteOnenoteNotebook -InputObject <ISitesIdentity> [-SiteId <String>]
+Copy-MgBetaSiteOnenoteNotebook -InputObject <ISitesIdentity> [-SiteId <String>]
  [-AdditionalProperties <Hashtable>] [-GroupId <String>] [-NotebookFolder <String>] [-RenameAs <String>]
  [-SiteCollectionId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -51,7 +51,7 @@ For Copy operations, you follow an asynchronous calling pattern:  First call the
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	GroupId = "groupId-value"
@@ -59,10 +59,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Copy-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId -BodyParameter $params
+Copy-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId -BodyParameter $params
 ```
 
-This example shows how to use the Copy-MgSiteOnenoteNotebook Cmdlet.
+This example shows how to use the Copy-MgBetaSiteOnenoteNotebook Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsS3Y1MrSitesSiteIdOnenoteNotebooksNotebookIdMicrosoftGraphCopynotebookPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsS3Y1MrSitesSiteIdOnenoteNotebooksNotebookIdMicrosoftGraphCopynotebookPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Copy, CopyViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
 Aliases:
 
@@ -256,13 +256,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsS3Y1MrSitesSiteIdOnenoteNotebooksNotebookIdMicrosoftGraphCopynotebookPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsS3Y1MrSitesSiteIdOnenoteNotebooksNotebookIdMicrosoftGraphCopynotebookPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteOperation
 
 ## NOTES
 

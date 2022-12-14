@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/submit-mgeducationmeassignmentsubmission
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/submit-mgeducationmeassignmentsubmission
 schema: 2.0.0
 ---
 
-# Submit-MgEducationMeAssignmentSubmission
+# Submit-MgBetaEducationMeAssignmentSubmission
 
 ## SYNOPSIS
 Indicate that a student is done with the work and is ready to hand in the assignment.
@@ -18,13 +18,13 @@ A teacher can also submit a student's assignment on their behalf.
 
 ### Submit (Default)
 ```
-Submit-MgEducationMeAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
+Submit-MgBetaEducationMeAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SubmitViaIdentity
 ```
-Submit-MgEducationMeAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Submit-MgBetaEducationMeAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -39,12 +39,12 @@ A teacher can also submit a student's assignment on their behalf.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 
-Submit-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+Submit-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
 
-This example shows how to use the Submit-MgEducationMeAssignmentSubmission Cmdlet.
+This example shows how to use the Submit-MgBetaEducationMeAssignmentSubmission Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -85,7 +85,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: SubmitViaIdentity
 Aliases:
 
@@ -132,11 +132,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
 
 ## NOTES
 

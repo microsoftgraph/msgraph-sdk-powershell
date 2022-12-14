@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementmicrosofttunnelsite
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementmicrosofttunnelsite
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementMicrosoftTunnelSite
+# Get-MgBetaDeviceManagementMicrosoftTunnelSite
 
 ## SYNOPSIS
 Collection of MicrosoftTunnelSite settings associated with account.
@@ -14,20 +14,20 @@ Collection of MicrosoftTunnelSite settings associated with account.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementMicrosoftTunnelSite [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementMicrosoftTunnelSite [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementMicrosoftTunnelSite -MicrosoftTunnelSiteId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementMicrosoftTunnelSite -MicrosoftTunnelSiteId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementMicrosoftTunnelSite -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementMicrosoftTunnelSite -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelSite
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelSite
 
 ## NOTES
 

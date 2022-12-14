@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/get-mguserchatpermissiongrantuserownedobject
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/get-mguserchatpermissiongrantuserownedobject
 schema: 2.0.0
 ---
 
-# Get-MgUserChatPermissionGrantUserOwnedObject
+# Get-MgBetaUserChatPermissionGrantUserOwnedObject
 
 ## SYNOPSIS
 Invoke action getUserOwnedObjects
@@ -14,28 +14,28 @@ Invoke action getUserOwnedObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgUserChatPermissionGrantUserOwnedObject -ChatId <String> -UserId <String>
+Get-MgBetaUserChatPermissionGrantUserOwnedObject -ChatId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId1 <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserChatPermissionGrantUserOwnedObject -ChatId <String> -UserId <String>
+Get-MgBetaUserChatPermissionGrantUserOwnedObject -ChatId <String> -UserId <String>
  -BodyParameter <IPathsAawmnnUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserChatPermissionGrantUserOwnedObject -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserChatPermissionGrantUserOwnedObject -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsAawmnnUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgUserChatPermissionGrantUserOwnedObject -InputObject <IUsersActionsIdentity> [-UserId <String>]
+Get-MgBetaUserChatPermissionGrantUserOwnedObject -InputObject <IUsersActionsIdentity> [-UserId <String>]
  [-AdditionalProperties <Hashtable>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsAawmnnUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsAawmnnUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -189,13 +189,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsAawmnnUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsAawmnnUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

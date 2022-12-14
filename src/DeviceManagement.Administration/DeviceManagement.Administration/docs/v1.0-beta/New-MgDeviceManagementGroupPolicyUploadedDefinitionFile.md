@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicyuploadeddefinitionfile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicyuploadeddefinitionfile
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementGroupPolicyUploadedDefinitionFile
+# New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile
 
 ## SYNOPSIS
 Create new navigation property to groupPolicyUploadedDefinitionFiles for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to groupPolicyUploadedDefinitionFiles for deviceM
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementGroupPolicyUploadedDefinitionFile [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-DefaultLanguageCode <String>]
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-Description <String>] [-DisplayName <String>]
  [-FileName <String>] [-GroupPolicyOperations <IMicrosoftGraphGroupPolicyOperation[]>]
@@ -26,7 +26,7 @@ New-MgDeviceManagementGroupPolicyUploadedDefinitionFile [-AdditionalProperties <
 
 ### Create
 ```
-New-MgDeviceManagementGroupPolicyUploadedDefinitionFile
+New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile
  -BodyParameter <IMicrosoftGraphGroupPolicyUploadedDefinitionFile> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -59,7 +59,7 @@ The group policy definition file also contains the languages supported as determ
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
 Parameter Sets: Create
 Aliases:
 
@@ -105,7 +105,7 @@ The group policy definitions associated with the file.
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -168,7 +168,7 @@ The list of operations on the uploaded ADMX file.
 To construct, please use Get-Help -Online and see NOTES section for GROUPPOLICYOPERATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -184,7 +184,7 @@ The list of ADML files associated with the uploaded ADMX file.
 To construct, please use Get-Help -Online and see NOTES section for GROUPPOLICYUPLOADEDLANGUAGEFILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedLanguageFile[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedLanguageFile[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 Type of Group Policy File or Definition.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 Type of Group Policy uploaded definition file status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyUploadedDefinitionFileStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyUploadedDefinitionFileStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -367,11 +367,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
 
 ## NOTES
 

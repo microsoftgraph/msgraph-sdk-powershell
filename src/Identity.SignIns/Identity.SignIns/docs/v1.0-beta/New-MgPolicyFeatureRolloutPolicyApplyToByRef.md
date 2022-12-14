@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicyfeaturerolloutpolicyapplytobyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicyfeaturerolloutpolicyapplytobyref
 schema: 2.0.0
 ---
 
-# New-MgPolicyFeatureRolloutPolicyApplyToByRef
+# New-MgBetaPolicyFeatureRolloutPolicyApplyToByRef
 
 ## SYNOPSIS
 Create new navigation property ref to appliesTo for policies
@@ -14,25 +14,25 @@ Create new navigation property ref to appliesTo for policies
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
+New-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
+New-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity>
+New-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity>
+New-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to appliesTo for policies
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPolicyFeatureRolloutPolicyApplyToByRef Cmdlet
+### Example 1: Using the New-MgBetaPolicyFeatureRolloutPolicyApplyToByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	"@odata.id" = " https://graph.microsoft.com/beta/directoryObjects/2441b489-4f12-4882-b039-8f6006bd66da"
 }
-New-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
+New-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPolicyFeatureRolloutPolicyApplyToByRef Cmdlet.
+This example shows how to use the New-MgBetaPolicyFeatureRolloutPolicyApplyToByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

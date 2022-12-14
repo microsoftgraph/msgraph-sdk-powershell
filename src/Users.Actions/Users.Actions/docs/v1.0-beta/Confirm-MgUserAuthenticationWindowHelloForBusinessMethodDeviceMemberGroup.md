@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/confirm-mguserauthenticationwindowhelloforbusinessmethoddevicemembergroup
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/confirm-mguserauthenticationwindowhelloforbusinessmethoddevicemembergroup
 schema: 2.0.0
 ---
 
-# Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup
+# Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup
 
 ## SYNOPSIS
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -18,14 +18,14 @@ Because Microsoft 365 groups cannot contain other groups, membership in a Micros
 
 ### CheckExpanded (Default)
 ```
-Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <String>
+Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> [-AdditionalProperties <Hashtable>]
  [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check
 ```
-Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <String>
+Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String>
  -BodyParameter <IPaths1MgihfkUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -33,14 +33,14 @@ Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserI
 
 ### CheckViaIdentity
 ```
-Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
+Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1MgihfkUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentityExpanded
 ```
-Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
+Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ Because Microsoft 365 groups cannot contain other groups, membership in a Micros
 
 ### Example 1: Check group memberships for a directory object
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	GroupIds = @(
@@ -67,16 +67,16 @@ $params = @{
 	)
 }
 
-Confirm-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
+Confirm-MgBetaDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
 
-This example shows how to use the Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup Cmdlet.
+This example shows how to use the Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Check group memberships for the signed-in user
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	GroupIds = @(
@@ -86,10 +86,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Confirm-MgUserMemberGroup -UserId $userId -BodyParameter $params
+Confirm-MgBetaUserMemberGroup -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup Cmdlet.
+This example shows how to use the Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1MgihfkUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1MgihfkUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
 Aliases:
 
@@ -223,9 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1MgihfkUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1MgihfkUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

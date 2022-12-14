@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mggroupteamchannelmessagereply
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mggroupteamchannelmessagereply
 schema: 2.0.0
 ---
 
-# Get-MgGroupTeamChannelMessageReply
+# Get-MgBetaGroupTeamChannelMessageReply
 
 ## SYNOPSIS
 Replies for a specified message.
@@ -15,20 +15,20 @@ Supports $expand for channel messages.
 
 ### List (Default)
 ```
-Get-MgGroupTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -GroupId <String>
+Get-MgBetaGroupTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -GroupId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -ChatMessageId1 <String>
+Get-MgBetaGroupTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTeamChannelMessageReply -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupTeamChannelMessageReply -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -166,7 +166,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -272,11 +272,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage
 
 ## NOTES
 

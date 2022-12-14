@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappdevicestatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappdevicestatuses
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppDeviceStatuses
+# Update-MgBetaDeviceAppMgtMobileAppDeviceStatuses
 
 ## SYNOPSIS
 Update the navigation property deviceStatuses in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceStatuses in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> -MobileAppInstallStatusId <String>
+Update-MgBetaDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> -MobileAppInstallStatusId <String>
  [-AdditionalProperties <Hashtable>] [-App <IMicrosoftGraphMobileApp1>] [-DeviceId <String>]
  [-DeviceName <String>] [-DisplayVersion <String>] [-ErrorCode <Int32>] [-Id <String>]
  [-InstallState <ResultantAppState>] [-InstallStateDetail <ResultantAppStateDetail>]
@@ -25,19 +25,19 @@ Update-MgDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> -MobileAppIns
 
 ### Update
 ```
-Update-MgDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> -MobileAppInstallStatusId <String>
+Update-MgBetaDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> -MobileAppInstallStatusId <String>
  -BodyParameter <IMicrosoftGraphMobileAppInstallStatus> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtMobileAppDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMobileAppDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphMobileAppInstallStatus> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtMobileAppDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMobileAppDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-App <IMicrosoftGraphMobileApp1>] [-DeviceId <String>]
  [-DeviceName <String>] [-DisplayVersion <String>] [-ErrorCode <Int32>] [-Id <String>]
  [-InstallState <ResultantAppState>] [-InstallStateDetail <ResultantAppStateDetail>]
@@ -73,7 +73,7 @@ An abstract class containing the base properties for Intune mobile apps.
 To construct, please use Get-Help -Online and see NOTES section for APP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -89,7 +89,7 @@ Contains properties for the installation state of a mobile app for a device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -198,7 +198,7 @@ When devices contact the Intune service and find targeted application enforcemen
 Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ResultantAppState
+Type: Microsoft.Graph.Beta.PowerShell.Support.ResultantAppState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -213,7 +213,7 @@ Accept wildcard characters: False
 Enum indicating additional details regarding why an application has a particular install state.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ResultantAppStateDetail
+Type: Microsoft.Graph.Beta.PowerShell.Support.ResultantAppStateDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -275,7 +275,7 @@ When devices contact the Intune service and find targeted application enforcemen
 Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ResultantAppState
+Type: Microsoft.Graph.Beta.PowerShell.Support.ResultantAppState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -397,9 +397,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus
 
 ## OUTPUTS
 
@@ -409,7 +409,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementMobileAppDeviceStatuses
+### Update-MgBetaDeviceAppManagementMobileAppDeviceStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalmemberof
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipalmemberof
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalMemberOf
+# Get-MgBetaServicePrincipalMemberOf
 
 ## SYNOPSIS
 Roles that this service principal is a member of.
@@ -17,20 +17,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgServicePrincipalMemberOf -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaServicePrincipalMemberOf -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServicePrincipalMemberOf -DirectoryObjectId <String> -ServicePrincipalId <String>
+Get-MgBetaServicePrincipalMemberOf -DirectoryObjectId <String> -ServicePrincipalId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalMemberOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalMemberOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -42,13 +42,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServicePrincipalMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalMemberOf -ServicePrincipalId $servicePrincipalId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalMemberOf -ServicePrincipalId $servicePrincipalId
 ```
 
-This example shows how to use the Get-MgServicePrincipalMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -150,7 +150,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -271,11 +271,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

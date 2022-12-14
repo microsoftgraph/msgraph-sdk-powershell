@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedapppolicy
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedapppolicy
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtManagedAppPolicy
+# New-MgBetaDeviceAppMgtManagedAppPolicy
 
 ## SYNOPSIS
 Create new navigation property to managedAppPolicies for deviceAppManagement
@@ -14,14 +14,14 @@ Create new navigation property to managedAppPolicies for deviceAppManagement
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceAppMgtManagedAppPolicy [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
+New-MgBetaDeviceAppMgtManagedAppPolicy [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-RoleScopeTagIds <String[]>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-Confirm] [-WhatIf]
+New-MgBetaDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ The ManagedAppPolicy resource represents a base type for platform specific polic
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 Parameter Sets: Create1
 Aliases:
 
@@ -205,17 +205,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementManagedAppPolicy
+### New-MgBetaDeviceAppManagementManagedAppPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

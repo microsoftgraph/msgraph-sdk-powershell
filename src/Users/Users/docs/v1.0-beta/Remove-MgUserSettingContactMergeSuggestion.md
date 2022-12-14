@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mgusersettingcontactmergesuggestion
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/remove-mgusersettingcontactmergesuggestion
 schema: 2.0.0
 ---
 
-# Remove-MgUserSettingContactMergeSuggestion
+# Remove-MgBetaUserSettingContactMergeSuggestion
 
 ## SYNOPSIS
 Delete navigation property contactMergeSuggestions for users
@@ -14,13 +14,13 @@ Delete navigation property contactMergeSuggestions for users
 
 ### Delete (Default)
 ```
-Remove-MgUserSettingContactMergeSuggestion -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserSettingContactMergeSuggestion -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

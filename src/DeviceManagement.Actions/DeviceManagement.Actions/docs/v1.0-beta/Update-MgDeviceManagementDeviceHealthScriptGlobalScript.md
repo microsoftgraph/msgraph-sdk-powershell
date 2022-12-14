@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/update-mgdevicemanagementdevicehealthscriptglobalscript
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/update-mgdevicemanagementdevicehealthscriptglobalscript
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceHealthScriptGlobalScript
+# Update-MgBetaDeviceManagementDeviceHealthScriptGlobalScript
 
 ## SYNOPSIS
 Update the Proprietary Device Health Script
@@ -14,27 +14,27 @@ Update the Proprietary Device Health Script
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceHealthScriptGlobalScript -DeviceHealthScriptId <String>
+Update-MgBetaDeviceManagementDeviceHealthScriptGlobalScript -DeviceHealthScriptId <String>
  [-AdditionalProperties <Hashtable>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceHealthScriptGlobalScript -DeviceHealthScriptId <String>
+Update-MgBetaDeviceManagementDeviceHealthScriptGlobalScript -DeviceHealthScriptId <String>
  -BodyParameter <IPaths1Ca4Qq5DevicemanagementDevicehealthscriptsDevicehealthscriptIdMicrosoftGraphUpdateglobalscriptPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceHealthScriptGlobalScript -InputObject <IDeviceManagementActionsIdentity>
+Update-MgBetaDeviceManagementDeviceHealthScriptGlobalScript -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1Ca4Qq5DevicemanagementDevicehealthscriptsDevicehealthscriptIdMicrosoftGraphUpdateglobalscriptPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceHealthScriptGlobalScript -InputObject <IDeviceManagementActionsIdentity>
+Update-MgBetaDeviceManagementDeviceHealthScriptGlobalScript -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Ca4Qq5DevicemanagementDevicehealthscriptsDevicehealthscriptIdMicrosoftGraphUpdateglobalscriptPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ca4Qq5DevicemanagementDevicehealthscriptsDevicehealthscriptIdMicrosoftGraphUpdateglobalscriptPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -158,9 +158,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Ca4Qq5DevicemanagementDevicehealthscriptsDevicehealthscriptIdMicrosoftGraphUpdateglobalscriptPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ca4Qq5DevicemanagementDevicehealthscriptsDevicehealthscriptIdMicrosoftGraphUpdateglobalscriptPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

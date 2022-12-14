@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgagreement
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgagreement
 schema: 2.0.0
 ---
 
-# Get-MgAgreement
+# Get-MgBetaAgreement
 
 ## SYNOPSIS
 Get entity from agreements by key
@@ -14,18 +14,18 @@ Get entity from agreements by key
 
 ### List (Default)
 ```
-Get-MgAgreement [-Property <String[]>] [-Search <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
+Get-MgBetaAgreement [-Property <String[]>] [-Search <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAgreement -AgreementId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaAgreement -AgreementId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAgreement -InputObject <IIdentityGovernanceIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaAgreement -InputObject <IIdentityGovernanceIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,7 +86,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -147,11 +147,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
 
 ## NOTES
 

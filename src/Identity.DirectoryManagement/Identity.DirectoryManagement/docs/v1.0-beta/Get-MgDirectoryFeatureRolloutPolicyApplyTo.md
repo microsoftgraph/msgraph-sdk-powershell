@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryfeaturerolloutpolicyapplyto
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryfeaturerolloutpolicyapplyto
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryFeatureRolloutPolicyApplyTo
+# Get-MgBetaDirectoryFeatureRolloutPolicyApplyTo
 
 ## SYNOPSIS
 Nullable.
@@ -14,7 +14,7 @@ Specifies a list of directoryObjects that feature is enabled for.
 ## SYNTAX
 
 ```
-Get-MgDirectoryFeatureRolloutPolicyApplyTo -FeatureRolloutPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDirectoryFeatureRolloutPolicyApplyTo -FeatureRolloutPolicyId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -200,7 +200,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

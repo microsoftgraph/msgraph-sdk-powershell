@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementrolescopetag
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementrolescopetag
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementRoleScopeTag
+# Update-MgBetaDeviceManagementRoleScopeTag
 
 ## SYNOPSIS
 Update the navigation property roleScopeTags in deviceManagement
@@ -14,26 +14,26 @@ Update the navigation property roleScopeTags in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementRoleScopeTag -RoleScopeTagId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementRoleScopeTag -RoleScopeTagId <String> [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphRoleScopeTagAutoAssignment[]>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementRoleScopeTag -RoleScopeTagId <String> -BodyParameter <IMicrosoftGraphRoleScopeTag>
+Update-MgBetaDeviceManagementRoleScopeTag -RoleScopeTagId <String> -BodyParameter <IMicrosoftGraphRoleScopeTag>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementRoleScopeTag -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementRoleScopeTag -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphRoleScopeTag> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementRoleScopeTag -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementRoleScopeTag -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphRoleScopeTagAutoAssignment[]>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -66,7 +66,7 @@ The list of assignments for this Role Scope Tag.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTagAutoAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTagAutoAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -82,7 +82,7 @@ Role Scope Tag
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTag
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTag
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -221,9 +221,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTag
 
 ## OUTPUTS
 

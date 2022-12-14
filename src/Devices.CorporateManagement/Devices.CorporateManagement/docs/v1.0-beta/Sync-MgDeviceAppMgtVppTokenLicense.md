@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/sync-mgdeviceappmgtvpptokenlicense
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/sync-mgdeviceappmgtvpptokenlicense
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceAppMgtVppTokenLicense
+# Sync-MgBetaDeviceAppMgtVppTokenLicense
 
 ## SYNOPSIS
 Syncs licenses associated with a specific appleVolumePurchaseProgramToken
@@ -14,12 +14,12 @@ Syncs licenses associated with a specific appleVolumePurchaseProgramToken
 
 ### Sync (Default)
 ```
-Sync-MgDeviceAppMgtVppTokenLicense -VppTokenId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Sync-MgBetaDeviceAppMgtVppTokenLicense -VppTokenId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SyncViaIdentity
 ```
-Sync-MgDeviceAppMgtVppTokenLicense -InputObject <IDevicesCorporateManagementIdentity> [-Confirm] [-WhatIf]
+Sync-MgBetaDeviceAppMgtVppTokenLicense -InputObject <IDevicesCorporateManagementIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: SyncViaIdentity
 Aliases:
 
@@ -97,17 +97,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken2
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVppToken2
 
 ## NOTES
 
 ALIASES
 
-### Sync-MgDeviceAppManagementVppTokenLicense
+### Sync-MgBetaDeviceAppManagementVppTokenLicense
 
 COMPLEX PARAMETER PROPERTIES
 

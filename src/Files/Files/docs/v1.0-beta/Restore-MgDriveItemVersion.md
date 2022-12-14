@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/restore-mgdriveitemversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/restore-mgdriveitemversion
 schema: 2.0.0
 ---
 
-# Restore-MgDriveItemVersion
+# Restore-MgBetaDriveItemVersion
 
 ## SYNOPSIS
 Restore a previous version of a DriveItem to be the current version.
@@ -15,13 +15,13 @@ This will create a new version with the contents of the previous version, but pr
 
 ### Restore1 (Default)
 ```
-Restore-MgDriveItemVersion -DriveId <String> -DriveItemId <String> -DriveItemVersionId <String> [-PassThru]
+Restore-MgBetaDriveItemVersion -DriveId <String> -DriveItemId <String> -DriveItemVersionId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity1
 ```
-Restore-MgDriveItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgBetaDriveItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,13 +30,13 @@ This will create a new version with the contents of the previous version, but pr
 
 ## EXAMPLES
 
-### Example 1: Using the Restore-MgDriveItemVersion Cmdlet
+### Example 1: Using the Restore-MgBetaDriveItemVersion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Restore-MgDriveItemVersion -DriveId $driveId -DriveItemId $driveItemId -DriveItemVersionId $driveItemVersionId
+Import-Module Microsoft.Graph.Beta.Files
+Restore-MgBetaDriveItemVersion -DriveId $driveId -DriveItemId $driveItemId -DriveItemVersionId $driveItemVersionId
 ```
 
-This example shows how to use the Restore-MgDriveItemVersion Cmdlet.
+This example shows how to use the Restore-MgBetaDriveItemVersion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: RestoreViaIdentity1
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mguseronlinemeetingattendancereport
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mguseronlinemeetingattendancereport
 schema: 2.0.0
 ---
 
-# Get-MgUserOnlineMeetingAttendanceReport
+# Get-MgBetaUserOnlineMeetingAttendanceReport
 
 ## SYNOPSIS
 The attendance reports of an online meeting.
@@ -15,31 +15,31 @@ Read-only.
 
 ### Get1 (Default)
 ```
-Get-MgUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
+Get-MgBetaUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserOnlineMeetingAttendanceReport -MeetingAttendanceReportId <String> -OnlineMeetingId <String>
+Get-MgBetaUserOnlineMeetingAttendanceReport -MeetingAttendanceReportId <String> -OnlineMeetingId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
+Get-MgBetaUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
+Get-MgBetaUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
+Get-MgBetaUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -50,24 +50,24 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOnlineMeetingAttendanceReport Cmdlet
+### Example 1: Using the Get-MgBetaUserOnlineMeetingAttendanceReport Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 # A UPN can also be used as -UserId.
-Get-MgUserOnlineMeetingAttendanceReport -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingAttendanceReportId $meetingAttendanceReportId -ExpandProperty "attendanceRecords" 
+Get-MgBetaUserOnlineMeetingAttendanceReport -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingAttendanceReportId $meetingAttendanceReportId -ExpandProperty "attendanceRecords" 
 ```
 
-This example shows how to use the Get-MgUserOnlineMeetingAttendanceReport Cmdlet.
+This example shows how to use the Get-MgBetaUserOnlineMeetingAttendanceReport Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserOnlineMeetingAttendanceReport Cmdlet
+### Example 2: Using the Get-MgBetaUserOnlineMeetingAttendanceReport Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 # A UPN can also be used as -UserId.
-Get-MgUserOnlineMeetingAttendanceReport -UserId $userId -OnlineMeetingId $onlineMeetingId
+Get-MgBetaUserOnlineMeetingAttendanceReport -UserId $userId -OnlineMeetingId $onlineMeetingId
 ```
 
-This example shows how to use the Get-MgUserOnlineMeetingAttendanceReport Cmdlet.
+This example shows how to use the Get-MgBetaUserOnlineMeetingAttendanceReport Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -289,11 +289,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
 
 ## NOTES
 

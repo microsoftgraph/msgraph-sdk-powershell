@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/set-mgsharelistitemdriveitemcontent
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/set-mgsharelistitemdriveitemcontent
 schema: 2.0.0
 ---
 
-# Set-MgShareListItemDriveItemContent
+# Set-MgBetaShareListItemDriveItemContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,25 +14,25 @@ The content stream, if the item represents a file.
 
 ### Set3 (Default)
 ```
-Set-MgShareListItemDriveItemContent -SharedDriveItemId <String> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaShareListItemDriveItemContent -SharedDriveItemId <String> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set2
 ```
-Set-MgShareListItemDriveItemContent -ListItemId <String> -SharedDriveItemId <String> -InFile <String>
+Set-MgBetaShareListItemDriveItemContent -ListItemId <String> -SharedDriveItemId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity2
 ```
-Set-MgShareListItemDriveItemContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaShareListItemDriveItemContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity3
 ```
-Set-MgShareListItemDriveItemContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaShareListItemDriveItemContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -80,7 +80,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: SetViaIdentity2, SetViaIdentity3
 Aliases:
 
@@ -172,7 +172,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### System.IO.Stream
 

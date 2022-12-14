@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationclassassignmentsubmissionsubmittedresource
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/new-mgeducationclassassignmentsubmissionsubmittedresource
 schema: 2.0.0
 ---
 
-# New-MgEducationClassAssignmentSubmissionSubmittedResource
+# New-MgBetaEducationClassAssignmentSubmissionSubmittedResource
 
 ## SYNOPSIS
 Create new navigation property to submittedResources for education
@@ -14,7 +14,7 @@ Create new navigation property to submittedResources for education
 
 ### CreateExpanded1 (Default)
 ```
-New-MgEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
+New-MgBetaEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
  -EducationClassId <String> -EducationSubmissionId <String> [-AdditionalProperties <Hashtable>]
  [-AssignmentResourceUrl <String>] [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ New-MgEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId
 
 ### Create1
 ```
-New-MgEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
+New-MgBetaEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
  -EducationClassId <String> -EducationSubmissionId <String>
  -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgEducationClassAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
+New-MgBetaEducationClassAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgEducationClassAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
+New-MgBetaEducationClassAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>] [-Id <String>]
  [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ educationSubmissionResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -160,7 +160,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -176,7 +176,7 @@ educationResource
 To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationResource
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -223,13 +223,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mggroupteaminstalledapp
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mggroupteaminstalledapp
 schema: 2.0.0
 ---
 
-# New-MgGroupTeamInstalledApp
+# New-MgBetaGroupTeamInstalledApp
 
 ## SYNOPSIS
 Install an app to the specified team.
@@ -14,26 +14,26 @@ Install an app to the specified team.
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupTeamInstalledApp -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaGroupTeamInstalledApp -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-TeamsApp <IMicrosoftGraphTeamsApp>] [-TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition1>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupTeamInstalledApp -GroupId <String> -BodyParameter <IMicrosoftGraphTeamsAppInstallation1> [-Confirm]
+New-MgBetaGroupTeamInstalledApp -GroupId <String> -BodyParameter <IMicrosoftGraphTeamsAppInstallation1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupTeamInstalledApp -InputObject <ITeamsIdentity>
+New-MgBetaGroupTeamInstalledApp -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphTeamsAppInstallation1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupTeamInstalledApp -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaGroupTeamInstalledApp -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-TeamsApp <IMicrosoftGraphTeamsApp>] [-TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition1>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ teamsAppInstallation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -128,7 +128,7 @@ teamsApp
 To construct, please use Get-Help -Online and see NOTES section for TEAMSAPP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsApp
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -144,7 +144,7 @@ teamsAppDefinition
 To construct, please use Get-Help -Online and see NOTES section for TEAMSAPPDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -191,13 +191,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
 
 ## NOTES
 

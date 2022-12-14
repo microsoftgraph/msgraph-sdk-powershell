@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/set-mgdriverootcontent
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/set-mgdriverootcontent
 schema: 2.0.0
 ---
 
-# Set-MgDriveRootContent
+# Set-MgBetaDriveRootContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,13 +14,13 @@ The content stream, if the item represents a file.
 
 ### Set (Default)
 ```
-Set-MgDriveRootContent -DriveId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
+Set-MgBetaDriveRootContent -DriveId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgDriveRootContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
+Set-MgBetaDriveRootContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### System.IO.Stream
 

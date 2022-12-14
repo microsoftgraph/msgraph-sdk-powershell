@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbookingbusinessappointment
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/new-mgbookingbusinessappointment
 schema: 2.0.0
 ---
 
-# New-MgBookingBusinessAppointment
+# New-MgBetaBookingBusinessAppointment
 
 ## SYNOPSIS
 Create a new bookingAppointment for the specified bookingBusiness.
@@ -14,7 +14,7 @@ Create a new bookingAppointment for the specified bookingBusiness.
 
 ### CreateExpanded (Default)
 ```
-New-MgBookingBusinessAppointment -BookingBusinessId <String> [-AdditionalInformation <String>]
+New-MgBetaBookingBusinessAppointment -BookingBusinessId <String> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-CustomerEmailAddress <String>]
  [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation1>] [-CustomerName <String>]
  [-CustomerNotes <String>] [-CustomerPhone <String>]
@@ -31,19 +31,19 @@ New-MgBookingBusinessAppointment -BookingBusinessId <String> [-AdditionalInforma
 
 ### Create
 ```
-New-MgBookingBusinessAppointment -BookingBusinessId <String>
+New-MgBetaBookingBusinessAppointment -BookingBusinessId <String>
  -BodyParameter <IMicrosoftGraphBookingAppointment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgBookingBusinessAppointment -InputObject <IBookingsIdentity>
+New-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphBookingAppointment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
+New-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-CustomerEmailAddress <String>]
  [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation1>] [-CustomerName <String>]
  [-CustomerNotes <String>] [-CustomerPhone <String>]
@@ -63,33 +63,33 @@ Create a new bookingAppointment for the specified bookingBusiness.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgBookingBusinessAppointment Cmdlet
+### Example 1: Using the New-MgBetaBookingBusinessAppointment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
-	"@odata.type" = "#microsoft.graph.bookingAppointment"
+	"@odata.type" = "#Microsoft.Graph.Beta.bookingAppointment"
 	CustomerEmailAddress = "jordanm@contoso.com"
 	CustomerLocation = @{
-		"@odata.type" = "#microsoft.graph.location"
+		"@odata.type" = "#Microsoft.Graph.Beta.location"
 		Address = @{
-			"@odata.type" = "#microsoft.graph.physicalAddress"
+			"@odata.type" = "#Microsoft.Graph.Beta.physicalAddress"
 			City = "Buffalo"
 			CountryOrRegion = "USA"
 			PostalCode = "98052"
 			PostOfficeBox = $null
 			State = "NY"
 			Street = "123 First Avenue"
-			"Type@odata.type" = "#microsoft.graph.physicalAddressType"
+			"Type@odata.type" = "#Microsoft.Graph.Beta.physicalAddressType"
 			Type = $null
 		}
 		Coordinates = $null
 		DisplayName = "Customer"
 		LocationEmailAddress = $null
-		"LocationType@odata.type" = "#microsoft.graph.locationType"
+		"LocationType@odata.type" = "#Microsoft.Graph.Beta.locationType"
 		LocationType = $null
 		LocationUri = $null
 		UniqueId = $null
-		"UniqueIdType@odata.type" = "#microsoft.graph.locationUniqueIdType"
+		"UniqueIdType@odata.type" = "#Microsoft.Graph.Beta.locationUniqueIdType"
 		UniqueIdType = $null
 	}
 	CustomerName = "Jordan Miller"
@@ -98,18 +98,18 @@ $params = @{
 	CustomerTimeZone = "America/Chicago"
 	SmsNotificationsEnabled = $true
 	End = @{
-		"@odata.type" = "#microsoft.graph.dateTimeTimeZone"
+		"@odata.type" = "#Microsoft.Graph.Beta.dateTimeTimeZone"
 		DateTime = "2018-05-01T12:30:00.0000000+00:00"
 		TimeZone = "UTC"
 	}
 	InvoiceAmount = 10
 	InvoiceDate = @{
-		"@odata.type" = "#microsoft.graph.dateTimeTimeZone"
+		"@odata.type" = "#Microsoft.Graph.Beta.dateTimeTimeZone"
 		DateTime = "2018-05-01T12:30:00.0000000+00:00"
 		TimeZone = "UTC"
 	}
 	InvoiceId = "1001"
-	"InvoiceStatus@odata.type" = "#microsoft.graph.bookingInvoiceStatus"
+	"InvoiceStatus@odata.type" = "#Microsoft.Graph.Beta.bookingInvoiceStatus"
 	InvoiceStatus = "open"
 	InvoiceUrl = "theInvoiceUrl"
 	IsLocationOnline = $true
@@ -118,60 +118,60 @@ $params = @{
 	PostBuffer = "PT10M"
 	PreBuffer = "PT5M"
 	Price = 10
-	"PriceType@odata.type" = "#microsoft.graph.bookingPriceType"
+	"PriceType@odata.type" = "#Microsoft.Graph.Beta.bookingPriceType"
 	PriceType = "fixedPrice"
-	"Reminders@odata.type" = "#Collection(microsoft.graph.bookingReminder)"
+	"Reminders@odata.type" = "#Collection(Microsoft.Graph.Beta.bookingReminder)"
 	Reminders = @(
 		@{
-			"@odata.type" = "#microsoft.graph.bookingReminder"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingReminder"
 			Message = "This service is tomorrow"
 			Offset = "P1D"
-			"Recipients@odata.type" = "#microsoft.graph.bookingReminderRecipients"
+			"Recipients@odata.type" = "#Microsoft.Graph.Beta.bookingReminderRecipients"
 			Recipients = "allAttendees"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.bookingReminder"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingReminder"
 			Message = "Please be available to enjoy your lunch service."
 			Offset = "PT1H"
-			"Recipients@odata.type" = "#microsoft.graph.bookingReminderRecipients"
+			"Recipients@odata.type" = "#Microsoft.Graph.Beta.bookingReminderRecipients"
 			Recipients = "customer"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.bookingReminder"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingReminder"
 			Message = "Please check traffic for next cater."
 			Offset = "PT2H"
-			"Recipients@odata.type" = "#microsoft.graph.bookingReminderRecipients"
+			"Recipients@odata.type" = "#Microsoft.Graph.Beta.bookingReminderRecipients"
 			Recipients = "staff"
 		}
 	)
 	ServiceId = "57da6774-a087-4d69-b0e6-6fb82c339976"
 	ServiceLocation = @{
-		"@odata.type" = "#microsoft.graph.location"
+		"@odata.type" = "#Microsoft.Graph.Beta.location"
 		Address = @{
-			"@odata.type" = "#microsoft.graph.physicalAddress"
+			"@odata.type" = "#Microsoft.Graph.Beta.physicalAddress"
 			City = "Buffalo"
 			CountryOrRegion = "USA"
 			PostalCode = "98052"
 			PostOfficeBox = $null
 			State = "NY"
 			Street = "123 First Avenue"
-			"Type@odata.type" = "#microsoft.graph.physicalAddressType"
+			"Type@odata.type" = "#Microsoft.Graph.Beta.physicalAddressType"
 			Type = $null
 		}
 		Coordinates = $null
 		DisplayName = "Customer location"
 		LocationEmailAddress = $null
-		"LocationType@odata.type" = "#microsoft.graph.locationType"
+		"LocationType@odata.type" = "#Microsoft.Graph.Beta.locationType"
 		LocationType = $null
 		LocationUri = $null
 		UniqueId = $null
-		"UniqueIdType@odata.type" = "#microsoft.graph.locationUniqueIdType"
+		"UniqueIdType@odata.type" = "#Microsoft.Graph.Beta.locationUniqueIdType"
 		UniqueIdType = $null
 	}
 	ServiceName = "Catered bento"
 	ServiceNotes = "Customer requires punctual service."
 	Start = @{
-		"@odata.type" = "#microsoft.graph.dateTimeTimeZone"
+		"@odata.type" = "#Microsoft.Graph.Beta.dateTimeTimeZone"
 		DateTime = "2018-05-01T12:00:00.0000000+00:00"
 		TimeZone = "UTC"
 	}
@@ -179,14 +179,14 @@ $params = @{
 	FilledAttendeesCount = 1
 	Customers = @(
 		@{
-			"@odata.type" = "#microsoft.graph.bookingCustomerInformation"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingCustomerInformation"
 			CustomerId = "7ed53fa5-9ef2-4f2f-975b-27447440bc09"
 			Name = "Jordan Miller"
 			EmailAddress = "jordanm@contoso.com"
 			Phone = "213-555-0199"
 			Notes = $null
 			Location = @{
-				"@odata.type" = "#microsoft.graph.location"
+				"@odata.type" = "#Microsoft.Graph.Beta.location"
 				DisplayName = "Customer"
 				LocationEmailAddress = $null
 				LocationUri = ""
@@ -194,7 +194,7 @@ $params = @{
 				UniqueId = $null
 				UniqueIdType = $null
 				Address = @{
-					"@odata.type" = "#microsoft.graph.physicalAddress"
+					"@odata.type" = "#Microsoft.Graph.Beta.physicalAddress"
 					Type = "home"
 					PostOfficeBox = ""
 					Street = ""
@@ -210,10 +210,10 @@ $params = @{
 		}
 	)
 }
-New-MgBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BodyParameter $params
+New-MgBetaBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgBookingBusinessAppointment Cmdlet.
+This example shows how to use the New-MgBetaBookingBusinessAppointment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -268,7 +268,7 @@ Represents a booked appointment of a service by a customer in a business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -331,7 +331,7 @@ location
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMERLOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -396,7 +396,7 @@ An appointment will contain a list of customer information and each unit will in
 Optional.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomerInformationBase[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomerInformationBase[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -428,7 +428,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for END properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -460,7 +460,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -491,7 +491,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for INVOICEDATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -676,7 +676,7 @@ Accept wildcard characters: False
 Represents the type of pricing of a booking service.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.BookingPriceType
+Type: Microsoft.Graph.Beta.PowerShell.Support.BookingPriceType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -693,7 +693,7 @@ The value of this property is available only when reading this bookingAppointmen
 To construct, please use Get-Help -Online and see NOTES section for REMINDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingReminder1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingReminder1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -739,7 +739,7 @@ location
 To construct, please use Get-Help -Online and see NOTES section for SERVICELOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -818,7 +818,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for START properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -865,13 +865,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 
 ## NOTES
 

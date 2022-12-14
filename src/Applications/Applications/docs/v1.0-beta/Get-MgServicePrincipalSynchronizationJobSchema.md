@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalsynchronizationjobschema
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipalsynchronizationjobschema
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalSynchronizationJobSchema
+# Get-MgBetaServicePrincipalSynchronizationJobSchema
 
 ## SYNOPSIS
 Retrieve the schema for a given synchronization job or template.
@@ -14,13 +14,13 @@ Retrieve the schema for a given synchronization job or template.
 
 ### Get (Default)
 ```
-Get-MgServicePrincipalSynchronizationJobSchema -ServicePrincipalId <String> -SynchronizationJobId <String>
+Get-MgBetaServicePrincipalSynchronizationJobSchema -ServicePrincipalId <String> -SynchronizationJobId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalSynchronizationJobSchema -InputObject <IApplicationsIdentity>
+Get-MgBetaServicePrincipalSynchronizationJobSchema -InputObject <IApplicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,31 +29,31 @@ Retrieve the schema for a given synchronization job or template.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServicePrincipalSynchronizationJobSchema Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalSynchronizationJobSchema Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
 
-This example shows how to use the Get-MgServicePrincipalSynchronizationJobSchema Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalSynchronizationJobSchema Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgServicePrincipalSynchronizationJobSchema Cmdlet
+### Example 2: Using the Get-MgBetaServicePrincipalSynchronizationJobSchema Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
 
-This example shows how to use the Get-MgServicePrincipalSynchronizationJobSchema Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalSynchronizationJobSchema Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgServicePrincipalSynchronizationJobSchema Cmdlet
+### Example 3: Using the Get-MgBetaServicePrincipalSynchronizationJobSchema Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
 
-This example shows how to use the Get-MgServicePrincipalSynchronizationJobSchema Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalSynchronizationJobSchema Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -78,7 +78,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -139,11 +139,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
 
 ## NOTES
 

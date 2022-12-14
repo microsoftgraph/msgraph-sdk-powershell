@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mggroupteaminstalledapp
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mggroupteaminstalledapp
 schema: 2.0.0
 ---
 
-# Get-MgGroupTeamInstalledApp
+# Get-MgBetaGroupTeamInstalledApp
 
 ## SYNOPSIS
 The apps installed in this team.
@@ -14,20 +14,20 @@ The apps installed in this team.
 
 ### List (Default)
 ```
-Get-MgGroupTeamInstalledApp -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaGroupTeamInstalledApp -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupTeamInstalledApp -GroupId <String> -TeamsAppInstallationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupTeamInstalledApp -GroupId <String> -TeamsAppInstallationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTeamInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupTeamInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtemplatetaskprocessingresult
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtemplatetaskprocessingresult
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
 
 ## SYNOPSIS
 The result of processing the task.
@@ -14,7 +14,7 @@ The result of processing the task.
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <String>
  -WorkflowTemplateId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <S
 
 ### Get
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <String>
  -TaskProcessingResultId <String> -WorkflowTemplateId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskProcessingResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskProcessingResult
 
 ## NOTES
 

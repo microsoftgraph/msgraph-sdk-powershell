@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementcomanageddevicecompliancepolicystate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementcomanageddevicecompliancepolicystate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementComanagedDeviceCompliancePolicyState
+# Update-MgBetaDeviceManagementComanagedDeviceCompliancePolicyState
 
 ## SYNOPSIS
 Update the navigation property deviceCompliancePolicyStates in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceCompliancePolicyStates in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementComanagedDeviceCompliancePolicyState -DeviceCompliancePolicyStateId <String>
+Update-MgBetaDeviceManagementComanagedDeviceCompliancePolicyState -DeviceCompliancePolicyStateId <String>
  -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState1[]>] [-State <String>] [-UserId <String>]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementComanagedDeviceCompliancePolicyState -DeviceComplianceP
 
 ### Update
 ```
-Update-MgDeviceManagementComanagedDeviceCompliancePolicyState -DeviceCompliancePolicyStateId <String>
+Update-MgBetaDeviceManagementComanagedDeviceCompliancePolicyState -DeviceCompliancePolicyStateId <String>
  -ManagedDeviceId <String> -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementComanagedDeviceCompliancePolicyState -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementComanagedDeviceCompliancePolicyState -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementComanagedDeviceCompliancePolicyState -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementComanagedDeviceCompliancePolicyState -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState1[]>] [-State <String>] [-UserId <String>]
@@ -71,7 +71,7 @@ Device Compliance Policy State for a given device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyState1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyState1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicyPlatformType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SETTINGSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicySettingState1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicySettingState1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -316,9 +316,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyState1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyState1
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgchat
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgchat
 schema: 2.0.0
 ---
 
-# New-MgChat
+# New-MgBetaChat
 
 ## SYNOPSIS
 Create a new chat object.
@@ -14,7 +14,7 @@ Create a new chat object.
 
 ### CreateExpanded (Default)
 ```
-New-MgChat [-AdditionalProperties <Hashtable>] [-ChatType <String>] [-CreatedDateTime <DateTime>]
+New-MgBetaChat [-AdditionalProperties <Hashtable>] [-ChatType <String>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]
  [-LastMessagePreview <IMicrosoftGraphChatMessageInfo>] [-LastUpdatedDateTime <DateTime>]
  [-Members <IMicrosoftGraphConversationMember[]>] [-Messages <IMicrosoftGraphChatMessage[]>]
@@ -28,7 +28,7 @@ New-MgChat [-AdditionalProperties <Hashtable>] [-ChatType <String>] [-CreatedDat
 
 ### Create
 ```
-New-MgChat -BodyParameter <IMicrosoftGraphChat> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaChat -BodyParameter <IMicrosoftGraphChat> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,29 +36,29 @@ Create a new chat object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgChat Cmdlet
+### Example 1: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "group"
 	Topic = "Group chat title"
 	Members = @(
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8c0a1a67-50ce-4114-bb6c-da9c5dbcf6ca')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('82fe7758-5bb3-4f0d-a43f-e555fd399c6f')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
@@ -66,35 +66,35 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgChat Cmdlet
+### Example 2: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "group"
 	Topic = "Group chat title"
 	Members = @(
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8c0a1a67-50ce-4114-bb6c-da9c5dbcf6ca')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('82fe7758-5bb3-4f0d-a43f-e555fd399c6f')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"guest"
 			)
@@ -102,35 +102,35 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgChat Cmdlet
+### Example 3: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "group"
 	Topic = "Group chat title"
 	Members = @(
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8c0a1a67-50ce-4114-bb6c-da9c5dbcf6ca')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('82fe7758-5bb3-4f0d-a43f-e555fd399c6f')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"guest"
 			)
@@ -138,27 +138,27 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgChat Cmdlet
+### Example 4: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "oneOnOne"
 	Members = @(
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
@@ -167,27 +167,27 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the New-MgChat Cmdlet
+### Example 5: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "oneOnOne"
 	Members = @(
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
@@ -195,27 +195,27 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the New-MgChat Cmdlet
+### Example 6: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "oneOnOne"
 	Members = @(
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
@@ -223,27 +223,27 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 7: Using the New-MgChat Cmdlet
+### Example 7: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "oneOnOne"
 	Members = @(
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
@@ -256,10 +256,10 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -284,7 +284,7 @@ chat
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChat
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChat
 Parameter Sets: Create
 Aliases:
 
@@ -348,7 +348,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for INSTALLEDAPPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -364,7 +364,7 @@ chatMessageInfo
 To construct, please use Get-Help -Online and see NOTES section for LASTMESSAGEPREVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageInfo
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -397,7 +397,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -414,7 +414,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for MESSAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -430,7 +430,7 @@ teamworkOnlineMeetingInfo
 To construct, please use Get-Help -Online and see NOTES section for ONLINEMEETINGINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkOnlineMeetingInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkOnlineMeetingInfo1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -447,7 +447,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for OPERATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -463,7 +463,7 @@ A collection of permissions granted to apps for the chat.
 To construct, please use Get-Help -Online and see NOTES section for PERMISSIONGRANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -480,7 +480,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for PINNEDMESSAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -497,7 +497,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for TABS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsTab1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsTab1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -545,7 +545,7 @@ chatViewpoint
 To construct, please use Get-Help -Online and see NOTES section for VIEWPOINT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatViewpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatViewpoint
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -609,11 +609,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChat
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChat
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChat
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChat
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritytriggertyperetentioneventtype
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritytriggertyperetentioneventtype
 schema: 2.0.0
 ---
 
-# Update-MgSecurityTriggerTypeRetentionEventType
+# Update-MgBetaSecurityTriggerTypeRetentionEventType
 
 ## SYNOPSIS
 Update the navigation property retentionEventTypes in security
@@ -14,7 +14,7 @@ Update the navigation property retentionEventTypes in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityTriggerTypeRetentionEventType -RetentionEventTypeId <String>
+Update-MgBetaSecurityTriggerTypeRetentionEventType -RetentionEventTypeId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgSecurityTriggerTypeRetentionEventType -RetentionEventTypeId <String>
 
 ### Update
 ```
-Update-MgSecurityTriggerTypeRetentionEventType -RetentionEventTypeId <String>
+Update-MgBetaSecurityTriggerTypeRetentionEventType -RetentionEventTypeId <String>
  -BodyParameter <IMicrosoftGraphSecurityRetentionEventType> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityTriggerTypeRetentionEventType -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityTriggerTypeRetentionEventType -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityRetentionEventType> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityTriggerTypeRetentionEventType -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityTriggerTypeRetentionEventType -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ retentionEventType
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -270,9 +270,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

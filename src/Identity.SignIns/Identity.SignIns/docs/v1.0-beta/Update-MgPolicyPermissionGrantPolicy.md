@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicypermissiongrantpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicypermissiongrantpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyPermissionGrantPolicy
+# Update-MgBetaPolicyPermissionGrantPolicy
 
 ## SYNOPSIS
 Update the navigation property permissionGrantPolicies in policies
@@ -14,7 +14,7 @@ Update the navigation property permissionGrantPolicies in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-Excludes <IMicrosoftGraphPermissionGrantConditionSet1[]>] [-Id <String>]
  [-Includes <IMicrosoftGraphPermissionGrantConditionSet1[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-Additio
 
 ### Update
 ```
-Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String>
+Update-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String>
  -BodyParameter <IMicrosoftGraphPermissionGrantPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphPermissionGrantPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Excludes <IMicrosoftGraphPermissionGrantConditionSet1[]>] [-Id <String>]
  [-Includes <IMicrosoftGraphPermissionGrantConditionSet1[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -49,8 +49,8 @@ Update the navigation property permissionGrantPolicies in policies
 
 ### Example 1: Update a permission grant policy
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
-Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -Description "Permissions for sample app in test tenant with new updates" -DisplayName "Sample app permissions with new updates"
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Update-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -Description "Permissions for sample app in test tenant with new updates" -DisplayName "Sample app permissions with new updates"
 ```
 
 This command replaces the existing values with the provided new values for the specified properties in the specified permission grant policy in Azure AD.
@@ -77,7 +77,7 @@ permissionGrantPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Automatically expanded on GET.
 To construct, please use Get-Help -Online and see NOTES section for EXCLUDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -175,7 +175,7 @@ Automatically expanded on GET.
 To construct, please use Get-Help -Online and see NOTES section for INCLUDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -191,7 +191,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -268,9 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
 
 ## OUTPUTS
 

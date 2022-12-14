@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementdevicecompliancepolicydevicestatuses
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementdevicecompliancepolicydevicestatuses
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses
+# New-MgBetaDeviceManagementDeviceCompliancePolicyDeviceStatuses
 
 ## SYNOPSIS
 Create new navigation property to deviceStatuses for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceStatuses for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses -DeviceCompliancePolicyId <String>
+New-MgBetaDeviceManagementDeviceCompliancePolicyDeviceStatuses -DeviceCompliancePolicyId <String>
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceDisplayName <String>] [-DeviceModel <String>] [-Id <String>] [-LastReportedDateTime <DateTime>]
  [-Platform <Int32>] [-Status <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm]
@@ -23,19 +23,19 @@ New-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses -DeviceCompliancePoli
 
 ### Create
 ```
-New-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses -DeviceCompliancePolicyId <String>
+New-MgBetaDeviceManagementDeviceCompliancePolicyDeviceStatuses -DeviceCompliancePolicyId <String>
  -BodyParameter <IMicrosoftGraphDeviceComplianceDeviceStatus1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementDeviceCompliancePolicyDeviceStatuses -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceComplianceDeviceStatus1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementDeviceCompliancePolicyDeviceStatuses -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceDisplayName <String>] [-DeviceModel <String>] [-Id <String>] [-LastReportedDateTime <DateTime>]
  [-Platform <Int32>] [-Status <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm]
@@ -69,7 +69,7 @@ deviceComplianceDeviceStatus
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceDeviceStatus1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceDeviceStatus1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -283,13 +283,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceDeviceStatus1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceDeviceStatus1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceDeviceStatus1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceDeviceStatus1
 
 ## NOTES
 

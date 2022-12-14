@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguserprofilenote
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguserprofilenote
 schema: 2.0.0
 ---
 
-# Get-MgUserProfileNote
+# Get-MgBetaUserProfileNote
 
 ## SYNOPSIS
 Represents notes that a user has added to their profile.
@@ -14,20 +14,20 @@ Represents notes that a user has added to their profile.
 
 ### List (Default)
 ```
-Get-MgUserProfileNote -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserProfileNote -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserProfileNote -PersonAnnotationId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserProfileNote -PersonAnnotationId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserProfileNote -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserProfileNote -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Represents notes that a user has added to their profile.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserProfileNote Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileNote Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileNote -UserId $userId
+Get-MgBetaUserProfileNote -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserProfileNote Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileNote Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserProfileNote Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileNote Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileNote -UserId $userId -PersonAnnotationId $personAnnotationId
+Get-MgBetaUserProfileNote -UserId $userId -PersonAnnotationId $personAnnotationId
 ```
 
-This example shows how to use the Get-MgUserProfileNote Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileNote Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonAnnotation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonAnnotation
 
 ## NOTES
 

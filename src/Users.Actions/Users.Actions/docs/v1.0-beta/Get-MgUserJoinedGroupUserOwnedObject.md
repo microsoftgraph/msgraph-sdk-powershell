@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/get-mguserjoinedgroupuserownedobject
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/get-mguserjoinedgroupuserownedobject
 schema: 2.0.0
 ---
 
-# Get-MgUserJoinedGroupUserOwnedObject
+# Get-MgBetaUserJoinedGroupUserOwnedObject
 
 ## SYNOPSIS
 Invoke action getUserOwnedObjects
@@ -14,27 +14,27 @@ Invoke action getUserOwnedObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgUserJoinedGroupUserOwnedObject -UserId <String> [-AdditionalProperties <Hashtable>] [-Type <String>]
+Get-MgBetaUserJoinedGroupUserOwnedObject -UserId <String> [-AdditionalProperties <Hashtable>] [-Type <String>]
  [-UserId1 <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserJoinedGroupUserOwnedObject -UserId <String>
+Get-MgBetaUserJoinedGroupUserOwnedObject -UserId <String>
  -BodyParameter <IPaths15PjsbvUsersUserIdJoinedgroupsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserJoinedGroupUserOwnedObject -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserJoinedGroupUserOwnedObject -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths15PjsbvUsersUserIdJoinedgroupsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgUserJoinedGroupUserOwnedObject -InputObject <IUsersActionsIdentity> [-UserId <String>]
+Get-MgBetaUserJoinedGroupUserOwnedObject -InputObject <IUsersActionsIdentity> [-UserId <String>]
  [-AdditionalProperties <Hashtable>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths15PjsbvUsersUserIdJoinedgroupsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths15PjsbvUsersUserIdJoinedgroupsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -173,13 +173,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths15PjsbvUsersUserIdJoinedgroupsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths15PjsbvUsersUserIdJoinedgroupsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

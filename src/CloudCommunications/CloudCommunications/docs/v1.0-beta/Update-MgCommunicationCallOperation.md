@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationcalloperation
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/update-mgcommunicationcalloperation
 schema: 2.0.0
 ---
 
-# Update-MgCommunicationCallOperation
+# Update-MgBetaCommunicationCallOperation
 
 ## SYNOPSIS
 Update the navigation property operations in communications
@@ -14,7 +14,7 @@ Update the navigation property operations in communications
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String>
+Update-MgBetaCommunicationCallOperation -CallId <String> -CommsOperationId <String>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Id <String>]
  [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String>
 
 ### Update1
 ```
-Update-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String>
+Update-MgBetaCommunicationCallOperation -CallId <String> -CommsOperationId <String>
  -BodyParameter <IMicrosoftGraphCommsOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphCommsOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Id <String>]
  [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -67,7 +67,7 @@ commsOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommsOperation
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -176,7 +176,7 @@ resultInfo
 To construct, please use Get-Help -Online and see NOTES section for RESULTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResultInfo
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -238,9 +238,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommsOperation
 
 ## OUTPUTS
 

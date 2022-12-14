@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationmeassignmentcategorydelta
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationmeassignmentcategorydelta
 schema: 2.0.0
 ---
 
-# Get-MgEducationMeAssignmentCategoryDelta
+# Get-MgBetaEducationMeAssignmentCategoryDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -14,14 +14,14 @@ Invoke function delta
 
 ### Delta1 (Default)
 ```
-Get-MgEducationMeAssignmentCategoryDelta -EducationAssignmentId <String> [-Count] [-Filter <String>]
+Get-MgBetaEducationMeAssignmentCategoryDelta -EducationAssignmentId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity1
 ```
-Get-MgEducationMeAssignmentCategoryDelta -InputObject <IEducationIdentity> [-Count] [-Filter <String>]
+Get-MgBetaEducationMeAssignmentCategoryDelta -InputObject <IEducationIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeltaViaIdentity1
 Aliases:
 
@@ -174,11 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationCategory
 
 ## NOTES
 

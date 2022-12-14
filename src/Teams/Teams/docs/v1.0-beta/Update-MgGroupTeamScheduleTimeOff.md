@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mggroupteamscheduletimeoff
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mggroupteamscheduletimeoff
 schema: 2.0.0
 ---
 
-# Update-MgGroupTeamScheduleTimeOff
+# Update-MgBetaGroupTeamScheduleTimeOff
 
 ## SYNOPSIS
 Update the navigation property timesOff in groups
@@ -14,7 +14,7 @@ Update the navigation property timesOff in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupTeamScheduleTimeOff -GroupId <String> -TimeOffId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupTeamScheduleTimeOff -GroupId <String> -TimeOffId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DraftTimeOff <IMicrosoftGraphTimeOffItem>] [-Id <String>]
  [-IsStagedForDeletion] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-SharedTimeOff <IMicrosoftGraphTimeOffItem>] [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgGroupTeamScheduleTimeOff -GroupId <String> -TimeOffId <String> [-Additi
 
 ### Update
 ```
-Update-MgGroupTeamScheduleTimeOff -GroupId <String> -TimeOffId <String>
+Update-MgBetaGroupTeamScheduleTimeOff -GroupId <String> -TimeOffId <String>
  -BodyParameter <IMicrosoftGraphTimeOff1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTimeOff1>
+Update-MgBetaGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTimeOff1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DraftTimeOff <IMicrosoftGraphTimeOffItem>] [-Id <String>]
  [-IsStagedForDeletion] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-SharedTimeOff <IMicrosoftGraphTimeOffItem>] [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -69,7 +69,7 @@ timeOff
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOff1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOff1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -101,7 +101,7 @@ timeOffItem
 To construct, please use Get-Help -Online and see NOTES section for DRAFTTIMEOFF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOffItem
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -210,7 +210,7 @@ timeOffItem
 To construct, please use Get-Help -Online and see NOTES section for SHAREDTIMEOFF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOffItem
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -288,9 +288,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOff1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOff1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

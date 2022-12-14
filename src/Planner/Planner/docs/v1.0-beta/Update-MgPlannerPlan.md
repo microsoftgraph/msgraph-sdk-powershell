@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mgplannerplan
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/update-mgplannerplan
 schema: 2.0.0
 ---
 
-# Update-MgPlannerPlan
+# Update-MgBetaPlannerPlan
 
 ## SYNOPSIS
 Update the navigation property plans in planner
@@ -14,7 +14,7 @@ Update the navigation property plans in planner
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPlannerPlan -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlannerPlan -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
  [-Buckets <IMicrosoftGraphPlannerBucket1[]>] [-Container <IMicrosoftGraphPlannerPlanContainer1>]
  [-Contexts <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-CreationSource <IMicrosoftGraphPlannerPlanCreation>] [-Details <IMicrosoftGraphPlannerPlanDetails1>]
@@ -24,19 +24,19 @@ Update-MgPlannerPlan -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
 
 ### Update1
 ```
-Update-MgPlannerPlan -PlannerPlanId <String> -BodyParameter <IMicrosoftGraphPlannerPlan1> [-PassThru]
+Update-MgBetaPlannerPlan -PlannerPlanId <String> -BodyParameter <IMicrosoftGraphPlannerPlan1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgPlannerPlan -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlan1> [-PassThru]
+Update-MgBetaPlannerPlan -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlan1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgPlannerPlan -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlannerPlan -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
  [-Buckets <IMicrosoftGraphPlannerBucket1[]>] [-Container <IMicrosoftGraphPlannerPlanContainer1>]
  [-Contexts <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-CreationSource <IMicrosoftGraphPlannerPlanCreation>] [-Details <IMicrosoftGraphPlannerPlanDetails1>]
@@ -49,16 +49,16 @@ Update the navigation property plans in planner
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPlannerPlan Cmdlet
+### Example 1: Using the Update-MgBetaPlannerPlan Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	Title = "title-value"
 }
-Update-MgPlannerPlan -PlannerPlanId $plannerPlanId -BodyParameter $params
+Update-MgBetaPlannerPlan -PlannerPlanId $plannerPlanId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPlannerPlan Cmdlet.
+This example shows how to use the Update-MgBetaPlannerPlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -83,7 +83,7 @@ plannerPlan
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -101,7 +101,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for BUCKETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -117,7 +117,7 @@ plannerPlanContainer
 To construct, please use Get-Help -Online and see NOTES section for CONTAINER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanContainer1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanContainer1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -148,7 +148,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -182,7 +182,7 @@ plannerPlanCreation
 To construct, please use Get-Help -Online and see NOTES section for CREATIONSOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanCreation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanCreation
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -198,7 +198,7 @@ plannerPlanDetails
 To construct, please use Get-Help -Online and see NOTES section for DETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -230,7 +230,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -293,7 +293,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -356,9 +356,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

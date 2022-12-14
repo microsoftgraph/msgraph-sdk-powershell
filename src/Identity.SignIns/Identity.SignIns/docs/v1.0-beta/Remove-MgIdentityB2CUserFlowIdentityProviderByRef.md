@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityb2cuserflowidentityproviderbyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityb2cuserflowidentityproviderbyref
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityB2CUserFlowIdentityProviderByRef
+# Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef
 
 ## SYNOPSIS
 Delete ref of navigation property identityProviders for identity
@@ -14,13 +14,13 @@ Delete ref of navigation property identityProviders for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String> -IdentityProviderId <String>
+Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String> -IdentityProviderId <String>
  [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity> [-Id <String>]
+Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property identityProviders for identity
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityB2CUserFlowIdentityProviderByRef Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityB2CUserFlowIdentityProviderByRef -B2cIdentityUserFlowId $b2cIdentityUserFlowId -IdentityProviderId $identityProviderId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2cIdentityUserFlowId $b2cIdentityUserFlowId -IdentityProviderId $identityProviderId
 ```
 
-This example shows how to use the Remove-MgIdentityB2CUserFlowIdentityProviderByRef Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

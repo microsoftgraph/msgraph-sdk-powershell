@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamtemplatedefinition
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamtemplatedefinition
 schema: 2.0.0
 ---
 
-# Get-MgTeamTemplateDefinition
+# Get-MgBetaTeamTemplateDefinition
 
 ## SYNOPSIS
 Get templateDefinition from teams
@@ -14,13 +14,13 @@ Get templateDefinition from teams
 
 ### Get (Default)
 ```
-Get-MgTeamTemplateDefinition -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamTemplateDefinition -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamTemplateDefinition -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamTemplateDefinition -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamTemplateDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamTemplateDefinition
 
 ## NOTES
 

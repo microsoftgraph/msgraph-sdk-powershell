@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/update-mgusercontactfolderchildfoldercontactphoto
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/update-mgusercontactfolderchildfoldercontactphoto
 schema: 2.0.0
 ---
 
-# Update-MgUserContactFolderChildFolderContactPhoto
+# Update-MgBetaUserContactFolderChildFolderContactPhoto
 
 ## SYNOPSIS
 Update the navigation property photo in users
@@ -14,27 +14,27 @@ Update the navigation property photo in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserContactFolderChildFolderContactPhoto -ContactFolderId <String> -ContactFolderId1 <String>
+Update-MgBetaUserContactFolderChildFolderContactPhoto -ContactFolderId <String> -ContactFolderId1 <String>
  -ContactId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Height <Int32>] [-Id <String>]
  [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserContactFolderChildFolderContactPhoto -ContactFolderId <String> -ContactFolderId1 <String>
+Update-MgBetaUserContactFolderChildFolderContactPhoto -ContactFolderId <String> -ContactFolderId1 <String>
  -ContactId <String> -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserContactFolderChildFolderContactPhoto -InputObject <IPersonalContactsIdentity>
+Update-MgBetaUserContactFolderChildFolderContactPhoto -InputObject <IPersonalContactsIdentity>
  -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserContactFolderChildFolderContactPhoto -InputObject <IPersonalContactsIdentity>
+Update-MgBetaUserContactFolderChildFolderContactPhoto -InputObject <IPersonalContactsIdentity>
  [-AdditionalProperties <Hashtable>] [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ profilePhoto
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfilePhoto
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -251,9 +251,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfilePhoto
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 

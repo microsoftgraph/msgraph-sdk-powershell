@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementmanageddeviceencryptionstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementmanageddeviceencryptionstate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementManagedDeviceEncryptionState
+# New-MgBetaDeviceManagementManagedDeviceEncryptionState
 
 ## SYNOPSIS
 Create new navigation property to managedDeviceEncryptionStates for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to managedDeviceEncryptionStates for deviceManage
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementManagedDeviceEncryptionState [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementManagedDeviceEncryptionState [-AdditionalProperties <Hashtable>]
  [-AdvancedBitLockerStates <AdvancedBitLockerState>] [-DeviceName <String>] [-DeviceType <DeviceTypes>]
  [-EncryptionPolicySettingState <String>] [-EncryptionReadinessState <EncryptionReadinessState>]
  [-EncryptionState <EncryptionState>] [-FileVaultStates <FileVaultState>] [-Id <String>] [-OSVersion <String>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementManagedDeviceEncryptionState [-AdditionalProperties <Hasht
 
 ### Create
 ```
-New-MgDeviceManagementManagedDeviceEncryptionState
+New-MgBetaDeviceManagementManagedDeviceEncryptionState
  -BodyParameter <IMicrosoftGraphManagedDeviceEncryptionState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 Advanced BitLocker State
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AdvancedBitLockerState
+Type: Microsoft.Graph.Beta.PowerShell.Support.AdvancedBitLockerState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -70,7 +70,7 @@ Encryption report per device
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
 Parameter Sets: Create
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 Device type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceTypes
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceTypes
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 Encryption readiness state
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.EncryptionReadinessState
+Type: Microsoft.Graph.Beta.PowerShell.Support.EncryptionReadinessState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 Encryption state
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.EncryptionState
+Type: Microsoft.Graph.Beta.PowerShell.Support.EncryptionState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 FileVault State
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.FileVaultState
+Type: Microsoft.Graph.Beta.PowerShell.Support.FileVaultState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -207,7 +207,7 @@ Policy Details
 To construct, please use Get-Help -Online and see NOTES section for POLICYDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEncryptionReportPolicyDetails[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEncryptionReportPolicyDetails[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -284,11 +284,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
 
 ## NOTES
 

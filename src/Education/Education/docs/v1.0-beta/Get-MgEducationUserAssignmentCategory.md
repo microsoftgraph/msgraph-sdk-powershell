@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuserassignmentcategory
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationuserassignmentcategory
 schema: 2.0.0
 ---
 
-# Get-MgEducationUserAssignmentCategory
+# Get-MgBetaEducationUserAssignmentCategory
 
 ## SYNOPSIS
 List all the categories associated with an assignment.
@@ -13,7 +13,7 @@ List all the categories associated with an assignment.
 ## SYNTAX
 
 ```
-Get-MgEducationUserAssignmentCategory -EducationAssignmentId <String> -EducationUserId <String>
+Get-MgBetaEducationUserAssignmentCategory -EducationAssignmentId <String> -EducationUserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -213,7 +213,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationCategory
 
 ## NOTES
 

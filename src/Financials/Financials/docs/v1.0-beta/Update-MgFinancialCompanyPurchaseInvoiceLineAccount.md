@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanypurchaseinvoicelineaccount
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanypurchaseinvoicelineaccount
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyPurchaseInvoiceLineAccount
+# Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount
 
 ## SYNOPSIS
 Update the navigation property account in financials
@@ -14,7 +14,7 @@ Update the navigation property account in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -PurchaseInvoiceLineId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -PurchaseInvoiceLineId <String>
  [-AdditionalProperties <Hashtable>] [-Blocked] [-Category <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-SubCategory <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -Purchas
 
 ### Update
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -PurchaseInvoiceLineId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -PurchaseInvoiceLineId <String>
  -BodyParameter <IMicrosoftGraphAccount> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -PurchaseInvoiceId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -PurchaseInvoiceId <String>
  -PurchaseInvoiceLineId <String> -BodyParameter <IMicrosoftGraphAccount> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -PurchaseInvoiceId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -PurchaseInvoiceId <String>
  -PurchaseInvoiceLineId <String> [-AdditionalProperties <Hashtable>] [-Blocked] [-Category <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-SubCategory <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -43,19 +43,19 @@ Update-MgFinancialCompanyPurchaseInvoiceLineAccount -CompanyId <String> -Purchas
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphAccount> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphAccount> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Blocked] [-Category <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-SubCategory <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -63,7 +63,7 @@ Update-MgFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIde
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineAccount -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Blocked] [-Category <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-SubCategory <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -111,7 +111,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -187,7 +187,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -324,9 +324,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 
 ## OUTPUTS
 

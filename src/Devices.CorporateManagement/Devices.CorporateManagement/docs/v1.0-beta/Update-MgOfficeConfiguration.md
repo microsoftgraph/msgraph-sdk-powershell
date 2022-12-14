@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgofficeconfiguration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgofficeconfiguration
 schema: 2.0.0
 ---
 
-# Update-MgOfficeConfiguration
+# Update-MgBetaOfficeConfiguration
 
 ## SYNOPSIS
 Update officeConfiguration
@@ -14,7 +14,7 @@ Update officeConfiguration
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOfficeConfiguration [-AdditionalProperties <Hashtable>]
+Update-MgBetaOfficeConfiguration [-AdditionalProperties <Hashtable>]
  [-ClientConfigurations <IMicrosoftGraphOfficeClientConfiguration[]>]
  [-TenantCheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]
  [-TenantUserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgOfficeConfiguration [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgOfficeConfiguration -BodyParameter <IMicrosoftGraphOfficeConfiguration> [-PassThru] [-Confirm]
+Update-MgBetaOfficeConfiguration -BodyParameter <IMicrosoftGraphOfficeConfiguration> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ officeConfiguration
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeConfiguration
 Parameter Sets: Update
 Aliases:
 
@@ -70,7 +70,7 @@ List of office Client configuration.
 To construct, please use Get-Help -Online and see NOTES section for CLIENTCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -101,7 +101,7 @@ List of office Client check-in status.
 To construct, please use Get-Help -Online and see NOTES section for TENANTCHECKINSTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientCheckinStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientCheckinStatus[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ officeUserCheckinSummary
 To construct, please use Get-Help -Online and see NOTES section for TENANTUSERCHECKINSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeUserCheckinSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeUserCheckinSummary
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -164,7 +164,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeConfiguration
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementtroubleshootingevent
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementtroubleshootingevent
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementTroubleshootingEvent
+# Get-MgBetaDeviceManagementTroubleshootingEvent
 
 ## SYNOPSIS
 The list of troubleshooting events for the tenant.
@@ -14,20 +14,20 @@ The list of troubleshooting events for the tenant.
 
 ### List1 (Default)
 ```
-Get-MgDeviceManagementTroubleshootingEvent [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementTroubleshootingEvent [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgDeviceManagementTroubleshootingEvent -DeviceManagementTroubleshootingEventId <String>
+Get-MgBetaDeviceManagementTroubleshootingEvent -DeviceManagementTroubleshootingEventId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgDeviceManagementTroubleshootingEvent -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementTroubleshootingEvent -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent1
 
 ## NOTES
 

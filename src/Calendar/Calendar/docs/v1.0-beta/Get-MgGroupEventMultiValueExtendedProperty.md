@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mggroupeventmultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mggroupeventmultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgGroupEventMultiValueExtendedProperty
+# Get-MgBetaGroupEventMultiValueExtendedProperty
 
 ## SYNOPSIS
 The collection of multi-value extended properties defined for the event.
@@ -16,21 +16,21 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgGroupEventMultiValueExtendedProperty -EventId <String> -GroupId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupEventMultiValueExtendedProperty -EventId <String> -GroupId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupEventMultiValueExtendedProperty -EventId <String> -GroupId <String>
+Get-MgBetaGroupEventMultiValueExtendedProperty -EventId <String> -GroupId <String>
  -MultiValueLegacyExtendedPropertyId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupEventMultiValueExtendedProperty -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupEventMultiValueExtendedProperty -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 
 ## NOTES
 

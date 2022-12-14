@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/confirm-mgorganizationmemberobject
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/confirm-mgorganizationmemberobject
 schema: 2.0.0
 ---
 
-# Confirm-MgOrganizationMemberObject
+# Confirm-MgBetaOrganizationMemberObject
 
 ## SYNOPSIS
 Invoke action checkMemberObjects
@@ -14,27 +14,27 @@ Invoke action checkMemberObjects
 
 ### CheckExpanded (Default)
 ```
-Confirm-MgOrganizationMemberObject -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+Confirm-MgBetaOrganizationMemberObject -OrganizationId <String> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check
 ```
-Confirm-MgOrganizationMemberObject -OrganizationId <String>
+Confirm-MgBetaOrganizationMemberObject -OrganizationId <String>
  -BodyParameter <IPaths1Yxqrp7OrganizationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity
 ```
-Confirm-MgOrganizationMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
+Confirm-MgBetaOrganizationMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPaths1Yxqrp7OrganizationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentityExpanded
 ```
-Confirm-MgOrganizationMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
+Confirm-MgBetaOrganizationMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Yxqrp7OrganizationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Yxqrp7OrganizationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
 Aliases:
 
@@ -158,9 +158,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Yxqrp7OrganizationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Yxqrp7OrganizationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

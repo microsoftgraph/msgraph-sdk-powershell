@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mguserscopedrolememberof
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mguserscopedrolememberof
 schema: 2.0.0
 ---
 
-# New-MgUserScopedRoleMemberOf
+# New-MgBetaUserScopedRoleMemberOf
 
 ## SYNOPSIS
 Create new navigation property to scopedRoleMemberOf for users
@@ -14,26 +14,26 @@ Create new navigation property to scopedRoleMemberOf for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserScopedRoleMemberOf -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserScopedRoleMemberOf -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AdministrativeUnitId <String>] [-Id <String>] [-RoleId <String>]
  [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserScopedRoleMemberOf -UserId <String> -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm]
+New-MgBetaUserScopedRoleMemberOf -UserId <String> -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserScopedRoleMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaUserScopedRoleMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserScopedRoleMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaUserScopedRoleMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AdministrativeUnitId <String>] [-Id <String>] [-RoleId <String>]
  [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -80,7 +80,7 @@ scopedRoleMembership
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -143,7 +143,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for ROLEMEMBERINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -205,13 +205,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgaccessreviewreviewer
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgaccessreviewreviewer
 schema: 2.0.0
 ---
 
-# Remove-MgAccessReviewReviewer
+# Remove-MgBetaAccessReviewReviewer
 
 ## SYNOPSIS
 Delete navigation property reviewers for accessReviews
@@ -14,13 +14,13 @@ Delete navigation property reviewers for accessReviews
 
 ### Delete (Default)
 ```
-Remove-MgAccessReviewReviewer -AccessReviewId <String> -AccessReviewReviewerId <String> [-IfMatch <String>]
+Remove-MgBetaAccessReviewReviewer -AccessReviewId <String> -AccessReviewReviewerId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgAccessReviewReviewer -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaAccessReviewReviewer -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property reviewers for accessReviews
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgAccessReviewReviewer Cmdlet
+### Example 1: Using the Remove-MgBetaAccessReviewReviewer Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgAccessReviewReviewer -AccessReviewId $accessReviewId -AccessReviewReviewerId $accessReviewReviewerId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaAccessReviewReviewer -AccessReviewId $accessReviewId -AccessReviewReviewerId $accessReviewReviewerId
 ```
 
-This example shows how to use the Remove-MgAccessReviewReviewer Cmdlet.
+This example shows how to use the Remove-MgBetaAccessReviewReviewer Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

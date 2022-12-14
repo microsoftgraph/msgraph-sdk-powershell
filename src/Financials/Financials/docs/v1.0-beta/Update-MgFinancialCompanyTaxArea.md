@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanytaxarea
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanytaxarea
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyTaxArea
+# Update-MgBetaFinancialCompanyTaxArea
 
 ## SYNOPSIS
 Update the navigation property taxAreas in financials
@@ -14,26 +14,26 @@ Update the navigation property taxAreas in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyTaxArea -CompanyId <String> -TaxAreaId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyTaxArea -CompanyId <String> -TaxAreaId <String> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-TaxType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgFinancialCompanyTaxArea -CompanyId <String> -TaxAreaId <String>
+Update-MgBetaFinancialCompanyTaxArea -CompanyId <String> -TaxAreaId <String>
  -BodyParameter <IMicrosoftGraphTaxArea> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyTaxArea -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphTaxArea>
+Update-MgBetaFinancialCompanyTaxArea -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphTaxArea>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyTaxArea -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyTaxArea -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-TaxType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ taxArea
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxArea
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxArea
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -249,9 +249,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxArea
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxArea
 
 ## OUTPUTS
 

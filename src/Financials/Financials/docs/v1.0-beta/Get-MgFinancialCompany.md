@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompany
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompany
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompany
+# Get-MgBetaFinancialCompany
 
 ## SYNOPSIS
 Get companies from financials
@@ -14,20 +14,20 @@ Get companies from financials
 
 ### List (Default)
 ```
-Get-MgFinancialCompany [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaFinancialCompany [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgFinancialCompany -CompanyId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaFinancialCompany -CompanyId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompany -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaFinancialCompany -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompany
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCompany
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/clear-mgteamworkdeletedteamchannelmessagereplyreaction
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/clear-mgteamworkdeletedteamchannelmessagereplyreaction
 schema: 2.0.0
 ---
 
-# Clear-MgTeamworkDeletedTeamChannelMessageReplyReaction
+# Clear-MgBetaTeamworkDeletedTeamChannelMessageReplyReaction
 
 ## SYNOPSIS
 Invoke action unsetReaction
@@ -14,14 +14,14 @@ Invoke action unsetReaction
 
 ### UnsetExpanded (Default)
 ```
-Clear-MgTeamworkDeletedTeamChannelMessageReplyReaction -ChannelId <String> -ChatMessageId <String>
+Clear-MgBetaTeamworkDeletedTeamChannelMessageReplyReaction -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -DeletedTeamId <String> [-AdditionalProperties <Hashtable>] [-ReactionType <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Unset
 ```
-Clear-MgTeamworkDeletedTeamChannelMessageReplyReaction -ChannelId <String> -ChatMessageId <String>
+Clear-MgBetaTeamworkDeletedTeamChannelMessageReplyReaction -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -DeletedTeamId <String>
  -BodyParameter <IPathsQ7Z6PzTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,14 +29,14 @@ Clear-MgTeamworkDeletedTeamChannelMessageReplyReaction -ChannelId <String> -Chat
 
 ### UnsetViaIdentity
 ```
-Clear-MgTeamworkDeletedTeamChannelMessageReplyReaction -InputObject <ITeamsIdentity>
+Clear-MgBetaTeamworkDeletedTeamChannelMessageReplyReaction -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsQ7Z6PzTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnsetViaIdentityExpanded
 ```
-Clear-MgTeamworkDeletedTeamChannelMessageReplyReaction -InputObject <ITeamsIdentity>
+Clear-MgBetaTeamworkDeletedTeamChannelMessageReplyReaction -InputObject <ITeamsIdentity>
  [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsQ7Z6PzTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsQ7Z6PzTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Unset, UnsetViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UnsetViaIdentity, UnsetViaIdentityExpanded
 Aliases:
 
@@ -221,9 +221,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsQ7Z6PzTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsQ7Z6PzTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

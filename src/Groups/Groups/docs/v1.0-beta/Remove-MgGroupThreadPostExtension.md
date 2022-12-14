@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/remove-mggroupthreadpostextension
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/remove-mggroupthreadpostextension
 schema: 2.0.0
 ---
 
-# Remove-MgGroupThreadPostExtension
+# Remove-MgBetaGroupThreadPostExtension
 
 ## SYNOPSIS
 Delete navigation property extensions for groups
@@ -14,13 +14,13 @@ Delete navigation property extensions for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupThreadPostExtension -ConversationThreadId <String> -ExtensionId <String> -GroupId <String>
+Remove-MgBetaGroupThreadPostExtension -ConversationThreadId <String> -ExtensionId <String> -GroupId <String>
  -PostId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupThreadPostExtension -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaGroupThreadPostExtension -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -173,7 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mginvitecommunicationcallparticipant
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mginvitecommunicationcallparticipant
 schema: 2.0.0
 ---
 
-# Invoke-MgInviteCommunicationCallParticipant
+# Invoke-MgBetaInviteCommunicationCallParticipant
 
 ## SYNOPSIS
 Invite participants to the active call.
@@ -15,28 +15,28 @@ For more information about how to handle operations, see commsOperation.
 
 ### InviteExpanded1 (Default)
 ```
-Invoke-MgInviteCommunicationCallParticipant -CallId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId <String> [-AdditionalProperties <Hashtable>]
  [-ClientContext <String>] [-Participants <IMicrosoftGraphInvitationParticipantInfo1[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Invite1
 ```
-Invoke-MgInviteCommunicationCallParticipant -CallId <String>
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId <String>
  -BodyParameter <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InviteViaIdentity1
 ```
-Invoke-MgInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InviteViaIdentityExpanded1
 ```
-Invoke-MgInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>]
  [-Participants <IMicrosoftGraphInvitationParticipantInfo1[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,18 +47,18 @@ For more information about how to handle operations, see commsOperation.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgInviteCommunicationCallParticipant Cmdlet
+### Example 1: Using the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Participants = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "278405a3-f568-4b3e-b684-009193463064"
 					IdentityProvider = "AAD"
 				}
@@ -67,24 +67,24 @@ $params = @{
 	)
 	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
 }
-Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgInviteCommunicationCallParticipant Cmdlet.
+This example shows how to use the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Invoke-MgInviteCommunicationCallParticipant Cmdlet
+### Example 2: Using the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Participants = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "278405a3-f568-4b3e-b684-009193463064"
 					IdentityProvider = "AAD"
 				}
@@ -93,24 +93,24 @@ $params = @{
 	)
 	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
 }
-Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgInviteCommunicationCallParticipant Cmdlet.
+This example shows how to use the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Invoke-MgInviteCommunicationCallParticipant Cmdlet
+### Example 3: Using the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Participants = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "278405a3-f568-4b3e-b684-009193463064"
 					IdentityProvider = "AAD"
 				}
@@ -119,23 +119,23 @@ $params = @{
 	)
 	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
 }
-Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgInviteCommunicationCallParticipant Cmdlet.
+This example shows how to use the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Invoke-MgInviteCommunicationCallParticipant Cmdlet
+### Example 4: Using the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Participants = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				Phone = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "+12345678901"
 				}
 			}
@@ -143,24 +143,24 @@ $params = @{
 	)
 	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
 }
-Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgInviteCommunicationCallParticipant Cmdlet.
+This example shows how to use the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Invoke-MgInviteCommunicationCallParticipant Cmdlet
+### Example 5: Using the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Participants = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "7e1b4346-85a6-4bdd-abe3-d11c5d420efe"
 					IdentityProvider = "AAD"
 				}
@@ -169,25 +169,25 @@ $params = @{
 	)
 	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
 }
-Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgInviteCommunicationCallParticipant Cmdlet.
+This example shows how to use the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the Invoke-MgInviteCommunicationCallParticipant Cmdlet
+### Example 6: Using the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Participants = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
 			ParticipantId = "7d501bf1-5ee4-4605-ba92-0ae4513c611c"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "682b6c37-0729-4fab-ace6-d730d5d9137e"
 					IdentityProvider = "AAD"
 				}
@@ -196,36 +196,36 @@ $params = @{
 	)
 	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
 }
-Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgInviteCommunicationCallParticipant Cmdlet.
+This example shows how to use the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 7: Using the Invoke-MgInviteCommunicationCallParticipant Cmdlet
+### Example 7: Using the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Participants = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "7e1b4346-85a6-4bdd-abe3-d11c5d420efe"
 					IdentityProvider = "AAD"
 				}
 			}
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "1e126418-44a0-4a94-a6f8-0efe1ad71acb"
 					IdentityProvider = "AAD"
 				}
@@ -234,10 +234,10 @@ $params = @{
 	)
 	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
 }
-Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
+Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgInviteCommunicationCallParticipant Cmdlet.
+This example shows how to use the Invoke-MgBetaInviteCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Invite1, InviteViaIdentity1
 Aliases:
 
@@ -308,7 +308,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: InviteViaIdentity1, InviteViaIdentityExpanded1
 Aliases:
 
@@ -324,7 +324,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PARTICIPANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInvitationParticipantInfo1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInvitationParticipantInfo1[]
 Parameter Sets: InviteExpanded1, InviteViaIdentityExpanded1
 Aliases:
 
@@ -371,13 +371,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInviteParticipantsOperation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInviteParticipantsOperation1
 
 ## NOTES
 

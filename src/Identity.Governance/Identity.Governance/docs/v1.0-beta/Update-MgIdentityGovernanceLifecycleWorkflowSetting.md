@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgidentitygovernancelifecycleworkflowsetting
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgidentitygovernancelifecycleworkflowsetting
 schema: 2.0.0
 ---
 
-# Update-MgIdentityGovernanceLifecycleWorkflowSetting
+# Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting
 
 ## SYNOPSIS
 Update the properties of a lifecycleManagementSettings object.
@@ -14,13 +14,13 @@ Update the properties of a lifecycleManagementSettings object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityGovernanceLifecycleWorkflowSetting [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-WorkflowScheduleIntervalInHours <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgIdentityGovernanceLifecycleWorkflowSetting
+Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting
  -BodyParameter <IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -30,17 +30,17 @@ Update the properties of a lifecycleManagementSettings object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgIdentityGovernanceLifecycleWorkflowSetting Cmdlet
+### Example 1: Using the Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	"@odata.context" = "https://graph.microsoft.com/beta/$metadata#identityGovernance/lifecycleWorkflows/settings/$entity"
 	WorkflowScheduleIntervalInHours = 3
 }
-Update-MgIdentityGovernanceLifecycleWorkflowSetting -BodyParameter $params
+Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityGovernanceLifecycleWorkflowSetting Cmdlet.
+This example shows how to use the Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -65,7 +65,7 @@ lifecycleManagementSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings
 Parameter Sets: Update
 Aliases:
 
@@ -160,7 +160,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings
 
 ## OUTPUTS
 

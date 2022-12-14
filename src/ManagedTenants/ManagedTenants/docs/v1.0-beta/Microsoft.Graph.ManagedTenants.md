@@ -1,472 +1,472 @@
 ---
-Module Name: Microsoft.Graph.ManagedTenants
+Module Name: Microsoft.Graph.Beta.ManagedTenants
 Module Guid: 2c14c8a2-4769-44d0-a476-2d053ed0f8f5
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.managedtenants
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.ManagedTenants Module
+# Microsoft.Graph.Beta.ManagedTenants Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.ManagedTenants Cmdlets
-### [Get-MgTenantRelationshipManagedTenant](Get-MgTenantRelationshipManagedTenant.md)
+## Microsoft.Graph.Beta.ManagedTenants Cmdlets
+### [Get-MgBetaTenantRelationshipManagedTenant](Get-MgBetaTenantRelationshipManagedTenant.md)
 The collection of tenants associated with the managing entity.
 
-### [Get-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance](Get-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance](Get-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Aggregate view of device compliance policies across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantAlert](Get-MgTenantRelationshipManagedTenantAlert.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlert](Get-MgBetaTenantRelationshipManagedTenantAlert.md)
 Get managedTenantAlerts from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAlertApiNotification](Get-MgTenantRelationshipManagedTenantAlertApiNotification.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlertApiNotification](Get-MgBetaTenantRelationshipManagedTenantAlertApiNotification.md)
 Get apiNotifications from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAlertEmailNotification](Get-MgTenantRelationshipManagedTenantAlertEmailNotification.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlertEmailNotification](Get-MgBetaTenantRelationshipManagedTenantAlertEmailNotification.md)
 Get emailNotifications from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAlertLog](Get-MgTenantRelationshipManagedTenantAlertLog.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlertLog](Get-MgBetaTenantRelationshipManagedTenantAlertLog.md)
 Get managedTenantAlertLogs from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAlertLogAlert](Get-MgTenantRelationshipManagedTenantAlertLogAlert.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlertLogAlert](Get-MgBetaTenantRelationshipManagedTenantAlertLogAlert.md)
 Get alert from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAlertRule](Get-MgTenantRelationshipManagedTenantAlertRule.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlertRule](Get-MgBetaTenantRelationshipManagedTenantAlertRule.md)
 Get managedTenantAlertRules from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAlertRuleAlert](Get-MgTenantRelationshipManagedTenantAlertRuleAlert.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlertRuleAlert](Get-MgBetaTenantRelationshipManagedTenantAlertRuleAlert.md)
 Get alerts from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAlertRuleDefinition](Get-MgTenantRelationshipManagedTenantAlertRuleDefinition.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition](Get-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition.md)
 Get managedTenantAlertRuleDefinitions from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule](Get-MgTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule](Get-MgBetaTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule.md)
 Get alertRules from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantApiNotification](Get-MgTenantRelationshipManagedTenantApiNotification.md)
+### [Get-MgBetaTenantRelationshipManagedTenantApiNotification](Get-MgBetaTenantRelationshipManagedTenantApiNotification.md)
 Get managedTenantApiNotifications from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantApiNotificationAlert](Get-MgTenantRelationshipManagedTenantApiNotificationAlert.md)
+### [Get-MgBetaTenantRelationshipManagedTenantApiNotificationAlert](Get-MgBetaTenantRelationshipManagedTenantApiNotificationAlert.md)
 Get alert from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantAuditEvent](Get-MgTenantRelationshipManagedTenantAuditEvent.md)
+### [Get-MgBetaTenantRelationshipManagedTenantAuditEvent](Get-MgBetaTenantRelationshipManagedTenantAuditEvent.md)
 The collection of audit events across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantCloudPcConnection](Get-MgTenantRelationshipManagedTenantCloudPcConnection.md)
+### [Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection](Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection.md)
 The collection of cloud PC connections across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantCloudPcDevice](Get-MgTenantRelationshipManagedTenantCloudPcDevice.md)
+### [Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice](Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice.md)
 The collection of cloud PC devices across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantCloudPcOverview](Get-MgTenantRelationshipManagedTenantCloudPcOverview.md)
+### [Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview](Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview.md)
 Overview of cloud PC information across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
+### [Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
 Aggregate view of conditional access policy coverage across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary](Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
+### [Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary](Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
 Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantCustomizedInformation](Get-MgTenantRelationshipManagedTenantCustomizedInformation.md)
+### [Get-MgBetaTenantRelationshipManagedTenantCustomizedInformation](Get-MgBetaTenantRelationshipManagedTenantCustomizedInformation.md)
 The collection of tenant level customized information across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantDetailedInformation](Get-MgTenantRelationshipManagedTenantDetailedInformation.md)
+### [Get-MgBetaTenantRelationshipManagedTenantDetailedInformation](Get-MgBetaTenantRelationshipManagedTenantDetailedInformation.md)
 The collection tenant level detailed information across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
+### [Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Summary information for device compliance policy setting states across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantEmailNotification](Get-MgTenantRelationshipManagedTenantEmailNotification.md)
+### [Get-MgBetaTenantRelationshipManagedTenantEmailNotification](Get-MgBetaTenantRelationshipManagedTenantEmailNotification.md)
 Get managedTenantEmailNotifications from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantEmailNotificationAlert](Get-MgTenantRelationshipManagedTenantEmailNotificationAlert.md)
+### [Get-MgBetaTenantRelationshipManagedTenantEmailNotificationAlert](Get-MgBetaTenantRelationshipManagedTenantEmailNotificationAlert.md)
 Get alert from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantGroup](Get-MgTenantRelationshipManagedTenantGroup.md)
+### [Get-MgBetaTenantRelationshipManagedTenantGroup](Get-MgBetaTenantRelationshipManagedTenantGroup.md)
 The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 
-### [Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance](Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance](Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance.md)
 The collection of compliance for managed devices across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend](Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend](Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
 Trend insights for device compliance across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantManagementAction](Get-MgTenantRelationshipManagedTenantManagementAction.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementAction](Get-MgBetaTenantRelationshipManagedTenantManagementAction.md)
 The collection of baseline management actions across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses](Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses](Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses.md)
 The tenant level status of management actions across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantManagementIntent](Get-MgTenantRelationshipManagedTenantManagementIntent.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementIntent](Get-MgBetaTenantRelationshipManagedTenantManagementIntent.md)
 The collection of baseline management intents across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplate](Get-MgTenantRelationshipManagedTenantManagementTemplate.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplate](Get-MgBetaTenantRelationshipManagedTenantManagementTemplate.md)
 The collection of baseline management templates across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateCollection](Get-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Get managementTemplateCollections from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionManagementTemplate](Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionManagementTemplate.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionManagementTemplate](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionManagementTemplate.md)
 Get managementTemplates from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
 Get managementTemplateCollectionTenantSummaries from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStep](Get-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStep](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStep.md)
 Get managementTemplateSteps from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepAcceptedVersion](Get-MgTenantRelationshipManagedTenantManagementTemplateStepAcceptedVersion.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepAcceptedVersion](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepAcceptedVersion.md)
 Get acceptedVersion from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepManagementTemplate](Get-MgTenantRelationshipManagedTenantManagementTemplateStepManagementTemplate.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepManagementTemplate](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepManagementTemplate.md)
 Get managementTemplate from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Get-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
 Get managementTemplateStepTenantSummaries from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Get versions from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersionAcceptedFor](Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersionAcceptedFor.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionAcceptedFor](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionAcceptedFor.md)
 Get acceptedFor from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment](Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment.md)
 Get deployments from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeploymentTemplateStepVersion](Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeploymentTemplateStepVersion.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeploymentTemplateStepVersion](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeploymentTemplateStepVersion.md)
 Get templateStepVersion from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersionTemplateStep](Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersionTemplateStep.md)
+### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionTemplateStep](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionTemplateStep.md)
 Get templateStep from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantMyRole](Get-MgTenantRelationshipManagedTenantMyRole.md)
+### [Get-MgBetaTenantRelationshipManagedTenantMyRole](Get-MgBetaTenantRelationshipManagedTenantMyRole.md)
 The collection of role assignments to a signed-in user for a managed tenant.
 
-### [Get-MgTenantRelationshipManagedTenantTag](Get-MgTenantRelationshipManagedTenantTag.md)
+### [Get-MgBetaTenantRelationshipManagedTenantTag](Get-MgBetaTenantRelationshipManagedTenantTag.md)
 The collection of tenant tags across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantTicketingEndpoint](Get-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
+### [Get-MgBetaTenantRelationshipManagedTenantTicketingEndpoint](Get-MgBetaTenantRelationshipManagedTenantTicketingEndpoint.md)
 Get managedTenantTicketingEndpoints from tenantRelationships
 
-### [Get-MgTenantRelationshipManagedTenantWindowDeviceMalwareState](Get-MgTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
+### [Get-MgBetaTenantRelationshipManagedTenantWindowDeviceMalwareState](Get-MgBetaTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
 The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 
-### [Get-MgTenantRelationshipManagedTenantWindowProtectionState](Get-MgTenantRelationshipManagedTenantWindowProtectionState.md)
+### [Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState](Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState.md)
 The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 
-### [New-MgTenantRelationshipManagedTenant](New-MgTenantRelationshipManagedTenant.md)
+### [New-MgBetaTenantRelationshipManagedTenant](New-MgBetaTenantRelationshipManagedTenant.md)
 Create new navigation property to tenants for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance](New-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
+### [New-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance](New-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Create new navigation property to aggregatedPolicyCompliances for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantAlert](New-MgTenantRelationshipManagedTenantAlert.md)
+### [New-MgBetaTenantRelationshipManagedTenantAlert](New-MgBetaTenantRelationshipManagedTenantAlert.md)
 Create new navigation property to managedTenantAlerts for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantAlertLog](New-MgTenantRelationshipManagedTenantAlertLog.md)
+### [New-MgBetaTenantRelationshipManagedTenantAlertLog](New-MgBetaTenantRelationshipManagedTenantAlertLog.md)
 Create new navigation property to managedTenantAlertLogs for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantAlertRule](New-MgTenantRelationshipManagedTenantAlertRule.md)
+### [New-MgBetaTenantRelationshipManagedTenantAlertRule](New-MgBetaTenantRelationshipManagedTenantAlertRule.md)
 Create new navigation property to managedTenantAlertRules for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantAlertRuleDefinition](New-MgTenantRelationshipManagedTenantAlertRuleDefinition.md)
+### [New-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition](New-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition.md)
 Create new navigation property to managedTenantAlertRuleDefinitions for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantApiNotification](New-MgTenantRelationshipManagedTenantApiNotification.md)
+### [New-MgBetaTenantRelationshipManagedTenantApiNotification](New-MgBetaTenantRelationshipManagedTenantApiNotification.md)
 Create new navigation property to managedTenantApiNotifications for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantAuditEvent](New-MgTenantRelationshipManagedTenantAuditEvent.md)
+### [New-MgBetaTenantRelationshipManagedTenantAuditEvent](New-MgBetaTenantRelationshipManagedTenantAuditEvent.md)
 Create new navigation property to auditEvents for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantCloudPcConnection](New-MgTenantRelationshipManagedTenantCloudPcConnection.md)
+### [New-MgBetaTenantRelationshipManagedTenantCloudPcConnection](New-MgBetaTenantRelationshipManagedTenantCloudPcConnection.md)
 Create new navigation property to cloudPcConnections for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantCloudPcDevice](New-MgTenantRelationshipManagedTenantCloudPcDevice.md)
+### [New-MgBetaTenantRelationshipManagedTenantCloudPcDevice](New-MgBetaTenantRelationshipManagedTenantCloudPcDevice.md)
 Create new navigation property to cloudPcDevices for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantCloudPcOverview](New-MgTenantRelationshipManagedTenantCloudPcOverview.md)
+### [New-MgBetaTenantRelationshipManagedTenantCloudPcOverview](New-MgBetaTenantRelationshipManagedTenantCloudPcOverview.md)
 Create new navigation property to cloudPcsOverview for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](New-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
+### [New-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](New-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
 Create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary](New-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
+### [New-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary](New-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
 Create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantCustomizedInformation](New-MgTenantRelationshipManagedTenantCustomizedInformation.md)
+### [New-MgBetaTenantRelationshipManagedTenantCustomizedInformation](New-MgBetaTenantRelationshipManagedTenantCustomizedInformation.md)
 Create new navigation property to tenantsCustomizedInformation for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantDetailedInformation](New-MgTenantRelationshipManagedTenantDetailedInformation.md)
+### [New-MgBetaTenantRelationshipManagedTenantDetailedInformation](New-MgBetaTenantRelationshipManagedTenantDetailedInformation.md)
 Create new navigation property to tenantsDetailedInformation for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
+### [New-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](New-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantEmailNotification](New-MgTenantRelationshipManagedTenantEmailNotification.md)
+### [New-MgBetaTenantRelationshipManagedTenantEmailNotification](New-MgBetaTenantRelationshipManagedTenantEmailNotification.md)
 Create new navigation property to managedTenantEmailNotifications for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantGroup](New-MgTenantRelationshipManagedTenantGroup.md)
+### [New-MgBetaTenantRelationshipManagedTenantGroup](New-MgBetaTenantRelationshipManagedTenantGroup.md)
 Create new navigation property to tenantGroups for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagedDeviceCompliance](New-MgTenantRelationshipManagedTenantManagedDeviceCompliance.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance](New-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance.md)
 Create new navigation property to managedDeviceCompliances for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend](New-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend](New-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
 Create new navigation property to managedDeviceComplianceTrends for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementAction](New-MgTenantRelationshipManagedTenantManagementAction.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementAction](New-MgBetaTenantRelationshipManagedTenantManagementAction.md)
 Create new navigation property to managementActions for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses](New-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses](New-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses.md)
 Create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementIntent](New-MgTenantRelationshipManagedTenantManagementIntent.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementIntent](New-MgBetaTenantRelationshipManagedTenantManagementIntent.md)
 Create new navigation property to managementIntents for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementTemplate](New-MgTenantRelationshipManagedTenantManagementTemplate.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementTemplate](New-MgBetaTenantRelationshipManagedTenantManagementTemplate.md)
 Create new navigation property to managementTemplates for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementTemplateCollection](New-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection](New-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Create new navigation property to managementTemplateCollections for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](New-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](New-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
 Create new navigation property to managementTemplateCollectionTenantSummaries for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementTemplateStep](New-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementTemplateStep](New-MgBetaTenantRelationshipManagedTenantManagementTemplateStep.md)
 Create new navigation property to managementTemplateSteps for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
 Create new navigation property to managementTemplateStepTenantSummaries for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](New-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion](New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Create new navigation property to managementTemplateStepVersions for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment](New-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment.md)
+### [New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment](New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment.md)
 Create new navigation property to deployments for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantMyRole](New-MgTenantRelationshipManagedTenantMyRole.md)
+### [New-MgBetaTenantRelationshipManagedTenantMyRole](New-MgBetaTenantRelationshipManagedTenantMyRole.md)
 Create new navigation property to myRoles for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantTag](New-MgTenantRelationshipManagedTenantTag.md)
+### [New-MgBetaTenantRelationshipManagedTenantTag](New-MgBetaTenantRelationshipManagedTenantTag.md)
 Create a new tenantTag object.
 
-### [New-MgTenantRelationshipManagedTenantTicketingEndpoint](New-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
+### [New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint](New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint.md)
 Create new navigation property to managedTenantTicketingEndpoints for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantWindowDeviceMalwareState](New-MgTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
+### [New-MgBetaTenantRelationshipManagedTenantWindowDeviceMalwareState](New-MgBetaTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
 Create new navigation property to windowsDeviceMalwareStates for tenantRelationships
 
-### [New-MgTenantRelationshipManagedTenantWindowProtectionState](New-MgTenantRelationshipManagedTenantWindowProtectionState.md)
+### [New-MgBetaTenantRelationshipManagedTenantWindowProtectionState](New-MgBetaTenantRelationshipManagedTenantWindowProtectionState.md)
 Create new navigation property to windowsProtectionStates for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenant](Remove-MgTenantRelationshipManagedTenant.md)
+### [Remove-MgBetaTenantRelationshipManagedTenant](Remove-MgBetaTenantRelationshipManagedTenant.md)
 Delete navigation property tenants for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance](Remove-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance](Remove-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Delete navigation property aggregatedPolicyCompliances for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantAlert](Remove-MgTenantRelationshipManagedTenantAlert.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantAlert](Remove-MgBetaTenantRelationshipManagedTenantAlert.md)
 Delete navigation property managedTenantAlerts for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantAlertLog](Remove-MgTenantRelationshipManagedTenantAlertLog.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantAlertLog](Remove-MgBetaTenantRelationshipManagedTenantAlertLog.md)
 Delete navigation property managedTenantAlertLogs for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantAlertRule](Remove-MgTenantRelationshipManagedTenantAlertRule.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantAlertRule](Remove-MgBetaTenantRelationshipManagedTenantAlertRule.md)
 Delete navigation property managedTenantAlertRules for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantAlertRuleDefinition](Remove-MgTenantRelationshipManagedTenantAlertRuleDefinition.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition](Remove-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition.md)
 Delete navigation property managedTenantAlertRuleDefinitions for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantApiNotification](Remove-MgTenantRelationshipManagedTenantApiNotification.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantApiNotification](Remove-MgBetaTenantRelationshipManagedTenantApiNotification.md)
 Delete navigation property managedTenantApiNotifications for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantAuditEvent](Remove-MgTenantRelationshipManagedTenantAuditEvent.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantAuditEvent](Remove-MgBetaTenantRelationshipManagedTenantAuditEvent.md)
 Delete navigation property auditEvents for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantCloudPcConnection](Remove-MgTenantRelationshipManagedTenantCloudPcConnection.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantCloudPcConnection](Remove-MgBetaTenantRelationshipManagedTenantCloudPcConnection.md)
 Delete navigation property cloudPcConnections for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantCloudPcDevice](Remove-MgTenantRelationshipManagedTenantCloudPcDevice.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantCloudPcDevice](Remove-MgBetaTenantRelationshipManagedTenantCloudPcDevice.md)
 Delete navigation property cloudPcDevices for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantCloudPcOverview](Remove-MgTenantRelationshipManagedTenantCloudPcOverview.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantCloudPcOverview](Remove-MgBetaTenantRelationshipManagedTenantCloudPcOverview.md)
 Delete navigation property cloudPcsOverview for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](Remove-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](Remove-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
 Delete navigation property conditionalAccessPolicyCoverages for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary](Remove-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary](Remove-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
 Delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantCustomizedInformation](Remove-MgTenantRelationshipManagedTenantCustomizedInformation.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantCustomizedInformation](Remove-MgBetaTenantRelationshipManagedTenantCustomizedInformation.md)
 Delete navigation property tenantsCustomizedInformation for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantDetailedInformation](Remove-MgTenantRelationshipManagedTenantDetailedInformation.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantDetailedInformation](Remove-MgBetaTenantRelationshipManagedTenantDetailedInformation.md)
 Delete navigation property tenantsDetailedInformation for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Remove-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Remove-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Delete navigation property deviceCompliancePolicySettingStateSummaries for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantEmailNotification](Remove-MgTenantRelationshipManagedTenantEmailNotification.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantEmailNotification](Remove-MgBetaTenantRelationshipManagedTenantEmailNotification.md)
 Delete navigation property managedTenantEmailNotifications for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantGroup](Remove-MgTenantRelationshipManagedTenantGroup.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantGroup](Remove-MgBetaTenantRelationshipManagedTenantGroup.md)
 Delete navigation property tenantGroups for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagedDeviceCompliance](Remove-MgTenantRelationshipManagedTenantManagedDeviceCompliance.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance](Remove-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance.md)
 Delete navigation property managedDeviceCompliances for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend](Remove-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend](Remove-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
 Delete navigation property managedDeviceComplianceTrends for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementAction](Remove-MgTenantRelationshipManagedTenantManagementAction.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementAction](Remove-MgBetaTenantRelationshipManagedTenantManagementAction.md)
 Delete navigation property managementActions for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses](Remove-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses](Remove-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses.md)
 Delete navigation property managementActionTenantDeploymentStatuses for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementIntent](Remove-MgTenantRelationshipManagedTenantManagementIntent.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementIntent](Remove-MgBetaTenantRelationshipManagedTenantManagementIntent.md)
 Delete navigation property managementIntents for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementTemplate](Remove-MgTenantRelationshipManagedTenantManagementTemplate.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementTemplate](Remove-MgBetaTenantRelationshipManagedTenantManagementTemplate.md)
 Delete navigation property managementTemplates for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementTemplateCollection](Remove-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection](Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Delete navigation property managementTemplateCollections for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Remove-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
 Delete navigation property managementTemplateCollectionTenantSummaries for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStep](Remove-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStep](Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStep.md)
 Delete navigation property managementTemplateSteps for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Remove-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
 Delete navigation property managementTemplateStepTenantSummaries for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion](Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Delete navigation property managementTemplateStepVersions for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment](Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment](Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment.md)
 Delete navigation property deployments for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantMyRole](Remove-MgTenantRelationshipManagedTenantMyRole.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantMyRole](Remove-MgBetaTenantRelationshipManagedTenantMyRole.md)
 Delete navigation property myRoles for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantTag](Remove-MgTenantRelationshipManagedTenantTag.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantTag](Remove-MgBetaTenantRelationshipManagedTenantTag.md)
 Delete navigation property tenantTags for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantTicketingEndpoint](Remove-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantTicketingEndpoint](Remove-MgBetaTenantRelationshipManagedTenantTicketingEndpoint.md)
 Delete navigation property managedTenantTicketingEndpoints for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantWindowDeviceMalwareState](Remove-MgTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantWindowDeviceMalwareState](Remove-MgBetaTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
 Delete navigation property windowsDeviceMalwareStates for tenantRelationships
 
-### [Remove-MgTenantRelationshipManagedTenantWindowProtectionState](Remove-MgTenantRelationshipManagedTenantWindowProtectionState.md)
+### [Remove-MgBetaTenantRelationshipManagedTenantWindowProtectionState](Remove-MgBetaTenantRelationshipManagedTenantWindowProtectionState.md)
 Delete navigation property windowsProtectionStates for tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenant](Update-MgTenantRelationshipManagedTenant.md)
+### [Update-MgBetaTenantRelationshipManagedTenant](Update-MgBetaTenantRelationshipManagedTenant.md)
 Update the navigation property tenants in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance](Update-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
+### [Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance](Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Update the navigation property aggregatedPolicyCompliances in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantAlert](Update-MgTenantRelationshipManagedTenantAlert.md)
+### [Update-MgBetaTenantRelationshipManagedTenantAlert](Update-MgBetaTenantRelationshipManagedTenantAlert.md)
 Update the navigation property managedTenantAlerts in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantAlertLog](Update-MgTenantRelationshipManagedTenantAlertLog.md)
+### [Update-MgBetaTenantRelationshipManagedTenantAlertLog](Update-MgBetaTenantRelationshipManagedTenantAlertLog.md)
 Update the navigation property managedTenantAlertLogs in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantAlertRule](Update-MgTenantRelationshipManagedTenantAlertRule.md)
+### [Update-MgBetaTenantRelationshipManagedTenantAlertRule](Update-MgBetaTenantRelationshipManagedTenantAlertRule.md)
 Update the navigation property managedTenantAlertRules in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantAlertRuleDefinition](Update-MgTenantRelationshipManagedTenantAlertRuleDefinition.md)
+### [Update-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition](Update-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition.md)
 Update the navigation property managedTenantAlertRuleDefinitions in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantApiNotification](Update-MgTenantRelationshipManagedTenantApiNotification.md)
+### [Update-MgBetaTenantRelationshipManagedTenantApiNotification](Update-MgBetaTenantRelationshipManagedTenantApiNotification.md)
 Update the navigation property managedTenantApiNotifications in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantAuditEvent](Update-MgTenantRelationshipManagedTenantAuditEvent.md)
+### [Update-MgBetaTenantRelationshipManagedTenantAuditEvent](Update-MgBetaTenantRelationshipManagedTenantAuditEvent.md)
 Update the navigation property auditEvents in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantCloudPcConnection](Update-MgTenantRelationshipManagedTenantCloudPcConnection.md)
+### [Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection](Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection.md)
 Update the navigation property cloudPcConnections in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantCloudPcDevice](Update-MgTenantRelationshipManagedTenantCloudPcDevice.md)
+### [Update-MgBetaTenantRelationshipManagedTenantCloudPcDevice](Update-MgBetaTenantRelationshipManagedTenantCloudPcDevice.md)
 Update the navigation property cloudPcDevices in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantCloudPcOverview](Update-MgTenantRelationshipManagedTenantCloudPcOverview.md)
+### [Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview](Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview.md)
 Update the navigation property cloudPcsOverview in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
+### [Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
 Update the navigation property conditionalAccessPolicyCoverages in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary](Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
+### [Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary](Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
 Update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantCustomizedInformation](Update-MgTenantRelationshipManagedTenantCustomizedInformation.md)
+### [Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation](Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation.md)
 Update the navigation property tenantsCustomizedInformation in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantDetailedInformation](Update-MgTenantRelationshipManagedTenantDetailedInformation.md)
+### [Update-MgBetaTenantRelationshipManagedTenantDetailedInformation](Update-MgBetaTenantRelationshipManagedTenantDetailedInformation.md)
 Update the navigation property tenantsDetailedInformation in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
+### [Update-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Update-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Update the navigation property deviceCompliancePolicySettingStateSummaries in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantEmailNotification](Update-MgTenantRelationshipManagedTenantEmailNotification.md)
+### [Update-MgBetaTenantRelationshipManagedTenantEmailNotification](Update-MgBetaTenantRelationshipManagedTenantEmailNotification.md)
 Update the navigation property managedTenantEmailNotifications in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantGroup](Update-MgTenantRelationshipManagedTenantGroup.md)
+### [Update-MgBetaTenantRelationshipManagedTenantGroup](Update-MgBetaTenantRelationshipManagedTenantGroup.md)
 Update the navigation property tenantGroups in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagedDeviceCompliance](Update-MgTenantRelationshipManagedTenantManagedDeviceCompliance.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance](Update-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance.md)
 Update the navigation property managedDeviceCompliances in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend](Update-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend](Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
 Update the navigation property managedDeviceComplianceTrends in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementAction](Update-MgTenantRelationshipManagedTenantManagementAction.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementAction](Update-MgBetaTenantRelationshipManagedTenantManagementAction.md)
 Update the navigation property managementActions in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses](Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses](Update-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses.md)
 Update the navigation property managementActionTenantDeploymentStatuses in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementIntent](Update-MgTenantRelationshipManagedTenantManagementIntent.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementIntent](Update-MgBetaTenantRelationshipManagedTenantManagementIntent.md)
 Update the navigation property managementIntents in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementTemplate](Update-MgTenantRelationshipManagedTenantManagementTemplate.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementTemplate](Update-MgBetaTenantRelationshipManagedTenantManagementTemplate.md)
 Update the navigation property managementTemplates in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementTemplateCollection](Update-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection](Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Update the navigation property managementTemplateCollections in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
 Update the navigation property managementTemplateCollectionTenantSummaries in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementTemplateStep](Update-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStep](Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStep.md)
 Update the navigation property managementTemplateSteps in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
 Update the navigation property managementTemplateStepTenantSummaries in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion](Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Update the navigation property managementTemplateStepVersions in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment](Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment.md)
+### [Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment](Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment.md)
 Update the navigation property deployments in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantMyRole](Update-MgTenantRelationshipManagedTenantMyRole.md)
+### [Update-MgBetaTenantRelationshipManagedTenantMyRole](Update-MgBetaTenantRelationshipManagedTenantMyRole.md)
 Update the navigation property myRoles in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantTag](Update-MgTenantRelationshipManagedTenantTag.md)
+### [Update-MgBetaTenantRelationshipManagedTenantTag](Update-MgBetaTenantRelationshipManagedTenantTag.md)
 Update the navigation property tenantTags in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantTicketingEndpoint](Update-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
+### [Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint](Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint.md)
 Update the navigation property managedTenantTicketingEndpoints in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantWindowDeviceMalwareState](Update-MgTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
+### [Update-MgBetaTenantRelationshipManagedTenantWindowDeviceMalwareState](Update-MgBetaTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
 Update the navigation property windowsDeviceMalwareStates in tenantRelationships
 
-### [Update-MgTenantRelationshipManagedTenantWindowProtectionState](Update-MgTenantRelationshipManagedTenantWindowProtectionState.md)
+### [Update-MgBetaTenantRelationshipManagedTenantWindowProtectionState](Update-MgBetaTenantRelationshipManagedTenantWindowProtectionState.md)
 Update the navigation property windowsProtectionStates in tenantRelationships
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mgusermailfoldermessagereplyall
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/new-mgusermailfoldermessagereplyall
 schema: 2.0.0
 ---
 
-# New-MgUserMailFolderMessageReplyAll
+# New-MgBetaUserMailFolderMessageReplyAll
 
 ## SYNOPSIS
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
@@ -20,28 +20,28 @@ Alternatively, reply-all to a message in a single action.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserMailFolderMessageReplyAll -MailFolderId <String> -MessageId <String> -UserId <String>
+New-MgBetaUserMailFolderMessageReplyAll -MailFolderId <String> -MessageId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserMailFolderMessageReplyAll -MailFolderId <String> -MessageId <String> -UserId <String>
+New-MgBetaUserMailFolderMessageReplyAll -MailFolderId <String> -MessageId <String> -UserId <String>
  -BodyParameter <IPaths3M6QbmUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphCreatereplyallPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserMailFolderMessageReplyAll -InputObject <IUsersActionsIdentity>
+New-MgBetaUserMailFolderMessageReplyAll -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths3M6QbmUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphCreatereplyallPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserMailFolderMessageReplyAll -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserMailFolderMessageReplyAll -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -58,13 +58,13 @@ Alternatively, reply-all to a message in a single action.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 # A UPN can also be used as -UserId.
-New-MgUserMessageReplyAll -UserId $userId -MessageId $messageId
+New-MgBetaUserMessageReplyAll -UserId $userId -MessageId $messageId
 ```
 
-This example shows how to use the New-MgUserMailFolderMessageReplyAll Cmdlet.
+This example shows how to use the New-MgBetaUserMailFolderMessageReplyAll Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths3M6QbmUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphCreatereplyallPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths3M6QbmUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphCreatereplyallPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -152,7 +152,7 @@ message
 To construct, please use Get-Help -Online and see NOTES section for MESSAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -229,13 +229,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths3M6QbmUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphCreatereplyallPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths3M6QbmUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphCreatereplyallPostRequestbodyContentApplicationJsonSchema1
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
 
 ## NOTES
 

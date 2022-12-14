@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementintent
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementintent
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementIntent
+# Get-MgBetaDeviceManagementIntent
 
 ## SYNOPSIS
 The device management intents
@@ -14,20 +14,20 @@ The device management intents
 
 ### List (Default)
 ```
-Get-MgDeviceManagementIntent [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDeviceManagementIntent [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementIntent -DeviceManagementIntentId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementIntent -DeviceManagementIntentId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementIntent -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementIntent -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntent
 
 ## NOTES
 

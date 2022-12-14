@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedaccessresource
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedaccessresource
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedAccessResource
+# Get-MgBetaPrivilegedAccessResource
 
 ## SYNOPSIS
 A collection of resources for the provider.
@@ -14,20 +14,20 @@ A collection of resources for the provider.
 
 ### List (Default)
 ```
-Get-MgPrivilegedAccessResource -PrivilegedAccessId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPrivilegedAccessResource -PrivilegedAccessId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPrivilegedAccessResource -GovernanceResourceId <String> -PrivilegedAccessId <String>
+Get-MgBetaPrivilegedAccessResource -GovernanceResourceId <String> -PrivilegedAccessId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ A collection of resources for the provider.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrivilegedAccessResource Cmdlet
+### Example 1: Using the Get-MgBetaPrivilegedAccessResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedAccessResource -PrivilegedAccessId $privilegedAccessId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedAccessResource -PrivilegedAccessId $privilegedAccessId
 ```
 
-This example shows how to use the Get-MgPrivilegedAccessResource Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedAccessResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 
 ## NOTES
 

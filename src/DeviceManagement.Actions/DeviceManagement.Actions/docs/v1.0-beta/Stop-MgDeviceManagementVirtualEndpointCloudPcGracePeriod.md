@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/stop-mgdevicemanagementvirtualendpointcloudpcgraceperiod
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/stop-mgdevicemanagementvirtualendpointcloudpcgraceperiod
 schema: 2.0.0
 ---
 
-# Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod
+# Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod
 
 ## SYNOPSIS
 End the grace period for a specific Cloud PC.
@@ -17,13 +17,13 @@ Ending the grace period immediately deprovisions the Cloud PC without waiting th
 
 ### End (Default)
 ```
-Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod -CloudPcId <String> [-PassThru] [-Confirm] [-WhatIf]
+Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod -CloudPcId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### EndViaIdentity
 ```
-Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod -InputObject <IDeviceManagementActionsIdentity>
+Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -35,13 +35,13 @@ Ending the grace period immediately deprovisions the Cloud PC without waiting th
 
 ## EXAMPLES
 
-### Example 1: Using the Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod Cmdlet
+### Example 1: Using the Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
-Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod -CloudPCId $cloudPCId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod -CloudPCId $cloudPCId
 ```
 
-This example shows how to use the Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod Cmdlet.
+This example shows how to use the Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: EndViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

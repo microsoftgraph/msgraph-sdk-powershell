@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mggroupeventexceptionoccurrenceinstanceattachment
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mggroupeventexceptionoccurrenceinstanceattachment
 schema: 2.0.0
 ---
 
-# Get-MgGroupEventExceptionOccurrenceInstanceAttachment
+# Get-MgBetaGroupEventExceptionOccurrenceInstanceAttachment
 
 ## SYNOPSIS
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
@@ -17,21 +17,21 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgGroupEventExceptionOccurrenceInstanceAttachment -EventId <String> -EventId1 <String> -EventId2 <String>
+Get-MgBetaGroupEventExceptionOccurrenceInstanceAttachment -EventId <String> -EventId1 <String> -EventId2 <String>
  -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupEventExceptionOccurrenceInstanceAttachment -AttachmentId <String> -EventId <String>
+Get-MgBetaGroupEventExceptionOccurrenceInstanceAttachment -AttachmentId <String> -EventId <String>
  -EventId1 <String> -EventId2 <String> -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupEventExceptionOccurrenceInstanceAttachment -InputObject <ICalendarIdentity>
+Get-MgBetaGroupEventExceptionOccurrenceInstanceAttachment -InputObject <ICalendarIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -186,7 +186,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -277,11 +277,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

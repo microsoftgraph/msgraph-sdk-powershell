@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mgcommunicationcallaudioroutinggroup
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mgcommunicationcallaudioroutinggroup
 schema: 2.0.0
 ---
 
-# New-MgCommunicationCallAudioRoutingGroup
+# New-MgBetaCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
 Create a new **audioRoutingGroup**.
@@ -14,26 +14,26 @@ Create a new **audioRoutingGroup**.
 
 ### CreateExpanded (Default)
 ```
-New-MgCommunicationCallAudioRoutingGroup -CallId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaCommunicationCallAudioRoutingGroup -CallId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Receivers <String[]>] [-RoutingMode <String>] [-Sources <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgCommunicationCallAudioRoutingGroup -CallId <String> -BodyParameter <IMicrosoftGraphAudioRoutingGroup1>
+New-MgBetaCommunicationCallAudioRoutingGroup -CallId <String> -BodyParameter <IMicrosoftGraphAudioRoutingGroup1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphAudioRoutingGroup1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Receivers <String[]>] [-RoutingMode <String>]
  [-Sources <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,9 +43,9 @@ Create a new **audioRoutingGroup**.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgCommunicationCallAudioRoutingGroup Cmdlet
+### Example 1: Using the New-MgBetaCommunicationCallAudioRoutingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Id = "oneToOne"
 	RoutingMode = "oneToOne"
@@ -56,10 +56,10 @@ $params = @{
 		"550fae72-d251-43ec-868c-373732c2704f"
 	)
 }
-New-MgCommunicationCallAudioRoutingGroup -CallId $callId -BodyParameter $params
+New-MgBetaCommunicationCallAudioRoutingGroup -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCallAudioRoutingGroup Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCallAudioRoutingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ audioRoutingGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -223,13 +223,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1
 
 ## NOTES
 

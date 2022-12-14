@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdeviceregisteredownerbyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdeviceregisteredownerbyref
 schema: 2.0.0
 ---
 
-# New-MgDeviceRegisteredOwnerByRef
+# New-MgBetaDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
 Create new navigation property ref to registeredOwners for devices
@@ -14,25 +14,25 @@ Create new navigation property ref to registeredOwners for devices
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceRegisteredOwnerByRef -DeviceId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
+New-MgBetaDeviceRegisteredOwnerByRef -DeviceId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgDeviceRegisteredOwnerByRef -DeviceId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
+New-MgBetaDeviceRegisteredOwnerByRef -DeviceId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to registeredOwners for devices
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDeviceRegisteredOwnerByRef Cmdlet
+### Example 1: Using the New-MgBetaDeviceRegisteredOwnerByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/directoryObjects/{id}"
 }
-New-MgDeviceRegisteredOwnerByRef -DeviceId $deviceId -BodyParameter $params
+New-MgBetaDeviceRegisteredOwnerByRef -DeviceId $deviceId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDeviceRegisteredOwnerByRef Cmdlet.
+This example shows how to use the New-MgBetaDeviceRegisteredOwnerByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

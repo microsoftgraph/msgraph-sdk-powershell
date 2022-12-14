@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtioslobappprovisioningconfigurationgroupassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtioslobappprovisioningconfigurationgroupassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
+# New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
 
 ## SYNOPSIS
 Create new navigation property to groupAssignments for deviceAppManagement
@@ -14,14 +14,14 @@ Create new navigation property to groupAssignments for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
  -IosLobAppProvisioningConfigurationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-TargetGroupId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
  -IosLobAppProvisioningConfigurationId <String>
  -BodyParameter <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -29,7 +29,7 @@ New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -37,7 +37,7 @@ New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-TargetGroupId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Contains the properties used to assign an App provisioning configuration to a gr
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -178,19 +178,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementiOSLobAppProvisioningConfigurationGroupAssignment
+### New-MgBetaDeviceAppManagementiOSLobAppProvisioningConfigurationGroupAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

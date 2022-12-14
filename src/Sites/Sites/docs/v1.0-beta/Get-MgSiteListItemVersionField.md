@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemversionfield
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelistitemversionfield
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemVersionField
+# Get-MgBetaSiteListItemVersionField
 
 ## SYNOPSIS
 A collection of the fields and values for this version of the list item.
@@ -14,13 +14,13 @@ A collection of the fields and values for this version of the list item.
 
 ### Get (Default)
 ```
-Get-MgSiteListItemVersionField -ListId <String> -ListItemId <String> -ListItemVersionId <String>
+Get-MgBetaSiteListItemVersionField -ListId <String> -ListItemId <String> -ListItemVersionId <String>
  -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteListItemVersionField -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSiteListItemVersionField -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

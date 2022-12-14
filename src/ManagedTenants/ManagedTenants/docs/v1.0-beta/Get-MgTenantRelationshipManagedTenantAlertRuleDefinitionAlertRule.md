@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantalertruledefinitionalertrule
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantalertruledefinitionalertrule
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule
+# Get-MgBetaTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule
 
 ## SYNOPSIS
 Get alertRules from tenantRelationships
@@ -14,20 +14,20 @@ Get alertRules from tenantRelationships
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule -ManagedTenantAlertRuleDefinitionId <String>
+Get-MgBetaTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule -ManagedTenantAlertRuleDefinitionId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule -ManagedTenantAlertRuleDefinitionId <String>
+Get-MgBetaTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule -ManagedTenantAlertRuleDefinitionId <String>
  -ManagedTenantAlertRuleId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritythreatsubmissionemailthreatsubmissionpolicy
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritythreatsubmissionemailthreatsubmissionpolicy
 schema: 2.0.0
 ---
 
-# New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy
+# New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy
 
 ## SYNOPSIS
 Create new navigation property to emailThreatSubmissionPolicies for security
@@ -14,7 +14,7 @@ Create new navigation property to emailThreatSubmissionPolicies for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy [-AdditionalProperties <Hashtable>]
  [-CustomizedNotificationSenderEmailAddress <String>] [-CustomizedReportRecipientEmailAddress <String>]
  [-Id <String>] [-IsAlwaysReportEnabledForUsers] [-IsAskMeEnabledForUsers] [-IsCustomizedMessageEnabled]
  [-IsCustomizedMessageEnabledForPhishing] [-IsCustomizedNotificationSenderEnabled]
@@ -25,7 +25,7 @@ New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy [-AdditionalProperties
 
 ### Create
 ```
-New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy
+New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy
  -BodyParameter <IMicrosoftGraphSecurityEmailThreatSubmissionPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -34,16 +34,16 @@ Create new navigation property to emailThreatSubmissionPolicies for security
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet
+### Example 1: Using the New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	IsReportToMicrosoftEnabled = $true
 }
-New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -BodyParameter $params
+New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet.
+This example shows how to use the New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -68,7 +68,7 @@ emailThreatSubmissionPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
 Parameter Sets: Create
 Aliases:
 
@@ -352,11 +352,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
 
 ## NOTES
 

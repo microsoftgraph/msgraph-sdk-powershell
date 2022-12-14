@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgorganizationbranding
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/remove-mgorganizationbranding
 schema: 2.0.0
 ---
 
-# Remove-MgOrganizationBranding
+# Remove-MgBetaOrganizationBranding
 
 ## SYNOPSIS
 Delete the default organizational branding object.
@@ -15,13 +15,13 @@ To delete the organizationalBranding object, all images (Stream types) must firs
 
 ### Delete (Default)
 ```
-Remove-MgOrganizationBranding -OrganizationId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaOrganizationBranding -OrganizationId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>]
+Remove-MgBetaOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

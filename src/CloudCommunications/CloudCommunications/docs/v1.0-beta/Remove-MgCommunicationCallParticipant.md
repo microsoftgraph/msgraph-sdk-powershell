@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/remove-mgcommunicationcallparticipant
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/remove-mgcommunicationcallparticipant
 schema: 2.0.0
 ---
 
-# Remove-MgCommunicationCallParticipant
+# Remove-MgBetaCommunicationCallParticipant
 
 ## SYNOPSIS
 Delete navigation property participants for communications
@@ -14,13 +14,13 @@ Delete navigation property participants for communications
 
 ### Delete1 (Default)
 ```
-Remove-MgCommunicationCallParticipant -CallId <String> -ParticipantId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaCommunicationCallParticipant -CallId <String> -ParticipantId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>]
+Remove-MgBetaCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,31 +29,31 @@ Delete navigation property participants for communications
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgCommunicationCallParticipant Cmdlet
+### Example 1: Using the Remove-MgBetaCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
 
-This example shows how to use the Remove-MgCommunicationCallParticipant Cmdlet.
+This example shows how to use the Remove-MgBetaCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Remove-MgCommunicationCallParticipant Cmdlet
+### Example 2: Using the Remove-MgBetaCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
 
-This example shows how to use the Remove-MgCommunicationCallParticipant Cmdlet.
+This example shows how to use the Remove-MgBetaCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Remove-MgCommunicationCallParticipant Cmdlet
+### Example 3: Using the Remove-MgBetaCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
 
-This example shows how to use the Remove-MgCommunicationCallParticipant Cmdlet.
+This example shows how to use the Remove-MgBetaCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -93,7 +93,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -170,7 +170,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

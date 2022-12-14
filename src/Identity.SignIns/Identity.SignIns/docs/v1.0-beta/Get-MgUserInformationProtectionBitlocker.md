@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserinformationprotectionbitlocker
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserinformationprotectionbitlocker
 schema: 2.0.0
 ---
 
-# Get-MgUserInformationProtectionBitlocker
+# Get-MgBetaUserInformationProtectionBitlocker
 
 ## SYNOPSIS
 Get bitlocker from users
@@ -14,13 +14,13 @@ Get bitlocker from users
 
 ### Get (Default)
 ```
-Get-MgUserInformationProtectionBitlocker -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserInformationProtectionBitlocker -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserInformationProtectionBitlocker -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserInformationProtectionBitlocker -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlocker
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlocker
 
 ## NOTES
 

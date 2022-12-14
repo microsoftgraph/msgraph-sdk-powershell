@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicydefinition
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicydefinition
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementGroupPolicyDefinition
+# New-MgBetaDeviceManagementGroupPolicyDefinition
 
 ## SYNOPSIS
 Create new navigation property to groupPolicyDefinitions for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to groupPolicyDefinitions for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementGroupPolicyDefinition [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementGroupPolicyDefinition [-AdditionalProperties <Hashtable>]
  [-Category <IMicrosoftGraphGroupPolicyCategory>] [-CategoryPath <String>]
  [-ClassType <GroupPolicyDefinitionClassType>] [-DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]
  [-DisplayName <String>] [-ExplainText <String>] [-GroupPolicyCategoryId <String>] [-HasRelatedDefinitions]
@@ -27,7 +27,7 @@ New-MgDeviceManagementGroupPolicyDefinition [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementGroupPolicyDefinition -BodyParameter <IMicrosoftGraphGroupPolicyDefinition> [-Confirm]
+New-MgBetaDeviceManagementGroupPolicyDefinition -BodyParameter <IMicrosoftGraphGroupPolicyDefinition> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -58,7 +58,7 @@ The entity describes all of the information about a single group policy.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 Parameter Sets: Create
 Aliases:
 
@@ -74,7 +74,7 @@ The category entity stores the category of a group policy definition
 To construct, please use Get-Help -Online and see NOTES section for CATEGORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 Group Policy Definition Class Type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyDefinitionClassType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyDefinitionClassType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -122,7 +122,7 @@ The group policy definition file also contains the languages supported as determ
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -260,7 +260,7 @@ The entity describes all of the information about a single group policy.
 To construct, please use Get-Help -Online and see NOTES section for NEXTVERSIONDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 Type of Group Policy File or Definition.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -291,7 +291,7 @@ The group policy presentations associated with the definition.
 To construct, please use Get-Help -Online and see NOTES section for PRESENTATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -307,7 +307,7 @@ The entity describes all of the information about a single group policy.
 To construct, please use Get-Help -Online and see NOTES section for PREVIOUSVERSIONDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -384,11 +384,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 
 ## NOTES
 

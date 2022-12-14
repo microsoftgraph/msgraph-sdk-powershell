@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggrouprejectedsenderbyref
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggrouprejectedsenderbyref
 schema: 2.0.0
 ---
 
-# Get-MgGroupRejectedSenderByRef
+# Get-MgBetaGroupRejectedSenderByRef
 
 ## SYNOPSIS
 Get a list of users or groups that are in the rejected-senders list for this group.
@@ -15,7 +15,7 @@ Make sure you do not specify the same user or group in the rejected senders and 
 ## SYNTAX
 
 ```
-Get-MgGroupRejectedSenderByRef -GroupId <String> [-Filter <String>] [-Skip <Int32>] [-Sort <String[]>]
+Get-MgBetaGroupRejectedSenderByRef -GroupId <String> [-Filter <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 

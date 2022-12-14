@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/restore-mguserdriveitemlistitemversion
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/restore-mguserdriveitemlistitemversion
 schema: 2.0.0
 ---
 
-# Restore-MgUserDriveItemListItemVersion
+# Restore-MgBetaUserDriveItemListItemVersion
 
 ## SYNOPSIS
 Invoke action restoreVersion
@@ -14,13 +14,13 @@ Invoke action restoreVersion
 
 ### Restore1 (Default)
 ```
-Restore-MgUserDriveItemListItemVersion -DriveId <String> -DriveItemId <String> -ListItemVersionId <String>
+Restore-MgBetaUserDriveItemListItemVersion -DriveId <String> -DriveItemId <String> -ListItemVersionId <String>
  -UserId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity1
 ```
-Restore-MgUserDriveItemListItemVersion -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaUserDriveItemListItemVersion -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,12 +31,12 @@ Invoke action restoreVersion
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
-Restore-MgSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId
+Restore-MgBetaSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId
 ```
 
-This example shows how to use the Restore-MgUserDriveItemListItemVersion Cmdlet.
+This example shows how to use the Restore-MgBetaUserDriveItemListItemVersion Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: RestoreViaIdentity1
 Aliases:
 
@@ -169,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgttask
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgttask
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtTask
+# New-MgBetaDeviceAppMgtTask
 
 ## SYNOPSIS
 Create new navigation property to deviceAppManagementTasks for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceAppManagementTasks for deviceAppManageme
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtTask [-AdditionalProperties <Hashtable>] [-AssignedTo <String>]
+New-MgBetaDeviceAppMgtTask [-AdditionalProperties <Hashtable>] [-AssignedTo <String>]
  [-Category <DeviceAppManagementTaskCategory>] [-CreatedDateTime <DateTime>] [-Creator <String>]
  [-CreatorNotes <String>] [-Description <String>] [-DisplayName <String>] [-DueDateTime <DateTime>]
  [-Id <String>] [-Priority <DeviceAppManagementTaskPriority>] [-Status <DeviceAppManagementTaskStatus>]
@@ -23,7 +23,7 @@ New-MgDeviceAppMgtTask [-AdditionalProperties <Hashtable>] [-AssignedTo <String>
 
 ### Create
 ```
-New-MgDeviceAppMgtTask -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [-Confirm] [-WhatIf]
+New-MgBetaDeviceAppMgtTask -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ A device app management task.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
 Parameter Sets: Create
 Aliases:
 
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 Device app management task category.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskCategory
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAppManagementTaskCategory
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -205,7 +205,7 @@ Accept wildcard characters: False
 Device app management task priority.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskPriority
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAppManagementTaskPriority
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -220,7 +220,7 @@ Accept wildcard characters: False
 Device app management task status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAppManagementTaskStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -267,17 +267,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementTask
+### New-MgBetaDeviceAppManagementTask
 
 COMPLEX PARAMETER PROPERTIES
 

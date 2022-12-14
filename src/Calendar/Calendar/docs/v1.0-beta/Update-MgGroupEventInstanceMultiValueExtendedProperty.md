@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/update-mggroupeventinstancemultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/update-mggroupeventinstancemultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Update-MgGroupEventInstanceMultiValueExtendedProperty
+# Update-MgBetaGroupEventInstanceMultiValueExtendedProperty
 
 ## SYNOPSIS
 Update the navigation property multiValueExtendedProperties in groups
@@ -14,28 +14,28 @@ Update the navigation property multiValueExtendedProperties in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupEventInstanceMultiValueExtendedProperty -EventId <String> -EventId1 <String> -GroupId <String>
+Update-MgBetaGroupEventInstanceMultiValueExtendedProperty -EventId <String> -EventId1 <String> -GroupId <String>
  -MultiValueLegacyExtendedPropertyId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Value <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupEventInstanceMultiValueExtendedProperty -EventId <String> -EventId1 <String> -GroupId <String>
+Update-MgBetaGroupEventInstanceMultiValueExtendedProperty -EventId <String> -EventId1 <String> -GroupId <String>
  -MultiValueLegacyExtendedPropertyId <String> -BodyParameter <IMicrosoftGraphMultiValueLegacyExtendedProperty>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupEventInstanceMultiValueExtendedProperty -InputObject <ICalendarIdentity>
+Update-MgBetaGroupEventInstanceMultiValueExtendedProperty -InputObject <ICalendarIdentity>
  -BodyParameter <IMicrosoftGraphMultiValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupEventInstanceMultiValueExtendedProperty -InputObject <ICalendarIdentity>
+Update-MgBetaGroupEventInstanceMultiValueExtendedProperty -InputObject <ICalendarIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ multiValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -236,9 +236,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 
 ## OUTPUTS
 

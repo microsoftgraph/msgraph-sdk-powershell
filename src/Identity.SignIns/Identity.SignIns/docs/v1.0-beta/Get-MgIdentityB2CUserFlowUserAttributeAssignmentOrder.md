@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2cuserflowuserattributeassignmentorder
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2cuserflowuserattributeassignmentorder
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2CUserFlowUserAttributeAssignmentOrder
+# Get-MgBetaIdentityB2CUserFlowUserAttributeAssignmentOrder
 
 ## SYNOPSIS
 Invoke function getOrder
@@ -14,12 +14,12 @@ Invoke function getOrder
 
 ### Get (Default)
 ```
-Get-MgIdentityB2CUserFlowUserAttributeAssignmentOrder -B2CIdentityUserFlowId <String> [<CommonParameters>]
+Get-MgBetaIdentityB2CUserFlowUserAttributeAssignmentOrder -B2CIdentityUserFlowId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityB2CUserFlowUserAttributeAssignmentOrder -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaIdentityB2CUserFlowUserAttributeAssignmentOrder -InputObject <IIdentitySignInsIdentity>
  [<CommonParameters>]
 ```
 
@@ -28,13 +28,13 @@ Invoke function getOrder
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityB2CUserFlowUserAttributeAssignmentOrder Cmdlet
+### Example 1: Using the Get-MgBetaIdentityB2CUserFlowUserAttributeAssignmentOrder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlowUserAttributeAssignmentOrder -B2cIdentityUserFlowId $b2cIdentityUserFlowId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlowUserAttributeAssignmentOrder -B2cIdentityUserFlowId $b2cIdentityUserFlowId
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlowUserAttributeAssignmentOrder Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlowUserAttributeAssignmentOrder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -59,7 +59,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -75,7 +75,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

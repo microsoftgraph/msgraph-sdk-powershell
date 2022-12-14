@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritysubjectrightsrequestnote
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritysubjectrightsrequestnote
 schema: 2.0.0
 ---
 
-# Get-MgSecuritySubjectRightsRequestNote
+# Get-MgBetaSecuritySubjectRightsRequestNote
 
 ## SYNOPSIS
 List of notes associated with the request.
@@ -14,20 +14,20 @@ List of notes associated with the request.
 
 ### List (Default)
 ```
-Get-MgSecuritySubjectRightsRequestNote -SubjectRightsRequestId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecuritySubjectRightsRequestNote -SubjectRightsRequestId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecuritySubjectRightsRequestNote -AuthoredNoteId <String> -SubjectRightsRequestId <String>
+Get-MgBetaSecuritySubjectRightsRequestNote -AuthoredNoteId <String> -SubjectRightsRequestId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecuritySubjectRightsRequestNote -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecuritySubjectRightsRequestNote -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthoredNote
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthoredNote
 
 ## NOTES
 

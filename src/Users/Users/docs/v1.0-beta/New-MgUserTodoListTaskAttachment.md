@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mgusertodolisttaskattachment
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/new-mgusertodolisttaskattachment
 schema: 2.0.0
 ---
 
-# New-MgUserTodoListTaskAttachment
+# New-MgBetaUserTodoListTaskAttachment
 
 ## SYNOPSIS
 Add a new taskFileAttachment object to a todoTask.
@@ -16,26 +16,26 @@ If the size of the file attachments is more than 3 MB, create an upload session 
 
 ### CreateExpanded (Default)
 ```
-New-MgUserTodoListTaskAttachment -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+New-MgBetaUserTodoListTaskAttachment -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserTodoListTaskAttachment -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+New-MgBetaUserTodoListTaskAttachment -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphAttachmentBase> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserTodoListTaskAttachment -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphAttachmentBase>
+New-MgBetaUserTodoListTaskAttachment -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphAttachmentBase>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,20 +47,20 @@ If the size of the file attachments is more than 3 MB, create an upload session 
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserTodoListTaskAttachment Cmdlet
+### Example 1: Using the New-MgBetaUserTodoListTaskAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
-	"@odata.type" = "#microsoft.graph.taskFileAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.taskFileAttachment"
 	Name = "smile"
 	ContentBytes = "a0b1c76de9f7="
 	ContentType = "image/gif"
 }
 # A UPN can also be used as -UserId.
-New-MgUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+New-MgBetaUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserTodoListTaskAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserTodoListTaskAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -85,7 +85,7 @@ attachmentBase
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentBase
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentBase
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -269,13 +269,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentBase
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentBase
 
 ## NOTES
 

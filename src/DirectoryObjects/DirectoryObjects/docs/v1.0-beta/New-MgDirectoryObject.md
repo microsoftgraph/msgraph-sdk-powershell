@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DirectoryObjects
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.directoryobjects/new-mgdirectoryobject
+Module Name: Microsoft.Graph.Beta.DirectoryObjects
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.directoryobjects/new-mgdirectoryobject
 schema: 2.0.0
 ---
 
-# New-MgDirectoryObject
+# New-MgBetaDirectoryObject
 
 ## SYNOPSIS
 Add new entity to directoryObjects
@@ -14,13 +14,13 @@ Add new entity to directoryObjects
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryObject [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Id <String>]
+New-MgBetaDirectoryObject [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryObject -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm] [-WhatIf]
+New-MgBetaDirectoryObject -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ directoryObject
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 Parameter Sets: Create
 Aliases:
 
@@ -130,11 +130,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

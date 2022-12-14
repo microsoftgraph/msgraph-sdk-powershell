@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/get-mgbusinessscenarioplannerplanconfiguration
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/get-mgbusinessscenarioplannerplanconfiguration
 schema: 2.0.0
 ---
 
-# Get-MgBusinessScenarioPlannerPlanConfiguration
+# Get-MgBetaBusinessScenarioPlannerPlanConfiguration
 
 ## SYNOPSIS
 Get planConfiguration from solutions
@@ -14,13 +14,13 @@ Get planConfiguration from solutions
 
 ### Get (Default)
 ```
-Get-MgBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String> [-ExpandProperty <String[]>]
+Get-MgBetaBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanConfiguration
 
 ## NOTES
 

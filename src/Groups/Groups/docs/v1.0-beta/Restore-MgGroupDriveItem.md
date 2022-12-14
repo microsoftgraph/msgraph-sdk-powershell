@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/restore-mggroupdriveitem
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/restore-mggroupdriveitem
 schema: 2.0.0
 ---
 
-# Restore-MgGroupDriveItem
+# Restore-MgBetaGroupDriveItem
 
 ## SYNOPSIS
 Restore a driveItem that has been deleted and is currently in the recycle bin.
@@ -14,28 +14,28 @@ Restore a driveItem that has been deleted and is currently in the recycle bin.
 
 ### RestoreExpanded (Default)
 ```
-Restore-MgGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String>
+Restore-MgBetaGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Restore
 ```
-Restore-MgGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String>
+Restore-MgBetaGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String>
  -BodyParameter <IPathsOu3G1UGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgGroupDriveItem -InputObject <IGroupsIdentity>
+Restore-MgBetaGroupDriveItem -InputObject <IGroupsIdentity>
  -BodyParameter <IPathsOu3G1UGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentityExpanded
 ```
-Restore-MgGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Name <String>]
+Restore-MgBetaGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Name <String>]
  [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsOu3G1UGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsOu3G1UGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Restore, RestoreViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: RestoreViaIdentity, RestoreViaIdentityExpanded
 Aliases:
 
@@ -158,7 +158,7 @@ itemReference
 To construct, please use Get-Help -Online and see NOTES section for PARENTREFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemReference
 Parameter Sets: RestoreExpanded, RestoreViaIdentityExpanded
 Aliases:
 
@@ -205,13 +205,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsOu3G1UGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsOu3G1UGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem
 
 ## NOTES
 

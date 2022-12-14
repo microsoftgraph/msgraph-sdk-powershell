@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanagementtemplate
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanagementtemplate
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantManagementTemplate
+# Get-MgBetaTenantRelationshipManagedTenantManagementTemplate
 
 ## SYNOPSIS
 The collection of baseline management templates across managed tenants.
@@ -14,20 +14,20 @@ The collection of baseline management templates across managed tenants.
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplate [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplate [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplate -ManagementTemplateId <String>
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplate -ManagementTemplateId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplate -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplate -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The collection of baseline management templates across managed tenants.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantManagementTemplate Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantManagementTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagementTemplate -ManagementTemplateId $managementTemplateId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplate -ManagementTemplateId $managementTemplateId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementTemplate Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagementTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantManagementTemplate Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantManagementTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagementTemplate
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplate
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementTemplate Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagementTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
 
 ## NOTES
 

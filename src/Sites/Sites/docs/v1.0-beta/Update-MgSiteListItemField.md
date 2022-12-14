@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/update-mgsitelistitemfield
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/update-mgsitelistitemfield
 schema: 2.0.0
 ---
 
-# Update-MgSiteListItemField
+# Update-MgBetaSiteListItemField
 
 ## SYNOPSIS
 Update the properties on a **[listItem][]**.
@@ -14,25 +14,25 @@ Update the properties on a **[listItem][]**.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSiteListItemField -ListId <String> -ListItemId <String> -SiteId <String>
+Update-MgBetaSiteListItemField -ListId <String> -ListItemId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSiteListItemField -ListId <String> -ListItemId <String> -SiteId <String> -BodyParameter <Hashtable>
+Update-MgBetaSiteListItemField -ListId <String> -ListItemId <String> -SiteId <String> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSiteListItemField -InputObject <ISitesIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Update-MgBetaSiteListItemField -InputObject <ISitesIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSiteListItemField -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaSiteListItemField -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,17 +41,17 @@ Update the properties on a **[listItem][]**.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSiteListItemField Cmdlet
+### Example 1: Using the Update-MgBetaSiteListItemField Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	Color = "Fuchsia"
 	Quantity = 
 }
-Update-MgSiteListItemField -SiteId $siteId -ListId $listId -ListItemId $listItemId -BodyParameter $params
+Update-MgBetaSiteListItemField -SiteId $siteId -ListId $listId -ListItemId $listItemId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSiteListItemField Cmdlet.
+This example shows how to use the Update-MgBetaSiteListItemField Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -214,7 +214,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ### System.Collections.Hashtable
 

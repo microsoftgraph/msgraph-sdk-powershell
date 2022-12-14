@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/remove-mgprintprintertasktrigger
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/remove-mgprintprintertasktrigger
 schema: 2.0.0
 ---
 
-# Remove-MgPrintPrinterTaskTrigger
+# Remove-MgBetaPrintPrinterTaskTrigger
 
 ## SYNOPSIS
 Delete navigation property taskTriggers for print
@@ -14,13 +14,13 @@ Delete navigation property taskTriggers for print
 
 ### Delete1 (Default)
 ```
-Remove-MgPrintPrinterTaskTrigger -PrinterId <String> -PrintTaskTriggerId <String> [-IfMatch <String>]
+Remove-MgBetaPrintPrinterTaskTrigger -PrinterId <String> -PrintTaskTriggerId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property taskTriggers for print
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPrintPrinterTaskTrigger Cmdlet
+### Example 1: Using the Remove-MgBetaPrintPrinterTaskTrigger Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Remove-MgPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Remove-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
 ```
 
-This example shows how to use the Remove-MgPrintPrinterTaskTrigger Cmdlet.
+This example shows how to use the Remove-MgBetaPrintPrinterTaskTrigger Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 

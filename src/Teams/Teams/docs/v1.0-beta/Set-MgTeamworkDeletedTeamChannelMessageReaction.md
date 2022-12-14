@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgteamworkdeletedteamchannelmessagereaction
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/set-mgteamworkdeletedteamchannelmessagereaction
 schema: 2.0.0
 ---
 
-# Set-MgTeamworkDeletedTeamChannelMessageReaction
+# Set-MgBetaTeamworkDeletedTeamChannelMessageReaction
 
 ## SYNOPSIS
 Invoke action setReaction
@@ -14,14 +14,14 @@ Invoke action setReaction
 
 ### SetExpanded (Default)
 ```
-Set-MgTeamworkDeletedTeamChannelMessageReaction -ChannelId <String> -ChatMessageId <String>
+Set-MgBetaTeamworkDeletedTeamChannelMessageReaction -ChannelId <String> -ChatMessageId <String>
  -DeletedTeamId <String> [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgTeamworkDeletedTeamChannelMessageReaction -ChannelId <String> -ChatMessageId <String>
+Set-MgBetaTeamworkDeletedTeamChannelMessageReaction -ChannelId <String> -ChatMessageId <String>
  -DeletedTeamId <String>
  -BodyParameter <IPathsL24246TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,14 +29,14 @@ Set-MgTeamworkDeletedTeamChannelMessageReaction -ChannelId <String> -ChatMessage
 
 ### SetViaIdentity
 ```
-Set-MgTeamworkDeletedTeamChannelMessageReaction -InputObject <ITeamsIdentity>
+Set-MgBetaTeamworkDeletedTeamChannelMessageReaction -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsL24246TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-MgTeamworkDeletedTeamChannelMessageReaction -InputObject <ITeamsIdentity>
+Set-MgBetaTeamworkDeletedTeamChannelMessageReaction -InputObject <ITeamsIdentity>
  [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsL24246TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsL24246TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
@@ -206,9 +206,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsL24246TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsL24246TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

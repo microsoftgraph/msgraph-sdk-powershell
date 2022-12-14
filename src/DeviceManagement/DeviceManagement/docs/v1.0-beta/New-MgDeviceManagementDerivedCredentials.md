@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementderivedcredentials
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementderivedcredentials
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDerivedCredentials
+# New-MgBetaDeviceManagementDerivedCredentials
 
 ## SYNOPSIS
 Create new navigation property to derivedCredentials for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to derivedCredentials for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDerivedCredentials [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceManagementDerivedCredentials [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-HelpUrl <String>] [-Id <String>] [-Issuer <DeviceManagementDerivedCredentialIssuer>]
  [-NotificationType <DeviceManagementDerivedCredentialNotificationType>] [-RenewalThresholdPercentage <Int32>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementDerivedCredentials [-AdditionalProperties <Hashtable>] [-D
 
 ### Create
 ```
-New-MgDeviceManagementDerivedCredentials
+New-MgBetaDeviceManagementDerivedCredentials
  -BodyParameter <IMicrosoftGraphDeviceManagementDerivedCredentialSettings> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Entity that describes tenant level settings for derived credentials
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementDerivedCredentialSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDerivedCredentialSettings
 Parameter Sets: Create
 Aliases:
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 Supported values for the derived credential issuer.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementDerivedCredentialIssuer
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementDerivedCredentialIssuer
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 Supported values for the notification type to use.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementDerivedCredentialNotificationType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementDerivedCredentialNotificationType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -192,11 +192,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementDerivedCredentialSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDerivedCredentialSettings
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementDerivedCredentialSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDerivedCredentialSettings
 
 ## NOTES
 

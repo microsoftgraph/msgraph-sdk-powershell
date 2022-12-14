@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgusermanageddevicelogcollectionresponse
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgusermanageddevicelogcollectionresponse
 schema: 2.0.0
 ---
 
-# New-MgUserManagedDeviceLogCollectionResponse
+# New-MgBetaUserManagedDeviceLogCollectionResponse
 
 ## SYNOPSIS
 Create new navigation property to logCollectionRequests for users
@@ -14,7 +14,7 @@ Create new navigation property to logCollectionRequests for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserManagedDeviceLogCollectionResponse -ManagedDeviceId <String> -UserId <String>
+New-MgBetaUserManagedDeviceLogCollectionResponse -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-EnrolledByUser <String>] [-ErrorCode <Int64>]
  [-ExpirationDateTimeUtc <DateTime>] [-Id <String>] [-InitiatedByUserPrincipalName <String>]
  [-ManagedDeviceId1 <String>] [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>]
@@ -23,19 +23,19 @@ New-MgUserManagedDeviceLogCollectionResponse -ManagedDeviceId <String> -UserId <
 
 ### Create
 ```
-New-MgUserManagedDeviceLogCollectionResponse -ManagedDeviceId <String> -UserId <String>
+New-MgBetaUserManagedDeviceLogCollectionResponse -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateManagementIdentity>
  [-ManagedDeviceId <String>] [-AdditionalProperties <Hashtable>] [-EnrolledByUser <String>]
  [-ErrorCode <Int64>] [-ExpirationDateTimeUtc <DateTime>] [-Id <String>]
  [-InitiatedByUserPrincipalName <String>] [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>]
@@ -69,7 +69,7 @@ Windows Log Collection request entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -315,13 +315,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
 
 ## NOTES
 

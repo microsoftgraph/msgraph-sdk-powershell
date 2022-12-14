@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationmerubric
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/update-mgeducationmerubric
 schema: 2.0.0
 ---
 
-# Update-MgEducationMeRubric
+# Update-MgBetaEducationMeRubric
 
 ## SYNOPSIS
 Update the navigation property rubrics in education
@@ -14,7 +14,7 @@ Update the navigation property rubrics in education
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEducationMeRubric -EducationRubricId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaEducationMeRubric -EducationRubricId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <IMicrosoftGraphEducationItemBody>]
  [-DisplayName <String>] [-Grading <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-Levels <IMicrosoftGraphRubricLevel[]>] [-Qualities <IMicrosoftGraphRubricQuality[]>] [-PassThru] [-Confirm]
@@ -23,19 +23,19 @@ Update-MgEducationMeRubric -EducationRubricId <String> [-AdditionalProperties <H
 
 ### Update
 ```
-Update-MgEducationMeRubric -EducationRubricId <String> -BodyParameter <IMicrosoftGraphEducationRubric>
+Update-MgBetaEducationMeRubric -EducationRubricId <String> -BodyParameter <IMicrosoftGraphEducationRubric>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgEducationMeRubric -InputObject <IEducationIdentity> -BodyParameter <IMicrosoftGraphEducationRubric>
+Update-MgBetaEducationMeRubric -InputObject <IEducationIdentity> -BodyParameter <IMicrosoftGraphEducationRubric>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationMeRubric -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaEducationMeRubric -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <IMicrosoftGraphEducationItemBody>]
  [-DisplayName <String>] [-Grading <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-Levels <IMicrosoftGraphRubricLevel[]>] [-Qualities <IMicrosoftGraphRubricQuality[]>] [-PassThru] [-Confirm]
@@ -47,16 +47,16 @@ Update the navigation property rubrics in education
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgEducationMeRubric Cmdlet
+### Example 1: Using the Update-MgBetaEducationMeRubric Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	DisplayName = "Example Credit Rubric after display name patch"
 }
-Update-MgEducationMeRubric -EducationRubricId $educationRubricId -BodyParameter $params
+Update-MgBetaEducationMeRubric -EducationRubricId $educationRubricId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgEducationMeRubric Cmdlet.
+This example shows how to use the Update-MgBetaEducationMeRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ educationRubric
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationRubric
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -113,7 +113,7 @@ educationItemBody
 To construct, please use Get-Help -Online and see NOTES section for DESCRIPTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationItemBody
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -206,7 +206,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -222,7 +222,7 @@ The collection of levels making up this rubric.
 To construct, please use Get-Help -Online and see NOTES section for LEVELS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRubricLevel[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRubricLevel[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,7 +253,7 @@ The collection of qualities making up this rubric.
 To construct, please use Get-Help -Online and see NOTES section for QUALITIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRubricQuality[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRubricQuality[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -300,9 +300,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationRubric
 
 ## OUTPUTS
 

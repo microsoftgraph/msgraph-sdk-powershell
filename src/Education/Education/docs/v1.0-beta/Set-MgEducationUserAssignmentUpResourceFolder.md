@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationuserassignmentupresourcefolder
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/set-mgeducationuserassignmentupresourcefolder
 schema: 2.0.0
 ---
 
-# Set-MgEducationUserAssignmentUpResourceFolder
+# Set-MgBetaEducationUserAssignmentUpResourceFolder
 
 ## SYNOPSIS
 Create a SharePoint folder to upload files for a given educationAssignment.
@@ -15,13 +15,13 @@ The teacher determines the resources to upload in the assignment's folder.
 
 ### Set (Default)
 ```
-Set-MgEducationUserAssignmentUpResourceFolder -EducationAssignmentId <String> -EducationUserId <String>
+Set-MgBetaEducationUserAssignmentUpResourceFolder -EducationAssignmentId <String> -EducationUserId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgEducationUserAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Set-MgBetaEducationUserAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -115,11 +115,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

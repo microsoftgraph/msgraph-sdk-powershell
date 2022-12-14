@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementaccesspackageresourcerequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgentitlementmanagementaccesspackageresourcerequest
 schema: 2.0.0
 ---
 
-# New-MgEntitlementManagementAccessPackageResourceRequest
+# New-MgBetaEntitlementManagementAccessPackageResourceRequest
 
 ## SYNOPSIS
 Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
@@ -15,7 +15,7 @@ A resource must be included in an access package catalog before a role of that r
 
 ### CreateExpanded (Default)
 ```
-New-MgEntitlementManagementAccessPackageResourceRequest
+New-MgBetaEntitlementManagementAccessPackageResourceRequest
  [-AccessPackageResource <IMicrosoftGraphAccessPackageResource>] [-AdditionalProperties <Hashtable>]
  [-CatalogId <String>] [-ExecuteImmediately] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-IsValidationOnly] [-Justification <String>] [-Requestor <IMicrosoftGraphAccessPackageSubject1>]
@@ -25,7 +25,7 @@ New-MgEntitlementManagementAccessPackageResourceRequest
 
 ### Create
 ```
-New-MgEntitlementManagementAccessPackageResourceRequest
+New-MgBetaEntitlementManagementAccessPackageResourceRequest
  -BodyParameter <IMicrosoftGraphAccessPackageResourceRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -37,14 +37,14 @@ A resource must be included in an access package catalog before a role of that r
 
 ### Example 1: Create a new access package resource request
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All', 'Group.ReadWrite.All'
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All', 'Group.ReadWrite.All'
 $accessPackageResource = @{
   "originSystem" = "AadGroup "
   OriginId= "b5cd9d19-91c0-4622-93e2-537ad8a0b3ad"
   }
-New-MgEntitlementManagementAccessPackageResourceRequest -CatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -RequestType "AdminAdd" -AccessPackageResource $accessPackageResource
+New-MgBetaEntitlementManagementAccessPackageResourceRequest -CatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -RequestType "AdminAdd" -AccessPackageResource $accessPackageResource
 
-AccessPackageResource : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageResource
+AccessPackageResource : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageResource
 CatalogId             : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b
 ExecuteImmediately    : False
 ExpirationDateTime    :
@@ -54,7 +54,7 @@ Justification         :
 RequestState          : Delivered
 RequestStatus         : Fulfilled
 RequestType           : AdminAdd
-Requestor             : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageSubject
+Requestor             : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageSubject
 AdditionalProperties  : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackageResourceRequests/$entity]}                                                            
 ```
 
@@ -67,7 +67,7 @@ accessPackageResource
 To construct, please use Get-Help -Online and see NOTES section for ACCESSPACKAGERESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResource
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ accessPackageResourceRequest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
 Parameter Sets: Create
 Aliases:
 
@@ -206,7 +206,7 @@ accessPackageSubject
 To construct, please use Get-Help -Online and see NOTES section for REQUESTOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -300,11 +300,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
 
 ## NOTES
 
@@ -449,7 +449,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRequest>: accessPackageResour
       - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-      - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
+      - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/Microsoft.Graph.Beta.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
       - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[ModifiedBy <String>]`: UPN of the user who last modified this resource. Read-only.
       - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -477,7 +477,7 @@ REQUESTOR <IMicrosoftGraphAccessPackageSubject1>: accessPackageSubject
     - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
+    - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/Microsoft.Graph.Beta.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
     - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[ModifiedBy <String>]`: UPN of the user who last modified this resource. Read-only.
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.

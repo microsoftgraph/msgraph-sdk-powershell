@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/remove-mgwindowsupdatesdeployment
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/remove-mgwindowsupdatesdeployment
 schema: 2.0.0
 ---
 
-# Remove-MgWindowsUpdatesDeployment
+# Remove-MgBetaWindowsUpdatesDeployment
 
 ## SYNOPSIS
 Delete navigation property deployments for admin
@@ -14,13 +14,13 @@ Delete navigation property deployments for admin
 
 ### Delete (Default)
 ```
-Remove-MgWindowsUpdatesDeployment -DeploymentId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaWindowsUpdatesDeployment -DeploymentId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property deployments for admin
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgWindowsUpdatesDeployment Cmdlet
+### Example 1: Using the Remove-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Remove-MgWindowsUpdatesDeployment -DeploymentId $deploymentId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Remove-MgBetaWindowsUpdatesDeployment -DeploymentId $deploymentId
 ```
 
-This example shows how to use the Remove-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the Remove-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -147,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgWuDeployment
+### Remove-MgBetaWuDeployment
 
 COMPLEX PARAMETER PROPERTIES
 

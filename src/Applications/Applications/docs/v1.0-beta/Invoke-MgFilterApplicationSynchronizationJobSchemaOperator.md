@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/invoke-mgfilterapplicationsynchronizationjobschemaoperator
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/invoke-mgfilterapplicationsynchronizationjobschemaoperator
 schema: 2.0.0
 ---
 
-# Invoke-MgFilterApplicationSynchronizationJobSchemaOperator
+# Invoke-MgBetaFilterApplicationSynchronizationJobSchemaOperator
 
 ## SYNOPSIS
 Invoke function filterOperators
@@ -14,14 +14,14 @@ Invoke function filterOperators
 
 ### Filter (Default)
 ```
-Invoke-MgFilterApplicationSynchronizationJobSchemaOperator -ApplicationId <String>
+Invoke-MgBetaFilterApplicationSynchronizationJobSchemaOperator -ApplicationId <String>
  -SynchronizationJobId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FilterViaIdentity
 ```
-Invoke-MgFilterApplicationSynchronizationJobSchemaOperator -InputObject <IApplicationsIdentity> [-Count]
+Invoke-MgBetaFilterApplicationSynchronizationJobSchemaOperator -InputObject <IApplicationsIdentity> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: FilterViaIdentity
 Aliases:
 
@@ -189,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFilterOperatorSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFilterOperatorSchema
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mgcommunicationcallcontentsharingsession
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mgcommunicationcallcontentsharingsession
 schema: 2.0.0
 ---
 
-# New-MgCommunicationCallContentSharingSession
+# New-MgBetaCommunicationCallContentSharingSession
 
 ## SYNOPSIS
 Create new navigation property to contentSharingSessions for communications
@@ -14,25 +14,25 @@ Create new navigation property to contentSharingSessions for communications
 
 ### CreateExpanded (Default)
 ```
-New-MgCommunicationCallContentSharingSession -CallId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaCommunicationCallContentSharingSession -CallId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgCommunicationCallContentSharingSession -CallId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaCommunicationCallContentSharingSession -CallId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgCommunicationCallContentSharingSession -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationCallContentSharingSession -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgCommunicationCallContentSharingSession -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationCallContentSharingSession -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -109,7 +109,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -156,7 +156,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ### System.Collections.Hashtable
 

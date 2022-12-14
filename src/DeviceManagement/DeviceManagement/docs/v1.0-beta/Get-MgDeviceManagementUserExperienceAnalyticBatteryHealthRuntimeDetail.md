@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticbatteryhealthruntimedetail
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticbatteryhealthruntimedetail
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail
+# Get-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail
 
 ## SYNOPSIS
 User Experience Analytics Battery Health Runtime Details
@@ -13,7 +13,7 @@ User Experience Analytics Battery Health Runtime Details
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthRuntimeDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthRuntimeDetails
 
 ## NOTES
 

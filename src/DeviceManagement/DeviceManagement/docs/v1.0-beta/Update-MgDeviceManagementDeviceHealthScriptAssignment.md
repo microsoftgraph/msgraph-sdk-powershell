@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdevicehealthscriptassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdevicehealthscriptassignment
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceHealthScriptAssignment
+# Update-MgBetaDeviceManagementDeviceHealthScriptAssignment
 
 ## SYNOPSIS
 Update the navigation property assignments in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property assignments in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptAssignmentId <String>
+Update-MgBetaDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptAssignmentId <String>
  -DeviceHealthScriptId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-RunRemediationScript]
  [-RunSchedule <IMicrosoftGraphDeviceHealthScriptRunSchedule>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptAssignm
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptAssignmentId <String>
+Update-MgBetaDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptAssignmentId <String>
  -DeviceHealthScriptId <String> -BodyParameter <IMicrosoftGraphDeviceHealthScriptAssignment> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceHealthScriptAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceHealthScriptAssignment -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceHealthScriptAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceHealthScriptAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceHealthScriptAssignment -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-RunRemediationScript]
  [-RunSchedule <IMicrosoftGraphDeviceHealthScriptRunSchedule>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
@@ -71,7 +71,7 @@ Contains properties used to assign a device management script to a group.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptAssignment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ Base type of Device health script run schedule.
 To construct, please use Get-Help -Online and see NOTES section for RUNSCHEDULE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptRunSchedule
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptRunSchedule
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -242,9 +242,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptAssignment
 
 ## OUTPUTS
 

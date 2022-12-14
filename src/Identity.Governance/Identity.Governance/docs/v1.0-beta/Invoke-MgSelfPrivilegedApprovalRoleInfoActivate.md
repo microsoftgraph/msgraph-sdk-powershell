@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgselfprivilegedapprovalroleinfoactivate
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgselfprivilegedapprovalroleinfoactivate
 schema: 2.0.0
 ---
 
-# Invoke-MgSelfPrivilegedApprovalRoleInfoActivate
+# Invoke-MgBetaSelfPrivilegedApprovalRoleInfoActivate
 
 ## SYNOPSIS
 Activate the role that is assigned to the requester.
@@ -14,28 +14,28 @@ Activate the role that is assigned to the requester.
 
 ### SelfExpanded (Default)
 ```
-Invoke-MgSelfPrivilegedApprovalRoleInfoActivate -PrivilegedApprovalId <String>
+Invoke-MgBetaSelfPrivilegedApprovalRoleInfoActivate -PrivilegedApprovalId <String>
  [-AdditionalProperties <Hashtable>] [-Duration <String>] [-Reason <String>] [-TicketNumber <String>]
  [-TicketSystem <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Self
 ```
-Invoke-MgSelfPrivilegedApprovalRoleInfoActivate -PrivilegedApprovalId <String>
+Invoke-MgBetaSelfPrivilegedApprovalRoleInfoActivate -PrivilegedApprovalId <String>
  -BodyParameter <IPathsZs8JlrPrivilegedapprovalIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SelfViaIdentity
 ```
-Invoke-MgSelfPrivilegedApprovalRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
+Invoke-MgBetaSelfPrivilegedApprovalRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPathsZs8JlrPrivilegedapprovalIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SelfViaIdentityExpanded
 ```
-Invoke-MgSelfPrivilegedApprovalRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
+Invoke-MgBetaSelfPrivilegedApprovalRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Duration <String>] [-Reason <String>] [-TicketNumber <String>]
  [-TicketSystem <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZs8JlrPrivilegedapprovalIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsZs8JlrPrivilegedapprovalIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Self, SelfViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SelfViaIdentity, SelfViaIdentityExpanded
 Aliases:
 
@@ -205,13 +205,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsZs8JlrPrivilegedapprovalIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsZs8JlrPrivilegedapprovalIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## NOTES
 

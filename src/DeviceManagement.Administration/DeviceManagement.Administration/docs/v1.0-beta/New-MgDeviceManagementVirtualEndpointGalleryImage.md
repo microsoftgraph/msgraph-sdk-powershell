@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointgalleryimage
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointgalleryimage
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointGalleryImage
+# New-MgBetaDeviceManagementVirtualEndpointGalleryImage
 
 ## SYNOPSIS
 Create new navigation property to galleryImages for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to galleryImages for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointGalleryImage [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceManagementVirtualEndpointGalleryImage [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-EndDate <DateTime>] [-ExpirationDate <DateTime>] [-Id <String>] [-Offer <String>]
  [-OfferDisplayName <String>] [-Publisher <String>] [-RecommendedSku <String>] [-SizeInGb <Int32>]
  [-Sku <String>] [-SkuDisplayName <String>] [-StartDate <DateTime>] [-Status <String>] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgDeviceManagementVirtualEndpointGalleryImage [-AdditionalProperties <Hashta
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointGalleryImage -BodyParameter <IMicrosoftGraphCloudPcGalleryImage>
+New-MgBetaDeviceManagementVirtualEndpointGalleryImage -BodyParameter <IMicrosoftGraphCloudPcGalleryImage>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ cloudPcGalleryImage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
 Parameter Sets: Create
 Aliases:
 
@@ -314,11 +314,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectorysettingtemplate
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectorysettingtemplate
 schema: 2.0.0
 ---
 
-# New-MgDirectorySettingTemplate
+# New-MgBetaDirectorySettingTemplate
 
 ## SYNOPSIS
 Add new entity to directorySettingTemplates
@@ -14,14 +14,14 @@ Add new entity to directorySettingTemplates
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectorySettingTemplate [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
+New-MgBetaDirectorySettingTemplate [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Values <IMicrosoftGraphSettingTemplateValue[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectorySettingTemplate -BodyParameter <IMicrosoftGraphDirectorySettingTemplate> [-Confirm] [-WhatIf]
+New-MgBetaDirectorySettingTemplate -BodyParameter <IMicrosoftGraphDirectorySettingTemplate> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ directorySettingTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
 Parameter Sets: Create
 Aliases:
 
@@ -133,7 +133,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingTemplateValue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingTemplateValue[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -180,11 +180,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryadministrativeunitextension
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectoryadministrativeunitextension
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryAdministrativeUnitExtension
+# Update-MgBetaDirectoryAdministrativeUnitExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in directory
@@ -14,25 +14,25 @@ Update the navigation property extensions in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryAdministrativeUnitExtension -AdministrativeUnitId <String> -ExtensionId <String>
+Update-MgBetaDirectoryAdministrativeUnitExtension -AdministrativeUnitId <String> -ExtensionId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryAdministrativeUnitExtension -AdministrativeUnitId <String> -ExtensionId <String>
+Update-MgBetaDirectoryAdministrativeUnitExtension -AdministrativeUnitId <String> -ExtensionId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryAdministrativeUnitExtension -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryAdministrativeUnitExtension -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryAdministrativeUnitExtension -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryAdministrativeUnitExtension -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### System.Collections.Hashtable
 

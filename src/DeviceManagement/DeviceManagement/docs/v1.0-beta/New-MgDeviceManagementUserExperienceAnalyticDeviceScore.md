@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticdevicescore
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticdevicescore
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticDeviceScore
+# New-MgBetaDeviceManagementUserExperienceAnalyticDeviceScore
 
 ## SYNOPSIS
 Create new navigation property to userExperienceAnalyticsDeviceScores for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userExperienceAnalyticsDeviceScores for device
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticDeviceScore [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementUserExperienceAnalyticDeviceScore [-AdditionalProperties <Hashtable>]
  [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>] [-DeviceName <String>]
  [-EndpointAnalyticsScore <Double>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
  [-Manufacturer <String>] [-Model <String>] [-StartupPerformanceScore <Double>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceScore [-AdditionalProperties <
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticDeviceScore
+New-MgBetaDeviceManagementUserExperienceAnalyticDeviceScore
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -86,7 +86,7 @@ The user experience analytics device scores entity consolidates the various endp
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
 Parameter Sets: Create
 Aliases:
 
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 userExperienceAnalyticsHealthState
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsHealthState
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsHealthState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
 
 ## NOTES
 

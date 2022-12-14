@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/get-mguserdevicememberobject
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/get-mguserdevicememberobject
 schema: 2.0.0
 ---
 
-# Get-MgUserDeviceMemberObject
+# Get-MgBetaUserDeviceMemberObject
 
 ## SYNOPSIS
 Invoke action getMemberObjects
@@ -14,27 +14,27 @@ Invoke action getMemberObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgUserDeviceMemberObject -DeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Get-MgBetaUserDeviceMemberObject -DeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserDeviceMemberObject -DeviceId <String> -UserId <String>
+Get-MgBetaUserDeviceMemberObject -DeviceId <String> -UserId <String>
  -BodyParameter <IPathsPbxybfUsersUserIdDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserDeviceMemberObject -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserDeviceMemberObject -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsPbxybfUsersUserIdDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgUserDeviceMemberObject -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Get-MgBetaUserDeviceMemberObject -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsPbxybfUsersUserIdDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsPbxybfUsersUserIdDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -173,9 +173,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsPbxybfUsersUserIdDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsPbxybfUsersUserIdDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

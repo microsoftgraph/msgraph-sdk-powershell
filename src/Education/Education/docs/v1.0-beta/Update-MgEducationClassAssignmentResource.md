@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationclassassignmentresource
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/update-mgeducationclassassignmentresource
 schema: 2.0.0
 ---
 
-# Update-MgEducationClassAssignmentResource
+# Update-MgBetaEducationClassAssignmentResource
 
 ## SYNOPSIS
 Update the navigation property resources in education
@@ -14,7 +14,7 @@ Update the navigation property resources in education
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgEducationClassAssignmentResource -EducationAssignmentId <String>
+Update-MgBetaEducationClassAssignmentResource -EducationAssignmentId <String>
  -EducationAssignmentResourceId <String> -EducationClassId <String> [-AdditionalProperties <Hashtable>]
  [-DistributeForStudentWork] [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgEducationClassAssignmentResource -EducationAssignmentId <String>
 
 ### Update1
 ```
-Update-MgEducationClassAssignmentResource -EducationAssignmentId <String>
+Update-MgBetaEducationClassAssignmentResource -EducationAssignmentId <String>
  -EducationAssignmentResourceId <String> -EducationClassId <String>
  -BodyParameter <IMicrosoftGraphEducationAssignmentResource> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,14 +30,14 @@ Update-MgEducationClassAssignmentResource -EducationAssignmentId <String>
 
 ### UpdateViaIdentity1
 ```
-Update-MgEducationClassAssignmentResource -InputObject <IEducationIdentity>
+Update-MgBetaEducationClassAssignmentResource -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationAssignmentResource> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgEducationClassAssignmentResource -InputObject <IEducationIdentity>
+Update-MgBetaEducationClassAssignmentResource -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-DistributeForStudentWork] [-Id <String>]
  [-Resource <IMicrosoftGraphEducationResource>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ educationAssignmentResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentResource
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -193,7 +193,7 @@ educationResource
 To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationResource
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -240,9 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentResource
 
 ## OUTPUTS
 

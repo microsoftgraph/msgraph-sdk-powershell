@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/reset-mgeducationsynchronizationprofile
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/reset-mgeducationsynchronizationprofile
 schema: 2.0.0
 ---
 
-# Reset-MgEducationSynchronizationProfile
+# Reset-MgBetaEducationSynchronizationProfile
 
 ## SYNOPSIS
 Reset the sync of a specific school data synchronization profile in the tenant.
@@ -14,13 +14,13 @@ Reset the sync of a specific school data synchronization profile in the tenant.
 
 ### Reset (Default)
 ```
-Reset-MgEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-PassThru] [-Confirm]
+Reset-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Reset-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Reset the sync of a specific school data synchronization profile in the tenant.
 
 ## EXAMPLES
 
-### Example 1: Using the Reset-MgEducationSynchronizationProfile Cmdlet
+### Example 1: Using the Reset-MgBetaEducationSynchronizationProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Reset-MgEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
+Import-Module Microsoft.Graph.Beta.Education
+Reset-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
 ```
 
-This example shows how to use the Reset-MgEducationSynchronizationProfile Cmdlet.
+This example shows how to use the Reset-MgBetaEducationSynchronizationProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

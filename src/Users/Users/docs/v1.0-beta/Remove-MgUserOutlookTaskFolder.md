@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mguseroutlooktaskfolder
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/remove-mguseroutlooktaskfolder
 schema: 2.0.0
 ---
 
-# Remove-MgUserOutlookTaskFolder
+# Remove-MgBetaUserOutlookTaskFolder
 
 ## SYNOPSIS
 Delete navigation property taskFolders for users
@@ -14,13 +14,13 @@ Delete navigation property taskFolders for users
 
 ### Delete (Default)
 ```
-Remove-MgUserOutlookTaskFolder -OutlookTaskFolderId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserOutlookTaskFolder -OutlookTaskFolderId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserOutlookTaskFolder -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserOutlookTaskFolder -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property taskFolders for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserOutlookTaskFolder Cmdlet
+### Example 1: Using the Remove-MgBetaUserOutlookTaskFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Remove-MgUserOutlookTaskFolder -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId
+Remove-MgBetaUserOutlookTaskFolder -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId
 ```
 
-This example shows how to use the Remove-MgUserOutlookTaskFolder Cmdlet.
+This example shows how to use the Remove-MgBetaUserOutlookTaskFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplicationownerbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgapplicationownerbyref
 schema: 2.0.0
 ---
 
-# New-MgApplicationOwnerByRef
+# New-MgBetaApplicationOwnerByRef
 
 ## SYNOPSIS
 Create new navigation property ref to owners for applications
@@ -14,25 +14,25 @@ Create new navigation property ref to owners for applications
 
 ### CreateExpanded1 (Default)
 ```
-New-MgApplicationOwnerByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
+New-MgBetaApplicationOwnerByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgApplicationOwnerByRef -ApplicationId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
+New-MgBetaApplicationOwnerByRef -ApplicationId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgApplicationOwnerByRef -InputObject <IApplicationsIdentity> -BodyParameter <IReferenceCreate> [-PassThru]
+New-MgBetaApplicationOwnerByRef -InputObject <IApplicationsIdentity> -BodyParameter <IReferenceCreate> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgApplicationOwnerByRef -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaApplicationOwnerByRef -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,7 +47,7 @@ Create new navigation property ref to owners for applications
   "@odata.id"= "https://graph.microsoft.com/v1.0/directoryObjects/{075b32dd-edb7-47cf-89ef-f3f733683a3f}"
   }
 
-New-MgApplicationOwnerByRef -ApplicationId 'f6b30057-7095-4e2c-89f8-224149f591b7' -BodyParameter $NewOwner
+New-MgBetaApplicationOwnerByRef -ApplicationId 'f6b30057-7095-4e2c-89f8-224149f591b7' -BodyParameter $NewOwner
 ```
 
 In this example, the first command defines the value for the $NewOwner variable.
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

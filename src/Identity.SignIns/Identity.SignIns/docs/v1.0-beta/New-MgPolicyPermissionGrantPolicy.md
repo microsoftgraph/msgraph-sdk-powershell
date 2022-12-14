@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicypermissiongrantpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicypermissiongrantpolicy
 schema: 2.0.0
 ---
 
-# New-MgPolicyPermissionGrantPolicy
+# New-MgBetaPolicyPermissionGrantPolicy
 
 ## SYNOPSIS
 Creates a permissionGrantPolicy.
@@ -16,7 +16,7 @@ After creating the permission grant policy, you can add include condition sets t
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyPermissionGrantPolicy [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
+New-MgBetaPolicyPermissionGrantPolicy [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Excludes <IMicrosoftGraphPermissionGrantConditionSet1[]>]
  [-Id <String>] [-Includes <IMicrosoftGraphPermissionGrantConditionSet1[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -24,7 +24,7 @@ New-MgPolicyPermissionGrantPolicy [-AdditionalProperties <Hashtable>] [-DeletedD
 
 ### Create
 ```
-New-MgPolicyPermissionGrantPolicy -BodyParameter <IMicrosoftGraphPermissionGrantPolicy1> [-Confirm] [-WhatIf]
+New-MgBetaPolicyPermissionGrantPolicy -BodyParameter <IMicrosoftGraphPermissionGrantPolicy1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -37,8 +37,8 @@ After creating the permission grant policy, you can add include condition sets t
 
 ### Example 1: Create a permission grant policy
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
-New-MgPolicyPermissionGrantPolicy -Id "testtenant-sampleapp-permissions" -Description "Permissions for sample app in test tenant" -DisplayName "Sample app permissions" | fl
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+New-MgBetaPolicyPermissionGrantPolicy -Id "testtenant-sampleapp-permissions" -Description "Permissions for sample app in test tenant" -DisplayName "Sample app permissions" | fl
 
 DeletedDateTime      :
 Description          : Permissions for sample app in test tenant
@@ -50,7 +50,7 @@ AdditionalProperties : {[@odata.context, https://graph.microsoft.com/v1.0/$metad
 ```
 
 This command creates a new permission grant policy in Azure AD.
-Specific include and exclude configurations can be created using the `New-MgPolicyPermissionGrantPolicyInclude` and `New-MgPolicyPermissionGrantPolicyExclude` cmdlets.
+Specific include and exclude configurations can be created using the `New-MgBetaPolicyPermissionGrantPolicyInclude` and `New-MgBetaPolicyPermissionGrantPolicyExclude` cmdlets.
 
 ## PARAMETERS
 
@@ -74,7 +74,7 @@ permissionGrantPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
 Parameter Sets: Create
 Aliases:
 
@@ -139,7 +139,7 @@ Automatically expanded on GET.
 To construct, please use Get-Help -Online and see NOTES section for EXCLUDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -172,7 +172,7 @@ Automatically expanded on GET.
 To construct, please use Get-Help -Online and see NOTES section for INCLUDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -219,11 +219,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
 
 ## NOTES
 

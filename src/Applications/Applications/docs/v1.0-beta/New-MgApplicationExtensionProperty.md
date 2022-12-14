@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplicationextensionproperty
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgapplicationextensionproperty
 schema: 2.0.0
 ---
 
-# New-MgApplicationExtensionProperty
+# New-MgBetaApplicationExtensionProperty
 
 ## SYNOPSIS
 Create a new directory extension definition, represented by an extensionProperty object.
@@ -14,7 +14,7 @@ Create a new directory extension definition, represented by an extensionProperty
 
 ### CreateExpanded (Default)
 ```
-New-MgApplicationExtensionProperty -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaApplicationExtensionProperty -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
  [-IsSyncedFromOnPremises] [-Name <String>] [-TargetObjects <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgApplicationExtensionProperty -ApplicationId <String> [-AdditionalPropertie
 
 ### Create
 ```
-New-MgApplicationExtensionProperty -ApplicationId <String> -BodyParameter <IMicrosoftGraphExtensionProperty>
+New-MgBetaApplicationExtensionProperty -ApplicationId <String> -BodyParameter <IMicrosoftGraphExtensionProperty>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationExtensionProperty -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphExtensionProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
  [-IsSyncedFromOnPremises] [-Name <String>] [-TargetObjects <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -45,9 +45,9 @@ Create a new directory extension definition, represented by an extensionProperty
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgApplicationExtensionProperty Cmdlet
+### Example 1: Using the New-MgBetaApplicationExtensionProperty Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	Name = "jobGroup"
 	DataType = "String"
@@ -55,10 +55,10 @@ $params = @{
 		"User"
 	)
 }
-New-MgApplicationExtensionProperty -ApplicationId $applicationId -BodyParameter $params
+New-MgBetaApplicationExtensionProperty -ApplicationId $applicationId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgApplicationExtensionProperty Cmdlet.
+This example shows how to use the New-MgBetaApplicationExtensionProperty Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -114,7 +114,7 @@ extensionProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtensionProperty
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -278,13 +278,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtensionProperty
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtensionProperty
 
 ## NOTES
 

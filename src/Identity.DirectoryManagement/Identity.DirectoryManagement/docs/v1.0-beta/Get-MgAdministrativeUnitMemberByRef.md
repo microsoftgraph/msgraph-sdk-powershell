@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgadministrativeunitmemberbyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgadministrativeunitmemberbyref
 schema: 2.0.0
 ---
 
-# Get-MgAdministrativeUnitMemberByRef
+# Get-MgBetaAdministrativeUnitMemberByRef
 
 ## SYNOPSIS
 Users and groups that are members of this administrative unit.
@@ -14,7 +14,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgAdministrativeUnitMemberByRef -AdministrativeUnitId <String> [-Filter <String>] [-Search <String>]
+Get-MgBetaAdministrativeUnitMemberByRef -AdministrativeUnitId <String> [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```

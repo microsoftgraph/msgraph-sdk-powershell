@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticregressionsummarymanufacturerregression
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticregressionsummarymanufacturerregression
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression
+# New-MgBetaDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression
 
 ## SYNOPSIS
 Create new navigation property to manufacturerRegression for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to manufacturerRegression for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression
+New-MgBetaDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Unit <String>] [-Value <Double>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression
+New-MgBetaDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsMetric> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ The user experience analytics metric contains the score and units of a metric of
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric
 Parameter Sets: Create
 Aliases:
 
@@ -145,11 +145,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric
 
 ## NOTES
 

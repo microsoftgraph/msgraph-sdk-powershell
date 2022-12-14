@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdeviceusagerights
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdeviceusagerights
 schema: 2.0.0
 ---
 
-# Get-MgDeviceUsageRights
+# Get-MgBetaDeviceUsageRights
 
 ## SYNOPSIS
 Represents the usage rights a device has been granted.
@@ -14,20 +14,20 @@ Represents the usage rights a device has been granted.
 
 ### List (Default)
 ```
-Get-MgDeviceUsageRights -DeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceUsageRights -DeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceUsageRights -DeviceId <String> -UsageRightId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceUsageRights -DeviceId <String> -UsageRightId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Represents the usage rights a device has been granted.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceUsageRights Cmdlet
+### Example 1: Using the Get-MgBetaDeviceUsageRights Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDeviceUsageRights -DeviceId $deviceId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDeviceUsageRights -DeviceId $deviceId
 ```
 
-This example shows how to use the Get-MgDeviceUsageRights Cmdlet.
+This example shows how to use the Get-MgBetaDeviceUsageRights Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgDeviceUsageRights Cmdlet
+### Example 2: Using the Get-MgBetaDeviceUsageRights Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDeviceUsageRights -DeviceId $deviceId -Filter "state in ('active', 'suspended') and serviceIdentifier in ('ABCD')" 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDeviceUsageRights -DeviceId $deviceId -Filter "state in ('active', 'suspended') and serviceIdentifier in ('ABCD')" 
 ```
 
-This example shows how to use the Get-MgDeviceUsageRights Cmdlet.
+This example shows how to use the Get-MgBetaDeviceUsageRights Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 
 ## NOTES
 

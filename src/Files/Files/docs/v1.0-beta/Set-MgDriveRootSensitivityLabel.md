@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/set-mgdriverootsensitivitylabel
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/set-mgdriverootsensitivitylabel
 schema: 2.0.0
 ---
 
-# Set-MgDriveRootSensitivityLabel
+# Set-MgBetaDriveRootSensitivityLabel
 
 ## SYNOPSIS
 Invoke action assignSensitivityLabel
@@ -14,28 +14,28 @@ Invoke action assignSensitivityLabel
 
 ### AssignExpanded (Default)
 ```
-Set-MgDriveRootSensitivityLabel -DriveId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaDriveRootSensitivityLabel -DriveId <String> [-AdditionalProperties <Hashtable>]
  [-AssignmentMethod <String>] [-JustificationText <String>] [-SensitivityLabelId <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgDriveRootSensitivityLabel -DriveId <String>
+Set-MgBetaDriveRootSensitivityLabel -DriveId <String>
  -BodyParameter <IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDriveRootSensitivityLabel -InputObject <IFilesIdentity>
+Set-MgBetaDriveRootSensitivityLabel -InputObject <IFilesIdentity>
  -BodyParameter <IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDriveRootSensitivityLabel -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaDriveRootSensitivityLabel -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignmentMethod <String>] [-JustificationText <String>] [-SensitivityLabelId <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -205,9 +205,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

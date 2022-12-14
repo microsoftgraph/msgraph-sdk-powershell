@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mguseronenotesectiongroupsection
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mguseronenotesectiongroupsection
 schema: 2.0.0
 ---
 
-# Get-MgUserOnenoteSectionGroupSection
+# Get-MgBetaUserOnenoteSectionGroupSection
 
 ## SYNOPSIS
 Retrieve a list of onenoteSection objects from the specified section group.
@@ -13,7 +13,7 @@ Retrieve a list of onenoteSection objects from the specified section group.
 ## SYNTAX
 
 ```
-Get-MgUserOnenoteSectionGroupSection -SectionGroupId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserOnenoteSectionGroupSection -SectionGroupId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,14 +23,14 @@ Retrieve a list of onenoteSection objects from the specified section group.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOnenoteSectionGroupSection Cmdlet
+### Example 1: Using the Get-MgBetaUserOnenoteSectionGroupSection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteSectionGroupSection -UserId $userId -SectionGroupId $sectionGroupId
+Get-MgBetaUserOnenoteSectionGroupSection -UserId $userId -SectionGroupId $sectionGroupId
 ```
 
-This example shows how to use the Get-MgUserOnenoteSectionGroupSection Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteSectionGroupSection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -223,7 +223,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteSection1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteSection1
 
 ## NOTES
 

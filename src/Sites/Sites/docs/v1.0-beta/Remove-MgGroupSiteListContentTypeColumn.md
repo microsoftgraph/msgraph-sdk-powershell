@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mggroupsitelistcontenttypecolumn
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/remove-mggroupsitelistcontenttypecolumn
 schema: 2.0.0
 ---
 
-# Remove-MgGroupSiteListContentTypeColumn
+# Remove-MgBetaGroupSiteListContentTypeColumn
 
 ## SYNOPSIS
 Delete navigation property columns for groups
@@ -14,13 +14,13 @@ Delete navigation property columns for groups
 
 ### Delete1 (Default)
 ```
-Remove-MgGroupSiteListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String> -GroupId <String>
+Remove-MgBetaGroupSiteListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String> -GroupId <String>
  -ListId <String> -SiteId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgGroupSiteListContentTypeColumn -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaGroupSiteListContentTypeColumn -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -188,7 +188,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

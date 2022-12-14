@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mggroupdriveitemversioncontent
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mggroupdriveitemversioncontent
 schema: 2.0.0
 ---
 
-# Get-MgGroupDriveItemVersionContent
+# Get-MgBetaGroupDriveItemVersionContent
 
 ## SYNOPSIS
 Get content for the navigation property versions from groups
@@ -14,13 +14,13 @@ Get content for the navigation property versions from groups
 
 ### Get1 (Default)
 ```
-Get-MgGroupDriveItemVersionContent -DriveId <String> -DriveItemId <String> -DriveItemVersionId <String>
+Get-MgBetaGroupDriveItemVersionContent -DriveId <String> -DriveItemId <String> -DriveItemVersionId <String>
  -GroupId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupDriveItemVersionContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaGroupDriveItemVersionContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

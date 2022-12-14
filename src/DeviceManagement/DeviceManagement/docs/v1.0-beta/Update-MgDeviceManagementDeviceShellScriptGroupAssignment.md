@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdeviceshellscriptgroupassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdeviceshellscriptgroupassignment
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceShellScriptGroupAssignment
+# Update-MgBetaDeviceManagementDeviceShellScriptGroupAssignment
 
 ## SYNOPSIS
 Update the navigation property groupAssignments in deviceManagement
@@ -14,28 +14,28 @@ Update the navigation property groupAssignments in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceShellScriptGroupAssignment -DeviceManagementScriptGroupAssignmentId <String>
+Update-MgBetaDeviceManagementDeviceShellScriptGroupAssignment -DeviceManagementScriptGroupAssignmentId <String>
  -DeviceShellScriptId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetGroupId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceShellScriptGroupAssignment -DeviceManagementScriptGroupAssignmentId <String>
+Update-MgBetaDeviceManagementDeviceShellScriptGroupAssignment -DeviceManagementScriptGroupAssignmentId <String>
  -DeviceShellScriptId <String> -BodyParameter <IMicrosoftGraphDeviceManagementScriptGroupAssignment>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceShellScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceShellScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementScriptGroupAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceShellScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceShellScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetGroupId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Contains properties used to assign a device management script to a group.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -206,9 +206,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
 
 ## OUTPUTS
 

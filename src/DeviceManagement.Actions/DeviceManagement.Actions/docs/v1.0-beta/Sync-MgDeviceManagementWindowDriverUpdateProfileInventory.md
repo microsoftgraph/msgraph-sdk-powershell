@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/sync-mgdevicemanagementwindowdriverupdateprofileinventory
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/sync-mgdevicemanagementwindowdriverupdateprofileinventory
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceManagementWindowDriverUpdateProfileInventory
+# Sync-MgBetaDeviceManagementWindowDriverUpdateProfileInventory
 
 ## SYNOPSIS
 Sync the driver inventory of a WindowsDriverUpdateProfile.
@@ -14,13 +14,13 @@ Sync the driver inventory of a WindowsDriverUpdateProfile.
 
 ### Sync (Default)
 ```
-Sync-MgDeviceManagementWindowDriverUpdateProfileInventory -WindowsDriverUpdateProfileId <String> [-PassThru]
+Sync-MgBetaDeviceManagementWindowDriverUpdateProfileInventory -WindowsDriverUpdateProfileId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SyncViaIdentity
 ```
-Sync-MgDeviceManagementWindowDriverUpdateProfileInventory -InputObject <IDeviceManagementActionsIdentity>
+Sync-MgBetaDeviceManagementWindowDriverUpdateProfileInventory -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: SyncViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

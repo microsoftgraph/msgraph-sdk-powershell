@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/invoke-mgpostponedirectoryrecommendationimpactedresource
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/invoke-mgpostponedirectoryrecommendationimpactedresource
 schema: 2.0.0
 ---
 
-# Invoke-MgPostponeDirectoryRecommendationImpactedResource
+# Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource
 
 ## SYNOPSIS
 Invoke action postpone
@@ -14,14 +14,14 @@ Invoke action postpone
 
 ### PostponeExpanded (Default)
 ```
-Invoke-MgPostponeDirectoryRecommendationImpactedResource -RecommendationId <String>
+Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource -RecommendationId <String>
  -RecommendationResourceId <String> [-AdditionalProperties <Hashtable>] [-PostponeUntilDateTime <DateTime>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Postpone
 ```
-Invoke-MgPostponeDirectoryRecommendationImpactedResource -RecommendationId <String>
+Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource -RecommendationId <String>
  -RecommendationResourceId <String>
  -BodyParameter <IPathsU2678MDirectoryRecommendationsRecommendationIdImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,14 +29,14 @@ Invoke-MgPostponeDirectoryRecommendationImpactedResource -RecommendationId <Stri
 
 ### PostponeViaIdentity
 ```
-Invoke-MgPostponeDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
+Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPathsU2678MDirectoryRecommendationsRecommendationIdImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PostponeViaIdentityExpanded
 ```
-Invoke-MgPostponeDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
+Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-PostponeUntilDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsU2678MDirectoryRecommendationsRecommendationIdImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsU2678MDirectoryRecommendationsRecommendationIdImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Postpone, PostponeViaIdentity
 Aliases:
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: PostponeViaIdentity, PostponeViaIdentityExpanded
 Aliases:
 
@@ -176,13 +176,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsU2678MDirectoryRecommendationsRecommendationIdImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsU2678MDirectoryRecommendationsRecommendationIdImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 
 ## NOTES
 

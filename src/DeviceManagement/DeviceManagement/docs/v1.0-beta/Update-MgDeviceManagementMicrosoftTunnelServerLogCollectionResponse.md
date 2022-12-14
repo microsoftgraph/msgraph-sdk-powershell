@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementmicrosofttunnelserverlogcollectionresponse
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementmicrosofttunnelserverlogcollectionresponse
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
+# Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
 
 ## SYNOPSIS
 Update the navigation property microsoftTunnelServerLogCollectionResponses in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property microsoftTunnelServerLogCollectionResponses in de
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
+Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
  -MicrosoftTunnelServerLogCollectionResponseId <String> [-AdditionalProperties <Hashtable>]
  [-EndDateTime <DateTime>] [-ExpiryDateTime <DateTime>] [-Id <String>] [-RequestDateTime <DateTime>]
  [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
 
 ### Update
 ```
-Update-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
+Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
  -MicrosoftTunnelServerLogCollectionResponseId <String>
  -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -31,14 +31,14 @@ Update-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>] [-ExpiryDateTime <DateTime>] [-Id <String>]
  [-RequestDateTime <DateTime>] [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
  [-Status <MicrosoftTunnelLogCollectionStatus>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -71,7 +71,7 @@ Entity that stores the server log collection status.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 Enum type that represent the status of log collection
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MicrosoftTunnelLogCollectionStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.MicrosoftTunnelLogCollectionStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -285,9 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
 
 ## OUTPUTS
 

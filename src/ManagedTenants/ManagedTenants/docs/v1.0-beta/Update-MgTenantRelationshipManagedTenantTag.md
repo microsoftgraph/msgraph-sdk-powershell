@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenanttag
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenanttag
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantTag
+# Update-MgBetaTenantRelationshipManagedTenantTag
 
 ## SYNOPSIS
 Update the navigation property tenantTags in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property tenantTags in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantTag -TenantTagId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaTenantRelationshipManagedTenantTag -TenantTagId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastActionByUserId <String>]
  [-LastActionDateTime <DateTime>] [-Tenants <IMicrosoftGraphManagedTenantsTenantInfo[]>] [-PassThru]
@@ -23,19 +23,19 @@ Update-MgTenantRelationshipManagedTenantTag -TenantTagId <String> [-AdditionalPr
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantTag -TenantTagId <String>
+Update-MgBetaTenantRelationshipManagedTenantTag -TenantTagId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsTenantTag> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantTag -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantTag -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsTenantTag> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantTag -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantTag -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
@@ -47,17 +47,17 @@ Update the navigation property tenantTags in tenantRelationships
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgTenantRelationshipManagedTenantTag Cmdlet
+### Example 1: Using the Update-MgBetaTenantRelationshipManagedTenantTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
+Import-Module Microsoft.Graph.Beta.ManagedTenants
 $params = @{
 	DisplayName = "Onboarding"
 	Description = "Tenants that we are currently onboarding"
 }
-Update-MgTenantRelationshipManagedTenantTag -TenantTagId $tenantTagId -BodyParameter $params
+Update-MgBetaTenantRelationshipManagedTenantTag -TenantTagId $tenantTagId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgTenantRelationshipManagedTenantTag Cmdlet.
+This example shows how to use the Update-MgBetaTenantRelationshipManagedTenantTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -82,7 +82,7 @@ tenantTag
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -199,7 +199,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -265,7 +265,7 @@ Optional.
 To construct, please use Get-Help -Online and see NOTES section for TENANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantInfo[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -327,9 +327,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
 
 ## OUTPUTS
 

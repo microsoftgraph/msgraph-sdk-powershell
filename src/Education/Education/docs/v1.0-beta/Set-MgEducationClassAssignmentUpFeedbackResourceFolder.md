@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationclassassignmentupfeedbackresourcefolder
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/set-mgeducationclassassignmentupfeedbackresourcefolder
 schema: 2.0.0
 ---
 
-# Set-MgEducationClassAssignmentUpFeedbackResourceFolder
+# Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder
 
 ## SYNOPSIS
 Create a SharePoint folder to upload feedback files for a given educationSubmission.
@@ -15,13 +15,13 @@ The teacher determines the resources to upload in the feedback resources folder 
 
 ### Set1 (Default)
 ```
-Set-MgEducationClassAssignmentUpFeedbackResourceFolder -EducationAssignmentId <String>
+Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder -EducationAssignmentId <String>
  -EducationClassId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgEducationClassAssignmentUpFeedbackResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,15 +31,15 @@ The teacher determines the resources to upload in the feedback resources folder 
 
 ## EXAMPLES
 
-### Example 1: Using the Set-MgEducationClassAssignmentUpFeedbackResourceFolder Cmdlet
+### Example 1: Using the Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 }
-Set-MgEducationClassAssignmentUpFeedbackResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
 
-This example shows how to use the Set-MgEducationClassAssignmentUpFeedbackResourceFolder Cmdlet.
+This example shows how to use the Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: SetViaIdentity1
 Aliases:
 
@@ -126,11 +126,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

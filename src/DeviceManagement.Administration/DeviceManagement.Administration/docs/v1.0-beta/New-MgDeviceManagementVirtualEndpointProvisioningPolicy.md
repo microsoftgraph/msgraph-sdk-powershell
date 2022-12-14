@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointprovisioningpolicy
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointprovisioningpolicy
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointProvisioningPolicy
+# New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy
 
 ## SYNOPSIS
 Create a new cloudPcProvisioningPolicy object.
@@ -14,7 +14,7 @@ Create a new cloudPcProvisioningPolicy object.
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointProvisioningPolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy [-AdditionalProperties <Hashtable>]
  [-AlternateResourceUrl <String>] [-Assignments <IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]>]
  [-CloudPcGroupDisplayName <String>] [-Description <String>] [-DisplayName <String>]
  [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-GracePeriodInHours <Int32>]
@@ -26,7 +26,7 @@ New-MgDeviceManagementVirtualEndpointProvisioningPolicy [-AdditionalProperties <
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointProvisioningPolicy
+New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy
  -BodyParameter <IMicrosoftGraphCloudPcProvisioningPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -35,11 +35,11 @@ Create a new cloudPcProvisioningPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet
+### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcProvisioningPolicy"
+	"@odata.type" = "#Microsoft.Graph.Beta.cloudPcProvisioningPolicy"
 	Description = "Description value"
 	DisplayName = "Display Name value"
 	DomainJoinConfiguration = @{
@@ -55,10 +55,10 @@ $params = @{
 		Language = "en-US"
 	}
 }
-New-MgDeviceManagementVirtualEndpointProvisioningPolicy -BodyParameter $params
+New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet.
+This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -102,7 +102,7 @@ See an example of getting the assignments relationship.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -118,7 +118,7 @@ cloudPcProvisioningPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
 Parameter Sets: Create
 Aliases:
 
@@ -180,7 +180,7 @@ cloudPcDomainJoinConfiguration
 To construct, please use Get-Help -Online and see NOTES section for DOMAINJOINCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcDomainJoinConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcDomainJoinConfiguration
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -309,7 +309,7 @@ microsoftManagedDesktop
 To construct, please use Get-Help -Online and see NOTES section for MICROSOFTMANAGEDDESKTOP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftManagedDesktop
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftManagedDesktop
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -356,7 +356,7 @@ cloudPcWindowsSettings
 To construct, please use Get-Help -Online and see NOTES section for WINDOWSSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcWindowsSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcWindowsSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -403,11 +403,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
 
 ## NOTES
 

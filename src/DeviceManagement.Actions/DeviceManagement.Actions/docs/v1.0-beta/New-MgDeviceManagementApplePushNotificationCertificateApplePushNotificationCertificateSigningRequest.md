@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementapplepushnotificationcertificateapplepushnotificationcertificatesigningrequest
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementapplepushnotificationcertificateapplepushnotificationcertificatesigningrequest
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest
+# New-MgBetaDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest
 
 ## SYNOPSIS
 Download Apple push notification certificate signing request
@@ -13,7 +13,7 @@ Download Apple push notification certificate signing request
 ## SYNTAX
 
 ```
-New-MgDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest
+New-MgBetaDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 

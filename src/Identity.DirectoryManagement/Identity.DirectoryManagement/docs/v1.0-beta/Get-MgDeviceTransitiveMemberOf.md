@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevicetransitivememberof
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdevicetransitivememberof
 schema: 2.0.0
 ---
 
-# Get-MgDeviceTransitiveMemberOf
+# Get-MgBetaDeviceTransitiveMemberOf
 
 ## SYNOPSIS
 Groups and administrative units that this device is a member of.
@@ -16,20 +16,20 @@ Supports $expand.
 
 ### List1 (Default)
 ```
-Get-MgDeviceTransitiveMemberOf -DeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceTransitiveMemberOf -DeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgDeviceTransitiveMemberOf -DeviceId <String> -DirectoryObjectId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceTransitiveMemberOf -DeviceId <String> -DirectoryObjectId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgDeviceTransitiveMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDeviceTransitiveMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -40,13 +40,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceTransitiveMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaDeviceTransitiveMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDeviceTransitiveMemberOf -DeviceId $deviceId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDeviceTransitiveMemberOf -DeviceId $deviceId
 ```
 
-This example shows how to use the Get-MgDeviceTransitiveMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaDeviceTransitiveMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -269,11 +269,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

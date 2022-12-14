@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantalertemailnotification
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantalertemailnotification
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantAlertEmailNotification
+# Get-MgBetaTenantRelationshipManagedTenantAlertEmailNotification
 
 ## SYNOPSIS
 Get emailNotifications from tenantRelationships
@@ -14,21 +14,21 @@ Get emailNotifications from tenantRelationships
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantAlertEmailNotification -ManagedTenantAlertId <String>
+Get-MgBetaTenantRelationshipManagedTenantAlertEmailNotification -ManagedTenantAlertId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantAlertEmailNotification -ManagedTenantAlertId <String>
+Get-MgBetaTenantRelationshipManagedTenantAlertEmailNotification -ManagedTenantAlertId <String>
  -ManagedTenantEmailNotificationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantAlertEmailNotification -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantAlertEmailNotification -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -241,11 +241,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
 
 ## NOTES
 

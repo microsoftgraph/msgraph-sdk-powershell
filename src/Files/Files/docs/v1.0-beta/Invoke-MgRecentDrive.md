@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/invoke-mgrecentdrive
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/invoke-mgrecentdrive
 schema: 2.0.0
 ---
 
-# Invoke-MgRecentDrive
+# Invoke-MgBetaRecentDrive
 
 ## SYNOPSIS
 Invoke function recent
@@ -14,13 +14,13 @@ Invoke function recent
 
 ### Recent (Default)
 ```
-Invoke-MgRecentDrive -DriveId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Invoke-MgBetaRecentDrive -DriveId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### RecentViaIdentity
 ```
-Invoke-MgRecentDrive -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Invoke-MgBetaRecentDrive -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: RecentViaIdentity
 Aliases:
 
@@ -172,11 +172,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/set-mggroupdriveitemcontent
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/set-mggroupdriveitemcontent
 schema: 2.0.0
 ---
 
-# Set-MgGroupDriveItemContent
+# Set-MgBetaGroupDriveItemContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,13 +14,13 @@ The content stream, if the item represents a file.
 
 ### Set1 (Default)
 ```
-Set-MgGroupDriveItemContent -DriveId <String> -DriveItemId <String> -GroupId <String> -InFile <String>
+Set-MgBetaGroupDriveItemContent -DriveId <String> -DriveItemId <String> -GroupId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgGroupDriveItemContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaGroupDriveItemContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: SetViaIdentity1
 Aliases:
 
@@ -175,7 +175,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### System.IO.Stream
 

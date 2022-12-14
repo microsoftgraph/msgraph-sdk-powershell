@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanyunitofmeasure
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanyunitofmeasure
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyUnitOfMeasure
+# New-MgBetaFinancialCompanyUnitOfMeasure
 
 ## SYNOPSIS
 Create new navigation property to unitsOfMeasure for financials
@@ -14,26 +14,26 @@ Create new navigation property to unitsOfMeasure for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyUnitOfMeasure -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
+New-MgBetaFinancialCompanyUnitOfMeasure -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
  [-DisplayName <String>] [-Id <String>] [-InternationalStandardCode <String>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -BodyParameter <IMicrosoftGraphUnitOfMeasure>
+New-MgBetaFinancialCompanyUnitOfMeasure -CompanyId <String> -BodyParameter <IMicrosoftGraphUnitOfMeasure>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphUnitOfMeasure> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-InternationalStandardCode <String>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ unitOfMeasure
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -219,13 +219,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/invoke-mgmarkserviceannouncementmessageunread
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/invoke-mgmarkserviceannouncementmessageunread
 schema: 2.0.0
 ---
 
-# Invoke-MgMarkServiceAnnouncementMessageUnread
+# Invoke-MgBetaMarkServiceAnnouncementMessageUnread
 
 ## SYNOPSIS
 Mark a list of serviceUpdateMessages as **unread** for the signed in user.
@@ -14,13 +14,13 @@ Mark a list of serviceUpdateMessages as **unread** for the signed in user.
 
 ### MarkExpanded (Default)
 ```
-Invoke-MgMarkServiceAnnouncementMessageUnread [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
+Invoke-MgBetaMarkServiceAnnouncementMessageUnread [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Mark
 ```
-Invoke-MgMarkServiceAnnouncementMessageUnread
+Invoke-MgBetaMarkServiceAnnouncementMessageUnread
  -BodyParameter <IPathsX0Td2HAdminServiceannouncementMessagesMicrosoftGraphMarkunreadPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,19 +30,19 @@ Mark a list of serviceUpdateMessages as **unread** for the signed in user.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgMarkServiceAnnouncementMessageUnread Cmdlet
+### Example 1: Using the Invoke-MgBetaMarkServiceAnnouncementMessageUnread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 $params = @{
 	MessageIds = @(
 		"MC172851"
 		"MC167983"
 	)
 }
-Invoke-MgMarkServiceAnnouncementMessageUnread -BodyParameter $params
+Invoke-MgBetaMarkServiceAnnouncementMessageUnread -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgMarkServiceAnnouncementMessageUnread Cmdlet.
+This example shows how to use the Invoke-MgBetaMarkServiceAnnouncementMessageUnread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsX0Td2HAdminServiceannouncementMessagesMicrosoftGraphMarkunreadPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsX0Td2HAdminServiceannouncementMessagesMicrosoftGraphMarkunreadPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Mark
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsX0Td2HAdminServiceannouncementMessagesMicrosoftGraphMarkunreadPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsX0Td2HAdminServiceannouncementMessagesMicrosoftGraphMarkunreadPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

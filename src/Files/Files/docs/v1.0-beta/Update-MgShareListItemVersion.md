@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/update-mgsharelistitemversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/update-mgsharelistitemversion
 schema: 2.0.0
 ---
 
-# Update-MgShareListItemVersion
+# Update-MgBetaShareListItemVersion
 
 ## SYNOPSIS
 Update the navigation property versions in shares
@@ -14,7 +14,7 @@ Update the navigation property versions in shares
 
 ### UpdateExpanded3 (Default)
 ```
-Update-MgShareListItemVersion -ListItemVersionId <String> -SharedDriveItemId <String>
+Update-MgBetaShareListItemVersion -ListItemVersionId <String> -SharedDriveItemId <String>
  [-AdditionalProperties <Hashtable>] [-Fields <Hashtable>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-Publication <IMicrosoftGraphPublicationFacet>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgShareListItemVersion -ListItemVersionId <String> -SharedDriveItemId <St
 
 ### Update2
 ```
-Update-MgShareListItemVersion -ListItemId <String> -ListItemVersionId <String> -SharedDriveItemId <String>
+Update-MgBetaShareListItemVersion -ListItemId <String> -ListItemVersionId <String> -SharedDriveItemId <String>
  -BodyParameter <IMicrosoftGraphListItemVersion> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update3
 ```
-Update-MgShareListItemVersion -ListItemVersionId <String> -SharedDriveItemId <String>
+Update-MgBetaShareListItemVersion -ListItemVersionId <String> -SharedDriveItemId <String>
  -BodyParameter <IMicrosoftGraphListItemVersion> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded2
 ```
-Update-MgShareListItemVersion -ListItemId <String> -ListItemVersionId <String> -SharedDriveItemId <String>
+Update-MgBetaShareListItemVersion -ListItemId <String> -ListItemVersionId <String> -SharedDriveItemId <String>
  [-AdditionalProperties <Hashtable>] [-Fields <Hashtable>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-Publication <IMicrosoftGraphPublicationFacet>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -42,19 +42,19 @@ Update-MgShareListItemVersion -ListItemId <String> -ListItemVersionId <String> -
 
 ### UpdateViaIdentity2
 ```
-Update-MgShareListItemVersion -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphListItemVersion>
+Update-MgBetaShareListItemVersion -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphListItemVersion>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity3
 ```
-Update-MgShareListItemVersion -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphListItemVersion>
+Update-MgBetaShareListItemVersion -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphListItemVersion>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded2
 ```
-Update-MgShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Fields <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -62,7 +62,7 @@ Update-MgShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperti
 
 ### UpdateViaIdentityExpanded3
 ```
-Update-MgShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Fields <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -95,7 +95,7 @@ listItemVersion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItemVersion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItemVersion
 Parameter Sets: Update2, Update3, UpdateViaIdentity2, UpdateViaIdentity3
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UpdateViaIdentity2, UpdateViaIdentity3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
 Aliases:
 
@@ -158,7 +158,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
 Aliases:
 
@@ -235,7 +235,7 @@ publicationFacet
 To construct, please use Get-Help -Online and see NOTES section for PUBLICATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublicationFacet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublicationFacet
 Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
 Aliases:
 
@@ -297,9 +297,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItemVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItemVersion
 
 ## OUTPUTS
 

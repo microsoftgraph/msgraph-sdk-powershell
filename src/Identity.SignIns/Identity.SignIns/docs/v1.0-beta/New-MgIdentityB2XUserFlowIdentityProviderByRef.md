@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityb2xuserflowidentityproviderbyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityb2xuserflowidentityproviderbyref
 schema: 2.0.0
 ---
 
-# New-MgIdentityB2XUserFlowIdentityProviderByRef
+# New-MgBetaIdentityB2XUserFlowIdentityProviderByRef
 
 ## SYNOPSIS
 Create new navigation property ref to userFlowIdentityProviders for identity
@@ -14,25 +14,25 @@ Create new navigation property ref to userFlowIdentityProviders for identity
 
 ### CreateExpanded1 (Default)
 ```
-New-MgIdentityB2XUserFlowIdentityProviderByRef -B2XIdentityUserFlowId <String>
+New-MgBetaIdentityB2XUserFlowIdentityProviderByRef -B2XIdentityUserFlowId <String>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgIdentityB2XUserFlowIdentityProviderByRef -B2XIdentityUserFlowId <String>
+New-MgBetaIdentityB2XUserFlowIdentityProviderByRef -B2XIdentityUserFlowId <String>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgIdentityB2XUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
+New-MgBetaIdentityB2XUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgIdentityB2XUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
+New-MgBetaIdentityB2XUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -94,7 +94,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -171,9 +171,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

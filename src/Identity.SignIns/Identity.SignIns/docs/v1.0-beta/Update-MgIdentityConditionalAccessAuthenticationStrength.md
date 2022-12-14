@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityconditionalaccessauthenticationstrength
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityconditionalaccessauthenticationstrength
 schema: 2.0.0
 ---
 
-# Update-MgIdentityConditionalAccessAuthenticationStrength
+# Update-MgBetaIdentityConditionalAccessAuthenticationStrength
 
 ## SYNOPSIS
 Update the navigation property authenticationStrengths in identity
@@ -14,7 +14,7 @@ Update the navigation property authenticationStrengths in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityConditionalAccessAuthenticationStrength [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityConditionalAccessAuthenticationStrength [-AdditionalProperties <Hashtable>]
  [-AuthenticationCombinations <String[]>]
  [-AuthenticationMethodModes <IMicrosoftGraphAuthenticationMethodModeDetail[]>] [-Id <String>]
  [-Policies <IMicrosoftGraphAuthenticationStrengthPolicy[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgIdentityConditionalAccessAuthenticationStrength [-AdditionalProperties 
 
 ### Update
 ```
-Update-MgIdentityConditionalAccessAuthenticationStrength
+Update-MgBetaIdentityConditionalAccessAuthenticationStrength
  -BodyParameter <IMicrosoftGraphAuthenticationStrengthRoot> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -70,7 +70,7 @@ Names and descriptions of all valid authentication method modes in the system.
 To construct, please use Get-Help -Online and see NOTES section for AUTHENTICATIONMETHODMODES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ authenticationStrengthRoot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
 Parameter Sets: Update
 Aliases:
 
@@ -133,7 +133,7 @@ A collection of authentication strength policies that exist for this tenant, inc
 To construct, please use Get-Help -Online and see NOTES section for POLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthPolicy[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthPolicy[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
 
 ## OUTPUTS
 

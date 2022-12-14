@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgunbinddevicemanagementandroidforworksetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgunbinddevicemanagementandroidforworksetting
 schema: 2.0.0
 ---
 
-# Invoke-MgUnbindDeviceManagementAndroidForWorkSetting
+# Invoke-MgBetaUnbindDeviceManagementAndroidForWorkSetting
 
 ## SYNOPSIS
 Invoke action unbind
@@ -13,7 +13,7 @@ Invoke action unbind
 ## SYNTAX
 
 ```
-Invoke-MgUnbindDeviceManagementAndroidForWorkSetting [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaUnbindDeviceManagementAndroidForWorkSetting [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

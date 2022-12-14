@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprivilegedrolesetting
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgprivilegedrolesetting
 schema: 2.0.0
 ---
 
-# Update-MgPrivilegedRoleSetting
+# Update-MgBetaPrivilegedRoleSetting
 
 ## SYNOPSIS
 Update the role settings for the given role setting.
@@ -15,7 +15,7 @@ A privilegedRoleSettings object will be returned.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPrivilegedRoleSetting -PrivilegedRoleId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPrivilegedRoleSetting -PrivilegedRoleId <String> [-AdditionalProperties <Hashtable>]
  [-ApprovalOnElevation] [-ApproverIds <String[]>] [-ElevationDuration <TimeSpan>] [-Id <String>]
  [-IsMfaOnElevationConfigurable] [-LastGlobalAdmin] [-MaxElavationDuration <TimeSpan>] [-MfaOnElevation]
  [-MinElevationDuration <TimeSpan>] [-NotificationToUserOnElevation] [-TicketingInfoOnElevation] [-PassThru]
@@ -24,19 +24,19 @@ Update-MgPrivilegedRoleSetting -PrivilegedRoleId <String> [-AdditionalProperties
 
 ### Update
 ```
-Update-MgPrivilegedRoleSetting -PrivilegedRoleId <String>
+Update-MgBetaPrivilegedRoleSetting -PrivilegedRoleId <String>
  -BodyParameter <IMicrosoftGraphPrivilegedRoleSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPrivilegedRoleSetting -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedRoleSetting -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphPrivilegedRoleSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPrivilegedRoleSetting -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPrivilegedRoleSetting -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-ApprovalOnElevation] [-ApproverIds <String[]>] [-ElevationDuration <TimeSpan>] [-Id <String>]
  [-IsMfaOnElevationConfigurable] [-LastGlobalAdmin] [-MaxElavationDuration <TimeSpan>] [-MfaOnElevation]
  [-MinElevationDuration <TimeSpan>] [-NotificationToUserOnElevation] [-TicketingInfoOnElevation] [-PassThru]
@@ -102,7 +102,7 @@ privilegedRoleSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -335,9 +335,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
 
 ## OUTPUTS
 

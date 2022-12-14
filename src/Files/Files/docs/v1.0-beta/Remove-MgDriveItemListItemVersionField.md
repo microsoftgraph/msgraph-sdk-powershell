@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/remove-mgdriveitemlistitemversionfield
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/remove-mgdriveitemlistitemversionfield
 schema: 2.0.0
 ---
 
-# Remove-MgDriveItemListItemVersionField
+# Remove-MgBetaDriveItemListItemVersionField
 
 ## SYNOPSIS
 Delete navigation property fields for drives
@@ -14,13 +14,13 @@ Delete navigation property fields for drives
 
 ### Delete (Default)
 ```
-Remove-MgDriveItemListItemVersionField -DriveId <String> -DriveItemId <String> -ListItemVersionId <String>
+Remove-MgBetaDriveItemListItemVersionField -DriveId <String> -DriveItemId <String> -ListItemVersionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDriveItemListItemVersionField -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaDriveItemListItemVersionField -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

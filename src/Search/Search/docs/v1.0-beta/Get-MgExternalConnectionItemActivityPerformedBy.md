@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternalconnectionitemactivityperformedby
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/get-mgexternalconnectionitemactivityperformedby
 schema: 2.0.0
 ---
 
-# Get-MgExternalConnectionItemActivityPerformedBy
+# Get-MgBetaExternalConnectionItemActivityPerformedBy
 
 ## SYNOPSIS
 Represents an identity used to identify who is responsible for the activity.
@@ -14,13 +14,13 @@ Represents an identity used to identify who is responsible for the activity.
 
 ### Get (Default)
 ```
-Get-MgExternalConnectionItemActivityPerformedBy -ExternalActivityId <String> -ExternalConnectionId <String>
+Get-MgBetaExternalConnectionItemActivityPerformedBy -ExternalActivityId <String> -ExternalConnectionId <String>
  -ExternalItemId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgExternalConnectionItemActivityPerformedBy -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaExternalConnectionItemActivityPerformedBy -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
 
 ## NOTES
 

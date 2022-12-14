@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/new-mguserdrivelistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/new-mguserdrivelistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# New-MgUserDriveListItemDocumentSetVersion
+# New-MgBetaUserDriveListItemDocumentSetVersion
 
 ## SYNOPSIS
 Create a new version of a document set item in a list.
@@ -14,7 +14,7 @@ Create a new version of a document set item in a list.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserDriveListItemDocumentSetVersion -DriveId <String> -ListItemId <String> -UserId <String>
+New-MgBetaUserDriveListItemDocumentSetVersion -DriveId <String> -ListItemId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Fields <Hashtable>] [-Id <String>]
  [-Items <IMicrosoftGraphDocumentSetVersionItem[]>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -24,19 +24,19 @@ New-MgUserDriveListItemDocumentSetVersion -DriveId <String> -ListItemId <String>
 
 ### Create1
 ```
-New-MgUserDriveListItemDocumentSetVersion -DriveId <String> -ListItemId <String> -UserId <String>
+New-MgBetaUserDriveListItemDocumentSetVersion -DriveId <String> -ListItemId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserDriveListItemDocumentSetVersion -InputObject <IFilesIdentity>
+New-MgBetaUserDriveListItemDocumentSetVersion -InputObject <IFilesIdentity>
  -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Fields <Hashtable>] [-Id <String>] [-Items <IMicrosoftGraphDocumentSetVersionItem[]>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
@@ -71,7 +71,7 @@ documentSetVersion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -102,7 +102,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -179,7 +179,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -195,7 +195,7 @@ Items within the document set that are captured as part of this version.
 To construct, please use Get-Help -Online and see NOTES section for ITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersionItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSetVersionItem[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -211,7 +211,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -258,7 +258,7 @@ publicationFacet
 To construct, please use Get-Help -Online and see NOTES section for PUBLICATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublicationFacet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublicationFacet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -336,13 +336,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
 
 ## NOTES
 

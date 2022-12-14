@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportbrowserdistributionusercount
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportbrowserdistributionusercount
 schema: 2.0.0
 ---
 
-# Get-MgReportBrowserDistributionUserCount
+# Get-MgBetaReportBrowserDistributionUserCount
 
 ## SYNOPSIS
 Invoke function getBrowserDistributionUserCounts
@@ -14,12 +14,12 @@ Invoke function getBrowserDistributionUserCounts
 
 ### Get (Default)
 ```
-Get-MgReportBrowserDistributionUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportBrowserDistributionUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportBrowserDistributionUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportBrowserDistributionUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementroledefinition
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementroledefinition
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementRoleDefinition
+# New-MgBetaDeviceManagementRoleDefinition
 
 ## SYNOPSIS
 Create new navigation property to roleDefinitions for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to roleDefinitions for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementRoleDefinition [-AdditionalProperties <Hashtable>] [-Description <String>]
+New-MgBetaDeviceManagementRoleDefinition [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsBuiltIn] [-IsBuiltInRoleDefinition]
  [-Permissions <IMicrosoftGraphRolePermission1[]>] [-RoleAssignments <IMicrosoftGraphRoleAssignment[]>]
  [-RolePermissions <IMicrosoftGraphRolePermission1[]>] [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgDeviceManagementRoleDefinition [-AdditionalProperties <Hashtable>] [-Descr
 
 ### Create
 ```
-New-MgDeviceManagementRoleDefinition -BodyParameter <IMicrosoftGraphRoleDefinition1> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementRoleDefinition -BodyParameter <IMicrosoftGraphRoleDefinition1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -60,7 +60,7 @@ Create custom roles if you want to define a role that allows any of the availabl
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleDefinition1
 Parameter Sets: Create
 Aliases:
 
@@ -155,7 +155,7 @@ These must match the actionName that is defined as part of the rolePermission.
 To construct, please use Get-Help -Online and see NOTES section for PERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRolePermission1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRolePermission1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -171,7 +171,7 @@ List of Role assignments for this role definition.
 To construct, please use Get-Help -Online and see NOTES section for ROLEASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -188,7 +188,7 @@ These must match the actionName that is defined as part of the rolePermission.
 To construct, please use Get-Help -Online and see NOTES section for ROLEPERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRolePermission1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRolePermission1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleDefinition1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleDefinition1
 
 ## NOTES
 

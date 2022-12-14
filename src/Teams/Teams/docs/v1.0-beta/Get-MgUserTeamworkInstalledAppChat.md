@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mguserteamworkinstalledappchat
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mguserteamworkinstalledappchat
 schema: 2.0.0
 ---
 
-# Get-MgUserTeamworkInstalledAppChat
+# Get-MgBetaUserTeamworkInstalledAppChat
 
 ## SYNOPSIS
 Retrieve the chat of the specified user and Teams app.
@@ -14,13 +14,13 @@ Retrieve the chat of the specified user and Teams app.
 
 ### Get1 (Default)
 ```
-Get-MgUserTeamworkInstalledAppChat -UserId <String> -UserScopeTeamsAppInstallationId <String>
+Get-MgBetaUserTeamworkInstalledAppChat -UserId <String> -UserScopeTeamsAppInstallationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserTeamworkInstalledAppChat -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserTeamworkInstalledAppChat -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Retrieve the chat of the specified user and Teams app.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTeamworkInstalledAppChat Cmdlet
+### Example 1: Using the Get-MgBetaUserTeamworkInstalledAppChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserTeamworkInstalledAppChat -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserTeamworkInstalledAppChat -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
 ```
 
-This example shows how to use the Get-MgUserTeamworkInstalledAppChat Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkInstalledAppChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -121,11 +121,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChat
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChat
 
 ## NOTES
 

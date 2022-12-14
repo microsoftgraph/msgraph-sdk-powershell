@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/confirm-mgriskyserviceprincipalcompromised
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/confirm-mgriskyserviceprincipalcompromised
 schema: 2.0.0
 ---
 
-# Confirm-MgRiskyServicePrincipalCompromised
+# Confirm-MgBetaRiskyServicePrincipalCompromised
 
 ## SYNOPSIS
 Confirm one or more riskyServicePrincipal objects as compromised.
@@ -16,13 +16,13 @@ When the risk level of the service principal is confirmed as compromised, the se
 
 ### ConfirmExpanded (Default)
 ```
-Confirm-MgRiskyServicePrincipalCompromised [-AdditionalProperties <Hashtable>]
+Confirm-MgBetaRiskyServicePrincipalCompromised [-AdditionalProperties <Hashtable>]
  [-ServicePrincipalIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Confirm
 ```
-Confirm-MgRiskyServicePrincipalCompromised
+Confirm-MgBetaRiskyServicePrincipalCompromised
  -BodyParameter <IPaths1858Gl0IdentityprotectionRiskyserviceprincipalsMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -34,18 +34,18 @@ When the risk level of the service principal is confirmed as compromised, the se
 
 ## EXAMPLES
 
-### Example 1: Using the Confirm-MgRiskyServicePrincipalCompromised Cmdlet
+### Example 1: Using the Confirm-MgBetaRiskyServicePrincipalCompromised Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ServicePrincipalIds = @(
 		"9089a539-a539-9089-39a5-899039a58990"
 	)
 }
-Confirm-MgRiskyServicePrincipalCompromised -BodyParameter $params
+Confirm-MgBetaRiskyServicePrincipalCompromised -BodyParameter $params
 ```
 
-This example shows how to use the Confirm-MgRiskyServicePrincipalCompromised Cmdlet.
+This example shows how to use the Confirm-MgBetaRiskyServicePrincipalCompromised Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1858Gl0IdentityprotectionRiskyserviceprincipalsMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1858Gl0IdentityprotectionRiskyserviceprincipalsMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Confirm
 Aliases:
 
@@ -147,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1858Gl0IdentityprotectionRiskyserviceprincipalsMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1858Gl0IdentityprotectionRiskyserviceprincipalsMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

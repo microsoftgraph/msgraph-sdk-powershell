@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityattacksimulation
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecurityattacksimulation
 schema: 2.0.0
 ---
 
-# Get-MgSecurityAttackSimulation
+# Get-MgBetaSecurityAttackSimulation
 
 ## SYNOPSIS
 Represents an attack simulation training campaign in a tenant.
@@ -14,24 +14,24 @@ Represents an attack simulation training campaign in a tenant.
 
 ### Get3 (Default)
 ```
-Get-MgSecurityAttackSimulation [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSecurityAttackSimulation [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityAttackSimulation -SimulationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecurityAttackSimulation -SimulationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityAttackSimulation -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityAttackSimulation -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgSecurityAttackSimulation [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSecurityAttackSimulation [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -41,13 +41,13 @@ Represents an attack simulation training campaign in a tenant.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityAttackSimulation Cmdlet
+### Example 1: Using the Get-MgBetaSecurityAttackSimulation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAttackSimulation
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAttackSimulation
 ```
 
-This example shows how to use the Get-MgSecurityAttackSimulation Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAttackSimulation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -118,7 +118,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -239,13 +239,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttackSimulationRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttackSimulationRoot
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulation
 
 ## NOTES
 

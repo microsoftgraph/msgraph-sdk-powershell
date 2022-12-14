@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/new-mggroupsitelistcontenttypecolumnlink
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/new-mggroupsitelistcontenttypecolumnlink
 schema: 2.0.0
 ---
 
-# New-MgGroupSiteListContentTypeColumnLink
+# New-MgBetaGroupSiteListContentTypeColumnLink
 
 ## SYNOPSIS
 Create new navigation property to columnLinks for groups
@@ -14,26 +14,26 @@ Create new navigation property to columnLinks for groups
 
 ### CreateExpanded1 (Default)
 ```
-New-MgGroupSiteListContentTypeColumnLink -ContentTypeId <String> -GroupId <String> -ListId <String>
+New-MgBetaGroupSiteListContentTypeColumnLink -ContentTypeId <String> -GroupId <String> -ListId <String>
  -SiteId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgGroupSiteListContentTypeColumnLink -ContentTypeId <String> -GroupId <String> -ListId <String>
+New-MgBetaGroupSiteListContentTypeColumnLink -ContentTypeId <String> -GroupId <String> -ListId <String>
  -SiteId <String> -BodyParameter <IMicrosoftGraphColumnLink> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgGroupSiteListContentTypeColumnLink -InputObject <ISitesIdentity>
+New-MgBetaGroupSiteListContentTypeColumnLink -InputObject <ISitesIdentity>
  -BodyParameter <IMicrosoftGraphColumnLink> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgGroupSiteListContentTypeColumnLink -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupSiteListContentTypeColumnLink -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -64,7 +64,7 @@ columnLink
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -218,13 +218,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink
 
 ## NOTES
 

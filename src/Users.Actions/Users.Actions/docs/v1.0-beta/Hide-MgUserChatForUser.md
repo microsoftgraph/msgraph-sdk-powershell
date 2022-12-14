@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/hide-mguserchatforuser
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/hide-mguserchatforuser
 schema: 2.0.0
 ---
 
-# Hide-MgUserChatForUser
+# Hide-MgBetaUserChatForUser
 
 ## SYNOPSIS
 Hide a chat for a user.
@@ -14,28 +14,28 @@ Hide a chat for a user.
 
 ### HideExpanded (Default)
 ```
-Hide-MgUserChatForUser -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Hide-MgBetaUserChatForUser -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Hide
 ```
-Hide-MgUserChatForUser -ChatId <String> -UserId <String>
+Hide-MgBetaUserChatForUser -ChatId <String> -UserId <String>
  -BodyParameter <IPaths39855TUsersUserIdChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### HideViaIdentity
 ```
-Hide-MgUserChatForUser -InputObject <IUsersActionsIdentity>
+Hide-MgBetaUserChatForUser -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths39855TUsersUserIdChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### HideViaIdentityExpanded
 ```
-Hide-MgUserChatForUser -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Hide-MgBetaUserChatForUser -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths39855TUsersUserIdChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths39855TUsersUserIdChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Hide, HideViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: HideViaIdentity, HideViaIdentityExpanded
 Aliases:
 
@@ -144,7 +144,7 @@ teamworkUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for USER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity
 Parameter Sets: HideExpanded, HideViaIdentityExpanded
 Aliases:
 
@@ -206,9 +206,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths39855TUsersUserIdChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths39855TUsersUserIdChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

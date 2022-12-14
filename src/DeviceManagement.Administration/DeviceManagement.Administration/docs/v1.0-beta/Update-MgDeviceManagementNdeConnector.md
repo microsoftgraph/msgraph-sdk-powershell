@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementndeconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementndeconnector
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementNdeConnector
+# Update-MgBetaDeviceManagementNdeConnector
 
 ## SYNOPSIS
 Update the navigation property ndesConnectors in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property ndesConnectors in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementNdeConnector -NdesConnectorId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementNdeConnector -NdesConnectorId <String> [-AdditionalProperties <Hashtable>]
  [-ConnectorVersion <String>] [-DisplayName <String>] [-EnrolledDateTime <DateTime>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-MachineName <String>] [-RoleScopeTagIds <String[]>]
  [-State <NdesConnectorState>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgDeviceManagementNdeConnector -NdesConnectorId <String> [-AdditionalProp
 
 ### Update
 ```
-Update-MgDeviceManagementNdeConnector -NdesConnectorId <String> -BodyParameter <IMicrosoftGraphNdesConnector>
+Update-MgBetaDeviceManagementNdeConnector -NdesConnectorId <String> -BodyParameter <IMicrosoftGraphNdesConnector>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphNdesConnector> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-ConnectorVersion <String>] [-DisplayName <String>]
  [-EnrolledDateTime <DateTime>] [-Id <String>] [-LastConnectionDateTime <DateTime>] [-MachineName <String>]
  [-RoleScopeTagIds <String[]>] [-State <NdesConnectorState>] [-PassThru] [-Confirm] [-WhatIf]
@@ -68,7 +68,7 @@ Entity which represents an OnPrem Ndes connector.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNdesConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNdesConnector
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 The current status of the Ndes Connector.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.NdesConnectorState
+Type: Microsoft.Graph.Beta.PowerShell.Support.NdesConnectorState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -282,9 +282,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNdesConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNdesConnector
 
 ## OUTPUTS
 

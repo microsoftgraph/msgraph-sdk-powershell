@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationclassassignmentcategory
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationclassassignmentcategory
 schema: 2.0.0
 ---
 
-# Remove-MgEducationClassAssignmentCategory
+# Remove-MgBetaEducationClassAssignmentCategory
 
 ## SYNOPSIS
 Delete navigation property assignmentCategories for education
@@ -14,13 +14,13 @@ Delete navigation property assignmentCategories for education
 
 ### Delete (Default)
 ```
-Remove-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
+Remove-MgBetaEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property assignmentCategories for education
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEducationClassAssignmentCategory Cmdlet
+### Example 1: Using the Remove-MgBetaEducationClassAssignmentCategory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
+Import-Module Microsoft.Graph.Beta.Education
+Remove-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
 ```
 
-This example shows how to use the Remove-MgEducationClassAssignmentCategory Cmdlet.
+This example shows how to use the Remove-MgBetaEducationClassAssignmentCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

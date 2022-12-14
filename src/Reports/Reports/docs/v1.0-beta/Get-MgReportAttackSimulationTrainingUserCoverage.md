@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportattacksimulationtrainingusercoverage
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportattacksimulationtrainingusercoverage
 schema: 2.0.0
 ---
 
-# Get-MgReportAttackSimulationTrainingUserCoverage
+# Get-MgBetaReportAttackSimulationTrainingUserCoverage
 
 ## SYNOPSIS
 Invoke function getAttackSimulationTrainingUserCoverage
@@ -13,7 +13,7 @@ Invoke function getAttackSimulationTrainingUserCoverage
 ## SYNTAX
 
 ```
-Get-MgReportAttackSimulationTrainingUserCoverage [-Count] [-Filter <String>] [-Search <String>]
+Get-MgBetaReportAttackSimulationTrainingUserCoverage [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function getAttackSimulationTrainingUserCoverage
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgReportAttackSimulationTrainingUserCoverage Cmdlet
+### Example 1: Using the Get-MgBetaReportAttackSimulationTrainingUserCoverage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportAttackSimulationTrainingUserCoverage
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportAttackSimulationTrainingUserCoverage
 ```
 
-This example shows how to use the Get-MgReportAttackSimulationTrainingUserCoverage Cmdlet.
+This example shows how to use the Get-MgBetaReportAttackSimulationTrainingUserCoverage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -115,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttackSimulationTrainingUserCoverage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttackSimulationTrainingUserCoverage
 
 ## NOTES
 

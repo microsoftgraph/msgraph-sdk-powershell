@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermailfolderchildfolderdelta
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusermailfolderchildfolderdelta
 schema: 2.0.0
 ---
 
-# Get-MgUserMailFolderChildFolderDelta
+# Get-MgBetaUserMailFolderChildFolderDelta
 
 ## SYNOPSIS
 Get a set of mail folders that have been added, deleted, or removed from the user's mailbox.
@@ -16,14 +16,14 @@ This allows you to maintain and synchronize \na local store of a user's mail fol
 
 ### Delta1 (Default)
 ```
-Get-MgUserMailFolderChildFolderDelta -MailFolderId <String> -UserId <String> [-Count] [-Filter <String>]
+Get-MgBetaUserMailFolderChildFolderDelta -MailFolderId <String> -UserId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity1
 ```
-Get-MgUserMailFolderChildFolderDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaUserMailFolderChildFolderDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -72,7 +72,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: DeltaViaIdentity1
 Aliases:
 
@@ -193,11 +193,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailFolder1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailFolder1
 
 ## NOTES
 

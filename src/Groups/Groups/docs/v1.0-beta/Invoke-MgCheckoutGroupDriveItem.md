@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgcheckoutgroupdriveitem
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgcheckoutgroupdriveitem
 schema: 2.0.0
 ---
 
-# Invoke-MgCheckoutGroupDriveItem
+# Invoke-MgBetaCheckoutGroupDriveItem
 
 ## SYNOPSIS
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
@@ -14,13 +14,13 @@ Check out a **driveItem** resource to prevent others from editing the document, 
 
 ### Checkout (Default)
 ```
-Invoke-MgCheckoutGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String> [-PassThru]
+Invoke-MgBetaCheckoutGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckoutViaIdentity
 ```
-Invoke-MgCheckoutGroupDriveItem -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaCheckoutGroupDriveItem -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,12 +31,12 @@ Check out a **driveItem** resource to prevent others from editing the document, 
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Files
+Import-Module Microsoft.Graph.Beta.Files
 
-Invoke-MgCheckoutDriveItem -DriveId $driveId -DriveItemId $driveItemId
+Invoke-MgBetaCheckoutDriveItem -DriveId $driveId -DriveItemId $driveItemId
 ```
 
-This example shows how to use the Invoke-MgCheckoutGroupDriveItem Cmdlet.
+This example shows how to use the Invoke-MgBetaCheckoutGroupDriveItem Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -92,7 +92,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CheckoutViaIdentity
 Aliases:
 
@@ -154,7 +154,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

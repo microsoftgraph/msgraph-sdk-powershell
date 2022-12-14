@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicyactivitybasedtimeoutpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicyactivitybasedtimeoutpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyActivityBasedTimeoutPolicy
+# Remove-MgBetaPolicyActivityBasedTimeoutPolicy
 
 ## SYNOPSIS
 Delete navigation property activityBasedTimeoutPolicies for policies
@@ -14,13 +14,13 @@ Delete navigation property activityBasedTimeoutPolicies for policies
 
 ### Delete (Default)
 ```
-Remove-MgPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId <String> [-IfMatch <String>]
+Remove-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPolicyActivityBasedTimeoutPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaPolicyActivityBasedTimeoutPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property activityBasedTimeoutPolicies for policies
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPolicyActivityBasedTimeoutPolicy Cmdlet
+### Example 1: Using the Remove-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId
 ```
 
-This example shows how to use the Remove-MgPolicyActivityBasedTimeoutPolicy Cmdlet.
+This example shows how to use the Remove-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

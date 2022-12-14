@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementgrouppolicyconfiguration
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementgrouppolicyconfiguration
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementGroupPolicyConfiguration
+# Set-MgBetaDeviceManagementGroupPolicyConfiguration
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,28 +14,28 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementGroupPolicyConfiguration -GroupPolicyConfigurationId <String>
+Set-MgBetaDeviceManagementGroupPolicyConfiguration -GroupPolicyConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphGroupPolicyConfigurationAssignment[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgDeviceManagementGroupPolicyConfiguration -GroupPolicyConfigurationId <String>
+Set-MgBetaDeviceManagementGroupPolicyConfiguration -GroupPolicyConfigurationId <String>
  -BodyParameter <IPathsCbiegtDevicemanagementGrouppolicyconfigurationsGrouppolicyconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementGroupPolicyConfiguration -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementGroupPolicyConfiguration -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsCbiegtDevicemanagementGrouppolicyconfigurationsGrouppolicyconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementGroupPolicyConfiguration -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementGroupPolicyConfiguration -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphGroupPolicyConfigurationAssignment[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsCbiegtDevicemanagementGrouppolicyconfigurationsGrouppolicyconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsCbiegtDevicemanagementGrouppolicyconfigurationsGrouppolicyconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -161,13 +161,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsCbiegtDevicemanagementGrouppolicyconfigurationsGrouppolicyconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsCbiegtDevicemanagementGrouppolicyconfigurationsGrouppolicyconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment
 
 ## NOTES
 

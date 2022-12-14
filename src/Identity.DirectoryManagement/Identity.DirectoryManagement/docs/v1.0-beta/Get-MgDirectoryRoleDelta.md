@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryroledelta
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryroledelta
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryRoleDelta
+# Get-MgBetaDirectoryRoleDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -13,7 +13,7 @@ Invoke function delta
 ## SYNTAX
 
 ```
-Get-MgDirectoryRoleDelta [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+Get-MgBetaDirectoryRoleDelta [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function delta
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDirectoryRoleDelta Cmdlet
+### Example 1: Using the Get-MgBetaDirectoryRoleDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryRoleDelta
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectoryRoleDelta
 ```
 
-This example shows how to use the Get-MgDirectoryRoleDelta Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryRoleDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryRole
 
 ## NOTES
 

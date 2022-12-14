@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityattacksimulationautomation
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityattacksimulationautomation
 schema: 2.0.0
 ---
 
-# Update-MgSecurityAttackSimulationAutomation
+# Update-MgBetaSecurityAttackSimulationAutomation
 
 ## SYNOPSIS
 Update the navigation property simulationAutomations in security
@@ -14,7 +14,7 @@ Update the navigation property simulationAutomations in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityAttackSimulationAutomation -SimulationAutomationId <String>
+Update-MgBetaSecurityAttackSimulationAutomation -SimulationAutomationId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphEmailIdentity>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphEmailIdentity>] [-LastModifiedDateTime <DateTime>]
@@ -25,19 +25,19 @@ Update-MgSecurityAttackSimulationAutomation -SimulationAutomationId <String>
 
 ### Update
 ```
-Update-MgSecurityAttackSimulationAutomation -SimulationAutomationId <String>
+Update-MgBetaSecurityAttackSimulationAutomation -SimulationAutomationId <String>
  -BodyParameter <IMicrosoftGraphSimulationAutomation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSimulationAutomation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphEmailIdentity>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphEmailIdentity>] [-LastModifiedDateTime <DateTime>]
@@ -73,7 +73,7 @@ simulationAutomation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulationAutomation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -89,7 +89,7 @@ emailIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -183,7 +183,7 @@ emailIdentity
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ A collection of simulation automation runs.
 To construct, please use Get-Help -Online and see NOTES section for RUNS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomationRun[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulationAutomationRun[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -336,9 +336,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulationAutomation
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

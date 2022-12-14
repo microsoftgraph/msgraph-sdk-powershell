@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgdriveitemcontent
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgdriveitemcontent
 schema: 2.0.0
 ---
 
-# Get-MgDriveItemContent
+# Get-MgBetaDriveItemContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,13 +14,13 @@ The content stream, if the item represents a file.
 
 ### Get (Default)
 ```
-Get-MgDriveItemContent -DriveId <String> -DriveItemId <String> -OutFile <String> [-PassThru]
+Get-MgBetaDriveItemContent -DriveId <String> -DriveItemId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +65,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -111,7 +111,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

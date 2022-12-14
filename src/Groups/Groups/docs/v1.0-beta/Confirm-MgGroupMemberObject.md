@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/confirm-mggroupmemberobject
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/confirm-mggroupmemberobject
 schema: 2.0.0
 ---
 
-# Confirm-MgGroupMemberObject
+# Confirm-MgBetaGroupMemberObject
 
 ## SYNOPSIS
 Invoke action checkMemberObjects
@@ -14,27 +14,27 @@ Invoke action checkMemberObjects
 
 ### CheckExpanded (Default)
 ```
-Confirm-MgGroupMemberObject -GroupId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm]
+Confirm-MgBetaGroupMemberObject -GroupId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check
 ```
-Confirm-MgGroupMemberObject -GroupId <String>
+Confirm-MgBetaGroupMemberObject -GroupId <String>
  -BodyParameter <IPathsV0V4JhGroupsGroupIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity
 ```
-Confirm-MgGroupMemberObject -InputObject <IGroupsIdentity>
+Confirm-MgBetaGroupMemberObject -InputObject <IGroupsIdentity>
  -BodyParameter <IPathsV0V4JhGroupsGroupIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentityExpanded
 ```
-Confirm-MgGroupMemberObject -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Confirm-MgBetaGroupMemberObject -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsV0V4JhGroupsGroupIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsV0V4JhGroupsGroupIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
 Aliases:
 
@@ -158,9 +158,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsV0V4JhGroupsGroupIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsV0V4JhGroupsGroupIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

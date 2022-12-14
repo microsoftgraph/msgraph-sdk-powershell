@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mguserscopedrolememberof
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mguserscopedrolememberof
 schema: 2.0.0
 ---
 
-# Get-MgUserScopedRoleMemberOf
+# Get-MgBetaUserScopedRoleMemberOf
 
 ## SYNOPSIS
 The scoped-role administrative unit memberships for this user.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserScopedRoleMemberOf -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserScopedRoleMemberOf -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserScopedRoleMemberOf -ScopedRoleMembershipId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserScopedRoleMemberOf -ScopedRoleMembershipId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserScopedRoleMemberOf -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserScopedRoleMemberOf -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,14 +40,14 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserScopedRoleMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaUserScopedRoleMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 # A UPN can also be used as -UserId.
-Get-MgUserScopedRoleMemberOf -UserId $userId
+Get-MgBetaUserScopedRoleMemberOf -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserScopedRoleMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaUserScopedRoleMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -118,7 +118,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -254,11 +254,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
 ## NOTES
 

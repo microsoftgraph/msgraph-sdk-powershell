@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggroupthreadpostinreplytoextension
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/update-mggroupthreadpostinreplytoextension
 schema: 2.0.0
 ---
 
-# Update-MgGroupThreadPostInReplyToExtension
+# Update-MgBetaGroupThreadPostInReplyToExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in groups
@@ -14,27 +14,27 @@ Update the navigation property extensions in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupThreadPostInReplyToExtension -ConversationThreadId <String> -ExtensionId <String>
+Update-MgBetaGroupThreadPostInReplyToExtension -ConversationThreadId <String> -ExtensionId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupThreadPostInReplyToExtension -ConversationThreadId <String> -ExtensionId <String>
+Update-MgBetaGroupThreadPostInReplyToExtension -ConversationThreadId <String> -ExtensionId <String>
  -GroupId <String> -PostId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupThreadPostInReplyToExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable>
+Update-MgBetaGroupThreadPostInReplyToExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupThreadPostInReplyToExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupThreadPostInReplyToExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -141,7 +141,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -218,7 +218,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ### System.Collections.Hashtable
 

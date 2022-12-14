@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantwindowprotectionstate
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantwindowprotectionstate
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantWindowProtectionState
+# Update-MgBetaTenantRelationshipManagedTenantWindowProtectionState
 
 ## SYNOPSIS
 Update the navigation property windowsProtectionStates in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property windowsProtectionStates in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantWindowProtectionState -WindowsProtectionStateId <String>
+Update-MgBetaTenantRelationshipManagedTenantWindowProtectionState -WindowsProtectionStateId <String>
  [-AdditionalProperties <Hashtable>] [-AntiMalwareVersion <String>] [-AttentionRequired] [-DeviceDeleted]
  [-DevicePropertyRefreshDateTime <DateTime>] [-EngineVersion <String>] [-FullScanOverdue] [-FullScanRequired]
  [-Id <String>] [-LastFullScanDateTime <DateTime>] [-LastFullScanSignatureVersion <String>]
@@ -28,21 +28,21 @@ Update-MgTenantRelationshipManagedTenantWindowProtectionState -WindowsProtection
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantWindowProtectionState -WindowsProtectionStateId <String>
+Update-MgBetaTenantRelationshipManagedTenantWindowProtectionState -WindowsProtectionStateId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsWindowsProtectionState> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantWindowProtectionState -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantWindowProtectionState -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsWindowsProtectionState> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantWindowProtectionState -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantWindowProtectionState -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-AntiMalwareVersion <String>] [-AttentionRequired] [-DeviceDeleted]
  [-DevicePropertyRefreshDateTime <DateTime>] [-EngineVersion <String>] [-FullScanOverdue] [-FullScanRequired]
  [-Id <String>] [-LastFullScanDateTime <DateTime>] [-LastFullScanSignatureVersion <String>]
@@ -115,7 +115,7 @@ windowsProtectionState
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -232,7 +232,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -615,9 +615,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
 
 ## OUTPUTS
 

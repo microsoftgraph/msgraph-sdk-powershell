@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontactfoldercontactextension
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/get-mgusercontactfoldercontactextension
 schema: 2.0.0
 ---
 
-# Get-MgUserContactFolderContactExtension
+# Get-MgBetaUserContactFolderContactExtension
 
 ## SYNOPSIS
 The collection of open extensions defined for the contact.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserContactFolderContactExtension -ContactFolderId <String> -ContactId <String> -UserId <String>
+Get-MgBetaUserContactFolderContactExtension -ContactFolderId <String> -ContactId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserContactFolderContactExtension -ContactFolderId <String> -ContactId <String> -ExtensionId <String>
+Get-MgBetaUserContactFolderContactExtension -ContactFolderId <String> -ContactId <String> -ExtensionId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserContactFolderContactExtension -InputObject <IPersonalContactsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserContactFolderContactExtension -InputObject <IPersonalContactsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension
 
 ### System.String
 

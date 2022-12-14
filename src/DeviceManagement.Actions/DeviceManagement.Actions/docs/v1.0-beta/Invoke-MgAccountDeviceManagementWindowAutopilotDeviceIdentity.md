@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgaccountdevicemanagementwindowautopilotdeviceidentity
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgaccountdevicemanagementwindowautopilotdeviceidentity
 schema: 2.0.0
 ---
 
-# Invoke-MgAccountDeviceManagementWindowAutopilotDeviceIdentity
+# Invoke-MgBetaAccountDeviceManagementWindowAutopilotDeviceIdentity
 
 ## SYNOPSIS
 Unassigns the resource account from an Autopilot device.
@@ -14,13 +14,13 @@ Unassigns the resource account from an Autopilot device.
 
 ### Account (Default)
 ```
-Invoke-MgAccountDeviceManagementWindowAutopilotDeviceIdentity -WindowsAutopilotDeviceIdentityId <String>
+Invoke-MgBetaAccountDeviceManagementWindowAutopilotDeviceIdentity -WindowsAutopilotDeviceIdentityId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AccountViaIdentity
 ```
-Invoke-MgAccountDeviceManagementWindowAutopilotDeviceIdentity -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaAccountDeviceManagementWindowAutopilotDeviceIdentity -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AccountViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

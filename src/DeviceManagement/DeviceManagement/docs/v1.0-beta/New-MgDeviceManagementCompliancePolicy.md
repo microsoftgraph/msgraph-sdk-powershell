@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementcompliancepolicy
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementcompliancepolicy
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementCompliancePolicy
+# New-MgBetaDeviceManagementCompliancePolicy
 
 ## SYNOPSIS
 Create new navigation property to compliancePolicies for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to compliancePolicies for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementCompliancePolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementCompliancePolicy [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreationSource <String>]
  [-Description <String>] [-Id <String>] [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-RoleScopeTagIds <String[]>]
@@ -25,7 +25,7 @@ New-MgDeviceManagementCompliancePolicy [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementCompliancePolicy -BodyParameter <IMicrosoftGraphDeviceManagementCompliancePolicy>
+New-MgBetaDeviceManagementCompliancePolicy -BodyParameter <IMicrosoftGraphDeviceManagementCompliancePolicy>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ Policy assignments
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ Device Management Compliance Policy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementCompliancePolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementCompliancePolicy
 Parameter Sets: Create
 Aliases:
 
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 Supported platform types.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationPlatforms
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationPlatforms
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ The list of scheduled action for this rule
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULEDACTIONSFORRULE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ Policy settings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 Describes which technology this setting can be deployed with
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationTechnologies
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationTechnologies
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementCompliancePolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementCompliancePolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementCompliancePolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementCompliancePolicy
 
 ## NOTES
 

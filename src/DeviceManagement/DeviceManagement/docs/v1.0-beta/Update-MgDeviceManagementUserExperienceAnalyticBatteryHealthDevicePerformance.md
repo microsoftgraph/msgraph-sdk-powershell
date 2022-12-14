@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthdeviceperformance
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthdeviceperformance
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
+# Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsBatteryHealthDevicePerformance in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsBatteryHealthDevicePerform
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
  -UserExperienceAnalyticsBatteryHealthDevicePerformanceId <String> [-AdditionalProperties <Hashtable>]
  [-BatteryAgeInDays <Int32>] [-DeviceBatteryHealthScore <Int32>] [-DeviceId <String>] [-DeviceName <String>]
  [-EstimatedRuntimeInMinutes <Int32>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
@@ -24,7 +24,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
  -UserExperienceAnalyticsBatteryHealthDevicePerformanceId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDevicePerformance> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -32,7 +32,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDevicePerformance> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -40,7 +40,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-BatteryAgeInDays <Int32>]
  [-DeviceBatteryHealthScore <Int32>] [-DeviceId <String>] [-DeviceName <String>]
  [-EstimatedRuntimeInMinutes <Int32>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
@@ -92,7 +92,7 @@ The user experience analytics battery health device performance entity contains 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDevicePerformance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDevicePerformance
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 userExperienceAnalyticsHealthState
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsHealthState
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsHealthState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -203,7 +203,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -327,9 +327,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDevicePerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDevicePerformance
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityuserflowattribute
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityuserflowattribute
 schema: 2.0.0
 ---
 
-# New-MgIdentityUserFlowAttribute
+# New-MgBetaIdentityUserFlowAttribute
 
 ## SYNOPSIS
 Create a new identityUserFlowAttribute object.
@@ -14,14 +14,14 @@ Create a new identityUserFlowAttribute object.
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityUserFlowAttribute [-AdditionalProperties <Hashtable>] [-DataType <String>]
+New-MgBetaIdentityUserFlowAttribute [-AdditionalProperties <Hashtable>] [-DataType <String>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-UserFlowAttributeType <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityUserFlowAttribute -BodyParameter <IMicrosoftGraphIdentityUserFlowAttribute> [-Confirm] [-WhatIf]
+New-MgBetaIdentityUserFlowAttribute -BodyParameter <IMicrosoftGraphIdentityUserFlowAttribute> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,18 +30,18 @@ Create a new identityUserFlowAttribute object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityUserFlowAttribute Cmdlet
+### Example 1: Using the New-MgBetaIdentityUserFlowAttribute Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "Hobby"
 	Description = "Your hobby"
 	DataType = "string"
 }
-New-MgIdentityUserFlowAttribute -BodyParameter $params
+New-MgBetaIdentityUserFlowAttribute -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityUserFlowAttribute Cmdlet.
+This example shows how to use the New-MgBetaIdentityUserFlowAttribute Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -66,7 +66,7 @@ identityUserFlowAttribute
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
 Parameter Sets: Create
 Aliases:
 
@@ -189,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
 
 ## NOTES
 

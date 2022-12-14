@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/new-mguserdeviceextension
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/new-mguserdeviceextension
 schema: 2.0.0
 ---
 
-# New-MgUserDeviceExtension
+# New-MgBetaUserDeviceExtension
 
 ## SYNOPSIS
 Create new navigation property to extensions for users
@@ -14,25 +14,25 @@ Create new navigation property to extensions for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserDeviceExtension -DeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserDeviceExtension -DeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserDeviceExtension -DeviceId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaUserDeviceExtension -DeviceId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserDeviceExtension -InputObject <ICrossDeviceExperiencesIdentity> -BodyParameter <Hashtable> [-Confirm]
+New-MgBetaUserDeviceExtension -InputObject <ICrossDeviceExperiencesIdentity> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserDeviceExtension -InputObject <ICrossDeviceExperiencesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserDeviceExtension -InputObject <ICrossDeviceExperiencesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -109,7 +109,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -171,7 +171,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ### System.Collections.Hashtable
 

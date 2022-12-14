@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgtrustframework
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgtrustframework
 schema: 2.0.0
 ---
 
-# Get-MgTrustFramework
+# Get-MgBetaTrustFramework
 
 ## SYNOPSIS
 Get trustFramework
@@ -13,7 +13,7 @@ Get trustFramework
 ## SYNTAX
 
 ```
-Get-MgTrustFramework [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaTrustFramework [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFramework
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFramework
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgorganizationbrandinglocalization
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgorganizationbrandinglocalization
 schema: 2.0.0
 ---
 
-# New-MgOrganizationBrandingLocalization
+# New-MgBetaOrganizationBrandingLocalization
 
 ## SYNOPSIS
 Create a new organizationalBrandingLocalization object.
@@ -18,7 +18,7 @@ To retrieve the default branding, see Get branding.
 
 ### CreateExpanded (Default)
 ```
-New-MgOrganizationBrandingLocalization -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaOrganizationBrandingLocalization -OrganizationId <String> [-AdditionalProperties <Hashtable>]
  [-BackgroundColor <String>] [-BackgroundImageInputFile <String>] [-BackgroundImageRelativeUrl <String>]
  [-BannerLogoInputFile <String>] [-BannerLogoRelativeUrl <String>] [-CdnList <String[]>]
  [-CustomAccountResetCredentialsUrl <String>] [-CustomCannotAccessYourAccountText <String>]
@@ -36,19 +36,19 @@ New-MgOrganizationBrandingLocalization -OrganizationId <String> [-AdditionalProp
 
 ### Create
 ```
-New-MgOrganizationBrandingLocalization -OrganizationId <String> -BodyParameter <Hashtable> [-Confirm]
+New-MgBetaOrganizationBrandingLocalization -OrganizationId <String> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-BackgroundColor <String>] [-BackgroundImageInputFile <String>]
  [-BackgroundImageRelativeUrl <String>] [-BannerLogoInputFile <String>] [-BannerLogoRelativeUrl <String>]
  [-CdnList <String[]>] [-CustomAccountResetCredentialsUrl <String>]
@@ -74,18 +74,18 @@ To retrieve the default branding, see Get branding.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgOrganizationBrandingLocalization Cmdlet
+### Example 1: Using the New-MgBetaOrganizationBrandingLocalization Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	BackgroundColor = "#00000F"
 	Id = "fr-FR"
 	SignInPageText = " "
 }
-New-MgOrganizationBrandingLocalization -OrganizationId $organizationId -BodyParameter $params
+New-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgOrganizationBrandingLocalization Cmdlet.
+This example shows how to use the New-MgBetaOrganizationBrandingLocalization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -494,7 +494,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -510,7 +510,7 @@ loginPageLayoutConfiguration
 To construct, please use Get-Help -Online and see NOTES section for LOGINPAGELAYOUTCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLoginPageLayoutConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLoginPageLayoutConfiguration
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -526,7 +526,7 @@ loginPageTextVisibilitySettings
 To construct, please use Get-Help -Online and see NOTES section for LOGINPAGETEXTVISIBILITYSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLoginPageTextVisibilitySettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLoginPageTextVisibilitySettings
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -687,13 +687,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### System.Collections.Hashtable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationalBrandingLocalization1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganizationalBrandingLocalization1
 
 ## NOTES
 

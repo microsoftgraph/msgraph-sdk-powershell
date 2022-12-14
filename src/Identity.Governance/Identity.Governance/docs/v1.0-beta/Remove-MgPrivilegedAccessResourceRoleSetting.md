@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgprivilegedaccessresourcerolesetting
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgprivilegedaccessresourcerolesetting
 schema: 2.0.0
 ---
 
-# Remove-MgPrivilegedAccessResourceRoleSetting
+# Remove-MgBetaPrivilegedAccessResourceRoleSetting
 
 ## SYNOPSIS
 Delete navigation property roleSettings for privilegedAccess
@@ -14,13 +14,13 @@ Delete navigation property roleSettings for privilegedAccess
 
 ### Delete (Default)
 ```
-Remove-MgPrivilegedAccessResourceRoleSetting -GovernanceResourceId <String> -GovernanceRoleSettingId <String>
+Remove-MgBetaPrivilegedAccessResourceRoleSetting -GovernanceResourceId <String> -GovernanceRoleSettingId <String>
  -PrivilegedAccessId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPrivilegedAccessResourceRoleSetting -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
+Remove-MgBetaPrivilegedAccessResourceRoleSetting -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

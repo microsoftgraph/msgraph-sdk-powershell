@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementcompliancepolicyscheduledactionforrulescheduledactionconfiguration
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementcompliancepolicyscheduledactionforrulescheduledactionconfiguration
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
+# Get-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
 
 ## SYNOPSIS
 The list of scheduled action configurations for this compliance policy.
@@ -15,7 +15,7 @@ This collection can contain a maximum of 100 elements.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
+Get-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
  -DeviceManagementCompliancePolicyId <String> -DeviceManagementComplianceScheduledActionForRuleId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -23,7 +23,7 @@ Get-MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfi
 
 ### Get
 ```
-Get-MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
+Get-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
  -DeviceManagementComplianceActionItemId <String> -DeviceManagementCompliancePolicyId <String>
  -DeviceManagementComplianceScheduledActionForRuleId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -31,7 +31,7 @@ Get-MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfi
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
+Get-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
  -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceActionItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceActionItem
 
 ## NOTES
 

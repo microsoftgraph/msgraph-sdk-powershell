@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/restore-mgusercloudpc
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/restore-mgusercloudpc
 schema: 2.0.0
 ---
 
-# Restore-MgUserCloudPc
+# Restore-MgBetaUserCloudPc
 
 ## SYNOPSIS
 Restore a specific Cloud PC.
@@ -15,27 +15,27 @@ Use this API to trigger a remote action that restores a Cloud PC device to a pre
 
 ### RestoreExpanded (Default)
 ```
-Restore-MgUserCloudPc -CloudPcId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Restore-MgBetaUserCloudPc -CloudPcId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-CloudPcSnapshotId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Restore
 ```
-Restore-MgUserCloudPc -CloudPcId <String> -UserId <String>
+Restore-MgBetaUserCloudPc -CloudPcId <String> -UserId <String>
  -BodyParameter <IPathsDqlywlUsersUserIdCloudpcsCloudpcIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgUserCloudPc -InputObject <IUsersActionsIdentity>
+Restore-MgBetaUserCloudPc -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsDqlywlUsersUserIdCloudpcsCloudpcIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentityExpanded
 ```
-Restore-MgUserCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Restore-MgBetaUserCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-CloudPcSnapshotId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsDqlywlUsersUserIdCloudpcsCloudpcIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsDqlywlUsersUserIdCloudpcsCloudpcIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Restore, RestoreViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: RestoreViaIdentity, RestoreViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsDqlywlUsersUserIdCloudpcsCloudpcIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsDqlywlUsersUserIdCloudpcsCloudpcIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

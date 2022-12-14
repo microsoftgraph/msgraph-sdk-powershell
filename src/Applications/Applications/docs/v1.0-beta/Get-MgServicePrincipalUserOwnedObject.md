@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipaluserownedobject
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipaluserownedobject
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalUserOwnedObject
+# Get-MgBetaServicePrincipalUserOwnedObject
 
 ## SYNOPSIS
 Invoke action getUserOwnedObjects
@@ -14,13 +14,13 @@ Invoke action getUserOwnedObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgServicePrincipalUserOwnedObject [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>]
+Get-MgBetaServicePrincipalUserOwnedObject [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServicePrincipalUserOwnedObject
+Get-MgBetaServicePrincipalUserOwnedObject
  -BodyParameter <IPaths1Ob0K0NServiceprincipalsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Ob0K0NServiceprincipalsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ob0K0NServiceprincipalsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Ob0K0NServiceprincipalsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ob0K0NServiceprincipalsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

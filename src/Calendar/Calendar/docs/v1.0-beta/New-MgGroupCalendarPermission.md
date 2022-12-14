@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mggroupcalendarpermission
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mggroupcalendarpermission
 schema: 2.0.0
 ---
 
-# New-MgGroupCalendarPermission
+# New-MgBetaGroupCalendarPermission
 
 ## SYNOPSIS
 Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
@@ -14,26 +14,26 @@ Create a calendarPermission resource to specify the identity and role of the use
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupCalendarPermission -GroupId <String> [-AdditionalProperties <Hashtable>] [-AllowedRoles <String[]>]
+New-MgBetaGroupCalendarPermission -GroupId <String> [-AdditionalProperties <Hashtable>] [-AllowedRoles <String[]>]
  [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>] [-IsInsideOrganization] [-IsRemovable]
  [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupCalendarPermission -GroupId <String> -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm]
+New-MgBetaGroupCalendarPermission -GroupId <String> -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupCalendarPermission -InputObject <ICalendarIdentity>
+New-MgBetaGroupCalendarPermission -InputObject <ICalendarIdentity>
  -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
  [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -81,7 +81,7 @@ calendarPermission
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarPermission
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for EMAILADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -238,13 +238,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarPermission
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarPermission
 
 ## NOTES
 

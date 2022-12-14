@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationoperation
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationoperation
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationOperation
+# Get-MgBetaUserAuthenticationOperation
 
 ## SYNOPSIS
 Get operations from users
@@ -14,20 +14,20 @@ Get operations from users
 
 ### List (Default)
 ```
-Get-MgUserAuthenticationOperation -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserAuthenticationOperation -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserAuthenticationOperation -LongRunningOperationId <String> -UserId <String>
+Get-MgBetaUserAuthenticationOperation -LongRunningOperationId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationOperation -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserAuthenticationOperation -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get operations from users
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserAuthenticationOperation Cmdlet
+### Example 1: Using the Get-MgBetaUserAuthenticationOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgUserAuthenticationOperation -UserId $userId -LongRunningOperationId $longRunningOperationId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaUserAuthenticationOperation -UserId $userId -LongRunningOperationId $longRunningOperationId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationOperation Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLongRunningOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLongRunningOperation
 
 ## NOTES
 

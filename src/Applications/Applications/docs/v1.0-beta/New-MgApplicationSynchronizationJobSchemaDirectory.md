@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplicationsynchronizationjobschemadirectory
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgapplicationsynchronizationjobschemadirectory
 schema: 2.0.0
 ---
 
-# New-MgApplicationSynchronizationJobSchemaDirectory
+# New-MgBetaApplicationSynchronizationJobSchemaDirectory
 
 ## SYNOPSIS
 Create new navigation property to directories for applications
@@ -14,7 +14,7 @@ Create new navigation property to directories for applications
 
 ### CreateExpanded (Default)
 ```
-New-MgApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -SynchronizationJobId <String>
+New-MgBetaApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -SynchronizationJobId <String>
  [-AdditionalProperties <Hashtable>] [-Discoverabilities <String>] [-DiscoveryDateTime <DateTime>]
  [-Id <String>] [-Name <String>] [-Objects <IMicrosoftGraphObjectDefinition[]>] [-ReadOnly]
  [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -Sync
 
 ### Create
 ```
-New-MgApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -SynchronizationJobId <String>
+New-MgBetaApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -SynchronizationJobId <String>
  -BodyParameter <IMicrosoftGraphDirectoryDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphDirectoryDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Discoverabilities <String>] [-DiscoveryDateTime <DateTime>]
  [-Id <String>] [-Name <String>] [-Objects <IMicrosoftGraphObjectDefinition[]>] [-ReadOnly]
  [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -82,7 +82,7 @@ directoryDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ Collection of objects supported by the directory.
 To construct, please use Get-Help -Online and see NOTES section for OBJECTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphObjectDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphObjectDefinition[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -271,13 +271,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
 
 ## NOTES
 

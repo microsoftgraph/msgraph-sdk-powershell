@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusertodolistextension
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mgusertodolistextension
 schema: 2.0.0
 ---
 
-# Update-MgUserTodoListExtension
+# Update-MgBetaUserTodoListExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in users
@@ -14,25 +14,25 @@ Update the navigation property extensions in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserTodoListExtension -ExtensionId <String> -TodoTaskListId <String> -UserId <String>
+Update-MgBetaUserTodoListExtension -ExtensionId <String> -TodoTaskListId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserTodoListExtension -ExtensionId <String> -TodoTaskListId <String> -UserId <String>
+Update-MgBetaUserTodoListExtension -ExtensionId <String> -TodoTaskListId <String> -UserId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserTodoListExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Update-MgBetaUserTodoListExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserTodoListExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserTodoListExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -109,7 +109,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -201,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ### System.Collections.Hashtable
 

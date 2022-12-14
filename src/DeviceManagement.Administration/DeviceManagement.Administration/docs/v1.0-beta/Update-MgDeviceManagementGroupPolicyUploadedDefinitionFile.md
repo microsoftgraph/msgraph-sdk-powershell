@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicyuploadeddefinitionfile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicyuploadeddefinitionfile
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile
+# Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile
 
 ## SYNOPSIS
 Update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property groupPolicyUploadedDefinitionFiles in deviceManag
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile -GroupPolicyUploadedDefinitionFileId <String>
+Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile -GroupPolicyUploadedDefinitionFileId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-DefaultLanguageCode <String>]
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-Description <String>] [-DisplayName <String>]
  [-FileName <String>] [-GroupPolicyOperations <IMicrosoftGraphGroupPolicyOperation[]>]
@@ -26,14 +26,14 @@ Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile -GroupPolicyUploadedD
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile -GroupPolicyUploadedDefinitionFileId <String>
+Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile -GroupPolicyUploadedDefinitionFileId <String>
  -BodyParameter <IMicrosoftGraphGroupPolicyUploadedDefinitionFile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile
+Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphGroupPolicyUploadedDefinitionFile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -41,7 +41,7 @@ Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile
+Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-DefaultLanguageCode <String>]
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-Description <String>] [-DisplayName <String>]
@@ -81,7 +81,7 @@ The group policy definition file also contains the languages supported as determ
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ The group policy definitions associated with the file.
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ The list of operations on the uploaded ADMX file.
 To construct, please use Get-Help -Online and see NOTES section for GROUPPOLICYOPERATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -221,7 +221,7 @@ The list of ADML files associated with the uploaded ADMX file.
 To construct, please use Get-Help -Online and see NOTES section for GROUPPOLICYUPLOADEDLANGUAGEFILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedLanguageFile[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedLanguageFile[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,7 +253,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 Type of Group Policy File or Definition.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -343,7 +343,7 @@ Accept wildcard characters: False
 Type of Group Policy uploaded definition file status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyUploadedDefinitionFileStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyUploadedDefinitionFileStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -435,9 +435,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedDefinitionFile
 
 ## OUTPUTS
 

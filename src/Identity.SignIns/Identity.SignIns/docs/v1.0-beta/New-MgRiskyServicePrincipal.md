@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgriskyserviceprincipal
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgriskyserviceprincipal
 schema: 2.0.0
 ---
 
-# New-MgRiskyServicePrincipal
+# New-MgBetaRiskyServicePrincipal
 
 ## SYNOPSIS
 Create new navigation property to riskyServicePrincipals for identityProtection
@@ -14,7 +14,7 @@ Create new navigation property to riskyServicePrincipals for identityProtection
 
 ### CreateExpanded (Default)
 ```
-New-MgRiskyServicePrincipal [-AccountEnabled] [-AdditionalProperties <Hashtable>] [-AppId <String>]
+New-MgBetaRiskyServicePrincipal [-AccountEnabled] [-AdditionalProperties <Hashtable>] [-AppId <String>]
  [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>] [-Id <String>]
  [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
  [-RiskState <String>] [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgRiskyServicePrincipal [-AccountEnabled] [-AdditionalProperties <Hashtable>
 
 ### Create
 ```
-New-MgRiskyServicePrincipal -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-Confirm] [-WhatIf]
+New-MgBetaRiskyServicePrincipal -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -83,7 +83,7 @@ riskyServicePrincipal
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
 Parameter Sets: Create
 Aliases:
 
@@ -114,7 +114,7 @@ Represents the risk history of Azure AD service principals.
 To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -271,11 +271,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
 
 ## NOTES
 

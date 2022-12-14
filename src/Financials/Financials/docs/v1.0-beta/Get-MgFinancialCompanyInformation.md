@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanyinformation
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanyinformation
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanyInformation
+# Get-MgBetaFinancialCompanyInformation
 
 ## SYNOPSIS
 Get companyInformation from financials
@@ -14,20 +14,20 @@ Get companyInformation from financials
 
 ### List (Default)
 ```
-Get-MgFinancialCompanyInformation -CompanyId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaFinancialCompanyInformation -CompanyId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgFinancialCompanyInformation -CompanyId <String> -CompanyInformationId <String>
+Get-MgBetaFinancialCompanyInformation -CompanyId <String> -CompanyInformationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanyInformation -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaFinancialCompanyInformation -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompanyInformation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCompanyInformation1
 
 ## NOTES
 

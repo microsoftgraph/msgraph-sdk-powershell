@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantticketingendpoint
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantticketingendpoint
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantTicketingEndpoint
+# Get-MgBetaTenantRelationshipManagedTenantTicketingEndpoint
 
 ## SYNOPSIS
 Get managedTenantTicketingEndpoints from tenantRelationships
@@ -14,20 +14,20 @@ Get managedTenantTicketingEndpoints from tenantRelationships
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantTicketingEndpoint [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTenantRelationshipManagedTenantTicketingEndpoint [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketingEndpointId <String>
+Get-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketingEndpointId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
 
 ## NOTES
 

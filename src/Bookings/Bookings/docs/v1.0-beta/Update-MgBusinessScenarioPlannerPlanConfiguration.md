@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/update-mgbusinessscenarioplannerplanconfiguration
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/update-mgbusinessscenarioplannerplanconfiguration
 schema: 2.0.0
 ---
 
-# Update-MgBusinessScenarioPlannerPlanConfiguration
+# Update-MgBetaBusinessScenarioPlannerPlanConfiguration
 
 ## SYNOPSIS
 Update the navigation property planConfiguration in solutions
@@ -14,7 +14,7 @@ Update the navigation property planConfiguration in solutions
 
 ### UpdateExpanded (Default)
 ```
-Update-MgBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String>
+Update-MgBetaBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String>
  [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerPlanConfigurationBucketDefinition[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DefaultLanguage <String>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
@@ -24,21 +24,21 @@ Update-MgBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String>
 
 ### Update
 ```
-Update-MgBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String>
+Update-MgBetaBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String>
  -BodyParameter <IMicrosoftGraphPlannerPlanConfiguration> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity>
+Update-MgBetaBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphPlannerPlanConfiguration> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity>
+Update-MgBetaBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity>
  [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerPlanConfigurationBucketDefinition[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DefaultLanguage <String>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
@@ -73,7 +73,7 @@ plannerPlanConfiguration
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanConfiguration
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BUCKETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationBucketDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationBucketDefinition[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -120,7 +120,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -198,7 +198,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -229,7 +229,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for LOCALIZATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationLocalization[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationLocalization[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -291,9 +291,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanConfiguration
 
 ## OUTPUTS
 

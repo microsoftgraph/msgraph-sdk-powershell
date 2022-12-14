@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mggroupapproleassignment
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mggroupapproleassignment
 schema: 2.0.0
 ---
 
-# Get-MgGroupAppRoleAssignment
+# Get-MgBetaGroupAppRoleAssignment
 
 ## SYNOPSIS
 Represents the app roles a group has been granted for an application.
@@ -15,20 +15,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgGroupAppRoleAssignment -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaGroupAppRoleAssignment -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -40,7 +40,7 @@ Supports $expand.
 
 ### Example 1: Get appRoleAssignments granted to a group
 ```powershell
-Get-MgGroupAppRoleAssignment -GroupId '2692d278-8323-4094-b286-e0ffce5e54a5' |
+Get-MgBetaGroupAppRoleAssignment -GroupId '2692d278-8323-4094-b286-e0ffce5e54a5' |
   Format-List
 
 AppRoleId            : 00000000-0000-0000-0000-000000000000
@@ -171,7 +171,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -277,11 +277,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
 
 ## NOTES
 

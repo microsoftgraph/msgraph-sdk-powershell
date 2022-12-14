@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/restore-mgdevicemanagementmanageddevicepasscode
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/restore-mgdevicemanagementmanageddevicepasscode
 schema: 2.0.0
 ---
 
-# Restore-MgDeviceManagementManagedDevicePasscode
+# Restore-MgBetaDeviceManagementManagedDevicePasscode
 
 ## SYNOPSIS
 Recover passcode
@@ -14,13 +14,13 @@ Recover passcode
 
 ### Recover (Default)
 ```
-Restore-MgDeviceManagementManagedDevicePasscode -ManagedDeviceId <String> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaDeviceManagementManagedDevicePasscode -ManagedDeviceId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### RecoverViaIdentity
 ```
-Restore-MgDeviceManagementManagedDevicePasscode -InputObject <IDeviceManagementActionsIdentity> [-PassThru]
+Restore-MgBetaDeviceManagementManagedDevicePasscode -InputObject <IDeviceManagementActionsIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RecoverViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

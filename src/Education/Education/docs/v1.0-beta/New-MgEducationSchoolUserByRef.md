@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationschooluserbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/new-mgeducationschooluserbyref
 schema: 2.0.0
 ---
 
-# New-MgEducationSchoolUserByRef
+# New-MgBetaEducationSchoolUserByRef
 
 ## SYNOPSIS
 Create new navigation property ref to users for education
@@ -14,25 +14,25 @@ Create new navigation property ref to users for education
 
 ### CreateExpanded (Default)
 ```
-New-MgEducationSchoolUserByRef -EducationSchoolId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaEducationSchoolUserByRef -EducationSchoolId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgEducationSchoolUserByRef -EducationSchoolId <String> -BodyParameter <IReferenceCreate> [-PassThru]
+New-MgBetaEducationSchoolUserByRef -EducationSchoolId <String> -BodyParameter <IReferenceCreate> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgEducationSchoolUserByRef -InputObject <IEducationIdentity> -BodyParameter <IReferenceCreate> [-PassThru]
+New-MgBetaEducationSchoolUserByRef -InputObject <IEducationIdentity> -BodyParameter <IReferenceCreate> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgEducationSchoolUserByRef -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaEducationSchoolUserByRef -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to users for education
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgEducationSchoolUserByRef Cmdlet
+### Example 1: Using the New-MgBetaEducationSchoolUserByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/education/users/14008"
 }
-New-MgEducationSchoolUserByRef -EducationSchoolId $educationSchoolId -BodyParameter $params
+New-MgBetaEducationSchoolUserByRef -EducationSchoolId $educationSchoolId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationSchoolUserByRef Cmdlet.
+This example shows how to use the New-MgBetaEducationSchoolUserByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

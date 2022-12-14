@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/sync-mgusermanageddevice
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/sync-mgusermanageddevice
 schema: 2.0.0
 ---
 
-# Sync-MgUserManagedDevice
+# Sync-MgBetaUserManagedDevice
 
 ## SYNOPSIS
 Invoke action syncDevice
@@ -14,13 +14,13 @@ Invoke action syncDevice
 
 ### Sync (Default)
 ```
-Sync-MgUserManagedDevice -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
+Sync-MgBetaUserManagedDevice -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SyncViaIdentity
 ```
-Sync-MgUserManagedDevice -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Sync-MgBetaUserManagedDevice -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: SyncViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermanagedappblockeduser
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusermanagedappblockeduser
 schema: 2.0.0
 ---
 
-# Get-MgUserManagedAppBlockedUser
+# Get-MgBetaUserManagedAppBlockedUser
 
 ## SYNOPSIS
 Invoke function getManagedAppBlockedUsers
@@ -13,7 +13,7 @@ Invoke function getManagedAppBlockedUsers
 ## SYNTAX
 
 ```
-Get-MgUserManagedAppBlockedUser [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>]
+Get-MgBetaUserManagedAppBlockedUser [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 

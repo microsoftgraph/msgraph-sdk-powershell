@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasereviewsetfilecustodian
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasereviewsetfilecustodian
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseReviewSetFileCustodian
+# Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileCustodian
 
 ## SYNOPSIS
 Custodians associated with the file.
@@ -14,13 +14,13 @@ Custodians associated with the file.
 
 ### Get (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseReviewSetFileCustodian -EdiscoveryCaseId <String> -EdiscoveryFileId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileCustodian -EdiscoveryCaseId <String> -EdiscoveryFileId <String>
  -EdiscoveryReviewSetId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityCaseEdiscoveryCaseReviewSetFileCustodian -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileCustodian -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCustodian
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCustodian
 
 ## NOTES
 

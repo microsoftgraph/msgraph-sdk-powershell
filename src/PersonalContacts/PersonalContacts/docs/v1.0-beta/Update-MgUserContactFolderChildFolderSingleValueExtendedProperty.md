@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/update-mgusercontactfolderchildfoldersinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/update-mgusercontactfolderchildfoldersinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Update-MgUserContactFolderChildFolderSingleValueExtendedProperty
+# Update-MgBetaUserContactFolderChildFolderSingleValueExtendedProperty
 
 ## SYNOPSIS
 Update the navigation property singleValueExtendedProperties in users
@@ -14,7 +14,7 @@ Update the navigation property singleValueExtendedProperties in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserContactFolderChildFolderSingleValueExtendedProperty -ContactFolderId <String>
+Update-MgBetaUserContactFolderChildFolderSingleValueExtendedProperty -ContactFolderId <String>
  -ContactFolderId1 <String> -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgUserContactFolderChildFolderSingleValueExtendedProperty -ContactFolderI
 
 ### Update1
 ```
-Update-MgUserContactFolderChildFolderSingleValueExtendedProperty -ContactFolderId <String>
+Update-MgBetaUserContactFolderChildFolderSingleValueExtendedProperty -ContactFolderId <String>
  -ContactFolderId1 <String> -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,14 +30,14 @@ Update-MgUserContactFolderChildFolderSingleValueExtendedProperty -ContactFolderI
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserContactFolderChildFolderSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
+Update-MgBetaUserContactFolderChildFolderSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserContactFolderChildFolderSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
+Update-MgBetaUserContactFolderChildFolderSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ singleValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -237,9 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 

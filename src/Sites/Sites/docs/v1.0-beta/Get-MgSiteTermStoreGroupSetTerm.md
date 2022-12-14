@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitetermstoregroupsetterm
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitetermstoregroupsetterm
 schema: 2.0.0
 ---
 
-# Get-MgSiteTermStoreGroupSetTerm
+# Get-MgBetaSiteTermStoreGroupSetTerm
 
 ## SYNOPSIS
 All the terms under the set.
@@ -14,20 +14,20 @@ All the terms under the set.
 
 ### List1 (Default)
 ```
-Get-MgSiteTermStoreGroupSetTerm -GroupId <String> -SetId <String> -SiteId <String>
+Get-MgBetaSiteTermStoreGroupSetTerm -GroupId <String> -SetId <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgSiteTermStoreGroupSetTerm -GroupId <String> -SetId <String> -SiteId <String> -TermId <String>
+Get-MgBetaSiteTermStoreGroupSetTerm -GroupId <String> -SetId <String> -SiteId <String> -TermId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSiteTermStoreGroupSetTerm -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSiteTermStoreGroupSetTerm -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ All the terms under the set.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteTermStoreGroupSetTerm Cmdlet
+### Example 1: Using the Get-MgBetaSiteTermStoreGroupSetTerm Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
 ```
 
-This example shows how to use the Get-MgSiteTermStoreGroupSetTerm Cmdlet.
+This example shows how to use the Get-MgBetaSiteTermStoreGroupSetTerm Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSiteTermStoreGroupSetTerm Cmdlet
+### Example 2: Using the Get-MgBetaSiteTermStoreGroupSetTerm Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
 ```
 
-This example shows how to use the Get-MgSiteTermStoreGroupSetTerm Cmdlet.
+This example shows how to use the Get-MgBetaSiteTermStoreGroupSetTerm Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -288,11 +288,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreTerm1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreTerm1
 
 ## NOTES
 

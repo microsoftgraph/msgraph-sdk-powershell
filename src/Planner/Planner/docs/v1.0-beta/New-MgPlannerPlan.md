@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/new-mgplannerplan
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/new-mgplannerplan
 schema: 2.0.0
 ---
 
-# New-MgPlannerPlan
+# New-MgBetaPlannerPlan
 
 ## SYNOPSIS
 Create a new **plannerPlan**.
@@ -14,7 +14,7 @@ Create a new **plannerPlan**.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgPlannerPlan [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerBucket1[]>]
+New-MgBetaPlannerPlan [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerBucket1[]>]
  [-Container <IMicrosoftGraphPlannerPlanContainer1>] [-Contexts <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-CreationSource <IMicrosoftGraphPlannerPlanCreation>] [-Details <IMicrosoftGraphPlannerPlanDetails1>]
@@ -24,7 +24,7 @@ New-MgPlannerPlan [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraph
 
 ### Create1
 ```
-New-MgPlannerPlan -BodyParameter <IMicrosoftGraphPlannerPlan1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPlannerPlan -BodyParameter <IMicrosoftGraphPlannerPlan1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,19 +32,19 @@ Create a new **plannerPlan**.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPlannerPlan Cmdlet
+### Example 1: Using the New-MgBetaPlannerPlan Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	Container = @{
 		Url = "https://graph.microsoft.com/beta/groups/ebf3b108-5234-4e22-b93d-656d7dae5874"
 	}
 	Title = "title-value"
 }
-New-MgPlannerPlan -BodyParameter $params
+New-MgBetaPlannerPlan -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPlannerPlan Cmdlet.
+This example shows how to use the New-MgBetaPlannerPlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ plannerPlan
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 Parameter Sets: Create1
 Aliases:
 
@@ -87,7 +87,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for BUCKETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -103,7 +103,7 @@ plannerPlanContainer
 To construct, please use Get-Help -Online and see NOTES section for CONTAINER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanContainer1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanContainer1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -134,7 +134,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -168,7 +168,7 @@ plannerPlanCreation
 To construct, please use Get-Help -Online and see NOTES section for CREATIONSOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanCreation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanCreation
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -184,7 +184,7 @@ plannerPlanDetails
 To construct, please use Get-Help -Online and see NOTES section for DETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -233,7 +233,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -296,11 +296,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 
 ## NOTES
 

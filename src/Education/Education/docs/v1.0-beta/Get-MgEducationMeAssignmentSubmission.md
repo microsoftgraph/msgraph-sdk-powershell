@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationmeassignmentsubmission
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationmeassignmentsubmission
 schema: 2.0.0
 ---
 
-# Get-MgEducationMeAssignmentSubmission
+# Get-MgBetaEducationMeAssignmentSubmission
 
 ## SYNOPSIS
 Once published, there is a submission object for each student representing their work and grade.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgEducationMeAssignmentSubmission -EducationAssignmentId <String> [-ExpandProperty <String[]>]
+Get-MgBetaEducationMeAssignmentSubmission -EducationAssignmentId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEducationMeAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
+Get-MgBetaEducationMeAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationMeAssignmentSubmission -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationMeAssignmentSubmission -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -244,11 +244,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
 
 ## NOTES
 

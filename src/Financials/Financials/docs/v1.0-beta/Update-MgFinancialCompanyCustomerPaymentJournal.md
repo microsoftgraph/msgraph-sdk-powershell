@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanycustomerpaymentjournal
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanycustomerpaymentjournal
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyCustomerPaymentJournal
+# Update-MgBetaFinancialCompanyCustomerPaymentJournal
 
 ## SYNOPSIS
 Update the navigation property customerPaymentJournals in financials
@@ -14,7 +14,7 @@ Update the navigation property customerPaymentJournals in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyCustomerPaymentJournal -CompanyId <String> -CustomerPaymentJournalId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentJournal -CompanyId <String> -CustomerPaymentJournalId <String>
  [-Account <IMicrosoftGraphAccount>] [-AdditionalProperties <Hashtable>] [-BalancingAccountId <String>]
  [-BalancingAccountNumber <String>] [-Code <String>] [-CustomerPayments <IMicrosoftGraphCustomerPayment[]>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgFinancialCompanyCustomerPaymentJournal -CompanyId <String> -CustomerPay
 
 ### Update
 ```
-Update-MgFinancialCompanyCustomerPaymentJournal -CompanyId <String> -CustomerPaymentJournalId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentJournal -CompanyId <String> -CustomerPaymentJournalId <String>
  -BodyParameter <IMicrosoftGraphCustomerPaymentJournal> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyCustomerPaymentJournal -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentJournal -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphCustomerPaymentJournal> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyCustomerPaymentJournal -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentJournal -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AdditionalProperties <Hashtable>] [-BalancingAccountId <String>]
  [-BalancingAccountNumber <String>] [-Code <String>] [-CustomerPayments <IMicrosoftGraphCustomerPayment[]>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
@@ -54,7 +54,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -115,7 +115,7 @@ customerPaymentJournal
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMERPAYMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPayment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPayment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -223,7 +223,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -300,9 +300,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryattributeset
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectoryattributeset
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryAttributeSet
+# Update-MgBetaDirectoryAttributeSet
 
 ## SYNOPSIS
 Update the navigation property attributeSets in directory
@@ -14,26 +14,26 @@ Update the navigation property attributeSets in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryAttributeSet -AttributeSetId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectoryAttributeSet -AttributeSetId <String> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-Id <String>] [-MaxAttributesPerSet <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryAttributeSet -AttributeSetId <String> -BodyParameter <IMicrosoftGraphAttributeSet>
+Update-MgBetaDirectoryAttributeSet -AttributeSetId <String> -BodyParameter <IMicrosoftGraphAttributeSet>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphAttributeSet> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>] [-MaxAttributesPerSet <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,17 +43,17 @@ Update the navigation property attributeSets in directory
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgDirectoryAttributeSet Cmdlet
+### Example 1: Using the Update-MgBetaDirectoryAttributeSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	Description = "Attributes for engineering team"
 	MaxAttributesPerSet = 20
 }
-Update-MgDirectoryAttributeSet -AttributeSetId $attributeSetId -BodyParameter $params
+Update-MgBetaDirectoryAttributeSet -AttributeSetId $attributeSetId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgDirectoryAttributeSet Cmdlet.
+This example shows how to use the Update-MgBetaDirectoryAttributeSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -93,7 +93,7 @@ attributeSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeSet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -222,9 +222,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
 
 ## OUTPUTS
 

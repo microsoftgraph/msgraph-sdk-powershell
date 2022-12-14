@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamworkdeletedteamchannelmessagehostedcontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamworkdeletedteamchannelmessagehostedcontent
 schema: 2.0.0
 ---
 
-# New-MgTeamworkDeletedTeamChannelMessageHostedContent
+# New-MgBetaTeamworkDeletedTeamChannelMessageHostedContent
 
 ## SYNOPSIS
 Create new navigation property to hostedContents for teamwork
@@ -14,26 +14,26 @@ Create new navigation property to hostedContents for teamwork
 
 ### CreateExpanded (Default)
 ```
-New-MgTeamworkDeletedTeamChannelMessageHostedContent -ChannelId <String> -ChatMessageId <String>
+New-MgBetaTeamworkDeletedTeamChannelMessageHostedContent -ChannelId <String> -ChatMessageId <String>
  -DeletedTeamId <String> [-AdditionalProperties <Hashtable>] [-ContentBytesInputFile <String>]
  [-ContentType <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTeamworkDeletedTeamChannelMessageHostedContent -ChannelId <String> -ChatMessageId <String>
+New-MgBetaTeamworkDeletedTeamChannelMessageHostedContent -ChannelId <String> -ChatMessageId <String>
  -DeletedTeamId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgTeamworkDeletedTeamChannelMessageHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable>
+New-MgBetaTeamworkDeletedTeamChannelMessageHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgTeamworkDeletedTeamChannelMessageHostedContent -InputObject <ITeamsIdentity>
+New-MgBetaTeamworkDeletedTeamChannelMessageHostedContent -InputObject <ITeamsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -174,7 +174,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -221,13 +221,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ### System.Collections.Hashtable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysaleinvoicelineitem
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysaleinvoicelineitem
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleInvoiceLineItem
+# Update-MgBetaFinancialCompanySaleInvoiceLineItem
 
 ## SYNOPSIS
 Update the navigation property item in financials
@@ -14,7 +14,7 @@ Update the navigation property item in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceLineId <String>
+Update-MgBetaFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceLineId <String>
  [-AdditionalProperties <Hashtable>] [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>]
  [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>]
  [-ItemCategoryCode <String>] [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
@@ -25,20 +25,20 @@ Update-MgFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceLi
 
 ### Update
 ```
-Update-MgFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceLineId <String>
+Update-MgBetaFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceLineId <String>
  -BodyParameter <IMicrosoftGraphItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceId <String>
+Update-MgBetaFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceId <String>
  -SalesInvoiceLineId <String> -BodyParameter <IMicrosoftGraphItem> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceId <String>
+Update-MgBetaFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceId <String>
  -SalesInvoiceLineId <String> [-AdditionalProperties <Hashtable>] [-BaseUnitOfMeasureId <String>] [-Blocked]
  [-DisplayName <String>] [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>]
  [-ItemCategory <IMicrosoftGraphItemCategory>] [-ItemCategoryCode <String>] [-ItemCategoryId <String>]
@@ -49,19 +49,19 @@ Update-MgFinancialCompanySaleInvoiceLineItem -CompanyId <String> -SalesInvoiceId
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>]
  [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>]
  [-ItemCategoryCode <String>] [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
@@ -72,7 +72,7 @@ Update-MgFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceLineItem -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>]
  [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>]
  [-ItemCategoryCode <String>] [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
@@ -138,7 +138,7 @@ item
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -215,7 +215,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -246,7 +246,7 @@ itemCategory
 To construct, please use Get-Help -Online and see NOTES section for ITEMCATEGORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -337,7 +337,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PICTURE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture[]
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -504,9 +504,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 
 ## OUTPUTS
 

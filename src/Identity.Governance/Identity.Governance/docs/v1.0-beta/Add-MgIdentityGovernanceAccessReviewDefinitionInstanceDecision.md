@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/add-mgidentitygovernanceaccessreviewdefinitioninstancedecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/add-mgidentitygovernanceaccessreviewdefinitioninstancedecision
 schema: 2.0.0
 ---
 
-# Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision
+# Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision
 
 ## SYNOPSIS
 Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
@@ -15,13 +15,13 @@ The status of the accessReviewInstance must be `Completed` to call this method.
 
 ### Apply (Default)
 ```
-Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
+Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentity
 ```
-Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -InputObject <IIdentityGovernanceIdentity>
+Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -InputObject <IIdentityGovernanceIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ The status of the accessReviewInstance must be `Completed` to call this method.
 
 ## EXAMPLES
 
-### Example 1: Using the Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision Cmdlet
+### Example 1: Using the Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision Cmdlet.
+This example shows how to use the Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: ApplyViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

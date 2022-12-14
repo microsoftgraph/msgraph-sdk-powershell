@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementtermandconditiongroupassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementtermandconditiongroupassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementTermAndConditionGroupAssignment
+# New-MgBetaDeviceManagementTermAndConditionGroupAssignment
 
 ## SYNOPSIS
 Create new navigation property to groupAssignments for deviceManagement
@@ -14,26 +14,26 @@ Create new navigation property to groupAssignments for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementTermAndConditionGroupAssignment -TermsAndConditionsId <String>
+New-MgBetaDeviceManagementTermAndConditionGroupAssignment -TermsAndConditionsId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetGroupId <String>]
  [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementTermAndConditionGroupAssignment -TermsAndConditionsId <String>
+New-MgBetaDeviceManagementTermAndConditionGroupAssignment -TermsAndConditionsId <String>
  -BodyParameter <IMicrosoftGraphTermsAndConditionsGroupAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementTermAndConditionGroupAssignment -InputObject <IDeviceManagementAdministrationIdentity>
+New-MgBetaDeviceManagementTermAndConditionGroupAssignment -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphTermsAndConditionsGroupAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementTermAndConditionGroupAssignment -InputObject <IDeviceManagementAdministrationIdentity>
+New-MgBetaDeviceManagementTermAndConditionGroupAssignment -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetGroupId <String>]
  [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ Users in the group will be required to accept the terms in order to have devices
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsGroupAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsGroupAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -131,7 +131,7 @@ They enable administrators to communicate the provisions to which a user must ag
 To construct, please use Get-Help -Online and see NOTES section for TERMSANDCONDITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditions
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -193,13 +193,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsGroupAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsGroupAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsGroupAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsGroupAssignment
 
 ## NOTES
 

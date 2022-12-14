@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/new-mggroupdriveitempermission
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/new-mggroupdriveitempermission
 schema: 2.0.0
 ---
 
-# New-MgGroupDriveItemPermission
+# New-MgBetaGroupDriveItemPermission
 
 ## SYNOPSIS
 Create new navigation property to permissions for groups
@@ -14,7 +14,7 @@ Create new navigation property to permissions for groups
 
 ### CreateExpanded1 (Default)
 ```
-New-MgGroupDriveItemPermission -DriveId <String> -DriveItemId <String> -GroupId <String>
+New-MgBetaGroupDriveItemPermission -DriveId <String> -DriveItemId <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-ExpirationDateTime <DateTime>]
  [-GrantedTo <IMicrosoftGraphIdentitySet>] [-GrantedToIdentities <IMicrosoftGraphIdentitySet[]>]
  [-GrantedToIdentitiesV2 <IMicrosoftGraphSharePointIdentitySet[]>]
@@ -26,19 +26,19 @@ New-MgGroupDriveItemPermission -DriveId <String> -DriveItemId <String> -GroupId 
 
 ### Create1
 ```
-New-MgGroupDriveItemPermission -DriveId <String> -DriveItemId <String> -GroupId <String>
+New-MgBetaGroupDriveItemPermission -DriveId <String> -DriveItemId <String> -GroupId <String>
  -BodyParameter <IMicrosoftGraphPermission1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgGroupDriveItemPermission -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphPermission1>
+New-MgBetaGroupDriveItemPermission -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphPermission1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgGroupDriveItemPermission -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupDriveItemPermission -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-ExpirationDateTime <DateTime>] [-GrantedTo <IMicrosoftGraphIdentitySet>]
  [-GrantedToIdentities <IMicrosoftGraphIdentitySet[]>]
  [-GrantedToIdentitiesV2 <IMicrosoftGraphSharePointIdentitySet[]>]
@@ -75,7 +75,7 @@ permission
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermission1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -138,7 +138,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for GRANTEDTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for GRANTEDTOIDENTITIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -171,7 +171,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for GRANTEDTOIDENTITIESV2 properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharePointIdentitySet[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharePointIdentitySet[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -187,7 +187,7 @@ sharePointIdentitySet
 To construct, please use Get-Help -Online and see NOTES section for GRANTEDTOV2 properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharePointIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharePointIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -253,7 +253,7 @@ itemReference
 To construct, please use Get-Help -Online and see NOTES section for INHERITEDFROM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemReference
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -269,7 +269,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -285,7 +285,7 @@ sharingInvitation
 To construct, please use Get-Help -Online and see NOTES section for INVITATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharingInvitation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharingInvitation
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -301,7 +301,7 @@ sharingLink
 To construct, please use Get-Help -Online and see NOTES section for LINK properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharingLink1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharingLink1
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -381,13 +381,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermission1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermission1
 
 ## NOTES
 

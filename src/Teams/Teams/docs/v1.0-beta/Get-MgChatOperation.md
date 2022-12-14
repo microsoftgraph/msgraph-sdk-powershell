@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgchatoperation
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgchatoperation
 schema: 2.0.0
 ---
 
-# Get-MgChatOperation
+# Get-MgBetaChatOperation
 
 ## SYNOPSIS
 A collection of all the Teams async operations that ran or are running on the chat.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgChatOperation -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaChatOperation -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgChatOperation -ChatId <String> -TeamsAsyncOperationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaChatOperation -ChatId <String> -TeamsAsyncOperationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgChatOperation -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaChatOperation -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgChatOperation Cmdlet
+### Example 1: Using the Get-MgBetaChatOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatOperation -ChatId $chatId -TeamsAsyncOperationId $teamsAsyncOperationId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatOperation -ChatId $chatId -TeamsAsyncOperationId $teamsAsyncOperationId
 ```
 
-This example shows how to use the Get-MgChatOperation Cmdlet.
+This example shows how to use the Get-MgBetaChatOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgChatOperation Cmdlet
+### Example 2: Using the Get-MgBetaChatOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatOperation -ChatId $chatId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatOperation -ChatId $chatId
 ```
 
-This example shows how to use the Get-MgChatOperation Cmdlet.
+This example shows how to use the Get-MgBetaChatOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1
 
 ## NOTES
 

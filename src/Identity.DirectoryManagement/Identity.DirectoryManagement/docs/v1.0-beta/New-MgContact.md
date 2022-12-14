@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgcontact
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgcontact
 schema: 2.0.0
 ---
 
-# New-MgContact
+# New-MgBetaContact
 
 ## SYNOPSIS
 Add new entity to contacts
@@ -14,7 +14,7 @@ Add new entity to contacts
 
 ### CreateExpanded (Default)
 ```
-New-MgContact [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphPhysicalOfficeAddress[]>]
+New-MgBetaContact [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphPhysicalOfficeAddress[]>]
  [-CompanyName <String>] [-DeletedDateTime <DateTime>] [-Department <String>]
  [-DirectReports <IMicrosoftGraphDirectoryObject[]>] [-DisplayName <String>] [-GivenName <String>]
  [-Id <String>] [-JobTitle <String>] [-Mail <String>] [-MailNickname <String>]
@@ -28,7 +28,7 @@ New-MgContact [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphPh
 
 ### Create
 ```
-New-MgContact -BodyParameter <IMicrosoftGraphOrgContact1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaContact -BodyParameter <IMicrosoftGraphOrgContact1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,7 +59,7 @@ For now a contact can only have one physical address.
 To construct, please use Get-Help -Online and see NOTES section for ADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalOfficeAddress[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhysicalOfficeAddress[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -75,7 +75,7 @@ orgContact
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrgContact1
 Parameter Sets: Create
 Aliases:
 
@@ -142,7 +142,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for DIRECTREPORTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -254,7 +254,7 @@ directoryObject
 To construct, please use Get-Help -Online and see NOTES section for MANAGER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -273,7 +273,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for MEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -308,7 +308,7 @@ Supports $filter (eq, not for category and propertyCausingError), /$count eq 0, 
 To construct, please use Get-Help -Online and see NOTES section for ONPREMISESPROVISIONINGERRORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesProvisioningError[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesProvisioningError[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -343,7 +343,7 @@ Supports $filter (eq, ne, not, in).
 To construct, please use Get-Help -Online and see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhone1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TRANSITIVEMEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -409,7 +409,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for TRANSITIVEREPORTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -456,11 +456,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrgContact1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrgContact1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantalertrule
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantalertrule
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantAlertRule
+# New-MgBetaTenantRelationshipManagedTenantAlertRule
 
 ## SYNOPSIS
 Create new navigation property to managedTenantAlertRules for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managedTenantAlertRules for tenantRelationship
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantAlertRule [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantAlertRule [-AdditionalProperties <Hashtable>]
  [-AlertDisplayName <String>] [-Alerts <IMicrosoftGraphManagedTenantsManagedTenantAlert[]>]
  [-AlertTtl <Int32>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
@@ -26,7 +26,7 @@ New-MgTenantRelationshipManagedTenantAlertRule [-AdditionalProperties <Hashtable
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantAlertRule
+New-MgBetaTenantRelationshipManagedTenantAlertRule
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertRule> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ALERTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ managedTenantAlertRule
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
 Parameter Sets: Create
 Aliases:
 
@@ -256,7 +256,7 @@ managedTenantAlertRuleDefinition
 To construct, please use Get-Help -Online and see NOTES section for RULEDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TARGETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsNotificationTarget[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsNotificationTarget[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TENANTIDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantInfo[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -350,11 +350,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
 
 ## NOTES
 

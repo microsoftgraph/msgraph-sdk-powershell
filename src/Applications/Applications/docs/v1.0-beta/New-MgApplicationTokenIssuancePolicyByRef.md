@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplicationtokenissuancepolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgapplicationtokenissuancepolicybyref
 schema: 2.0.0
 ---
 
-# New-MgApplicationTokenIssuancePolicyByRef
+# New-MgBetaApplicationTokenIssuancePolicyByRef
 
 ## SYNOPSIS
 Create new navigation property ref to tokenIssuancePolicies for applications
@@ -14,25 +14,25 @@ Create new navigation property ref to tokenIssuancePolicies for applications
 
 ### CreateExpanded1 (Default)
 ```
-New-MgApplicationTokenIssuancePolicyByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaApplicationTokenIssuancePolicyByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgApplicationTokenIssuancePolicyByRef -ApplicationId <String> -BodyParameter <IReferenceCreate>
+New-MgBetaApplicationTokenIssuancePolicyByRef -ApplicationId <String> -BodyParameter <IReferenceCreate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgApplicationTokenIssuancePolicyByRef -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationTokenIssuancePolicyByRef -InputObject <IApplicationsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgApplicationTokenIssuancePolicyByRef -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationTokenIssuancePolicyByRef -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to tokenIssuancePolicies for applications
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgApplicationTokenIssuancePolicyByRef Cmdlet
+### Example 1: Using the New-MgBetaApplicationTokenIssuancePolicyByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/policies/tokenIssuancePolicies/cd3d9b57-0aee-4f25-8ee3-ac74ef5986a9"
 }
-New-MgApplicationTokenIssuancePolicyByRef -ApplicationId $applicationId -BodyParameter $params
+New-MgBetaApplicationTokenIssuancePolicyByRef -ApplicationId $applicationId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgApplicationTokenIssuancePolicyByRef Cmdlet.
+This example shows how to use the New-MgBetaApplicationTokenIssuancePolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

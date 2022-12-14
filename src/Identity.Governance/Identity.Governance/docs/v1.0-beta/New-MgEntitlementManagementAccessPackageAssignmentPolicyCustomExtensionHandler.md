@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementaccesspackageassignmentpolicycustomextensionhandler
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgentitlementmanagementaccesspackageassignmentpolicycustomextensionhandler
 schema: 2.0.0
 ---
 
-# New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+# New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
 
 ## SYNOPSIS
 Create new navigation property to customExtensionHandlers for identityGovernance
@@ -14,7 +14,7 @@ Create new navigation property to customExtensionHandlers for identityGovernance
 
 ### CreateExpanded (Default)
 ```
-New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
  -AccessPackageAssignmentPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-CustomExtension <IMicrosoftGraphCustomAccessPackageWorkflowExtension>] [-Id <String>] [-Stage <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
 
 ### Create
 ```
-New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
  -AccessPackageAssignmentPolicyId <String> -BodyParameter <IMicrosoftGraphCustomExtensionHandler> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
  -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphCustomExtensionHandler> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-CustomExtension <IMicrosoftGraphCustomAccessPackageWorkflowExtension>] [-Id <String>] [-Stage <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -84,7 +84,7 @@ customExtensionHandler
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomExtensionHandler
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomExtensionHandler
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ customAccessPackageWorkflowExtension
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMEXTENSION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -194,13 +194,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomExtensionHandler
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomExtensionHandler
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomExtensionHandler
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomExtensionHandler
 
 ## NOTES
 

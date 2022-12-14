@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgteamworkteamappsetting
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgteamworkteamappsetting
 schema: 2.0.0
 ---
 
-# Update-MgTeamworkTeamAppSetting
+# Update-MgBetaTeamworkTeamAppSetting
 
 ## SYNOPSIS
 Update the properties of a teamsAppSettings object.
@@ -14,13 +14,13 @@ Update the properties of a teamsAppSettings object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTeamworkTeamAppSetting [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaTeamworkTeamAppSetting [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-IsChatResourceSpecificConsentEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgTeamworkTeamAppSetting -BodyParameter <IMicrosoftGraphTeamsAppSettings> [-PassThru] [-Confirm]
+Update-MgBetaTeamworkTeamAppSetting -BodyParameter <IMicrosoftGraphTeamsAppSettings> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,17 +29,17 @@ Update the properties of a teamsAppSettings object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgTeamworkTeamAppSetting Cmdlet
+### Example 1: Using the Update-MgBetaTeamworkTeamAppSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
-	"@odata.type" = "#microsoft.graph.teamsAppSettings"
+	"@odata.type" = "#Microsoft.Graph.Beta.teamsAppSettings"
 	IsChatResourceSpecificConsentEnabled = "true"
 }
-Update-MgTeamworkTeamAppSetting -BodyParameter $params
+Update-MgBetaTeamworkTeamAppSetting -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgTeamworkTeamAppSetting Cmdlet.
+This example shows how to use the Update-MgBetaTeamworkTeamAppSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -64,7 +64,7 @@ teamsAppSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppSettings
 Parameter Sets: Update
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppSettings
 
 ## OUTPUTS
 

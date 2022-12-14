@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/test-mgsecurityinformationprotectionsensitivitylabelremoval
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/test-mgsecurityinformationprotectionsensitivitylabelremoval
 schema: 2.0.0
 ---
 
-# Test-MgSecurityInformationProtectionSensitivityLabelRemoval
+# Test-MgBetaSecurityInformationProtectionSensitivityLabelRemoval
 
 ## SYNOPSIS
 Invoke action evaluateRemoval
@@ -14,7 +14,7 @@ Invoke action evaluateRemoval
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgSecurityInformationProtectionSensitivityLabelRemoval [-AdditionalProperties <Hashtable>]
+Test-MgBetaSecurityInformationProtectionSensitivityLabelRemoval [-AdditionalProperties <Hashtable>]
  [-ContentInfo <IMicrosoftGraphSecurityContentInfo>]
  [-DowngradeJustification <IMicrosoftGraphSecurityDowngradeJustification>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Test-MgSecurityInformationProtectionSensitivityLabelRemoval [-AdditionalProperti
 
 ### Evaluate
 ```
-Test-MgSecurityInformationProtectionSensitivityLabelRemoval
+Test-MgBetaSecurityInformationProtectionSensitivityLabelRemoval
  -BodyParameter <IPaths13Ef0YwSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths13Ef0YwSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths13Ef0YwSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate
 Aliases:
 
@@ -70,7 +70,7 @@ contentInfo
 To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityContentInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityContentInfo
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ downgradeJustification
 To construct, please use Get-Help -Online and see NOTES section for DOWNGRADEJUSTIFICATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDowngradeJustification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityDowngradeJustification
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -133,11 +133,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths13Ef0YwSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths13Ef0YwSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionAction
 
 ## NOTES
 

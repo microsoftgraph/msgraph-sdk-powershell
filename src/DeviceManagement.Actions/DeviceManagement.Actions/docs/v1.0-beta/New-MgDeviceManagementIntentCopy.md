@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementintentcopy
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementintentcopy
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementIntentCopy
+# New-MgBetaDeviceManagementIntentCopy
 
 ## SYNOPSIS
 Invoke action createCopy
@@ -14,27 +14,27 @@ Invoke action createCopy
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementIntentCopy -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementIntentCopy -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementIntentCopy -DeviceManagementIntentId <String>
+New-MgBetaDeviceManagementIntentCopy -DeviceManagementIntentId <String>
  -BodyParameter <IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementIntentCopy -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementIntentCopy -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementIntentCopy -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementIntentCopy -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -174,13 +174,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntent
 
 ## NOTES
 

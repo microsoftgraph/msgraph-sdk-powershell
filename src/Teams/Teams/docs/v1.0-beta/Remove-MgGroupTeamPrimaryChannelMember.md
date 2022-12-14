@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mggroupteamprimarychannelmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mggroupteamprimarychannelmember
 schema: 2.0.0
 ---
 
-# Remove-MgGroupTeamPrimaryChannelMember
+# Remove-MgBetaGroupTeamPrimaryChannelMember
 
 ## SYNOPSIS
 Delete navigation property members for groups
@@ -14,13 +14,13 @@ Delete navigation property members for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupTeamPrimaryChannelMember -ConversationMemberId <String> -GroupId <String> [-IfMatch <String>]
+Remove-MgBetaGroupTeamPrimaryChannelMember -ConversationMemberId <String> -GroupId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaGroupTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

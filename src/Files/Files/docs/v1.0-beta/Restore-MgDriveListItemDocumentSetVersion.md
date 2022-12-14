@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/restore-mgdrivelistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/restore-mgdrivelistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# Restore-MgDriveListItemDocumentSetVersion
+# Restore-MgBetaDriveListItemDocumentSetVersion
 
 ## SYNOPSIS
 Restore a document set version.
@@ -14,13 +14,13 @@ Restore a document set version.
 
 ### Restore (Default)
 ```
-Restore-MgDriveListItemDocumentSetVersion -DocumentSetVersionId <String> -DriveId <String>
+Restore-MgBetaDriveListItemDocumentSetVersion -DocumentSetVersionId <String> -DriveId <String>
  -ListItemId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

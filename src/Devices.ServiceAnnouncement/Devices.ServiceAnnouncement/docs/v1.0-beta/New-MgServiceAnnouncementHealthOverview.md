@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/new-mgserviceannouncementhealthoverview
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/new-mgserviceannouncementhealthoverview
 schema: 2.0.0
 ---
 
-# New-MgServiceAnnouncementHealthOverview
+# New-MgBetaServiceAnnouncementHealthOverview
 
 ## SYNOPSIS
 Create new navigation property to healthOverviews for admin
@@ -14,14 +14,14 @@ Create new navigation property to healthOverviews for admin
 
 ### CreateExpanded (Default)
 ```
-New-MgServiceAnnouncementHealthOverview [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaServiceAnnouncementHealthOverview [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Issues <IMicrosoftGraphServiceHealthIssue[]>] [-Service <String>] [-Status <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgServiceAnnouncementHealthOverview -BodyParameter <IMicrosoftGraphServiceHealth> [-Confirm] [-WhatIf]
+New-MgBetaServiceAnnouncementHealthOverview -BodyParameter <IMicrosoftGraphServiceHealth> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ serviceHealth
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceHealth
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
 Parameter Sets: Create
 Aliases:
 
@@ -84,7 +84,7 @@ A collection of issues that happened on the service, with detailed information f
 To construct, please use Get-Help -Online and see NOTES section for ISSUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceHealthIssue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealthIssue[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -162,11 +162,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceHealth
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceHealth
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
 
 ## NOTES
 

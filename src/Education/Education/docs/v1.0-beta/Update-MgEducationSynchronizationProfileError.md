@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationsynchronizationprofileerror
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/update-mgeducationsynchronizationprofileerror
 schema: 2.0.0
 ---
 
-# Update-MgEducationSynchronizationProfileError
+# Update-MgBetaEducationSynchronizationProfileError
 
 ## SYNOPSIS
 Update the navigation property errors in education
@@ -14,7 +14,7 @@ Update the navigation property errors in education
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEducationSynchronizationProfileError -EducationSynchronizationErrorId <String>
+Update-MgBetaEducationSynchronizationProfileError -EducationSynchronizationErrorId <String>
  -EducationSynchronizationProfileId <String> [-AdditionalProperties <Hashtable>] [-EntryType <String>]
  [-ErrorCode <String>] [-ErrorMessage <String>] [-Id <String>] [-JoiningValue <String>]
  [-RecordedDateTime <DateTime>] [-ReportableIdentifier <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ Update-MgEducationSynchronizationProfileError -EducationSynchronizationErrorId <
 
 ### Update
 ```
-Update-MgEducationSynchronizationProfileError -EducationSynchronizationErrorId <String>
+Update-MgBetaEducationSynchronizationProfileError -EducationSynchronizationErrorId <String>
  -EducationSynchronizationProfileId <String> -BodyParameter <IMicrosoftGraphEducationSynchronizationError>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgEducationSynchronizationProfileError -InputObject <IEducationIdentity>
+Update-MgBetaEducationSynchronizationProfileError -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationSynchronizationError> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationSynchronizationProfileError -InputObject <IEducationIdentity>
+Update-MgBetaEducationSynchronizationProfileError -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-EntryType <String>] [-ErrorCode <String>] [-ErrorMessage <String>]
  [-Id <String>] [-JoiningValue <String>] [-RecordedDateTime <DateTime>] [-ReportableIdentifier <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -70,7 +70,7 @@ educationSynchronizationError
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -177,7 +177,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -284,9 +284,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError
 
 ## OUTPUTS
 

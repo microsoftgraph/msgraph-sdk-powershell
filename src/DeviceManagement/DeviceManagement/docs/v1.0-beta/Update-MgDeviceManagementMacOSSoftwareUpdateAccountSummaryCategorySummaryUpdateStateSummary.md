@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementmacossoftwareupdateaccountsummarycategorysummaryupdatestatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementmacossoftwareupdateaccountsummarycategorysummaryupdatestatesummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
+# Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
 
 ## SYNOPSIS
 Update the navigation property updateStateSummaries in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property updateStateSummaries in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
+Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
  -MacOSSoftwareUpdateAccountSummaryId <String> -MacOSSoftwareUpdateCategorySummaryId <String>
  -MacOSSoftwareUpdateStateSummaryId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-ProductKey <String>] [-State <MacOSSoftwareUpdateState>]
@@ -24,7 +24,7 @@ Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateS
 
 ### Update
 ```
-Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
+Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
  -MacOSSoftwareUpdateAccountSummaryId <String> -MacOSSoftwareUpdateCategorySummaryId <String>
  -MacOSSoftwareUpdateStateSummaryId <String> -BodyParameter <IMicrosoftGraphMacOSSoftwareUpdateStateSummary>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -32,14 +32,14 @@ Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateS
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
+Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphMacOSSoftwareUpdateStateSummary>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
+Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-ProductKey <String>] [-State <MacOSSoftwareUpdateState>]
  [-UpdateCategory <MacOSSoftwareUpdateCategory>] [-UpdateVersion <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -73,7 +73,7 @@ MacOS software update state summary for a device and user
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateStateSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateStateSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -120,7 +120,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 MacOS Software Update State
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MacOSSoftwareUpdateState
+Type: Microsoft.Graph.Beta.PowerShell.Support.MacOSSoftwareUpdateState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 MacOS Software Update Category
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MacOSSoftwareUpdateCategory
+Type: Microsoft.Graph.Beta.PowerShell.Support.MacOSSoftwareUpdateCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -302,9 +302,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateStateSummary
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementwindowinformationprotectionapplearningsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementwindowinformationprotectionapplearningsummary
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementWindowInformationProtectionAppLearningSummary
+# New-MgBetaDeviceManagementWindowInformationProtectionAppLearningSummary
 
 ## SYNOPSIS
 Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to windowsInformationProtectionAppLearningSummari
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceManagementWindowInformationProtectionAppLearningSummary [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementWindowInformationProtectionAppLearningSummary [-AdditionalProperties <Hashtable>]
  [-ApplicationName <String>] [-ApplicationType <ApplicationType>] [-DeviceCount <Int32>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgDeviceManagementWindowInformationProtectionAppLearningSummary
+New-MgBetaDeviceManagementWindowInformationProtectionAppLearningSummary
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionAppLearningSummary> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 Possible types of Application
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ApplicationType
+Type: Microsoft.Graph.Beta.PowerShell.Support.ApplicationType
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -83,7 +83,7 @@ Windows Information Protection AppLearning Summary entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
 Parameter Sets: Create1
 Aliases:
 
@@ -161,11 +161,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
 
 ## NOTES
 

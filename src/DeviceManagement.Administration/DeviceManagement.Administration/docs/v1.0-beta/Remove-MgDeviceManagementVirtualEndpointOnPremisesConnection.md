@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/remove-mgdevicemanagementvirtualendpointonpremisesconnection
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/remove-mgdevicemanagementvirtualendpointonpremisesconnection
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementVirtualEndpointOnPremisesConnection
+# Remove-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
 Delete navigation property onPremisesConnections for deviceManagement
@@ -14,13 +14,13 @@ Delete navigation property onPremisesConnections for deviceManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId <String>
+Remove-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementVirtualEndpointOnPremisesConnection
+Remove-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
  -InputObject <IDeviceManagementAdministrationIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -30,13 +30,13 @@ Delete navigation property onPremisesConnections for deviceManagement
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+### Example 1: Using the Remove-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Remove-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Remove-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId
 ```
 
-This example shows how to use the Remove-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+This example shows how to use the Remove-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -76,7 +76,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedapproval
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedapproval
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedApproval
+# Get-MgBetaPrivilegedApproval
 
 ## SYNOPSIS
 Retrieve the properties and relationships of privilegedapproval object.
@@ -14,20 +14,20 @@ Retrieve the properties and relationships of privilegedapproval object.
 
 ### List (Default)
 ```
-Get-MgPrivilegedApproval [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPrivilegedApproval [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPrivilegedApproval -PrivilegedApprovalId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPrivilegedApproval -PrivilegedApprovalId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedApproval -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedApproval -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Retrieve the properties and relationships of privilegedapproval object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrivilegedApproval Cmdlet
+### Example 1: Using the Get-MgBetaPrivilegedApproval Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedApproval -PrivilegedApprovalId $privilegedApprovalId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedApproval -PrivilegedApprovalId $privilegedApprovalId
 ```
 
-This example shows how to use the Get-MgPrivilegedApproval Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedApproval Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPrivilegedApproval Cmdlet
+### Example 2: Using the Get-MgBetaPrivilegedApproval Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedApproval
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedApproval
 ```
 
-This example shows how to use the Get-MgPrivilegedApproval Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedApproval Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
 
 ## NOTES
 

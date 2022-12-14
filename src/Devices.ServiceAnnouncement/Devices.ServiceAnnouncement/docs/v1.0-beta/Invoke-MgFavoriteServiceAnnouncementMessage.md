@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/invoke-mgfavoriteserviceannouncementmessage
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/invoke-mgfavoriteserviceannouncementmessage
 schema: 2.0.0
 ---
 
-# Invoke-MgFavoriteServiceAnnouncementMessage
+# Invoke-MgBetaFavoriteServiceAnnouncementMessage
 
 ## SYNOPSIS
 Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
@@ -14,13 +14,13 @@ Change the status of a list of serviceUpdateMessages to favorite for the signed 
 
 ### FavoriteExpanded (Default)
 ```
-Invoke-MgFavoriteServiceAnnouncementMessage [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
+Invoke-MgBetaFavoriteServiceAnnouncementMessage [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Favorite
 ```
-Invoke-MgFavoriteServiceAnnouncementMessage
+Invoke-MgBetaFavoriteServiceAnnouncementMessage
  -BodyParameter <IPaths1Hqlbr0AdminServiceannouncementMessagesMicrosoftGraphFavoritePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,19 +30,19 @@ Change the status of a list of serviceUpdateMessages to favorite for the signed 
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgFavoriteServiceAnnouncementMessage Cmdlet
+### Example 1: Using the Invoke-MgBetaFavoriteServiceAnnouncementMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 $params = @{
 	MessageIds = @(
 		"MC172851"
 		"MC167983"
 	)
 }
-Invoke-MgFavoriteServiceAnnouncementMessage -BodyParameter $params
+Invoke-MgBetaFavoriteServiceAnnouncementMessage -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgFavoriteServiceAnnouncementMessage Cmdlet.
+This example shows how to use the Invoke-MgBetaFavoriteServiceAnnouncementMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Hqlbr0AdminServiceannouncementMessagesMicrosoftGraphFavoritePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Hqlbr0AdminServiceannouncementMessagesMicrosoftGraphFavoritePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Favorite
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Hqlbr0AdminServiceannouncementMessagesMicrosoftGraphFavoritePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Hqlbr0AdminServiceannouncementMessagesMicrosoftGraphFavoritePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

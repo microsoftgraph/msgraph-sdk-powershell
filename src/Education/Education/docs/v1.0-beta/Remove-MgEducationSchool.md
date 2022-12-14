@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationschool
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationschool
 schema: 2.0.0
 ---
 
-# Remove-MgEducationSchool
+# Remove-MgBetaEducationSchool
 
 ## SYNOPSIS
 Delete navigation property schools for education
@@ -14,13 +14,13 @@ Delete navigation property schools for education
 
 ### Delete (Default)
 ```
-Remove-MgEducationSchool -EducationSchoolId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaEducationSchool -EducationSchoolId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationSchool -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaEducationSchool -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property schools for education
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEducationSchool Cmdlet
+### Example 1: Using the Remove-MgBetaEducationSchool Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationSchool -EducationSchoolId $educationSchoolId
+Import-Module Microsoft.Graph.Beta.Education
+Remove-MgBetaEducationSchool -EducationSchoolId $educationSchoolId
 ```
 
-This example shows how to use the Remove-MgEducationSchool Cmdlet.
+This example shows how to use the Remove-MgBetaEducationSchool Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

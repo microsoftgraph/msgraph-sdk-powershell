@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/invoke-mggraphwindowsupdatesupdatableasset
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/invoke-mggraphwindowsupdatesupdatableasset
 schema: 2.0.0
 ---
 
-# Invoke-MgGraphWindowsUpdatesUpdatableAsset
+# Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
 Invoke action unenrollAssetsById
@@ -14,13 +14,13 @@ Invoke action unenrollAssetsById
 
 ### GraphExpanded (Default)
 ```
-Invoke-MgGraphWindowsUpdatesUpdatableAsset [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
+Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-MemberEntityType <String>] [-UpdateCategory <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Graph
 ```
-Invoke-MgGraphWindowsUpdatesUpdatableAsset
+Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset
  -BodyParameter <IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,22 +30,22 @@ Invoke action unenrollAssetsById
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgGraphWindowsUpdatesUpdatableAsset Cmdlet
+### Example 1: Using the Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	UpdateCategory = "feature"
-	MemberEntityType = "#microsoft.graph.windowsUpdates.azureADDevice"
+	MemberEntityType = "#Microsoft.Graph.Beta.windowsUpdates.azureADDevice"
 	Ids = @(
 		"String"
 		"String"
 		"String"
 	)
 }
-Invoke-MgGraphWindowsUpdatesUpdatableAsset -BodyParameter $params
+Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgGraphWindowsUpdatesUpdatableAsset Cmdlet.
+This example shows how to use the Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Graph
 Aliases:
 
@@ -177,7 +177,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -187,7 +187,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgGraphWuUpdatableAsset
+### Invoke-MgBetaGraphWuUpdatableAsset
 
 COMPLEX PARAMETER PROPERTIES
 

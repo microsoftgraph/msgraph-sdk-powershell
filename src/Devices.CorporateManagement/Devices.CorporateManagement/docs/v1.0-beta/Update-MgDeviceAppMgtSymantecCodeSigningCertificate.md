@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtsymanteccodesigningcertificate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtsymanteccodesigningcertificate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtSymantecCodeSigningCertificate
+# Update-MgBetaDeviceAppMgtSymantecCodeSigningCertificate
 
 ## SYNOPSIS
 Update the navigation property symantecCodeSigningCertificate in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property symantecCodeSigningCertificate in deviceAppManage
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtSymantecCodeSigningCertificate [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtSymantecCodeSigningCertificate [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-Issuer <String>]
  [-IssuerName <String>] [-Password <String>] [-Status <String>] [-Subject <String>] [-SubjectName <String>]
  [-UploadDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceAppMgtSymantecCodeSigningCertificate [-AdditionalProperties <Hash
 
 ### Update
 ```
-Update-MgDeviceAppMgtSymantecCodeSigningCertificate
+Update-MgBetaDeviceAppMgtSymantecCodeSigningCertificate
  -BodyParameter <IMicrosoftGraphSymantecCodeSigningCertificate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ symantecCodeSigningCertificate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSymantecCodeSigningCertificate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSymantecCodeSigningCertificate
 Parameter Sets: Update
 Aliases:
 
@@ -267,7 +267,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSymantecCodeSigningCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSymantecCodeSigningCertificate
 
 ## OUTPUTS
 
@@ -277,7 +277,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementSymantecCodeSigningCertificate
+### Update-MgBetaDeviceAppManagementSymantecCodeSigningCertificate
 
 COMPLEX PARAMETER PROPERTIES
 

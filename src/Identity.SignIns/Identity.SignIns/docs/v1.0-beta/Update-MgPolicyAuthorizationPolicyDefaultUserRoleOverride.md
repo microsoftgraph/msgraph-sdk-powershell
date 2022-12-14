@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicydefaultuserroleoverride
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyauthorizationpolicydefaultuserroleoverride
 schema: 2.0.0
 ---
 
-# Update-MgPolicyAuthorizationPolicyDefaultUserRoleOverride
+# Update-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride
 
 ## SYNOPSIS
 Update the navigation property defaultUserRoleOverrides in policies
@@ -14,7 +14,7 @@ Update the navigation property defaultUserRoleOverrides in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyAuthorizationPolicyDefaultUserRoleOverride -AuthorizationPolicyId <String>
+Update-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride -AuthorizationPolicyId <String>
  -DefaultUserRoleOverrideId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault]
  [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgPolicyAuthorizationPolicyDefaultUserRoleOverride -AuthorizationPolicyId
 
 ### Update
 ```
-Update-MgPolicyAuthorizationPolicyDefaultUserRoleOverride -AuthorizationPolicyId <String>
+Update-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride -AuthorizationPolicyId <String>
  -DefaultUserRoleOverrideId <String> -BodyParameter <IMicrosoftGraphDefaultUserRoleOverride> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyAuthorizationPolicyDefaultUserRoleOverride -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphDefaultUserRoleOverride> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyAuthorizationPolicyDefaultUserRoleOverride -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault]
  [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -83,7 +83,7 @@ defaultUserRoleOverride
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ROLEPERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRolePermission[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRolePermission[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -223,9 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride
 
 ## OUTPUTS
 

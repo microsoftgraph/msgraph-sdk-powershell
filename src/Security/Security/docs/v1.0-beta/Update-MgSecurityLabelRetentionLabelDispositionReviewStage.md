@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritylabelretentionlabeldispositionreviewstage
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritylabelretentionlabeldispositionreviewstage
 schema: 2.0.0
 ---
 
-# Update-MgSecurityLabelRetentionLabelDispositionReviewStage
+# Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage
 
 ## SYNOPSIS
 Update the navigation property dispositionReviewStages in security
@@ -14,7 +14,7 @@ Update the navigation property dispositionReviewStages in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityLabelRetentionLabelDispositionReviewStage -DispositionReviewStageId <String>
+Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage -DispositionReviewStageId <String>
  -RetentionLabelId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>]
  [-ReviewersEmailAddresses <String[]>] [-StageNumber <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgSecurityLabelRetentionLabelDispositionReviewStage -DispositionReviewSta
 
 ### Update
 ```
-Update-MgSecurityLabelRetentionLabelDispositionReviewStage -DispositionReviewStageId <String>
+Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage -DispositionReviewStageId <String>
  -RetentionLabelId <String> -BodyParameter <IMicrosoftGraphSecurityDispositionReviewStage> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityLabelRetentionLabelDispositionReviewStage -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityDispositionReviewStage> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityLabelRetentionLabelDispositionReviewStage -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-ReviewersEmailAddresses <String[]>]
  [-StageNumber <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ dispositionReviewStage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -115,7 +115,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -237,9 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

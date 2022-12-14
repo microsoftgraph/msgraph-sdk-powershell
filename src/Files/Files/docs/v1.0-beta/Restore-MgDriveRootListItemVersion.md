@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/restore-mgdriverootlistitemversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/restore-mgdriverootlistitemversion
 schema: 2.0.0
 ---
 
-# Restore-MgDriveRootListItemVersion
+# Restore-MgBetaDriveRootListItemVersion
 
 ## SYNOPSIS
 Invoke action restoreVersion
@@ -14,13 +14,13 @@ Invoke action restoreVersion
 
 ### Restore1 (Default)
 ```
-Restore-MgDriveRootListItemVersion -DriveId <String> -ListItemVersionId <String> [-PassThru] [-Confirm]
+Restore-MgBetaDriveRootListItemVersion -DriveId <String> -ListItemVersionId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity1
 ```
-Restore-MgDriveRootListItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaDriveRootListItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: RestoreViaIdentity1
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

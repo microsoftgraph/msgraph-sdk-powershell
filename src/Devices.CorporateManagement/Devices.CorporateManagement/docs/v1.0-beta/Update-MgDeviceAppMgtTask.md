@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgttask
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgttask
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtTask
+# Update-MgBetaDeviceAppMgtTask
 
 ## SYNOPSIS
 Update the navigation property deviceAppManagementTasks in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceAppManagementTasks in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtTask -DeviceAppManagementTaskId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtTask -DeviceAppManagementTaskId <String> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-Category <DeviceAppManagementTaskCategory>] [-CreatedDateTime <DateTime>]
  [-Creator <String>] [-CreatorNotes <String>] [-Description <String>] [-DisplayName <String>]
  [-DueDateTime <DateTime>] [-Id <String>] [-Priority <DeviceAppManagementTaskPriority>]
@@ -23,19 +23,19 @@ Update-MgDeviceAppMgtTask -DeviceAppManagementTaskId <String> [-AdditionalProper
 
 ### Update
 ```
-Update-MgDeviceAppMgtTask -DeviceAppManagementTaskId <String>
+Update-MgBetaDeviceAppMgtTask -DeviceAppManagementTaskId <String>
  -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtTask -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtTask -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtTask -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtTask -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-Category <DeviceAppManagementTaskCategory>]
  [-CreatedDateTime <DateTime>] [-Creator <String>] [-CreatorNotes <String>] [-Description <String>]
  [-DisplayName <String>] [-DueDateTime <DateTime>] [-Id <String>]
@@ -85,7 +85,7 @@ A device app management task.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 Device app management task category.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskCategory
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAppManagementTaskCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -237,7 +237,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -267,7 +267,7 @@ Accept wildcard characters: False
 Device app management task priority.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskPriority
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAppManagementTaskPriority
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -282,7 +282,7 @@ Accept wildcard characters: False
 Device app management task status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAppManagementTaskStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -329,9 +329,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
 
 ## OUTPUTS
 
@@ -341,7 +341,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementTask
+### Update-MgBetaDeviceAppManagementTask
 
 COMPLEX PARAMETER PROPERTIES
 

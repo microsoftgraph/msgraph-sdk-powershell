@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/new-mgsharelistitemversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/new-mgsharelistitemversion
 schema: 2.0.0
 ---
 
-# New-MgShareListItemVersion
+# New-MgBetaShareListItemVersion
 
 ## SYNOPSIS
 Create new navigation property to versions for shares
@@ -14,7 +14,7 @@ Create new navigation property to versions for shares
 
 ### CreateExpanded3 (Default)
 ```
-New-MgShareListItemVersion -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaShareListItemVersion -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>]
  [-Fields <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgShareListItemVersion -SharedDriveItemId <String> [-AdditionalProperties <H
 
 ### Create2
 ```
-New-MgShareListItemVersion -ListItemId <String> -SharedDriveItemId <String>
+New-MgBetaShareListItemVersion -ListItemId <String> -SharedDriveItemId <String>
  -BodyParameter <IMicrosoftGraphListItemVersion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create3
 ```
-New-MgShareListItemVersion -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphListItemVersion>
+New-MgBetaShareListItemVersion -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphListItemVersion>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded2
 ```
-New-MgShareListItemVersion -ListItemId <String> -SharedDriveItemId <String>
+New-MgBetaShareListItemVersion -ListItemId <String> -SharedDriveItemId <String>
  [-AdditionalProperties <Hashtable>] [-Fields <Hashtable>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-Publication <IMicrosoftGraphPublicationFacet>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -42,19 +42,19 @@ New-MgShareListItemVersion -ListItemId <String> -SharedDriveItemId <String>
 
 ### CreateViaIdentity2
 ```
-New-MgShareListItemVersion -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphListItemVersion>
+New-MgBetaShareListItemVersion -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphListItemVersion>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity3
 ```
-New-MgShareListItemVersion -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphListItemVersion>
+New-MgBetaShareListItemVersion -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphListItemVersion>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded2
 ```
-New-MgShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Fields <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -62,7 +62,7 @@ New-MgShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties 
 
 ### CreateViaIdentityExpanded3
 ```
-New-MgShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaShareListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Fields <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -95,7 +95,7 @@ listItemVersion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItemVersion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItemVersion
 Parameter Sets: Create2, Create3, CreateViaIdentity2, CreateViaIdentity3
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: CreateViaIdentity2, CreateViaIdentity3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
 Aliases:
 
@@ -158,7 +158,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
 Aliases:
 
@@ -205,7 +205,7 @@ publicationFacet
 To construct, please use Get-Help -Online and see NOTES section for PUBLICATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublicationFacet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublicationFacet
 Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
 Aliases:
 
@@ -267,13 +267,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItemVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItemVersion
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItemVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItemVersion
 
 ## NOTES
 

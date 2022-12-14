@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/update-mggroupcalendarpermission
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/update-mggroupcalendarpermission
 schema: 2.0.0
 ---
 
-# Update-MgGroupCalendarPermission
+# Update-MgBetaGroupCalendarPermission
 
 ## SYNOPSIS
 Update the navigation property calendarPermissions in groups
@@ -14,7 +14,7 @@ Update the navigation property calendarPermissions in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String>
+Update-MgBetaGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>]
  [-Id <String>] [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String
 
 ### Update1
 ```
-Update-MgGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String>
+Update-MgBetaGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String>
  -BodyParameter <IMicrosoftGraphCalendarPermission> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupCalendarPermission -InputObject <ICalendarIdentity>
+Update-MgBetaGroupCalendarPermission -InputObject <ICalendarIdentity>
  -BodyParameter <IMicrosoftGraphCalendarPermission> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
  [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ calendarPermission
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarPermission
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -113,7 +113,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for EMAILADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -160,7 +160,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -269,9 +269,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarPermission
 
 ## OUTPUTS
 

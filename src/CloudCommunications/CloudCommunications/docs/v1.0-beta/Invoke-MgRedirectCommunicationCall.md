@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgredirectcommunicationcall
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mgredirectcommunicationcall
 schema: 2.0.0
 ---
 
-# Invoke-MgRedirectCommunicationCall
+# Invoke-MgBetaRedirectCommunicationCall
 
 ## SYNOPSIS
 Redirect an incoming call that hasn't been answered or rejected yet.
@@ -17,7 +17,7 @@ The current timeout value is 15 seconds.
 
 ### RedirectExpanded1 (Default)
 ```
-Invoke-MgRedirectCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaRedirectCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>]
  [-CallbackUri <String>] [-MaskCallee] [-MaskCaller] [-TargetDisposition <String>]
  [-Targets <IMicrosoftGraphInvitationParticipantInfo1[]>] [-Timeout <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -25,21 +25,21 @@ Invoke-MgRedirectCommunicationCall -CallId <String> [-AdditionalProperties <Hash
 
 ### Redirect1
 ```
-Invoke-MgRedirectCommunicationCall -CallId <String>
+Invoke-MgBetaRedirectCommunicationCall -CallId <String>
  -BodyParameter <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentity1
 ```
-Invoke-MgRedirectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaRedirectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentityExpanded1
 ```
-Invoke-MgRedirectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaRedirectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-CallbackUri <String>] [-MaskCallee] [-MaskCaller]
  [-TargetDisposition <String>] [-Targets <IMicrosoftGraphInvitationParticipantInfo1[]>] [-Timeout <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -53,17 +53,17 @@ The current timeout value is 15 seconds.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgRedirectCommunicationCall Cmdlet
+### Example 1: Using the Invoke-MgBetaRedirectCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Targets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				Application = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					DisplayName = "test bot 2"
 					Id = "22bfd41f-550e-477d-8789-f6f7bd2a5e8b"
 				}
@@ -72,23 +72,23 @@ $params = @{
 	)
 	CallbackUri = "https://bot.contoso.com/api/calls/24701998-1a73-4d42-8085-bf46ed0ae039"
 }
-Invoke-MgRedirectCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaRedirectCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgRedirectCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaRedirectCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Invoke-MgRedirectCommunicationCall Cmdlet
+### Example 2: Using the Invoke-MgBetaRedirectCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Targets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				Phone = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "+12345678901"
 				}
 			}
@@ -96,10 +96,10 @@ $params = @{
 	)
 	CallbackUri = "https://bot.contoso.com/api/calls/24701998-1a73-4d42-8085-bf46ed0ae039"
 }
-Invoke-MgRedirectCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaRedirectCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgRedirectCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaRedirectCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Redirect1, RedirectViaIdentity1
 Aliases:
 
@@ -170,7 +170,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: RedirectViaIdentity1, RedirectViaIdentityExpanded1
 Aliases:
 
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TARGETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInvitationParticipantInfo1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInvitationParticipantInfo1[]
 Parameter Sets: RedirectExpanded1, RedirectViaIdentityExpanded1
 Aliases:
 
@@ -308,9 +308,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

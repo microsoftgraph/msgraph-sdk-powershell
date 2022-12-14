@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityusersecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecurityusersecurityprofile
 schema: 2.0.0
 ---
 
-# Get-MgSecurityUserSecurityProfile
+# Get-MgBetaSecurityUserSecurityProfile
 
 ## SYNOPSIS
 Get userSecurityProfiles from security
@@ -14,20 +14,20 @@ Get userSecurityProfiles from security
 
 ### List (Default)
 ```
-Get-MgSecurityUserSecurityProfile [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSecurityUserSecurityProfile [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityUserSecurityProfile -UserSecurityProfileId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityUserSecurityProfile -UserSecurityProfileId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityUserSecurityProfile -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityUserSecurityProfile -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
 
 ## NOTES
 

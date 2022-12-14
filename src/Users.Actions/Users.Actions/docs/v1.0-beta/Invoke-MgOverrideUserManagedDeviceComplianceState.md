@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgoverrideusermanageddevicecompliancestate
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgoverrideusermanageddevicecompliancestate
 schema: 2.0.0
 ---
 
-# Invoke-MgOverrideUserManagedDeviceComplianceState
+# Invoke-MgBetaOverrideUserManagedDeviceComplianceState
 
 ## SYNOPSIS
 Invoke action overrideComplianceState
@@ -14,28 +14,28 @@ Invoke action overrideComplianceState
 
 ### OverrideExpanded (Default)
 ```
-Invoke-MgOverrideUserManagedDeviceComplianceState -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaOverrideUserManagedDeviceComplianceState -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ComplianceState <AdministratorConfiguredDeviceComplianceState>]
  [-RemediationUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Override
 ```
-Invoke-MgOverrideUserManagedDeviceComplianceState -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaOverrideUserManagedDeviceComplianceState -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths11FbqvhUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### OverrideViaIdentity
 ```
-Invoke-MgOverrideUserManagedDeviceComplianceState -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaOverrideUserManagedDeviceComplianceState -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths11FbqvhUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### OverrideViaIdentityExpanded
 ```
-Invoke-MgOverrideUserManagedDeviceComplianceState -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaOverrideUserManagedDeviceComplianceState -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ComplianceState <AdministratorConfiguredDeviceComplianceState>]
  [-RemediationUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths11FbqvhUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths11FbqvhUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Override, OverrideViaIdentity
 Aliases:
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 Administrator configured device compliance state Enum
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AdministratorConfiguredDeviceComplianceState
+Type: Microsoft.Graph.Beta.PowerShell.Support.AdministratorConfiguredDeviceComplianceState
 Parameter Sets: OverrideExpanded, OverrideViaIdentityExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: OverrideViaIdentity, OverrideViaIdentityExpanded
 Aliases:
 
@@ -205,9 +205,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths11FbqvhUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths11FbqvhUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

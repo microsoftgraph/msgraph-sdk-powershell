@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementioupdatestatuses
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementioupdatestatuses
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementIoUpdateStatuses
+# Update-MgBetaDeviceManagementIoUpdateStatuses
 
 ## SYNOPSIS
 Update the navigation property iosUpdateStatuses in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property iosUpdateStatuses in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementIoUpdateStatuses -IosUpdateDeviceStatusId <String>
+Update-MgBetaDeviceManagementIoUpdateStatuses -IosUpdateDeviceStatusId <String>
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceModel <String>] [-Id <String>]
  [-InstallStatus <String>] [-LastReportedDateTime <DateTime>] [-OSVersion <String>] [-Platform <Int32>]
@@ -24,19 +24,19 @@ Update-MgDeviceManagementIoUpdateStatuses -IosUpdateDeviceStatusId <String>
 
 ### Update
 ```
-Update-MgDeviceManagementIoUpdateStatuses -IosUpdateDeviceStatusId <String>
+Update-MgBetaDeviceManagementIoUpdateStatuses -IosUpdateDeviceStatusId <String>
  -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementIoUpdateStatuses -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementIoUpdateStatuses -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementIoUpdateStatuses -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementIoUpdateStatuses -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceModel <String>] [-Id <String>]
  [-InstallStatus <String>] [-LastReportedDateTime <DateTime>] [-OSVersion <String>] [-Platform <Int32>]
@@ -71,7 +71,7 @@ iosUpdateDeviceStatus
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -360,9 +360,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 
 ## OUTPUTS
 

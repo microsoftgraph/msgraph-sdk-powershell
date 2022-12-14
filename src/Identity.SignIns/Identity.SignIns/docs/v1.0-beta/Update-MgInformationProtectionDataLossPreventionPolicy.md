@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mginformationprotectiondatalosspreventionpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mginformationprotectiondatalosspreventionpolicy
 schema: 2.0.0
 ---
 
-# Update-MgInformationProtectionDataLossPreventionPolicy
+# Update-MgBetaInformationProtectionDataLossPreventionPolicy
 
 ## SYNOPSIS
 Update the navigation property dataLossPreventionPolicies in informationProtection
@@ -14,28 +14,28 @@ Update the navigation property dataLossPreventionPolicies in informationProtecti
 
 ### UpdateExpanded (Default)
 ```
-Update-MgInformationProtectionDataLossPreventionPolicy -DataLossPreventionPolicyId <String>
+Update-MgBetaInformationProtectionDataLossPreventionPolicy -DataLossPreventionPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgInformationProtectionDataLossPreventionPolicy -DataLossPreventionPolicyId <String>
+Update-MgBetaInformationProtectionDataLossPreventionPolicy -DataLossPreventionPolicyId <String>
  -BodyParameter <IMicrosoftGraphDataLossPreventionPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphDataLossPreventionPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ dataLossPreventionPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -191,9 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 
 ## OUTPUTS
 

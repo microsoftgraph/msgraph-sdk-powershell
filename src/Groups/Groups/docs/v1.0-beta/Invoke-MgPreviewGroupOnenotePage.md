@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgpreviewgrouponenotepage
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgpreviewgrouponenotepage
 schema: 2.0.0
 ---
 
-# Invoke-MgPreviewGroupOnenotePage
+# Invoke-MgBetaPreviewGroupOnenotePage
 
 ## SYNOPSIS
 Invoke function preview
@@ -14,12 +14,12 @@ Invoke function preview
 
 ### Preview (Default)
 ```
-Invoke-MgPreviewGroupOnenotePage -GroupId <String> -OnenotePageId <String> [<CommonParameters>]
+Invoke-MgBetaPreviewGroupOnenotePage -GroupId <String> -OnenotePageId <String> [<CommonParameters>]
 ```
 
 ### PreviewViaIdentity
 ```
-Invoke-MgPreviewGroupOnenotePage -InputObject <IGroupsIdentity> [<CommonParameters>]
+Invoke-MgBetaPreviewGroupOnenotePage -InputObject <IGroupsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: PreviewViaIdentity
 Aliases:
 
@@ -80,11 +80,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePagePreview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenotePagePreview
 
 ## NOTES
 

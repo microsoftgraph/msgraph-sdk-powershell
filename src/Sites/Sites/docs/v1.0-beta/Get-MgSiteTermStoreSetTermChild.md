@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitetermstoresettermchild
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitetermstoresettermchild
 schema: 2.0.0
 ---
 
-# Get-MgSiteTermStoreSetTermChild
+# Get-MgBetaSiteTermStoreSetTermChild
 
 ## SYNOPSIS
 Children of current term.
@@ -14,20 +14,20 @@ Children of current term.
 
 ### List1 (Default)
 ```
-Get-MgSiteTermStoreSetTermChild -SetId <String> -SiteId <String> -TermId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSiteTermStoreSetTermChild -SetId <String> -SiteId <String> -TermId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgSiteTermStoreSetTermChild -SetId <String> -SiteId <String> -TermId <String> -TermId1 <String>
+Get-MgBetaSiteTermStoreSetTermChild -SetId <String> -SiteId <String> -TermId <String> -TermId1 <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSiteTermStoreSetTermChild -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSiteTermStoreSetTermChild -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreTerm1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreTerm1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/confirm-mguserauthenticationmicrosoftauthenticatormethoddevicememberobject
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/confirm-mguserauthenticationmicrosoftauthenticatormethoddevicememberobject
 schema: 2.0.0
 ---
 
-# Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
+# Confirm-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
 
 ## SYNOPSIS
 Invoke action checkMemberObjects
@@ -14,14 +14,14 @@ Invoke action checkMemberObjects
 
 ### CheckExpanded1 (Default)
 ```
-Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
+Confirm-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check1
 ```
-Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
+Confirm-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  -BodyParameter <IPaths1BrvcqxUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
 
 ### CheckViaIdentity1
 ```
-Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
+Confirm-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1BrvcqxUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
 
 ### CheckViaIdentityExpanded1
 ```
-Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
+Confirm-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1BrvcqxUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1BrvcqxUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Check1, CheckViaIdentity1
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CheckViaIdentity1, CheckViaIdentityExpanded1
 Aliases:
 
@@ -177,9 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1BrvcqxUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1BrvcqxUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

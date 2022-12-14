@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebookcategory
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebookcategory
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtManagedEBookCategory
+# Update-MgBetaDeviceAppMgtManagedEBookCategory
 
 ## SYNOPSIS
 Update the navigation property managedEBookCategories in deviceAppManagement
@@ -14,26 +14,26 @@ Update the navigation property managedEBookCategories in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtManagedEBookCategory -ManagedEBookCategoryId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtManagedEBookCategory -ManagedEBookCategoryId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceAppMgtManagedEBookCategory -ManagedEBookCategoryId <String>
+Update-MgBetaDeviceAppMgtManagedEBookCategory -ManagedEBookCategoryId <String>
  -BodyParameter <IMicrosoftGraphManagedEBookCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedEBookCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ Contains properties for a single Intune eBook category.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -204,9 +204,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
 
 ## OUTPUTS
 
@@ -216,7 +216,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementManagedEBookCategory
+### Update-MgBetaDeviceAppManagementManagedEBookCategory
 
 COMPLEX PARAMETER PROPERTIES
 

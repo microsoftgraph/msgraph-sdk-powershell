@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgreprovisionusermanageddevicecloudpc
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgreprovisionusermanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgReprovisionUserManagedDeviceCloudPc
+# Invoke-MgBetaReprovisionUserManagedDeviceCloudPc
 
 ## SYNOPSIS
 Reprovision a Cloud PC with an Intune managed device ID.
@@ -14,13 +14,13 @@ Reprovision a Cloud PC with an Intune managed device ID.
 
 ### Cloud (Default)
 ```
-Invoke-MgReprovisionUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm]
+Invoke-MgBetaReprovisionUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CloudViaIdentity
 ```
-Invoke-MgReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm]
+Invoke-MgBetaReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CloudViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgCloudUserManagedDevice
+### Invoke-MgBetaCloudUserManagedDevice
 
 COMPLEX PARAMETER PROPERTIES
 

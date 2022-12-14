@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/add-mgteamworkdeletedteamchannelmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/add-mgteamworkdeletedteamchannelmember
 schema: 2.0.0
 ---
 
-# Add-MgTeamworkDeletedTeamChannelMember
+# Add-MgBetaTeamworkDeletedTeamChannelMember
 
 ## SYNOPSIS
 Add multiple members in a single request to a team.
@@ -15,28 +15,28 @@ The response provides details about which memberships could and couldn't be crea
 
 ### AddExpanded (Default)
 ```
-Add-MgTeamworkDeletedTeamChannelMember -ChannelId <String> -DeletedTeamId <String>
+Add-MgBetaTeamworkDeletedTeamChannelMember -ChannelId <String> -DeletedTeamId <String>
  [-AdditionalProperties <Hashtable>] [-Values <IMicrosoftGraphConversationMember[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Add
 ```
-Add-MgTeamworkDeletedTeamChannelMember -ChannelId <String> -DeletedTeamId <String>
+Add-MgBetaTeamworkDeletedTeamChannelMember -ChannelId <String> -DeletedTeamId <String>
  -BodyParameter <IPathsWalfg2TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity>
+Add-MgBetaTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsWalfg2TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
-Add-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Add-MgBetaTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Values <IMicrosoftGraphConversationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsWalfg2TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsWalfg2TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add, AddViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember[]
 Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
@@ -177,13 +177,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsWalfg2TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsWalfg2TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActionResultPart
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActionResultPart
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/close-mgsecuritycaseediscoverycase
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/close-mgsecuritycaseediscoverycase
 schema: 2.0.0
 ---
 
-# Close-MgSecurityCaseEdiscoveryCase
+# Close-MgBetaSecurityCaseEdiscoveryCase
 
 ## SYNOPSIS
 Close an eDiscovery case.
@@ -15,13 +15,13 @@ For details, see Close a case.
 
 ### Close1 (Default)
 ```
-Close-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId <String> [-PassThru] [-Confirm] [-WhatIf]
+Close-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CloseViaIdentity1
 ```
-Close-MgSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Close-MgBetaSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ For details, see Close a case.
 
 ## EXAMPLES
 
-### Example 1: Using the Close-MgSecurityCaseEdiscoveryCase Cmdlet
+### Example 1: Using the Close-MgBetaSecurityCaseEdiscoveryCase Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Close-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
+Import-Module Microsoft.Graph.Beta.Security
+Close-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
-This example shows how to use the Close-MgSecurityCaseEdiscoveryCase Cmdlet.
+This example shows how to use the Close-MgBetaSecurityCaseEdiscoveryCase Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: CloseViaIdentity1
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mguserdevicemanagementtroubleshootingevent
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mguserdevicemanagementtroubleshootingevent
 schema: 2.0.0
 ---
 
-# Update-MgUserDeviceManagementTroubleshootingEvent
+# Update-MgBetaUserDeviceManagementTroubleshootingEvent
 
 ## SYNOPSIS
 Update the navigation property deviceManagementTroubleshootingEvents in users
@@ -14,7 +14,7 @@ Update the navigation property deviceManagementTroubleshootingEvents in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserDeviceManagementTroubleshootingEvent -DeviceManagementTroubleshootingEventId <String>
+Update-MgBetaUserDeviceManagementTroubleshootingEvent -DeviceManagementTroubleshootingEventId <String>
  -UserId <String> [-AdditionalInformation <IMicrosoftGraphKeyValuePair[]>] [-AdditionalProperties <Hashtable>]
  [-CorrelationId <String>] [-EventDateTime <DateTime>] [-EventName <String>] [-Id <String>]
  [-TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>] [-PassThru]
@@ -23,21 +23,21 @@ Update-MgUserDeviceManagementTroubleshootingEvent -DeviceManagementTroubleshooti
 
 ### Update
 ```
-Update-MgUserDeviceManagementTroubleshootingEvent -DeviceManagementTroubleshootingEventId <String>
+Update-MgBetaUserDeviceManagementTroubleshootingEvent -DeviceManagementTroubleshootingEventId <String>
  -UserId <String> -BodyParameter <IMicrosoftGraphDeviceManagementTroubleshootingEvent> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserDeviceManagementTroubleshootingEvent -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaUserDeviceManagementTroubleshootingEvent -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementTroubleshootingEvent> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserDeviceManagementTroubleshootingEvent -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaUserDeviceManagementTroubleshootingEvent -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalInformation <IMicrosoftGraphKeyValuePair[]>] [-AdditionalProperties <Hashtable>]
  [-CorrelationId <String>] [-EventDateTime <DateTime>] [-EventName <String>] [-Id <String>]
  [-TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>] [-PassThru]
@@ -56,7 +56,7 @@ A set of string key and string value pairs which provides additional information
 To construct, please use Get-Help -Online and see NOTES section for ADDITIONALINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ Event representing an general failure.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -180,7 +180,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -211,7 +211,7 @@ Object containing detailed information about the error and its remediation.
 To construct, please use Get-Help -Online and see NOTES section for TROUBLESHOOTINGERRORDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -273,9 +273,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent
 
 ## OUTPUTS
 

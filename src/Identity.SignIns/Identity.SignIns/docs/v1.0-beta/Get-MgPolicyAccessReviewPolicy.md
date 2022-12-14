@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyaccessreviewpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyaccessreviewpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyAccessReviewPolicy
+# Get-MgBetaPolicyAccessReviewPolicy
 
 ## SYNOPSIS
 Read the properties and relationships of an accessReviewPolicy object.
@@ -13,7 +13,7 @@ Read the properties and relationships of an accessReviewPolicy object.
 ## SYNTAX
 
 ```
-Get-MgPolicyAccessReviewPolicy [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaPolicyAccessReviewPolicy [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,13 +21,13 @@ Read the properties and relationships of an accessReviewPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyAccessReviewPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyAccessReviewPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyAccessReviewPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyAccessReviewPolicy
 ```
 
-This example shows how to use the Get-MgPolicyAccessReviewPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyAccessReviewPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
 
 ## NOTES
 

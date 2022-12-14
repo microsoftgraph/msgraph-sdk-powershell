@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgextractuserinformationprotectionpolicylabel
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgextractuserinformationprotectionpolicylabel
 schema: 2.0.0
 ---
 
-# Invoke-MgExtractUserInformationProtectionPolicyLabel
+# Invoke-MgBetaExtractUserInformationProtectionPolicyLabel
 
 ## SYNOPSIS
 Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
@@ -15,27 +15,27 @@ The contentInfo input is resolved to informationProtectionContentLabel.
 
 ### ExtractExpanded (Default)
 ```
-Invoke-MgExtractUserInformationProtectionPolicyLabel -UserId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaExtractUserInformationProtectionPolicyLabel -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContentInfo <IMicrosoftGraphContentInfo>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Extract
 ```
-Invoke-MgExtractUserInformationProtectionPolicyLabel -UserId <String>
+Invoke-MgBetaExtractUserInformationProtectionPolicyLabel -UserId <String>
  -BodyParameter <IPaths15P5U1HUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExtractViaIdentity
 ```
-Invoke-MgExtractUserInformationProtectionPolicyLabel -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaExtractUserInformationProtectionPolicyLabel -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths15P5U1HUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExtractViaIdentityExpanded
 ```
-Invoke-MgExtractUserInformationProtectionPolicyLabel -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaExtractUserInformationProtectionPolicyLabel -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInfo <IMicrosoftGraphContentInfo>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths15P5U1HUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths15P5U1HUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Extract, ExtractViaIdentity
 Aliases:
 
@@ -84,7 +84,7 @@ contentInfo
 To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentInfo
 Parameter Sets: ExtractExpanded, ExtractViaIdentityExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ExtractViaIdentity, ExtractViaIdentityExpanded
 Aliases:
 
@@ -162,13 +162,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths15P5U1HUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths15P5U1HUsersUserIdInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionContentLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionContentLabel
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityconditionalaccesstemplate
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityconditionalaccesstemplate
 schema: 2.0.0
 ---
 
-# Update-MgIdentityConditionalAccessTemplate
+# Update-MgBetaIdentityConditionalAccessTemplate
 
 ## SYNOPSIS
 Update the navigation property templates in identity
@@ -14,7 +14,7 @@ Update the navigation property templates in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityConditionalAccessTemplate -ConditionalAccessTemplateId <String>
+Update-MgBetaIdentityConditionalAccessTemplate -ConditionalAccessTemplateId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-Details <IMicrosoftGraphConditionalAccessPolicyDetail>] [-Id <String>] [-Name <String>]
  [-Scenarios <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgIdentityConditionalAccessTemplate -ConditionalAccessTemplateId <String>
 
 ### Update
 ```
-Update-MgIdentityConditionalAccessTemplate -ConditionalAccessTemplateId <String>
+Update-MgBetaIdentityConditionalAccessTemplate -ConditionalAccessTemplateId <String>
  -BodyParameter <IMicrosoftGraphConditionalAccessTemplate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityConditionalAccessTemplate -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityConditionalAccessTemplate -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphConditionalAccessTemplate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityConditionalAccessTemplate -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityConditionalAccessTemplate -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-Details <IMicrosoftGraphConditionalAccessPolicyDetail>] [-Id <String>] [-Name <String>]
  [-Scenarios <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ conditionalAccessTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessTemplate
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -115,7 +115,7 @@ conditionalAccessPolicyDetail
 To construct, please use Get-Help -Online and see NOTES section for DETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicyDetail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicyDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -239,9 +239,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessTemplate
 
 ## OUTPUTS
 

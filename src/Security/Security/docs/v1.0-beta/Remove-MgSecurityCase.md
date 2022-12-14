@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecuritycase
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/remove-mgsecuritycase
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityCase
+# Remove-MgBetaSecurityCase
 
 ## SYNOPSIS
 Delete navigation property cases for security
@@ -13,7 +13,7 @@ Delete navigation property cases for security
 ## SYNTAX
 
 ```
-Remove-MgSecurityCase [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaSecurityCase [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

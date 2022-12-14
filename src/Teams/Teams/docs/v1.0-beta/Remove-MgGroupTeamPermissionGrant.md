@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mggroupteampermissiongrant
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mggroupteampermissiongrant
 schema: 2.0.0
 ---
 
-# Remove-MgGroupTeamPermissionGrant
+# Remove-MgBetaGroupTeamPermissionGrant
 
 ## SYNOPSIS
 Delete navigation property permissionGrants for groups
@@ -14,13 +14,13 @@ Delete navigation property permissionGrants for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupTeamPermissionGrant -GroupId <String> -ResourceSpecificPermissionGrantId <String>
+Remove-MgBetaGroupTeamPermissionGrant -GroupId <String> -ResourceSpecificPermissionGrantId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupTeamPermissionGrant -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaGroupTeamPermissionGrant -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

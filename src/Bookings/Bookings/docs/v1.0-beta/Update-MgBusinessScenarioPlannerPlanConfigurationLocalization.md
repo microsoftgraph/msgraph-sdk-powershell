@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/update-mgbusinessscenarioplannerplanconfigurationlocalization
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/update-mgbusinessscenarioplannerplanconfigurationlocalization
 schema: 2.0.0
 ---
 
-# Update-MgBusinessScenarioPlannerPlanConfigurationLocalization
+# Update-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization
 
 ## SYNOPSIS
 Update the navigation property localizations in solutions
@@ -14,7 +14,7 @@ Update the navigation property localizations in solutions
 
 ### UpdateExpanded (Default)
 ```
-Update-MgBusinessScenarioPlannerPlanConfigurationLocalization -BusinessScenarioId <String>
+Update-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization -BusinessScenarioId <String>
  -PlannerPlanConfigurationLocalizationId <String> [-AdditionalProperties <Hashtable>]
  [-Buckets <IMicrosoftGraphPlannerPlanConfigurationBucketLocalization[]>] [-Id <String>]
  [-LanguageTag <String>] [-PlanTitle <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgBusinessScenarioPlannerPlanConfigurationLocalization -BusinessScenarioI
 
 ### Update
 ```
-Update-MgBusinessScenarioPlannerPlanConfigurationLocalization -BusinessScenarioId <String>
+Update-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization -BusinessScenarioId <String>
  -PlannerPlanConfigurationLocalizationId <String>
  -BodyParameter <IMicrosoftGraphPlannerPlanConfigurationLocalization> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,14 +30,14 @@ Update-MgBusinessScenarioPlannerPlanConfigurationLocalization -BusinessScenarioI
 
 ### UpdateViaIdentity
 ```
-Update-MgBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBookingsIdentity>
+Update-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphPlannerPlanConfigurationLocalization> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBookingsIdentity>
+Update-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBookingsIdentity>
  [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerPlanConfigurationBucketLocalization[]>]
  [-Id <String>] [-LanguageTag <String>] [-PlanTitle <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -70,7 +70,7 @@ plannerPlanConfigurationLocalization
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationLocalization
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationLocalization
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BUCKETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationBucketLocalization[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationBucketLocalization[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -240,9 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationLocalization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanConfigurationLocalization
 
 ## OUTPUTS
 

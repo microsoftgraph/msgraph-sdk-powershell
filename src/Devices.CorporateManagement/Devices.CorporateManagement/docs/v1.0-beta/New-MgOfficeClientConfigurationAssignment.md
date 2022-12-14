@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgofficeclientconfigurationassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgofficeclientconfigurationassignment
 schema: 2.0.0
 ---
 
-# New-MgOfficeClientConfigurationAssignment
+# New-MgBetaOfficeClientConfigurationAssignment
 
 ## SYNOPSIS
 Create new navigation property to assignments for officeConfiguration
@@ -14,26 +14,26 @@ Create new navigation property to assignments for officeConfiguration
 
 ### CreateExpanded (Default)
 ```
-New-MgOfficeClientConfigurationAssignment -OfficeClientConfigurationId <String>
+New-MgBetaOfficeClientConfigurationAssignment -OfficeClientConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Target <Hashtable>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOfficeClientConfigurationAssignment -OfficeClientConfigurationId <String>
+New-MgBetaOfficeClientConfigurationAssignment -OfficeClientConfigurationId <String>
  -BodyParameter <IMicrosoftGraphOfficeClientConfigurationAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphOfficeClientConfigurationAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Target <Hashtable>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ officeClientConfigurationAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -174,13 +174,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
 
 ## NOTES
 

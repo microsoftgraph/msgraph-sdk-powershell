@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mggroupteamscheduleschedulinggroup
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mggroupteamscheduleschedulinggroup
 schema: 2.0.0
 ---
 
-# Get-MgGroupTeamScheduleSchedulingGroup
+# Get-MgBetaGroupTeamScheduleSchedulingGroup
 
 ## SYNOPSIS
 The logical grouping of users in the schedule (usually by role).
@@ -14,20 +14,20 @@ The logical grouping of users in the schedule (usually by role).
 
 ### List (Default)
 ```
-Get-MgGroupTeamScheduleSchedulingGroup -GroupId <String> [-Filter <String>] [-Property <String[]>]
+Get-MgBetaGroupTeamScheduleSchedulingGroup -GroupId <String> [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupTeamScheduleSchedulingGroup -GroupId <String> -SchedulingGroupId <String> [-Property <String[]>]
+Get-MgBetaGroupTeamScheduleSchedulingGroup -GroupId <String> -SchedulingGroupId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Property <String[]>]
+Get-MgBetaGroupTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
 
 ## NOTES
 

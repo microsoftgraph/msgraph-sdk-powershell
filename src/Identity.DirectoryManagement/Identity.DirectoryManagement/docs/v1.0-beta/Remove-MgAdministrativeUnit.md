@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgadministrativeunit
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/remove-mgadministrativeunit
 schema: 2.0.0
 ---
 
-# Remove-MgAdministrativeUnit
+# Remove-MgBetaAdministrativeUnit
 
 ## SYNOPSIS
 Delete an administrativeUnit.
@@ -14,13 +14,13 @@ Delete an administrativeUnit.
 
 ### Delete (Default)
 ```
-Remove-MgAdministrativeUnit -AdministrativeUnitId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaAdministrativeUnit -AdministrativeUnitId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>]
+Remove-MgBetaAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,7 +31,7 @@ Delete an administrativeUnit.
 
 ### Example 1: Remove an administrative unit
 ```powershell
-Remove-MgDirectoryAdministrativeUnit -AdministrativeUnitId '416f19a5-2e01-4d15-a78c-d9028fee1ebb'
+Remove-MgBetaDirectoryAdministrativeUnit -AdministrativeUnitId '416f19a5-2e01-4d15-a78c-d9028fee1ebb'
 ```
 
 This example removes the specified administrative unit.
@@ -73,7 +73,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -135,7 +135,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

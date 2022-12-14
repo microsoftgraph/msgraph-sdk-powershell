@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtpolicysetassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtpolicysetassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtPolicySetAssignment
+# New-MgBetaDeviceAppMgtPolicySetAssignment
 
 ## SYNOPSIS
 Create new navigation property to assignments for deviceAppManagement
@@ -14,26 +14,26 @@ Create new navigation property to assignments for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtPolicySetAssignment -PolicySetId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaDeviceAppMgtPolicySetAssignment -PolicySetId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtPolicySetAssignment -PolicySetId <String>
+New-MgBetaDeviceAppMgtPolicySetAssignment -PolicySetId <String>
  -BodyParameter <IMicrosoftGraphPolicySetAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtPolicySetAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtPolicySetAssignment -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphPolicySetAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtPolicySetAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtPolicySetAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ A class containing the properties used for PolicySet Assignment.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -143,7 +143,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -190,19 +190,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetAssignment
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementPolicySetAssignment
+### New-MgBetaDeviceAppManagementPolicySetAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

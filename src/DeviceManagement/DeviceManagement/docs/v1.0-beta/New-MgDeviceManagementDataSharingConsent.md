@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementdatasharingconsent
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementdatasharingconsent
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDataSharingConsent
+# New-MgBetaDeviceManagementDataSharingConsent
 
 ## SYNOPSIS
 Create new navigation property to dataSharingConsents for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to dataSharingConsents for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDataSharingConsent [-AdditionalProperties <Hashtable>] [-GrantDateTime <DateTime>]
+New-MgBetaDeviceManagementDataSharingConsent [-AdditionalProperties <Hashtable>] [-GrantDateTime <DateTime>]
  [-Granted] [-GrantedByUpn <String>] [-GrantedByUserId <String>] [-Id <String>] [-ServiceDisplayName <String>]
  [-TermsUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementDataSharingConsent -BodyParameter <IMicrosoftGraphDataSharingConsent> [-Confirm]
+New-MgBetaDeviceManagementDataSharingConsent -BodyParameter <IMicrosoftGraphDataSharingConsent> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Data sharing consent information.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataSharingConsent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataSharingConsent
 Parameter Sets: Create
 Aliases:
 
@@ -205,11 +205,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataSharingConsent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataSharingConsent
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataSharingConsent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataSharingConsent
 
 ## NOTES
 

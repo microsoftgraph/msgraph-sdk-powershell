@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycaselegalholdsitesource
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycaselegalholdsitesource
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource
+# Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource
 
 ## SYNOPSIS
 Data sources that represent SharePoint sites.
@@ -14,7 +14,7 @@ Data sources that represent SharePoint sites.
 
 ### List (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId <String>
  -EdiscoveryHoldPolicyId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId <String>
 
 ### Get
 ```
-Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId <String>
  -EdiscoveryHoldPolicyId <String> -SiteSourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySiteSource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySiteSource
 
 ## NOTES
 

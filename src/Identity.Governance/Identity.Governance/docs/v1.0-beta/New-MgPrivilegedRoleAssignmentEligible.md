@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedroleassignmenteligible
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedroleassignmenteligible
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedRoleAssignmentEligible
+# New-MgBetaPrivilegedRoleAssignmentEligible
 
 ## SYNOPSIS
 Make the role assignment eligible.
@@ -17,13 +17,13 @@ If the requestor is the target user and the role is Security Administrator or Pr
 
 ### Make (Default)
 ```
-New-MgPrivilegedRoleAssignmentEligible -PrivilegedRoleAssignmentId <String> [-Confirm] [-WhatIf]
+New-MgBetaPrivilegedRoleAssignmentEligible -PrivilegedRoleAssignmentId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### MakeViaIdentity
 ```
-New-MgPrivilegedRoleAssignmentEligible -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf]
+New-MgBetaPrivilegedRoleAssignmentEligible -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -35,13 +35,13 @@ If the requestor is the target user and the role is Security Administrator or Pr
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPrivilegedRoleAssignmentEligible Cmdlet
+### Example 1: Using the New-MgBetaPrivilegedRoleAssignmentEligible Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-New-MgPrivilegedRoleAssignmentEligible -PrivilegedRoleAssignmentId $privilegedRoleAssignmentId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+New-MgBetaPrivilegedRoleAssignmentEligible -PrivilegedRoleAssignmentId $privilegedRoleAssignmentId
 ```
 
-This example shows how to use the New-MgPrivilegedRoleAssignmentEligible Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedRoleAssignmentEligible Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: MakeViaIdentity
 Aliases:
 
@@ -113,11 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## NOTES
 

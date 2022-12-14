@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolisttasklinkedresource
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusertodolisttasklinkedresource
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoListTaskLinkedResource
+# Get-MgBetaUserTodoListTaskLinkedResource
 
 ## SYNOPSIS
 A collection of resources linked to the task.
@@ -14,20 +14,20 @@ A collection of resources linked to the task.
 
 ### List (Default)
 ```
-Get-MgUserTodoListTaskLinkedResource -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+Get-MgBetaUserTodoListTaskLinkedResource -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String> -TodoTaskListId <String>
+Get-MgBetaUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String> -TodoTaskListId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ A collection of resources linked to the task.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTodoListTaskLinkedResource Cmdlet
+### Example 1: Using the Get-MgBetaUserTodoListTaskLinkedResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId
+Get-MgBetaUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId
 ```
 
-This example shows how to use the Get-MgUserTodoListTaskLinkedResource Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskLinkedResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserTodoListTaskLinkedResource Cmdlet
+### Example 2: Using the Get-MgBetaUserTodoListTaskLinkedResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
+Get-MgBetaUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
 ```
 
-This example shows how to use the Get-MgUserTodoListTaskLinkedResource Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskLinkedResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -290,11 +290,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLinkedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLinkedResource
 
 ## NOTES
 

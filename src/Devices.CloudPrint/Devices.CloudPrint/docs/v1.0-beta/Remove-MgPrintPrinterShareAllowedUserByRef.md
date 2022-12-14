@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/remove-mgprintprintersharealloweduserbyref
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/remove-mgprintprintersharealloweduserbyref
 schema: 2.0.0
 ---
 
-# Remove-MgPrintPrinterShareAllowedUserByRef
+# Remove-MgBetaPrintPrinterShareAllowedUserByRef
 
 ## SYNOPSIS
 Delete ref of navigation property allowedUsers for print
@@ -14,13 +14,13 @@ Delete ref of navigation property allowedUsers for print
 
 ### Delete (Default)
 ```
-Remove-MgPrintPrinterShareAllowedUserByRef -PrinterShareId <String> -UserId <String> [-Id <String>]
+Remove-MgBetaPrintPrinterShareAllowedUserByRef -PrinterShareId <String> -UserId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPrintPrinterShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
+Remove-MgBetaPrintPrinterShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property allowedUsers for print
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPrintPrinterShareAllowedUserByRef Cmdlet
+### Example 1: Using the Remove-MgBetaPrintPrinterShareAllowedUserByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Remove-MgPrintPrinterShareAllowedUserByRef -PrinterShareId $printerShareId -UserId $userId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Remove-MgBetaPrintPrinterShareAllowedUserByRef -PrinterShareId $printerShareId -UserId $userId
 ```
 
-This example shows how to use the Remove-MgPrintPrinterShareAllowedUserByRef Cmdlet.
+This example shows how to use the Remove-MgBetaPrintPrinterShareAllowedUserByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelist
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelist
 schema: 2.0.0
 ---
 
-# Get-MgSiteList
+# Get-MgBetaSiteList
 
 ## SYNOPSIS
 The collection of lists under this site.
@@ -14,20 +14,20 @@ The collection of lists under this site.
 
 ### List (Default)
 ```
-Get-MgSiteList -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSiteList -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSiteList -ListId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteList -ListId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteList -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteList -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,58 +36,58 @@ The collection of lists under this site.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteList Cmdlet
+### Example 1: Using the Get-MgBetaSiteList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteList -SiteId $siteId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteList -SiteId $siteId
 ```
 
-This example shows how to use the Get-MgSiteList Cmdlet.
+This example shows how to use the Get-MgBetaSiteList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSiteList Cmdlet
+### Example 2: Using the Get-MgBetaSiteList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteList -SiteId $siteId -ListId $listId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteList -SiteId $siteId -ListId $listId
 ```
 
-This example shows how to use the Get-MgSiteList Cmdlet.
+This example shows how to use the Get-MgBetaSiteList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgSiteList Cmdlet
+### Example 3: Using the Get-MgBetaSiteList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteList -SiteId $siteId -ListId $listId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteList -SiteId $siteId -ListId $listId
 ```
 
-This example shows how to use the Get-MgSiteList Cmdlet.
+This example shows how to use the Get-MgBetaSiteList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgSiteList Cmdlet
+### Example 4: Using the Get-MgBetaSiteList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteList -SiteId $siteId -ListId $listId -Property "name,lastModifiedDateTime" -ExpandProperty "columns(select=name,description),items)" 
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteList -SiteId $siteId -ListId $listId -Property "name,lastModifiedDateTime" -ExpandProperty "columns(select=name,description),items)" 
 ```
 
-This example shows how to use the Get-MgSiteList Cmdlet.
+This example shows how to use the Get-MgBetaSiteList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Get-MgSiteList Cmdlet
+### Example 5: Using the Get-MgBetaSiteList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteList -SiteId $siteId -ListId $listId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteList -SiteId $siteId -ListId $listId
 ```
 
-This example shows how to use the Get-MgSiteList Cmdlet.
+This example shows how to use the Get-MgBetaSiteList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the Get-MgSiteList Cmdlet
+### Example 6: Using the Get-MgBetaSiteList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteList -SiteId $siteId -ListId $listId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteList -SiteId $siteId -ListId $listId
 ```
 
-This example shows how to use the Get-MgSiteList Cmdlet.
+This example shows how to use the Get-MgBetaSiteList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -294,11 +294,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphList
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphList
 
 ## NOTES
 

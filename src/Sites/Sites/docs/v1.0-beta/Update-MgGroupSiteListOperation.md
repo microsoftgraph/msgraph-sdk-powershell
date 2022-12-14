@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/update-mggroupsitelistoperation
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/update-mggroupsitelistoperation
 schema: 2.0.0
 ---
 
-# Update-MgGroupSiteListOperation
+# Update-MgBetaGroupSiteListOperation
 
 ## SYNOPSIS
 Update the navigation property operations in groups
@@ -14,7 +14,7 @@ Update the navigation property operations in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupSiteListOperation -GroupId <String> -ListId <String> -RichLongRunningOperationId <String>
+Update-MgBetaGroupSiteListOperation -GroupId <String> -ListId <String> -RichLongRunningOperationId <String>
  -SiteId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-Error <IMicrosoftGraphPublicError>] [-Id <String>] [-LastActionDateTime <DateTime>]
  [-PercentageComplete <Int32>] [-ResourceId <String>] [-ResourceLocation <String>] [-Status <String>]
@@ -23,21 +23,21 @@ Update-MgGroupSiteListOperation -GroupId <String> -ListId <String> -RichLongRunn
 
 ### Update1
 ```
-Update-MgGroupSiteListOperation -GroupId <String> -ListId <String> -RichLongRunningOperationId <String>
+Update-MgBetaGroupSiteListOperation -GroupId <String> -ListId <String> -RichLongRunningOperationId <String>
  -SiteId <String> -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupSiteListOperation -InputObject <ISitesIdentity>
+Update-MgBetaGroupSiteListOperation -InputObject <ISitesIdentity>
  -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupSiteListOperation -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupSiteListOperation -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
  [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-PassThru]
@@ -71,7 +71,7 @@ richLongRunningOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -102,7 +102,7 @@ publicError
 To construct, please use Get-Help -Online and see NOTES section for ERROR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublicError
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublicError
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -361,9 +361,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

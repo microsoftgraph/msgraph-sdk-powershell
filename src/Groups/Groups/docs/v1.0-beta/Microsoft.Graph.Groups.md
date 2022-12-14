@@ -1,133 +1,133 @@
 ---
-Module Name: Microsoft.Graph.Groups
+Module Name: Microsoft.Graph.Beta.Groups
 Module Guid: 8818bd08-77c2-4c0a-80d1-6a465fd53c78
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Groups Module
+# Microsoft.Graph.Beta.Groups Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Groups Cmdlets
-### [Add-MgGroupDriveListContentTypeCopy](Add-MgGroupDriveListContentTypeCopy.md)
+## Microsoft.Graph.Beta.Groups Cmdlets
+### [Add-MgBetaGroupDriveListContentTypeCopy](Add-MgBetaGroupDriveListContentTypeCopy.md)
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
-### [Add-MgGroupDriveListContentTypeCopyFromContentTypeHub](Add-MgGroupDriveListContentTypeCopyFromContentTypeHub.md)
+### [Add-MgBetaGroupDriveListContentTypeCopyFromContentTypeHub](Add-MgBetaGroupDriveListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
-### [Add-MgGroupFavorite](Add-MgGroupFavorite.md)
+### [Add-MgBetaGroupFavorite](Add-MgBetaGroupFavorite.md)
 Add the group to the list of the current user's favorite groups.
 Supported for Microsoft 365 groups only.
 
-### [Add-MgGroupSite](Add-MgGroupSite.md)
+### [Add-MgBetaGroupSite](Add-MgBetaGroupSite.md)
 Follow a user's site or multiple sites.
 
-### [Add-MgGroupSiteContentTypeCopy](Add-MgGroupSiteContentTypeCopy.md)
+### [Add-MgBetaGroupSiteContentTypeCopy](Add-MgBetaGroupSiteContentTypeCopy.md)
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
-### [Add-MgGroupSiteContentTypeCopyFromContentTypeHub](Add-MgGroupSiteContentTypeCopyFromContentTypeHub.md)
+### [Add-MgBetaGroupSiteContentTypeCopyFromContentTypeHub](Add-MgBetaGroupSiteContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
-### [Add-MgGroupSiteListContentTypeCopy](Add-MgGroupSiteListContentTypeCopy.md)
+### [Add-MgBetaGroupSiteListContentTypeCopy](Add-MgBetaGroupSiteListContentTypeCopy.md)
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
-### [Add-MgGroupSiteListContentTypeCopyFromContentTypeHub](Add-MgGroupSiteListContentTypeCopyFromContentTypeHub.md)
+### [Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub](Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
-### [Add-MgGroupToLifecyclePolicy](Add-MgGroupToLifecyclePolicy.md)
+### [Add-MgBetaGroupToLifecyclePolicy](Add-MgBetaGroupToLifecyclePolicy.md)
 Invoke action addGroup
 
-### [Confirm-MgGroupGrantedPermissionForApp](Confirm-MgGroupGrantedPermissionForApp.md)
+### [Confirm-MgBetaGroupGrantedPermissionForApp](Confirm-MgBetaGroupGrantedPermissionForApp.md)
 Invoke action checkGrantedPermissionsForApp
 
-### [Confirm-MgGroupMemberGroup](Confirm-MgGroupMemberGroup.md)
+### [Confirm-MgBetaGroupMemberGroup](Confirm-MgBetaGroupMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgGroupMemberObject](Confirm-MgGroupMemberObject.md)
+### [Confirm-MgBetaGroupMemberObject](Confirm-MgBetaGroupMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgGroupPermissionGrantMemberGroup](Confirm-MgGroupPermissionGrantMemberGroup.md)
+### [Confirm-MgBetaGroupPermissionGrantMemberGroup](Confirm-MgBetaGroupPermissionGrantMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgGroupPermissionGrantMemberObject](Confirm-MgGroupPermissionGrantMemberObject.md)
+### [Confirm-MgBetaGroupPermissionGrantMemberObject](Confirm-MgBetaGroupPermissionGrantMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Copy-MgGroupDriveItem](Copy-MgGroupDriveItem.md)
+### [Copy-MgBetaGroupDriveItem](Copy-MgBetaGroupDriveItem.md)
 Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
-### [Copy-MgGroupDriveListContentTypeToDefaultContentLocation](Copy-MgGroupDriveListContentTypeToDefaultContentLocation.md)
+### [Copy-MgBetaGroupDriveListContentTypeToDefaultContentLocation](Copy-MgBetaGroupDriveListContentTypeToDefaultContentLocation.md)
 Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
 
-### [Copy-MgGroupDriveRoot](Copy-MgGroupDriveRoot.md)
+### [Copy-MgBetaGroupDriveRoot](Copy-MgBetaGroupDriveRoot.md)
 Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
-### [Copy-MgGroupOnenoteNotebook](Copy-MgGroupOnenoteNotebook.md)
+### [Copy-MgBetaGroupOnenoteNotebook](Copy-MgBetaGroupOnenoteNotebook.md)
 Copies a notebook to the Notebooks folder in the destination Documents library.
 The folder is created if it doesn't exist.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
-### [Copy-MgGroupOnenotePageToSection](Copy-MgGroupOnenotePageToSection.md)
+### [Copy-MgBetaGroupOnenotePageToSection](Copy-MgBetaGroupOnenotePageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
-### [Copy-MgGroupOnenoteSectionToNotebook](Copy-MgGroupOnenoteSectionToNotebook.md)
+### [Copy-MgBetaGroupOnenoteSectionToNotebook](Copy-MgBetaGroupOnenoteSectionToNotebook.md)
 Copies a section to a specific notebook.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
-### [Copy-MgGroupOnenoteSectionToSectionGroup](Copy-MgGroupOnenoteSectionToSectionGroup.md)
+### [Copy-MgBetaGroupOnenoteSectionToSectionGroup](Copy-MgBetaGroupOnenoteSectionToSectionGroup.md)
 Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
-### [Copy-MgGroupSiteContentTypeToDefaultContentLocation](Copy-MgGroupSiteContentTypeToDefaultContentLocation.md)
+### [Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation](Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation.md)
 Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
 
-### [Copy-MgGroupSiteListContentTypeToDefaultContentLocation](Copy-MgGroupSiteListContentTypeToDefaultContentLocation.md)
+### [Copy-MgBetaGroupSiteListContentTypeToDefaultContentLocation](Copy-MgBetaGroupSiteListContentTypeToDefaultContentLocation.md)
 Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
 
-### [Get-MgGroup](Get-MgGroup.md)
+### [Get-MgBetaGroup](Get-MgBetaGroup.md)
 Get the properties and relationships of a group object.
 This operation returns by default only a subset of all the available properties, as noted in the Properties section.
 To get properties that are _not_ returned by default, specify them in a `$select` OData query option.
 The **hasMembersWithLicenseErrors** and **isArchived** properties are an exception and are not returned in the `$select` query.
 Because the **group** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **group** instance.
 
-### [Get-MgGroupAcceptedSender](Get-MgGroupAcceptedSender.md)
+### [Get-MgBetaGroupAcceptedSender](Get-MgBetaGroupAcceptedSender.md)
 Get a list of users or groups that are in the accepted-senders list for this group.
 Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).
 Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
-### [Get-MgGroupAcceptedSenderByRef](Get-MgGroupAcceptedSenderByRef.md)
+### [Get-MgBetaGroupAcceptedSenderByRef](Get-MgBetaGroupAcceptedSenderByRef.md)
 Get a list of users or groups that are in the accepted-senders list for this group.
 Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).
 Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
-### [Get-MgGroupById](Get-MgGroupById.md)
+### [Get-MgBetaGroupById](Get-MgBetaGroupById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgGroupCalendarEventDelta](Get-MgGroupCalendarEventDelta.md)
+### [Get-MgBetaGroupCalendarEventDelta](Get-MgBetaGroupCalendarEventDelta.md)
 Get a set of event resources that have been added, deleted, or updated in one or more calendars.
 You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar.
 The calendar can be the default calendar or some other specified calendar of the user's.
@@ -137,112 +137,112 @@ The initial call is a full synchronization, and every subsequent **delta** call 
 This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
 The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.
 
-### [Get-MgGroupCalendarSchedule](Get-MgGroupCalendarSchedule.md)
+### [Get-MgBetaGroupCalendarSchedule](Get-MgBetaGroupCalendarSchedule.md)
 Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 
-### [Get-MgGroupConversation](Get-MgGroupConversation.md)
+### [Get-MgBetaGroupConversation](Get-MgBetaGroupConversation.md)
 The group's conversations.
 
-### [Get-MgGroupConversationThread](Get-MgGroupConversationThread.md)
+### [Get-MgBetaGroupConversationThread](Get-MgBetaGroupConversationThread.md)
 A collection of all the conversation threads in the conversation.
 A navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgGroupConversationThreadPost](Get-MgGroupConversationThreadPost.md)
+### [Get-MgBetaGroupConversationThreadPost](Get-MgBetaGroupConversationThreadPost.md)
 Get posts from groups
 
-### [Get-MgGroupConversationThreadPostAttachment](Get-MgGroupConversationThreadPostAttachment.md)
+### [Get-MgBetaGroupConversationThreadPostAttachment](Get-MgBetaGroupConversationThreadPostAttachment.md)
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupConversationThreadPostExtension](Get-MgGroupConversationThreadPostExtension.md)
+### [Get-MgBetaGroupConversationThreadPostExtension](Get-MgBetaGroupConversationThreadPostExtension.md)
 The collection of open extensions defined for the post.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupConversationThreadPostInReplyToAttachment](Get-MgGroupConversationThreadPostInReplyToAttachment.md)
+### [Get-MgBetaGroupConversationThreadPostInReplyToAttachment](Get-MgBetaGroupConversationThreadPostInReplyToAttachment.md)
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupConversationThreadPostInReplyToExtension](Get-MgGroupConversationThreadPostInReplyToExtension.md)
+### [Get-MgBetaGroupConversationThreadPostInReplyToExtension](Get-MgBetaGroupConversationThreadPostInReplyToExtension.md)
 The collection of open extensions defined for the post.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupConversationThreadPostInReplyToMention](Get-MgGroupConversationThreadPostInReplyToMention.md)
+### [Get-MgBetaGroupConversationThreadPostInReplyToMention](Get-MgBetaGroupConversationThreadPostInReplyToMention.md)
 Get mentions from groups
 
-### [Get-MgGroupConversationThreadPostInReplyToMultiValueExtendedProperty](Get-MgGroupConversationThreadPostInReplyToMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupConversationThreadPostInReplyToMultiValueExtendedProperty](Get-MgBetaGroupConversationThreadPostInReplyToMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty](Get-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty](Get-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupConversationThreadPostMention](Get-MgGroupConversationThreadPostMention.md)
+### [Get-MgBetaGroupConversationThreadPostMention](Get-MgBetaGroupConversationThreadPostMention.md)
 Get mentions from groups
 
-### [Get-MgGroupConversationThreadPostMultiValueExtendedProperty](Get-MgGroupConversationThreadPostMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupConversationThreadPostMultiValueExtendedProperty](Get-MgBetaGroupConversationThreadPostMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupConversationThreadPostSingleValueExtendedProperty](Get-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupConversationThreadPostSingleValueExtendedProperty](Get-MgBetaGroupConversationThreadPostSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupCreatedOnBehalfOf](Get-MgGroupCreatedOnBehalfOf.md)
+### [Get-MgBetaGroupCreatedOnBehalfOf](Get-MgBetaGroupCreatedOnBehalfOf.md)
 The user (or application) that created the group.
 Note: This is not set if the user is an administrator.
 Read-only.
 
-### [Get-MgGroupDelta](Get-MgGroupDelta.md)
+### [Get-MgBetaGroupDelta](Get-MgBetaGroupDelta.md)
 Invoke function delta
 
-### [Get-MgGroupDriveItemActivityByInterval](Get-MgGroupDriveItemActivityByInterval.md)
+### [Get-MgBetaGroupDriveItemActivityByInterval](Get-MgBetaGroupDriveItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgGroupDriveItemDelta](Get-MgGroupDriveItemDelta.md)
+### [Get-MgBetaGroupDriveItemDelta](Get-MgBetaGroupDriveItemDelta.md)
 Invoke function delta
 
-### [Get-MgGroupDriveItemListItemActivityByInterval](Get-MgGroupDriveItemListItemActivityByInterval.md)
+### [Get-MgBetaGroupDriveItemListItemActivityByInterval](Get-MgBetaGroupDriveItemListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgGroupDriveListContentTypeCompatibleHubContentType](Get-MgGroupDriveListContentTypeCompatibleHubContentType.md)
+### [Get-MgBetaGroupDriveListContentTypeCompatibleHubContentType](Get-MgBetaGroupDriveListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgGroupDriveListItemActivityByInterval](Get-MgGroupDriveListItemActivityByInterval.md)
+### [Get-MgBetaGroupDriveListItemActivityByInterval](Get-MgBetaGroupDriveListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgGroupDriveListItemDelta](Get-MgGroupDriveListItemDelta.md)
+### [Get-MgBetaGroupDriveListItemDelta](Get-MgBetaGroupDriveListItemDelta.md)
 Invoke function delta
 
-### [Get-MgGroupDriveRootActivityByInterval](Get-MgGroupDriveRootActivityByInterval.md)
+### [Get-MgBetaGroupDriveRootActivityByInterval](Get-MgBetaGroupDriveRootActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgGroupDriveRootDelta](Get-MgGroupDriveRootDelta.md)
+### [Get-MgBetaGroupDriveRootDelta](Get-MgBetaGroupDriveRootDelta.md)
 Invoke function delta
 
-### [Get-MgGroupDriveRootListItemActivityByInterval](Get-MgGroupDriveRootListItemActivityByInterval.md)
+### [Get-MgBetaGroupDriveRootListItemActivityByInterval](Get-MgBetaGroupDriveRootListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgGroupEndpoint](Get-MgGroupEndpoint.md)
+### [Get-MgBetaGroupEndpoint](Get-MgBetaGroupEndpoint.md)
 Endpoints for the group.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventDelta](Get-MgGroupEventDelta.md)
+### [Get-MgBetaGroupEventDelta](Get-MgBetaGroupEventDelta.md)
 Get a set of event resources that have been added, deleted, or updated in one or more calendars.
 You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar.
 The calendar can be the default calendar or some other specified calendar of the user's.
@@ -252,416 +252,416 @@ The initial call is a full synchronization, and every subsequent **delta** call 
 This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
 The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.
 
-### [Get-MgGroupExtension](Get-MgGroupExtension.md)
+### [Get-MgBetaGroupExtension](Get-MgBetaGroupExtension.md)
 The collection of open extensions defined for the group.
 Read-only.
 Nullable.
 
-### [Get-MgGroupLifecyclePolicy](Get-MgGroupLifecyclePolicy.md)
+### [Get-MgBetaGroupLifecyclePolicy](Get-MgBetaGroupLifecyclePolicy.md)
 Retrieve the properties and relationships of a groupLifecyclePolicies object.
 
-### [Get-MgGroupLifecyclePolicyByGroup](Get-MgGroupLifecyclePolicyByGroup.md)
+### [Get-MgBetaGroupLifecyclePolicyByGroup](Get-MgBetaGroupLifecyclePolicyByGroup.md)
 Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 
-### [Get-MgGroupMember](Get-MgGroupMember.md)
+### [Get-MgBetaGroupMember](Get-MgBetaGroupMember.md)
 Direct members of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
-### [Get-MgGroupMemberByRef](Get-MgGroupMemberByRef.md)
+### [Get-MgBetaGroupMemberByRef](Get-MgBetaGroupMemberByRef.md)
 Direct members of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
-### [Get-MgGroupMemberGroup](Get-MgGroupMemberGroup.md)
+### [Get-MgBetaGroupMemberGroup](Get-MgBetaGroupMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgGroupMemberObject](Get-MgGroupMemberObject.md)
+### [Get-MgBetaGroupMemberObject](Get-MgBetaGroupMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgGroupMemberOf](Get-MgGroupMemberOf.md)
+### [Get-MgBetaGroupMemberOf](Get-MgBetaGroupMemberOf.md)
 Groups and administrative units that this group is a member of.
 HTTP Methods: GET (supported for all groups).
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupMemberWithLicenseError](Get-MgGroupMemberWithLicenseError.md)
+### [Get-MgBetaGroupMemberWithLicenseError](Get-MgBetaGroupMemberWithLicenseError.md)
 A list of group members with license errors from this group-based license assignment.
 Read-only.
 
-### [Get-MgGroupOnenoteNotebookFromWebUrl](Get-MgGroupOnenoteNotebookFromWebUrl.md)
+### [Get-MgBetaGroupOnenoteNotebookFromWebUrl](Get-MgBetaGroupOnenoteNotebookFromWebUrl.md)
 Retrieve the properties and relationships of a notebook object by using its URL path.
 The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 
-### [Get-MgGroupOnenoteRecentNotebook](Get-MgGroupOnenoteRecentNotebook.md)
+### [Get-MgBetaGroupOnenoteRecentNotebook](Get-MgBetaGroupOnenoteRecentNotebook.md)
 Invoke function getRecentNotebooks
 
-### [Get-MgGroupOwner](Get-MgGroupOwner.md)
+### [Get-MgBetaGroupOwner](Get-MgBetaGroupOwner.md)
 The owners of the group who can be users or service principals.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
 Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
-### [Get-MgGroupOwnerByRef](Get-MgGroupOwnerByRef.md)
+### [Get-MgBetaGroupOwnerByRef](Get-MgBetaGroupOwnerByRef.md)
 The owners of the group who can be users or service principals.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
 Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
-### [Get-MgGroupPermissionGrant](Get-MgGroupPermissionGrant.md)
+### [Get-MgBetaGroupPermissionGrant](Get-MgBetaGroupPermissionGrant.md)
 The permissions that have been granted for a group to a specific application.
 Supports $expand.
 
-### [Get-MgGroupPermissionGrantById](Get-MgGroupPermissionGrantById.md)
+### [Get-MgBetaGroupPermissionGrantById](Get-MgBetaGroupPermissionGrantById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgGroupPermissionGrantMemberGroup](Get-MgGroupPermissionGrantMemberGroup.md)
+### [Get-MgBetaGroupPermissionGrantMemberGroup](Get-MgBetaGroupPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgGroupPermissionGrantMemberObject](Get-MgGroupPermissionGrantMemberObject.md)
+### [Get-MgBetaGroupPermissionGrantMemberObject](Get-MgBetaGroupPermissionGrantMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgGroupPermissionGrantUserOwnedObject](Get-MgGroupPermissionGrantUserOwnedObject.md)
+### [Get-MgBetaGroupPermissionGrantUserOwnedObject](Get-MgBetaGroupPermissionGrantUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgGroupPhoto](Get-MgGroupPhoto.md)
+### [Get-MgBetaGroupPhoto](Get-MgBetaGroupPhoto.md)
 The group's profile photo.
 
-### [Get-MgGroupPhotoContent](Get-MgGroupPhotoContent.md)
+### [Get-MgBetaGroupPhotoContent](Get-MgBetaGroupPhotoContent.md)
 Get media content for the navigation property photo from groups
 
-### [Get-MgGroupRejectedSender](Get-MgGroupRejectedSender.md)
+### [Get-MgBetaGroupRejectedSender](Get-MgBetaGroupRejectedSender.md)
 Get a list of users or groups that are in the rejected-senders list for this group.
 Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
 Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 
-### [Get-MgGroupRejectedSenderByRef](Get-MgGroupRejectedSenderByRef.md)
+### [Get-MgBetaGroupRejectedSenderByRef](Get-MgBetaGroupRejectedSenderByRef.md)
 Get a list of users or groups that are in the rejected-senders list for this group.
 Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
 Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 
-### [Get-MgGroupSetting](Get-MgGroupSetting.md)
+### [Get-MgBetaGroupSetting](Get-MgBetaGroupSetting.md)
 Settings that can govern this group's behavior, like whether members can invite guest users to the group.
 Nullable.
 
-### [Get-MgGroupSiteActivityByInterval](Get-MgGroupSiteActivityByInterval.md)
+### [Get-MgBetaGroupSiteActivityByInterval](Get-MgBetaGroupSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgGroupSiteApplicableContentTypeForList](Get-MgGroupSiteApplicableContentTypeForList.md)
+### [Get-MgBetaGroupSiteApplicableContentTypeForList](Get-MgBetaGroupSiteApplicableContentTypeForList.md)
 Invoke function getApplicableContentTypesForList
 
-### [Get-MgGroupSiteByPath](Get-MgGroupSiteByPath.md)
+### [Get-MgBetaGroupSiteByPath](Get-MgBetaGroupSiteByPath.md)
 Invoke function getByPath
 
-### [Get-MgGroupSiteContentTypeCompatibleHubContentType](Get-MgGroupSiteContentTypeCompatibleHubContentType.md)
+### [Get-MgBetaGroupSiteContentTypeCompatibleHubContentType](Get-MgBetaGroupSiteContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgGroupSiteDelta](Get-MgGroupSiteDelta.md)
+### [Get-MgBetaGroupSiteDelta](Get-MgBetaGroupSiteDelta.md)
 Invoke function delta
 
-### [Get-MgGroupSiteListContentTypeCompatibleHubContentType](Get-MgGroupSiteListContentTypeCompatibleHubContentType.md)
+### [Get-MgBetaGroupSiteListContentTypeCompatibleHubContentType](Get-MgBetaGroupSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgGroupSiteListItemActivityByInterval](Get-MgGroupSiteListItemActivityByInterval.md)
+### [Get-MgBetaGroupSiteListItemActivityByInterval](Get-MgBetaGroupSiteListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgGroupSiteListItemDelta](Get-MgGroupSiteListItemDelta.md)
+### [Get-MgBetaGroupSiteListItemDelta](Get-MgBetaGroupSiteListItemDelta.md)
 Invoke function delta
 
-### [Get-MgGroupThread](Get-MgGroupThread.md)
+### [Get-MgBetaGroupThread](Get-MgBetaGroupThread.md)
 The group's conversation threads.
 Nullable.
 
-### [Get-MgGroupThreadPost](Get-MgGroupThreadPost.md)
+### [Get-MgBetaGroupThreadPost](Get-MgBetaGroupThreadPost.md)
 Get posts from groups
 
-### [Get-MgGroupThreadPostAttachment](Get-MgGroupThreadPostAttachment.md)
+### [Get-MgBetaGroupThreadPostAttachment](Get-MgBetaGroupThreadPostAttachment.md)
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupThreadPostExtension](Get-MgGroupThreadPostExtension.md)
+### [Get-MgBetaGroupThreadPostExtension](Get-MgBetaGroupThreadPostExtension.md)
 The collection of open extensions defined for the post.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupThreadPostInReplyToAttachment](Get-MgGroupThreadPostInReplyToAttachment.md)
+### [Get-MgBetaGroupThreadPostInReplyToAttachment](Get-MgBetaGroupThreadPostInReplyToAttachment.md)
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupThreadPostInReplyToExtension](Get-MgGroupThreadPostInReplyToExtension.md)
+### [Get-MgBetaGroupThreadPostInReplyToExtension](Get-MgBetaGroupThreadPostInReplyToExtension.md)
 The collection of open extensions defined for the post.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgGroupThreadPostInReplyToMention](Get-MgGroupThreadPostInReplyToMention.md)
+### [Get-MgBetaGroupThreadPostInReplyToMention](Get-MgBetaGroupThreadPostInReplyToMention.md)
 Get mentions from groups
 
-### [Get-MgGroupThreadPostInReplyToMultiValueExtendedProperty](Get-MgGroupThreadPostInReplyToMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty](Get-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupThreadPostInReplyToSingleValueExtendedProperty](Get-MgGroupThreadPostInReplyToSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty](Get-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupThreadPostMention](Get-MgGroupThreadPostMention.md)
+### [Get-MgBetaGroupThreadPostMention](Get-MgBetaGroupThreadPostMention.md)
 Get mentions from groups
 
-### [Get-MgGroupThreadPostMultiValueExtendedProperty](Get-MgGroupThreadPostMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupThreadPostMultiValueExtendedProperty](Get-MgBetaGroupThreadPostMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupThreadPostSingleValueExtendedProperty](Get-MgGroupThreadPostSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupThreadPostSingleValueExtendedProperty](Get-MgBetaGroupThreadPostSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupTransitiveMember](Get-MgGroupTransitiveMember.md)
+### [Get-MgBetaGroupTransitiveMember](Get-MgBetaGroupTransitiveMember.md)
 The direct and transitive members of a group.
 Nullable.
 
-### [Get-MgGroupTransitiveMemberOf](Get-MgGroupTransitiveMemberOf.md)
+### [Get-MgBetaGroupTransitiveMemberOf](Get-MgBetaGroupTransitiveMemberOf.md)
 The groups that a group is a member of, either directly and through nested membership.
 Nullable.
 
-### [Get-MgGroupUserOwnedObject](Get-MgGroupUserOwnedObject.md)
+### [Get-MgBetaGroupUserOwnedObject](Get-MgBetaGroupUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgUserJoinedGroup](Get-MgUserJoinedGroup.md)
+### [Get-MgBetaUserJoinedGroup](Get-MgBetaUserJoinedGroup.md)
 Get joinedGroups from users
 
-### [Grant-MgGroupDriveItemPermission](Grant-MgGroupDriveItemPermission.md)
+### [Grant-MgBetaGroupDriveItemPermission](Grant-MgBetaGroupDriveItemPermission.md)
 Grant users access to a link represented by a [permission][].
 
-### [Grant-MgGroupDriveRootPermission](Grant-MgGroupDriveRootPermission.md)
+### [Grant-MgBetaGroupDriveRootPermission](Grant-MgBetaGroupDriveRootPermission.md)
 Grant users access to a link represented by a [permission][].
 
-### [Grant-MgGroupSitePermission](Grant-MgGroupSitePermission.md)
+### [Grant-MgBetaGroupSitePermission](Grant-MgBetaGroupSitePermission.md)
 Grant users access to a link represented by a [permission][].
 
-### [Invoke-MgAcceptGroupCalendarEvent](Invoke-MgAcceptGroupCalendarEvent.md)
+### [Invoke-MgBetaAcceptGroupCalendarEvent](Invoke-MgBetaAcceptGroupCalendarEvent.md)
 Accept the specified event in a user calendar.
 
-### [Invoke-MgAcceptGroupCalendarEventTentatively](Invoke-MgAcceptGroupCalendarEventTentatively.md)
+### [Invoke-MgBetaAcceptGroupCalendarEventTentatively](Invoke-MgBetaAcceptGroupCalendarEventTentatively.md)
 Tentatively accept the specified event in a user calendar.
 If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
-### [Invoke-MgAcceptGroupEvent](Invoke-MgAcceptGroupEvent.md)
+### [Invoke-MgBetaAcceptGroupEvent](Invoke-MgBetaAcceptGroupEvent.md)
 Accept the specified event in a user calendar.
 
-### [Invoke-MgAcceptGroupEventTentatively](Invoke-MgAcceptGroupEventTentatively.md)
+### [Invoke-MgBetaAcceptGroupEventTentatively](Invoke-MgBetaAcceptGroupEventTentatively.md)
 Tentatively accept the specified event in a user calendar.
 If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
-### [Invoke-MgCalendarGroupCalendar](Invoke-MgCalendarGroupCalendar.md)
+### [Invoke-MgBetaCalendarGroupCalendar](Invoke-MgBetaCalendarGroupCalendar.md)
 Invoke function allowedCalendarSharingRoles
 
-### [Invoke-MgCheckinGroupDriveItem](Invoke-MgCheckinGroupDriveItem.md)
+### [Invoke-MgBetaCheckinGroupDriveItem](Invoke-MgBetaCheckinGroupDriveItem.md)
 Check in a checked out **driveItem** resource, which makes the version of the document available to others.
 
-### [Invoke-MgCheckinGroupDriveRoot](Invoke-MgCheckinGroupDriveRoot.md)
+### [Invoke-MgBetaCheckinGroupDriveRoot](Invoke-MgBetaCheckinGroupDriveRoot.md)
 Check in a checked out **driveItem** resource, which makes the version of the document available to others.
 
-### [Invoke-MgCheckoutGroupDriveItem](Invoke-MgCheckoutGroupDriveItem.md)
+### [Invoke-MgBetaCheckoutGroupDriveItem](Invoke-MgBetaCheckoutGroupDriveItem.md)
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
-### [Invoke-MgCheckoutGroupDriveRoot](Invoke-MgCheckoutGroupDriveRoot.md)
+### [Invoke-MgBetaCheckoutGroupDriveRoot](Invoke-MgBetaCheckoutGroupDriveRoot.md)
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
-### [Invoke-MgDeclineGroupCalendarEvent](Invoke-MgDeclineGroupCalendarEvent.md)
+### [Invoke-MgBetaDeclineGroupCalendarEvent](Invoke-MgBetaDeclineGroupCalendarEvent.md)
 Decline invitation to the specified event in a user calendar.
 If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
-### [Invoke-MgDeclineGroupEvent](Invoke-MgDeclineGroupEvent.md)
+### [Invoke-MgBetaDeclineGroupEvent](Invoke-MgBetaDeclineGroupEvent.md)
 Decline invitation to the specified event in a user calendar.
 If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
-### [Invoke-MgDismissGroupCalendarEventReminder](Invoke-MgDismissGroupCalendarEventReminder.md)
+### [Invoke-MgBetaDismissGroupCalendarEventReminder](Invoke-MgBetaDismissGroupCalendarEventReminder.md)
 Dismiss a reminder that has been triggered for an event in a user calendar.
 
-### [Invoke-MgDismissGroupEventReminder](Invoke-MgDismissGroupEventReminder.md)
+### [Invoke-MgBetaDismissGroupEventReminder](Invoke-MgBetaDismissGroupEventReminder.md)
 Dismiss a reminder that has been triggered for an event in a user calendar.
 
-### [Invoke-MgExtractGroupDriveItemSensitivityLabel](Invoke-MgExtractGroupDriveItemSensitivityLabel.md)
+### [Invoke-MgBetaExtractGroupDriveItemSensitivityLabel](Invoke-MgBetaExtractGroupDriveItemSensitivityLabel.md)
 Invoke action extractSensitivityLabels
 
-### [Invoke-MgExtractGroupDriveRootSensitivityLabel](Invoke-MgExtractGroupDriveRootSensitivityLabel.md)
+### [Invoke-MgBetaExtractGroupDriveRootSensitivityLabel](Invoke-MgBetaExtractGroupDriveRootSensitivityLabel.md)
 Invoke action extractSensitivityLabels
 
-### [Invoke-MgFollowGroupDriveItem](Invoke-MgFollowGroupDriveItem.md)
+### [Invoke-MgBetaFollowGroupDriveItem](Invoke-MgBetaFollowGroupDriveItem.md)
 Follow a driveItem.
 
-### [Invoke-MgFollowGroupDriveRoot](Invoke-MgFollowGroupDriveRoot.md)
+### [Invoke-MgBetaFollowGroupDriveRoot](Invoke-MgBetaFollowGroupDriveRoot.md)
 Follow a driveItem.
 
-### [Invoke-MgForwardGroupCalendarEvent](Invoke-MgForwardGroupCalendarEvent.md)
+### [Invoke-MgBetaForwardGroupCalendarEvent](Invoke-MgBetaForwardGroupCalendarEvent.md)
 This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
 If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
-### [Invoke-MgForwardGroupConversationThreadPost](Invoke-MgForwardGroupConversationThreadPost.md)
+### [Invoke-MgBetaForwardGroupConversationThreadPost](Invoke-MgBetaForwardGroupConversationThreadPost.md)
 Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
-### [Invoke-MgForwardGroupConversationThreadPostInReplyTo](Invoke-MgForwardGroupConversationThreadPostInReplyTo.md)
+### [Invoke-MgBetaForwardGroupConversationThreadPostInReplyTo](Invoke-MgBetaForwardGroupConversationThreadPostInReplyTo.md)
 Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
-### [Invoke-MgForwardGroupEvent](Invoke-MgForwardGroupEvent.md)
+### [Invoke-MgBetaForwardGroupEvent](Invoke-MgBetaForwardGroupEvent.md)
 This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
 If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
-### [Invoke-MgForwardGroupThreadPost](Invoke-MgForwardGroupThreadPost.md)
+### [Invoke-MgBetaForwardGroupThreadPost](Invoke-MgBetaForwardGroupThreadPost.md)
 Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
-### [Invoke-MgForwardGroupThreadPostInReplyTo](Invoke-MgForwardGroupThreadPostInReplyTo.md)
+### [Invoke-MgBetaForwardGroupThreadPostInReplyTo](Invoke-MgBetaForwardGroupThreadPostInReplyTo.md)
 Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
-### [Invoke-MgGraphGroup](Invoke-MgGraphGroup.md)
+### [Invoke-MgBetaGraphGroup](Invoke-MgBetaGraphGroup.md)
 Calling this method will disable the current user to receive email notifications for this group about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
 
-### [Invoke-MgGraphGroupDrive](Invoke-MgGraphGroupDrive.md)
+### [Invoke-MgBetaGraphGroupDrive](Invoke-MgBetaGraphGroupDrive.md)
 Invoke function sharedWithMe
 
-### [Invoke-MgInviteGroupDriveItem](Invoke-MgInviteGroupDriveItem.md)
+### [Invoke-MgBetaInviteGroupDriveItem](Invoke-MgBetaInviteGroupDriveItem.md)
 Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
-### [Invoke-MgInviteGroupDriveRoot](Invoke-MgInviteGroupDriveRoot.md)
+### [Invoke-MgBetaInviteGroupDriveRoot](Invoke-MgBetaInviteGroupDriveRoot.md)
 Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
-### [Invoke-MgPreviewGroupDriveItem](Invoke-MgPreviewGroupDriveItem.md)
+### [Invoke-MgBetaPreviewGroupDriveItem](Invoke-MgBetaPreviewGroupDriveItem.md)
 Invoke action preview
 
-### [Invoke-MgPreviewGroupDriveRoot](Invoke-MgPreviewGroupDriveRoot.md)
+### [Invoke-MgBetaPreviewGroupDriveRoot](Invoke-MgBetaPreviewGroupDriveRoot.md)
 Invoke action preview
 
-### [Invoke-MgPreviewGroupOnenotePage](Invoke-MgPreviewGroupOnenotePage.md)
+### [Invoke-MgBetaPreviewGroupOnenotePage](Invoke-MgBetaPreviewGroupOnenotePage.md)
 Invoke function preview
 
-### [Invoke-MgReauthorizeGroupDriveItemSubscription](Invoke-MgReauthorizeGroupDriveItemSubscription.md)
+### [Invoke-MgBetaReauthorizeGroupDriveItemSubscription](Invoke-MgBetaReauthorizeGroupDriveItemSubscription.md)
 Invoke action reauthorize
 
-### [Invoke-MgReauthorizeGroupDriveListSubscription](Invoke-MgReauthorizeGroupDriveListSubscription.md)
+### [Invoke-MgBetaReauthorizeGroupDriveListSubscription](Invoke-MgBetaReauthorizeGroupDriveListSubscription.md)
 Invoke action reauthorize
 
-### [Invoke-MgReauthorizeGroupDriveRootSubscription](Invoke-MgReauthorizeGroupDriveRootSubscription.md)
+### [Invoke-MgBetaReauthorizeGroupDriveRootSubscription](Invoke-MgBetaReauthorizeGroupDriveRootSubscription.md)
 Invoke action reauthorize
 
-### [Invoke-MgReauthorizeGroupSiteListSubscription](Invoke-MgReauthorizeGroupSiteListSubscription.md)
+### [Invoke-MgBetaReauthorizeGroupSiteListSubscription](Invoke-MgBetaReauthorizeGroupSiteListSubscription.md)
 Invoke action reauthorize
 
-### [Invoke-MgRecentGroupDrive](Invoke-MgRecentGroupDrive.md)
+### [Invoke-MgBetaRecentGroupDrive](Invoke-MgBetaRecentGroupDrive.md)
 Invoke function recent
 
-### [Invoke-MgRenewGroup](Invoke-MgRenewGroup.md)
+### [Invoke-MgBetaRenewGroup](Invoke-MgBetaRenewGroup.md)
 Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
-### [Invoke-MgRenewGroupLifecyclePolicy](Invoke-MgRenewGroupLifecyclePolicy.md)
+### [Invoke-MgBetaRenewGroupLifecyclePolicy](Invoke-MgBetaRenewGroupLifecyclePolicy.md)
 Renew a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
-### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
+### [Invoke-MgBetaReplyGroupConversationThread](Invoke-MgBetaReplyGroupConversationThread.md)
 Add an attachment when creating a group post.
 This operation limits the size of the attachment you can add to under 3 MB.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
-### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
+### [Invoke-MgBetaReplyGroupConversationThreadPost](Invoke-MgBetaReplyGroupConversationThreadPost.md)
 Reply to a post and add a new post to the specified thread in a group conversation.
 You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
-### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
+### [Invoke-MgBetaReplyGroupConversationThreadPostInReplyTo](Invoke-MgBetaReplyGroupConversationThreadPostInReplyTo.md)
 Reply to a post and add a new post to the specified thread in a group conversation.
 You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
-### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
+### [Invoke-MgBetaReplyGroupThread](Invoke-MgBetaReplyGroupThread.md)
 Add an attachment when creating a group post.
 This operation limits the size of the attachment you can add to under 3 MB.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
-### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
+### [Invoke-MgBetaReplyGroupThreadPost](Invoke-MgBetaReplyGroupThreadPost.md)
 Reply to a post and add a new post to the specified thread in a group conversation.
 You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
-### [Invoke-MgReplyGroupThreadPostInReplyTo](Invoke-MgReplyGroupThreadPostInReplyTo.md)
+### [Invoke-MgBetaReplyGroupThreadPostInReplyTo](Invoke-MgBetaReplyGroupThreadPostInReplyTo.md)
 Reply to a post and add a new post to the specified thread in a group conversation.
 You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
-### [Invoke-MgSnoozeGroupCalendarEventReminder](Invoke-MgSnoozeGroupCalendarEventReminder.md)
+### [Invoke-MgBetaSnoozeGroupCalendarEventReminder](Invoke-MgBetaSnoozeGroupCalendarEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
 
-### [Invoke-MgSnoozeGroupEventReminder](Invoke-MgSnoozeGroupEventReminder.md)
+### [Invoke-MgBetaSnoozeGroupEventReminder](Invoke-MgBetaSnoozeGroupEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
 
-### [Invoke-MgSubscribeGroupByMail](Invoke-MgSubscribeGroupByMail.md)
+### [Invoke-MgBetaSubscribeGroupByMail](Invoke-MgBetaSubscribeGroupByMail.md)
 Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
 
-### [Invoke-MgUnfollowGroupDriveItem](Invoke-MgUnfollowGroupDriveItem.md)
+### [Invoke-MgBetaUnfollowGroupDriveItem](Invoke-MgBetaUnfollowGroupDriveItem.md)
 Unfollow a driveItem.
 
-### [Invoke-MgUnfollowGroupDriveRoot](Invoke-MgUnfollowGroupDriveRoot.md)
+### [Invoke-MgBetaUnfollowGroupDriveRoot](Invoke-MgBetaUnfollowGroupDriveRoot.md)
 Unfollow a driveItem.
 
-### [Join-MgGroupDriveListContentTypeWithHubSite](Join-MgGroupDriveListContentTypeWithHubSite.md)
+### [Join-MgBetaGroupDriveListContentTypeWithHubSite](Join-MgBetaGroupDriveListContentTypeWithHubSite.md)
 Associate a [content type][contentType] with a list of hub sites.
 
-### [Join-MgGroupSiteContentTypeWithHubSite](Join-MgGroupSiteContentTypeWithHubSite.md)
+### [Join-MgBetaGroupSiteContentTypeWithHubSite](Join-MgBetaGroupSiteContentTypeWithHubSite.md)
 Associate a [content type][contentType] with a list of hub sites.
 
-### [Join-MgGroupSiteListContentTypeWithHubSite](Join-MgGroupSiteListContentTypeWithHubSite.md)
+### [Join-MgBetaGroupSiteListContentTypeWithHubSite](Join-MgBetaGroupSiteListContentTypeWithHubSite.md)
 Associate a [content type][contentType] with a list of hub sites.
 
-### [New-MgGroup](New-MgGroup.md)
+### [New-MgBetaGroup](New-MgBetaGroup.md)
 Create a new group as specified in the request body.
 You can create one of the following groups: This operation returns by default only a subset of the properties for each group.
 These default properties are noted in the Properties section.
 To get properties that are _not_ returned by default, do a GET operation and specify the properties in a `$select` OData query option.
 **Note**: To create a team, first create a group then add a team to it, see create team.
 
-### [New-MgGroupAcceptedSenderByRef](New-MgGroupAcceptedSenderByRef.md)
+### [New-MgBetaGroupAcceptedSenderByRef](New-MgBetaGroupAcceptedSenderByRef.md)
 Create new navigation property ref to acceptedSenders for groups
 
-### [New-MgGroupConversation](New-MgGroupConversation.md)
+### [New-MgBetaGroupConversation](New-MgBetaGroupConversation.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
+### [New-MgBetaGroupConversationThread](New-MgBetaGroupConversationThread.md)
 Create new navigation property to threads for groups
 
-### [New-MgGroupConversationThreadPostAttachment](New-MgGroupConversationThreadPostAttachment.md)
+### [New-MgBetaGroupConversationThreadPostAttachment](New-MgBetaGroupConversationThreadPostAttachment.md)
 Create new navigation property to attachments for groups
 
-### [New-MgGroupConversationThreadPostAttachmentUploadSession](New-MgGroupConversationThreadPostAttachmentUploadSession.md)
+### [New-MgBetaGroupConversationThreadPostAttachmentUploadSession](New-MgBetaGroupConversationThreadPostAttachmentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
@@ -671,13 +671,13 @@ Request headers for each `PUT` operation let you specify the exact range of byte
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
-### [New-MgGroupConversationThreadPostExtension](New-MgGroupConversationThreadPostExtension.md)
+### [New-MgBetaGroupConversationThreadPostExtension](New-MgBetaGroupConversationThreadPostExtension.md)
 Create new navigation property to extensions for groups
 
-### [New-MgGroupConversationThreadPostInReplyToAttachment](New-MgGroupConversationThreadPostInReplyToAttachment.md)
+### [New-MgBetaGroupConversationThreadPostInReplyToAttachment](New-MgBetaGroupConversationThreadPostInReplyToAttachment.md)
 Create new navigation property to attachments for groups
 
-### [New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession](New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession.md)
+### [New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession](New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
@@ -687,110 +687,110 @@ Request headers for each `PUT` operation let you specify the exact range of byte
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
-### [New-MgGroupConversationThreadPostInReplyToExtension](New-MgGroupConversationThreadPostInReplyToExtension.md)
+### [New-MgBetaGroupConversationThreadPostInReplyToExtension](New-MgBetaGroupConversationThreadPostInReplyToExtension.md)
 Create new navigation property to extensions for groups
 
-### [New-MgGroupConversationThreadPostInReplyToMention](New-MgGroupConversationThreadPostInReplyToMention.md)
+### [New-MgBetaGroupConversationThreadPostInReplyToMention](New-MgBetaGroupConversationThreadPostInReplyToMention.md)
 Create new navigation property to mentions for groups
 
-### [New-MgGroupConversationThreadPostInReplyToMultiValueExtendedProperty](New-MgGroupConversationThreadPostInReplyToMultiValueExtendedProperty.md)
+### [New-MgBetaGroupConversationThreadPostInReplyToMultiValueExtendedProperty](New-MgBetaGroupConversationThreadPostInReplyToMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty](New-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty.md)
+### [New-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty](New-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgGroupConversationThreadPostMention](New-MgGroupConversationThreadPostMention.md)
+### [New-MgBetaGroupConversationThreadPostMention](New-MgBetaGroupConversationThreadPostMention.md)
 Create new navigation property to mentions for groups
 
-### [New-MgGroupConversationThreadPostMultiValueExtendedProperty](New-MgGroupConversationThreadPostMultiValueExtendedProperty.md)
+### [New-MgBetaGroupConversationThreadPostMultiValueExtendedProperty](New-MgBetaGroupConversationThreadPostMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupConversationThreadPostSingleValueExtendedProperty](New-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
+### [New-MgBetaGroupConversationThreadPostSingleValueExtendedProperty](New-MgBetaGroupConversationThreadPostSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgGroupDriveItemLink](New-MgGroupDriveItemLink.md)
+### [New-MgBetaGroupDriveItemLink](New-MgBetaGroupDriveItemLink.md)
 You can use **createLink** action to share a driveItem via a sharing link.
 The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgGroupDriveItemListItemLink](New-MgGroupDriveItemListItemLink.md)
+### [New-MgBetaGroupDriveItemListItemLink](New-MgBetaGroupDriveItemListItemLink.md)
 Create a sharing link for a listItem.
 The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 **listItem** resources inherit sharing permissions from the list the item resides in.
 
-### [New-MgGroupDriveItemUploadSession](New-MgGroupDriveItemUploadSession.md)
+### [New-MgBetaGroupDriveItemUploadSession](New-MgBetaGroupDriveItemUploadSession.md)
 Create an upload session to allow your app to upload files up to the maximum file size.
 An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
 To upload a file using an upload session:
 
-### [New-MgGroupDriveListItemLink](New-MgGroupDriveListItemLink.md)
+### [New-MgBetaGroupDriveListItemLink](New-MgBetaGroupDriveListItemLink.md)
 Create a sharing link for a listItem.
 The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 **listItem** resources inherit sharing permissions from the list the item resides in.
 
-### [New-MgGroupDriveRootLink](New-MgGroupDriveRootLink.md)
+### [New-MgBetaGroupDriveRootLink](New-MgBetaGroupDriveRootLink.md)
 You can use **createLink** action to share a driveItem via a sharing link.
 The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgGroupDriveRootListItemLink](New-MgGroupDriveRootListItemLink.md)
+### [New-MgBetaGroupDriveRootListItemLink](New-MgBetaGroupDriveRootListItemLink.md)
 Create a sharing link for a listItem.
 The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 **listItem** resources inherit sharing permissions from the list the item resides in.
 
-### [New-MgGroupDriveRootUploadSession](New-MgGroupDriveRootUploadSession.md)
+### [New-MgBetaGroupDriveRootUploadSession](New-MgBetaGroupDriveRootUploadSession.md)
 Create an upload session to allow your app to upload files up to the maximum file size.
 An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
 To upload a file using an upload session:
 
-### [New-MgGroupEndpoint](New-MgGroupEndpoint.md)
+### [New-MgBetaGroupEndpoint](New-MgBetaGroupEndpoint.md)
 Create new navigation property to endpoints for groups
 
-### [New-MgGroupExtension](New-MgGroupExtension.md)
+### [New-MgBetaGroupExtension](New-MgBetaGroupExtension.md)
 Create new navigation property to extensions for groups
 
-### [New-MgGroupLifecyclePolicy](New-MgGroupLifecyclePolicy.md)
+### [New-MgBetaGroupLifecyclePolicy](New-MgBetaGroupLifecyclePolicy.md)
 Creates a new groupLifecyclePolicy.
 
-### [New-MgGroupMember](New-MgGroupMember.md)
+### [New-MgBetaGroupMember](New-MgBetaGroupMember.md)
 Add a member to an Office 365 group or security group through the members navigation property.
 
-### [New-MgGroupMemberByRef](New-MgGroupMemberByRef.md)
+### [New-MgBetaGroupMemberByRef](New-MgBetaGroupMemberByRef.md)
 Create new navigation property ref to members for groups
 
-### [New-MgGroupOwner](New-MgGroupOwner.md)
+### [New-MgBetaGroupOwner](New-MgBetaGroupOwner.md)
 Add an owner to an Office 365 group or security group through the owners navigation property.
 
-### [New-MgGroupOwnerByRef](New-MgGroupOwnerByRef.md)
+### [New-MgBetaGroupOwnerByRef](New-MgBetaGroupOwnerByRef.md)
 Create new navigation property ref to owners for groups
 
-### [New-MgGroupPermissionGrant](New-MgGroupPermissionGrant.md)
+### [New-MgBetaGroupPermissionGrant](New-MgBetaGroupPermissionGrant.md)
 Create new navigation property to permissionGrants for groups
 
-### [New-MgGroupRejectedSenderByRef](New-MgGroupRejectedSenderByRef.md)
+### [New-MgBetaGroupRejectedSenderByRef](New-MgBetaGroupRejectedSenderByRef.md)
 Create new navigation property ref to rejectedSenders for groups
 
-### [New-MgGroupSetting](New-MgGroupSetting.md)
+### [New-MgBetaGroupSetting](New-MgBetaGroupSetting.md)
 Create a new setting based on the templates available in directorySettingTemplates.
 These settings can be at the tenant-level or at the group level.
 Group settings apply to only Microsoft 365 groups.
 The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.
 
-### [New-MgGroupSiteListItemLink](New-MgGroupSiteListItemLink.md)
+### [New-MgBetaGroupSiteListItemLink](New-MgBetaGroupSiteListItemLink.md)
 Create a sharing link for a listItem.
 The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 **listItem** resources inherit sharing permissions from the list the item resides in.
 
-### [New-MgGroupThread](New-MgGroupThread.md)
+### [New-MgBetaGroupThread](New-MgBetaGroupThread.md)
 Start a new group conversation by first creating a thread.
 A new conversation, conversation thread, and post are created in the group.
 Use reply thread or reply post to further post to that thread.
 Note: You can also start a new thread in an existing conversation.
 
-### [New-MgGroupThreadPostAttachment](New-MgGroupThreadPostAttachment.md)
+### [New-MgBetaGroupThreadPostAttachment](New-MgBetaGroupThreadPostAttachment.md)
 Create new navigation property to attachments for groups
 
-### [New-MgGroupThreadPostAttachmentUploadSession](New-MgGroupThreadPostAttachmentUploadSession.md)
+### [New-MgBetaGroupThreadPostAttachmentUploadSession](New-MgBetaGroupThreadPostAttachmentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
@@ -800,13 +800,13 @@ Request headers for each `PUT` operation let you specify the exact range of byte
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
-### [New-MgGroupThreadPostExtension](New-MgGroupThreadPostExtension.md)
+### [New-MgBetaGroupThreadPostExtension](New-MgBetaGroupThreadPostExtension.md)
 Create new navigation property to extensions for groups
 
-### [New-MgGroupThreadPostInReplyToAttachment](New-MgGroupThreadPostInReplyToAttachment.md)
+### [New-MgBetaGroupThreadPostInReplyToAttachment](New-MgBetaGroupThreadPostInReplyToAttachment.md)
 Create new navigation property to attachments for groups
 
-### [New-MgGroupThreadPostInReplyToAttachmentUploadSession](New-MgGroupThreadPostInReplyToAttachmentUploadSession.md)
+### [New-MgBetaGroupThreadPostInReplyToAttachmentUploadSession](New-MgBetaGroupThreadPostInReplyToAttachmentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
@@ -816,261 +816,261 @@ Request headers for each `PUT` operation let you specify the exact range of byte
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
-### [New-MgGroupThreadPostInReplyToExtension](New-MgGroupThreadPostInReplyToExtension.md)
+### [New-MgBetaGroupThreadPostInReplyToExtension](New-MgBetaGroupThreadPostInReplyToExtension.md)
 Create new navigation property to extensions for groups
 
-### [New-MgGroupThreadPostInReplyToMention](New-MgGroupThreadPostInReplyToMention.md)
+### [New-MgBetaGroupThreadPostInReplyToMention](New-MgBetaGroupThreadPostInReplyToMention.md)
 Create new navigation property to mentions for groups
 
-### [New-MgGroupThreadPostInReplyToMultiValueExtendedProperty](New-MgGroupThreadPostInReplyToMultiValueExtendedProperty.md)
+### [New-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty](New-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupThreadPostInReplyToSingleValueExtendedProperty](New-MgGroupThreadPostInReplyToSingleValueExtendedProperty.md)
+### [New-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty](New-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgGroupThreadPostMention](New-MgGroupThreadPostMention.md)
+### [New-MgBetaGroupThreadPostMention](New-MgBetaGroupThreadPostMention.md)
 Create new navigation property to mentions for groups
 
-### [New-MgGroupThreadPostMultiValueExtendedProperty](New-MgGroupThreadPostMultiValueExtendedProperty.md)
+### [New-MgBetaGroupThreadPostMultiValueExtendedProperty](New-MgBetaGroupThreadPostMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupThreadPostSingleValueExtendedProperty](New-MgGroupThreadPostSingleValueExtendedProperty.md)
+### [New-MgBetaGroupThreadPostSingleValueExtendedProperty](New-MgBetaGroupThreadPostSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [Publish-MgGroupDriveListContentType](Publish-MgGroupDriveListContentType.md)
+### [Publish-MgBetaGroupDriveListContentType](Publish-MgBetaGroupDriveListContentType.md)
 Publishes a [contentType][] present in a content type hub site.
 
-### [Publish-MgGroupSiteContentType](Publish-MgGroupSiteContentType.md)
+### [Publish-MgBetaGroupSiteContentType](Publish-MgBetaGroupSiteContentType.md)
 Publishes a [contentType][] present in a content type hub site.
 
-### [Publish-MgGroupSiteListContentType](Publish-MgGroupSiteListContentType.md)
+### [Publish-MgBetaGroupSiteListContentType](Publish-MgBetaGroupSiteListContentType.md)
 Publishes a [contentType][] present in a content type hub site.
 
-### [Publish-MgGroupSitePage](Publish-MgGroupSitePage.md)
+### [Publish-MgBetaGroupSitePage](Publish-MgBetaGroupSitePage.md)
 Invoke action publish
 
-### [Remove-MgGroup](Remove-MgGroup.md)
+### [Remove-MgBetaGroup](Remove-MgBetaGroup.md)
 Deletes a group.
 When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
 This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
 To learn more, see deletedItems.
 
-### [Remove-MgGroupAcceptedSenderByRef](Remove-MgGroupAcceptedSenderByRef.md)
+### [Remove-MgBetaGroupAcceptedSenderByRef](Remove-MgBetaGroupAcceptedSenderByRef.md)
 Delete ref of navigation property acceptedSenders for groups
 
-### [Remove-MgGroupConversation](Remove-MgGroupConversation.md)
+### [Remove-MgBetaGroupConversation](Remove-MgBetaGroupConversation.md)
 Delete navigation property conversations for groups
 
-### [Remove-MgGroupConversationThread](Remove-MgGroupConversationThread.md)
+### [Remove-MgBetaGroupConversationThread](Remove-MgBetaGroupConversationThread.md)
 Delete navigation property threads for groups
 
-### [Remove-MgGroupConversationThreadPostAttachment](Remove-MgGroupConversationThreadPostAttachment.md)
+### [Remove-MgBetaGroupConversationThreadPostAttachment](Remove-MgBetaGroupConversationThreadPostAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupConversationThreadPostExtension](Remove-MgGroupConversationThreadPostExtension.md)
+### [Remove-MgBetaGroupConversationThreadPostExtension](Remove-MgBetaGroupConversationThreadPostExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupConversationThreadPostInReplyToAttachment](Remove-MgGroupConversationThreadPostInReplyToAttachment.md)
+### [Remove-MgBetaGroupConversationThreadPostInReplyToAttachment](Remove-MgBetaGroupConversationThreadPostInReplyToAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupConversationThreadPostInReplyToExtension](Remove-MgGroupConversationThreadPostInReplyToExtension.md)
+### [Remove-MgBetaGroupConversationThreadPostInReplyToExtension](Remove-MgBetaGroupConversationThreadPostInReplyToExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupConversationThreadPostInReplyToMention](Remove-MgGroupConversationThreadPostInReplyToMention.md)
+### [Remove-MgBetaGroupConversationThreadPostInReplyToMention](Remove-MgBetaGroupConversationThreadPostInReplyToMention.md)
 Delete navigation property mentions for groups
 
-### [Remove-MgGroupConversationThreadPostInReplyToMultiValueExtendedProperty](Remove-MgGroupConversationThreadPostInReplyToMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupConversationThreadPostInReplyToMultiValueExtendedProperty](Remove-MgBetaGroupConversationThreadPostInReplyToMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty](Remove-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty](Remove-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgGroupConversationThreadPostMention](Remove-MgGroupConversationThreadPostMention.md)
+### [Remove-MgBetaGroupConversationThreadPostMention](Remove-MgBetaGroupConversationThreadPostMention.md)
 Delete navigation property mentions for groups
 
-### [Remove-MgGroupConversationThreadPostMultiValueExtendedProperty](Remove-MgGroupConversationThreadPostMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupConversationThreadPostMultiValueExtendedProperty](Remove-MgBetaGroupConversationThreadPostMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupConversationThreadPostSingleValueExtendedProperty](Remove-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupConversationThreadPostSingleValueExtendedProperty](Remove-MgBetaGroupConversationThreadPostSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgGroupEndpoint](Remove-MgGroupEndpoint.md)
+### [Remove-MgBetaGroupEndpoint](Remove-MgBetaGroupEndpoint.md)
 Delete navigation property endpoints for groups
 
-### [Remove-MgGroupExtension](Remove-MgGroupExtension.md)
+### [Remove-MgBetaGroupExtension](Remove-MgBetaGroupExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupFavorite](Remove-MgGroupFavorite.md)
+### [Remove-MgBetaGroupFavorite](Remove-MgBetaGroupFavorite.md)
 Remove the group from the list of the current user's favorite groups.
 Supported for Microsoft 365 groups only.
 
-### [Remove-MgGroupFromLifecyclePolicy](Remove-MgGroupFromLifecyclePolicy.md)
+### [Remove-MgBetaGroupFromLifecyclePolicy](Remove-MgBetaGroupFromLifecyclePolicy.md)
 Invoke action removeGroup
 
-### [Remove-MgGroupLifecyclePolicy](Remove-MgGroupLifecyclePolicy.md)
+### [Remove-MgBetaGroupLifecyclePolicy](Remove-MgBetaGroupLifecyclePolicy.md)
 Delete a groupLifecyclePolicy.
 
-### [Remove-MgGroupMemberByRef](Remove-MgGroupMemberByRef.md)
+### [Remove-MgBetaGroupMemberByRef](Remove-MgBetaGroupMemberByRef.md)
 Delete ref of navigation property members for groups
 
-### [Remove-MgGroupOwnerByRef](Remove-MgGroupOwnerByRef.md)
+### [Remove-MgBetaGroupOwnerByRef](Remove-MgBetaGroupOwnerByRef.md)
 Delete ref of navigation property owners for groups
 
-### [Remove-MgGroupPermissionGrant](Remove-MgGroupPermissionGrant.md)
+### [Remove-MgBetaGroupPermissionGrant](Remove-MgBetaGroupPermissionGrant.md)
 Delete navigation property permissionGrants for groups
 
-### [Remove-MgGroupRejectedSenderByRef](Remove-MgGroupRejectedSenderByRef.md)
+### [Remove-MgBetaGroupRejectedSenderByRef](Remove-MgBetaGroupRejectedSenderByRef.md)
 Delete ref of navigation property rejectedSenders for groups
 
-### [Remove-MgGroupSetting](Remove-MgGroupSetting.md)
+### [Remove-MgBetaGroupSetting](Remove-MgBetaGroupSetting.md)
 Delete navigation property settings for groups
 
-### [Remove-MgGroupSite](Remove-MgGroupSite.md)
+### [Remove-MgBetaGroupSite](Remove-MgBetaGroupSite.md)
 Unfollow a user's site or multiple sites.
 
-### [Remove-MgGroupThread](Remove-MgGroupThread.md)
+### [Remove-MgBetaGroupThread](Remove-MgBetaGroupThread.md)
 Delete navigation property threads for groups
 
-### [Remove-MgGroupThreadPostAttachment](Remove-MgGroupThreadPostAttachment.md)
+### [Remove-MgBetaGroupThreadPostAttachment](Remove-MgBetaGroupThreadPostAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupThreadPostExtension](Remove-MgGroupThreadPostExtension.md)
+### [Remove-MgBetaGroupThreadPostExtension](Remove-MgBetaGroupThreadPostExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupThreadPostInReplyToAttachment](Remove-MgGroupThreadPostInReplyToAttachment.md)
+### [Remove-MgBetaGroupThreadPostInReplyToAttachment](Remove-MgBetaGroupThreadPostInReplyToAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupThreadPostInReplyToExtension](Remove-MgGroupThreadPostInReplyToExtension.md)
+### [Remove-MgBetaGroupThreadPostInReplyToExtension](Remove-MgBetaGroupThreadPostInReplyToExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupThreadPostInReplyToMention](Remove-MgGroupThreadPostInReplyToMention.md)
+### [Remove-MgBetaGroupThreadPostInReplyToMention](Remove-MgBetaGroupThreadPostInReplyToMention.md)
 Delete navigation property mentions for groups
 
-### [Remove-MgGroupThreadPostInReplyToMultiValueExtendedProperty](Remove-MgGroupThreadPostInReplyToMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty](Remove-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupThreadPostInReplyToSingleValueExtendedProperty](Remove-MgGroupThreadPostInReplyToSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty](Remove-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgGroupThreadPostMention](Remove-MgGroupThreadPostMention.md)
+### [Remove-MgBetaGroupThreadPostMention](Remove-MgBetaGroupThreadPostMention.md)
 Delete navigation property mentions for groups
 
-### [Remove-MgGroupThreadPostMultiValueExtendedProperty](Remove-MgGroupThreadPostMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupThreadPostMultiValueExtendedProperty](Remove-MgBetaGroupThreadPostMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupThreadPostSingleValueExtendedProperty](Remove-MgGroupThreadPostSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupThreadPostSingleValueExtendedProperty](Remove-MgBetaGroupThreadPostSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Reset-MgGroupUnseenCount](Reset-MgGroupUnseenCount.md)
+### [Reset-MgBetaGroupUnseenCount](Reset-MgBetaGroupUnseenCount.md)
 Reset the unseenCount of all the posts that the current user has not seen since their last visit.
 Supported for Microsoft 365 groups only.
 
-### [Restore-MgGroupDriveItem](Restore-MgGroupDriveItem.md)
+### [Restore-MgBetaGroupDriveItem](Restore-MgBetaGroupDriveItem.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
 
-### [Restore-MgGroupDriveItemListItemDocumentSetVersion](Restore-MgGroupDriveItemListItemDocumentSetVersion.md)
+### [Restore-MgBetaGroupDriveItemListItemDocumentSetVersion](Restore-MgBetaGroupDriveItemListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgGroupDriveItemListItemVersion](Restore-MgGroupDriveItemListItemVersion.md)
+### [Restore-MgBetaGroupDriveItemListItemVersion](Restore-MgBetaGroupDriveItemListItemVersion.md)
 Invoke action restoreVersion
 
-### [Restore-MgGroupDriveItemVersion](Restore-MgGroupDriveItemVersion.md)
+### [Restore-MgBetaGroupDriveItemVersion](Restore-MgBetaGroupDriveItemVersion.md)
 Restore a previous version of a DriveItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
 
-### [Restore-MgGroupDriveListItemDocumentSetVersion](Restore-MgGroupDriveListItemDocumentSetVersion.md)
+### [Restore-MgBetaGroupDriveListItemDocumentSetVersion](Restore-MgBetaGroupDriveListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgGroupDriveListItemVersion](Restore-MgGroupDriveListItemVersion.md)
+### [Restore-MgBetaGroupDriveListItemVersion](Restore-MgBetaGroupDriveListItemVersion.md)
 Invoke action restoreVersion
 
-### [Restore-MgGroupDriveRoot](Restore-MgGroupDriveRoot.md)
+### [Restore-MgBetaGroupDriveRoot](Restore-MgBetaGroupDriveRoot.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
 
-### [Restore-MgGroupDriveRootListItemDocumentSetVersion](Restore-MgGroupDriveRootListItemDocumentSetVersion.md)
+### [Restore-MgBetaGroupDriveRootListItemDocumentSetVersion](Restore-MgBetaGroupDriveRootListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgGroupDriveRootListItemVersion](Restore-MgGroupDriveRootListItemVersion.md)
+### [Restore-MgBetaGroupDriveRootListItemVersion](Restore-MgBetaGroupDriveRootListItemVersion.md)
 Invoke action restoreVersion
 
-### [Restore-MgGroupDriveRootVersion](Restore-MgGroupDriveRootVersion.md)
+### [Restore-MgBetaGroupDriveRootVersion](Restore-MgBetaGroupDriveRootVersion.md)
 Restore a previous version of a DriveItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
 
-### [Restore-MgGroupSiteListItemDocumentSetVersion](Restore-MgGroupSiteListItemDocumentSetVersion.md)
+### [Restore-MgBetaGroupSiteListItemDocumentSetVersion](Restore-MgBetaGroupSiteListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgGroupSiteListItemVersion](Restore-MgGroupSiteListItemVersion.md)
+### [Restore-MgBetaGroupSiteListItemVersion](Restore-MgBetaGroupSiteListItemVersion.md)
 Invoke action restoreVersion
 
-### [Revoke-MgGroupDriveItemPermissionGrant](Revoke-MgGroupDriveItemPermissionGrant.md)
+### [Revoke-MgBetaGroupDriveItemPermissionGrant](Revoke-MgBetaGroupDriveItemPermissionGrant.md)
 Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
-### [Revoke-MgGroupDriveRootPermissionGrant](Revoke-MgGroupDriveRootPermissionGrant.md)
+### [Revoke-MgBetaGroupDriveRootPermissionGrant](Revoke-MgBetaGroupDriveRootPermissionGrant.md)
 Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
-### [Revoke-MgGroupSitePermissionGrant](Revoke-MgGroupSitePermissionGrant.md)
+### [Revoke-MgBetaGroupSitePermissionGrant](Revoke-MgBetaGroupSitePermissionGrant.md)
 Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
-### [Search-MgGroupDrive](Search-MgGroupDrive.md)
+### [Search-MgBetaGroupDrive](Search-MgBetaGroupDrive.md)
 Invoke function search
 
-### [Search-MgGroupDriveItem](Search-MgGroupDriveItem.md)
+### [Search-MgBetaGroupDriveItem](Search-MgBetaGroupDriveItem.md)
 Invoke function search
 
-### [Search-MgGroupDriveRoot](Search-MgGroupDriveRoot.md)
+### [Search-MgBetaGroupDriveRoot](Search-MgBetaGroupDriveRoot.md)
 Invoke function search
 
-### [Set-MgGroupDriveItemSensitivityLabel](Set-MgGroupDriveItemSensitivityLabel.md)
+### [Set-MgBetaGroupDriveItemSensitivityLabel](Set-MgBetaGroupDriveItemSensitivityLabel.md)
 Invoke action assignSensitivityLabel
 
-### [Set-MgGroupDriveRootSensitivityLabel](Set-MgGroupDriveRootSensitivityLabel.md)
+### [Set-MgBetaGroupDriveRootSensitivityLabel](Set-MgBetaGroupDriveRootSensitivityLabel.md)
 Invoke action assignSensitivityLabel
 
-### [Set-MgGroupLicense](Set-MgGroupLicense.md)
+### [Set-MgBetaGroupLicense](Set-MgBetaGroupLicense.md)
 Add or remove licenses on the group.
 Licenses assigned to the group will be assigned to all users in the group.
 To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
 To get the subscriptions available in the directory, perform a GET subscribedSkus request.
 
-### [Set-MgGroupPhotoContent](Set-MgGroupPhotoContent.md)
+### [Set-MgBetaGroupPhotoContent](Set-MgBetaGroupPhotoContent.md)
 Update media content for the navigation property photo in groups
 
-### [Stop-MgGroupCalendarEvent](Stop-MgGroupCalendarEvent.md)
+### [Stop-MgBetaGroupCalendarEvent](Stop-MgBetaGroupCalendarEvent.md)
 This action allows the organizer of a meeting to send a cancellation message and cancel the event.
 The action moves the event to the Deleted Items folder.
 The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
 An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
 You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
 
-### [Stop-MgGroupEvent](Stop-MgGroupEvent.md)
+### [Stop-MgBetaGroupEvent](Stop-MgBetaGroupEvent.md)
 This action allows the organizer of a meeting to send a cancellation message and cancel the event.
 The action moves the event to the Deleted Items folder.
 The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
 An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
 You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
 
-### [Test-MgGroupDriveItemPermission](Test-MgGroupDriveItemPermission.md)
+### [Test-MgBetaGroupDriveItemPermission](Test-MgBetaGroupDriveItemPermission.md)
 Invoke action validatePermission
 
-### [Test-MgGroupDriveListContentTypePublished](Test-MgGroupDriveListContentTypePublished.md)
+### [Test-MgBetaGroupDriveListContentTypePublished](Test-MgBetaGroupDriveListContentTypePublished.md)
 Invoke function isPublished
 
-### [Test-MgGroupDriveRootPermission](Test-MgGroupDriveRootPermission.md)
+### [Test-MgBetaGroupDriveRootPermission](Test-MgBetaGroupDriveRootPermission.md)
 Invoke action validatePermission
 
-### [Test-MgGroupDynamicMembership](Test-MgGroupDynamicMembership.md)
+### [Test-MgBetaGroupDynamicMembership](Test-MgBetaGroupDynamicMembership.md)
 Evaluate whether a user or device is or would be a member of a dynamic group.
 The membership rule is returned along with other details that were used in the evaluation.
 You can complete this operation in the following ways:
 
-### [Test-MgGroupDynamicMembershipRule](Test-MgGroupDynamicMembershipRule.md)
+### [Test-MgBetaGroupDynamicMembershipRule](Test-MgBetaGroupDynamicMembershipRule.md)
 Evaluate whether a user or device is or would be a member of a dynamic group.
 The membership rule is returned along with other details that were used in the evaluation.
 You can complete this operation in the following ways:
 
-### [Test-MgGroupPermissionGrantProperty](Test-MgGroupPermissionGrantProperty.md)
+### [Test-MgBetaGroupPermissionGrantProperty](Test-MgBetaGroupPermissionGrantProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1081,7 +1081,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgGroupProperty](Test-MgGroupProperty.md)
+### [Test-MgBetaGroupProperty](Test-MgBetaGroupProperty.md)
 Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use the API to determine if a display name or mail nickname is valid before trying to **update** a Microsoft 365 group.
 For validating properties before creating a group, use the validateProperties function for directory objects.
@@ -1089,90 +1089,90 @@ The following validations are performed for the display name and mail nickname p
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgGroupSiteContentTypePublished](Test-MgGroupSiteContentTypePublished.md)
+### [Test-MgBetaGroupSiteContentTypePublished](Test-MgBetaGroupSiteContentTypePublished.md)
 Invoke function isPublished
 
-### [Test-MgGroupSiteListContentTypePublished](Test-MgGroupSiteListContentTypePublished.md)
+### [Test-MgBetaGroupSiteListContentTypePublished](Test-MgBetaGroupSiteListContentTypePublished.md)
 Invoke function isPublished
 
-### [Unpublish-MgGroupDriveListContentType](Unpublish-MgGroupDriveListContentType.md)
+### [Unpublish-MgBetaGroupDriveListContentType](Unpublish-MgBetaGroupDriveListContentType.md)
 Unpublish a [contentType][] from a content type hub site.
 
-### [Unpublish-MgGroupSiteContentType](Unpublish-MgGroupSiteContentType.md)
+### [Unpublish-MgBetaGroupSiteContentType](Unpublish-MgBetaGroupSiteContentType.md)
 Unpublish a [contentType][] from a content type hub site.
 
-### [Unpublish-MgGroupSiteListContentType](Unpublish-MgGroupSiteListContentType.md)
+### [Unpublish-MgBetaGroupSiteListContentType](Unpublish-MgBetaGroupSiteListContentType.md)
 Unpublish a [contentType][] from a content type hub site.
 
-### [Update-MgGroup](Update-MgGroup.md)
+### [Update-MgBetaGroup](Update-MgBetaGroup.md)
 Update the properties of a group object.
 
-### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
+### [Update-MgBetaGroupConversationThread](Update-MgBetaGroupConversationThread.md)
 Update the navigation property threads in groups
 
-### [Update-MgGroupConversationThreadPost](Update-MgGroupConversationThreadPost.md)
+### [Update-MgBetaGroupConversationThreadPost](Update-MgBetaGroupConversationThreadPost.md)
 Update the navigation property posts in groups
 
-### [Update-MgGroupConversationThreadPostExtension](Update-MgGroupConversationThreadPostExtension.md)
+### [Update-MgBetaGroupConversationThreadPostExtension](Update-MgBetaGroupConversationThreadPostExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupConversationThreadPostInReplyToExtension](Update-MgGroupConversationThreadPostInReplyToExtension.md)
+### [Update-MgBetaGroupConversationThreadPostInReplyToExtension](Update-MgBetaGroupConversationThreadPostInReplyToExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupConversationThreadPostInReplyToMultiValueExtendedProperty](Update-MgGroupConversationThreadPostInReplyToMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupConversationThreadPostInReplyToMultiValueExtendedProperty](Update-MgBetaGroupConversationThreadPostInReplyToMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty](Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty](Update-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgGroupConversationThreadPostMultiValueExtendedProperty](Update-MgGroupConversationThreadPostMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupConversationThreadPostMultiValueExtendedProperty](Update-MgBetaGroupConversationThreadPostMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupConversationThreadPostSingleValueExtendedProperty](Update-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupConversationThreadPostSingleValueExtendedProperty](Update-MgBetaGroupConversationThreadPostSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgGroupEndpoint](Update-MgGroupEndpoint.md)
+### [Update-MgBetaGroupEndpoint](Update-MgBetaGroupEndpoint.md)
 Update the navigation property endpoints in groups
 
-### [Update-MgGroupExtension](Update-MgGroupExtension.md)
+### [Update-MgBetaGroupExtension](Update-MgBetaGroupExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupLifecyclePolicy](Update-MgGroupLifecyclePolicy.md)
+### [Update-MgBetaGroupLifecyclePolicy](Update-MgBetaGroupLifecyclePolicy.md)
 Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
 
-### [Update-MgGroupOnenotePageContent](Update-MgGroupOnenotePageContent.md)
+### [Update-MgBetaGroupOnenotePageContent](Update-MgBetaGroupOnenotePageContent.md)
 Invoke action onenotePatchContent
 
-### [Update-MgGroupPermissionGrant](Update-MgGroupPermissionGrant.md)
+### [Update-MgBetaGroupPermissionGrant](Update-MgBetaGroupPermissionGrant.md)
 Update the navigation property permissionGrants in groups
 
-### [Update-MgGroupPhoto](Update-MgGroupPhoto.md)
+### [Update-MgBetaGroupPhoto](Update-MgBetaGroupPhoto.md)
 Update the navigation property photo in groups
 
-### [Update-MgGroupSetting](Update-MgGroupSetting.md)
+### [Update-MgBetaGroupSetting](Update-MgBetaGroupSetting.md)
 Update the navigation property settings in groups
 
-### [Update-MgGroupThread](Update-MgGroupThread.md)
+### [Update-MgBetaGroupThread](Update-MgBetaGroupThread.md)
 Update the navigation property threads in groups
 
-### [Update-MgGroupThreadPost](Update-MgGroupThreadPost.md)
+### [Update-MgBetaGroupThreadPost](Update-MgBetaGroupThreadPost.md)
 Update the navigation property posts in groups
 
-### [Update-MgGroupThreadPostExtension](Update-MgGroupThreadPostExtension.md)
+### [Update-MgBetaGroupThreadPostExtension](Update-MgBetaGroupThreadPostExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupThreadPostInReplyToExtension](Update-MgGroupThreadPostInReplyToExtension.md)
+### [Update-MgBetaGroupThreadPostInReplyToExtension](Update-MgBetaGroupThreadPostInReplyToExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupThreadPostInReplyToMultiValueExtendedProperty](Update-MgGroupThreadPostInReplyToMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty](Update-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupThreadPostInReplyToSingleValueExtendedProperty](Update-MgGroupThreadPostInReplyToSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty](Update-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgGroupThreadPostMultiValueExtendedProperty](Update-MgGroupThreadPostMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupThreadPostMultiValueExtendedProperty](Update-MgBetaGroupThreadPostMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupThreadPostSingleValueExtendedProperty](Update-MgGroupThreadPostSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupThreadPostSingleValueExtendedProperty](Update-MgBetaGroupThreadPostSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 

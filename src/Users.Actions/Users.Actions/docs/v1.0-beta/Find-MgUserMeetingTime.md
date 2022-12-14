@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/find-mgusermeetingtime
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/find-mgusermeetingtime
 schema: 2.0.0
 ---
 
-# Find-MgUserMeetingTime
+# Find-MgBetaUserMeetingTime
 
 ## SYNOPSIS
 Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters.
@@ -18,7 +18,7 @@ In scenarios like test environments where the input parameters and calendar data
 
 ### FindExpanded (Default)
 ```
-Find-MgUserMeetingTime -UserId <String> [-AdditionalProperties <Hashtable>]
+Find-MgBetaUserMeetingTime -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
  [-LocationConstraint <IMicrosoftGraphLocationConstraint1>] [-MaxCandidates <Int32>]
  [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons]
@@ -27,21 +27,21 @@ Find-MgUserMeetingTime -UserId <String> [-AdditionalProperties <Hashtable>]
 
 ### Find
 ```
-Find-MgUserMeetingTime -UserId <String>
+Find-MgBetaUserMeetingTime -UserId <String>
  -BodyParameter <IComponents1H459T5RequestbodiesFindmeetingtimesrequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### FindViaIdentity
 ```
-Find-MgUserMeetingTime -InputObject <IUsersActionsIdentity>
+Find-MgBetaUserMeetingTime -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents1H459T5RequestbodiesFindmeetingtimesrequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### FindViaIdentityExpanded
 ```
-Find-MgUserMeetingTime -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Find-MgBetaUserMeetingTime -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
  [-LocationConstraint <IMicrosoftGraphLocationConstraint1>] [-MaxCandidates <Int32>]
  [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons]
@@ -57,9 +57,9 @@ In scenarios like test environments where the input parameters and calendar data
 
 ## EXAMPLES
 
-### Example 1: Using the Find-MgUserMeetingTime Cmdlet
+### Example 1: Using the Find-MgBetaUserMeetingTime Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Attendees = @(
 		@{
@@ -101,10 +101,10 @@ $params = @{
 	MinimumAttendeePercentage = "100"
 }
 # A UPN can also be used as -UserId.
-Find-MgUserMeetingTime -UserId $userId -BodyParameter $params
+Find-MgBetaUserMeetingTime -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Find-MgUserMeetingTime Cmdlet.
+This example shows how to use the Find-MgBetaUserMeetingTime Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ATTENDEES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendeeBase[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendeeBase[]
 Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponents1H459T5RequestbodiesFindmeetingtimesrequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponents1H459T5RequestbodiesFindmeetingtimesrequestbodyContentApplicationJsonSchema1
 Parameter Sets: Find, FindViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: FindViaIdentity, FindViaIdentityExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ locationConstraint
 To construct, please use Get-Help -Online and see NOTES section for LOCATIONCONSTRAINT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocationConstraint1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocationConstraint1
 Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
@@ -268,7 +268,7 @@ timeConstraint
 To construct, please use Get-Help -Online and see NOTES section for TIMECONSTRAINT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeConstraint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeConstraint
 Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
@@ -330,13 +330,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponents1H459T5RequestbodiesFindmeetingtimesrequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IComponents1H459T5RequestbodiesFindmeetingtimesrequestbodyContentApplicationJsonSchema1
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingTimeSuggestionsResult1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingTimeSuggestionsResult1
 
 ## NOTES
 

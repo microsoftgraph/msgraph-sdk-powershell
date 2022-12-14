@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalclaimmappingpolicy
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipalclaimmappingpolicy
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalClaimMappingPolicy
+# Get-MgBetaServicePrincipalClaimMappingPolicy
 
 ## SYNOPSIS
 List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
@@ -13,7 +13,7 @@ List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 ## SYNTAX
 
 ```
-Get-MgServicePrincipalClaimMappingPolicy -ServicePrincipalId <String> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalClaimMappingPolicy -ServicePrincipalId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,13 +23,13 @@ List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServicePrincipalClaimMappingPolicy Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalClaimMappingPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalClaimMappingPolicy -ServicePrincipalId $servicePrincipalId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalClaimMappingPolicy -ServicePrincipalId $servicePrincipalId
 ```
 
-This example shows how to use the Get-MgServicePrincipalClaimMappingPolicy Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalClaimMappingPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -207,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphClaimsMappingPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphClaimsMappingPolicy1
 
 ## NOTES
 

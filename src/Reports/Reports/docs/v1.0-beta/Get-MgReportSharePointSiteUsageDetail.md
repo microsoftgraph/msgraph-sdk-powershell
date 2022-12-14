@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportsharepointsiteusagedetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportsharepointsiteusagedetail
 schema: 2.0.0
 ---
 
-# Get-MgReportSharePointSiteUsageDetail
+# Get-MgBetaReportSharePointSiteUsageDetail
 
 ## SYNOPSIS
 Invoke function getSharePointSiteUsageDetail
@@ -14,23 +14,23 @@ Invoke function getSharePointSiteUsageDetail
 
 ### Get (Default)
 ```
-Get-MgReportSharePointSiteUsageDetail -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportSharePointSiteUsageDetail -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### Get3
 ```
-Get-MgReportSharePointSiteUsageDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportSharePointSiteUsageDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportSharePointSiteUsageDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportSharePointSiteUsageDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgReportSharePointSiteUsageDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportSharePointSiteUsageDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity3
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityhostsecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityhostsecurityprofile
 schema: 2.0.0
 ---
 
-# New-MgSecurityHostSecurityProfile
+# New-MgBetaSecurityHostSecurityProfile
 
 ## SYNOPSIS
 Create new navigation property to hostSecurityProfiles for security
@@ -14,7 +14,7 @@ Create new navigation property to hostSecurityProfiles for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityHostSecurityProfile [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>]
+New-MgBetaSecurityHostSecurityProfile [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>]
  [-AzureTenantId <String>] [-FirstSeenDateTime <DateTime>] [-Fqdn <String>] [-Id <String>] [-IsAzureAdJoined]
  [-IsAzureAdRegistered] [-IsHybridAzureDomainJoined] [-LastSeenDateTime <DateTime>]
  [-LogonUsers <IMicrosoftGraphLogonUser[]>] [-NetBiosName <String>]
@@ -25,7 +25,7 @@ New-MgSecurityHostSecurityProfile [-AdditionalProperties <Hashtable>] [-AzureSub
 
 ### Create
 ```
-New-MgSecurityHostSecurityProfile -BodyParameter <IMicrosoftGraphHostSecurityProfile> [-Confirm] [-WhatIf]
+New-MgBetaSecurityHostSecurityProfile -BodyParameter <IMicrosoftGraphHostSecurityProfile> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -86,7 +86,7 @@ hostSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
 Parameter Sets: Create
 Aliases:
 
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for LOGONUSERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLogonUser[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLogonUser[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for NETWORKINTERFACES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNetworkInterface[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNetworkInterface[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -345,7 +345,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -392,11 +392,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
 
 ## NOTES
 

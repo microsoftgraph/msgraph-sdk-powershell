@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityprovider
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityprovider
 schema: 2.0.0
 ---
 
-# Update-MgIdentityProvider
+# Update-MgBetaIdentityProvider
 
 ## SYNOPSIS
 Update the navigation property identityProviders in identity
@@ -14,25 +14,25 @@ Update the navigation property identityProviders in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityProvider -IdentityProviderBaseId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityProvider -IdentityProviderBaseId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgIdentityProvider -IdentityProviderBaseId <String>
+Update-MgBetaIdentityProvider -IdentityProviderBaseId <String>
  -BodyParameter <IMicrosoftGraphIdentityProviderBase> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityProvider -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityProvider -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphIdentityProviderBase> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityProvider -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityProvider -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,68 +41,68 @@ Update the navigation property identityProviders in identity
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgIdentityProvider Cmdlet
+### Example 1: Using the Update-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	"@odata.type" = "#Microsoft.Graph.Beta.socialIdentityProvider"
 	DisplayName = "Apple"
 }
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityProvider Cmdlet.
+This example shows how to use the Update-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Update-MgIdentityProvider Cmdlet
+### Example 2: Using the Update-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ClientSecret = "1111111111111"
 }
-Update-MgIdentityProvider -IdentityProviderId $identityProviderId -BodyParameter $params
+Update-MgBetaIdentityProvider -IdentityProviderId $identityProviderId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityProvider Cmdlet.
+This example shows how to use the Update-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Update-MgIdentityProvider Cmdlet
+### Example 3: Using the Update-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	"@odata.type" = "#Microsoft.Graph.Beta.socialIdentityProvider"
 	ResponseType = "id_token"
 }
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityProvider Cmdlet.
+This example shows how to use the Update-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Update-MgIdentityProvider Cmdlet
+### Example 4: Using the Update-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	"@odata.type" = "#Microsoft.Graph.Beta.socialIdentityProvider"
 	ResponseType = "id_token"
 }
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityProvider Cmdlet.
+This example shows how to use the Update-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Update-MgIdentityProvider Cmdlet
+### Example 5: Using the Update-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	"@odata.type" = "#Microsoft.Graph.Beta.socialIdentityProvider"
 	ClientSecret = "1111111111111"
 }
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityProvider Cmdlet.
+This example shows how to use the Update-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -127,7 +127,7 @@ identityProviderBase
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -251,9 +251,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 
 ## OUTPUTS
 

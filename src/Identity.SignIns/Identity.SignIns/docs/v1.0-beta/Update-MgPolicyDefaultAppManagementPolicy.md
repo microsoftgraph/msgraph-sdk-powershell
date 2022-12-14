@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicydefaultappmanagementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicydefaultappmanagementpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyDefaultAppManagementPolicy
+# Update-MgBetaPolicyDefaultAppManagementPolicy
 
 ## SYNOPSIS
 Update the properties of a tenantAppManagementPolicy object.
@@ -14,7 +14,7 @@ Update the properties of a tenantAppManagementPolicy object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyDefaultAppManagementPolicy [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyDefaultAppManagementPolicy [-AdditionalProperties <Hashtable>]
  [-ApplicationRestrictions <IMicrosoftGraphAppManagementConfiguration>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsEnabled]
  [-ServicePrincipalRestrictions <IMicrosoftGraphAppManagementConfiguration>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgPolicyDefaultAppManagementPolicy [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgPolicyDefaultAppManagementPolicy -BodyParameter <IMicrosoftGraphTenantAppManagementPolicy>
+Update-MgBetaPolicyDefaultAppManagementPolicy -BodyParameter <IMicrosoftGraphTenantAppManagementPolicy>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -32,9 +32,9 @@ Update the properties of a tenantAppManagementPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyDefaultAppManagementPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyDefaultAppManagementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	IsEnabled = $true
 	ApplicationRestrictions = @{
@@ -74,10 +74,10 @@ $params = @{
 		)
 	}
 }
-Update-MgPolicyDefaultAppManagementPolicy -BodyParameter $params
+Update-MgBetaPolicyDefaultAppManagementPolicy -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyDefaultAppManagementPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyDefaultAppManagementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -102,7 +102,7 @@ appManagementConfiguration
 To construct, please use Get-Help -Online and see NOTES section for APPLICATIONRESTRICTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppManagementConfiguration
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -118,7 +118,7 @@ tenantAppManagementPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -229,7 +229,7 @@ appManagementConfiguration
 To construct, please use Get-Help -Online and see NOTES section for SERVICEPRINCIPALRESTRICTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppManagementConfiguration
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -276,7 +276,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
 
 ## OUTPUTS
 

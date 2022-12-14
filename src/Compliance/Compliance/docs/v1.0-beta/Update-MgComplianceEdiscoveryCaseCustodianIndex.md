@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/update-mgcomplianceediscoverycasecustodianindex
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/update-mgcomplianceediscoverycasecustodianindex
 schema: 2.0.0
 ---
 
-# Update-MgComplianceEdiscoveryCaseCustodianIndex
+# Update-MgBetaComplianceEdiscoveryCaseCustodianIndex
 
 ## SYNOPSIS
 Invoke action updateIndex
@@ -14,13 +14,13 @@ Invoke action updateIndex
 
 ### Update (Default)
 ```
-Update-MgComplianceEdiscoveryCaseCustodianIndex -CaseId <String> -CustodianId <String> [-PassThru] [-Confirm]
+Update-MgBetaComplianceEdiscoveryCaseCustodianIndex -CaseId <String> -CustodianId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgComplianceEdiscoveryCaseCustodianIndex -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
+Update-MgBetaComplianceEdiscoveryCaseCustodianIndex -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: UpdateViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemDocumentSetVersion
+# Get-MgBetaSiteListItemDocumentSetVersion
 
 ## SYNOPSIS
 Version information for a document set version created by a user.
@@ -14,20 +14,20 @@ Version information for a document set version created by a user.
 
 ### List (Default)
 ```
-Get-MgSiteListItemDocumentSetVersion -ListId <String> -ListItemId <String> -SiteId <String>
+Get-MgBetaSiteListItemDocumentSetVersion -ListId <String> -ListItemId <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -ListId <String> -ListItemId <String>
+Get-MgBetaSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -ListId <String> -ListItemId <String>
  -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Version information for a document set version created by a user.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteListItemDocumentSetVersion Cmdlet
+### Example 1: Using the Get-MgBetaSiteListItemDocumentSetVersion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
 ```
 
-This example shows how to use the Get-MgSiteListItemDocumentSetVersion Cmdlet.
+This example shows how to use the Get-MgBetaSiteListItemDocumentSetVersion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSiteListItemDocumentSetVersion Cmdlet
+### Example 2: Using the Get-MgBetaSiteListItemDocumentSetVersion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId
 ```
 
-This example shows how to use the Get-MgSiteListItemDocumentSetVersion Cmdlet.
+This example shows how to use the Get-MgBetaSiteListItemDocumentSetVersion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -288,11 +288,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
 
 ## NOTES
 

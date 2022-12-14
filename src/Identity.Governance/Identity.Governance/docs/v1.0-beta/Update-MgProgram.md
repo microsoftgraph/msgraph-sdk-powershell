@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprogram
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgprogram
 schema: 2.0.0
 ---
 
-# Update-MgProgram
+# Update-MgBetaProgram
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, update an existing program object.
@@ -14,26 +14,26 @@ In the Azure AD access reviews feature, update an existing program object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgProgram -ProgramId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaProgram -ProgramId <String> [-AdditionalProperties <Hashtable>]
  [-Controls <IMicrosoftGraphProgramControl[]>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgProgram -ProgramId <String> -BodyParameter <IMicrosoftGraphProgram> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaProgram -ProgramId <String> -BodyParameter <IMicrosoftGraphProgram> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgProgram -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphProgram>
+Update-MgBetaProgram -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphProgram>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgProgram -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaProgram -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-Controls <IMicrosoftGraphProgramControl[]>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,16 +43,16 @@ In the Azure AD access reviews feature, update an existing program object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgProgram Cmdlet
+### Example 1: Using the Update-MgBetaProgram Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "testprogram3 new name"
 }
-Update-MgProgram -ProgramId $programId -BodyParameter $params
+Update-MgBetaProgram -ProgramId $programId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgProgram Cmdlet.
+This example shows how to use the Update-MgBetaProgram Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ program
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgram
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgram
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -93,7 +93,7 @@ Controls associated with the program.
 To construct, please use Get-Help -Online and see NOTES section for CONTROLS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControl[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControl[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -156,7 +156,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -233,9 +233,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgram
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgram
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgsnoozeusereventinstancereminder
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgsnoozeusereventinstancereminder
 schema: 2.0.0
 ---
 
-# Invoke-MgSnoozeUserEventInstanceReminder
+# Invoke-MgBetaSnoozeUserEventInstanceReminder
 
 ## SYNOPSIS
 Postpone a reminder for an event in a user calendar until a new time.
@@ -14,28 +14,28 @@ Postpone a reminder for an event in a user calendar until a new time.
 
 ### SnoozeExpanded (Default)
 ```
-Invoke-MgSnoozeUserEventInstanceReminder -EventId <String> -EventId1 <String> -UserId <String>
+Invoke-MgBetaSnoozeUserEventInstanceReminder -EventId <String> -EventId1 <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Snooze
 ```
-Invoke-MgSnoozeUserEventInstanceReminder -EventId <String> -EventId1 <String> -UserId <String>
+Invoke-MgBetaSnoozeUserEventInstanceReminder -EventId <String> -EventId1 <String> -UserId <String>
  -BodyParameter <IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SnoozeViaIdentity
 ```
-Invoke-MgSnoozeUserEventInstanceReminder -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaSnoozeUserEventInstanceReminder -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SnoozeViaIdentityExpanded
 ```
-Invoke-MgSnoozeUserEventInstanceReminder -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaSnoozeUserEventInstanceReminder -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -47,7 +47,7 @@ Postpone a reminder for an event in a user calendar until a new time.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	NewReminderTime = @{
@@ -57,10 +57,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgSnoozeUserEventReminder -UserId $userId -EventId $eventId -BodyParameter $params
+Invoke-MgBetaSnoozeUserEventReminder -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgSnoozeUserEventInstanceReminder Cmdlet.
+This example shows how to use the Invoke-MgBetaSnoozeUserEventInstanceReminder Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Snooze, SnoozeViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: SnoozeViaIdentity, SnoozeViaIdentityExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for NEWREMINDERTIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: SnoozeExpanded, SnoozeViaIdentityExpanded
 Aliases:
 
@@ -225,9 +225,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

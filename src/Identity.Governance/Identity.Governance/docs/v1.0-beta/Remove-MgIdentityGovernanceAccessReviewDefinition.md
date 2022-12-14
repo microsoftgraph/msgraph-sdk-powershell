@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernanceaccessreviewdefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernanceaccessreviewdefinition
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceAccessReviewDefinition
+# Remove-MgBetaIdentityGovernanceAccessReviewDefinition
 
 ## SYNOPSIS
 Delete navigation property definitions for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property definitions for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgIdentityGovernanceAccessReviewDefinition -AccessReviewScheduleDefinitionId <String>
+Remove-MgBetaIdentityGovernanceAccessReviewDefinition -AccessReviewScheduleDefinitionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityGovernanceAccessReviewDefinition -InputObject <IIdentityGovernanceIdentity>
+Remove-MgBetaIdentityGovernanceAccessReviewDefinition -InputObject <IIdentityGovernanceIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property definitions for identityGovernance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgIdentityGovernanceAccessReviewDefinition -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaIdentityGovernanceAccessReviewDefinition -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId
 ```
 
-This example shows how to use the Remove-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuserassignmentsubmission
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationuserassignmentsubmission
 schema: 2.0.0
 ---
 
-# Get-MgEducationUserAssignmentSubmission
+# Get-MgBetaEducationUserAssignmentSubmission
 
 ## SYNOPSIS
 Once published, there is a submission object for each student representing their work and grade.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgEducationUserAssignmentSubmission -EducationAssignmentId <String> -EducationUserId <String>
+Get-MgBetaEducationUserAssignmentSubmission -EducationAssignmentId <String> -EducationUserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEducationUserAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
+Get-MgBetaEducationUserAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
  -EducationUserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -153,7 +153,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
 
 ## NOTES
 

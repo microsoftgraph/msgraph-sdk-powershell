@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityinformationprotectionlabelpolicysetting
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityinformationprotectionlabelpolicysetting
 schema: 2.0.0
 ---
 
-# Update-MgSecurityInformationProtectionLabelPolicySetting
+# Update-MgBetaSecurityInformationProtectionLabelPolicySetting
 
 ## SYNOPSIS
 Update the navigation property labelPolicySettings in security
@@ -14,14 +14,14 @@ Update the navigation property labelPolicySettings in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityInformationProtectionLabelPolicySetting [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityInformationProtectionLabelPolicySetting [-AdditionalProperties <Hashtable>]
  [-DefaultLabelId <String>] [-Id <String>] [-IsDowngradeJustificationRequired] [-IsMandatory]
  [-MoreInfoUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecurityInformationProtectionLabelPolicySetting
+Update-MgBetaSecurityInformationProtectionLabelPolicySetting
  -BodyParameter <IMicrosoftGraphSecurityInformationProtectionPolicySetting> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ informationProtectionPolicySetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
 Parameter Sets: Update
 Aliases:
 
@@ -191,7 +191,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
 
 ## OUTPUTS
 

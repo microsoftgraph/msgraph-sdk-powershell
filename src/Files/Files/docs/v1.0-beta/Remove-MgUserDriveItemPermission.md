@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/remove-mguserdriveitempermission
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/remove-mguserdriveitempermission
 schema: 2.0.0
 ---
 
-# Remove-MgUserDriveItemPermission
+# Remove-MgBetaUserDriveItemPermission
 
 ## SYNOPSIS
 Delete navigation property permissions for users
@@ -14,13 +14,13 @@ Delete navigation property permissions for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserDriveItemPermission -DriveId <String> -DriveItemId <String> -PermissionId <String>
+Remove-MgBetaUserDriveItemPermission -DriveId <String> -DriveItemId <String> -PermissionId <String>
  -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserDriveItemPermission -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserDriveItemPermission -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -173,7 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

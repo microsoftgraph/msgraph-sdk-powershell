@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementgrouppolicyconfigurationdefinitionvaluepresentationvalue
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementgrouppolicyconfigurationdefinitionvaluepresentationvalue
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+# Update-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
 
 ## SYNOPSIS
 Update the navigation property presentationValues in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property presentationValues in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+Update-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
  -GroupPolicyConfigurationId <String> -GroupPolicyDefinitionValueId <String>
  -GroupPolicyPresentationValueId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-DefinitionValue <IMicrosoftGraphGroupPolicyDefinitionValue>] [-Id <String>]
@@ -24,7 +24,7 @@ Update-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValu
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+Update-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
  -GroupPolicyConfigurationId <String> -GroupPolicyDefinitionValueId <String>
  -GroupPolicyPresentationValueId <String> -BodyParameter <IMicrosoftGraphGroupPolicyPresentationValue>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -32,14 +32,14 @@ Update-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValu
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+Update-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphGroupPolicyPresentationValue>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+Update-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-DefinitionValue <IMicrosoftGraphGroupPolicyDefinitionValue>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Presentation <IMicrosoftGraphGroupPolicyPresentation>] [-PassThru]
@@ -73,7 +73,7 @@ The base presentation value entity that stores the value for a single group poli
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentationValue
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentationValue
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -104,7 +104,7 @@ The definition value entity stores the value for a single group policy definitio
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONVALUE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionValue
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionValue
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -227,7 +227,7 @@ The base entity for the display presentation of any of the additional options in
 To construct, please use Get-Help -Online and see NOTES section for PRESENTATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -274,9 +274,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentationValue
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentationValue
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddevice
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddevice
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice
+# Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice
 
 ## SYNOPSIS
 Get device from users
@@ -14,14 +14,14 @@ Get device from users
 
 ### Get (Default)
 ```
-Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice
+Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -113,11 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice1
 
 ## NOTES
 

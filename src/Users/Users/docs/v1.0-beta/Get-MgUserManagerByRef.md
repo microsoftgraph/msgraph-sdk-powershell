@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusermanagerbyref
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusermanagerbyref
 schema: 2.0.0
 ---
 
-# Get-MgUserManagerByRef
+# Get-MgBetaUserManagerByRef
 
 ## SYNOPSIS
 Returns the user or organizational contact assigned as the user's manager.
@@ -15,12 +15,12 @@ Optionally, you can expand the manager's chain up to the root node.
 
 ### Get (Default)
 ```
-Get-MgUserManagerByRef -UserId <String> [<CommonParameters>]
+Get-MgBetaUserManagerByRef -UserId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserManagerByRef -InputObject <IUsersIdentity> [<CommonParameters>]
+Get-MgBetaUserManagerByRef -InputObject <IUsersIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -67,7 +67,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

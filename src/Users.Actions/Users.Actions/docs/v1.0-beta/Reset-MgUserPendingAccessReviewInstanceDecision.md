@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/reset-mguserpendingaccessreviewinstancedecision
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/reset-mguserpendingaccessreviewinstancedecision
 schema: 2.0.0
 ---
 
-# Reset-MgUserPendingAccessReviewInstanceDecision
+# Reset-MgBetaUserPendingAccessReviewInstanceDecision
 
 ## SYNOPSIS
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
@@ -14,13 +14,13 @@ Resets decisions of all accessReviewInstanceDecisionItem objects on an accessRev
 
 ### Reset (Default)
 ```
-Reset-MgUserPendingAccessReviewInstanceDecision -AccessReviewInstanceId <String> -UserId <String> [-PassThru]
+Reset-MgBetaUserPendingAccessReviewInstanceDecision -AccessReviewInstanceId <String> -UserId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgUserPendingAccessReviewInstanceDecision -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm]
+Reset-MgBetaUserPendingAccessReviewInstanceDecision -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantcloudpcoverview
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantcloudpcoverview
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantCloudPcOverview
+# Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview
 
 ## SYNOPSIS
 Overview of cloud PC information across managed tenants.
@@ -14,20 +14,20 @@ Overview of cloud PC information across managed tenants.
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantCloudPcOverview [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTenantId <String>
+Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTenantId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantCloudPcOverview -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Overview of cloud PC information across managed tenants.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantCloudPcOverview Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTenantId $cloudPcOverviewTenantId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTenantId $cloudPcOverviewTenantId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCloudPcOverview Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantCloudPcOverview Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCloudPcOverview
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCloudPcOverview Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
 
 ## NOTES
 

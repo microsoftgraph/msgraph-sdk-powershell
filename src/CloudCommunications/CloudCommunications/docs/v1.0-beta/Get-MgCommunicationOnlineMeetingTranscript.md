@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationonlinemeetingtranscript
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationonlinemeetingtranscript
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationOnlineMeetingTranscript
+# Get-MgBetaCommunicationOnlineMeetingTranscript
 
 ## SYNOPSIS
 The transcripts of an online meeting.
@@ -15,20 +15,20 @@ Read-only.
 
 ### List (Default)
 ```
-Get-MgCommunicationOnlineMeetingTranscript -OnlineMeetingId <String> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationOnlineMeetingTranscript -OnlineMeetingId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgCommunicationOnlineMeetingTranscript -CallTranscriptId <String> -OnlineMeetingId <String>
+Get-MgBetaCommunicationOnlineMeetingTranscript -CallTranscriptId <String> -OnlineMeetingId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgCommunicationOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity>
+Get-MgBetaCommunicationOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallTranscript
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallTranscript
 
 ## NOTES
 

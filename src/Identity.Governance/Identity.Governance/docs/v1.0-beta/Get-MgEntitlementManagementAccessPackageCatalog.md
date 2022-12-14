@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackagecatalog
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackagecatalog
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageCatalog
+# Get-MgBetaEntitlementManagementAccessPackageCatalog
 
 ## SYNOPSIS
 A container of access packages.
@@ -14,38 +14,38 @@ A container of access packages.
 
 ### ListAll (Default)
 ```
-Get-MgEntitlementManagementAccessPackageCatalog [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageCatalog [-ExpandProperty <String[]>] [-Property <String[]>]
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageCatalog -AccessPackageCatalogId <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageCatalog -AccessPackageCatalogId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageCatalog -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackageCatalog -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgEntitlementManagementAccessPackageCatalog [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementAccessPackageCatalog [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### ListByDisplayNameContains
 ```
-Get-MgEntitlementManagementAccessPackageCatalog -DisplayNameContains <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageCatalog -DisplayNameContains <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
 ### ListByDisplayNameEq
 ```
-Get-MgEntitlementManagementAccessPackageCatalog -DisplayNameEq <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageCatalog -DisplayNameEq <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
@@ -56,8 +56,8 @@ A container of access packages.
 
 ### Example 1: Get a list of all access package catalogs
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageCatalog | Format-list
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageCatalog | Format-list
 
 AccessPackageResourceRoles  :
 AccessPackageResourceScopes :
@@ -80,8 +80,8 @@ This command returns a list of all the access package catalogs.
 
 ### Example 2: Filter the access package catalogs by the display name
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageCatalog -Filter "DisplayName eq 'General'" | Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageCatalog -Filter "DisplayName eq 'General'" | Format-List
 
 AccessPackageResourceRoles  :
 AccessPackageResourceScopes :
@@ -215,7 +215,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -321,13 +321,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mggroupapproleassignment
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mggroupapproleassignment
 schema: 2.0.0
 ---
 
-# Update-MgGroupAppRoleAssignment
+# Update-MgBetaGroupAppRoleAssignment
 
 ## SYNOPSIS
 Update the navigation property appRoleAssignments in groups
@@ -14,7 +14,7 @@ Update the navigation property appRoleAssignments in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String>
+Update-MgBetaGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-AppRoleId <String>] [-CreationTimestamp <DateTime>] [-Id <String>]
  [-PrincipalDisplayName <String>] [-PrincipalId <String>] [-PrincipalType <String>]
  [-ResourceDisplayName <String>] [-ResourceId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String>
 
 ### Update
 ```
-Update-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String>
+Update-MgBetaGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String>
  -BodyParameter <IMicrosoftGraphAppRoleAssignment1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity>
+Update-MgBetaGroupAppRoleAssignment -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphAppRoleAssignment1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AppRoleId <String>] [-CreationTimestamp <DateTime>] [-Id <String>] [-PrincipalDisplayName <String>]
  [-PrincipalId <String>] [-PrincipalType <String>] [-ResourceDisplayName <String>] [-ResourceId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -100,7 +100,7 @@ appRoleAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -165,7 +165,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -310,9 +310,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
 
 ## OUTPUTS
 

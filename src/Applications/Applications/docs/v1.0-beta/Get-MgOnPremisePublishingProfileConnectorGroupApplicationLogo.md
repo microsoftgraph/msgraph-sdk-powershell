@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgonpremisepublishingprofileconnectorgroupapplicationlogo
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgonpremisepublishingprofileconnectorgroupapplicationlogo
 schema: 2.0.0
 ---
 
-# Get-MgOnPremisePublishingProfileConnectorGroupApplicationLogo
+# Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationLogo
 
 ## SYNOPSIS
 The main logo for the application.
@@ -15,14 +15,14 @@ Not nullable.
 
 ### Get (Default)
 ```
-Get-MgOnPremisePublishingProfileConnectorGroupApplicationLogo -ApplicationId <String>
+Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationLogo -ApplicationId <String>
  -ConnectorGroupId <String> -OnPremisesPublishingProfileId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOnPremisePublishingProfileConnectorGroupApplicationLogo -InputObject <IApplicationsIdentity>
+Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationLogo -InputObject <IApplicationsIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

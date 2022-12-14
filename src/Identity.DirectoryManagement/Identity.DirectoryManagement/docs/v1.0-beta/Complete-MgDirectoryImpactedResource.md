@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/complete-mgdirectoryimpactedresource
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/complete-mgdirectoryimpactedresource
 schema: 2.0.0
 ---
 
-# Complete-MgDirectoryImpactedResource
+# Complete-MgBetaDirectoryImpactedResource
 
 ## SYNOPSIS
 Invoke action complete
@@ -14,13 +14,13 @@ Invoke action complete
 
 ### Complete (Default)
 ```
-Complete-MgDirectoryImpactedResource -RecommendationResourceId <String> [-Confirm] [-WhatIf]
+Complete-MgBetaDirectoryImpactedResource -RecommendationResourceId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CompleteViaIdentity
 ```
-Complete-MgDirectoryImpactedResource -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf]
+Complete-MgBetaDirectoryImpactedResource -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CompleteViaIdentity
 Aliases:
 
@@ -98,11 +98,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 
 ## NOTES
 

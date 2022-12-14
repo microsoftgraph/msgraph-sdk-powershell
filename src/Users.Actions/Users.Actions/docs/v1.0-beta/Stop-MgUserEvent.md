@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/stop-mguserevent
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/stop-mguserevent
 schema: 2.0.0
 ---
 
-# Stop-MgUserEvent
+# Stop-MgBetaUserEvent
 
 ## SYNOPSIS
 This action allows the organizer of a meeting to send a cancellation message and cancel the event.
@@ -18,27 +18,27 @@ You need to be an organizer to cancel a meeting.' This action differs from Delet
 
 ### CancelExpanded (Default)
 ```
-Stop-MgUserEvent -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
+Stop-MgBetaUserEvent -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Cancel
 ```
-Stop-MgUserEvent -EventId <String> -UserId <String>
+Stop-MgBetaUserEvent -EventId <String> -UserId <String>
  -BodyParameter <IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgUserEvent -InputObject <IUsersActionsIdentity>
+Stop-MgBetaUserEvent -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentityExpanded
 ```
-Stop-MgUserEvent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>] [-Comment <String>]
+Stop-MgBetaUserEvent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,17 +51,17 @@ You need to be an organizer to cancel a meeting.' This action differs from Delet
 
 ## EXAMPLES
 
-### Example 1: Using the Stop-MgUserEvent Cmdlet
+### Example 1: Using the Stop-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Comment = "Cancelling for this week due to all hands"
 }
 # A UPN can also be used as -UserId.
-Stop-MgUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
+Stop-MgBetaUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the Stop-MgUserEvent Cmdlet.
+This example shows how to use the Stop-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Cancel, CancelViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CancelViaIdentity, CancelViaIdentityExpanded
 Aliases:
 
@@ -209,9 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

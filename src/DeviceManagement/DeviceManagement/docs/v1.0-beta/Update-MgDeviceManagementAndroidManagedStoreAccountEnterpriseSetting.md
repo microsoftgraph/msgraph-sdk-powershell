@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementandroidmanagedstoreaccountenterprisesetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementandroidmanagedstoreaccountenterprisesetting
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
+# Update-MgBetaDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
 
 ## SYNOPSIS
 Update the navigation property androidManagedStoreAccountEnterpriseSettings in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property androidManagedStoreAccountEnterpriseSettings in d
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementAndroidManagedStoreAccountEnterpriseSetting [-AdditionalProperties <Hashtable>]
  [-AndroidDeviceOwnerFullyManagedEnrollmentEnabled] [-BindStatus <String>]
  [-CompanyCodes <IMicrosoftGraphAndroidEnrollmentCompanyCode[]>] [-DeviceOwnerManagementEnabled]
  [-EnrollmentTarget <String>] [-Id <String>] [-LastAppSyncDateTime <DateTime>] [-LastAppSyncStatus <String>]
@@ -25,7 +25,7 @@ Update-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting [-Additiona
 
 ### Update
 ```
-Update-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
+Update-MgBetaDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
  -BodyParameter <IMicrosoftGraphAndroidManagedStoreAccountEnterpriseSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -87,7 +87,7 @@ Enterprise settings for an Android managed store account.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAccountEnterpriseSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAccountEnterpriseSettings
 Parameter Sets: Update
 Aliases:
 
@@ -103,7 +103,7 @@ Company codes for AndroidManagedStoreAccountEnterpriseSettings
 To construct, please use Get-Help -Online and see NOTES section for COMPANYCODES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidEnrollmentCompanyCode[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidEnrollmentCompanyCode[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -316,7 +316,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAccountEnterpriseSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAccountEnterpriseSettings
 
 ## OUTPUTS
 

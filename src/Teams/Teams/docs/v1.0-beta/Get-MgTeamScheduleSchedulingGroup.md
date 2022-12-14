@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamscheduleschedulinggroup
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamscheduleschedulinggroup
 schema: 2.0.0
 ---
 
-# Get-MgTeamScheduleSchedulingGroup
+# Get-MgBetaTeamScheduleSchedulingGroup
 
 ## SYNOPSIS
 The logical grouping of users in the schedule (usually by role).
@@ -14,20 +14,20 @@ The logical grouping of users in the schedule (usually by role).
 
 ### List1 (Default)
 ```
-Get-MgTeamScheduleSchedulingGroup -TeamId <String> [-Filter <String>] [-Property <String[]>]
+Get-MgBetaTeamScheduleSchedulingGroup -TeamId <String> [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgTeamScheduleSchedulingGroup -SchedulingGroupId <String> -TeamId <String> [-Property <String[]>]
+Get-MgBetaTeamScheduleSchedulingGroup -SchedulingGroupId <String> -TeamId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,22 +35,22 @@ The logical grouping of users in the schedule (usually by role).
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamScheduleSchedulingGroup Cmdlet
+### Example 1: Using the Get-MgBetaTeamScheduleSchedulingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleSchedulingGroup -TeamId $teamId -SchedulingGroupId $schedulingGroupId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamScheduleSchedulingGroup -TeamId $teamId -SchedulingGroupId $schedulingGroupId
 ```
 
-This example shows how to use the Get-MgTeamScheduleSchedulingGroup Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleSchedulingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamScheduleSchedulingGroup Cmdlet
+### Example 2: Using the Get-MgBetaTeamScheduleSchedulingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleSchedulingGroup -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamScheduleSchedulingGroup -TeamId $teamId
 ```
 
-This example shows how to use the Get-MgTeamScheduleSchedulingGroup Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleSchedulingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
 
 ## NOTES
 

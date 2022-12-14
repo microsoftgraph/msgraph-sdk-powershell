@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointorganizationsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointorganizationsetting
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointOrganizationSetting
+# Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
 Update the properties of the cloudPcOrganizationSettings object in a tenant.
@@ -14,7 +14,7 @@ Update the properties of the cloudPcOrganizationSettings object in a tenant.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointOrganizationSetting [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting [-AdditionalProperties <Hashtable>]
  [-EnableMemAutoEnroll] [-Id <String>] [-OSVersion <String>] [-UserAccountType <String>]
  [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementVirtualEndpointOrganizationSetting [-AdditionalProperti
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointOrganizationSetting
+Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting
  -BodyParameter <IMicrosoftGraphCloudPcOrganizationSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -32,11 +32,11 @@ Update the properties of the cloudPcOrganizationSettings object in a tenant.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgDeviceManagementVirtualEndpointOrganizationSetting Cmdlet
+### Example 1: Using the Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcOrganizationSettings"
+	"@odata.type" = "#Microsoft.Graph.Beta.cloudPcOrganizationSettings"
 	EnableMEMAutoEnroll = $true
 	OsVersion = "windows11"
 	UserAccountType = "standardUser"
@@ -44,10 +44,10 @@ $params = @{
 		Language = "en-US"
 	}
 }
-Update-MgDeviceManagementVirtualEndpointOrganizationSetting -BodyParameter $params
+Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgDeviceManagementVirtualEndpointOrganizationSetting Cmdlet.
+This example shows how to use the Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -72,7 +72,7 @@ cloudPcOrganizationSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOrganizationSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOrganizationSettings
 Parameter Sets: Update
 Aliases:
 
@@ -165,7 +165,7 @@ cloudPcWindowsSettings
 To construct, please use Get-Help -Online and see NOTES section for WINDOWSSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcWindowsSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcWindowsSettings
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOrganizationSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOrganizationSettings
 
 ## OUTPUTS
 

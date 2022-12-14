@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/clear-mguserchatmessagereplyreaction
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/clear-mguserchatmessagereplyreaction
 schema: 2.0.0
 ---
 
-# Clear-MgUserChatMessageReplyReaction
+# Clear-MgBetaUserChatMessageReplyReaction
 
 ## SYNOPSIS
 Invoke action unsetReaction
@@ -14,14 +14,14 @@ Invoke action unsetReaction
 
 ### UnsetExpanded (Default)
 ```
-Clear-MgUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
+Clear-MgBetaUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Unset
 ```
-Clear-MgUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
+Clear-MgBetaUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -UserId <String>
  -BodyParameter <IPathsH9Jox8UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,14 +29,14 @@ Clear-MgUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -C
 
 ### UnsetViaIdentity
 ```
-Clear-MgUserChatMessageReplyReaction -InputObject <IUsersActionsIdentity>
+Clear-MgBetaUserChatMessageReplyReaction -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsH9Jox8UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnsetViaIdentityExpanded
 ```
-Clear-MgUserChatMessageReplyReaction -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Clear-MgBetaUserChatMessageReplyReaction -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsH9Jox8UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsH9Jox8UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Unset, UnsetViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: UnsetViaIdentity, UnsetViaIdentityExpanded
 Aliases:
 
@@ -220,9 +220,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsH9Jox8UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsH9Jox8UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

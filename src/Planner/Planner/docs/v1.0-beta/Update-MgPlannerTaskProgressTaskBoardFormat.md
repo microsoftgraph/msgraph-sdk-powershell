@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mgplannertaskprogresstaskboardformat
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/update-mgplannertaskprogresstaskboardformat
 schema: 2.0.0
 ---
 
-# Update-MgPlannerTaskProgressTaskBoardFormat
+# Update-MgBetaPlannerTaskProgressTaskBoardFormat
 
 ## SYNOPSIS
 Update the properties of **plannerProgressTaskBoardTaskFormat** object.
@@ -14,27 +14,27 @@ Update the properties of **plannerProgressTaskBoardTaskFormat** object.
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlannerTaskProgressTaskBoardFormat -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId <String>
+Update-MgBetaPlannerTaskProgressTaskBoardFormat -PlannerTaskId <String>
  -BodyParameter <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgBetaPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
  -BodyParameter <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgBetaPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -44,16 +44,16 @@ Update the properties of **plannerProgressTaskBoardTaskFormat** object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPlannerTaskProgressTaskBoardFormat Cmdlet
+### Example 1: Using the Update-MgBetaPlannerTaskProgressTaskBoardFormat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	OrderHint = "A6673H Ejkl!"
 }
-Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+Update-MgBetaPlannerTaskProgressTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPlannerTaskProgressTaskBoardFormat Cmdlet.
+This example shows how to use the Update-MgBetaPlannerTaskProgressTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -78,7 +78,7 @@ plannerProgressTaskBoardTaskFormat
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -203,9 +203,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

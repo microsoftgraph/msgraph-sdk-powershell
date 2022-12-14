@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementintentuserstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementintentuserstate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementIntentUserState
+# New-MgBetaDeviceManagementIntentUserState
 
 ## SYNOPSIS
 Create new navigation property to userStates for deviceManagement
@@ -14,26 +14,26 @@ Create new navigation property to userStates for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementIntentUserState -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementIntentUserState -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceCount <Int32>] [-Id <String>] [-LastReportedDateTime <DateTime>] [-State <String>]
  [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementIntentUserState -DeviceManagementIntentId <String>
+New-MgBetaDeviceManagementIntentUserState -DeviceManagementIntentId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementIntentUserState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementIntentUserState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>] [-Id <String>] [-LastReportedDateTime <DateTime>]
  [-State <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -66,7 +66,7 @@ Entity that represents user state for an intent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -235,13 +235,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/remove-mguserdevicecommand
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/remove-mguserdevicecommand
 schema: 2.0.0
 ---
 
-# Remove-MgUserDeviceCommand
+# Remove-MgBetaUserDeviceCommand
 
 ## SYNOPSIS
 Delete navigation property commands for users
@@ -14,13 +14,13 @@ Delete navigation property commands for users
 
 ### Delete (Default)
 ```
-Remove-MgUserDeviceCommand -CommandId <String> -DeviceId <String> -UserId <String> [-IfMatch <String>]
+Remove-MgBetaUserDeviceCommand -CommandId <String> -DeviceId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserDeviceCommand -InputObject <ICrossDeviceExperiencesIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserDeviceCommand -InputObject <ICrossDeviceExperiencesIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ## OUTPUTS
 

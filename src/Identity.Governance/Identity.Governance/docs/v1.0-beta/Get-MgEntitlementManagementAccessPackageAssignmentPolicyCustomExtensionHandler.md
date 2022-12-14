@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentpolicycustomextensionhandler
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentpolicycustomextensionhandler
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+# Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
 
 ## SYNOPSIS
 The collection of stages when to execute one or more custom access package workflow extensions.
@@ -15,7 +15,7 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
  -AccessPackageAssignmentPolicyId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -23,14 +23,14 @@ Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
  -AccessPackageAssignmentPolicyId <String> -CustomExtensionHandlerId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -245,11 +245,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomExtensionHandler
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomExtensionHandler
 
 ## NOTES
 

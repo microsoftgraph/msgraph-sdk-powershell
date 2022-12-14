@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgorganization
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgorganization
 schema: 2.0.0
 ---
 
-# Update-MgOrganization
+# Update-MgBetaOrganization
 
 ## SYNOPSIS
 Update the properties of the currently authenticated organization.
@@ -16,7 +16,7 @@ The **ID** is also known as the **tenantId** of the organization.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOrganization -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaOrganization -OrganizationId <String> [-AdditionalProperties <Hashtable>]
  [-AssignedPlans <IMicrosoftGraphAssignedPlan[]>] [-Branding <IMicrosoftGraphOrganizationalBranding1>]
  [-BusinessPhones <String[]>]
  [-CertificateBasedAuthConfiguration <IMicrosoftGraphCertificateBasedAuthConfiguration[]>]
@@ -36,19 +36,19 @@ Update-MgOrganization -OrganizationId <String> [-AdditionalProperties <Hashtable
 
 ### Update
 ```
-Update-MgOrganization -OrganizationId <String> -BodyParameter <IMicrosoftGraphOrganization> [-PassThru]
+Update-MgBetaOrganization -OrganizationId <String> -BodyParameter <IMicrosoftGraphOrganization> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOrganization -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaOrganization -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphOrganization> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOrganization -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaOrganization -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignedPlans <IMicrosoftGraphAssignedPlan[]>] [-Branding <IMicrosoftGraphOrganizationalBranding1>]
  [-BusinessPhones <String[]>]
  [-CertificateBasedAuthConfiguration <IMicrosoftGraphCertificateBasedAuthConfiguration[]>]
@@ -73,9 +73,9 @@ The **ID** is also known as the **tenantId** of the organization.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgOrganization Cmdlet
+### Example 1: Using the Update-MgBetaOrganization Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	MarketingNotificationEmails = @(
 		"marketing@contoso.com"
@@ -94,10 +94,10 @@ $params = @{
 		"tech@contoso.com"
 	)
 }
-Update-MgOrganization -OrganizationId $organizationId -BodyParameter $params
+Update-MgBetaOrganization -OrganizationId $organizationId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgOrganization Cmdlet.
+This example shows how to use the Update-MgBetaOrganization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -123,7 +123,7 @@ Not nullable.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNEDPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignedPlan[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignedPlan[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -139,7 +139,7 @@ organization
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganization
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -155,7 +155,7 @@ organizationalBranding
 To construct, please use Get-Help -Online and see NOTES section for BRANDING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationalBranding1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganizationalBranding1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -188,7 +188,7 @@ Only a single instance of certificateBasedAuthConfiguration can be created in th
 To construct, please use Get-Help -Online and see NOTES section for CERTIFICATEBASEDAUTHCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCertificateBasedAuthConfiguration[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCertificateBasedAuthConfiguration[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -204,7 +204,7 @@ Certificate connector settings.
 To construct, please use Get-Help -Online and see NOTES section for CERTIFICATECONNECTORSETTING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCertificateConnectorSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCertificateConnectorSetting
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -315,7 +315,7 @@ directorySizeQuota
 To construct, please use Get-Help -Online and see NOTES section for DIRECTORYSIZEQUOTA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySizeQuota
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySizeQuota
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -347,7 +347,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -379,7 +379,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -426,7 +426,7 @@ Accept wildcard characters: False
 Mobile device management authority.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MdmAuthority
+Type: Microsoft.Graph.Beta.PowerShell.Support.MdmAuthority
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -536,7 +536,7 @@ privacyProfile
 To construct, please use Get-Help -Online and see NOTES section for PRIVACYPROFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivacyProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivacyProfile
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -552,7 +552,7 @@ Not nullable.
 To construct, please use Get-Help -Online and see NOTES section for PROVISIONEDPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProvisionedPlan[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProvisionedPlan[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -598,7 +598,7 @@ organizationSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganizationSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -660,7 +660,7 @@ Not nullable.
 To construct, please use Get-Help -Online and see NOTES section for VERIFIEDDOMAINS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVerifiedDomain[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVerifiedDomain[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -707,9 +707,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganization
 
 ## OUTPUTS
 

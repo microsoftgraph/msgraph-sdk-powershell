@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/get-mgserviceannouncementhealthoverview
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/get-mgserviceannouncementhealthoverview
 schema: 2.0.0
 ---
 
-# Get-MgServiceAnnouncementHealthOverview
+# Get-MgBetaServiceAnnouncementHealthOverview
 
 ## SYNOPSIS
 A collection of service health information for tenant.
@@ -15,20 +15,20 @@ This property is a contained navigation property, it is nullable and readonly.
 
 ### List (Default)
 ```
-Get-MgServiceAnnouncementHealthOverview [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaServiceAnnouncementHealthOverview [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServiceAnnouncementHealthOverview -ServiceHealthId <String> [-ExpandProperty <String[]>]
+Get-MgBetaServiceAnnouncementHealthOverview -ServiceHealthId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncementIdentity>
+Get-MgBetaServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,40 +38,40 @@ This property is a contained navigation property, it is nullable and readonly.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
+### Example 1: Using the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId
 ```
 
-This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
+### Example 2: Using the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId -ExpandProperty "issues" 
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId -ExpandProperty "issues" 
 ```
 
-This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
+### Example 3: Using the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementHealthOverview
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementHealthOverview
 ```
 
-This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
+### Example 4: Using the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementHealthOverview -ExpandProperty "issues" 
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementHealthOverview -ExpandProperty "issues" 
 ```
 
-This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -263,11 +263,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceHealth
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
 
 ## NOTES
 

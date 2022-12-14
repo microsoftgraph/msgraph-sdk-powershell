@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/test-mginformationprotectionpolicylabelapplication
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/test-mginformationprotectionpolicylabelapplication
 schema: 2.0.0
 ---
 
-# Test-MgInformationProtectionPolicyLabelApplication
+# Test-MgBetaInformationProtectionPolicyLabelApplication
 
 ## SYNOPSIS
 Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
@@ -16,14 +16,14 @@ Given contentInfo, which includes existing content metadata key/value pairs, and
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgInformationProtectionPolicyLabelApplication [-AdditionalProperties <Hashtable>]
+Test-MgBetaInformationProtectionPolicyLabelApplication [-AdditionalProperties <Hashtable>]
  [-ContentInfo <IMicrosoftGraphContentInfo>] [-LabelingOptions <IMicrosoftGraphLabelingOptions>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Evaluate
 ```
-Test-MgInformationProtectionPolicyLabelApplication
+Test-MgBetaInformationProtectionPolicyLabelApplication
  -BodyParameter <IPaths1Aushj1InformationprotectionPolicyLabelsMicrosoftGraphEvaluateapplicationPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -35,72 +35,72 @@ Given contentInfo, which includes existing content metadata key/value pairs, and
 
 ## EXAMPLES
 
-### Example 1: Using the Test-MgInformationProtectionPolicyLabelApplication Cmdlet
+### Example 1: Using the Test-MgBetaInformationProtectionPolicyLabelApplication Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ContentInfo = @{
-		"@odata.type" = "#microsoft.graph.contentInfo"
-		"Format@odata.type" = "#microsoft.graph.contentFormat"
+		"@odata.type" = "#Microsoft.Graph.Beta.contentInfo"
+		"Format@odata.type" = "#Microsoft.Graph.Beta.contentFormat"
 		Format = "default"
 		Identifier = $null
-		"State@odata.type" = "#microsoft.graph.contentState"
+		"State@odata.type" = "#Microsoft.Graph.Beta.contentState"
 		State = "rest"
-		"Metadata@odata.type" = "#Collection(microsoft.graph.keyValuePair)"
+		"Metadata@odata.type" = "#Collection(Microsoft.Graph.Beta.keyValuePair)"
 		Metadata = @(
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Enabled"
 				Value = "True"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Method"
 				Value = "Standard"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_SetDate"
 				Value = "1/1/0001 12:00:00 AM"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_SiteId"
 				Value = "cfa4cf1d-a337-4481-aa99-19d8f3d63f7c"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Name"
 				Value = "General"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_ContentBits"
 				Value = "0"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_ActionId"
 				Value = "00000000-0000-0000-0000-000000000000"
 			}
 		)
 	}
 	LabelingOptions = @{
-		"@odata.type" = "#microsoft.graph.labelingOptions"
-		"AssignmentMethod@odata.type" = "#microsoft.graph.assignmentMethod"
+		"@odata.type" = "#Microsoft.Graph.Beta.labelingOptions"
+		"AssignmentMethod@odata.type" = "#Microsoft.Graph.Beta.assignmentMethod"
 		AssignmentMethod = "standard"
 		"LabelId@odata.type" = "#Guid"
 		LabelId = "97309856-9c28-4ac6-9382-5f8bc20c457b"
 		DowngradeJustification = $null
-		"ExtendedProperties@odata.type" = "#Collection(microsoft.graph.keyValuePair)"
+		"ExtendedProperties@odata.type" = "#Collection(Microsoft.Graph.Beta.keyValuePair)"
 		ExtendedProperties = @(
 		)
 	}
 }
-Test-MgInformationProtectionPolicyLabelApplication -BodyParameter $params
+Test-MgBetaInformationProtectionPolicyLabelApplication -BodyParameter $params
 ```
 
-This example shows how to use the Test-MgInformationProtectionPolicyLabelApplication Cmdlet.
+This example shows how to use the Test-MgBetaInformationProtectionPolicyLabelApplication Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Aushj1InformationprotectionPolicyLabelsMicrosoftGraphEvaluateapplicationPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Aushj1InformationprotectionPolicyLabelsMicrosoftGraphEvaluateapplicationPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate
 Aliases:
 
@@ -141,7 +141,7 @@ contentInfo
 To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentInfo
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -157,7 +157,7 @@ labelingOptions
 To construct, please use Get-Help -Online and see NOTES section for LABELINGOPTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLabelingOptions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLabelingOptions
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -204,11 +204,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Aushj1InformationprotectionPolicyLabelsMicrosoftGraphEvaluateapplicationPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Aushj1InformationprotectionPolicyLabelsMicrosoftGraphEvaluateapplicationPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionAction
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanypurchaseinvoiceline
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanypurchaseinvoiceline
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyPurchaseInvoiceLine
+# Update-MgBetaFinancialCompanyPurchaseInvoiceLine
 
 ## SYNOPSIS
 Update the navigation property purchaseInvoiceLines in financials
@@ -14,7 +14,7 @@ Update the navigation property purchaseInvoiceLines in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoiceLineId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoiceLineId <String>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -27,20 +27,20 @@ Update-MgFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoic
 
 ### Update
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoiceLineId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoiceLineId <String>
  -BodyParameter <IMicrosoftGraphPurchaseInvoiceLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoiceId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoiceId <String>
  -PurchaseInvoiceLineId <String> -BodyParameter <IMicrosoftGraphPurchaseInvoiceLine> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoiceId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoiceId <String>
  -PurchaseInvoiceLineId <String> [-Account <IMicrosoftGraphAccount>] [-AccountId <String>]
  [-AdditionalProperties <Hashtable>] [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>]
  [-Description <String>] [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>]
@@ -53,19 +53,19 @@ Update-MgFinancialCompanyPurchaseInvoiceLine -CompanyId <String> -PurchaseInvoic
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPurchaseInvoiceLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPurchaseInvoiceLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -78,7 +78,7 @@ Update-MgFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLine -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -101,7 +101,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -177,7 +177,7 @@ purchaseInvoiceLine
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPurchaseInvoiceLine
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPurchaseInvoiceLine
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -314,7 +314,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -345,7 +345,7 @@ item
 To construct, please use Get-Help -Online and see NOTES section for ITEM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -602,9 +602,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPurchaseInvoiceLine
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPurchaseInvoiceLine
 
 ## OUTPUTS
 

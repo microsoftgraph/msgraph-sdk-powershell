@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentitycontinuouaccessevaluationpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentitycontinuouaccessevaluationpolicy
 schema: 2.0.0
 ---
 
-# Update-MgIdentityContinuouAccessEvaluationPolicy
+# Update-MgBetaIdentityContinuouAccessEvaluationPolicy
 
 ## SYNOPSIS
 Update the properties of a continuousAccessEvaluationPolicy object.
@@ -14,14 +14,14 @@ Update the properties of a continuousAccessEvaluationPolicy object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityContinuouAccessEvaluationPolicy [-AdditionalProperties <Hashtable>] [-Description <String>]
+Update-MgBetaIdentityContinuouAccessEvaluationPolicy [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Groups <String[]>] [-Id <String>] [-IsEnabled] [-Migrate] [-Users <String[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgIdentityContinuouAccessEvaluationPolicy
+Update-MgBetaIdentityContinuouAccessEvaluationPolicy
  -BodyParameter <IMicrosoftGraphContinuousAccessEvaluationPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -31,17 +31,17 @@ Update the properties of a continuousAccessEvaluationPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgIdentityContinuouAccessEvaluationPolicy Cmdlet
+### Example 1: Using the Update-MgBetaIdentityContinuouAccessEvaluationPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.continuousAccessEvaluationPolicy"
+	"@odata.type" = "#Microsoft.Graph.Beta.continuousAccessEvaluationPolicy"
 	Migrate = $true
 }
-Update-MgIdentityContinuouAccessEvaluationPolicy -BodyParameter $params
+Update-MgBetaIdentityContinuouAccessEvaluationPolicy -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityContinuouAccessEvaluationPolicy Cmdlet.
+This example shows how to use the Update-MgBetaIdentityContinuouAccessEvaluationPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -66,7 +66,7 @@ continuousAccessEvaluationPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContinuousAccessEvaluationPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContinuousAccessEvaluationPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -241,7 +241,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContinuousAccessEvaluationPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContinuousAccessEvaluationPolicy
 
 ## OUTPUTS
 

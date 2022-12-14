@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguseroutlooktaskattachment
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguseroutlooktaskattachment
 schema: 2.0.0
 ---
 
-# Get-MgUserOutlookTaskAttachment
+# Get-MgBetaUserOutlookTaskAttachment
 
 ## SYNOPSIS
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserOutlookTaskAttachment -AttachmentId <String> -OutlookTaskId <String> -UserId <String>
+Get-MgBetaUserOutlookTaskAttachment -AttachmentId <String> -OutlookTaskId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserOutlookTaskAttachment -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserOutlookTaskAttachment -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,13 +40,13 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOutlookTaskAttachment Cmdlet
+### Example 1: Using the Get-MgBetaUserOutlookTaskAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
-Get-MgUserOutlookTaskAttachment -UserId $userId -OutlookTaskId $outlookTaskId
+Import-Module Microsoft.Graph.Beta.Users
+Get-MgBetaUserOutlookTaskAttachment -UserId $userId -OutlookTaskId $outlookTaskId
 ```
 
-This example shows how to use the Get-MgUserOutlookTaskAttachment Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookTaskAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

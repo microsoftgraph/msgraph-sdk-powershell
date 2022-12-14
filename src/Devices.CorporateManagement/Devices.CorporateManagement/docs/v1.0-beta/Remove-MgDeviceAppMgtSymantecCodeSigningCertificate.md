@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgdeviceappmgtsymanteccodesigningcertificate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/remove-mgdeviceappmgtsymanteccodesigningcertificate
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceAppMgtSymantecCodeSigningCertificate
+# Remove-MgBetaDeviceAppMgtSymantecCodeSigningCertificate
 
 ## SYNOPSIS
 Delete navigation property symantecCodeSigningCertificate for deviceAppManagement
@@ -13,7 +13,7 @@ Delete navigation property symantecCodeSigningCertificate for deviceAppManagemen
 ## SYNTAX
 
 ```
-Remove-MgDeviceAppMgtSymantecCodeSigningCertificate [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaDeviceAppMgtSymantecCodeSigningCertificate [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -98,7 +98,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgDeviceAppManagementSymantecCodeSigningCertificate
+### Remove-MgBetaDeviceAppManagementSymantecCodeSigningCertificate
 
 ## RELATED LINKS
 

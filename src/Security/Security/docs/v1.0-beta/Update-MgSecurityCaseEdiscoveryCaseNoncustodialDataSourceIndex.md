@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritycaseediscoverycasenoncustodialdatasourceindex
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritycaseediscoverycasenoncustodialdatasourceindex
 schema: 2.0.0
 ---
 
-# Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex
+# Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex
 
 ## SYNOPSIS
 Trigger an indexOperation
@@ -14,13 +14,13 @@ Trigger an indexOperation
 
 ### Update1 (Default)
 ```
-Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -EdiscoveryCaseId <String>
+Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -EdiscoveryCaseId <String>
  -EdiscoveryNoncustodialDataSourceId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -InputObject <ISecurityIdentity> [-PassThru]
+Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -InputObject <ISecurityIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Trigger an indexOperation
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex Cmdlet
+### Example 1: Using the Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryNoncustodialDataSourceId $ediscoveryNoncustodialDataSourceId
+Import-Module Microsoft.Graph.Beta.Security
+Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryNoncustodialDataSourceId $ediscoveryNoncustodialDataSourceId
 ```
 
-This example shows how to use the Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex Cmdlet.
+This example shows how to use the Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity1
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/remove-mggroupownerbyref
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/remove-mggroupownerbyref
 schema: 2.0.0
 ---
 
-# Remove-MgGroupOwnerByRef
+# Remove-MgBetaGroupOwnerByRef
 
 ## SYNOPSIS
 Delete ref of navigation property owners for groups
@@ -14,13 +14,13 @@ Delete ref of navigation property owners for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupOwnerByRef -DirectoryObjectId <String> -GroupId <String> [-Id <String>] [-IfMatch <String>]
+Remove-MgBetaGroupOwnerByRef -DirectoryObjectId <String> -GroupId <String> [-Id <String>] [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupOwnerByRef -InputObject <IGroupsIdentity> [-Id <String>] [-IfMatch <String>] [-PassThru]
+Remove-MgBetaGroupOwnerByRef -InputObject <IGroupsIdentity> [-Id <String>] [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property owners for groups
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgGroupOwnerByRef Cmdlet
+### Example 1: Using the Remove-MgBetaGroupOwnerByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupOwnerByRef -GroupId $groupId -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Groups
+Remove-MgBetaGroupOwnerByRef -GroupId $groupId -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Remove-MgGroupOwnerByRef Cmdlet.
+This example shows how to use the Remove-MgBetaGroupOwnerByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

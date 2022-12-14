@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/test-mgteampermissiongrantproperty
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/test-mgteampermissiongrantproperty
 schema: 2.0.0
 ---
 
-# Test-MgTeamPermissionGrantProperty
+# Test-MgBetaTeamPermissionGrantProperty
 
 ## SYNOPSIS
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -22,28 +22,28 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ### ValidateExpanded (Default)
 ```
-Test-MgTeamPermissionGrantProperty -TeamId <String> [-AdditionalProperties <Hashtable>]
+Test-MgBetaTeamPermissionGrantProperty -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate
 ```
-Test-MgTeamPermissionGrantProperty -TeamId <String>
+Test-MgBetaTeamPermissionGrantProperty -TeamId <String>
  -BodyParameter <IPaths11Tq7QfTeamsTeamIdPermissiongrantsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity
 ```
-Test-MgTeamPermissionGrantProperty -InputObject <ITeamsIdentity>
+Test-MgBetaTeamPermissionGrantProperty -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths11Tq7QfTeamsTeamIdPermissiongrantsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentityExpanded
 ```
-Test-MgTeamPermissionGrantProperty -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Test-MgBetaTeamPermissionGrantProperty -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths11Tq7QfTeamsTeamIdPermissiongrantsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths11Tq7QfTeamsTeamIdPermissiongrantsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate, ValidateViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: ValidateViaIdentity, ValidateViaIdentityExpanded
 Aliases:
 
@@ -236,9 +236,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths11Tq7QfTeamsTeamIdPermissiongrantsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths11Tq7QfTeamsTeamIdPermissiongrantsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

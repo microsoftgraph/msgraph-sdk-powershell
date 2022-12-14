@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgforwardgroupevent
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgforwardgroupevent
 schema: 2.0.0
 ---
 
-# Invoke-MgForwardGroupEvent
+# Invoke-MgBetaForwardGroupEvent
 
 ## SYNOPSIS
 This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
@@ -16,28 +16,28 @@ This convenience is not available when forwarding from an Outlook.com account.
 
 ### ForwardExpanded (Default)
 ```
-Invoke-MgForwardGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaForwardGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Forward
 ```
-Invoke-MgForwardGroupEvent -EventId <String> -GroupId <String>
+Invoke-MgBetaForwardGroupEvent -EventId <String> -GroupId <String>
  -BodyParameter <IPaths1K4KnkbGroupsGroupIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentity
 ```
-Invoke-MgForwardGroupEvent -InputObject <IGroupsIdentity>
+Invoke-MgBetaForwardGroupEvent -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1K4KnkbGroupsGroupIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentityExpanded
 ```
-Invoke-MgForwardGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaForwardGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -51,7 +51,7 @@ This convenience is not available when forwarding from an Outlook.com account.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	ToRecipients = @(
@@ -66,10 +66,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgForwardUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
+Invoke-MgBetaForwardUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgForwardGroupEvent Cmdlet.
+This example shows how to use the Invoke-MgBetaForwardGroupEvent Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1K4KnkbGroupsGroupIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1K4KnkbGroupsGroupIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Forward, ForwardViaIdentity
 Aliases:
 
@@ -156,7 +156,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: ForwardViaIdentity, ForwardViaIdentityExpanded
 Aliases:
 
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TORECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecipient[]
 Parameter Sets: ForwardExpanded, ForwardViaIdentityExpanded
 Aliases:
 
@@ -234,9 +234,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1K4KnkbGroupsGroupIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1K4KnkbGroupsGroupIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

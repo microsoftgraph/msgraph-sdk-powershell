@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgprogram
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgprogram
 schema: 2.0.0
 ---
 
-# Remove-MgProgram
+# Remove-MgBetaProgram
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, delete a program object.
@@ -16,12 +16,12 @@ Also, please note that the built-in default program cannot be deleted.
 
 ### Delete (Default)
 ```
-Remove-MgProgram -ProgramId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaProgram -ProgramId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgProgram -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaProgram -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -32,13 +32,13 @@ Also, please note that the built-in default program cannot be deleted.
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgProgram Cmdlet
+### Example 1: Using the Remove-MgBetaProgram Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgProgram -ProgramId $programId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaProgram -ProgramId $programId
 ```
 
-This example shows how to use the Remove-MgProgram Cmdlet.
+This example shows how to use the Remove-MgBetaProgram Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -63,7 +63,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -140,7 +140,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

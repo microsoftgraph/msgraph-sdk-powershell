@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusercontactdelta
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusercontactdelta
 schema: 2.0.0
 ---
 
-# Get-MgUserContactDelta
+# Get-MgBetaUserContactDelta
 
 ## SYNOPSIS
 Get a set of contacts that have been added, deleted, or updated in a specified folder.
@@ -16,13 +16,13 @@ This allows you to maintain and synchronize a local store of a user's contacts w
 
 ### Delta (Default)
 ```
-Get-MgUserContactDelta -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaUserContactDelta -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgUserContactDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaUserContactDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -71,7 +71,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: DeltaViaIdentity
 Aliases:
 
@@ -177,11 +177,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact
 
 ## NOTES
 

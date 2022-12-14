@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mguserteamworkassociatedteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mguserteamworkassociatedteam
 schema: 2.0.0
 ---
 
-# Get-MgUserTeamworkAssociatedTeam
+# Get-MgBetaUserTeamworkAssociatedTeam
 
 ## SYNOPSIS
 The list of associatedTeamInfo objects that a user is associated with.
@@ -14,20 +14,20 @@ The list of associatedTeamInfo objects that a user is associated with.
 
 ### List1 (Default)
 ```
-Get-MgUserTeamworkAssociatedTeam -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserTeamworkAssociatedTeam -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserTeamworkAssociatedTeam -AssociatedTeamInfoId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserTeamworkAssociatedTeam -AssociatedTeamInfoId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserTeamworkAssociatedTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserTeamworkAssociatedTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,14 +36,14 @@ The list of associatedTeamInfo objects that a user is associated with.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTeamworkAssociatedTeam Cmdlet
+### Example 1: Using the Get-MgBetaUserTeamworkAssociatedTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 # A UPN can also be used as -UserId.
-Get-MgUserTeamworkAssociatedTeam -UserId $userId
+Get-MgBetaUserTeamworkAssociatedTeam -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserTeamworkAssociatedTeam Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkAssociatedTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssociatedTeamInfo1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssociatedTeamInfo1
 
 ## NOTES
 

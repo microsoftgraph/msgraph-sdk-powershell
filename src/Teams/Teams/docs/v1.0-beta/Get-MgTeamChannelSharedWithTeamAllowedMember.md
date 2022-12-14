@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamchannelsharedwithteamallowedmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamchannelsharedwithteamallowedmember
 schema: 2.0.0
 ---
 
-# Get-MgTeamChannelSharedWithTeamAllowedMember
+# Get-MgBetaTeamChannelSharedWithTeamAllowedMember
 
 ## SYNOPSIS
 A collection of team members who have access to the shared channel.
@@ -14,7 +14,7 @@ A collection of team members who have access to the shared channel.
 
 ### List1 (Default)
 ```
-Get-MgTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -SharedWithChannelTeamInfoId <String>
+Get-MgBetaTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -SharedWithChannelTeamInfoId <String>
  -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -SharedWithChan
 
 ### Get1
 ```
-Get-MgTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -ConversationMemberId <String>
+Get-MgBetaTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -ConversationMemberId <String>
  -SharedWithChannelTeamInfoId <String> -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamChannelSharedWithTeamAllowedMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaTeamChannelSharedWithTeamAllowedMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,13 +38,13 @@ A collection of team members who have access to the shared channel.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamChannelSharedWithTeamAllowedMember Cmdlet
+### Example 1: Using the Get-MgBetaTeamChannelSharedWithTeamAllowedMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannelSharedWithTeamAllowedMember -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannelSharedWithTeamAllowedMember -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
 ```
 
-This example shows how to use the Get-MgTeamChannelSharedWithTeamAllowedMember Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannelSharedWithTeamAllowedMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -281,11 +281,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 
 ## NOTES
 

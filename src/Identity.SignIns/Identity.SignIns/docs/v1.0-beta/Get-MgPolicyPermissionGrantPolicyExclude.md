@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicypermissiongrantpolicyexclude
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicypermissiongrantpolicyexclude
 schema: 2.0.0
 ---
 
-# Get-MgPolicyPermissionGrantPolicyExclude
+# Get-MgBetaPolicyPermissionGrantPolicyExclude
 
 ## SYNOPSIS
 Condition sets which are excluded in this permission grant policy.
@@ -15,20 +15,20 @@ Automatically expanded on GET.
 
 ### List (Default)
 ```
-Get-MgPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <String>
+Get-MgBetaPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <String>
  -PermissionGrantPolicyId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,8 +40,8 @@ Automatically expanded on GET.
 
 ### Example 1: Get a permission grant policy exclude by ID
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant" 
-Get-MgPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId "microsoft-application-admin" | fl  
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant" 
+Get-MgBetaPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId "microsoft-application-admin" | fl  
 
 CertifiedClientApplicationsOnly             : False
 ClientApplicationIds                        : {all}
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -274,11 +274,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
 
 ## NOTES
 

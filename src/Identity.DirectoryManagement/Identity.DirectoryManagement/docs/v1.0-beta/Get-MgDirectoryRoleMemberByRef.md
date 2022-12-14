@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrolememberbyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryrolememberbyref
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryRoleMemberByRef
+# Get-MgBetaDirectoryRoleMemberByRef
 
 ## SYNOPSIS
 Users that are members of this directory role.
@@ -17,7 +17,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgDirectoryRoleMemberByRef -DirectoryRoleId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Get-MgBetaDirectoryRoleMemberByRef -DirectoryRoleId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

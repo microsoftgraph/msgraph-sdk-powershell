@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalsynchronization
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipalsynchronization
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalSynchronization
+# Get-MgBetaServicePrincipalSynchronization
 
 ## SYNOPSIS
 Get synchronization from servicePrincipals
@@ -14,13 +14,13 @@ Get synchronization from servicePrincipals
 
 ### Get (Default)
 ```
-Get-MgServicePrincipalSynchronization -ServicePrincipalId <String> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalSynchronization -ServicePrincipalId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalSynchronization -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalSynchronization -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronization
 
 ## NOTES
 

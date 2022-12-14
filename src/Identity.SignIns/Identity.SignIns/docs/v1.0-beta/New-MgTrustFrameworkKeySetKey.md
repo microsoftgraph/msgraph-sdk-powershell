@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgtrustframeworkkeysetkey
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgtrustframeworkkeysetkey
 schema: 2.0.0
 ---
 
-# New-MgTrustFrameworkKeySetKey
+# New-MgBetaTrustFrameworkKeySetKey
 
 ## SYNOPSIS
 Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset.
@@ -15,27 +15,27 @@ The caller doesn't have to provide a secret.
 
 ### GenerateExpanded (Default)
 ```
-New-MgTrustFrameworkKeySetKey -TrustFrameworkKeySetId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaTrustFrameworkKeySetKey -TrustFrameworkKeySetId <String> [-AdditionalProperties <Hashtable>]
  [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Generate
 ```
-New-MgTrustFrameworkKeySetKey -TrustFrameworkKeySetId <String>
+New-MgBetaTrustFrameworkKeySetKey -TrustFrameworkKeySetId <String>
  -BodyParameter <IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GenerateViaIdentity
 ```
-New-MgTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity>
+New-MgBetaTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GenerateViaIdentityExpanded
 ```
-New-MgTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,19 +45,19 @@ The caller doesn't have to provide a secret.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTrustFrameworkKeySetKey Cmdlet
+### Example 1: Using the New-MgBetaTrustFrameworkKeySetKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Use = "sig"
 	Kty = "RSA"
 	Nbf = 1508969811
 	Exp = 1508969811
 }
-New-MgTrustFrameworkKeySetKey -TrustFrameworkKeySetId $trustFrameworkKeySetId -BodyParameter $params
+New-MgBetaTrustFrameworkKeySetKey -TrustFrameworkKeySetId $trustFrameworkKeySetId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTrustFrameworkKeySetKey Cmdlet.
+This example shows how to use the New-MgBetaTrustFrameworkKeySetKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Generate, GenerateViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GenerateViaIdentity, GenerateViaIdentityExpanded
 Aliases:
 
@@ -220,13 +220,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
 
 ## NOTES
 

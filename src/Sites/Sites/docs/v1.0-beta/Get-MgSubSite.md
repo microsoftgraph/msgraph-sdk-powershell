@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsubsite
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsubsite
 schema: 2.0.0
 ---
 
-# Get-MgSubSite
+# Get-MgBetaSubSite
 
 ## SYNOPSIS
 The collection of the sub-sites under this site.
@@ -14,20 +14,20 @@ The collection of the sub-sites under this site.
 
 ### List1 (Default)
 ```
-Get-MgSubSite [-SiteId <String>] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSubSite [-SiteId <String>] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgSubSite -SiteId1 <String> [-SiteId <String>] [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSubSite -SiteId1 <String> [-SiteId <String>] [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSubSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSubSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ The collection of the sub-sites under this site.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSubSite Cmdlet
+### Example 1: Using the Get-MgBetaSubSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSubSite -SiteId $siteId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSubSite -SiteId $siteId
 ```
 
-This example shows how to use the Get-MgSubSite Cmdlet.
+This example shows how to use the Get-MgBetaSubSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSite1
 
 ## NOTES
 

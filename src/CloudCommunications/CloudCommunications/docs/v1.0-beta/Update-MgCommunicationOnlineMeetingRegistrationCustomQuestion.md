@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationonlinemeetingregistrationcustomquestion
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/update-mgcommunicationonlinemeetingregistrationcustomquestion
 schema: 2.0.0
 ---
 
-# Update-MgCommunicationOnlineMeetingRegistrationCustomQuestion
+# Update-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion
 
 ## SYNOPSIS
 Update the navigation property customQuestions in communications
@@ -14,7 +14,7 @@ Update the navigation property customQuestions in communications
 
 ### UpdateExpanded (Default)
 ```
-Update-MgCommunicationOnlineMeetingRegistrationCustomQuestion -MeetingRegistrationQuestionId <String>
+Update-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion -MeetingRegistrationQuestionId <String>
  -OnlineMeetingId <String> [-AdditionalProperties <Hashtable>] [-AnswerInputType <String>]
  [-AnswerOptions <String[]>] [-DisplayName <String>] [-Id <String>] [-IsRequired] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgCommunicationOnlineMeetingRegistrationCustomQuestion -MeetingRegistrati
 
 ### Update
 ```
-Update-MgCommunicationOnlineMeetingRegistrationCustomQuestion -MeetingRegistrationQuestionId <String>
+Update-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion -MeetingRegistrationQuestionId <String>
  -OnlineMeetingId <String> -BodyParameter <IMicrosoftGraphMeetingRegistrationQuestion> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphMeetingRegistrationQuestion> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AnswerInputType <String>] [-AnswerOptions <String[]>]
  [-DisplayName <String>] [-Id <String>] [-IsRequired] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -98,7 +98,7 @@ meetingRegistrationQuestion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,9 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
 
 ## OUTPUTS
 

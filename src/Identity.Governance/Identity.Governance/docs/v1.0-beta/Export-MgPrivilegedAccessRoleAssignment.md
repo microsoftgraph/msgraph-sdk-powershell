@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/export-mgprivilegedaccessroleassignment
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/export-mgprivilegedaccessroleassignment
 schema: 2.0.0
 ---
 
-# Export-MgPrivilegedAccessRoleAssignment
+# Export-MgBetaPrivilegedAccessRoleAssignment
 
 ## SYNOPSIS
 Invoke function export
@@ -14,13 +14,13 @@ Invoke function export
 
 ### Export (Default)
 ```
-Export-MgPrivilegedAccessRoleAssignment -PrivilegedAccessId <String> [-Count] [-Filter <String>]
+Export-MgBetaPrivilegedAccessRoleAssignment -PrivilegedAccessId <String> [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
-Export-MgPrivilegedAccessRoleAssignment -InputObject <IIdentityGovernanceIdentity> [-Count] [-Filter <String>]
+Export-MgBetaPrivilegedAccessRoleAssignment -InputObject <IIdentityGovernanceIdentity> [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: ExportViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

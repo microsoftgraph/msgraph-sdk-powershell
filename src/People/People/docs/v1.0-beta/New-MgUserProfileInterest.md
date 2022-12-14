@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofileinterest
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/new-mguserprofileinterest
 schema: 2.0.0
 ---
 
-# New-MgUserProfileInterest
+# New-MgBetaUserProfileInterest
 
 ## SYNOPSIS
 Create a new personInterest.
@@ -14,7 +14,7 @@ Create a new personInterest.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserProfileInterest -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
+New-MgBetaUserProfileInterest -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
  [-Categories <String[]>] [-CollaborationTags <String[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -24,19 +24,19 @@ New-MgUserProfileInterest -UserId <String> [-AdditionalProperties <Hashtable>] [
 
 ### Create
 ```
-New-MgUserProfileInterest -UserId <String> -BodyParameter <IMicrosoftGraphPersonInterest> [-Confirm] [-WhatIf]
+New-MgBetaUserProfileInterest -UserId <String> -BodyParameter <IMicrosoftGraphPersonInterest> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfileInterest -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphPersonInterest>
+New-MgBetaUserProfileInterest -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphPersonInterest>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserProfileInterest -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfileInterest -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-Categories <String[]>] [-CollaborationTags <String[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
@@ -50,9 +50,9 @@ Create a new personInterest.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserProfileInterest Cmdlet
+### Example 1: Using the New-MgBetaUserProfileInterest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Categories = @(
 		"Sports"
@@ -62,10 +62,10 @@ $params = @{
 	WebUrl = "https://www.chelseafc.com"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileInterest -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileInterest -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserProfileInterest Cmdlet.
+This example shows how to use the New-MgBetaUserProfileInterest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ personInterest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonInterest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonInterest
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -229,7 +229,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -245,7 +245,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -276,7 +276,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -307,7 +307,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -399,13 +399,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonInterest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonInterest
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonInterest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonInterest
 
 ## NOTES
 

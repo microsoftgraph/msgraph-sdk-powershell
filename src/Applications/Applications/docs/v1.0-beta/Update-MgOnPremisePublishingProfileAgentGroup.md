@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgonpremisepublishingprofileagentgroup
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgonpremisepublishingprofileagentgroup
 schema: 2.0.0
 ---
 
-# Update-MgOnPremisePublishingProfileAgentGroup
+# Update-MgBetaOnPremisePublishingProfileAgentGroup
 
 ## SYNOPSIS
 Update the navigation property agentGroups in onPremisesPublishingProfiles
@@ -14,7 +14,7 @@ Update the navigation property agentGroups in onPremisesPublishingProfiles
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
+Update-MgBetaOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> [-AdditionalProperties <Hashtable>]
  [-Agents <IMicrosoftGraphOnPremisesAgent[]>] [-DisplayName <String>] [-Id <String>] [-IsDefault]
  [-PublishedResources <IMicrosoftGraphPublishedResource[]>] [-PublishingType <String>] [-PassThru] [-Confirm]
@@ -23,20 +23,20 @@ Update-MgOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
 
 ### Update
 ```
-Update-MgOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
+Update-MgBetaOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> -BodyParameter <IMicrosoftGraphOnPremisesAgentGroup> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity>
+Update-MgBetaOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphOnPremisesAgentGroup> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity>
+Update-MgBetaOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Agents <IMicrosoftGraphOnPremisesAgent[]>] [-DisplayName <String>]
  [-Id <String>] [-IsDefault] [-PublishedResources <IMicrosoftGraphPublishedResource[]>]
  [-PublishingType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -47,16 +47,16 @@ Update the navigation property agentGroups in onPremisesPublishingProfiles
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgOnPremisePublishingProfileAgentGroup Cmdlet
+### Example 1: Using the Update-MgBetaOnPremisePublishingProfileAgentGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	DisplayName = "Group New Name"
 }
-Update-MgOnPremisePublishingProfileAgentGroup -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -OnPremisesAgentGroupId $onPremisesAgentGroupId -BodyParameter $params
+Update-MgBetaOnPremisePublishingProfileAgentGroup -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -OnPremisesAgentGroupId $onPremisesAgentGroupId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgOnPremisePublishingProfileAgentGroup Cmdlet.
+This example shows how to use the Update-MgBetaOnPremisePublishingProfileAgentGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -83,7 +83,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for AGENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgent[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -99,7 +99,7 @@ onPremisesAgentGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -225,7 +225,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for PUBLISHEDRESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -287,9 +287,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup
 
 ## OUTPUTS
 

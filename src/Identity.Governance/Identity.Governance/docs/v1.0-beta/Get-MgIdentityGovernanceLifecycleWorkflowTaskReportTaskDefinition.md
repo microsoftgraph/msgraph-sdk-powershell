@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtaskreporttaskdefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtaskreporttaskdefinition
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition
 
 ## SYNOPSIS
 The taskDefinition associated with the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
@@ -14,13 +14,13 @@ The taskDefinition associated with the related lifecycle workflow task.Supports 
 
 ### Get (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition -TaskReportId <String> -WorkflowId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition -TaskReportId <String> -WorkflowId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,11 +112,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
 
 ## NOTES
 

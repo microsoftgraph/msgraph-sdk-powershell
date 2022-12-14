@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementdeviceconfigurationtargeteduseranddevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementdeviceconfigurationtargeteduseranddevice
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceConfigurationTargetedUserAndDevice
+# Get-MgBetaDeviceManagementDeviceConfigurationTargetedUserAndDevice
 
 ## SYNOPSIS
 Invoke action getTargetedUsersAndDevices
@@ -14,13 +14,13 @@ Invoke action getTargetedUsersAndDevices
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementDeviceConfigurationTargetedUserAndDevice [-AdditionalProperties <Hashtable>]
+Get-MgBetaDeviceManagementDeviceConfigurationTargetedUserAndDevice [-AdditionalProperties <Hashtable>]
  [-DeviceConfigurationIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementDeviceConfigurationTargetedUserAndDevice
+Get-MgBetaDeviceManagementDeviceConfigurationTargetedUserAndDevice
  -BodyParameter <IPaths1G57514DevicemanagementDeviceconfigurationsMicrosoftGraphGettargetedusersanddevicesPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1G57514DevicemanagementDeviceconfigurationsMicrosoftGraphGettargetedusersanddevicesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1G57514DevicemanagementDeviceconfigurationsMicrosoftGraphGettargetedusersanddevicesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1G57514DevicemanagementDeviceconfigurationsMicrosoftGraphGettargetedusersanddevicesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1G57514DevicemanagementDeviceconfigurationsMicrosoftGraphGettargetedusersanddevicesPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationTargetedUserAndDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationTargetedUserAndDevice
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/rename-mgusercloudpc
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/rename-mgusercloudpc
 schema: 2.0.0
 ---
 
-# Rename-MgUserCloudPc
+# Rename-MgBetaUserCloudPc
 
 ## SYNOPSIS
 Rename a specific Cloud PC.
@@ -15,27 +15,27 @@ Use this API to update the **displayName** for the Cloud PC entity.
 
 ### RenameExpanded (Default)
 ```
-Rename-MgUserCloudPc -CloudPcId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Rename-MgBetaUserCloudPc -CloudPcId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Rename
 ```
-Rename-MgUserCloudPc -CloudPcId <String> -UserId <String>
+Rename-MgBetaUserCloudPc -CloudPcId <String> -UserId <String>
  -BodyParameter <IPaths1Swl8P4UsersUserIdCloudpcsCloudpcIdMicrosoftGraphRenamePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RenameViaIdentity
 ```
-Rename-MgUserCloudPc -InputObject <IUsersActionsIdentity>
+Rename-MgBetaUserCloudPc -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Swl8P4UsersUserIdCloudpcsCloudpcIdMicrosoftGraphRenamePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RenameViaIdentityExpanded
 ```
-Rename-MgUserCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Rename-MgBetaUserCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,14 +45,14 @@ Use this API to update the **displayName** for the Cloud PC entity.
 
 ## EXAMPLES
 
-### Example 1: Using the Rename-MgUserCloudPc Cmdlet
+### Example 1: Using the Rename-MgBetaUserCloudPc Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 # A UPN can also be used as -UserId.
-Rename-MgUserCloudPc -UserId $userId -CloudPCId $cloudPCId
+Rename-MgBetaUserCloudPc -UserId $userId -CloudPCId $cloudPCId
 ```
 
-This example shows how to use the Rename-MgUserCloudPc Cmdlet.
+This example shows how to use the Rename-MgBetaUserCloudPc Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Swl8P4UsersUserIdCloudpcsCloudpcIdMicrosoftGraphRenamePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Swl8P4UsersUserIdCloudpcsCloudpcIdMicrosoftGraphRenamePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Rename, RenameViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: RenameViaIdentity, RenameViaIdentityExpanded
 Aliases:
 
@@ -200,9 +200,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Swl8P4UsersUserIdCloudpcsCloudpcIdMicrosoftGraphRenamePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Swl8P4UsersUserIdCloudpcsCloudpcIdMicrosoftGraphRenamePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernancelifecycleworkflow
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernancelifecycleworkflow
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceLifecycleWorkflow
+# Remove-MgBetaIdentityGovernanceLifecycleWorkflow
 
 ## SYNOPSIS
 Delete navigation property workflows for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property workflows for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgIdentityGovernanceLifecycleWorkflow -WorkflowId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaIdentityGovernanceLifecycleWorkflow -WorkflowId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityGovernanceLifecycleWorkflow -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
+Remove-MgBetaIdentityGovernanceLifecycleWorkflow -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property workflows for identityGovernance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityGovernanceLifecycleWorkflow Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityGovernanceLifecycleWorkflow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgIdentityGovernanceLifecycleWorkflow -WorkflowId $workflowId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaIdentityGovernanceLifecycleWorkflow -WorkflowId $workflowId
 ```
 
-This example shows how to use the Remove-MgIdentityGovernanceLifecycleWorkflow Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityGovernanceLifecycleWorkflow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

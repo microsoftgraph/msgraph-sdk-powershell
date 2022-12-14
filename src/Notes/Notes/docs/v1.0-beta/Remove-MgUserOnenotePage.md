@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/remove-mguseronenotepage
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/remove-mguseronenotepage
 schema: 2.0.0
 ---
 
-# Remove-MgUserOnenotePage
+# Remove-MgBetaUserOnenotePage
 
 ## SYNOPSIS
 Delete navigation property pages for users
@@ -14,13 +14,13 @@ Delete navigation property pages for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserOnenotePage -OnenotePageId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserOnenotePage -OnenotePageId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserOnenotePage -InputObject <INotesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaUserOnenotePage -InputObject <INotesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property pages for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserOnenotePage Cmdlet
+### Example 1: Using the Remove-MgBetaUserOnenotePage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Remove-MgUserOnenotePage -UserId $userId -OnenotePageId $onenotePageId
+Remove-MgBetaUserOnenotePage -UserId $userId -OnenotePageId $onenotePageId
 ```
 
-This example shows how to use the Remove-MgUserOnenotePage Cmdlet.
+This example shows how to use the Remove-MgBetaUserOnenotePage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 

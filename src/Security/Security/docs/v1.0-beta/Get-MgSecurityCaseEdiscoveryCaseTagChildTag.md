@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasetagchildtag
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasetagchildtag
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseTagChildTag
+# Get-MgBetaSecurityCaseEdiscoveryCaseTagChildTag
 
 ## SYNOPSIS
 Returns the tags that are a child of a tag.
@@ -14,20 +14,20 @@ Returns the tags that are a child of a tag.
 
 ### List (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseTagChildTag -EdiscoveryCaseId <String> -EdiscoveryReviewTagId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseTagChildTag -EdiscoveryCaseId <String> -EdiscoveryReviewTagId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityCaseEdiscoveryCaseTagChildTag -EdiscoveryCaseId <String> -EdiscoveryReviewTagId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseTagChildTag -EdiscoveryCaseId <String> -EdiscoveryReviewTagId <String>
  -EdiscoveryReviewTagId1 <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityCaseEdiscoveryCaseTagChildTag -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityCaseEdiscoveryCaseTagChildTag -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryReviewTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryReviewTag
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/update-mgsharelistcontenttypecolumnlink
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/update-mgsharelistcontenttypecolumnlink
 schema: 2.0.0
 ---
 
-# Update-MgShareListContentTypeColumnLink
+# Update-MgBetaShareListContentTypeColumnLink
 
 ## SYNOPSIS
 Update the navigation property columnLinks in shares
@@ -14,27 +14,27 @@ Update the navigation property columnLinks in shares
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgShareListContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String>
+Update-MgBetaShareListContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String>
  -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgShareListContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String>
+Update-MgBetaShareListContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String>
  -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphColumnLink> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgShareListContentTypeColumnLink -InputObject <IFilesIdentity>
+Update-MgBetaShareListContentTypeColumnLink -InputObject <IFilesIdentity>
  -BodyParameter <IMicrosoftGraphColumnLink> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgShareListContentTypeColumnLink -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaShareListContentTypeColumnLink -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Name <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ columnLink
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -219,9 +219,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink
 
 ## OUTPUTS
 

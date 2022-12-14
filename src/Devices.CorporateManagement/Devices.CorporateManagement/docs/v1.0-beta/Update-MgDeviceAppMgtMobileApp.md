@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileapp
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmobileapp
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileApp
+# Update-MgBetaDeviceAppMgtMobileApp
 
 ## SYNOPSIS
 Update the navigation property mobileApps in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property mobileApps in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtMobileApp -MobileAppId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtMobileApp -MobileAppId <String> [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphMobileAppAssignment1[]>] [-Categories <IMicrosoftGraphMobileAppCategory[]>]
  [-CreatedDateTime <DateTime>] [-DependentAppCount <Int32>] [-Description <String>] [-Developer <String>]
  [-DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>] [-DisplayName <String>] [-Id <String>]
@@ -29,19 +29,19 @@ Update-MgDeviceAppMgtMobileApp -MobileAppId <String> [-AdditionalProperties <Has
 
 ### Update
 ```
-Update-MgDeviceAppMgtMobileApp -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileApp1> [-PassThru]
+Update-MgBetaDeviceAppMgtMobileApp -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileApp1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphMobileApp1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphMobileAppAssignment1[]>]
  [-Categories <IMicrosoftGraphMobileAppCategory[]>] [-CreatedDateTime <DateTime>] [-DependentAppCount <Int32>]
  [-Description <String>] [-Developer <String>] [-DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]
@@ -82,7 +82,7 @@ The list of group assignments for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ An abstract class containing the base properties for Intune mobile apps.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ The list of categories for this app.
 To construct, please use Get-Help -Online and see NOTES section for CATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppCategory[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ The list of installation states for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -252,7 +252,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -268,7 +268,7 @@ Contains properties for the installation summary of a mobile app.
 To construct, please use Get-Help -Online and see NOTES section for INSTALLSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -314,7 +314,7 @@ Contains properties for a generic mime content.
 To construct, please use Get-Help -Online and see NOTES section for LARGEICON properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMimeContent
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -434,7 +434,7 @@ Accept wildcard characters: False
 Indicates the publishing state of an app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MobileAppPublishingState
+Type: Microsoft.Graph.Beta.PowerShell.Support.MobileAppPublishingState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -450,7 +450,7 @@ List of relationships for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for RELATIONSHIPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationship[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppRelationship[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -526,7 +526,7 @@ The list of installation states for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for USERSTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -573,9 +573,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp1
 
 ## OUTPUTS
 
@@ -585,7 +585,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementMobileApp
+### Update-MgBetaDeviceAppManagementMobileApp
 
 COMPLEX PARAMETER PROPERTIES
 

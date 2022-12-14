@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementmanageddevicelogcollectionrequest
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementmanageddevicelogcollectionrequest
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementManagedDeviceLogCollectionRequest
+# Get-MgBetaDeviceManagementManagedDeviceLogCollectionRequest
 
 ## SYNOPSIS
 List of log collection requests
@@ -14,20 +14,20 @@ List of log collection requests
 
 ### List (Default)
 ```
-Get-MgDeviceManagementManagedDeviceLogCollectionRequest -ManagedDeviceId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementManagedDeviceLogCollectionRequest -ManagedDeviceId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementManagedDeviceLogCollectionRequest -DeviceLogCollectionResponseId <String>
+Get-MgBetaDeviceManagementManagedDeviceLogCollectionRequest -DeviceLogCollectionResponseId <String>
  -ManagedDeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementManagedDeviceLogCollectionRequest -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementManagedDeviceLogCollectionRequest -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
 
 ## NOTES
 

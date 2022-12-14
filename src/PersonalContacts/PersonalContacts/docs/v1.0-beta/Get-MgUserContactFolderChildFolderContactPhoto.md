@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontactfolderchildfoldercontactphoto
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/get-mgusercontactfolderchildfoldercontactphoto
 schema: 2.0.0
 ---
 
-# Get-MgUserContactFolderChildFolderContactPhoto
+# Get-MgBetaUserContactFolderChildFolderContactPhoto
 
 ## SYNOPSIS
 Optional contact picture.
@@ -15,13 +15,13 @@ You can get or set a photo for a contact.
 
 ### Get1 (Default)
 ```
-Get-MgUserContactFolderChildFolderContactPhoto -ContactFolderId <String> -ContactFolderId1 <String>
+Get-MgBetaUserContactFolderChildFolderContactPhoto -ContactFolderId <String> -ContactFolderId1 <String>
  -ContactId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserContactFolderChildFolderContactPhoto -InputObject <IPersonalContactsIdentity> [-Property <String[]>]
+Get-MgBetaUserContactFolderChildFolderContactPhoto -InputObject <IPersonalContactsIdentity> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfilePhoto
 
 ## NOTES
 

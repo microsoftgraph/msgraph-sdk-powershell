@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbegindevicemanagementremoteassistancepartneronboarding
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgbegindevicemanagementremoteassistancepartneronboarding
 schema: 2.0.0
 ---
 
-# Invoke-MgBeginDeviceManagementRemoteAssistancePartnerOnboarding
+# Invoke-MgBetaBeginDeviceManagementRemoteAssistancePartnerOnboarding
 
 ## SYNOPSIS
 A request to start onboarding.
@@ -15,13 +15,13 @@ Must be coupled with the appropriate TeamViewer account information
 
 ### Begin (Default)
 ```
-Invoke-MgBeginDeviceManagementRemoteAssistancePartnerOnboarding -RemoteAssistancePartnerId <String>
+Invoke-MgBetaBeginDeviceManagementRemoteAssistancePartnerOnboarding -RemoteAssistancePartnerId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### BeginViaIdentity
 ```
-Invoke-MgBeginDeviceManagementRemoteAssistancePartnerOnboarding
+Invoke-MgBetaBeginDeviceManagementRemoteAssistancePartnerOnboarding
  -InputObject <IDeviceManagementActionsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -38,7 +38,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: BeginViaIdentity
 Aliases:
 
@@ -115,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyauthorizationpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyAuthorizationPolicy
+# Update-MgBetaPolicyAuthorizationPolicy
 
 ## SYNOPSIS
 Update the navigation property authorizationPolicy in policies
@@ -14,7 +14,7 @@ Update the navigation property authorizationPolicy in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyAuthorizationPolicy -AuthorizationPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedToSignUpEmailBasedSubscriptions] [-AllowedToUseSspr] [-AllowEmailVerifiedUsersToJoinOrganization]
  [-AllowInvitesFrom <String>] [-AllowUserConsentForRiskyApps] [-BlockMsolPowerShell]
  [-DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]
@@ -26,19 +26,19 @@ Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId <String> [-AdditionalP
 
 ### Update
 ```
-Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId <String>
+Update-MgBetaPolicyAuthorizationPolicy -AuthorizationPolicyId <String>
  -BodyParameter <IMicrosoftGraphAuthorizationPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyAuthorizationPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyAuthorizationPolicy -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphAuthorizationPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyAuthorizationPolicy -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyAuthorizationPolicy -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedToSignUpEmailBasedSubscriptions] [-AllowedToUseSspr] [-AllowEmailVerifiedUsersToJoinOrganization]
  [-AllowInvitesFrom <String>] [-AllowUserConsentForRiskyApps] [-BlockMsolPowerShell]
  [-DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 ### -BlockMsolPowerShell
 To disable the use of the MSOnline PowerShell module set this property to true.
 This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module.
-This does not affect Azure AD Connect or Microsoft Graph.
+This does not affect Azure AD Connect or Microsoft.Graph.Beta.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -183,7 +183,7 @@ authorizationPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTUSERROLEOVERRIDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -215,7 +215,7 @@ defaultUserRolePermissions
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTUSERROLEPERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultUserRolePermissions1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultUserRolePermissions1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -327,7 +327,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -406,9 +406,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
 
 ## OUTPUTS
 
@@ -434,7 +434,7 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy1>: authorizationPolicy
   - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
   - `[AllowedToUseSspr <Boolean?>]`: Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
-  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
+  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft.Graph.Beta.
   - `[DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[IsDefault <Boolean?>]`: 

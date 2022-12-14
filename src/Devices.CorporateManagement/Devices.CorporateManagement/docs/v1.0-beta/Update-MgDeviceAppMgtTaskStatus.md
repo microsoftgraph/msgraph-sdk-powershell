@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgttaskstatus
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgttaskstatus
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtTaskStatus
+# Update-MgBetaDeviceAppMgtTaskStatus
 
 ## SYNOPSIS
 Set the task's status and attach a note.
@@ -14,28 +14,28 @@ Set the task's status and attach a note.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtTaskStatus -DeviceAppManagementTaskId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtTaskStatus -DeviceAppManagementTaskId <String> [-AdditionalProperties <Hashtable>]
  [-Note <String>] [-Status <DeviceAppManagementTaskStatus>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceAppMgtTaskStatus -DeviceAppManagementTaskId <String>
+Update-MgBetaDeviceAppMgtTaskStatus -DeviceAppManagementTaskId <String>
  -BodyParameter <IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtTaskStatus -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtTaskStatus -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtTaskStatus -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtTaskStatus -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Note <String>] [-Status <DeviceAppManagementTaskStatus>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 Device app management task status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAppManagementTaskStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -202,7 +202,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementTaskStatus
+### Update-MgBetaDeviceAppManagementTaskStatus
 
 COMPLEX PARAMETER PROPERTIES
 

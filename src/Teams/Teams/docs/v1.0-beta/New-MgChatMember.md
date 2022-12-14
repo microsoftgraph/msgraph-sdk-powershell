@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgchatmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgchatmember
 schema: 2.0.0
 ---
 
-# New-MgChatMember
+# New-MgBetaChatMember
 
 ## SYNOPSIS
 Add a conversationMember to a chat.
@@ -14,25 +14,25 @@ Add a conversationMember to a chat.
 
 ### CreateExpanded (Default)
 ```
-New-MgChatMember -ChatId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+New-MgBetaChatMember -ChatId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgChatMember -ChatId <String> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm] [-WhatIf]
+New-MgBetaChatMember -ChatId <String> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgChatMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm]
+New-MgBetaChatMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgChatMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaChatMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -42,71 +42,71 @@ Add a conversationMember to a chat.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgChatMember Cmdlet
+### Example 1: Using the New-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 	"User@odata.bind" = "https://graph.microsoft.com/beta/users/jacob@contoso.com"
 	VisibleHistoryStartDateTime = [System.DateTime]::Parse("2019-04-18T23:51:43.255Z")
 	Roles = @(
 		"owner"
 	)
 }
-New-MgChatMember -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgChatMember Cmdlet
+### Example 2: Using the New-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 	"User@odata.bind" = "https://graph.microsoft.com/beta/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
 	VisibleHistoryStartDateTime = [System.DateTime]::Parse("0001-01-01T00:00:00Z")
 	Roles = @(
 		"owner"
 	)
 }
-New-MgChatMember -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgChatMember Cmdlet
+### Example 3: Using the New-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 	"User@odata.bind" = "https://graph.microsoft.com/beta/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
 	Roles = @(
 		"owner"
 	)
 }
-New-MgChatMember -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgChatMember Cmdlet
+### Example 4: Using the New-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 	"User@odata.bind" = "https://graph.microsoft.com/beta/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
 	VisibleHistoryStartDateTime = [System.DateTime]::Parse("2019-04-18T23:51:43.255Z")
 	Roles = @(
 		"owner"
 	)
 }
-New-MgChatMember -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -131,7 +131,7 @@ conversationMember
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -193,7 +193,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -274,13 +274,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 
 ## NOTES
 

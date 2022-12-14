@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/connect-mgdevicemanagementzebrafotaconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/connect-mgdevicemanagementzebrafotaconnector
 schema: 2.0.0
 ---
 
-# Connect-MgDeviceManagementZebraFotaConnector
+# Connect-MgBetaDeviceManagementZebraFotaConnector
 
 ## SYNOPSIS
 Invoke action connect
@@ -13,7 +13,7 @@ Invoke action connect
 ## SYNTAX
 
 ```
-Connect-MgDeviceManagementZebraFotaConnector [-Confirm] [-WhatIf] [<CommonParameters>]
+Connect-MgBetaDeviceManagementZebraFotaConnector [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

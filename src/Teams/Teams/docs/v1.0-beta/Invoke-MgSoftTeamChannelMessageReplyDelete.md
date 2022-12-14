@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mgsoftteamchannelmessagereplydelete
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mgsoftteamchannelmessagereplydelete
 schema: 2.0.0
 ---
 
-# Invoke-MgSoftTeamChannelMessageReplyDelete
+# Invoke-MgBetaSoftTeamChannelMessageReplyDelete
 
 ## SYNOPSIS
 Delete a single message or a message reply in a channel or a chat.
@@ -14,13 +14,13 @@ Delete a single message or a message reply in a channel or a chat.
 
 ### Soft (Default)
 ```
-Invoke-MgSoftTeamChannelMessageReplyDelete -ChannelId <String> -ChatMessageId <String>
+Invoke-MgBetaSoftTeamChannelMessageReplyDelete -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SoftViaIdentity
 ```
-Invoke-MgSoftTeamChannelMessageReplyDelete -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaSoftTeamChannelMessageReplyDelete -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete a single message or a message reply in a channel or a chat.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgSoftTeamChannelMessageReplyDelete Cmdlet
+### Example 1: Using the Invoke-MgBetaSoftTeamChannelMessageReplyDelete Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Invoke-MgSoftTeamChannelMessageReplyDelete -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -ChatMessageId1 $chatMessageId1
+Import-Module Microsoft.Graph.Beta.Teams
+Invoke-MgBetaSoftTeamChannelMessageReplyDelete -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -ChatMessageId1 $chatMessageId1
 ```
 
-This example shows how to use the Invoke-MgSoftTeamChannelMessageReplyDelete Cmdlet.
+This example shows how to use the Invoke-MgBetaSoftTeamChannelMessageReplyDelete Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: SoftViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

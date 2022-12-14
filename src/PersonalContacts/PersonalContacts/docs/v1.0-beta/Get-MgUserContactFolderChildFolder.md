@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontactfolderchildfolder
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/get-mgusercontactfolderchildfolder
 schema: 2.0.0
 ---
 
-# Get-MgUserContactFolderChildFolder
+# Get-MgBetaUserContactFolderChildFolder
 
 ## SYNOPSIS
 The collection of child folders in the folder.
@@ -17,20 +17,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserContactFolderChildFolder -ContactFolderId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserContactFolderChildFolder -ContactFolderId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserContactFolderChildFolder -ContactFolderId <String> -ContactFolderId1 <String> -UserId <String>
+Get-MgBetaUserContactFolderChildFolder -ContactFolderId <String> -ContactFolderId1 <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -42,14 +42,14 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserContactFolderChildFolder Cmdlet
+### Example 1: Using the Get-MgBetaUserContactFolderChildFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 # A UPN can also be used as -UserId.
-Get-MgUserContactFolderChildFolder -UserId $userId -ContactFolderId $contactFolderId
+Get-MgBetaUserContactFolderChildFolder -UserId $userId -ContactFolderId $contactFolderId
 ```
 
-This example shows how to use the Get-MgUserContactFolderChildFolder Cmdlet.
+This example shows how to use the Get-MgBetaUserContactFolderChildFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -150,7 +150,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -256,11 +256,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactFolder1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactFolder1
 
 ## NOTES
 

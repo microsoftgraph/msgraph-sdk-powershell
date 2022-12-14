@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/remove-mgcommunicationcallaudioroutinggroup
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/remove-mgcommunicationcallaudioroutinggroup
 schema: 2.0.0
 ---
 
-# Remove-MgCommunicationCallAudioRoutingGroup
+# Remove-MgBetaCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
 Delete navigation property audioRoutingGroups for communications
@@ -14,13 +14,13 @@ Delete navigation property audioRoutingGroups for communications
 
 ### Delete (Default)
 ```
-Remove-MgCommunicationCallAudioRoutingGroup -AudioRoutingGroupId <String> -CallId <String> [-IfMatch <String>]
+Remove-MgBetaCommunicationCallAudioRoutingGroup -AudioRoutingGroupId <String> -CallId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>]
+Remove-MgBetaCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property audioRoutingGroups for communications
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgCommunicationCallAudioRoutingGroup Cmdlet
+### Example 1: Using the Remove-MgBetaCommunicationCallAudioRoutingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Remove-MgCommunicationCallAudioRoutingGroup -CallId $callId -AudioRoutingGroupId $audioRoutingGroupId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Remove-MgBetaCommunicationCallAudioRoutingGroup -CallId $callId -AudioRoutingGroupId $audioRoutingGroupId
 ```
 
-This example shows how to use the Remove-MgCommunicationCallAudioRoutingGroup Cmdlet.
+This example shows how to use the Remove-MgBetaCommunicationCallAudioRoutingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

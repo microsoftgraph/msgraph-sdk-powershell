@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgfollowgroupdriveitem
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgfollowgroupdriveitem
 schema: 2.0.0
 ---
 
-# Invoke-MgFollowGroupDriveItem
+# Invoke-MgBetaFollowGroupDriveItem
 
 ## SYNOPSIS
 Follow a driveItem.
@@ -14,13 +14,13 @@ Follow a driveItem.
 
 ### Follow (Default)
 ```
-Invoke-MgFollowGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String> [-Confirm] [-WhatIf]
+Invoke-MgBetaFollowGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### FollowViaIdentity
 ```
-Invoke-MgFollowGroupDriveItem -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaFollowGroupDriveItem -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -80,7 +80,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: FollowViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem
 
 ## NOTES
 

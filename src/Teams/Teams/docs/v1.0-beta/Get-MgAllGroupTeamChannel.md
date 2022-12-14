@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgallgroupteamchannel
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgallgroupteamchannel
 schema: 2.0.0
 ---
 
-# Get-MgAllGroupTeamChannel
+# Get-MgBetaAllGroupTeamChannel
 
 ## SYNOPSIS
 List of channels either hosted in or shared with the team (incoming channels).
@@ -14,20 +14,20 @@ List of channels either hosted in or shared with the team (incoming channels).
 
 ### List (Default)
 ```
-Get-MgAllGroupTeamChannel -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaAllGroupTeamChannel -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAllGroupTeamChannel -ChannelId <String> -GroupId <String> [-ExpandProperty <String[]>]
+Get-MgBetaAllGroupTeamChannel -ChannelId <String> -GroupId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAllGroupTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaAllGroupTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChannel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChannel
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/new-mgusermessagesinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/new-mgusermessagesinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# New-MgUserMessageSingleValueExtendedProperty
+# New-MgBetaUserMessageSingleValueExtendedProperty
 
 ## SYNOPSIS
 Create new navigation property to singleValueExtendedProperties for users
@@ -14,26 +14,26 @@ Create new navigation property to singleValueExtendedProperties for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserMessageSingleValueExtendedProperty -MessageId <String> -UserId <String>
+New-MgBetaUserMessageSingleValueExtendedProperty -MessageId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserMessageSingleValueExtendedProperty -MessageId <String> -UserId <String>
+New-MgBetaUserMessageSingleValueExtendedProperty -MessageId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserMessageSingleValueExtendedProperty -InputObject <IMailIdentity>
+New-MgBetaUserMessageSingleValueExtendedProperty -InputObject <IMailIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserMessageSingleValueExtendedProperty -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserMessageSingleValueExtendedProperty -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -64,7 +64,7 @@ singleValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -188,13 +188,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

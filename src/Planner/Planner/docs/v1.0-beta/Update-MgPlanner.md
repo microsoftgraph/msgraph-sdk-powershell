@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mgplanner
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/update-mgplanner
 schema: 2.0.0
 ---
 
-# Update-MgPlanner
+# Update-MgBetaPlanner
 
 ## SYNOPSIS
 Update planner
@@ -14,14 +14,14 @@ Update planner
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPlanner [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerBucket1[]>]
+Update-MgBetaPlanner [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerBucket1[]>]
  [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan1[]>] [-Rosters <IMicrosoftGraphPlannerRoster[]>]
  [-Tasks <IMicrosoftGraphPlannerTask1[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgPlanner -BodyParameter <IMicrosoftGraphPlanner> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaPlanner -BodyParameter <IMicrosoftGraphPlanner> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ planner
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlanner
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlanner
 Parameter Sets: Update1
 Aliases:
 
@@ -69,7 +69,7 @@ Returns a collection of the specified buckets
 To construct, please use Get-Help -Online and see NOTES section for BUCKETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -118,7 +118,7 @@ Returns a collection of the specified plans
 To construct, please use Get-Help -Online and see NOTES section for PLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -136,7 +136,7 @@ Returns a collection of the specified rosters
 To construct, please use Get-Help -Online and see NOTES section for ROSTERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRoster[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRoster[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -154,7 +154,7 @@ Returns a collection of the specified tasks
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -201,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlanner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlanner
 
 ## OUTPUTS
 

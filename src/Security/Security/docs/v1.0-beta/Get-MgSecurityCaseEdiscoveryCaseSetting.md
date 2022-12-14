@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasesetting
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasesetting
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseSetting
+# Get-MgBetaSecurityCaseEdiscoveryCaseSetting
 
 ## SYNOPSIS
 Read the properties and relationships of an ediscoveryCaseSettings object.
@@ -14,13 +14,13 @@ Read the properties and relationships of an ediscoveryCaseSettings object.
 
 ### Get (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Read the properties and relationships of an ediscoveryCaseSettings object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseSetting Cmdlet
+### Example 1: Using the Get-MgBetaSecurityCaseEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCaseSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCaseSettings
 
 ## NOTES
 

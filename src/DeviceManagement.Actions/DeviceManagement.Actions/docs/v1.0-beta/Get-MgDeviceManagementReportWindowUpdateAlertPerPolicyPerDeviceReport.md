@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementreportwindowupdatealertperpolicyperdevicereport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementreportwindowupdatealertperpolicyperdevicereport
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementReportWindowUpdateAlertPerPolicyPerDeviceReport
+# Get-MgBetaDeviceManagementReportWindowUpdateAlertPerPolicyPerDeviceReport
 
 ## SYNOPSIS
 Invoke action getWindowsUpdateAlertsPerPolicyPerDeviceReport
@@ -14,7 +14,7 @@ Invoke action getWindowsUpdateAlertsPerPolicyPerDeviceReport
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementReportWindowUpdateAlertPerPolicyPerDeviceReport -OutFile <String>
+Get-MgBetaDeviceManagementReportWindowUpdateAlertPerPolicyPerDeviceReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Name <String>]
  [-Property <String[]>] [-Search <String>] [-SessionId <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementReportWindowUpdateAlertPerPolicyPerDeviceReport -OutFile <
 
 ### Get
 ```
-Get-MgDeviceManagementReportWindowUpdateAlertPerPolicyPerDeviceReport
+Get-MgBetaDeviceManagementReportWindowUpdateAlertPerPolicyPerDeviceReport
  -BodyParameter <IPaths1WxxrkkDevicemanagementReportsMicrosoftGraphGetwindowsupdatealertsperpolicyperdevicereportPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1WxxrkkDevicemanagementReportsMicrosoftGraphGetwindowsupdatealertsperpolicyperdevicereportPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1WxxrkkDevicemanagementReportsMicrosoftGraphGetwindowsupdatealertsperpolicyperdevicereportPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -266,7 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1WxxrkkDevicemanagementReportsMicrosoftGraphGetwindowsupdatealertsperpolicyperdevicereportPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1WxxrkkDevicemanagementReportsMicrosoftGraphGetwindowsupdatealertsperpolicyperdevicereportPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/new-mgdrivelistcontenttype
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/new-mgdrivelistcontenttype
 schema: 2.0.0
 ---
 
-# New-MgDriveListContentType
+# New-MgBetaDriveListContentType
 
 ## SYNOPSIS
 Create new navigation property to contentTypes for drives
@@ -14,7 +14,7 @@ Create new navigation property to contentTypes for drives
 
 ### CreateExpanded (Default)
 ```
-New-MgDriveListContentType -DriveId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDriveListContentType -DriveId <String> [-AdditionalProperties <Hashtable>]
  [-AssociatedHubsUrls <String[]>] [-Base <IMicrosoftGraphContentType1>]
  [-BaseTypes <IMicrosoftGraphContentType1[]>] [-ColumnLinks <IMicrosoftGraphColumnLink[]>]
  [-ColumnPositions <IMicrosoftGraphColumnDefinition1[]>] [-Columns <IMicrosoftGraphColumnDefinition1[]>]
@@ -27,19 +27,19 @@ New-MgDriveListContentType -DriveId <String> [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDriveListContentType -DriveId <String> -BodyParameter <IMicrosoftGraphContentType1> [-Confirm] [-WhatIf]
+New-MgBetaDriveListContentType -DriveId <String> -BodyParameter <IMicrosoftGraphContentType1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDriveListContentType -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphContentType1>
+New-MgBetaDriveListContentType -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphContentType1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDriveListContentType -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaDriveListContentType -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-AssociatedHubsUrls <String[]>] [-Base <IMicrosoftGraphContentType1>]
  [-BaseTypes <IMicrosoftGraphContentType1[]>] [-ColumnLinks <IMicrosoftGraphColumnLink[]>]
  [-ColumnPositions <IMicrosoftGraphColumnDefinition1[]>] [-Columns <IMicrosoftGraphColumnDefinition1[]>]
@@ -94,7 +94,7 @@ contentType
 To construct, please use Get-Help -Online and see NOTES section for BASE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -110,7 +110,7 @@ The collection of content types that are ancestors of this content type.
 To construct, please use Get-Help -Online and see NOTES section for BASETYPES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -126,7 +126,7 @@ contentType
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ The collection of columns that are required by this content type
 To construct, please use Get-Help -Online and see NOTES section for COLUMNLINKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -158,7 +158,7 @@ Column order information in a content type.
 To construct, please use Get-Help -Online and see NOTES section for COLUMNPOSITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -174,7 +174,7 @@ The collection of column definitions for this contentType.
 To construct, please use Get-Help -Online and see NOTES section for COLUMNS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -205,7 +205,7 @@ documentSet
 To construct, please use Get-Help -Online and see NOTES section for DOCUMENTSET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSet1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSet1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -221,7 +221,7 @@ documentSetContent
 To construct, please use Get-Help -Online and see NOTES section for DOCUMENTTEMPLATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSetContent
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -299,7 +299,7 @@ itemReference
 To construct, please use Get-Help -Online and see NOTES section for INHERITEDFROM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemReference
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -315,7 +315,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -361,7 +361,7 @@ contentTypeOrder
 To construct, please use Get-Help -Online and see NOTES section for ORDER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentTypeOrder
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentTypeOrder
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -469,13 +469,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 
 ## NOTES
 

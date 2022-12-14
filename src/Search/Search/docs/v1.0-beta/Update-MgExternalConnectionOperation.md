@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgexternalconnectionoperation
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/update-mgexternalconnectionoperation
 schema: 2.0.0
 ---
 
-# Update-MgExternalConnectionOperation
+# Update-MgBetaExternalConnectionOperation
 
 ## SYNOPSIS
 Update the navigation property operations in external
@@ -14,28 +14,28 @@ Update the navigation property operations in external
 
 ### UpdateExpanded (Default)
 ```
-Update-MgExternalConnectionOperation -ConnectionOperationId <String> -ExternalConnectionId <String>
+Update-MgBetaExternalConnectionOperation -ConnectionOperationId <String> -ExternalConnectionId <String>
  [-AdditionalProperties <Hashtable>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>] [-Status <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgExternalConnectionOperation -ConnectionOperationId <String> -ExternalConnectionId <String>
+Update-MgBetaExternalConnectionOperation -ConnectionOperationId <String> -ExternalConnectionId <String>
  -BodyParameter <IMicrosoftGraphExternalConnectorsConnectionOperation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgExternalConnectionOperation -InputObject <ISearchIdentity>
+Update-MgBetaExternalConnectionOperation -InputObject <ISearchIdentity>
  -BodyParameter <IMicrosoftGraphExternalConnectorsConnectionOperation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgExternalConnectionOperation -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaExternalConnectionOperation -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
  [-Error <IMicrosoftGraphPublicError>] [-Id <String>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ connectionOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ publicError
 To construct, please use Get-Help -Online and see NOTES section for ERROR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublicError
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublicError
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -222,9 +222,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 

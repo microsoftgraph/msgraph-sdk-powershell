@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityinformationprotectionsensitivitylabel
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityinformationprotectionsensitivitylabel
 schema: 2.0.0
 ---
 
-# New-MgSecurityInformationProtectionSensitivityLabel
+# New-MgBetaSecurityInformationProtectionSensitivityLabel
 
 ## SYNOPSIS
 Create new navigation property to sensitivityLabels for security
@@ -14,7 +14,7 @@ Create new navigation property to sensitivityLabels for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityInformationProtectionSensitivityLabel [-AdditionalProperties <Hashtable>] [-Color <String>]
+New-MgBetaSecurityInformationProtectionSensitivityLabel [-AdditionalProperties <Hashtable>] [-Color <String>]
  [-ContentFormats <String[]>] [-Description <String>] [-HasProtection] [-Id <String>] [-IsActive]
  [-IsAppliable] [-Name <String>] [-Parent <IMicrosoftGraphSecuritySensitivityLabel>] [-Sensitivity <Int32>]
  [-Tooltip <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgSecurityInformationProtectionSensitivityLabel [-AdditionalProperties <Hash
 
 ### Create
 ```
-New-MgSecurityInformationProtectionSensitivityLabel -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel>
+New-MgBetaSecurityInformationProtectionSensitivityLabel -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ sensitivityLabel
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 Parameter Sets: Create
 Aliases:
 
@@ -192,7 +192,7 @@ sensitivityLabel
 To construct, please use Get-Help -Online and see NOTES section for PARENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -269,11 +269,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 
 ## NOTES
 

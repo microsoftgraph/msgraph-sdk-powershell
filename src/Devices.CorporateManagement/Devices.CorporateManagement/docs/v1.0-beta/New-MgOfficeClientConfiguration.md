@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgofficeclientconfiguration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgofficeclientconfiguration
 schema: 2.0.0
 ---
 
-# New-MgOfficeClientConfiguration
+# New-MgBetaOfficeClientConfiguration
 
 ## SYNOPSIS
 Create new navigation property to clientConfigurations for officeConfiguration
@@ -14,7 +14,7 @@ Create new navigation property to clientConfigurations for officeConfiguration
 
 ### CreateExpanded (Default)
 ```
-New-MgOfficeClientConfiguration [-AdditionalProperties <Hashtable>]
+New-MgBetaOfficeClientConfiguration [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]
  [-CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-PolicyPayloadInputFile <String>] [-Priority <Int32>]
@@ -24,7 +24,7 @@ New-MgOfficeClientConfiguration [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgOfficeClientConfiguration -BodyParameter <IMicrosoftGraphOfficeClientConfiguration> [-Confirm] [-WhatIf]
+New-MgBetaOfficeClientConfiguration -BodyParameter <IMicrosoftGraphOfficeClientConfiguration> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ The list of group assignments for the policy.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -71,7 +71,7 @@ officeClientConfiguration
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
 Parameter Sets: Create
 Aliases:
 
@@ -87,7 +87,7 @@ List of office Client check-in status.
 To construct, please use Get-Help -Online and see NOTES section for CHECKINSTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientCheckinStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientCheckinStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ officeUserCheckinSummary
 To construct, please use Get-Help -Online and see NOTES section for USERCHECKINSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeUserCheckinSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeUserCheckinSummary
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -241,11 +241,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/set-mgapplicationconnectorgroupbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/set-mgapplicationconnectorgroupbyref
 schema: 2.0.0
 ---
 
-# Set-MgApplicationConnectorGroupByRef
+# Set-MgBetaApplicationConnectorGroupByRef
 
 ## SYNOPSIS
 Update the ref of navigation property connectorGroup in applications
@@ -14,25 +14,25 @@ Update the ref of navigation property connectorGroup in applications
 
 ### SetExpanded (Default)
 ```
-Set-MgApplicationConnectorGroupByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaApplicationConnectorGroupByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgApplicationConnectorGroupByRef -ApplicationId <String> -BodyParameter <IReferenceUpdate> [-PassThru]
+Set-MgBetaApplicationConnectorGroupByRef -ApplicationId <String> -BodyParameter <IReferenceUpdate> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> -BodyParameter <IReferenceUpdate>
+Set-MgBetaApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> -BodyParameter <IReferenceUpdate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-MgApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Update the ref of navigation property connectorGroup in applications
 
 ## EXAMPLES
 
-### Example 1: Using the Set-MgApplicationConnectorGroupByRef Cmdlet
+### Example 1: Using the Set-MgBetaApplicationConnectorGroupByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/onPremisesPublishingProfiles/applicationproxy/connectorGroups/{id}"
 }
-Set-MgApplicationConnectorGroupByRef -ApplicationId $applicationId -BodyParameter $params
+Set-MgBetaApplicationConnectorGroupByRef -ApplicationId $applicationId -BodyParameter $params
 ```
 
-This example shows how to use the Set-MgApplicationConnectorGroupByRef Cmdlet.
+This example shows how to use the Set-MgBetaApplicationConnectorGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceUpdate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceUpdate
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
@@ -198,9 +198,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceUpdate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceUpdate
 
 ## OUTPUTS
 

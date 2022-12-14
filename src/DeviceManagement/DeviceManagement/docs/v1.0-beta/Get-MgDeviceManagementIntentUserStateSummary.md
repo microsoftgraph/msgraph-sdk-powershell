@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementintentuserstatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementintentuserstatesummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementIntentUserStateSummary
+# Get-MgBetaDeviceManagementIntentUserStateSummary
 
 ## SYNOPSIS
 A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
@@ -14,13 +14,13 @@ A summary of user states and counts of users that belong to corresponding state 
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementIntentUserStateSummary -DeviceManagementIntentId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementIntentUserStateSummary -DeviceManagementIntentId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementIntentUserStateSummary -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementIntentUserStateSummary -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserStateSummary
 
 ## NOTES
 

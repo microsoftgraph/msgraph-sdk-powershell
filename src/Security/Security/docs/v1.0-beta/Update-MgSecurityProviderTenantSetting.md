@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityprovidertenantsetting
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityprovidertenantsetting
 schema: 2.0.0
 ---
 
-# Update-MgSecurityProviderTenantSetting
+# Update-MgBetaSecurityProviderTenantSetting
 
 ## SYNOPSIS
 Update the navigation property providerTenantSettings in security
@@ -14,26 +14,26 @@ Update the navigation property providerTenantSettings in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityProviderTenantSetting -ProviderTenantSettingId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityProviderTenantSetting -ProviderTenantSettingId <String> [-AdditionalProperties <Hashtable>]
  [-AzureTenantId <String>] [-Enabled] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>]
  [-Vendor <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecurityProviderTenantSetting -ProviderTenantSettingId <String>
+Update-MgBetaSecurityProviderTenantSetting -ProviderTenantSettingId <String>
  -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityProviderTenantSetting -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityProviderTenantSetting -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityProviderTenantSetting -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityProviderTenantSetting -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
  [-AzureTenantId <String>] [-Enabled] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>]
  [-Vendor <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -80,7 +80,7 @@ providerTenantSetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -249,9 +249,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

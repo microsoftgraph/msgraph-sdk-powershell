@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementreportpolicynoncompliancesummaryreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementreportpolicynoncompliancesummaryreport
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementReportPolicyNonComplianceSummaryReport
+# Get-MgBetaDeviceManagementReportPolicyNonComplianceSummaryReport
 
 ## SYNOPSIS
 Invoke action getPolicyNonComplianceSummaryReport
@@ -14,7 +14,7 @@ Invoke action getPolicyNonComplianceSummaryReport
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementReportPolicyNonComplianceSummaryReport -OutFile <String>
+Get-MgBetaDeviceManagementReportPolicyNonComplianceSummaryReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Name <String>]
  [-Property <String[]>] [-Search <String>] [-SessionId <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementReportPolicyNonComplianceSummaryReport -OutFile <String>
 
 ### Get
 ```
-Get-MgDeviceManagementReportPolicyNonComplianceSummaryReport
+Get-MgBetaDeviceManagementReportPolicyNonComplianceSummaryReport
  -BodyParameter <IPathsJ8K6OfDevicemanagementReportsMicrosoftGraphGetpolicynoncompliancesummaryreportPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsJ8K6OfDevicemanagementReportsMicrosoftGraphGetpolicynoncompliancesummaryreportPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsJ8K6OfDevicemanagementReportsMicrosoftGraphGetpolicynoncompliancesummaryreportPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -266,7 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsJ8K6OfDevicemanagementReportsMicrosoftGraphGetpolicynoncompliancesummaryreportPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsJ8K6OfDevicemanagementReportsMicrosoftGraphGetpolicynoncompliancesummaryreportPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

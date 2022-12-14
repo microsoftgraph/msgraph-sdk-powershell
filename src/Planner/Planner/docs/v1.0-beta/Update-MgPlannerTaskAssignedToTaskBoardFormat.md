@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mgplannertaskassignedtotaskboardformat
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/update-mgplannertaskassignedtotaskboardformat
 schema: 2.0.0
 ---
 
-# Update-MgPlannerTaskAssignedToTaskBoardFormat
+# Update-MgBetaPlannerTaskAssignedToTaskBoardFormat
 
 ## SYNOPSIS
 Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
@@ -14,28 +14,28 @@ Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-OrderHintsByAssignee <Hashtable>] [-UnassignedOrderHint <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String>
+Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String>
  -BodyParameter <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity>
  -BodyParameter <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHintsByAssignee <Hashtable>]
  [-UnassignedOrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,18 +45,18 @@ Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet
+### Example 1: Using the Update-MgBetaPlannerTaskAssignedToTaskBoardFormat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	OrderHintsByAssignee = @{
 		"Aaa27244-1db4-476a-a5cb-004607466324" = "8566473P 957764Jk!"
 	}
 }
-Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet.
+This example shows how to use the Update-MgBetaPlannerTaskAssignedToTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ plannerAssignedToTaskBoardTaskFormat
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -221,9 +221,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

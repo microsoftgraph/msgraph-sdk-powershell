@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityb2xuserflow
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityb2xuserflow
 schema: 2.0.0
 ---
 
-# Update-MgIdentityB2XUserFlow
+# Update-MgBetaIdentityB2XUserFlow
 
 ## SYNOPSIS
 Update the navigation property b2xUserFlows in identity
@@ -14,7 +14,7 @@ Update the navigation property b2xUserFlows in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityB2XUserFlow -B2XIdentityUserFlowId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityB2XUserFlow -B2XIdentityUserFlowId <String> [-AdditionalProperties <Hashtable>]
  [-ApiConnectorConfiguration <IMicrosoftGraphUserFlowApiConnectorConfiguration1>] [-Id <String>]
  [-IdentityProviders <IMicrosoftGraphIdentityProvider[]>]
  [-Languages <IMicrosoftGraphUserFlowLanguageConfiguration[]>]
@@ -25,19 +25,19 @@ Update-MgIdentityB2XUserFlow -B2XIdentityUserFlowId <String> [-AdditionalPropert
 
 ### Update
 ```
-Update-MgIdentityB2XUserFlow -B2XIdentityUserFlowId <String>
+Update-MgBetaIdentityB2XUserFlow -B2XIdentityUserFlowId <String>
  -BodyParameter <IMicrosoftGraphB2XIdentityUserFlow1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityB2XUserFlow -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityB2XUserFlow -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphB2XIdentityUserFlow1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityB2XUserFlow -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityB2XUserFlow -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-ApiConnectorConfiguration <IMicrosoftGraphUserFlowApiConnectorConfiguration1>] [-Id <String>]
  [-IdentityProviders <IMicrosoftGraphIdentityProvider[]>]
  [-Languages <IMicrosoftGraphUserFlowLanguageConfiguration[]>]
@@ -73,7 +73,7 @@ userFlowApiConnectorConfiguration
 To construct, please use Get-Help -Online and see NOTES section for APICONNECTORCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowApiConnectorConfiguration1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowApiConnectorConfiguration1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ b2xIdentityUserFlow
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ The identity providers included in the user flow.
 To construct, please use Get-Help -Online and see NOTES section for IDENTITYPROVIDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProvider[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProvider[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -170,7 +170,7 @@ You cannot create custom languages in self-service sign up user flows.
 To construct, please use Get-Help -Online and see NOTES section for LANGUAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -201,7 +201,7 @@ The user attribute assignments included in the user flow.
 To construct, please use Get-Help -Online and see NOTES section for USERATTRIBUTEASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttributeAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttributeAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for USERFLOWIDENTITYPROVIDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -294,9 +294,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
 
 ## OUTPUTS
 

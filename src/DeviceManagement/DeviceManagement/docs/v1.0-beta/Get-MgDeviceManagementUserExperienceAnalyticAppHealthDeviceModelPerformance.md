@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticapphealthdevicemodelperformance
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticapphealthdevicemodelperformance
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance
+# Get-MgBetaDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance
 
 ## SYNOPSIS
 User experience analytics appHealth Model Performance
@@ -14,21 +14,21 @@ User experience analytics appHealth Model Performance
 
 ### List (Default)
 ```
-Get-MgDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance
+Get-MgBetaDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance
  -UserExperienceAnalyticsAppHealthDeviceModelPerformanceId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance
+Get-MgBetaDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance
  -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -227,11 +227,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthDeviceModelPerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthDeviceModelPerformance
 
 ## NOTES
 

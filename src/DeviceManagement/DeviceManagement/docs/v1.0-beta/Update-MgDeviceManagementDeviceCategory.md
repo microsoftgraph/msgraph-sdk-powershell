@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdevicecategory
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdevicecategory
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceCategory
+# Update-MgBetaDeviceManagementDeviceCategory
 
 ## SYNOPSIS
 Update the navigation property deviceCategories in deviceManagement
@@ -14,26 +14,26 @@ Update the navigation property deviceCategories in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceCategory -DeviceCategoryId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementDeviceCategory -DeviceCategoryId <String> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-RoleScopeTagIds <String[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceCategory -DeviceCategoryId <String>
+Update-MgBetaDeviceManagementDeviceCategory -DeviceCategoryId <String>
  -BodyParameter <IMicrosoftGraphDeviceCategory1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceCategory -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceCategory -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceCategory1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceCategory -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceCategory -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-RoleScopeTagIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ You can filter reports and create dynamic Azure Active Directory device groups b
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCategory1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCategory1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -222,9 +222,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCategory1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCategory1
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/update-mggroupevent
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/update-mggroupevent
 schema: 2.0.0
 ---
 
-# Update-MgGroupEvent
+# Update-MgBetaGroupEvent
 
 ## SYNOPSIS
 Update the navigation property events in groups
@@ -14,7 +14,7 @@ Update the navigation property events in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-AllowNewTimeProposals] [-Attachments <IMicrosoftGraphAttachment[]>]
  [-Attendees <IMicrosoftGraphAttendee[]>] [-Body <IMicrosoftGraphItemBody>] [-BodyPreview <String>]
  [-Calendar <IMicrosoftGraphCalendar1>] [-CancelledOccurrences <String[]>] [-Categories <String[]>]
@@ -37,19 +37,19 @@ Update-MgGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <
 
 ### Update
 ```
-Update-MgGroupEvent -EventId <String> -GroupId <String> -BodyParameter <IMicrosoftGraphEvent> [-PassThru]
+Update-MgBetaGroupEvent -EventId <String> -GroupId <String> -BodyParameter <IMicrosoftGraphEvent> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupEvent -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphEvent> [-PassThru]
+Update-MgBetaGroupEvent -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphEvent> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupEvent -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupEvent -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowNewTimeProposals] [-Attachments <IMicrosoftGraphAttachment[]>]
  [-Attendees <IMicrosoftGraphAttendee[]>] [-Body <IMicrosoftGraphItemBody>] [-BodyPreview <String>]
  [-Calendar <IMicrosoftGraphCalendar1>] [-CancelledOccurrences <String[]>] [-Categories <String[]>]
@@ -75,9 +75,9 @@ Update the navigation property events in groups
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgGroupEvent Cmdlet
+### Example 1: Using the Update-MgBetaGroupEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	OriginalStartTimeZone = "originalStartTimeZone-value"
 	OriginalEndTimeZone = "originalEndTimeZone-value"
@@ -89,10 +89,10 @@ $params = @{
 	ReminderMinutesBeforeStart = 99
 	IsReminderOn = $true
 }
-Update-MgGroupEvent -GroupId $groupId -EventId $eventId -BodyParameter $params
+Update-MgBetaGroupEvent -GroupId $groupId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgGroupEvent Cmdlet.
+This example shows how to use the Update-MgBetaGroupEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -153,7 +153,7 @@ The collection of attendees for the event.
 To construct, please use Get-Help -Online and see NOTES section for ATTENDEES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendee[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendee[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -169,7 +169,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -185,7 +185,7 @@ event
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -217,7 +217,7 @@ calendar
 To construct, please use Get-Help -Online and see NOTES section for CALENDAR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendar1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -298,7 +298,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for END properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EXCEPTIONOCCURRENCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -346,7 +346,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -439,7 +439,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -459,7 +459,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for INSTANCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -581,7 +581,7 @@ location
 To construct, please use Get-Help -Online and see NOTES section for LOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -597,7 +597,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for LOCATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -615,7 +615,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -646,7 +646,7 @@ onlineMeetingInfo
 To construct, please use Get-Help -Online and see NOTES section for ONLINEMEETING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeetingInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnlineMeetingInfo1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -692,7 +692,7 @@ recipient
 To construct, please use Get-Help -Online and see NOTES section for ORGANIZER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecipient
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -768,7 +768,7 @@ patternedRecurrence
 To construct, please use Get-Help -Online and see NOTES section for RECURRENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPatternedRecurrence
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPatternedRecurrence
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -814,7 +814,7 @@ responseStatus
 To construct, please use Get-Help -Online and see NOTES section for RESPONSESTATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResponseStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResponseStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -877,7 +877,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -893,7 +893,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for START properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -1015,9 +1015,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 
 ## OUTPUTS
 

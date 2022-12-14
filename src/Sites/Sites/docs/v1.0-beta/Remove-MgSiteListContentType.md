@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mgsitelistcontenttype
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/remove-mgsitelistcontenttype
 schema: 2.0.0
 ---
 
-# Remove-MgSiteListContentType
+# Remove-MgBetaSiteListContentType
 
 ## SYNOPSIS
 Delete navigation property contentTypes for sites
@@ -14,13 +14,13 @@ Delete navigation property contentTypes for sites
 
 ### Delete (Default)
 ```
-Remove-MgSiteListContentType -ContentTypeId <String> -ListId <String> -SiteId <String> [-IfMatch <String>]
+Remove-MgBetaSiteListContentType -ContentTypeId <String> -ListId <String> -SiteId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSiteListContentType -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaSiteListContentType -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

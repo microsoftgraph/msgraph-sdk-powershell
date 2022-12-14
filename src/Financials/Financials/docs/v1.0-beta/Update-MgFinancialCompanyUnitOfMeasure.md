@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyunitofmeasure
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanyunitofmeasure
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyUnitOfMeasure
+# Update-MgBetaFinancialCompanyUnitOfMeasure
 
 ## SYNOPSIS
 Update the navigation property unitsOfMeasure in financials
@@ -14,7 +14,7 @@ Update the navigation property unitsOfMeasure in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <String>
+Update-MgBetaFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-InternationalStandardCode <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <Str
 
 ### Update
 ```
-Update-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <String>
+Update-MgBetaFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <String>
  -BodyParameter <IMicrosoftGraphUnitOfMeasure> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphUnitOfMeasure> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-InternationalStandardCode <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ unitOfMeasure
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -250,9 +250,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 
 ## OUTPUTS
 

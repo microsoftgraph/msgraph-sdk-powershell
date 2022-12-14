@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementioupdatestatuses
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementioupdatestatuses
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementIoUpdateStatuses
+# New-MgBetaDeviceManagementIoUpdateStatuses
 
 ## SYNOPSIS
 Create new navigation property to iosUpdateStatuses for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to iosUpdateStatuses for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementIoUpdateStatuses [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementIoUpdateStatuses [-AdditionalProperties <Hashtable>]
  [-ComplianceGracePeriodExpirationDateTime <DateTime>] [-DeviceDisplayName <String>] [-DeviceId <String>]
  [-DeviceModel <String>] [-Id <String>] [-InstallStatus <String>] [-LastReportedDateTime <DateTime>]
  [-OSVersion <String>] [-Platform <Int32>] [-Status <String>] [-UserId <String>] [-UserName <String>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementIoUpdateStatuses [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementIoUpdateStatuses -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-Confirm]
+New-MgBetaDeviceManagementIoUpdateStatuses -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ iosUpdateDeviceStatus
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 Parameter Sets: Create
 Aliases:
 
@@ -297,11 +297,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 
 ## NOTES
 

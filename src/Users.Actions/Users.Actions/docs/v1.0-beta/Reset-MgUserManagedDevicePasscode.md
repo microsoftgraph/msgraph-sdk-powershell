@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/reset-mgusermanageddevicepasscode
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/reset-mgusermanageddevicepasscode
 schema: 2.0.0
 ---
 
-# Reset-MgUserManagedDevicePasscode
+# Reset-MgBetaUserManagedDevicePasscode
 
 ## SYNOPSIS
 Reset passcode
@@ -14,13 +14,13 @@ Reset passcode
 
 ### Reset (Default)
 ```
-Reset-MgUserManagedDevicePasscode -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
+Reset-MgBetaUserManagedDevicePasscode -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgUserManagedDevicePasscode -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Reset-MgBetaUserManagedDevicePasscode -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancetermofuseagreementfilelocalization
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancetermofuseagreementfilelocalization
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization
+# Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization
 
 ## SYNOPSIS
 The localized version of the terms of use agreement files attached to the agreement.
@@ -14,20 +14,20 @@ The localized version of the terms of use agreement files attached to the agreem
 
 ### List1 (Default)
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization -AgreementId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization -AgreementId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization -AgreementFileLocalizationId <String>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization -AgreementFileLocalizationId <String>
  -AgreementId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementadvancedthreatprotectiononboardingstatesummaryadvancedthreatprotectiononboardingdevicesettingstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementadvancedthreatprotectiononboardingstatesummaryadvancedthreatprotectiononboardingdevicesettingstate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState
+# New-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState
 
 ## SYNOPSIS
 Create new navigation property to advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to advancedThreatProtectionOnboardingDeviceSettin
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState
+New-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceId <String>] [-DeviceModel <String>] [-DeviceName <String>] [-Id <String>]
  [-PlatformType <DeviceType>] [-Setting <String>] [-SettingName <String>] [-State <String>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThre
 
 ### Create
 ```
-New-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState
+New-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState
  -BodyParameter <IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -56,7 +56,7 @@ ATP onboarding State for a given device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState
 Parameter Sets: Create
 Aliases:
 
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 Device type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -299,11 +299,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState
 
 ## NOTES
 

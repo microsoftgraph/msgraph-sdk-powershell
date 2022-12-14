@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedaccessresourceparent
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedaccessresourceparent
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedAccessResourceParent
+# Get-MgBetaPrivilegedAccessResourceParent
 
 ## SYNOPSIS
 Read-only.
@@ -16,13 +16,13 @@ for pimforazurerbac scenario, it can represent the subscription the resource bel
 
 ### Get (Default)
 ```
-Get-MgPrivilegedAccessResourceParent -GovernanceResourceId <String> -PrivilegedAccessId <String>
+Get-MgBetaPrivilegedAccessResourceParent -GovernanceResourceId <String> -PrivilegedAccessId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedAccessResourceParent -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedAccessResourceParent -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -70,7 +70,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -116,11 +116,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 
 ## NOTES
 

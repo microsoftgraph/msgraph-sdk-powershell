@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyfeaturerolloutpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyfeaturerolloutpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyFeatureRolloutPolicy
+# Update-MgBetaPolicyFeatureRolloutPolicy
 
 ## SYNOPSIS
 Update the navigation property featureRolloutPolicies in policies
@@ -14,7 +14,7 @@ Update the navigation property featureRolloutPolicies in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Description <String>] [-DisplayName <String>]
  [-Feature <String>] [-Id <String>] [-IsAppliedToOrganization] [-IsEnabled] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-Additiona
 
 ### Update
 ```
-Update-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId <String>
+Update-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId <String>
  -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyFeatureRolloutPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyFeatureRolloutPolicy -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyFeatureRolloutPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyFeatureRolloutPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Description <String>]
  [-DisplayName <String>] [-Feature <String>] [-Id <String>] [-IsAppliedToOrganization] [-IsEnabled]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -45,19 +45,19 @@ Update the navigation property featureRolloutPolicies in policies
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyFeatureRolloutPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyFeatureRolloutPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "PasswordHashSync Rollout Policy"
 	Description = "PasswordHashSync Rollout Policy"
 	IsEnabled = $true
 	IsAppliedToOrganization = $false
 }
-Update-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
+Update-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyFeatureRolloutPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -83,7 +83,7 @@ Specifies a list of directoryObjects that feature is enabled for.
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -99,7 +99,7 @@ featureRolloutPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -191,7 +191,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -283,9 +283,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
 
 ## OUTPUTS
 

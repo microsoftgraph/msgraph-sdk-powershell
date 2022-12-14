@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementndeconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementndeconnector
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementNdeConnector
+# New-MgBetaDeviceManagementNdeConnector
 
 ## SYNOPSIS
 Create new navigation property to ndesConnectors for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to ndesConnectors for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementNdeConnector [-AdditionalProperties <Hashtable>] [-ConnectorVersion <String>]
+New-MgBetaDeviceManagementNdeConnector [-AdditionalProperties <Hashtable>] [-ConnectorVersion <String>]
  [-DisplayName <String>] [-EnrolledDateTime <DateTime>] [-Id <String>] [-LastConnectionDateTime <DateTime>]
  [-MachineName <String>] [-RoleScopeTagIds <String[]>] [-State <NdesConnectorState>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementNdeConnector [-AdditionalProperties <Hashtable>] [-Connect
 
 ### Create
 ```
-New-MgDeviceManagementNdeConnector -BodyParameter <IMicrosoftGraphNdesConnector> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementNdeConnector -BodyParameter <IMicrosoftGraphNdesConnector> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Entity which represents an OnPrem Ndes connector.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNdesConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNdesConnector
 Parameter Sets: Create
 Aliases:
 
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 The current status of the Ndes Connector.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.NdesConnectorState
+Type: Microsoft.Graph.Beta.PowerShell.Support.NdesConnectorState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -221,11 +221,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNdesConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNdesConnector
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNdesConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNdesConnector
 
 ## NOTES
 

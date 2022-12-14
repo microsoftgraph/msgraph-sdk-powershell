@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgexecuteusermanageddeviceaction
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgexecuteusermanageddeviceaction
 schema: 2.0.0
 ---
 
-# Invoke-MgExecuteUserManagedDeviceAction
+# Invoke-MgBetaExecuteUserManagedDeviceAction
 
 ## SYNOPSIS
 Invoke action executeAction
@@ -14,7 +14,7 @@ Invoke action executeAction
 
 ### ExecuteExpanded (Default)
 ```
-Invoke-MgExecuteUserManagedDeviceAction -UserId <String> [-ActionName <ManagedDeviceRemoteAction>]
+Invoke-MgBetaExecuteUserManagedDeviceAction -UserId <String> [-ActionName <ManagedDeviceRemoteAction>]
  [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>] [-DeprovisionReason <String>]
  [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData] [-KeepUserData]
  [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
@@ -23,21 +23,21 @@ Invoke-MgExecuteUserManagedDeviceAction -UserId <String> [-ActionName <ManagedDe
 
 ### Execute
 ```
-Invoke-MgExecuteUserManagedDeviceAction -UserId <String>
+Invoke-MgBetaExecuteUserManagedDeviceAction -UserId <String>
  -BodyParameter <IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExecuteViaIdentity
 ```
-Invoke-MgExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExecuteViaIdentityExpanded
 ```
-Invoke-MgExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
  [-ActionName <ManagedDeviceRemoteAction>] [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>]
  [-DeprovisionReason <String>] [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData]
  [-KeepUserData] [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
@@ -55,7 +55,7 @@ Invoke action executeAction
 managedDeviceRemoteAction
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedDeviceRemoteAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedDeviceRemoteAction
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Execute, ExecuteViaIdentity
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ExecuteViaIdentity, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -314,13 +314,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBulkManagedDeviceActionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBulkManagedDeviceActionResult
 
 ## NOTES
 

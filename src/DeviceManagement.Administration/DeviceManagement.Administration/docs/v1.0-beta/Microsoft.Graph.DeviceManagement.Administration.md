@@ -1,825 +1,825 @@
 ---
-Module Name: Microsoft.Graph.DeviceManagement.Administration
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
 Module Guid: 504ec205-a4db-4901-aaab-b933db81d3d5
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.DeviceManagement.Administration Module
+# Microsoft.Graph.Beta.DeviceManagement.Administration Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.DeviceManagement.Administration Cmdlets
-### [Get-MgDeviceManagementApplePushNotificationCertificate](Get-MgDeviceManagementApplePushNotificationCertificate.md)
+## Microsoft.Graph.Beta.DeviceManagement.Administration Cmdlets
+### [Get-MgBetaDeviceManagementApplePushNotificationCertificate](Get-MgBetaDeviceManagementApplePushNotificationCertificate.md)
 Apple push notification certificate.
 
-### [Get-MgDeviceManagementAuditEvent](Get-MgDeviceManagementAuditEvent.md)
+### [Get-MgBetaDeviceManagementAuditEvent](Get-MgBetaDeviceManagementAuditEvent.md)
 The Audit Events
 
-### [Get-MgDeviceManagementCartToClassAssociation](Get-MgDeviceManagementCartToClassAssociation.md)
+### [Get-MgBetaDeviceManagementCartToClassAssociation](Get-MgBetaDeviceManagementCartToClassAssociation.md)
 The Cart To Class Associations.
 
-### [Get-MgDeviceManagementComanagementEligibleDevice](Get-MgDeviceManagementComanagementEligibleDevice.md)
+### [Get-MgBetaDeviceManagementComanagementEligibleDevice](Get-MgBetaDeviceManagementComanagementEligibleDevice.md)
 The list of co-management eligible devices report
 
-### [Get-MgDeviceManagementComplianceManagementPartner](Get-MgDeviceManagementComplianceManagementPartner.md)
+### [Get-MgBetaDeviceManagementComplianceManagementPartner](Get-MgBetaDeviceManagementComplianceManagementPartner.md)
 The list of Compliance Management Partners configured by the tenant.
 
-### [Get-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState](Get-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState.md)
+### [Get-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState](Get-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState.md)
 Summary of all certificates for all devices.
 
-### [Get-MgDeviceManagementDeviceConfigurationRestrictedAppViolation](Get-MgDeviceManagementDeviceConfigurationRestrictedAppViolation.md)
+### [Get-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation](Get-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation.md)
 Restricted apps violations for this account.
 
-### [Get-MgDeviceManagementDomainJoinConnector](Get-MgDeviceManagementDomainJoinConnector.md)
+### [Get-MgBetaDeviceManagementDomainJoinConnector](Get-MgBetaDeviceManagementDomainJoinConnector.md)
 A list of connector objects.
 
-### [Get-MgDeviceManagementExchangeConnector](Get-MgDeviceManagementExchangeConnector.md)
+### [Get-MgBetaDeviceManagementExchangeConnector](Get-MgBetaDeviceManagementExchangeConnector.md)
 The list of Exchange Connectors configured by the tenant.
 
-### [Get-MgDeviceManagementExchangeOnPremisPolicy](Get-MgDeviceManagementExchangeOnPremisPolicy.md)
+### [Get-MgBetaDeviceManagementExchangeOnPremisPolicy](Get-MgBetaDeviceManagementExchangeOnPremisPolicy.md)
 The list of Exchange On Premisis policies configured by the tenant.
 
-### [Get-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting](Get-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting.md)
+### [Get-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting](Get-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting.md)
 The Exchange on premises conditional access settings.
 On premises conditional access will require devices to be both enrolled and compliant for mail access
 
-### [Get-MgDeviceManagementGroupPolicyCategory](Get-MgDeviceManagementGroupPolicyCategory.md)
+### [Get-MgBetaDeviceManagementGroupPolicyCategory](Get-MgBetaDeviceManagementGroupPolicyCategory.md)
 The available group policy categories for this account.
 
-### [Get-MgDeviceManagementGroupPolicyCategoryChild](Get-MgDeviceManagementGroupPolicyCategoryChild.md)
+### [Get-MgBetaDeviceManagementGroupPolicyCategoryChild](Get-MgBetaDeviceManagementGroupPolicyCategoryChild.md)
 The children categories
 
-### [Get-MgDeviceManagementGroupPolicyCategoryDefinition](Get-MgDeviceManagementGroupPolicyCategoryDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyCategoryDefinition](Get-MgBetaDeviceManagementGroupPolicyCategoryDefinition.md)
 The immediate GroupPolicyDefinition children of the category
 
-### [Get-MgDeviceManagementGroupPolicyCategoryDefinitionFile](Get-MgDeviceManagementGroupPolicyCategoryDefinitionFile.md)
+### [Get-MgBetaDeviceManagementGroupPolicyCategoryDefinitionFile](Get-MgBetaDeviceManagementGroupPolicyCategoryDefinitionFile.md)
 The id of the definition file the category came from
 
-### [Get-MgDeviceManagementGroupPolicyCategoryParent](Get-MgDeviceManagementGroupPolicyCategoryParent.md)
+### [Get-MgBetaDeviceManagementGroupPolicyCategoryParent](Get-MgBetaDeviceManagementGroupPolicyCategoryParent.md)
 The parent category
 
-### [Get-MgDeviceManagementGroupPolicyDefinition](Get-MgDeviceManagementGroupPolicyDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinition.md)
 The available group policy definitions for this account.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionCategory](Get-MgDeviceManagementGroupPolicyDefinitionCategory.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionCategory](Get-MgBetaDeviceManagementGroupPolicyDefinitionCategory.md)
 The group policy category associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionFile](Get-MgDeviceManagementGroupPolicyDefinitionFile.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionFile](Get-MgBetaDeviceManagementGroupPolicyDefinitionFile.md)
 The available group policy definition files for this account.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionFileDefinition](Get-MgDeviceManagementGroupPolicyDefinitionFileDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionFileDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionFileDefinition.md)
 The group policy definitions associated with the file.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinition](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinition.md)
 Definition of the next version of this definition
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionCategory](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionCategory.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionCategory](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionCategory.md)
 The group policy category associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionFile](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionFile.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionFile](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionFile.md)
 The group policy file associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation.md)
 The group policy presentations associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentationDefinition](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentationDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentationDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentationDefinition.md)
 The group policy definition associated with the presentation.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition.md)
 Definition of the previous version of this definition
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionCategory](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionCategory.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionCategory](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionCategory.md)
 The group policy category associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionFile](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionFile.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionFile](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionFile.md)
 The group policy file associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation.md)
 The group policy presentations associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentationDefinition](Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentationDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentationDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentationDefinition.md)
 The group policy definition associated with the presentation.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPresentation](Get-MgDeviceManagementGroupPolicyDefinitionPresentation.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPresentation](Get-MgBetaDeviceManagementGroupPolicyDefinitionPresentation.md)
 The group policy presentations associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPresentationDefinition](Get-MgDeviceManagementGroupPolicyDefinitionPresentationDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPresentationDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionPresentationDefinition.md)
 The group policy definition associated with the presentation.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition.md)
 Definition of the previous version of this definition
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionCategory](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionCategory.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionCategory](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionCategory.md)
 The group policy category associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionFile](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionFile.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionFile](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionFile.md)
 The group policy file associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition.md)
 Definition of the next version of this definition
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionCategory](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionCategory.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionCategory](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionCategory.md)
 The group policy category associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionFile](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionFile.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionFile](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionFile.md)
 The group policy file associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation.md)
 The group policy presentations associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentationDefinition](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentationDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentationDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentationDefinition.md)
 The group policy definition associated with the presentation.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation.md)
 The group policy presentations associated with the definition.
 
-### [Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentationDefinition](Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentationDefinition.md)
+### [Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentationDefinition](Get-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentationDefinition.md)
 The group policy definition associated with the presentation.
 
-### [Get-MgDeviceManagementGroupPolicyMigrationReport](Get-MgDeviceManagementGroupPolicyMigrationReport.md)
+### [Get-MgBetaDeviceManagementGroupPolicyMigrationReport](Get-MgBetaDeviceManagementGroupPolicyMigrationReport.md)
 A list of Group Policy migration reports.
 
-### [Get-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping](Get-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping.md)
+### [Get-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping](Get-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping.md)
 A list of group policy settings to MDM/Intune mappings.
 
-### [Get-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension](Get-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension.md)
+### [Get-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension](Get-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension.md)
 A list of unsupported group policy extensions inside the Group Policy Object.
 
-### [Get-MgDeviceManagementGroupPolicyObjectFile](Get-MgDeviceManagementGroupPolicyObjectFile.md)
+### [Get-MgBetaDeviceManagementGroupPolicyObjectFile](Get-MgBetaDeviceManagementGroupPolicyObjectFile.md)
 A list of Group Policy Object files uploaded.
 
-### [Get-MgDeviceManagementGroupPolicyUploadedDefinitionFile](Get-MgDeviceManagementGroupPolicyUploadedDefinitionFile.md)
+### [Get-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile](Get-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile.md)
 The available group policy uploaded definition files for this account.
 
-### [Get-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation](Get-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation.md)
+### [Get-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation](Get-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation.md)
 The list of operations on the uploaded ADMX file.
 
-### [Get-MgDeviceManagementIntuneBrandingProfile](Get-MgDeviceManagementIntuneBrandingProfile.md)
+### [Get-MgBetaDeviceManagementIntuneBrandingProfile](Get-MgBetaDeviceManagementIntuneBrandingProfile.md)
 Intune branding profiles targeted to AAD groups
 
-### [Get-MgDeviceManagementIntuneBrandingProfileAssignment](Get-MgDeviceManagementIntuneBrandingProfileAssignment.md)
+### [Get-MgBetaDeviceManagementIntuneBrandingProfileAssignment](Get-MgBetaDeviceManagementIntuneBrandingProfileAssignment.md)
 The list of group assignments for the branding profile
 
-### [Get-MgDeviceManagementIoUpdateStatuses](Get-MgDeviceManagementIoUpdateStatuses.md)
+### [Get-MgBetaDeviceManagementIoUpdateStatuses](Get-MgBetaDeviceManagementIoUpdateStatuses.md)
 The IOS software update installation statuses for this account.
 
-### [Get-MgDeviceManagementMobileThreatDefenseConnector](Get-MgDeviceManagementMobileThreatDefenseConnector.md)
+### [Get-MgBetaDeviceManagementMobileThreatDefenseConnector](Get-MgBetaDeviceManagementMobileThreatDefenseConnector.md)
 The list of Mobile threat Defense connectors configured by the tenant.
 
-### [Get-MgDeviceManagementNdeConnector](Get-MgDeviceManagementNdeConnector.md)
+### [Get-MgBetaDeviceManagementNdeConnector](Get-MgBetaDeviceManagementNdeConnector.md)
 The collection of Ndes connectors for this account.
 
-### [Get-MgDeviceManagementPartner](Get-MgDeviceManagementPartner.md)
+### [Get-MgBetaDeviceManagementPartner](Get-MgBetaDeviceManagementPartner.md)
 The list of Device Management Partners configured by the tenant.
 
-### [Get-MgDeviceManagementRemoteAssistancePartner](Get-MgDeviceManagementRemoteAssistancePartner.md)
+### [Get-MgBetaDeviceManagementRemoteAssistancePartner](Get-MgBetaDeviceManagementRemoteAssistancePartner.md)
 The remote assist partners.
 
-### [Get-MgDeviceManagementResourceOperation](Get-MgDeviceManagementResourceOperation.md)
+### [Get-MgBetaDeviceManagementResourceOperation](Get-MgBetaDeviceManagementResourceOperation.md)
 The Resource Operations.
 
-### [Get-MgDeviceManagementRoleAssignment](Get-MgDeviceManagementRoleAssignment.md)
+### [Get-MgBetaDeviceManagementRoleAssignment](Get-MgBetaDeviceManagementRoleAssignment.md)
 The Role Assignments.
 
-### [Get-MgDeviceManagementRoleAssignmentRoleScopeTag](Get-MgDeviceManagementRoleAssignmentRoleScopeTag.md)
+### [Get-MgBetaDeviceManagementRoleAssignmentRoleScopeTag](Get-MgBetaDeviceManagementRoleAssignmentRoleScopeTag.md)
 The set of Role Scope Tags defined on the Role Assignment.
 
-### [Get-MgDeviceManagementRoleDefinition](Get-MgDeviceManagementRoleDefinition.md)
+### [Get-MgBetaDeviceManagementRoleDefinition](Get-MgBetaDeviceManagementRoleDefinition.md)
 The Role Definitions.
 
-### [Get-MgDeviceManagementRoleDefinitionRoleAssignment](Get-MgDeviceManagementRoleDefinitionRoleAssignment.md)
+### [Get-MgBetaDeviceManagementRoleDefinitionRoleAssignment](Get-MgBetaDeviceManagementRoleDefinitionRoleAssignment.md)
 List of Role assignments for this role definition.
 
-### [Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition](Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition.md)
+### [Get-MgBetaDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition](Get-MgBetaDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition.md)
 Role definition this assignment is part of.
 
-### [Get-MgDeviceManagementRoleScopeTag](Get-MgDeviceManagementRoleScopeTag.md)
+### [Get-MgBetaDeviceManagementRoleScopeTag](Get-MgBetaDeviceManagementRoleScopeTag.md)
 The Role Scope Tags.
 
-### [Get-MgDeviceManagementRoleScopeTagAssignment](Get-MgDeviceManagementRoleScopeTagAssignment.md)
+### [Get-MgBetaDeviceManagementRoleScopeTagAssignment](Get-MgBetaDeviceManagementRoleScopeTagAssignment.md)
 The list of assignments for this Role Scope Tag.
 
-### [Get-MgDeviceManagementTelecomExpenseManagementPartner](Get-MgDeviceManagementTelecomExpenseManagementPartner.md)
+### [Get-MgBetaDeviceManagementTelecomExpenseManagementPartner](Get-MgBetaDeviceManagementTelecomExpenseManagementPartner.md)
 The telecom expense management partners.
 
-### [Get-MgDeviceManagementTermAndCondition](Get-MgDeviceManagementTermAndCondition.md)
+### [Get-MgBetaDeviceManagementTermAndCondition](Get-MgBetaDeviceManagementTermAndCondition.md)
 The terms and conditions associated with device management of the company.
 
-### [Get-MgDeviceManagementTermAndConditionAcceptanceStatuses](Get-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
+### [Get-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses](Get-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses.md)
 The list of acceptance statuses for this T&C policy.
 
-### [Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition](Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition.md)
+### [Get-MgBetaDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition](Get-MgBetaDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition.md)
 Navigation link to the terms and conditions that are assigned.
 
-### [Get-MgDeviceManagementTermAndConditionAssignment](Get-MgDeviceManagementTermAndConditionAssignment.md)
+### [Get-MgBetaDeviceManagementTermAndConditionAssignment](Get-MgBetaDeviceManagementTermAndConditionAssignment.md)
 The list of assignments for this T&C policy.
 
-### [Get-MgDeviceManagementTermAndConditionGroupAssignment](Get-MgDeviceManagementTermAndConditionGroupAssignment.md)
+### [Get-MgBetaDeviceManagementTermAndConditionGroupAssignment](Get-MgBetaDeviceManagementTermAndConditionGroupAssignment.md)
 The list of group assignments for this T&C policy.
 
-### [Get-MgDeviceManagementTermAndConditionGroupAssignmentTermAndCondition](Get-MgDeviceManagementTermAndConditionGroupAssignmentTermAndCondition.md)
+### [Get-MgBetaDeviceManagementTermAndConditionGroupAssignmentTermAndCondition](Get-MgBetaDeviceManagementTermAndConditionGroupAssignmentTermAndCondition.md)
 Navigation link to the terms and conditions that are assigned.
 
-### [Get-MgDeviceManagementUserPfxCertificate](Get-MgDeviceManagementUserPfxCertificate.md)
+### [Get-MgBetaDeviceManagementUserPfxCertificate](Get-MgBetaDeviceManagementUserPfxCertificate.md)
 Collection of PFX certificates associated with a user.
 
-### [Get-MgDeviceManagementVirtualEndpoint](Get-MgDeviceManagementVirtualEndpoint.md)
+### [Get-MgBetaDeviceManagementVirtualEndpoint](Get-MgBetaDeviceManagementVirtualEndpoint.md)
 Get virtualEndpoint from deviceManagement
 
-### [Get-MgDeviceManagementVirtualEndpointAuditEvent](Get-MgDeviceManagementVirtualEndpointAuditEvent.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointAuditEvent](Get-MgBetaDeviceManagementVirtualEndpointAuditEvent.md)
 Cloud PC audit event.
 
-### [Get-MgDeviceManagementVirtualEndpointCloudPC](Get-MgDeviceManagementVirtualEndpointCloudPC.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointCloudPC](Get-MgBetaDeviceManagementVirtualEndpointCloudPC.md)
 Cloud managed virtual desktops.
 
-### [Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Get-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
 Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
 
-### [Get-MgDeviceManagementVirtualEndpointDeviceImage](Get-MgDeviceManagementVirtualEndpointDeviceImage.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointDeviceImage](Get-MgBetaDeviceManagementVirtualEndpointDeviceImage.md)
 The image resource on Cloud PC.
 
-### [Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting](Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](Get-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 The external partner settings on a Cloud PC.
 
-### [Get-MgDeviceManagementVirtualEndpointGalleryImage](Get-MgDeviceManagementVirtualEndpointGalleryImage.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointGalleryImage](Get-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 The gallery image resource on Cloud PC.
 
-### [Get-MgDeviceManagementVirtualEndpointOnPremisesConnection](Get-MgDeviceManagementVirtualEndpointOnPremisesConnection.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection](Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection.md)
 A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 
-### [Get-MgDeviceManagementVirtualEndpointOrganizationSetting](Get-MgDeviceManagementVirtualEndpointOrganizationSetting.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
 A tenant has only one **cloudPcOrganizationSettings** object.
 
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicy](Get-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Cloud PC provisioning policy.
 
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 A defined collection of provisioning policy assignments.
 Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
 Returned only on $expand.
 See an example of getting the assignments relationship.
 
-### [Get-MgDeviceManagementVirtualEndpointReport](Get-MgDeviceManagementVirtualEndpointReport.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointReport](Get-MgBetaDeviceManagementVirtualEndpointReport.md)
 Cloud PC related reports.
 
-### [Get-MgDeviceManagementVirtualEndpointReportExportJob](Get-MgDeviceManagementVirtualEndpointReportExportJob.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointReportExportJob](Get-MgBetaDeviceManagementVirtualEndpointReportExportJob.md)
 The export jobs created for downloading reports.
 
-### [Get-MgDeviceManagementVirtualEndpointServicePlan](Get-MgDeviceManagementVirtualEndpointServicePlan.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointServicePlan](Get-MgBetaDeviceManagementVirtualEndpointServicePlan.md)
 Cloud PC service plans.
 
-### [Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan](Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlan](Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlan.md)
 Get sharedUseServicePlans from deviceManagement
 
-### [Get-MgDeviceManagementVirtualEndpointSnapshot](Get-MgDeviceManagementVirtualEndpointSnapshot.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointSnapshot](Get-MgBetaDeviceManagementVirtualEndpointSnapshot.md)
 Cloud PC snapshots.
 
-### [Get-MgDeviceManagementVirtualEndpointSupportedRegion](Get-MgDeviceManagementVirtualEndpointSupportedRegion.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointSupportedRegion](Get-MgBetaDeviceManagementVirtualEndpointSupportedRegion.md)
 Cloud PC supported regions.
 
-### [Get-MgDeviceManagementVirtualEndpointUserSetting](Get-MgDeviceManagementVirtualEndpointUserSetting.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointUserSetting](Get-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Cloud PC user settings.
 
-### [Get-MgDeviceManagementVirtualEndpointUserSettingAssignment](Get-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](Get-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned.
 Returned only on $expand.
 For an example, see Get cloudPcUserSettingample.
 
-### [New-MgDeviceManagementAuditEvent](New-MgDeviceManagementAuditEvent.md)
+### [New-MgBetaDeviceManagementAuditEvent](New-MgBetaDeviceManagementAuditEvent.md)
 Create new navigation property to auditEvents for deviceManagement
 
-### [New-MgDeviceManagementCartToClassAssociation](New-MgDeviceManagementCartToClassAssociation.md)
+### [New-MgBetaDeviceManagementCartToClassAssociation](New-MgBetaDeviceManagementCartToClassAssociation.md)
 Create new navigation property to cartToClassAssociations for deviceManagement
 
-### [New-MgDeviceManagementComanagementEligibleDevice](New-MgDeviceManagementComanagementEligibleDevice.md)
+### [New-MgBetaDeviceManagementComanagementEligibleDevice](New-MgBetaDeviceManagementComanagementEligibleDevice.md)
 Create new navigation property to comanagementEligibleDevices for deviceManagement
 
-### [New-MgDeviceManagementComplianceManagementPartner](New-MgDeviceManagementComplianceManagementPartner.md)
+### [New-MgBetaDeviceManagementComplianceManagementPartner](New-MgBetaDeviceManagementComplianceManagementPartner.md)
 Create new navigation property to complianceManagementPartners for deviceManagement
 
-### [New-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState](New-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState.md)
+### [New-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState](New-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState.md)
 Create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
 
-### [New-MgDeviceManagementDeviceConfigurationRestrictedAppViolation](New-MgDeviceManagementDeviceConfigurationRestrictedAppViolation.md)
+### [New-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation](New-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation.md)
 Create new navigation property to deviceConfigurationRestrictedAppsViolations for deviceManagement
 
-### [New-MgDeviceManagementDomainJoinConnector](New-MgDeviceManagementDomainJoinConnector.md)
+### [New-MgBetaDeviceManagementDomainJoinConnector](New-MgBetaDeviceManagementDomainJoinConnector.md)
 Create new navigation property to domainJoinConnectors for deviceManagement
 
-### [New-MgDeviceManagementExchangeConnector](New-MgDeviceManagementExchangeConnector.md)
+### [New-MgBetaDeviceManagementExchangeConnector](New-MgBetaDeviceManagementExchangeConnector.md)
 Create new navigation property to exchangeConnectors for deviceManagement
 
-### [New-MgDeviceManagementExchangeOnPremisPolicy](New-MgDeviceManagementExchangeOnPremisPolicy.md)
+### [New-MgBetaDeviceManagementExchangeOnPremisPolicy](New-MgBetaDeviceManagementExchangeOnPremisPolicy.md)
 Create new navigation property to exchangeOnPremisesPolicies for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyCategory](New-MgDeviceManagementGroupPolicyCategory.md)
+### [New-MgBetaDeviceManagementGroupPolicyCategory](New-MgBetaDeviceManagementGroupPolicyCategory.md)
 Create new navigation property to groupPolicyCategories for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyDefinition](New-MgDeviceManagementGroupPolicyDefinition.md)
+### [New-MgBetaDeviceManagementGroupPolicyDefinition](New-MgBetaDeviceManagementGroupPolicyDefinition.md)
 Create new navigation property to groupPolicyDefinitions for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyDefinitionFile](New-MgDeviceManagementGroupPolicyDefinitionFile.md)
+### [New-MgBetaDeviceManagementGroupPolicyDefinitionFile](New-MgBetaDeviceManagementGroupPolicyDefinitionFile.md)
 Create new navigation property to groupPolicyDefinitionFiles for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation](New-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation.md)
+### [New-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation](New-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation.md)
 Create new navigation property to presentations for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation](New-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation.md)
+### [New-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation](New-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation.md)
 Create new navigation property to presentations for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyDefinitionPresentation](New-MgDeviceManagementGroupPolicyDefinitionPresentation.md)
+### [New-MgBetaDeviceManagementGroupPolicyDefinitionPresentation](New-MgBetaDeviceManagementGroupPolicyDefinitionPresentation.md)
 Create new navigation property to presentations for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation](New-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation.md)
+### [New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation](New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation.md)
 Create new navigation property to presentations for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation](New-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation.md)
+### [New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation](New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation.md)
 Create new navigation property to presentations for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping](New-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping.md)
+### [New-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping](New-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping.md)
 Create new navigation property to groupPolicySettingMappings for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension](New-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension.md)
+### [New-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension](New-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension.md)
 Create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyObjectFile](New-MgDeviceManagementGroupPolicyObjectFile.md)
+### [New-MgBetaDeviceManagementGroupPolicyObjectFile](New-MgBetaDeviceManagementGroupPolicyObjectFile.md)
 Create new navigation property to groupPolicyObjectFiles for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyUploadedDefinitionFile](New-MgDeviceManagementGroupPolicyUploadedDefinitionFile.md)
+### [New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile](New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile.md)
 Create new navigation property to groupPolicyUploadedDefinitionFiles for deviceManagement
 
-### [New-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation](New-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation.md)
+### [New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation](New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation.md)
 Create new navigation property to groupPolicyOperations for deviceManagement
 
-### [New-MgDeviceManagementIntuneBrandingProfile](New-MgDeviceManagementIntuneBrandingProfile.md)
+### [New-MgBetaDeviceManagementIntuneBrandingProfile](New-MgBetaDeviceManagementIntuneBrandingProfile.md)
 Create new navigation property to intuneBrandingProfiles for deviceManagement
 
-### [New-MgDeviceManagementIntuneBrandingProfileAssignment](New-MgDeviceManagementIntuneBrandingProfileAssignment.md)
+### [New-MgBetaDeviceManagementIntuneBrandingProfileAssignment](New-MgBetaDeviceManagementIntuneBrandingProfileAssignment.md)
 Create new navigation property to assignments for deviceManagement
 
-### [New-MgDeviceManagementIoUpdateStatuses](New-MgDeviceManagementIoUpdateStatuses.md)
+### [New-MgBetaDeviceManagementIoUpdateStatuses](New-MgBetaDeviceManagementIoUpdateStatuses.md)
 Create new navigation property to iosUpdateStatuses for deviceManagement
 
-### [New-MgDeviceManagementMobileThreatDefenseConnector](New-MgDeviceManagementMobileThreatDefenseConnector.md)
+### [New-MgBetaDeviceManagementMobileThreatDefenseConnector](New-MgBetaDeviceManagementMobileThreatDefenseConnector.md)
 Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
 
-### [New-MgDeviceManagementNdeConnector](New-MgDeviceManagementNdeConnector.md)
+### [New-MgBetaDeviceManagementNdeConnector](New-MgBetaDeviceManagementNdeConnector.md)
 Create new navigation property to ndesConnectors for deviceManagement
 
-### [New-MgDeviceManagementPartner](New-MgDeviceManagementPartner.md)
+### [New-MgBetaDeviceManagementPartner](New-MgBetaDeviceManagementPartner.md)
 Create new navigation property to deviceManagementPartners for deviceManagement
 
-### [New-MgDeviceManagementRemoteAssistancePartner](New-MgDeviceManagementRemoteAssistancePartner.md)
+### [New-MgBetaDeviceManagementRemoteAssistancePartner](New-MgBetaDeviceManagementRemoteAssistancePartner.md)
 Create new navigation property to remoteAssistancePartners for deviceManagement
 
-### [New-MgDeviceManagementResourceOperation](New-MgDeviceManagementResourceOperation.md)
+### [New-MgBetaDeviceManagementResourceOperation](New-MgBetaDeviceManagementResourceOperation.md)
 Create new navigation property to resourceOperations for deviceManagement
 
-### [New-MgDeviceManagementRoleAssignment](New-MgDeviceManagementRoleAssignment.md)
+### [New-MgBetaDeviceManagementRoleAssignment](New-MgBetaDeviceManagementRoleAssignment.md)
 Create new navigation property to roleAssignments for deviceManagement
 
-### [New-MgDeviceManagementRoleDefinition](New-MgDeviceManagementRoleDefinition.md)
+### [New-MgBetaDeviceManagementRoleDefinition](New-MgBetaDeviceManagementRoleDefinition.md)
 Create new navigation property to roleDefinitions for deviceManagement
 
-### [New-MgDeviceManagementRoleDefinitionRoleAssignment](New-MgDeviceManagementRoleDefinitionRoleAssignment.md)
+### [New-MgBetaDeviceManagementRoleDefinitionRoleAssignment](New-MgBetaDeviceManagementRoleDefinitionRoleAssignment.md)
 Create new navigation property to roleAssignments for deviceManagement
 
-### [New-MgDeviceManagementRoleScopeTag](New-MgDeviceManagementRoleScopeTag.md)
+### [New-MgBetaDeviceManagementRoleScopeTag](New-MgBetaDeviceManagementRoleScopeTag.md)
 Create new navigation property to roleScopeTags for deviceManagement
 
-### [New-MgDeviceManagementRoleScopeTagAssignment](New-MgDeviceManagementRoleScopeTagAssignment.md)
+### [New-MgBetaDeviceManagementRoleScopeTagAssignment](New-MgBetaDeviceManagementRoleScopeTagAssignment.md)
 Create new navigation property to assignments for deviceManagement
 
-### [New-MgDeviceManagementTelecomExpenseManagementPartner](New-MgDeviceManagementTelecomExpenseManagementPartner.md)
+### [New-MgBetaDeviceManagementTelecomExpenseManagementPartner](New-MgBetaDeviceManagementTelecomExpenseManagementPartner.md)
 Create new navigation property to telecomExpenseManagementPartners for deviceManagement
 
-### [New-MgDeviceManagementTermAndCondition](New-MgDeviceManagementTermAndCondition.md)
+### [New-MgBetaDeviceManagementTermAndCondition](New-MgBetaDeviceManagementTermAndCondition.md)
 Create new navigation property to termsAndConditions for deviceManagement
 
-### [New-MgDeviceManagementTermAndConditionAcceptanceStatuses](New-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
+### [New-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses](New-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses.md)
 Create new navigation property to acceptanceStatuses for deviceManagement
 
-### [New-MgDeviceManagementTermAndConditionAssignment](New-MgDeviceManagementTermAndConditionAssignment.md)
+### [New-MgBetaDeviceManagementTermAndConditionAssignment](New-MgBetaDeviceManagementTermAndConditionAssignment.md)
 Create new navigation property to assignments for deviceManagement
 
-### [New-MgDeviceManagementTermAndConditionGroupAssignment](New-MgDeviceManagementTermAndConditionGroupAssignment.md)
+### [New-MgBetaDeviceManagementTermAndConditionGroupAssignment](New-MgBetaDeviceManagementTermAndConditionGroupAssignment.md)
 Create new navigation property to groupAssignments for deviceManagement
 
-### [New-MgDeviceManagementUserPfxCertificate](New-MgDeviceManagementUserPfxCertificate.md)
+### [New-MgBetaDeviceManagementUserPfxCertificate](New-MgBetaDeviceManagementUserPfxCertificate.md)
 Create new navigation property to userPfxCertificates for deviceManagement
 
-### [New-MgDeviceManagementVirtualEndpointDeviceImage](New-MgDeviceManagementVirtualEndpointDeviceImage.md)
+### [New-MgBetaDeviceManagementVirtualEndpointDeviceImage](New-MgBetaDeviceManagementVirtualEndpointDeviceImage.md)
 Create a new cloudPcDeviceImage object.
 Upload a custom OS image that you can later provision on Cloud PCs.
 
-### [New-MgDeviceManagementVirtualEndpointExternalPartnerSetting](New-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
+### [New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Create a new cloudPcExternalPartnerSetting object.
 
-### [New-MgDeviceManagementVirtualEndpointGalleryImage](New-MgDeviceManagementVirtualEndpointGalleryImage.md)
+### [New-MgBetaDeviceManagementVirtualEndpointGalleryImage](New-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 Create new navigation property to galleryImages for deviceManagement
 
-### [New-MgDeviceManagementVirtualEndpointOnPremisesConnection](New-MgDeviceManagementVirtualEndpointOnPremisesConnection.md)
+### [New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection](New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection.md)
 Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
 
-### [New-MgDeviceManagementVirtualEndpointProvisioningPolicy](New-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
+### [New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Create a new cloudPcProvisioningPolicy object.
 
-### [New-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](New-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
+### [New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 Create new navigation property to assignments for deviceManagement
 
-### [New-MgDeviceManagementVirtualEndpointReportExportJob](New-MgDeviceManagementVirtualEndpointReportExportJob.md)
+### [New-MgBetaDeviceManagementVirtualEndpointReportExportJob](New-MgBetaDeviceManagementVirtualEndpointReportExportJob.md)
 Create a new cloudPcExportJob object.
 
-### [New-MgDeviceManagementVirtualEndpointServicePlan](New-MgDeviceManagementVirtualEndpointServicePlan.md)
+### [New-MgBetaDeviceManagementVirtualEndpointServicePlan](New-MgBetaDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement
 
-### [New-MgDeviceManagementVirtualEndpointSnapshot](New-MgDeviceManagementVirtualEndpointSnapshot.md)
+### [New-MgBetaDeviceManagementVirtualEndpointSnapshot](New-MgBetaDeviceManagementVirtualEndpointSnapshot.md)
 Create new navigation property to snapshots for deviceManagement
 
-### [New-MgDeviceManagementVirtualEndpointSupportedRegion](New-MgDeviceManagementVirtualEndpointSupportedRegion.md)
+### [New-MgBetaDeviceManagementVirtualEndpointSupportedRegion](New-MgBetaDeviceManagementVirtualEndpointSupportedRegion.md)
 Create new navigation property to supportedRegions for deviceManagement
 
-### [New-MgDeviceManagementVirtualEndpointUserSetting](New-MgDeviceManagementVirtualEndpointUserSetting.md)
+### [New-MgBetaDeviceManagementVirtualEndpointUserSetting](New-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Create a new cloudPcUserSetting object.
 
-### [New-MgDeviceManagementVirtualEndpointUserSettingAssignment](New-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
+### [New-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](New-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Create new navigation property to assignments for deviceManagement
 
-### [Remove-MgDeviceManagementApplePushNotificationCertificate](Remove-MgDeviceManagementApplePushNotificationCertificate.md)
+### [Remove-MgBetaDeviceManagementApplePushNotificationCertificate](Remove-MgBetaDeviceManagementApplePushNotificationCertificate.md)
 Delete navigation property applePushNotificationCertificate for deviceManagement
 
-### [Remove-MgDeviceManagementAuditEvent](Remove-MgDeviceManagementAuditEvent.md)
+### [Remove-MgBetaDeviceManagementAuditEvent](Remove-MgBetaDeviceManagementAuditEvent.md)
 Delete navigation property auditEvents for deviceManagement
 
-### [Remove-MgDeviceManagementCartToClassAssociation](Remove-MgDeviceManagementCartToClassAssociation.md)
+### [Remove-MgBetaDeviceManagementCartToClassAssociation](Remove-MgBetaDeviceManagementCartToClassAssociation.md)
 Delete navigation property cartToClassAssociations for deviceManagement
 
-### [Remove-MgDeviceManagementComanagementEligibleDevice](Remove-MgDeviceManagementComanagementEligibleDevice.md)
+### [Remove-MgBetaDeviceManagementComanagementEligibleDevice](Remove-MgBetaDeviceManagementComanagementEligibleDevice.md)
 Delete navigation property comanagementEligibleDevices for deviceManagement
 
-### [Remove-MgDeviceManagementComplianceManagementPartner](Remove-MgDeviceManagementComplianceManagementPartner.md)
+### [Remove-MgBetaDeviceManagementComplianceManagementPartner](Remove-MgBetaDeviceManagementComplianceManagementPartner.md)
 Delete navigation property complianceManagementPartners for deviceManagement
 
-### [Remove-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState](Remove-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState.md)
+### [Remove-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState](Remove-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState.md)
 Delete navigation property deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
 
-### [Remove-MgDeviceManagementDeviceConfigurationRestrictedAppViolation](Remove-MgDeviceManagementDeviceConfigurationRestrictedAppViolation.md)
+### [Remove-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation](Remove-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation.md)
 Delete navigation property deviceConfigurationRestrictedAppsViolations for deviceManagement
 
-### [Remove-MgDeviceManagementDomainJoinConnector](Remove-MgDeviceManagementDomainJoinConnector.md)
+### [Remove-MgBetaDeviceManagementDomainJoinConnector](Remove-MgBetaDeviceManagementDomainJoinConnector.md)
 Delete navigation property domainJoinConnectors for deviceManagement
 
-### [Remove-MgDeviceManagementExchangeConnector](Remove-MgDeviceManagementExchangeConnector.md)
+### [Remove-MgBetaDeviceManagementExchangeConnector](Remove-MgBetaDeviceManagementExchangeConnector.md)
 Delete navigation property exchangeConnectors for deviceManagement
 
-### [Remove-MgDeviceManagementExchangeOnPremisPolicy](Remove-MgDeviceManagementExchangeOnPremisPolicy.md)
+### [Remove-MgBetaDeviceManagementExchangeOnPremisPolicy](Remove-MgBetaDeviceManagementExchangeOnPremisPolicy.md)
 Delete navigation property exchangeOnPremisesPolicies for deviceManagement
 
-### [Remove-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting](Remove-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting.md)
+### [Remove-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting](Remove-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting.md)
 Delete navigation property conditionalAccessSettings for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyCategory](Remove-MgDeviceManagementGroupPolicyCategory.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyCategory](Remove-MgBetaDeviceManagementGroupPolicyCategory.md)
 Delete navigation property groupPolicyCategories for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinition](Remove-MgDeviceManagementGroupPolicyDefinition.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinition](Remove-MgBetaDeviceManagementGroupPolicyDefinition.md)
 Delete navigation property groupPolicyDefinitions for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionFile](Remove-MgDeviceManagementGroupPolicyDefinitionFile.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionFile](Remove-MgBetaDeviceManagementGroupPolicyDefinitionFile.md)
 Delete navigation property groupPolicyDefinitionFiles for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinition](Remove-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinition.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinition](Remove-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinition.md)
 Delete navigation property nextVersionDefinition for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation](Remove-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation](Remove-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation.md)
 Delete navigation property presentations for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition](Remove-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition](Remove-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition.md)
 Delete navigation property previousVersionDefinition for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation](Remove-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation](Remove-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation.md)
 Delete navigation property presentations for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionPresentation](Remove-MgDeviceManagementGroupPolicyDefinitionPresentation.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionPresentation](Remove-MgBetaDeviceManagementGroupPolicyDefinitionPresentation.md)
 Delete navigation property presentations for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition](Remove-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition](Remove-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition.md)
 Delete navigation property previousVersionDefinition for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition](Remove-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition](Remove-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition.md)
 Delete navigation property nextVersionDefinition for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation](Remove-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation](Remove-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation.md)
 Delete navigation property presentations for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation](Remove-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation](Remove-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation.md)
 Delete navigation property presentations for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyMigrationReport](Remove-MgDeviceManagementGroupPolicyMigrationReport.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyMigrationReport](Remove-MgBetaDeviceManagementGroupPolicyMigrationReport.md)
 Delete navigation property groupPolicyMigrationReports for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping](Remove-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping](Remove-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping.md)
 Delete navigation property groupPolicySettingMappings for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension](Remove-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension](Remove-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension.md)
 Delete navigation property unsupportedGroupPolicyExtensions for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyObjectFile](Remove-MgDeviceManagementGroupPolicyObjectFile.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyObjectFile](Remove-MgBetaDeviceManagementGroupPolicyObjectFile.md)
 Delete navigation property groupPolicyObjectFiles for deviceManagement
 
-### [Remove-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation](Remove-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation.md)
+### [Remove-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation](Remove-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation.md)
 Delete navigation property groupPolicyOperations for deviceManagement
 
-### [Remove-MgDeviceManagementIntuneBrandingProfile](Remove-MgDeviceManagementIntuneBrandingProfile.md)
+### [Remove-MgBetaDeviceManagementIntuneBrandingProfile](Remove-MgBetaDeviceManagementIntuneBrandingProfile.md)
 Delete navigation property intuneBrandingProfiles for deviceManagement
 
-### [Remove-MgDeviceManagementIntuneBrandingProfileAssignment](Remove-MgDeviceManagementIntuneBrandingProfileAssignment.md)
+### [Remove-MgBetaDeviceManagementIntuneBrandingProfileAssignment](Remove-MgBetaDeviceManagementIntuneBrandingProfileAssignment.md)
 Delete navigation property assignments for deviceManagement
 
-### [Remove-MgDeviceManagementIoUpdateStatuses](Remove-MgDeviceManagementIoUpdateStatuses.md)
+### [Remove-MgBetaDeviceManagementIoUpdateStatuses](Remove-MgBetaDeviceManagementIoUpdateStatuses.md)
 Delete navigation property iosUpdateStatuses for deviceManagement
 
-### [Remove-MgDeviceManagementMobileThreatDefenseConnector](Remove-MgDeviceManagementMobileThreatDefenseConnector.md)
+### [Remove-MgBetaDeviceManagementMobileThreatDefenseConnector](Remove-MgBetaDeviceManagementMobileThreatDefenseConnector.md)
 Delete navigation property mobileThreatDefenseConnectors for deviceManagement
 
-### [Remove-MgDeviceManagementNdeConnector](Remove-MgDeviceManagementNdeConnector.md)
+### [Remove-MgBetaDeviceManagementNdeConnector](Remove-MgBetaDeviceManagementNdeConnector.md)
 Delete navigation property ndesConnectors for deviceManagement
 
-### [Remove-MgDeviceManagementPartner](Remove-MgDeviceManagementPartner.md)
+### [Remove-MgBetaDeviceManagementPartner](Remove-MgBetaDeviceManagementPartner.md)
 Delete navigation property deviceManagementPartners for deviceManagement
 
-### [Remove-MgDeviceManagementRemoteAssistancePartner](Remove-MgDeviceManagementRemoteAssistancePartner.md)
+### [Remove-MgBetaDeviceManagementRemoteAssistancePartner](Remove-MgBetaDeviceManagementRemoteAssistancePartner.md)
 Delete navigation property remoteAssistancePartners for deviceManagement
 
-### [Remove-MgDeviceManagementResourceOperation](Remove-MgDeviceManagementResourceOperation.md)
+### [Remove-MgBetaDeviceManagementResourceOperation](Remove-MgBetaDeviceManagementResourceOperation.md)
 Delete navigation property resourceOperations for deviceManagement
 
-### [Remove-MgDeviceManagementRoleAssignment](Remove-MgDeviceManagementRoleAssignment.md)
+### [Remove-MgBetaDeviceManagementRoleAssignment](Remove-MgBetaDeviceManagementRoleAssignment.md)
 Delete navigation property roleAssignments for deviceManagement
 
-### [Remove-MgDeviceManagementRoleDefinition](Remove-MgDeviceManagementRoleDefinition.md)
+### [Remove-MgBetaDeviceManagementRoleDefinition](Remove-MgBetaDeviceManagementRoleDefinition.md)
 Delete navigation property roleDefinitions for deviceManagement
 
-### [Remove-MgDeviceManagementRoleDefinitionRoleAssignment](Remove-MgDeviceManagementRoleDefinitionRoleAssignment.md)
+### [Remove-MgBetaDeviceManagementRoleDefinitionRoleAssignment](Remove-MgBetaDeviceManagementRoleDefinitionRoleAssignment.md)
 Delete navigation property roleAssignments for deviceManagement
 
-### [Remove-MgDeviceManagementRoleScopeTag](Remove-MgDeviceManagementRoleScopeTag.md)
+### [Remove-MgBetaDeviceManagementRoleScopeTag](Remove-MgBetaDeviceManagementRoleScopeTag.md)
 Delete navigation property roleScopeTags for deviceManagement
 
-### [Remove-MgDeviceManagementRoleScopeTagAssignment](Remove-MgDeviceManagementRoleScopeTagAssignment.md)
+### [Remove-MgBetaDeviceManagementRoleScopeTagAssignment](Remove-MgBetaDeviceManagementRoleScopeTagAssignment.md)
 Delete navigation property assignments for deviceManagement
 
-### [Remove-MgDeviceManagementTelecomExpenseManagementPartner](Remove-MgDeviceManagementTelecomExpenseManagementPartner.md)
+### [Remove-MgBetaDeviceManagementTelecomExpenseManagementPartner](Remove-MgBetaDeviceManagementTelecomExpenseManagementPartner.md)
 Delete navigation property telecomExpenseManagementPartners for deviceManagement
 
-### [Remove-MgDeviceManagementTermAndCondition](Remove-MgDeviceManagementTermAndCondition.md)
+### [Remove-MgBetaDeviceManagementTermAndCondition](Remove-MgBetaDeviceManagementTermAndCondition.md)
 Delete navigation property termsAndConditions for deviceManagement
 
-### [Remove-MgDeviceManagementTermAndConditionAcceptanceStatuses](Remove-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
+### [Remove-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses](Remove-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses.md)
 Delete navigation property acceptanceStatuses for deviceManagement
 
-### [Remove-MgDeviceManagementTermAndConditionAssignment](Remove-MgDeviceManagementTermAndConditionAssignment.md)
+### [Remove-MgBetaDeviceManagementTermAndConditionAssignment](Remove-MgBetaDeviceManagementTermAndConditionAssignment.md)
 Delete navigation property assignments for deviceManagement
 
-### [Remove-MgDeviceManagementTermAndConditionGroupAssignment](Remove-MgDeviceManagementTermAndConditionGroupAssignment.md)
+### [Remove-MgBetaDeviceManagementTermAndConditionGroupAssignment](Remove-MgBetaDeviceManagementTermAndConditionGroupAssignment.md)
 Delete navigation property groupAssignments for deviceManagement
 
-### [Remove-MgDeviceManagementUserPfxCertificate](Remove-MgDeviceManagementUserPfxCertificate.md)
+### [Remove-MgBetaDeviceManagementUserPfxCertificate](Remove-MgBetaDeviceManagementUserPfxCertificate.md)
 Delete navigation property userPfxCertificates for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Remove-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Remove-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
 Delete navigation property crossCloudGovernmentOrganizationMapping for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointDeviceImage](Remove-MgDeviceManagementVirtualEndpointDeviceImage.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage](Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage.md)
 Delete navigation property deviceImages for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointExternalPartnerSetting](Remove-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](Remove-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Delete navigation property externalPartnerSettings for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointGalleryImage](Remove-MgDeviceManagementVirtualEndpointGalleryImage.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointGalleryImage](Remove-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 Delete navigation property galleryImages for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointOnPremisesConnection](Remove-MgDeviceManagementVirtualEndpointOnPremisesConnection.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection](Remove-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection.md)
 Delete navigation property onPremisesConnections for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointOrganizationSetting](Remove-MgDeviceManagementVirtualEndpointOrganizationSetting.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Delete navigation property organizationSettings for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy](Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Delete navigation property provisioningPolicies for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Remove-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 Delete navigation property assignments for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointReport](Remove-MgDeviceManagementVirtualEndpointReport.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointReport](Remove-MgBetaDeviceManagementVirtualEndpointReport.md)
 Delete navigation property reports for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointReportExportJob](Remove-MgDeviceManagementVirtualEndpointReportExportJob.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointReportExportJob](Remove-MgBetaDeviceManagementVirtualEndpointReportExportJob.md)
 Delete navigation property exportJobs for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointServicePlan](Remove-MgDeviceManagementVirtualEndpointServicePlan.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointServicePlan](Remove-MgBetaDeviceManagementVirtualEndpointServicePlan.md)
 Delete navigation property servicePlans for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointSnapshot](Remove-MgDeviceManagementVirtualEndpointSnapshot.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointSnapshot](Remove-MgBetaDeviceManagementVirtualEndpointSnapshot.md)
 Delete navigation property snapshots for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointSupportedRegion](Remove-MgDeviceManagementVirtualEndpointSupportedRegion.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointSupportedRegion](Remove-MgBetaDeviceManagementVirtualEndpointSupportedRegion.md)
 Delete navigation property supportedRegions for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointUserSetting](Remove-MgDeviceManagementVirtualEndpointUserSetting.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointUserSetting](Remove-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Delete navigation property userSettings for deviceManagement
 
-### [Remove-MgDeviceManagementVirtualEndpointUserSettingAssignment](Remove-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
+### [Remove-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](Remove-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Delete navigation property assignments for deviceManagement
 
-### [Update-MgDeviceManagementApplePushNotificationCertificate](Update-MgDeviceManagementApplePushNotificationCertificate.md)
+### [Update-MgBetaDeviceManagementApplePushNotificationCertificate](Update-MgBetaDeviceManagementApplePushNotificationCertificate.md)
 Update the navigation property applePushNotificationCertificate in deviceManagement
 
-### [Update-MgDeviceManagementAuditEvent](Update-MgDeviceManagementAuditEvent.md)
+### [Update-MgBetaDeviceManagementAuditEvent](Update-MgBetaDeviceManagementAuditEvent.md)
 Update the navigation property auditEvents in deviceManagement
 
-### [Update-MgDeviceManagementCartToClassAssociation](Update-MgDeviceManagementCartToClassAssociation.md)
+### [Update-MgBetaDeviceManagementCartToClassAssociation](Update-MgBetaDeviceManagementCartToClassAssociation.md)
 Update the navigation property cartToClassAssociations in deviceManagement
 
-### [Update-MgDeviceManagementComanagementEligibleDevice](Update-MgDeviceManagementComanagementEligibleDevice.md)
+### [Update-MgBetaDeviceManagementComanagementEligibleDevice](Update-MgBetaDeviceManagementComanagementEligibleDevice.md)
 Update the navigation property comanagementEligibleDevices in deviceManagement
 
-### [Update-MgDeviceManagementComplianceManagementPartner](Update-MgDeviceManagementComplianceManagementPartner.md)
+### [Update-MgBetaDeviceManagementComplianceManagementPartner](Update-MgBetaDeviceManagementComplianceManagementPartner.md)
 Update the navigation property complianceManagementPartners in deviceManagement
 
-### [Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState](Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState.md)
+### [Update-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState](Update-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState.md)
 Update the navigation property deviceConfigurationsAllManagedDeviceCertificateStates in deviceManagement
 
-### [Update-MgDeviceManagementDeviceConfigurationRestrictedAppViolation](Update-MgDeviceManagementDeviceConfigurationRestrictedAppViolation.md)
+### [Update-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation](Update-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation.md)
 Update the navigation property deviceConfigurationRestrictedAppsViolations in deviceManagement
 
-### [Update-MgDeviceManagementDomainJoinConnector](Update-MgDeviceManagementDomainJoinConnector.md)
+### [Update-MgBetaDeviceManagementDomainJoinConnector](Update-MgBetaDeviceManagementDomainJoinConnector.md)
 Update the navigation property domainJoinConnectors in deviceManagement
 
-### [Update-MgDeviceManagementExchangeConnector](Update-MgDeviceManagementExchangeConnector.md)
+### [Update-MgBetaDeviceManagementExchangeConnector](Update-MgBetaDeviceManagementExchangeConnector.md)
 Update the navigation property exchangeConnectors in deviceManagement
 
-### [Update-MgDeviceManagementExchangeOnPremisPolicy](Update-MgDeviceManagementExchangeOnPremisPolicy.md)
+### [Update-MgBetaDeviceManagementExchangeOnPremisPolicy](Update-MgBetaDeviceManagementExchangeOnPremisPolicy.md)
 Update the navigation property exchangeOnPremisesPolicies in deviceManagement
 
-### [Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting](Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting.md)
+### [Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting](Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting.md)
 Update the navigation property conditionalAccessSettings in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyCategory](Update-MgDeviceManagementGroupPolicyCategory.md)
+### [Update-MgBetaDeviceManagementGroupPolicyCategory](Update-MgBetaDeviceManagementGroupPolicyCategory.md)
 Update the navigation property groupPolicyCategories in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinition](Update-MgDeviceManagementGroupPolicyDefinition.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinition](Update-MgBetaDeviceManagementGroupPolicyDefinition.md)
 Update the navigation property groupPolicyDefinitions in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionFile](Update-MgDeviceManagementGroupPolicyDefinitionFile.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionFile](Update-MgBetaDeviceManagementGroupPolicyDefinitionFile.md)
 Update the navigation property groupPolicyDefinitionFiles in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinition](Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinition.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinition](Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinition.md)
 Update the navigation property nextVersionDefinition in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation](Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation](Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPresentation.md)
 Update the navigation property presentations in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition](Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition](Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition.md)
 Update the navigation property previousVersionDefinition in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation](Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation](Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionPresentation.md)
 Update the navigation property presentations in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionPresentation](Update-MgDeviceManagementGroupPolicyDefinitionPresentation.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionPresentation](Update-MgBetaDeviceManagementGroupPolicyDefinitionPresentation.md)
 Update the navigation property presentations in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition](Update-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition](Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinition.md)
 Update the navigation property previousVersionDefinition in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition](Update-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition](Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition.md)
 Update the navigation property nextVersionDefinition in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation](Update-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation](Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation.md)
 Update the navigation property presentations in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation](Update-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation.md)
+### [Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation](Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionPresentation.md)
 Update the navigation property presentations in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyMigrationReport](Update-MgDeviceManagementGroupPolicyMigrationReport.md)
+### [Update-MgBetaDeviceManagementGroupPolicyMigrationReport](Update-MgBetaDeviceManagementGroupPolicyMigrationReport.md)
 Update the navigation property groupPolicyMigrationReports in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping](Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping.md)
+### [Update-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping](Update-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping.md)
 Update the navigation property groupPolicySettingMappings in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension](Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension.md)
+### [Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension](Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension.md)
 Update the navigation property unsupportedGroupPolicyExtensions in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyObjectFile](Update-MgDeviceManagementGroupPolicyObjectFile.md)
+### [Update-MgBetaDeviceManagementGroupPolicyObjectFile](Update-MgBetaDeviceManagementGroupPolicyObjectFile.md)
 Update the navigation property groupPolicyObjectFiles in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile](Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile.md)
+### [Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile](Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile.md)
 Update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
 
-### [Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation](Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation.md)
+### [Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation](Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation.md)
 Update the navigation property groupPolicyOperations in deviceManagement
 
-### [Update-MgDeviceManagementIntuneBrandingProfile](Update-MgDeviceManagementIntuneBrandingProfile.md)
+### [Update-MgBetaDeviceManagementIntuneBrandingProfile](Update-MgBetaDeviceManagementIntuneBrandingProfile.md)
 Update the navigation property intuneBrandingProfiles in deviceManagement
 
-### [Update-MgDeviceManagementIntuneBrandingProfileAssignment](Update-MgDeviceManagementIntuneBrandingProfileAssignment.md)
+### [Update-MgBetaDeviceManagementIntuneBrandingProfileAssignment](Update-MgBetaDeviceManagementIntuneBrandingProfileAssignment.md)
 Update the navigation property assignments in deviceManagement
 
-### [Update-MgDeviceManagementIoUpdateStatuses](Update-MgDeviceManagementIoUpdateStatuses.md)
+### [Update-MgBetaDeviceManagementIoUpdateStatuses](Update-MgBetaDeviceManagementIoUpdateStatuses.md)
 Update the navigation property iosUpdateStatuses in deviceManagement
 
-### [Update-MgDeviceManagementMobileThreatDefenseConnector](Update-MgDeviceManagementMobileThreatDefenseConnector.md)
+### [Update-MgBetaDeviceManagementMobileThreatDefenseConnector](Update-MgBetaDeviceManagementMobileThreatDefenseConnector.md)
 Update the navigation property mobileThreatDefenseConnectors in deviceManagement
 
-### [Update-MgDeviceManagementNdeConnector](Update-MgDeviceManagementNdeConnector.md)
+### [Update-MgBetaDeviceManagementNdeConnector](Update-MgBetaDeviceManagementNdeConnector.md)
 Update the navigation property ndesConnectors in deviceManagement
 
-### [Update-MgDeviceManagementPartner](Update-MgDeviceManagementPartner.md)
+### [Update-MgBetaDeviceManagementPartner](Update-MgBetaDeviceManagementPartner.md)
 Update the navigation property deviceManagementPartners in deviceManagement
 
-### [Update-MgDeviceManagementRemoteAssistancePartner](Update-MgDeviceManagementRemoteAssistancePartner.md)
+### [Update-MgBetaDeviceManagementRemoteAssistancePartner](Update-MgBetaDeviceManagementRemoteAssistancePartner.md)
 Update the navigation property remoteAssistancePartners in deviceManagement
 
-### [Update-MgDeviceManagementResourceOperation](Update-MgDeviceManagementResourceOperation.md)
+### [Update-MgBetaDeviceManagementResourceOperation](Update-MgBetaDeviceManagementResourceOperation.md)
 Update the navigation property resourceOperations in deviceManagement
 
-### [Update-MgDeviceManagementRoleAssignment](Update-MgDeviceManagementRoleAssignment.md)
+### [Update-MgBetaDeviceManagementRoleAssignment](Update-MgBetaDeviceManagementRoleAssignment.md)
 Update the navigation property roleAssignments in deviceManagement
 
-### [Update-MgDeviceManagementRoleDefinition](Update-MgDeviceManagementRoleDefinition.md)
+### [Update-MgBetaDeviceManagementRoleDefinition](Update-MgBetaDeviceManagementRoleDefinition.md)
 Update the navigation property roleDefinitions in deviceManagement
 
-### [Update-MgDeviceManagementRoleDefinitionRoleAssignment](Update-MgDeviceManagementRoleDefinitionRoleAssignment.md)
+### [Update-MgBetaDeviceManagementRoleDefinitionRoleAssignment](Update-MgBetaDeviceManagementRoleDefinitionRoleAssignment.md)
 Update the navigation property roleAssignments in deviceManagement
 
-### [Update-MgDeviceManagementRoleScopeTag](Update-MgDeviceManagementRoleScopeTag.md)
+### [Update-MgBetaDeviceManagementRoleScopeTag](Update-MgBetaDeviceManagementRoleScopeTag.md)
 Update the navigation property roleScopeTags in deviceManagement
 
-### [Update-MgDeviceManagementRoleScopeTagAssignment](Update-MgDeviceManagementRoleScopeTagAssignment.md)
+### [Update-MgBetaDeviceManagementRoleScopeTagAssignment](Update-MgBetaDeviceManagementRoleScopeTagAssignment.md)
 Update the navigation property assignments in deviceManagement
 
-### [Update-MgDeviceManagementTelecomExpenseManagementPartner](Update-MgDeviceManagementTelecomExpenseManagementPartner.md)
+### [Update-MgBetaDeviceManagementTelecomExpenseManagementPartner](Update-MgBetaDeviceManagementTelecomExpenseManagementPartner.md)
 Update the navigation property telecomExpenseManagementPartners in deviceManagement
 
-### [Update-MgDeviceManagementTermAndCondition](Update-MgDeviceManagementTermAndCondition.md)
+### [Update-MgBetaDeviceManagementTermAndCondition](Update-MgBetaDeviceManagementTermAndCondition.md)
 Update the navigation property termsAndConditions in deviceManagement
 
-### [Update-MgDeviceManagementTermAndConditionAcceptanceStatuses](Update-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
+### [Update-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses](Update-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses.md)
 Update the navigation property acceptanceStatuses in deviceManagement
 
-### [Update-MgDeviceManagementTermAndConditionAssignment](Update-MgDeviceManagementTermAndConditionAssignment.md)
+### [Update-MgBetaDeviceManagementTermAndConditionAssignment](Update-MgBetaDeviceManagementTermAndConditionAssignment.md)
 Update the navigation property assignments in deviceManagement
 
-### [Update-MgDeviceManagementTermAndConditionGroupAssignment](Update-MgDeviceManagementTermAndConditionGroupAssignment.md)
+### [Update-MgBetaDeviceManagementTermAndConditionGroupAssignment](Update-MgBetaDeviceManagementTermAndConditionGroupAssignment.md)
 Update the navigation property groupAssignments in deviceManagement
 
-### [Update-MgDeviceManagementUserPfxCertificate](Update-MgDeviceManagementUserPfxCertificate.md)
+### [Update-MgBetaDeviceManagementUserPfxCertificate](Update-MgBetaDeviceManagementUserPfxCertificate.md)
 Update the navigation property userPfxCertificates in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Update-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
 Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointDeviceImage](Update-MgDeviceManagementVirtualEndpointDeviceImage.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointDeviceImage](Update-MgBetaDeviceManagementVirtualEndpointDeviceImage.md)
 Update the navigation property deviceImages in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointExternalPartnerSetting](Update-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](Update-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Update the navigation property externalPartnerSettings in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointGalleryImage](Update-MgDeviceManagementVirtualEndpointGalleryImage.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointGalleryImage](Update-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 Update the navigation property galleryImages in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointOnPremisesConnection](Update-MgDeviceManagementVirtualEndpointOnPremisesConnection.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection](Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection.md)
 Update the navigation property onPremisesConnections in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointOrganizationSetting](Update-MgDeviceManagementVirtualEndpointOrganizationSetting.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Update the properties of the cloudPcOrganizationSettings object in a tenant.
 
-### [Update-MgDeviceManagementVirtualEndpointProvisioningPolicy](Update-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Update the navigation property provisioningPolicies in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 Update the navigation property assignments in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointReport](Update-MgDeviceManagementVirtualEndpointReport.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointReport](Update-MgBetaDeviceManagementVirtualEndpointReport.md)
 Update the navigation property reports in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointReportExportJob](Update-MgDeviceManagementVirtualEndpointReportExportJob.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointReportExportJob](Update-MgBetaDeviceManagementVirtualEndpointReportExportJob.md)
 Update the navigation property exportJobs in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointServicePlan](Update-MgDeviceManagementVirtualEndpointServicePlan.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointServicePlan](Update-MgBetaDeviceManagementVirtualEndpointServicePlan.md)
 Update the navigation property servicePlans in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointSnapshot](Update-MgDeviceManagementVirtualEndpointSnapshot.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointSnapshot](Update-MgBetaDeviceManagementVirtualEndpointSnapshot.md)
 Update the navigation property snapshots in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointSupportedRegion](Update-MgDeviceManagementVirtualEndpointSupportedRegion.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointSupportedRegion](Update-MgBetaDeviceManagementVirtualEndpointSupportedRegion.md)
 Update the navigation property supportedRegions in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointUserSetting](Update-MgDeviceManagementVirtualEndpointUserSetting.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointUserSetting](Update-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Update the navigation property userSettings in deviceManagement
 
-### [Update-MgDeviceManagementVirtualEndpointUserSettingAssignment](Update-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
+### [Update-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](Update-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Update the navigation property assignments in deviceManagement
 

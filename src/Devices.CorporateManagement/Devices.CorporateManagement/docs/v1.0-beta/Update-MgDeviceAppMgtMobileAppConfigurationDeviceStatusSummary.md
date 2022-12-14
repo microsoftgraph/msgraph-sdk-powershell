@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappconfigurationdevicestatussummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappconfigurationdevicestatussummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
+# Update-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
 
 ## SYNOPSIS
 Update the navigation property deviceStatusSummary in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceStatusSummary in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -ManagedDeviceMobileAppConfigurationId <String>
+Update-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -ManagedDeviceMobileAppConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-ConfigurationVersion <Int32>] [-ConflictCount <Int32>]
  [-ErrorCount <Int32>] [-FailedCount <Int32>] [-Id <String>] [-LastUpdateDateTime <DateTime>]
  [-NotApplicableCount <Int32>] [-NotApplicablePlatformCount <Int32>] [-PendingCount <Int32>]
@@ -23,14 +23,14 @@ Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -ManagedDeviceMob
 
 ### Update
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -ManagedDeviceMobileAppConfigurationId <String>
+Update-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -ManagedDeviceMobileAppConfigurationId <String>
  -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
+Update-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
+Update-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ConfigurationVersion <Int32>] [-ConflictCount <Int32>] [-ErrorCount <Int32>] [-FailedCount <Int32>]
  [-Id <String>] [-LastUpdateDateTime <DateTime>] [-NotApplicableCount <Int32>]
@@ -73,7 +73,7 @@ Contains properties, inherited properties and actions for an MDM mobile app conf
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -165,7 +165,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -317,9 +317,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
 
 ## OUTPUTS
 
@@ -329,7 +329,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementMobileAppConfigurationDeviceStatusSummary
+### Update-MgBetaDeviceAppManagementMobileAppConfigurationDeviceStatusSummary
 
 COMPLEX PARAMETER PROPERTIES
 

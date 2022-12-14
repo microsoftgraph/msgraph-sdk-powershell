@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/find-mgapplicationsynchronizationtemplateschemadirectory
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/find-mgapplicationsynchronizationtemplateschemadirectory
 schema: 2.0.0
 ---
 
-# Find-MgApplicationSynchronizationTemplateSchemaDirectory
+# Find-MgBetaApplicationSynchronizationTemplateSchemaDirectory
 
 ## SYNOPSIS
 Discover the latest schema definition for provisioning to an application.
@@ -14,13 +14,13 @@ Discover the latest schema definition for provisioning to an application.
 
 ### Discover (Default)
 ```
-Find-MgApplicationSynchronizationTemplateSchemaDirectory -ApplicationId <String>
+Find-MgBetaApplicationSynchronizationTemplateSchemaDirectory -ApplicationId <String>
  -DirectoryDefinitionId <String> -SynchronizationTemplateId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DiscoverViaIdentity
 ```
-Find-MgApplicationSynchronizationTemplateSchemaDirectory -InputObject <IApplicationsIdentity> [-Confirm]
+Find-MgBetaApplicationSynchronizationTemplateSchemaDirectory -InputObject <IApplicationsIdentity> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DiscoverViaIdentity
 Aliases:
 
@@ -128,11 +128,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
 
 ## NOTES
 

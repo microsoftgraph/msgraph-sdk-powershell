@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtsymanteccodesigningcertificate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtsymanteccodesigningcertificate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtSymantecCodeSigningCertificate
+# Get-MgBetaDeviceAppMgtSymantecCodeSigningCertificate
 
 ## SYNOPSIS
 The WinPhone Symantec Code Signing Certificate.
@@ -13,7 +13,7 @@ The WinPhone Symantec Code Signing Certificate.
 ## SYNTAX
 
 ```
-Get-MgDeviceAppMgtSymantecCodeSigningCertificate [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceAppMgtSymantecCodeSigningCertificate [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -61,13 +61,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSymantecCodeSigningCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSymantecCodeSigningCertificate
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementSymantecCodeSigningCertificate
+### Get-MgBetaDeviceAppManagementSymantecCodeSigningCertificate
 
 ## RELATED LINKS
 

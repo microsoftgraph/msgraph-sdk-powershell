@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplicationappmanagementpolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgapplicationappmanagementpolicybyref
 schema: 2.0.0
 ---
 
-# New-MgApplicationAppManagementPolicyByRef
+# New-MgBetaApplicationAppManagementPolicyByRef
 
 ## SYNOPSIS
 Create new navigation property ref to appManagementPolicies for applications
@@ -14,25 +14,25 @@ Create new navigation property ref to appManagementPolicies for applications
 
 ### CreateExpanded (Default)
 ```
-New-MgApplicationAppManagementPolicyByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaApplicationAppManagementPolicyByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgApplicationAppManagementPolicyByRef -ApplicationId <String> -BodyParameter <IReferenceCreate>
+New-MgBetaApplicationAppManagementPolicyByRef -ApplicationId <String> -BodyParameter <IReferenceCreate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgApplicationAppManagementPolicyByRef -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationAppManagementPolicyByRef -InputObject <IApplicationsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgApplicationAppManagementPolicyByRef -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationAppManagementPolicyByRef -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to appManagementPolicies for applications
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgApplicationAppManagementPolicyByRef Cmdlet
+### Example 1: Using the New-MgBetaApplicationAppManagementPolicyByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/policies/appManagementPolicies/{id}"
 }
-New-MgApplicationAppManagementPolicyByRef -ApplicationId $applicationId -BodyParameter $params
+New-MgBetaApplicationAppManagementPolicyByRef -ApplicationId $applicationId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgApplicationAppManagementPolicyByRef Cmdlet.
+This example shows how to use the New-MgBetaApplicationAppManagementPolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

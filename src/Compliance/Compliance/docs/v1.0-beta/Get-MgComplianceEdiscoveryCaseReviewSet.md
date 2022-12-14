@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycasereviewset
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycasereviewset
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseReviewSet
+# Get-MgBetaComplianceEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
 Returns a list of reviewSet objects in the case.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,22 +40,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseReviewSet Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseReviewSet -CaseId $caseId -ReviewSetId $reviewSetId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId $caseId -ReviewSetId $reviewSetId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseReviewSet Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgComplianceEdiscoveryCaseReviewSet Cmdlet
+### Example 2: Using the Get-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseReviewSet -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId $caseId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseReviewSet Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -141,7 +141,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -262,11 +262,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
 
 ## NOTES
 

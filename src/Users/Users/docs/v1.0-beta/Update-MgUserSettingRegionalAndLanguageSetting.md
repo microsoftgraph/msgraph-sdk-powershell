@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusersettingregionalandlanguagesetting
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mgusersettingregionalandlanguagesetting
 schema: 2.0.0
 ---
 
-# Update-MgUserSettingRegionalAndLanguageSetting
+# Update-MgBetaUserSettingRegionalAndLanguageSetting
 
 ## SYNOPSIS
 Update the navigation property regionalAndLanguageSettings in users
@@ -14,7 +14,7 @@ Update the navigation property regionalAndLanguageSettings in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserSettingRegionalAndLanguageSetting -UserId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserSettingRegionalAndLanguageSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AuthoringLanguages <IMicrosoftGraphLocaleInfo[]>] [-DefaultDisplayLanguage <IMicrosoftGraphLocaleInfo>]
  [-DefaultRegionalFormat <IMicrosoftGraphLocaleInfo>]
  [-DefaultSpeechInputLanguage <IMicrosoftGraphLocaleInfo>]
@@ -26,21 +26,21 @@ Update-MgUserSettingRegionalAndLanguageSetting -UserId <String> [-AdditionalProp
 
 ### Update
 ```
-Update-MgUserSettingRegionalAndLanguageSetting -UserId <String>
+Update-MgBetaUserSettingRegionalAndLanguageSetting -UserId <String>
  -BodyParameter <IMicrosoftGraphRegionalAndLanguageSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
+Update-MgBetaUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphRegionalAndLanguageSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
+Update-MgBetaUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
  [-AdditionalProperties <Hashtable>] [-AuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]
  [-DefaultDisplayLanguage <IMicrosoftGraphLocaleInfo>] [-DefaultRegionalFormat <IMicrosoftGraphLocaleInfo>]
  [-DefaultSpeechInputLanguage <IMicrosoftGraphLocaleInfo>]
@@ -55,9 +55,9 @@ Update the navigation property regionalAndLanguageSettings in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserSettingRegionalAndLanguageSetting Cmdlet
+### Example 1: Using the Update-MgBetaUserSettingRegionalAndLanguageSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	AuthoringLanguages = @(
 		@{
@@ -72,10 +72,10 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Update-MgUserSettingRegionalAndLanguageSetting -UserId $userId -BodyParameter $params
+Update-MgBetaUserSettingRegionalAndLanguageSetting -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserSettingRegionalAndLanguageSetting Cmdlet.
+This example shows how to use the Update-MgBetaUserSettingRegionalAndLanguageSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -101,7 +101,7 @@ Not nullable.
 To construct, please use Get-Help -Online and see NOTES section for AUTHORINGLANGUAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocaleInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocaleInfo[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ regionalAndLanguageSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ localeInfo
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTDISPLAYLANGUAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocaleInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocaleInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -149,7 +149,7 @@ localeInfo
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTREGIONALFORMAT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocaleInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocaleInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ localeInfo
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTSPEECHINPUTLANGUAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocaleInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocaleInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ localeInfo
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTTRANSLATIONLANGUAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocaleInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocaleInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -213,7 +213,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -244,7 +244,7 @@ regionalFormatOverrides
 To construct, please use Get-Help -Online and see NOTES section for REGIONALFORMATOVERRIDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegionalFormatOverrides
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegionalFormatOverrides
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -260,7 +260,7 @@ translationPreferences
 To construct, please use Get-Help -Online and see NOTES section for TRANSLATIONPREFERENCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTranslationPreferences
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTranslationPreferences
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -322,9 +322,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

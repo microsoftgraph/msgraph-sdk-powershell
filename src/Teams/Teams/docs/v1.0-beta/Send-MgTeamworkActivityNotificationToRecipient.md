@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/send-mgteamworkactivitynotificationtorecipient
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/send-mgteamworkactivitynotificationtorecipient
 schema: 2.0.0
 ---
 
-# Send-MgTeamworkActivityNotificationToRecipient
+# Send-MgBetaTeamworkActivityNotificationToRecipient
 
 ## SYNOPSIS
 Send activity feed notifications to multiple users, in bulk.
@@ -15,7 +15,7 @@ For more details about sending notifications and the requirements for doing so, 
 
 ### SendExpanded1 (Default)
 ```
-Send-MgTeamworkActivityNotificationToRecipient [-ActivityType <String>] [-AdditionalProperties <Hashtable>]
+Send-MgBetaTeamworkActivityNotificationToRecipient [-ActivityType <String>] [-AdditionalProperties <Hashtable>]
  [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
  [-Recipients <IMicrosoftGraphTeamworkNotificationRecipient[]>] [-TeamsAppId <String>]
  [-TemplateParameters <IMicrosoftGraphKeyValuePair[]>] [-Topic <IMicrosoftGraphTeamworkActivityTopic>]
@@ -24,7 +24,7 @@ Send-MgTeamworkActivityNotificationToRecipient [-ActivityType <String>] [-Additi
 
 ### Send1
 ```
-Send-MgTeamworkActivityNotificationToRecipient
+Send-MgBetaTeamworkActivityNotificationToRecipient
  -BodyParameter <IPaths1T8Q21HTeamworkMicrosoftGraphSendactivitynotificationtorecipientsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -35,9 +35,9 @@ For more details about sending notifications and the requirements for doing so, 
 
 ## EXAMPLES
 
-### Example 1: Using the Send-MgTeamworkActivityNotificationToRecipient Cmdlet
+### Example 1: Using the Send-MgBetaTeamworkActivityNotificationToRecipient Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "entityUrl"
@@ -49,15 +49,15 @@ $params = @{
 	}
 	Recipients = @(
 		@{
-			"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserNotificationRecipient"
 			UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
 		}
 		@{
-			"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserNotificationRecipient"
 			UserId = "ab88234e-0874-477c-9638-d144296ed04f"
 		}
 		@{
-			"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserNotificationRecipient"
 			UserId = "01c64f53-69aa-42c7-9b7f-9f75195d6bfc"
 		}
 	)
@@ -68,15 +68,15 @@ $params = @{
 		}
 	)
 }
-Send-MgTeamworkActivityNotificationToRecipient -BodyParameter $params
+Send-MgBetaTeamworkActivityNotificationToRecipient -BodyParameter $params
 ```
 
-This example shows how to use the Send-MgTeamworkActivityNotificationToRecipient Cmdlet.
+This example shows how to use the Send-MgBetaTeamworkActivityNotificationToRecipient Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Send-MgTeamworkActivityNotificationToRecipient Cmdlet
+### Example 2: Using the Send-MgBetaTeamworkActivityNotificationToRecipient Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "text"
@@ -95,23 +95,23 @@ $params = @{
 	)
 	Recipients = @(
 		@{
-			"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserNotificationRecipient"
 			UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
 		}
 		@{
-			"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserNotificationRecipient"
 			UserId = "ab88234e-0874-477c-9638-d144296ed04f"
 		}
 		@{
-			"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserNotificationRecipient"
 			UserId = "01c64f53-69aa-42c7-9b7f-9f75195d6bfc"
 		}
 	)
 }
-Send-MgTeamworkActivityNotificationToRecipient -BodyParameter $params
+Send-MgBetaTeamworkActivityNotificationToRecipient -BodyParameter $params
 ```
 
-This example shows how to use the Send-MgTeamworkActivityNotificationToRecipient Cmdlet.
+This example shows how to use the Send-MgBetaTeamworkActivityNotificationToRecipient Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1T8Q21HTeamworkMicrosoftGraphSendactivitynotificationtorecipientsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1T8Q21HTeamworkMicrosoftGraphSendactivitynotificationtorecipientsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Send1
 Aliases:
 
@@ -197,7 +197,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for PREVIEWTEXT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: SendExpanded1
 Aliases:
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkNotificationRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkNotificationRecipient[]
 Parameter Sets: SendExpanded1
 Aliases:
 
@@ -243,7 +243,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TEMPLATEPARAMETERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: SendExpanded1
 Aliases:
 
@@ -259,7 +259,7 @@ teamworkActivityTopic
 To construct, please use Get-Help -Online and see NOTES section for TOPIC properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkActivityTopic
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkActivityTopic
 Parameter Sets: SendExpanded1
 Aliases:
 
@@ -306,7 +306,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1T8Q21HTeamworkMicrosoftGraphSendactivitynotificationtorecipientsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1T8Q21HTeamworkMicrosoftGraphSendactivitynotificationtorecipientsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -337,7 +337,7 @@ BODYPARAMETER <IPaths1T8Q21HTeamworkMicrosoftGraphSendactivitynotificationtoreci
   - `[Topic <IMicrosoftGraphTeamworkActivityTopic>]`: teamworkActivityTopic
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Source <String>]`: teamworkActivityTopicSource
-    - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.
+    - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft.Graph.Beta URL. If the vaule is text, this must be a plain text value.
     - `[WebUrl <String>]`: The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.
 
 PREVIEWTEXT <IMicrosoftGraphItemBody>: itemBody
@@ -352,7 +352,7 @@ TEMPLATEPARAMETERS <IMicrosoftGraphKeyValuePair[]>: .
 TOPIC <IMicrosoftGraphTeamworkActivityTopic>: teamworkActivityTopic
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Source <String>]`: teamworkActivityTopicSource
-  - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.
+  - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft.Graph.Beta URL. If the vaule is text, this must be a plain text value.
   - `[WebUrl <String>]`: The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.
 
 ## RELATED LINKS

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteammember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteammember
 schema: 2.0.0
 ---
 
-# New-MgTeamMember
+# New-MgBetaTeamMember
 
 ## SYNOPSIS
 Add a new conversation member to a team.
@@ -14,25 +14,25 @@ Add a new conversation member to a team.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgTeamMember -TeamId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+New-MgBetaTeamMember -TeamId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgTeamMember -TeamId <String> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm] [-WhatIf]
+New-MgBetaTeamMember -TeamId <String> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgTeamMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm]
+New-MgBetaTeamMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgTeamMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaTeamMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -42,36 +42,36 @@ Add a new conversation member to a team.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTeamMember Cmdlet
+### Example 1: Using the New-MgBetaTeamMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 	Roles = @(
 		"owner"
 	)
 	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
 }
-New-MgTeamMember -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTeamMember Cmdlet.
+This example shows how to use the New-MgBetaTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgTeamMember Cmdlet
+### Example 2: Using the New-MgBetaTeamMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"@odata.type" = "#Microsoft.Graph.Beta.aadUserConversationMember"
 	Roles = @(
 		"owner"
 	)
 	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
 }
-New-MgTeamMember -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTeamMember Cmdlet.
+This example shows how to use the New-MgBetaTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -96,7 +96,7 @@ conversationMember
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -239,13 +239,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 
 ## NOTES
 

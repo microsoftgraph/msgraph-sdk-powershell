@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/clear-mgcomplianceediscoverycasesourcecollectiondata
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/clear-mgcomplianceediscoverycasesourcecollectiondata
 schema: 2.0.0
 ---
 
-# Clear-MgComplianceEdiscoveryCaseSourceCollectionData
+# Clear-MgBetaComplianceEdiscoveryCaseSourceCollectionData
 
 ## SYNOPSIS
 Permanently delete Microsoft Teams messages contained in a sourceCollection.
@@ -18,13 +18,13 @@ For more information about purging Teams messages, see:\n- eDiscovery solution s
 
 ### Purge (Default)
 ```
-Clear-MgComplianceEdiscoveryCaseSourceCollectionData -CaseId <String> -SourceCollectionId <String> [-PassThru]
+Clear-MgBetaComplianceEdiscoveryCaseSourceCollectionData -CaseId <String> -SourceCollectionId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PurgeViaIdentity
 ```
-Clear-MgComplianceEdiscoveryCaseSourceCollectionData -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
+Clear-MgBetaComplianceEdiscoveryCaseSourceCollectionData -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -37,13 +37,13 @@ For more information about purging Teams messages, see:\n- eDiscovery solution s
 
 ## EXAMPLES
 
-### Example 1: Using the Clear-MgComplianceEdiscoveryCaseSourceCollectionData Cmdlet
+### Example 1: Using the Clear-MgBetaComplianceEdiscoveryCaseSourceCollectionData Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Clear-MgComplianceEdiscoveryCaseSourceCollectionData -CaseId $caseId -SourceCollectionId $sourceCollectionId
+Import-Module Microsoft.Graph.Beta.Compliance
+Clear-MgBetaComplianceEdiscoveryCaseSourceCollectionData -CaseId $caseId -SourceCollectionId $sourceCollectionId
 ```
 
-This example shows how to use the Clear-MgComplianceEdiscoveryCaseSourceCollectionData Cmdlet.
+This example shows how to use the Clear-MgBetaComplianceEdiscoveryCaseSourceCollectionData Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: PurgeViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

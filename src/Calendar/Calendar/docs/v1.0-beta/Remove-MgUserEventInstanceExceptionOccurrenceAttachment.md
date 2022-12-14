@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mgusereventinstanceexceptionoccurrenceattachment
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mgusereventinstanceexceptionoccurrenceattachment
 schema: 2.0.0
 ---
 
-# Remove-MgUserEventInstanceExceptionOccurrenceAttachment
+# Remove-MgBetaUserEventInstanceExceptionOccurrenceAttachment
 
 ## SYNOPSIS
 Delete navigation property attachments for users
@@ -14,14 +14,14 @@ Delete navigation property attachments for users
 
 ### Delete (Default)
 ```
-Remove-MgUserEventInstanceExceptionOccurrenceAttachment -AttachmentId <String> -EventId <String>
+Remove-MgBetaUserEventInstanceExceptionOccurrenceAttachment -AttachmentId <String> -EventId <String>
  -EventId1 <String> -EventId2 <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserEventInstanceExceptionOccurrenceAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>]
+Remove-MgBetaUserEventInstanceExceptionOccurrenceAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

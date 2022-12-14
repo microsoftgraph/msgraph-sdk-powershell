@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgorganizationsettingprofilecardproperty
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgorganizationsettingprofilecardproperty
 schema: 2.0.0
 ---
 
-# Update-MgOrganizationSettingProfileCardProperty
+# Update-MgBetaOrganizationSettingProfileCardProperty
 
 ## SYNOPSIS
 Update the navigation property profileCardProperties in organization
@@ -14,26 +14,26 @@ Update the navigation property profileCardProperties in organization
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOrganizationSettingProfileCardProperty -OrganizationId <String> -ProfileCardPropertyId <String>
+Update-MgBetaOrganizationSettingProfileCardProperty -OrganizationId <String> -ProfileCardPropertyId <String>
  [-AdditionalProperties <Hashtable>] [-Annotations <IMicrosoftGraphProfileCardAnnotation[]>]
  [-DirectoryPropertyName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgOrganizationSettingProfileCardProperty -OrganizationId <String> -ProfileCardPropertyId <String>
+Update-MgBetaOrganizationSettingProfileCardProperty -OrganizationId <String> -ProfileCardPropertyId <String>
  -BodyParameter <IMicrosoftGraphProfileCardProperty> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphProfileCardProperty> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Annotations <IMicrosoftGraphProfileCardAnnotation[]>]
  [-DirectoryPropertyName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,9 +43,9 @@ Update the navigation property profileCardProperties in organization
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgOrganizationSettingProfileCardProperty Cmdlet
+### Example 1: Using the Update-MgBetaOrganizationSettingProfileCardProperty Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	Annotations = @(
 		@{
@@ -58,10 +58,10 @@ $params = @{
 		}
 	)
 }
-Update-MgOrganizationSettingProfileCardProperty -OrganizationId $organizationId -ProfileCardPropertyId $profileCardPropertyId -BodyParameter $params
+Update-MgBetaOrganizationSettingProfileCardProperty -OrganizationId $organizationId -ProfileCardPropertyId $profileCardPropertyId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgOrganizationSettingProfileCardProperty Cmdlet.
+This example shows how to use the Update-MgBetaOrganizationSettingProfileCardProperty Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ Allows an administrator to set a custom display label for the directory property
 To construct, please use Get-Help -Online and see NOTES section for ANNOTATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfileCardAnnotation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfileCardAnnotation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ profileCardProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfileCardProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfileCardProperty
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -244,9 +244,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfileCardProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfileCardProperty
 
 ## OUTPUTS
 

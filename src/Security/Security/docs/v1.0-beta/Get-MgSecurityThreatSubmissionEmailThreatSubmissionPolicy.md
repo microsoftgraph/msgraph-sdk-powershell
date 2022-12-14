@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritythreatsubmissionemailthreatsubmissionpolicy
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritythreatsubmissionemailthreatsubmissionpolicy
 schema: 2.0.0
 ---
 
-# Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy
+# Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy
 
 ## SYNOPSIS
 Get emailThreatSubmissionPolicies from security
@@ -14,20 +14,20 @@ Get emailThreatSubmissionPolicies from security
 
 ### List (Default)
 ```
-Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId <String>
+Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get emailThreatSubmissionPolicies from security
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet
+### Example 1: Using the Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId $emailThreatSubmissionPolicyId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId $emailThreatSubmissionPolicyId
 ```
 
-This example shows how to use the Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet.
+This example shows how to use the Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet
+### Example 2: Using the Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy
 ```
 
-This example shows how to use the Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet.
+This example shows how to use the Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
 
 ## NOTES
 

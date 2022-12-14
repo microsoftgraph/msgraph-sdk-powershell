@@ -1,196 +1,196 @@
 ---
-Module Name: Microsoft.Graph.DeviceManagement.Functions
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
 Module Guid: 89e505b7-b426-40ac-9e7a-9399f0ac100a
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.DeviceManagement.Functions Module
+# Microsoft.Graph.Beta.DeviceManagement.Functions Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.DeviceManagement.Functions Cmdlets
-### [Compare-MgDeviceManagementIntent](Compare-MgDeviceManagementIntent.md)
+## Microsoft.Graph.Beta.DeviceManagement.Functions Cmdlets
+### [Compare-MgBetaDeviceManagementIntent](Compare-MgBetaDeviceManagementIntent.md)
 Invoke function compare
 
-### [Compare-MgDeviceManagementTemplate](Compare-MgDeviceManagementTemplate.md)
+### [Compare-MgBetaDeviceManagementTemplate](Compare-MgBetaDeviceManagementTemplate.md)
 Invoke function compare
 
-### [Compare-MgDeviceManagementTemplateMigratableTo](Compare-MgDeviceManagementTemplateMigratableTo.md)
+### [Compare-MgBetaDeviceManagementTemplateMigratableTo](Compare-MgBetaDeviceManagementTemplateMigratableTo.md)
 Invoke function compare
 
-### [Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery](Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery.md)
+### [Confirm-MgBetaDeviceManagementWindowEnrollmentAutoDiscovery](Confirm-MgBetaDeviceManagementWindowEnrollmentAutoDiscovery.md)
 Invoke function verifyWindowsEnrollmentAutoDiscovery
 
-### [Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig](Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig.md)
+### [Export-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig](Export-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig.md)
 Exports the mobile configuration
 
-### [Get-MgDeviceManagementAssignedRoleDetail](Get-MgDeviceManagementAssignedRoleDetail.md)
+### [Get-MgBetaDeviceManagementAssignedRoleDetail](Get-MgBetaDeviceManagementAssignedRoleDetail.md)
 Retrieves the assigned role definitions and role assignments of the currently authenticated user.
 
-### [Get-MgDeviceManagementAssignmentFilterPlatformSupportedProperty](Get-MgDeviceManagementAssignmentFilterPlatformSupportedProperty.md)
+### [Get-MgBetaDeviceManagementAssignmentFilterPlatformSupportedProperty](Get-MgBetaDeviceManagementAssignmentFilterPlatformSupportedProperty.md)
 Invoke function getPlatformSupportedProperties
 
-### [Get-MgDeviceManagementAssignmentFilterState](Get-MgDeviceManagementAssignmentFilterState.md)
+### [Get-MgBetaDeviceManagementAssignmentFilterState](Get-MgBetaDeviceManagementAssignmentFilterState.md)
 Invoke function getState
 
-### [Get-MgDeviceManagementAssignmentFilterSupportedProperty](Get-MgDeviceManagementAssignmentFilterSupportedProperty.md)
+### [Get-MgBetaDeviceManagementAssignmentFilterSupportedProperty](Get-MgBetaDeviceManagementAssignmentFilterSupportedProperty.md)
 Invoke function getSupportedProperties
 
-### [Get-MgDeviceManagementAuditEventAuditActivityType](Get-MgDeviceManagementAuditEventAuditActivityType.md)
+### [Get-MgBetaDeviceManagementAuditEventAuditActivityType](Get-MgBetaDeviceManagementAuditEventAuditActivityType.md)
 Invoke function getAuditActivityTypes
 
-### [Get-MgDeviceManagementAuditEventAuditCategory](Get-MgDeviceManagementAuditEventAuditCategory.md)
+### [Get-MgBetaDeviceManagementAuditEventAuditCategory](Get-MgBetaDeviceManagementAuditEventAuditCategory.md)
 Invoke function getAuditCategories
 
-### [Get-MgDeviceManagementComanagedDeviceCloudPcRemoteActionResult](Get-MgDeviceManagementComanagedDeviceCloudPcRemoteActionResult.md)
+### [Get-MgBetaDeviceManagementComanagedDeviceCloudPcRemoteActionResult](Get-MgBetaDeviceManagementComanagedDeviceCloudPcRemoteActionResult.md)
 Invoke function getCloudPcRemoteActionResults
 
-### [Get-MgDeviceManagementComanagedDeviceCloudPcReviewStatus](Get-MgDeviceManagementComanagedDeviceCloudPcReviewStatus.md)
+### [Get-MgBetaDeviceManagementComanagedDeviceCloudPcReviewStatus](Get-MgBetaDeviceManagementComanagedDeviceCloudPcReviewStatus.md)
 Invoke function getCloudPcReviewStatus
 
-### [Get-MgDeviceManagementComanagedDeviceFileVaultKey](Get-MgDeviceManagementComanagedDeviceFileVaultKey.md)
+### [Get-MgBetaDeviceManagementComanagedDeviceFileVaultKey](Get-MgBetaDeviceManagementComanagedDeviceFileVaultKey.md)
 Invoke function getFileVaultKey
 
-### [Get-MgDeviceManagementComanagedDeviceNonCompliantSetting](Get-MgDeviceManagementComanagedDeviceNonCompliantSetting.md)
+### [Get-MgBetaDeviceManagementComanagedDeviceNonCompliantSetting](Get-MgBetaDeviceManagementComanagedDeviceNonCompliantSetting.md)
 Invoke function getNonCompliantSettings
 
-### [Get-MgDeviceManagementComanagedDeviceOemWarranty](Get-MgDeviceManagementComanagedDeviceOemWarranty.md)
+### [Get-MgBetaDeviceManagementComanagedDeviceOemWarranty](Get-MgBetaDeviceManagementComanagedDeviceOemWarranty.md)
 Invoke function getOemWarranty
 
-### [Get-MgDeviceManagementComanagedDeviceRemoteHelpSession](Get-MgDeviceManagementComanagedDeviceRemoteHelpSession.md)
+### [Get-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession](Get-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession.md)
 Invoke function retrieveRemoteHelpSession
 
-### [Get-MgDeviceManagementComanagedDeviceSummary](Get-MgDeviceManagementComanagedDeviceSummary.md)
+### [Get-MgBetaDeviceManagementComanagedDeviceSummary](Get-MgBetaDeviceManagementComanagedDeviceSummary.md)
 Invoke function getComanagedDevicesSummary
 
-### [Get-MgDeviceManagementComanagementEligibleDeviceSummary](Get-MgDeviceManagementComanagementEligibleDeviceSummary.md)
+### [Get-MgBetaDeviceManagementComanagementEligibleDeviceSummary](Get-MgBetaDeviceManagementComanagementEligibleDeviceSummary.md)
 Invoke function getComanagementEligibleDevicesSummary
 
-### [Get-MgDeviceManagementConfigManagerCollectionPolicySummary](Get-MgDeviceManagementConfigManagerCollectionPolicySummary.md)
+### [Get-MgBetaDeviceManagementConfigManagerCollectionPolicySummary](Get-MgBetaDeviceManagementConfigManagerCollectionPolicySummary.md)
 Invoke function getPolicySummary
 
-### [Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey](Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey.md)
+### [Get-MgBetaDeviceManagementDepOnboardingSettingEncryptionPublicKey](Get-MgBetaDeviceManagementDepOnboardingSettingEncryptionPublicKey.md)
 Get a public key to use to encrypt the Apple device enrollment program token
 
-### [Get-MgDeviceManagementDepOnboardingSettingExpiringVppTokenCount](Get-MgDeviceManagementDepOnboardingSettingExpiringVppTokenCount.md)
+### [Get-MgBetaDeviceManagementDepOnboardingSettingExpiringVppTokenCount](Get-MgBetaDeviceManagementDepOnboardingSettingExpiringVppTokenCount.md)
 Invoke function getExpiringVppTokenCount
 
-### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire](Get-MgDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire.md)
+### [Get-MgBetaDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire](Get-MgBetaDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire.md)
 Invoke function getDevicesScheduledToRetire
 
-### [Get-MgDeviceManagementDeviceConfigurationIoAvailableUpdateVersion](Get-MgDeviceManagementDeviceConfigurationIoAvailableUpdateVersion.md)
+### [Get-MgBetaDeviceManagementDeviceConfigurationIoAvailableUpdateVersion](Get-MgBetaDeviceManagementDeviceConfigurationIoAvailableUpdateVersion.md)
 Invoke function getIosAvailableUpdateVersions
 
-### [Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue](Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue.md)
+### [Get-MgBetaDeviceManagementDeviceConfigurationOmaSettingPlainTextValue](Get-MgBetaDeviceManagementDeviceConfigurationOmaSettingPlainTextValue.md)
 Invoke function getOmaSettingPlainTextValue
 
-### [Get-MgDeviceManagementDeviceHealthScriptRemediationHistory](Get-MgDeviceManagementDeviceHealthScriptRemediationHistory.md)
+### [Get-MgBetaDeviceManagementDeviceHealthScriptRemediationHistory](Get-MgBetaDeviceManagementDeviceHealthScriptRemediationHistory.md)
 Function to get the number of remediations by a device health scripts
 
-### [Get-MgDeviceManagementDeviceHealthScriptRemediationSummary](Get-MgDeviceManagementDeviceHealthScriptRemediationSummary.md)
+### [Get-MgBetaDeviceManagementDeviceHealthScriptRemediationSummary](Get-MgBetaDeviceManagementDeviceHealthScriptRemediationSummary.md)
 Invoke function getRemediationSummary
 
-### [Get-MgDeviceManagementEffectivePermission](Get-MgDeviceManagementEffectivePermission.md)
+### [Get-MgBetaDeviceManagementEffectivePermission](Get-MgBetaDeviceManagementEffectivePermission.md)
 Invoke function getEffectivePermissions
 
-### [Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult](Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult.md)
+### [Get-MgBetaDeviceManagementManagedDeviceCloudPcRemoteActionResult](Get-MgBetaDeviceManagementManagedDeviceCloudPcRemoteActionResult.md)
 Invoke function getCloudPcRemoteActionResults
 
-### [Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus](Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus.md)
+### [Get-MgBetaDeviceManagementManagedDeviceCloudPcReviewStatus](Get-MgBetaDeviceManagementManagedDeviceCloudPcReviewStatus.md)
 Invoke function getCloudPcReviewStatus
 
-### [Get-MgDeviceManagementManagedDeviceFileVaultKey](Get-MgDeviceManagementManagedDeviceFileVaultKey.md)
+### [Get-MgBetaDeviceManagementManagedDeviceFileVaultKey](Get-MgBetaDeviceManagementManagedDeviceFileVaultKey.md)
 Invoke function getFileVaultKey
 
-### [Get-MgDeviceManagementManagedDeviceNonCompliantSetting](Get-MgDeviceManagementManagedDeviceNonCompliantSetting.md)
+### [Get-MgBetaDeviceManagementManagedDeviceNonCompliantSetting](Get-MgBetaDeviceManagementManagedDeviceNonCompliantSetting.md)
 Invoke function getNonCompliantSettings
 
-### [Get-MgDeviceManagementManagedDeviceOemWarranty](Get-MgDeviceManagementManagedDeviceOemWarranty.md)
+### [Get-MgBetaDeviceManagementManagedDeviceOemWarranty](Get-MgBetaDeviceManagementManagedDeviceOemWarranty.md)
 Invoke function getOemWarranty
 
-### [Get-MgDeviceManagementManagedDeviceRemoteHelpSession](Get-MgDeviceManagementManagedDeviceRemoteHelpSession.md)
+### [Get-MgBetaDeviceManagementManagedDeviceRemoteHelpSession](Get-MgBetaDeviceManagementManagedDeviceRemoteHelpSession.md)
 Invoke function retrieveRemoteHelpSession
 
-### [Get-MgDeviceManagementMonitoringAlertRecordPortalNotification](Get-MgDeviceManagementMonitoringAlertRecordPortalNotification.md)
+### [Get-MgBetaDeviceManagementMonitoringAlertRecordPortalNotification](Get-MgBetaDeviceManagementMonitoringAlertRecordPortalNotification.md)
 Invoke function getPortalNotifications
 
-### [Get-MgDeviceManagementResourceOperationScopeForUser](Get-MgDeviceManagementResourceOperationScopeForUser.md)
+### [Get-MgBetaDeviceManagementResourceOperationScopeForUser](Get-MgBetaDeviceManagementResourceOperationScopeForUser.md)
 Invoke function getScopesForUser
 
-### [Get-MgDeviceManagementRoleScopeTagById](Get-MgDeviceManagementRoleScopeTagById.md)
+### [Get-MgBetaDeviceManagementRoleScopeTagById](Get-MgBetaDeviceManagementRoleScopeTagById.md)
 Invoke function getRoleScopeTagsByIds
 
-### [Get-MgDeviceManagementRoleScopeTagByResource](Get-MgDeviceManagementRoleScopeTagByResource.md)
+### [Get-MgBetaDeviceManagementRoleScopeTagByResource](Get-MgBetaDeviceManagementRoleScopeTagByResource.md)
 Invoke function getRoleScopeTagsByResource
 
-### [Get-MgDeviceManagementSuggestedEnrollmentLimit](Get-MgDeviceManagementSuggestedEnrollmentLimit.md)
+### [Get-MgBetaDeviceManagementSuggestedEnrollmentLimit](Get-MgBetaDeviceManagementSuggestedEnrollmentLimit.md)
 Invoke function getSuggestedEnrollmentLimit
 
-### [Get-MgDeviceManagementTenantAttachRbacState](Get-MgDeviceManagementTenantAttachRbacState.md)
+### [Get-MgBetaDeviceManagementTenantAttachRbacState](Get-MgBetaDeviceManagementTenantAttachRbacState.md)
 Invoke function getState
 
-### [Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType](Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointAuditEventAuditActivityType](Get-MgBetaDeviceManagementVirtualEndpointAuditEventAuditActivityType.md)
 Invoke function getAuditActivityTypes
 
-### [Get-MgDeviceManagementVirtualEndpointCloudPcConnectivityHistory](Get-MgDeviceManagementVirtualEndpointCloudPcConnectivityHistory.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointCloudPcConnectivityHistory](Get-MgBetaDeviceManagementVirtualEndpointCloudPcConnectivityHistory.md)
 Invoke function getCloudPcConnectivityHistory
 
-### [Get-MgDeviceManagementVirtualEndpointCloudPcLaunchInfo](Get-MgDeviceManagementVirtualEndpointCloudPcLaunchInfo.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointCloudPcLaunchInfo](Get-MgBetaDeviceManagementVirtualEndpointCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo
 
-### [Get-MgDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState](Get-MgDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState](Get-MgBetaDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState.md)
 Invoke function getShiftWorkCloudPcAccessState
 
-### [Get-MgDeviceManagementVirtualEndpointCloudPcSupportedCloudPcRemoteAction](Get-MgDeviceManagementVirtualEndpointCloudPcSupportedCloudPcRemoteAction.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointCloudPcSupportedCloudPcRemoteAction](Get-MgBetaDeviceManagementVirtualEndpointCloudPcSupportedCloudPcRemoteAction.md)
 Invoke function getSupportedCloudPcRemoteActions
 
-### [Get-MgDeviceManagementVirtualEndpointDeviceImageSourceImage](Get-MgDeviceManagementVirtualEndpointDeviceImageSourceImage.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointDeviceImageSourceImage](Get-MgBetaDeviceManagementVirtualEndpointDeviceImageSourceImage.md)
 Invoke function getSourceImages
 
-### [Get-MgDeviceManagementVirtualEndpointEffectivePermission](Get-MgDeviceManagementVirtualEndpointEffectivePermission.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointEffectivePermission](Get-MgBetaDeviceManagementVirtualEndpointEffectivePermission.md)
 Invoke function getEffectivePermissions
 
-### [Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionLatency](Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionLatency.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionLatency](Get-MgBetaDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionLatency.md)
 Invoke function getRealTimeRemoteConnectionLatency
 
-### [Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus](Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus](Get-MgBetaDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus.md)
 Invoke function getRealTimeRemoteConnectionStatus
 
-### [Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount](Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointSnapshotStorageAccount](Get-MgBetaDeviceManagementVirtualEndpointSnapshotStorageAccount.md)
 Invoke function getStorageAccounts
 
-### [Get-MgDeviceManagementVirtualEndpointSnapshotSubscription](Get-MgDeviceManagementVirtualEndpointSnapshotSubscription.md)
+### [Get-MgBetaDeviceManagementVirtualEndpointSnapshotSubscription](Get-MgBetaDeviceManagementVirtualEndpointSnapshotSubscription.md)
 Invoke function getSubscriptions
 
-### [Invoke-MgAppDeviceManagementComanagedDeviceDiagnostic](Invoke-MgAppDeviceManagementComanagedDeviceDiagnostic.md)
+### [Invoke-MgBetaAppDeviceManagementComanagedDeviceDiagnostic](Invoke-MgBetaAppDeviceManagementComanagedDeviceDiagnostic.md)
 Invoke function appDiagnostics
 
-### [Invoke-MgAppDeviceManagementManagedDeviceDiagnostic](Invoke-MgAppDeviceManagementManagedDeviceDiagnostic.md)
+### [Invoke-MgBetaAppDeviceManagementManagedDeviceDiagnostic](Invoke-MgBetaAppDeviceManagementManagedDeviceDiagnostic.md)
 Invoke function appDiagnostics
 
-### [Invoke-MgCustomDeviceManagementRoleScopeTag](Invoke-MgCustomDeviceManagementRoleScopeTag.md)
+### [Invoke-MgBetaCustomDeviceManagementRoleScopeTag](Invoke-MgBetaCustomDeviceManagementRoleScopeTag.md)
 Invoke function hasCustomRoleScopeTag
 
-### [Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest](Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest.md)
+### [Invoke-MgBetaDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest](Invoke-MgBetaDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest.md)
 Download Apple push notification certificate signing request
 
-### [Invoke-MgExperienceDeviceManagement](Invoke-MgExperienceDeviceManagement.md)
+### [Invoke-MgBetaExperienceDeviceManagement](Invoke-MgBetaExperienceDeviceManagement.md)
 Invoke function userExperienceAnalyticsSummarizedDeviceScopes
 
-### [Invoke-MgGraphDeviceManagement](Invoke-MgGraphDeviceManagement.md)
+### [Invoke-MgBetaGraphDeviceManagement](Invoke-MgBetaGraphDeviceManagement.md)
 Invoke function scopedForResource
 
-### [Invoke-MgIsDeviceManagementDeviceHealthScriptGlobalScriptAvailable](Invoke-MgIsDeviceManagementDeviceHealthScriptGlobalScriptAvailable.md)
+### [Invoke-MgBetaIsDeviceManagementDeviceHealthScriptGlobalScriptAvailable](Invoke-MgBetaIsDeviceManagementDeviceHealthScriptGlobalScriptAvailable.md)
 Invoke function areGlobalScriptsAvailable
 
-### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice.md)
+### [Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice](Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice.md)
 Invoke function summarizeDevicePerformanceDevices
 
-### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRemoteConnectionDeviceRemoteConnection](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRemoteConnectionDeviceRemoteConnection.md)
+### [Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticRemoteConnectionDeviceRemoteConnection](Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticRemoteConnectionDeviceRemoteConnection.md)
 Invoke function summarizeDeviceRemoteConnection
 
-### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticResourcePerformanceDeviceResourcePerformance](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticResourcePerformanceDeviceResourcePerformance.md)
+### [Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticResourcePerformanceDeviceResourcePerformance](Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticResourcePerformanceDeviceResourcePerformance.md)
 Invoke function summarizeDeviceResourcePerformance
 

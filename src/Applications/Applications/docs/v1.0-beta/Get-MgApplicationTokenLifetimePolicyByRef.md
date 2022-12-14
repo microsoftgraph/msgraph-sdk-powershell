@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationtokenlifetimepolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationtokenlifetimepolicybyref
 schema: 2.0.0
 ---
 
-# Get-MgApplicationTokenLifetimePolicyByRef
+# Get-MgBetaApplicationTokenLifetimePolicyByRef
 
 ## SYNOPSIS
 List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
@@ -13,7 +13,7 @@ List the tokenLifetimePolicy objects that are assigned to an application or serv
 ## SYNTAX
 
 ```
-Get-MgApplicationTokenLifetimePolicyByRef -ApplicationId <String> [-Filter <String>] [-Search <String>]
+Get-MgBetaApplicationTokenLifetimePolicyByRef -ApplicationId <String> [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```

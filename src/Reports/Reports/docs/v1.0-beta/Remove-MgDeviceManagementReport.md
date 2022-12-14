@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/remove-mgdevicemanagementreport
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/remove-mgdevicemanagementreport
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementReport
+# Remove-MgBetaDeviceManagementReport
 
 ## SYNOPSIS
 Delete navigation property reports for deviceManagement
@@ -13,7 +13,7 @@ Delete navigation property reports for deviceManagement
 ## SYNTAX
 
 ```
-Remove-MgDeviceManagementReport [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaDeviceManagementReport [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

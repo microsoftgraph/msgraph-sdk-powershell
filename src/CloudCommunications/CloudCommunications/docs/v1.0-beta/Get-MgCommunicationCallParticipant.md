@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationcallparticipant
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationcallparticipant
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationCallParticipant
+# Get-MgBetaCommunicationCallParticipant
 
 ## SYNOPSIS
 Get participants from communications
@@ -14,20 +14,20 @@ Get participants from communications
 
 ### List1 (Default)
 ```
-Get-MgCommunicationCallParticipant -CallId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaCommunicationCallParticipant -CallId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgCommunicationCallParticipant -CallId <String> -ParticipantId <String> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationCallParticipant -CallId <String> -ParticipantId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get participants from communications
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgCommunicationCallParticipant Cmdlet
+### Example 1: Using the Get-MgBetaCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
 
-This example shows how to use the Get-MgCommunicationCallParticipant Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgCommunicationCallParticipant Cmdlet
+### Example 2: Using the Get-MgBetaCommunicationCallParticipant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallParticipant -CallId $callId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallParticipant -CallId $callId
 ```
 
-This example shows how to use the Get-MgCommunicationCallParticipant Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallParticipant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipant1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipant1
 
 ## NOTES
 

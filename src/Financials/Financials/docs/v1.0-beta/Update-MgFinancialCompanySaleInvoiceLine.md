@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysaleinvoiceline
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysaleinvoiceline
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleInvoiceLine
+# Update-MgBetaFinancialCompanySaleInvoiceLine
 
 ## SYNOPSIS
 Update the navigation property salesInvoiceLines in financials
@@ -14,7 +14,7 @@ Update the navigation property salesInvoiceLines in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceLineId <String>
+Update-MgBetaFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceLineId <String>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -27,20 +27,20 @@ Update-MgFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceLineId
 
 ### Update
 ```
-Update-MgFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceLineId <String>
+Update-MgBetaFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceLineId <String>
  -BodyParameter <IMicrosoftGraphSalesInvoiceLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceId <String>
+Update-MgBetaFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceId <String>
  -SalesInvoiceLineId <String> -BodyParameter <IMicrosoftGraphSalesInvoiceLine> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceId <String>
+Update-MgBetaFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceId <String>
  -SalesInvoiceLineId <String> [-Account <IMicrosoftGraphAccount>] [-AccountId <String>]
  [-AdditionalProperties <Hashtable>] [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>]
  [-Description <String>] [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>]
@@ -53,19 +53,19 @@ Update-MgFinancialCompanySaleInvoiceLine -CompanyId <String> -SalesInvoiceId <St
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphSalesInvoiceLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphSalesInvoiceLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -78,7 +78,7 @@ Update-MgFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceLine -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -101,7 +101,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -177,7 +177,7 @@ salesInvoiceLine
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesInvoiceLine
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesInvoiceLine
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -299,7 +299,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -330,7 +330,7 @@ item
 To construct, please use Get-Help -Online and see NOTES section for ITEM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -617,9 +617,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesInvoiceLine
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesInvoiceLine
 
 ## OUTPUTS
 

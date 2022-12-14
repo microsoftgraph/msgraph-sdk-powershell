@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelserverlogcollectionrequest
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelserverlogcollectionrequest
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
+# New-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
 
 ## SYNOPSIS
 Invoke action createServerLogCollectionRequest
@@ -14,14 +14,14 @@ Invoke action createServerLogCollectionRequest
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
+New-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
  -MicrosoftTunnelServerId <String> -MicrosoftTunnelSiteId <String> [-AdditionalProperties <Hashtable>]
  [-EndDateTime <DateTime>] [-StartDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
+New-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
  -MicrosoftTunnelServerId <String> -MicrosoftTunnelSiteId <String>
  -BodyParameter <IPaths11Xfdy7DevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphCreateserverlogcollectionrequestPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ New-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionReque
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
+New-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths11Xfdy7DevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphCreateserverlogcollectionrequestPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ New-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionReque
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
+New-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerLogCollectionRequest
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>]
  [-StartDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths11Xfdy7DevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphCreateserverlogcollectionrequestPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths11Xfdy7DevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphCreateserverlogcollectionrequestPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -192,13 +192,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths11Xfdy7DevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphCreateserverlogcollectionrequestPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths11Xfdy7DevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphCreateserverlogcollectionrequestPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
 
 ## NOTES
 

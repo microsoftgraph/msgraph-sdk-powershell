@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportsharepointsiteusagepage
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportsharepointsiteusagepage
 schema: 2.0.0
 ---
 
-# Get-MgReportSharePointSiteUsagePage
+# Get-MgBetaReportSharePointSiteUsagePage
 
 ## SYNOPSIS
 Invoke function getSharePointSiteUsagePages
@@ -14,12 +14,12 @@ Invoke function getSharePointSiteUsagePages
 
 ### Get (Default)
 ```
-Get-MgReportSharePointSiteUsagePage -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportSharePointSiteUsagePage -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportSharePointSiteUsagePage -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportSharePointSiteUsagePage -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdeviceregisteredownerbyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdeviceregisteredownerbyref
 schema: 2.0.0
 ---
 
-# Get-MgDeviceRegisteredOwnerByRef
+# Get-MgBetaDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
 The user that cloud joined the device or registered their personal device.
@@ -18,7 +18,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgDeviceRegisteredOwnerByRef -DeviceId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Get-MgBetaDeviceRegisteredOwnerByRef -DeviceId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

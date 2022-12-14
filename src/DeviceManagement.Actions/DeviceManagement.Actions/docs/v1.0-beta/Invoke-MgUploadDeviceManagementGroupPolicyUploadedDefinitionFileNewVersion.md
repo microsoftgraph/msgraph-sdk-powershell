@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mguploaddevicemanagementgrouppolicyuploadeddefinitionfilenewversion
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mguploaddevicemanagementgrouppolicyuploadeddefinitionfilenewversion
 schema: 2.0.0
 ---
 
-# Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
+# Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
 
 ## SYNOPSIS
 Invoke action uploadNewVersion
@@ -14,7 +14,7 @@ Invoke action uploadNewVersion
 
 ### UploadExpanded (Default)
 ```
-Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
+Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
  -GroupPolicyUploadedDefinitionFileId <String> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>]
  [-GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>] [-PassThru] [-Confirm]
@@ -23,7 +23,7 @@ Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
 
 ### Upload
 ```
-Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
+Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
  -GroupPolicyUploadedDefinitionFileId <String>
  -BodyParameter <IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -31,7 +31,7 @@ Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
 
 ### UploadViaIdentity
 ```
-Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
+Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -39,7 +39,7 @@ Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
 
 ### UploadViaIdentityExpanded
 ```
-Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
+Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>]
  [-GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>] [-PassThru] [-Confirm]
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Upload, UploadViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for GROUPPOLICYUPLOADEDLANGUAGEFILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedLanguageFile[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyUploadedLanguageFile[]
 Parameter Sets: UploadExpanded, UploadViaIdentityExpanded
 Aliases:
 
@@ -135,7 +135,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: UploadViaIdentity, UploadViaIdentityExpanded
 Aliases:
 
@@ -197,9 +197,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

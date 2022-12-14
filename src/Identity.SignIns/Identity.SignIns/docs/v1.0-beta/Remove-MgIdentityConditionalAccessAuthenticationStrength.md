@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityconditionalaccessauthenticationstrength
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityconditionalaccessauthenticationstrength
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityConditionalAccessAuthenticationStrength
+# Remove-MgBetaIdentityConditionalAccessAuthenticationStrength
 
 ## SYNOPSIS
 Delete navigation property authenticationStrengths for identity
@@ -13,7 +13,7 @@ Delete navigation property authenticationStrengths for identity
 ## SYNTAX
 
 ```
-Remove-MgIdentityConditionalAccessAuthenticationStrength [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaIdentityConditionalAccessAuthenticationStrength [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

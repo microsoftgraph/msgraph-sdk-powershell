@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgonpremisepublishingprofilepublishedresource
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgonpremisepublishingprofilepublishedresource
 schema: 2.0.0
 ---
 
-# Get-MgOnPremisePublishingProfilePublishedResource
+# Get-MgBetaOnPremisePublishingProfilePublishedResource
 
 ## SYNOPSIS
 List of existing publishedResource objects.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
+Get-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
+Get-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
  -PublishedResourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
+Get-MgBetaOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,22 +40,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOnPremisePublishingProfilePublishedResource Cmdlet
+### Example 1: Using the Get-MgBetaOnPremisePublishingProfilePublishedResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -ExpandProperty "agentGroups" 
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -ExpandProperty "agentGroups" 
 ```
 
-This example shows how to use the Get-MgOnPremisePublishingProfilePublishedResource Cmdlet.
+This example shows how to use the Get-MgBetaOnPremisePublishingProfilePublishedResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgOnPremisePublishingProfilePublishedResource Cmdlet
+### Example 2: Using the Get-MgBetaOnPremisePublishingProfilePublishedResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ExpandProperty "agentGroups" 
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ExpandProperty "agentGroups" 
 ```
 
-This example shows how to use the Get-MgOnPremisePublishingProfilePublishedResource Cmdlet.
+This example shows how to use the Get-MgBetaOnPremisePublishingProfilePublishedResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -262,11 +262,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 
 ## NOTES
 

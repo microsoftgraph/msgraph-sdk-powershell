@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggrouppermissiongrantbyid
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggrouppermissiongrantbyid
 schema: 2.0.0
 ---
 
-# Get-MgGroupPermissionGrantById
+# Get-MgBetaGroupPermissionGrantById
 
 ## SYNOPSIS
 Return the directory objects specified in a list of IDs.
@@ -15,27 +15,27 @@ Some common uses for this function are to:
 
 ### GetExpanded (Default)
 ```
-Get-MgGroupPermissionGrantById -GroupId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
+Get-MgBetaGroupPermissionGrantById -GroupId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupPermissionGrantById -GroupId <String>
+Get-MgBetaGroupPermissionGrantById -GroupId <String>
  -BodyParameter <IPaths1DcqzubGroupsGroupIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupPermissionGrantById -InputObject <IGroupsIdentity>
+Get-MgBetaGroupPermissionGrantById -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1DcqzubGroupsGroupIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgGroupPermissionGrantById -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Get-MgBetaGroupPermissionGrantById -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1DcqzubGroupsGroupIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1DcqzubGroupsGroupIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -175,13 +175,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1DcqzubGroupsGroupIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1DcqzubGroupsGroupIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/set-mgofficeclientconfigurationuserpreferencepayload
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/set-mgofficeclientconfigurationuserpreferencepayload
 schema: 2.0.0
 ---
 
-# Set-MgOfficeClientConfigurationUserPreferencePayload
+# Set-MgBetaOfficeClientConfigurationUserPreferencePayload
 
 ## SYNOPSIS
 Preference settings JSON string in binary format, these values can be overridden by the user.
@@ -14,13 +14,13 @@ Preference settings JSON string in binary format, these values can be overridden
 
 ### Set (Default)
 ```
-Set-MgOfficeClientConfigurationUserPreferencePayload -OfficeClientConfigurationId <String> -InFile <String>
+Set-MgBetaOfficeClientConfigurationUserPreferencePayload -OfficeClientConfigurationId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgOfficeClientConfigurationUserPreferencePayload -InputObject <IDevicesCorporateManagementIdentity>
+Set-MgBetaOfficeClientConfigurationUserPreferencePayload -InputObject <IDevicesCorporateManagementIdentity>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### System.IO.Stream
 

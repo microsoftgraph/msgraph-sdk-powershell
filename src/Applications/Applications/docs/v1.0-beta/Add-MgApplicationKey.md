@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/add-mgapplicationkey
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/add-mgapplicationkey
 schema: 2.0.0
 ---
 
-# Add-MgApplicationKey
+# Add-MgBetaApplicationKey
 
 ## SYNOPSIS
 Add a key credential to an application.
@@ -18,28 +18,28 @@ You can use the Update application operation to perform an update instead.
 
 ### AddExpanded (Default)
 ```
-Add-MgApplicationKey -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+Add-MgBetaApplicationKey -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-KeyCredential <IMicrosoftGraphKeyCredential>] [-PasswordCredential <IMicrosoftGraphPasswordCredential>]
  [-Proof <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
-Add-MgApplicationKey -ApplicationId <String>
+Add-MgBetaApplicationKey -ApplicationId <String>
  -BodyParameter <IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-MgApplicationKey -InputObject <IApplicationsIdentity>
+Add-MgBetaApplicationKey -InputObject <IApplicationsIdentity>
  -BodyParameter <IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
-Add-MgApplicationKey -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+Add-MgBetaApplicationKey -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-KeyCredential <IMicrosoftGraphKeyCredential>] [-PasswordCredential <IMicrosoftGraphPasswordCredential>]
  [-Proof <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,9 +53,9 @@ You can use the Update application operation to perform an update instead.
 
 ## EXAMPLES
 
-### Example 1: Using the Add-MgApplicationKey Cmdlet
+### Example 1: Using the Add-MgBetaApplicationKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	KeyCredential = @{
 		Type = "AsymmetricX509Cert"
@@ -65,15 +65,15 @@ $params = @{
 	PasswordCredential = $null
 	Proof = "eyJ0eXAiOiJ..."
 }
-Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+Add-MgBetaApplicationKey -ApplicationId $applicationId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgApplicationKey Cmdlet.
+This example shows how to use the Add-MgBetaApplicationKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Add-MgApplicationKey Cmdlet
+### Example 2: Using the Add-MgBetaApplicationKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	KeyCredential = @{
 		Type = "X509CertAndPassword"
@@ -85,10 +85,10 @@ $params = @{
 	}
 	Proof = "eyJ0eXAiOiJ..."
 }
-Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+Add-MgBetaApplicationKey -ApplicationId $applicationId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgApplicationKey Cmdlet.
+This example shows how to use the Add-MgBetaApplicationKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add, AddViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ keyCredential
 To construct, please use Get-Help -Online and see NOTES section for KEYCREDENTIAL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyCredential
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyCredential
 Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ passwordCredential
 To construct, please use Get-Help -Online and see NOTES section for PASSWORDCREDENTIAL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPasswordCredential
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPasswordCredential
 Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
@@ -238,13 +238,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyCredential
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyCredential
 
 ## NOTES
 

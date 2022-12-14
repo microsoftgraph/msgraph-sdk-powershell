@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mggroupdrivelistcolumnsourcecolumn
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mggroupdrivelistcolumnsourcecolumn
 schema: 2.0.0
 ---
 
-# Get-MgGroupDriveListColumnSourceColumn
+# Get-MgBetaGroupDriveListColumnSourceColumn
 
 ## SYNOPSIS
 The source column for content type column.
@@ -14,13 +14,13 @@ The source column for content type column.
 
 ### Get1 (Default)
 ```
-Get-MgGroupDriveListColumnSourceColumn -ColumnDefinitionId <String> -DriveId <String> -GroupId <String>
+Get-MgBetaGroupDriveListColumnSourceColumn -ColumnDefinitionId <String> -DriveId <String> -GroupId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupDriveListColumnSourceColumn -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupDriveListColumnSourceColumn -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 
 ## NOTES
 

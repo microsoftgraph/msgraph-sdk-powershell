@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/new-mguserdevice
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/new-mguserdevice
 schema: 2.0.0
 ---
 
-# New-MgUserDevice
+# New-MgBetaUserDevice
 
 ## SYNOPSIS
 Create new navigation property to devices for users
@@ -14,7 +14,7 @@ Create new navigation property to devices for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserDevice -UserId <String> [-AccountEnabled] [-AdditionalProperties <Hashtable>]
+New-MgBetaUserDevice -UserId <String> [-AccountEnabled] [-AdditionalProperties <Hashtable>]
  [-AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]
  [-ApproximateLastSignInDateTime <DateTime>] [-Commands <IMicrosoftGraphCommand[]>]
  [-ComplianceExpirationDateTime <DateTime>] [-DeletedDateTime <DateTime>] [-DeviceCategory <String>]
@@ -34,19 +34,19 @@ New-MgUserDevice -UserId <String> [-AccountEnabled] [-AdditionalProperties <Hash
 
 ### Create
 ```
-New-MgUserDevice -UserId <String> -BodyParameter <IMicrosoftGraphDevice> [-Confirm] [-WhatIf]
+New-MgBetaUserDevice -UserId <String> -BodyParameter <IMicrosoftGraphDevice> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserDevice -InputObject <ICrossDeviceExperiencesIdentity> -BodyParameter <IMicrosoftGraphDevice>
+New-MgBetaUserDevice -InputObject <ICrossDeviceExperiencesIdentity> -BodyParameter <IMicrosoftGraphDevice>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserDevice -InputObject <ICrossDeviceExperiencesIdentity> [-AccountEnabled]
+New-MgBetaUserDevice -InputObject <ICrossDeviceExperiencesIdentity> [-AccountEnabled]
  [-AdditionalProperties <Hashtable>] [-AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]
  [-ApproximateLastSignInDateTime <DateTime>] [-Commands <IMicrosoftGraphCommand[]>]
  [-ComplianceExpirationDateTime <DateTime>] [-DeletedDateTime <DateTime>] [-DeviceCategory <String>]
@@ -111,7 +111,7 @@ Supports $filter (eq, not, ge, le).
 To construct, please use Get-Help -Online and see NOTES section for ALTERNATIVESECURITYIDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlternativeSecurityId[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlternativeSecurityId[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ device
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ Set of commands sent to this device.
 To construct, please use Get-Help -Online and see NOTES section for COMMANDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -358,7 +358,7 @@ onPremisesExtensionAttributes
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONATTRIBUTES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesExtensionAttributes
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesExtensionAttributes
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -376,7 +376,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -423,7 +423,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -574,7 +574,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for MEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -746,7 +746,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for REGISTEREDOWNERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -766,7 +766,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for REGISTEREDUSERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -834,7 +834,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for TRANSITIVEMEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -868,7 +868,7 @@ Represents the usage rights a device has been granted.
 To construct, please use Get-Help -Online and see NOTES section for USAGERIGHTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -930,13 +930,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice
 
 ## NOTES
 

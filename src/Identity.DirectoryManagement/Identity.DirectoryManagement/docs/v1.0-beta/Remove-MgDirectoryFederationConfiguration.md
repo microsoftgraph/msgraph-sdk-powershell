@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryfederationconfiguration
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/remove-mgdirectoryfederationconfiguration
 schema: 2.0.0
 ---
 
-# Remove-MgDirectoryFederationConfiguration
+# Remove-MgBetaDirectoryFederationConfiguration
 
 ## SYNOPSIS
 Delete navigation property federationConfigurations for directory
@@ -14,13 +14,13 @@ Delete navigation property federationConfigurations for directory
 
 ### Delete (Default)
 ```
-Remove-MgDirectoryFederationConfiguration -IdentityProviderBaseId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaDirectoryFederationConfiguration -IdentityProviderBaseId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
+Remove-MgBetaDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property federationConfigurations for directory
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgDirectoryFederationConfiguration Cmdlet
+### Example 1: Using the Remove-MgBetaDirectoryFederationConfiguration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Remove-MgBetaDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
 ```
 
-This example shows how to use the Remove-MgDirectoryFederationConfiguration Cmdlet.
+This example shows how to use the Remove-MgBetaDirectoryFederationConfiguration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

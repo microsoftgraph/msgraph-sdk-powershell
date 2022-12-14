@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementcategory
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementcategory
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementCategory
+# New-MgBetaDeviceManagementCategory
 
 ## SYNOPSIS
 Create new navigation property to categories for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to categories for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementCategory [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceManagementCategory [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-HasRequiredSetting] [-Id <String>]
  [-SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementCategory [-AdditionalProperties <Hashtable>] [-DisplayName
 
 ### Create
 ```
-New-MgDeviceManagementCategory -BodyParameter <IMicrosoftGraphDeviceManagementSettingCategory> [-Confirm]
+New-MgBetaDeviceManagementCategory -BodyParameter <IMicrosoftGraphDeviceManagementSettingCategory> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Entity representing a setting category
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingCategory
 Parameter Sets: Create
 Aliases:
 
@@ -115,7 +115,7 @@ The setting definitions this category contains
 To construct, please use Get-Help -Online and see NOTES section for SETTINGDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -162,11 +162,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingCategory
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingCategory
 
 ## NOTES
 

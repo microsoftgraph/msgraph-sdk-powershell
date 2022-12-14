@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityipsecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityipsecurityprofile
 schema: 2.0.0
 ---
 
-# Update-MgSecurityIPSecurityProfile
+# Update-MgBetaSecurityIPSecurityProfile
 
 ## SYNOPSIS
 Update the navigation property ipSecurityProfiles in security
@@ -14,7 +14,7 @@ Update the navigation property ipSecurityProfiles in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityIPSecurityProfile -IPSecurityProfileId <String> [-ActivityGroupNames <String[]>]
+Update-MgBetaSecurityIPSecurityProfile -IPSecurityProfileId <String> [-ActivityGroupNames <String[]>]
  [-AdditionalProperties <Hashtable>] [-Address <String>] [-AzureSubscriptionId <String>]
  [-AzureTenantId <String>] [-CountHits <Int32>] [-CountHosts <Int32>] [-FirstSeenDateTime <DateTime>]
  [-Id <String>] [-IPCategories <IMicrosoftGraphIPCategory[]>]
@@ -25,19 +25,19 @@ Update-MgSecurityIPSecurityProfile -IPSecurityProfileId <String> [-ActivityGroup
 
 ### Update
 ```
-Update-MgSecurityIPSecurityProfile -IPSecurityProfileId <String>
+Update-MgBetaSecurityIPSecurityProfile -IPSecurityProfileId <String>
  -BodyParameter <IMicrosoftGraphIPSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityIPSecurityProfile -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityIPSecurityProfile -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphIPSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityIPSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGroupNames <String[]>]
+Update-MgBetaSecurityIPSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGroupNames <String[]>]
  [-AdditionalProperties <Hashtable>] [-Address <String>] [-AzureSubscriptionId <String>]
  [-AzureTenantId <String>] [-CountHits <Int32>] [-CountHosts <Int32>] [-FirstSeenDateTime <DateTime>]
  [-Id <String>] [-IPCategories <IMicrosoftGraphIPCategory[]>]
@@ -133,7 +133,7 @@ ipSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -210,7 +210,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IPCATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPCategory[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IPREFERENCEDATA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPReferenceData[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPReferenceData[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -333,7 +333,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -380,9 +380,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

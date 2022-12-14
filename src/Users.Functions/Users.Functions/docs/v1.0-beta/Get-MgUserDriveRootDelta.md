@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mguserdriverootdelta
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mguserdriverootdelta
 schema: 2.0.0
 ---
 
-# Get-MgUserDriveRootDelta
+# Get-MgBetaUserDriveRootDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -14,27 +14,27 @@ Invoke function delta
 
 ### Delta2 (Default)
 ```
-Get-MgUserDriveRootDelta -DriveId <String> -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserDriveRootDelta -DriveId <String> -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Delta3
 ```
-Get-MgUserDriveRootDelta -DriveId <String> -Token <String> -UserId <String> [-Count] [-Filter <String>]
+Get-MgBetaUserDriveRootDelta -DriveId <String> -Token <String> -UserId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity2
 ```
-Get-MgUserDriveRootDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaUserDriveRootDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity3
 ```
-Get-MgUserDriveRootDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaUserDriveRootDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: DeltaViaIdentity2, DeltaViaIdentity3
 Aliases:
 
@@ -217,11 +217,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2xuserflowlanguageoverridepage
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2xuserflowlanguageoverridepage
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2XUserFlowLanguageOverridePage
+# Get-MgBetaIdentityB2XUserFlowLanguageOverridePage
 
 ## SYNOPSIS
 Collection of pages with the overrides messages to display in a user flow for a specified language.
@@ -15,7 +15,7 @@ This collection only allows to modify the content of the page, any other modific
 
 ### List1 (Default)
 ```
-Get-MgIdentityB2XUserFlowLanguageOverridePage -B2XIdentityUserFlowId <String>
+Get-MgBetaIdentityB2XUserFlowLanguageOverridePage -B2XIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -23,14 +23,14 @@ Get-MgIdentityB2XUserFlowLanguageOverridePage -B2XIdentityUserFlowId <String>
 
 ### Get1
 ```
-Get-MgIdentityB2XUserFlowLanguageOverridePage -B2XIdentityUserFlowId <String>
+Get-MgBetaIdentityB2XUserFlowLanguageOverridePage -B2XIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgIdentityB2XUserFlowLanguageOverridePage -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaIdentityB2XUserFlowLanguageOverridePage -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguagePage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguagePage
 
 ### System.String
 

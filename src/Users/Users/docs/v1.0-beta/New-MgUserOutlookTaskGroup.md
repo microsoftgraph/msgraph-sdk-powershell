@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguseroutlooktaskgroup
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/new-mguseroutlooktaskgroup
 schema: 2.0.0
 ---
 
-# New-MgUserOutlookTaskGroup
+# New-MgBetaUserOutlookTaskGroup
 
 ## SYNOPSIS
 Create an Outlook task group in the user's mailbox.
@@ -14,26 +14,26 @@ Create an Outlook task group in the user's mailbox.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserOutlookTaskGroup -UserId <String> [-AdditionalProperties <Hashtable>] [-ChangeKey <String>]
+New-MgBetaUserOutlookTaskGroup -UserId <String> [-AdditionalProperties <Hashtable>] [-ChangeKey <String>]
  [-GroupKey <String>] [-Id <String>] [-IsDefaultGroup] [-Name <String>]
  [-TaskFolders <IMicrosoftGraphOutlookTaskFolder[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserOutlookTaskGroup -UserId <String> -BodyParameter <IMicrosoftGraphOutlookTaskGroup> [-Confirm]
+New-MgBetaUserOutlookTaskGroup -UserId <String> -BodyParameter <IMicrosoftGraphOutlookTaskGroup> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOutlookTaskGroup -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookTaskGroup>
+New-MgBetaUserOutlookTaskGroup -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookTaskGroup>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserOutlookTaskGroup -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserOutlookTaskGroup -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ChangeKey <String>] [-GroupKey <String>] [-Id <String>] [-IsDefaultGroup] [-Name <String>]
  [-TaskFolders <IMicrosoftGraphOutlookTaskFolder[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,17 +43,17 @@ Create an Outlook task group in the user's mailbox.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserOutlookTaskGroup Cmdlet
+### Example 1: Using the New-MgBetaUserOutlookTaskGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	Name = "Leisure tasks"
 }
 # A UPN can also be used as -UserId.
-New-MgUserOutlookTaskGroup -UserId $userId -BodyParameter $params
+New-MgBetaUserOutlookTaskGroup -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserOutlookTaskGroup Cmdlet.
+This example shows how to use the New-MgBetaUserOutlookTaskGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -78,7 +78,7 @@ outlookTaskGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -188,7 +188,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for TASKFOLDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskFolder[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTaskFolder[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -250,13 +250,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
 
 ## NOTES
 

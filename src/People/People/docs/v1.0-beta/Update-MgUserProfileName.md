@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/update-mguserprofilename
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/update-mguserprofilename
 schema: 2.0.0
 ---
 
-# Update-MgUserProfileName
+# Update-MgBetaUserProfileName
 
 ## SYNOPSIS
 Update the navigation property names in users
@@ -14,7 +14,7 @@ Update the navigation property names in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserProfileName -PersonNameId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserProfileName -PersonNameId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-First <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-Initials <String>] [-IsSearchable] [-LanguageTag <String>] [-Last <String>]
@@ -26,19 +26,19 @@ Update-MgUserProfileName -PersonNameId <String> -UserId <String> [-AdditionalPro
 
 ### Update
 ```
-Update-MgUserProfileName -PersonNameId <String> -UserId <String> -BodyParameter <IMicrosoftGraphPersonName>
+Update-MgBetaUserProfileName -PersonNameId <String> -UserId <String> -BodyParameter <IMicrosoftGraphPersonName>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserProfileName -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphPersonName> [-PassThru]
+Update-MgBetaUserProfileName -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphPersonName> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserProfileName -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserProfileName -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-First <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-Initials <String>] [-IsSearchable] [-LanguageTag <String>] [-Last <String>]
@@ -53,17 +53,17 @@ Update the navigation property names in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserProfileName Cmdlet
+### Example 1: Using the Update-MgBetaUserProfileName Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Nickname = "Kesha"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserProfileName -UserId $userId -PersonNameId $personNameId -BodyParameter $params
+Update-MgBetaUserProfileName -UserId $userId -PersonNameId $personNameId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserProfileName Cmdlet.
+This example shows how to use the Update-MgBetaUserProfileName Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -103,7 +103,7 @@ personName
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonName
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonName
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -196,7 +196,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -227,7 +227,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -288,7 +288,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -394,7 +394,7 @@ personNamePronounciation
 To construct, please use Get-Help -Online and see NOTES section for PRONUNCIATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonNamePronounciation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonNamePronounciation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -410,7 +410,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -502,9 +502,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonName
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonName
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 

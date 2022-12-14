@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/new-mguseractivity
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/new-mguseractivity
 schema: 2.0.0
 ---
 
-# New-MgUserActivity
+# New-MgBetaUserActivity
 
 ## SYNOPSIS
 Create new navigation property to activities for users
@@ -14,7 +14,7 @@ Create new navigation property to activities for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserActivity -UserId <String> [-ActivationUrl <String>] [-ActivitySourceHost <String>]
+New-MgBetaUserActivity -UserId <String> [-ActivationUrl <String>] [-ActivitySourceHost <String>]
  [-AdditionalProperties <Hashtable>] [-AppActivityId <String>] [-AppDisplayName <String>]
  [-ContentInfo <Hashtable>] [-ContentUrl <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-FallbackUrl <String>]
@@ -25,19 +25,19 @@ New-MgUserActivity -UserId <String> [-ActivationUrl <String>] [-ActivitySourceHo
 
 ### Create
 ```
-New-MgUserActivity -UserId <String> -BodyParameter <IMicrosoftGraphUserActivity1> [-Confirm] [-WhatIf]
+New-MgBetaUserActivity -UserId <String> -BodyParameter <IMicrosoftGraphUserActivity1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity>
+New-MgBetaUserActivity -InputObject <ICrossDeviceExperiencesIdentity>
  -BodyParameter <IMicrosoftGraphUserActivity1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-ActivationUrl <String>]
+New-MgBetaUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-ActivationUrl <String>]
  [-ActivitySourceHost <String>] [-AdditionalProperties <Hashtable>] [-AppActivityId <String>]
  [-AppDisplayName <String>] [-ContentInfo <Hashtable>] [-ContentUrl <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-FallbackUrl <String>]
@@ -144,7 +144,7 @@ userActivity
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for HISTORYITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityHistoryItem[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -271,7 +271,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -349,7 +349,7 @@ visualInfo
 To construct, please use Get-Help -Online and see NOTES section for VISUALELEMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVisualInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVisualInfo
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -396,13 +396,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity1
 
 ## NOTES
 

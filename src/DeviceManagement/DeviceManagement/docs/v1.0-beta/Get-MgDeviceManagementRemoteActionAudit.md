@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementremoteactionaudit
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementremoteactionaudit
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementRemoteActionAudit
+# Get-MgBetaDeviceManagementRemoteActionAudit
 
 ## SYNOPSIS
 The list of device remote action audits with the tenant.
@@ -14,20 +14,20 @@ The list of device remote action audits with the tenant.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementRemoteActionAudit [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDeviceManagementRemoteActionAudit [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
 
 ## NOTES
 

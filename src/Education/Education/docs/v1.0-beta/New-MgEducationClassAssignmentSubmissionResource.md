@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationclassassignmentsubmissionresource
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/new-mgeducationclassassignmentsubmissionresource
 schema: 2.0.0
 ---
 
-# New-MgEducationClassAssignmentSubmissionResource
+# New-MgBetaEducationClassAssignmentSubmissionResource
 
 ## SYNOPSIS
 Add a educationSubmissionResource to a submission resource list.
@@ -18,27 +18,27 @@ If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgEducationClassAssignmentSubmissionResource -EducationAssignmentId <String> -EducationClassId <String>
+New-MgBetaEducationClassAssignmentSubmissionResource -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>]
  [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgEducationClassAssignmentSubmissionResource -EducationAssignmentId <String> -EducationClassId <String>
+New-MgBetaEducationClassAssignmentSubmissionResource -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity>
+New-MgBetaEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity>
+New-MgBetaEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>] [-Id <String>]
  [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,100 +52,100 @@ If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgEducationClassAssignmentSubmissionResource Cmdlet
+### Example 1: Using the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	Resource = @{
-		"@odata.type" = "#microsoft.graph.educationExcelResource"
+		"@odata.type" = "#Microsoft.Graph.Beta.educationExcelResource"
 		DisplayName = "userAgeGroup QueryParameter Test.xlsx"
 		FileUrl = "https://graph.microsoft.com/beta/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXodJYOAkI7rTLhw7ME_e42J/items/01QTY63RONPUDM2CZKNRF3TGHYUM7Z64WE"
 	}
 }
-New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgEducationClassAssignmentSubmissionResource Cmdlet
+### Example 2: Using the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	Resource = @{
 		DisplayName = "_FTP_EDC-61424749-250820211136.pdf"
 		FileUrl = "https://graph.microsoft.com/beta/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXodJYOAkI7rTLhw7ME_e42J/items/01QTY63RL45XVPGDBRW5FLDR62Z5TCMGG3"
-		"@odata.type" = "#microsoft.graph.educationFileResource"
+		"@odata.type" = "#Microsoft.Graph.Beta.educationFileResource"
 	}
 }
-New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgEducationClassAssignmentSubmissionResource Cmdlet
+### Example 3: Using the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	Resource = @{
 		DisplayName = "Wikipedia"
 		Link = "https://en.wikipedia.org/wiki/Main_Page"
-		"@odata.type" = "#microsoft.graph.educationLinkResource"
+		"@odata.type" = "#Microsoft.Graph.Beta.educationLinkResource"
 	}
 }
-New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgEducationClassAssignmentSubmissionResource Cmdlet
+### Example 4: Using the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	Resource = @{
 		DisplayName = "category.jpg"
 		FileUrl = "https://graph.microsoft.com/beta/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXodJYOAkI7rTLhw7ME_e42J/items/01QTY63RK2WLKUUBAA4ZBKXNBL6QFC2TKG"
-		"@odata.type" = "#microsoft.graph.educationMediaResource"
+		"@odata.type" = "#Microsoft.Graph.Beta.educationMediaResource"
 	}
 }
-New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the New-MgEducationClassAssignmentSubmissionResource Cmdlet
+### Example 5: Using the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	Resource = @{
-		"@odata.type" = "#microsoft.graph.educationPowerPointResource"
+		"@odata.type" = "#Microsoft.Graph.Beta.educationPowerPointResource"
 		DisplayName = "state diagram.pptx"
 		FileUrl = "https://graph.microsoft.com/beta/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXodJYOAkI7rTLhw7ME_e42J/items/01QTY63RN3MHWWM7BNXJD2UD5OMRFEDKN2"
 	}
 }
-New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the New-MgEducationClassAssignmentSubmissionResource Cmdlet
+### Example 6: Using the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	Resource = @{
-		"@odata.type" = "microsoft.graph.educationWordResource"
+		"@odata.type" = "Microsoft.Graph.Beta.educationWordResource"
 		DisplayName = "Report.docx"
 		FileUrl = "https://graph.microsoft.com/beta/drives/b!DPA6q59Tw0mtgmyXRUmrQRqBZTesG-lMkl1cBmvvMeUEWrOk89nKRpUEr4ZhNYBc/items/016XPCQEELISJB7NVNVBAK7V4UIF6Q27U2"
 	}
 }
-New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -186,7 +186,7 @@ educationSubmissionResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -263,7 +263,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -279,7 +279,7 @@ educationResource
 To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationResource
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -326,13 +326,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
 
 ## NOTES
 

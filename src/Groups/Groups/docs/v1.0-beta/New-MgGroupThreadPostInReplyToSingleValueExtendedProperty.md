@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupthreadpostinreplytosinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupthreadpostinreplytosinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# New-MgGroupThreadPostInReplyToSingleValueExtendedProperty
+# New-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty
 
 ## SYNOPSIS
 Create new navigation property to singleValueExtendedProperties for groups
@@ -14,27 +14,27 @@ Create new navigation property to singleValueExtendedProperties for groups
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupThreadPostInReplyToSingleValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
+New-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
  -PostId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupThreadPostInReplyToSingleValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
+New-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
  -PostId <String> -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
+New-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
+New-MgBetaGroupThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ singleValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -205,13 +205,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

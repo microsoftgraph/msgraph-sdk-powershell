@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanyshipmentmethod
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/remove-mgfinancialcompanyshipmentmethod
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanyShipmentMethod
+# Remove-MgBetaFinancialCompanyShipmentMethod
 
 ## SYNOPSIS
 Delete navigation property shipmentMethods for financials
@@ -14,13 +14,13 @@ Delete navigation property shipmentMethods for financials
 
 ### Delete (Default)
 ```
-Remove-MgFinancialCompanyShipmentMethod -CompanyId <String> -ShipmentMethodId <String> [-IfMatch <String>]
+Remove-MgBetaFinancialCompanyShipmentMethod -CompanyId <String> -ShipmentMethodId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

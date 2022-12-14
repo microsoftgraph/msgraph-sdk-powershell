@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgchatpinnedmessage
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgchatpinnedmessage
 schema: 2.0.0
 ---
 
-# Update-MgChatPinnedMessage
+# Update-MgBetaChatPinnedMessage
 
 ## SYNOPSIS
 Update the navigation property pinnedMessages in chats
@@ -14,26 +14,26 @@ Update the navigation property pinnedMessages in chats
 
 ### UpdateExpanded (Default)
 ```
-Update-MgChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String>
+Update-MgBetaChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Message <IMicrosoftGraphChatMessage>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String>
+Update-MgBetaChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String>
  -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgChatPinnedMessage -InputObject <ITeamsIdentity>
+Update-MgBetaChatPinnedMessage -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Message <IMicrosoftGraphChatMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -64,7 +64,7 @@ pinnedChatMessageInfo
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -127,7 +127,7 @@ chatMessage
 To construct, please use Get-Help -Online and see NOTES section for MESSAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -204,9 +204,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

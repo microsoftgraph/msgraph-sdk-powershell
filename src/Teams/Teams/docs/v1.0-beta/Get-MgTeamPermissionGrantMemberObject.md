@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteampermissiongrantmemberobject
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteampermissiongrantmemberobject
 schema: 2.0.0
 ---
 
-# Get-MgTeamPermissionGrantMemberObject
+# Get-MgBetaTeamPermissionGrantMemberObject
 
 ## SYNOPSIS
 Invoke action getMemberObjects
@@ -14,27 +14,27 @@ Invoke action getMemberObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgTeamPermissionGrantMemberObject -ResourceSpecificPermissionGrantId <String> -TeamId <String>
+Get-MgBetaTeamPermissionGrantMemberObject -ResourceSpecificPermissionGrantId <String> -TeamId <String>
  [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTeamPermissionGrantMemberObject -ResourceSpecificPermissionGrantId <String> -TeamId <String>
+Get-MgBetaTeamPermissionGrantMemberObject -ResourceSpecificPermissionGrantId <String> -TeamId <String>
  -BodyParameter <IPathsK7Txm6TeamsTeamIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamPermissionGrantMemberObject -InputObject <ITeamsIdentity>
+Get-MgBetaTeamPermissionGrantMemberObject -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsK7Txm6TeamsTeamIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgTeamPermissionGrantMemberObject -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Get-MgBetaTeamPermissionGrantMemberObject -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsK7Txm6TeamsTeamIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsK7Txm6TeamsTeamIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -173,9 +173,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsK7Txm6TeamsTeamIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsK7Txm6TeamsTeamIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

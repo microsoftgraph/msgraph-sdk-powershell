@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/resize-mgusermanageddevicecloudpc
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/resize-mgusermanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Resize-MgUserManagedDeviceCloudPc
+# Resize-MgBetaUserManagedDeviceCloudPc
 
 ## SYNOPSIS
 Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
@@ -14,28 +14,28 @@ Upgrade or downgrade an existing Cloud PC to another configuration with a new vi
 
 ### ResizeExpanded (Default)
 ```
-Resize-MgUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
+Resize-MgBetaUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-TargetServicePlanId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Resize
 ```
-Resize-MgUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
+Resize-MgBetaUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResizeViaIdentity
 ```
-Resize-MgUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
+Resize-MgBetaUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResizeViaIdentityExpanded
 ```
-Resize-MgUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Resize-MgBetaUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-TargetServicePlanId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Resize, ResizeViaIdentity
 Aliases:
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ResizeViaIdentity, ResizeViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

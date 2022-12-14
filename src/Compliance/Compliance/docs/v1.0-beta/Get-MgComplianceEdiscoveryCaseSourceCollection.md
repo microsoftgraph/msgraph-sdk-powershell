@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycasesourcecollection
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycasesourcecollection
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseSourceCollection
+# Get-MgBetaComplianceEdiscoveryCaseSourceCollection
 
 ## SYNOPSIS
 Returns a list of sourceCollection objects associated with this case.
@@ -14,20 +14,20 @@ Returns a list of sourceCollection objects associated with this case.
 
 ### List (Default)
 ```
-Get-MgComplianceEdiscoveryCaseSourceCollection -CaseId <String> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgComplianceEdiscoveryCaseSourceCollection -CaseId <String> -SourceCollectionId <String>
+Get-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId <String> -SourceCollectionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Returns a list of sourceCollection objects associated with this case.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseSourceCollection Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseSourceCollection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseSourceCollection -CaseId $caseId -SourceCollectionId $sourceCollectionId -ExpandProperty "addToReviewSetOperation,custodianSources,lastEstimateStatisticsOperation" 
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId $caseId -SourceCollectionId $sourceCollectionId -ExpandProperty "addToReviewSetOperation,custodianSources,lastEstimateStatisticsOperation" 
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollection Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseSourceCollection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgComplianceEdiscoveryCaseSourceCollection Cmdlet
+### Example 2: Using the Get-MgBetaComplianceEdiscoveryCaseSourceCollection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseSourceCollection -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId $caseId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollection Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseSourceCollection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoverySourceCollection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoverySourceCollection
 
 ## NOTES
 

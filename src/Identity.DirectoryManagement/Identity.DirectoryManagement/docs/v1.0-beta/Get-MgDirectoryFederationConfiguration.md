@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryfederationconfiguration
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryfederationconfiguration
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryFederationConfiguration
+# Get-MgBetaDirectoryFederationConfiguration
 
 ## SYNOPSIS
 Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
@@ -14,20 +14,20 @@ Configure domain federation with organizations whose identity provider (IdP) sup
 
 ### List (Default)
 ```
-Get-MgDirectoryFederationConfiguration [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDirectoryFederationConfiguration [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDirectoryFederationConfiguration -IdentityProviderBaseId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Configure domain federation with organizations whose identity provider (IdP) sup
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDirectoryFederationConfiguration Cmdlet
+### Example 1: Using the Get-MgBetaDirectoryFederationConfiguration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId -Filter "domains/any(x: x/id eq 'contoso.com')" 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId -Filter "domains/any(x: x/id eq 'contoso.com')" 
 ```
 
-This example shows how to use the Get-MgDirectoryFederationConfiguration Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryFederationConfiguration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgDirectoryFederationConfiguration Cmdlet
+### Example 2: Using the Get-MgBetaDirectoryFederationConfiguration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
 ```
 
-This example shows how to use the Get-MgDirectoryFederationConfiguration Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryFederationConfiguration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 
 ## NOTES
 

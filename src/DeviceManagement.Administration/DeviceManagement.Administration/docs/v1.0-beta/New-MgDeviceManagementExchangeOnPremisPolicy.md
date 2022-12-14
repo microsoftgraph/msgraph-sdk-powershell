@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementexchangeonpremispolicy
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementexchangeonpremispolicy
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementExchangeOnPremisPolicy
+# New-MgBetaDeviceManagementExchangeOnPremisPolicy
 
 ## SYNOPSIS
 Create new navigation property to exchangeOnPremisesPolicies for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to exchangeOnPremisesPolicies for deviceManagemen
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementExchangeOnPremisPolicy
+New-MgBetaDeviceManagementExchangeOnPremisPolicy
  [-AccessRules <IMicrosoftGraphDeviceManagementExchangeAccessRule[]>] [-AdditionalProperties <Hashtable>]
  [-ConditionalAccessSettings <IMicrosoftGraphOnPremisesConditionalAccessSettings>]
  [-DefaultAccessLevel <DeviceManagementExchangeAccessLevel>] [-Id <String>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementExchangeOnPremisPolicy
 
 ### Create
 ```
-New-MgDeviceManagementExchangeOnPremisPolicy
+New-MgBetaDeviceManagementExchangeOnPremisPolicy
  -BodyParameter <IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -42,7 +42,7 @@ The access rules apply globally to the entire Exchange organization
 To construct, please use Get-Help -Online and see NOTES section for ACCESSRULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeAccessRule[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeAccessRule[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -73,7 +73,7 @@ Singleton entity which represents the Exchange OnPremises policy configured for 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
 Parameter Sets: Create
 Aliases:
 
@@ -89,7 +89,7 @@ Singleton entity which represents the Exchange OnPremises Conditional Access Set
 To construct, please use Get-Help -Online and see NOTES section for CONDITIONALACCESSSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 Access Level in Exchange.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementExchangeAccessLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementExchangeAccessLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -136,7 +136,7 @@ The list of device classes known to Exchange
 To construct, please use Get-Help -Online and see NOTES section for KNOWNDEVICECLASSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeDeviceClass[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeDeviceClass[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -199,11 +199,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowrunuserprocessingresult
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowrunuserprocessingresult
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult
 
 ## SYNOPSIS
 The associated individual user execution.
@@ -14,21 +14,21 @@ The associated individual user execution.
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -RunId <String> -WorkflowId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -RunId <String> -WorkflowId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -RunId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -RunId <String>
  -UserProcessingResultId <String> -WorkflowId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -37,22 +37,22 @@ The associated individual user execution.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -WorkflowId $workflowId -RunId $runId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -WorkflowId $workflowId -RunId $runId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -WorkflowId $workflowId -RunId $runId -UserProcessingResultId $userProcessingResultId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -WorkflowId $workflowId -RunId $runId -UserProcessingResultId $userProcessingResultId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -274,11 +274,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceUserProcessingResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceUserProcessingResult
 
 ## NOTES
 

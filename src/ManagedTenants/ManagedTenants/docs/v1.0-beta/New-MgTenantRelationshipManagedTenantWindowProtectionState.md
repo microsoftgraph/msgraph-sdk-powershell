@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantwindowprotectionstate
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantwindowprotectionstate
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantWindowProtectionState
+# New-MgBetaTenantRelationshipManagedTenantWindowProtectionState
 
 ## SYNOPSIS
 Create new navigation property to windowsProtectionStates for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to windowsProtectionStates for tenantRelationship
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantWindowProtectionState [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantWindowProtectionState [-AdditionalProperties <Hashtable>]
  [-AntiMalwareVersion <String>] [-AttentionRequired] [-DeviceDeleted]
  [-DevicePropertyRefreshDateTime <DateTime>] [-EngineVersion <String>] [-FullScanOverdue] [-FullScanRequired]
  [-Id <String>] [-LastFullScanDateTime <DateTime>] [-LastFullScanSignatureVersion <String>]
@@ -28,7 +28,7 @@ New-MgTenantRelationshipManagedTenantWindowProtectionState [-AdditionalPropertie
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantWindowProtectionState
+New-MgBetaTenantRelationshipManagedTenantWindowProtectionState
  -BodyParameter <IMicrosoftGraphManagedTenantsWindowsProtectionState> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -94,7 +94,7 @@ windowsProtectionState
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
 Parameter Sets: Create
 Aliases:
 
@@ -548,11 +548,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
 
 ## NOTES
 

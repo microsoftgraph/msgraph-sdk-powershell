@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantmyrole
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantmyrole
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantMyRole
+# New-MgBetaTenantRelationshipManagedTenantMyRole
 
 ## SYNOPSIS
 Create new navigation property to myRoles for tenantRelationships
@@ -14,14 +14,14 @@ Create new navigation property to myRoles for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantMyRole [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantMyRole [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphManagedTenantsRoleAssignment[]>] [-TenantId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantMyRole -BodyParameter <IMicrosoftGraphManagedTenantsMyRole> [-Confirm]
+New-MgBetaTenantRelationshipManagedTenantMyRole -BodyParameter <IMicrosoftGraphManagedTenantsMyRole> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ A collection of role assignments for the managed tenant.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsRoleAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsRoleAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -68,7 +68,7 @@ myRole
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsMyRole
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsMyRole
 Parameter Sets: Create
 Aliases:
 
@@ -132,11 +132,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsMyRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsMyRole
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsMyRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsMyRole
 
 ## NOTES
 

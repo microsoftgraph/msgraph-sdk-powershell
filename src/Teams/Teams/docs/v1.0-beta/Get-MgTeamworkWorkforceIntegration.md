@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamworkworkforceintegration
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamworkworkforceintegration
 schema: 2.0.0
 ---
 
-# Get-MgTeamworkWorkforceIntegration
+# Get-MgBetaTeamworkWorkforceIntegration
 
 ## SYNOPSIS
 A workforce integration with shifts.
@@ -14,20 +14,20 @@ A workforce integration with shifts.
 
 ### List1 (Default)
 ```
-Get-MgTeamworkWorkforceIntegration [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaTeamworkWorkforceIntegration [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ A workforce integration with shifts.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamworkWorkforceIntegration Cmdlet
+### Example 1: Using the Get-MgBetaTeamworkWorkforceIntegration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
 ```
 
-This example shows how to use the Get-MgTeamworkWorkforceIntegration Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkWorkforceIntegration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamworkWorkforceIntegration Cmdlet
+### Example 2: Using the Get-MgBetaTeamworkWorkforceIntegration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkWorkforceIntegration
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkWorkforceIntegration
 ```
 
-This example shows how to use the Get-MgTeamworkWorkforceIntegration Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkWorkforceIntegration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
 
 ## NOTES
 

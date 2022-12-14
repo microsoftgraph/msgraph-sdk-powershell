@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternalconnectionoperation
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/get-mgexternalconnectionoperation
 schema: 2.0.0
 ---
 
-# Get-MgExternalConnectionOperation
+# Get-MgBetaExternalConnectionOperation
 
 ## SYNOPSIS
 Get operations from external
@@ -14,20 +14,20 @@ Get operations from external
 
 ### List (Default)
 ```
-Get-MgExternalConnectionOperation -ExternalConnectionId <String> [-ExpandProperty <String[]>]
+Get-MgBetaExternalConnectionOperation -ExternalConnectionId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgExternalConnectionOperation -ConnectionOperationId <String> -ExternalConnectionId <String>
+Get-MgBetaExternalConnectionOperation -ConnectionOperationId <String> -ExternalConnectionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgExternalConnectionOperation -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaExternalConnectionOperation -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get operations from external
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgExternalConnectionOperation Cmdlet
+### Example 1: Using the Get-MgBetaExternalConnectionOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgExternalConnectionOperation -ExternalConnectionId $externalConnectionId -ConnectionOperationId $connectionOperationId
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaExternalConnectionOperation -ExternalConnectionId $externalConnectionId -ConnectionOperationId $connectionOperationId
 ```
 
-This example shows how to use the Get-MgExternalConnectionOperation Cmdlet.
+This example shows how to use the Get-MgBetaExternalConnectionOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusercalendarsinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusercalendarsinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgUserCalendarSingleValueExtendedProperty
+# Get-MgBetaUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
 The collection of single-value extended properties defined for the calendar.
@@ -16,39 +16,39 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserCalendarSingleValueExtendedProperty -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserCalendarSingleValueExtendedProperty -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
+Get-MgBetaUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserCalendarSingleValueExtendedProperty -CalendarId <String>
+Get-MgBetaUserCalendarSingleValueExtendedProperty -CalendarId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgUserCalendarSingleValueExtendedProperty -CalendarId <String> -UserId <String>
+Get-MgBetaUserCalendarSingleValueExtendedProperty -CalendarId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -279,11 +279,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

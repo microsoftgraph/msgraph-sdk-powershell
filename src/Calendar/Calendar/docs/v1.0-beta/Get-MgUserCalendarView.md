@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusercalendarview
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusercalendarview
 schema: 2.0.0
 ---
 
-# Get-MgUserCalendarView
+# Get-MgBetaUserCalendarView
 
 ## SYNOPSIS
 The calendar view for the calendar.
@@ -16,14 +16,14 @@ Read-only.
 
 ### List (Default)
 ```
-Get-MgUserCalendarView -UserId <String> -EndDateTime <String> -StartDateTime <String> [-Filter <String>]
+Get-MgBetaUserCalendarView -UserId <String> -EndDateTime <String> -StartDateTime <String> [-Filter <String>]
  [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgUserCalendarView -CalendarId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
+Get-MgBetaUserCalendarView -CalendarId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -35,14 +35,14 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserCalendarView Cmdlet
+### Example 1: Using the Get-MgBetaUserCalendarView Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserCalendarView -UserId $userId -Startdatetime "2017-01-01T19:00:00-08:00" -Enddatetime "2017-01-07T19:00:00-08:00" 
+Get-MgBetaUserCalendarView -UserId $userId -Startdatetime "2017-01-01T19:00:00-08:00" -Enddatetime "2017-01-07T19:00:00-08:00" 
 ```
 
-This example shows how to use the Get-MgUserCalendarView Cmdlet.
+This example shows how to use the Get-MgBetaUserCalendarView Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -237,7 +237,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 
 ## NOTES
 

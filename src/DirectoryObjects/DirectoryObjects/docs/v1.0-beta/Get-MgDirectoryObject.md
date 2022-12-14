@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DirectoryObjects
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.directoryobjects/get-mgdirectoryobject
+Module Name: Microsoft.Graph.Beta.DirectoryObjects
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.directoryobjects/get-mgdirectoryobject
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryObject
+# Get-MgBetaDirectoryObject
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a directoryObject object.
@@ -14,20 +14,20 @@ Retrieve the properties and relationships of a directoryObject object.
 
 ### List (Default)
 ```
-Get-MgDirectoryObject [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDirectoryObject [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgDirectoryObject -DirectoryObjectId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDirectoryObject -DirectoryObjectId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Retrieve the properties and relationships of a directoryObject object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDirectoryObject Cmdlet
+### Example 1: Using the Get-MgBetaDirectoryObject Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
-Get-MgDirectoryObject -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
+Get-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Get-MgDirectoryObject Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryObject Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDirectoryObjectsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDirectoryObjectsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDirectoryObjectsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDirectoryObjectsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

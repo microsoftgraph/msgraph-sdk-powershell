@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgappcatalogteamappdefinitionoutlineiconhostedcontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgappcatalogteamappdefinitionoutlineiconhostedcontent
 schema: 2.0.0
 ---
 
-# Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent
+# Get-MgBetaAppCatalogTeamAppDefinitionOutlineIconHostedContent
 
 ## SYNOPSIS
 Retrieve the hosted content in an app's icon.
@@ -14,25 +14,25 @@ Retrieve the hosted content in an app's icon.
 
 ### Get (Default)
 ```
-Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent -TeamsAppDefinitionId <String> -TeamsAppId <String>
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIconHostedContent -TeamsAppDefinitionId <String> -TeamsAppId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent -TeamsAppDefinitionId <String> -TeamsAppId <String>
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIconHostedContent -TeamsAppDefinitionId <String> -TeamsAppId <String>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent -InputObject <ITeamsIdentity>
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIconHostedContent -InputObject <ITeamsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent -InputObject <ITeamsIdentity> -OutFile <String>
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIconHostedContent -InputObject <ITeamsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -154,11 +154,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkHostedContent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkHostedContent
 
 ### System.Boolean
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/new-mggrouponenotenotebooksectiongroup
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/new-mggrouponenotenotebooksectiongroup
 schema: 2.0.0
 ---
 
-# New-MgGroupOnenoteNotebookSectionGroup
+# New-MgBetaGroupOnenoteNotebookSectionGroup
 
 ## SYNOPSIS
 Create a new section group in the specified notebook.
@@ -14,7 +14,7 @@ Create a new section group in the specified notebook.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgGroupOnenoteNotebookSectionGroup -GroupId <String> -NotebookId <String>
+New-MgBetaGroupOnenoteNotebookSectionGroup -GroupId <String> -NotebookId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-ParentNotebook <IMicrosoftGraphNotebook1>]
@@ -25,19 +25,19 @@ New-MgGroupOnenoteNotebookSectionGroup -GroupId <String> -NotebookId <String>
 
 ### Create1
 ```
-New-MgGroupOnenoteNotebookSectionGroup -GroupId <String> -NotebookId <String>
+New-MgBetaGroupOnenoteNotebookSectionGroup -GroupId <String> -NotebookId <String>
  -BodyParameter <IMicrosoftGraphSectionGroup1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgGroupOnenoteNotebookSectionGroup -InputObject <INotesIdentity>
+New-MgBetaGroupOnenoteNotebookSectionGroup -InputObject <INotesIdentity>
  -BodyParameter <IMicrosoftGraphSectionGroup1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgGroupOnenoteNotebookSectionGroup -InputObject <INotesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupOnenoteNotebookSectionGroup -InputObject <INotesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-ParentNotebook <IMicrosoftGraphNotebook1>] [-ParentSectionGroup <IMicrosoftGraphSectionGroup1>]
@@ -73,7 +73,7 @@ sectionGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSectionGroup1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -89,7 +89,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -168,7 +168,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -184,7 +184,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -233,7 +233,7 @@ notebook
 To construct, please use Get-Help -Online and see NOTES section for PARENTNOTEBOOK properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotebook1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotebook1
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -249,7 +249,7 @@ sectionGroup
 To construct, please use Get-Help -Online and see NOTES section for PARENTSECTIONGROUP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSectionGroup1
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -267,7 +267,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SECTIONGROUPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSectionGroup1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -301,7 +301,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SECTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteSection1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteSection1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -380,13 +380,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSectionGroup1
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSectionGroup1
 
 ## NOTES
 

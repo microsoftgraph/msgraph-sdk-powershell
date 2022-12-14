@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/clear-mgcommunicationpresenceuserpreferredpresence
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/clear-mgcommunicationpresenceuserpreferredpresence
 schema: 2.0.0
 ---
 
-# Clear-MgCommunicationPresenceUserPreferredPresence
+# Clear-MgBetaCommunicationPresenceUserPreferredPresence
 
 ## SYNOPSIS
 Clear the preferred availability and activity status for a user.
@@ -14,13 +14,13 @@ Clear the preferred availability and activity status for a user.
 
 ### Clear (Default)
 ```
-Clear-MgCommunicationPresenceUserPreferredPresence -PresenceId <String> [-PassThru] [-Confirm] [-WhatIf]
+Clear-MgBetaCommunicationPresenceUserPreferredPresence -PresenceId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### ClearViaIdentity
 ```
-Clear-MgCommunicationPresenceUserPreferredPresence -InputObject <ICloudCommunicationsIdentity> [-PassThru]
+Clear-MgBetaCommunicationPresenceUserPreferredPresence -InputObject <ICloudCommunicationsIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: ClearViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

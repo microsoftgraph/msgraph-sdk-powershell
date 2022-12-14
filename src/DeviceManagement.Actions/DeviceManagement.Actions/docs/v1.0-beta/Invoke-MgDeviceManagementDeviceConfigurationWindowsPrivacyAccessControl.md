@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgdevicemanagementdeviceconfigurationwindowsprivacyaccesscontrol
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgdevicemanagementdeviceconfigurationwindowsprivacyaccesscontrol
 schema: 2.0.0
 ---
 
-# Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl
+# Invoke-MgBetaDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl
 
 ## SYNOPSIS
 Invoke action windowsPrivacyAccessControls
@@ -14,7 +14,7 @@ Invoke action windowsPrivacyAccessControls
 
 ### AccessExpanded1 (Default)
 ```
-Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl -DeviceConfigurationId <String>
+Invoke-MgBetaDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl -DeviceConfigurationId <String>
  [-AdditionalProperties <Hashtable>]
  [-WindowsPrivacyAccessControls <IMicrosoftGraphWindowsPrivacyDataAccessControlItem[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,14 +22,14 @@ Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl -DeviceC
 
 ### Access1
 ```
-Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl -DeviceConfigurationId <String>
+Invoke-MgBetaDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl -DeviceConfigurationId <String>
  -BodyParameter <IPathsB12D8ODevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphWindowsprivacyaccesscontrolsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AccessViaIdentity1
 ```
-Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl
+Invoke-MgBetaDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsB12D8ODevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphWindowsprivacyaccesscontrolsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl
 
 ### AccessViaIdentityExpanded1
 ```
-Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl
+Invoke-MgBetaDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-WindowsPrivacyAccessControls <IMicrosoftGraphWindowsPrivacyDataAccessControlItem[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsB12D8ODevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphWindowsprivacyaccesscontrolsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsB12D8ODevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphWindowsprivacyaccesscontrolsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Access1, AccessViaIdentity1
 Aliases:
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AccessViaIdentity1, AccessViaIdentityExpanded1
 Aliases:
 
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for WINDOWSPRIVACYACCESSCONTROLS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsPrivacyDataAccessControlItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsPrivacyDataAccessControlItem[]
 Parameter Sets: AccessExpanded1, AccessViaIdentityExpanded1
 Aliases:
 
@@ -179,9 +179,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsB12D8ODevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphWindowsprivacyaccesscontrolsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsB12D8ODevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphWindowsprivacyaccesscontrolsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

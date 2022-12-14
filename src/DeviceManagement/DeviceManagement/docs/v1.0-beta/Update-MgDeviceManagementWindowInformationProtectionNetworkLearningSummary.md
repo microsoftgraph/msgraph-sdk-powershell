@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementwindowinformationprotectionnetworklearningsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementwindowinformationprotectionnetworklearningsummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
+# Update-MgBetaDeviceManagementWindowInformationProtectionNetworkLearningSummary
 
 ## SYNOPSIS
 Update the navigation property windowsInformationProtectionNetworkLearningSummaries in deviceManagement
@@ -14,14 +14,14 @@ Update the navigation property windowsInformationProtectionNetworkLearningSummar
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
+Update-MgBetaDeviceManagementWindowInformationProtectionNetworkLearningSummary
  -WindowsInformationProtectionNetworkLearningSummaryId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceCount <Int32>] [-Id <String>] [-Url <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
+Update-MgBetaDeviceManagementWindowInformationProtectionNetworkLearningSummary
  -WindowsInformationProtectionNetworkLearningSummaryId <String>
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Update-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
 
 ### UpdateViaIdentity1
 ```
-Update-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
+Update-MgBetaDeviceManagementWindowInformationProtectionNetworkLearningSummary
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Update-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
+Update-MgBetaDeviceManagementWindowInformationProtectionNetworkLearningSummary
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>]
  [-Id <String>] [-Url <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Windows Information Protection Network learning Summary entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -208,9 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
 
 ## OUTPUTS
 

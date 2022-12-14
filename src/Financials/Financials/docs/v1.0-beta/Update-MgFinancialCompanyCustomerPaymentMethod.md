@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanycustomerpaymentmethod
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanycustomerpaymentmethod
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyCustomerPaymentMethod
+# Update-MgBetaFinancialCompanyCustomerPaymentMethod
 
 ## SYNOPSIS
 Update the navigation property paymentMethod in financials
@@ -14,52 +14,52 @@ Update the navigation property paymentMethod in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerPaymentId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerPaymentId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerPaymentId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerPaymentId <String>
  -BodyParameter <IMicrosoftGraphPaymentMethod> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerId <String>
  -BodyParameter <IMicrosoftGraphPaymentMethod> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyCustomerPaymentMethod -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentMethod -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPaymentMethod> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanyCustomerPaymentMethod -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentMethod -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPaymentMethod> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyCustomerPaymentMethod -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentMethod -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanyCustomerPaymentMethod -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentMethod -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -91,7 +91,7 @@ paymentMethod
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentMethod
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -198,7 +198,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -275,9 +275,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentMethod
 
 ## OUTPUTS
 

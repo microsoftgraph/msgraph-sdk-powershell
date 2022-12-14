@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtioslobappprovisioningconfigurationuserstatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtioslobappprovisioningconfigurationuserstatuses
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
+# Get-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
 
 ## SYNOPSIS
 The list of user installation states for this mobile app configuration.
@@ -14,7 +14,7 @@ The list of user installation states for this mobile app configuration.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
+Get-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
  -IosLobAppProvisioningConfigurationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
 
 ### Get
 ```
-Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
+Get-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
  -IosLobAppProvisioningConfigurationId <String> -ManagedDeviceMobileAppConfigurationUserStatusId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
+Get-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses
  -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,17 +243,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementiOSLobAppProvisioningConfigurationUserStatuses
+### Get-MgBetaDeviceAppManagementiOSLobAppProvisioningConfigurationUserStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

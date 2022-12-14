@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mguseronlinemeeting
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mguseronlinemeeting
 schema: 2.0.0
 ---
 
-# New-MgUserOnlineMeeting
+# New-MgBetaUserOnlineMeeting
 
 ## SYNOPSIS
 Create an online meeting on behalf of a user.
@@ -14,7 +14,7 @@ Create an online meeting on behalf of a user.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera]
+New-MgBetaUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera]
  [-AllowAttendeeToEnableMic] [-AllowedPresenters <String>] [-AllowTeamworkReactions]
  [-AlternativeRecordingInputFile <String>] [-AnonymizeIdentityForRoles <String[]>]
  [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>] [-AttendeeReportInputFile <String>]
@@ -33,19 +33,19 @@ New-MgUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>] [-A
 
 ### Create
 ```
-New-MgUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-Confirm] [-WhatIf]
+New-MgBetaUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic] [-AllowedPresenters <String>]
  [-AllowTeamworkReactions] [-AlternativeRecordingInputFile <String>] [-AnonymizeIdentityForRoles <String[]>]
  [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>] [-AttendeeReportInputFile <String>]
@@ -67,19 +67,19 @@ Create an online meeting on behalf of a user.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserOnlineMeeting Cmdlet
+### Example 1: Using the New-MgBetaUserOnlineMeeting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	StartDateTime = [System.DateTime]::Parse("2019-07-12T14:30:34.2444915-07:00")
 	EndDateTime = [System.DateTime]::Parse("2019-07-12T15:00:34.2464912-07:00")
 	Subject = "User Token Meeting"
 }
 # A UPN can also be used as -UserId.
-New-MgUserOnlineMeeting -UserId $userId -BodyParameter $params
+New-MgBetaUserOnlineMeeting -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserOnlineMeeting Cmdlet.
+This example shows how to use the New-MgBetaUserOnlineMeeting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -196,7 +196,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for ATTENDANCEREPORTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -228,7 +228,7 @@ audioConferencing
 To construct, please use Get-Help -Online and see NOTES section for AUDIOCONFERENCING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioConferencing
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAudioConferencing
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -244,7 +244,7 @@ onlineMeeting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -260,7 +260,7 @@ broadcastMeetingSettings
 To construct, please use Get-Help -Online and see NOTES section for BROADCASTSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBroadcastMeetingSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBroadcastMeetingSettings
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -291,7 +291,7 @@ chatInfo
 To construct, please use Get-Help -Online and see NOTES section for CHATINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatInfo
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -371,7 +371,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -417,7 +417,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for JOININFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -433,7 +433,7 @@ joinMeetingIdSettings
 To construct, please use Get-Help -Online and see NOTES section for JOINMEETINGIDSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJoinMeetingIdSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJoinMeetingIdSettings
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -480,7 +480,7 @@ lobbyBypassSettings
 To construct, please use Get-Help -Online and see NOTES section for LOBBYBYPASSSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLobbyBypassSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLobbyBypassSettings
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -496,7 +496,7 @@ meetingAttendanceReport
 To construct, please use Get-Help -Online and see NOTES section for MEETINGATTENDANCEREPORT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -512,7 +512,7 @@ meetingParticipants
 To construct, please use Get-Help -Online and see NOTES section for PARTICIPANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingParticipants1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingParticipants1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -559,7 +559,7 @@ meetingRegistration
 To construct, please use Get-Help -Online and see NOTES section for REGISTRATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistration
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -606,7 +606,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for TRANSCRIPTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallTranscript[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallTranscript[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -653,7 +653,7 @@ virtualAppointment
 To construct, please use Get-Help -Online and see NOTES section for VIRTUALAPPOINTMENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualAppointment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualAppointment
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -700,13 +700,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 
 ## NOTES
 

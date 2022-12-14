@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintprintertasktriggerdefinition
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprintprintertasktriggerdefinition
 schema: 2.0.0
 ---
 
-# Get-MgPrintPrinterTaskTriggerDefinition
+# Get-MgBetaPrintPrinterTaskTriggerDefinition
 
 ## SYNOPSIS
 An abstract definition that will be used to create a printTask when triggered by a print event.
@@ -15,13 +15,13 @@ Read-only.
 
 ### Get1 (Default)
 ```
-Get-MgPrintPrinterTaskTriggerDefinition -PrinterId <String> -PrintTaskTriggerId <String>
+Get-MgBetaPrintPrinterTaskTriggerDefinition -PrinterId <String> -PrintTaskTriggerId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPrintPrinterTaskTriggerDefinition -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrintPrinterTaskTriggerDefinition -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
 
 ## NOTES
 

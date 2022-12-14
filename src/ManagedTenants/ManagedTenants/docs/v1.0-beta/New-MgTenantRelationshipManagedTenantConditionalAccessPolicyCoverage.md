@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantconditionalaccesspolicycoverage
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantconditionalaccesspolicycoverage
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+# New-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
 
 ## SYNOPSIS
 Create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
@@ -14,14 +14,14 @@ Create new navigation property to conditionalAccessPolicyCoverages for tenantRel
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage [-AdditionalProperties <Hashtable>]
  [-ConditionalAccessPolicyState <String>] [-Id <String>] [-LatestPolicyModifiedDateTime <DateTime>]
  [-RequiresDeviceCompliance] [-TenantDisplayName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+New-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
  -BodyParameter <IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ conditionalAccessPolicyCoverage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
 Parameter Sets: Create
 Aliases:
 
@@ -185,11 +185,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
 
 ## NOTES
 

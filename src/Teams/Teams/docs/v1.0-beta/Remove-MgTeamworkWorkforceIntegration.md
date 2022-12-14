@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamworkworkforceintegration
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgteamworkworkforceintegration
 schema: 2.0.0
 ---
 
-# Remove-MgTeamworkWorkforceIntegration
+# Remove-MgBetaTeamworkWorkforceIntegration
 
 ## SYNOPSIS
 Delete navigation property workforceIntegrations for teamwork
@@ -14,13 +14,13 @@ Delete navigation property workforceIntegrations for teamwork
 
 ### Delete1 (Default)
 ```
-Remove-MgTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property workforceIntegrations for teamwork
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgTeamworkWorkforceIntegration Cmdlet
+### Example 1: Using the Remove-MgBetaTeamworkWorkforceIntegration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
 ```
 
-This example shows how to use the Remove-MgTeamworkWorkforceIntegration Cmdlet.
+This example shows how to use the Remove-MgBetaTeamworkWorkforceIntegration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

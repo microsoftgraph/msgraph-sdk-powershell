@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassmemberbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationclassmemberbyref
 schema: 2.0.0
 ---
 
-# Get-MgEducationClassMemberByRef
+# Get-MgBetaEducationClassMemberByRef
 
 ## SYNOPSIS
 Retrieves the teachers and students for a class.
@@ -14,7 +14,7 @@ Note that if the delegated token is used, members can only be seen by other memb
 ## SYNTAX
 
 ```
-Get-MgEducationClassMemberByRef -EducationClassId <String> [-Filter <String>] [-Search <String>]
+Get-MgBetaEducationClassMemberByRef -EducationClassId <String> [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```

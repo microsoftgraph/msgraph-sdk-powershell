@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/restore-mgdriveroot
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/restore-mgdriveroot
 schema: 2.0.0
 ---
 
-# Restore-MgDriveRoot
+# Restore-MgBetaDriveRoot
 
 ## SYNOPSIS
 Restore a driveItem that has been deleted and is currently in the recycle bin.
@@ -14,27 +14,27 @@ Restore a driveItem that has been deleted and is currently in the recycle bin.
 
 ### RestoreExpanded1 (Default)
 ```
-Restore-MgDriveRoot -DriveId <String> [-AdditionalProperties <Hashtable>] [-Name <String>]
+Restore-MgBetaDriveRoot -DriveId <String> [-AdditionalProperties <Hashtable>] [-Name <String>]
  [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Restore1
 ```
-Restore-MgDriveRoot -DriveId <String>
+Restore-MgBetaDriveRoot -DriveId <String>
  -BodyParameter <IPaths93BytjDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity1
 ```
-Restore-MgDriveRoot -InputObject <IFilesIdentity>
+Restore-MgBetaDriveRoot -InputObject <IFilesIdentity>
  -BodyParameter <IPaths93BytjDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentityExpanded1
 ```
-Restore-MgDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Name <String>]
+Restore-MgBetaDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Name <String>]
  [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths93BytjDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths93BytjDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Restore1, RestoreViaIdentity1
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: RestoreViaIdentity1, RestoreViaIdentityExpanded1
 Aliases:
 
@@ -127,7 +127,7 @@ itemReference
 To construct, please use Get-Help -Online and see NOTES section for PARENTREFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemReference
 Parameter Sets: RestoreExpanded1, RestoreViaIdentityExpanded1
 Aliases:
 
@@ -174,13 +174,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths93BytjDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths93BytjDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

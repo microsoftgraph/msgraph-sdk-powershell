@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguser
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguser
 schema: 2.0.0
 ---
 
-# Get-MgUser
+# Get-MgBetaUser
 
 ## SYNOPSIS
 Retrieve the properties and relationships of user object.
@@ -18,19 +18,19 @@ Because the **user** resource supports extensions, you can also use the `GET` op
 
 ### List (Default)
 ```
-Get-MgUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUser -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUser -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUser -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUser -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -46,7 +46,7 @@ Because the **user** resource supports extensions, you can also use the `GET` op
 ### Example 1: Get the list of all the users
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -All | Format-List  ID, DisplayName, Mail, UserPrincipalName
+Get-MgBetaUser -All | Format-List  ID, DisplayName, Mail, UserPrincipalName
 
 Id                : e4e2b110-8d4f-434f-a990-7cd63e23aed6
 DisplayName       : Kristi Laar
@@ -69,7 +69,7 @@ For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 ### Example 2: Get a user by Id
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -UserId 'e4e2b110-8d4f-434f-a990-7cd63e23aed6' | 
+Get-MgBetaUser -UserId 'e4e2b110-8d4f-434f-a990-7cd63e23aed6' | 
   Format-List  ID, DisplayName, Mail, UserPrincipalName
 
 Id                : e4e2b110-8d4f-434f-a990-7cd63e23aed6
@@ -88,7 +88,7 @@ For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 ### Example 3: Get a count of all users
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -Count userCount -ConsistencyLevel eventual
+Get-MgBetaUser -Count userCount -ConsistencyLevel eventual
 
 Id                                   DisplayName              Mail                           UserPrincipalName        
 --                                   -----------              ----                           -----------------               
@@ -114,7 +114,7 @@ For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 ### Example 4: Use -Filter and -Top to get one user with a display name that starts with 'a' including a count of returned objects
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'a')" -Top 1
+Get-MgBetaUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'a')" -Top 1
 
 Id                                   DisplayName   Mail                               UserPrincipalName                  UserType
 --                                   -----------   ----                               -----------------                  --------
@@ -134,7 +134,7 @@ For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 ### Example 5: Use -Search to get all the users whose display name contains 'Conf' including a count of the returned users
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -ConsistencyLevel eventual -Count userCount -Search '"DisplayName:Conf"'
+Get-MgBetaUser -ConsistencyLevel eventual -Count userCount -Search '"DisplayName:Conf"'
 
 Id                                   DisplayName       Mail                UserPrincipalName                   
 --                                   -----------       ----                -----------------                             
@@ -158,7 +158,7 @@ For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 ### Example 6: Use -Filter to get all the users with a display name that starts with 'Conf' including a count of the returned users, with the results ordered by UserPrincipalName
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'Conf')" -OrderBy UserPrincipalName
+Get-MgBetaUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'Conf')" -OrderBy UserPrincipalName
 
 Id                                   DisplayName       Mail                UserPrincipalName                   
 --                                   -----------       ----                -----------------                   
@@ -263,7 +263,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -384,11 +384,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser1
 
 ## NOTES
 

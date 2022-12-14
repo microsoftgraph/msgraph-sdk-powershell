@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/update-mgcomplianceediscoverycasesetting
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/update-mgcomplianceediscoverycasesetting
 schema: 2.0.0
 ---
 
-# Update-MgComplianceEdiscoveryCaseSetting
+# Update-MgBetaComplianceEdiscoveryCaseSetting
 
 ## SYNOPSIS
 Update the properties of a an eDiscovery caseSettings object.
@@ -14,7 +14,7 @@ Update the properties of a an eDiscovery caseSettings object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgComplianceEdiscoveryCaseSetting -CaseId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Ocr <IMicrosoftGraphEdiscoveryOcrSettings>]
  [-RedundancyDetection <IMicrosoftGraphEdiscoveryRedundancyDetectionSettings>]
  [-TopicModeling <IMicrosoftGraphEdiscoveryTopicModelingSettings>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgComplianceEdiscoveryCaseSetting -CaseId <String> [-AdditionalProperties
 
 ### Update
 ```
-Update-MgComplianceEdiscoveryCaseSetting -CaseId <String>
+Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId <String>
  -BodyParameter <IMicrosoftGraphEdiscoveryCaseSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
+Update-MgBetaComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
  -BodyParameter <IMicrosoftGraphEdiscoveryCaseSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
+Update-MgBetaComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Ocr <IMicrosoftGraphEdiscoveryOcrSettings>]
  [-RedundancyDetection <IMicrosoftGraphEdiscoveryRedundancyDetectionSettings>]
  [-TopicModeling <IMicrosoftGraphEdiscoveryTopicModelingSettings>] [-PassThru] [-Confirm] [-WhatIf]
@@ -47,9 +47,9 @@ Update the properties of a an eDiscovery caseSettings object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgComplianceEdiscoveryCaseSetting Cmdlet
+### Example 1: Using the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	RedundancyDetection = @{
 		IsEnabled = $false
@@ -68,15 +68,15 @@ $params = @{
 		MaxImageSize = 12000
 	}
 }
-Update-MgComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
+Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgComplianceEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Update-MgComplianceEdiscoveryCaseSetting Cmdlet
+### Example 2: Using the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	RedundancyDetection = @{
 		IsEnabled = $false
@@ -95,10 +95,10 @@ $params = @{
 		MaxImageSize = 12000
 	}
 }
-Update-MgComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
+Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgComplianceEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -123,7 +123,7 @@ caseSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -170,7 +170,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ ocrSettings
 To construct, please use Get-Help -Online and see NOTES section for OCR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryOcrSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryOcrSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ redundancyDetectionSettings
 To construct, please use Get-Help -Online and see NOTES section for REDUNDANCYDETECTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryRedundancyDetectionSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryRedundancyDetectionSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -233,7 +233,7 @@ topicModelingSettings
 To construct, please use Get-Help -Online and see NOTES section for TOPICMODELING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryTopicModelingSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryTopicModelingSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -280,9 +280,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseSettings
 
 ## OUTPUTS
 

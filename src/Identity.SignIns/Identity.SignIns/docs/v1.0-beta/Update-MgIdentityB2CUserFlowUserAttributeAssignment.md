@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityb2cuserflowuserattributeassignment
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityb2cuserflowuserattributeassignment
 schema: 2.0.0
 ---
 
-# Update-MgIdentityB2CUserFlowUserAttributeAssignment
+# Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment
 
 ## SYNOPSIS
 Update the navigation property userAttributeAssignments in identity
@@ -14,7 +14,7 @@ Update the navigation property userAttributeAssignments in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityB2CUserFlowUserAttributeAssignment -B2CIdentityUserFlowId <String>
+Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment -B2CIdentityUserFlowId <String>
  -IdentityUserFlowAttributeAssignmentId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-IsOptional] [-RequiresVerification]
  [-UserAttribute <IMicrosoftGraphIdentityUserFlowAttribute>]
@@ -24,7 +24,7 @@ Update-MgIdentityB2CUserFlowUserAttributeAssignment -B2CIdentityUserFlowId <Stri
 
 ### Update
 ```
-Update-MgIdentityB2CUserFlowUserAttributeAssignment -B2CIdentityUserFlowId <String>
+Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment -B2CIdentityUserFlowId <String>
  -IdentityUserFlowAttributeAssignmentId <String>
  -BodyParameter <IMicrosoftGraphIdentityUserFlowAttributeAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -32,14 +32,14 @@ Update-MgIdentityB2CUserFlowUserAttributeAssignment -B2CIdentityUserFlowId <Stri
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityB2CUserFlowUserAttributeAssignment -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphIdentityUserFlowAttributeAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityB2CUserFlowUserAttributeAssignment -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-IsOptional]
  [-RequiresVerification] [-UserAttribute <IMicrosoftGraphIdentityUserFlowAttribute>]
  [-UserAttributeValues <IMicrosoftGraphUserAttributeValuesItem[]>] [-UserInputType <String>] [-PassThru]
@@ -51,16 +51,16 @@ Update the navigation property userAttributeAssignments in identity
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgIdentityB2CUserFlowUserAttributeAssignment Cmdlet
+### Example 1: Using the Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	UserInputType = "textBox"
 }
-Update-MgIdentityB2CUserFlowUserAttributeAssignment -B2cIdentityUserFlowId $b2cIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId -BodyParameter $params
+Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment -B2cIdentityUserFlowId $b2cIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityB2CUserFlowUserAttributeAssignment Cmdlet.
+This example shows how to use the Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -100,7 +100,7 @@ identityUserFlowAttributeAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttributeAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttributeAssignment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ identityUserFlowAttribute
 To construct, please use Get-Help -Online and see NOTES section for USERATTRIBUTE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -243,7 +243,7 @@ Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelec
 To construct, please use Get-Help -Online and see NOTES section for USERATTRIBUTEVALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAttributeValuesItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAttributeValuesItem[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -305,9 +305,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttributeAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttributeAssignment
 
 ## OUTPUTS
 

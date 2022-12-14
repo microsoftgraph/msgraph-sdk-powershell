@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritysubjectrightsrequestfinalattachment
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritysubjectrightsrequestfinalattachment
 schema: 2.0.0
 ---
 
-# Get-MgSecuritySubjectRightsRequestFinalAttachment
+# Get-MgBetaSecuritySubjectRightsRequestFinalAttachment
 
 ## SYNOPSIS
 Invoke function getFinalAttachment
@@ -14,13 +14,13 @@ Invoke function getFinalAttachment
 
 ### Get (Default)
 ```
-Get-MgSecuritySubjectRightsRequestFinalAttachment -SubjectRightsRequestId <String> -OutFile <String>
+Get-MgBetaSecuritySubjectRightsRequestFinalAttachment -SubjectRightsRequestId <String> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecuritySubjectRightsRequestFinalAttachment -InputObject <ISecurityIdentity> -OutFile <String>
+Get-MgBetaSecuritySubjectRightsRequestFinalAttachment -InputObject <ISecurityIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

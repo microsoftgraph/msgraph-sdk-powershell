@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/remove-mgcomplianceediscovery
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/remove-mgcomplianceediscovery
 schema: 2.0.0
 ---
 
-# Remove-MgComplianceEdiscovery
+# Remove-MgBetaComplianceEdiscovery
 
 ## SYNOPSIS
 Delete navigation property ediscovery for compliance
@@ -13,7 +13,7 @@ Delete navigation property ediscovery for compliance
 ## SYNTAX
 
 ```
-Remove-MgComplianceEdiscovery [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaComplianceEdiscovery [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgdatapolicyoperation
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgdatapolicyoperation
 schema: 2.0.0
 ---
 
-# New-MgDataPolicyOperation
+# New-MgBetaDataPolicyOperation
 
 ## SYNOPSIS
 Add new entity to dataPolicyOperations
@@ -14,14 +14,14 @@ Add new entity to dataPolicyOperations
 
 ### CreateExpanded (Default)
 ```
-New-MgDataPolicyOperation [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-Id <String>]
+New-MgBetaDataPolicyOperation [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-Id <String>]
  [-Progress <Double>] [-Status <String>] [-StorageLocation <String>] [-SubmittedDateTime <DateTime>]
  [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDataPolicyOperation -BodyParameter <IMicrosoftGraphDataPolicyOperation> [-Confirm] [-WhatIf]
+New-MgBetaDataPolicyOperation -BodyParameter <IMicrosoftGraphDataPolicyOperation> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ dataPolicyOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
 Parameter Sets: Create
 Aliases:
 
@@ -208,11 +208,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
 
 ## NOTES
 

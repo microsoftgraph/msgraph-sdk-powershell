@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysaleinvoicecustomerpaymentterm
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysaleinvoicecustomerpaymentterm
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleInvoiceCustomerPaymentTerm
+# Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm
 
 ## SYNOPSIS
 Update the navigation property paymentTerm in financials
@@ -14,7 +14,7 @@ Update the navigation property paymentTerm in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleInvoiceCustomerPaymentTerm -CompanyId <String> -SalesInvoiceId <String>
+Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm -CompanyId <String> -SalesInvoiceId <String>
  [-AdditionalProperties <Hashtable>] [-CalculateDiscountOnCreditMemos] [-Code <String>]
  [-DiscountDateCalculation <String>] [-DiscountPercent <Decimal>] [-DisplayName <String>]
  [-DueDateCalculation <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -23,19 +23,19 @@ Update-MgFinancialCompanySaleInvoiceCustomerPaymentTerm -CompanyId <String> -Sal
 
 ### Update
 ```
-Update-MgFinancialCompanySaleInvoiceCustomerPaymentTerm -CompanyId <String> -SalesInvoiceId <String>
+Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm -CompanyId <String> -SalesInvoiceId <String>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleInvoiceCustomerPaymentTerm -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleInvoiceCustomerPaymentTerm -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-CalculateDiscountOnCreditMemos] [-Code <String>]
  [-DiscountDateCalculation <String>] [-DiscountPercent <Decimal>] [-DisplayName <String>]
  [-DueDateCalculation <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -69,7 +69,7 @@ paymentTerm
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -206,7 +206,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -298,9 +298,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 
 ## OUTPUTS
 

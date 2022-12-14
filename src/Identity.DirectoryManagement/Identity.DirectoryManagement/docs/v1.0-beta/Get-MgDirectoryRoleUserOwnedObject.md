@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryroleuserownedobject
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryroleuserownedobject
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryRoleUserOwnedObject
+# Get-MgBetaDirectoryRoleUserOwnedObject
 
 ## SYNOPSIS
 Invoke action getUserOwnedObjects
@@ -14,13 +14,13 @@ Invoke action getUserOwnedObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgDirectoryRoleUserOwnedObject [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>]
+Get-MgBetaDirectoryRoleUserOwnedObject [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDirectoryRoleUserOwnedObject
+Get-MgBetaDirectoryRoleUserOwnedObject
  -BodyParameter <IPathsRx7DjhDirectoryrolesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsRx7DjhDirectoryrolesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsRx7DjhDirectoryrolesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsRx7DjhDirectoryrolesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsRx7DjhDirectoryrolesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

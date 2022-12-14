@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/approve-mgdevicemanagementzebrafotaconnectorfotaapp
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/approve-mgdevicemanagementzebrafotaconnectorfotaapp
 schema: 2.0.0
 ---
 
-# Approve-MgDeviceManagementZebraFotaConnectorFotaApp
+# Approve-MgBetaDeviceManagementZebraFotaConnectorFotaApp
 
 ## SYNOPSIS
 Invoke action approveFotaApps
@@ -13,7 +13,7 @@ Invoke action approveFotaApps
 ## SYNTAX
 
 ```
-Approve-MgDeviceManagementZebraFotaConnectorFotaApp [-Confirm] [-WhatIf] [<CommonParameters>]
+Approve-MgBetaDeviceManagementZebraFotaConnectorFotaApp [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

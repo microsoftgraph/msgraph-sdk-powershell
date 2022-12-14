@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/copy-mgteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/copy-mgteam
 schema: 2.0.0
 ---
 
-# Copy-MgTeam
+# Copy-MgBetaTeam
 
 ## SYNOPSIS
 Create a copy of a team.
@@ -18,28 +18,28 @@ This operation also creates a copy of the corresponding group.\nYou can specify 
 
 ### CloneExpanded1 (Default)
 ```
-Copy-MgTeam -TeamId <String> [-AdditionalProperties <Hashtable>] [-Classification <String>]
+Copy-MgBetaTeam -TeamId <String> [-AdditionalProperties <Hashtable>] [-Classification <String>]
  [-Description <String>] [-DisplayName <String>] [-MailNickname <String>] [-PartsToClone <String>]
  [-Visibility <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Clone1
 ```
-Copy-MgTeam -TeamId <String>
+Copy-MgBetaTeam -TeamId <String>
  -BodyParameter <IPaths1Izic0UTeamsTeamIdMicrosoftGraphClonePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CloneViaIdentity1
 ```
-Copy-MgTeam -InputObject <ITeamsIdentity>
+Copy-MgBetaTeam -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1Izic0UTeamsTeamIdMicrosoftGraphClonePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CloneViaIdentityExpanded1
 ```
-Copy-MgTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Classification <String>]
+Copy-MgBetaTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Classification <String>]
  [-Description <String>] [-DisplayName <String>] [-MailNickname <String>] [-PartsToClone <String>]
  [-Visibility <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,9 +53,9 @@ This operation also creates a copy of the corresponding group.\nYou can specify 
 
 ## EXAMPLES
 
-### Example 1: Using the Copy-MgTeam Cmdlet
+### Example 1: Using the Copy-MgBetaTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "Library Assist"
 	Description = "Self help community for library"
@@ -63,10 +63,10 @@ $params = @{
 	PartsToClone = "apps,tabs,settings,channels,members"
 	Visibility = "public"
 }
-Copy-MgTeam -TeamId $teamId -BodyParameter $params
+Copy-MgBetaTeam -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the Copy-MgTeam Cmdlet.
+This example shows how to use the Copy-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Izic0UTeamsTeamIdMicrosoftGraphClonePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Izic0UTeamsTeamIdMicrosoftGraphClonePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Clone1, CloneViaIdentity1
 Aliases:
 
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CloneViaIdentity1, CloneViaIdentityExpanded1
 Aliases:
 
@@ -274,9 +274,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Izic0UTeamsTeamIdMicrosoftGraphClonePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Izic0UTeamsTeamIdMicrosoftGraphClonePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

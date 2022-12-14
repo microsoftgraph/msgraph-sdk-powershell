@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanycustomerpaymentjournalcustomerpaymentcustomer
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanycustomerpaymentjournalcustomerpaymentcustomer
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer
+# Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer
 
 ## SYNOPSIS
 Get customer from financials
@@ -14,14 +14,14 @@ Get customer from financials
 
 ### Get (Default)
 ```
-Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -CompanyId <String>
+Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -CompanyId <String>
  -CustomerPaymentId <String> -CustomerPaymentJournalId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -InputObject <IFinancialsIdentity>
+Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -InputObject <IFinancialsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -128,11 +128,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/remove-mgreportauthenticationmethoduserregistrationdetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/remove-mgreportauthenticationmethoduserregistrationdetail
 schema: 2.0.0
 ---
 
-# Remove-MgReportAuthenticationMethodUserRegistrationDetail
+# Remove-MgBetaReportAuthenticationMethodUserRegistrationDetail
 
 ## SYNOPSIS
 Delete navigation property userRegistrationDetails for reports
@@ -14,13 +14,13 @@ Delete navigation property userRegistrationDetails for reports
 
 ### Delete (Default)
 ```
-Remove-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
+Remove-MgBetaReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity> [-IfMatch <String>]
+Remove-MgBetaReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

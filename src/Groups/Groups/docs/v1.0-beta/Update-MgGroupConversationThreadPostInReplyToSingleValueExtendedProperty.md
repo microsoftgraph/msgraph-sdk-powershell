@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggroupconversationthreadpostinreplytosinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/update-mggroupconversationthreadpostinreplytosinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty
+# Update-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty
 
 ## SYNOPSIS
 Update the navigation property singleValueExtendedProperties in groups
@@ -14,7 +14,7 @@ Update the navigation property singleValueExtendedProperties in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -ConversationId <String>
+Update-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty -ConversationId <String>
  -ConversationThreadId <String> -GroupId <String> -PostId <String>
  -SingleValueLegacyExtendedPropertyId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Value <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -Conver
 
 ### Update1
 ```
-Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -ConversationId <String>
+Update-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty -ConversationId <String>
  -ConversationThreadId <String> -GroupId <String> -PostId <String>
  -SingleValueLegacyExtendedPropertyId <String>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
@@ -31,14 +31,14 @@ Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -Conver
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
+Update-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
+Update-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -70,7 +70,7 @@ singleValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -254,9 +254,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## OUTPUTS
 

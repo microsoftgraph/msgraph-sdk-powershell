@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationclassassignmentrubricbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/set-mgeducationclassassignmentrubricbyref
 schema: 2.0.0
 ---
 
-# Set-MgEducationClassAssignmentRubricByRef
+# Set-MgBetaEducationClassAssignmentRubricByRef
 
 ## SYNOPSIS
 Update the ref of navigation property rubric in education
@@ -14,26 +14,26 @@ Update the ref of navigation property rubric in education
 
 ### SetExpanded1 (Default)
 ```
-Set-MgEducationClassAssignmentRubricByRef -EducationAssignmentId <String> -EducationClassId <String>
+Set-MgBetaEducationClassAssignmentRubricByRef -EducationAssignmentId <String> -EducationClassId <String>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-OdataType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set1
 ```
-Set-MgEducationClassAssignmentRubricByRef -EducationAssignmentId <String> -EducationClassId <String>
+Set-MgBetaEducationClassAssignmentRubricByRef -EducationAssignmentId <String> -EducationClassId <String>
  -BodyParameter <IReferenceUpdate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity> -BodyParameter <IReferenceUpdate>
+Set-MgBetaEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity> -BodyParameter <IReferenceUpdate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded1
 ```
-Set-MgEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity>
+Set-MgBetaEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-OdataType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -43,16 +43,16 @@ Update the ref of navigation property rubric in education
 
 ## EXAMPLES
 
-### Example 1: Using the Set-MgEducationClassAssignmentRubricByRef Cmdlet
+### Example 1: Using the Set-MgBetaEducationClassAssignmentRubricByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/v1.0/education/me/rubrics/{id}"
 }
-Set-MgEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+Set-MgBetaEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
 
-This example shows how to use the Set-MgEducationClassAssignmentRubricByRef Cmdlet.
+This example shows how to use the Set-MgBetaEducationClassAssignmentRubricByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceUpdate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceUpdate
 Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
@@ -215,9 +215,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceUpdate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceUpdate
 
 ## OUTPUTS
 

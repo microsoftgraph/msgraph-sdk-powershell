@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanycustomerpaymentjournalcustomerpaymentcustomercurrency
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanycustomerpaymentjournalcustomerpaymentcustomercurrency
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency
+# Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency
 
 ## SYNOPSIS
 Get currency from financials
@@ -14,14 +14,14 @@ Get currency from financials
 
 ### Get (Default)
 ```
-Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency -CompanyId <String>
+Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency -CompanyId <String>
  -CustomerPaymentId <String> -CustomerPaymentJournalId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency -InputObject <IFinancialsIdentity>
+Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency -InputObject <IFinancialsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -128,11 +128,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCurrency
 
 ## NOTES
 

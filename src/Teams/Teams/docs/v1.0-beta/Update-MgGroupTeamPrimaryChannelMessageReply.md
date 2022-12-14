@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mggroupteamprimarychannelmessagereply
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mggroupteamprimarychannelmessagereply
 schema: 2.0.0
 ---
 
-# Update-MgGroupTeamPrimaryChannelMessageReply
+# Update-MgBetaGroupTeamPrimaryChannelMessageReply
 
 ## SYNOPSIS
 Update the navigation property replies in groups
@@ -14,7 +14,7 @@ Update the navigation property replies in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupTeamPrimaryChannelMessageReply -ChatMessageId <String> -ChatMessageId1 <String>
+Update-MgBetaGroupTeamPrimaryChannelMessageReply -ChatMessageId <String> -ChatMessageId1 <String>
  -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-Attachments <IMicrosoftGraphChatMessageAttachment1[]>] [-Body <IMicrosoftGraphItemBody>]
  [-ChannelIdentity <IMicrosoftGraphChannelIdentity>] [-ChatId <String>] [-CreatedDateTime <DateTime>]
@@ -31,20 +31,20 @@ Update-MgGroupTeamPrimaryChannelMessageReply -ChatMessageId <String> -ChatMessag
 
 ### Update
 ```
-Update-MgGroupTeamPrimaryChannelMessageReply -ChatMessageId <String> -ChatMessageId1 <String>
+Update-MgBetaGroupTeamPrimaryChannelMessageReply -ChatMessageId <String> -ChatMessageId1 <String>
  -GroupId <String> -BodyParameter <IMicrosoftGraphChatMessage> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupTeamPrimaryChannelMessageReply -InputObject <ITeamsIdentity>
+Update-MgBetaGroupTeamPrimaryChannelMessageReply -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphChatMessage> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupTeamPrimaryChannelMessageReply -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupTeamPrimaryChannelMessageReply -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Attachments <IMicrosoftGraphChatMessageAttachment1[]>] [-Body <IMicrosoftGraphItemBody>]
  [-ChannelIdentity <IMicrosoftGraphChannelIdentity>] [-ChatId <String>] [-CreatedDateTime <DateTime>]
  [-DeletedDateTime <DateTime>] [-Etag <String>] [-EventDetail <Hashtable>] [-From <Hashtable>]
@@ -85,7 +85,7 @@ References to attached objects like files, tabs, meetings etc.
 To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageAttachment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageAttachment1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -101,7 +101,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ chatMessage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ channelIdentity
 To construct, please use Get-Help -Online and see NOTES section for CHANNELIDENTITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChannelIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChannelIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -286,7 +286,7 @@ Content in a message hosted by Microsoft Teams - for example, images or code sni
 To construct, please use Get-Help -Online and see NOTES section for HOSTEDCONTENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -333,7 +333,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -400,7 +400,7 @@ Supported entities are: user, bot, team, channel, and tag.
 To construct, please use Get-Help -Online and see NOTES section for MENTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageMention1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageMention1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -416,7 +416,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MESSAGEHISTORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHistoryItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageHistoryItem[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -477,7 +477,7 @@ chatMessagePolicyViolation
 To construct, please use Get-Help -Online and see NOTES section for POLICYVIOLATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessagePolicyViolation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessagePolicyViolation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -493,7 +493,7 @@ Reactions for this chat message (for example, Like).
 To construct, please use Get-Help -Online and see NOTES section for REACTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageReaction[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageReaction[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -510,7 +510,7 @@ Supports $expand for channel messages.
 To construct, please use Get-Help -Online and see NOTES section for REPLIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -621,9 +621,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecuritycaseediscoverycaselegalholdsitesource
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/remove-mgsecuritycaseediscoverycaselegalholdsitesource
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource
+# Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource
 
 ## SYNOPSIS
 Delete navigation property siteSources for security
@@ -14,14 +14,14 @@ Delete navigation property siteSources for security
 
 ### Delete (Default)
 ```
-Remove-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId <String>
+Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId <String>
  -EdiscoveryHoldPolicyId <String> -SiteSourceId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -InputObject <ISecurityIdentity> [-IfMatch <String>]
+Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource -InputObject <ISecurityIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

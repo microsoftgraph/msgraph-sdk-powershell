@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserinformationprotectionpolicylabel
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mguserinformationprotectionpolicylabel
 schema: 2.0.0
 ---
 
-# New-MgUserInformationProtectionPolicyLabel
+# New-MgBetaUserInformationProtectionPolicyLabel
 
 ## SYNOPSIS
 Create new navigation property to labels for users
@@ -14,7 +14,7 @@ Create new navigation property to labels for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserInformationProtectionPolicyLabel -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserInformationProtectionPolicyLabel -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Color <String>] [-Description <String>] [-Id <String>] [-IsActive] [-Name <String>]
  [-Parent <IMicrosoftGraphParentLabelDetails>] [-Sensitivity <Int32>] [-Tooltip <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgUserInformationProtectionPolicyLabel -UserId <String> [-AdditionalProperti
 
 ### Create
 ```
-New-MgUserInformationProtectionPolicyLabel -UserId <String>
+New-MgBetaUserInformationProtectionPolicyLabel -UserId <String>
  -BodyParameter <IMicrosoftGraphInformationProtectionLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphInformationProtectionLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Color <String>] [-Description <String>] [-Id <String>] [-IsActive]
  [-Name <String>] [-Parent <IMicrosoftGraphParentLabelDetails>] [-Sensitivity <Int32>] [-Tooltip <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ informationProtectionLabel
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ parentLabelDetails
 To construct, please use Get-Help -Online and see NOTES section for PARENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParentLabelDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParentLabelDetails
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -268,13 +268,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
 
 ## NOTES
 

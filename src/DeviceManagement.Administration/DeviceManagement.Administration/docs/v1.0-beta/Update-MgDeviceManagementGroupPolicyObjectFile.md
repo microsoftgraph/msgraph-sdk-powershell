@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicyobjectfile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicyobjectfile
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyObjectFile
+# Update-MgBetaDeviceManagementGroupPolicyObjectFile
 
 ## SYNOPSIS
 Update the navigation property groupPolicyObjectFiles in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property groupPolicyObjectFiles in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String>
+Update-MgBetaDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String>
  [-AdditionalProperties <Hashtable>] [-Content <String>] [-CreatedDateTime <DateTime>]
  [-GroupPolicyObjectId <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-OuDistinguishedName <String>] [-RoleScopeTagIds <String[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String>
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String>
+Update-MgBetaDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String>
  -BodyParameter <IMicrosoftGraphGroupPolicyObjectFile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphGroupPolicyObjectFile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Content <String>] [-CreatedDateTime <DateTime>]
  [-GroupPolicyObjectId <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-OuDistinguishedName <String>] [-RoleScopeTagIds <String[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -69,7 +69,7 @@ The Group Policy Object file uploaded by admin.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -268,9 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
 
 ## OUTPUTS
 

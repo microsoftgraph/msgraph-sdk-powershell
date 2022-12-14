@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritysubjectrightsrequestnote
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritysubjectrightsrequestnote
 schema: 2.0.0
 ---
 
-# Update-MgSecuritySubjectRightsRequestNote
+# Update-MgBetaSecuritySubjectRightsRequestNote
 
 ## SYNOPSIS
 Update the navigation property notes in security
@@ -14,26 +14,26 @@ Update the navigation property notes in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecuritySubjectRightsRequestNote -AuthoredNoteId <String> -SubjectRightsRequestId <String>
+Update-MgBetaSecuritySubjectRightsRequestNote -AuthoredNoteId <String> -SubjectRightsRequestId <String>
  [-AdditionalProperties <Hashtable>] [-Author <IMicrosoftGraphIdentity>] [-Content <IMicrosoftGraphItemBody>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecuritySubjectRightsRequestNote -AuthoredNoteId <String> -SubjectRightsRequestId <String>
+Update-MgBetaSecuritySubjectRightsRequestNote -AuthoredNoteId <String> -SubjectRightsRequestId <String>
  -BodyParameter <IMicrosoftGraphAuthoredNote> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecuritySubjectRightsRequestNote -InputObject <ISecurityIdentity>
+Update-MgBetaSecuritySubjectRightsRequestNote -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphAuthoredNote> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecuritySubjectRightsRequestNote -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecuritySubjectRightsRequestNote -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
  [-Author <IMicrosoftGraphIdentity>] [-Content <IMicrosoftGraphItemBody>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for AUTHOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -96,7 +96,7 @@ authoredNote
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthoredNote
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthoredNote
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for CONTENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -238,9 +238,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthoredNote
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthoredNote
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

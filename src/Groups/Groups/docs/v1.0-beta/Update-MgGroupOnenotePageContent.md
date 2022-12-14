@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggrouponenotepagecontent
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/update-mggrouponenotepagecontent
 schema: 2.0.0
 ---
 
-# Update-MgGroupOnenotePageContent
+# Update-MgBetaGroupOnenotePageContent
 
 ## SYNOPSIS
 Invoke action onenotePatchContent
@@ -14,28 +14,28 @@ Invoke action onenotePatchContent
 
 ### PatchExpanded (Default)
 ```
-Update-MgGroupOnenotePageContent -GroupId <String> -OnenotePageId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupOnenotePageContent -GroupId <String> -OnenotePageId <String> [-AdditionalProperties <Hashtable>]
  [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Patch
 ```
-Update-MgGroupOnenotePageContent -GroupId <String> -OnenotePageId <String>
+Update-MgBetaGroupOnenotePageContent -GroupId <String> -OnenotePageId <String>
  -BodyParameter <IPaths96Tlp1GroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PatchViaIdentity
 ```
-Update-MgGroupOnenotePageContent -InputObject <IGroupsIdentity>
+Update-MgBetaGroupOnenotePageContent -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths96Tlp1GroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PatchViaIdentityExpanded
 ```
-Update-MgGroupOnenotePageContent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupOnenotePageContent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths96Tlp1GroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths96Tlp1GroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Patch, PatchViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for COMMANDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePatchContentCommand[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenotePatchContentCommand[]
 Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: PatchViaIdentity, PatchViaIdentityExpanded
 Aliases:
 
@@ -191,9 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths96Tlp1GroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths96Tlp1GroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

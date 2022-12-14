@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementmobileapptroubleshootingevent
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementmobileapptroubleshootingevent
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementMobileAppTroubleshootingEvent
+# New-MgBetaDeviceManagementMobileAppTroubleshootingEvent
 
 ## SYNOPSIS
 Create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to mobileAppTroubleshootingEvents for deviceManag
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementMobileAppTroubleshootingEvent [-AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]
+New-MgBetaDeviceManagementMobileAppTroubleshootingEvent [-AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]
  [-AdditionalProperties <Hashtable>] [-ApplicationId <String>]
  [-AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>] [-CorrelationId <String>]
  [-EventDateTime <DateTime>] [-EventName <String>]
@@ -26,7 +26,7 @@ New-MgDeviceManagementMobileAppTroubleshootingEvent [-AdditionalInformation <IMi
 
 ### Create
 ```
-New-MgDeviceManagementMobileAppTroubleshootingEvent
+New-MgBetaDeviceManagementMobileAppTroubleshootingEvent
  -BodyParameter <IMicrosoftGraphMobileAppTroubleshootingEvent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -42,7 +42,7 @@ A set of string key and string value pairs which provides additional information
 To construct, please use Get-Help -Online and see NOTES section for ADDITIONALINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -88,7 +88,7 @@ The collection property of AppLogUploadRequest.
 To construct, please use Get-Help -Online and see NOTES section for APPLOGCOLLECTIONREQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ Event representing a users device application install status.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
 Parameter Sets: Create
 Aliases:
 
@@ -166,7 +166,7 @@ Intune Mobile Application Troubleshooting History Item
 To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingHistoryItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingHistoryItem[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -213,7 +213,7 @@ Object containing detailed information about the error and its remediation.
 To construct, please use Get-Help -Online and see NOTES section for TROUBLESHOOTINGERRORDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -275,11 +275,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupmemberbyref
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupmemberbyref
 schema: 2.0.0
 ---
 
-# Get-MgGroupMemberByRef
+# Get-MgBetaGroupMemberByRef
 
 ## SYNOPSIS
 Direct members of this group, who can be users, devices, other groups, or service principals.
@@ -17,7 +17,7 @@ For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayNa
 ## SYNTAX
 
 ```
-Get-MgGroupMemberByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Get-MgBetaGroupMemberByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

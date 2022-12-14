@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgdeviceappmgtiosmanagedappprotectionapp
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/remove-mgdeviceappmgtiosmanagedappprotectionapp
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceAppMgtiOSManagedAppProtectionApp
+# Remove-MgBetaDeviceAppMgtiOSManagedAppProtectionApp
 
 ## SYNOPSIS
 Delete navigation property apps for deviceAppManagement
@@ -14,13 +14,13 @@ Delete navigation property apps for deviceAppManagement
 
 ### Delete1 (Default)
 ```
-Remove-MgDeviceAppMgtiOSManagedAppProtectionApp -IosManagedAppProtectionId <String>
+Remove-MgBetaDeviceAppMgtiOSManagedAppProtectionApp -IosManagedAppProtectionId <String>
  -ManagedMobileAppId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgDeviceAppMgtiOSManagedAppProtectionApp -InputObject <IDevicesCorporateManagementIdentity>
+Remove-MgBetaDeviceAppMgtiOSManagedAppProtectionApp -InputObject <IDevicesCorporateManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgDeviceAppManagementiOSManagedAppProtectionApp
+### Remove-MgBetaDeviceAppManagementiOSManagedAppProtectionApp
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgaccessreviewinstance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgaccessreviewinstance
 schema: 2.0.0
 ---
 
-# New-MgAccessReviewInstance
+# New-MgBetaAccessReviewInstance
 
 ## SYNOPSIS
 Create new navigation property to instances for accessReviews
@@ -14,7 +14,7 @@ Create new navigation property to instances for accessReviews
 
 ### CreateExpanded (Default)
 ```
-New-MgAccessReviewInstance -AccessReviewId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaAccessReviewInstance -AccessReviewId <String> [-AdditionalProperties <Hashtable>]
  [-BusinessFlowTemplateId <String>] [-CreatedBy <IMicrosoftGraphUserIdentity>]
  [-Decisions <IMicrosoftGraphAccessReviewDecision[]>] [-Description <String>] [-DisplayName <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Instances <IMicrosoftGraphAccessReview[]>]
@@ -26,19 +26,19 @@ New-MgAccessReviewInstance -AccessReviewId <String> [-AdditionalProperties <Hash
 
 ### Create
 ```
-New-MgAccessReviewInstance -AccessReviewId <String> -BodyParameter <IMicrosoftGraphAccessReview> [-Confirm]
+New-MgBetaAccessReviewInstance -AccessReviewId <String> -BodyParameter <IMicrosoftGraphAccessReview> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgAccessReviewInstance -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaAccessReviewInstance -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAccessReview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgAccessReviewInstance -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaAccessReviewInstance -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-BusinessFlowTemplateId <String>] [-CreatedBy <IMicrosoftGraphUserIdentity>]
  [-Decisions <IMicrosoftGraphAccessReviewDecision[]>] [-Description <String>] [-DisplayName <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Instances <IMicrosoftGraphAccessReview[]>]
@@ -90,7 +90,7 @@ accessReview
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ userIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserIdentity
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -139,7 +139,7 @@ The collection of decisions for this access review.
 To construct, please use Get-Help -Online and see NOTES section for DECISIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -219,7 +219,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -235,7 +235,7 @@ The collection of access reviews instances past, present and future, if this obj
 To construct, please use Get-Help -Online and see NOTES section for INSTANCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -251,7 +251,7 @@ The collection of decisions for the caller, if the caller is a reviewer.
 To construct, please use Get-Help -Online and see NOTES section for MYDECISIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -267,7 +267,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for REVIEWEDENTITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -283,7 +283,7 @@ The collection of reviewers for an access review, if access review reviewerType 
 To construct, please use Get-Help -Online and see NOTES section for REVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -315,7 +315,7 @@ accessReviewSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewSettings
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -395,13 +395,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 
 ## NOTES
 

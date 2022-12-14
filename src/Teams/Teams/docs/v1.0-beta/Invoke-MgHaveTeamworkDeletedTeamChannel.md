@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mghaveteamworkdeletedteamchannel
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mghaveteamworkdeletedteamchannel
 schema: 2.0.0
 ---
 
-# Invoke-MgHaveTeamworkDeletedTeamChannel
+# Invoke-MgBetaHaveTeamworkDeletedTeamChannel
 
 ## SYNOPSIS
 Invoke function doesUserHaveAccess
@@ -14,13 +14,13 @@ Invoke function doesUserHaveAccess
 
 ### Have (Default)
 ```
-Invoke-MgHaveTeamworkDeletedTeamChannel -ChannelId <String> -DeletedTeamId <String> [-TenantId <String>]
+Invoke-MgBetaHaveTeamworkDeletedTeamChannel -ChannelId <String> -DeletedTeamId <String> [-TenantId <String>]
  [-UserId <String>] [-UserPrincipalName <String>] [<CommonParameters>]
 ```
 
 ### HaveViaIdentity
 ```
-Invoke-MgHaveTeamworkDeletedTeamChannel -InputObject <ITeamsIdentity> [-TenantId <String>] [-UserId <String>]
+Invoke-MgBetaHaveTeamworkDeletedTeamChannel -InputObject <ITeamsIdentity> [-TenantId <String>] [-UserId <String>]
  [-UserPrincipalName <String>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: HaveViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

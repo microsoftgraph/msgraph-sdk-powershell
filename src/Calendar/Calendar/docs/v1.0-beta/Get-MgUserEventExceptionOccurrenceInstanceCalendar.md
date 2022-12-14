@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusereventexceptionoccurrenceinstancecalendar
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusereventexceptionoccurrenceinstancecalendar
 schema: 2.0.0
 ---
 
-# Get-MgUserEventExceptionOccurrenceInstanceCalendar
+# Get-MgBetaUserEventExceptionOccurrenceInstanceCalendar
 
 ## SYNOPSIS
 The calendar that contains the event.
@@ -16,13 +16,13 @@ Read-only.
 
 ### Get (Default)
 ```
-Get-MgUserEventExceptionOccurrenceInstanceCalendar -EventId <String> -EventId1 <String> -EventId2 <String>
+Get-MgBetaUserEventExceptionOccurrenceInstanceCalendar -EventId <String> -EventId1 <String> -EventId2 <String>
  -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserEventExceptionOccurrenceInstanceCalendar -InputObject <ICalendarIdentity> [-Property <String[]>]
+Get-MgBetaUserEventExceptionOccurrenceInstanceCalendar -InputObject <ICalendarIdentity> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -85,7 +85,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -131,11 +131,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendar1
 
 ## NOTES
 

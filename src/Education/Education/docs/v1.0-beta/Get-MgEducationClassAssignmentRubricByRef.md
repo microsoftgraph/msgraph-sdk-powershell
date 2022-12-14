@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassassignmentrubricbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationclassassignmentrubricbyref
 schema: 2.0.0
 ---
 
-# Get-MgEducationClassAssignmentRubricByRef
+# Get-MgBetaEducationClassAssignmentRubricByRef
 
 ## SYNOPSIS
 Get the educationRubric object attached to an educationAssignment, if one exists.
@@ -14,13 +14,13 @@ Get the educationRubric object attached to an educationAssignment, if one exists
 
 ### Get1 (Default)
 ```
-Get-MgEducationClassAssignmentRubricByRef -EducationAssignmentId <String> -EducationClassId <String>
+Get-MgBetaEducationClassAssignmentRubricByRef -EducationAssignmentId <String> -EducationClassId <String>
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity> [<CommonParameters>]
+Get-MgBetaEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +65,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -81,7 +81,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectorysetting
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/remove-mgdirectorysetting
 schema: 2.0.0
 ---
 
-# Remove-MgDirectorySetting
+# Remove-MgBetaDirectorySetting
 
 ## SYNOPSIS
 Delete a directory setting.
@@ -14,13 +14,13 @@ Delete a directory setting.
 
 ### Delete (Default)
 ```
-Remove-MgDirectorySetting -DirectorySettingId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaDirectorySetting -DirectorySettingId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDirectorySetting -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaDirectorySetting -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete a directory setting.
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgDirectorySetting Cmdlet
+### Example 1: Using the Remove-MgBetaDirectorySetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDirectorySetting -DirectorySettingId $directorySettingId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Remove-MgBetaDirectorySetting -DirectorySettingId $directorySettingId
 ```
 
-This example shows how to use the Remove-MgDirectorySetting Cmdlet.
+This example shows how to use the Remove-MgBetaDirectorySetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

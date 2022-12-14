@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/remove-mgplannerroster
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/remove-mgplannerroster
 schema: 2.0.0
 ---
 
-# Remove-MgPlannerRoster
+# Remove-MgBetaPlannerRoster
 
 ## SYNOPSIS
 Delete navigation property rosters for planner
@@ -14,13 +14,13 @@ Delete navigation property rosters for planner
 
 ### Delete (Default)
 ```
-Remove-MgPlannerRoster -PlannerRosterId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPlannerRoster -PlannerRosterId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPlannerRoster -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPlannerRoster -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property rosters for planner
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPlannerRoster Cmdlet
+### Example 1: Using the Remove-MgBetaPlannerRoster Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Remove-MgPlannerRoster -PlannerRosterId $plannerRosterId
+Import-Module Microsoft.Graph.Beta.Planner
+Remove-MgBetaPlannerRoster -PlannerRosterId $plannerRosterId
 ```
 
-This example shows how to use the Remove-MgPlannerRoster Cmdlet.
+This example shows how to use the Remove-MgBetaPlannerRoster Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

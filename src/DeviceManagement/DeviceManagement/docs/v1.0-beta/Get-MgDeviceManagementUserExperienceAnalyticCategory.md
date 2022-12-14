@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticcategory
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticcategory
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementUserExperienceAnalyticCategory
+# Get-MgBetaDeviceManagementUserExperienceAnalyticCategory
 
 ## SYNOPSIS
 User experience analytics categories
@@ -14,20 +14,20 @@ User experience analytics categories
 
 ### List (Default)
 ```
-Get-MgDeviceManagementUserExperienceAnalyticCategory [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementUserExperienceAnalyticCategory [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementUserExperienceAnalyticCategory -UserExperienceAnalyticsCategoryId <String>
+Get-MgBetaDeviceManagementUserExperienceAnalyticCategory -UserExperienceAnalyticsCategoryId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementUserExperienceAnalyticCategory -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementUserExperienceAnalyticCategory -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 
 ## NOTES
 

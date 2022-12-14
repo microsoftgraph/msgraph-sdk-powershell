@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/resize-mgdevicemanagementmanageddevicecloudpc
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/resize-mgdevicemanagementmanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Resize-MgDeviceManagementManagedDeviceCloudPc
+# Resize-MgBetaDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
 Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
@@ -14,27 +14,27 @@ Upgrade or downgrade an existing Cloud PC to another configuration with a new vi
 
 ### ResizeExpanded (Default)
 ```
-Resize-MgDeviceManagementManagedDeviceCloudPc -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
+Resize-MgBetaDeviceManagementManagedDeviceCloudPc -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
  [-TargetServicePlanId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Resize
 ```
-Resize-MgDeviceManagementManagedDeviceCloudPc -ManagedDeviceId <String>
+Resize-MgBetaDeviceManagementManagedDeviceCloudPc -ManagedDeviceId <String>
  -BodyParameter <IPaths1Xt2Z82DevicemanagementManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResizeViaIdentity
 ```
-Resize-MgDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
+Resize-MgBetaDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1Xt2Z82DevicemanagementManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResizeViaIdentityExpanded
 ```
-Resize-MgDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
+Resize-MgBetaDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-TargetServicePlanId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -44,16 +44,16 @@ Upgrade or downgrade an existing Cloud PC to another configuration with a new vi
 
 ## EXAMPLES
 
-### Example 1: Using the Resize-MgDeviceManagementManagedDeviceCloudPc Cmdlet
+### Example 1: Using the Resize-MgBetaDeviceManagementManagedDeviceCloudPc Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
 $params = @{
 	TargetServicePlanId = "30d0e128-de93-41dc-89ec-33d84bb662a0"
 }
-Resize-MgDeviceManagementManagedDeviceCloudPc -ManagedDeviceId $managedDeviceId -BodyParameter $params
+Resize-MgBetaDeviceManagementManagedDeviceCloudPc -ManagedDeviceId $managedDeviceId -BodyParameter $params
 ```
 
-This example shows how to use the Resize-MgDeviceManagementManagedDeviceCloudPc Cmdlet.
+This example shows how to use the Resize-MgBetaDeviceManagementManagedDeviceCloudPc Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Xt2Z82DevicemanagementManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Xt2Z82DevicemanagementManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Resize, ResizeViaIdentity
 Aliases:
 
@@ -94,7 +94,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: ResizeViaIdentity, ResizeViaIdentityExpanded
 Aliases:
 
@@ -186,9 +186,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Xt2Z82DevicemanagementManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Xt2Z82DevicemanagementManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

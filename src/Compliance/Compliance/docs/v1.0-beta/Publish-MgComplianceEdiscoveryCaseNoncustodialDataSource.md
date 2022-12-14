@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/publish-mgcomplianceediscoverycasenoncustodialdatasource
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/publish-mgcomplianceediscoverycasenoncustodialdatasource
 schema: 2.0.0
 ---
 
-# Publish-MgComplianceEdiscoveryCaseNoncustodialDataSource
+# Publish-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource
 
 ## SYNOPSIS
 Releases the non-custodial data source from the case.
@@ -14,13 +14,13 @@ Releases the non-custodial data source from the case.
 
 ### Release (Default)
 ```
-Publish-MgComplianceEdiscoveryCaseNoncustodialDataSource -CaseId <String> -NoncustodialDataSourceId <String>
+Publish-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -CaseId <String> -NoncustodialDataSourceId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReleaseViaIdentity
 ```
-Publish-MgComplianceEdiscoveryCaseNoncustodialDataSource -InputObject <IComplianceIdentity> [-PassThru]
+Publish-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -InputObject <IComplianceIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Releases the non-custodial data source from the case.
 
 ## EXAMPLES
 
-### Example 1: Using the Publish-MgComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet
+### Example 1: Using the Publish-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Publish-MgComplianceEdiscoveryCaseNoncustodialDataSource -CaseId $caseId -NoncustodialDataSourceId $noncustodialDataSourceId
+Import-Module Microsoft.Graph.Beta.Compliance
+Publish-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -CaseId $caseId -NoncustodialDataSourceId $noncustodialDataSourceId
 ```
 
-This example shows how to use the Publish-MgComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet.
+This example shows how to use the Publish-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: ReleaseViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

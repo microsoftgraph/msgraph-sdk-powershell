@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mguserdeviceenrollmentconfigurationenrollmentnotificationconfiguration
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/new-mguserdeviceenrollmentconfigurationenrollmentnotificationconfiguration
 schema: 2.0.0
 ---
 
-# New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration
+# New-MgBetaUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration
 
 ## SYNOPSIS
 Invoke action createEnrollmentNotificationConfiguration
@@ -14,7 +14,7 @@ Invoke action createEnrollmentNotificationConfiguration
 
 ### CreateExpanded (Default)
 ```
-New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration -UserId <String>
+New-MgBetaUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration -UserId <String>
  [-AdditionalProperties <Hashtable>]
  [-DeviceEnrollmentNotificationConfigurations <IMicrosoftGraphDeviceEnrollmentConfiguration[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,14 +22,14 @@ New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration -User
 
 ### Create
 ```
-New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration -UserId <String>
+New-MgBetaUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration -UserId <String>
  -BodyParameter <IPaths18H3Bp4UsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphCreateenrollmentnotificationconfigurationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration
+New-MgBetaUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration
  -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths18H3Bp4UsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphCreateenrollmentnotificationconfigurationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration
+New-MgBetaUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration
  -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DeviceEnrollmentNotificationConfigurations <IMicrosoftGraphDeviceEnrollmentConfiguration[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths18H3Bp4UsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphCreateenrollmentnotificationconfigurationPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths18H3Bp4UsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphCreateenrollmentnotificationconfigurationPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DEVICEENROLLMENTNOTIFICATIONCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceEnrollmentConfiguration[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceEnrollmentConfiguration[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -179,9 +179,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths18H3Bp4UsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphCreateenrollmentnotificationconfigurationPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths18H3Bp4UsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphCreateenrollmentnotificationconfigurationPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

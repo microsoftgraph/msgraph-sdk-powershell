@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgusermanageddevicemobileappconfigurationstate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgusermanageddevicemobileappconfigurationstate
 schema: 2.0.0
 ---
 
-# New-MgUserManagedDeviceMobileAppConfigurationState
+# New-MgBetaUserManagedDeviceMobileAppConfigurationState
 
 ## SYNOPSIS
 Create new navigation property to managedDeviceMobileAppConfigurationStates for users
@@ -14,7 +14,7 @@ Create new navigation property to managedDeviceMobileAppConfigurationStates for 
 
 ### CreateExpanded (Default)
 ```
-New-MgUserManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String> -UserId <String>
+New-MgBetaUserManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphManagedDeviceMobileAppConfigurationSettingState[]>] [-State <String>]
@@ -24,21 +24,21 @@ New-MgUserManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String> -Us
 
 ### Create
 ```
-New-MgUserManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String> -UserId <String>
+New-MgBetaUserManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationState> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserManagedDeviceMobileAppConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserManagedDeviceMobileAppConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationState> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserManagedDeviceMobileAppConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserManagedDeviceMobileAppConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
  [-UserId <String>] [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphManagedDeviceMobileAppConfigurationSettingState[]>] [-State <String>]
@@ -72,7 +72,7 @@ Managed Device Mobile App Configuration State for a given device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicyPlatformType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SETTINGSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationSettingState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationSettingState[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -302,13 +302,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
 
 ## NOTES
 

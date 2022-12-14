@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupthreadpostinreplytomultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupthreadpostinreplytomultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgGroupThreadPostInReplyToMultiValueExtendedProperty
+# Get-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty
 
 ## SYNOPSIS
 The collection of multi-value extended properties defined for the post.
@@ -16,7 +16,7 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
+Get-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
  -PostId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -24,14 +24,14 @@ Get-MgGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <
 
 ### Get
 ```
-Get-MgGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
+Get-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
  -MultiValueLegacyExtendedPropertyId <String> -PostId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupThreadPostInReplyToMultiValueExtendedProperty -InputObject <IGroupsIdentity>
+Get-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty -InputObject <IGroupsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -276,11 +276,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementcompliancepolicyscheduledactionforrule
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementcompliancepolicyscheduledactionforrule
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementCompliancePolicyScheduledActionForRule
+# New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRule
 
 ## SYNOPSIS
 Create new navigation property to scheduledActionsForRule for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to scheduledActionsForRule for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementCompliancePolicyScheduledActionForRule -DeviceManagementCompliancePolicyId <String>
+New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRule -DeviceManagementCompliancePolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-RuleName <String>]
  [-ScheduledActionConfigurations <IMicrosoftGraphDeviceManagementComplianceActionItem[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,21 +22,21 @@ New-MgDeviceManagementCompliancePolicyScheduledActionForRule -DeviceManagementCo
 
 ### Create
 ```
-New-MgDeviceManagementCompliancePolicyScheduledActionForRule -DeviceManagementCompliancePolicyId <String>
+New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRule -DeviceManagementCompliancePolicyId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementCompliancePolicyScheduledActionForRule -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRule -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementCompliancePolicyScheduledActionForRule -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRule -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-RuleName <String>]
  [-ScheduledActionConfigurations <IMicrosoftGraphDeviceManagementComplianceActionItem[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ Scheduled Action for Rule
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ This collection can contain a maximum of 100 elements.
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULEDACTIONCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceActionItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceActionItem[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -195,13 +195,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mgclockteamscheduletimecardout
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mgclockteamscheduletimecardout
 schema: 2.0.0
 ---
 
-# Invoke-MgClockTeamScheduleTimeCardOut
+# Invoke-MgBetaClockTeamScheduleTimeCardOut
 
 ## SYNOPSIS
 Clock out to end an open timeCard.
@@ -14,28 +14,28 @@ Clock out to end an open timeCard.
 
 ### ClockExpanded (Default)
 ```
-Invoke-MgClockTeamScheduleTimeCardOut -TeamId <String> -TimeCardId <String>
+Invoke-MgBetaClockTeamScheduleTimeCardOut -TeamId <String> -TimeCardId <String>
  [-AdditionalProperties <Hashtable>] [-AtApprovedLocation] [-Notes <IMicrosoftGraphItemBody>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Clock
 ```
-Invoke-MgClockTeamScheduleTimeCardOut -TeamId <String> -TimeCardId <String>
+Invoke-MgBetaClockTeamScheduleTimeCardOut -TeamId <String> -TimeCardId <String>
  -BodyParameter <IPaths1Hehk7XTeamsTeamIdScheduleTimecardsTimecardIdMicrosoftGraphClockoutPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ClockViaIdentity
 ```
-Invoke-MgClockTeamScheduleTimeCardOut -InputObject <ITeamsIdentity>
+Invoke-MgBetaClockTeamScheduleTimeCardOut -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1Hehk7XTeamsTeamIdScheduleTimecardsTimecardIdMicrosoftGraphClockoutPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ClockViaIdentityExpanded
 ```
-Invoke-MgClockTeamScheduleTimeCardOut -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaClockTeamScheduleTimeCardOut -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AtApprovedLocation] [-Notes <IMicrosoftGraphItemBody>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -44,9 +44,9 @@ Clock out to end an open timeCard.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgClockTeamScheduleTimeCardOut Cmdlet
+### Example 1: Using the Invoke-MgBetaClockTeamScheduleTimeCardOut Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	AtAprovedLocation = $true
 	Notes = @{
@@ -54,10 +54,10 @@ $params = @{
 		Content = "clock out smaple notes"
 	}
 }
-Invoke-MgClockTeamScheduleTimeCardOut -TeamId $teamId -TimeCardId $timeCardId -BodyParameter $params
+Invoke-MgBetaClockTeamScheduleTimeCardOut -TeamId $teamId -TimeCardId $timeCardId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgClockTeamScheduleTimeCardOut Cmdlet.
+This example shows how to use the Invoke-MgBetaClockTeamScheduleTimeCardOut Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Hehk7XTeamsTeamIdScheduleTimecardsTimecardIdMicrosoftGraphClockoutPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Hehk7XTeamsTeamIdScheduleTimecardsTimecardIdMicrosoftGraphClockoutPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Clock, ClockViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: ClockViaIdentity, ClockViaIdentityExpanded
 Aliases:
 
@@ -129,7 +129,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for NOTES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: ClockExpanded, ClockViaIdentityExpanded
 Aliases:
 
@@ -206,13 +206,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Hehk7XTeamsTeamIdScheduleTimecardsTimecardIdMicrosoftGraphClockoutPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Hehk7XTeamsTeamIdScheduleTimecardsTimecardIdMicrosoftGraphClockoutPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCard
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCard
 
 ## NOTES
 

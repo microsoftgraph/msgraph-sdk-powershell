@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtwdacsupplementalpolicyassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtwdacsupplementalpolicyassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtWdacSupplementalPolicyAssignment
+# New-MgBetaDeviceAppMgtWdacSupplementalPolicyAssignment
 
 ## SYNOPSIS
 Create new navigation property to assignments for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to assignments for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtWdacSupplementalPolicyAssignment
+New-MgBetaDeviceAppMgtWdacSupplementalPolicyAssignment
  -WindowsDefenderApplicationControlSupplementalPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceAppMgtWdacSupplementalPolicyAssignment
 
 ### Create
 ```
-New-MgDeviceAppMgtWdacSupplementalPolicyAssignment
+New-MgBetaDeviceAppMgtWdacSupplementalPolicyAssignment
  -WindowsDefenderApplicationControlSupplementalPolicyId <String>
  -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment> [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -30,14 +30,14 @@ New-MgDeviceAppMgtWdacSupplementalPolicyAssignment
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtWdacSupplementalPolicyAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtWdacSupplementalPolicyAssignment -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtWdacSupplementalPolicyAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtWdacSupplementalPolicyAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ A class containing the properties used for assignment of a WindowsDefenderApplic
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -179,19 +179,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementWdacSupplementalPolicyAssignment
+### New-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

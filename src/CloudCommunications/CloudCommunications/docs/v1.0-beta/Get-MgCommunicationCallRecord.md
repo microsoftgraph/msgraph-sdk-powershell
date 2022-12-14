@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationcallrecord
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationcallrecord
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationCallRecord
+# Get-MgBetaCommunicationCallRecord
 
 ## SYNOPSIS
 Get callRecords from communications
@@ -14,13 +14,13 @@ Get callRecords from communications
 
 ### Get (Default)
 ```
-Get-MgCommunicationCallRecord -CallRecordId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaCommunicationCallRecord -CallRecordId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgCommunicationCallRecord -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationCallRecord -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,40 +29,40 @@ Get callRecords from communications
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgCommunicationCallRecord Cmdlet
+### Example 1: Using the Get-MgBetaCommunicationCallRecord Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecord -CallRecordId $callRecordId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallRecord -CallRecordId $callRecordId
 ```
 
-This example shows how to use the Get-MgCommunicationCallRecord Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallRecord Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgCommunicationCallRecord Cmdlet
+### Example 2: Using the Get-MgBetaCommunicationCallRecord Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecord -CallRecordId $callRecordId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallRecord -CallRecordId $callRecordId
 ```
 
-This example shows how to use the Get-MgCommunicationCallRecord Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallRecord Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgCommunicationCallRecord Cmdlet
+### Example 3: Using the Get-MgBetaCommunicationCallRecord Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecord -CallRecordId $callRecordId -ExpandProperty "sessions(`$expand=segments)" 
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallRecord -CallRecordId $callRecordId -ExpandProperty "sessions(`$expand=segments)" 
 ```
 
-This example shows how to use the Get-MgCommunicationCallRecord Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallRecord Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgCommunicationCallRecord Cmdlet
+### Example 4: Using the Get-MgBetaCommunicationCallRecord Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecord -CallRecordId $callRecordId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallRecord -CallRecordId $callRecordId
 ```
 
-This example shows how to use the Get-MgCommunicationCallRecord Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallRecord Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -102,7 +102,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -133,11 +133,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsCallRecord
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsCallRecord
 
 ## NOTES
 

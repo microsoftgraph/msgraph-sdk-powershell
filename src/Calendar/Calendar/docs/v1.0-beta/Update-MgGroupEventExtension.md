@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/update-mggroupeventextension
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/update-mggroupeventextension
 schema: 2.0.0
 ---
 
-# Update-MgGroupEventExtension
+# Update-MgBetaGroupEventExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in groups
@@ -14,25 +14,25 @@ Update the navigation property extensions in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupEventExtension -EventId <String> -ExtensionId <String> -GroupId <String>
+Update-MgBetaGroupEventExtension -EventId <String> -ExtensionId <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgGroupEventExtension -EventId <String> -ExtensionId <String> -GroupId <String>
+Update-MgBetaGroupEventExtension -EventId <String> -ExtensionId <String> -GroupId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupEventExtension -InputObject <ICalendarIdentity> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaGroupEventExtension -InputObject <ICalendarIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupEventExtension -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupEventExtension -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -201,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ### System.Collections.Hashtable
 

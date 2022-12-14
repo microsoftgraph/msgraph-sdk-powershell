@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mgusermanageddeviceremotehelpsession
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/new-mgusermanageddeviceremotehelpsession
 schema: 2.0.0
 ---
 
-# New-MgUserManagedDeviceRemoteHelpSession
+# New-MgBetaUserManagedDeviceRemoteHelpSession
 
 ## SYNOPSIS
 Remote help - Create session with a specific device
@@ -14,27 +14,27 @@ Remote help - Create session with a specific device
 
 ### CreateExpanded (Default)
 ```
-New-MgUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -UserId <String>
+New-MgBetaUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-SessionType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -UserId <String>
+New-MgBetaUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPathsC2LctxUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserManagedDeviceRemoteHelpSession -InputObject <IUsersActionsIdentity>
+New-MgBetaUserManagedDeviceRemoteHelpSession -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsC2LctxUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserManagedDeviceRemoteHelpSession -InputObject <IUsersActionsIdentity>
+New-MgBetaUserManagedDeviceRemoteHelpSession -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-SessionType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsC2LctxUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsC2LctxUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -173,9 +173,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsC2LctxUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsC2LctxUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

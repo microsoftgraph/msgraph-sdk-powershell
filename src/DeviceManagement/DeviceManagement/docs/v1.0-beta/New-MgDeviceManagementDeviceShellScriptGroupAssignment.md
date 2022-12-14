@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementdeviceshellscriptgroupassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementdeviceshellscriptgroupassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDeviceShellScriptGroupAssignment
+# New-MgBetaDeviceManagementDeviceShellScriptGroupAssignment
 
 ## SYNOPSIS
 Create new navigation property to groupAssignments for deviceManagement
@@ -14,28 +14,28 @@ Create new navigation property to groupAssignments for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDeviceShellScriptGroupAssignment -DeviceShellScriptId <String>
+New-MgBetaDeviceManagementDeviceShellScriptGroupAssignment -DeviceShellScriptId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetGroupId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementDeviceShellScriptGroupAssignment -DeviceShellScriptId <String>
+New-MgBetaDeviceManagementDeviceShellScriptGroupAssignment -DeviceShellScriptId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementScriptGroupAssignment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementDeviceShellScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementDeviceShellScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementScriptGroupAssignment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementDeviceShellScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementDeviceShellScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetGroupId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Contains properties used to assign a device management script to a group.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -176,13 +176,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
 
 ## NOTES
 

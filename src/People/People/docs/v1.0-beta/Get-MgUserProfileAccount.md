@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguserprofileaccount
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguserprofileaccount
 schema: 2.0.0
 ---
 
-# Get-MgUserProfileAccount
+# Get-MgBetaUserProfileAccount
 
 ## SYNOPSIS
 Get account from users
@@ -14,20 +14,20 @@ Get account from users
 
 ### List (Default)
 ```
-Get-MgUserProfileAccount -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserProfileAccount -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserProfileAccount -UserAccountInformationId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserProfileAccount -UserAccountInformationId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserProfileAccount -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserProfileAccount -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Get account from users
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserProfileAccount Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileAccount Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileAccount -UserId $userId
+Get-MgBetaUserProfileAccount -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserProfileAccount Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileAccount Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserProfileAccount Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileAccount Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileAccount -UserId $userId -UserAccountInformationId $userAccountInformationId
+Get-MgBetaUserProfileAccount -UserId $userId -UserAccountInformationId $userAccountInformationId
 ```
 
-This example shows how to use the Get-MgUserProfileAccount Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileAccount Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAccountInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAccountInformation
 
 ## NOTES
 

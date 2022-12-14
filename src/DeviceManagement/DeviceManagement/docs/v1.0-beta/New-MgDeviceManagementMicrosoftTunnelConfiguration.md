@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementmicrosofttunnelconfiguration
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementmicrosofttunnelconfiguration
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementMicrosoftTunnelConfiguration
+# New-MgBetaDeviceManagementMicrosoftTunnelConfiguration
 
 ## SYNOPSIS
 Create new navigation property to microsoftTunnelConfigurations for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to microsoftTunnelConfigurations for deviceManage
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementMicrosoftTunnelConfiguration [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementMicrosoftTunnelConfiguration [-AdditionalProperties <Hashtable>]
  [-AdvancedSettings <IMicrosoftGraphKeyValuePair[]>] [-DefaultDomainSuffix <String>] [-Description <String>]
  [-DisableUdpConnections] [-DisplayName <String>] [-DnsServers <String[]>] [-Id <String>]
  [-LastUpdateDateTime <DateTime>] [-ListenPort <Int32>] [-Network <String>] [-RoleScopeTagIds <String[]>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementMicrosoftTunnelConfiguration [-AdditionalProperties <Hasht
 
 ### Create
 ```
-New-MgDeviceManagementMicrosoftTunnelConfiguration
+New-MgBetaDeviceManagementMicrosoftTunnelConfiguration
  -BodyParameter <IMicrosoftGraphMicrosoftTunnelConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ Additional settings that may be applied to the server
 To construct, please use Get-Help -Online and see NOTES section for ADVANCEDSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -71,7 +71,7 @@ Entity that represents a collection of Microsoft Tunnel settings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
 Parameter Sets: Create
 Aliases:
 
@@ -347,11 +347,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
 
 ## NOTES
 

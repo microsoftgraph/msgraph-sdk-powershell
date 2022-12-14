@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/set-mgusertodolisttaskattachmentcontent
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/set-mgusertodolisttaskattachmentcontent
 schema: 2.0.0
 ---
 
-# Set-MgUserTodoListTaskAttachmentContent
+# Set-MgBetaUserTodoListTaskAttachmentContent
 
 ## SYNOPSIS
 Update media content for the navigation property attachments in users
@@ -14,14 +14,14 @@ Update media content for the navigation property attachments in users
 
 ### Set (Default)
 ```
-Set-MgUserTodoListTaskAttachmentContent -AttachmentBaseId <String> -TodoTaskId <String>
+Set-MgBetaUserTodoListTaskAttachmentContent -AttachmentBaseId <String> -TodoTaskId <String>
  -TodoTaskListId <String> -UserId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgUserTodoListTaskAttachmentContent -InputObject <IUsersIdentity> -InFile <String>
+Set-MgBetaUserTodoListTaskAttachmentContent -InputObject <IUsersIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -191,7 +191,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ### System.IO.Stream
 

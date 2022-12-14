@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgserviceprincipaldelegatedpermissionclassification
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgserviceprincipaldelegatedpermissionclassification
 schema: 2.0.0
 ---
 
-# Update-MgServicePrincipalDelegatedPermissionClassification
+# Update-MgBetaServicePrincipalDelegatedPermissionClassification
 
 ## SYNOPSIS
 Update the navigation property delegatedPermissionClassifications in servicePrincipals
@@ -14,28 +14,28 @@ Update the navigation property delegatedPermissionClassifications in servicePrin
 
 ### UpdateExpanded (Default)
 ```
-Update-MgServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
+Update-MgBetaServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
  -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>]
  [-PermissionId <String>] [-PermissionName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
+Update-MgBetaServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
  -ServicePrincipalId <String> -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
+Update-MgBetaServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
+Update-MgBetaServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>] [-PermissionId <String>]
  [-PermissionName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ delegatedPermissionClassification
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -239,9 +239,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
 
 ## OUTPUTS
 

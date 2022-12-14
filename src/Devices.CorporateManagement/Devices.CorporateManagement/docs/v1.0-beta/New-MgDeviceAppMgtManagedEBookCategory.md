@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedebookcategory
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedebookcategory
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtManagedEBookCategory
+# New-MgBetaDeviceAppMgtManagedEBookCategory
 
 ## SYNOPSIS
 Create new navigation property to managedEBookCategories for deviceAppManagement
@@ -14,13 +14,13 @@ Create new navigation property to managedEBookCategories for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtManagedEBookCategory [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceAppMgtManagedEBookCategory [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtManagedEBookCategory -BodyParameter <IMicrosoftGraphManagedEBookCategory> [-Confirm]
+New-MgBetaDeviceAppMgtManagedEBookCategory -BodyParameter <IMicrosoftGraphManagedEBookCategory> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Contains properties for a single Intune eBook category.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
 Parameter Sets: Create
 Aliases:
 
@@ -144,17 +144,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementManagedEBookCategory
+### New-MgBetaDeviceAppManagementManagedEBookCategory
 
 COMPLEX PARAMETER PROPERTIES
 

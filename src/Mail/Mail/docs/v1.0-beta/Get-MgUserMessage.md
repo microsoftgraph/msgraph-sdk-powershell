@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermessage
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mgusermessage
 schema: 2.0.0
 ---
 
-# Get-MgUserMessage
+# Get-MgBetaUserMessage
 
 ## SYNOPSIS
 The messages in a mailbox or folder.
@@ -16,19 +16,19 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserMessage -UserId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaUserMessage -UserId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserMessage -MessageId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserMessage -MessageId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserMessage -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserMessage -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,84 +38,84 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserMessage Cmdlet
+### Example 1: Using the Get-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -MessageId $messageId
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId
 ```
 
-This example shows how to use the Get-MgUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserMessage Cmdlet
+### Example 2: Using the Get-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "mentions" 
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "mentions" 
 ```
 
-This example shows how to use the Get-MgUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgUserMessage Cmdlet
+### Example 3: Using the Get-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -MessageId $messageId -Property "subject,body,bodyPreview,uniqueBody" 
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -Property "subject,body,bodyPreview,uniqueBody" 
 ```
 
-This example shows how to use the Get-MgUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgUserMessage Cmdlet
+### Example 4: Using the Get-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -MessageId $messageId -Property "internetMessageHeaders" 
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -Property "internetMessageHeaders" 
 ```
 
-This example shows how to use the Get-MgUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Get-MgUserMessage Cmdlet
+### Example 5: Using the Get-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -MessageId $messageId
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId
 ```
 
-This example shows how to use the Get-MgUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the Get-MgUserMessage Cmdlet
+### Example 6: Using the Get-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -Property "subject,body,bodyPreview,uniqueBody" 
+Get-MgBetaUserMessage -UserId $userId -Property "subject,body,bodyPreview,uniqueBody" 
 ```
 
-This example shows how to use the Get-MgUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 7: Using the Get-MgUserMessage Cmdlet
+### Example 7: Using the Get-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -Property "sender,subject" 
+Get-MgBetaUserMessage -UserId $userId -Property "sender,subject" 
 ```
 
-This example shows how to use the Get-MgUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 8: Using the Get-MgUserMessage Cmdlet
+### Example 8: Using the Get-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -Filter "MentionsPreview/IsMentioned eq true" -Property "Subject,Sender,ReceivedDateTime,MentionsPreview" 
+Get-MgBetaUserMessage -UserId $userId -Filter "MentionsPreview/IsMentioned eq true" -Property "Subject,Sender,ReceivedDateTime,MentionsPreview" 
 ```
 
-This example shows how to use the Get-MgUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -171,7 +171,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -307,11 +307,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage1
 
 ## NOTES
 

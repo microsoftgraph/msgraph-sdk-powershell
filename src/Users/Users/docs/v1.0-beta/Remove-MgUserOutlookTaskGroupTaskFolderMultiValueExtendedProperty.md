@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mguseroutlooktaskgrouptaskfoldermultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/remove-mguseroutlooktaskgrouptaskfoldermultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Remove-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty
+# Remove-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty
 
 ## SYNOPSIS
 Delete navigation property multiValueExtendedProperties for users
@@ -14,14 +14,14 @@ Delete navigation property multiValueExtendedProperties for users
 
 ### Delete (Default)
 ```
-Remove-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty -MultiValueLegacyExtendedPropertyId <String>
+Remove-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty -MultiValueLegacyExtendedPropertyId <String>
  -OutlookTaskFolderId <String> -OutlookTaskGroupId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty -InputObject <IUsersIdentity>
+Remove-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty -InputObject <IUsersIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -174,7 +174,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

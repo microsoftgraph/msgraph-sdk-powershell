@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/request-mgdevicemanagementcomanageddeviceremotehelpsessionaccess
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/request-mgdevicemanagementcomanageddeviceremotehelpsessionaccess
 schema: 2.0.0
 ---
 
-# Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess
+# Request-MgBetaDeviceManagementComanagedDeviceRemoteHelpSessionAccess
 
 ## SYNOPSIS
 Remote help - Request Remote help session access permission for an existing session
@@ -14,21 +14,21 @@ Remote help - Request Remote help session access permission for an existing sess
 
 ### RequestExpanded (Default)
 ```
-Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess -ManagedDeviceId <String>
+Request-MgBetaDeviceManagementComanagedDeviceRemoteHelpSessionAccess -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-PubSubConnectionId <String>] [-SessionKey <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Request
 ```
-Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess -ManagedDeviceId <String>
+Request-MgBetaDeviceManagementComanagedDeviceRemoteHelpSessionAccess -ManagedDeviceId <String>
  -BodyParameter <IPathsSn09FtDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RequestViaIdentity
 ```
-Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess
+Request-MgBetaDeviceManagementComanagedDeviceRemoteHelpSessionAccess
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsSn09FtDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess
 
 ### RequestViaIdentityExpanded
 ```
-Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess
+Request-MgBetaDeviceManagementComanagedDeviceRemoteHelpSessionAccess
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-PubSubConnectionId <String>] [-SessionKey <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsSn09FtDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsSn09FtDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Request, RequestViaIdentity
 Aliases:
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RequestViaIdentity, RequestViaIdentityExpanded
 Aliases:
 
@@ -176,13 +176,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsSn09FtDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsSn09FtDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRequestRemoteHelpSessionAccessResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRequestRemoteHelpSessionAccessResponse
 
 ## NOTES
 

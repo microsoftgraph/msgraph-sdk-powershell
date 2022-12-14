@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprint
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprint
 schema: 2.0.0
 ---
 
-# Get-MgPrint
+# Get-MgBetaPrint
 
 ## SYNOPSIS
 Get print
@@ -13,7 +13,7 @@ Get print
 ## SYNTAX
 
 ```
-Get-MgPrint [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaPrint [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrint1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrint1
 
 ## NOTES
 

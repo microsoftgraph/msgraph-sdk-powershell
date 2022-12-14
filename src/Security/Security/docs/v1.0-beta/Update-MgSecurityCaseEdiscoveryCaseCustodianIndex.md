@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritycaseediscoverycasecustodianindex
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritycaseediscoverycasecustodianindex
 schema: 2.0.0
 ---
 
-# Update-MgSecurityCaseEdiscoveryCaseCustodianIndex
+# Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex
 
 ## SYNOPSIS
 Trigger an indexOperation
@@ -14,13 +14,13 @@ Trigger an indexOperation
 
 ### Update1 (Default)
 ```
-Update-MgSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
+Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
+Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Trigger an indexOperation
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityCaseEdiscoveryCaseCustodianIndex Cmdlet
+### Example 1: Using the Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Update-MgSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+Import-Module Microsoft.Graph.Beta.Security
+Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
 ```
 
-This example shows how to use the Update-MgSecurityCaseEdiscoveryCaseCustodianIndex Cmdlet.
+This example shows how to use the Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity1
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

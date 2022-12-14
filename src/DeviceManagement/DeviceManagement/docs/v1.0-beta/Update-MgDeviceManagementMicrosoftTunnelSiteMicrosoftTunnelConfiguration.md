@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelconfiguration
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelconfiguration
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration
+# Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration
 
 ## SYNOPSIS
 Update the navigation property microsoftTunnelConfiguration in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property microsoftTunnelConfiguration in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration -MicrosoftTunnelSiteId <String>
+Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration -MicrosoftTunnelSiteId <String>
  [-AdditionalProperties <Hashtable>] [-AdvancedSettings <IMicrosoftGraphKeyValuePair[]>]
  [-DefaultDomainSuffix <String>] [-Description <String>] [-DisableUdpConnections] [-DisplayName <String>]
  [-DnsServers <String[]>] [-Id <String>] [-LastUpdateDateTime <DateTime>] [-ListenPort <Int32>]
@@ -25,21 +25,21 @@ Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration -Micros
 
 ### Update
 ```
-Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration -MicrosoftTunnelSiteId <String>
+Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration -MicrosoftTunnelSiteId <String>
  -BodyParameter <IMicrosoftGraphMicrosoftTunnelConfiguration> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration
+Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphMicrosoftTunnelConfiguration>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration
+Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-AdvancedSettings <IMicrosoftGraphKeyValuePair[]>] [-DefaultDomainSuffix <String>] [-Description <String>]
  [-DisableUdpConnections] [-DisplayName <String>] [-DnsServers <String[]>] [-Id <String>]
@@ -75,7 +75,7 @@ Additional settings that may be applied to the server
 To construct, please use Get-Help -Online and see NOTES section for ADVANCEDSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -91,7 +91,7 @@ Entity that represents a collection of Microsoft Tunnel settings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -199,7 +199,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -413,9 +413,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
 
 ## OUTPUTS
 

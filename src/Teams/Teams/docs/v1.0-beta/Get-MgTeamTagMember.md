@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamtagmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamtagmember
 schema: 2.0.0
 ---
 
-# Get-MgTeamTagMember
+# Get-MgBetaTeamTagMember
 
 ## SYNOPSIS
 Users assigned to the tag.
@@ -14,20 +14,20 @@ Users assigned to the tag.
 
 ### List1 (Default)
 ```
-Get-MgTeamTagMember -TeamId <String> -TeamworkTagId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTeamTagMember -TeamId <String> -TeamworkTagId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgTeamTagMember -TeamId <String> -TeamworkTagId <String> -TeamworkTagMemberId <String>
+Get-MgBetaTeamTagMember -TeamId <String> -TeamworkTagId <String> -TeamworkTagMemberId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamTagMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamTagMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Users assigned to the tag.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamTagMember Cmdlet
+### Example 1: Using the Get-MgBetaTeamTagMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
 ```
 
-This example shows how to use the Get-MgTeamTagMember Cmdlet.
+This example shows how to use the Get-MgBetaTeamTagMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamTagMember Cmdlet
+### Example 2: Using the Get-MgBetaTeamTagMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId
 ```
 
-This example shows how to use the Get-MgTeamTagMember Cmdlet.
+This example shows how to use the Get-MgBetaTeamTagMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 
 ## NOTES
 

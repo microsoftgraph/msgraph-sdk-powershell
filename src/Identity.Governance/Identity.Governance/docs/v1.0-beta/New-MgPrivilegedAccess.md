@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedaccess
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedaccess
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedAccess
+# New-MgBetaPrivilegedAccess
 
 ## SYNOPSIS
 Add new entity to privilegedAccess
@@ -14,7 +14,7 @@ Add new entity to privilegedAccess
 
 ### CreateExpanded (Default)
 ```
-New-MgPrivilegedAccess [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+New-MgBetaPrivilegedAccess [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-Resources <IMicrosoftGraphGovernanceResource[]>]
  [-RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]
  [-RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]
@@ -24,7 +24,7 @@ New-MgPrivilegedAccess [-AdditionalProperties <Hashtable>] [-DisplayName <String
 
 ### Create
 ```
-New-MgPrivilegedAccess -BodyParameter <IMicrosoftGraphPrivilegedAccess> [-Confirm] [-WhatIf]
+New-MgBetaPrivilegedAccess -BodyParameter <IMicrosoftGraphPrivilegedAccess> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ privilegedAccess
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedAccess
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedAccess
 Parameter Sets: Create
 Aliases:
 
@@ -102,7 +102,7 @@ A collection of resources for the provider.
 To construct, please use Get-Help -Online and see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -118,7 +118,7 @@ A collection of role assignment requests for the provider.
 To construct, please use Get-Help -Online and see NOTES section for ROLEASSIGNMENTREQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -134,7 +134,7 @@ A collection of role assignments for the provider.
 To construct, please use Get-Help -Online and see NOTES section for ROLEASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ A collection of role defintions for the provider.
 To construct, please use Get-Help -Online and see NOTES section for ROLEDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -166,7 +166,7 @@ A collection of role settings for the provider.
 To construct, please use Get-Help -Online and see NOTES section for ROLESETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -213,11 +213,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedAccess
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedAccess
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedAccess
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedAccess
 
 ## NOTES
 

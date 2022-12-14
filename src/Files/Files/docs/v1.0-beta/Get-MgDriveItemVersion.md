@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgdriveitemversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgdriveitemversion
 schema: 2.0.0
 ---
 
-# Get-MgDriveItemVersion
+# Get-MgBetaDriveItemVersion
 
 ## SYNOPSIS
 The list of previous versions of the item.
@@ -17,20 +17,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgDriveItemVersion -DriveId <String> -DriveItemId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDriveItemVersion -DriveId <String> -DriveItemId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgDriveItemVersion -DriveId <String> -DriveItemId <String> -DriveItemVersionId <String>
+Get-MgBetaDriveItemVersion -DriveId <String> -DriveItemId <String> -DriveItemVersionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgDriveItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDriveItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItemVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItemVersion
 
 ## NOTES
 

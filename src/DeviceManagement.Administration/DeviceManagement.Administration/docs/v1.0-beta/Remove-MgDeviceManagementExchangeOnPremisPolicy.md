@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/remove-mgdevicemanagementexchangeonpremispolicy
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/remove-mgdevicemanagementexchangeonpremispolicy
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementExchangeOnPremisPolicy
+# Remove-MgBetaDeviceManagementExchangeOnPremisPolicy
 
 ## SYNOPSIS
 Delete navigation property exchangeOnPremisesPolicies for deviceManagement
@@ -14,19 +14,19 @@ Delete navigation property exchangeOnPremisesPolicies for deviceManagement
 
 ### Delete1 (Default)
 ```
-Remove-MgDeviceManagementExchangeOnPremisPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaDeviceManagementExchangeOnPremisPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-MgDeviceManagementExchangeOnPremisPolicy -DeviceManagementExchangeOnPremisesPolicyId <String>
+Remove-MgBetaDeviceManagementExchangeOnPremisPolicy -DeviceManagementExchangeOnPremisesPolicyId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementExchangeOnPremisPolicy -InputObject <IDeviceManagementAdministrationIdentity>
+Remove-MgBetaDeviceManagementExchangeOnPremisPolicy -InputObject <IDeviceManagementAdministrationIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -72,7 +72,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -134,7 +134,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 

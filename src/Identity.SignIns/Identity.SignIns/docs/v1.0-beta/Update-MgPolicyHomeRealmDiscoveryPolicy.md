@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyhomerealmdiscoverypolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyhomerealmdiscoverypolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyHomeRealmDiscoveryPolicy
+# Update-MgBetaPolicyHomeRealmDiscoveryPolicy
 
 ## SYNOPSIS
 Update the navigation property homeRealmDiscoveryPolicies in policies
@@ -14,7 +14,7 @@ Update the navigation property homeRealmDiscoveryPolicies in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId <String>
+Update-MgBetaPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Definition <String[]>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-IsOrganizationDefault] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId <String>
 
 ### Update
 ```
-Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId <String> -BodyParameter <Hashtable>
+Update-MgBetaPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId <String> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyHomeRealmDiscoveryPolicy -InputObject <IIdentitySignInsIdentity> -BodyParameter <Hashtable>
+Update-MgBetaPolicyHomeRealmDiscoveryPolicy -InputObject <IIdentitySignInsIdentity> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyHomeRealmDiscoveryPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyHomeRealmDiscoveryPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Definition <String[]>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-IsOrganizationDefault] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -45,9 +45,9 @@ Update the navigation property homeRealmDiscoveryPolicies in policies
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyHomeRealmDiscoveryPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyHomeRealmDiscoveryPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Definition = @(
 		"definition-value"
@@ -55,10 +55,10 @@ $params = @{
 	DisplayName = "displayName-value"
 	IsOrganizationDefault = $true
 }
-Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId -BodyParameter $params
+Update-MgBetaPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyHomeRealmDiscoveryPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyHomeRealmDiscoveryPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -210,7 +210,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -289,7 +289,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.Collections.Hashtable
 

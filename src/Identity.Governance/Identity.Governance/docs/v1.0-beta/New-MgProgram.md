@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprogram
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprogram
 schema: 2.0.0
 ---
 
-# New-MgProgram
+# New-MgBetaProgram
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, create a new program object.
@@ -14,13 +14,13 @@ In the Azure AD access reviews feature, create a new program object.
 
 ### CreateExpanded (Default)
 ```
-New-MgProgram [-AdditionalProperties <Hashtable>] [-Controls <IMicrosoftGraphProgramControl[]>]
+New-MgBetaProgram [-AdditionalProperties <Hashtable>] [-Controls <IMicrosoftGraphProgramControl[]>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgProgram -BodyParameter <IMicrosoftGraphProgram> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaProgram -BodyParameter <IMicrosoftGraphProgram> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,17 +28,17 @@ In the Azure AD access reviews feature, create a new program object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgProgram Cmdlet
+### Example 1: Using the New-MgBetaProgram Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "testprogram3"
 	Description = "test description"
 }
-New-MgProgram -BodyParameter $params
+New-MgBetaProgram -BodyParameter $params
 ```
 
-This example shows how to use the New-MgProgram Cmdlet.
+This example shows how to use the New-MgBetaProgram Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -63,7 +63,7 @@ program
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgram
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgram
 Parameter Sets: Create
 Aliases:
 
@@ -79,7 +79,7 @@ Controls associated with the program.
 To construct, please use Get-Help -Online and see NOTES section for CONTROLS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControl[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControl[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -173,11 +173,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgram
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgram
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgram
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgram
 
 ## NOTES
 

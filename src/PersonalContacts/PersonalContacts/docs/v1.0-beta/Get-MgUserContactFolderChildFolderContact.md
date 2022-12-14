@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontactfolderchildfoldercontact
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/get-mgusercontactfolderchildfoldercontact
 schema: 2.0.0
 ---
 
-# Get-MgUserContactFolderChildFolderContact
+# Get-MgBetaUserContactFolderChildFolderContact
 
 ## SYNOPSIS
 The contacts in the folder.
@@ -17,20 +17,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
+Get-MgBetaUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
+Get-MgBetaUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
  -ContactId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
+Get-MgBetaUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact1
 
 ## NOTES
 

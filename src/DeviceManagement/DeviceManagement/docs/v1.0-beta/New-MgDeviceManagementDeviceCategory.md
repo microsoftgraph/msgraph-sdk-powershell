@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementdevicecategory
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementdevicecategory
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDeviceCategory
+# New-MgBetaDeviceManagementDeviceCategory
 
 ## SYNOPSIS
 Create new navigation property to deviceCategories for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to deviceCategories for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDeviceCategory [-AdditionalProperties <Hashtable>] [-Description <String>]
+New-MgBetaDeviceManagementDeviceCategory [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementDeviceCategory -BodyParameter <IMicrosoftGraphDeviceCategory1> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementDeviceCategory -BodyParameter <IMicrosoftGraphDeviceCategory1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ You can filter reports and create dynamic Azure Active Directory device groups b
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCategory1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCategory1
 Parameter Sets: Create
 Aliases:
 
@@ -163,11 +163,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCategory1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCategory1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCategory1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCategory1
 
 ## NOTES
 

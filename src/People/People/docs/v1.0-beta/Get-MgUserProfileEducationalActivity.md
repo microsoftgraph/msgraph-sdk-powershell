@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguserprofileeducationalactivity
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguserprofileeducationalactivity
 schema: 2.0.0
 ---
 
-# Get-MgUserProfileEducationalActivity
+# Get-MgBetaUserProfileEducationalActivity
 
 ## SYNOPSIS
 Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
@@ -14,20 +14,20 @@ Represents data that a user has supplied related to undergraduate, graduate, pos
 
 ### List (Default)
 ```
-Get-MgUserProfileEducationalActivity -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserProfileEducationalActivity -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserProfileEducationalActivity -EducationalActivityId <String> -UserId <String>
+Get-MgBetaUserProfileEducationalActivity -EducationalActivityId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Represents data that a user has supplied related to undergraduate, graduate, pos
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserProfileEducationalActivity Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileEducationalActivity Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileEducationalActivity -UserId $userId
+Get-MgBetaUserProfileEducationalActivity -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserProfileEducationalActivity Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileEducationalActivity Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserProfileEducationalActivity Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileEducationalActivity Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileEducationalActivity -UserId $userId -EducationalActivityId $educationalActivityId
+Get-MgBetaUserProfileEducationalActivity -UserId $userId -EducationalActivityId $educationalActivityId
 ```
 
-This example shows how to use the Get-MgUserProfileEducationalActivity Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileEducationalActivity Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationalActivity
 
 ## NOTES
 

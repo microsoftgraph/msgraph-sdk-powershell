@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/import-mgdevicemanagementimporteddeviceidentitylist
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/import-mgdevicemanagementimporteddeviceidentitylist
 schema: 2.0.0
 ---
 
-# Import-MgDeviceManagementImportedDeviceIdentityList
+# Import-MgBetaDeviceManagementImportedDeviceIdentityList
 
 ## SYNOPSIS
 Invoke action importDeviceIdentityList
@@ -14,14 +14,14 @@ Invoke action importDeviceIdentityList
 
 ### ImportExpanded (Default)
 ```
-Import-MgDeviceManagementImportedDeviceIdentityList [-AdditionalProperties <Hashtable>]
+Import-MgBetaDeviceManagementImportedDeviceIdentityList [-AdditionalProperties <Hashtable>]
  [-ImportedDeviceIdentities <IMicrosoftGraphImportedDeviceIdentity[]>] [-OverwriteImportedDeviceIdentities]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Import
 ```
-Import-MgDeviceManagementImportedDeviceIdentityList
+Import-MgBetaDeviceManagementImportedDeviceIdentityList
  -BodyParameter <IPaths19M2JbiDevicemanagementImporteddeviceidentitiesMicrosoftGraphImportdeviceidentitylistPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths19M2JbiDevicemanagementImporteddeviceidentitiesMicrosoftGraphImportdeviceidentitylistPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths19M2JbiDevicemanagementImporteddeviceidentitiesMicrosoftGraphImportdeviceidentitylistPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Import
 Aliases:
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IMPORTEDDEVICEIDENTITIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentity[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentity[]
 Parameter Sets: ImportExpanded
 Aliases:
 
@@ -131,11 +131,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths19M2JbiDevicemanagementImporteddeviceidentitiesMicrosoftGraphImportdeviceidentitylistPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths19M2JbiDevicemanagementImporteddeviceidentitiesMicrosoftGraphImportdeviceidentitylistPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentityResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentityResult
 
 ## NOTES
 

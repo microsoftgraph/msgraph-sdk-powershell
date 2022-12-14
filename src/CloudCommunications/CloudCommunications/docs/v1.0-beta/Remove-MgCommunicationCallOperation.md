@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/remove-mgcommunicationcalloperation
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/remove-mgcommunicationcalloperation
 schema: 2.0.0
 ---
 
-# Remove-MgCommunicationCallOperation
+# Remove-MgBetaCommunicationCallOperation
 
 ## SYNOPSIS
 Delete navigation property operations for communications
@@ -14,13 +14,13 @@ Delete navigation property operations for communications
 
 ### Delete1 (Default)
 ```
-Remove-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String> [-IfMatch <String>]
+Remove-MgBetaCommunicationCallOperation -CallId <String> -CommsOperationId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>]
+Remove-MgBetaCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

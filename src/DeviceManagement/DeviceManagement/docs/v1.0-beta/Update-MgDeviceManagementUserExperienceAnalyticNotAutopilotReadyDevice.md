@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticnotautopilotreadydevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticnotautopilotreadydevice
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
+# Update-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsNotAutopilotReadyDevice in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsNotAutopilotReadyDevice in
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
+Update-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
  -UserExperienceAnalyticsNotAutopilotReadyDeviceId <String> [-AdditionalProperties <Hashtable>]
  [-AutoPilotProfileAssigned] [-AutoPilotRegistered] [-AzureAdJoinType <String>] [-AzureAdRegistered]
  [-DeviceName <String>] [-Id <String>] [-ManagedBy <String>] [-Manufacturer <String>] [-Model <String>]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
+Update-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
  -UserExperienceAnalyticsNotAutopilotReadyDeviceId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -31,7 +31,7 @@ Update-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
+Update-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -39,7 +39,7 @@ Update-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
+Update-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-AutoPilotProfileAssigned]
  [-AutoPilotRegistered] [-AzureAdJoinType <String>] [-AzureAdRegistered] [-DeviceName <String>] [-Id <String>]
  [-ManagedBy <String>] [-Manufacturer <String>] [-Model <String>] [-SerialNumber <String>] [-PassThru]
@@ -133,7 +133,7 @@ The user experience analytics Device not windows autopilot ready.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -180,7 +180,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -317,9 +317,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice
 
 ## OUTPUTS
 

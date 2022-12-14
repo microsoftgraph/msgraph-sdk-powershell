@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgtrustframeworkpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgtrustframeworkpolicy
 schema: 2.0.0
 ---
 
-# New-MgTrustFrameworkPolicy
+# New-MgBetaTrustFrameworkPolicy
 
 ## SYNOPSIS
 Create new navigation property to policies for trustFramework
@@ -14,13 +14,13 @@ Create new navigation property to policies for trustFramework
 
 ### CreateExpanded (Default)
 ```
-New-MgTrustFrameworkPolicy [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
+New-MgBetaTrustFrameworkPolicy [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTrustFrameworkPolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaTrustFrameworkPolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/restore-mgdrivelistitemversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/restore-mgdrivelistitemversion
 schema: 2.0.0
 ---
 
-# Restore-MgDriveListItemVersion
+# Restore-MgBetaDriveListItemVersion
 
 ## SYNOPSIS
 Invoke action restoreVersion
@@ -14,13 +14,13 @@ Invoke action restoreVersion
 
 ### Restore (Default)
 ```
-Restore-MgDriveListItemVersion -DriveId <String> -ListItemId <String> -ListItemVersionId <String> [-PassThru]
+Restore-MgBetaDriveListItemVersion -DriveId <String> -ListItemId <String> -ListItemVersionId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgDriveListItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaDriveListItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,12 +31,12 @@ Invoke action restoreVersion
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
-Restore-MgSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId
+Restore-MgBetaSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId
 ```
 
-This example shows how to use the Restore-MgDriveListItemVersion Cmdlet.
+This example shows how to use the Restore-MgBetaDriveListItemVersion Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -154,7 +154,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

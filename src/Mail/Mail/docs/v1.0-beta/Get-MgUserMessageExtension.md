@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermessageextension
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mgusermessageextension
 schema: 2.0.0
 ---
 
-# Get-MgUserMessageExtension
+# Get-MgBetaUserMessageExtension
 
 ## SYNOPSIS
 The collection of open extensions defined for the message.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserMessageExtension -MessageId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserMessageExtension -MessageId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserMessageExtension -ExtensionId <String> -MessageId <String> -UserId <String>
+Get-MgBetaUserMessageExtension -ExtensionId <String> -MessageId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserMessageExtension -InputObject <IMailIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserMessageExtension -InputObject <IMailIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,14 +38,14 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserMessageExtension Cmdlet
+### Example 1: Using the Get-MgBetaUserMessageExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
+Get-MgBetaUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
 ```
 
-This example shows how to use the Get-MgUserMessageExtension Cmdlet.
+This example shows how to use the Get-MgBetaUserMessageExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension
 
 ### System.String
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementuserpfxcertificate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementuserpfxcertificate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserPfxCertificate
+# New-MgBetaDeviceManagementUserPfxCertificate
 
 ## SYNOPSIS
 Create new navigation property to userPfxCertificates for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userPfxCertificates for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserPfxCertificate [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
+New-MgBetaDeviceManagementUserPfxCertificate [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-EncryptedPfxBlobInputFile <String>] [-EncryptedPfxPassword <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-IntendedPurpose <UserPfxIntendedPurpose>] [-KeyName <String>]
  [-LastModifiedDateTime <DateTime>] [-PaddingScheme <UserPfxPaddingScheme>] [-ProviderName <String>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementUserPfxCertificate [-AdditionalProperties <Hashtable>] [-C
 
 ### Create
 ```
-New-MgDeviceManagementUserPfxCertificate -BodyParameter <IMicrosoftGraphUserPfxCertificate> [-Confirm]
+New-MgBetaDeviceManagementUserPfxCertificate -BodyParameter <IMicrosoftGraphUserPfxCertificate> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ Entity that encapsulates all information required for a user's PFX certificates.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
 Parameter Sets: Create
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 Supported values for the intended purpose of a user PFX certificate.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserPfxIntendedPurpose
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserPfxIntendedPurpose
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 Supported values for the padding scheme used by encryption provider.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserPfxPaddingScheme
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserPfxPaddingScheme
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -298,11 +298,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
 
 ## NOTES
 

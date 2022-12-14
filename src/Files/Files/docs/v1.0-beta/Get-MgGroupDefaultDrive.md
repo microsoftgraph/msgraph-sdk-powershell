@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mggroupdefaultdrive
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mggroupdefaultdrive
 schema: 2.0.0
 ---
 
-# Get-MgGroupDefaultDrive
+# Get-MgBetaGroupDefaultDrive
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a Drive resource.
@@ -15,13 +15,13 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 
 ### Get2 (Default)
 ```
-Get-MgGroupDefaultDrive -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupDefaultDrive -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgGroupDefaultDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupDefaultDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupDefaultDrive Cmdlet
+### Example 1: Using the Get-MgBetaGroupDefaultDrive Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Get-MgGroupDefaultDrive -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Files
+Get-MgBetaGroupDefaultDrive -GroupId $groupId
 ```
 
-This example shows how to use the Get-MgGroupDefaultDrive Cmdlet.
+This example shows how to use the Get-MgBetaGroupDefaultDrive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity2
 Aliases:
 
@@ -108,11 +108,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDrive1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDrive1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mguseroutlooktaskgroup
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mguseroutlooktaskgroup
 schema: 2.0.0
 ---
 
-# Update-MgUserOutlookTaskGroup
+# Update-MgBetaUserOutlookTaskGroup
 
 ## SYNOPSIS
 Update the navigation property taskGroups in users
@@ -14,7 +14,7 @@ Update the navigation property taskGroups in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserOutlookTaskGroup -OutlookTaskGroupId <String> -UserId <String>
+Update-MgBetaUserOutlookTaskGroup -OutlookTaskGroupId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ChangeKey <String>] [-GroupKey <String>] [-Id <String>]
  [-IsDefaultGroup] [-Name <String>] [-TaskFolders <IMicrosoftGraphOutlookTaskFolder[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgUserOutlookTaskGroup -OutlookTaskGroupId <String> -UserId <String>
 
 ### Update
 ```
-Update-MgUserOutlookTaskGroup -OutlookTaskGroupId <String> -UserId <String>
+Update-MgBetaUserOutlookTaskGroup -OutlookTaskGroupId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphOutlookTaskGroup> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserOutlookTaskGroup -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookTaskGroup>
+Update-MgBetaUserOutlookTaskGroup -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookTaskGroup>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserOutlookTaskGroup -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserOutlookTaskGroup -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ChangeKey <String>] [-GroupKey <String>] [-Id <String>] [-IsDefaultGroup] [-Name <String>]
  [-TaskFolders <IMicrosoftGraphOutlookTaskFolder[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -44,17 +44,17 @@ Update the navigation property taskGroups in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserOutlookTaskGroup Cmdlet
+### Example 1: Using the Update-MgBetaUserOutlookTaskGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	Name = "Personal Tasks"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserOutlookTaskGroup -UserId $userId -OutlookTaskGroupId $outlookTaskGroupId -BodyParameter $params
+Update-MgBetaUserOutlookTaskGroup -UserId $userId -OutlookTaskGroupId $outlookTaskGroupId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserOutlookTaskGroup Cmdlet.
+This example shows how to use the Update-MgBetaUserOutlookTaskGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ outlookTaskGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -141,7 +141,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -219,7 +219,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for TASKFOLDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskFolder[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTaskFolder[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -281,9 +281,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

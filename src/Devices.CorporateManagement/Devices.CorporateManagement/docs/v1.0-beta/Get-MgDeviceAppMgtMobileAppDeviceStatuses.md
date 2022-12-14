@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmobileappdevicestatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmobileappdevicestatuses
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtMobileAppDeviceStatuses
+# Get-MgBetaDeviceAppMgtMobileAppDeviceStatuses
 
 ## SYNOPSIS
 The list of installation states for this mobile app.
@@ -14,20 +14,20 @@ The list of installation states for this mobile app.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> -MobileAppInstallStatusId <String>
+Get-MgBetaDeviceAppMgtMobileAppDeviceStatuses -MobileAppId <String> -MobileAppInstallStatusId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtMobileAppDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtMobileAppDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,17 +240,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementMobileAppDeviceStatuses
+### Get-MgBetaDeviceAppManagementMobileAppDeviceStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

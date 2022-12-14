@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritydomainsecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritydomainsecurityprofile
 schema: 2.0.0
 ---
 
-# Update-MgSecurityDomainSecurityProfile
+# Update-MgBetaSecurityDomainSecurityProfile
 
 ## SYNOPSIS
 Update the navigation property domainSecurityProfiles in security
@@ -14,7 +14,7 @@ Update the navigation property domainSecurityProfiles in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityDomainSecurityProfile -DomainSecurityProfileId <String> [-ActivityGroupNames <String[]>]
+Update-MgBetaSecurityDomainSecurityProfile -DomainSecurityProfileId <String> [-ActivityGroupNames <String[]>]
  [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
  [-CountHits <Int32>] [-CountInOrg <Int32>] [-DomainCategories <IMicrosoftGraphReputationCategory[]>]
  [-DomainRegisteredDateTime <DateTime>] [-FirstSeenDateTime <DateTime>] [-Id <String>]
@@ -25,19 +25,19 @@ Update-MgSecurityDomainSecurityProfile -DomainSecurityProfileId <String> [-Activ
 
 ### Update
 ```
-Update-MgSecurityDomainSecurityProfile -DomainSecurityProfileId <String>
+Update-MgBetaSecurityDomainSecurityProfile -DomainSecurityProfileId <String>
  -BodyParameter <IMicrosoftGraphDomainSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityDomainSecurityProfile -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityDomainSecurityProfile -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphDomainSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityDomainSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGroupNames <String[]>]
+Update-MgBetaSecurityDomainSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGroupNames <String[]>]
  [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
  [-CountHits <Int32>] [-CountInOrg <Int32>] [-DomainCategories <IMicrosoftGraphReputationCategory[]>]
  [-DomainRegisteredDateTime <DateTime>] [-FirstSeenDateTime <DateTime>] [-Id <String>]
@@ -118,7 +118,7 @@ domainSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainSecurityProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DOMAINCATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReputationCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphReputationCategory[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -241,7 +241,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -302,7 +302,7 @@ domainRegistrant
 To construct, please use Get-Help -Online and see NOTES section for REGISTRANT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainRegistrant
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainRegistrant
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -348,7 +348,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -395,9 +395,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainSecurityProfile
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

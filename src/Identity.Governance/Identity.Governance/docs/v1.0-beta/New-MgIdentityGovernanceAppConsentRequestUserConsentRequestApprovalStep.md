@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernanceappconsentrequestuserconsentrequestapprovalstep
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernanceappconsentrequestuserconsentrequestapprovalstep
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep
+# New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep
 
 ## SYNOPSIS
 Create new navigation property to steps for identityGovernance
@@ -14,7 +14,7 @@ Create new navigation property to steps for identityGovernance
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep -AppConsentRequestId <String>
+New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep -AppConsentRequestId <String>
  -UserConsentRequestId <String> [-AdditionalProperties <Hashtable>] [-AssignedToMe] [-DisplayName <String>]
  [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphIdentity>]
  [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Status <String>] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep -AppCons
 
 ### Create
 ```
-New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep -AppConsentRequestId <String>
+New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep -AppConsentRequestId <String>
  -UserConsentRequestId <String> -BodyParameter <IMicrosoftGraphApprovalStep> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep
+New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep
  -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphApprovalStep> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep
+New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-AssignedToMe]
  [-DisplayName <String>] [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphIdentity>]
  [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Status <String>] [-Confirm] [-WhatIf]
@@ -102,7 +102,7 @@ approvalStep
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStep
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApprovalStep
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -150,7 +150,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for REVIEWEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -294,13 +294,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStep
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApprovalStep
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStep
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApprovalStep
 
 ## NOTES
 

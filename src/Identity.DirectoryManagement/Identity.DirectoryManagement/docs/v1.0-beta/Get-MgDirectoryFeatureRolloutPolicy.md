@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryfeaturerolloutpolicy
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryfeaturerolloutpolicy
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryFeatureRolloutPolicy
+# Get-MgBetaDirectoryFeatureRolloutPolicy
 
 ## SYNOPSIS
 Get featureRolloutPolicies from directory
@@ -14,20 +14,20 @@ Get featureRolloutPolicies from directory
 
 ### List (Default)
 ```
-Get-MgDirectoryFeatureRolloutPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDirectoryFeatureRolloutPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
 
 ## NOTES
 

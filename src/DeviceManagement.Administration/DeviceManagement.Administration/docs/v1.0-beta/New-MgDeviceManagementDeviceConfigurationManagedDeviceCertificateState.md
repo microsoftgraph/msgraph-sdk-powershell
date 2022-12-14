@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementdeviceconfigurationmanageddevicecertificatestate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementdeviceconfigurationmanageddevicecertificatestate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+# New-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
 
 ## SYNOPSIS
 Create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceConfigurationsAllManagedDeviceCertificat
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState [-AdditionalProperties <Hashtable>]
  [-CertificateExpirationDateTime <DateTime>] [-CertificateExtendedKeyUsages <String>]
  [-CertificateIssuanceDateTime <DateTime>] [-CertificateIssuerName <String>] [-CertificateKeyUsages <Int32>]
  [-CertificateRevokeStatus <CertificateRevocationStatus>]
@@ -25,7 +25,7 @@ New-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState [-Additio
 
 ### Create
 ```
-New-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+New-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -BodyParameter <IMicrosoftGraphManagedAllDeviceCertificateState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ managedAllDeviceCertificateState
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
 Parameter Sets: Create
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 Certificate Revocation Status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.CertificateRevocationStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.CertificateRevocationStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -299,11 +299,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/get-mgwindowsupdatesresourceconnection
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/get-mgwindowsupdatesresourceconnection
 schema: 2.0.0
 ---
 
-# Get-MgWindowsUpdatesResourceConnection
+# Get-MgBetaWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
 Service connections to external resources such as analytics workspaces.
@@ -14,20 +14,20 @@ Service connections to external resources such as analytics workspaces.
 
 ### List (Default)
 ```
-Get-MgWindowsUpdatesResourceConnection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaWindowsUpdatesResourceConnection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-ExpandProperty <String[]>]
+Get-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,40 +36,40 @@ Service connections to external resources such as analytics workspaces.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgWindowsUpdatesResourceConnection Cmdlet
+### Example 1: Using the Get-MgBetaWindowsUpdatesResourceConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Get-MgWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Get-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
 ```
 
-This example shows how to use the Get-MgWindowsUpdatesResourceConnection Cmdlet.
+This example shows how to use the Get-MgBetaWindowsUpdatesResourceConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgWindowsUpdatesResourceConnection Cmdlet
+### Example 2: Using the Get-MgBetaWindowsUpdatesResourceConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Get-MgWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Get-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
 ```
 
-This example shows how to use the Get-MgWindowsUpdatesResourceConnection Cmdlet.
+This example shows how to use the Get-MgBetaWindowsUpdatesResourceConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgWindowsUpdatesResourceConnection Cmdlet
+### Example 3: Using the Get-MgBetaWindowsUpdatesResourceConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Get-MgWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Get-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
 ```
 
-This example shows how to use the Get-MgWindowsUpdatesResourceConnection Cmdlet.
+This example shows how to use the Get-MgBetaWindowsUpdatesResourceConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgWindowsUpdatesResourceConnection Cmdlet
+### Example 4: Using the Get-MgBetaWindowsUpdatesResourceConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Get-MgWindowsUpdatesResourceConnection
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Get-MgBetaWindowsUpdatesResourceConnection
 ```
 
-This example shows how to use the Get-MgWindowsUpdatesResourceConnection Cmdlet.
+This example shows how to use the Get-MgBetaWindowsUpdatesResourceConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -261,17 +261,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
 
 ## NOTES
 
 ALIASES
 
-### Get-MgWuResourceConnection
+### Get-MgBetaWuResourceConnection
 
 COMPLEX PARAMETER PROPERTIES
 

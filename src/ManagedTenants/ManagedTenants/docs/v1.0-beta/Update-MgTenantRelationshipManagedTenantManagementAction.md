@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementaction
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementaction
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantManagementAction
+# Update-MgBetaTenantRelationshipManagedTenantManagementAction
 
 ## SYNOPSIS
 Update the navigation property managementActions in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managementActions in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantManagementAction -ManagementActionId <String>
+Update-MgBetaTenantRelationshipManagedTenantManagementAction -ManagementActionId <String>
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-ReferenceTemplateId <String>] [-ReferenceTemplateVersion <Int32>]
  [-WorkloadActions <IMicrosoftGraphManagedTenantsWorkloadAction[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ Update-MgTenantRelationshipManagedTenantManagementAction -ManagementActionId <St
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantManagementAction -ManagementActionId <String>
+Update-MgBetaTenantRelationshipManagedTenantManagementAction -ManagementActionId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementAction> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantManagementAction -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantManagementAction -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementAction> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantManagementAction -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantManagementAction -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-ReferenceTemplateId <String>] [-ReferenceTemplateVersion <Int32>]
  [-WorkloadActions <IMicrosoftGraphManagedTenantsWorkloadAction[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -71,7 +71,7 @@ managementAction
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for WORKLOADACTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWorkloadAction[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWorkloadAction[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -279,9 +279,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
 
 ## OUTPUTS
 

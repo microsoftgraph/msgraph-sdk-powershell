@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/remove-mgdevicemanagementvirtualendpointreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/remove-mgdevicemanagementvirtualendpointreport
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementVirtualEndpointReport
+# Remove-MgBetaDeviceManagementVirtualEndpointReport
 
 ## SYNOPSIS
 Delete navigation property reports for deviceManagement
@@ -13,7 +13,7 @@ Delete navigation property reports for deviceManagement
 ## SYNTAX
 
 ```
-Remove-MgDeviceManagementVirtualEndpointReport [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaDeviceManagementVirtualEndpointReport [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

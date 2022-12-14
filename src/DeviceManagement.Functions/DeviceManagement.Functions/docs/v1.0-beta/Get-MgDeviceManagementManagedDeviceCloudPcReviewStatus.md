@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementmanageddevicecloudpcreviewstatus
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementmanageddevicecloudpcreviewstatus
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus
+# Get-MgBetaDeviceManagementManagedDeviceCloudPcReviewStatus
 
 ## SYNOPSIS
 Invoke function getCloudPcReviewStatus
@@ -14,12 +14,12 @@ Invoke function getCloudPcReviewStatus
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus -ManagedDeviceId <String> [<CommonParameters>]
+Get-MgBetaDeviceManagementManagedDeviceCloudPcReviewStatus -ManagedDeviceId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus -InputObject <IDeviceManagementFunctionsIdentity>
+Get-MgBetaDeviceManagementManagedDeviceCloudPcReviewStatus -InputObject <IDeviceManagementFunctionsIdentity>
  [<CommonParameters>]
 ```
 
@@ -28,13 +28,13 @@ Invoke function getCloudPcReviewStatus
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus Cmdlet
+### Example 1: Using the Get-MgBetaDeviceManagementManagedDeviceCloudPcReviewStatus Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Functions
-Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus -ManagedDeviceId $managedDeviceId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Functions
+Get-MgBetaDeviceManagementManagedDeviceCloudPcReviewStatus -ManagedDeviceId $managedDeviceId
 ```
 
-This example shows how to use the Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementManagedDeviceCloudPcReviewStatus Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -44,7 +44,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -75,11 +75,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcReviewStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcReviewStatus
 
 ## NOTES
 

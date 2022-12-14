@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/set-mgfinancialcompanysaleordercustomerpicturecontent
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/set-mgfinancialcompanysaleordercustomerpicturecontent
 schema: 2.0.0
 ---
 
-# Set-MgFinancialCompanySaleOrderCustomerPictureContent
+# Set-MgBetaFinancialCompanySaleOrderCustomerPictureContent
 
 ## SYNOPSIS
 Update content for the navigation property picture in financials
@@ -14,14 +14,14 @@ Update content for the navigation property picture in financials
 
 ### Set (Default)
 ```
-Set-MgFinancialCompanySaleOrderCustomerPictureContent -CompanyId <String> -PictureId <String>
+Set-MgBetaFinancialCompanySaleOrderCustomerPictureContent -CompanyId <String> -PictureId <String>
  -SalesOrderId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgFinancialCompanySaleOrderCustomerPictureContent -InputObject <IFinancialsIdentity> -InFile <String>
+Set-MgBetaFinancialCompanySaleOrderCustomerPictureContent -InputObject <IFinancialsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -176,7 +176,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### System.IO.Stream
 

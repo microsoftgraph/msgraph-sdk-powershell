@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusersettingiteminsight
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mgusersettingiteminsight
 schema: 2.0.0
 ---
 
-# Update-MgUserSettingItemInsight
+# Update-MgBetaUserSettingItemInsight
 
 ## SYNOPSIS
 Update the privacy settings for itemInsights and meeting hours insights of a user.
@@ -14,25 +14,25 @@ Update the privacy settings for itemInsights and meeting hours insights of a use
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserSettingItemInsight -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaUserSettingItemInsight -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-IsEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserSettingItemInsight -UserId <String> -BodyParameter <IMicrosoftGraphUserInsightsSettings>
+Update-MgBetaUserSettingItemInsight -UserId <String> -BodyParameter <IMicrosoftGraphUserInsightsSettings>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserSettingItemInsight -InputObject <IUsersIdentity>
+Update-MgBetaUserSettingItemInsight -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphUserInsightsSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserSettingItemInsight -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserSettingItemInsight -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-IsEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Update the privacy settings for itemInsights and meeting hours insights of a use
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserSettingItemInsight Cmdlet
+### Example 1: Using the Update-MgBetaUserSettingItemInsight Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	IsEnabled = "false"
 }
-Update-MgUserSettingItemInsight -UserId $userId -BodyParameter $params
+Update-MgBetaUserSettingItemInsight -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserSettingItemInsight Cmdlet.
+This example shows how to use the Update-MgBetaUserSettingItemInsight Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ userInsightsSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInsightsSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserInsightsSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -201,9 +201,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInsightsSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserInsightsSettings
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

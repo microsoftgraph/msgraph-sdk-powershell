@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportemailappusageuserdetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportemailappusageuserdetail
 schema: 2.0.0
 ---
 
-# Get-MgReportEmailAppUsageUserDetail
+# Get-MgBetaReportEmailAppUsageUserDetail
 
 ## SYNOPSIS
 Invoke function getEmailAppUsageUserDetail
@@ -14,23 +14,23 @@ Invoke function getEmailAppUsageUserDetail
 
 ### Get2 (Default)
 ```
-Get-MgReportEmailAppUsageUserDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportEmailAppUsageUserDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### Get3
 ```
-Get-MgReportEmailAppUsageUserDetail -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportEmailAppUsageUserDetail -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgReportEmailAppUsageUserDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportEmailAppUsageUserDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgReportEmailAppUsageUserDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportEmailAppUsageUserDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

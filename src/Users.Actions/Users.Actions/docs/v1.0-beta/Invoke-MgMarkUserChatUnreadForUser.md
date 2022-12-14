@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgmarkuserchatunreadforuser
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgmarkuserchatunreadforuser
 schema: 2.0.0
 ---
 
-# Invoke-MgMarkUserChatUnreadForUser
+# Invoke-MgBetaMarkUserChatUnreadForUser
 
 ## SYNOPSIS
 Mark a chat as unread for a user.
@@ -14,28 +14,28 @@ Mark a chat as unread for a user.
 
 ### MarkExpanded1 (Default)
 ```
-Invoke-MgMarkUserChatUnreadForUser -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaMarkUserChatUnreadForUser -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-LastMessageReadDateTime <DateTime>] [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Mark1
 ```
-Invoke-MgMarkUserChatUnreadForUser -ChatId <String> -UserId <String>
+Invoke-MgBetaMarkUserChatUnreadForUser -ChatId <String> -UserId <String>
  -BodyParameter <IPaths1Ca5SfzUsersUserIdChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MarkViaIdentity1
 ```
-Invoke-MgMarkUserChatUnreadForUser -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaMarkUserChatUnreadForUser -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Ca5SfzUsersUserIdChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MarkViaIdentityExpanded1
 ```
-Invoke-MgMarkUserChatUnreadForUser -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaMarkUserChatUnreadForUser -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-LastMessageReadDateTime <DateTime>] [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Ca5SfzUsersUserIdChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ca5SfzUsersUserIdChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Mark1, MarkViaIdentity1
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: MarkViaIdentity1, MarkViaIdentityExpanded1
 Aliases:
 
@@ -159,7 +159,7 @@ teamworkUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for USER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity
 Parameter Sets: MarkExpanded1, MarkViaIdentityExpanded1
 Aliases:
 
@@ -221,9 +221,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Ca5SfzUsersUserIdChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ca5SfzUsersUserIdChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

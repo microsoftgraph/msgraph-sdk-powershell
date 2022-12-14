@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgdeviceappmgtandroidmanagedappprotectiondeploymentsummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/remove-mgdeviceappmgtandroidmanagedappprotectiondeploymentsummary
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
+# Remove-MgBetaDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
 
 ## SYNOPSIS
 Delete navigation property deploymentSummary for deviceAppManagement
@@ -14,13 +14,13 @@ Delete navigation property deploymentSummary for deviceAppManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary -AndroidManagedAppProtectionId <String>
+Remove-MgBetaDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary -AndroidManagedAppProtectionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
+Remove-MgBetaDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
  -InputObject <IDevicesCorporateManagementIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgDeviceAppManagementAndroidManagedAppProtectionDeploymentSummary
+### Remove-MgBetaDeviceAppManagementAndroidManagedAppProtectionDeploymentSummary
 
 COMPLEX PARAMETER PROPERTIES
 

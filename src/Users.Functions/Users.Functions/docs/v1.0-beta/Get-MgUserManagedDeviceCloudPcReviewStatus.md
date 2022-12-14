@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermanageddevicecloudpcreviewstatus
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusermanageddevicecloudpcreviewstatus
 schema: 2.0.0
 ---
 
-# Get-MgUserManagedDeviceCloudPcReviewStatus
+# Get-MgBetaUserManagedDeviceCloudPcReviewStatus
 
 ## SYNOPSIS
 Invoke function getCloudPcReviewStatus
@@ -14,12 +14,12 @@ Invoke function getCloudPcReviewStatus
 
 ### Get (Default)
 ```
-Get-MgUserManagedDeviceCloudPcReviewStatus -ManagedDeviceId <String> -UserId <String> [<CommonParameters>]
+Get-MgBetaUserManagedDeviceCloudPcReviewStatus -ManagedDeviceId <String> -UserId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserManagedDeviceCloudPcReviewStatus -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgBetaUserManagedDeviceCloudPcReviewStatus -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -80,11 +80,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcReviewStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcReviewStatus
 
 ## NOTES
 

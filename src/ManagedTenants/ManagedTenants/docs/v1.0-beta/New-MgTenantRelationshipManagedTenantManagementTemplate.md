@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementtemplate
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementtemplate
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantManagementTemplate
+# New-MgBetaTenantRelationshipManagedTenantManagementTemplate
 
 ## SYNOPSIS
 Create new navigation property to managementTemplates for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managementTemplates for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantManagementTemplate [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantManagementTemplate [-AdditionalProperties <Hashtable>]
  [-Category <String>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-InformationLinks <IMicrosoftGraphActionUrl[]>]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
@@ -27,7 +27,7 @@ New-MgTenantRelationshipManagedTenantManagementTemplate [-AdditionalProperties <
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantManagementTemplate
+New-MgBetaTenantRelationshipManagedTenantManagementTemplate
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -58,7 +58,7 @@ managementTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
 Parameter Sets: Create
 Aliases:
 
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for INFORMATIONLINKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActionUrl[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActionUrl[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MANAGEMENTTEMPLATECOLLECTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MANAGEMENTTEMPLATESTEPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -249,7 +249,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for PARAMETERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTemplateParameter[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTemplateParameter[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -327,7 +327,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for WORKLOADACTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWorkloadAction[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWorkloadAction[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -374,11 +374,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
 
 ## NOTES
 

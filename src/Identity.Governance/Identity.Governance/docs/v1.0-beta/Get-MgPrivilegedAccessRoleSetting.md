@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedaccessrolesetting
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedaccessrolesetting
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedAccessRoleSetting
+# Get-MgBetaPrivilegedAccessRoleSetting
 
 ## SYNOPSIS
 A collection of role settings for the provider.
@@ -14,20 +14,20 @@ A collection of role settings for the provider.
 
 ### List (Default)
 ```
-Get-MgPrivilegedAccessRoleSetting -PrivilegedAccessId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPrivilegedAccessRoleSetting -PrivilegedAccessId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPrivilegedAccessRoleSetting -GovernanceRoleSettingId <String> -PrivilegedAccessId <String>
+Get-MgBetaPrivilegedAccessRoleSetting -GovernanceRoleSettingId <String> -PrivilegedAccessId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedAccessRoleSetting -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedAccessRoleSetting -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ A collection of role settings for the provider.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrivilegedAccessRoleSetting Cmdlet
+### Example 1: Using the Get-MgBetaPrivilegedAccessRoleSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedAccessRoleSetting -PrivilegedAccessId $privilegedAccessId -GovernanceRoleSettingId $governanceRoleSettingId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedAccessRoleSetting -PrivilegedAccessId $privilegedAccessId -GovernanceRoleSettingId $governanceRoleSettingId
 ```
 
-This example shows how to use the Get-MgPrivilegedAccessRoleSetting Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedAccessRoleSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting
 
 ## NOTES
 

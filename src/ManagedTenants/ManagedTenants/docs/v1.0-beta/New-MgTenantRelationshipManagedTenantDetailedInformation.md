@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantdetailedinformation
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantdetailedinformation
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantDetailedInformation
+# New-MgBetaTenantRelationshipManagedTenantDetailedInformation
 
 ## SYNOPSIS
 Create new navigation property to tenantsDetailedInformation for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to tenantsDetailedInformation for tenantRelations
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantDetailedInformation [-AdditionalProperties <Hashtable>] [-City <String>]
+New-MgBetaTenantRelationshipManagedTenantDetailedInformation [-AdditionalProperties <Hashtable>] [-City <String>]
  [-CountryCode <String>] [-CountryName <String>] [-DefaultDomainName <String>] [-DisplayName <String>]
  [-Id <String>] [-IndustryName <String>] [-Region <String>] [-SegmentName <String>] [-TenantId <String>]
  [-VerticalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgTenantRelationshipManagedTenantDetailedInformation [-AdditionalProperties 
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantDetailedInformation
+New-MgBetaTenantRelationshipManagedTenantDetailedInformation
  -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ tenantDetailedInformation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
 Parameter Sets: Create
 Aliases:
 
@@ -283,11 +283,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
 
 ## NOTES
 

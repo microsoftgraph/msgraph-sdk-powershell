@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/send-mgidentitygovernanceaccessreviewdecisioninstancereminder
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/send-mgidentitygovernanceaccessreviewdecisioninstancereminder
 schema: 2.0.0
 ---
 
-# Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder
+# Send-MgBetaIdentityGovernanceAccessReviewDecisionInstanceReminder
 
 ## SYNOPSIS
 Send a reminder to the reviewers of a currently active accessReviewInstance.
@@ -14,13 +14,13 @@ Send a reminder to the reviewers of a currently active accessReviewInstance.
 
 ### Send (Default)
 ```
-Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder -AccessReviewInstanceDecisionItemId <String>
+Send-MgBetaIdentityGovernanceAccessReviewDecisionInstanceReminder -AccessReviewInstanceDecisionItemId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
-Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder -InputObject <IIdentityGovernanceIdentity>
+Send-MgBetaIdentityGovernanceAccessReviewDecisionInstanceReminder -InputObject <IIdentityGovernanceIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SendViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/test-mgsitecontenttypepublished
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/test-mgsitecontenttypepublished
 schema: 2.0.0
 ---
 
-# Test-MgSiteContentTypePublished
+# Test-MgBetaSiteContentTypePublished
 
 ## SYNOPSIS
 Invoke function isPublished
@@ -14,12 +14,12 @@ Invoke function isPublished
 
 ### Is (Default)
 ```
-Test-MgSiteContentTypePublished -ContentTypeId <String> -SiteId <String> [<CommonParameters>]
+Test-MgBetaSiteContentTypePublished -ContentTypeId <String> -SiteId <String> [<CommonParameters>]
 ```
 
 ### IsViaIdentity
 ```
-Test-MgSiteContentTypePublished -InputObject <ISitesIdentity> [<CommonParameters>]
+Test-MgBetaSiteContentTypePublished -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,13 +27,13 @@ Invoke function isPublished
 
 ## EXAMPLES
 
-### Example 1: Using the Test-MgSiteContentTypePublished Cmdlet
+### Example 1: Using the Test-MgBetaSiteContentTypePublished Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Test-MgSiteContentTypePublished -SiteId $siteId -ContentTypeId $contentTypeId
+Import-Module Microsoft.Graph.Beta.Sites
+Test-MgBetaSiteContentTypePublished -SiteId $siteId -ContentTypeId $contentTypeId
 ```
 
-This example shows how to use the Test-MgSiteContentTypePublished Cmdlet.
+This example shows how to use the Test-MgBetaSiteContentTypePublished Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -58,7 +58,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: IsViaIdentity
 Aliases:
 
@@ -89,7 +89,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

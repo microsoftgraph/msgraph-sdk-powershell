@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/remove-mgdevicemanagementvirtualendpointdeviceimage
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/remove-mgdevicemanagementvirtualendpointdeviceimage
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementVirtualEndpointDeviceImage
+# Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
 Delete navigation property deviceImages for deviceManagement
@@ -14,13 +14,13 @@ Delete navigation property deviceImages for deviceManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String> [-IfMatch <String>]
+Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementAdministrationIdentity>
+Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementAdministrationIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property deviceImages for deviceManagement
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
+### Example 1: Using the Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Remove-MgDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
 ```
 
-This example shows how to use the Remove-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+This example shows how to use the Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 

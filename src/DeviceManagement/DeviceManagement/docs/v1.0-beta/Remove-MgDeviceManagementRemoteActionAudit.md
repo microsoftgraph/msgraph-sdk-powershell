@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementremoteactionaudit
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementremoteactionaudit
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementRemoteActionAudit
+# Remove-MgBetaDeviceManagementRemoteActionAudit
 
 ## SYNOPSIS
 Delete navigation property remoteActionAudits for deviceManagement
@@ -14,13 +14,13 @@ Delete navigation property remoteActionAudits for deviceManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity> [-IfMatch <String>]
+Remove-MgBetaDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

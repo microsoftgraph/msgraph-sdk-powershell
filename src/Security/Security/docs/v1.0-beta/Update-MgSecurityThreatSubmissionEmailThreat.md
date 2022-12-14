@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritythreatsubmissionemailthreat
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritythreatsubmissionemailthreat
 schema: 2.0.0
 ---
 
-# Update-MgSecurityThreatSubmissionEmailThreat
+# Update-MgBetaSecurityThreatSubmissionEmailThreat
 
 ## SYNOPSIS
 Update the navigation property emailThreats in security
@@ -14,7 +14,7 @@ Update the navigation property emailThreats in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityThreatSubmissionEmailThreat -EmailThreatSubmissionId <String>
+Update-MgBetaSecurityThreatSubmissionEmailThreat -EmailThreatSubmissionId <String>
  [-AdditionalProperties <Hashtable>] [-AdminReview <IMicrosoftGraphSecuritySubmissionAdminReview>]
  [-AttackSimulationInfo <IMicrosoftGraphSecurityAttackSimulationInfo>] [-Category <String>]
  [-ClientSource <String>] [-ContentType <String>] [-CreatedBy <IMicrosoftGraphSecuritySubmissionUserIdentity>]
@@ -28,21 +28,21 @@ Update-MgSecurityThreatSubmissionEmailThreat -EmailThreatSubmissionId <String>
 
 ### Update
 ```
-Update-MgSecurityThreatSubmissionEmailThreat -EmailThreatSubmissionId <String>
+Update-MgBetaSecurityThreatSubmissionEmailThreat -EmailThreatSubmissionId <String>
  -BodyParameter <IMicrosoftGraphSecurityEmailThreatSubmission> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityThreatSubmissionEmailThreat -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityThreatSubmissionEmailThreat -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityEmailThreatSubmission> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityThreatSubmissionEmailThreat -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityThreatSubmissionEmailThreat -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-AdminReview <IMicrosoftGraphSecuritySubmissionAdminReview>]
  [-AttackSimulationInfo <IMicrosoftGraphSecurityAttackSimulationInfo>] [-Category <String>]
  [-ClientSource <String>] [-ContentType <String>] [-CreatedBy <IMicrosoftGraphSecuritySubmissionUserIdentity>]
@@ -81,7 +81,7 @@ submissionAdminReview
 To construct, please use Get-Help -Online and see NOTES section for ADMINREVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionAdminReview
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionAdminReview
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -97,7 +97,7 @@ attackSimulationInfo
 To construct, please use Get-Help -Online and see NOTES section for ATTACKSIMULATIONINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAttackSimulationInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAttackSimulationInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -113,7 +113,7 @@ emailThreatSubmission
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -174,7 +174,7 @@ submissionUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionUserIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -237,7 +237,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -329,7 +329,7 @@ submissionResult
 To construct, please use Get-Help -Online and see NOTES section for RESULT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionResult
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionResult
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -420,7 +420,7 @@ tenantAllowOrBlockListAction
 To construct, please use Get-Help -Online and see NOTES section for TENANTALLOWORBLOCKLISTACTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityTenantAllowOrBlockListAction
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityTenantAllowOrBlockListAction
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -484,9 +484,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

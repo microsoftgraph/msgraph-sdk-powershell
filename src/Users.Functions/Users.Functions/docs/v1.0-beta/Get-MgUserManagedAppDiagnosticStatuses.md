@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermanagedappdiagnosticstatuses
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusermanagedappdiagnosticstatuses
 schema: 2.0.0
 ---
 
-# Get-MgUserManagedAppDiagnosticStatuses
+# Get-MgBetaUserManagedAppDiagnosticStatuses
 
 ## SYNOPSIS
 Gets diagnostics validation status for a given user.
@@ -14,13 +14,13 @@ Gets diagnostics validation status for a given user.
 
 ### Get1 (Default)
 ```
-Get-MgUserManagedAppDiagnosticStatuses -UserId <String> [-Count] [-Filter <String>] [-Search <String>]
+Get-MgBetaUserManagedAppDiagnosticStatuses -UserId <String> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserManagedAppDiagnosticStatuses -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaUserManagedAppDiagnosticStatuses -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -142,11 +142,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppDiagnosticStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppDiagnosticStatus
 
 ## NOTES
 

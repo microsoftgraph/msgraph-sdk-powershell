@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/send-mgidentitygovernanceaccessreviewdefinitioninstancereminder
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/send-mgidentitygovernanceaccessreviewdefinitioninstancereminder
 schema: 2.0.0
 ---
 
-# Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder
+# Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder
 
 ## SYNOPSIS
 Send a reminder to the reviewers of a currently active accessReviewInstance.
@@ -14,13 +14,13 @@ Send a reminder to the reviewers of a currently active accessReviewInstance.
 
 ### Send (Default)
 ```
-Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder -AccessReviewInstanceId <String>
+Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
-Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder -InputObject <IIdentityGovernanceIdentity>
+Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder -InputObject <IIdentityGovernanceIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Send a reminder to the reviewers of a currently active accessReviewInstance.
 
 ## EXAMPLES
 
-### Example 1: Using the Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder Cmdlet
+### Example 1: Using the Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder Cmdlet.
+This example shows how to use the Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SendViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

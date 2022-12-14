@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/remove-mgtenantrelationshipmanagedtenantcloudpcoverview
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/remove-mgtenantrelationshipmanagedtenantcloudpcoverview
 schema: 2.0.0
 ---
 
-# Remove-MgTenantRelationshipManagedTenantCloudPcOverview
+# Remove-MgBetaTenantRelationshipManagedTenantCloudPcOverview
 
 ## SYNOPSIS
 Delete navigation property cloudPcsOverview for tenantRelationships
@@ -14,13 +14,13 @@ Delete navigation property cloudPcsOverview for tenantRelationships
 
 ### Delete (Default)
 ```
-Remove-MgTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTenantId <String> [-IfMatch <String>]
+Remove-MgBetaTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTenantId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgTenantRelationshipManagedTenantCloudPcOverview -InputObject <IManagedTenantsIdentity>
+Remove-MgBetaTenantRelationshipManagedTenantCloudPcOverview -InputObject <IManagedTenantsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 

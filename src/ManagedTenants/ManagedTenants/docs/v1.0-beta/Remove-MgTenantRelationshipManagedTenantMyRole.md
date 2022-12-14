@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/remove-mgtenantrelationshipmanagedtenantmyrole
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/remove-mgtenantrelationshipmanagedtenantmyrole
 schema: 2.0.0
 ---
 
-# Remove-MgTenantRelationshipManagedTenantMyRole
+# Remove-MgBetaTenantRelationshipManagedTenantMyRole
 
 ## SYNOPSIS
 Delete navigation property myRoles for tenantRelationships
@@ -14,13 +14,13 @@ Delete navigation property myRoles for tenantRelationships
 
 ### Delete (Default)
 ```
-Remove-MgTenantRelationshipManagedTenantMyRole -MyRoleTenantId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaTenantRelationshipManagedTenantMyRole -MyRoleTenantId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgTenantRelationshipManagedTenantMyRole -InputObject <IManagedTenantsIdentity> [-IfMatch <String>]
+Remove-MgBetaTenantRelationshipManagedTenantMyRole -InputObject <IManagedTenantsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 

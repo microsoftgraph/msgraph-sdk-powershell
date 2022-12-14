@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguseroauth2permissiongrant
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguseroauth2permissiongrant
 schema: 2.0.0
 ---
 
-# Get-MgUserOauth2PermissionGrant
+# Get-MgBetaUserOauth2PermissionGrant
 
 ## SYNOPSIS
 Get oauth2PermissionGrants from users
@@ -14,20 +14,20 @@ Get oauth2PermissionGrants from users
 
 ### List1 (Default)
 ```
-Get-MgUserOauth2PermissionGrant -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserOauth2PermissionGrant -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserOauth2PermissionGrant -OAuth2PermissionGrantId <String> -UserId <String>
+Get-MgBetaUserOauth2PermissionGrant -OAuth2PermissionGrantId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserOauth2PermissionGrant -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserOauth2PermissionGrant -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant
 
 ## NOTES
 

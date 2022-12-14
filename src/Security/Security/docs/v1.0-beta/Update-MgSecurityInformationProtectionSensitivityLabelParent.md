@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityinformationprotectionsensitivitylabelparent
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityinformationprotectionsensitivitylabelparent
 schema: 2.0.0
 ---
 
-# Update-MgSecurityInformationProtectionSensitivityLabelParent
+# Update-MgBetaSecurityInformationProtectionSensitivityLabelParent
 
 ## SYNOPSIS
 Update the navigation property parent in security
@@ -14,7 +14,7 @@ Update the navigation property parent in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
+Update-MgBetaSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
  [-AdditionalProperties <Hashtable>] [-Color <String>] [-ContentFormats <String[]>] [-Description <String>]
  [-HasProtection] [-Id <String>] [-IsActive] [-IsAppliable] [-Name <String>]
  [-Parent <IMicrosoftGraphSecuritySensitivityLabel>] [-Sensitivity <Int32>] [-Tooltip <String>] [-PassThru]
@@ -23,21 +23,21 @@ Update-MgSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId
 
 ### Update
 ```
-Update-MgSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
+Update-MgBetaSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
  -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Color <String>] [-ContentFormats <String[]>] [-Description <String>]
  [-HasProtection] [-Id <String>] [-IsActive] [-IsAppliable] [-Name <String>]
  [-Parent <IMicrosoftGraphSecuritySensitivityLabel>] [-Sensitivity <Int32>] [-Tooltip <String>] [-PassThru]
@@ -71,7 +71,7 @@ sensitivityLabel
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ sensitivityLabel
 To construct, please use Get-Help -Online and see NOTES section for PARENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -333,9 +333,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

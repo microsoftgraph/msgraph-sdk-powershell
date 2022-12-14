@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/update-mggroupsitelistitemversionfield
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/update-mggroupsitelistitemversionfield
 schema: 2.0.0
 ---
 
-# Update-MgGroupSiteListItemVersionField
+# Update-MgBetaGroupSiteListItemVersionField
 
 ## SYNOPSIS
 Update the navigation property fields in groups
@@ -14,27 +14,27 @@ Update the navigation property fields in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupSiteListItemVersionField -GroupId <String> -ListId <String> -ListItemId <String>
+Update-MgBetaGroupSiteListItemVersionField -GroupId <String> -ListId <String> -ListItemId <String>
  -ListItemVersionId <String> -SiteId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgGroupSiteListItemVersionField -GroupId <String> -ListId <String> -ListItemId <String>
+Update-MgBetaGroupSiteListItemVersionField -GroupId <String> -ListId <String> -ListItemId <String>
  -ListItemVersionId <String> -SiteId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupSiteListItemVersionField -InputObject <ISitesIdentity> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaGroupSiteListItemVersionField -InputObject <ISitesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupSiteListItemVersionField -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupSiteListItemVersionField -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -233,7 +233,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ### System.Collections.Hashtable
 

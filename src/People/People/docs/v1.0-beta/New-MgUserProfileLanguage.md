@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofilelanguage
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/new-mguserprofilelanguage
 schema: 2.0.0
 ---
 
-# New-MgUserProfileLanguage
+# New-MgBetaUserProfileLanguage
 
 ## SYNOPSIS
 Use this API to create a new languageProficiency object in a user's profile.
@@ -14,7 +14,7 @@ Use this API to create a new languageProficiency object in a user's profile.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserProfileLanguage -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
+New-MgBetaUserProfileLanguage -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Proficiency <String>]
@@ -24,19 +24,19 @@ New-MgUserProfileLanguage -UserId <String> [-AdditionalProperties <Hashtable>] [
 
 ### Create
 ```
-New-MgUserProfileLanguage -UserId <String> -BodyParameter <IMicrosoftGraphLanguageProficiency> [-Confirm]
+New-MgBetaUserProfileLanguage -UserId <String> -BodyParameter <IMicrosoftGraphLanguageProficiency> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfileLanguage -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphLanguageProficiency>
+New-MgBetaUserProfileLanguage -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphLanguageProficiency>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserProfileLanguage -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfileLanguage -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Proficiency <String>]
@@ -49,9 +49,9 @@ Use this API to create a new languageProficiency object in a user's profile.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserProfileLanguage Cmdlet
+### Example 1: Using the New-MgBetaUserProfileLanguage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	DisplayName = "Norwegian Bokmål"
 	Tag = "nb-NO"
@@ -60,10 +60,10 @@ $params = @{
 	Reading = "nativeOrBilingual"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileLanguage -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileLanguage -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserProfileLanguage Cmdlet.
+This example shows how to use the New-MgBetaUserProfileLanguage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -103,7 +103,7 @@ languageProficiency
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLanguageProficiency
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLanguageProficiency
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -228,7 +228,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -289,7 +289,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -411,13 +411,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLanguageProficiency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLanguageProficiency
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLanguageProficiency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLanguageProficiency
 
 ## NOTES
 

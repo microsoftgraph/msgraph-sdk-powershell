@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mgmessageteamworkdeletedteamchannel
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mgmessageteamworkdeletedteamchannel
 schema: 2.0.0
 ---
 
-# Invoke-MgMessageTeamworkDeletedTeamChannel
+# Invoke-MgBetaMessageTeamworkDeletedTeamChannel
 
 ## SYNOPSIS
 Invoke function allMessages
@@ -14,14 +14,14 @@ Invoke function allMessages
 
 ### Messages (Default)
 ```
-Invoke-MgMessageTeamworkDeletedTeamChannel -DeletedTeamId <String> [-Count] [-Filter <String>]
+Invoke-MgBetaMessageTeamworkDeletedTeamChannel -DeletedTeamId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### MessagesViaIdentity
 ```
-Invoke-MgMessageTeamworkDeletedTeamChannel -InputObject <ITeamsIdentity> [-Count] [-Filter <String>]
+Invoke-MgBetaMessageTeamworkDeletedTeamChannel -InputObject <ITeamsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: MessagesViaIdentity
 Aliases:
 
@@ -174,11 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage
 
 ## NOTES
 

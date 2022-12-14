@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectorysetting
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectorysetting
 schema: 2.0.0
 ---
 
-# Update-MgDirectorySetting
+# Update-MgBetaDirectorySetting
 
 ## SYNOPSIS
 Update the properties of a specific directory setting object.
@@ -14,26 +14,26 @@ Update the properties of a specific directory setting object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectorySetting -DirectorySettingId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectorySetting -DirectorySettingId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-TemplateId <String>] [-Values <IMicrosoftGraphSettingValue[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectorySetting -DirectorySettingId <String> -BodyParameter <IMicrosoftGraphDirectorySetting>
+Update-MgBetaDirectorySetting -DirectorySettingId <String> -BodyParameter <IMicrosoftGraphDirectorySetting>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectorySetting -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectorySetting -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphDirectorySetting> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectorySetting -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectorySetting -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-TemplateId <String>]
  [-Values <IMicrosoftGraphSettingValue[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,9 +43,9 @@ Update the properties of a specific directory setting object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgDirectorySetting Cmdlet
+### Example 1: Using the Update-MgBetaDirectorySetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	Values = @(
 		@{
@@ -54,10 +54,10 @@ $params = @{
 		}
 	)
 }
-Update-MgDirectorySetting -DirectorySettingId $directorySettingId -BodyParameter $params
+Update-MgBetaDirectorySetting -DirectorySettingId $directorySettingId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgDirectorySetting Cmdlet.
+This example shows how to use the Update-MgBetaDirectorySetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -82,7 +82,7 @@ directorySetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ Collection of name-value pairs corresponding to the name and defaultValue proper
 To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingValue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingValue[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -239,9 +239,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 
 ## OUTPUTS
 

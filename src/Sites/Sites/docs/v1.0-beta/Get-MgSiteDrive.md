@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitedrive
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitedrive
 schema: 2.0.0
 ---
 
-# Get-MgSiteDrive
+# Get-MgBetaSiteDrive
 
 ## SYNOPSIS
 The collection of drives (document libraries) under this site.
@@ -14,20 +14,20 @@ The collection of drives (document libraries) under this site.
 
 ### List (Default)
 ```
-Get-MgSiteDrive -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSiteDrive -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgSiteDrive -DriveId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteDrive -DriveId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSiteDrive -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteDrive -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ The collection of drives (document libraries) under this site.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteDrive Cmdlet
+### Example 1: Using the Get-MgBetaSiteDrive Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteDrive -SiteId $siteId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteDrive -SiteId $siteId
 ```
 
-This example shows how to use the Get-MgSiteDrive Cmdlet.
+This example shows how to use the Get-MgBetaSiteDrive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDrive1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDrive1
 
 ## NOTES
 

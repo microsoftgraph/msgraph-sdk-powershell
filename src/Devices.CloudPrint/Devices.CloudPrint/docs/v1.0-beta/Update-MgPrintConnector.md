@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/update-mgprintconnector
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/update-mgprintconnector
 schema: 2.0.0
 ---
 
-# Update-MgPrintConnector
+# Update-MgBetaPrintConnector
 
 ## SYNOPSIS
 Update the navigation property connectors in print
@@ -14,7 +14,7 @@ Update the navigation property connectors in print
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPrintConnector -PrintConnectorId <String> [-AdditionalProperties <Hashtable>] [-AppVersion <String>]
+Update-MgBetaPrintConnector -PrintConnectorId <String> [-AdditionalProperties <Hashtable>] [-AppVersion <String>]
  [-DeviceHealth <IMicrosoftGraphDeviceHealth>] [-DisplayName <String>] [-FullyQualifiedDomainName <String>]
  [-Id <String>] [-Location <IMicrosoftGraphPrinterLocation>] [-Name <String>] [-OperatingSystem <String>]
  [-RegisteredDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgPrintConnector -PrintConnectorId <String> [-AdditionalProperties <Hasht
 
 ### Update
 ```
-Update-MgPrintConnector -PrintConnectorId <String> -BodyParameter <IMicrosoftGraphPrintConnector> [-PassThru]
+Update-MgBetaPrintConnector -PrintConnectorId <String> -BodyParameter <IMicrosoftGraphPrintConnector> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPrintConnector -InputObject <IDevicesCloudPrintIdentity>
+Update-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity>
  -BodyParameter <IMicrosoftGraphPrintConnector> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
  [-AppVersion <String>] [-DeviceHealth <IMicrosoftGraphDeviceHealth>] [-DisplayName <String>]
  [-FullyQualifiedDomainName <String>] [-Id <String>] [-Location <IMicrosoftGraphPrinterLocation>]
  [-Name <String>] [-OperatingSystem <String>] [-RegisteredDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -46,9 +46,9 @@ Update the navigation property connectors in print
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPrintConnector Cmdlet
+### Example 1: Using the Update-MgBetaPrintConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 $params = @{
 	DisplayName = "ConnectorName"
 	FullyQualifiedDomainName = "CONNECTOR-MACHINE"
@@ -60,10 +60,10 @@ $params = @{
 		AltitudeInMeters = 3
 	}
 }
-Update-MgPrintConnector -PrintConnectorId $printConnectorId -BodyParameter $params
+Update-MgBetaPrintConnector -PrintConnectorId $printConnectorId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPrintConnector Cmdlet.
+This example shows how to use the Update-MgBetaPrintConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -103,7 +103,7 @@ printConnector
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ deviceHealth
 To construct, please use Get-Help -Online and see NOTES section for DEVICEHEALTH properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealth
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealth
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ printerLocation
 To construct, please use Get-Help -Online and see NOTES section for LOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterLocation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrinterLocation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -319,9 +319,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
 
 ## OUTPUTS
 

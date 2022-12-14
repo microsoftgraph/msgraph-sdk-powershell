@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycasesourcecollectioncustodiansource
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycasesourcecollectioncustodiansource
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource
+# Get-MgBetaComplianceEdiscoveryCaseSourceCollectionCustodianSource
 
 ## SYNOPSIS
 Custodian sources that are included in the sourceCollection.
@@ -14,20 +14,20 @@ Custodian sources that are included in the sourceCollection.
 
 ### List (Default)
 ```
-Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource -CaseId <String> -SourceCollectionId <String>
+Get-MgBetaComplianceEdiscoveryCaseSourceCollectionCustodianSource -CaseId <String> -SourceCollectionId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource -CaseId <String> -DataSourceId <String>
+Get-MgBetaComplianceEdiscoveryCaseSourceCollectionCustodianSource -CaseId <String> -DataSourceId <String>
  -SourceCollectionId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource -InputObject <IComplianceIdentity>
+Get-MgBetaComplianceEdiscoveryCaseSourceCollectionCustodianSource -InputObject <IComplianceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Custodian sources that are included in the sourceCollection.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseSourceCollectionCustodianSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource -CaseId $caseId -SourceCollectionId $sourceCollectionId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseSourceCollectionCustodianSource -CaseId $caseId -SourceCollectionId $sourceCollectionId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseSourceCollectionCustodianSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -264,11 +264,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryDataSource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryDataSource
 
 ## NOTES
 

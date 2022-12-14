@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantapinotification
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantapinotification
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantApiNotification
+# Update-MgBetaTenantRelationshipManagedTenantApiNotification
 
 ## SYNOPSIS
 Update the navigation property managedTenantApiNotifications in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managedTenantApiNotifications in tenantRelationsh
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantApiNotification -ManagedTenantApiNotificationId <String>
+Update-MgBetaTenantRelationshipManagedTenantApiNotification -ManagedTenantApiNotificationId <String>
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsAcknowledged]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>] [-Title <String>]
@@ -23,21 +23,21 @@ Update-MgTenantRelationshipManagedTenantApiNotification -ManagedTenantApiNotific
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantApiNotification -ManagedTenantApiNotificationId <String>
+Update-MgBetaTenantRelationshipManagedTenantApiNotification -ManagedTenantApiNotificationId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantApiNotification> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantApiNotification -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantApiNotification -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantApiNotification> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantApiNotification -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantApiNotification -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsAcknowledged]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>] [-Title <String>]
@@ -71,7 +71,7 @@ managedTenantAlert
 To construct, please use Get-Help -Online and see NOTES section for ALERT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ managedTenantApiNotification
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -316,9 +316,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
 
 ## OUTPUTS
 

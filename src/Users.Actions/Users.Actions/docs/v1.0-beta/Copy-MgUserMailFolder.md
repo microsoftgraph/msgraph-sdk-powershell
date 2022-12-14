@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/copy-mgusermailfolder
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/copy-mgusermailfolder
 schema: 2.0.0
 ---
 
-# Copy-MgUserMailFolder
+# Copy-MgBetaUserMailFolder
 
 ## SYNOPSIS
 Copy a mailfolder and its contents to another mailfolder.
@@ -14,27 +14,27 @@ Copy a mailfolder and its contents to another mailfolder.
 
 ### CopyExpanded (Default)
 ```
-Copy-MgUserMailFolder -MailFolderId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Copy-MgBetaUserMailFolder -MailFolderId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DestinationId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy
 ```
-Copy-MgUserMailFolder -MailFolderId <String> -UserId <String>
+Copy-MgBetaUserMailFolder -MailFolderId <String> -UserId <String>
  -BodyParameter <IPathsSdgf1MUsersUserIdMailfoldersMailfolderIdMicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
-Copy-MgUserMailFolder -InputObject <IUsersActionsIdentity>
+Copy-MgBetaUserMailFolder -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsSdgf1MUsersUserIdMailfoldersMailfolderIdMicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
-Copy-MgUserMailFolder -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Copy-MgBetaUserMailFolder -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DestinationId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,17 +43,17 @@ Copy a mailfolder and its contents to another mailfolder.
 
 ## EXAMPLES
 
-### Example 1: Using the Copy-MgUserMailFolder Cmdlet
+### Example 1: Using the Copy-MgBetaUserMailFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	DestinationId = "destinationId-value"
 }
 # A UPN can also be used as -UserId.
-Copy-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Copy-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
 
-This example shows how to use the Copy-MgUserMailFolder Cmdlet.
+This example shows how to use the Copy-MgBetaUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsSdgf1MUsersUserIdMailfoldersMailfolderIdMicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsSdgf1MUsersUserIdMailfoldersMailfolderIdMicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Copy, CopyViaIdentity
 Aliases:
 
@@ -109,7 +109,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
 Aliases:
 
@@ -186,13 +186,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsSdgf1MUsersUserIdMailfoldersMailfolderIdMicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsSdgf1MUsersUserIdMailfoldersMailfolderIdMicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailFolder
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailFolder
 
 ## NOTES
 

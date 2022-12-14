@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanycountryregion
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/remove-mgfinancialcompanycountryregion
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanyCountryRegion
+# Remove-MgBetaFinancialCompanyCountryRegion
 
 ## SYNOPSIS
 Delete navigation property countriesRegions for financials
@@ -14,13 +14,13 @@ Delete navigation property countriesRegions for financials
 
 ### Delete (Default)
 ```
-Remove-MgFinancialCompanyCountryRegion -CompanyId <String> -CountryRegionId <String> [-IfMatch <String>]
+Remove-MgBetaFinancialCompanyCountryRegion -CompanyId <String> -CountryRegionId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

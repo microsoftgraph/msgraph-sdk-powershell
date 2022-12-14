@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/test-mgdeviceappmgtmobileappxml
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/test-mgdeviceappmgtmobileappxml
 schema: 2.0.0
 ---
 
-# Test-MgDeviceAppMgtMobileAppXml
+# Test-MgBetaDeviceAppMgtMobileAppXml
 
 ## SYNOPSIS
 Invoke action validateXml
@@ -14,13 +14,13 @@ Invoke action validateXml
 
 ### ValidateExpanded (Default)
 ```
-Test-MgDeviceAppMgtMobileAppXml [-AdditionalProperties <Hashtable>]
+Test-MgBetaDeviceAppMgtMobileAppXml [-AdditionalProperties <Hashtable>]
  [-OfficeConfigurationXmlInputFile <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate
 ```
-Test-MgDeviceAppMgtMobileAppXml
+Test-MgBetaDeviceAppMgtMobileAppXml
  -BodyParameter <IPaths17Ccqu0DeviceappmanagementMobileappsMicrosoftGraphValidatexmlPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths17Ccqu0DeviceappmanagementMobileappsMicrosoftGraphValidatexmlPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths17Ccqu0DeviceappmanagementMobileappsMicrosoftGraphValidatexmlPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate
 Aliases:
 
@@ -114,7 +114,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths17Ccqu0DeviceappmanagementMobileappsMicrosoftGraphValidatexmlPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths17Ccqu0DeviceappmanagementMobileappsMicrosoftGraphValidatexmlPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Test-MgDeviceAppManagementMobileAppXml
+### Test-MgBetaDeviceAppManagementMobileAppXml
 
 COMPLEX PARAMETER PROPERTIES
 

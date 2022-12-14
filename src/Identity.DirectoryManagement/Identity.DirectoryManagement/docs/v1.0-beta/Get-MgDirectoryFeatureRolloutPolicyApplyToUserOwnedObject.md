@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryfeaturerolloutpolicyapplytouserownedobject
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryfeaturerolloutpolicyapplytouserownedobject
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject
+# Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject
 
 ## SYNOPSIS
 Invoke action getUserOwnedObjects
@@ -14,28 +14,28 @@ Invoke action getUserOwnedObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject -FeatureRolloutPolicyId <String>
+Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject -FeatureRolloutPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject -FeatureRolloutPolicyId <String>
+Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject -FeatureRolloutPolicyId <String>
  -BodyParameter <IPathsEmc6YdDirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPathsEmc6YdDirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsEmc6YdDirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsEmc6YdDirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -175,13 +175,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsEmc6YdDirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsEmc6YdDirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyserviceprincipalcreationpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyserviceprincipalcreationpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyServicePrincipalCreationPolicy
+# Update-MgBetaPolicyServicePrincipalCreationPolicy
 
 ## SYNOPSIS
 Update the navigation property servicePrincipalCreationPolicies in policies
@@ -14,7 +14,7 @@ Update the navigation property servicePrincipalCreationPolicies in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyServicePrincipalCreationPolicy -ServicePrincipalCreationPolicyId <String>
+Update-MgBetaPolicyServicePrincipalCreationPolicy -ServicePrincipalCreationPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Excludes <IMicrosoftGraphServicePrincipalCreationConditionSet[]>] [-Id <String>]
  [-Includes <IMicrosoftGraphServicePrincipalCreationConditionSet[]>] [-IsBuiltIn] [-PassThru] [-Confirm]
@@ -23,21 +23,21 @@ Update-MgPolicyServicePrincipalCreationPolicy -ServicePrincipalCreationPolicyId 
 
 ### Update
 ```
-Update-MgPolicyServicePrincipalCreationPolicy -ServicePrincipalCreationPolicyId <String>
+Update-MgBetaPolicyServicePrincipalCreationPolicy -ServicePrincipalCreationPolicyId <String>
  -BodyParameter <IMicrosoftGraphServicePrincipalCreationPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyServicePrincipalCreationPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyServicePrincipalCreationPolicy -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphServicePrincipalCreationPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyServicePrincipalCreationPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyServicePrincipalCreationPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Excludes <IMicrosoftGraphServicePrincipalCreationConditionSet[]>] [-Id <String>]
  [-Includes <IMicrosoftGraphServicePrincipalCreationConditionSet[]>] [-IsBuiltIn] [-PassThru] [-Confirm]
@@ -71,7 +71,7 @@ servicePrincipalCreationPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationPolicy
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EXCLUDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -167,7 +167,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for INCLUDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -183,7 +183,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -275,9 +275,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationPolicy
 
 ## OUTPUTS
 

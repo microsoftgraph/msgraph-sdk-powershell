@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mgcommunicationcalloperation
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mgcommunicationcalloperation
 schema: 2.0.0
 ---
 
-# New-MgCommunicationCallOperation
+# New-MgBetaCommunicationCallOperation
 
 ## SYNOPSIS
 Create new navigation property to operations for communications
@@ -14,26 +14,26 @@ Create new navigation property to operations for communications
 
 ### CreateExpanded1 (Default)
 ```
-New-MgCommunicationCallOperation -CallId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaCommunicationCallOperation -CallId <String> [-AdditionalProperties <Hashtable>]
  [-ClientContext <String>] [-Id <String>] [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgCommunicationCallOperation -CallId <String> -BodyParameter <IMicrosoftGraphCommsOperation> [-Confirm]
+New-MgBetaCommunicationCallOperation -CallId <String> -BodyParameter <IMicrosoftGraphCommsOperation> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphCommsOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Id <String>]
  [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ commsOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommsOperation
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -144,7 +144,7 @@ resultInfo
 To construct, please use Get-Help -Online and see NOTES section for RESULTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResultInfo
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -206,13 +206,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommsOperation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommsOperation
 
 ## NOTES
 

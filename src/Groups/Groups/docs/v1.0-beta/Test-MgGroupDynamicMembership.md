@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/test-mggroupdynamicmembership
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/test-mggroupdynamicmembership
 schema: 2.0.0
 ---
 
-# Test-MgGroupDynamicMembership
+# Test-MgBetaGroupDynamicMembership
 
 ## SYNOPSIS
 Evaluate whether a user or device is or would be a member of a dynamic group.
@@ -16,27 +16,27 @@ You can complete this operation in the following ways:
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgGroupDynamicMembership -GroupId <String> [-AdditionalProperties <Hashtable>] [-MemberId <String>]
+Test-MgBetaGroupDynamicMembership -GroupId <String> [-AdditionalProperties <Hashtable>] [-MemberId <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Evaluate
 ```
-Test-MgGroupDynamicMembership -GroupId <String>
+Test-MgBetaGroupDynamicMembership -GroupId <String>
  -BodyParameter <IPaths815SnbGroupsGroupIdMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentity
 ```
-Test-MgGroupDynamicMembership -InputObject <IGroupsIdentity>
+Test-MgBetaGroupDynamicMembership -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths815SnbGroupsGroupIdMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentityExpanded
 ```
-Test-MgGroupDynamicMembership -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Test-MgBetaGroupDynamicMembership -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-MemberId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,16 +47,16 @@ You can complete this operation in the following ways:
 
 ## EXAMPLES
 
-### Example 1: Using the Test-MgGroupDynamicMembership Cmdlet
+### Example 1: Using the Test-MgBetaGroupDynamicMembership Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	MemberId = "319b41e8-d9e4-42f8-bdc9-741113f48b33"
 }
-Test-MgGroupDynamicMembership -GroupId $groupId -BodyParameter $params
+Test-MgBetaGroupDynamicMembership -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the Test-MgGroupDynamicMembership Cmdlet.
+This example shows how to use the Test-MgBetaGroupDynamicMembership Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths815SnbGroupsGroupIdMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths815SnbGroupsGroupIdMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate, EvaluateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: EvaluateViaIdentity, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -174,13 +174,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths815SnbGroupsGroupIdMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths815SnbGroupsGroupIdMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvaluateDynamicMembershipResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvaluateDynamicMembershipResult
 
 ## NOTES
 

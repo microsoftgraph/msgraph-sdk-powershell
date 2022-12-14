@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgusermanagedappregistration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgusermanagedappregistration
 schema: 2.0.0
 ---
 
-# Get-MgUserManagedAppRegistration
+# Get-MgBetaUserManagedAppRegistration
 
 ## SYNOPSIS
 Zero or more managed app registrations that belong to the user.
@@ -14,20 +14,20 @@ Zero or more managed app registrations that belong to the user.
 
 ### List (Default)
 ```
-Get-MgUserManagedAppRegistration -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserManagedAppRegistration -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserManagedAppRegistration -ManagedAppRegistrationId <String> -UserId <String>
+Get-MgBetaUserManagedAppRegistration -ManagedAppRegistrationId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserManagedAppRegistration -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaUserManagedAppRegistration -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
 
 ## NOTES
 

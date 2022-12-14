@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/undo-mguserchatmessagesoftdelete
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/undo-mguserchatmessagesoftdelete
 schema: 2.0.0
 ---
 
-# Undo-MgUserChatMessageSoftDelete
+# Undo-MgBetaUserChatMessageSoftDelete
 
 ## SYNOPSIS
 Undo soft deletion of a single message or a message reply in a channel or a chat.
@@ -14,13 +14,13 @@ Undo soft deletion of a single message or a message reply in a channel or a chat
 
 ### Undo (Default)
 ```
-Undo-MgUserChatMessageSoftDelete -ChatId <String> -ChatMessageId <String> -UserId <String> [-PassThru]
+Undo-MgBetaUserChatMessageSoftDelete -ChatId <String> -ChatMessageId <String> -UserId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UndoViaIdentity
 ```
-Undo-MgUserChatMessageSoftDelete -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Undo-MgBetaUserChatMessageSoftDelete -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Undo soft deletion of a single message or a message reply in a channel or a chat
 
 ## EXAMPLES
 
-### Example 1: Using the Undo-MgUserChatMessageSoftDelete Cmdlet
+### Example 1: Using the Undo-MgBetaUserChatMessageSoftDelete Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
-Undo-MgUserChatMessageSoftDelete -UserId $userId -ChatId $chatId -ChatMessageId $chatMessageId
+Import-Module Microsoft.Graph.Beta.Users.Actions
+Undo-MgBetaUserChatMessageSoftDelete -UserId $userId -ChatId $chatId -ChatMessageId $chatMessageId
 ```
 
-This example shows how to use the Undo-MgUserChatMessageSoftDelete Cmdlet.
+This example shows how to use the Undo-MgBetaUserChatMessageSoftDelete Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: UndoViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

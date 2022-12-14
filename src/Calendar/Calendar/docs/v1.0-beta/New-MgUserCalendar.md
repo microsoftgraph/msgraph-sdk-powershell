@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mgusercalendar
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mgusercalendar
 schema: 2.0.0
 ---
 
-# New-MgUserCalendar
+# New-MgBetaUserCalendar
 
 ## SYNOPSIS
 Create a new calendar for a user.
@@ -14,7 +14,7 @@ Create a new calendar for a user.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserCalendar -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserCalendar -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedOnlineMeetingProviders <String[]>] [-CalendarGroupId <String>]
  [-CalendarPermissions <IMicrosoftGraphCalendarPermission[]>] [-CalendarView <IMicrosoftGraphEvent[]>]
  [-CanEdit] [-CanShare] [-CanViewPrivateItems] [-ChangeKey <String>] [-Color <String>]
@@ -28,19 +28,19 @@ New-MgUserCalendar -UserId <String> [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgUserCalendar -UserId <String> -BodyParameter <IMicrosoftGraphCalendar1> [-Confirm] [-WhatIf]
+New-MgBetaUserCalendar -UserId <String> -BodyParameter <IMicrosoftGraphCalendar1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserCalendar -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphCalendar1> [-Confirm]
+New-MgBetaUserCalendar -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphCalendar1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserCalendar -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserCalendar -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedOnlineMeetingProviders <String[]>] [-CalendarGroupId <String>]
  [-CalendarPermissions <IMicrosoftGraphCalendarPermission[]>] [-CalendarView <IMicrosoftGraphEvent[]>]
  [-CanEdit] [-CanShare] [-CanViewPrivateItems] [-ChangeKey <String>] [-Color <String>]
@@ -57,17 +57,17 @@ Create a new calendar for a user.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserCalendar Cmdlet
+### Example 1: Using the New-MgBetaUserCalendar Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	Name = "Volunteer"
 }
 # A UPN can also be used as -UserId.
-New-MgUserCalendar -UserId $userId -BodyParameter $params
+New-MgBetaUserCalendar -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserCalendar Cmdlet.
+This example shows how to use the New-MgBetaUserCalendar Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -108,7 +108,7 @@ calendar
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendar1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -140,7 +140,7 @@ The permissions of the users with whom the calendar is shared.
 To construct, please use Get-Help -Online and see NOTES section for CALENDARPERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarPermission[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -158,7 +158,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for CALENDARVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -276,7 +276,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for EVENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -324,7 +324,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -424,7 +424,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -455,7 +455,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for OWNER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -473,7 +473,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -535,13 +535,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendar1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendar1
 
 ## NOTES
 

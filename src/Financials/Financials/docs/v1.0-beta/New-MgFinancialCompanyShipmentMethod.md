@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanyshipmentmethod
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanyshipmentmethod
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyShipmentMethod
+# New-MgBetaFinancialCompanyShipmentMethod
 
 ## SYNOPSIS
 Create new navigation property to shipmentMethods for financials
@@ -14,26 +14,26 @@ Create new navigation property to shipmentMethods for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyShipmentMethod -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
+New-MgBetaFinancialCompanyShipmentMethod -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgFinancialCompanyShipmentMethod -CompanyId <String> -BodyParameter <IMicrosoftGraphShipmentMethod>
+New-MgBetaFinancialCompanyShipmentMethod -CompanyId <String> -BodyParameter <IMicrosoftGraphShipmentMethod>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphShipmentMethod> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ shipmentMethod
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShipmentMethod
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -204,13 +204,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShipmentMethod
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShipmentMethod
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementauditevent
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementauditevent
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementAuditEvent
+# Update-MgBetaDeviceManagementAuditEvent
 
 ## SYNOPSIS
 Update the navigation property auditEvents in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property auditEvents in deviceManagement
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceManagementAuditEvent -AuditEventId <String> [-Activity <String>] [-ActivityDateTime <DateTime>]
+Update-MgBetaDeviceManagementAuditEvent -AuditEventId <String> [-Activity <String>] [-ActivityDateTime <DateTime>]
  [-ActivityOperationType <String>] [-ActivityResult <String>] [-ActivityType <String>]
  [-Actor <IMicrosoftGraphAuditActor1>] [-AdditionalProperties <Hashtable>] [-Category <String>]
  [-ComponentName <String>] [-CorrelationId <String>] [-DisplayName <String>] [-Id <String>]
@@ -23,19 +23,19 @@ Update-MgDeviceManagementAuditEvent -AuditEventId <String> [-Activity <String>] 
 
 ### Update1
 ```
-Update-MgDeviceManagementAuditEvent -AuditEventId <String> -BodyParameter <IMicrosoftGraphAuditEvent>
+Update-MgBetaDeviceManagementAuditEvent -AuditEventId <String> -BodyParameter <IMicrosoftGraphAuditEvent>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgDeviceManagementAuditEvent -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementAuditEvent -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphAuditEvent> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgDeviceManagementAuditEvent -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementAuditEvent -InputObject <IDeviceManagementAdministrationIdentity>
  [-Activity <String>] [-ActivityDateTime <DateTime>] [-ActivityOperationType <String>]
  [-ActivityResult <String>] [-ActivityType <String>] [-Actor <IMicrosoftGraphAuditActor1>]
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-ComponentName <String>] [-CorrelationId <String>]
@@ -130,7 +130,7 @@ A class containing the properties for Audit Actor.
 To construct, please use Get-Help -Online and see NOTES section for ACTOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditActor1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditActor1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -176,7 +176,7 @@ A class containing the properties for Audit Event.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditEvent
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -268,7 +268,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -299,7 +299,7 @@ Resources being modified.
 To construct, please use Get-Help -Online and see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditResource1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditResource1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -346,9 +346,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditEvent
 
 ## OUTPUTS
 

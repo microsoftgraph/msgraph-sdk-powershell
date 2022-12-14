@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofileeducationalactivity
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/new-mguserprofileeducationalactivity
 schema: 2.0.0
 ---
 
-# New-MgUserProfileEducationalActivity
+# New-MgBetaUserProfileEducationalActivity
 
 ## SYNOPSIS
 Create a new educationalActivity in a user's profile.
@@ -14,7 +14,7 @@ Create a new educationalActivity in a user's profile.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserProfileEducationalActivity -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfileEducationalActivity -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CompletionMonthYear <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-EndMonthYear <DateTime>] [-Id <String>]
  [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>] [-IsSearchable]
@@ -25,19 +25,19 @@ New-MgUserProfileEducationalActivity -UserId <String> [-AdditionalProperties <Ha
 
 ### Create
 ```
-New-MgUserProfileEducationalActivity -UserId <String> -BodyParameter <IMicrosoftGraphEducationalActivity>
+New-MgBetaUserProfileEducationalActivity -UserId <String> -BodyParameter <IMicrosoftGraphEducationalActivity>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity>
+New-MgBetaUserProfileEducationalActivity -InputObject <IPeopleIdentity>
  -BodyParameter <IMicrosoftGraphEducationalActivity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CompletionMonthYear <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-EndMonthYear <DateTime>] [-Id <String>]
  [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>] [-IsSearchable]
@@ -51,9 +51,9 @@ Create a new educationalActivity in a user's profile.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserProfileEducationalActivity Cmdlet
+### Example 1: Using the New-MgBetaUserProfileEducationalActivity Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	CompletionMonthYear = "Date"
 	EndMonthYear = "Date"
@@ -85,10 +85,10 @@ $params = @{
 	StartMonthYear = "Date"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileEducationalActivity -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileEducationalActivity -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserProfileEducationalActivity Cmdlet.
+This example shows how to use the New-MgBetaUserProfileEducationalActivity Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ educationalActivity
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationalActivity
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -221,7 +221,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -237,7 +237,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -253,7 +253,7 @@ institutionData
 To construct, please use Get-Help -Online and see NOTES section for INSTITUTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInstitutionData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInstitutionData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -284,7 +284,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -315,7 +315,7 @@ educationalActivityDetail
 To construct, please use Get-Help -Online and see NOTES section for PROGRAM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivityDetail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationalActivityDetail
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -331,7 +331,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -408,13 +408,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationalActivity
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationalActivity
 
 ## NOTES
 

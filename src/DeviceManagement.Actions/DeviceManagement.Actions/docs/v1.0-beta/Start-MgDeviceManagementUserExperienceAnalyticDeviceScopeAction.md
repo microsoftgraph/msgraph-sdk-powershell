@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/start-mgdevicemanagementuserexperienceanalyticdevicescopeaction
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/start-mgdevicemanagementuserexperienceanalyticdevicescopeaction
 schema: 2.0.0
 ---
 
-# Start-MgDeviceManagementUserExperienceAnalyticDeviceScopeAction
+# Start-MgBetaDeviceManagementUserExperienceAnalyticDeviceScopeAction
 
 ## SYNOPSIS
 Invoke action triggerDeviceScopeAction
@@ -14,13 +14,13 @@ Invoke action triggerDeviceScopeAction
 
 ### TriggerExpanded (Default)
 ```
-Start-MgDeviceManagementUserExperienceAnalyticDeviceScopeAction [-ActionName <String>]
+Start-MgBetaDeviceManagementUserExperienceAnalyticDeviceScopeAction [-ActionName <String>]
  [-AdditionalProperties <Hashtable>] [-DeviceScopeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Trigger
 ```
-Start-MgDeviceManagementUserExperienceAnalyticDeviceScopeAction
+Start-MgBetaDeviceManagementUserExperienceAnalyticDeviceScopeAction
  -BodyParameter <IPathsNcwx4CDevicemanagementUserexperienceanalyticsdevicescopeMicrosoftGraphTriggerdevicescopeactionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsNcwx4CDevicemanagementUserexperienceanalyticsdevicescopeMicrosoftGraphTriggerdevicescopeactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsNcwx4CDevicemanagementUserexperienceanalyticsdevicescopeMicrosoftGraphTriggerdevicescopeactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Trigger
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsNcwx4CDevicemanagementUserexperienceanalyticsdevicescopeMicrosoftGraphTriggerdevicescopeactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsNcwx4CDevicemanagementUserexperienceanalyticsdevicescopeMicrosoftGraphTriggerdevicescopeactionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceScopeActionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceScopeActionResult
 
 ## NOTES
 

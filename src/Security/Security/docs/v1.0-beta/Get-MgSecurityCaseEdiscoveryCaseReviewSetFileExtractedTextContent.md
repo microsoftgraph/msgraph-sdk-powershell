@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasereviewsetfileextractedtextcontent
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasereviewsetfileextractedtextcontent
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent
+# Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent
 
 ## SYNOPSIS
 Get extractedTextContent for the navigation property files from security
@@ -14,13 +14,13 @@ Get extractedTextContent for the navigation property files from security
 
 ### Get (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent -EdiscoveryCaseId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent -EdiscoveryCaseId <String>
  -EdiscoveryFileId <String> -EdiscoveryReviewSetId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent -InputObject <ISecurityIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

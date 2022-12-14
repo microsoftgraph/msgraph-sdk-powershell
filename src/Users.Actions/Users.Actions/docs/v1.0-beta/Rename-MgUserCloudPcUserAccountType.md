@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/rename-mgusercloudpcuseraccounttype
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/rename-mgusercloudpcuseraccounttype
 schema: 2.0.0
 ---
 
-# Rename-MgUserCloudPcUserAccountType
+# Rename-MgBetaUserCloudPcUserAccountType
 
 ## SYNOPSIS
 Change the account type of the user on a specific Cloud PC.
@@ -14,27 +14,27 @@ Change the account type of the user on a specific Cloud PC.
 
 ### ChangeExpanded (Default)
 ```
-Rename-MgUserCloudPcUserAccountType -CloudPcId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Rename-MgBetaUserCloudPcUserAccountType -CloudPcId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-UserAccountType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Change
 ```
-Rename-MgUserCloudPcUserAccountType -CloudPcId <String> -UserId <String>
+Rename-MgBetaUserCloudPcUserAccountType -CloudPcId <String> -UserId <String>
  -BodyParameter <IPaths7J5TafUsersUserIdCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentity
 ```
-Rename-MgUserCloudPcUserAccountType -InputObject <IUsersActionsIdentity>
+Rename-MgBetaUserCloudPcUserAccountType -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths7J5TafUsersUserIdCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentityExpanded
 ```
-Rename-MgUserCloudPcUserAccountType -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Rename-MgBetaUserCloudPcUserAccountType -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-UserAccountType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths7J5TafUsersUserIdCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths7J5TafUsersUserIdCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Change, ChangeViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ChangeViaIdentity, ChangeViaIdentityExpanded
 Aliases:
 
@@ -188,9 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths7J5TafUsersUserIdCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths7J5TafUsersUserIdCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

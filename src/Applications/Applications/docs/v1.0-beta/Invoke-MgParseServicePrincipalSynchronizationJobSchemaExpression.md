@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/invoke-mgparseserviceprincipalsynchronizationjobschemaexpression
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/invoke-mgparseserviceprincipalsynchronizationjobschemaexpression
 schema: 2.0.0
 ---
 
-# Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression
+# Invoke-MgBetaParseServicePrincipalSynchronizationJobSchemaExpression
 
 ## SYNOPSIS
 Parse a given string expression into an attributeMappingSource object.
@@ -15,7 +15,7 @@ For more information about expressions, see Writing Expressions for Attribute Ma
 
 ### ParseExpanded (Default)
 ```
-Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression -ServicePrincipalId <String>
+Invoke-MgBetaParseServicePrincipalSynchronizationJobSchemaExpression -ServicePrincipalId <String>
  -SynchronizationJobId <String> [-AdditionalProperties <Hashtable>] [-Expression <String>]
  [-TargetAttributeDefinition <IMicrosoftGraphAttributeDefinition>]
  [-TestInputObject <IMicrosoftGraphExpressionInputObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,7 +23,7 @@ Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression -ServicePrincip
 
 ### Parse
 ```
-Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression -ServicePrincipalId <String>
+Invoke-MgBetaParseServicePrincipalSynchronizationJobSchemaExpression -ServicePrincipalId <String>
  -SynchronizationJobId <String>
  -BodyParameter <IPathsOmq7Q9ServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -31,14 +31,14 @@ Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression -ServicePrincip
 
 ### ParseViaIdentity
 ```
-Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression -InputObject <IApplicationsIdentity>
+Invoke-MgBetaParseServicePrincipalSynchronizationJobSchemaExpression -InputObject <IApplicationsIdentity>
  -BodyParameter <IPathsOmq7Q9ServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ParseViaIdentityExpanded
 ```
-Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression -InputObject <IApplicationsIdentity>
+Invoke-MgBetaParseServicePrincipalSynchronizationJobSchemaExpression -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Expression <String>]
  [-TargetAttributeDefinition <IMicrosoftGraphAttributeDefinition>]
  [-TestInputObject <IMicrosoftGraphExpressionInputObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsOmq7Q9ServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsOmq7Q9ServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Parse, ParseViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: ParseViaIdentity, ParseViaIdentityExpanded
 Aliases:
 
@@ -149,7 +149,7 @@ attributeDefinition
 To construct, please use Get-Help -Online and see NOTES section for TARGETATTRIBUTEDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeDefinition
 Parameter Sets: ParseExpanded, ParseViaIdentityExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ expressionInputObject
 To construct, please use Get-Help -Online and see NOTES section for TESTINPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExpressionInputObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExpressionInputObject
 Parameter Sets: ParseExpanded, ParseViaIdentityExpanded
 Aliases:
 
@@ -212,13 +212,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsOmq7Q9ServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsOmq7Q9ServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParseExpressionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParseExpressionResponse
 
 ## NOTES
 

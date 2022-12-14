@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointreport
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointReport
+# Update-MgBetaDeviceManagementVirtualEndpointReport
 
 ## SYNOPSIS
 Update the navigation property reports in deviceManagement
@@ -14,14 +14,14 @@ Update the navigation property reports in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointReport [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementVirtualEndpointReport [-AdditionalProperties <Hashtable>]
  [-ExportJobs <IMicrosoftGraphCloudPcExportJob[]>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointReport -BodyParameter <IMicrosoftGraphCloudPcReports> [-PassThru]
+Update-MgBetaDeviceManagementVirtualEndpointReport -BodyParameter <IMicrosoftGraphCloudPcReports> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ cloudPcReports
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcReports
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcReports
 Parameter Sets: Update
 Aliases:
 
@@ -68,7 +68,7 @@ The export jobs created for downloading reports.
 To construct, please use Get-Help -Online and see NOTES section for EXPORTJOBS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExportJob[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExportJob[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcReports
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcReports
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernancelifecycleworkflowtaskdefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernancelifecycleworkflowtaskdefinition
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceLifecycleWorkflowTaskDefinition
+# New-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition
 
 ## SYNOPSIS
 Create new navigation property to taskDefinitions for identityGovernance
@@ -14,7 +14,7 @@ Create new navigation property to taskDefinitions for identityGovernance
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityGovernanceLifecycleWorkflowTaskDefinition [-AdditionalProperties <Hashtable>]
+New-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition [-AdditionalProperties <Hashtable>]
  [-Category <String>] [-ContinueOnError] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Parameters <IMicrosoftGraphIdentityGovernanceParameter[]>] [-Version <Int32>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgIdentityGovernanceLifecycleWorkflowTaskDefinition [-AdditionalProperties <
 
 ### Create
 ```
-New-MgIdentityGovernanceLifecycleWorkflowTaskDefinition
+New-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition
  -BodyParameter <IMicrosoftGraphIdentityGovernanceTaskDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ taskDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
 Parameter Sets: Create
 Aliases:
 
@@ -145,7 +145,7 @@ The parameters that must be supplied when creating a workflow task object.Suppor
 To construct, please use Get-Help -Online and see NOTES section for PARAMETERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceParameter[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceParameter[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -208,11 +208,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
 
 ## NOTES
 

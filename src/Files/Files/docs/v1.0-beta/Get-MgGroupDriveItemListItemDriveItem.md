@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mggroupdriveitemlistitemdriveitem
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mggroupdriveitemlistitemdriveitem
 schema: 2.0.0
 ---
 
-# Get-MgGroupDriveItemListItemDriveItem
+# Get-MgBetaGroupDriveItemListItemDriveItem
 
 ## SYNOPSIS
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
@@ -14,13 +14,13 @@ For document libraries, the driveItem relationship exposes the listItem as a [dr
 
 ### Get1 (Default)
 ```
-Get-MgGroupDriveItemListItemDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String>
+Get-MgBetaGroupDriveItemListItemDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupDriveItemListItemDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupDriveItemListItemDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

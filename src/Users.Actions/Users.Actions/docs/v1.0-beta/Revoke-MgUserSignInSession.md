@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/revoke-mgusersigninsession
 schema: 2.0.0
 ---
 
-# Revoke-MgUserSignInSession
+# Revoke-MgBetaUserSignInSession
 
 ## SYNOPSIS
 Invoke action revokeSignInSessions
@@ -14,12 +14,12 @@ Invoke action revokeSignInSessions
 
 ### Revoke (Default)
 ```
-Revoke-MgUserSignInSession -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Revoke-MgBetaUserSignInSession -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentity
 ```
-Revoke-MgUserSignInSession -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Revoke-MgBetaUserSignInSession -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: RevokeViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
@@ -106,7 +106,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Revoke-MgUserSign
+### Revoke-MgBetaUserSign
 
 COMPLEX PARAMETER PROPERTIES
 

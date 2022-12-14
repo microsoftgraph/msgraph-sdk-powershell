@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgonpremisepublishingprofileagentgroupagent
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgonpremisepublishingprofileagentgroupagent
 schema: 2.0.0
 ---
 
-# New-MgOnPremisePublishingProfileAgentGroupAgent
+# New-MgBetaOnPremisePublishingProfileAgentGroupAgent
 
 ## SYNOPSIS
 Create new navigation property to agents for onPremisesPublishingProfiles
@@ -14,7 +14,7 @@ Create new navigation property to agents for onPremisesPublishingProfiles
 
 ### CreateExpanded (Default)
 ```
-New-MgOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
+New-MgBetaOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> [-AdditionalProperties <Hashtable>]
  [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>] [-ExternalIP <String>] [-Id <String>]
  [-MachineName <String>] [-Status <String>] [-SupportedPublishingTypes <String[]>] [-Confirm] [-WhatIf]
@@ -23,20 +23,20 @@ New-MgOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
 
 ### Create
 ```
-New-MgOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
+New-MgBetaOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> -BodyParameter <IMicrosoftGraphOnPremisesAgent> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOnPremisePublishingProfileAgentGroupAgent -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileAgentGroupAgent -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphOnPremisesAgent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOnPremisePublishingProfileAgentGroupAgent -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileAgentGroupAgent -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>]
  [-ExternalIP <String>] [-Id <String>] [-MachineName <String>] [-Status <String>]
  [-SupportedPublishingTypes <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -71,7 +71,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for AGENTGROUPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ onPremisesAgent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -135,7 +135,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -258,13 +258,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
 
 ## NOTES
 

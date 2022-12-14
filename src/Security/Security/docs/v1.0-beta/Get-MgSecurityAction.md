@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityaction
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecurityaction
 schema: 2.0.0
 ---
 
-# Get-MgSecurityAction
+# Get-MgBetaSecurityAction
 
 ## SYNOPSIS
 Get securityActions from security
@@ -14,20 +14,20 @@ Get securityActions from security
 
 ### List (Default)
 ```
-Get-MgSecurityAction [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaSecurityAction [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityAction -SecurityActionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecurityAction -SecurityActionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityAction -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecurityAction -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get securityActions from security
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityAction Cmdlet
+### Example 1: Using the Get-MgBetaSecurityAction Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAction -SecurityActionId $securityActionId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAction -SecurityActionId $securityActionId
 ```
 
-This example shows how to use the Get-MgSecurityAction Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAction Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityAction Cmdlet
+### Example 2: Using the Get-MgBetaSecurityAction Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAction
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAction
 ```
 
-This example shows how to use the Get-MgSecurityAction Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAction Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAction
 
 ## NOTES
 

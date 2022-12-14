@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyrolemanagementpolicyrule
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyrolemanagementpolicyrule
 schema: 2.0.0
 ---
 
-# Get-MgPolicyRoleManagementPolicyRule
+# Get-MgBetaPolicyRoleManagementPolicyRule
 
 ## SYNOPSIS
 The collection of rules like approval rules and expiration rules.
@@ -15,21 +15,21 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId <String>
+Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId <String>
  -UnifiedRoleManagementPolicyRuleId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -39,31 +39,31 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyRoleManagementPolicyRule Cmdlet
+### Example 1: Using the Get-MgBetaPolicyRoleManagementPolicyRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -UnifiedRoleManagementPolicyRuleId $unifiedRoleManagementPolicyRuleId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -UnifiedRoleManagementPolicyRuleId $unifiedRoleManagementPolicyRuleId
 ```
 
-This example shows how to use the Get-MgPolicyRoleManagementPolicyRule Cmdlet.
+This example shows how to use the Get-MgBetaPolicyRoleManagementPolicyRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPolicyRoleManagementPolicyRule Cmdlet
+### Example 2: Using the Get-MgBetaPolicyRoleManagementPolicyRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgPolicyRoleManagementPolicyRule Cmdlet.
+This example shows how to use the Get-MgBetaPolicyRoleManagementPolicyRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgPolicyRoleManagementPolicyRule Cmdlet
+### Example 3: Using the Get-MgBetaPolicyRoleManagementPolicyRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId
 ```
 
-This example shows how to use the Get-MgPolicyRoleManagementPolicyRule Cmdlet.
+This example shows how to use the Get-MgBetaPolicyRoleManagementPolicyRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule1
 
 ## NOTES
 

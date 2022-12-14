@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernanceaccessreviewhistorydefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernanceaccessreviewhistorydefinition
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceAccessReviewHistoryDefinition
+# New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition
 
 ## SYNOPSIS
 Create a new accessReviewHistoryDefinition object.
@@ -14,7 +14,7 @@ Create a new accessReviewHistoryDefinition object.
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityGovernanceAccessReviewHistoryDefinition [-AdditionalProperties <Hashtable>]
+New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphUserIdentity>] [-CreatedDateTime <DateTime>] [-Decisions <String[]>]
  [-DisplayName <String>] [-DownloadUri <String>] [-FulfilledDateTime <DateTime>] [-Id <String>]
  [-Instances <IMicrosoftGraphAccessReviewHistoryInstance[]>] [-ReviewHistoryPeriodEndDateTime <DateTime>]
@@ -25,7 +25,7 @@ New-MgIdentityGovernanceAccessReviewHistoryDefinition [-AdditionalProperties <Ha
 
 ### Create
 ```
-New-MgIdentityGovernanceAccessReviewHistoryDefinition
+New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition
  -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -34,9 +34,9 @@ Create a new accessReviewHistoryDefinition object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityGovernanceAccessReviewHistoryDefinition Cmdlet
+### Example 1: Using the New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Last quarter's group reviews April 2021"
 	Decisions = @(
@@ -62,23 +62,23 @@ $params = @{
 	}
 	Scopes = @(
 		@{
-			"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+			"@odata.type" = "#Microsoft.Graph.Beta.accessReviewQueryScope"
 			QueryType = "MicrosoftGraph"
 			Query = "/identityGovernance/accessReviews/definitions?$filter=contains(scope/query, 'accessPackageAssignments')"
 			QueryRoot = $null
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+			"@odata.type" = "#Microsoft.Graph.Beta.accessReviewQueryScope"
 			QueryType = "MicrosoftGraph"
 			Query = "/identityGovernance/accessReviews/definitions?$filter=contains(scope/query, '/groups')"
 			QueryRoot = $null
 		}
 	)
 }
-New-MgIdentityGovernanceAccessReviewHistoryDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -103,7 +103,7 @@ accessReviewHistoryDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
 Parameter Sets: Create
 Aliases:
 
@@ -119,7 +119,7 @@ userIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserIdentity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -231,7 +231,7 @@ A definition that does not recur will have exactly one instance.
 To construct, please use Get-Help -Online and see NOTES section for INSTANCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryInstance[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryInstance[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -281,7 +281,7 @@ accessReviewHistoryScheduleSettings
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULESETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryScheduleSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryScheduleSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -298,7 +298,7 @@ Fetches reviews whose scope matches with this provided scope.
 Required.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScope[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewScope[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -360,11 +360,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
 
 ## NOTES
 

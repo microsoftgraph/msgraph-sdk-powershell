@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointdeviceimage
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointdeviceimage
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointDeviceImage
+# New-MgBetaDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
 Create a new cloudPcDeviceImage object.
@@ -15,7 +15,7 @@ Upload a custom OS image that you can later provision on Cloud PCs.
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointDeviceImage [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceManagementVirtualEndpointDeviceImage [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-ExpirationDate <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-OperatingSystem <String>]
  [-OSBuildNumber <String>] [-OSStatus <String>] [-SourceImageResourceId <String>] [-Status <String>]
  [-StatusDetails <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementVirtualEndpointDeviceImage [-AdditionalProperties <Hashtab
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointDeviceImage -BodyParameter <IMicrosoftGraphCloudPcDeviceImage> [-Confirm]
+New-MgBetaDeviceManagementVirtualEndpointDeviceImage -BodyParameter <IMicrosoftGraphCloudPcDeviceImage> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -33,21 +33,21 @@ Upload a custom OS image that you can later provision on Cloud PCs.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
+### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointDeviceImage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcDeviceImage"
+	"@odata.type" = "#Microsoft.Graph.Beta.cloudPcDeviceImage"
 	DisplayName = "Display Name value"
 	OsBuildNumber = "OS Build Number value"
 	OperatingSystem = "Operating System value"
 	Version = "Version value"
 	SourceImageResourceId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/Example/providers/Microsoft.Compute/images/exampleImage"
 }
-New-MgDeviceManagementVirtualEndpointDeviceImage -BodyParameter $params
+New-MgBetaDeviceManagementVirtualEndpointDeviceImage -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointDeviceImage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -72,7 +72,7 @@ cloudPcDeviceImage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
 Parameter Sets: Create
 Aliases:
 
@@ -291,11 +291,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
 
 ## NOTES
 

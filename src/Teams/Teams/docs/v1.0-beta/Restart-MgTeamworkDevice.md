@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/restart-mgteamworkdevice
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/restart-mgteamworkdevice
 schema: 2.0.0
 ---
 
-# Restart-MgTeamworkDevice
+# Restart-MgBetaTeamworkDevice
 
 ## SYNOPSIS
 Restart the specified Microsoft Teams-enabled device asynchronously.
@@ -15,12 +15,12 @@ A device is restarted after the async operation completes successfully, which mi
 
 ### Restart (Default)
 ```
-Restart-MgTeamworkDevice -TeamworkDeviceId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Restart-MgBetaTeamworkDevice -TeamworkDeviceId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestartViaIdentity
 ```
-Restart-MgTeamworkDevice -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Restart-MgBetaTeamworkDevice -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,13 +29,13 @@ A device is restarted after the async operation completes successfully, which mi
 
 ## EXAMPLES
 
-### Example 1: Using the Restart-MgTeamworkDevice Cmdlet
+### Example 1: Using the Restart-MgBetaTeamworkDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Restart-MgTeamworkDevice -TeamworkDeviceId $teamworkDeviceId
+Import-Module Microsoft.Graph.Beta.Teams
+Restart-MgBetaTeamworkDevice -TeamworkDeviceId $teamworkDeviceId
 ```
 
-This example shows how to use the Restart-MgTeamworkDevice Cmdlet.
+This example shows how to use the Restart-MgBetaTeamworkDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -45,7 +45,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: RestartViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

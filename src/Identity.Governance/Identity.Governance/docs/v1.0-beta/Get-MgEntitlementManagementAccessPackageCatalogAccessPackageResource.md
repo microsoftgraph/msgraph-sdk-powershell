@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackagecatalogaccesspackageresource
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackagecatalogaccesspackageresource
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource
+# Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource
 
 ## SYNOPSIS
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -14,7 +14,7 @@ To request to add or remove an accessPackageResource, use create accessPackageRe
 ## SYNTAX
 
 ```
-Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId <String>
+Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -27,10 +27,10 @@ To request to add or remove an accessPackageResource, use create accessPackageRe
 
 ### Example 1: Get catalog resources by catalog id
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' | Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' | Format-List
 
-AccessPackageResourceEnvironment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageResourceEnvironment
+AccessPackageResourceEnvironment : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageResourceEnvironment
 AccessPackageResourceRoles       :
 AccessPackageResourceScopes      :
 AddedBy                          : admin@M365x814237.onmicrosoft.com
@@ -46,7 +46,7 @@ ResourceType                     : Security Group
 Url                              : https://account.activedirectory.windowsazure.com/r?tenantId=c265ddcc-4694-4bb0-b771-4829ca21177d#/manageMembership?objectType=Group&objectId=b5cd9d19-91c0-4622-93e2-537ad8a0b3ad
 AdditionalProperties             : {}
 
-AccessPackageResourceEnvironment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageResourceEnvironment
+AccessPackageResourceEnvironment : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageResourceEnvironment
 AccessPackageResourceRoles       :
 AccessPackageResourceScopes      :
 AddedBy                          : admin@M365x814237.onmicrosoft.com
@@ -67,10 +67,10 @@ This example returns all access package catalog resources for the specified cata
 
 ### Example 2: Use -Filter to get all catalog resources with the display name 'Marketing resources'
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "DisplayName eq 'Marketing resources'" | Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "DisplayName eq 'Marketing resources'" | Format-List
 
-AccessPackageResourceEnvironment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageResourceEnvironment
+AccessPackageResourceEnvironment : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageResourceEnvironment
 AccessPackageResourceRoles       :
 AccessPackageResourceScopes      :
 AddedBy                          : admin@M365x814237.onmicrosoft.com
@@ -264,7 +264,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResource
 
 ## NOTES
 

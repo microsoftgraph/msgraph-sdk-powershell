@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityconditionalaccessauthenticationcontextclassreference
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityconditionalaccessauthenticationcontextclassreference
 schema: 2.0.0
 ---
 
-# New-MgIdentityConditionalAccessAuthenticationContextClassReference
+# New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
 Create a new authenticationContextClassReference.
@@ -14,14 +14,14 @@ Create a new authenticationContextClassReference.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgIdentityConditionalAccessAuthenticationContextClassReference [-AdditionalProperties <Hashtable>]
+New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsAvailable] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgIdentityConditionalAccessAuthenticationContextClassReference
+New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
  -BodyParameter <IMicrosoftGraphAuthenticationContextClassReference> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,19 +30,19 @@ Create a new authenticationContextClassReference.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
+### Example 1: Using the New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "c1"
 	DisplayName = "Contoso medium"
 	Description = "Medium protection level defined for Contoso policy"
 	IsAvailable = $true
 }
-New-MgIdentityConditionalAccessAuthenticationContextClassReference -BodyParameter $params
+New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
+This example shows how to use the New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ authenticationContextClassReference
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
 Parameter Sets: Create1
 Aliases:
 
@@ -183,11 +183,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
 
 ## NOTES
 

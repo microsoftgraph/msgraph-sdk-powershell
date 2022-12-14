@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityattacksimulationautomationrun
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityattacksimulationautomationrun
 schema: 2.0.0
 ---
 
-# Update-MgSecurityAttackSimulationAutomationRun
+# Update-MgBetaSecurityAttackSimulationAutomationRun
 
 ## SYNOPSIS
 Update the navigation property runs in security
@@ -14,7 +14,7 @@ Update the navigation property runs in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
+Update-MgBetaSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
  -SimulationAutomationRunId <String> [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>]
  [-Id <String>] [-SimulationId <String>] [-StartDateTime <DateTime>] [-Status <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
 
 ### Update
 ```
-Update-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
+Update-MgBetaSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
  -SimulationAutomationRunId <String> -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>] [-Id <String>] [-SimulationId <String>]
  [-StartDateTime <DateTime>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ simulationAutomationRun
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomationRun
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulationAutomationRun
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -251,9 +251,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomationRun
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulationAutomationRun
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

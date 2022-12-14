@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainserviceconfigurationrecord
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdomainserviceconfigurationrecord
 schema: 2.0.0
 ---
 
-# New-MgDomainServiceConfigurationRecord
+# New-MgBetaDomainServiceConfigurationRecord
 
 ## SYNOPSIS
 Create new navigation property to serviceConfigurationRecords for domains
@@ -14,26 +14,26 @@ Create new navigation property to serviceConfigurationRecords for domains
 
 ### CreateExpanded (Default)
 ```
-New-MgDomainServiceConfigurationRecord -DomainId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaDomainServiceConfigurationRecord -DomainId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-IsOptional] [-Label <String>] [-RecordType <String>] [-SupportedService <String>] [-Ttl <Int32>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDomainServiceConfigurationRecord -DomainId <String> -BodyParameter <IMicrosoftGraphDomainDnsRecord>
+New-MgBetaDomainServiceConfigurationRecord -DomainId <String> -BodyParameter <IMicrosoftGraphDomainDnsRecord>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDomainServiceConfigurationRecord -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDomainServiceConfigurationRecord -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphDomainDnsRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDomainServiceConfigurationRecord -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDomainServiceConfigurationRecord -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsOptional] [-Label <String>] [-RecordType <String>]
  [-SupportedService <String>] [-Ttl <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ domainDnsRecord
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -235,13 +235,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
 
 ## NOTES
 

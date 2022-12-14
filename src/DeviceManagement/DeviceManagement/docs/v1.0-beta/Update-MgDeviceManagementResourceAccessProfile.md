@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementresourceaccessprofile
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementresourceaccessprofile
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementResourceAccessProfile
+# Update-MgBetaDeviceManagementResourceAccessProfile
 
 ## SYNOPSIS
 Update the navigation property resourceAccessProfiles in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property resourceAccessProfiles in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfileBaseId <String>
+Update-MgBetaDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfileBaseId <String>
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>]
  [-CreationDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
@@ -24,21 +24,21 @@ Update-MgDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessPr
 
 ### Update
 ```
-Update-MgDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfileBaseId <String>
+Update-MgBetaDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfileBaseId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementResourceAccessProfileBase> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementResourceAccessProfile -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementResourceAccessProfile -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementResourceAccessProfileBase> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementResourceAccessProfile -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementResourceAccessProfile -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>]
  [-CreationDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
@@ -73,7 +73,7 @@ The list of assignments for the device configuration profile.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -89,7 +89,7 @@ Base Profile Type for Resource Access
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileBase
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileBase
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -288,9 +288,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileBase
 
 ## OUTPUTS
 

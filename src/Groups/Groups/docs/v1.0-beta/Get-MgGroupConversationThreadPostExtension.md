@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupconversationthreadpostextension
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupconversationthreadpostextension
 schema: 2.0.0
 ---
 
-# Get-MgGroupConversationThreadPostExtension
+# Get-MgBetaGroupConversationThreadPostExtension
 
 ## SYNOPSIS
 The collection of open extensions defined for the post.
@@ -17,7 +17,7 @@ Supports $expand.
 
 ### List1 (Default)
 ```
-Get-MgGroupConversationThreadPostExtension -ConversationId <String> -ConversationThreadId <String>
+Get-MgBetaGroupConversationThreadPostExtension -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -25,14 +25,14 @@ Get-MgGroupConversationThreadPostExtension -ConversationId <String> -Conversatio
 
 ### Get1
 ```
-Get-MgGroupConversationThreadPostExtension -ConversationId <String> -ConversationThreadId <String>
+Get-MgBetaGroupConversationThreadPostExtension -ConversationId <String> -ConversationThreadId <String>
  -ExtensionId <String> -GroupId <String> -PostId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupConversationThreadPostExtension -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupConversationThreadPostExtension -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -172,7 +172,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -278,11 +278,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension
 
 ### System.String
 

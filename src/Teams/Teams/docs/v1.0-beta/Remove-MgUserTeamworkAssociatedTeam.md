@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mguserteamworkassociatedteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mguserteamworkassociatedteam
 schema: 2.0.0
 ---
 
-# Remove-MgUserTeamworkAssociatedTeam
+# Remove-MgBetaUserTeamworkAssociatedTeam
 
 ## SYNOPSIS
 Delete navigation property associatedTeams for users
@@ -14,13 +14,13 @@ Delete navigation property associatedTeams for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserTeamworkAssociatedTeam -AssociatedTeamInfoId <String> -UserId <String> [-IfMatch <String>]
+Remove-MgBetaUserTeamworkAssociatedTeam -AssociatedTeamInfoId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserTeamworkAssociatedTeam -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserTeamworkAssociatedTeam -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

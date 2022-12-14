@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuser
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationuser
 schema: 2.0.0
 ---
 
-# Get-MgEducationUser
+# Get-MgBetaEducationUser
 
 ## SYNOPSIS
 Get users from education
@@ -14,32 +14,32 @@ Get users from education
 
 ### List (Default)
 ```
-Get-MgEducationUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaEducationUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEducationUser -EducationUserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationUser -EducationUserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgEducationUser -EducationUserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationUser -EducationUserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationUser -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationUser -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgEducationUser -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationUser -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -48,22 +48,22 @@ Get users from education
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationUser Cmdlet
+### Example 1: Using the Get-MgBetaEducationUser Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationUser
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationUser
 ```
 
-This example shows how to use the Get-MgEducationUser Cmdlet.
+This example shows how to use the Get-MgBetaEducationUser Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEducationUser Cmdlet
+### Example 2: Using the Get-MgBetaEducationUser Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationUser -EducationUserId $educationUserId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationUser -EducationUserId $educationUserId
 ```
 
-This example shows how to use the Get-MgEducationUser Cmdlet.
+This example shows how to use the Get-MgBetaEducationUser Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -255,13 +255,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationUser
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser
 
 ## NOTES
 

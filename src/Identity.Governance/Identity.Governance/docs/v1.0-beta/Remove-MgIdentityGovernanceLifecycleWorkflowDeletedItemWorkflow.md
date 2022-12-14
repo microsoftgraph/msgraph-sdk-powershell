@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernancelifecycleworkflowdeleteditemworkflow
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernancelifecycleworkflowdeleteditemworkflow
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow
+# Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow
 
 ## SYNOPSIS
 Delete navigation property workflows for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property workflows for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId <String> [-IfMatch <String>]
+Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -InputObject <IIdentityGovernanceIdentity>
+Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -InputObject <IIdentityGovernanceIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property workflows for identityGovernance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId $workflowId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId $workflowId
 ```
 
-This example shows how to use the Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

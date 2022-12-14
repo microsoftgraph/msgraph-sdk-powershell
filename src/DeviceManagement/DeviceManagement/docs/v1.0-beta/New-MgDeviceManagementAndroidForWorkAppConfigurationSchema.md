@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementandroidforworkappconfigurationschema
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementandroidforworkappconfigurationschema
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementAndroidForWorkAppConfigurationSchema
+# New-MgBetaDeviceManagementAndroidForWorkAppConfigurationSchema
 
 ## SYNOPSIS
 Create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to androidForWorkAppConfigurationSchemas for devi
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementAndroidForWorkAppConfigurationSchema [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementAndroidForWorkAppConfigurationSchema [-AdditionalProperties <Hashtable>]
  [-ExampleJsonInputFile <String>] [-Id <String>]
  [-SchemaItems <IMicrosoftGraphAndroidForWorkAppConfigurationSchemaItem[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementAndroidForWorkAppConfigurationSchema [-AdditionalPropertie
 
 ### Create
 ```
-New-MgDeviceManagementAndroidForWorkAppConfigurationSchema
+New-MgBetaDeviceManagementAndroidForWorkAppConfigurationSchema
  -BodyParameter <IMicrosoftGraphAndroidForWorkAppConfigurationSchema> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Schema describing an Android for Work application's custom configurations.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
 Parameter Sets: Create
 Aliases:
 
@@ -101,7 +101,7 @@ Collection of items each representing a named configuration option in the schema
 To construct, please use Get-Help -Online and see NOTES section for SCHEMAITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchemaItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchemaItem[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -148,11 +148,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
 
 ## NOTES
 

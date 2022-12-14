@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/unpublish-mggroupdrivelistcontenttype
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/unpublish-mggroupdrivelistcontenttype
 schema: 2.0.0
 ---
 
-# Unpublish-MgGroupDriveListContentType
+# Unpublish-MgBetaGroupDriveListContentType
 
 ## SYNOPSIS
 Unpublish a [contentType][] from a content type hub site.
@@ -14,13 +14,13 @@ Unpublish a [contentType][] from a content type hub site.
 
 ### Unpublish (Default)
 ```
-Unpublish-MgGroupDriveListContentType -ContentTypeId <String> -DriveId <String> -GroupId <String> [-PassThru]
+Unpublish-MgBetaGroupDriveListContentType -ContentTypeId <String> -DriveId <String> -GroupId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnpublishViaIdentity
 ```
-Unpublish-MgGroupDriveListContentType -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Unpublish-MgBetaGroupDriveListContentType -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: UnpublishViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

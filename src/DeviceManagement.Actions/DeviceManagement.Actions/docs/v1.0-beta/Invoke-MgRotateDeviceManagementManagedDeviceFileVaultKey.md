@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgrotatedevicemanagementmanageddevicefilevaultkey
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgrotatedevicemanagementmanageddevicefilevaultkey
 schema: 2.0.0
 ---
 
-# Invoke-MgRotateDeviceManagementManagedDeviceFileVaultKey
+# Invoke-MgBetaRotateDeviceManagementManagedDeviceFileVaultKey
 
 ## SYNOPSIS
 Invoke action rotateFileVaultKey
@@ -14,13 +14,13 @@ Invoke action rotateFileVaultKey
 
 ### Rotate (Default)
 ```
-Invoke-MgRotateDeviceManagementManagedDeviceFileVaultKey -ManagedDeviceId <String> [-PassThru] [-Confirm]
+Invoke-MgBetaRotateDeviceManagementManagedDeviceFileVaultKey -ManagedDeviceId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### RotateViaIdentity
 ```
-Invoke-MgRotateDeviceManagementManagedDeviceFileVaultKey -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaRotateDeviceManagementManagedDeviceFileVaultKey -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RotateViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

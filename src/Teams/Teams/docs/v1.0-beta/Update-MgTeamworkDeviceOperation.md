@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgteamworkdeviceoperation
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgteamworkdeviceoperation
 schema: 2.0.0
 ---
 
-# Update-MgTeamworkDeviceOperation
+# Update-MgBetaTeamworkDeviceOperation
 
 ## SYNOPSIS
 Update the navigation property operations in teamwork
@@ -14,7 +14,7 @@ Update the navigation property operations in teamwork
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTeamworkDeviceOperation -TeamworkDeviceId <String> -TeamworkDeviceOperationId <String>
+Update-MgBetaTeamworkDeviceOperation -TeamworkDeviceId <String> -TeamworkDeviceOperationId <String>
  [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphOperationError>] [-Id <String>]
  [-LastActionBy <IMicrosoftGraphIdentitySet>] [-LastActionDateTime <DateTime>] [-OperationType <String>]
@@ -23,19 +23,19 @@ Update-MgTeamworkDeviceOperation -TeamworkDeviceId <String> -TeamworkDeviceOpera
 
 ### Update
 ```
-Update-MgTeamworkDeviceOperation -TeamworkDeviceId <String> -TeamworkDeviceOperationId <String>
+Update-MgBetaTeamworkDeviceOperation -TeamworkDeviceId <String> -TeamworkDeviceOperationId <String>
  -BodyParameter <IMicrosoftGraphTeamworkDeviceOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTeamworkDeviceOperation -InputObject <ITeamsIdentity>
+Update-MgBetaTeamworkDeviceOperation -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphTeamworkDeviceOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTeamworkDeviceOperation -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaTeamworkDeviceOperation -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CompletedDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Error <IMicrosoftGraphOperationError>] [-Id <String>] [-LastActionBy <IMicrosoftGraphIdentitySet>]
  [-LastActionDateTime <DateTime>] [-OperationType <String>] [-StartedDateTime <DateTime>] [-Status <String>]
@@ -69,7 +69,7 @@ teamworkDeviceOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDeviceOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDeviceOperation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -131,7 +131,7 @@ operationError
 To construct, please use Get-Help -Online and see NOTES section for ERROR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOperationError
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOperationError
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTACTIONBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -331,9 +331,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDeviceOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDeviceOperation
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

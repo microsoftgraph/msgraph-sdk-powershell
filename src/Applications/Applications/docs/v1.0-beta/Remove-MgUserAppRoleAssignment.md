@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mguserapproleassignment
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mguserapproleassignment
 schema: 2.0.0
 ---
 
-# Remove-MgUserAppRoleAssignment
+# Remove-MgBetaUserAppRoleAssignment
 
 ## SYNOPSIS
 Delete navigation property appRoleAssignments for users
@@ -14,13 +14,13 @@ Delete navigation property appRoleAssignments for users
 
 ### Delete (Default)
 ```
-Remove-MgUserAppRoleAssignment -AppRoleAssignmentId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserAppRoleAssignment -AppRoleAssignmentId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserAppRoleAssignment -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserAppRoleAssignment -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,7 +31,7 @@ Delete navigation property appRoleAssignments for users
 
 ### Example 1: Remove a user's application role assignment
 ```powershell
-Remove-MgUserAppRoleAssignment ` 
+Remove-MgBetaUserAppRoleAssignment ` 
 -AppRoleAssignmentID '01B8ir38J0eoiYqyMt_qAVDX9vgSB6xDur4zn5zOluM' ` 
 -UserId '8a7c50d3-fcbd-4727-a889-8ab232dfea01'
 ```
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

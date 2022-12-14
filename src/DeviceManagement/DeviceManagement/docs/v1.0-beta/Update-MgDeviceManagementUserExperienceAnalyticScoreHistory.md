@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticscorehistory
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticscorehistory
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticScoreHistory
+# Update-MgBetaDeviceManagementUserExperienceAnalyticScoreHistory
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsScoreHistory in deviceManagement
@@ -14,28 +14,28 @@ Update the navigation property userExperienceAnalyticsScoreHistory in deviceMana
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticScoreHistory -UserExperienceAnalyticsScoreHistoryId <String>
+Update-MgBetaDeviceManagementUserExperienceAnalyticScoreHistory -UserExperienceAnalyticsScoreHistoryId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-StartupDateTime <DateTime>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticScoreHistory -UserExperienceAnalyticsScoreHistoryId <String>
+Update-MgBetaDeviceManagementUserExperienceAnalyticScoreHistory -UserExperienceAnalyticsScoreHistoryId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsScoreHistory> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticScoreHistory -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticScoreHistory -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsScoreHistory> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticScoreHistory -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticScoreHistory -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-StartupDateTime <DateTime>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ The user experience analytics device startup score history.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsScoreHistory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsScoreHistory
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -191,9 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsScoreHistory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsScoreHistory
 
 ## OUTPUTS
 

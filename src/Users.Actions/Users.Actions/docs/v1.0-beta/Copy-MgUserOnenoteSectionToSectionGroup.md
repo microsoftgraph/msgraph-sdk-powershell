@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/copy-mguseronenotesectiontosectiongroup
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/copy-mguseronenotesectiontosectiongroup
 schema: 2.0.0
 ---
 
-# Copy-MgUserOnenoteSectionToSectionGroup
+# Copy-MgBetaUserOnenoteSectionToSectionGroup
 
 ## SYNOPSIS
 Copies a section to a specific section group.
@@ -15,28 +15,28 @@ For Copy operations, you follow an asynchronous calling pattern:  First call the
 
 ### CopyExpanded (Default)
 ```
-Copy-MgUserOnenoteSectionToSectionGroup -OnenoteSectionId <String> -UserId <String>
+Copy-MgBetaUserOnenoteSectionToSectionGroup -OnenoteSectionId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-GroupId <String>] [-Id <String>] [-RenameAs <String>]
  [-SiteCollectionId <String>] [-SiteId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy
 ```
-Copy-MgUserOnenoteSectionToSectionGroup -OnenoteSectionId <String> -UserId <String>
+Copy-MgBetaUserOnenoteSectionToSectionGroup -OnenoteSectionId <String> -UserId <String>
  -BodyParameter <IPathsRppvczUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
-Copy-MgUserOnenoteSectionToSectionGroup -InputObject <IUsersActionsIdentity>
+Copy-MgBetaUserOnenoteSectionToSectionGroup -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsRppvczUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
-Copy-MgUserOnenoteSectionToSectionGroup -InputObject <IUsersActionsIdentity>
+Copy-MgBetaUserOnenoteSectionToSectionGroup -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-GroupId <String>] [-Id <String>] [-RenameAs <String>]
  [-SiteCollectionId <String>] [-SiteId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,19 +47,19 @@ For Copy operations, you follow an asynchronous calling pattern:  First call the
 
 ## EXAMPLES
 
-### Example 1: Using the Copy-MgUserOnenoteSectionToSectionGroup Cmdlet
+### Example 1: Using the Copy-MgBetaUserOnenoteSectionToSectionGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Id = "id-value"
 	GroupId = "groupId-value"
 	RenameAs = "renameAs-value"
 }
 # A UPN can also be used as -UserId.
-Copy-MgUserOnenoteSectionToSectionGroup -UserId $userId -OnenoteSectionId $onenoteSectionId -BodyParameter $params
+Copy-MgBetaUserOnenoteSectionToSectionGroup -UserId $userId -OnenoteSectionId $onenoteSectionId -BodyParameter $params
 ```
 
-This example shows how to use the Copy-MgUserOnenoteSectionToSectionGroup Cmdlet.
+This example shows how to use the Copy-MgBetaUserOnenoteSectionToSectionGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsRppvczUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsRppvczUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Copy, CopyViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
 Aliases:
 
@@ -252,13 +252,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsRppvczUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsRppvczUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteOperation
 
 ## NOTES
 

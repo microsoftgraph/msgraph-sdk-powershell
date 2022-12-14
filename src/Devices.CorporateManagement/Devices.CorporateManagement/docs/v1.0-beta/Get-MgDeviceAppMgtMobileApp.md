@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmobileapp
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmobileapp
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtMobileApp
+# Get-MgBetaDeviceAppMgtMobileApp
 
 ## SYNOPSIS
 The mobile apps.
@@ -14,20 +14,20 @@ The mobile apps.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtMobileApp [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDeviceAppMgtMobileApp [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtMobileApp -MobileAppId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceAppMgtMobileApp -MobileAppId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,17 +225,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp1
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementMobileApp
+### Get-MgBetaDeviceAppManagementMobileApp
 
 COMPLEX PARAMETER PROPERTIES
 

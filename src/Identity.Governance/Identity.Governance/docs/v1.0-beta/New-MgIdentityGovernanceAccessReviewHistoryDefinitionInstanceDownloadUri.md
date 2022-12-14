@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernanceaccessreviewhistorydefinitioninstancedownloaduri
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernanceaccessreviewhistorydefinitioninstancedownloaduri
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri
+# New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri
 
 ## SYNOPSIS
 Generates a URI for an accessReviewHistoryInstance object the **status** for which is `done`.
@@ -16,14 +16,14 @@ Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUr
 
 ### Generate (Default)
 ```
-New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri
+New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri
  -AccessReviewHistoryDefinitionId <String> -AccessReviewHistoryInstanceId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### GenerateViaIdentity
 ```
-New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri
+New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri
  -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -34,13 +34,13 @@ Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUr
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri Cmdlet
+### Example 1: Using the New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri -AccessReviewHistoryDefinitionId $accessReviewHistoryDefinitionId -AccessReviewHistoryInstanceId $accessReviewHistoryInstanceId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri -AccessReviewHistoryDefinitionId $accessReviewHistoryDefinitionId -AccessReviewHistoryInstanceId $accessReviewHistoryInstanceId
 ```
 
-This example shows how to use the New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GenerateViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryInstance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryInstance
 
 ## NOTES
 

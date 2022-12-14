@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mguserchat
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mguserchat
 schema: 2.0.0
 ---
 
-# Get-MgUserChat
+# Get-MgBetaUserChat
 
 ## SYNOPSIS
 Get chats from users
@@ -14,20 +14,20 @@ Get chats from users
 
 ### List1 (Default)
 ```
-Get-MgUserChat -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserChat -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserChat -ChatId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserChat -ChatId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserChat -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserChat -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,40 +36,40 @@ Get chats from users
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserChat Cmdlet
+### Example 1: Using the Get-MgBetaUserChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserChat -UserId $userId -ChatId $chatId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserChat -UserId $userId -ChatId $chatId
 ```
 
-This example shows how to use the Get-MgUserChat Cmdlet.
+This example shows how to use the Get-MgBetaUserChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserChat Cmdlet
+### Example 2: Using the Get-MgBetaUserChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserChat -UserId $userId -ExpandProperty "members" -Filter "members/any(o: o/displayname eq 'Peter Parker')" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserChat -UserId $userId -ExpandProperty "members" -Filter "members/any(o: o/displayname eq 'Peter Parker')" 
 ```
 
-This example shows how to use the Get-MgUserChat Cmdlet.
+This example shows how to use the Get-MgBetaUserChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgUserChat Cmdlet
+### Example 3: Using the Get-MgBetaUserChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserChat -UserId $userId -ExpandProperty "members" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserChat -UserId $userId -ExpandProperty "members" 
 ```
 
-This example shows how to use the Get-MgUserChat Cmdlet.
+This example shows how to use the Get-MgBetaUserChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgUserChat Cmdlet
+### Example 4: Using the Get-MgBetaUserChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserChat -UserId $userId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserChat -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserChat Cmdlet.
+This example shows how to use the Get-MgBetaUserChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -276,11 +276,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChat
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChat
 
 ## NOTES
 

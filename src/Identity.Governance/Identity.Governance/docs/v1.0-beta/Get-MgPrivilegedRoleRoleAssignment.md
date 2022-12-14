@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedroleroleassignment
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedroleroleassignment
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedRoleRoleAssignment
+# Get-MgBetaPrivilegedRoleRoleAssignment
 
 ## SYNOPSIS
 Retrieve the properties and relationships of privilegedRoleAssignment object.
@@ -14,38 +14,38 @@ Retrieve the properties and relationships of privilegedRoleAssignment object.
 
 ### List (Default)
 ```
-Get-MgPrivilegedRoleRoleAssignment [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPrivilegedRoleRoleAssignment [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPrivilegedRoleRoleAssignment -PrivilegedRoleAssignmentId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedRoleRoleAssignment -PrivilegedRoleAssignmentId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgPrivilegedRoleRoleAssignment -PrivilegedRoleAssignmentId <String> -PrivilegedRoleId <String>
+Get-MgBetaPrivilegedRoleRoleAssignment -PrivilegedRoleAssignmentId <String> -PrivilegedRoleId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedRoleRoleAssignment -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedRoleRoleAssignment -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPrivilegedRoleRoleAssignment -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedRoleRoleAssignment -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgPrivilegedRoleRoleAssignment -PrivilegedRoleId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPrivilegedRoleRoleAssignment -PrivilegedRoleId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -55,49 +55,49 @@ Retrieve the properties and relationships of privilegedRoleAssignment object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrivilegedRoleRoleAssignment Cmdlet
+### Example 1: Using the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedRoleRoleAssignment -PrivilegedRoleAssignmentId $privilegedRoleAssignmentId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedRoleRoleAssignment -PrivilegedRoleAssignmentId $privilegedRoleAssignmentId
 ```
 
-This example shows how to use the Get-MgPrivilegedRoleRoleAssignment Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPrivilegedRoleRoleAssignment Cmdlet
+### Example 2: Using the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedRoleRoleAssignment
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedRoleRoleAssignment
 ```
 
-This example shows how to use the Get-MgPrivilegedRoleRoleAssignment Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgPrivilegedRoleRoleAssignment Cmdlet
+### Example 3: Using the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedRoleRoleAssignment -Filter "isElevated eq true" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedRoleRoleAssignment -Filter "isElevated eq true" 
 ```
 
-This example shows how to use the Get-MgPrivilegedRoleRoleAssignment Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgPrivilegedRoleRoleAssignment Cmdlet
+### Example 4: Using the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedRoleRoleAssignment -Filter "isElevated eq true and expirationDateTime eq null" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedRoleRoleAssignment -Filter "isElevated eq true and expirationDateTime eq null" 
 ```
 
-This example shows how to use the Get-MgPrivilegedRoleRoleAssignment Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Get-MgPrivilegedRoleRoleAssignment Cmdlet
+### Example 5: Using the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedRoleRoleAssignment -Filter "isElevated eq true and expirationDateTime ne null or isElevated eq false" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedRoleRoleAssignment -Filter "isElevated eq true and expirationDateTime ne null or isElevated eq false" 
 ```
 
-This example shows how to use the Get-MgPrivilegedRoleRoleAssignment Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedRoleRoleAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -168,7 +168,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -304,11 +304,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## NOTES
 

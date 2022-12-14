@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticdevicestartuphistory
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticdevicestartuphistory
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
+# Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupHistory
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsDeviceStartupHistory in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsDeviceStartupHistory in de
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupHistory
  -UserExperienceAnalyticsDeviceStartupHistoryId <String> [-AdditionalProperties <Hashtable>]
  [-CoreBootTimeInMS <Int32>] [-CoreLoginTimeInMS <Int32>] [-DeviceId <String>]
  [-FeatureUpdateBootTimeInMS <Int32>] [-GroupPolicyBootTimeInMS <Int32>] [-GroupPolicyLoginTimeInMS <Int32>]
@@ -27,7 +27,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupHistory
  -UserExperienceAnalyticsDeviceStartupHistoryId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -35,14 +35,14 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupHistory -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupHistory -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CoreBootTimeInMS <Int32>] [-CoreLoginTimeInMS <Int32>]
  [-DeviceId <String>] [-FeatureUpdateBootTimeInMS <Int32>] [-GroupPolicyBootTimeInMS <Int32>]
  [-GroupPolicyLoginTimeInMS <Int32>] [-Id <String>] [-IsFeatureUpdate] [-IsFirstLogin]
@@ -79,7 +79,7 @@ The user experience analytics device startup history entity contains device boot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -201,7 +201,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 Operating System restart category
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsOperatingSystemRestartCategory
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsOperatingSystemRestartCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -430,9 +430,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
 
 ## OUTPUTS
 

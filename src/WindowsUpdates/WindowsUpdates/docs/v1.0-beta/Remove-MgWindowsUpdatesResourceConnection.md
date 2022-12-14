@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/remove-mgwindowsupdatesresourceconnection
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/remove-mgwindowsupdatesresourceconnection
 schema: 2.0.0
 ---
 
-# Remove-MgWindowsUpdatesResourceConnection
+# Remove-MgBetaWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
 Delete navigation property resourceConnections for admin
@@ -14,13 +14,13 @@ Delete navigation property resourceConnections for admin
 
 ### Delete (Default)
 ```
-Remove-MgWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity> [-IfMatch <String>]
+Remove-MgBetaWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,22 +29,22 @@ Delete navigation property resourceConnections for admin
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgWindowsUpdatesResourceConnection Cmdlet
+### Example 1: Using the Remove-MgBetaWindowsUpdatesResourceConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Remove-MgWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Remove-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
 ```
 
-This example shows how to use the Remove-MgWindowsUpdatesResourceConnection Cmdlet.
+This example shows how to use the Remove-MgBetaWindowsUpdatesResourceConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Remove-MgWindowsUpdatesResourceConnection Cmdlet
+### Example 2: Using the Remove-MgBetaWindowsUpdatesResourceConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Remove-MgWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Remove-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId $resourceConnectionId
 ```
 
-This example shows how to use the Remove-MgWindowsUpdatesResourceConnection Cmdlet.
+This example shows how to use the Remove-MgBetaWindowsUpdatesResourceConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -156,7 +156,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgWuResourceConnection
+### Remove-MgBetaWuResourceConnection
 
 COMPLEX PARAMETER PROPERTIES
 

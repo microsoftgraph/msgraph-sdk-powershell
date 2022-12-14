@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguseroutlooktaskgrouptaskfoldertaskattachment
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguseroutlooktaskgrouptaskfoldertaskattachment
 schema: 2.0.0
 ---
 
-# Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment
+# Get-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment
 
 ## SYNOPSIS
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
@@ -16,7 +16,7 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskGroupId <String>
+Get-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskGroupId <String>
  -OutlookTaskId <String> -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -24,14 +24,14 @@ Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment -OutlookTaskFolderId <String>
 
 ### Get
 ```
-Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment -AttachmentId <String> -OutlookTaskFolderId <String>
+Get-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment -AttachmentId <String> -OutlookTaskFolderId <String>
  -OutlookTaskGroupId <String> -OutlookTaskId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -125,7 +125,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -276,11 +276,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

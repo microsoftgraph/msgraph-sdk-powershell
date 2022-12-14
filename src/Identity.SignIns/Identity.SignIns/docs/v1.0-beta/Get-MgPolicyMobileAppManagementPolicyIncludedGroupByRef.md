@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicymobileappmanagementpolicyincludedgroupbyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicymobileappmanagementpolicyincludedgroupbyref
 schema: 2.0.0
 ---
 
-# Get-MgPolicyMobileAppManagementPolicyIncludedGroupByRef
+# Get-MgBetaPolicyMobileAppManagementPolicyIncludedGroupByRef
 
 ## SYNOPSIS
 Get the list of groups that are included in a mobile app management policy.
@@ -13,7 +13,7 @@ Get the list of groups that are included in a mobile app management policy.
 ## SYNTAX
 
 ```
-Get-MgPolicyMobileAppManagementPolicyIncludedGroupByRef -MobilityManagementPolicyId <String>
+Get-MgBetaPolicyMobileAppManagementPolicyIncludedGroupByRef -MobilityManagementPolicyId <String>
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```

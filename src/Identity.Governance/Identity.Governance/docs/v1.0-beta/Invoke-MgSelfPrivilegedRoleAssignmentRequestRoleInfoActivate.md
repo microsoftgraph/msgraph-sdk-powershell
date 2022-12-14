@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgselfprivilegedroleassignmentrequestroleinfoactivate
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgselfprivilegedroleassignmentrequestroleinfoactivate
 schema: 2.0.0
 ---
 
-# Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate
+# Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoActivate
 
 ## SYNOPSIS
 Activate the role that is assigned to the requester.
@@ -14,28 +14,28 @@ Activate the role that is assigned to the requester.
 
 ### SelfExpanded (Default)
 ```
-Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate -PrivilegedRoleAssignmentRequestId <String>
+Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoActivate -PrivilegedRoleAssignmentRequestId <String>
  [-AdditionalProperties <Hashtable>] [-Duration <String>] [-Reason <String>] [-TicketNumber <String>]
  [-TicketSystem <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Self
 ```
-Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate -PrivilegedRoleAssignmentRequestId <String>
+Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoActivate -PrivilegedRoleAssignmentRequestId <String>
  -BodyParameter <IPathsBo7GrfPrivilegedroleassignmentrequestsPrivilegedroleassignmentrequestIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SelfViaIdentity
 ```
-Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
+Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPathsBo7GrfPrivilegedroleassignmentrequestsPrivilegedroleassignmentrequestIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SelfViaIdentityExpanded
 ```
-Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
+Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Duration <String>] [-Reason <String>] [-TicketNumber <String>]
  [-TicketSystem <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBo7GrfPrivilegedroleassignmentrequestsPrivilegedroleassignmentrequestIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsBo7GrfPrivilegedroleassignmentrequestsPrivilegedroleassignmentrequestIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Self, SelfViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SelfViaIdentity, SelfViaIdentityExpanded
 Aliases:
 
@@ -205,13 +205,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsBo7GrfPrivilegedroleassignmentrequestsPrivilegedroleassignmentrequestIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsBo7GrfPrivilegedroleassignmentrequestsPrivilegedroleassignmentrequestIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## NOTES
 

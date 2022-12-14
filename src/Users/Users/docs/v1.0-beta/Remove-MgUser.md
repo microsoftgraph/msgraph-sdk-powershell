@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mguser
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/remove-mguser
 schema: 2.0.0
 ---
 
-# Remove-MgUser
+# Remove-MgBetaUser
 
 ## SYNOPSIS
 Delete user.
@@ -17,12 +17,12 @@ To learn more, see deletedItems.
 
 ### Delete1 (Default)
 ```
-Remove-MgUser -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaUser -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUser -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaUser -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,14 +36,14 @@ To learn more, see deletedItems.
 
 ### Example 1: Remove a user
 ```powershell
-Remove-MgUser -UserId '5c442efb-5e66-484a-936a-91b6810bed14'
+Remove-MgBetaUser -UserId '5c442efb-5e66-484a-936a-91b6810bed14'
 ```
 
 This example removes a user.
 
 ### Example 2: Remove a user with a confirmation
 ```powershell
-Remove-MgUser -UserId '3f80a75e-750b-49aa-a6b0-d9bf6df7b4c6' -Confirm
+Remove-MgBetaUser -UserId '3f80a75e-750b-49aa-a6b0-d9bf6df7b4c6' -Confirm
 ```
 
 This examples removes a user after the user is prompted for a confirmation.
@@ -70,7 +70,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -147,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

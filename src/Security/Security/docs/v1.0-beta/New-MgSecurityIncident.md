@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityincident
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityincident
 schema: 2.0.0
 ---
 
-# New-MgSecurityIncident
+# New-MgBetaSecurityIncident
 
 ## SYNOPSIS
 Create new navigation property to incidents for security
@@ -14,7 +14,7 @@ Create new navigation property to incidents for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityIncident [-AdditionalProperties <Hashtable>] [-Alerts <IMicrosoftGraphSecurityAlert[]>]
+New-MgBetaSecurityIncident [-AdditionalProperties <Hashtable>] [-Alerts <IMicrosoftGraphSecurityAlert[]>]
  [-AssignedTo <String>] [-Classification <String>] [-Comments <IMicrosoftGraphSecurityAlertComment[]>]
  [-CreatedDateTime <DateTime>] [-Determination <String>] [-DisplayName <String>] [-Id <String>]
  [-IncidentWebUrl <String>] [-LastUpdateDateTime <DateTime>] [-RedirectIncidentId <String>]
@@ -24,7 +24,7 @@ New-MgSecurityIncident [-AdditionalProperties <Hashtable>] [-Alerts <IMicrosoftG
 
 ### Create
 ```
-New-MgSecurityIncident -BodyParameter <IMicrosoftGraphSecurityIncident> [-Confirm] [-WhatIf]
+New-MgBetaSecurityIncident -BodyParameter <IMicrosoftGraphSecurityIncident> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for ALERTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAlert[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAlert[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -88,7 +88,7 @@ incident
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityIncident
 Parameter Sets: Create
 Aliases:
 
@@ -119,7 +119,7 @@ Array of comments created by the Security Operations (SecOps) team when the inci
 To construct, please use Get-Help -Online and see NOTES section for COMMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAlertComment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAlertComment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -333,11 +333,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityIncident
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityIncident
 
 ## NOTES
 

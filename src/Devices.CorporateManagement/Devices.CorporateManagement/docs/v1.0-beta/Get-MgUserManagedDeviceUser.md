@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgusermanageddeviceuser
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgusermanageddeviceuser
 schema: 2.0.0
 ---
 
-# Get-MgUserManagedDeviceUser
+# Get-MgBetaUserManagedDeviceUser
 
 ## SYNOPSIS
 The primary users associated with the managed device.
@@ -13,7 +13,7 @@ The primary users associated with the managed device.
 ## SYNTAX
 
 ```
-Get-MgUserManagedDeviceUser -ManagedDeviceId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserManagedDeviceUser -ManagedDeviceId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -213,7 +213,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser
 
 ## NOTES
 

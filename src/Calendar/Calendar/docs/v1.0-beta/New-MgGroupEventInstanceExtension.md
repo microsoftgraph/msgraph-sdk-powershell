@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mggroupeventinstanceextension
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mggroupeventinstanceextension
 schema: 2.0.0
 ---
 
-# New-MgGroupEventInstanceExtension
+# New-MgBetaGroupEventInstanceExtension
 
 ## SYNOPSIS
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -17,25 +17,25 @@ The table in the Permissions section lists the resources that support open exten
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupEventInstanceExtension -EventId <String> -EventId1 <String> -GroupId <String>
+New-MgBetaGroupEventInstanceExtension -EventId <String> -EventId1 <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupEventInstanceExtension -EventId <String> -EventId1 <String> -GroupId <String>
+New-MgBetaGroupEventInstanceExtension -EventId <String> -EventId1 <String> -GroupId <String>
  -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupEventInstanceExtension -InputObject <ICalendarIdentity> -BodyParameter <Hashtable> [-Confirm]
+New-MgBetaGroupEventInstanceExtension -InputObject <ICalendarIdentity> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupEventInstanceExtension -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupEventInstanceExtension -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ### System.Collections.Hashtable
 

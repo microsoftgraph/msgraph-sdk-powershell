@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipal
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipal
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipal
+# Get-MgBetaServicePrincipal
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a servicePrincipal object.
@@ -14,20 +14,20 @@ Retrieve the properties and relationships of a servicePrincipal object.
 
 ### List (Default)
 ```
-Get-MgServicePrincipal [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaServicePrincipal [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServicePrincipal -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaServicePrincipal -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipal -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipal -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,8 +38,8 @@ Retrieve the properties and relationships of a servicePrincipal object.
 
 ### Example 1: Get all service principals from the directory
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal
 
 Id             : 304ae362-7953-4d08-8e15-aeece4d01017c
 DisplayName    : IC3 Gateway TestClone
@@ -56,13 +56,13 @@ This example retrieves all service principals from the directory.
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 2: Get the service principal by display name
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal -Filter "DisplayName eq 'Power BI Service'" | 
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal -Filter "DisplayName eq 'Power BI Service'" | 
   Format-List Id, DisplayName,AppId, SignInAudience
 
 Id             : 9518fb8f-8d9e-4aae-be20-d398f9cc59ac
@@ -75,13 +75,13 @@ This example gets the service principal by display name.
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 3: Get a count of the service principals
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal -ConsistencyLevel eventual -Count spCount
 
 Id                                   DisplayName                                                    AppId                                SignInAudience                     PublisherName
 --                                   -----------                                                    -----                                --------------                     -------------
@@ -98,13 +98,13 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 4: Use -Filter and -Top to get five service principals with a display name that starts with 'a' including a count of returned objects
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount -Filter "startsWith(DisplayName, 'a')" -Top 5
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal -ConsistencyLevel eventual -Count spCount -Filter "startsWith(DisplayName, 'a')" -Top 5
 
 Id                                   DisplayName                       AppId                                SignInAudience      PublisherName
 --                                   -----------                       -----                                --------------      -------------
@@ -122,13 +122,13 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 5: Use -Search to get service principals with display names that contain the letters 'Team' including a count of returned objects
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount -Search '"DisplayName:Team"'
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal -ConsistencyLevel eventual -Count spCount -Search '"DisplayName:Team"'
 
 Id                                   DisplayName                                                 AppId                                SignInAudience                     PublisherName
 --                                   -----------                                                 -----                                --------------                     -------------
@@ -148,8 +148,8 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ## PARAMETERS
 
@@ -235,7 +235,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -356,11 +356,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipal1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipal1
 
 ## NOTES
 

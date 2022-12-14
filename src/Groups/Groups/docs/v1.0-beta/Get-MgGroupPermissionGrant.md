@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggrouppermissiongrant
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggrouppermissiongrant
 schema: 2.0.0
 ---
 
-# Get-MgGroupPermissionGrant
+# Get-MgBetaGroupPermissionGrant
 
 ## SYNOPSIS
 The permissions that have been granted for a group to a specific application.
@@ -15,20 +15,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgGroupPermissionGrant -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaGroupPermissionGrant -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupPermissionGrant -GroupId <String> -ResourceSpecificPermissionGrantId <String>
+Get-MgBetaGroupPermissionGrant -GroupId <String> -ResourceSpecificPermissionGrantId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupPermissionGrant -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupPermissionGrant -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,13 +38,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupPermissionGrant Cmdlet
+### Example 1: Using the Get-MgBetaGroupPermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupPermissionGrant -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupPermissionGrant -GroupId $groupId
 ```
 
-This example shows how to use the Get-MgGroupPermissionGrant Cmdlet.
+This example shows how to use the Get-MgBetaGroupPermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -251,11 +251,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
 
 ## NOTES
 

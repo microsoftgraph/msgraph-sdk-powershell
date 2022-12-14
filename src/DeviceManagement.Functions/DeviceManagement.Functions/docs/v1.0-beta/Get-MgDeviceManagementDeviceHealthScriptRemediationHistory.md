@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementdevicehealthscriptremediationhistory
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementdevicehealthscriptremediationhistory
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceHealthScriptRemediationHistory
+# Get-MgBetaDeviceManagementDeviceHealthScriptRemediationHistory
 
 ## SYNOPSIS
 Function to get the number of remediations by a device health scripts
@@ -14,12 +14,12 @@ Function to get the number of remediations by a device health scripts
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementDeviceHealthScriptRemediationHistory -DeviceHealthScriptId <String> [<CommonParameters>]
+Get-MgBetaDeviceManagementDeviceHealthScriptRemediationHistory -DeviceHealthScriptId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceHealthScriptRemediationHistory -InputObject <IDeviceManagementFunctionsIdentity>
+Get-MgBetaDeviceManagementDeviceHealthScriptRemediationHistory -InputObject <IDeviceManagementFunctionsIdentity>
  [<CommonParameters>]
 ```
 
@@ -50,7 +50,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -66,11 +66,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptRemediationHistory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptRemediationHistory
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/start-mgteamworkdevicediagnostic
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/start-mgteamworkdevicediagnostic
 schema: 2.0.0
 ---
 
-# Start-MgTeamworkDeviceDiagnostic
+# Start-MgBetaTeamworkDeviceDiagnostic
 
 ## SYNOPSIS
 Run and generate diagnostic logs for the specified Microsoft Teams-enabled device.
@@ -15,13 +15,13 @@ This API triggers a long-running operation used to generate logs for a device.
 
 ### Run (Default)
 ```
-Start-MgTeamworkDeviceDiagnostic -TeamworkDeviceId <String> [-PassThru] [-Confirm] [-WhatIf]
+Start-MgBetaTeamworkDeviceDiagnostic -TeamworkDeviceId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### RunViaIdentity
 ```
-Start-MgTeamworkDeviceDiagnostic -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Start-MgBetaTeamworkDeviceDiagnostic -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ This API triggers a long-running operation used to generate logs for a device.
 
 ## EXAMPLES
 
-### Example 1: Using the Start-MgTeamworkDeviceDiagnostic Cmdlet
+### Example 1: Using the Start-MgBetaTeamworkDeviceDiagnostic Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Start-MgTeamworkDeviceDiagnostic -TeamworkDeviceId $teamworkDeviceId
+Import-Module Microsoft.Graph.Beta.Teams
+Start-MgBetaTeamworkDeviceDiagnostic -TeamworkDeviceId $teamworkDeviceId
 ```
 
-This example shows how to use the Start-MgTeamworkDeviceDiagnostic Cmdlet.
+This example shows how to use the Start-MgBetaTeamworkDeviceDiagnostic Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -47,7 +47,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: RunViaIdentity
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

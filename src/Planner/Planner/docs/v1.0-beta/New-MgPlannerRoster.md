@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/new-mgplannerroster
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/new-mgplannerroster
 schema: 2.0.0
 ---
 
-# New-MgPlannerRoster
+# New-MgBetaPlannerRoster
 
 ## SYNOPSIS
 Create a new plannerRoster object.
@@ -14,14 +14,14 @@ Create a new plannerRoster object.
 
 ### CreateExpanded (Default)
 ```
-New-MgPlannerRoster [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaPlannerRoster [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Members <IMicrosoftGraphPlannerRosterMember[]>] [-Plans <IMicrosoftGraphPlannerPlan1[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPlannerRoster -BodyParameter <IMicrosoftGraphPlannerRoster> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPlannerRoster -BodyParameter <IMicrosoftGraphPlannerRoster> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,16 +29,16 @@ Create a new plannerRoster object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPlannerRoster Cmdlet
+### Example 1: Using the New-MgBetaPlannerRoster Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
-	"@odata.type" = "#microsoft.graph.plannerRoster"
+	"@odata.type" = "#Microsoft.Graph.Beta.plannerRoster"
 }
-New-MgPlannerRoster -BodyParameter $params
+New-MgBetaPlannerRoster -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPlannerRoster Cmdlet.
+This example shows how to use the New-MgBetaPlannerRoster Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -63,7 +63,7 @@ plannerRoster
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRoster
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRoster
 Parameter Sets: Create
 Aliases:
 
@@ -95,7 +95,7 @@ Retrieves the members of the plannerRoster.
 To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRosterMember[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRosterMember[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -111,7 +111,7 @@ Retrieves the plans contained by the plannerRoster.
 To construct, please use Get-Help -Online and see NOTES section for PLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -158,11 +158,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRoster
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRoster
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRoster
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRoster
 
 ## NOTES
 

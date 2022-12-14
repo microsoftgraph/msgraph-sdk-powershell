@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgacceptidentitygovernanceaccessreviewdecisioninstancerecommendation
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgacceptidentitygovernanceaccessreviewdecisioninstancerecommendation
 schema: 2.0.0
 ---
 
-# Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation
+# Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation
 
 ## SYNOPSIS
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
@@ -16,13 +16,13 @@ If there is not a recommendation on an accessReviewInstanceDecisionItem object n
 
 ### Accept (Default)
 ```
-Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation
+Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation
  -AccessReviewInstanceDecisionItemId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentity
 ```
-Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation
+Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation
  -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: AcceptViaIdentity
 Aliases:
 
@@ -117,7 +117,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

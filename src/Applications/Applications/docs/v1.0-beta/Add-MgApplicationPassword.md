@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/add-mgapplicationpassword
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/add-mgapplicationpassword
 schema: 2.0.0
 ---
 
-# Add-MgApplicationPassword
+# Add-MgBetaApplicationPassword
 
 ## SYNOPSIS
 Adds a strong password to an application.
@@ -14,27 +14,27 @@ Adds a strong password to an application.
 
 ### AddExpanded (Default)
 ```
-Add-MgApplicationPassword -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+Add-MgBetaApplicationPassword -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-PasswordCredential <IMicrosoftGraphPasswordCredential>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
-Add-MgApplicationPassword -ApplicationId <String>
+Add-MgBetaApplicationPassword -ApplicationId <String>
  -BodyParameter <IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-MgApplicationPassword -InputObject <IApplicationsIdentity>
+Add-MgBetaApplicationPassword -InputObject <IApplicationsIdentity>
  -BodyParameter <IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
-Add-MgApplicationPassword -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+Add-MgBetaApplicationPassword -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-PasswordCredential <IMicrosoftGraphPasswordCredential>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -46,7 +46,7 @@ Adds a strong password to an application.
 ### Example 1: Add a password credential to an application with a six month expiry
 ```powershell
 
-Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgBetaGraph -Scopes 'Application.ReadWrite.All'
 
 $appObjectId = 'eaf1e531-0d58-4874-babe-b9a9f436e6c3'
 
@@ -55,7 +55,7 @@ $passwordCred = @{
    endDateTime = (Get-Date).AddMonths(6)
 }
 
-$secret = Add-MgApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
+$secret = Add-MgBetaApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
 $secret | Format-List
 
 CustomKeyIdentifier  :
@@ -66,7 +66,7 @@ KeyId                : c82bb763-741b-4575-9d9d-df7e766f6999
 SecretText           : Q_e8Q~ZDWJD.bkgajbREp-VFFUayCuEk8b1hDcr9
 StartDateTime        : 26/5/2022 1:03:31 pm
 AdditionalProperties : {[@odata.context,
-                       https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.passwordCredential]}
+                       https://graph.microsoft.com/v1.0/$metadata#Microsoft.Graph.Beta.passwordCredential]}
 ```
 
 Add a password to an application that expires in six months from the current date.
@@ -74,7 +74,7 @@ Add a password to an application that expires in six months from the current dat
 ### Example 2: Add a password credential to an application with a start date
 ```powershell
 
-Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgBetaGraph -Scopes 'Application.ReadWrite.All'
 
 $appObjectId = 'eaf1e531-0d58-4874-babe-b9a9f436e6c3'
 
@@ -87,7 +87,7 @@ $passwordCred = @{
    endDateTime = $endDate
 }
 
-$secret = Add-MgApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
+$secret = Add-MgBetaApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
 $secret | Format-List
 
 CustomKeyIdentifier  :
@@ -98,7 +98,7 @@ KeyId                : 082bf20f-63d6-4970-bb4e-55e504f50d8b
 SecretText           : TiA8Q~Zs7ej1cGtlW0qnmuFi~JlxXTZew_tU1bGA
 StartDateTime        : 26/5/2022 2:00:00 pm
 AdditionalProperties : {[@odata.context,
-                       https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.passwordCredential]}
+                       https://graph.microsoft.com/v1.0/$metadata#Microsoft.Graph.Beta.passwordCredential]}
 ```
 
 Add a password to an application that becomes valid at 12:00 am the next day and is valid for six months.
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add, AddViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
 Aliases:
 
@@ -174,7 +174,7 @@ passwordCredential
 To construct, please use Get-Help -Online and see NOTES section for PASSWORDCREDENTIAL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPasswordCredential
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPasswordCredential
 Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
@@ -221,13 +221,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPasswordCredential
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPasswordCredential
 
 ## NOTES
 

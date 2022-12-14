@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgacceptusereventinstancetentatively
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgacceptusereventinstancetentatively
 schema: 2.0.0
 ---
 
-# Invoke-MgAcceptUserEventInstanceTentatively
+# Invoke-MgBetaAcceptUserEventInstanceTentatively
 
 ## SYNOPSIS
 Tentatively accept the specified event in a user calendar.
@@ -16,28 +16,28 @@ For more information on how to propose a time, and how to receive and accept a n
 
 ### AcceptExpanded (Default)
 ```
-Invoke-MgAcceptUserEventInstanceTentatively -EventId <String> -EventId1 <String> -UserId <String>
+Invoke-MgBetaAcceptUserEventInstanceTentatively -EventId <String> -EventId1 <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>]
  [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Accept
 ```
-Invoke-MgAcceptUserEventInstanceTentatively -EventId <String> -EventId1 <String> -UserId <String>
+Invoke-MgBetaAcceptUserEventInstanceTentatively -EventId <String> -EventId1 <String> -UserId <String>
  -BodyParameter <IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentity
 ```
-Invoke-MgAcceptUserEventInstanceTentatively -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaAcceptUserEventInstanceTentatively -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentityExpanded
 ```
-Invoke-MgAcceptUserEventInstanceTentatively -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaAcceptUserEventInstanceTentatively -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>]
  [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -51,7 +51,7 @@ For more information on how to propose a time, and how to receive and accept a n
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Comment = "I may not be able to make this week. How about next week?"
@@ -69,10 +69,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgAcceptUserEventTentatively -UserId $userId -EventId $eventId -BodyParameter $params
+Invoke-MgBetaAcceptUserEventTentatively -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgAcceptUserEventInstanceTentatively Cmdlet.
+This example shows how to use the Invoke-MgBetaAcceptUserEventInstanceTentatively Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Accept, AcceptViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: AcceptViaIdentity, AcceptViaIdentityExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ timeSlot
 To construct, please use Get-Help -Online and see NOTES section for PROPOSEDNEWTIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeSlot
 Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
 Aliases:
 
@@ -267,9 +267,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/enable-mgdevicemanagementunlicensedadminstrator
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/enable-mgdevicemanagementunlicensedadminstrator
 schema: 2.0.0
 ---
 
-# Enable-MgDeviceManagementUnlicensedAdminstrator
+# Enable-MgBetaDeviceManagementUnlicensedAdminstrator
 
 ## SYNOPSIS
 Upon enabling, users assigned as administrators via Role Assignment Memberships will no longer require an assigned Intune license.
@@ -15,7 +15,7 @@ Licensed administrators will continue to function as-is in that transitive membe
 ## SYNTAX
 
 ```
-Enable-MgDeviceManagementUnlicensedAdminstrator [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Enable-MgBetaDeviceManagementUnlicensedAdminstrator [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

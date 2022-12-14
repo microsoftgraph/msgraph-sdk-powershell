@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontact
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/get-mgusercontact
 schema: 2.0.0
 ---
 
-# Get-MgUserContact
+# Get-MgBetaUserContact
 
 ## SYNOPSIS
 The user's contacts.
@@ -16,19 +16,19 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserContact -UserId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaUserContact -UserId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserContact -ContactId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserContact -ContactId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserContact -InputObject <IPersonalContactsIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserContact -InputObject <IPersonalContactsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,24 +38,24 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserContact Cmdlet
+### Example 1: Using the Get-MgBetaUserContact Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 # A UPN can also be used as -UserId.
-Get-MgUserContact -UserId $userId -ContactId $contactId
+Get-MgBetaUserContact -UserId $userId -ContactId $contactId
 ```
 
-This example shows how to use the Get-MgUserContact Cmdlet.
+This example shows how to use the Get-MgBetaUserContact Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserContact Cmdlet
+### Example 2: Using the Get-MgBetaUserContact Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 # A UPN can also be used as -UserId.
-Get-MgUserContact -UserId $userId -Property "displayName,emailAddresses" 
+Get-MgBetaUserContact -UserId $userId -Property "displayName,emailAddresses" 
 ```
 
-This example shows how to use the Get-MgUserContact Cmdlet.
+This example shows how to use the Get-MgBetaUserContact Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -247,11 +247,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact1
 
 ## NOTES
 

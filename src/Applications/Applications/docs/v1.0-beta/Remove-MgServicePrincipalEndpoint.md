@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgserviceprincipalendpoint
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgserviceprincipalendpoint
 schema: 2.0.0
 ---
 
-# Remove-MgServicePrincipalEndpoint
+# Remove-MgBetaServicePrincipalEndpoint
 
 ## SYNOPSIS
 Delete navigation property endpoints for servicePrincipals
@@ -14,13 +14,13 @@ Delete navigation property endpoints for servicePrincipals
 
 ### Delete (Default)
 ```
-Remove-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String> [-IfMatch <String>]
+Remove-MgBetaServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServicePrincipalEndpoint -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaServicePrincipalEndpoint -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

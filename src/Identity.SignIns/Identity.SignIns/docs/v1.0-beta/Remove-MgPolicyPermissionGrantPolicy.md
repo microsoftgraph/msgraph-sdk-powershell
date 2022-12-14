@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicypermissiongrantpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicypermissiongrantpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyPermissionGrantPolicy
+# Remove-MgBetaPolicyPermissionGrantPolicy
 
 ## SYNOPSIS
 Delete navigation property permissionGrantPolicies for policies
@@ -14,13 +14,13 @@ Delete navigation property permissionGrantPolicies for policies
 
 ### Delete (Default)
 ```
-Remove-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,8 +31,8 @@ Delete navigation property permissionGrantPolicies for policies
 
 ### Example 1: Remove a permission grant policy
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
-Remove-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId "testtenant-sampleapp-permissions"
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Remove-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId "testtenant-sampleapp-permissions"
 ```
 
 This command deletes the specified permission grant policy in Azure AD.
@@ -59,7 +59,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

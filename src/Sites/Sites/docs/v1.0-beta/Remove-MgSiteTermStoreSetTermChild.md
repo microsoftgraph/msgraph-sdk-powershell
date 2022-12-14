@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mgsitetermstoresettermchild
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/remove-mgsitetermstoresettermchild
 schema: 2.0.0
 ---
 
-# Remove-MgSiteTermStoreSetTermChild
+# Remove-MgBetaSiteTermStoreSetTermChild
 
 ## SYNOPSIS
 Delete navigation property children for sites
@@ -14,13 +14,13 @@ Delete navigation property children for sites
 
 ### Delete1 (Default)
 ```
-Remove-MgSiteTermStoreSetTermChild -SetId <String> -SiteId <String> -TermId <String> -TermId1 <String>
+Remove-MgBetaSiteTermStoreSetTermChild -SetId <String> -SiteId <String> -TermId <String> -TermId1 <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgSiteTermStoreSetTermChild -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaSiteTermStoreSetTermChild -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -173,7 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

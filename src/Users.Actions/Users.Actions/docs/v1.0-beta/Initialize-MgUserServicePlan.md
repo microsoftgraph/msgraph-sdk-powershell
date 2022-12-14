@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/initialize-mguserserviceplan
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/initialize-mguserserviceplan
 schema: 2.0.0
 ---
 
-# Initialize-MgUserServicePlan
+# Initialize-MgBetaUserServicePlan
 
 ## SYNOPSIS
 Activate a service plan with a given `servicePlanId` and `skuId` for a given user.
@@ -14,27 +14,27 @@ Activate a service plan with a given `servicePlanId` and `skuId` for a given use
 
 ### ActivateExpanded (Default)
 ```
-Initialize-MgUserServicePlan -UserId <String> [-AdditionalProperties <Hashtable>] [-ServicePlanId <String>]
+Initialize-MgBetaUserServicePlan -UserId <String> [-AdditionalProperties <Hashtable>] [-ServicePlanId <String>]
  [-SkuId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Activate
 ```
-Initialize-MgUserServicePlan -UserId <String>
+Initialize-MgBetaUserServicePlan -UserId <String>
  -BodyParameter <IComponents2P8K5LRequestbodiesActivateserviceplanrequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ActivateViaIdentity
 ```
-Initialize-MgUserServicePlan -InputObject <IUsersActionsIdentity>
+Initialize-MgBetaUserServicePlan -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents2P8K5LRequestbodiesActivateserviceplanrequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ActivateViaIdentityExpanded
 ```
-Initialize-MgUserServicePlan -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Initialize-MgBetaUserServicePlan -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ServicePlanId <String>] [-SkuId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,18 +43,18 @@ Activate a service plan with a given `servicePlanId` and `skuId` for a given use
 
 ## EXAMPLES
 
-### Example 1: Using the Initialize-MgUserServicePlan Cmdlet
+### Example 1: Using the Initialize-MgBetaUserServicePlan Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	ServicePlanId = "28f42d6f-8034-4a0f-9d8a-a218a63b3299"
 	SkuId = "465a2a90-5e59-456d-a7b8-127b9fb2e484"
 }
 # A UPN can also be used as -UserId.
-Initialize-MgUserServicePlan -UserId $userId -BodyParameter $params
+Initialize-MgBetaUserServicePlan -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Initialize-MgUserServicePlan Cmdlet.
+This example shows how to use the Initialize-MgBetaUserServicePlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponents2P8K5LRequestbodiesActivateserviceplanrequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponents2P8K5LRequestbodiesActivateserviceplanrequestbodyContentApplicationJsonSchema
 Parameter Sets: Activate, ActivateViaIdentity
 Aliases:
 
@@ -95,7 +95,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ActivateViaIdentity, ActivateViaIdentityExpanded
 Aliases:
 
@@ -202,9 +202,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponents2P8K5LRequestbodiesActivateserviceplanrequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IComponents2P8K5LRequestbodiesActivateserviceplanrequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgsubscribedsku
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgsubscribedsku
 schema: 2.0.0
 ---
 
-# Update-MgSubscribedSku
+# Update-MgBetaSubscribedSku
 
 ## SYNOPSIS
 Update entity in subscribedSkus
@@ -14,7 +14,7 @@ Update entity in subscribedSkus
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSubscribedSku -SubscribedSkuId <String> [-AdditionalProperties <Hashtable>] [-AppliesTo <String>]
+Update-MgBetaSubscribedSku -SubscribedSkuId <String> [-AdditionalProperties <Hashtable>] [-AppliesTo <String>]
  [-CapabilityStatus <String>] [-ConsumedUnits <Int32>] [-Id <String>]
  [-PrepaidUnits <IMicrosoftGraphLicenseUnitsDetail>] [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>]
  [-SkuId <String>] [-SkuPartNumber <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgSubscribedSku -SubscribedSkuId <String> [-AdditionalProperties <Hashtab
 
 ### Update
 ```
-Update-MgSubscribedSku -SubscribedSkuId <String> -BodyParameter <IMicrosoftGraphSubscribedSku> [-PassThru]
+Update-MgBetaSubscribedSku -SubscribedSkuId <String> -BodyParameter <IMicrosoftGraphSubscribedSku> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphSubscribedSku> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-AppliesTo <String>] [-CapabilityStatus <String>] [-ConsumedUnits <Int32>] [-Id <String>]
  [-PrepaidUnits <IMicrosoftGraphLicenseUnitsDetail>] [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>]
  [-SkuId <String>] [-SkuPartNumber <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -82,7 +82,7 @@ subscribedSku
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscribedSku
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ licenseUnitsDetail
 To construct, please use Get-Help -Online and see NOTES section for PREPAIDUNITS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLicenseUnitsDetail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLicenseUnitsDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -193,7 +193,7 @@ Not nullable
 To construct, please use Get-Help -Online and see NOTES section for SERVICEPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePlanInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePlanInfo[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -286,9 +286,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscribedSku
 
 ## OUTPUTS
 

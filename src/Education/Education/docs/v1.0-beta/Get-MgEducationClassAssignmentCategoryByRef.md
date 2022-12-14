@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassassignmentcategorybyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationclassassignmentcategorybyref
 schema: 2.0.0
 ---
 
-# Get-MgEducationClassAssignmentCategoryByRef
+# Get-MgBetaEducationClassAssignmentCategoryByRef
 
 ## SYNOPSIS
 List all the categories associated with an assignment.
@@ -13,7 +13,7 @@ List all the categories associated with an assignment.
 ## SYNTAX
 
 ```
-Get-MgEducationClassAssignmentCategoryByRef -EducationAssignmentId <String> -EducationClassId <String>
+Get-MgBetaEducationClassAssignmentCategoryByRef -EducationAssignmentId <String> -EducationClassId <String>
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitetermstore
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitetermstore
 schema: 2.0.0
 ---
 
-# Get-MgSiteTermStore
+# Get-MgBetaSiteTermStore
 
 ## SYNOPSIS
 Read the properties and relationships of a store object.
@@ -14,12 +14,12 @@ Read the properties and relationships of a store object.
 
 ### Get1 (Default)
 ```
-Get-MgSiteTermStore -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSiteTermStore -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSiteTermStore -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteTermStore -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -28,22 +28,22 @@ Read the properties and relationships of a store object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteTermStore Cmdlet
+### Example 1: Using the Get-MgBetaSiteTermStore Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteTermStore -SiteId $siteId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteTermStore -SiteId $siteId
 ```
 
-This example shows how to use the Get-MgSiteTermStore Cmdlet.
+This example shows how to use the Get-MgBetaSiteTermStore Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSiteTermStore Cmdlet
+### Example 2: Using the Get-MgBetaSiteTermStore Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteTermStore -SiteId $siteId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteTermStore -SiteId $siteId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgSiteTermStore Cmdlet.
+This example shows how to use the Get-MgBetaSiteTermStore Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStore
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStore
 
 ## NOTES
 

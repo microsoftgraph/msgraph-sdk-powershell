@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementcomanageddevicemanageddevicemobileappconfigurationstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementcomanageddevicemanageddevicemobileappconfigurationstate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState
+# Get-MgBetaDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState
 
 ## SYNOPSIS
 Managed device mobile app configuration states for this device.
@@ -14,21 +14,21 @@ Managed device mobile app configuration states for this device.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
+Get-MgBetaDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
+Get-MgBetaDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
  -ManagedDeviceMobileAppConfigurationStateId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState
+Get-MgBetaDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState
  -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
 
 ## NOTES
 

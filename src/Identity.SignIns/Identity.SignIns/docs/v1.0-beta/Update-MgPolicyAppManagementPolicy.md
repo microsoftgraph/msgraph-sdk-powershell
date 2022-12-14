@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyappmanagementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyappmanagementpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyAppManagementPolicy
+# Update-MgBetaPolicyAppManagementPolicy
 
 ## SYNOPSIS
 Update the navigation property appManagementPolicies in policies
@@ -14,7 +14,7 @@ Update the navigation property appManagementPolicies in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyAppManagementPolicy -AppManagementPolicyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyAppManagementPolicy -AppManagementPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsEnabled]
  [-Restrictions <IMicrosoftGraphAppManagementConfiguration>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgPolicyAppManagementPolicy -AppManagementPolicyId <String> [-AdditionalP
 
 ### Update
 ```
-Update-MgPolicyAppManagementPolicy -AppManagementPolicyId <String>
+Update-MgBetaPolicyAppManagementPolicy -AppManagementPolicyId <String>
  -BodyParameter <IMicrosoftGraphAppManagementPolicy> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphAppManagementPolicy> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsEnabled]
  [-Restrictions <IMicrosoftGraphAppManagementConfiguration>] [-PassThru] [-Confirm] [-WhatIf]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ appManagementPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -180,7 +180,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ appManagementConfiguration
 To construct, please use Get-Help -Online and see NOTES section for RESTRICTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppManagementConfiguration
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -273,9 +273,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
 
 ## OUTPUTS
 

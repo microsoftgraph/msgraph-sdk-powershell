@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgdrivelistactivity
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgdrivelistactivity
 schema: 2.0.0
 ---
 
-# Get-MgDriveListActivity
+# Get-MgBetaDriveListActivity
 
 ## SYNOPSIS
 The recent activities that took place within this list.
@@ -13,7 +13,7 @@ The recent activities that took place within this list.
 ## SYNTAX
 
 ```
-Get-MgDriveListActivity -DriveId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDriveListActivity -DriveId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -198,7 +198,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityOld
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemActivityOld
 
 ## NOTES
 

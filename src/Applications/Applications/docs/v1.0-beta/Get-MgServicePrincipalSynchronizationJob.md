@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalsynchronizationjob
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipalsynchronizationjob
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalSynchronizationJob
+# Get-MgBetaServicePrincipalSynchronizationJob
 
 ## SYNOPSIS
 Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
@@ -14,20 +14,20 @@ Performs synchronization by periodically running in the background, polling for 
 
 ### List (Default)
 ```
-Get-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String> -SynchronizationJobId <String>
+Get-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId <String> -SynchronizationJobId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Performs synchronization by periodically running in the background, polling for 
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServicePrincipalSynchronizationJob Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalSynchronizationJob Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId
 ```
 
-This example shows how to use the Get-MgServicePrincipalSynchronizationJob Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalSynchronizationJob Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgServicePrincipalSynchronizationJob Cmdlet
+### Example 2: Using the Get-MgBetaServicePrincipalSynchronizationJob Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
 
-This example shows how to use the Get-MgServicePrincipalSynchronizationJob Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalSynchronizationJob Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationJob
 
 ## NOTES
 

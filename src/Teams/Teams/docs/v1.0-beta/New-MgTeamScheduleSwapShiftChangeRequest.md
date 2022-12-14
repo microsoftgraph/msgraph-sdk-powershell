@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamscheduleswapshiftchangerequest
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamscheduleswapshiftchangerequest
 schema: 2.0.0
 ---
 
-# New-MgTeamScheduleSwapShiftChangeRequest
+# New-MgBetaTeamScheduleSwapShiftChangeRequest
 
 ## SYNOPSIS
 Create an instance of a swapShiftsChangeRequest object.
@@ -14,7 +14,7 @@ Create an instance of a swapShiftsChangeRequest object.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgTeamScheduleSwapShiftChangeRequest -TeamId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamScheduleSwapShiftChangeRequest -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ManagerActionMessage <String>]
  [-RecipientActionMessage <String>] [-RecipientShiftId <String>] [-RecipientUserId <String>]
@@ -24,19 +24,19 @@ New-MgTeamScheduleSwapShiftChangeRequest -TeamId <String> [-AdditionalProperties
 
 ### Create1
 ```
-New-MgTeamScheduleSwapShiftChangeRequest -TeamId <String>
+New-MgBetaTeamScheduleSwapShiftChangeRequest -TeamId <String>
  -BodyParameter <IMicrosoftGraphSwapShiftsChangeRequest1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity>
+New-MgBetaTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphSwapShiftsChangeRequest1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ManagerActionMessage <String>]
  [-RecipientActionMessage <String>] [-RecipientShiftId <String>] [-RecipientUserId <String>]
@@ -49,19 +49,19 @@ Create an instance of a swapShiftsChangeRequest object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTeamScheduleSwapShiftChangeRequest Cmdlet
+### Example 1: Using the New-MgBetaTeamScheduleSwapShiftChangeRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	SenderShiftId = "5ad10161-6524-4c7c-9beb-4e8677ba2f6d"
 	SenderMessage = "I can't make my shift, any chance we can swap?"
 	RecipientUserId = "567c8ea5-9e32-422a-a663-8270201699cd"
 	RecipientShiftId = "e73408ca-3ea5-4bbf-96a8-2e06c95f7a2c"
 }
-New-MgTeamScheduleSwapShiftChangeRequest -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamScheduleSwapShiftChangeRequest -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTeamScheduleSwapShiftChangeRequest Cmdlet.
+This example shows how to use the New-MgBetaTeamScheduleSwapShiftChangeRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -101,7 +101,7 @@ swapShiftsChangeRequest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -117,7 +117,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -165,7 +165,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -332,13 +332,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
 
 ## NOTES
 

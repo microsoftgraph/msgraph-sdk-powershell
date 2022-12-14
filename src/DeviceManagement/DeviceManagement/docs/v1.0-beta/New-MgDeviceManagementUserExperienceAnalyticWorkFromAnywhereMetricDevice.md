@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticworkfromanywheremetricdevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticworkfromanywheremetricdevice
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
+# New-MgBetaDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
 
 ## SYNOPSIS
 Create new navigation property to metricDevices for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to metricDevices for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
+New-MgBetaDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
  -UserExperienceAnalyticsWorkFromAnywhereMetricId <String> [-AdditionalProperties <Hashtable>]
  [-AutoPilotProfileAssigned] [-AutoPilotRegistered] [-AzureAdDeviceId <String>] [-AzureAdJoinType <String>]
  [-AzureAdRegistered] [-CloudIdentityScore <Double>] [-CloudManagementScore <Double>]
@@ -30,7 +30,7 @@ New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
+New-MgBetaDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
  -UserExperienceAnalyticsWorkFromAnywhereMetricId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -38,7 +38,7 @@ New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
+New-MgBetaDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -46,7 +46,7 @@ New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
+New-MgBetaDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-AutoPilotProfileAssigned]
  [-AutoPilotRegistered] [-AzureAdDeviceId <String>] [-AzureAdJoinType <String>] [-AzureAdRegistered]
  [-CloudIdentityScore <Double>] [-CloudManagementScore <Double>] [-CloudProvisioningScore <Double>]
@@ -162,7 +162,7 @@ The user experience analytics Device for work from anywhere report
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -270,7 +270,7 @@ Accept wildcard characters: False
 userExperienceAnalyticsHealthState
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsHealthState
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsHealthState
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -302,7 +302,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -602,7 +602,7 @@ Accept wildcard characters: False
 Work From Anywhere windows device upgrade eligibility status
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.OperatingSystemUpgradeEligibility
+Type: Microsoft.Graph.Beta.PowerShell.Support.OperatingSystemUpgradeEligibility
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -696,13 +696,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice
 
 ## NOTES
 

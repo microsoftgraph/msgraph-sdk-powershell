@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthcapacitydetail
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthcapacitydetail
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail
+# Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsBatteryHealthCapacityDetails in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsBatteryHealthCapacityDetai
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail [-ActiveDevices <Int32>]
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-BatteryCapacityFair <Int32>] [-BatteryCapacityGood <Int32>]
  [-BatteryCapacityPoor <Int32>] [-Id <String>] [-LastRefreshedDateTime <DateTime>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail [-Act
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetails> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -118,7 +118,7 @@ The user experience analytics battery health capacity entity contains count of d
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetails
 Parameter Sets: Update
 Aliases:
 
@@ -211,7 +211,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetails
 
 ## OUTPUTS
 

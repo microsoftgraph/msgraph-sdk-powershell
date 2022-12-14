@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementandroidforworksetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementandroidforworksetting
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementAndroidForWorkSetting
+# Update-MgBetaDeviceManagementAndroidForWorkSetting
 
 ## SYNOPSIS
 Update the navigation property androidForWorkSettings in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property androidForWorkSettings in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementAndroidForWorkSetting [-AdditionalProperties <Hashtable>] [-BindStatus <String>]
+Update-MgBetaDeviceManagementAndroidForWorkSetting [-AdditionalProperties <Hashtable>] [-BindStatus <String>]
  [-DeviceOwnerManagementEnabled] [-EnrollmentTarget <String>] [-Id <String>] [-LastAppSyncDateTime <DateTime>]
  [-LastAppSyncStatus <String>] [-LastModifiedDateTime <DateTime>] [-OwnerOrganizationName <String>]
  [-OwnerUserPrincipalName <String>] [-TargetGroupIds <String[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementAndroidForWorkSetting [-AdditionalProperties <Hashtable
 
 ### Update
 ```
-Update-MgDeviceManagementAndroidForWorkSetting -BodyParameter <IMicrosoftGraphAndroidForWorkSettings>
+Update-MgBetaDeviceManagementAndroidForWorkSetting -BodyParameter <IMicrosoftGraphAndroidForWorkSettings>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ Settings for Android For Work.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkSettings
 Parameter Sets: Update
 Aliases:
 
@@ -267,7 +267,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkSettings
 
 ## OUTPUTS
 

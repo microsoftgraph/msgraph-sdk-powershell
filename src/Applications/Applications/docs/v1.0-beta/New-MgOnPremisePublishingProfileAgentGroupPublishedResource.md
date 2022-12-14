@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgonpremisepublishingprofileagentgrouppublishedresource
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgonpremisepublishingprofileagentgrouppublishedresource
 schema: 2.0.0
 ---
 
-# New-MgOnPremisePublishingProfileAgentGroupPublishedResource
+# New-MgBetaOnPremisePublishingProfileAgentGroupPublishedResource
 
 ## SYNOPSIS
 Create new navigation property to publishedResources for onPremisesPublishingProfiles
@@ -14,7 +14,7 @@ Create new navigation property to publishedResources for onPremisesPublishingPro
 
 ### CreateExpanded (Default)
 ```
-New-MgOnPremisePublishingProfileAgentGroupPublishedResource -OnPremisesAgentGroupId <String>
+New-MgBetaOnPremisePublishingProfileAgentGroupPublishedResource -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> [-AdditionalProperties <Hashtable>]
  [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>] [-DisplayName <String>] [-Id <String>]
  [-PublishingType <String>] [-ResourceName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ New-MgOnPremisePublishingProfileAgentGroupPublishedResource -OnPremisesAgentGrou
 
 ### Create
 ```
-New-MgOnPremisePublishingProfileAgentGroupPublishedResource -OnPremisesAgentGroupId <String>
+New-MgBetaOnPremisePublishingProfileAgentGroupPublishedResource -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> -BodyParameter <IMicrosoftGraphPublishedResource> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOnPremisePublishingProfileAgentGroupPublishedResource -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileAgentGroupPublishedResource -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphPublishedResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOnPremisePublishingProfileAgentGroupPublishedResource -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileAgentGroupPublishedResource -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>]
  [-DisplayName <String>] [-Id <String>] [-PublishingType <String>] [-ResourceName <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -70,7 +70,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for AGENTGROUPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ publishedResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -240,13 +240,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 
 ## NOTES
 

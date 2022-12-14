@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitecontenttypecompatiblehubcontenttype
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitecontenttypecompatiblehubcontenttype
 schema: 2.0.0
 ---
 
-# Get-MgSiteContentTypeCompatibleHubContentType
+# Get-MgBetaSiteContentTypeCompatibleHubContentType
 
 ## SYNOPSIS
 Invoke function getCompatibleHubContentTypes
@@ -14,14 +14,14 @@ Invoke function getCompatibleHubContentTypes
 
 ### Get (Default)
 ```
-Get-MgSiteContentTypeCompatibleHubContentType [-SiteId <String>] [-Count] [-Filter <String>]
+Get-MgBetaSiteContentTypeCompatibleHubContentType [-SiteId <String>] [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteContentTypeCompatibleHubContentType -InputObject <ISitesIdentity> [-Count] [-Filter <String>]
+Get-MgBetaSiteContentTypeCompatibleHubContentType -InputObject <ISitesIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -174,11 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 
 ## NOTES
 

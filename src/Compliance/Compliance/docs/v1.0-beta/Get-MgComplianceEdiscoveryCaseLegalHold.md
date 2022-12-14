@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycaselegalhold
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycaselegalhold
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseLegalHold
+# Get-MgBetaComplianceEdiscoveryCaseLegalHold
 
 ## SYNOPSIS
 Returns a list of case legalHold objects for this case.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgComplianceEdiscoveryCaseLegalHold -CaseId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaComplianceEdiscoveryCaseLegalHold -CaseId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgComplianceEdiscoveryCaseLegalHold -CaseId <String> -LegalHoldId <String> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseLegalHold -CaseId <String> -LegalHoldId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseLegalHold -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseLegalHold -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseLegalHold Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseLegalHold Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseLegalHold -CaseId $caseId -LegalHoldId $legalHoldId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseLegalHold -CaseId $caseId -LegalHoldId $legalHoldId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseLegalHold Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseLegalHold Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgComplianceEdiscoveryCaseLegalHold Cmdlet
+### Example 2: Using the Get-MgBetaComplianceEdiscoveryCaseLegalHold Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseLegalHold -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseLegalHold -CaseId $caseId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseLegalHold Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseLegalHold Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryLegalHold
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryLegalHold
 
 ## NOTES
 

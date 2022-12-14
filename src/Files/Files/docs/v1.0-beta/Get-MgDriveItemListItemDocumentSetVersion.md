@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgdriveitemlistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgdriveitemlistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# Get-MgDriveItemListItemDocumentSetVersion
+# Get-MgBetaDriveItemListItemDocumentSetVersion
 
 ## SYNOPSIS
 Version information for a document set version created by a user.
@@ -14,20 +14,20 @@ Version information for a document set version created by a user.
 
 ### List (Default)
 ```
-Get-MgDriveItemListItemDocumentSetVersion -DriveId <String> -DriveItemId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDriveItemListItemDocumentSetVersion -DriveId <String> -DriveItemId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDriveItemListItemDocumentSetVersion -DocumentSetVersionId <String> -DriveId <String>
+Get-MgBetaDriveItemListItemDocumentSetVersion -DocumentSetVersionId <String> -DriveId <String>
  -DriveItemId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDriveItemListItemDocumentSetVersion -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDriveItemListItemDocumentSetVersion -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/invoke-mgreopensecuritycaseediscoverycase
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/invoke-mgreopensecuritycaseediscoverycase
 schema: 2.0.0
 ---
 
-# Invoke-MgReopenSecurityCaseEdiscoveryCase
+# Invoke-MgBetaReopenSecurityCaseEdiscoveryCase
 
 ## SYNOPSIS
 Reopen an eDiscovery case that was closed.
@@ -15,13 +15,13 @@ For details, see Reopen a closed case.
 
 ### Reopen1 (Default)
 ```
-Invoke-MgReopenSecurityCaseEdiscoveryCase -EdiscoveryCaseId <String> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaReopenSecurityCaseEdiscoveryCase -EdiscoveryCaseId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### ReopenViaIdentity1
 ```
-Invoke-MgReopenSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaReopenSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ For details, see Reopen a closed case.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgReopenSecurityCaseEdiscoveryCase Cmdlet
+### Example 1: Using the Invoke-MgBetaReopenSecurityCaseEdiscoveryCase Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Invoke-MgReopenSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
+Import-Module Microsoft.Graph.Beta.Security
+Invoke-MgBetaReopenSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
-This example shows how to use the Invoke-MgReopenSecurityCaseEdiscoveryCase Cmdlet.
+This example shows how to use the Invoke-MgBetaReopenSecurityCaseEdiscoveryCase Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: ReopenViaIdentity1
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

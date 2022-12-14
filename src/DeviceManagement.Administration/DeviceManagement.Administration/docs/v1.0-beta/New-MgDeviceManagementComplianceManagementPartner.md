@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementcompliancemanagementpartner
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementcompliancemanagementpartner
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementComplianceManagementPartner
+# New-MgBetaDeviceManagementComplianceManagementPartner
 
 ## SYNOPSIS
 Create new navigation property to complianceManagementPartners for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to complianceManagementPartners for deviceManagem
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementComplianceManagementPartner [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementComplianceManagementPartner [-AdditionalProperties <Hashtable>]
  [-AndroidEnrollmentAssignments <IMicrosoftGraphComplianceManagementPartnerAssignment1[]>] [-AndroidOnboarded]
  [-DisplayName <String>] [-Id <String>]
  [-IosEnrollmentAssignments <IMicrosoftGraphComplianceManagementPartnerAssignment1[]>] [-IosOnboarded]
@@ -27,7 +27,7 @@ New-MgDeviceManagementComplianceManagementPartner [-AdditionalProperties <Hashta
 
 ### Create
 ```
-New-MgDeviceManagementComplianceManagementPartner -BodyParameter <IMicrosoftGraphComplianceManagementPartner>
+New-MgBetaDeviceManagementComplianceManagementPartner -BodyParameter <IMicrosoftGraphComplianceManagementPartner>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -58,7 +58,7 @@ User groups which enroll Android devices through partner.
 To construct, please use Get-Help -Online and see NOTES section for ANDROIDENROLLMENTASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartnerAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceManagementPartnerAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -89,7 +89,7 @@ Compliance management partner for all platforms
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
 Parameter Sets: Create
 Aliases:
 
@@ -136,7 +136,7 @@ User groups which enroll ios devices through partner.
 To construct, please use Get-Help -Online and see NOTES section for IOSENROLLMENTASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartnerAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceManagementPartnerAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ User groups which enroll Mac devices through partner.
 To construct, please use Get-Help -Online and see NOTES section for MACOSENROLLMENTASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartnerAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceManagementPartnerAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 Partner state of this tenant.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementPartnerTenantState
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementPartnerTenantState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -228,7 +228,7 @@ User groups which enroll Windows devices through partner.
 To construct, please use Get-Help -Online and see NOTES section for WINDOWSENROLLMENTASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartnerAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceManagementPartnerAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -290,11 +290,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
 
 ## NOTES
 

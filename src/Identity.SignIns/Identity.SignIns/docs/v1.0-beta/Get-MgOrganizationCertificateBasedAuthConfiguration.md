@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgorganizationcertificatebasedauthconfiguration
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgorganizationcertificatebasedauthconfiguration
 schema: 2.0.0
 ---
 
-# Get-MgOrganizationCertificateBasedAuthConfiguration
+# Get-MgBetaOrganizationCertificateBasedAuthConfiguration
 
 ## SYNOPSIS
 Navigation property to manage certificate-based authentication configuration.
@@ -15,20 +15,20 @@ Only a single instance of certificateBasedAuthConfiguration can be created in th
 
 ### List (Default)
 ```
-Get-MgOrganizationCertificateBasedAuthConfiguration -OrganizationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaOrganizationCertificateBasedAuthConfiguration -OrganizationId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgOrganizationCertificateBasedAuthConfiguration -CertificateBasedAuthConfigurationId <String>
+Get-MgBetaOrganizationCertificateBasedAuthConfiguration -CertificateBasedAuthConfigurationId <String>
  -OrganizationId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOrganizationCertificateBasedAuthConfiguration -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaOrganizationCertificateBasedAuthConfiguration -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ Only a single instance of certificateBasedAuthConfiguration can be created in th
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOrganizationCertificateBasedAuthConfiguration Cmdlet
+### Example 1: Using the Get-MgBetaOrganizationCertificateBasedAuthConfiguration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgOrganizationCertificateBasedAuthConfiguration -OrganizationId $organizationId -CertificateBasedAuthConfigurationId $certificateBasedAuthConfigurationId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaOrganizationCertificateBasedAuthConfiguration -OrganizationId $organizationId -CertificateBasedAuthConfigurationId $certificateBasedAuthConfigurationId
 ```
 
-This example shows how to use the Get-MgOrganizationCertificateBasedAuthConfiguration Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationCertificateBasedAuthConfiguration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgOrganizationCertificateBasedAuthConfiguration Cmdlet
+### Example 2: Using the Get-MgBetaOrganizationCertificateBasedAuthConfiguration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgOrganizationCertificateBasedAuthConfiguration -OrganizationId $organizationId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaOrganizationCertificateBasedAuthConfiguration -OrganizationId $organizationId
 ```
 
-This example shows how to use the Get-MgOrganizationCertificateBasedAuthConfiguration Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationCertificateBasedAuthConfiguration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCertificateBasedAuthConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCertificateBasedAuthConfiguration
 
 ## NOTES
 

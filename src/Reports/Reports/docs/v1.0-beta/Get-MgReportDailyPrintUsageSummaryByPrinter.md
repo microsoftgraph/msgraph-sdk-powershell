@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportdailyprintusagesummarybyprinter
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportdailyprintusagesummarybyprinter
 schema: 2.0.0
 ---
 
-# Get-MgReportDailyPrintUsageSummaryByPrinter
+# Get-MgBetaReportDailyPrintUsageSummaryByPrinter
 
 ## SYNOPSIS
 Get dailyPrintUsageSummariesByPrinter from reports
@@ -14,20 +14,20 @@ Get dailyPrintUsageSummariesByPrinter from reports
 
 ### List (Default)
 ```
-Get-MgReportDailyPrintUsageSummaryByPrinter [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaReportDailyPrintUsageSummaryByPrinter [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgReportDailyPrintUsageSummaryByPrinter -PrintUsageByPrinterId <String> [-ExpandProperty <String[]>]
+Get-MgBetaReportDailyPrintUsageSummaryByPrinter -PrintUsageByPrinterId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportDailyPrintUsageSummaryByPrinter -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaReportDailyPrintUsageSummaryByPrinter -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByPrinter1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintUsageByPrinter1
 
 ## NOTES
 

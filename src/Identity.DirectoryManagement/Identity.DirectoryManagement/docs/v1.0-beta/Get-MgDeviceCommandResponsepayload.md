@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevicecommandresponsepayload
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdevicecommandresponsepayload
 schema: 2.0.0
 ---
 
-# Get-MgDeviceCommandResponsepayload
+# Get-MgBetaDeviceCommandResponsepayload
 
 ## SYNOPSIS
 Get responsepayload from devices
@@ -14,13 +14,13 @@ Get responsepayload from devices
 
 ### Get (Default)
 ```
-Get-MgDeviceCommandResponsepayload -CommandId <String> -DeviceId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceCommandResponsepayload -CommandId <String> -DeviceId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceCommandResponsepayload -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDeviceCommandResponsepayload -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

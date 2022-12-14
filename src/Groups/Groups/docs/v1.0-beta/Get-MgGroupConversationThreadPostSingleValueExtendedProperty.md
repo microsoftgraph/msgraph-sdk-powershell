@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupconversationthreadpostsinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupconversationthreadpostsinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgGroupConversationThreadPostSingleValueExtendedProperty
+# Get-MgBetaGroupConversationThreadPostSingleValueExtendedProperty
 
 ## SYNOPSIS
 The collection of single-value extended properties defined for the post.
@@ -16,7 +16,7 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgGroupConversationThreadPostSingleValueExtendedProperty -ConversationId <String>
+Get-MgBetaGroupConversationThreadPostSingleValueExtendedProperty -ConversationId <String>
  -ConversationThreadId <String> -GroupId <String> -PostId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -24,7 +24,7 @@ Get-MgGroupConversationThreadPostSingleValueExtendedProperty -ConversationId <St
 
 ### Get1
 ```
-Get-MgGroupConversationThreadPostSingleValueExtendedProperty -ConversationId <String>
+Get-MgBetaGroupConversationThreadPostSingleValueExtendedProperty -ConversationId <String>
  -ConversationThreadId <String> -GroupId <String> -PostId <String>
  -SingleValueLegacyExtendedPropertyId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -32,7 +32,7 @@ Get-MgGroupConversationThreadPostSingleValueExtendedProperty -ConversationId <St
 
 ### GetViaIdentity1
 ```
-Get-MgGroupConversationThreadPostSingleValueExtendedProperty -InputObject <IGroupsIdentity>
+Get-MgBetaGroupConversationThreadPostSingleValueExtendedProperty -InputObject <IGroupsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -156,7 +156,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -292,11 +292,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

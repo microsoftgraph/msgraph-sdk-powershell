@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementwindowinformationprotectionnetworklearningsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementwindowinformationprotectionnetworklearningsummary
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
+# New-MgBetaDeviceManagementWindowInformationProtectionNetworkLearningSummary
 
 ## SYNOPSIS
 Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
@@ -14,13 +14,13 @@ Create new navigation property to windowsInformationProtectionNetworkLearningSum
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementWindowInformationProtectionNetworkLearningSummary [-AdditionalProperties <Hashtable>]
  [-DeviceCount <Int32>] [-Id <String>] [-Url <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
+New-MgBetaDeviceManagementWindowInformationProtectionNetworkLearningSummary
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Windows Information Protection Network learning Summary entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
 Parameter Sets: Create1
 Aliases:
 
@@ -145,11 +145,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
 
 ## NOTES
 

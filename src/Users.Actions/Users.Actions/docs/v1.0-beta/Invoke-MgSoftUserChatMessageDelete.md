@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgsoftuserchatmessagedelete
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgsoftuserchatmessagedelete
 schema: 2.0.0
 ---
 
-# Invoke-MgSoftUserChatMessageDelete
+# Invoke-MgBetaSoftUserChatMessageDelete
 
 ## SYNOPSIS
 Delete a single message or a message reply in a channel or a chat.
@@ -14,13 +14,13 @@ Delete a single message or a message reply in a channel or a chat.
 
 ### Soft (Default)
 ```
-Invoke-MgSoftUserChatMessageDelete -ChatId <String> -ChatMessageId <String> -UserId <String> [-PassThru]
+Invoke-MgBetaSoftUserChatMessageDelete -ChatId <String> -ChatMessageId <String> -UserId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SoftViaIdentity
 ```
-Invoke-MgSoftUserChatMessageDelete -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaSoftUserChatMessageDelete -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete a single message or a message reply in a channel or a chat.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgSoftUserChatMessageDelete Cmdlet
+### Example 1: Using the Invoke-MgBetaSoftUserChatMessageDelete Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
-Invoke-MgSoftUserChatMessageDelete -UserId $userId -ChatId $chatId -ChatMessageId $chatMessageId
+Import-Module Microsoft.Graph.Beta.Users.Actions
+Invoke-MgBetaSoftUserChatMessageDelete -UserId $userId -ChatId $chatId -ChatMessageId $chatMessageId
 ```
 
-This example shows how to use the Invoke-MgSoftUserChatMessageDelete Cmdlet.
+This example shows how to use the Invoke-MgBetaSoftUserChatMessageDelete Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: SoftViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

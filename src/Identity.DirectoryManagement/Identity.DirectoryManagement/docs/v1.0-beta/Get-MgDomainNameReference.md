@@ -1,36 +1,36 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainnamereference
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdomainnamereference
 schema: 2.0.0
 ---
 
-# Get-MgDomainNameReference
+# Get-MgBetaDomainNameReference
 
 ## SYNOPSIS
 The objects such as users and groups that reference the domain ID.
 Read-only, Nullable.
 Supports $expand and $filter by the OData type of objects returned.
-For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+For example /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.user and /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.group.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgDomainNameReference -DomainId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDomainNameReference -DomainId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDomainNameReference -DirectoryObjectId <String> -DomainId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDomainNameReference -DirectoryObjectId <String> -DomainId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDomainNameReference -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDomainNameReference -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,17 +38,17 @@ Get-MgDomainNameReference -InputObject <IIdentityDirectoryManagementIdentity> [-
 The objects such as users and groups that reference the domain ID.
 Read-only, Nullable.
 Supports $expand and $filter by the OData type of objects returned.
-For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+For example /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.user and /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.group.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDomainNameReference Cmdlet
+### Example 1: Using the Get-MgBetaDomainNameReference Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDomainNameReference -DomainId $domainId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDomainNameReference -DomainId $domainId
 ```
 
-This example shows how to use the Get-MgDomainNameReference Cmdlet.
+This example shows how to use the Get-MgBetaDomainNameReference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

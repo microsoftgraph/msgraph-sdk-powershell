@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationuserassignmentsubmission
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationuserassignmentsubmission
 schema: 2.0.0
 ---
 
-# Remove-MgEducationUserAssignmentSubmission
+# Remove-MgBetaEducationUserAssignmentSubmission
 
 ## SYNOPSIS
 Delete navigation property submissions for education
@@ -14,13 +14,13 @@ Delete navigation property submissions for education
 
 ### Delete (Default)
 ```
-Remove-MgEducationUserAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
+Remove-MgBetaEducationUserAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
  -EducationUserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

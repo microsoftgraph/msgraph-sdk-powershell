@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgcalendarusercalendarallowedcalendarsharingroles
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/invoke-mgcalendarusercalendarallowedcalendarsharingroles
 schema: 2.0.0
 ---
 
-# Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles
+# Invoke-MgBetaCalendarUserCalendarAllowedCalendarSharingRoles
 
 ## SYNOPSIS
 Invoke function allowedCalendarSharingRoles
@@ -14,25 +14,25 @@ Invoke function allowedCalendarSharingRoles
 
 ### Calendar (Default)
 ```
-Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -User <String> -UserId <String> [-Count]
+Invoke-MgBetaCalendarUserCalendarAllowedCalendarSharingRoles -User <String> -UserId <String> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Calendar1
 ```
-Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -CalendarId <String> -User <String> -UserId <String>
+Invoke-MgBetaCalendarUserCalendarAllowedCalendarSharingRoles -CalendarId <String> -User <String> -UserId <String>
  [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### CalendarViaIdentity
 ```
-Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -InputObject <IUsersFunctionsIdentity> [-Count]
+Invoke-MgBetaCalendarUserCalendarAllowedCalendarSharingRoles -InputObject <IUsersFunctionsIdentity> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### CalendarViaIdentity1
 ```
-Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -InputObject <IUsersFunctionsIdentity> [-Count]
+Invoke-MgBetaCalendarUserCalendarAllowedCalendarSharingRoles -InputObject <IUsersFunctionsIdentity> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -93,7 +93,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: CalendarViaIdentity, CalendarViaIdentity1
 Aliases:
 
@@ -184,7 +184,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 

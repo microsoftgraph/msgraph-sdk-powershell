@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointusersetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointusersetting
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointUserSetting
+# Update-MgBetaDeviceManagementVirtualEndpointUserSetting
 
 ## SYNOPSIS
 Update the navigation property userSettings in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userSettings in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId <String>
+Update-MgBetaDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphCloudPcUserSettingAssignment[]>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-LocalAdminEnabled] [-RestorePointSetting <IMicrosoftGraphCloudPcRestorePointSetting>] [-SelfServiceEnabled]
@@ -23,19 +23,19 @@ Update-MgDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId <Strin
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId <String>
+Update-MgBetaDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId <String>
  -BodyParameter <IMicrosoftGraphCloudPcUserSetting> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementVirtualEndpointUserSetting -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementVirtualEndpointUserSetting -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphCloudPcUserSetting> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementVirtualEndpointUserSetting -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementVirtualEndpointUserSetting -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphCloudPcUserSettingAssignment[]>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-LocalAdminEnabled] [-RestorePointSetting <IMicrosoftGraphCloudPcRestorePointSetting>] [-SelfServiceEnabled]
@@ -47,11 +47,11 @@ Update the navigation property userSettings in deviceManagement
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgDeviceManagementVirtualEndpointUserSetting Cmdlet
+### Example 1: Using the Update-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcUserSetting"
+	"@odata.type" = "#Microsoft.Graph.Beta.cloudPcUserSetting"
 	DisplayName = "Example"
 	SelfServiceEnabled = $true
 	RestorePointSetting = @{
@@ -60,10 +60,10 @@ $params = @{
 	}
 	LocalAdminEnabled = $false
 }
-Update-MgDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId $cloudPcUserSettingId -BodyParameter $params
+Update-MgBetaDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId $cloudPcUserSettingId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgDeviceManagementVirtualEndpointUserSetting Cmdlet.
+This example shows how to use the Update-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ For an example, see Get cloudPcUserSettingample.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcUserSettingAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcUserSettingAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -106,7 +106,7 @@ cloudPcUserSetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -185,7 +185,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -251,7 +251,7 @@ cloudPcRestorePointSetting
 To construct, please use Get-Help -Online and see NOTES section for RESTOREPOINTSETTING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcRestorePointSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcRestorePointSetting
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -315,9 +315,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
 
 ## OUTPUTS
 

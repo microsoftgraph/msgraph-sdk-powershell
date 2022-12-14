@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgentitlementmanagementsetting
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgentitlementmanagementsetting
 schema: 2.0.0
 ---
 
-# Update-MgEntitlementManagementSetting
+# Update-MgBetaEntitlementManagementSetting
 
 ## SYNOPSIS
 Update an existing entitlementManagementSettings object to change one or more of its properties.
@@ -14,14 +14,14 @@ Update an existing entitlementManagementSettings object to change one or more of
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgEntitlementManagementSetting [-AdditionalProperties <Hashtable>]
+Update-MgBetaEntitlementManagementSetting [-AdditionalProperties <Hashtable>]
  [-DaysUntilExternalUserDeletedAfterBlocked <Int32>] [-ExternalUserLifecycleAction <String>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgEntitlementManagementSetting -BodyParameter <IMicrosoftGraphEntitlementManagementSettings1>
+Update-MgBetaEntitlementManagementSetting -BodyParameter <IMicrosoftGraphEntitlementManagementSettings1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,16 +30,16 @@ Update an existing entitlementManagementSettings object to change one or more of
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgEntitlementManagementSetting Cmdlet
+### Example 1: Using the Update-MgBetaEntitlementManagementSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	ExternalUserLifecycleAction = "None"
 }
-Update-MgEntitlementManagementSetting -BodyParameter $params
+Update-MgBetaEntitlementManagementSetting -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgEntitlementManagementSetting Cmdlet.
+This example shows how to use the Update-MgBetaEntitlementManagementSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -64,7 +64,7 @@ entitlementManagementSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings1
 Parameter Sets: Update1
 Aliases:
 
@@ -172,7 +172,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings1
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgapplicationfederatedidentitycredential
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgapplicationfederatedidentitycredential
 schema: 2.0.0
 ---
 
-# Update-MgApplicationFederatedIdentityCredential
+# Update-MgBetaApplicationFederatedIdentityCredential
 
 ## SYNOPSIS
 Update the navigation property federatedIdentityCredentials in applications
@@ -14,7 +14,7 @@ Update the navigation property federatedIdentityCredentials in applications
 
 ### UpdateExpanded (Default)
 ```
-Update-MgApplicationFederatedIdentityCredential -ApplicationId <String>
+Update-MgBetaApplicationFederatedIdentityCredential -ApplicationId <String>
  -FederatedIdentityCredentialId <String> [-AdditionalProperties <Hashtable>] [-Audiences <String[]>]
  [-Description <String>] [-Id <String>] [-Issuer <String>] [-Name <String>] [-Subject <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgApplicationFederatedIdentityCredential -ApplicationId <String>
 
 ### Update
 ```
-Update-MgApplicationFederatedIdentityCredential -ApplicationId <String>
+Update-MgBetaApplicationFederatedIdentityCredential -ApplicationId <String>
  -FederatedIdentityCredentialId <String> -BodyParameter <IMicrosoftGraphFederatedIdentityCredential>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity>
+Update-MgBetaApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphFederatedIdentityCredential> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity>
+Update-MgBetaApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Audiences <String[]>] [-Description <String>] [-Id <String>]
  [-Issuer <String>] [-Name <String>] [-Subject <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -46,9 +46,9 @@ Update the navigation property federatedIdentityCredentials in applications
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgApplicationFederatedIdentityCredential Cmdlet
+### Example 1: Using the Update-MgBetaApplicationFederatedIdentityCredential Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	Name = "testing02"
 	Issuer = "https://login.microsoftonline.com/3d1e2be9-a10a-4a0c-8380-7ce190f98ed9/v2.0"
@@ -58,10 +58,10 @@ $params = @{
 		"api://AzureADTokenExchange"
 	)
 }
-Update-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId -BodyParameter $params
+Update-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgApplicationFederatedIdentityCredential Cmdlet.
+This example shows how to use the Update-MgBetaApplicationFederatedIdentityCredential Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -121,7 +121,7 @@ federatedIdentityCredential
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -185,7 +185,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -305,9 +305,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential
 
 ## OUTPUTS
 

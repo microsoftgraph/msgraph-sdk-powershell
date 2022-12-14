@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantdevicecompliancepolicysettingstatesummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantdevicecompliancepolicysettingstatesummary
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+# Update-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
 
 ## SYNOPSIS
 Update the navigation property deviceCompliancePolicySettingStateSummaries in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property deviceCompliancePolicySettingStateSummaries in te
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+Update-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
  -DeviceCompliancePolicySettingStateSummaryId <String> [-AdditionalProperties <Hashtable>]
  [-ConflictDeviceCount <Int32>] [-ErrorDeviceCount <Int32>] [-FailedDeviceCount <Int32>] [-Id <String>]
  [-IntuneAccountId <String>] [-IntuneSettingId <String>] [-LastRefreshedDateTime <DateTime>]
@@ -25,7 +25,7 @@ Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummar
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+Update-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
  -DeviceCompliancePolicySettingStateSummaryId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -33,7 +33,7 @@ Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummar
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+Update-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
  -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -41,7 +41,7 @@ Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummar
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+Update-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>] [-ConflictDeviceCount <Int32>]
  [-ErrorDeviceCount <Int32>] [-FailedDeviceCount <Int32>] [-Id <String>] [-IntuneAccountId <String>]
  [-IntuneSettingId <String>] [-LastRefreshedDateTime <DateTime>] [-NotApplicableDeviceCount <Int32>]
@@ -76,7 +76,7 @@ deviceCompliancePolicySettingStateSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -174,7 +174,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -406,9 +406,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
 
 ## OUTPUTS
 

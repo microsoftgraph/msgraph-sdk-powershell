@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/update-mggroupdrivelistoperation
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/update-mggroupdrivelistoperation
 schema: 2.0.0
 ---
 
-# Update-MgGroupDriveListOperation
+# Update-MgBetaGroupDriveListOperation
 
 ## SYNOPSIS
 Update the navigation property operations in groups
@@ -14,7 +14,7 @@ Update the navigation property operations in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupDriveListOperation -DriveId <String> -GroupId <String> -RichLongRunningOperationId <String>
+Update-MgBetaGroupDriveListOperation -DriveId <String> -GroupId <String> -RichLongRunningOperationId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
  [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-PassThru]
@@ -23,21 +23,21 @@ Update-MgGroupDriveListOperation -DriveId <String> -GroupId <String> -RichLongRu
 
 ### Update1
 ```
-Update-MgGroupDriveListOperation -DriveId <String> -GroupId <String> -RichLongRunningOperationId <String>
+Update-MgBetaGroupDriveListOperation -DriveId <String> -GroupId <String> -RichLongRunningOperationId <String>
  -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupDriveListOperation -InputObject <IFilesIdentity>
+Update-MgBetaGroupDriveListOperation -InputObject <IFilesIdentity>
  -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupDriveListOperation -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupDriveListOperation -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
  [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-PassThru]
@@ -71,7 +71,7 @@ richLongRunningOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -117,7 +117,7 @@ publicError
 To construct, please use Get-Help -Online and see NOTES section for ERROR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublicError
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublicError
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -164,7 +164,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -346,9 +346,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
 
 ## OUTPUTS
 

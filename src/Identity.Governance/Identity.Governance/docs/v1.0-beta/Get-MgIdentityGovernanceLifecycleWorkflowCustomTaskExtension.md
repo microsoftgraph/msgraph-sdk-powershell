@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowcustomtaskextension
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowcustomtaskextension
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension
 
 ## SYNOPSIS
 The customTaskExtension instance.
@@ -14,20 +14,20 @@ The customTaskExtension instance.
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension -CustomTaskExtensionId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension -CustomTaskExtensionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The customTaskExtension instance.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension -CustomTaskExtensionId $customTaskExtensionId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension -CustomTaskExtensionId $customTaskExtensionId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceCustomTaskExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceCustomTaskExtension
 
 ## NOTES
 

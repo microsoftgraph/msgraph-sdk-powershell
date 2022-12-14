@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageincompatibleaccesspackagebyref
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageincompatibleaccesspackagebyref
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef
+# Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef
 
 ## SYNOPSIS
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
@@ -13,7 +13,7 @@ Retrieve a list of the accessPackage objects that have been marked as incompatib
 ## SYNTAX
 
 ```
-Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId <String>
+Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId <String>
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```

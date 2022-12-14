@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mggroupsitetermstoresettermrelation
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mggroupsitetermstoresettermrelation
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteTermStoreSetTermRelation
+# Get-MgBetaGroupSiteTermStoreSetTermRelation
 
 ## SYNOPSIS
 To indicate which terms are related to the current term as either pinned or reused.
@@ -14,20 +14,20 @@ To indicate which terms are related to the current term as either pinned or reus
 
 ### List (Default)
 ```
-Get-MgGroupSiteTermStoreSetTermRelation -GroupId <String> -SetId <String> -SiteId <String> -TermId <String>
+Get-MgBetaGroupSiteTermStoreSetTermRelation -GroupId <String> -SetId <String> -SiteId <String> -TermId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupSiteTermStoreSetTermRelation -GroupId <String> -RelationId <String> -SetId <String>
+Get-MgBetaGroupSiteTermStoreSetTermRelation -GroupId <String> -RelationId <String> -SetId <String>
  -SiteId <String> -TermId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -285,11 +285,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreRelation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreRelation
 
 ## NOTES
 

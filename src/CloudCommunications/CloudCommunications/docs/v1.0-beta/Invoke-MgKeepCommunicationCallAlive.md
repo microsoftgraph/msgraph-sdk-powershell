@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgkeepcommunicationcallalive
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mgkeepcommunicationcallalive
 schema: 2.0.0
 ---
 
-# Invoke-MgKeepCommunicationCallAlive
+# Invoke-MgBetaKeepCommunicationCallAlive
 
 ## SYNOPSIS
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
@@ -20,12 +20,12 @@ The resources related to the call should be cleaned up on the application side.
 
 ### Keep1 (Default)
 ```
-Invoke-MgKeepCommunicationCallAlive -CallId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaKeepCommunicationCallAlive -CallId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### KeepViaIdentity1
 ```
-Invoke-MgKeepCommunicationCallAlive -InputObject <ICloudCommunicationsIdentity> [-PassThru] [-Confirm]
+Invoke-MgBetaKeepCommunicationCallAlive -InputObject <ICloudCommunicationsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -40,13 +40,13 @@ The resources related to the call should be cleaned up on the application side.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgKeepCommunicationCallAlive Cmdlet
+### Example 1: Using the Invoke-MgBetaKeepCommunicationCallAlive Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Invoke-MgKeepCommunicationCallAlive -CallId $callId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Invoke-MgBetaKeepCommunicationCallAlive -CallId $callId
 ```
 
-This example shows how to use the Invoke-MgKeepCommunicationCallAlive Cmdlet.
+This example shows how to use the Invoke-MgBetaKeepCommunicationCallAlive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -71,7 +71,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: KeepViaIdentity1
 Aliases:
 
@@ -133,7 +133,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

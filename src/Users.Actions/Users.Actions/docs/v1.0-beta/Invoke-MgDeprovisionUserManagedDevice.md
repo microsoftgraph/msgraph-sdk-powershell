@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgdeprovisionusermanageddevice
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgdeprovisionusermanageddevice
 schema: 2.0.0
 ---
 
-# Invoke-MgDeprovisionUserManagedDevice
+# Invoke-MgBetaDeprovisionUserManagedDevice
 
 ## SYNOPSIS
 Invoke action deprovision
@@ -14,28 +14,28 @@ Invoke action deprovision
 
 ### DeprovisionExpanded (Default)
 ```
-Invoke-MgDeprovisionUserManagedDevice -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaDeprovisionUserManagedDevice -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DeprovisionReason <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Deprovision
 ```
-Invoke-MgDeprovisionUserManagedDevice -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaDeprovisionUserManagedDevice -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths1D6Atq8UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeprovisionViaIdentity
 ```
-Invoke-MgDeprovisionUserManagedDevice -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaDeprovisionUserManagedDevice -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1D6Atq8UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeprovisionViaIdentityExpanded
 ```
-Invoke-MgDeprovisionUserManagedDevice -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaDeprovisionUserManagedDevice -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DeprovisionReason <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1D6Atq8UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1D6Atq8UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Deprovision, DeprovisionViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: DeprovisionViaIdentity, DeprovisionViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1D6Atq8UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1D6Atq8UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

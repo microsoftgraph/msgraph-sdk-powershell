@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityb2cuserflowidentityproviderbyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityb2cuserflowidentityproviderbyref
 schema: 2.0.0
 ---
 
-# New-MgIdentityB2CUserFlowIdentityProviderByRef
+# New-MgBetaIdentityB2CUserFlowIdentityProviderByRef
 
 ## SYNOPSIS
 Create new navigation property ref to identityProviders for identity
@@ -14,25 +14,25 @@ Create new navigation property ref to identityProviders for identity
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String>
+New-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String>
+New-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
+New-MgBetaIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
+New-MgBetaIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to identityProviders for identity
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityB2CUserFlowIdentityProviderByRef Cmdlet
+### Example 1: Using the New-MgBetaIdentityB2CUserFlowIdentityProviderByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/identityProviders/{id}"
 }
-New-MgIdentityB2CUserFlowIdentityProviderByRef -B2cIdentityUserFlowId $b2cIdentityUserFlowId -BodyParameter $params
+New-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2cIdentityUserFlowId $b2cIdentityUserFlowId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityB2CUserFlowIdentityProviderByRef Cmdlet.
+This example shows how to use the New-MgBetaIdentityB2CUserFlowIdentityProviderByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

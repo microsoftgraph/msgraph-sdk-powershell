@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationschoolclassbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationschoolclassbyref
 schema: 2.0.0
 ---
 
-# Get-MgEducationSchoolClassByRef
+# Get-MgBetaEducationSchoolClassByRef
 
 ## SYNOPSIS
 Retrieve a list of classes owned by a school.
@@ -13,7 +13,7 @@ Retrieve a list of classes owned by a school.
 ## SYNTAX
 
 ```
-Get-MgEducationSchoolClassByRef -EducationSchoolId <String> [-Filter <String>] [-Search <String>]
+Get-MgBetaEducationSchoolClassByRef -EducationSchoolId <String> [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationcallparticipant
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/update-mgcommunicationcallparticipant
 schema: 2.0.0
 ---
 
-# Update-MgCommunicationCallParticipant
+# Update-MgBetaCommunicationCallParticipant
 
 ## SYNOPSIS
 Update the navigation property participants in communications
@@ -14,7 +14,7 @@ Update the navigation property participants in communications
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgCommunicationCallParticipant -CallId <String> -ParticipantId <String>
+Update-MgBetaCommunicationCallParticipant -CallId <String> -ParticipantId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Info <IMicrosoftGraphParticipantInfo1>]
  [-IsIdentityAnonymized] [-IsInLobby] [-IsMuted] [-MediaStreams <IMicrosoftGraphMediaStream1[]>]
  [-Metadata <String>] [-RecordingInfo <IMicrosoftGraphRecordingInfo1>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgCommunicationCallParticipant -CallId <String> -ParticipantId <String>
 
 ### Update1
 ```
-Update-MgCommunicationCallParticipant -CallId <String> -ParticipantId <String>
+Update-MgBetaCommunicationCallParticipant -CallId <String> -ParticipantId <String>
  -BodyParameter <IMicrosoftGraphParticipant1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphParticipant1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Info <IMicrosoftGraphParticipantInfo1>]
  [-IsIdentityAnonymized] [-IsInLobby] [-IsMuted] [-MediaStreams <IMicrosoftGraphMediaStream1[]>]
  [-Metadata <String>] [-RecordingInfo <IMicrosoftGraphRecordingInfo1>] [-PassThru] [-Confirm] [-WhatIf]
@@ -69,7 +69,7 @@ participant
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipant1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipant1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -116,7 +116,7 @@ participantInfo
 To construct, please use Get-Help -Online and see NOTES section for INFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipantInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipantInfo1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -193,7 +193,7 @@ The list of media streams.
 To construct, please use Get-Help -Online and see NOTES section for MEDIASTREAMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMediaStream1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMediaStream1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -254,7 +254,7 @@ recordingInfo
 To construct, please use Get-Help -Online and see NOTES section for RECORDINGINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecordingInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecordingInfo1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -301,9 +301,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipant1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipant1
 
 ## OUTPUTS
 

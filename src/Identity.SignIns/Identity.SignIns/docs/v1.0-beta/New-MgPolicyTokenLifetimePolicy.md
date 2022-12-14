@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicytokenlifetimepolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicytokenlifetimepolicy
 schema: 2.0.0
 ---
 
-# New-MgPolicyTokenLifetimePolicy
+# New-MgBetaPolicyTokenLifetimePolicy
 
 ## SYNOPSIS
 Create a new tokenLifetimePolicy object.
@@ -14,7 +14,7 @@ Create a new tokenLifetimePolicy object.
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyTokenLifetimePolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaPolicyTokenLifetimePolicy [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Definition <String[]>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsOrganizationDefault] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgPolicyTokenLifetimePolicy [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgPolicyTokenLifetimePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPolicyTokenLifetimePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,9 +30,9 @@ Create a new tokenLifetimePolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPolicyTokenLifetimePolicy Cmdlet
+### Example 1: Using the New-MgBetaPolicyTokenLifetimePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Definition = @(
 		"definition-value"
@@ -40,10 +40,10 @@ $params = @{
 	DisplayName = "displayName-value"
 	IsOrganizationDefault = $true
 }
-New-MgPolicyTokenLifetimePolicy -BodyParameter $params
+New-MgBetaPolicyTokenLifetimePolicy -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPolicyTokenLifetimePolicy Cmdlet.
+This example shows how to use the New-MgBetaPolicyTokenLifetimePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenLifetimePolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTokenLifetimePolicy1
 
 ## NOTES
 

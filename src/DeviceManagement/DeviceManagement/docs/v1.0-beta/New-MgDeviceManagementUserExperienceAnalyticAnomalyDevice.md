@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticanomalydevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticanomalydevice
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticAnomalyDevice
+# New-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice
 
 ## SYNOPSIS
 Create new navigation property to userExperienceAnalyticsAnomalyDevice for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userExperienceAnalyticsAnomalyDevice for devic
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticAnomalyDevice [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice [-AdditionalProperties <Hashtable>]
  [-AnomalyId <String>] [-AnomalyOnDeviceFirstOccurrenceDateTime <DateTime>]
  [-AnomalyOnDeviceLatestOccurrenceDateTime <DateTime>] [-DeviceId <String>] [-DeviceManufacturer <String>]
  [-DeviceModel <String>] [-DeviceName <String>] [-Id <String>] [-OSName <String>] [-OSVersion <String>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementUserExperienceAnalyticAnomalyDevice [-AdditionalProperties
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticAnomalyDevice
+New-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -100,7 +100,7 @@ The user experience analytics anomaly entity contains device details.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
 Parameter Sets: Create
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
 
 ## NOTES
 

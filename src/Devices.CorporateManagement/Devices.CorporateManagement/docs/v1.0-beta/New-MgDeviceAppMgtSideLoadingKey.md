@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtsideloadingkey
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtsideloadingkey
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtSideLoadingKey
+# New-MgBetaDeviceAppMgtSideLoadingKey
 
 ## SYNOPSIS
 Create new navigation property to sideLoadingKeys for deviceAppManagement
@@ -14,14 +14,14 @@ Create new navigation property to sideLoadingKeys for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtSideLoadingKey [-AdditionalProperties <Hashtable>] [-Description <String>]
+New-MgBetaDeviceAppMgtSideLoadingKey [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastUpdatedDateTime <String>] [-TotalActivation <Int32>]
  [-Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtSideLoadingKey -BodyParameter <IMicrosoftGraphSideLoadingKey> [-Confirm] [-WhatIf]
+New-MgBetaDeviceAppMgtSideLoadingKey -BodyParameter <IMicrosoftGraphSideLoadingKey> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ SideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line O
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSideLoadingKey
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSideLoadingKey
 Parameter Sets: Create
 Aliases:
 
@@ -190,17 +190,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSideLoadingKey
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSideLoadingKey
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSideLoadingKey
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSideLoadingKey
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementSideLoadingKey
+### New-MgBetaDeviceAppManagementSideLoadingKey
 
 COMPLEX PARAMETER PROPERTIES
 

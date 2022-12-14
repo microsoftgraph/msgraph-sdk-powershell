@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mgplannerplantask
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mgplannerplantask
 schema: 2.0.0
 ---
 
-# Get-MgPlannerPlanTask
+# Get-MgBetaPlannerPlanTask
 
 ## SYNOPSIS
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -13,7 +13,7 @@ Retrieve a list of plannerTask objects associated with a plannerPlan object.
 ## SYNTAX
 
 ```
-Get-MgPlannerPlanTask -PlannerPlanId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPlannerPlanTask -PlannerPlanId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,13 +23,13 @@ Retrieve a list of plannerTask objects associated with a plannerPlan object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPlannerPlanTask Cmdlet
+### Example 1: Using the Get-MgBetaPlannerPlanTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgPlannerPlanTask -PlannerPlanId $plannerPlanId
+Import-Module Microsoft.Graph.Beta.Planner
+Get-MgBetaPlannerPlanTask -PlannerPlanId $plannerPlanId
 ```
 
-This example shows how to use the Get-MgPlannerPlanTask Cmdlet.
+This example shows how to use the Get-MgBetaPlannerPlanTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -207,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1
 
 ## NOTES
 

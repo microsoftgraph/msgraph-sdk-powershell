@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationsynchronizationprofileerror
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationsynchronizationprofileerror
 schema: 2.0.0
 ---
 
-# Remove-MgEducationSynchronizationProfileError
+# Remove-MgBetaEducationSynchronizationProfileError
 
 ## SYNOPSIS
 Delete navigation property errors for education
@@ -14,14 +14,14 @@ Delete navigation property errors for education
 
 ### Delete (Default)
 ```
-Remove-MgEducationSynchronizationProfileError -EducationSynchronizationErrorId <String>
+Remove-MgBetaEducationSynchronizationProfileError -EducationSynchronizationErrorId <String>
  -EducationSynchronizationProfileId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationSynchronizationProfileError -InputObject <IEducationIdentity> [-IfMatch <String>]
+Remove-MgBetaEducationSynchronizationProfileError -InputObject <IEducationIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportoffice365activeuserdetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportoffice365activeuserdetail
 schema: 2.0.0
 ---
 
-# Get-MgReportOffice365ActiveUserDetail
+# Get-MgBetaReportOffice365ActiveUserDetail
 
 ## SYNOPSIS
 Invoke function getOffice365ActiveUserDetail
@@ -14,26 +14,26 @@ Invoke function getOffice365ActiveUserDetail
 
 ### Get2 (Default)
 ```
-Get-MgReportOffice365ActiveUserDetail -Date <DateTime> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaReportOffice365ActiveUserDetail -Date <DateTime> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get3
 ```
-Get-MgReportOffice365ActiveUserDetail -Period <String> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaReportOffice365ActiveUserDetail -Period <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgReportOffice365ActiveUserDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaReportOffice365ActiveUserDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgReportOffice365ActiveUserDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaReportOffice365ActiveUserDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -95,7 +95,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
@@ -201,11 +201,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOffice365ActiveUserDetail
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOffice365ActiveUserDetail
 
 ## NOTES
 

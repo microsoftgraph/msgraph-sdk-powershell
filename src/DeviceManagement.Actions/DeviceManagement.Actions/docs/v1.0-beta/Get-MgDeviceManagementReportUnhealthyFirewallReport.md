@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementreportunhealthyfirewallreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementreportunhealthyfirewallreport
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementReportUnhealthyFirewallReport
+# Get-MgBetaDeviceManagementReportUnhealthyFirewallReport
 
 ## SYNOPSIS
 Invoke action getUnhealthyFirewallReport
@@ -14,7 +14,7 @@ Invoke action getUnhealthyFirewallReport
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementReportUnhealthyFirewallReport -OutFile <String> [-AdditionalProperties <Hashtable>]
+Get-MgBetaDeviceManagementReportUnhealthyFirewallReport -OutFile <String> [-AdditionalProperties <Hashtable>]
  [-Filter <String>] [-GroupBy <String[]>] [-Name <String>] [-Property <String[]>] [-Search <String>]
  [-SessionId <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementReportUnhealthyFirewallReport -OutFile <String> [-Addition
 
 ### Get
 ```
-Get-MgDeviceManagementReportUnhealthyFirewallReport
+Get-MgBetaDeviceManagementReportUnhealthyFirewallReport
  -BodyParameter <IPaths4Dr5S6DevicemanagementReportsMicrosoftGraphGetunhealthyfirewallreportPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths4Dr5S6DevicemanagementReportsMicrosoftGraphGetunhealthyfirewallreportPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths4Dr5S6DevicemanagementReportsMicrosoftGraphGetunhealthyfirewallreportPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -266,7 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths4Dr5S6DevicemanagementReportsMicrosoftGraphGetunhealthyfirewallreportPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths4Dr5S6DevicemanagementReportsMicrosoftGraphGetunhealthyfirewallreportPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

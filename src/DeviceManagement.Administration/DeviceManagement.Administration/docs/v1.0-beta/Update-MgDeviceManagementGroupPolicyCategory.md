@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicycategory
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicycategory
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyCategory
+# Update-MgBetaDeviceManagementGroupPolicyCategory
 
 ## SYNOPSIS
 Update the navigation property groupPolicyCategories in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property groupPolicyCategories in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyCategory -GroupPolicyCategoryId <String>
+Update-MgBetaDeviceManagementGroupPolicyCategory -GroupPolicyCategoryId <String>
  [-AdditionalProperties <Hashtable>] [-Children <IMicrosoftGraphGroupPolicyCategory[]>]
  [-DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-DisplayName <String>] [-Id <String>]
@@ -24,19 +24,19 @@ Update-MgDeviceManagementGroupPolicyCategory -GroupPolicyCategoryId <String>
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyCategory -GroupPolicyCategoryId <String>
+Update-MgBetaDeviceManagementGroupPolicyCategory -GroupPolicyCategoryId <String>
  -BodyParameter <IMicrosoftGraphGroupPolicyCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyCategory -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementGroupPolicyCategory -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphGroupPolicyCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyCategory -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementGroupPolicyCategory -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Children <IMicrosoftGraphGroupPolicyCategory[]>]
  [-DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-DisplayName <String>] [-Id <String>]
@@ -71,7 +71,7 @@ The category entity stores the category of a group policy definition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -87,7 +87,7 @@ The children categories
 To construct, please use Get-Help -Online and see NOTES section for CHILDREN properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -105,7 +105,7 @@ The group policy definition file also contains the languages supported as determ
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -121,7 +121,7 @@ The immediate GroupPolicyDefinition children of the category
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 Category Ingestion source
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.IngestionSource
+Type: Microsoft.Graph.Beta.PowerShell.Support.IngestionSource
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -198,7 +198,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -244,7 +244,7 @@ The category entity stores the category of a group policy definition
 To construct, please use Get-Help -Online and see NOTES section for PARENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -306,9 +306,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 
 ## OUTPUTS
 

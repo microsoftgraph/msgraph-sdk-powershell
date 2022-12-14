@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementwindowautopilotdeviceidentityusertodevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementwindowautopilotdeviceidentityusertodevice
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
+# Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
 
 ## SYNOPSIS
 Assigns user to Autopilot devices.
@@ -14,21 +14,21 @@ Assigns user to Autopilot devices.
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice -WindowsAutopilotDeviceIdentityId <String>
+Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityUserToDevice -WindowsAutopilotDeviceIdentityId <String>
  [-AdditionalProperties <Hashtable>] [-AddressableUserName <String>] [-UserPrincipalName <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice -WindowsAutopilotDeviceIdentityId <String>
+Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityUserToDevice -WindowsAutopilotDeviceIdentityId <String>
  -BodyParameter <IPathsLgvh1ODevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignusertodevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
+Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsLgvh1ODevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignusertodevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
+Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-AddressableUserName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsLgvh1ODevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignusertodevicePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsLgvh1ODevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignusertodevicePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -192,9 +192,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsLgvh1ODevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignusertodevicePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsLgvh1ODevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignusertodevicePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

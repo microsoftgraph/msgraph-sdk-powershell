@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanyitemcategory
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanyitemcategory
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyItemCategory
+# New-MgBetaFinancialCompanyItemCategory
 
 ## SYNOPSIS
 Create new navigation property to itemCategories for financials
@@ -14,26 +14,26 @@ Create new navigation property to itemCategories for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyItemCategory -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
+New-MgBetaFinancialCompanyItemCategory -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgFinancialCompanyItemCategory -CompanyId <String> -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm]
+New-MgBetaFinancialCompanyItemCategory -CompanyId <String> -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyItemCategory -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyItemCategory -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyItemCategory -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyItemCategory -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ itemCategory
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -204,13 +204,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementconfigurationpolicytemplate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementconfigurationpolicytemplate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementConfigurationPolicyTemplate
+# Update-MgBetaDeviceManagementConfigurationPolicyTemplate
 
 ## SYNOPSIS
 Update the navigation property configurationPolicyTemplates in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property configurationPolicyTemplates in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementConfigurationPolicyTemplate -DeviceManagementConfigurationPolicyTemplateId <String>
+Update-MgBetaDeviceManagementConfigurationPolicyTemplate -DeviceManagementConfigurationPolicyTemplateId <String>
  [-AdditionalProperties <Hashtable>] [-AllowUnmanagedSettings] [-BaseId <String>] [-Description <String>]
  [-DisplayName <String>] [-DisplayVersion <String>] [-Id <String>]
  [-LifecycleState <DeviceManagementTemplateLifecycleState>]
@@ -27,21 +27,21 @@ Update-MgDeviceManagementConfigurationPolicyTemplate -DeviceManagementConfigurat
 
 ### Update
 ```
-Update-MgDeviceManagementConfigurationPolicyTemplate -DeviceManagementConfigurationPolicyTemplateId <String>
+Update-MgBetaDeviceManagementConfigurationPolicyTemplate -DeviceManagementConfigurationPolicyTemplateId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementConfigurationPolicyTemplate -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementConfigurationPolicyTemplate -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementConfigurationPolicyTemplate -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementConfigurationPolicyTemplate -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AllowUnmanagedSettings] [-BaseId <String>] [-Description <String>]
  [-DisplayName <String>] [-DisplayVersion <String>] [-Id <String>]
  [-LifecycleState <DeviceManagementTemplateLifecycleState>]
@@ -109,7 +109,7 @@ Device Management Configuration Policy Template
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -201,7 +201,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 Describes current lifecycle state of a template
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementTemplateLifecycleState
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementTemplateLifecycleState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 Supported platform types.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationPlatforms
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationPlatforms
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -262,7 +262,7 @@ Setting templates
 To construct, please use Get-Help -Online and see NOTES section for SETTINGTEMPLATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 Describes which technology this setting can be deployed with
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationTechnologies
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationTechnologies
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 Describes the TemplateFamily for the Template entity
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationTemplateFamily
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationTemplateFamily
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -339,9 +339,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate
 
 ## OUTPUTS
 

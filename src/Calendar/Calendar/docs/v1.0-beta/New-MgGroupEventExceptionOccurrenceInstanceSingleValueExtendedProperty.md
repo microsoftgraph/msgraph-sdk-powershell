@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mggroupeventexceptionoccurrenceinstancesinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mggroupeventexceptionoccurrenceinstancesinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# New-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty
+# New-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty
 
 ## SYNOPSIS
 Create new navigation property to singleValueExtendedProperties for groups
@@ -14,27 +14,27 @@ Create new navigation property to singleValueExtendedProperties for groups
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
+New-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
  -EventId2 <String> -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
+New-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
  -EventId2 <String> -GroupId <String> -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+New-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+New-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ singleValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -220,13 +220,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementuserexperienceanalyticdevicewithoutcloudidentity
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementuserexperienceanalyticdevicewithoutcloudidentity
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
+# Remove-MgBetaDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 
 ## SYNOPSIS
 Delete navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
@@ -14,14 +14,14 @@ Delete navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity fo
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
+Remove-MgBetaDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
  -UserExperienceAnalyticsDeviceWithoutCloudIdentityId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
+Remove-MgBetaDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
  -InputObject <IDeviceManagementIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

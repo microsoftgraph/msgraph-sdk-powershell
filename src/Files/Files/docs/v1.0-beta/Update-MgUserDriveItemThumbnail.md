@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/update-mguserdriveitemthumbnail
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/update-mguserdriveitemthumbnail
 schema: 2.0.0
 ---
 
-# Update-MgUserDriveItemThumbnail
+# Update-MgBetaUserDriveItemThumbnail
 
 ## SYNOPSIS
 Update the navigation property thumbnails in users
@@ -14,7 +14,7 @@ Update the navigation property thumbnails in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserDriveItemThumbnail -DriveId <String> -DriveItemId <String> -ThumbnailSetId <String>
+Update-MgBetaUserDriveItemThumbnail -DriveId <String> -DriveItemId <String> -ThumbnailSetId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Large <IMicrosoftGraphThumbnail>]
  [-Medium <IMicrosoftGraphThumbnail>] [-Small <IMicrosoftGraphThumbnail>] [-Source <IMicrosoftGraphThumbnail>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgUserDriveItemThumbnail -DriveId <String> -DriveItemId <String> -Thumbna
 
 ### Update1
 ```
-Update-MgUserDriveItemThumbnail -DriveId <String> -DriveItemId <String> -ThumbnailSetId <String>
+Update-MgBetaUserDriveItemThumbnail -DriveId <String> -DriveItemId <String> -ThumbnailSetId <String>
  -UserId <String> -BodyParameter <IMicrosoftGraphThumbnailSet> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserDriveItemThumbnail -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphThumbnailSet>
+Update-MgBetaUserDriveItemThumbnail -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphThumbnailSet>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserDriveItemThumbnail -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserDriveItemThumbnail -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Large <IMicrosoftGraphThumbnail>] [-Medium <IMicrosoftGraphThumbnail>]
  [-Small <IMicrosoftGraphThumbnail>] [-Source <IMicrosoftGraphThumbnail>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -68,7 +68,7 @@ thumbnailSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnailSet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnailSet
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -146,7 +146,7 @@ thumbnail
 To construct, please use Get-Help -Online and see NOTES section for LARGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnail
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -162,7 +162,7 @@ thumbnail
 To construct, please use Get-Help -Online and see NOTES section for MEDIUM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnail
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -193,7 +193,7 @@ thumbnail
 To construct, please use Get-Help -Online and see NOTES section for SMALL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnail
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -209,7 +209,7 @@ thumbnail
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnail
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -286,9 +286,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnailSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnailSet
 
 ## OUTPUTS
 

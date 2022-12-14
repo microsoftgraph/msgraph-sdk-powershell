@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementuserexperienceanalyticimpactingprocess
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementuserexperienceanalyticimpactingprocess
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementUserExperienceAnalyticImpactingProcess
+# Remove-MgBetaDeviceManagementUserExperienceAnalyticImpactingProcess
 
 ## SYNOPSIS
 Delete navigation property userExperienceAnalyticsImpactingProcess for deviceManagement
@@ -14,14 +14,14 @@ Delete navigation property userExperienceAnalyticsImpactingProcess for deviceMan
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementUserExperienceAnalyticImpactingProcess
+Remove-MgBetaDeviceManagementUserExperienceAnalyticImpactingProcess
  -UserExperienceAnalyticsImpactingProcessId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementUserExperienceAnalyticImpactingProcess -InputObject <IDeviceManagementIdentity>
+Remove-MgBetaDeviceManagementUserExperienceAnalyticImpactingProcess -InputObject <IDeviceManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

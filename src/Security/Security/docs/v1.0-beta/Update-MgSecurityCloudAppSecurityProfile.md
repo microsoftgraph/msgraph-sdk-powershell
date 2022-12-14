@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritycloudappsecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritycloudappsecurityprofile
 schema: 2.0.0
 ---
 
-# Update-MgSecurityCloudAppSecurityProfile
+# Update-MgBetaSecurityCloudAppSecurityProfile
 
 ## SYNOPSIS
 Update the navigation property cloudAppSecurityProfiles in security
@@ -14,7 +14,7 @@ Update the navigation property cloudAppSecurityProfiles in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityCloudAppSecurityProfile -CloudAppSecurityProfileId <String>
+Update-MgBetaSecurityCloudAppSecurityProfile -CloudAppSecurityProfileId <String>
  [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
  [-CreatedDateTime <DateTime>] [-DeploymentPackageUrl <String>] [-DestinationServiceName <String>]
  [-Id <String>] [-IsSigned] [-LastModifiedDateTime <DateTime>] [-Manifest <String>] [-Name <String>]
@@ -26,19 +26,19 @@ Update-MgSecurityCloudAppSecurityProfile -CloudAppSecurityProfileId <String>
 
 ### Update
 ```
-Update-MgSecurityCloudAppSecurityProfile -CloudAppSecurityProfileId <String>
+Update-MgBetaSecurityCloudAppSecurityProfile -CloudAppSecurityProfileId <String>
  -BodyParameter <IMicrosoftGraphCloudAppSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityCloudAppSecurityProfile -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityCloudAppSecurityProfile -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphCloudAppSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityCloudAppSecurityProfile -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityCloudAppSecurityProfile -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
  [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CreatedDateTime <DateTime>]
  [-DeploymentPackageUrl <String>] [-DestinationServiceName <String>] [-Id <String>] [-IsSigned]
  [-LastModifiedDateTime <DateTime>] [-Manifest <String>] [-Name <String>] [-PermissionsRequired <String>]
@@ -104,7 +104,7 @@ cloudAppSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -196,7 +196,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -392,7 +392,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -439,9 +439,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

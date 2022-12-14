@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgadministrativeunit
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgadministrativeunit
 schema: 2.0.0
 ---
 
-# Get-MgAdministrativeUnit
+# Get-MgBetaAdministrativeUnit
 
 ## SYNOPSIS
 Retrieve the properties and relationships of an administrativeUnit object.
@@ -15,20 +15,20 @@ Since the **administrativeUnit** resource supports extensions, you can also use 
 
 ### List (Default)
 ```
-Get-MgAdministrativeUnit [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaAdministrativeUnit [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAdministrativeUnit -AdministrativeUnitId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaAdministrativeUnit -AdministrativeUnitId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,7 +40,7 @@ Since the **administrativeUnit** resource supports extensions, you can also use 
 
 ### Example 1: Get a list of administrative units
 ```powershell
-Get-MgDirectoryAdministrativeUnit
+Get-MgBetaDirectoryAdministrativeUnit
 
 DeletedDateTime Id                                   Description DisplayName    Visibility
 --------------- --                                   ----------- -----------    ----------
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/new-mgsearchacronym
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/new-mgsearchacronym
 schema: 2.0.0
 ---
 
-# New-MgSearchAcronym
+# New-MgBetaSearchAcronym
 
 ## SYNOPSIS
 Create a new acronym object.
@@ -14,14 +14,14 @@ Create a new acronym object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSearchAcronym [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
+New-MgBetaSearchAcronym [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphSearchIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-StandsFor <String>] [-State <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSearchAcronym -BodyParameter <IMicrosoftGraphSearchAcronym> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSearchAcronym -BodyParameter <IMicrosoftGraphSearchAcronym> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,9 +29,9 @@ Create a new acronym object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSearchAcronym Cmdlet
+### Example 1: Using the New-MgBetaSearchAcronym Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	DisplayName = "DNN"
 	StandsFor = "Deep Neural Network"
@@ -39,10 +39,10 @@ $params = @{
 	WebUrl = "http://microsoft.com/deep-neural-network"
 	State = "draft"
 }
-New-MgSearchAcronym -BodyParameter $params
+New-MgBetaSearchAcronym -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSearchAcronym Cmdlet.
+This example shows how to use the New-MgBetaSearchAcronym Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ acronym
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAcronym
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAcronym
 Parameter Sets: Create
 Aliases:
 
@@ -129,7 +129,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -238,11 +238,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAcronym
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAcronym
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAcronym
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAcronym
 
 ## NOTES
 

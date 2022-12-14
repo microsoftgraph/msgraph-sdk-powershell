@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementdeviceconfigurationconflictsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementdeviceconfigurationconflictsummary
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementDeviceConfigurationConflictSummary
+# Remove-MgBetaDeviceManagementDeviceConfigurationConflictSummary
 
 ## SYNOPSIS
 Delete navigation property deviceConfigurationConflictSummary for deviceManagement
@@ -14,13 +14,13 @@ Delete navigation property deviceConfigurationConflictSummary for deviceManageme
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementDeviceConfigurationConflictSummary -DeviceConfigurationConflictSummaryId <String>
+Remove-MgBetaDeviceManagementDeviceConfigurationConflictSummary -DeviceConfigurationConflictSummaryId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementDeviceConfigurationConflictSummary -InputObject <IDeviceManagementIdentity>
+Remove-MgBetaDeviceManagementDeviceConfigurationConflictSummary -InputObject <IDeviceManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

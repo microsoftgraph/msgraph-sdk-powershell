@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportmonthlyprintusagebyuser
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportmonthlyprintusagebyuser
 schema: 2.0.0
 ---
 
-# Get-MgReportMonthlyPrintUsageByUser
+# Get-MgBetaReportMonthlyPrintUsageByUser
 
 ## SYNOPSIS
 Get monthlyPrintUsageByUser from reports
@@ -14,20 +14,20 @@ Get monthlyPrintUsageByUser from reports
 
 ### List (Default)
 ```
-Get-MgReportMonthlyPrintUsageByUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaReportMonthlyPrintUsageByUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgReportMonthlyPrintUsageByUser -PrintUsageByUserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaReportMonthlyPrintUsageByUser -PrintUsageByUserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportMonthlyPrintUsageByUser -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaReportMonthlyPrintUsageByUser -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByUser1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintUsageByUser1
 
 ## NOTES
 

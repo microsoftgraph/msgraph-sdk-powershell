@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantticketingendpoint
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantticketingendpoint
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantTicketingEndpoint
+# Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint
 
 ## SYNOPSIS
 Update the navigation property managedTenantTicketingEndpoints in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managedTenantTicketingEndpoints in tenantRelation
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketingEndpointId <String>
+Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketingEndpointId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-LastActionByUserId <String>]
  [-LastActionDateTime <DateTime>] [-PhoneNumber <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ Update-MgTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketin
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketingEndpointId <String>
+Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketingEndpointId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-LastActionByUserId <String>]
  [-LastActionDateTime <DateTime>] [-PhoneNumber <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -71,7 +71,7 @@ managedTenantTicketingEndpoint
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -285,9 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
 
 ## OUTPUTS
 

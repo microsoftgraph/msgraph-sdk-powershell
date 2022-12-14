@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgserviceprincipalownerbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgserviceprincipalownerbyref
 schema: 2.0.0
 ---
 
-# Remove-MgServicePrincipalOwnerByRef
+# Remove-MgBetaServicePrincipalOwnerByRef
 
 ## SYNOPSIS
 Delete ref of navigation property owners for servicePrincipals
@@ -14,13 +14,13 @@ Delete ref of navigation property owners for servicePrincipals
 
 ### Delete (Default)
 ```
-Remove-MgServicePrincipalOwnerByRef -DirectoryObjectId <String> -ServicePrincipalId <String> [-Id <String>]
+Remove-MgBetaServicePrincipalOwnerByRef -DirectoryObjectId <String> -ServicePrincipalId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServicePrincipalOwnerByRef -InputObject <IApplicationsIdentity> [-Id <String>] [-IfMatch <String>]
+Remove-MgBetaServicePrincipalOwnerByRef -InputObject <IApplicationsIdentity> [-Id <String>] [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,16 +29,16 @@ Delete ref of navigation property owners for servicePrincipals
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgServicePrincipalOwnerByRef Cmdlet
+### Example 1: Using the Remove-MgBetaServicePrincipalOwnerByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/{id}"
 }
-Remove-MgServicePrincipalOwnerByRef -ServicePrincipalId $servicePrincipalId -DirectoryObjectId $directoryObjectId -BodyParameter $params
+Remove-MgBetaServicePrincipalOwnerByRef -ServicePrincipalId $servicePrincipalId -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
 
-This example shows how to use the Remove-MgServicePrincipalOwnerByRef Cmdlet.
+This example shows how to use the Remove-MgBetaServicePrincipalOwnerByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -93,7 +93,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -170,7 +170,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

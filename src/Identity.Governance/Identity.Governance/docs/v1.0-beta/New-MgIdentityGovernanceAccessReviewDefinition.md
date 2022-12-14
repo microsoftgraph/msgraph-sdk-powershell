@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernanceaccessreviewdefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernanceaccessreviewdefinition
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceAccessReviewDefinition
+# New-MgBetaIdentityGovernanceAccessReviewDefinition
 
 ## SYNOPSIS
 Create a new accessReviewScheduleDefinition object.
@@ -14,7 +14,7 @@ Create a new accessReviewScheduleDefinition object.
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityGovernanceAccessReviewDefinition
+New-MgBetaIdentityGovernanceAccessReviewDefinition
  [-AdditionalNotificationRecipients <IMicrosoftGraphAccessReviewNotificationRecipientItem[]>]
  [-AdditionalProperties <Hashtable>] [-BackupReviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]
  [-CreatedBy <IMicrosoftGraphUserIdentity>] [-CreatedDateTime <DateTime>] [-DescriptionForAdmins <String>]
@@ -29,7 +29,7 @@ New-MgIdentityGovernanceAccessReviewDefinition
 
 ### Create
 ```
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter <IMicrosoftGraphAccessReviewScheduleDefinition1>
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter <IMicrosoftGraphAccessReviewScheduleDefinition1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -38,24 +38,24 @@ Create a new accessReviewScheduleDefinition object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 1: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Review employee access to LinkedIn"
 	DescriptionForAdmins = "Review employee access to LinkedIn"
 	Scope = @{
-		"@odata.type" = "#microsoft.graph.principalResourceMembershipsScope"
+		"@odata.type" = "#Microsoft.Graph.Beta.principalResourceMembershipsScope"
 		PrincipalScopes = @(
 			@{
-				"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+				"@odata.type" = "#Microsoft.Graph.Beta.accessReviewQueryScope"
 				Query = "/users"
 				QueryType = "MicrosoftGraph"
 			}
 		)
 		ResourceScopes = @(
 			@{
-				"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+				"@odata.type" = "#Microsoft.Graph.Beta.accessReviewQueryScope"
 				Query = "/servicePrincipals/bae11f90-7d5d-46ba-9f55-8112b59d92ae"
 				QueryType = "MicrosoftGraph"
 			}
@@ -103,21 +103,21 @@ $params = @{
 		}
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 2: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Group Multi-stage Access Review"
 	DescriptionForAdmins = "New scheduled access review"
 	DescriptionForReviewers = "If you have any questions, contact jerry@contoso.com"
 	Scope = @{
-		"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+		"@odata.type" = "#Microsoft.Graph.Beta.accessReviewQueryScope"
 		Query = "/groups/02f3bafb-448c-487c-88c2-5fd65ce49a41/transitiveMembers"
 		QueryType = "MicrosoftGraph"
 	}
@@ -174,27 +174,27 @@ $params = @{
 		DecisionHistoriesForReviewersEnabled = $true
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 3: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Review inactive guests on teams"
 	DescriptionForAdmins = "Control guest user access to our teams."
 	DescriptionForReviewers = "Information security is everyone's responsibility. Review our access policy for more."
 	InstanceEnumerationScope = @{
-		"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+		"@odata.type" = "#Microsoft.Graph.Beta.accessReviewQueryScope"
 		Query = "/groups?$filter=(groupTypes/any(c:c+eq+'Unified') and resourceProvisioningOptions/Any(x:x eq 'Team')')"
 		QueryType = "MicrosoftGraph"
 	}
 	Scope = @{
-		"@odata.type" = "#microsoft.graph.accessReviewInactiveUsersQueryScope"
-		Query = "./members/microsoft.graph.user/?$filter=(userType eq 'Guest')"
+		"@odata.type" = "#Microsoft.Graph.Beta.accessReviewInactiveUsersQueryScope"
+		Query = "./members/Microsoft.Graph.Beta.user/?$filter=(userType eq 'Guest')"
 		QueryType = "MicrosoftGraph"
 		InactiveDuration = "P30D"
 	}
@@ -232,21 +232,21 @@ $params = @{
 		AutoApplyDecisionsEnabled = $true
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 4: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Test create"
 	DescriptionForAdmins = "New scheduled access review"
 	DescriptionForReviewers = "If you have any questions, contact jerry@contoso.com"
 	Scope = @{
-		"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+		"@odata.type" = "#Microsoft.Graph.Beta.accessReviewQueryScope"
 		Query = "/groups/02f3bafb-448c-487c-88c2-5fd65ce49a41/transitiveMembers"
 		QueryType = "MicrosoftGraph"
 	}
@@ -270,31 +270,31 @@ $params = @{
 		}
 		RecommendationInsightSettings = @(
 			@{
-				"@odata.type" = "#microsoft.graph.userLastSignInRecommendationInsightSetting"
+				"@odata.type" = "#Microsoft.Graph.Beta.userLastSignInRecommendationInsightSetting"
 				RecommendationLookBackDuration = "P30D"
 				SignInScope = "tenant"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.groupPeerOutlierRecommendationInsightSettings"
+				"@odata.type" = "#Microsoft.Graph.Beta.groupPeerOutlierRecommendationInsightSettings"
 			}
 		)
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 5: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Test create"
 	DescriptionForAdmins = "New scheduled access review"
 	DescriptionForReviewers = "If you have any questions, contact jerry@contoso.com"
 	Scope = @{
-		"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+		"@odata.type" = "#Microsoft.Graph.Beta.accessReviewQueryScope"
 		Query = "/groups/02f3bafb-448c-487c-88c2-5fd65ce49a41/transitiveMembers"
 		QueryType = "MicrosoftGraph"
 	}
@@ -324,10 +324,10 @@ $params = @{
 		}
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -337,7 +337,7 @@ Defines the list of additional users or group members to be notified of the acce
 To construct, please use Get-Help -Online and see NOTES section for ADDITIONALNOTIFICATIONRECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewNotificationRecipientItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewNotificationRecipientItem[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -368,7 +368,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BACKUPREVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -384,7 +384,7 @@ accessReviewScheduleDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleDefinition1
 Parameter Sets: Create
 Aliases:
 
@@ -400,7 +400,7 @@ userIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserIdentity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -490,7 +490,7 @@ NOTE: The value of this property will be ignored if fallback reviewers are assig
 To construct, please use Get-Help -Online and see NOTES section for FALLBACKREVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -538,7 +538,7 @@ Access reviews that do not recur will only have one instance; otherwise, there i
 To construct, please use Get-Help -Online and see NOTES section for INSTANCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewInstance1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewInstance1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -571,12 +571,12 @@ This collection of access review scopes is used to define who are the reviewers.
 The reviewers property is only updatable if individual users are assigned as reviewers.
 Required on create.
 Supports $select.
-For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API.
 NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
 To construct, please use Get-Help -Online and see NOTES section for REVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -607,7 +607,7 @@ accessReviewScheduleSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleSettings1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleSettings1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -627,7 +627,7 @@ When this property is defined, its settings are used instead of the correspondin
 To construct, please use Get-Help -Online and see NOTES section for STAGESETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewStageSettings1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewStageSettings1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -692,11 +692,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleDefinition1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleDefinition1
 
 ## NOTES
 
@@ -785,20 +785,20 @@ BODYPARAMETER <IMicrosoftGraphAccessReviewScheduleDefinition1>: accessReviewSche
       - `[Code <String>]`: The error code.
       - `[Message <String>]`: The error message.
     - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
-    - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+    - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API.
     - `[Scope <IMicrosoftGraphAccessReviewScope>]`: accessReviewScope
     - `[Stages <IMicrosoftGraphAccessReviewStage1[]>]`: If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem1[]>]`: Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
       - `[EndDateTime <DateTime?>]`: DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
       - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
-      - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+      - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API.
       - `[StartDateTime <DateTime?>]`: DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Status <String>]`: Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
     - `[StartDateTime <DateTime?>]`: DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
     - `[Status <String>]`: Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: Timestamp when the access review series was last modified. Supports $select. Read-only.
-  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
+  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
   - `[Scope <IMicrosoftGraphAccessReviewScope>]`: accessReviewScope
   - `[Settings <IMicrosoftGraphAccessReviewScheduleSettings1>]`: accessReviewScheduleSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -840,7 +840,7 @@ BODYPARAMETER <IMicrosoftGraphAccessReviewScheduleDefinition1>: accessReviewSche
     - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: 
     - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
     - `[RecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
-    - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
+    - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
     - `[StageId <String>]`: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
   - `[Status <String>]`: This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
 
@@ -920,7 +920,7 @@ INSTANCES <IMicrosoftGraphAccessReviewInstance1[]>: Set of access reviews instan
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Instances <IMicrosoftGraphAccessReviewInstance1[]>]`: Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
     - `[LastModifiedDateTime <DateTime?>]`: Timestamp when the access review series was last modified. Supports $select. Read-only.
-    - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
+    - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
     - `[Scope <IMicrosoftGraphAccessReviewScope>]`: accessReviewScope
     - `[Settings <IMicrosoftGraphAccessReviewScheduleSettings1>]`: accessReviewScheduleSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -962,7 +962,7 @@ INSTANCES <IMicrosoftGraphAccessReviewInstance1[]>: Set of access reviews instan
       - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: 
       - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
       - `[RecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
-      - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
+      - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
       - `[StageId <String>]`: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
     - `[Status <String>]`: This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
   - `[EndDateTime <DateTime?>]`: DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
@@ -970,20 +970,20 @@ INSTANCES <IMicrosoftGraphAccessReviewInstance1[]>: Set of access reviews instan
     - `[Code <String>]`: The error code.
     - `[Message <String>]`: The error message.
   - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
-  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API.
   - `[Scope <IMicrosoftGraphAccessReviewScope>]`: accessReviewScope
   - `[Stages <IMicrosoftGraphAccessReviewStage1[]>]`: If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem1[]>]`: Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
     - `[EndDateTime <DateTime?>]`: DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
     - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
-    - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+    - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API.
     - `[StartDateTime <DateTime?>]`: DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Status <String>]`: Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
   - `[StartDateTime <DateTime?>]`: DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
   - `[Status <String>]`: Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
 
-REVIEWERS <IMicrosoftGraphAccessReviewReviewerScope1[]>: This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
+REVIEWERS <IMicrosoftGraphAccessReviewReviewerScope1[]>: This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.
   - `[Query <String>]`: The query specifying who will be the reviewer.
   - `[QueryRoot <String>]`: In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
   - `[QueryType <String>]`: The type of query. Examples include MicrosoftGraph and ARM.
@@ -1032,7 +1032,7 @@ STAGESETTINGS <IMicrosoftGraphAccessReviewStageSettings1[]>: Required only for a
   - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: 
   - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
   - `[RecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
-  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
+  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft.Graph.Beta API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
   - `[StageId <String>]`: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
 
 ## RELATED LINKS

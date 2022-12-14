@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamprimarychannelfilefoldercontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamprimarychannelfilefoldercontent
 schema: 2.0.0
 ---
 
-# Get-MgTeamPrimaryChannelFileFolderContent
+# Get-MgBetaTeamPrimaryChannelFileFolderContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,12 +14,12 @@ The content stream, if the item represents a file.
 
 ### Get1 (Default)
 ```
-Get-MgTeamPrimaryChannelFileFolderContent -TeamId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaTeamPrimaryChannelFileFolderContent -TeamId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

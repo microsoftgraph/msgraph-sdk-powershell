@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtwdacsupplementalpolicydevicestatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtwdacsupplementalpolicydevicestatuses
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
+# New-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
 
 ## SYNOPSIS
 Create new navigation property to deviceStatuses for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceStatuses for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
+New-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
  -WindowsDefenderApplicationControlSupplementalPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-DeploymentStatus <WindowsDefenderApplicationControlSupplementalPolicyStatuses>] [-DeviceId <String>]
  [-DeviceName <String>] [-Id <String>] [-LastSyncDateTime <DateTime>] [-OSDescription <String>]
@@ -25,7 +25,7 @@ New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
 
 ### Create
 ```
-New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
+New-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
  -WindowsDefenderApplicationControlSupplementalPolicyId <String>
  -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -33,14 +33,14 @@ New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-DeploymentStatus <WindowsDefenderApplicationControlSupplementalPolicyStatuses>] [-DeviceId <String>]
  [-DeviceName <String>] [-Id <String>] [-LastSyncDateTime <DateTime>] [-OSDescription <String>]
@@ -76,7 +76,7 @@ Contains properties for the deployment state of a WindowsDefenderApplicationCont
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.WindowsDefenderApplicationControlSupplementalPolicyStatuses
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsDefenderApplicationControlSupplementalPolicyStatuses
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -153,7 +153,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -214,7 +214,7 @@ windowsDefenderApplicationControlSupplementalPolicy
 To construct, please use Get-Help -Online and see NOTES section for POLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicy
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -321,19 +321,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementWdacSupplementalPolicyDeviceStatuses
+### New-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

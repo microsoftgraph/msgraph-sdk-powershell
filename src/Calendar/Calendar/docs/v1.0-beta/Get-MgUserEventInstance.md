@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusereventinstance
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusereventinstance
 schema: 2.0.0
 ---
 
-# Get-MgUserEventInstance
+# Get-MgBetaUserEventInstance
 
 ## SYNOPSIS
 The occurrences of a recurring series, if the event is a series master.
@@ -18,20 +18,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserEventInstance -EventId <String> -UserId <String> [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserEventInstance -EventId <String> -UserId <String> [-Filter <String>] [-Property <String[]>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserEventInstance -EventId <String> -EventId1 <String> -UserId <String> [-Property <String[]>]
+Get-MgBetaUserEventInstance -EventId <String> -EventId1 <String> -UserId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserEventInstance -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserEventInstance -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,14 +43,14 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserEventInstance Cmdlet
+### Example 1: Using the Get-MgBetaUserEventInstance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEventInstance -UserId $userId -EventId $eventId -Startdatetime "2019-04-08T09:00:00.0000000" -Enddatetime "2019-04-30T09:00:00.0000000" -Property "subject,bodyPreview,seriesMasterId,type,recurrence,start,end" 
+Get-MgBetaUserEventInstance -UserId $userId -EventId $eventId -Startdatetime "2019-04-08T09:00:00.0000000" -Enddatetime "2019-04-30T09:00:00.0000000" -Property "subject,bodyPreview,seriesMasterId,type,recurrence,start,end" 
 ```
 
-This example shows how to use the Get-MgUserEventInstance Cmdlet.
+This example shows how to use the Get-MgBetaUserEventInstance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 
 ## NOTES
 

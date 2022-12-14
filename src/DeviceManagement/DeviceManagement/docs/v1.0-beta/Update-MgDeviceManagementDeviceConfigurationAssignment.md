@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdeviceconfigurationassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdeviceconfigurationassignment
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceConfigurationAssignment
+# Update-MgBetaDeviceManagementDeviceConfigurationAssignment
 
 ## SYNOPSIS
 Update the navigation property assignments in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property assignments in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceConfigurationAssignment -DeviceConfigurationAssignmentId <String>
+Update-MgBetaDeviceManagementDeviceConfigurationAssignment -DeviceConfigurationAssignmentId <String>
  -DeviceConfigurationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Intent <DeviceConfigAssignmentIntent>] [-Source <DeviceAndAppManagementAssignmentSource>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementDeviceConfigurationAssignment -DeviceConfigurationAssig
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceConfigurationAssignment -DeviceConfigurationAssignmentId <String>
+Update-MgBetaDeviceManagementDeviceConfigurationAssignment -DeviceConfigurationAssignmentId <String>
  -DeviceConfigurationId <String> -BodyParameter <IMicrosoftGraphDeviceConfigurationAssignment1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceConfigurationAssignment1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <DeviceConfigAssignmentIntent>]
  [-Source <DeviceAndAppManagementAssignmentSource>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
@@ -71,7 +71,7 @@ The device configuration assignment entity assigns an AAD group to a specific de
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationAssignment1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationAssignment1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 The administrator intent for the assignment of the profile.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceConfigAssignmentIntent
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceConfigAssignmentIntent
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 Represents source of assignment.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAndAppManagementAssignmentSource
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAndAppManagementAssignmentSource
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -241,9 +241,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationAssignment1
 
 ## OUTPUTS
 

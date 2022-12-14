@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanycurrency
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/remove-mgfinancialcompanycurrency
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanyCurrency
+# Remove-MgBetaFinancialCompanyCurrency
 
 ## SYNOPSIS
 Delete navigation property currencies for financials
@@ -14,13 +14,13 @@ Delete navigation property currencies for financials
 
 ### Delete (Default)
 ```
-Remove-MgFinancialCompanyCurrency -CompanyId <String> -CurrencyId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaFinancialCompanyCurrency -CompanyId <String> -CurrencyId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgFinancialCompanyCurrency -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaFinancialCompanyCurrency -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

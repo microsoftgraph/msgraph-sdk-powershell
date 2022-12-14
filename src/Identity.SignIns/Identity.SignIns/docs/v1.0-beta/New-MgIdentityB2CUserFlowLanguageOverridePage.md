@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityb2cuserflowlanguageoverridepage
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityb2cuserflowlanguageoverridepage
 schema: 2.0.0
 ---
 
-# New-MgIdentityB2CUserFlowLanguageOverridePage
+# New-MgBetaIdentityB2CUserFlowLanguageOverridePage
 
 ## SYNOPSIS
 Create new navigation property to overridesPages for identity
@@ -14,27 +14,27 @@ Create new navigation property to overridesPages for identity
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
+New-MgBetaIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
+New-MgBetaIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgIdentityB2CUserFlowLanguageOverridePage -InputObject <IIdentitySignInsIdentity>
+New-MgBetaIdentityB2CUserFlowLanguageOverridePage -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgIdentityB2CUserFlowLanguageOverridePage -InputObject <IIdentitySignInsIdentity>
+New-MgBetaIdentityB2CUserFlowLanguageOverridePage -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -173,7 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.Collections.Hashtable
 

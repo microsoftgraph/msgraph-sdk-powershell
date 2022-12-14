@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgserviceprincipaldelegatedpermissionclassification
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgserviceprincipaldelegatedpermissionclassification
 schema: 2.0.0
 ---
 
-# New-MgServicePrincipalDelegatedPermissionClassification
+# New-MgBetaServicePrincipalDelegatedPermissionClassification
 
 ## SYNOPSIS
 Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
@@ -14,26 +14,26 @@ Classify a delegated permission by adding a delegatedPermissionClassification to
 
 ### CreateExpanded (Default)
 ```
-New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String>
+New-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>] [-PermissionId <String>]
  [-PermissionName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String>
+New-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String>
  -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>] [-PermissionId <String>]
  [-PermissionName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,18 +43,18 @@ Classify a delegated permission by adding a delegatedPermissionClassification to
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgServicePrincipalDelegatedPermissionClassification Cmdlet
+### Example 1: Using the New-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	PermissionId = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
 	PermissionName = "User.Read"
 	Classification = "low"
 }
-New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+New-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgServicePrincipalDelegatedPermissionClassification Cmdlet.
+This example shows how to use the New-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ delegatedPermissionClassification
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -221,13 +221,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritytriggertype
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritytriggertype
 schema: 2.0.0
 ---
 
-# Get-MgSecurityTriggerType
+# Get-MgBetaSecurityTriggerType
 
 ## SYNOPSIS
 Get triggerTypes from security
@@ -13,7 +13,7 @@ Get triggerTypes from security
 ## SYNTAX
 
 ```
-Get-MgSecurityTriggerType [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSecurityTriggerType [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityTriggerTypesRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityTriggerTypesRoot
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mguserfollowedsite
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mguserfollowedsite
 schema: 2.0.0
 ---
 
-# Get-MgUserFollowedSite
+# Get-MgBetaUserFollowedSite
 
 ## SYNOPSIS
 Get followedSites from users
@@ -14,20 +14,20 @@ Get followedSites from users
 
 ### List1 (Default)
 ```
-Get-MgUserFollowedSite -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserFollowedSite -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserFollowedSite -SiteId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserFollowedSite -SiteId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserFollowedSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserFollowedSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,14 +36,14 @@ Get followedSites from users
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserFollowedSite Cmdlet
+### Example 1: Using the Get-MgBetaUserFollowedSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 # A UPN can also be used as -UserId.
-Get-MgUserFollowedSite -UserId $userId
+Get-MgBetaUserFollowedSite -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserFollowedSite Cmdlet.
+This example shows how to use the Get-MgBetaUserFollowedSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSite1
 
 ## NOTES
 

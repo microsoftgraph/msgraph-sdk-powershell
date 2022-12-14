@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappinstallsummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappinstallsummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppInstallSummary
+# Update-MgBetaDeviceAppMgtMobileAppInstallSummary
 
 ## SYNOPSIS
 Update the navigation property installSummary in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property installSummary in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtMobileAppInstallSummary -MobileAppId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtMobileAppInstallSummary -MobileAppId <String> [-AdditionalProperties <Hashtable>]
  [-FailedDeviceCount <Int32>] [-FailedUserCount <Int32>] [-Id <String>] [-InstalledDeviceCount <Int32>]
  [-InstalledUserCount <Int32>] [-NotApplicableDeviceCount <Int32>] [-NotApplicableUserCount <Int32>]
  [-NotInstalledDeviceCount <Int32>] [-NotInstalledUserCount <Int32>] [-PendingInstallDeviceCount <Int32>]
@@ -23,19 +23,19 @@ Update-MgDeviceAppMgtMobileAppInstallSummary -MobileAppId <String> [-AdditionalP
 
 ### Update
 ```
-Update-MgDeviceAppMgtMobileAppInstallSummary -MobileAppId <String>
+Update-MgBetaDeviceAppMgtMobileAppInstallSummary -MobileAppId <String>
  -BodyParameter <IMicrosoftGraphMobileAppInstallSummary> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtMobileAppInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMobileAppInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphMobileAppInstallSummary> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtMobileAppInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMobileAppInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-FailedDeviceCount <Int32>] [-FailedUserCount <Int32>] [-Id <String>]
  [-InstalledDeviceCount <Int32>] [-InstalledUserCount <Int32>] [-NotApplicableDeviceCount <Int32>]
  [-NotApplicableUserCount <Int32>] [-NotInstalledDeviceCount <Int32>] [-NotInstalledUserCount <Int32>]
@@ -70,7 +70,7 @@ Contains properties for the installation summary of a mobile app.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -329,9 +329,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
 
 ## OUTPUTS
 
@@ -341,7 +341,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementMobileAppInstallSummary
+### Update-MgBetaDeviceAppManagementMobileAppInstallSummary
 
 COMPLEX PARAMETER PROPERTIES
 

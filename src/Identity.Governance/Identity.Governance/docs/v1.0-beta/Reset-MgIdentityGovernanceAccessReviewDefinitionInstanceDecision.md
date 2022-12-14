@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/reset-mgidentitygovernanceaccessreviewdefinitioninstancedecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/reset-mgidentitygovernanceaccessreviewdefinitioninstancedecision
 schema: 2.0.0
 ---
 
-# Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision
+# Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision
 
 ## SYNOPSIS
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
@@ -14,13 +14,13 @@ Resets decisions of all accessReviewInstanceDecisionItem objects on an accessRev
 
 ### Reset (Default)
 ```
-Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
+Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -InputObject <IIdentityGovernanceIdentity>
+Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -InputObject <IIdentityGovernanceIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Resets decisions of all accessReviewInstanceDecisionItem objects on an accessRev
 
 ## EXAMPLES
 
-### Example 1: Using the Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision Cmdlet
+### Example 1: Using the Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision Cmdlet.
+This example shows how to use the Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

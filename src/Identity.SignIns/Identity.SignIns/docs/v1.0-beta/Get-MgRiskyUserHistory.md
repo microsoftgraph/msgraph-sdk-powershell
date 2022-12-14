@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgriskyuserhistory
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgriskyuserhistory
 schema: 2.0.0
 ---
 
-# Get-MgRiskyUserHistory
+# Get-MgBetaRiskyUserHistory
 
 ## SYNOPSIS
 Get history from identityProtection
@@ -14,20 +14,20 @@ Get history from identityProtection
 
 ### List (Default)
 ```
-Get-MgRiskyUserHistory -RiskyUserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaRiskyUserHistory -RiskyUserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgRiskyUserHistory -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaRiskyUserHistory -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,9 +38,9 @@ Get history from identityProtection
 
 ### Example 1: List history of a specific user
 ```powershell
-Connect-MgGraph -Scopes "IdentityRiskyUser.Read.All"
-Select-MgProfile beta
-Get-MgRiskyUserHistory -RiskyUserId 375844b0-2026-4265-b9f1-ee1708491e05 | Format-Table RiskDetail, RiskLastUpdatedDateTime, RiskState, UserDisplayName
+Connect-MgBetaGraph -Scopes "IdentityRiskyUser.Read.All"
+Select-MgBetaProfile beta
+Get-MgBetaRiskyUserHistory -RiskyUserId 375844b0-2026-4265-b9f1-ee1708491e05 | Format-Table RiskDetail, RiskLastUpdatedDateTime, RiskState, UserDisplayName
 
 RiskDetail                         RiskLastUpdatedDateTime RiskState            UserDisplayName
 ----------                         ----------------------- ---------            ---------------
@@ -55,9 +55,9 @@ The command return all the user risk history
 
 ### Example 2: List history of a specific user with detailed risk detection
 ```powershell
-Connect-MgGraph -Scopes "IdentityRiskyUser.Read.All"
-Select-MgProfile beta
-Get-MgRiskyUserHistory -RiskyUserId 375844b0-2026-4265-b9f1-ee1708491e05| Format-Table RiskDetail, RiskLastUpdatedDateTime, @{N="RiskDetection";E={($_). Activity.RiskEventTypes}}, RiskState, UserDisplayName
+Connect-MgBetaGraph -Scopes "IdentityRiskyUser.Read.All"
+Select-MgBetaProfile beta
+Get-MgBetaRiskyUserHistory -RiskyUserId 375844b0-2026-4265-b9f1-ee1708491e05| Format-Table RiskDetail, RiskLastUpdatedDateTime, @{N="RiskDetection";E={($_). Activity.RiskEventTypes}}, RiskState, UserDisplayName
 
 RiskDetail                         RiskLastUpdatedDateTime RiskDetection       RiskState            UserDisplayName
 ----------                         ----------------------- -------------       ---------            ---------------
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -274,11 +274,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1
 
 ## NOTES
 

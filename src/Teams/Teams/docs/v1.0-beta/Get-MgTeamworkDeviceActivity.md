@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamworkdeviceactivity
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamworkdeviceactivity
 schema: 2.0.0
 ---
 
-# Get-MgTeamworkDeviceActivity
+# Get-MgBetaTeamworkDeviceActivity
 
 ## SYNOPSIS
 Get the activity status of a Microsoft Teams-enabled device.
@@ -14,13 +14,13 @@ Get the activity status of a Microsoft Teams-enabled device.
 
 ### Get (Default)
 ```
-Get-MgTeamworkDeviceActivity -TeamworkDeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamworkDeviceActivity -TeamworkDeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamworkDeviceActivity -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamworkDeviceActivity -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Get the activity status of a Microsoft Teams-enabled device.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamworkDeviceActivity Cmdlet
+### Example 1: Using the Get-MgBetaTeamworkDeviceActivity Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDeviceActivity -TeamworkDeviceId $teamworkDeviceId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDeviceActivity -TeamworkDeviceId $teamworkDeviceId
 ```
 
-This example shows how to use the Get-MgTeamworkDeviceActivity Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDeviceActivity Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDeviceActivity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDeviceActivity
 
 ## NOTES
 

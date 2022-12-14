@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritylabelretentionlabel
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritylabelretentionlabel
 schema: 2.0.0
 ---
 
-# Update-MgSecurityLabelRetentionLabel
+# Update-MgBetaSecurityLabelRetentionLabel
 
 ## SYNOPSIS
 Update the navigation property retentionLabels in security
@@ -14,7 +14,7 @@ Update the navigation property retentionLabels in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityLabelRetentionLabel -RetentionLabelId <String> [-ActionAfterRetentionPeriod <String>]
+Update-MgBetaSecurityLabelRetentionLabel -RetentionLabelId <String> [-ActionAfterRetentionPeriod <String>]
  [-AdditionalProperties <Hashtable>] [-BehaviorDuringRetentionPeriod <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DefaultRecordBehavior <String>]
  [-DescriptionForAdmins <String>] [-DescriptionForUsers <String>] [-DisplayName <String>]
@@ -27,19 +27,19 @@ Update-MgSecurityLabelRetentionLabel -RetentionLabelId <String> [-ActionAfterRet
 
 ### Update
 ```
-Update-MgSecurityLabelRetentionLabel -RetentionLabelId <String>
+Update-MgBetaSecurityLabelRetentionLabel -RetentionLabelId <String>
  -BodyParameter <IMicrosoftGraphSecurityRetentionLabel> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityLabelRetentionLabel -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityLabelRetentionLabel -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityRetentionLabel> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityLabelRetentionLabel -InputObject <ISecurityIdentity> [-ActionAfterRetentionPeriod <String>]
+Update-MgBetaSecurityLabelRetentionLabel -InputObject <ISecurityIdentity> [-ActionAfterRetentionPeriod <String>]
  [-AdditionalProperties <Hashtable>] [-BehaviorDuringRetentionPeriod <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DefaultRecordBehavior <String>]
  [-DescriptionForAdmins <String>] [-DescriptionForUsers <String>] [-DisplayName <String>]
@@ -55,31 +55,31 @@ Update the navigation property retentionLabels in security
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityLabelRetentionLabel Cmdlet
+### Example 1: Using the Update-MgBetaSecurityLabelRetentionLabel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
-	"@odata.type" = "#microsoft.graph.security.retentionLabel"
+	"@odata.type" = "#Microsoft.Graph.Beta.security.retentionLabel"
 	DisplayName = "String"
 	BehaviorDuringRetentionPeriod = "String"
 	ActionAfterRetentionPeriod = "String"
 	RetentionTrigger = "String"
 	RetentionDuration = @{
-		"@odata.type" = "microsoft.graph.security.retentionDuration"
+		"@odata.type" = "Microsoft.Graph.Beta.security.retentionDuration"
 	}
 	IsInUse = "Boolean"
 	DescriptionForAdmins = "String"
 	DescriptionForUsers = "String"
 	CreatedBy = @{
-		"@odata.type" = "microsoft.graph.identitySet"
+		"@odata.type" = "Microsoft.Graph.Beta.identitySet"
 	}
 	LabelToBeApplied = "String"
 	DefaultRecordBehavior = "String"
 }
-Update-MgSecurityLabelRetentionLabel -RetentionLabelId $retentionLabelId -BodyParameter $params
+Update-MgBetaSecurityLabelRetentionLabel -RetentionLabelId $retentionLabelId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityLabelRetentionLabel Cmdlet.
+This example shows how to use the Update-MgBetaSecurityLabelRetentionLabel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -134,7 +134,7 @@ retentionLabel
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -150,7 +150,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -243,7 +243,7 @@ Review stages during which reviewers are notified to determine whether a documen
 To construct, please use Get-Help -Online and see NOTES section for DISPOSITIONREVIEWSTAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -275,7 +275,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -321,7 +321,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -382,7 +382,7 @@ retentionEventType
 To construct, please use Get-Help -Online and see NOTES section for RETENTIONEVENTTYPE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -459,9 +459,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

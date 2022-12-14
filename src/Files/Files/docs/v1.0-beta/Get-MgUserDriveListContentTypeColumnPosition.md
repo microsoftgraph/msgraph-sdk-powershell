@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mguserdrivelistcontenttypecolumnposition
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mguserdrivelistcontenttypecolumnposition
 schema: 2.0.0
 ---
 
-# Get-MgUserDriveListContentTypeColumnPosition
+# Get-MgBetaUserDriveListContentTypeColumnPosition
 
 ## SYNOPSIS
 Column order information in a content type.
@@ -14,20 +14,20 @@ Column order information in a content type.
 
 ### List1 (Default)
 ```
-Get-MgUserDriveListContentTypeColumnPosition -ContentTypeId <String> -DriveId <String> -UserId <String>
+Get-MgBetaUserDriveListContentTypeColumnPosition -ContentTypeId <String> -DriveId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserDriveListContentTypeColumnPosition -ColumnDefinitionId <String> -ContentTypeId <String>
+Get-MgBetaUserDriveListContentTypeColumnPosition -ColumnDefinitionId <String> -ContentTypeId <String>
  -DriveId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserDriveListContentTypeColumnPosition -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserDriveListContentTypeColumnPosition -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 
 ## NOTES
 

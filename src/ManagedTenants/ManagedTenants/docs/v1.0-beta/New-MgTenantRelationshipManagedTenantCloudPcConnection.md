@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantcloudpcconnection
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantcloudpcconnection
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantCloudPcConnection
+# New-MgBetaTenantRelationshipManagedTenantCloudPcConnection
 
 ## SYNOPSIS
 Create new navigation property to cloudPcConnections for tenantRelationships
@@ -14,14 +14,14 @@ Create new navigation property to cloudPcConnections for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantCloudPcConnection [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantCloudPcConnection [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-HealthCheckStatus <String>] [-Id <String>] [-LastRefreshedDateTime <DateTime>]
  [-TenantDisplayName <String>] [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantCloudPcConnection
+New-MgBetaTenantRelationshipManagedTenantCloudPcConnection
  -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ cloudPcConnection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
 Parameter Sets: Create
 Aliases:
 
@@ -201,11 +201,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
 
 ## NOTES
 

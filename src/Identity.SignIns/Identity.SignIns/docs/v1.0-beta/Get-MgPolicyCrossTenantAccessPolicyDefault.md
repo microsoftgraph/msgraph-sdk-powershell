@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicycrosstenantaccesspolicydefault
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicycrosstenantaccesspolicydefault
 schema: 2.0.0
 ---
 
-# Get-MgPolicyCrossTenantAccessPolicyDefault
+# Get-MgBetaPolicyCrossTenantAccessPolicyDefault
 
 ## SYNOPSIS
 Read the default configuration of a cross-tenant access policy.
@@ -14,7 +14,7 @@ This default configuration may be the service default assigned by Azure AD (**is
 ## SYNTAX
 
 ```
-Get-MgPolicyCrossTenantAccessPolicyDefault [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPolicyCrossTenantAccessPolicyDefault [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -24,13 +24,13 @@ This default configuration may be the service default assigned by Azure AD (**is
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyCrossTenantAccessPolicyDefault Cmdlet
+### Example 1: Using the Get-MgBetaPolicyCrossTenantAccessPolicyDefault Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyCrossTenantAccessPolicyDefault
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyCrossTenantAccessPolicyDefault
 ```
 
-This example shows how to use the Get-MgPolicyCrossTenantAccessPolicyDefault Cmdlet.
+This example shows how to use the Get-MgBetaPolicyCrossTenantAccessPolicyDefault Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -72,7 +72,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1
 
 ## NOTES
 

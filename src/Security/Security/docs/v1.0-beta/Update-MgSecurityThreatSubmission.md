@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritythreatsubmission
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritythreatsubmission
 schema: 2.0.0
 ---
 
-# Update-MgSecurityThreatSubmission
+# Update-MgBetaSecurityThreatSubmission
 
 ## SYNOPSIS
 Update the navigation property threatSubmission in security
@@ -14,7 +14,7 @@ Update the navigation property threatSubmission in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityThreatSubmission [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityThreatSubmission [-AdditionalProperties <Hashtable>]
  [-EmailThreats <IMicrosoftGraphSecurityEmailThreatSubmission[]>]
  [-EmailThreatSubmissionPolicies <IMicrosoftGraphSecurityEmailThreatSubmissionPolicy[]>]
  [-FileThreats <IMicrosoftGraphSecurityFileThreatSubmission[]>] [-Id <String>]
@@ -24,7 +24,7 @@ Update-MgSecurityThreatSubmission [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgSecurityThreatSubmission -BodyParameter <IMicrosoftGraphSecurityThreatSubmissionRoot> [-PassThru]
+Update-MgBetaSecurityThreatSubmission -BodyParameter <IMicrosoftGraphSecurityThreatSubmissionRoot> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ threatSubmissionRoot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityThreatSubmissionRoot
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityThreatSubmissionRoot
 Parameter Sets: Update
 Aliases:
 
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EMAILTHREATS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EMAILTHREATSUBMISSIONPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for FILETHREATS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityFileThreatSubmission[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityFileThreatSubmission[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for URLTHREATS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityThreatSubmissionRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityThreatSubmissionRoot
 
 ## OUTPUTS
 

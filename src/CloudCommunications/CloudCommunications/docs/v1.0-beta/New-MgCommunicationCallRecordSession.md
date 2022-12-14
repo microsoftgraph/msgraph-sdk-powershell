@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mgcommunicationcallrecordsession
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mgcommunicationcallrecordsession
 schema: 2.0.0
 ---
 
-# New-MgCommunicationCallRecordSession
+# New-MgBetaCommunicationCallRecordSession
 
 ## SYNOPSIS
 Create new navigation property to sessions for communications
@@ -14,7 +14,7 @@ Create new navigation property to sessions for communications
 
 ### CreateExpanded1 (Default)
 ```
-New-MgCommunicationCallRecordSession -CallRecordId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaCommunicationCallRecordSession -CallRecordId <String> [-AdditionalProperties <Hashtable>]
  [-Callee <IMicrosoftGraphCallRecordsEndpoint>] [-Caller <IMicrosoftGraphCallRecordsEndpoint>]
  [-EndDateTime <DateTime>] [-FailureInfo <IMicrosoftGraphCallRecordsFailureInfo>] [-Id <String>]
  [-Modalities <String[]>] [-Segments <IMicrosoftGraphCallRecordsSegment[]>] [-StartDateTime <DateTime>]
@@ -23,19 +23,19 @@ New-MgCommunicationCallRecordSession -CallRecordId <String> [-AdditionalProperti
 
 ### Create1
 ```
-New-MgCommunicationCallRecordSession -CallRecordId <String> -BodyParameter <IMicrosoftGraphCallRecordsSession>
+New-MgBetaCommunicationCallRecordSession -CallRecordId <String> -BodyParameter <IMicrosoftGraphCallRecordsSession>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgCommunicationCallRecordSession -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationCallRecordSession -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphCallRecordsSession> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgCommunicationCallRecordSession -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaCommunicationCallRecordSession -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Callee <IMicrosoftGraphCallRecordsEndpoint>]
  [-Caller <IMicrosoftGraphCallRecordsEndpoint>] [-EndDateTime <DateTime>]
  [-FailureInfo <IMicrosoftGraphCallRecordsFailureInfo>] [-Id <String>] [-Modalities <String[]>]
@@ -70,7 +70,7 @@ session
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsSession
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsSession
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -86,7 +86,7 @@ endpoint
 To construct, please use Get-Help -Online and see NOTES section for CALLEE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsEndpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsEndpoint
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -102,7 +102,7 @@ endpoint
 To construct, please use Get-Help -Online and see NOTES section for CALLER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsEndpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsEndpoint
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -150,7 +150,7 @@ failureInfo
 To construct, please use Get-Help -Online and see NOTES section for FAILUREINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsFailureInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsFailureInfo
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -182,7 +182,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -216,7 +216,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SEGMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsSegment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsSegment[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -280,13 +280,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsSession
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsSession
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsSession
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsSession
 
 ## NOTES
 

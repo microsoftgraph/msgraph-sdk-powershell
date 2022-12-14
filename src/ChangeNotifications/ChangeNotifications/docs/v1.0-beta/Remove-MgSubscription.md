@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ChangeNotifications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.changenotifications/remove-mgsubscription
+Module Name: Microsoft.Graph.Beta.ChangeNotifications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.changenotifications/remove-mgsubscription
 schema: 2.0.0
 ---
 
-# Remove-MgSubscription
+# Remove-MgBetaSubscription
 
 ## SYNOPSIS
 Delete a subscription.
@@ -15,13 +15,13 @@ For the list of resources that support subscribing to change notifications, see 
 
 ### Delete1 (Default)
 ```
-Remove-MgSubscription -SubscriptionId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaSubscription -SubscriptionId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgSubscription -InputObject <IChangeNotificationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaSubscription -InputObject <IChangeNotificationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ For the list of resources that support subscribing to change notifications, see 
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgSubscription Cmdlet
+### Example 1: Using the Remove-MgBetaSubscription Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ChangeNotifications
-Remove-MgSubscription -SubscriptionId $subscriptionId
+Import-Module Microsoft.Graph.Beta.ChangeNotifications
+Remove-MgBetaSubscription -SubscriptionId $subscriptionId
 ```
 
-This example shows how to use the Remove-MgSubscription Cmdlet.
+This example shows how to use the Remove-MgBetaSubscription Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IChangeNotificationsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IChangeNotificationsIdentity
 
 ## OUTPUTS
 

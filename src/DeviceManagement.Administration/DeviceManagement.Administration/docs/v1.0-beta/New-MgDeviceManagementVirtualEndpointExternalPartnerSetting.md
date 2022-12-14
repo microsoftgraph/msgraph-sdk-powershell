@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointexternalpartnersetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointexternalpartnersetting
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointExternalPartnerSetting
+# New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting
 
 ## SYNOPSIS
 Create a new cloudPcExternalPartnerSetting object.
@@ -14,14 +14,14 @@ Create a new cloudPcExternalPartnerSetting object.
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointExternalPartnerSetting [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting [-AdditionalProperties <Hashtable>]
  [-EnableConnection] [-Id <String>] [-LastSyncDateTime <DateTime>] [-PartnerId <String>] [-Status <String>]
  [-StatusDetails <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointExternalPartnerSetting
+New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting
  -BodyParameter <IMicrosoftGraphCloudPcExternalPartnerSetting> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,18 +30,18 @@ Create a new cloudPcExternalPartnerSetting object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet
+### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcExternalPartnerSetting"
+	"@odata.type" = "#Microsoft.Graph.Beta.cloudPcExternalPartnerSetting"
 	PartnerId = "198d7140-80bb-4843-8cc4-811377a49a92"
 	EnableConnection = $true
 }
-New-MgDeviceManagementVirtualEndpointExternalPartnerSetting -BodyParameter $params
+New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet.
+This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -66,7 +66,7 @@ cloudPcExternalPartnerSetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExternalPartnerSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExternalPartnerSetting
 Parameter Sets: Create
 Aliases:
 
@@ -209,11 +209,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExternalPartnerSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExternalPartnerSetting
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExternalPartnerSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExternalPartnerSetting
 
 ## NOTES
 

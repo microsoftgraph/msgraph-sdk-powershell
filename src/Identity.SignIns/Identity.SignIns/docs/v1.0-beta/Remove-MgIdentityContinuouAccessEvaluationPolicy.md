@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentitycontinuouaccessevaluationpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentitycontinuouaccessevaluationpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityContinuouAccessEvaluationPolicy
+# Remove-MgBetaIdentityContinuouAccessEvaluationPolicy
 
 ## SYNOPSIS
 Delete navigation property continuousAccessEvaluationPolicy for identity
@@ -13,7 +13,7 @@ Delete navigation property continuousAccessEvaluationPolicy for identity
 ## SYNTAX
 
 ```
-Remove-MgIdentityContinuouAccessEvaluationPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaIdentityContinuouAccessEvaluationPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

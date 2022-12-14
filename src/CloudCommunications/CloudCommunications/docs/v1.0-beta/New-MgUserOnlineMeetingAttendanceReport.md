@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mguseronlinemeetingattendancereport
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mguseronlinemeetingattendancereport
 schema: 2.0.0
 ---
 
-# New-MgUserOnlineMeetingAttendanceReport
+# New-MgBetaUserOnlineMeetingAttendanceReport
 
 ## SYNOPSIS
 Create new navigation property to attendanceReports for users
@@ -14,7 +14,7 @@ Create new navigation property to attendanceReports for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
+New-MgBetaUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>] [-Id <String>]
  [-MeetingEndDateTime <DateTime>] [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <Strin
 
 ### Create
 ```
-New-MgUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
+New-MgBetaUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphMeetingAttendanceReport1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphMeetingAttendanceReport1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>] [-Id <String>]
  [-MeetingEndDateTime <DateTime>] [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -68,7 +68,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for ATTENDANCERECORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendanceRecord1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendanceRecord1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -84,7 +84,7 @@ meetingAttendanceReport
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -241,13 +241,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
 
 ## NOTES
 

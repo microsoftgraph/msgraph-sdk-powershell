@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdevicecompliancepolicyscheduledactionforrule
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdevicecompliancepolicyscheduledactionforrule
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule
+# Update-MgBetaDeviceManagementDeviceCompliancePolicyScheduledActionForRule
 
 ## SYNOPSIS
 Update the navigation property scheduledActionsForRule in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property scheduledActionsForRule in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -DeviceCompliancePolicyId <String>
+Update-MgBetaDeviceManagementDeviceCompliancePolicyScheduledActionForRule -DeviceCompliancePolicyId <String>
  -DeviceComplianceScheduledActionForRuleId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-RuleName <String>] [-ScheduledActionConfigurations <IMicrosoftGraphDeviceComplianceActionItem1[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -DeviceCom
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -DeviceCompliancePolicyId <String>
+Update-MgBetaDeviceManagementDeviceCompliancePolicyScheduledActionForRule -DeviceCompliancePolicyId <String>
  -DeviceComplianceScheduledActionForRuleId <String>
  -BodyParameter <IMicrosoftGraphDeviceComplianceScheduledActionForRule1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,14 +30,14 @@ Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -DeviceCom
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceCompliancePolicyScheduledActionForRule -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceComplianceScheduledActionForRule1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceCompliancePolicyScheduledActionForRule -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-RuleName <String>]
  [-ScheduledActionConfigurations <IMicrosoftGraphDeviceComplianceActionItem1[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -70,7 +70,7 @@ Scheduled Action for Rule
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceScheduledActionForRule1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceScheduledActionForRule1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ Compliance policy must have one and only one block scheduled action.
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULEDACTIONCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceActionItem1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceActionItem1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -227,9 +227,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceScheduledActionForRule1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceScheduledActionForRule1
 
 ## OUTPUTS
 

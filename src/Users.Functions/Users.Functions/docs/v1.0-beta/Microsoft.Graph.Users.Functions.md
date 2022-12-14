@@ -1,31 +1,31 @@
 ---
-Module Name: Microsoft.Graph.Users.Functions
+Module Name: Microsoft.Graph.Beta.Users.Functions
 Module Guid: 94797c2d-5732-4c2f-87f7-4b20a85d53f6
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Users.Functions Module
+# Microsoft.Graph.Beta.Users.Functions Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Users.Functions Cmdlets
-### [Export-MgUserDeviceAndAppManagementData](Export-MgUserDeviceAndAppManagementData.md)
+## Microsoft.Graph.Beta.Users.Functions Cmdlets
+### [Export-MgBetaUserDeviceAndAppManagementData](Export-MgBetaUserDeviceAndAppManagementData.md)
 Invoke function exportDeviceAndAppManagementData
 
-### [Find-MgUserRoom](Find-MgUserRoom.md)
+### [Find-MgBetaUserRoom](Find-MgBetaUserRoom.md)
 Invoke function findRooms
 
-### [Find-MgUserRoomList](Find-MgUserRoomList.md)
+### [Find-MgBetaUserRoomList](Find-MgBetaUserRoomList.md)
 Get the room lists defined in a tenant, as represented by their emailAddress objects.
 Tenants can organize meeting rooms into room lists.
 In this API, each meeting room and room list is represented by an emailAddress instance.\nYou can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
 
-### [Get-MgAllUserChatMessage](Get-MgAllUserChatMessage.md)
+### [Get-MgBetaAllUserChatMessage](Get-MgBetaAllUserChatMessage.md)
 Invoke function getAllMessages
 
-### [Get-MgUserCalendarEventDelta](Get-MgUserCalendarEventDelta.md)
+### [Get-MgBetaUserCalendarEventDelta](Get-MgBetaUserCalendarEventDelta.md)
 Get a set of event resources that have been added, deleted, or updated in one or more calendars.
 You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar.
 The calendar can be the default calendar or some other specified calendar of the user's.
@@ -35,86 +35,86 @@ The initial call is a full synchronization, and every subsequent **delta** call 
 This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
 The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.
 
-### [Get-MgUserChatMessageDelta](Get-MgUserChatMessageDelta.md)
+### [Get-MgBetaUserChatMessageDelta](Get-MgBetaUserChatMessageDelta.md)
 Invoke function delta
 
-### [Get-MgUserChatMessageReplyDelta](Get-MgUserChatMessageReplyDelta.md)
+### [Get-MgBetaUserChatMessageReplyDelta](Get-MgBetaUserChatMessageReplyDelta.md)
 Invoke function delta
 
-### [Get-MgUserCloudPcConnectivityHistory](Get-MgUserCloudPcConnectivityHistory.md)
+### [Get-MgBetaUserCloudPcConnectivityHistory](Get-MgBetaUserCloudPcConnectivityHistory.md)
 Invoke function getCloudPcConnectivityHistory
 
-### [Get-MgUserCloudPcLaunchInfo](Get-MgUserCloudPcLaunchInfo.md)
+### [Get-MgBetaUserCloudPcLaunchInfo](Get-MgBetaUserCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo
 
-### [Get-MgUserCloudPcShiftWorkCloudPcAccessState](Get-MgUserCloudPcShiftWorkCloudPcAccessState.md)
+### [Get-MgBetaUserCloudPcShiftWorkCloudPcAccessState](Get-MgBetaUserCloudPcShiftWorkCloudPcAccessState.md)
 Invoke function getShiftWorkCloudPcAccessState
 
-### [Get-MgUserCloudPcSupportedCloudPcRemoteAction](Get-MgUserCloudPcSupportedCloudPcRemoteAction.md)
+### [Get-MgBetaUserCloudPcSupportedCloudPcRemoteAction](Get-MgBetaUserCloudPcSupportedCloudPcRemoteAction.md)
 Invoke function getSupportedCloudPcRemoteActions
 
-### [Get-MgUserContactDelta](Get-MgUserContactDelta.md)
+### [Get-MgBetaUserContactDelta](Get-MgBetaUserContactDelta.md)
 Get a set of contacts that have been added, deleted, or updated in a specified folder.
 A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder.
 This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.
 
-### [Get-MgUserContactFolderChildFolderContactDelta](Get-MgUserContactFolderChildFolderContactDelta.md)
+### [Get-MgBetaUserContactFolderChildFolderContactDelta](Get-MgBetaUserContactFolderChildFolderContactDelta.md)
 Get a set of contacts that have been added, deleted, or updated in a specified folder.
 A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder.
 This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.
 
-### [Get-MgUserContactFolderChildFolderDelta](Get-MgUserContactFolderChildFolderDelta.md)
+### [Get-MgBetaUserContactFolderChildFolderDelta](Get-MgBetaUserContactFolderChildFolderDelta.md)
 Get a set of contact folders that have been added, deleted, or removed from the user's mailbox.
 A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders.
 This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time.
 
-### [Get-MgUserContactFolderContactDelta](Get-MgUserContactFolderContactDelta.md)
+### [Get-MgBetaUserContactFolderContactDelta](Get-MgBetaUserContactFolderContactDelta.md)
 Get a set of contacts that have been added, deleted, or updated in a specified folder.
 A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder.
 This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.
 
-### [Get-MgUserContactFolderDelta](Get-MgUserContactFolderDelta.md)
+### [Get-MgBetaUserContactFolderDelta](Get-MgBetaUserContactFolderDelta.md)
 Get a set of contact folders that have been added, deleted, or removed from the user's mailbox.
 A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders.
 This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time.
 
-### [Get-MgUserDelta](Get-MgUserDelta.md)
+### [Get-MgBetaUserDelta](Get-MgBetaUserDelta.md)
 Invoke function delta
 
-### [Get-MgUserDeviceDelta](Get-MgUserDeviceDelta.md)
+### [Get-MgBetaUserDeviceDelta](Get-MgBetaUserDeviceDelta.md)
 Invoke function delta
 
-### [Get-MgUserDriveItemActivityByInterval](Get-MgUserDriveItemActivityByInterval.md)
+### [Get-MgBetaUserDriveItemActivityByInterval](Get-MgBetaUserDriveItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgUserDriveItemDelta](Get-MgUserDriveItemDelta.md)
+### [Get-MgBetaUserDriveItemDelta](Get-MgBetaUserDriveItemDelta.md)
 Invoke function delta
 
-### [Get-MgUserDriveItemListItemActivityByInterval](Get-MgUserDriveItemListItemActivityByInterval.md)
+### [Get-MgBetaUserDriveItemListItemActivityByInterval](Get-MgBetaUserDriveItemListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgUserDriveListContentTypeCompatibleHubContentType](Get-MgUserDriveListContentTypeCompatibleHubContentType.md)
+### [Get-MgBetaUserDriveListContentTypeCompatibleHubContentType](Get-MgBetaUserDriveListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgUserDriveListItemActivityByInterval](Get-MgUserDriveListItemActivityByInterval.md)
+### [Get-MgBetaUserDriveListItemActivityByInterval](Get-MgBetaUserDriveListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgUserDriveListItemDelta](Get-MgUserDriveListItemDelta.md)
+### [Get-MgBetaUserDriveListItemDelta](Get-MgBetaUserDriveListItemDelta.md)
 Invoke function delta
 
-### [Get-MgUserDriveRootActivityByInterval](Get-MgUserDriveRootActivityByInterval.md)
+### [Get-MgBetaUserDriveRootActivityByInterval](Get-MgBetaUserDriveRootActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgUserDriveRootDelta](Get-MgUserDriveRootDelta.md)
+### [Get-MgBetaUserDriveRootDelta](Get-MgBetaUserDriveRootDelta.md)
 Invoke function delta
 
-### [Get-MgUserDriveRootListItemActivityByInterval](Get-MgUserDriveRootListItemActivityByInterval.md)
+### [Get-MgBetaUserDriveRootListItemActivityByInterval](Get-MgBetaUserDriveRootListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgUserEffectiveDeviceEnrollmentConfiguration](Get-MgUserEffectiveDeviceEnrollmentConfiguration.md)
+### [Get-MgBetaUserEffectiveDeviceEnrollmentConfiguration](Get-MgBetaUserEffectiveDeviceEnrollmentConfiguration.md)
 Invoke function getEffectiveDeviceEnrollmentConfigurations
 
-### [Get-MgUserEventDelta](Get-MgUserEventDelta.md)
+### [Get-MgBetaUserEventDelta](Get-MgBetaUserEventDelta.md)
 Get a set of event resources that have been added, deleted, or updated in one or more calendars.
 You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar.
 The calendar can be the default calendar or some other specified calendar of the user's.
@@ -124,7 +124,7 @@ The initial call is a full synchronization, and every subsequent **delta** call 
 This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
 The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.
 
-### [Get-MgUserEventInstanceDelta](Get-MgUserEventInstanceDelta.md)
+### [Get-MgBetaUserEventInstanceDelta](Get-MgBetaUserEventInstanceDelta.md)
 Get a set of event resources that have been added, deleted, or updated in one or more calendars.
 You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar.
 The calendar can be the default calendar or some other specified calendar of the user's.
@@ -134,144 +134,144 @@ The initial call is a full synchronization, and every subsequent **delta** call 
 This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
 The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.
 
-### [Get-MgUserLoggedOnManagedDevice](Get-MgUserLoggedOnManagedDevice.md)
+### [Get-MgBetaUserLoggedOnManagedDevice](Get-MgBetaUserLoggedOnManagedDevice.md)
 Invoke function getLoggedOnManagedDevices
 
-### [Get-MgUserMailFolderChildFolderDelta](Get-MgUserMailFolderChildFolderDelta.md)
+### [Get-MgBetaUserMailFolderChildFolderDelta](Get-MgBetaUserMailFolderChildFolderDelta.md)
 Get a set of mail folders that have been added, deleted, or removed from the user's mailbox.
 A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders.
 This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
 
-### [Get-MgUserMailFolderChildFolderMessageDelta](Get-MgUserMailFolderChildFolderMessageDelta.md)
+### [Get-MgBetaUserMailFolderChildFolderMessageDelta](Get-MgBetaUserMailFolderChildFolderMessageDelta.md)
 Get a set of messages that have been added, deleted, or updated in a specified folder.
 A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages).
 This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.
 
-### [Get-MgUserMailFolderDelta](Get-MgUserMailFolderDelta.md)
+### [Get-MgBetaUserMailFolderDelta](Get-MgBetaUserMailFolderDelta.md)
 Get a set of mail folders that have been added, deleted, or removed from the user's mailbox.
 A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders.
 This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
 
-### [Get-MgUserMailFolderMessageDelta](Get-MgUserMailFolderMessageDelta.md)
+### [Get-MgBetaUserMailFolderMessageDelta](Get-MgBetaUserMailFolderMessageDelta.md)
 Get a set of messages that have been added, deleted, or updated in a specified folder.
 A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages).
 This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.
 
-### [Get-MgUserManagedAppBlockedUser](Get-MgUserManagedAppBlockedUser.md)
+### [Get-MgBetaUserManagedAppBlockedUser](Get-MgBetaUserManagedAppBlockedUser.md)
 Invoke function getManagedAppBlockedUsers
 
-### [Get-MgUserManagedAppDiagnosticStatuses](Get-MgUserManagedAppDiagnosticStatuses.md)
+### [Get-MgBetaUserManagedAppDiagnosticStatuses](Get-MgBetaUserManagedAppDiagnosticStatuses.md)
 Gets diagnostics validation status for a given user.
 
-### [Get-MgUserManagedAppPolicy](Get-MgUserManagedAppPolicy.md)
+### [Get-MgBetaUserManagedAppPolicy](Get-MgBetaUserManagedAppPolicy.md)
 Gets app restrictions for a given user.
 
-### [Get-MgUserManagedDeviceCloudPcRemoteActionResult](Get-MgUserManagedDeviceCloudPcRemoteActionResult.md)
+### [Get-MgBetaUserManagedDeviceCloudPcRemoteActionResult](Get-MgBetaUserManagedDeviceCloudPcRemoteActionResult.md)
 Invoke function getCloudPcRemoteActionResults
 
-### [Get-MgUserManagedDeviceCloudPcReviewStatus](Get-MgUserManagedDeviceCloudPcReviewStatus.md)
+### [Get-MgBetaUserManagedDeviceCloudPcReviewStatus](Get-MgBetaUserManagedDeviceCloudPcReviewStatus.md)
 Invoke function getCloudPcReviewStatus
 
-### [Get-MgUserManagedDeviceFileVaultKey](Get-MgUserManagedDeviceFileVaultKey.md)
+### [Get-MgBetaUserManagedDeviceFileVaultKey](Get-MgBetaUserManagedDeviceFileVaultKey.md)
 Invoke function getFileVaultKey
 
-### [Get-MgUserManagedDeviceNonCompliantSetting](Get-MgUserManagedDeviceNonCompliantSetting.md)
+### [Get-MgBetaUserManagedDeviceNonCompliantSetting](Get-MgBetaUserManagedDeviceNonCompliantSetting.md)
 Invoke function getNonCompliantSettings
 
-### [Get-MgUserManagedDeviceOemWarranty](Get-MgUserManagedDeviceOemWarranty.md)
+### [Get-MgBetaUserManagedDeviceOemWarranty](Get-MgBetaUserManagedDeviceOemWarranty.md)
 Invoke function getOemWarranty
 
-### [Get-MgUserManagedDeviceRemoteHelpSession](Get-MgUserManagedDeviceRemoteHelpSession.md)
+### [Get-MgBetaUserManagedDeviceRemoteHelpSession](Get-MgBetaUserManagedDeviceRemoteHelpSession.md)
 Invoke function retrieveRemoteHelpSession
 
-### [Get-MgUserManagedDeviceWithAppFailure](Get-MgUserManagedDeviceWithAppFailure.md)
+### [Get-MgBetaUserManagedDeviceWithAppFailure](Get-MgBetaUserManagedDeviceWithAppFailure.md)
 Retrieves the list of devices with failed apps
 
-### [Get-MgUserManagedDeviceWithFailedApp](Get-MgUserManagedDeviceWithFailedApp.md)
+### [Get-MgBetaUserManagedDeviceWithFailedApp](Get-MgBetaUserManagedDeviceWithFailedApp.md)
 Retrieves the list of devices with failed or pending apps
 
-### [Get-MgUserMessageDelta](Get-MgUserMessageDelta.md)
+### [Get-MgBetaUserMessageDelta](Get-MgBetaUserMessageDelta.md)
 Get a set of messages that have been added, deleted, or updated in a specified folder.
 A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages).
 This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.
 
-### [Get-MgUserOnenoteRecentNotebook](Get-MgUserOnenoteRecentNotebook.md)
+### [Get-MgBetaUserOnenoteRecentNotebook](Get-MgBetaUserOnenoteRecentNotebook.md)
 Invoke function getRecentNotebooks
 
-### [Get-MgUserPlannerAllDelta](Get-MgUserPlannerAllDelta.md)
+### [Get-MgBetaUserPlannerAllDelta](Get-MgBetaUserPlannerAllDelta.md)
 Invoke function delta
 
-### [Get-MgUserTodoListDelta](Get-MgUserTodoListDelta.md)
+### [Get-MgBetaUserTodoListDelta](Get-MgBetaUserTodoListDelta.md)
 Invoke function delta
 
-### [Get-MgUserTodoListTaskDelta](Get-MgUserTodoListTaskDelta.md)
+### [Get-MgBetaUserTodoListTaskDelta](Get-MgBetaUserTodoListTaskDelta.md)
 Invoke function delta
 
-### [Invoke-MgAppUserManagedDeviceDiagnostic](Invoke-MgAppUserManagedDeviceDiagnostic.md)
+### [Invoke-MgBetaAppUserManagedDeviceDiagnostic](Invoke-MgBetaAppUserManagedDeviceDiagnostic.md)
 Invoke function appDiagnostics
 
-### [Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles](Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles.md)
+### [Invoke-MgBetaCalendarUserCalendarAllowedCalendarSharingRoles](Invoke-MgBetaCalendarUserCalendarAllowedCalendarSharingRoles.md)
 Invoke function allowedCalendarSharingRoles
 
-### [Invoke-MgFilterUserAppConsentRequestForApprovalByCurrentUser](Invoke-MgFilterUserAppConsentRequestForApprovalByCurrentUser.md)
+### [Invoke-MgBetaFilterUserAppConsentRequestForApprovalByCurrentUser](Invoke-MgBetaFilterUserAppConsentRequestForApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserAppConsentRequestForApprovalUserConsentRequestByCurrentUser](Invoke-MgFilterUserAppConsentRequestForApprovalUserConsentRequestByCurrentUser.md)
+### [Invoke-MgBetaFilterUserAppConsentRequestForApprovalUserConsentRequestByCurrentUser](Invoke-MgBetaFilterUserAppConsentRequestForApprovalUserConsentRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserApprovalByCurrentUser](Invoke-MgFilterUserApprovalByCurrentUser.md)
+### [Invoke-MgBetaFilterUserApprovalByCurrentUser](Invoke-MgBetaFilterUserApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserPendingAccessReviewInstanceByCurrentUser](Invoke-MgFilterUserPendingAccessReviewInstanceByCurrentUser.md)
+### [Invoke-MgBetaFilterUserPendingAccessReviewInstanceByCurrentUser](Invoke-MgBetaFilterUserPendingAccessReviewInstanceByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserPendingAccessReviewInstanceDecisionByCurrentUser](Invoke-MgFilterUserPendingAccessReviewInstanceDecisionByCurrentUser.md)
+### [Invoke-MgBetaFilterUserPendingAccessReviewInstanceDecisionByCurrentUser](Invoke-MgBetaFilterUserPendingAccessReviewInstanceDecisionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserPendingAccessReviewInstanceStageByCurrentUser](Invoke-MgFilterUserPendingAccessReviewInstanceStageByCurrentUser.md)
+### [Invoke-MgBetaFilterUserPendingAccessReviewInstanceStageByCurrentUser](Invoke-MgBetaFilterUserPendingAccessReviewInstanceStageByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgGraphUserDrive](Invoke-MgGraphUserDrive.md)
+### [Invoke-MgBetaGraphUserDrive](Invoke-MgBetaGraphUserDrive.md)
 Invoke function sharedWithMe
 
-### [Invoke-MgMessageUserChat](Invoke-MgMessageUserChat.md)
+### [Invoke-MgBetaMessageUserChat](Invoke-MgBetaMessageUserChat.md)
 Invoke function allMessages
 
-### [Invoke-MgPendingUserApp](Invoke-MgPendingUserApp.md)
+### [Invoke-MgBetaPendingUserApp](Invoke-MgBetaPendingUserApp.md)
 Retrieves the list of devices with failed or pending apps
 
-### [Invoke-MgPreviewUserOnenotePage](Invoke-MgPreviewUserOnenotePage.md)
+### [Invoke-MgBetaPreviewUserOnenotePage](Invoke-MgBetaPreviewUserOnenotePage.md)
 Invoke function preview
 
-### [Invoke-MgRecentUserActivity](Invoke-MgRecentUserActivity.md)
+### [Invoke-MgBetaRecentUserActivity](Invoke-MgBetaRecentUserActivity.md)
 Invoke function recent
 
-### [Invoke-MgRecentUserDrive](Invoke-MgRecentUserDrive.md)
+### [Invoke-MgBetaRecentUserDrive](Invoke-MgBetaRecentUserDrive.md)
 Invoke function recent
 
-### [Invoke-MgSupportedUserOutlookLanguage](Invoke-MgSupportedUserOutlookLanguage.md)
+### [Invoke-MgBetaSupportedUserOutlookLanguage](Invoke-MgBetaSupportedUserOutlookLanguage.md)
 Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
 When setting up an Outlook client, the user selects the preferred language from this supported list.
 You can subsequently get the preferred language by \ngetting the user's mailbox settings.
 
-### [Invoke-MgTimeUserOutlook](Invoke-MgTimeUserOutlook.md)
+### [Invoke-MgBetaTimeUserOutlook](Invoke-MgBetaTimeUserOutlook.md)
 Invoke function supportedTimeZones
 
-### [Invoke-MgViewUserReminder](Invoke-MgViewUserReminder.md)
+### [Invoke-MgBetaViewUserReminder](Invoke-MgBetaViewUserReminder.md)
 Invoke function reminderView
 
-### [Search-MgUserDrive](Search-MgUserDrive.md)
+### [Search-MgBetaUserDrive](Search-MgBetaUserDrive.md)
 Invoke function search
 
-### [Search-MgUserDriveItem](Search-MgUserDriveItem.md)
+### [Search-MgBetaUserDriveItem](Search-MgBetaUserDriveItem.md)
 Invoke function search
 
-### [Search-MgUserDriveRoot](Search-MgUserDriveRoot.md)
+### [Search-MgBetaUserDriveRoot](Search-MgBetaUserDriveRoot.md)
 Invoke function search
 
-### [Test-MgUserDriveListContentTypePublished](Test-MgUserDriveListContentTypePublished.md)
+### [Test-MgBetaUserDriveListContentTypePublished](Test-MgBetaUserDriveListContentTypePublished.md)
 Invoke function isPublished
 
-### [Test-MgUserManagedAppUserBlocked](Test-MgUserManagedAppUserBlocked.md)
+### [Test-MgBetaUserManagedAppUserBlocked](Test-MgBetaUserManagedAppUserBlocked.md)
 Gets the blocked state of a managed app user.
 

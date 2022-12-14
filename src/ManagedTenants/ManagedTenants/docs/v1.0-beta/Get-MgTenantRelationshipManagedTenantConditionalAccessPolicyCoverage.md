@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantconditionalaccesspolicycoverage
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantconditionalaccesspolicycoverage
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+# Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
 
 ## SYNOPSIS
 Aggregate view of conditional access policy coverage across managed tenants.
@@ -14,21 +14,21 @@ Aggregate view of conditional access policy coverage across managed tenants.
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
  -ConditionalAccessPolicyCoverageId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -37,22 +37,22 @@ Aggregate view of conditional access policy coverage across managed tenants.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -ConditionalAccessPolicyCoverageId $conditionalAccessPolicyCoverageId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -ConditionalAccessPolicyCoverageId $conditionalAccessPolicyCoverageId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -244,11 +244,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
 
 ## NOTES
 

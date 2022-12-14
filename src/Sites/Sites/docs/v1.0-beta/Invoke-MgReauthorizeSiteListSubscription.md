@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/invoke-mgreauthorizesitelistsubscription
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/invoke-mgreauthorizesitelistsubscription
 schema: 2.0.0
 ---
 
-# Invoke-MgReauthorizeSiteListSubscription
+# Invoke-MgBetaReauthorizeSiteListSubscription
 
 ## SYNOPSIS
 Invoke action reauthorize
@@ -14,13 +14,13 @@ Invoke action reauthorize
 
 ### Reauthorize (Default)
 ```
-Invoke-MgReauthorizeSiteListSubscription -ListId <String> -SiteId <String> -SubscriptionId <String>
+Invoke-MgBetaReauthorizeSiteListSubscription -ListId <String> -SiteId <String> -SubscriptionId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReauthorizeViaIdentity
 ```
-Invoke-MgReauthorizeSiteListSubscription -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaReauthorizeSiteListSubscription -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: ReauthorizeViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

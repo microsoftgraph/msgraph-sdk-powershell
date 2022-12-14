@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationmetaughtclass
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationmetaughtclass
 schema: 2.0.0
 ---
 
-# Get-MgEducationMeTaughtClass
+# Get-MgBetaEducationMeTaughtClass
 
 ## SYNOPSIS
 Classes for which the user is a teacher.
@@ -14,20 +14,20 @@ Classes for which the user is a teacher.
 
 ### List (Default)
 ```
-Get-MgEducationMeTaughtClass [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaEducationMeTaughtClass [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEducationMeTaughtClass -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationMeTaughtClass -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationMeTaughtClass -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationMeTaughtClass -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationClass
 
 ## NOTES
 

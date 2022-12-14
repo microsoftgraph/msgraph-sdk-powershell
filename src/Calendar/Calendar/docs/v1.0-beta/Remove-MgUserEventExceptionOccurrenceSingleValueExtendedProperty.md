@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mgusereventexceptionoccurrencesinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mgusereventexceptionoccurrencesinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Remove-MgUserEventExceptionOccurrenceSingleValueExtendedProperty
+# Remove-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty
 
 ## SYNOPSIS
 Delete navigation property singleValueExtendedProperties for users
@@ -14,14 +14,14 @@ Delete navigation property singleValueExtendedProperties for users
 
 ### Delete (Default)
 ```
-Remove-MgUserEventExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
+Remove-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserEventExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+Remove-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -174,7 +174,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

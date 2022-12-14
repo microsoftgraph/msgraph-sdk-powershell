@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/invoke-mgfunctionserviceprincipalsynchronizationjobschema
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/invoke-mgfunctionserviceprincipalsynchronizationjobschema
 schema: 2.0.0
 ---
 
-# Invoke-MgFunctionServicePrincipalSynchronizationJobSchema
+# Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema
 
 ## SYNOPSIS
 Invoke function functions
@@ -14,14 +14,14 @@ Invoke function functions
 
 ### Functions (Default)
 ```
-Invoke-MgFunctionServicePrincipalSynchronizationJobSchema -ServicePrincipalId <String>
+Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema -ServicePrincipalId <String>
  -SynchronizationJobId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FunctionsViaIdentity
 ```
-Invoke-MgFunctionServicePrincipalSynchronizationJobSchema -InputObject <IApplicationsIdentity> [-Count]
+Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema -InputObject <IApplicationsIdentity> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
@@ -31,13 +31,13 @@ Invoke function functions
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgFunctionServicePrincipalSynchronizationJobSchema Cmdlet
+### Example 1: Using the Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Invoke-MgFunctionServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
 
-This example shows how to use the Invoke-MgFunctionServicePrincipalSynchronizationJobSchema Cmdlet.
+This example shows how to use the Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: FunctionsViaIdentity
 Aliases:
 
@@ -198,11 +198,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeMappingFunctionSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeMappingFunctionSchema
 
 ## NOTES
 

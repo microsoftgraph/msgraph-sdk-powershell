@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamworkworkforceintegration
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamworkworkforceintegration
 schema: 2.0.0
 ---
 
-# New-MgTeamworkWorkforceIntegration
+# New-MgBetaTeamworkWorkforceIntegration
 
 ## SYNOPSIS
 Create a new workforceIntegration object.
@@ -14,7 +14,7 @@ Create a new workforceIntegration object.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgTeamworkWorkforceIntegration [-AdditionalProperties <Hashtable>] [-ApiVersion <Int32>]
+New-MgBetaTeamworkWorkforceIntegration [-AdditionalProperties <Hashtable>] [-ApiVersion <Int32>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>]
  [-EligibilityFilteringEnabledEntities <String>] [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]
  [-Id <String>] [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SupportedEntities <String>]
@@ -23,7 +23,7 @@ New-MgTeamworkWorkforceIntegration [-AdditionalProperties <Hashtable>] [-ApiVers
 
 ### Create1
 ```
-New-MgTeamworkWorkforceIntegration -BodyParameter <IMicrosoftGraphWorkforceIntegration1> [-Confirm] [-WhatIf]
+New-MgBetaTeamworkWorkforceIntegration -BodyParameter <IMicrosoftGraphWorkforceIntegration1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,9 +32,9 @@ Create a new workforceIntegration object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTeamworkWorkforceIntegration Cmdlet
+### Example 1: Using the New-MgBetaTeamworkWorkforceIntegration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "displayName-value"
 	ApiVersion = 99
@@ -46,10 +46,10 @@ $params = @{
 	Url = "url-value"
 	Supports = "supports-value"
 }
-New-MgTeamworkWorkforceIntegration -BodyParameter $params
+New-MgBetaTeamworkWorkforceIntegration -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTeamworkWorkforceIntegration Cmdlet.
+This example shows how to use the New-MgBetaTeamworkWorkforceIntegration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ workforceIntegration
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
 Parameter Sets: Create1
 Aliases:
 
@@ -106,7 +106,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -152,7 +152,7 @@ workforceIntegrationEncryption
 To construct, please use Get-Help -Online and see NOTES section for ENCRYPTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegrationEncryption
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkforceIntegrationEncryption
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -199,7 +199,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -291,11 +291,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
 
 ## NOTES
 

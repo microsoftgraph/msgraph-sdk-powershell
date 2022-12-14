@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprintservice
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/new-mgprintservice
 schema: 2.0.0
 ---
 
-# New-MgPrintService
+# New-MgBetaPrintService
 
 ## SYNOPSIS
 Create new navigation property to services for print
@@ -14,13 +14,13 @@ Create new navigation property to services for print
 
 ### CreateExpanded1 (Default)
 ```
-New-MgPrintService [-AdditionalProperties <Hashtable>] [-Endpoints <IMicrosoftGraphPrintServiceEndpoint[]>]
+New-MgBetaPrintService [-AdditionalProperties <Hashtable>] [-Endpoints <IMicrosoftGraphPrintServiceEndpoint[]>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgPrintService -BodyParameter <IMicrosoftGraphPrintService1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPrintService -BodyParameter <IMicrosoftGraphPrintService1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,7 +50,7 @@ printService
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintService1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintService1
 Parameter Sets: Create1
 Aliases:
 
@@ -68,7 +68,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for ENDPOINTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -131,11 +131,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintService1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintService1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintService1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintService1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/remove-mguserdrivelistcolumn
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/remove-mguserdrivelistcolumn
 schema: 2.0.0
 ---
 
-# Remove-MgUserDriveListColumn
+# Remove-MgBetaUserDriveListColumn
 
 ## SYNOPSIS
 Delete navigation property columns for users
@@ -14,13 +14,13 @@ Delete navigation property columns for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserDriveListColumn -ColumnDefinitionId <String> -DriveId <String> -UserId <String>
+Remove-MgBetaUserDriveListColumn -ColumnDefinitionId <String> -DriveId <String> -UserId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserDriveListColumn -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserDriveListColumn -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

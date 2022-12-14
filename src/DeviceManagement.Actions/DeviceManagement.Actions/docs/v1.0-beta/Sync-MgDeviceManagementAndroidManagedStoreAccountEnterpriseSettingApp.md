@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/sync-mgdevicemanagementandroidmanagedstoreaccountenterprisesettingapp
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/sync-mgdevicemanagementandroidmanagedstoreaccountenterprisesettingapp
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingApp
+# Sync-MgBetaDeviceManagementAndroidManagedStoreAccountEnterpriseSettingApp
 
 ## SYNOPSIS
 Invoke action syncApps
@@ -13,7 +13,7 @@ Invoke action syncApps
 ## SYNTAX
 
 ```
-Sync-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingApp [-PassThru] [-Confirm] [-WhatIf]
+Sync-MgBetaDeviceManagementAndroidManagedStoreAccountEnterpriseSettingApp [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

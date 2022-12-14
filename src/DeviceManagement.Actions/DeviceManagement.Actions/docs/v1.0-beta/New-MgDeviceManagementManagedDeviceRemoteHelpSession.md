@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementmanageddeviceremotehelpsession
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementmanageddeviceremotehelpsession
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementManagedDeviceRemoteHelpSession
+# New-MgBetaDeviceManagementManagedDeviceRemoteHelpSession
 
 ## SYNOPSIS
 Remote help - Create session with a specific device
@@ -14,27 +14,27 @@ Remote help - Create session with a specific device
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementManagedDeviceRemoteHelpSession -ManagedDeviceId <String>
+New-MgBetaDeviceManagementManagedDeviceRemoteHelpSession -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-SessionType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementManagedDeviceRemoteHelpSession -ManagedDeviceId <String>
+New-MgBetaDeviceManagementManagedDeviceRemoteHelpSession -ManagedDeviceId <String>
  -BodyParameter <IPathsBc214LDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementManagedDeviceRemoteHelpSession -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementManagedDeviceRemoteHelpSession -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsBc214LDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementManagedDeviceRemoteHelpSession -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementManagedDeviceRemoteHelpSession -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-SessionType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBc214LDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsBc214LDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -158,9 +158,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsBc214LDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsBc214LDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphCreateremotehelpsessionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

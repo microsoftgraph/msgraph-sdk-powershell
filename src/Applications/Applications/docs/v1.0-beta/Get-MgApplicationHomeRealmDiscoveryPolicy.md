@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationhomerealmdiscoverypolicy
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationhomerealmdiscoverypolicy
 schema: 2.0.0
 ---
 
-# Get-MgApplicationHomeRealmDiscoveryPolicy
+# Get-MgBetaApplicationHomeRealmDiscoveryPolicy
 
 ## SYNOPSIS
 Get homeRealmDiscoveryPolicies from applications
@@ -14,20 +14,20 @@ Get homeRealmDiscoveryPolicies from applications
 
 ### List (Default)
 ```
-Get-MgApplicationHomeRealmDiscoveryPolicy -ApplicationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationHomeRealmDiscoveryPolicy -ApplicationId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgApplicationHomeRealmDiscoveryPolicy -ApplicationId <String> -HomeRealmDiscoveryPolicyId <String>
+Get-MgBetaApplicationHomeRealmDiscoveryPolicy -ApplicationId <String> -HomeRealmDiscoveryPolicyId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationHomeRealmDiscoveryPolicy -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationHomeRealmDiscoveryPolicy -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHomeRealmDiscoveryPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHomeRealmDiscoveryPolicy1
 
 ## NOTES
 

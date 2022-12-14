@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationtokenissuancepolicy
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationtokenissuancepolicy
 schema: 2.0.0
 ---
 
-# Get-MgApplicationTokenIssuancePolicy
+# Get-MgBetaApplicationTokenIssuancePolicy
 
 ## SYNOPSIS
 List the tokenIssuancePolicy objects that are assigned to an application.
@@ -13,7 +13,7 @@ List the tokenIssuancePolicy objects that are assigned to an application.
 ## SYNTAX
 
 ```
-Get-MgApplicationTokenIssuancePolicy -ApplicationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaApplicationTokenIssuancePolicy -ApplicationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,13 +23,13 @@ List the tokenIssuancePolicy objects that are assigned to an application.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgApplicationTokenIssuancePolicy Cmdlet
+### Example 1: Using the Get-MgBetaApplicationTokenIssuancePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgApplicationTokenIssuancePolicy -ApplicationId $applicationId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaApplicationTokenIssuancePolicy -ApplicationId $applicationId
 ```
 
-This example shows how to use the Get-MgApplicationTokenIssuancePolicy Cmdlet.
+This example shows how to use the Get-MgBetaApplicationTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -207,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
 
 ## NOTES
 

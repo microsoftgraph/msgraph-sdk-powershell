@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/new-mgusermailfolder
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/new-mgusermailfolder
 schema: 2.0.0
 ---
 
-# New-MgUserMailFolder
+# New-MgBetaUserMailFolder
 
 ## SYNOPSIS
 Use this API to create a new mail folder in the root folder of the user's mailbox.
@@ -15,7 +15,7 @@ If you intend a new folder to be hidden, you must set the **isHidden** property 
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserMailFolder -UserId <String> [-AdditionalProperties <Hashtable>] [-ChildFolderCount <Int32>]
+New-MgBetaUserMailFolder -UserId <String> [-AdditionalProperties <Hashtable>] [-ChildFolderCount <Int32>]
  [-ChildFolders <IMicrosoftGraphMailFolder1[]>] [-DisplayName <String>] [-Id <String>] [-IsHidden]
  [-MessageRules <IMicrosoftGraphMessageRule[]>] [-Messages <IMicrosoftGraphMessage1[]>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
@@ -28,19 +28,19 @@ New-MgUserMailFolder -UserId <String> [-AdditionalProperties <Hashtable>] [-Chil
 
 ### Create1
 ```
-New-MgUserMailFolder -UserId <String> -BodyParameter <IMicrosoftGraphMailFolder1> [-Confirm] [-WhatIf]
+New-MgBetaUserMailFolder -UserId <String> -BodyParameter <IMicrosoftGraphMailFolder1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserMailFolder -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMailFolder1> [-Confirm]
+New-MgBetaUserMailFolder -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMailFolder1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserMailFolder -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserMailFolder -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-ChildFolderCount <Int32>] [-ChildFolders <IMicrosoftGraphMailFolder1[]>] [-DisplayName <String>]
  [-Id <String>] [-IsHidden] [-MessageRules <IMicrosoftGraphMessageRule[]>]
  [-Messages <IMicrosoftGraphMessage1[]>]
@@ -58,18 +58,18 @@ If you intend a new folder to be hidden, you must set the **isHidden** property 
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserMailFolder Cmdlet
+### Example 1: Using the New-MgBetaUserMailFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	DisplayName = "Clutter"
 	IsHidden = $true
 }
 # A UPN can also be used as -UserId.
-New-MgUserMailFolder -UserId $userId -BodyParameter $params
+New-MgBetaUserMailFolder -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserMailFolder Cmdlet.
+This example shows how to use the New-MgBetaUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -94,7 +94,7 @@ mailFolder
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailFolder1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailFolder1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -125,7 +125,7 @@ The collection of child folders in the mailFolder.
 To construct, please use Get-Help -Online and see NOTES section for CHILDFOLDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailFolder1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailFolder1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -172,7 +172,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -205,7 +205,7 @@ The collection of rules that apply to the user's Inbox folder.
 To construct, please use Get-Help -Online and see NOTES section for MESSAGERULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRule[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessageRule[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -221,7 +221,7 @@ The collection of messages in the mailFolder.
 To construct, please use Get-Help -Online and see NOTES section for MESSAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -239,7 +239,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -272,7 +272,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for USERCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserConfiguration[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserConfiguration[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -398,13 +398,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailFolder1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailFolder1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailFolder1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailFolder1
 
 ## NOTES
 

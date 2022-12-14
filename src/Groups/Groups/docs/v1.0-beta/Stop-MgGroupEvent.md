@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/stop-mggroupevent
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/stop-mggroupevent
 schema: 2.0.0
 ---
 
-# Stop-MgGroupEvent
+# Stop-MgBetaGroupEvent
 
 ## SYNOPSIS
 This action allows the organizer of a meeting to send a cancellation message and cancel the event.
@@ -18,27 +18,27 @@ You need to be an organizer to cancel a meeting.' This action differs from Delet
 
 ### CancelExpanded (Default)
 ```
-Stop-MgGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
+Stop-MgBetaGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Cancel
 ```
-Stop-MgGroupEvent -EventId <String> -GroupId <String>
+Stop-MgBetaGroupEvent -EventId <String> -GroupId <String>
  -BodyParameter <IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgGroupEvent -InputObject <IGroupsIdentity>
+Stop-MgBetaGroupEvent -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentityExpanded
 ```
-Stop-MgGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Comment <String>]
+Stop-MgBetaGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Cancel, CancelViaIdentity
 Aliases:
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CancelViaIdentity, CancelViaIdentityExpanded
 Aliases:
 
@@ -196,9 +196,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

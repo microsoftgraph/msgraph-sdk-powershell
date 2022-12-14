@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/remove-mggroupthread
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/remove-mggroupthread
 schema: 2.0.0
 ---
 
-# Remove-MgGroupThread
+# Remove-MgBetaGroupThread
 
 ## SYNOPSIS
 Delete navigation property threads for groups
@@ -14,13 +14,13 @@ Delete navigation property threads for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupThread -ConversationThreadId <String> -GroupId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaGroupThread -ConversationThreadId <String> -GroupId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupThread -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaGroupThread -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,22 +29,22 @@ Delete navigation property threads for groups
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgGroupThread Cmdlet
+### Example 1: Using the Remove-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
+Import-Module Microsoft.Graph.Beta.Groups
+Remove-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
 ```
 
-This example shows how to use the Remove-MgGroupThread Cmdlet.
+This example shows how to use the Remove-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Remove-MgGroupThread Cmdlet
+### Example 2: Using the Remove-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
+Import-Module Microsoft.Graph.Beta.Groups
+Remove-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
 ```
 
-This example shows how to use the Remove-MgGroupThread Cmdlet.
+This example shows how to use the Remove-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mggroupevent
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mggroupevent
 schema: 2.0.0
 ---
 
-# Remove-MgGroupEvent
+# Remove-MgBetaGroupEvent
 
 ## SYNOPSIS
 Delete navigation property events for groups
@@ -14,13 +14,13 @@ Delete navigation property events for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupEvent -EventId <String> -GroupId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaGroupEvent -EventId <String> -GroupId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupEvent -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaGroupEvent -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property events for groups
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgGroupEvent Cmdlet
+### Example 1: Using the Remove-MgBetaGroupEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Remove-MgGroupEvent -GroupId $groupId -EventId $eventId
+Import-Module Microsoft.Graph.Beta.Calendar
+Remove-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
 ```
 
-This example shows how to use the Remove-MgGroupEvent Cmdlet.
+This example shows how to use the Remove-MgBetaGroupEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

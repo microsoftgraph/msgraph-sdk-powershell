@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mginvalidateuserrefreshtoken
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mginvalidateuserrefreshtoken
 schema: 2.0.0
 ---
 
-# Invoke-MgInvalidateUserRefreshToken
+# Invoke-MgBetaInvalidateUserRefreshToken
 
 ## SYNOPSIS
 Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the **refreshTokensValidFromDateTime** user property to the current date-time.
@@ -19,12 +19,12 @@ If this happens, the application will need to acquire a new refresh token by mak
 
 ### Invalidate (Default)
 ```
-Invoke-MgInvalidateUserRefreshToken -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaInvalidateUserRefreshToken -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InvalidateViaIdentity
 ```
-Invoke-MgInvalidateUserRefreshToken -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf]
+Invoke-MgBetaInvalidateUserRefreshToken -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -38,14 +38,14 @@ If this happens, the application will need to acquire a new refresh token by mak
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgInvalidateUserRefreshToken Cmdlet
+### Example 1: Using the Invoke-MgBetaInvalidateUserRefreshToken Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 # A UPN can also be used as -UserId.
-Invoke-MgInvalidateUserRefreshToken -UserId $userId
+Invoke-MgBetaInvalidateUserRefreshToken -UserId $userId
 ```
 
-This example shows how to use the Invoke-MgInvalidateUserRefreshToken Cmdlet.
+This example shows how to use the Invoke-MgBetaInvalidateUserRefreshToken Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -55,7 +55,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: InvalidateViaIdentity
 Aliases:
 
@@ -117,7 +117,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

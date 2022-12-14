@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/add-mguserdrivelistcontenttypecopy
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/add-mguserdrivelistcontenttypecopy
 schema: 2.0.0
 ---
 
-# Add-MgUserDriveListContentTypeCopy
+# Add-MgBetaUserDriveListContentTypeCopy
 
 ## SYNOPSIS
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
@@ -14,27 +14,27 @@ Add a copy of a [content type][contentType] from a [site][site] to a [list][list
 
 ### AddExpanded1 (Default)
 ```
-Add-MgUserDriveListContentTypeCopy -DriveId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Add-MgBetaUserDriveListContentTypeCopy -DriveId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add1
 ```
-Add-MgUserDriveListContentTypeCopy -DriveId <String> -UserId <String>
+Add-MgBetaUserDriveListContentTypeCopy -DriveId <String> -UserId <String>
  -BodyParameter <IPaths2SzxsiUsersUserIdDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity1
 ```
-Add-MgUserDriveListContentTypeCopy -InputObject <IUsersActionsIdentity>
+Add-MgBetaUserDriveListContentTypeCopy -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths2SzxsiUsersUserIdDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded1
 ```
-Add-MgUserDriveListContentTypeCopy -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Add-MgBetaUserDriveListContentTypeCopy -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,16 +45,16 @@ Add a copy of a [content type][contentType] from a [site][site] to a [list][list
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	ContentType = "https://graph.microsoft.com/v1.0/sites/{site-id}/contentTypes/0x0101"
 }
 
-Add-MgSiteListContentTypeCopy -SiteId $siteId -ListId $listId -BodyParameter $params
+Add-MgBetaSiteListContentTypeCopy -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgUserDriveListContentTypeCopy Cmdlet.
+This example shows how to use the Add-MgBetaUserDriveListContentTypeCopy Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths2SzxsiUsersUserIdDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths2SzxsiUsersUserIdDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add1, AddViaIdentity1
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
 Aliases:
 
@@ -188,13 +188,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths2SzxsiUsersUserIdDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths2SzxsiUsersUserIdDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/restore-mgsitelistitemversion
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/restore-mgsitelistitemversion
 schema: 2.0.0
 ---
 
-# Restore-MgSiteListItemVersion
+# Restore-MgBetaSiteListItemVersion
 
 ## SYNOPSIS
 Invoke action restoreVersion
@@ -14,13 +14,13 @@ Invoke action restoreVersion
 
 ### Restore (Default)
 ```
-Restore-MgSiteListItemVersion -ListId <String> -ListItemId <String> -ListItemVersionId <String>
+Restore-MgBetaSiteListItemVersion -ListId <String> -ListItemId <String> -ListItemVersionId <String>
  -SiteId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgSiteListItemVersion -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaSiteListItemVersion -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,12 +31,12 @@ Invoke action restoreVersion
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
-Restore-MgSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId
+Restore-MgBetaSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId
 ```
 
-This example shows how to use the Restore-MgSiteListItemVersion Cmdlet.
+This example shows how to use the Restore-MgBetaSiteListItemVersion Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -47,7 +47,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -169,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

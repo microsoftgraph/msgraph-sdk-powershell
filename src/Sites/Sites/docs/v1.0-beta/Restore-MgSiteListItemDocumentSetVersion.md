@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/restore-mgsitelistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/restore-mgsitelistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# Restore-MgSiteListItemDocumentSetVersion
+# Restore-MgBetaSiteListItemDocumentSetVersion
 
 ## SYNOPSIS
 Restore a document set version.
@@ -14,13 +14,13 @@ Restore a document set version.
 
 ### Restore (Default)
 ```
-Restore-MgSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -ListId <String> -ListItemId <String>
+Restore-MgBetaSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -ListId <String> -ListItemId <String>
  -SiteId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Restore a document set version.
 
 ## EXAMPLES
 
-### Example 1: Using the Restore-MgSiteListItemDocumentSetVersion Cmdlet
+### Example 1: Using the Restore-MgBetaSiteListItemDocumentSetVersion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Restore-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
+Import-Module Microsoft.Graph.Beta.Sites
+Restore-MgBetaSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
 ```
 
-This example shows how to use the Restore-MgSiteListItemDocumentSetVersion Cmdlet.
+This example shows how to use the Restore-MgBetaSiteListItemDocumentSetVersion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

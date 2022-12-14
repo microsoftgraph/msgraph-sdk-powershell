@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplicationtokenlifetimepolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgapplicationtokenlifetimepolicybyref
 schema: 2.0.0
 ---
 
-# New-MgApplicationTokenLifetimePolicyByRef
+# New-MgBetaApplicationTokenLifetimePolicyByRef
 
 ## SYNOPSIS
 Assign a tokenLifetimePolicy to an application or servicePrincipal.
@@ -14,25 +14,25 @@ Assign a tokenLifetimePolicy to an application or servicePrincipal.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgApplicationTokenLifetimePolicyByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaApplicationTokenLifetimePolicyByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgApplicationTokenLifetimePolicyByRef -ApplicationId <String> -BodyParameter <IReferenceCreate>
+New-MgBetaApplicationTokenLifetimePolicyByRef -ApplicationId <String> -BodyParameter <IReferenceCreate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgApplicationTokenLifetimePolicyByRef -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationTokenLifetimePolicyByRef -InputObject <IApplicationsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgApplicationTokenLifetimePolicyByRef -InputObject <IApplicationsIdentity>
+New-MgBetaApplicationTokenLifetimePolicyByRef -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -94,7 +94,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -171,9 +171,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

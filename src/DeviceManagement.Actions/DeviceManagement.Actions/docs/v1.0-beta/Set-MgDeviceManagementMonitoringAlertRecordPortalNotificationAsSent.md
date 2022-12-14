@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementmonitoringalertrecordportalnotificationassent
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementmonitoringalertrecordportalnotificationassent
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
+# Set-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
 
 ## SYNOPSIS
 Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
@@ -14,13 +14,13 @@ Set a single portal notification status to published by modifying the **isPortal
 
 ### Set (Default)
 ```
-Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent -AlertRecordId <String> [-PassThru]
+Set-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent -AlertRecordId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
+Set-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
  -InputObject <IDeviceManagementActionsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

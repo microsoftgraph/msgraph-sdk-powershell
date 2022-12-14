@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectorydeleteditem
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectorydeleteditem
 schema: 2.0.0
 ---
 
-# New-MgDirectoryDeletedItem
+# New-MgBetaDirectoryDeletedItem
 
 ## SYNOPSIS
 Create new navigation property to deletedItems for directory
@@ -14,13 +14,13 @@ Create new navigation property to deletedItems for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryDeletedItem [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Id <String>]
+New-MgBetaDirectoryDeletedItem [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryDeletedItem -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm] [-WhatIf]
+New-MgBetaDirectoryDeletedItem -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ directoryObject
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 Parameter Sets: Create
 Aliases:
 
@@ -130,11 +130,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

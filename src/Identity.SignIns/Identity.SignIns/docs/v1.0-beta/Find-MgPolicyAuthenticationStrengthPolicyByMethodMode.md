@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/find-mgpolicyauthenticationstrengthpolicybymethodmode
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/find-mgpolicyauthenticationstrengthpolicybymethodmode
 schema: 2.0.0
 ---
 
-# Find-MgPolicyAuthenticationStrengthPolicyByMethodMode
+# Find-MgBetaPolicyAuthenticationStrengthPolicyByMethodMode
 
 ## SYNOPSIS
 Invoke function findByMethodMode
@@ -14,14 +14,14 @@ Invoke function findByMethodMode
 
 ### Find (Default)
 ```
-Find-MgPolicyAuthenticationStrengthPolicyByMethodMode -AuthenticationMethodModes <String[]> [-Count]
+Find-MgBetaPolicyAuthenticationStrengthPolicyByMethodMode -AuthenticationMethodModes <String[]> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FindViaIdentity
 ```
-Find-MgPolicyAuthenticationStrengthPolicyByMethodMode -InputObject <IIdentitySignInsIdentity> [-Count]
+Find-MgBetaPolicyAuthenticationStrengthPolicyByMethodMode -InputObject <IIdentitySignInsIdentity> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: FindViaIdentity
 Aliases:
 
@@ -174,11 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthPolicy
 
 ## NOTES
 

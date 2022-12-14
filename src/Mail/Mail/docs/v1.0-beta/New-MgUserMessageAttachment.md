@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/new-mgusermessageattachment
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/new-mgusermessageattachment
 schema: 2.0.0
 ---
 
-# New-MgUserMessageAttachment
+# New-MgBetaUserMessageAttachment
 
 ## SYNOPSIS
 Use this API to add an attachment to a message.
@@ -16,26 +16,26 @@ You can add an attachment to an existing message by posting to its attachments c
 
 ### CreateExpanded (Default)
 ```
-New-MgUserMessageAttachment -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserMessageAttachment -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
  [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserMessageAttachment -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment>
+New-MgBetaUserMessageAttachment -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserMessageAttachment -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm]
+New-MgBetaUserMessageAttachment -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserMessageAttachment -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserMessageAttachment -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
  [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,9 +47,9 @@ You can add an attachment to an existing message by posting to its attachments c
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserMessageAttachment Cmdlet
+### Example 1: Using the New-MgBetaUserMessageAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	"@odata.type" = "#Microsoft.OutlookServices.FileAttachment"
 	Name = "name-value"
@@ -59,50 +59,50 @@ $params = @{
 	ContentBytes = "contentBytes-value"
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserMessageAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgUserMessageAttachment Cmdlet
+### Example 2: Using the New-MgBetaUserMessageAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
-	"@odata.type" = "#microsoft.graph.fileAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.fileAttachment"
 	Name = "smile"
 	ContentBytes = "a0b1c76de9f7="
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserMessageAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgUserMessageAttachment Cmdlet
+### Example 3: Using the New-MgBetaUserMessageAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
-	"@odata.type" = "#microsoft.graph.itemAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.itemAttachment"
 	Name = "Holiday event"
 	Item = @{
-		"@odata.type" = "microsoft.graph.event"
+		"@odata.type" = "Microsoft.Graph.Beta.event"
 		Subject = "Discuss gifts for children"
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserMessageAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgUserMessageAttachment Cmdlet
+### Example 4: Using the New-MgBetaUserMessageAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
-	"@odata.type" = "#microsoft.graph.referenceAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.referenceAttachment"
 	Name = "Personal pictures"
 	SourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics"
 	ProviderType = "oneDriveConsumer"
@@ -110,10 +110,10 @@ $params = @{
 	IsFolder = "True"
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserMessageAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -138,7 +138,7 @@ attachment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -185,7 +185,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -323,13 +323,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

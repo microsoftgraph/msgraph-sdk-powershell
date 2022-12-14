@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/invoke-mgreturneducationmeassignmentsubmission
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/invoke-mgreturneducationmeassignmentsubmission
 schema: 2.0.0
 ---
 
-# Invoke-MgReturnEducationMeAssignmentSubmission
+# Invoke-MgBetaReturnEducationMeAssignmentSubmission
 
 ## SYNOPSIS
 Make the grade and feedback associated with this submission available to the student.
@@ -16,13 +16,13 @@ This action can only be done by the teacher.
 
 ### Return (Default)
 ```
-Invoke-MgReturnEducationMeAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
+Invoke-MgBetaReturnEducationMeAssignmentSubmission -EducationAssignmentId <String> -EducationSubmissionId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReturnViaIdentity
 ```
-Invoke-MgReturnEducationMeAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Invoke-MgBetaReturnEducationMeAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -35,12 +35,12 @@ This action can only be done by the teacher.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 
-Invoke-MgReturnEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+Invoke-MgBetaReturnEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
 
-This example shows how to use the Invoke-MgReturnEducationMeAssignmentSubmission Cmdlet.
+This example shows how to use the Invoke-MgBetaReturnEducationMeAssignmentSubmission Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: ReturnViaIdentity
 Aliases:
 
@@ -128,11 +128,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
 
 ## NOTES
 

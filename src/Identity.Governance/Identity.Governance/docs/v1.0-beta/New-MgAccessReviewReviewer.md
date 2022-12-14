@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgaccessreviewreviewer
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgaccessreviewreviewer
 schema: 2.0.0
 ---
 
-# New-MgAccessReviewReviewer
+# New-MgBetaAccessReviewReviewer
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.
@@ -16,26 +16,26 @@ This operation is not permitted for an access review in which users review their
 
 ### CreateExpanded (Default)
 ```
-New-MgAccessReviewReviewer -AccessReviewId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaAccessReviewReviewer -AccessReviewId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-UserPrincipalName <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgAccessReviewReviewer -AccessReviewId <String> -BodyParameter <IMicrosoftGraphAccessReviewReviewer>
+New-MgBetaAccessReviewReviewer -AccessReviewId <String> -BodyParameter <IMicrosoftGraphAccessReviewReviewer>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgAccessReviewReviewer -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaAccessReviewReviewer -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAccessReviewReviewer> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgAccessReviewReviewer -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaAccessReviewReviewer -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-UserPrincipalName <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -47,16 +47,16 @@ This operation is not permitted for an access review in which users review their
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgAccessReviewReviewer Cmdlet
+### Example 1: Using the New-MgBetaAccessReviewReviewer Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	Id = "006111db-0810-4494-a6df-904d368bd81b"
 }
-New-MgAccessReviewReviewer -AccessReviewId $accessReviewId -BodyParameter $params
+New-MgBetaAccessReviewReviewer -AccessReviewId $accessReviewId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgAccessReviewReviewer Cmdlet.
+This example shows how to use the New-MgBetaAccessReviewReviewer Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -96,7 +96,7 @@ accessReviewReviewer
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -220,13 +220,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 
 ## NOTES
 

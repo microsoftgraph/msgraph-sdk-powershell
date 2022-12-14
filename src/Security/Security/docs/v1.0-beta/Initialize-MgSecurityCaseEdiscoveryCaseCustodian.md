@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/initialize-mgsecuritycaseediscoverycasecustodian
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/initialize-mgsecuritycaseediscoverycasecustodian
 schema: 2.0.0
 ---
 
-# Initialize-MgSecurityCaseEdiscoveryCaseCustodian
+# Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian
 
 ## SYNOPSIS
 Activate a custodian that has been released from a case to make them part of the case again.
@@ -15,13 +15,13 @@ For details, see Manage custodians in an eDiscovery (Premium) case.
 
 ### Activate1 (Default)
 ```
-Initialize-MgSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
+Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ActivateViaIdentity1
 ```
-Initialize-MgSecurityCaseEdiscoveryCaseCustodian -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
+Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ For details, see Manage custodians in an eDiscovery (Premium) case.
 
 ## EXAMPLES
 
-### Example 1: Using the Initialize-MgSecurityCaseEdiscoveryCaseCustodian Cmdlet
+### Example 1: Using the Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Initialize-MgSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+Import-Module Microsoft.Graph.Beta.Security
+Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
 ```
 
-This example shows how to use the Initialize-MgSecurityCaseEdiscoveryCaseCustodian Cmdlet.
+This example shows how to use the Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: ActivateViaIdentity1
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdeviceregisteredowner
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdeviceregisteredowner
 schema: 2.0.0
 ---
 
-# Get-MgDeviceRegisteredOwner
+# Get-MgBetaDeviceRegisteredOwner
 
 ## SYNOPSIS
 The user that cloud joined the device or registered their personal device.
@@ -18,7 +18,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgDeviceRegisteredOwner -DeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceRegisteredOwner -DeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -33,13 +33,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceRegisteredOwner Cmdlet
+### Example 1: Using the Get-MgBetaDeviceRegisteredOwner Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDeviceRegisteredOwner -DeviceId $deviceId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDeviceRegisteredOwner -DeviceId $deviceId
 ```
 
-This example shows how to use the Get-MgDeviceRegisteredOwner Cmdlet.
+This example shows how to use the Get-MgBetaDeviceRegisteredOwner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -233,7 +233,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasesearchadditionalsource
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasesearchadditionalsource
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource
+# Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource
 
 ## SYNOPSIS
 Adds an additional source to the eDiscovery search.
@@ -14,20 +14,20 @@ Adds an additional source to the eDiscovery search.
 
 ### List (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -EdiscoveryCaseId <String> -EdiscoverySearchId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource -EdiscoveryCaseId <String> -EdiscoverySearchId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -DataSourceId <String> -EdiscoveryCaseId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource -DataSourceId <String> -EdiscoveryCaseId <String>
  -EdiscoverySearchId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Adds an additional source to the eDiscovery search.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource Cmdlet
+### Example 1: Using the Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource Cmdlet
+### Example 2: Using the Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
 ```
 
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDataSource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityDataSource
 
 ## NOTES
 

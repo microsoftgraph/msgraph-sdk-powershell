@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/grant-mgsharepermission
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/grant-mgsharepermission
 schema: 2.0.0
 ---
 
-# Grant-MgSharePermission
+# Grant-MgBetaSharePermission
 
 ## SYNOPSIS
 Grant users access to a link represented by a [permission][].
@@ -14,27 +14,27 @@ Grant users access to a link represented by a [permission][].
 
 ### GrantExpanded1 (Default)
 ```
-Grant-MgSharePermission -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>]
+Grant-MgBetaSharePermission -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>]
  [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Grant1
 ```
-Grant-MgSharePermission -SharedDriveItemId <String>
+Grant-MgBetaSharePermission -SharedDriveItemId <String>
  -BodyParameter <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GrantViaIdentity1
 ```
-Grant-MgSharePermission -InputObject <IFilesIdentity>
+Grant-MgBetaSharePermission -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GrantViaIdentityExpanded1
 ```
-Grant-MgSharePermission -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Grant-MgBetaSharePermission -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,9 +43,9 @@ Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 
-### Example 1: Using the Grant-MgSharePermission Cmdlet
+### Example 1: Using the Grant-MgBetaSharePermission Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
+Import-Module Microsoft.Graph.Beta.Files
 $params = @{
 	Recipients = @(
 		@{
@@ -59,10 +59,10 @@ $params = @{
 		"read"
 	)
 }
-Grant-MgSharePermission -SharedDriveItemId $sharedDriveItemId -BodyParameter $params
+Grant-MgBetaSharePermission -SharedDriveItemId $sharedDriveItemId -BodyParameter $params
 ```
 
-This example shows how to use the Grant-MgSharePermission Cmdlet.
+This example shows how to use the Grant-MgBetaSharePermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Grant1, GrantViaIdentity1
 Aliases:
 
@@ -103,7 +103,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GrantViaIdentity1, GrantViaIdentityExpanded1
 Aliases:
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for RECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
 Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
 Aliases:
 
@@ -196,13 +196,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermission1
 
 ## NOTES
 

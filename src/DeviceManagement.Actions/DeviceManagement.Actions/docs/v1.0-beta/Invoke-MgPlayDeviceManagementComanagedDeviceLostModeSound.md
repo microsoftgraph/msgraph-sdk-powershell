@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgplaydevicemanagementcomanageddevicelostmodesound
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgplaydevicemanagementcomanageddevicelostmodesound
 schema: 2.0.0
 ---
 
-# Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound
+# Invoke-MgBetaPlayDeviceManagementComanagedDeviceLostModeSound
 
 ## SYNOPSIS
 Play lost mode sound
@@ -14,28 +14,28 @@ Play lost mode sound
 
 ### PlayExpanded (Default)
 ```
-Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound -ManagedDeviceId <String>
+Invoke-MgBetaPlayDeviceManagementComanagedDeviceLostModeSound -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-DurationInMinutes <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Play
 ```
-Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound -ManagedDeviceId <String>
+Invoke-MgBetaPlayDeviceManagementComanagedDeviceLostModeSound -ManagedDeviceId <String>
  -BodyParameter <IPaths1Hvv4Q9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PlayViaIdentity
 ```
-Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaPlayDeviceManagementComanagedDeviceLostModeSound -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1Hvv4Q9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PlayViaIdentityExpanded
 ```
-Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaPlayDeviceManagementComanagedDeviceLostModeSound -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-DurationInMinutes <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Hvv4Q9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Hvv4Q9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Play, PlayViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: PlayViaIdentity, PlayViaIdentityExpanded
 Aliases:
 
@@ -175,9 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Hvv4Q9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Hvv4Q9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

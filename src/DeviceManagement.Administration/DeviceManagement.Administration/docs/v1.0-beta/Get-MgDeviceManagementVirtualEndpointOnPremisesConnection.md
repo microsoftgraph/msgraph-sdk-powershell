@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointonpremisesconnection
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointonpremisesconnection
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointOnPremisesConnection
+# Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
 A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
@@ -14,20 +14,20 @@ A defined collection of Azure resource information that can be used to establish
 
 ### List (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointOnPremisesConnection [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId <String>
+Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementVirtualEndpointOnPremisesConnection
+Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
  -InputObject <IDeviceManagementAdministrationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -37,31 +37,31 @@ A defined collection of Azure resource information that can be used to establish
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+### Example 1: Using the Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Get-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+### Example 2: Using the Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Get-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId -Property "id,displayName,healthCheckStatus,healthCheckStatusDetails,inUse" 
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId -Property "id,displayName,healthCheckStatus,healthCheckStatusDetails,inUse" 
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+### Example 3: Using the Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Get-MgDeviceManagementVirtualEndpointOnPremisesConnection
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
 
 ## NOTES
 

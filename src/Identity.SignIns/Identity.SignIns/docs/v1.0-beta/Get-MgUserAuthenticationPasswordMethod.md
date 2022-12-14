@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationpasswordmethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationpasswordmethod
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationPasswordMethod
+# Get-MgBetaUserAuthenticationPasswordMethod
 
 ## SYNOPSIS
 Represents the details of the password authentication method registered to a user for authentication.
@@ -14,20 +14,20 @@ Represents the details of the password authentication method registered to a use
 
 ### List (Default)
 ```
-Get-MgUserAuthenticationPasswordMethod -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserAuthenticationPasswordMethod -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserAuthenticationPasswordMethod -PasswordAuthenticationMethodId <String> -UserId <String>
+Get-MgBetaUserAuthenticationPasswordMethod -PasswordAuthenticationMethodId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationPasswordMethod -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserAuthenticationPasswordMethod -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Represents the details of the password authentication method registered to a use
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserAuthenticationPasswordMethod Cmdlet
+### Example 1: Using the Get-MgBetaUserAuthenticationPasswordMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationPasswordMethod -UserId $userId -PasswordAuthenticationMethodId $passwordAuthenticationMethodId
+Get-MgBetaUserAuthenticationPasswordMethod -UserId $userId -PasswordAuthenticationMethodId $passwordAuthenticationMethodId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationPasswordMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationPasswordMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserAuthenticationPasswordMethod Cmdlet
+### Example 2: Using the Get-MgBetaUserAuthenticationPasswordMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationPasswordMethod -UserId $userId
+Get-MgBetaUserAuthenticationPasswordMethod -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationPasswordMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationPasswordMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPasswordAuthenticationMethod1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPasswordAuthenticationMethod1
 
 ## NOTES
 

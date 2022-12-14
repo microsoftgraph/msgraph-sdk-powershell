@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/sync-mgdevicemanagementexchangeconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/sync-mgdevicemanagementexchangeconnector
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceManagementExchangeConnector
+# Sync-MgBetaDeviceManagementExchangeConnector
 
 ## SYNOPSIS
 Invoke action sync
@@ -14,28 +14,28 @@ Invoke action sync
 
 ### SyncExpanded (Default)
 ```
-Sync-MgDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
+Sync-MgBetaDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
  [-AdditionalProperties <Hashtable>] [-SyncType <DeviceManagementExchangeConnectorSyncType>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Sync
 ```
-Sync-MgDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
+Sync-MgBetaDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
  -BodyParameter <IPathsD33NzdDevicemanagementExchangeconnectorsDevicemanagementexchangeconnectorIdMicrosoftGraphSyncPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SyncViaIdentity
 ```
-Sync-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementActionsIdentity>
+Sync-MgBetaDeviceManagementExchangeConnector -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsD33NzdDevicemanagementExchangeconnectorsDevicemanagementexchangeconnectorIdMicrosoftGraphSyncPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SyncViaIdentityExpanded
 ```
-Sync-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementActionsIdentity>
+Sync-MgBetaDeviceManagementExchangeConnector -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-SyncType <DeviceManagementExchangeConnectorSyncType>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsD33NzdDevicemanagementExchangeconnectorsDevicemanagementexchangeconnectorIdMicrosoftGraphSyncPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsD33NzdDevicemanagementExchangeconnectorsDevicemanagementexchangeconnectorIdMicrosoftGraphSyncPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Sync, SyncViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: SyncViaIdentity, SyncViaIdentityExpanded
 Aliases:
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 The type of Exchange Connector sync requested.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementExchangeConnectorSyncType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementExchangeConnectorSyncType
 Parameter Sets: SyncExpanded, SyncViaIdentityExpanded
 Aliases:
 
@@ -175,9 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsD33NzdDevicemanagementExchangeconnectorsDevicemanagementexchangeconnectorIdMicrosoftGraphSyncPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsD33NzdDevicemanagementExchangeconnectorsDevicemanagementexchangeconnectorIdMicrosoftGraphSyncPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

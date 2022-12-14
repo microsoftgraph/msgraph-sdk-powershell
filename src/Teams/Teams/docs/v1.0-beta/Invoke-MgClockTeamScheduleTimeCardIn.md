@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mgclockteamscheduletimecardin
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mgclockteamscheduletimecardin
 schema: 2.0.0
 ---
 
-# Invoke-MgClockTeamScheduleTimeCardIn
+# Invoke-MgBetaClockTeamScheduleTimeCardIn
 
 ## SYNOPSIS
 Clock in to start a timeCard.
@@ -14,28 +14,28 @@ Clock in to start a timeCard.
 
 ### ClockExpanded (Default)
 ```
-Invoke-MgClockTeamScheduleTimeCardIn -TeamId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaClockTeamScheduleTimeCardIn -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-AtApprovedLocation] [-Notes <IMicrosoftGraphItemBody>] [-OnBehalfOfUserId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Clock
 ```
-Invoke-MgClockTeamScheduleTimeCardIn -TeamId <String>
+Invoke-MgBetaClockTeamScheduleTimeCardIn -TeamId <String>
  -BodyParameter <IPaths1CnzyehTeamsTeamIdScheduleTimecardsMicrosoftGraphClockinPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ClockViaIdentity
 ```
-Invoke-MgClockTeamScheduleTimeCardIn -InputObject <ITeamsIdentity>
+Invoke-MgBetaClockTeamScheduleTimeCardIn -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1CnzyehTeamsTeamIdScheduleTimecardsMicrosoftGraphClockinPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ClockViaIdentityExpanded
 ```
-Invoke-MgClockTeamScheduleTimeCardIn -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaClockTeamScheduleTimeCardIn -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AtApprovedLocation] [-Notes <IMicrosoftGraphItemBody>] [-OnBehalfOfUserId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -45,9 +45,9 @@ Clock in to start a timeCard.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgClockTeamScheduleTimeCardIn Cmdlet
+### Example 1: Using the Invoke-MgBetaClockTeamScheduleTimeCardIn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	AtAprovedLocation = $true
 	Notes = @{
@@ -55,10 +55,10 @@ $params = @{
 		Content = "clock in notes"
 	}
 }
-Invoke-MgClockTeamScheduleTimeCardIn -TeamId $teamId -BodyParameter $params
+Invoke-MgBetaClockTeamScheduleTimeCardIn -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgClockTeamScheduleTimeCardIn Cmdlet.
+This example shows how to use the Invoke-MgBetaClockTeamScheduleTimeCardIn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1CnzyehTeamsTeamIdScheduleTimecardsMicrosoftGraphClockinPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1CnzyehTeamsTeamIdScheduleTimecardsMicrosoftGraphClockinPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Clock, ClockViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: ClockViaIdentity, ClockViaIdentityExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for NOTES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: ClockExpanded, ClockViaIdentityExpanded
 Aliases:
 
@@ -207,13 +207,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1CnzyehTeamsTeamIdScheduleTimecardsMicrosoftGraphClockinPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1CnzyehTeamsTeamIdScheduleTimecardsMicrosoftGraphClockinPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCard
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCard
 
 ## NOTES
 

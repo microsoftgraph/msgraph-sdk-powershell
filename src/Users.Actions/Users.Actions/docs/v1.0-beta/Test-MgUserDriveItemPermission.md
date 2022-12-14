@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/test-mguserdriveitempermission
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/test-mguserdriveitempermission
 schema: 2.0.0
 ---
 
-# Test-MgUserDriveItemPermission
+# Test-MgBetaUserDriveItemPermission
 
 ## SYNOPSIS
 Invoke action validatePermission
@@ -14,28 +14,28 @@ Invoke action validatePermission
 
 ### ValidateExpanded1 (Default)
 ```
-Test-MgUserDriveItemPermission -DriveId <String> -DriveItemId <String> -UserId <String>
+Test-MgBetaUserDriveItemPermission -DriveId <String> -DriveItemId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ChallengeToken <String>] [-Password <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate1
 ```
-Test-MgUserDriveItemPermission -DriveId <String> -DriveItemId <String> -UserId <String>
+Test-MgBetaUserDriveItemPermission -DriveId <String> -DriveItemId <String> -UserId <String>
  -BodyParameter <IPathsBhdbzfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity1
 ```
-Test-MgUserDriveItemPermission -InputObject <IUsersActionsIdentity>
+Test-MgBetaUserDriveItemPermission -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsBhdbzfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentityExpanded1
 ```
-Test-MgUserDriveItemPermission -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Test-MgBetaUserDriveItemPermission -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ChallengeToken <String>] [-Password <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBhdbzfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsBhdbzfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate1, ValidateViaIdentity1
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ValidateViaIdentity1, ValidateViaIdentityExpanded1
 Aliases:
 
@@ -219,9 +219,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsBhdbzfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsBhdbzfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

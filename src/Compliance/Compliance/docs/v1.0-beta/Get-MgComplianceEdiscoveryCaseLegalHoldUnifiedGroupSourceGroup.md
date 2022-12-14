@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycaselegalholdunifiedgroupsourcegroup
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycaselegalholdunifiedgroupsourcegroup
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroup
+# Get-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroup
 
 ## SYNOPSIS
 The group associated with the unifiedGroupSource.
@@ -14,13 +14,13 @@ The group associated with the unifiedGroupSource.
 
 ### Get (Default)
 ```
-Get-MgComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroup -CaseId <String> -LegalHoldId <String>
+Get-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroup -CaseId <String> -LegalHoldId <String>
  -UnifiedGroupSourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroup -InputObject <IComplianceIdentity>
+Get-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroup -InputObject <IComplianceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroup
 
 ## NOTES
 

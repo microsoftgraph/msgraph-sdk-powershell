@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/set-mguserlicense
 schema: 2.0.0
 ---
 
-# Set-MgUserLicense
+# Set-MgBetaUserLicense
 
 ## SYNOPSIS
 Add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings.
@@ -18,28 +18,28 @@ To get the subscriptions available in the directory, perform a GET subscribedSku
 
 ### AssignExpanded (Default)
 ```
-Set-MgUserLicense -UserId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaUserLicense -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AddLicenses <IMicrosoftGraphAssignedLicense[]>] [-RemoveLicenses <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgUserLicense -UserId <String>
+Set-MgBetaUserLicense -UserId <String>
  -BodyParameter <IComponents103UmuuRequestbodiesAssignlicenserequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgUserLicense -InputObject <IUsersActionsIdentity>
+Set-MgBetaUserLicense -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents103UmuuRequestbodiesAssignlicenserequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgUserLicense -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaUserLicense -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-AddLicenses <IMicrosoftGraphAssignedLicense[]>] [-RemoveLicenses <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -57,9 +57,9 @@ To get the subscriptions available in the directory, perform a GET subscribedSku
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
 
-Set-MgUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses @{SkuId = $EmsSku.SkuId} -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses @{SkuId = $EmsSku.SkuId} -RemoveLicenses @()
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -73,14 +73,14 @@ For more information, see [assign licenses to users accounts with PowerShell](/m
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
-$FlowSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'FLOW_FREE'
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$FlowSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'FLOW_FREE'
 $addLicenses = @(
   @{SkuId = $EmsSku.SkuId},
   @{SkuId = $FlowSku.SkuId}
   )
 
-Set-MgUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -93,7 +93,7 @@ This example assigns **EMSPREMIUM** and **FLOW_FREE** licenses to the user **389
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
 $disabledPlans = $EmsSku.ServicePlans | where ServicePlanName -in ("MFA_PREMIUM", "INTUNE_A") | Select -ExpandProperty ServicePlanId
 $addLicenses = @(
   @{SkuId = $EmsSku.SkuId
@@ -101,7 +101,7 @@ $addLicenses = @(
   }
   )
 
-Set-MgUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -114,8 +114,8 @@ This example assigns **EMSPREMIUM** license with the **MFA_PREMIUM** and **INTUN
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
-$userLicense = Get-MgUserLicenseDetail -UserId "38955658-c844-4f59-9430-6519430ac89b"
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$userLicense = Get-MgBetaUserLicenseDetail -UserId "38955658-c844-4f59-9430-6519430ac89b"
 
 $userDisabledPlans = $userLicense.ServicePlans |
   Where ProvisioningStatus -eq "Disabled" |
@@ -133,7 +133,7 @@ $addLicenses = @(
   }
   )
 
-Set-MgUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -146,10 +146,10 @@ This example updates the **EMSPREMIUM** license assigned to the user to add **AA
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-Select-MgProfile -Name Beta
-$mgUser = Get-MgUser -UserId '38955658-c844-4f59-9430-6519430ac89b'
+Select-MgBetaProfile -Name Beta
+$mgUser = Get-MgBetaUser -UserId '38955658-c844-4f59-9430-6519430ac89b'
 
-Set-MgUserLicense -UserId "82f51c98-7221-442f-8329-3faf9fe022f1" -AddLicenses $mgUser.AssignedLicenses -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId "82f51c98-7221-442f-8329-3faf9fe022f1" -AddLicenses $mgUser.AssignedLicenses -RemoveLicenses @()
 
 
 Id                                   DisplayName    Mail UserPrincipalName                      UserType
@@ -163,9 +163,9 @@ This examples copies the license assignment of user **38955658-c844-4f59-9430-65
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
 
-Set-MgUserLicense -UserId "38955658-c844-4f59-9430-6519430ac89b" -AddLicenses @() -RemoveLicenses @($EmsSku.SkuId)
+Set-MgBetaUserLicense -UserId "38955658-c844-4f59-9430-6519430ac89b" -AddLicenses @() -RemoveLicenses @($EmsSku.SkuId)
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ADDLICENSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignedLicense[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignedLicense[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponents103UmuuRequestbodiesAssignlicenserequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponents103UmuuRequestbodiesAssignlicenserequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -228,7 +228,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -305,13 +305,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponents103UmuuRequestbodiesAssignlicenserequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IComponents103UmuuRequestbodiesAssignlicenserequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser
 
 ## NOTES
 

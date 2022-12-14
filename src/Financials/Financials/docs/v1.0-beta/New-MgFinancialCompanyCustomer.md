@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanycustomer
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanycustomer
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyCustomer
+# New-MgBetaFinancialCompanyCustomer
 
 ## SYNOPSIS
 Create new navigation property to customers for financials
@@ -14,7 +14,7 @@ Create new navigation property to customers for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyCustomer -CompanyId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyCustomer -CompanyId <String> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPostalAddressType>] [-Blocked <String>] [-Currency <IMicrosoftGraphCurrency>]
  [-CurrencyCode <String>] [-CurrencyId <String>] [-DisplayName <String>] [-Email <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-PaymentMethod <IMicrosoftGraphPaymentMethod>]
@@ -27,19 +27,19 @@ New-MgFinancialCompanyCustomer -CompanyId <String> [-AdditionalProperties <Hasht
 
 ### Create
 ```
-New-MgFinancialCompanyCustomer -CompanyId <String> -BodyParameter <IMicrosoftGraphCustomer> [-Confirm]
+New-MgBetaFinancialCompanyCustomer -CompanyId <String> -BodyParameter <IMicrosoftGraphCustomer> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyCustomer -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphCustomer>
+New-MgBetaFinancialCompanyCustomer -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphCustomer>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyCustomer -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyCustomer -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPostalAddressType>] [-Blocked <String>] [-Currency <IMicrosoftGraphCurrency>]
  [-CurrencyCode <String>] [-CurrencyId <String>] [-DisplayName <String>] [-Email <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-PaymentMethod <IMicrosoftGraphPaymentMethod>]
@@ -77,7 +77,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -108,7 +108,7 @@ customer
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ currency
 To construct, please use Get-Help -Online and see NOTES section for CURRENCY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCurrency
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -231,7 +231,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -277,7 +277,7 @@ paymentMethod
 To construct, please use Get-Help -Online and see NOTES section for PAYMENTMETHOD properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentMethod
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -308,7 +308,7 @@ paymentTerm
 To construct, please use Get-Help -Online and see NOTES section for PAYMENTTERM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PICTURE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -370,7 +370,7 @@ shipmentMethod
 To construct, please use Get-Help -Online and see NOTES section for SHIPMENTMETHOD properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShipmentMethod
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -522,13 +522,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 
 ## NOTES
 

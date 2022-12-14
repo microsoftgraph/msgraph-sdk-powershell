@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedroleassignmentroleinfo
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedroleassignmentroleinfo
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedRoleAssignmentRoleInfo
+# Get-MgBetaPrivilegedRoleAssignmentRoleInfo
 
 ## SYNOPSIS
 Read-only.
@@ -16,13 +16,13 @@ The associated role information.
 
 ### Get (Default)
 ```
-Get-MgPrivilegedRoleAssignmentRoleInfo -PrivilegedRoleAssignmentId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedRoleAssignmentRoleInfo -PrivilegedRoleAssignmentId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedRoleAssignmentRoleInfo -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedRoleAssignmentRoleInfo -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -101,11 +101,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 
 ## NOTES
 

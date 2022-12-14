@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicydirectoryroleaccessreviewpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicydirectoryroleaccessreviewpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyDirectoryRoleAccessReviewPolicy
+# Update-MgBetaPolicyDirectoryRoleAccessReviewPolicy
 
 ## SYNOPSIS
 Update the navigation property directoryRoleAccessReviewPolicy in policies
@@ -14,14 +14,14 @@ Update the navigation property directoryRoleAccessReviewPolicy in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyDirectoryRoleAccessReviewPolicy [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaPolicyDirectoryRoleAccessReviewPolicy [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Settings <IMicrosoftGraphAccessReviewScheduleSettings>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPolicyDirectoryRoleAccessReviewPolicy -BodyParameter <IMicrosoftGraphDirectoryRoleAccessReviewPolicy>
+Update-MgBetaPolicyDirectoryRoleAccessReviewPolicy -BodyParameter <IMicrosoftGraphDirectoryRoleAccessReviewPolicy>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ directoryRoleAccessReviewPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRoleAccessReviewPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryRoleAccessReviewPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -99,7 +99,7 @@ accessReviewScheduleSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleSettings
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRoleAccessReviewPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryRoleAccessReviewPolicy
 
 ## OUTPUTS
 

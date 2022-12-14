@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticbaselineworkfromanywheremetric
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticbaselineworkfromanywheremetric
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric
+# Get-MgBetaDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric
 
 ## SYNOPSIS
 The user experience analytics work from anywhere metrics.
@@ -14,14 +14,14 @@ The user experience analytics work from anywhere metrics.
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric
+Get-MgBetaDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric
  -UserExperienceAnalyticsBaselineId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric
+Get-MgBetaDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric
  -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -99,11 +99,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 
 ## NOTES
 

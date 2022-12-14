@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamschedule
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamschedule
 schema: 2.0.0
 ---
 
-# Get-MgTeamSchedule
+# Get-MgBetaTeamSchedule
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a schedule object.
@@ -18,12 +18,12 @@ Clients can also inspect the configuration of the schedule.
 
 ### Get1 (Default)
 ```
-Get-MgTeamSchedule -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaTeamSchedule -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamSchedule -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamSchedule -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Clients can also inspect the configuration of the schedule.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamSchedule Cmdlet
+### Example 1: Using the Get-MgBetaTeamSchedule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamSchedule -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamSchedule -TeamId $teamId
 ```
 
-This example shows how to use the Get-MgTeamSchedule Cmdlet.
+This example shows how to use the Get-MgBetaTeamSchedule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -113,11 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedule1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchedule1
 
 ## NOTES
 

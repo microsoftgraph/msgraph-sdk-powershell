@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsiteapplicablecontenttypeforlist
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsiteapplicablecontenttypeforlist
 schema: 2.0.0
 ---
 
-# Get-MgSiteApplicableContentTypeForList
+# Get-MgBetaSiteApplicableContentTypeForList
 
 ## SYNOPSIS
 Invoke function getApplicableContentTypesForList
@@ -14,14 +14,14 @@ Invoke function getApplicableContentTypesForList
 
 ### Get (Default)
 ```
-Get-MgSiteApplicableContentTypeForList -ListId <String> -SiteId <String> [-Count] [-Filter <String>]
+Get-MgBetaSiteApplicableContentTypeForList -ListId <String> -SiteId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteApplicableContentTypeForList -InputObject <ISitesIdentity> [-Count] [-Filter <String>]
+Get-MgBetaSiteApplicableContentTypeForList -InputObject <ISitesIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -189,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 
 ## NOTES
 

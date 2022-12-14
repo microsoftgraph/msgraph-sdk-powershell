@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/set-mgonpremisepublishingprofileconnectorgroupapplicationlogo
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/set-mgonpremisepublishingprofileconnectorgroupapplicationlogo
 schema: 2.0.0
 ---
 
-# Set-MgOnPremisePublishingProfileConnectorGroupApplicationLogo
+# Set-MgBetaOnPremisePublishingProfileConnectorGroupApplicationLogo
 
 ## SYNOPSIS
 The main logo for the application.
@@ -15,14 +15,14 @@ Not nullable.
 
 ### Set (Default)
 ```
-Set-MgOnPremisePublishingProfileConnectorGroupApplicationLogo -ApplicationId <String>
+Set-MgBetaOnPremisePublishingProfileConnectorGroupApplicationLogo -ApplicationId <String>
  -ConnectorGroupId <String> -OnPremisesPublishingProfileId <String> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgOnPremisePublishingProfileConnectorGroupApplicationLogo -InputObject <IApplicationsIdentity>
+Set-MgBetaOnPremisePublishingProfileConnectorGroupApplicationLogo -InputObject <IApplicationsIdentity>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -178,7 +178,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ### System.IO.Stream
 

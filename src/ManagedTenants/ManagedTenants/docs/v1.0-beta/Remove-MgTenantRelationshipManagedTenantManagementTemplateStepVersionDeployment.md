@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/remove-mgtenantrelationshipmanagedtenantmanagementtemplatestepversiondeployment
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/remove-mgtenantrelationshipmanagedtenantmanagementtemplatestepversiondeployment
 schema: 2.0.0
 ---
 
-# Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment
+# Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment
 
 ## SYNOPSIS
 Delete navigation property deployments for tenantRelationships
@@ -14,14 +14,14 @@ Delete navigation property deployments for tenantRelationships
 
 ### Delete (Default)
 ```
-Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment
+Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment
  -ManagementTemplateStepDeploymentId <String> -ManagementTemplateStepVersionId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment
+Remove-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment
  -InputObject <IManagedTenantsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 

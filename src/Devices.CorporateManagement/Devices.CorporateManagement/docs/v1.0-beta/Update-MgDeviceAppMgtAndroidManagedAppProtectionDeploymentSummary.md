@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtandroidmanagedappprotectiondeploymentsummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtandroidmanagedappprotectiondeploymentsummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
+# Update-MgBetaDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
 
 ## SYNOPSIS
 Update the navigation property deploymentSummary in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property deploymentSummary in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary -AndroidManagedAppProtectionId <String>
+Update-MgBetaDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary -AndroidManagedAppProtectionId <String>
  [-AdditionalProperties <Hashtable>] [-ConfigurationDeployedUserCount <Int32>]
  [-ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
  [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>] [-PassThru]
@@ -23,14 +23,14 @@ Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary -AndroidManage
 
 ### Update
 ```
-Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary -AndroidManagedAppProtectionId <String>
+Update-MgBetaDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary -AndroidManagedAppProtectionId <String>
  -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
+Update-MgBetaDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
+Update-MgBetaDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ConfigurationDeployedUserCount <Int32>]
  [-ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
@@ -88,7 +88,7 @@ The ManagedAppEntity is the base entity type for all other entity types under ap
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ Not yet documented
 To construct, please use Get-Help -Online and see NOTES section for CONFIGURATIONDEPLOYMENTSUMMARYPERAPP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -166,7 +166,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -258,9 +258,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
 
 ## OUTPUTS
 
@@ -270,7 +270,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementAndroidManagedAppProtectionDeploymentSummary
+### Update-MgBetaDeviceAppManagementAndroidManagedAppProtectionDeploymentSummary
 
 COMPLEX PARAMETER PROPERTIES
 

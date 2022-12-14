@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/invoke-mggraphwindowsupdatesdeploymentaudienceexclusion
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/invoke-mggraphwindowsupdatesdeploymentaudienceexclusion
 schema: 2.0.0
 ---
 
-# Invoke-MgGraphWindowsUpdatesDeploymentAudienceExclusion
+# Invoke-MgBetaGraphWindowsUpdatesDeploymentAudienceExclusion
 
 ## SYNOPSIS
 Invoke action unenrollAssetsById
@@ -14,28 +14,28 @@ Invoke action unenrollAssetsById
 
 ### GraphExpanded (Default)
 ```
-Invoke-MgGraphWindowsUpdatesDeploymentAudienceExclusion -DeploymentId <String>
+Invoke-MgBetaGraphWindowsUpdatesDeploymentAudienceExclusion -DeploymentId <String>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-UpdateCategory <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Graph
 ```
-Invoke-MgGraphWindowsUpdatesDeploymentAudienceExclusion -DeploymentId <String>
+Invoke-MgBetaGraphWindowsUpdatesDeploymentAudienceExclusion -DeploymentId <String>
  -BodyParameter <IPaths17VgwvAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GraphViaIdentity
 ```
-Invoke-MgGraphWindowsUpdatesDeploymentAudienceExclusion -InputObject <IWindowsUpdatesIdentity>
+Invoke-MgBetaGraphWindowsUpdatesDeploymentAudienceExclusion -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPaths17VgwvAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GraphViaIdentityExpanded
 ```
-Invoke-MgGraphWindowsUpdatesDeploymentAudienceExclusion -InputObject <IWindowsUpdatesIdentity>
+Invoke-MgBetaGraphWindowsUpdatesDeploymentAudienceExclusion -InputObject <IWindowsUpdatesIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-UpdateCategory <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths17VgwvAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths17VgwvAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Graph, GraphViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: GraphViaIdentity, GraphViaIdentityExpanded
 Aliases:
 
@@ -205,9 +205,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths17VgwvAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths17VgwvAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -217,7 +217,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgGraphWuDeploymentAudienceExclusion
+### Invoke-MgBetaGraphWuDeploymentAudienceExclusion
 
 COMPLEX PARAMETER PROPERTIES
 

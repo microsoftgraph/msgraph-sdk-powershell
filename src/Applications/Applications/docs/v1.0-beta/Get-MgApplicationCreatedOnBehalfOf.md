@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationcreatedonbehalfof
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationcreatedonbehalfof
 schema: 2.0.0
 ---
 
-# Get-MgApplicationCreatedOnBehalfOf
+# Get-MgBetaApplicationCreatedOnBehalfOf
 
 ## SYNOPSIS
 Supports $filter (/$count eq 0, /$count ne 0).
@@ -15,13 +15,13 @@ Read-only.
 
 ### Get (Default)
 ```
-Get-MgApplicationCreatedOnBehalfOf -ApplicationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaApplicationCreatedOnBehalfOf -ApplicationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationCreatedOnBehalfOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationCreatedOnBehalfOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -99,11 +99,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

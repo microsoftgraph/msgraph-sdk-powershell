@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/restore-mgidentitygovernancelifecycleworkflow
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/restore-mgidentitygovernancelifecycleworkflow
 schema: 2.0.0
 ---
 
-# Restore-MgIdentityGovernanceLifecycleWorkflow
+# Restore-MgBetaIdentityGovernanceLifecycleWorkflow
 
 ## SYNOPSIS
 Restore a workflow that has been deleted.
@@ -15,12 +15,12 @@ You can only restore a workflow that was deleted within the last 30 days before 
 
 ### Restore (Default)
 ```
-Restore-MgIdentityGovernanceLifecycleWorkflow -WorkflowId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgBetaIdentityGovernanceLifecycleWorkflow -WorkflowId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgIdentityGovernanceLifecycleWorkflow -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf]
+Restore-MgBetaIdentityGovernanceLifecycleWorkflow -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -37,7 +37,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -99,11 +99,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflow
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflow
 
 ## NOTES
 

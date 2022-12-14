@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgsearchbookmark
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/update-mgsearchbookmark
 schema: 2.0.0
 ---
 
-# Update-MgSearchBookmark
+# Update-MgBetaSearchBookmark
 
 ## SYNOPSIS
 Update the navigation property bookmarks in search
@@ -14,7 +14,7 @@ Update the navigation property bookmarks in search
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSearchBookmark -BookmarkId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSearchBookmark -BookmarkId <String> [-AdditionalProperties <Hashtable>]
  [-AvailabilityEndDateTime <DateTime>] [-AvailabilityStartDateTime <DateTime>] [-Categories <String[]>]
  [-Description <String>] [-DisplayName <String>] [-GroupIds <String[]>] [-Id <String>] [-IsSuggested]
  [-Keywords <IMicrosoftGraphSearchAnswerKeyword>] [-LanguageTags <String[]>]
@@ -26,19 +26,19 @@ Update-MgSearchBookmark -BookmarkId <String> [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgSearchBookmark -BookmarkId <String> -BodyParameter <IMicrosoftGraphSearchBookmark> [-PassThru]
+Update-MgBetaSearchBookmark -BookmarkId <String> -BodyParameter <IMicrosoftGraphSearchBookmark> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSearchBookmark -InputObject <ISearchIdentity> -BodyParameter <IMicrosoftGraphSearchBookmark>
+Update-MgBetaSearchBookmark -InputObject <ISearchIdentity> -BodyParameter <IMicrosoftGraphSearchBookmark>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSearchBookmark -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSearchBookmark -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
  [-AvailabilityEndDateTime <DateTime>] [-AvailabilityStartDateTime <DateTime>] [-Categories <String[]>]
  [-Description <String>] [-DisplayName <String>] [-GroupIds <String[]>] [-Id <String>] [-IsSuggested]
  [-Keywords <IMicrosoftGraphSearchAnswerKeyword>] [-LanguageTags <String[]>]
@@ -53,16 +53,16 @@ Update the navigation property bookmarks in search
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSearchBookmark Cmdlet
+### Example 1: Using the Update-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	Description = "Book a fancy vacation in Tuscany or browse museums in Florence."
 }
-Update-MgSearchBookmark -BookmarkId $bookmarkId -BodyParameter $params
+Update-MgBetaSearchBookmark -BookmarkId $bookmarkId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSearchBookmark Cmdlet.
+This example shows how to use the Update-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -119,7 +119,7 @@ bookmark
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchBookmark
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchBookmark
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -227,7 +227,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ answerKeyword
 To construct, please use Get-Help -Online and see NOTES section for KEYWORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAnswerKeyword
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAnswerKeyword
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -293,7 +293,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -340,7 +340,7 @@ List of devices and operating systems able to view this bookmark.
 Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DevicePlatformType[]
+Type: Microsoft.Graph.Beta.PowerShell.Support.DevicePlatformType[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -389,7 +389,7 @@ The date and group settings will apply to all variations.
 To construct, please use Get-Help -Online and see NOTES section for TARGETEDVARIATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAnswerVariant[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAnswerVariant[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -452,9 +452,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchBookmark
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchBookmark
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 

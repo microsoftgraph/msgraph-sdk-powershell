@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanycustomerpicture
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanycustomerpicture
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyCustomerPicture
+# New-MgBetaFinancialCompanyCustomerPicture
 
 ## SYNOPSIS
 Create new navigation property to picture for financials
@@ -14,26 +14,26 @@ Create new navigation property to picture for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyCustomerPicture -CompanyId <String> -CustomerId <String>
+New-MgBetaFinancialCompanyCustomerPicture -CompanyId <String> -CustomerId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
  [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgFinancialCompanyCustomerPicture -CompanyId <String> -CustomerId <String>
+New-MgBetaFinancialCompanyCustomerPicture -CompanyId <String> -CustomerId <String>
  -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyCustomerPicture -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyCustomerPicture -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyCustomerPicture -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyCustomerPicture -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>] [-Id <String>] [-Width <Int32>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ picture
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -172,7 +172,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -234,13 +234,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicypermissiongrantpolicyinclude
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicypermissiongrantpolicyinclude
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyPermissionGrantPolicyInclude
+# Remove-MgBetaPolicyPermissionGrantPolicyInclude
 
 ## SYNOPSIS
 Delete navigation property includes for policies
@@ -14,13 +14,13 @@ Delete navigation property includes for policies
 
 ### Delete (Default)
 ```
-Remove-MgPolicyPermissionGrantPolicyInclude -PermissionGrantConditionSetId <String>
+Remove-MgBetaPolicyPermissionGrantPolicyInclude -PermissionGrantConditionSetId <String>
  -PermissionGrantPolicyId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,8 +31,8 @@ Delete navigation property includes for policies
 
 ### Example 1: Remove a permission grant policy include
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
-Remove-MgPolicyPermissionGrantPolicyInclude -PermissionGrantConditionSetId "084b9abc-cf56-4d84-bdb0-5ad8f3a51038" -PermissionGrantPolicyId "testtenant-sampleapp-permissions"  
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Remove-MgBetaPolicyPermissionGrantPolicyInclude -PermissionGrantConditionSetId "084b9abc-cf56-4d84-bdb0-5ad8f3a51038" -PermissionGrantPolicyId "testtenant-sampleapp-permissions"  
 ```
 
 
@@ -59,7 +59,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -151,7 +151,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

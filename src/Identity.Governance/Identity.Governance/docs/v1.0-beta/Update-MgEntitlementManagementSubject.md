@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgentitlementmanagementsubject
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgentitlementmanagementsubject
 schema: 2.0.0
 ---
 
-# Update-MgEntitlementManagementSubject
+# Update-MgBetaEntitlementManagementSubject
 
 ## SYNOPSIS
 Update the navigation property subjects in identityGovernance
@@ -14,7 +14,7 @@ Update the navigation property subjects in identityGovernance
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEntitlementManagementSubject -AccessPackageSubjectId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaEntitlementManagementSubject -AccessPackageSubjectId <String> [-AdditionalProperties <Hashtable>]
  [-AltSecId <String>] [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>]
  [-ConnectedOrganizationId <String>] [-DisplayName <String>] [-Email <String>] [-Id <String>]
  [-ObjectId <String>] [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>]
@@ -23,19 +23,19 @@ Update-MgEntitlementManagementSubject -AccessPackageSubjectId <String> [-Additio
 
 ### Update
 ```
-Update-MgEntitlementManagementSubject -AccessPackageSubjectId <String>
+Update-MgBetaEntitlementManagementSubject -AccessPackageSubjectId <String>
  -BodyParameter <IMicrosoftGraphAccessPackageSubject1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgEntitlementManagementSubject -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaEntitlementManagementSubject -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAccessPackageSubject1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEntitlementManagementSubject -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaEntitlementManagementSubject -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-AltSecId <String>]
  [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>] [-ConnectedOrganizationId <String>]
  [-DisplayName <String>] [-Email <String>] [-Id <String>] [-ObjectId <String>]
@@ -100,7 +100,7 @@ accessPackageSubject
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ connectedOrganization
 To construct, please use Get-Help -Online and see NOTES section for CONNECTEDORGANIZATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -193,7 +193,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -331,9 +331,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
 
 ## OUTPUTS
 
@@ -362,7 +362,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageSubject1>: accessPackageSubject
     - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
+    - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/Microsoft.Graph.Beta.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
     - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[ModifiedBy <String>]`: UPN of the user who last modified this resource. Read-only.
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -386,7 +386,7 @@ CONNECTEDORGANIZATION <IMicrosoftGraphConnectedOrganization1>: connectedOrganiza
   - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
+  - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/Microsoft.Graph.Beta.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
   - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
   - `[ModifiedBy <String>]`: UPN of the user who last modified this resource. Read-only.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.

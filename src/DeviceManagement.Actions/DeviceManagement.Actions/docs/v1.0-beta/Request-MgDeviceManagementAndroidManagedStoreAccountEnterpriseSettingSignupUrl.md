@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/request-mgdevicemanagementandroidmanagedstoreaccountenterprisesettingsignupurl
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/request-mgdevicemanagementandroidmanagedstoreaccountenterprisesettingsignupurl
 schema: 2.0.0
 ---
 
-# Request-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingSignupUrl
+# Request-MgBetaDeviceManagementAndroidManagedStoreAccountEnterpriseSettingSignupUrl
 
 ## SYNOPSIS
 Invoke action requestSignupUrl
@@ -14,13 +14,13 @@ Invoke action requestSignupUrl
 
 ### RequestExpanded (Default)
 ```
-Request-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingSignupUrl
+Request-MgBetaDeviceManagementAndroidManagedStoreAccountEnterpriseSettingSignupUrl
  [-AdditionalProperties <Hashtable>] [-HostName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Request
 ```
-Request-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingSignupUrl
+Request-MgBetaDeviceManagementAndroidManagedStoreAccountEnterpriseSettingSignupUrl
  -BodyParameter <IPaths1Mblqr0DevicemanagementAndroidmanagedstoreaccountenterprisesettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Mblqr0DevicemanagementAndroidmanagedstoreaccountenterprisesettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Mblqr0DevicemanagementAndroidmanagedstoreaccountenterprisesettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Request
 Aliases:
 
@@ -114,7 +114,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Mblqr0DevicemanagementAndroidmanagedstoreaccountenterprisesettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Mblqr0DevicemanagementAndroidmanagedstoreaccountenterprisesettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

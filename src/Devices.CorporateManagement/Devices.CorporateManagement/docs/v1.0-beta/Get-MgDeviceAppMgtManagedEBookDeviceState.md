@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmanagedebookdevicestate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmanagedebookdevicestate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtManagedEBookDeviceState
+# Get-MgBetaDeviceAppMgtManagedEBookDeviceState
 
 ## SYNOPSIS
 The list of installation states for this eBook.
@@ -14,20 +14,20 @@ The list of installation states for this eBook.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtManagedEBookDeviceState -ManagedEBookId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtManagedEBookDeviceState -ManagedEBookId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtManagedEBookDeviceState -DeviceInstallStateId <String> -ManagedEBookId <String>
+Get-MgBetaDeviceAppMgtManagedEBookDeviceState -DeviceInstallStateId <String> -ManagedEBookId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtManagedEBookDeviceState -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtManagedEBookDeviceState -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,17 +240,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementManagedEBookDeviceState
+### Get-MgBetaDeviceAppManagementManagedEBookDeviceState
 
 COMPLEX PARAMETER PROPERTIES
 

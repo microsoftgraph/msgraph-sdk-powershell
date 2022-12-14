@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/set-mgorganizationbrandinglocalizationbackgroundimage
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/set-mgorganizationbrandinglocalizationbackgroundimage
 schema: 2.0.0
 ---
 
-# Set-MgOrganizationBrandingLocalizationBackgroundImage
+# Set-MgBetaOrganizationBrandingLocalizationBackgroundImage
 
 ## SYNOPSIS
 Image that appears as the background of the sign-in page.
@@ -16,14 +16,14 @@ A smaller image will reduce bandwidth requirements and make the page load faster
 
 ### Set (Default)
 ```
-Set-MgOrganizationBrandingLocalizationBackgroundImage -OrganizationalBrandingLocalizationId <String>
+Set-MgBetaOrganizationBrandingLocalizationBackgroundImage -OrganizationalBrandingLocalizationId <String>
  -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgOrganizationBrandingLocalizationBackgroundImage -InputObject <IIdentityDirectoryManagementIdentity>
+Set-MgBetaOrganizationBrandingLocalizationBackgroundImage -InputObject <IIdentityDirectoryManagementIdentity>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -73,7 +73,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -165,7 +165,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### System.IO.Stream
 

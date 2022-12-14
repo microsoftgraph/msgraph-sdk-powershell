@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementroledefinitionroleassignmentroledefinition
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementroledefinitionroleassignmentroledefinition
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition
+# Get-MgBetaDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition
 
 ## SYNOPSIS
 Role definition this assignment is part of.
@@ -14,13 +14,13 @@ Role definition this assignment is part of.
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition -RoleAssignmentId <String>
+Get-MgBetaDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition -RoleAssignmentId <String>
  -RoleDefinitionId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition
+Get-MgBetaDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition
  -InputObject <IDeviceManagementAdministrationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -113,11 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleDefinition1
 
 ## NOTES
 

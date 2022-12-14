@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityinformationprotection
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityinformationprotection
 schema: 2.0.0
 ---
 
-# Update-MgSecurityInformationProtection
+# Update-MgBetaSecurityInformationProtection
 
 ## SYNOPSIS
 Update the navigation property informationProtection in security
@@ -14,7 +14,7 @@ Update the navigation property informationProtection in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityInformationProtection [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaSecurityInformationProtection [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LabelPolicySettings <IMicrosoftGraphSecurityInformationProtectionPolicySetting>]
  [-SensitivityLabels <IMicrosoftGraphSecuritySensitivityLabel[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgSecurityInformationProtection [-AdditionalProperties <Hashtable>] [-Id 
 
 ### Update
 ```
-Update-MgSecurityInformationProtection -BodyParameter <IMicrosoftGraphSecurityInformationProtection>
+Update-MgBetaSecurityInformationProtection -BodyParameter <IMicrosoftGraphSecurityInformationProtection>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ informationProtection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityInformationProtection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtection
 Parameter Sets: Update
 Aliases:
 
@@ -85,7 +85,7 @@ informationProtectionPolicySetting
 To construct, please use Get-Help -Online and see NOTES section for LABELPOLICYSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -116,7 +116,7 @@ Read the Microsoft Purview Information Protection labels for the user or organiz
 To construct, please use Get-Help -Online and see NOTES section for SENSITIVITYLABELS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityInformationProtection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtection
 
 ## OUTPUTS
 

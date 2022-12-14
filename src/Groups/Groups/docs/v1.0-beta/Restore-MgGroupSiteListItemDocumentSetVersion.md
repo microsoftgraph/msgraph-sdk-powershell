@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/restore-mggroupsitelistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/restore-mggroupsitelistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# Restore-MgGroupSiteListItemDocumentSetVersion
+# Restore-MgBetaGroupSiteListItemDocumentSetVersion
 
 ## SYNOPSIS
 Restore a document set version.
@@ -14,13 +14,13 @@ Restore a document set version.
 
 ### Restore (Default)
 ```
-Restore-MgGroupSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -GroupId <String>
+Restore-MgBetaGroupSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -GroupId <String>
  -ListId <String> -ListItemId <String> -SiteId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgGroupSiteListItemDocumentSetVersion -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaGroupSiteListItemDocumentSetVersion -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -173,7 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

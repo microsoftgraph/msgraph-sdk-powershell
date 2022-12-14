@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/remove-mgserviceannouncementhealthoverview
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/remove-mgserviceannouncementhealthoverview
 schema: 2.0.0
 ---
 
-# Remove-MgServiceAnnouncementHealthOverview
+# Remove-MgBetaServiceAnnouncementHealthOverview
 
 ## SYNOPSIS
 Delete navigation property healthOverviews for admin
@@ -14,13 +14,13 @@ Delete navigation property healthOverviews for admin
 
 ### Delete (Default)
 ```
-Remove-MgServiceAnnouncementHealthOverview -ServiceHealthId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaServiceAnnouncementHealthOverview -ServiceHealthId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncementIdentity>
+Remove-MgBetaServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ## OUTPUTS
 

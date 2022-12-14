@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/request-mgusermanageddeviceremotehelpsessionaccess
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/request-mgusermanageddeviceremotehelpsessionaccess
 schema: 2.0.0
 ---
 
-# Request-MgUserManagedDeviceRemoteHelpSessionAccess
+# Request-MgBetaUserManagedDeviceRemoteHelpSessionAccess
 
 ## SYNOPSIS
 Remote help - Request Remote help session access permission for an existing session
@@ -14,28 +14,28 @@ Remote help - Request Remote help session access permission for an existing sess
 
 ### RequestExpanded (Default)
 ```
-Request-MgUserManagedDeviceRemoteHelpSessionAccess -ManagedDeviceId <String> -UserId <String>
+Request-MgBetaUserManagedDeviceRemoteHelpSessionAccess -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-PubSubConnectionId <String>] [-SessionKey <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Request
 ```
-Request-MgUserManagedDeviceRemoteHelpSessionAccess -ManagedDeviceId <String> -UserId <String>
+Request-MgBetaUserManagedDeviceRemoteHelpSessionAccess -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPathsD1QudkUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RequestViaIdentity
 ```
-Request-MgUserManagedDeviceRemoteHelpSessionAccess -InputObject <IUsersActionsIdentity>
+Request-MgBetaUserManagedDeviceRemoteHelpSessionAccess -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsD1QudkUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RequestViaIdentityExpanded
 ```
-Request-MgUserManagedDeviceRemoteHelpSessionAccess -InputObject <IUsersActionsIdentity>
+Request-MgBetaUserManagedDeviceRemoteHelpSessionAccess -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-PubSubConnectionId <String>] [-SessionKey <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsD1QudkUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsD1QudkUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Request, RequestViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: RequestViaIdentity, RequestViaIdentityExpanded
 Aliases:
 
@@ -190,13 +190,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsD1QudkUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsD1QudkUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRequestremotehelpsessionaccessPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRequestRemoteHelpSessionAccessResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRequestRemoteHelpSessionAccessResponse
 
 ## NOTES
 

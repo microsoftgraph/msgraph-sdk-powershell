@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportyammeractivityusercount
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportyammeractivityusercount
 schema: 2.0.0
 ---
 
-# Get-MgReportYammerActivityUserCount
+# Get-MgBetaReportYammerActivityUserCount
 
 ## SYNOPSIS
 Invoke function getYammerActivityUserCounts
@@ -14,12 +14,12 @@ Invoke function getYammerActivityUserCounts
 
 ### Get (Default)
 ```
-Get-MgReportYammerActivityUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportYammerActivityUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportYammerActivityUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportYammerActivityUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

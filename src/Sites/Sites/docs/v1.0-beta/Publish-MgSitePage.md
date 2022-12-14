@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/publish-mgsitepage
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/publish-mgsitepage
 schema: 2.0.0
 ---
 
-# Publish-MgSitePage
+# Publish-MgBetaSitePage
 
 ## SYNOPSIS
 Invoke action publish
@@ -14,12 +14,12 @@ Invoke action publish
 
 ### Publish (Default)
 ```
-Publish-MgSitePage -SiteId <String> -SitePageId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgBetaSitePage -SiteId <String> -SitePageId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PublishViaIdentity
 ```
-Publish-MgSitePage -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgBetaSitePage -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: PublishViaIdentity
 Aliases:
 
@@ -126,7 +126,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

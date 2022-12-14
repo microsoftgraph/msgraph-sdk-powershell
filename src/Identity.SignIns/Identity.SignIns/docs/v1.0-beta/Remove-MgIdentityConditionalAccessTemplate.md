@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityconditionalaccesstemplate
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityconditionalaccesstemplate
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityConditionalAccessTemplate
+# Remove-MgBetaIdentityConditionalAccessTemplate
 
 ## SYNOPSIS
 Delete navigation property templates for identity
@@ -14,13 +14,13 @@ Delete navigation property templates for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityConditionalAccessTemplate -ConditionalAccessTemplateId <String> [-IfMatch <String>]
+Remove-MgBetaIdentityConditionalAccessTemplate -ConditionalAccessTemplateId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityConditionalAccessTemplate -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaIdentityConditionalAccessTemplate -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

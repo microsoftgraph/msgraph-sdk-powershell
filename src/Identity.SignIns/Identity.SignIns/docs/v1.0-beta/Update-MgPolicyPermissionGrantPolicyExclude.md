@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicypermissiongrantpolicyexclude
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicypermissiongrantpolicyexclude
 schema: 2.0.0
 ---
 
-# Update-MgPolicyPermissionGrantPolicyExclude
+# Update-MgBetaPolicyPermissionGrantPolicyExclude
 
 ## SYNOPSIS
 Update the navigation property excludes in policies
@@ -14,7 +14,7 @@ Update the navigation property excludes in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <String>
+Update-MgBetaPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <String>
  -PermissionGrantPolicyId <String> [-AdditionalProperties <Hashtable>] [-CertifiedClientApplicationsOnly]
  [-ClientApplicationIds <String[]>] [-ClientApplicationPublisherIds <String[]>]
  [-ClientApplicationsFromVerifiedPublisherOnly] [-ClientApplicationTenantIds <String[]>] [-Id <String>]
@@ -24,21 +24,21 @@ Update-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <Stri
 
 ### Update
 ```
-Update-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <String>
+Update-MgBetaPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <String>
  -PermissionGrantPolicyId <String> -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CertifiedClientApplicationsOnly] [-ClientApplicationIds <String[]>]
  [-ClientApplicationPublisherIds <String[]>] [-ClientApplicationsFromVerifiedPublisherOnly]
  [-ClientApplicationTenantIds <String[]>] [-Id <String>] [-PermissionClassification <String>]
@@ -53,8 +53,8 @@ Update the navigation property excludes in policies
 
 ### Example 1: Update a permission grant policy exclude
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
-Update-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId "33895130-8450-4a4b-a353-e2bc28d54f97" -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -PermissionType "application" -ResourceApplication "00000000-0000-0000-0000-000000000000" -Permissions "00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"  
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Update-MgBetaPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId "33895130-8450-4a4b-a353-e2bc28d54f97" -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -PermissionType "application" -ResourceApplication "00000000-0000-0000-0000-000000000000" -Permissions "00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"  
 ```
 
 This command replaces the existing values with the provided new values for the specified exclude configuration properties in the specified permission grant policy in Azure AD.
@@ -81,7 +81,7 @@ permissionGrantConditionSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -195,7 +195,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -354,9 +354,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
 
 ## OUTPUTS
 

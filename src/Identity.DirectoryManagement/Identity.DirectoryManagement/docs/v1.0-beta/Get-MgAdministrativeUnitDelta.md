@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgadministrativeunitdelta
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgadministrativeunitdelta
 schema: 2.0.0
 ---
 
-# Get-MgAdministrativeUnitDelta
+# Get-MgBetaAdministrativeUnitDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -13,7 +13,7 @@ Invoke function delta
 ## SYNTAX
 
 ```
-Get-MgAdministrativeUnitDelta [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaAdministrativeUnitDelta [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function delta
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAdministrativeUnitDelta Cmdlet
+### Example 1: Using the Get-MgBetaAdministrativeUnitDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgAdministrativeUnitDelta
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaAdministrativeUnitDelta
 ```
 
-This example shows how to use the Get-MgAdministrativeUnitDelta Cmdlet.
+This example shows how to use the Get-MgBetaAdministrativeUnitDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
 
 ## NOTES
 

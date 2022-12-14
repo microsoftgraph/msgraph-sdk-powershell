@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/get-mgusermailtip
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/get-mgusermailtip
 schema: 2.0.0
 ---
 
-# Get-MgUserMailTip
+# Get-MgBetaUserMailTip
 
 ## SYNOPSIS
 Get the MailTips of one or more recipients as available to the signed-in user.
@@ -16,27 +16,27 @@ The requested MailTips are returned in a mailTips collection.
 
 ### GetExpanded (Default)
 ```
-Get-MgUserMailTip -UserId <String> [-AdditionalProperties <Hashtable>] [-EmailAddresses <String[]>]
+Get-MgBetaUserMailTip -UserId <String> [-AdditionalProperties <Hashtable>] [-EmailAddresses <String[]>]
  [-MailTipsOptions <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserMailTip -UserId <String>
+Get-MgBetaUserMailTip -UserId <String>
  -BodyParameter <IComponentsM2Vn8QRequestbodiesGetmailtipsrequestbodyContentApplicationJsonSchema> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserMailTip -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserMailTip -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponentsM2Vn8QRequestbodiesGetmailtipsrequestbodyContentApplicationJsonSchema> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgUserMailTip -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Get-MgBetaUserMailTip -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-EmailAddresses <String[]>] [-MailTipsOptions <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,9 +47,9 @@ The requested MailTips are returned in a mailTips collection.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserMailTip Cmdlet
+### Example 1: Using the Get-MgBetaUserMailTip Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	EmailAddresses = @(
 		"danas@contoso.onmicrosoft.com"
@@ -58,10 +58,10 @@ $params = @{
 	MailTipsOptions = "automaticReplies, mailboxFullStatus"
 }
 # A UPN can also be used as -UserId.
-Get-MgUserMailTip -UserId $userId -BodyParameter $params
+Get-MgBetaUserMailTip -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Get-MgUserMailTip Cmdlet.
+This example shows how to use the Get-MgBetaUserMailTip Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponentsM2Vn8QRequestbodiesGetmailtipsrequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponentsM2Vn8QRequestbodiesGetmailtipsrequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -194,13 +194,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponentsM2Vn8QRequestbodiesGetmailtipsrequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IComponentsM2Vn8QRequestbodiesGetmailtipsrequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailTips
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailTips
 
 ## NOTES
 

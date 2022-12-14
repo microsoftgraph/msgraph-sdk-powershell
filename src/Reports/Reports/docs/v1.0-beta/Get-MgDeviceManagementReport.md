@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgdevicemanagementreport
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgdevicemanagementreport
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementReport
+# Get-MgBetaDeviceManagementReport
 
 ## SYNOPSIS
 Reports singleton
@@ -13,7 +13,7 @@ Reports singleton
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementReport [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaDeviceManagementReport [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementReports1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementReports1
 
 ## NOTES
 

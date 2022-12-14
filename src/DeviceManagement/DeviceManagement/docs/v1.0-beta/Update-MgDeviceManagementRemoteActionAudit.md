@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementremoteactionaudit
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementremoteactionaudit
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementRemoteActionAudit
+# Update-MgBetaDeviceManagementRemoteActionAudit
 
 ## SYNOPSIS
 Update the navigation property remoteActionAudits in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property remoteActionAudits in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-Action <RemoteAction>]
+Update-MgBetaDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-Action <RemoteAction>]
  [-ActionState <String>] [-AdditionalProperties <Hashtable>] [-DeviceDisplayName <String>]
  [-DeviceImei <String>] [-DeviceOwnerUserPrincipalName <String>] [-Id <String>]
  [-InitiatedByUserPrincipalName <String>] [-ManagedDeviceId <String>] [-RequestDateTime <DateTime>]
@@ -23,19 +23,19 @@ Update-MgDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-Actio
 
 ### Update
 ```
-Update-MgDeviceManagementRemoteActionAudit -RemoteActionAuditId <String>
+Update-MgBetaDeviceManagementRemoteActionAudit -RemoteActionAuditId <String>
  -BodyParameter <IMicrosoftGraphRemoteActionAudit> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphRemoteActionAudit> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity> [-Action <RemoteAction>]
+Update-MgBetaDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity> [-Action <RemoteAction>]
  [-ActionState <String>] [-AdditionalProperties <Hashtable>] [-DeviceDisplayName <String>]
  [-DeviceImei <String>] [-DeviceOwnerUserPrincipalName <String>] [-Id <String>]
  [-InitiatedByUserPrincipalName <String>] [-ManagedDeviceId <String>] [-RequestDateTime <DateTime>]
@@ -53,7 +53,7 @@ Update the navigation property remoteActionAudits in deviceManagement
 Remote actions Intune supports.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.RemoteAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.RemoteAction
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -99,7 +99,7 @@ Report of remote actions initiated on the devices belonging to a certain tenant.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -191,7 +191,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -313,9 +313,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
 
 ## OUTPUTS
 

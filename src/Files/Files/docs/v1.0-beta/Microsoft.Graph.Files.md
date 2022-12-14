@@ -1,2173 +1,2173 @@
 ---
-Module Name: Microsoft.Graph.Files
+Module Name: Microsoft.Graph.Beta.Files
 Module Guid: a0be1b2f-a545-4869-97ed-e143aa1f77b3
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.files
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Files Module
+# Microsoft.Graph.Beta.Files Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Files Cmdlets
-### [Add-MgDriveListContentTypeCopy](Add-MgDriveListContentTypeCopy.md)
+## Microsoft.Graph.Beta.Files Cmdlets
+### [Add-MgBetaDriveListContentTypeCopy](Add-MgBetaDriveListContentTypeCopy.md)
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
-### [Add-MgDriveListContentTypeCopyFromContentTypeHub](Add-MgDriveListContentTypeCopyFromContentTypeHub.md)
+### [Add-MgBetaDriveListContentTypeCopyFromContentTypeHub](Add-MgBetaDriveListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
-### [Add-MgShareListContentTypeCopy](Add-MgShareListContentTypeCopy.md)
+### [Add-MgBetaShareListContentTypeCopy](Add-MgBetaShareListContentTypeCopy.md)
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
-### [Add-MgShareListContentTypeCopyFromContentTypeHub](Add-MgShareListContentTypeCopyFromContentTypeHub.md)
+### [Add-MgBetaShareListContentTypeCopyFromContentTypeHub](Add-MgBetaShareListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
-### [Copy-MgDriveItem](Copy-MgDriveItem.md)
+### [Copy-MgBetaDriveItem](Copy-MgBetaDriveItem.md)
 Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
-### [Copy-MgDriveListContentTypeToDefaultContentLocation](Copy-MgDriveListContentTypeToDefaultContentLocation.md)
+### [Copy-MgBetaDriveListContentTypeToDefaultContentLocation](Copy-MgBetaDriveListContentTypeToDefaultContentLocation.md)
 Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
 
-### [Copy-MgDriveRoot](Copy-MgDriveRoot.md)
+### [Copy-MgBetaDriveRoot](Copy-MgBetaDriveRoot.md)
 Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
-### [Copy-MgShareListContentTypeToDefaultContentLocation](Copy-MgShareListContentTypeToDefaultContentLocation.md)
+### [Copy-MgBetaShareListContentTypeToDefaultContentLocation](Copy-MgBetaShareListContentTypeToDefaultContentLocation.md)
 Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
 
-### [Get-MgDrive](Get-MgDrive.md)
+### [Get-MgBetaDrive](Get-MgBetaDrive.md)
 Retrieve the properties and relationships of a Drive resource.
 A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
-### [Get-MgDriveActivity](Get-MgDriveActivity.md)
+### [Get-MgBetaDriveActivity](Get-MgBetaDriveActivity.md)
 List the recent activities that took place on an item or under a hierarchy.
 
-### [Get-MgDriveBundle](Get-MgDriveBundle.md)
+### [Get-MgBetaDriveBundle](Get-MgBetaDriveBundle.md)
 Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
 Only in personal OneDrive.
 
-### [Get-MgDriveBundleContent](Get-MgDriveBundleContent.md)
+### [Get-MgBetaDriveBundleContent](Get-MgBetaDriveBundleContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveFollowing](Get-MgDriveFollowing.md)
+### [Get-MgBetaDriveFollowing](Get-MgBetaDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
 
-### [Get-MgDriveFollowingContent](Get-MgDriveFollowingContent.md)
+### [Get-MgBetaDriveFollowingContent](Get-MgBetaDriveFollowingContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveItem](Get-MgDriveItem.md)
+### [Get-MgBetaDriveItem](Get-MgBetaDriveItem.md)
 All items contained in the drive.
 Read-only.
 Nullable.
 
-### [Get-MgDriveItemActivity](Get-MgDriveItemActivity.md)
+### [Get-MgBetaDriveItemActivity](Get-MgBetaDriveItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgDriveItemActivityByInterval](Get-MgDriveItemActivityByInterval.md)
+### [Get-MgBetaDriveItemActivityByInterval](Get-MgBetaDriveItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgDriveItemAnalytic](Get-MgDriveItemAnalytic.md)
+### [Get-MgBetaDriveItemAnalytic](Get-MgBetaDriveItemAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
-### [Get-MgDriveItemChild](Get-MgDriveItemChild.md)
+### [Get-MgBetaDriveItemChild](Get-MgBetaDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
 Only items representing folders have children.
 Read-only.
 Nullable.
 
-### [Get-MgDriveItemChildContent](Get-MgDriveItemChildContent.md)
+### [Get-MgBetaDriveItemChildContent](Get-MgBetaDriveItemChildContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveItemContent](Get-MgDriveItemContent.md)
+### [Get-MgBetaDriveItemContent](Get-MgBetaDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveItemDelta](Get-MgDriveItemDelta.md)
+### [Get-MgBetaDriveItemDelta](Get-MgBetaDriveItemDelta.md)
 Invoke function delta
 
-### [Get-MgDriveItemListItem](Get-MgDriveItemListItem.md)
+### [Get-MgBetaDriveItemListItem](Get-MgBetaDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
 Read-only.
 Nullable.
 
-### [Get-MgDriveItemListItemActivity](Get-MgDriveItemListItemActivity.md)
+### [Get-MgBetaDriveItemListItemActivity](Get-MgBetaDriveItemListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgDriveItemListItemActivityByInterval](Get-MgDriveItemListItemActivityByInterval.md)
+### [Get-MgBetaDriveItemListItemActivityByInterval](Get-MgBetaDriveItemListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgDriveItemListItemAnalytic](Get-MgDriveItemListItemAnalytic.md)
+### [Get-MgBetaDriveItemListItemAnalytic](Get-MgBetaDriveItemListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgDriveItemListItemDocumentSetVersion](Get-MgDriveItemListItemDocumentSetVersion.md)
+### [Get-MgBetaDriveItemListItemDocumentSetVersion](Get-MgBetaDriveItemListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgDriveItemListItemDriveItem](Get-MgDriveItemListItemDriveItem.md)
+### [Get-MgBetaDriveItemListItemDriveItem](Get-MgBetaDriveItemListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgDriveItemListItemDriveItemContent](Get-MgDriveItemListItemDriveItemContent.md)
+### [Get-MgBetaDriveItemListItemDriveItemContent](Get-MgBetaDriveItemListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveItemListItemField](Get-MgDriveItemListItemField.md)
+### [Get-MgBetaDriveItemListItemField](Get-MgBetaDriveItemListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgDriveItemListItemVersion](Get-MgDriveItemListItemVersion.md)
+### [Get-MgBetaDriveItemListItemVersion](Get-MgBetaDriveItemListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgDriveItemListItemVersionField](Get-MgDriveItemListItemVersionField.md)
+### [Get-MgBetaDriveItemListItemVersionField](Get-MgBetaDriveItemListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgDriveItemPermission](Get-MgDriveItemPermission.md)
+### [Get-MgBetaDriveItemPermission](Get-MgBetaDriveItemPermission.md)
 The set of permissions for the item.
 Read-only.
 Nullable.
 
-### [Get-MgDriveItemSubscription](Get-MgDriveItemSubscription.md)
+### [Get-MgBetaDriveItemSubscription](Get-MgBetaDriveItemSubscription.md)
 The set of subscriptions on the item.
 Only supported on the root of a drive.
 
-### [Get-MgDriveItemThumbnail](Get-MgDriveItemThumbnail.md)
+### [Get-MgBetaDriveItemThumbnail](Get-MgBetaDriveItemThumbnail.md)
 Collection containing [ThumbnailSet][] objects associated with the item.
 For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
-### [Get-MgDriveItemVersion](Get-MgDriveItemVersion.md)
+### [Get-MgBetaDriveItemVersion](Get-MgBetaDriveItemVersion.md)
 The list of previous versions of the item.
 For more info, see [getting previous versions][].
 Read-only.
 Nullable.
 
-### [Get-MgDriveItemVersionContent](Get-MgDriveItemVersionContent.md)
+### [Get-MgBetaDriveItemVersionContent](Get-MgBetaDriveItemVersionContent.md)
 Get content for the navigation property versions from drives
 
-### [Get-MgDriveList](Get-MgDriveList.md)
+### [Get-MgBetaDriveList](Get-MgBetaDriveList.md)
 For drives in SharePoint, the underlying document library list.
 Read-only.
 Nullable.
 
-### [Get-MgDriveListActivity](Get-MgDriveListActivity.md)
+### [Get-MgBetaDriveListActivity](Get-MgBetaDriveListActivity.md)
 The recent activities that took place within this list.
 
-### [Get-MgDriveListColumn](Get-MgDriveListColumn.md)
+### [Get-MgBetaDriveListColumn](Get-MgBetaDriveListColumn.md)
 Get columns from drives
 
-### [Get-MgDriveListColumnSourceColumn](Get-MgDriveListColumnSourceColumn.md)
+### [Get-MgBetaDriveListColumnSourceColumn](Get-MgBetaDriveListColumnSourceColumn.md)
 The source column for content type column.
 
-### [Get-MgDriveListContentType](Get-MgDriveListContentType.md)
+### [Get-MgBetaDriveListContentType](Get-MgBetaDriveListContentType.md)
 Get contentTypes from drives
 
-### [Get-MgDriveListContentTypeBase](Get-MgDriveListContentTypeBase.md)
+### [Get-MgBetaDriveListContentTypeBase](Get-MgBetaDriveListContentTypeBase.md)
 Parent contentType from which this content type is derived.
 
-### [Get-MgDriveListContentTypeBaseType](Get-MgDriveListContentTypeBaseType.md)
+### [Get-MgBetaDriveListContentTypeBaseType](Get-MgBetaDriveListContentTypeBaseType.md)
 The collection of content types that are ancestors of this content type.
 
-### [Get-MgDriveListContentTypeColumn](Get-MgDriveListContentTypeColumn.md)
+### [Get-MgBetaDriveListContentTypeColumn](Get-MgBetaDriveListContentTypeColumn.md)
 The collection of column definitions for this contentType.
 
-### [Get-MgDriveListContentTypeColumnLink](Get-MgDriveListContentTypeColumnLink.md)
+### [Get-MgBetaDriveListContentTypeColumnLink](Get-MgBetaDriveListContentTypeColumnLink.md)
 The collection of columns that are required by this content type
 
-### [Get-MgDriveListContentTypeColumnPosition](Get-MgDriveListContentTypeColumnPosition.md)
+### [Get-MgBetaDriveListContentTypeColumnPosition](Get-MgBetaDriveListContentTypeColumnPosition.md)
 Column order information in a content type.
 
-### [Get-MgDriveListContentTypeColumnSourceColumn](Get-MgDriveListContentTypeColumnSourceColumn.md)
+### [Get-MgBetaDriveListContentTypeColumnSourceColumn](Get-MgBetaDriveListContentTypeColumnSourceColumn.md)
 The source column for content type column.
 
-### [Get-MgDriveListContentTypeCompatibleHubContentType](Get-MgDriveListContentTypeCompatibleHubContentType.md)
+### [Get-MgBetaDriveListContentTypeCompatibleHubContentType](Get-MgBetaDriveListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgDriveListDrive](Get-MgDriveListDrive.md)
+### [Get-MgBetaDriveListDrive](Get-MgBetaDriveListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
-### [Get-MgDriveListItem](Get-MgDriveListItem.md)
+### [Get-MgBetaDriveListItem](Get-MgBetaDriveListItem.md)
 All items contained in the list.
 
-### [Get-MgDriveListItemActivity](Get-MgDriveListItemActivity.md)
+### [Get-MgBetaDriveListItemActivity](Get-MgBetaDriveListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgDriveListItemActivityByInterval](Get-MgDriveListItemActivityByInterval.md)
+### [Get-MgBetaDriveListItemActivityByInterval](Get-MgBetaDriveListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgDriveListItemAnalytic](Get-MgDriveListItemAnalytic.md)
+### [Get-MgBetaDriveListItemAnalytic](Get-MgBetaDriveListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgDriveListItemDelta](Get-MgDriveListItemDelta.md)
+### [Get-MgBetaDriveListItemDelta](Get-MgBetaDriveListItemDelta.md)
 Invoke function delta
 
-### [Get-MgDriveListItemDocumentSetVersion](Get-MgDriveListItemDocumentSetVersion.md)
+### [Get-MgBetaDriveListItemDocumentSetVersion](Get-MgBetaDriveListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgDriveListItemDriveItem](Get-MgDriveListItemDriveItem.md)
+### [Get-MgBetaDriveListItemDriveItem](Get-MgBetaDriveListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgDriveListItemDriveItemContent](Get-MgDriveListItemDriveItemContent.md)
+### [Get-MgBetaDriveListItemDriveItemContent](Get-MgBetaDriveListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveListItemField](Get-MgDriveListItemField.md)
+### [Get-MgBetaDriveListItemField](Get-MgBetaDriveListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgDriveListItemVersion](Get-MgDriveListItemVersion.md)
+### [Get-MgBetaDriveListItemVersion](Get-MgBetaDriveListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgDriveListItemVersionField](Get-MgDriveListItemVersionField.md)
+### [Get-MgBetaDriveListItemVersionField](Get-MgBetaDriveListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgDriveListOperation](Get-MgDriveListOperation.md)
+### [Get-MgBetaDriveListOperation](Get-MgBetaDriveListOperation.md)
 The collection of long running operations for the list.
 
-### [Get-MgDriveListSubscription](Get-MgDriveListSubscription.md)
+### [Get-MgBetaDriveListSubscription](Get-MgBetaDriveListSubscription.md)
 The set of subscriptions on the list.
 
-### [Get-MgDriveRoot](Get-MgDriveRoot.md)
+### [Get-MgBetaDriveRoot](Get-MgBetaDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.
 
-### [Get-MgDriveRootActivity](Get-MgDriveRootActivity.md)
+### [Get-MgBetaDriveRootActivity](Get-MgBetaDriveRootActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgDriveRootActivityByInterval](Get-MgDriveRootActivityByInterval.md)
+### [Get-MgBetaDriveRootActivityByInterval](Get-MgBetaDriveRootActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgDriveRootAnalytic](Get-MgDriveRootAnalytic.md)
+### [Get-MgBetaDriveRootAnalytic](Get-MgBetaDriveRootAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
-### [Get-MgDriveRootChild](Get-MgDriveRootChild.md)
+### [Get-MgBetaDriveRootChild](Get-MgBetaDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
 Only items representing folders have children.
 Read-only.
 Nullable.
 
-### [Get-MgDriveRootChildContent](Get-MgDriveRootChildContent.md)
+### [Get-MgBetaDriveRootChildContent](Get-MgBetaDriveRootChildContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveRootContent](Get-MgDriveRootContent.md)
+### [Get-MgBetaDriveRootContent](Get-MgBetaDriveRootContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveRootDelta](Get-MgDriveRootDelta.md)
+### [Get-MgBetaDriveRootDelta](Get-MgBetaDriveRootDelta.md)
 Invoke function delta
 
-### [Get-MgDriveRootListItem](Get-MgDriveRootListItem.md)
+### [Get-MgBetaDriveRootListItem](Get-MgBetaDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
 Read-only.
 Nullable.
 
-### [Get-MgDriveRootListItemActivity](Get-MgDriveRootListItemActivity.md)
+### [Get-MgBetaDriveRootListItemActivity](Get-MgBetaDriveRootListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgDriveRootListItemActivityByInterval](Get-MgDriveRootListItemActivityByInterval.md)
+### [Get-MgBetaDriveRootListItemActivityByInterval](Get-MgBetaDriveRootListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgDriveRootListItemAnalytic](Get-MgDriveRootListItemAnalytic.md)
+### [Get-MgBetaDriveRootListItemAnalytic](Get-MgBetaDriveRootListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgDriveRootListItemDocumentSetVersion](Get-MgDriveRootListItemDocumentSetVersion.md)
+### [Get-MgBetaDriveRootListItemDocumentSetVersion](Get-MgBetaDriveRootListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgDriveRootListItemDriveItem](Get-MgDriveRootListItemDriveItem.md)
+### [Get-MgBetaDriveRootListItemDriveItem](Get-MgBetaDriveRootListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgDriveRootListItemDriveItemContent](Get-MgDriveRootListItemDriveItemContent.md)
+### [Get-MgBetaDriveRootListItemDriveItemContent](Get-MgBetaDriveRootListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgDriveRootListItemField](Get-MgDriveRootListItemField.md)
+### [Get-MgBetaDriveRootListItemField](Get-MgBetaDriveRootListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgDriveRootListItemVersion](Get-MgDriveRootListItemVersion.md)
+### [Get-MgBetaDriveRootListItemVersion](Get-MgBetaDriveRootListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgDriveRootListItemVersionField](Get-MgDriveRootListItemVersionField.md)
+### [Get-MgBetaDriveRootListItemVersionField](Get-MgBetaDriveRootListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgDriveRootPermission](Get-MgDriveRootPermission.md)
+### [Get-MgBetaDriveRootPermission](Get-MgBetaDriveRootPermission.md)
 The set of permissions for the item.
 Read-only.
 Nullable.
 
-### [Get-MgDriveRootSubscription](Get-MgDriveRootSubscription.md)
+### [Get-MgBetaDriveRootSubscription](Get-MgBetaDriveRootSubscription.md)
 The set of subscriptions on the item.
 Only supported on the root of a drive.
 
-### [Get-MgDriveRootThumbnail](Get-MgDriveRootThumbnail.md)
+### [Get-MgBetaDriveRootThumbnail](Get-MgBetaDriveRootThumbnail.md)
 Collection containing [ThumbnailSet][] objects associated with the item.
 For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
-### [Get-MgDriveRootVersion](Get-MgDriveRootVersion.md)
+### [Get-MgBetaDriveRootVersion](Get-MgBetaDriveRootVersion.md)
 The list of previous versions of the item.
 For more info, see [getting previous versions][].
 Read-only.
 Nullable.
 
-### [Get-MgDriveRootVersionContent](Get-MgDriveRootVersionContent.md)
+### [Get-MgBetaDriveRootVersionContent](Get-MgBetaDriveRootVersionContent.md)
 Get content for the navigation property versions from drives
 
-### [Get-MgDriveSpecial](Get-MgDriveSpecial.md)
+### [Get-MgBetaDriveSpecial](Get-MgBetaDriveSpecial.md)
 Collection of common folders available in OneDrive.
 Read-only.
 Nullable.
 
-### [Get-MgDriveSpecialContent](Get-MgDriveSpecialContent.md)
+### [Get-MgBetaDriveSpecialContent](Get-MgBetaDriveSpecialContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDefaultDrive](Get-MgGroupDefaultDrive.md)
+### [Get-MgBetaGroupDefaultDrive](Get-MgBetaGroupDefaultDrive.md)
 Retrieve the properties and relationships of a Drive resource.
 A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
-### [Get-MgGroupDrive](Get-MgGroupDrive.md)
+### [Get-MgBetaGroupDrive](Get-MgBetaGroupDrive.md)
 The group's drives.
 Read-only.
 
-### [Get-MgGroupDriveActivity](Get-MgGroupDriveActivity.md)
+### [Get-MgBetaGroupDriveActivity](Get-MgBetaGroupDriveActivity.md)
 List the recent activities that took place on an item or under a hierarchy.
 
-### [Get-MgGroupDriveBundle](Get-MgGroupDriveBundle.md)
+### [Get-MgBetaGroupDriveBundle](Get-MgBetaGroupDriveBundle.md)
 Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
 Only in personal OneDrive.
 
-### [Get-MgGroupDriveBundleContent](Get-MgGroupDriveBundleContent.md)
+### [Get-MgBetaGroupDriveBundleContent](Get-MgBetaGroupDriveBundleContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveFollowing](Get-MgGroupDriveFollowing.md)
+### [Get-MgBetaGroupDriveFollowing](Get-MgBetaGroupDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
 
-### [Get-MgGroupDriveFollowingContent](Get-MgGroupDriveFollowingContent.md)
+### [Get-MgBetaGroupDriveFollowingContent](Get-MgBetaGroupDriveFollowingContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveItem](Get-MgGroupDriveItem.md)
+### [Get-MgBetaGroupDriveItem](Get-MgBetaGroupDriveItem.md)
 All items contained in the drive.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveItemActivity](Get-MgGroupDriveItemActivity.md)
+### [Get-MgBetaGroupDriveItemActivity](Get-MgBetaGroupDriveItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgGroupDriveItemAnalytic](Get-MgGroupDriveItemAnalytic.md)
+### [Get-MgBetaGroupDriveItemAnalytic](Get-MgBetaGroupDriveItemAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
-### [Get-MgGroupDriveItemChild](Get-MgGroupDriveItemChild.md)
+### [Get-MgBetaGroupDriveItemChild](Get-MgBetaGroupDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
 Only items representing folders have children.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveItemChildContent](Get-MgGroupDriveItemChildContent.md)
+### [Get-MgBetaGroupDriveItemChildContent](Get-MgBetaGroupDriveItemChildContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveItemContent](Get-MgGroupDriveItemContent.md)
+### [Get-MgBetaGroupDriveItemContent](Get-MgBetaGroupDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveItemListItem](Get-MgGroupDriveItemListItem.md)
+### [Get-MgBetaGroupDriveItemListItem](Get-MgBetaGroupDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveItemListItemActivity](Get-MgGroupDriveItemListItemActivity.md)
+### [Get-MgBetaGroupDriveItemListItemActivity](Get-MgBetaGroupDriveItemListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgGroupDriveItemListItemAnalytic](Get-MgGroupDriveItemListItemAnalytic.md)
+### [Get-MgBetaGroupDriveItemListItemAnalytic](Get-MgBetaGroupDriveItemListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgGroupDriveItemListItemDocumentSetVersion](Get-MgGroupDriveItemListItemDocumentSetVersion.md)
+### [Get-MgBetaGroupDriveItemListItemDocumentSetVersion](Get-MgBetaGroupDriveItemListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgGroupDriveItemListItemDriveItem](Get-MgGroupDriveItemListItemDriveItem.md)
+### [Get-MgBetaGroupDriveItemListItemDriveItem](Get-MgBetaGroupDriveItemListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgGroupDriveItemListItemDriveItemContent](Get-MgGroupDriveItemListItemDriveItemContent.md)
+### [Get-MgBetaGroupDriveItemListItemDriveItemContent](Get-MgBetaGroupDriveItemListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveItemListItemField](Get-MgGroupDriveItemListItemField.md)
+### [Get-MgBetaGroupDriveItemListItemField](Get-MgBetaGroupDriveItemListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgGroupDriveItemListItemVersion](Get-MgGroupDriveItemListItemVersion.md)
+### [Get-MgBetaGroupDriveItemListItemVersion](Get-MgBetaGroupDriveItemListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgGroupDriveItemListItemVersionField](Get-MgGroupDriveItemListItemVersionField.md)
+### [Get-MgBetaGroupDriveItemListItemVersionField](Get-MgBetaGroupDriveItemListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgGroupDriveItemPermission](Get-MgGroupDriveItemPermission.md)
+### [Get-MgBetaGroupDriveItemPermission](Get-MgBetaGroupDriveItemPermission.md)
 The set of permissions for the item.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveItemSubscription](Get-MgGroupDriveItemSubscription.md)
+### [Get-MgBetaGroupDriveItemSubscription](Get-MgBetaGroupDriveItemSubscription.md)
 The set of subscriptions on the item.
 Only supported on the root of a drive.
 
-### [Get-MgGroupDriveItemThumbnail](Get-MgGroupDriveItemThumbnail.md)
+### [Get-MgBetaGroupDriveItemThumbnail](Get-MgBetaGroupDriveItemThumbnail.md)
 Collection containing [ThumbnailSet][] objects associated with the item.
 For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveItemVersion](Get-MgGroupDriveItemVersion.md)
+### [Get-MgBetaGroupDriveItemVersion](Get-MgBetaGroupDriveItemVersion.md)
 The list of previous versions of the item.
 For more info, see [getting previous versions][].
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveItemVersionContent](Get-MgGroupDriveItemVersionContent.md)
+### [Get-MgBetaGroupDriveItemVersionContent](Get-MgBetaGroupDriveItemVersionContent.md)
 Get content for the navigation property versions from groups
 
-### [Get-MgGroupDriveList](Get-MgGroupDriveList.md)
+### [Get-MgBetaGroupDriveList](Get-MgBetaGroupDriveList.md)
 For drives in SharePoint, the underlying document library list.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveListActivity](Get-MgGroupDriveListActivity.md)
+### [Get-MgBetaGroupDriveListActivity](Get-MgBetaGroupDriveListActivity.md)
 The recent activities that took place within this list.
 
-### [Get-MgGroupDriveListColumn](Get-MgGroupDriveListColumn.md)
+### [Get-MgBetaGroupDriveListColumn](Get-MgBetaGroupDriveListColumn.md)
 Get columns from groups
 
-### [Get-MgGroupDriveListColumnSourceColumn](Get-MgGroupDriveListColumnSourceColumn.md)
+### [Get-MgBetaGroupDriveListColumnSourceColumn](Get-MgBetaGroupDriveListColumnSourceColumn.md)
 The source column for content type column.
 
-### [Get-MgGroupDriveListContentType](Get-MgGroupDriveListContentType.md)
+### [Get-MgBetaGroupDriveListContentType](Get-MgBetaGroupDriveListContentType.md)
 Get contentTypes from groups
 
-### [Get-MgGroupDriveListContentTypeBase](Get-MgGroupDriveListContentTypeBase.md)
+### [Get-MgBetaGroupDriveListContentTypeBase](Get-MgBetaGroupDriveListContentTypeBase.md)
 Parent contentType from which this content type is derived.
 
-### [Get-MgGroupDriveListContentTypeBaseType](Get-MgGroupDriveListContentTypeBaseType.md)
+### [Get-MgBetaGroupDriveListContentTypeBaseType](Get-MgBetaGroupDriveListContentTypeBaseType.md)
 The collection of content types that are ancestors of this content type.
 
-### [Get-MgGroupDriveListContentTypeColumn](Get-MgGroupDriveListContentTypeColumn.md)
+### [Get-MgBetaGroupDriveListContentTypeColumn](Get-MgBetaGroupDriveListContentTypeColumn.md)
 The collection of column definitions for this contentType.
 
-### [Get-MgGroupDriveListContentTypeColumnLink](Get-MgGroupDriveListContentTypeColumnLink.md)
+### [Get-MgBetaGroupDriveListContentTypeColumnLink](Get-MgBetaGroupDriveListContentTypeColumnLink.md)
 The collection of columns that are required by this content type
 
-### [Get-MgGroupDriveListContentTypeColumnPosition](Get-MgGroupDriveListContentTypeColumnPosition.md)
+### [Get-MgBetaGroupDriveListContentTypeColumnPosition](Get-MgBetaGroupDriveListContentTypeColumnPosition.md)
 Column order information in a content type.
 
-### [Get-MgGroupDriveListContentTypeColumnSourceColumn](Get-MgGroupDriveListContentTypeColumnSourceColumn.md)
+### [Get-MgBetaGroupDriveListContentTypeColumnSourceColumn](Get-MgBetaGroupDriveListContentTypeColumnSourceColumn.md)
 The source column for content type column.
 
-### [Get-MgGroupDriveListDrive](Get-MgGroupDriveListDrive.md)
+### [Get-MgBetaGroupDriveListDrive](Get-MgBetaGroupDriveListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
-### [Get-MgGroupDriveListItem](Get-MgGroupDriveListItem.md)
+### [Get-MgBetaGroupDriveListItem](Get-MgBetaGroupDriveListItem.md)
 All items contained in the list.
 
-### [Get-MgGroupDriveListItemActivity](Get-MgGroupDriveListItemActivity.md)
+### [Get-MgBetaGroupDriveListItemActivity](Get-MgBetaGroupDriveListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgGroupDriveListItemAnalytic](Get-MgGroupDriveListItemAnalytic.md)
+### [Get-MgBetaGroupDriveListItemAnalytic](Get-MgBetaGroupDriveListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgGroupDriveListItemDocumentSetVersion](Get-MgGroupDriveListItemDocumentSetVersion.md)
+### [Get-MgBetaGroupDriveListItemDocumentSetVersion](Get-MgBetaGroupDriveListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgGroupDriveListItemDriveItem](Get-MgGroupDriveListItemDriveItem.md)
+### [Get-MgBetaGroupDriveListItemDriveItem](Get-MgBetaGroupDriveListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgGroupDriveListItemDriveItemContent](Get-MgGroupDriveListItemDriveItemContent.md)
+### [Get-MgBetaGroupDriveListItemDriveItemContent](Get-MgBetaGroupDriveListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveListItemField](Get-MgGroupDriveListItemField.md)
+### [Get-MgBetaGroupDriveListItemField](Get-MgBetaGroupDriveListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgGroupDriveListItemVersion](Get-MgGroupDriveListItemVersion.md)
+### [Get-MgBetaGroupDriveListItemVersion](Get-MgBetaGroupDriveListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgGroupDriveListItemVersionField](Get-MgGroupDriveListItemVersionField.md)
+### [Get-MgBetaGroupDriveListItemVersionField](Get-MgBetaGroupDriveListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgGroupDriveListOperation](Get-MgGroupDriveListOperation.md)
+### [Get-MgBetaGroupDriveListOperation](Get-MgBetaGroupDriveListOperation.md)
 The collection of long running operations for the list.
 
-### [Get-MgGroupDriveListSubscription](Get-MgGroupDriveListSubscription.md)
+### [Get-MgBetaGroupDriveListSubscription](Get-MgBetaGroupDriveListSubscription.md)
 The set of subscriptions on the list.
 
-### [Get-MgGroupDriveRoot](Get-MgGroupDriveRoot.md)
+### [Get-MgBetaGroupDriveRoot](Get-MgBetaGroupDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.
 
-### [Get-MgGroupDriveRootActivity](Get-MgGroupDriveRootActivity.md)
+### [Get-MgBetaGroupDriveRootActivity](Get-MgBetaGroupDriveRootActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgGroupDriveRootAnalytic](Get-MgGroupDriveRootAnalytic.md)
+### [Get-MgBetaGroupDriveRootAnalytic](Get-MgBetaGroupDriveRootAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
-### [Get-MgGroupDriveRootChild](Get-MgGroupDriveRootChild.md)
+### [Get-MgBetaGroupDriveRootChild](Get-MgBetaGroupDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
 Only items representing folders have children.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveRootChildContent](Get-MgGroupDriveRootChildContent.md)
+### [Get-MgBetaGroupDriveRootChildContent](Get-MgBetaGroupDriveRootChildContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveRootContent](Get-MgGroupDriveRootContent.md)
+### [Get-MgBetaGroupDriveRootContent](Get-MgBetaGroupDriveRootContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveRootListItem](Get-MgGroupDriveRootListItem.md)
+### [Get-MgBetaGroupDriveRootListItem](Get-MgBetaGroupDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveRootListItemActivity](Get-MgGroupDriveRootListItemActivity.md)
+### [Get-MgBetaGroupDriveRootListItemActivity](Get-MgBetaGroupDriveRootListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgGroupDriveRootListItemAnalytic](Get-MgGroupDriveRootListItemAnalytic.md)
+### [Get-MgBetaGroupDriveRootListItemAnalytic](Get-MgBetaGroupDriveRootListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgGroupDriveRootListItemDocumentSetVersion](Get-MgGroupDriveRootListItemDocumentSetVersion.md)
+### [Get-MgBetaGroupDriveRootListItemDocumentSetVersion](Get-MgBetaGroupDriveRootListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgGroupDriveRootListItemDriveItem](Get-MgGroupDriveRootListItemDriveItem.md)
+### [Get-MgBetaGroupDriveRootListItemDriveItem](Get-MgBetaGroupDriveRootListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgGroupDriveRootListItemDriveItemContent](Get-MgGroupDriveRootListItemDriveItemContent.md)
+### [Get-MgBetaGroupDriveRootListItemDriveItemContent](Get-MgBetaGroupDriveRootListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupDriveRootListItemField](Get-MgGroupDriveRootListItemField.md)
+### [Get-MgBetaGroupDriveRootListItemField](Get-MgBetaGroupDriveRootListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgGroupDriveRootListItemVersion](Get-MgGroupDriveRootListItemVersion.md)
+### [Get-MgBetaGroupDriveRootListItemVersion](Get-MgBetaGroupDriveRootListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgGroupDriveRootListItemVersionField](Get-MgGroupDriveRootListItemVersionField.md)
+### [Get-MgBetaGroupDriveRootListItemVersionField](Get-MgBetaGroupDriveRootListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgGroupDriveRootPermission](Get-MgGroupDriveRootPermission.md)
+### [Get-MgBetaGroupDriveRootPermission](Get-MgBetaGroupDriveRootPermission.md)
 The set of permissions for the item.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveRootSubscription](Get-MgGroupDriveRootSubscription.md)
+### [Get-MgBetaGroupDriveRootSubscription](Get-MgBetaGroupDriveRootSubscription.md)
 The set of subscriptions on the item.
 Only supported on the root of a drive.
 
-### [Get-MgGroupDriveRootThumbnail](Get-MgGroupDriveRootThumbnail.md)
+### [Get-MgBetaGroupDriveRootThumbnail](Get-MgBetaGroupDriveRootThumbnail.md)
 Collection containing [ThumbnailSet][] objects associated with the item.
 For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveRootVersion](Get-MgGroupDriveRootVersion.md)
+### [Get-MgBetaGroupDriveRootVersion](Get-MgBetaGroupDriveRootVersion.md)
 The list of previous versions of the item.
 For more info, see [getting previous versions][].
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveRootVersionContent](Get-MgGroupDriveRootVersionContent.md)
+### [Get-MgBetaGroupDriveRootVersionContent](Get-MgBetaGroupDriveRootVersionContent.md)
 Get content for the navigation property versions from groups
 
-### [Get-MgGroupDriveSpecial](Get-MgGroupDriveSpecial.md)
+### [Get-MgBetaGroupDriveSpecial](Get-MgBetaGroupDriveSpecial.md)
 Collection of common folders available in OneDrive.
 Read-only.
 Nullable.
 
-### [Get-MgGroupDriveSpecialContent](Get-MgGroupDriveSpecialContent.md)
+### [Get-MgBetaGroupDriveSpecialContent](Get-MgBetaGroupDriveSpecialContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgShareDriveItem](Get-MgShareDriveItem.md)
+### [Get-MgBetaShareDriveItem](Get-MgBetaShareDriveItem.md)
 Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL.
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 
-### [Get-MgShareDriveItemContent](Get-MgShareDriveItemContent.md)
+### [Get-MgBetaShareDriveItemContent](Get-MgBetaShareDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgShareItem](Get-MgShareItem.md)
+### [Get-MgBetaShareItem](Get-MgBetaShareItem.md)
 All driveItems contained in the sharing root.
 This collection cannot be enumerated.
 
-### [Get-MgShareItemContent](Get-MgShareItemContent.md)
+### [Get-MgBetaShareItemContent](Get-MgBetaShareItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgShareList](Get-MgShareList.md)
+### [Get-MgBetaShareList](Get-MgBetaShareList.md)
 Used to access the underlying list
 
-### [Get-MgShareListActivity](Get-MgShareListActivity.md)
+### [Get-MgBetaShareListActivity](Get-MgBetaShareListActivity.md)
 The recent activities that took place within this list.
 
-### [Get-MgShareListColumn](Get-MgShareListColumn.md)
+### [Get-MgBetaShareListColumn](Get-MgBetaShareListColumn.md)
 Get columns from shares
 
-### [Get-MgShareListColumnSourceColumn](Get-MgShareListColumnSourceColumn.md)
+### [Get-MgBetaShareListColumnSourceColumn](Get-MgBetaShareListColumnSourceColumn.md)
 The source column for content type column.
 
-### [Get-MgShareListContentType](Get-MgShareListContentType.md)
+### [Get-MgBetaShareListContentType](Get-MgBetaShareListContentType.md)
 Get contentTypes from shares
 
-### [Get-MgShareListContentTypeBase](Get-MgShareListContentTypeBase.md)
+### [Get-MgBetaShareListContentTypeBase](Get-MgBetaShareListContentTypeBase.md)
 Parent contentType from which this content type is derived.
 
-### [Get-MgShareListContentTypeBaseType](Get-MgShareListContentTypeBaseType.md)
+### [Get-MgBetaShareListContentTypeBaseType](Get-MgBetaShareListContentTypeBaseType.md)
 The collection of content types that are ancestors of this content type.
 
-### [Get-MgShareListContentTypeColumn](Get-MgShareListContentTypeColumn.md)
+### [Get-MgBetaShareListContentTypeColumn](Get-MgBetaShareListContentTypeColumn.md)
 The collection of column definitions for this contentType.
 
-### [Get-MgShareListContentTypeColumnLink](Get-MgShareListContentTypeColumnLink.md)
+### [Get-MgBetaShareListContentTypeColumnLink](Get-MgBetaShareListContentTypeColumnLink.md)
 The collection of columns that are required by this content type
 
-### [Get-MgShareListContentTypeColumnPosition](Get-MgShareListContentTypeColumnPosition.md)
+### [Get-MgBetaShareListContentTypeColumnPosition](Get-MgBetaShareListContentTypeColumnPosition.md)
 Column order information in a content type.
 
-### [Get-MgShareListContentTypeColumnSourceColumn](Get-MgShareListContentTypeColumnSourceColumn.md)
+### [Get-MgBetaShareListContentTypeColumnSourceColumn](Get-MgBetaShareListContentTypeColumnSourceColumn.md)
 The source column for content type column.
 
-### [Get-MgShareListContentTypeCompatibleHubContentType](Get-MgShareListContentTypeCompatibleHubContentType.md)
+### [Get-MgBetaShareListContentTypeCompatibleHubContentType](Get-MgBetaShareListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgShareListDrive](Get-MgShareListDrive.md)
+### [Get-MgBetaShareListDrive](Get-MgBetaShareListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
-### [Get-MgShareListItem](Get-MgShareListItem.md)
+### [Get-MgBetaShareListItem](Get-MgBetaShareListItem.md)
 All items contained in the list.
 
-### [Get-MgShareListItemActivity](Get-MgShareListItemActivity.md)
+### [Get-MgBetaShareListItemActivity](Get-MgBetaShareListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgShareListItemActivityByInterval](Get-MgShareListItemActivityByInterval.md)
+### [Get-MgBetaShareListItemActivityByInterval](Get-MgBetaShareListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgShareListItemAnalytic](Get-MgShareListItemAnalytic.md)
+### [Get-MgBetaShareListItemAnalytic](Get-MgBetaShareListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgShareListItemDelta](Get-MgShareListItemDelta.md)
+### [Get-MgBetaShareListItemDelta](Get-MgBetaShareListItemDelta.md)
 Invoke function delta
 
-### [Get-MgShareListItemDocumentSetVersion](Get-MgShareListItemDocumentSetVersion.md)
+### [Get-MgBetaShareListItemDocumentSetVersion](Get-MgBetaShareListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgShareListItemDriveItem](Get-MgShareListItemDriveItem.md)
+### [Get-MgBetaShareListItemDriveItem](Get-MgBetaShareListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgShareListItemDriveItemContent](Get-MgShareListItemDriveItemContent.md)
+### [Get-MgBetaShareListItemDriveItemContent](Get-MgBetaShareListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgShareListItemField](Get-MgShareListItemField.md)
+### [Get-MgBetaShareListItemField](Get-MgBetaShareListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgShareListItemVersion](Get-MgShareListItemVersion.md)
+### [Get-MgBetaShareListItemVersion](Get-MgBetaShareListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgShareListItemVersionField](Get-MgShareListItemVersionField.md)
+### [Get-MgBetaShareListItemVersionField](Get-MgBetaShareListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgShareListOperation](Get-MgShareListOperation.md)
+### [Get-MgBetaShareListOperation](Get-MgBetaShareListOperation.md)
 The collection of long running operations for the list.
 
-### [Get-MgShareListSubscription](Get-MgShareListSubscription.md)
+### [Get-MgBetaShareListSubscription](Get-MgBetaShareListSubscription.md)
 The set of subscriptions on the list.
 
-### [Get-MgSharePermission](Get-MgSharePermission.md)
+### [Get-MgBetaSharePermission](Get-MgBetaSharePermission.md)
 Used to access the permission representing the underlying sharing link
 
-### [Get-MgShareRoot](Get-MgShareRoot.md)
+### [Get-MgBetaShareRoot](Get-MgBetaShareRoot.md)
 Get root from shares
 
-### [Get-MgShareRootContent](Get-MgShareRootContent.md)
+### [Get-MgBetaShareRootContent](Get-MgBetaShareRootContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgShareSharedDriveItemSharedDriveItem](Get-MgShareSharedDriveItemSharedDriveItem.md)
+### [Get-MgBetaShareSharedDriveItemSharedDriveItem](Get-MgBetaShareSharedDriveItemSharedDriveItem.md)
 Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL.
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 
-### [Get-MgShareSite](Get-MgShareSite.md)
+### [Get-MgBetaShareSite](Get-MgBetaShareSite.md)
 Used to access the underlying site
 
-### [Get-MgUserDefaultDrive](Get-MgUserDefaultDrive.md)
+### [Get-MgBetaUserDefaultDrive](Get-MgBetaUserDefaultDrive.md)
 Retrieve the properties and relationships of a Drive resource.
 A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
-### [Get-MgUserDrive](Get-MgUserDrive.md)
+### [Get-MgBetaUserDrive](Get-MgBetaUserDrive.md)
 A collection of drives available for this user.
 Read-only.
 
-### [Get-MgUserDriveActivity](Get-MgUserDriveActivity.md)
+### [Get-MgBetaUserDriveActivity](Get-MgBetaUserDriveActivity.md)
 List the recent activities that took place on an item or under a hierarchy.
 
-### [Get-MgUserDriveBundle](Get-MgUserDriveBundle.md)
+### [Get-MgBetaUserDriveBundle](Get-MgBetaUserDriveBundle.md)
 Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
 Only in personal OneDrive.
 
-### [Get-MgUserDriveBundleContent](Get-MgUserDriveBundleContent.md)
+### [Get-MgBetaUserDriveBundleContent](Get-MgBetaUserDriveBundleContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveFollowing](Get-MgUserDriveFollowing.md)
+### [Get-MgBetaUserDriveFollowing](Get-MgBetaUserDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
 
-### [Get-MgUserDriveFollowingContent](Get-MgUserDriveFollowingContent.md)
+### [Get-MgBetaUserDriveFollowingContent](Get-MgBetaUserDriveFollowingContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveItem](Get-MgUserDriveItem.md)
+### [Get-MgBetaUserDriveItem](Get-MgBetaUserDriveItem.md)
 All items contained in the drive.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveItemActivity](Get-MgUserDriveItemActivity.md)
+### [Get-MgBetaUserDriveItemActivity](Get-MgBetaUserDriveItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgUserDriveItemAnalytic](Get-MgUserDriveItemAnalytic.md)
+### [Get-MgBetaUserDriveItemAnalytic](Get-MgBetaUserDriveItemAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
-### [Get-MgUserDriveItemChild](Get-MgUserDriveItemChild.md)
+### [Get-MgBetaUserDriveItemChild](Get-MgBetaUserDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
 Only items representing folders have children.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveItemChildContent](Get-MgUserDriveItemChildContent.md)
+### [Get-MgBetaUserDriveItemChildContent](Get-MgBetaUserDriveItemChildContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveItemContent](Get-MgUserDriveItemContent.md)
+### [Get-MgBetaUserDriveItemContent](Get-MgBetaUserDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveItemListItem](Get-MgUserDriveItemListItem.md)
+### [Get-MgBetaUserDriveItemListItem](Get-MgBetaUserDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveItemListItemActivity](Get-MgUserDriveItemListItemActivity.md)
+### [Get-MgBetaUserDriveItemListItemActivity](Get-MgBetaUserDriveItemListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgUserDriveItemListItemAnalytic](Get-MgUserDriveItemListItemAnalytic.md)
+### [Get-MgBetaUserDriveItemListItemAnalytic](Get-MgBetaUserDriveItemListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgUserDriveItemListItemDocumentSetVersion](Get-MgUserDriveItemListItemDocumentSetVersion.md)
+### [Get-MgBetaUserDriveItemListItemDocumentSetVersion](Get-MgBetaUserDriveItemListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgUserDriveItemListItemDriveItem](Get-MgUserDriveItemListItemDriveItem.md)
+### [Get-MgBetaUserDriveItemListItemDriveItem](Get-MgBetaUserDriveItemListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgUserDriveItemListItemDriveItemContent](Get-MgUserDriveItemListItemDriveItemContent.md)
+### [Get-MgBetaUserDriveItemListItemDriveItemContent](Get-MgBetaUserDriveItemListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveItemListItemField](Get-MgUserDriveItemListItemField.md)
+### [Get-MgBetaUserDriveItemListItemField](Get-MgBetaUserDriveItemListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgUserDriveItemListItemVersion](Get-MgUserDriveItemListItemVersion.md)
+### [Get-MgBetaUserDriveItemListItemVersion](Get-MgBetaUserDriveItemListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgUserDriveItemListItemVersionField](Get-MgUserDriveItemListItemVersionField.md)
+### [Get-MgBetaUserDriveItemListItemVersionField](Get-MgBetaUserDriveItemListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgUserDriveItemPermission](Get-MgUserDriveItemPermission.md)
+### [Get-MgBetaUserDriveItemPermission](Get-MgBetaUserDriveItemPermission.md)
 The set of permissions for the item.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveItemSubscription](Get-MgUserDriveItemSubscription.md)
+### [Get-MgBetaUserDriveItemSubscription](Get-MgBetaUserDriveItemSubscription.md)
 The set of subscriptions on the item.
 Only supported on the root of a drive.
 
-### [Get-MgUserDriveItemThumbnail](Get-MgUserDriveItemThumbnail.md)
+### [Get-MgBetaUserDriveItemThumbnail](Get-MgBetaUserDriveItemThumbnail.md)
 Collection containing [ThumbnailSet][] objects associated with the item.
 For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveItemVersion](Get-MgUserDriveItemVersion.md)
+### [Get-MgBetaUserDriveItemVersion](Get-MgBetaUserDriveItemVersion.md)
 The list of previous versions of the item.
 For more info, see [getting previous versions][].
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveItemVersionContent](Get-MgUserDriveItemVersionContent.md)
+### [Get-MgBetaUserDriveItemVersionContent](Get-MgBetaUserDriveItemVersionContent.md)
 Get content for the navigation property versions from users
 
-### [Get-MgUserDriveList](Get-MgUserDriveList.md)
+### [Get-MgBetaUserDriveList](Get-MgBetaUserDriveList.md)
 For drives in SharePoint, the underlying document library list.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveListActivity](Get-MgUserDriveListActivity.md)
+### [Get-MgBetaUserDriveListActivity](Get-MgBetaUserDriveListActivity.md)
 The recent activities that took place within this list.
 
-### [Get-MgUserDriveListColumn](Get-MgUserDriveListColumn.md)
+### [Get-MgBetaUserDriveListColumn](Get-MgBetaUserDriveListColumn.md)
 Get columns from users
 
-### [Get-MgUserDriveListColumnSourceColumn](Get-MgUserDriveListColumnSourceColumn.md)
+### [Get-MgBetaUserDriveListColumnSourceColumn](Get-MgBetaUserDriveListColumnSourceColumn.md)
 The source column for content type column.
 
-### [Get-MgUserDriveListContentType](Get-MgUserDriveListContentType.md)
+### [Get-MgBetaUserDriveListContentType](Get-MgBetaUserDriveListContentType.md)
 Get contentTypes from users
 
-### [Get-MgUserDriveListContentTypeBase](Get-MgUserDriveListContentTypeBase.md)
+### [Get-MgBetaUserDriveListContentTypeBase](Get-MgBetaUserDriveListContentTypeBase.md)
 Parent contentType from which this content type is derived.
 
-### [Get-MgUserDriveListContentTypeBaseType](Get-MgUserDriveListContentTypeBaseType.md)
+### [Get-MgBetaUserDriveListContentTypeBaseType](Get-MgBetaUserDriveListContentTypeBaseType.md)
 The collection of content types that are ancestors of this content type.
 
-### [Get-MgUserDriveListContentTypeColumn](Get-MgUserDriveListContentTypeColumn.md)
+### [Get-MgBetaUserDriveListContentTypeColumn](Get-MgBetaUserDriveListContentTypeColumn.md)
 The collection of column definitions for this contentType.
 
-### [Get-MgUserDriveListContentTypeColumnLink](Get-MgUserDriveListContentTypeColumnLink.md)
+### [Get-MgBetaUserDriveListContentTypeColumnLink](Get-MgBetaUserDriveListContentTypeColumnLink.md)
 The collection of columns that are required by this content type
 
-### [Get-MgUserDriveListContentTypeColumnPosition](Get-MgUserDriveListContentTypeColumnPosition.md)
+### [Get-MgBetaUserDriveListContentTypeColumnPosition](Get-MgBetaUserDriveListContentTypeColumnPosition.md)
 Column order information in a content type.
 
-### [Get-MgUserDriveListContentTypeColumnSourceColumn](Get-MgUserDriveListContentTypeColumnSourceColumn.md)
+### [Get-MgBetaUserDriveListContentTypeColumnSourceColumn](Get-MgBetaUserDriveListContentTypeColumnSourceColumn.md)
 The source column for content type column.
 
-### [Get-MgUserDriveListDrive](Get-MgUserDriveListDrive.md)
+### [Get-MgBetaUserDriveListDrive](Get-MgBetaUserDriveListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
-### [Get-MgUserDriveListItem](Get-MgUserDriveListItem.md)
+### [Get-MgBetaUserDriveListItem](Get-MgBetaUserDriveListItem.md)
 All items contained in the list.
 
-### [Get-MgUserDriveListItemActivity](Get-MgUserDriveListItemActivity.md)
+### [Get-MgBetaUserDriveListItemActivity](Get-MgBetaUserDriveListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgUserDriveListItemAnalytic](Get-MgUserDriveListItemAnalytic.md)
+### [Get-MgBetaUserDriveListItemAnalytic](Get-MgBetaUserDriveListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgUserDriveListItemDocumentSetVersion](Get-MgUserDriveListItemDocumentSetVersion.md)
+### [Get-MgBetaUserDriveListItemDocumentSetVersion](Get-MgBetaUserDriveListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgUserDriveListItemDriveItem](Get-MgUserDriveListItemDriveItem.md)
+### [Get-MgBetaUserDriveListItemDriveItem](Get-MgBetaUserDriveListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgUserDriveListItemDriveItemContent](Get-MgUserDriveListItemDriveItemContent.md)
+### [Get-MgBetaUserDriveListItemDriveItemContent](Get-MgBetaUserDriveListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveListItemField](Get-MgUserDriveListItemField.md)
+### [Get-MgBetaUserDriveListItemField](Get-MgBetaUserDriveListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgUserDriveListItemVersion](Get-MgUserDriveListItemVersion.md)
+### [Get-MgBetaUserDriveListItemVersion](Get-MgBetaUserDriveListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgUserDriveListItemVersionField](Get-MgUserDriveListItemVersionField.md)
+### [Get-MgBetaUserDriveListItemVersionField](Get-MgBetaUserDriveListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgUserDriveListOperation](Get-MgUserDriveListOperation.md)
+### [Get-MgBetaUserDriveListOperation](Get-MgBetaUserDriveListOperation.md)
 The collection of long running operations for the list.
 
-### [Get-MgUserDriveListSubscription](Get-MgUserDriveListSubscription.md)
+### [Get-MgBetaUserDriveListSubscription](Get-MgBetaUserDriveListSubscription.md)
 The set of subscriptions on the list.
 
-### [Get-MgUserDriveRoot](Get-MgUserDriveRoot.md)
+### [Get-MgBetaUserDriveRoot](Get-MgBetaUserDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.
 
-### [Get-MgUserDriveRootActivity](Get-MgUserDriveRootActivity.md)
+### [Get-MgBetaUserDriveRootActivity](Get-MgBetaUserDriveRootActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgUserDriveRootAnalytic](Get-MgUserDriveRootAnalytic.md)
+### [Get-MgBetaUserDriveRootAnalytic](Get-MgBetaUserDriveRootAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
-### [Get-MgUserDriveRootChild](Get-MgUserDriveRootChild.md)
+### [Get-MgBetaUserDriveRootChild](Get-MgBetaUserDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
 Only items representing folders have children.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveRootChildContent](Get-MgUserDriveRootChildContent.md)
+### [Get-MgBetaUserDriveRootChildContent](Get-MgBetaUserDriveRootChildContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveRootContent](Get-MgUserDriveRootContent.md)
+### [Get-MgBetaUserDriveRootContent](Get-MgBetaUserDriveRootContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveRootListItem](Get-MgUserDriveRootListItem.md)
+### [Get-MgBetaUserDriveRootListItem](Get-MgBetaUserDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveRootListItemActivity](Get-MgUserDriveRootListItemActivity.md)
+### [Get-MgBetaUserDriveRootListItemActivity](Get-MgBetaUserDriveRootListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgUserDriveRootListItemAnalytic](Get-MgUserDriveRootListItemAnalytic.md)
+### [Get-MgBetaUserDriveRootListItemAnalytic](Get-MgBetaUserDriveRootListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgUserDriveRootListItemDocumentSetVersion](Get-MgUserDriveRootListItemDocumentSetVersion.md)
+### [Get-MgBetaUserDriveRootListItemDocumentSetVersion](Get-MgBetaUserDriveRootListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgUserDriveRootListItemDriveItem](Get-MgUserDriveRootListItemDriveItem.md)
+### [Get-MgBetaUserDriveRootListItemDriveItem](Get-MgBetaUserDriveRootListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgUserDriveRootListItemDriveItemContent](Get-MgUserDriveRootListItemDriveItemContent.md)
+### [Get-MgBetaUserDriveRootListItemDriveItemContent](Get-MgBetaUserDriveRootListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgUserDriveRootListItemField](Get-MgUserDriveRootListItemField.md)
+### [Get-MgBetaUserDriveRootListItemField](Get-MgBetaUserDriveRootListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgUserDriveRootListItemVersion](Get-MgUserDriveRootListItemVersion.md)
+### [Get-MgBetaUserDriveRootListItemVersion](Get-MgBetaUserDriveRootListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgUserDriveRootListItemVersionField](Get-MgUserDriveRootListItemVersionField.md)
+### [Get-MgBetaUserDriveRootListItemVersionField](Get-MgBetaUserDriveRootListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgUserDriveRootPermission](Get-MgUserDriveRootPermission.md)
+### [Get-MgBetaUserDriveRootPermission](Get-MgBetaUserDriveRootPermission.md)
 The set of permissions for the item.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveRootSubscription](Get-MgUserDriveRootSubscription.md)
+### [Get-MgBetaUserDriveRootSubscription](Get-MgBetaUserDriveRootSubscription.md)
 The set of subscriptions on the item.
 Only supported on the root of a drive.
 
-### [Get-MgUserDriveRootThumbnail](Get-MgUserDriveRootThumbnail.md)
+### [Get-MgBetaUserDriveRootThumbnail](Get-MgBetaUserDriveRootThumbnail.md)
 Collection containing [ThumbnailSet][] objects associated with the item.
 For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveRootVersion](Get-MgUserDriveRootVersion.md)
+### [Get-MgBetaUserDriveRootVersion](Get-MgBetaUserDriveRootVersion.md)
 The list of previous versions of the item.
 For more info, see [getting previous versions][].
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveRootVersionContent](Get-MgUserDriveRootVersionContent.md)
+### [Get-MgBetaUserDriveRootVersionContent](Get-MgBetaUserDriveRootVersionContent.md)
 Get content for the navigation property versions from users
 
-### [Get-MgUserDriveSpecial](Get-MgUserDriveSpecial.md)
+### [Get-MgBetaUserDriveSpecial](Get-MgBetaUserDriveSpecial.md)
 Collection of common folders available in OneDrive.
 Read-only.
 Nullable.
 
-### [Get-MgUserDriveSpecialContent](Get-MgUserDriveSpecialContent.md)
+### [Get-MgBetaUserDriveSpecialContent](Get-MgBetaUserDriveSpecialContent.md)
 The content stream, if the item represents a file.
 
-### [Grant-MgDriveItemPermission](Grant-MgDriveItemPermission.md)
+### [Grant-MgBetaDriveItemPermission](Grant-MgBetaDriveItemPermission.md)
 Grant users access to a link represented by a [permission][].
 
-### [Grant-MgDriveRootPermission](Grant-MgDriveRootPermission.md)
+### [Grant-MgBetaDriveRootPermission](Grant-MgBetaDriveRootPermission.md)
 Grant users access to a link represented by a [permission][].
 
-### [Grant-MgSharePermission](Grant-MgSharePermission.md)
+### [Grant-MgBetaSharePermission](Grant-MgBetaSharePermission.md)
 Grant users access to a link represented by a [permission][].
 
-### [Invoke-MgCheckinDriveItem](Invoke-MgCheckinDriveItem.md)
+### [Invoke-MgBetaCheckinDriveItem](Invoke-MgBetaCheckinDriveItem.md)
 Check in a checked out **driveItem** resource, which makes the version of the document available to others.
 
-### [Invoke-MgCheckinDriveRoot](Invoke-MgCheckinDriveRoot.md)
+### [Invoke-MgBetaCheckinDriveRoot](Invoke-MgBetaCheckinDriveRoot.md)
 Check in a checked out **driveItem** resource, which makes the version of the document available to others.
 
-### [Invoke-MgCheckoutDriveItem](Invoke-MgCheckoutDriveItem.md)
+### [Invoke-MgBetaCheckoutDriveItem](Invoke-MgBetaCheckoutDriveItem.md)
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
-### [Invoke-MgCheckoutDriveRoot](Invoke-MgCheckoutDriveRoot.md)
+### [Invoke-MgBetaCheckoutDriveRoot](Invoke-MgBetaCheckoutDriveRoot.md)
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
-### [Invoke-MgExtractDriveItemSensitivityLabel](Invoke-MgExtractDriveItemSensitivityLabel.md)
+### [Invoke-MgBetaExtractDriveItemSensitivityLabel](Invoke-MgBetaExtractDriveItemSensitivityLabel.md)
 Invoke action extractSensitivityLabels
 
-### [Invoke-MgExtractDriveRootSensitivityLabel](Invoke-MgExtractDriveRootSensitivityLabel.md)
+### [Invoke-MgBetaExtractDriveRootSensitivityLabel](Invoke-MgBetaExtractDriveRootSensitivityLabel.md)
 Invoke action extractSensitivityLabels
 
-### [Invoke-MgFollowDriveItem](Invoke-MgFollowDriveItem.md)
+### [Invoke-MgBetaFollowDriveItem](Invoke-MgBetaFollowDriveItem.md)
 Follow a driveItem.
 
-### [Invoke-MgFollowDriveRoot](Invoke-MgFollowDriveRoot.md)
+### [Invoke-MgBetaFollowDriveRoot](Invoke-MgBetaFollowDriveRoot.md)
 Follow a driveItem.
 
-### [Invoke-MgGraphDrive](Invoke-MgGraphDrive.md)
+### [Invoke-MgBetaGraphDrive](Invoke-MgBetaGraphDrive.md)
 Invoke function sharedWithMe
 
-### [Invoke-MgInviteDriveItem](Invoke-MgInviteDriveItem.md)
+### [Invoke-MgBetaInviteDriveItem](Invoke-MgBetaInviteDriveItem.md)
 Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
-### [Invoke-MgInviteDriveRoot](Invoke-MgInviteDriveRoot.md)
+### [Invoke-MgBetaInviteDriveRoot](Invoke-MgBetaInviteDriveRoot.md)
 Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
-### [Invoke-MgPreviewDriveItem](Invoke-MgPreviewDriveItem.md)
+### [Invoke-MgBetaPreviewDriveItem](Invoke-MgBetaPreviewDriveItem.md)
 Invoke action preview
 
-### [Invoke-MgPreviewDriveRoot](Invoke-MgPreviewDriveRoot.md)
+### [Invoke-MgBetaPreviewDriveRoot](Invoke-MgBetaPreviewDriveRoot.md)
 Invoke action preview
 
-### [Invoke-MgReauthorizeDriveItemSubscription](Invoke-MgReauthorizeDriveItemSubscription.md)
+### [Invoke-MgBetaReauthorizeDriveItemSubscription](Invoke-MgBetaReauthorizeDriveItemSubscription.md)
 Invoke action reauthorize
 
-### [Invoke-MgReauthorizeDriveListSubscription](Invoke-MgReauthorizeDriveListSubscription.md)
+### [Invoke-MgBetaReauthorizeDriveListSubscription](Invoke-MgBetaReauthorizeDriveListSubscription.md)
 Invoke action reauthorize
 
-### [Invoke-MgReauthorizeDriveRootSubscription](Invoke-MgReauthorizeDriveRootSubscription.md)
+### [Invoke-MgBetaReauthorizeDriveRootSubscription](Invoke-MgBetaReauthorizeDriveRootSubscription.md)
 Invoke action reauthorize
 
-### [Invoke-MgReauthorizeShareListSubscription](Invoke-MgReauthorizeShareListSubscription.md)
+### [Invoke-MgBetaReauthorizeShareListSubscription](Invoke-MgBetaReauthorizeShareListSubscription.md)
 Invoke action reauthorize
 
-### [Invoke-MgRecentDrive](Invoke-MgRecentDrive.md)
+### [Invoke-MgBetaRecentDrive](Invoke-MgBetaRecentDrive.md)
 Invoke function recent
 
-### [Invoke-MgUnfollowDriveItem](Invoke-MgUnfollowDriveItem.md)
+### [Invoke-MgBetaUnfollowDriveItem](Invoke-MgBetaUnfollowDriveItem.md)
 Unfollow a driveItem.
 
-### [Invoke-MgUnfollowDriveRoot](Invoke-MgUnfollowDriveRoot.md)
+### [Invoke-MgBetaUnfollowDriveRoot](Invoke-MgBetaUnfollowDriveRoot.md)
 Unfollow a driveItem.
 
-### [Join-MgDriveListContentTypeWithHubSite](Join-MgDriveListContentTypeWithHubSite.md)
+### [Join-MgBetaDriveListContentTypeWithHubSite](Join-MgBetaDriveListContentTypeWithHubSite.md)
 Associate a [content type][contentType] with a list of hub sites.
 
-### [Join-MgShareListContentTypeWithHubSite](Join-MgShareListContentTypeWithHubSite.md)
+### [Join-MgBetaShareListContentTypeWithHubSite](Join-MgBetaShareListContentTypeWithHubSite.md)
 Associate a [content type][contentType] with a list of hub sites.
 
-### [New-MgDrive](New-MgDrive.md)
+### [New-MgBetaDrive](New-MgBetaDrive.md)
 Add new entity to drives
 
-### [New-MgDriveItem](New-MgDriveItem.md)
+### [New-MgBetaDriveItem](New-MgBetaDriveItem.md)
 Create new navigation property to items for drives
 
-### [New-MgDriveItemLink](New-MgDriveItemLink.md)
+### [New-MgBetaDriveItemLink](New-MgBetaDriveItemLink.md)
 You can use **createLink** action to share a driveItem via a sharing link.
 The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgDriveItemListItemDocumentSetVersion](New-MgDriveItemListItemDocumentSetVersion.md)
+### [New-MgBetaDriveItemListItemDocumentSetVersion](New-MgBetaDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgDriveItemListItemLink](New-MgDriveItemListItemLink.md)
+### [New-MgBetaDriveItemListItemLink](New-MgBetaDriveItemListItemLink.md)
 Create a sharing link for a listItem.
 The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 **listItem** resources inherit sharing permissions from the list the item resides in.
 
-### [New-MgDriveItemListItemVersion](New-MgDriveItemListItemVersion.md)
+### [New-MgBetaDriveItemListItemVersion](New-MgBetaDriveItemListItemVersion.md)
 Create new navigation property to versions for drives
 
-### [New-MgDriveItemPermission](New-MgDriveItemPermission.md)
+### [New-MgBetaDriveItemPermission](New-MgBetaDriveItemPermission.md)
 Create new navigation property to permissions for drives
 
-### [New-MgDriveItemSubscription](New-MgDriveItemSubscription.md)
+### [New-MgBetaDriveItemSubscription](New-MgBetaDriveItemSubscription.md)
 Create new navigation property to subscriptions for drives
 
-### [New-MgDriveItemThumbnail](New-MgDriveItemThumbnail.md)
+### [New-MgBetaDriveItemThumbnail](New-MgBetaDriveItemThumbnail.md)
 Create new navigation property to thumbnails for drives
 
-### [New-MgDriveItemUploadSession](New-MgDriveItemUploadSession.md)
+### [New-MgBetaDriveItemUploadSession](New-MgBetaDriveItemUploadSession.md)
 Create an upload session to allow your app to upload files up to the maximum file size.
 An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
 To upload a file using an upload session:
 
-### [New-MgDriveItemVersion](New-MgDriveItemVersion.md)
+### [New-MgBetaDriveItemVersion](New-MgBetaDriveItemVersion.md)
 Create new navigation property to versions for drives
 
-### [New-MgDriveListColumn](New-MgDriveListColumn.md)
+### [New-MgBetaDriveListColumn](New-MgBetaDriveListColumn.md)
 Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
-### [New-MgDriveListContentType](New-MgDriveListContentType.md)
+### [New-MgBetaDriveListContentType](New-MgBetaDriveListContentType.md)
 Create new navigation property to contentTypes for drives
 
-### [New-MgDriveListContentTypeColumn](New-MgDriveListContentTypeColumn.md)
+### [New-MgBetaDriveListContentTypeColumn](New-MgBetaDriveListContentTypeColumn.md)
 Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgDriveListContentTypeColumnLink](New-MgDriveListContentTypeColumnLink.md)
+### [New-MgBetaDriveListContentTypeColumnLink](New-MgBetaDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for drives
 
-### [New-MgDriveListItem](New-MgDriveListItem.md)
+### [New-MgBetaDriveListItem](New-MgBetaDriveListItem.md)
 Create a new [listItem][] in a [list][].
 
-### [New-MgDriveListItemDocumentSetVersion](New-MgDriveListItemDocumentSetVersion.md)
+### [New-MgBetaDriveListItemDocumentSetVersion](New-MgBetaDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgDriveListItemLink](New-MgDriveListItemLink.md)
+### [New-MgBetaDriveListItemLink](New-MgBetaDriveListItemLink.md)
 Create a sharing link for a listItem.
 The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 **listItem** resources inherit sharing permissions from the list the item resides in.
 
-### [New-MgDriveListItemVersion](New-MgDriveListItemVersion.md)
+### [New-MgBetaDriveListItemVersion](New-MgBetaDriveListItemVersion.md)
 Create new navigation property to versions for drives
 
-### [New-MgDriveListOperation](New-MgDriveListOperation.md)
+### [New-MgBetaDriveListOperation](New-MgBetaDriveListOperation.md)
 Create new navigation property to operations for drives
 
-### [New-MgDriveListSubscription](New-MgDriveListSubscription.md)
+### [New-MgBetaDriveListSubscription](New-MgBetaDriveListSubscription.md)
 Create new navigation property to subscriptions for drives
 
-### [New-MgDriveRootLink](New-MgDriveRootLink.md)
+### [New-MgBetaDriveRootLink](New-MgBetaDriveRootLink.md)
 You can use **createLink** action to share a driveItem via a sharing link.
 The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgDriveRootListItemDocumentSetVersion](New-MgDriveRootListItemDocumentSetVersion.md)
+### [New-MgBetaDriveRootListItemDocumentSetVersion](New-MgBetaDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgDriveRootListItemLink](New-MgDriveRootListItemLink.md)
+### [New-MgBetaDriveRootListItemLink](New-MgBetaDriveRootListItemLink.md)
 Create a sharing link for a listItem.
 The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 **listItem** resources inherit sharing permissions from the list the item resides in.
 
-### [New-MgDriveRootListItemVersion](New-MgDriveRootListItemVersion.md)
+### [New-MgBetaDriveRootListItemVersion](New-MgBetaDriveRootListItemVersion.md)
 Create new navigation property to versions for drives
 
-### [New-MgDriveRootPermission](New-MgDriveRootPermission.md)
+### [New-MgBetaDriveRootPermission](New-MgBetaDriveRootPermission.md)
 Create new navigation property to permissions for drives
 
-### [New-MgDriveRootSubscription](New-MgDriveRootSubscription.md)
+### [New-MgBetaDriveRootSubscription](New-MgBetaDriveRootSubscription.md)
 Create new navigation property to subscriptions for drives
 
-### [New-MgDriveRootThumbnail](New-MgDriveRootThumbnail.md)
+### [New-MgBetaDriveRootThumbnail](New-MgBetaDriveRootThumbnail.md)
 Create new navigation property to thumbnails for drives
 
-### [New-MgDriveRootUploadSession](New-MgDriveRootUploadSession.md)
+### [New-MgBetaDriveRootUploadSession](New-MgBetaDriveRootUploadSession.md)
 Create an upload session to allow your app to upload files up to the maximum file size.
 An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
 To upload a file using an upload session:
 
-### [New-MgDriveRootVersion](New-MgDriveRootVersion.md)
+### [New-MgBetaDriveRootVersion](New-MgBetaDriveRootVersion.md)
 Create new navigation property to versions for drives
 
-### [New-MgGroupDrive](New-MgGroupDrive.md)
+### [New-MgBetaGroupDrive](New-MgBetaGroupDrive.md)
 Create new navigation property to drives for groups
 
-### [New-MgGroupDriveItem](New-MgGroupDriveItem.md)
+### [New-MgBetaGroupDriveItem](New-MgBetaGroupDriveItem.md)
 Create new navigation property to items for groups
 
-### [New-MgGroupDriveItemListItemDocumentSetVersion](New-MgGroupDriveItemListItemDocumentSetVersion.md)
+### [New-MgBetaGroupDriveItemListItemDocumentSetVersion](New-MgBetaGroupDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgGroupDriveItemListItemVersion](New-MgGroupDriveItemListItemVersion.md)
+### [New-MgBetaGroupDriveItemListItemVersion](New-MgBetaGroupDriveItemListItemVersion.md)
 Create new navigation property to versions for groups
 
-### [New-MgGroupDriveItemPermission](New-MgGroupDriveItemPermission.md)
+### [New-MgBetaGroupDriveItemPermission](New-MgBetaGroupDriveItemPermission.md)
 Create new navigation property to permissions for groups
 
-### [New-MgGroupDriveItemSubscription](New-MgGroupDriveItemSubscription.md)
+### [New-MgBetaGroupDriveItemSubscription](New-MgBetaGroupDriveItemSubscription.md)
 Create new navigation property to subscriptions for groups
 
-### [New-MgGroupDriveItemThumbnail](New-MgGroupDriveItemThumbnail.md)
+### [New-MgBetaGroupDriveItemThumbnail](New-MgBetaGroupDriveItemThumbnail.md)
 Create new navigation property to thumbnails for groups
 
-### [New-MgGroupDriveItemVersion](New-MgGroupDriveItemVersion.md)
+### [New-MgBetaGroupDriveItemVersion](New-MgBetaGroupDriveItemVersion.md)
 Create new navigation property to versions for groups
 
-### [New-MgGroupDriveListColumn](New-MgGroupDriveListColumn.md)
+### [New-MgBetaGroupDriveListColumn](New-MgBetaGroupDriveListColumn.md)
 Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
-### [New-MgGroupDriveListContentType](New-MgGroupDriveListContentType.md)
+### [New-MgBetaGroupDriveListContentType](New-MgBetaGroupDriveListContentType.md)
 Create new navigation property to contentTypes for groups
 
-### [New-MgGroupDriveListContentTypeColumn](New-MgGroupDriveListContentTypeColumn.md)
+### [New-MgBetaGroupDriveListContentTypeColumn](New-MgBetaGroupDriveListContentTypeColumn.md)
 Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgGroupDriveListContentTypeColumnLink](New-MgGroupDriveListContentTypeColumnLink.md)
+### [New-MgBetaGroupDriveListContentTypeColumnLink](New-MgBetaGroupDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
-### [New-MgGroupDriveListItem](New-MgGroupDriveListItem.md)
+### [New-MgBetaGroupDriveListItem](New-MgBetaGroupDriveListItem.md)
 Create a new [listItem][] in a [list][].
 
-### [New-MgGroupDriveListItemDocumentSetVersion](New-MgGroupDriveListItemDocumentSetVersion.md)
+### [New-MgBetaGroupDriveListItemDocumentSetVersion](New-MgBetaGroupDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgGroupDriveListItemVersion](New-MgGroupDriveListItemVersion.md)
+### [New-MgBetaGroupDriveListItemVersion](New-MgBetaGroupDriveListItemVersion.md)
 Create new navigation property to versions for groups
 
-### [New-MgGroupDriveListOperation](New-MgGroupDriveListOperation.md)
+### [New-MgBetaGroupDriveListOperation](New-MgBetaGroupDriveListOperation.md)
 Create new navigation property to operations for groups
 
-### [New-MgGroupDriveListSubscription](New-MgGroupDriveListSubscription.md)
+### [New-MgBetaGroupDriveListSubscription](New-MgBetaGroupDriveListSubscription.md)
 Create new navigation property to subscriptions for groups
 
-### [New-MgGroupDriveRootListItemDocumentSetVersion](New-MgGroupDriveRootListItemDocumentSetVersion.md)
+### [New-MgBetaGroupDriveRootListItemDocumentSetVersion](New-MgBetaGroupDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgGroupDriveRootListItemVersion](New-MgGroupDriveRootListItemVersion.md)
+### [New-MgBetaGroupDriveRootListItemVersion](New-MgBetaGroupDriveRootListItemVersion.md)
 Create new navigation property to versions for groups
 
-### [New-MgGroupDriveRootPermission](New-MgGroupDriveRootPermission.md)
+### [New-MgBetaGroupDriveRootPermission](New-MgBetaGroupDriveRootPermission.md)
 Create new navigation property to permissions for groups
 
-### [New-MgGroupDriveRootSubscription](New-MgGroupDriveRootSubscription.md)
+### [New-MgBetaGroupDriveRootSubscription](New-MgBetaGroupDriveRootSubscription.md)
 Create new navigation property to subscriptions for groups
 
-### [New-MgGroupDriveRootThumbnail](New-MgGroupDriveRootThumbnail.md)
+### [New-MgBetaGroupDriveRootThumbnail](New-MgBetaGroupDriveRootThumbnail.md)
 Create new navigation property to thumbnails for groups
 
-### [New-MgGroupDriveRootVersion](New-MgGroupDriveRootVersion.md)
+### [New-MgBetaGroupDriveRootVersion](New-MgBetaGroupDriveRootVersion.md)
 Create new navigation property to versions for groups
 
-### [New-MgShareListColumn](New-MgShareListColumn.md)
+### [New-MgBetaShareListColumn](New-MgBetaShareListColumn.md)
 Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
-### [New-MgShareListContentType](New-MgShareListContentType.md)
+### [New-MgBetaShareListContentType](New-MgBetaShareListContentType.md)
 Create new navigation property to contentTypes for shares
 
-### [New-MgShareListContentTypeColumn](New-MgShareListContentTypeColumn.md)
+### [New-MgBetaShareListContentTypeColumn](New-MgBetaShareListContentTypeColumn.md)
 Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgShareListContentTypeColumnLink](New-MgShareListContentTypeColumnLink.md)
+### [New-MgBetaShareListContentTypeColumnLink](New-MgBetaShareListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for shares
 
-### [New-MgShareListItem](New-MgShareListItem.md)
+### [New-MgBetaShareListItem](New-MgBetaShareListItem.md)
 Create a new [listItem][] in a [list][].
 
-### [New-MgShareListItemDocumentSetVersion](New-MgShareListItemDocumentSetVersion.md)
+### [New-MgBetaShareListItemDocumentSetVersion](New-MgBetaShareListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgShareListItemVersion](New-MgShareListItemVersion.md)
+### [New-MgBetaShareListItemVersion](New-MgBetaShareListItemVersion.md)
 Create new navigation property to versions for shares
 
-### [New-MgShareListOperation](New-MgShareListOperation.md)
+### [New-MgBetaShareListOperation](New-MgBetaShareListOperation.md)
 Create new navigation property to operations for shares
 
-### [New-MgShareListSubscription](New-MgShareListSubscription.md)
+### [New-MgBetaShareListSubscription](New-MgBetaShareListSubscription.md)
 Create new navigation property to subscriptions for shares
 
-### [New-MgShareSharedDriveItemSharedDriveItem](New-MgShareSharedDriveItemSharedDriveItem.md)
+### [New-MgBetaShareSharedDriveItemSharedDriveItem](New-MgBetaShareSharedDriveItemSharedDriveItem.md)
 Add new entity to shares
 
-### [New-MgUserDrive](New-MgUserDrive.md)
+### [New-MgBetaUserDrive](New-MgBetaUserDrive.md)
 Create new navigation property to drives for users
 
-### [New-MgUserDriveItem](New-MgUserDriveItem.md)
+### [New-MgBetaUserDriveItem](New-MgBetaUserDriveItem.md)
 Create new navigation property to items for users
 
-### [New-MgUserDriveItemListItemDocumentSetVersion](New-MgUserDriveItemListItemDocumentSetVersion.md)
+### [New-MgBetaUserDriveItemListItemDocumentSetVersion](New-MgBetaUserDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgUserDriveItemListItemVersion](New-MgUserDriveItemListItemVersion.md)
+### [New-MgBetaUserDriveItemListItemVersion](New-MgBetaUserDriveItemListItemVersion.md)
 Create new navigation property to versions for users
 
-### [New-MgUserDriveItemPermission](New-MgUserDriveItemPermission.md)
+### [New-MgBetaUserDriveItemPermission](New-MgBetaUserDriveItemPermission.md)
 Create new navigation property to permissions for users
 
-### [New-MgUserDriveItemSubscription](New-MgUserDriveItemSubscription.md)
+### [New-MgBetaUserDriveItemSubscription](New-MgBetaUserDriveItemSubscription.md)
 Create new navigation property to subscriptions for users
 
-### [New-MgUserDriveItemThumbnail](New-MgUserDriveItemThumbnail.md)
+### [New-MgBetaUserDriveItemThumbnail](New-MgBetaUserDriveItemThumbnail.md)
 Create new navigation property to thumbnails for users
 
-### [New-MgUserDriveItemVersion](New-MgUserDriveItemVersion.md)
+### [New-MgBetaUserDriveItemVersion](New-MgBetaUserDriveItemVersion.md)
 Create new navigation property to versions for users
 
-### [New-MgUserDriveListColumn](New-MgUserDriveListColumn.md)
+### [New-MgBetaUserDriveListColumn](New-MgBetaUserDriveListColumn.md)
 Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
-### [New-MgUserDriveListContentType](New-MgUserDriveListContentType.md)
+### [New-MgBetaUserDriveListContentType](New-MgBetaUserDriveListContentType.md)
 Create new navigation property to contentTypes for users
 
-### [New-MgUserDriveListContentTypeColumn](New-MgUserDriveListContentTypeColumn.md)
+### [New-MgBetaUserDriveListContentTypeColumn](New-MgBetaUserDriveListContentTypeColumn.md)
 Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgUserDriveListContentTypeColumnLink](New-MgUserDriveListContentTypeColumnLink.md)
+### [New-MgBetaUserDriveListContentTypeColumnLink](New-MgBetaUserDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for users
 
-### [New-MgUserDriveListItem](New-MgUserDriveListItem.md)
+### [New-MgBetaUserDriveListItem](New-MgBetaUserDriveListItem.md)
 Create a new [listItem][] in a [list][].
 
-### [New-MgUserDriveListItemDocumentSetVersion](New-MgUserDriveListItemDocumentSetVersion.md)
+### [New-MgBetaUserDriveListItemDocumentSetVersion](New-MgBetaUserDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgUserDriveListItemVersion](New-MgUserDriveListItemVersion.md)
+### [New-MgBetaUserDriveListItemVersion](New-MgBetaUserDriveListItemVersion.md)
 Create new navigation property to versions for users
 
-### [New-MgUserDriveListOperation](New-MgUserDriveListOperation.md)
+### [New-MgBetaUserDriveListOperation](New-MgBetaUserDriveListOperation.md)
 Create new navigation property to operations for users
 
-### [New-MgUserDriveListSubscription](New-MgUserDriveListSubscription.md)
+### [New-MgBetaUserDriveListSubscription](New-MgBetaUserDriveListSubscription.md)
 Create new navigation property to subscriptions for users
 
-### [New-MgUserDriveRootListItemDocumentSetVersion](New-MgUserDriveRootListItemDocumentSetVersion.md)
+### [New-MgBetaUserDriveRootListItemDocumentSetVersion](New-MgBetaUserDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgUserDriveRootListItemVersion](New-MgUserDriveRootListItemVersion.md)
+### [New-MgBetaUserDriveRootListItemVersion](New-MgBetaUserDriveRootListItemVersion.md)
 Create new navigation property to versions for users
 
-### [New-MgUserDriveRootPermission](New-MgUserDriveRootPermission.md)
+### [New-MgBetaUserDriveRootPermission](New-MgBetaUserDriveRootPermission.md)
 Create new navigation property to permissions for users
 
-### [New-MgUserDriveRootSubscription](New-MgUserDriveRootSubscription.md)
+### [New-MgBetaUserDriveRootSubscription](New-MgBetaUserDriveRootSubscription.md)
 Create new navigation property to subscriptions for users
 
-### [New-MgUserDriveRootThumbnail](New-MgUserDriveRootThumbnail.md)
+### [New-MgBetaUserDriveRootThumbnail](New-MgBetaUserDriveRootThumbnail.md)
 Create new navigation property to thumbnails for users
 
-### [New-MgUserDriveRootVersion](New-MgUserDriveRootVersion.md)
+### [New-MgBetaUserDriveRootVersion](New-MgBetaUserDriveRootVersion.md)
 Create new navigation property to versions for users
 
-### [Publish-MgDriveListContentType](Publish-MgDriveListContentType.md)
+### [Publish-MgBetaDriveListContentType](Publish-MgBetaDriveListContentType.md)
 Publishes a [contentType][] present in a content type hub site.
 
-### [Publish-MgShareListContentType](Publish-MgShareListContentType.md)
+### [Publish-MgBetaShareListContentType](Publish-MgBetaShareListContentType.md)
 Publishes a [contentType][] present in a content type hub site.
 
-### [Remove-MgDrive](Remove-MgDrive.md)
+### [Remove-MgBetaDrive](Remove-MgBetaDrive.md)
 Delete entity from drives
 
-### [Remove-MgDriveItem](Remove-MgDriveItem.md)
+### [Remove-MgBetaDriveItem](Remove-MgBetaDriveItem.md)
 Delete navigation property items for drives
 
-### [Remove-MgDriveItemListItem](Remove-MgDriveItemListItem.md)
+### [Remove-MgBetaDriveItemListItem](Remove-MgBetaDriveItemListItem.md)
 Delete navigation property listItem for drives
 
-### [Remove-MgDriveItemListItemDocumentSetVersion](Remove-MgDriveItemListItemDocumentSetVersion.md)
+### [Remove-MgBetaDriveItemListItemDocumentSetVersion](Remove-MgBetaDriveItemListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for drives
 
-### [Remove-MgDriveItemListItemField](Remove-MgDriveItemListItemField.md)
+### [Remove-MgBetaDriveItemListItemField](Remove-MgBetaDriveItemListItemField.md)
 Delete navigation property fields for drives
 
-### [Remove-MgDriveItemListItemVersion](Remove-MgDriveItemListItemVersion.md)
+### [Remove-MgBetaDriveItemListItemVersion](Remove-MgBetaDriveItemListItemVersion.md)
 Delete navigation property versions for drives
 
-### [Remove-MgDriveItemListItemVersionField](Remove-MgDriveItemListItemVersionField.md)
+### [Remove-MgBetaDriveItemListItemVersionField](Remove-MgBetaDriveItemListItemVersionField.md)
 Delete navigation property fields for drives
 
-### [Remove-MgDriveItemPermission](Remove-MgDriveItemPermission.md)
+### [Remove-MgBetaDriveItemPermission](Remove-MgBetaDriveItemPermission.md)
 Delete navigation property permissions for drives
 
-### [Remove-MgDriveItemSubscription](Remove-MgDriveItemSubscription.md)
+### [Remove-MgBetaDriveItemSubscription](Remove-MgBetaDriveItemSubscription.md)
 Delete navigation property subscriptions for drives
 
-### [Remove-MgDriveItemThumbnail](Remove-MgDriveItemThumbnail.md)
+### [Remove-MgBetaDriveItemThumbnail](Remove-MgBetaDriveItemThumbnail.md)
 Delete navigation property thumbnails for drives
 
-### [Remove-MgDriveItemVersion](Remove-MgDriveItemVersion.md)
+### [Remove-MgBetaDriveItemVersion](Remove-MgBetaDriveItemVersion.md)
 Delete navigation property versions for drives
 
-### [Remove-MgDriveList](Remove-MgDriveList.md)
+### [Remove-MgBetaDriveList](Remove-MgBetaDriveList.md)
 Delete navigation property list for drives
 
-### [Remove-MgDriveListColumn](Remove-MgDriveListColumn.md)
+### [Remove-MgBetaDriveListColumn](Remove-MgBetaDriveListColumn.md)
 Delete navigation property columns for drives
 
-### [Remove-MgDriveListContentType](Remove-MgDriveListContentType.md)
+### [Remove-MgBetaDriveListContentType](Remove-MgBetaDriveListContentType.md)
 Delete navigation property contentTypes for drives
 
-### [Remove-MgDriveListContentTypeColumn](Remove-MgDriveListContentTypeColumn.md)
+### [Remove-MgBetaDriveListContentTypeColumn](Remove-MgBetaDriveListContentTypeColumn.md)
 Delete navigation property columns for drives
 
-### [Remove-MgDriveListContentTypeColumnLink](Remove-MgDriveListContentTypeColumnLink.md)
+### [Remove-MgBetaDriveListContentTypeColumnLink](Remove-MgBetaDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for drives
 
-### [Remove-MgDriveListItem](Remove-MgDriveListItem.md)
+### [Remove-MgBetaDriveListItem](Remove-MgBetaDriveListItem.md)
 Delete navigation property items for drives
 
-### [Remove-MgDriveListItemDocumentSetVersion](Remove-MgDriveListItemDocumentSetVersion.md)
+### [Remove-MgBetaDriveListItemDocumentSetVersion](Remove-MgBetaDriveListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for drives
 
-### [Remove-MgDriveListItemField](Remove-MgDriveListItemField.md)
+### [Remove-MgBetaDriveListItemField](Remove-MgBetaDriveListItemField.md)
 Delete navigation property fields for drives
 
-### [Remove-MgDriveListItemVersion](Remove-MgDriveListItemVersion.md)
+### [Remove-MgBetaDriveListItemVersion](Remove-MgBetaDriveListItemVersion.md)
 Delete navigation property versions for drives
 
-### [Remove-MgDriveListItemVersionField](Remove-MgDriveListItemVersionField.md)
+### [Remove-MgBetaDriveListItemVersionField](Remove-MgBetaDriveListItemVersionField.md)
 Delete navigation property fields for drives
 
-### [Remove-MgDriveListOperation](Remove-MgDriveListOperation.md)
+### [Remove-MgBetaDriveListOperation](Remove-MgBetaDriveListOperation.md)
 Delete navigation property operations for drives
 
-### [Remove-MgDriveListSubscription](Remove-MgDriveListSubscription.md)
+### [Remove-MgBetaDriveListSubscription](Remove-MgBetaDriveListSubscription.md)
 Delete navigation property subscriptions for drives
 
-### [Remove-MgDriveRoot](Remove-MgDriveRoot.md)
+### [Remove-MgBetaDriveRoot](Remove-MgBetaDriveRoot.md)
 Delete navigation property root for drives
 
-### [Remove-MgDriveRootListItem](Remove-MgDriveRootListItem.md)
+### [Remove-MgBetaDriveRootListItem](Remove-MgBetaDriveRootListItem.md)
 Delete navigation property listItem for drives
 
-### [Remove-MgDriveRootListItemDocumentSetVersion](Remove-MgDriveRootListItemDocumentSetVersion.md)
+### [Remove-MgBetaDriveRootListItemDocumentSetVersion](Remove-MgBetaDriveRootListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for drives
 
-### [Remove-MgDriveRootListItemField](Remove-MgDriveRootListItemField.md)
+### [Remove-MgBetaDriveRootListItemField](Remove-MgBetaDriveRootListItemField.md)
 Delete navigation property fields for drives
 
-### [Remove-MgDriveRootListItemVersion](Remove-MgDriveRootListItemVersion.md)
+### [Remove-MgBetaDriveRootListItemVersion](Remove-MgBetaDriveRootListItemVersion.md)
 Delete navigation property versions for drives
 
-### [Remove-MgDriveRootListItemVersionField](Remove-MgDriveRootListItemVersionField.md)
+### [Remove-MgBetaDriveRootListItemVersionField](Remove-MgBetaDriveRootListItemVersionField.md)
 Delete navigation property fields for drives
 
-### [Remove-MgDriveRootPermission](Remove-MgDriveRootPermission.md)
+### [Remove-MgBetaDriveRootPermission](Remove-MgBetaDriveRootPermission.md)
 Delete navigation property permissions for drives
 
-### [Remove-MgDriveRootSubscription](Remove-MgDriveRootSubscription.md)
+### [Remove-MgBetaDriveRootSubscription](Remove-MgBetaDriveRootSubscription.md)
 Delete navigation property subscriptions for drives
 
-### [Remove-MgDriveRootThumbnail](Remove-MgDriveRootThumbnail.md)
+### [Remove-MgBetaDriveRootThumbnail](Remove-MgBetaDriveRootThumbnail.md)
 Delete navigation property thumbnails for drives
 
-### [Remove-MgDriveRootVersion](Remove-MgDriveRootVersion.md)
+### [Remove-MgBetaDriveRootVersion](Remove-MgBetaDriveRootVersion.md)
 Delete navigation property versions for drives
 
-### [Remove-MgGroupDrive](Remove-MgGroupDrive.md)
+### [Remove-MgBetaGroupDrive](Remove-MgBetaGroupDrive.md)
 Delete navigation property drives for groups
 
-### [Remove-MgGroupDriveItem](Remove-MgGroupDriveItem.md)
+### [Remove-MgBetaGroupDriveItem](Remove-MgBetaGroupDriveItem.md)
 Delete navigation property items for groups
 
-### [Remove-MgGroupDriveItemListItem](Remove-MgGroupDriveItemListItem.md)
+### [Remove-MgBetaGroupDriveItemListItem](Remove-MgBetaGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
 
-### [Remove-MgGroupDriveItemListItemDocumentSetVersion](Remove-MgGroupDriveItemListItemDocumentSetVersion.md)
+### [Remove-MgBetaGroupDriveItemListItemDocumentSetVersion](Remove-MgBetaGroupDriveItemListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for groups
 
-### [Remove-MgGroupDriveItemListItemField](Remove-MgGroupDriveItemListItemField.md)
+### [Remove-MgBetaGroupDriveItemListItemField](Remove-MgBetaGroupDriveItemListItemField.md)
 Delete navigation property fields for groups
 
-### [Remove-MgGroupDriveItemListItemVersion](Remove-MgGroupDriveItemListItemVersion.md)
+### [Remove-MgBetaGroupDriveItemListItemVersion](Remove-MgBetaGroupDriveItemListItemVersion.md)
 Delete navigation property versions for groups
 
-### [Remove-MgGroupDriveItemListItemVersionField](Remove-MgGroupDriveItemListItemVersionField.md)
+### [Remove-MgBetaGroupDriveItemListItemVersionField](Remove-MgBetaGroupDriveItemListItemVersionField.md)
 Delete navigation property fields for groups
 
-### [Remove-MgGroupDriveItemPermission](Remove-MgGroupDriveItemPermission.md)
+### [Remove-MgBetaGroupDriveItemPermission](Remove-MgBetaGroupDriveItemPermission.md)
 Delete navigation property permissions for groups
 
-### [Remove-MgGroupDriveItemSubscription](Remove-MgGroupDriveItemSubscription.md)
+### [Remove-MgBetaGroupDriveItemSubscription](Remove-MgBetaGroupDriveItemSubscription.md)
 Delete navigation property subscriptions for groups
 
-### [Remove-MgGroupDriveItemThumbnail](Remove-MgGroupDriveItemThumbnail.md)
+### [Remove-MgBetaGroupDriveItemThumbnail](Remove-MgBetaGroupDriveItemThumbnail.md)
 Delete navigation property thumbnails for groups
 
-### [Remove-MgGroupDriveItemVersion](Remove-MgGroupDriveItemVersion.md)
+### [Remove-MgBetaGroupDriveItemVersion](Remove-MgBetaGroupDriveItemVersion.md)
 Delete navigation property versions for groups
 
-### [Remove-MgGroupDriveList](Remove-MgGroupDriveList.md)
+### [Remove-MgBetaGroupDriveList](Remove-MgBetaGroupDriveList.md)
 Delete navigation property list for groups
 
-### [Remove-MgGroupDriveListColumn](Remove-MgGroupDriveListColumn.md)
+### [Remove-MgBetaGroupDriveListColumn](Remove-MgBetaGroupDriveListColumn.md)
 Delete navigation property columns for groups
 
-### [Remove-MgGroupDriveListContentType](Remove-MgGroupDriveListContentType.md)
+### [Remove-MgBetaGroupDriveListContentType](Remove-MgBetaGroupDriveListContentType.md)
 Delete navigation property contentTypes for groups
 
-### [Remove-MgGroupDriveListContentTypeColumn](Remove-MgGroupDriveListContentTypeColumn.md)
+### [Remove-MgBetaGroupDriveListContentTypeColumn](Remove-MgBetaGroupDriveListContentTypeColumn.md)
 Delete navigation property columns for groups
 
-### [Remove-MgGroupDriveListContentTypeColumnLink](Remove-MgGroupDriveListContentTypeColumnLink.md)
+### [Remove-MgBetaGroupDriveListContentTypeColumnLink](Remove-MgBetaGroupDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
 
-### [Remove-MgGroupDriveListItem](Remove-MgGroupDriveListItem.md)
+### [Remove-MgBetaGroupDriveListItem](Remove-MgBetaGroupDriveListItem.md)
 Delete navigation property items for groups
 
-### [Remove-MgGroupDriveListItemDocumentSetVersion](Remove-MgGroupDriveListItemDocumentSetVersion.md)
+### [Remove-MgBetaGroupDriveListItemDocumentSetVersion](Remove-MgBetaGroupDriveListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for groups
 
-### [Remove-MgGroupDriveListItemField](Remove-MgGroupDriveListItemField.md)
+### [Remove-MgBetaGroupDriveListItemField](Remove-MgBetaGroupDriveListItemField.md)
 Delete navigation property fields for groups
 
-### [Remove-MgGroupDriveListItemVersion](Remove-MgGroupDriveListItemVersion.md)
+### [Remove-MgBetaGroupDriveListItemVersion](Remove-MgBetaGroupDriveListItemVersion.md)
 Delete navigation property versions for groups
 
-### [Remove-MgGroupDriveListItemVersionField](Remove-MgGroupDriveListItemVersionField.md)
+### [Remove-MgBetaGroupDriveListItemVersionField](Remove-MgBetaGroupDriveListItemVersionField.md)
 Delete navigation property fields for groups
 
-### [Remove-MgGroupDriveListOperation](Remove-MgGroupDriveListOperation.md)
+### [Remove-MgBetaGroupDriveListOperation](Remove-MgBetaGroupDriveListOperation.md)
 Delete navigation property operations for groups
 
-### [Remove-MgGroupDriveListSubscription](Remove-MgGroupDriveListSubscription.md)
+### [Remove-MgBetaGroupDriveListSubscription](Remove-MgBetaGroupDriveListSubscription.md)
 Delete navigation property subscriptions for groups
 
-### [Remove-MgGroupDriveRoot](Remove-MgGroupDriveRoot.md)
+### [Remove-MgBetaGroupDriveRoot](Remove-MgBetaGroupDriveRoot.md)
 Delete navigation property root for groups
 
-### [Remove-MgGroupDriveRootListItem](Remove-MgGroupDriveRootListItem.md)
+### [Remove-MgBetaGroupDriveRootListItem](Remove-MgBetaGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
 
-### [Remove-MgGroupDriveRootListItemDocumentSetVersion](Remove-MgGroupDriveRootListItemDocumentSetVersion.md)
+### [Remove-MgBetaGroupDriveRootListItemDocumentSetVersion](Remove-MgBetaGroupDriveRootListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for groups
 
-### [Remove-MgGroupDriveRootListItemField](Remove-MgGroupDriveRootListItemField.md)
+### [Remove-MgBetaGroupDriveRootListItemField](Remove-MgBetaGroupDriveRootListItemField.md)
 Delete navigation property fields for groups
 
-### [Remove-MgGroupDriveRootListItemVersion](Remove-MgGroupDriveRootListItemVersion.md)
+### [Remove-MgBetaGroupDriveRootListItemVersion](Remove-MgBetaGroupDriveRootListItemVersion.md)
 Delete navigation property versions for groups
 
-### [Remove-MgGroupDriveRootListItemVersionField](Remove-MgGroupDriveRootListItemVersionField.md)
+### [Remove-MgBetaGroupDriveRootListItemVersionField](Remove-MgBetaGroupDriveRootListItemVersionField.md)
 Delete navigation property fields for groups
 
-### [Remove-MgGroupDriveRootPermission](Remove-MgGroupDriveRootPermission.md)
+### [Remove-MgBetaGroupDriveRootPermission](Remove-MgBetaGroupDriveRootPermission.md)
 Delete navigation property permissions for groups
 
-### [Remove-MgGroupDriveRootSubscription](Remove-MgGroupDriveRootSubscription.md)
+### [Remove-MgBetaGroupDriveRootSubscription](Remove-MgBetaGroupDriveRootSubscription.md)
 Delete navigation property subscriptions for groups
 
-### [Remove-MgGroupDriveRootThumbnail](Remove-MgGroupDriveRootThumbnail.md)
+### [Remove-MgBetaGroupDriveRootThumbnail](Remove-MgBetaGroupDriveRootThumbnail.md)
 Delete navigation property thumbnails for groups
 
-### [Remove-MgGroupDriveRootVersion](Remove-MgGroupDriveRootVersion.md)
+### [Remove-MgBetaGroupDriveRootVersion](Remove-MgBetaGroupDriveRootVersion.md)
 Delete navigation property versions for groups
 
-### [Remove-MgShareList](Remove-MgShareList.md)
+### [Remove-MgBetaShareList](Remove-MgBetaShareList.md)
 Delete navigation property list for shares
 
-### [Remove-MgShareListColumn](Remove-MgShareListColumn.md)
+### [Remove-MgBetaShareListColumn](Remove-MgBetaShareListColumn.md)
 Delete navigation property columns for shares
 
-### [Remove-MgShareListContentType](Remove-MgShareListContentType.md)
+### [Remove-MgBetaShareListContentType](Remove-MgBetaShareListContentType.md)
 Delete navigation property contentTypes for shares
 
-### [Remove-MgShareListContentTypeColumn](Remove-MgShareListContentTypeColumn.md)
+### [Remove-MgBetaShareListContentTypeColumn](Remove-MgBetaShareListContentTypeColumn.md)
 Delete navigation property columns for shares
 
-### [Remove-MgShareListContentTypeColumnLink](Remove-MgShareListContentTypeColumnLink.md)
+### [Remove-MgBetaShareListContentTypeColumnLink](Remove-MgBetaShareListContentTypeColumnLink.md)
 Delete navigation property columnLinks for shares
 
-### [Remove-MgShareListItem](Remove-MgShareListItem.md)
+### [Remove-MgBetaShareListItem](Remove-MgBetaShareListItem.md)
 Delete navigation property items for shares
 
-### [Remove-MgShareListItemDocumentSetVersion](Remove-MgShareListItemDocumentSetVersion.md)
+### [Remove-MgBetaShareListItemDocumentSetVersion](Remove-MgBetaShareListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for shares
 
-### [Remove-MgShareListItemField](Remove-MgShareListItemField.md)
+### [Remove-MgBetaShareListItemField](Remove-MgBetaShareListItemField.md)
 Delete navigation property fields for shares
 
-### [Remove-MgShareListItemVersion](Remove-MgShareListItemVersion.md)
+### [Remove-MgBetaShareListItemVersion](Remove-MgBetaShareListItemVersion.md)
 Delete navigation property versions for shares
 
-### [Remove-MgShareListItemVersionField](Remove-MgShareListItemVersionField.md)
+### [Remove-MgBetaShareListItemVersionField](Remove-MgBetaShareListItemVersionField.md)
 Delete navigation property fields for shares
 
-### [Remove-MgShareListOperation](Remove-MgShareListOperation.md)
+### [Remove-MgBetaShareListOperation](Remove-MgBetaShareListOperation.md)
 Delete navigation property operations for shares
 
-### [Remove-MgShareListSubscription](Remove-MgShareListSubscription.md)
+### [Remove-MgBetaShareListSubscription](Remove-MgBetaShareListSubscription.md)
 Delete navigation property subscriptions for shares
 
-### [Remove-MgSharePermission](Remove-MgSharePermission.md)
+### [Remove-MgBetaSharePermission](Remove-MgBetaSharePermission.md)
 Delete navigation property permission for shares
 
-### [Remove-MgShareSharedDriveItemSharedDriveItem](Remove-MgShareSharedDriveItemSharedDriveItem.md)
+### [Remove-MgBetaShareSharedDriveItemSharedDriveItem](Remove-MgBetaShareSharedDriveItemSharedDriveItem.md)
 Delete entity from shares
 
-### [Remove-MgUserDrive](Remove-MgUserDrive.md)
+### [Remove-MgBetaUserDrive](Remove-MgBetaUserDrive.md)
 Delete navigation property drives for users
 
-### [Remove-MgUserDriveItem](Remove-MgUserDriveItem.md)
+### [Remove-MgBetaUserDriveItem](Remove-MgBetaUserDriveItem.md)
 Delete navigation property items for users
 
-### [Remove-MgUserDriveItemListItem](Remove-MgUserDriveItemListItem.md)
+### [Remove-MgBetaUserDriveItemListItem](Remove-MgBetaUserDriveItemListItem.md)
 Delete navigation property listItem for users
 
-### [Remove-MgUserDriveItemListItemDocumentSetVersion](Remove-MgUserDriveItemListItemDocumentSetVersion.md)
+### [Remove-MgBetaUserDriveItemListItemDocumentSetVersion](Remove-MgBetaUserDriveItemListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for users
 
-### [Remove-MgUserDriveItemListItemField](Remove-MgUserDriveItemListItemField.md)
+### [Remove-MgBetaUserDriveItemListItemField](Remove-MgBetaUserDriveItemListItemField.md)
 Delete navigation property fields for users
 
-### [Remove-MgUserDriveItemListItemVersion](Remove-MgUserDriveItemListItemVersion.md)
+### [Remove-MgBetaUserDriveItemListItemVersion](Remove-MgBetaUserDriveItemListItemVersion.md)
 Delete navigation property versions for users
 
-### [Remove-MgUserDriveItemListItemVersionField](Remove-MgUserDriveItemListItemVersionField.md)
+### [Remove-MgBetaUserDriveItemListItemVersionField](Remove-MgBetaUserDriveItemListItemVersionField.md)
 Delete navigation property fields for users
 
-### [Remove-MgUserDriveItemPermission](Remove-MgUserDriveItemPermission.md)
+### [Remove-MgBetaUserDriveItemPermission](Remove-MgBetaUserDriveItemPermission.md)
 Delete navigation property permissions for users
 
-### [Remove-MgUserDriveItemSubscription](Remove-MgUserDriveItemSubscription.md)
+### [Remove-MgBetaUserDriveItemSubscription](Remove-MgBetaUserDriveItemSubscription.md)
 Delete navigation property subscriptions for users
 
-### [Remove-MgUserDriveItemThumbnail](Remove-MgUserDriveItemThumbnail.md)
+### [Remove-MgBetaUserDriveItemThumbnail](Remove-MgBetaUserDriveItemThumbnail.md)
 Delete navigation property thumbnails for users
 
-### [Remove-MgUserDriveItemVersion](Remove-MgUserDriveItemVersion.md)
+### [Remove-MgBetaUserDriveItemVersion](Remove-MgBetaUserDriveItemVersion.md)
 Delete navigation property versions for users
 
-### [Remove-MgUserDriveList](Remove-MgUserDriveList.md)
+### [Remove-MgBetaUserDriveList](Remove-MgBetaUserDriveList.md)
 Delete navigation property list for users
 
-### [Remove-MgUserDriveListColumn](Remove-MgUserDriveListColumn.md)
+### [Remove-MgBetaUserDriveListColumn](Remove-MgBetaUserDriveListColumn.md)
 Delete navigation property columns for users
 
-### [Remove-MgUserDriveListContentType](Remove-MgUserDriveListContentType.md)
+### [Remove-MgBetaUserDriveListContentType](Remove-MgBetaUserDriveListContentType.md)
 Delete navigation property contentTypes for users
 
-### [Remove-MgUserDriveListContentTypeColumn](Remove-MgUserDriveListContentTypeColumn.md)
+### [Remove-MgBetaUserDriveListContentTypeColumn](Remove-MgBetaUserDriveListContentTypeColumn.md)
 Delete navigation property columns for users
 
-### [Remove-MgUserDriveListContentTypeColumnLink](Remove-MgUserDriveListContentTypeColumnLink.md)
+### [Remove-MgBetaUserDriveListContentTypeColumnLink](Remove-MgBetaUserDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for users
 
-### [Remove-MgUserDriveListItem](Remove-MgUserDriveListItem.md)
+### [Remove-MgBetaUserDriveListItem](Remove-MgBetaUserDriveListItem.md)
 Delete navigation property items for users
 
-### [Remove-MgUserDriveListItemDocumentSetVersion](Remove-MgUserDriveListItemDocumentSetVersion.md)
+### [Remove-MgBetaUserDriveListItemDocumentSetVersion](Remove-MgBetaUserDriveListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for users
 
-### [Remove-MgUserDriveListItemField](Remove-MgUserDriveListItemField.md)
+### [Remove-MgBetaUserDriveListItemField](Remove-MgBetaUserDriveListItemField.md)
 Delete navigation property fields for users
 
-### [Remove-MgUserDriveListItemVersion](Remove-MgUserDriveListItemVersion.md)
+### [Remove-MgBetaUserDriveListItemVersion](Remove-MgBetaUserDriveListItemVersion.md)
 Delete navigation property versions for users
 
-### [Remove-MgUserDriveListItemVersionField](Remove-MgUserDriveListItemVersionField.md)
+### [Remove-MgBetaUserDriveListItemVersionField](Remove-MgBetaUserDriveListItemVersionField.md)
 Delete navigation property fields for users
 
-### [Remove-MgUserDriveListOperation](Remove-MgUserDriveListOperation.md)
+### [Remove-MgBetaUserDriveListOperation](Remove-MgBetaUserDriveListOperation.md)
 Delete navigation property operations for users
 
-### [Remove-MgUserDriveListSubscription](Remove-MgUserDriveListSubscription.md)
+### [Remove-MgBetaUserDriveListSubscription](Remove-MgBetaUserDriveListSubscription.md)
 Delete navigation property subscriptions for users
 
-### [Remove-MgUserDriveRoot](Remove-MgUserDriveRoot.md)
+### [Remove-MgBetaUserDriveRoot](Remove-MgBetaUserDriveRoot.md)
 Delete navigation property root for users
 
-### [Remove-MgUserDriveRootListItem](Remove-MgUserDriveRootListItem.md)
+### [Remove-MgBetaUserDriveRootListItem](Remove-MgBetaUserDriveRootListItem.md)
 Delete navigation property listItem for users
 
-### [Remove-MgUserDriveRootListItemDocumentSetVersion](Remove-MgUserDriveRootListItemDocumentSetVersion.md)
+### [Remove-MgBetaUserDriveRootListItemDocumentSetVersion](Remove-MgBetaUserDriveRootListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for users
 
-### [Remove-MgUserDriveRootListItemField](Remove-MgUserDriveRootListItemField.md)
+### [Remove-MgBetaUserDriveRootListItemField](Remove-MgBetaUserDriveRootListItemField.md)
 Delete navigation property fields for users
 
-### [Remove-MgUserDriveRootListItemVersion](Remove-MgUserDriveRootListItemVersion.md)
+### [Remove-MgBetaUserDriveRootListItemVersion](Remove-MgBetaUserDriveRootListItemVersion.md)
 Delete navigation property versions for users
 
-### [Remove-MgUserDriveRootListItemVersionField](Remove-MgUserDriveRootListItemVersionField.md)
+### [Remove-MgBetaUserDriveRootListItemVersionField](Remove-MgBetaUserDriveRootListItemVersionField.md)
 Delete navigation property fields for users
 
-### [Remove-MgUserDriveRootPermission](Remove-MgUserDriveRootPermission.md)
+### [Remove-MgBetaUserDriveRootPermission](Remove-MgBetaUserDriveRootPermission.md)
 Delete navigation property permissions for users
 
-### [Remove-MgUserDriveRootSubscription](Remove-MgUserDriveRootSubscription.md)
+### [Remove-MgBetaUserDriveRootSubscription](Remove-MgBetaUserDriveRootSubscription.md)
 Delete navigation property subscriptions for users
 
-### [Remove-MgUserDriveRootThumbnail](Remove-MgUserDriveRootThumbnail.md)
+### [Remove-MgBetaUserDriveRootThumbnail](Remove-MgBetaUserDriveRootThumbnail.md)
 Delete navigation property thumbnails for users
 
-### [Remove-MgUserDriveRootVersion](Remove-MgUserDriveRootVersion.md)
+### [Remove-MgBetaUserDriveRootVersion](Remove-MgBetaUserDriveRootVersion.md)
 Delete navigation property versions for users
 
-### [Restore-MgDriveItem](Restore-MgDriveItem.md)
+### [Restore-MgBetaDriveItem](Restore-MgBetaDriveItem.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
 
-### [Restore-MgDriveItemListItemDocumentSetVersion](Restore-MgDriveItemListItemDocumentSetVersion.md)
+### [Restore-MgBetaDriveItemListItemDocumentSetVersion](Restore-MgBetaDriveItemListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgDriveItemListItemVersion](Restore-MgDriveItemListItemVersion.md)
+### [Restore-MgBetaDriveItemListItemVersion](Restore-MgBetaDriveItemListItemVersion.md)
 Invoke action restoreVersion
 
-### [Restore-MgDriveItemVersion](Restore-MgDriveItemVersion.md)
+### [Restore-MgBetaDriveItemVersion](Restore-MgBetaDriveItemVersion.md)
 Restore a previous version of a DriveItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
 
-### [Restore-MgDriveListItemDocumentSetVersion](Restore-MgDriveListItemDocumentSetVersion.md)
+### [Restore-MgBetaDriveListItemDocumentSetVersion](Restore-MgBetaDriveListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgDriveListItemVersion](Restore-MgDriveListItemVersion.md)
+### [Restore-MgBetaDriveListItemVersion](Restore-MgBetaDriveListItemVersion.md)
 Invoke action restoreVersion
 
-### [Restore-MgDriveRoot](Restore-MgDriveRoot.md)
+### [Restore-MgBetaDriveRoot](Restore-MgBetaDriveRoot.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
 
-### [Restore-MgDriveRootListItemDocumentSetVersion](Restore-MgDriveRootListItemDocumentSetVersion.md)
+### [Restore-MgBetaDriveRootListItemDocumentSetVersion](Restore-MgBetaDriveRootListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgDriveRootListItemVersion](Restore-MgDriveRootListItemVersion.md)
+### [Restore-MgBetaDriveRootListItemVersion](Restore-MgBetaDriveRootListItemVersion.md)
 Invoke action restoreVersion
 
-### [Restore-MgDriveRootVersion](Restore-MgDriveRootVersion.md)
+### [Restore-MgBetaDriveRootVersion](Restore-MgBetaDriveRootVersion.md)
 Restore a previous version of a DriveItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
 
-### [Restore-MgShareListItemDocumentSetVersion](Restore-MgShareListItemDocumentSetVersion.md)
+### [Restore-MgBetaShareListItemDocumentSetVersion](Restore-MgBetaShareListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgShareListItemVersion](Restore-MgShareListItemVersion.md)
+### [Restore-MgBetaShareListItemVersion](Restore-MgBetaShareListItemVersion.md)
 Invoke action restoreVersion
 
-### [Revoke-MgDriveItemPermissionGrant](Revoke-MgDriveItemPermissionGrant.md)
+### [Revoke-MgBetaDriveItemPermissionGrant](Revoke-MgBetaDriveItemPermissionGrant.md)
 Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
-### [Revoke-MgDriveRootPermissionGrant](Revoke-MgDriveRootPermissionGrant.md)
+### [Revoke-MgBetaDriveRootPermissionGrant](Revoke-MgBetaDriveRootPermissionGrant.md)
 Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
-### [Revoke-MgSharePermissionGrant](Revoke-MgSharePermissionGrant.md)
+### [Revoke-MgBetaSharePermissionGrant](Revoke-MgBetaSharePermissionGrant.md)
 Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
-### [Search-MgDrive](Search-MgDrive.md)
+### [Search-MgBetaDrive](Search-MgBetaDrive.md)
 Invoke function search
 
-### [Search-MgDriveItem](Search-MgDriveItem.md)
+### [Search-MgBetaDriveItem](Search-MgBetaDriveItem.md)
 Invoke function search
 
-### [Search-MgDriveRoot](Search-MgDriveRoot.md)
+### [Search-MgBetaDriveRoot](Search-MgBetaDriveRoot.md)
 Invoke function search
 
-### [Set-MgDriveBundleContent](Set-MgDriveBundleContent.md)
+### [Set-MgBetaDriveBundleContent](Set-MgBetaDriveBundleContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveFollowingContent](Set-MgDriveFollowingContent.md)
+### [Set-MgBetaDriveFollowingContent](Set-MgBetaDriveFollowingContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveItemChildContent](Set-MgDriveItemChildContent.md)
+### [Set-MgBetaDriveItemChildContent](Set-MgBetaDriveItemChildContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveItemContent](Set-MgDriveItemContent.md)
+### [Set-MgBetaDriveItemContent](Set-MgBetaDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveItemListItemDriveItemContent](Set-MgDriveItemListItemDriveItemContent.md)
+### [Set-MgBetaDriveItemListItemDriveItemContent](Set-MgBetaDriveItemListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveItemSensitivityLabel](Set-MgDriveItemSensitivityLabel.md)
+### [Set-MgBetaDriveItemSensitivityLabel](Set-MgBetaDriveItemSensitivityLabel.md)
 Invoke action assignSensitivityLabel
 
-### [Set-MgDriveItemVersionContent](Set-MgDriveItemVersionContent.md)
+### [Set-MgBetaDriveItemVersionContent](Set-MgBetaDriveItemVersionContent.md)
 Update content for the navigation property versions in drives
 
-### [Set-MgDriveListItemDriveItemContent](Set-MgDriveListItemDriveItemContent.md)
+### [Set-MgBetaDriveListItemDriveItemContent](Set-MgBetaDriveListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveRootChildContent](Set-MgDriveRootChildContent.md)
+### [Set-MgBetaDriveRootChildContent](Set-MgBetaDriveRootChildContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveRootContent](Set-MgDriveRootContent.md)
+### [Set-MgBetaDriveRootContent](Set-MgBetaDriveRootContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveRootListItemDriveItemContent](Set-MgDriveRootListItemDriveItemContent.md)
+### [Set-MgBetaDriveRootListItemDriveItemContent](Set-MgBetaDriveRootListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgDriveRootSensitivityLabel](Set-MgDriveRootSensitivityLabel.md)
+### [Set-MgBetaDriveRootSensitivityLabel](Set-MgBetaDriveRootSensitivityLabel.md)
 Invoke action assignSensitivityLabel
 
-### [Set-MgDriveRootVersionContent](Set-MgDriveRootVersionContent.md)
+### [Set-MgBetaDriveRootVersionContent](Set-MgBetaDriveRootVersionContent.md)
 Update content for the navigation property versions in drives
 
-### [Set-MgDriveSpecialContent](Set-MgDriveSpecialContent.md)
+### [Set-MgBetaDriveSpecialContent](Set-MgBetaDriveSpecialContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveBundleContent](Set-MgGroupDriveBundleContent.md)
+### [Set-MgBetaGroupDriveBundleContent](Set-MgBetaGroupDriveBundleContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveFollowingContent](Set-MgGroupDriveFollowingContent.md)
+### [Set-MgBetaGroupDriveFollowingContent](Set-MgBetaGroupDriveFollowingContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveItemChildContent](Set-MgGroupDriveItemChildContent.md)
+### [Set-MgBetaGroupDriveItemChildContent](Set-MgBetaGroupDriveItemChildContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveItemContent](Set-MgGroupDriveItemContent.md)
+### [Set-MgBetaGroupDriveItemContent](Set-MgBetaGroupDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveItemListItemDriveItemContent](Set-MgGroupDriveItemListItemDriveItemContent.md)
+### [Set-MgBetaGroupDriveItemListItemDriveItemContent](Set-MgBetaGroupDriveItemListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveItemVersionContent](Set-MgGroupDriveItemVersionContent.md)
+### [Set-MgBetaGroupDriveItemVersionContent](Set-MgBetaGroupDriveItemVersionContent.md)
 Update content for the navigation property versions in groups
 
-### [Set-MgGroupDriveListItemDriveItemContent](Set-MgGroupDriveListItemDriveItemContent.md)
+### [Set-MgBetaGroupDriveListItemDriveItemContent](Set-MgBetaGroupDriveListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveRootChildContent](Set-MgGroupDriveRootChildContent.md)
+### [Set-MgBetaGroupDriveRootChildContent](Set-MgBetaGroupDriveRootChildContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveRootContent](Set-MgGroupDriveRootContent.md)
+### [Set-MgBetaGroupDriveRootContent](Set-MgBetaGroupDriveRootContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveRootListItemDriveItemContent](Set-MgGroupDriveRootListItemDriveItemContent.md)
+### [Set-MgBetaGroupDriveRootListItemDriveItemContent](Set-MgBetaGroupDriveRootListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgGroupDriveRootVersionContent](Set-MgGroupDriveRootVersionContent.md)
+### [Set-MgBetaGroupDriveRootVersionContent](Set-MgBetaGroupDriveRootVersionContent.md)
 Update content for the navigation property versions in groups
 
-### [Set-MgGroupDriveSpecialContent](Set-MgGroupDriveSpecialContent.md)
+### [Set-MgBetaGroupDriveSpecialContent](Set-MgBetaGroupDriveSpecialContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgShareDriveItemContent](Set-MgShareDriveItemContent.md)
+### [Set-MgBetaShareDriveItemContent](Set-MgBetaShareDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgShareItemContent](Set-MgShareItemContent.md)
+### [Set-MgBetaShareItemContent](Set-MgBetaShareItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgShareListItemDriveItemContent](Set-MgShareListItemDriveItemContent.md)
+### [Set-MgBetaShareListItemDriveItemContent](Set-MgBetaShareListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgShareRootContent](Set-MgShareRootContent.md)
+### [Set-MgBetaShareRootContent](Set-MgBetaShareRootContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveBundleContent](Set-MgUserDriveBundleContent.md)
+### [Set-MgBetaUserDriveBundleContent](Set-MgBetaUserDriveBundleContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveFollowingContent](Set-MgUserDriveFollowingContent.md)
+### [Set-MgBetaUserDriveFollowingContent](Set-MgBetaUserDriveFollowingContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveItemChildContent](Set-MgUserDriveItemChildContent.md)
+### [Set-MgBetaUserDriveItemChildContent](Set-MgBetaUserDriveItemChildContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveItemContent](Set-MgUserDriveItemContent.md)
+### [Set-MgBetaUserDriveItemContent](Set-MgBetaUserDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveItemListItemDriveItemContent](Set-MgUserDriveItemListItemDriveItemContent.md)
+### [Set-MgBetaUserDriveItemListItemDriveItemContent](Set-MgBetaUserDriveItemListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveItemVersionContent](Set-MgUserDriveItemVersionContent.md)
+### [Set-MgBetaUserDriveItemVersionContent](Set-MgBetaUserDriveItemVersionContent.md)
 Update content for the navigation property versions in users
 
-### [Set-MgUserDriveListItemDriveItemContent](Set-MgUserDriveListItemDriveItemContent.md)
+### [Set-MgBetaUserDriveListItemDriveItemContent](Set-MgBetaUserDriveListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveRootChildContent](Set-MgUserDriveRootChildContent.md)
+### [Set-MgBetaUserDriveRootChildContent](Set-MgBetaUserDriveRootChildContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveRootContent](Set-MgUserDriveRootContent.md)
+### [Set-MgBetaUserDriveRootContent](Set-MgBetaUserDriveRootContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveRootListItemDriveItemContent](Set-MgUserDriveRootListItemDriveItemContent.md)
+### [Set-MgBetaUserDriveRootListItemDriveItemContent](Set-MgBetaUserDriveRootListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgUserDriveRootVersionContent](Set-MgUserDriveRootVersionContent.md)
+### [Set-MgBetaUserDriveRootVersionContent](Set-MgBetaUserDriveRootVersionContent.md)
 Update content for the navigation property versions in users
 
-### [Set-MgUserDriveSpecialContent](Set-MgUserDriveSpecialContent.md)
+### [Set-MgBetaUserDriveSpecialContent](Set-MgBetaUserDriveSpecialContent.md)
 The content stream, if the item represents a file.
 
-### [Test-MgDriveItemPermission](Test-MgDriveItemPermission.md)
+### [Test-MgBetaDriveItemPermission](Test-MgBetaDriveItemPermission.md)
 Invoke action validatePermission
 
-### [Test-MgDriveListContentTypePublished](Test-MgDriveListContentTypePublished.md)
+### [Test-MgBetaDriveListContentTypePublished](Test-MgBetaDriveListContentTypePublished.md)
 Invoke function isPublished
 
-### [Test-MgDriveRootPermission](Test-MgDriveRootPermission.md)
+### [Test-MgBetaDriveRootPermission](Test-MgBetaDriveRootPermission.md)
 Invoke action validatePermission
 
-### [Test-MgShareListContentTypePublished](Test-MgShareListContentTypePublished.md)
+### [Test-MgBetaShareListContentTypePublished](Test-MgBetaShareListContentTypePublished.md)
 Invoke function isPublished
 
-### [Unpublish-MgDriveListContentType](Unpublish-MgDriveListContentType.md)
+### [Unpublish-MgBetaDriveListContentType](Unpublish-MgBetaDriveListContentType.md)
 Unpublish a [contentType][] from a content type hub site.
 
-### [Unpublish-MgShareListContentType](Unpublish-MgShareListContentType.md)
+### [Unpublish-MgBetaShareListContentType](Unpublish-MgBetaShareListContentType.md)
 Unpublish a [contentType][] from a content type hub site.
 
-### [Update-MgDrive](Update-MgDrive.md)
+### [Update-MgBetaDrive](Update-MgBetaDrive.md)
 Update entity in drives
 
-### [Update-MgDriveItem](Update-MgDriveItem.md)
+### [Update-MgBetaDriveItem](Update-MgBetaDriveItem.md)
 Update the navigation property items in drives
 
-### [Update-MgDriveItemListItem](Update-MgDriveItemListItem.md)
+### [Update-MgBetaDriveItemListItem](Update-MgBetaDriveItemListItem.md)
 Update the navigation property listItem in drives
 
-### [Update-MgDriveItemListItemDocumentSetVersion](Update-MgDriveItemListItemDocumentSetVersion.md)
+### [Update-MgBetaDriveItemListItemDocumentSetVersion](Update-MgBetaDriveItemListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in drives
 
-### [Update-MgDriveItemListItemField](Update-MgDriveItemListItemField.md)
+### [Update-MgBetaDriveItemListItemField](Update-MgBetaDriveItemListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgDriveItemListItemVersion](Update-MgDriveItemListItemVersion.md)
+### [Update-MgBetaDriveItemListItemVersion](Update-MgBetaDriveItemListItemVersion.md)
 Update the navigation property versions in drives
 
-### [Update-MgDriveItemListItemVersionField](Update-MgDriveItemListItemVersionField.md)
+### [Update-MgBetaDriveItemListItemVersionField](Update-MgBetaDriveItemListItemVersionField.md)
 Update the navigation property fields in drives
 
-### [Update-MgDriveItemPermission](Update-MgDriveItemPermission.md)
+### [Update-MgBetaDriveItemPermission](Update-MgBetaDriveItemPermission.md)
 Update the navigation property permissions in drives
 
-### [Update-MgDriveItemSubscription](Update-MgDriveItemSubscription.md)
+### [Update-MgBetaDriveItemSubscription](Update-MgBetaDriveItemSubscription.md)
 Update the navigation property subscriptions in drives
 
-### [Update-MgDriveItemThumbnail](Update-MgDriveItemThumbnail.md)
+### [Update-MgBetaDriveItemThumbnail](Update-MgBetaDriveItemThumbnail.md)
 Update the navigation property thumbnails in drives
 
-### [Update-MgDriveItemVersion](Update-MgDriveItemVersion.md)
+### [Update-MgBetaDriveItemVersion](Update-MgBetaDriveItemVersion.md)
 Update the navigation property versions in drives
 
-### [Update-MgDriveList](Update-MgDriveList.md)
+### [Update-MgBetaDriveList](Update-MgBetaDriveList.md)
 Update the navigation property list in drives
 
-### [Update-MgDriveListColumn](Update-MgDriveListColumn.md)
+### [Update-MgBetaDriveListColumn](Update-MgBetaDriveListColumn.md)
 Update the navigation property columns in drives
 
-### [Update-MgDriveListContentType](Update-MgDriveListContentType.md)
+### [Update-MgBetaDriveListContentType](Update-MgBetaDriveListContentType.md)
 Update the navigation property contentTypes in drives
 
-### [Update-MgDriveListContentTypeColumn](Update-MgDriveListContentTypeColumn.md)
+### [Update-MgBetaDriveListContentTypeColumn](Update-MgBetaDriveListContentTypeColumn.md)
 Update the navigation property columns in drives
 
-### [Update-MgDriveListContentTypeColumnLink](Update-MgDriveListContentTypeColumnLink.md)
+### [Update-MgBetaDriveListContentTypeColumnLink](Update-MgBetaDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in drives
 
-### [Update-MgDriveListItem](Update-MgDriveListItem.md)
+### [Update-MgBetaDriveListItem](Update-MgBetaDriveListItem.md)
 Update the navigation property items in drives
 
-### [Update-MgDriveListItemDocumentSetVersion](Update-MgDriveListItemDocumentSetVersion.md)
+### [Update-MgBetaDriveListItemDocumentSetVersion](Update-MgBetaDriveListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in drives
 
-### [Update-MgDriveListItemField](Update-MgDriveListItemField.md)
+### [Update-MgBetaDriveListItemField](Update-MgBetaDriveListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgDriveListItemVersion](Update-MgDriveListItemVersion.md)
+### [Update-MgBetaDriveListItemVersion](Update-MgBetaDriveListItemVersion.md)
 Update the navigation property versions in drives
 
-### [Update-MgDriveListItemVersionField](Update-MgDriveListItemVersionField.md)
+### [Update-MgBetaDriveListItemVersionField](Update-MgBetaDriveListItemVersionField.md)
 Update the navigation property fields in drives
 
-### [Update-MgDriveListOperation](Update-MgDriveListOperation.md)
+### [Update-MgBetaDriveListOperation](Update-MgBetaDriveListOperation.md)
 Update the navigation property operations in drives
 
-### [Update-MgDriveListSubscription](Update-MgDriveListSubscription.md)
+### [Update-MgBetaDriveListSubscription](Update-MgBetaDriveListSubscription.md)
 Update the navigation property subscriptions in drives
 
-### [Update-MgDriveRoot](Update-MgDriveRoot.md)
+### [Update-MgBetaDriveRoot](Update-MgBetaDriveRoot.md)
 Update the navigation property root in drives
 
-### [Update-MgDriveRootListItem](Update-MgDriveRootListItem.md)
+### [Update-MgBetaDriveRootListItem](Update-MgBetaDriveRootListItem.md)
 Update the navigation property listItem in drives
 
-### [Update-MgDriveRootListItemDocumentSetVersion](Update-MgDriveRootListItemDocumentSetVersion.md)
+### [Update-MgBetaDriveRootListItemDocumentSetVersion](Update-MgBetaDriveRootListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in drives
 
-### [Update-MgDriveRootListItemField](Update-MgDriveRootListItemField.md)
+### [Update-MgBetaDriveRootListItemField](Update-MgBetaDriveRootListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgDriveRootListItemVersion](Update-MgDriveRootListItemVersion.md)
+### [Update-MgBetaDriveRootListItemVersion](Update-MgBetaDriveRootListItemVersion.md)
 Update the navigation property versions in drives
 
-### [Update-MgDriveRootListItemVersionField](Update-MgDriveRootListItemVersionField.md)
+### [Update-MgBetaDriveRootListItemVersionField](Update-MgBetaDriveRootListItemVersionField.md)
 Update the navigation property fields in drives
 
-### [Update-MgDriveRootPermission](Update-MgDriveRootPermission.md)
+### [Update-MgBetaDriveRootPermission](Update-MgBetaDriveRootPermission.md)
 Update the navigation property permissions in drives
 
-### [Update-MgDriveRootSubscription](Update-MgDriveRootSubscription.md)
+### [Update-MgBetaDriveRootSubscription](Update-MgBetaDriveRootSubscription.md)
 Update the navigation property subscriptions in drives
 
-### [Update-MgDriveRootThumbnail](Update-MgDriveRootThumbnail.md)
+### [Update-MgBetaDriveRootThumbnail](Update-MgBetaDriveRootThumbnail.md)
 Update the navigation property thumbnails in drives
 
-### [Update-MgDriveRootVersion](Update-MgDriveRootVersion.md)
+### [Update-MgBetaDriveRootVersion](Update-MgBetaDriveRootVersion.md)
 Update the navigation property versions in drives
 
-### [Update-MgGroupDrive](Update-MgGroupDrive.md)
+### [Update-MgBetaGroupDrive](Update-MgBetaGroupDrive.md)
 Update the navigation property drives in groups
 
-### [Update-MgGroupDriveItem](Update-MgGroupDriveItem.md)
+### [Update-MgBetaGroupDriveItem](Update-MgBetaGroupDriveItem.md)
 Update the navigation property items in groups
 
-### [Update-MgGroupDriveItemListItem](Update-MgGroupDriveItemListItem.md)
+### [Update-MgBetaGroupDriveItemListItem](Update-MgBetaGroupDriveItemListItem.md)
 Update the navigation property listItem in groups
 
-### [Update-MgGroupDriveItemListItemDocumentSetVersion](Update-MgGroupDriveItemListItemDocumentSetVersion.md)
+### [Update-MgBetaGroupDriveItemListItemDocumentSetVersion](Update-MgBetaGroupDriveItemListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in groups
 
-### [Update-MgGroupDriveItemListItemField](Update-MgGroupDriveItemListItemField.md)
+### [Update-MgBetaGroupDriveItemListItemField](Update-MgBetaGroupDriveItemListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgGroupDriveItemListItemVersion](Update-MgGroupDriveItemListItemVersion.md)
+### [Update-MgBetaGroupDriveItemListItemVersion](Update-MgBetaGroupDriveItemListItemVersion.md)
 Update the navigation property versions in groups
 
-### [Update-MgGroupDriveItemListItemVersionField](Update-MgGroupDriveItemListItemVersionField.md)
+### [Update-MgBetaGroupDriveItemListItemVersionField](Update-MgBetaGroupDriveItemListItemVersionField.md)
 Update the navigation property fields in groups
 
-### [Update-MgGroupDriveItemPermission](Update-MgGroupDriveItemPermission.md)
+### [Update-MgBetaGroupDriveItemPermission](Update-MgBetaGroupDriveItemPermission.md)
 Update the navigation property permissions in groups
 
-### [Update-MgGroupDriveItemSubscription](Update-MgGroupDriveItemSubscription.md)
+### [Update-MgBetaGroupDriveItemSubscription](Update-MgBetaGroupDriveItemSubscription.md)
 Update the navigation property subscriptions in groups
 
-### [Update-MgGroupDriveItemThumbnail](Update-MgGroupDriveItemThumbnail.md)
+### [Update-MgBetaGroupDriveItemThumbnail](Update-MgBetaGroupDriveItemThumbnail.md)
 Update the navigation property thumbnails in groups
 
-### [Update-MgGroupDriveItemVersion](Update-MgGroupDriveItemVersion.md)
+### [Update-MgBetaGroupDriveItemVersion](Update-MgBetaGroupDriveItemVersion.md)
 Update the navigation property versions in groups
 
-### [Update-MgGroupDriveList](Update-MgGroupDriveList.md)
+### [Update-MgBetaGroupDriveList](Update-MgBetaGroupDriveList.md)
 Update the navigation property list in groups
 
-### [Update-MgGroupDriveListColumn](Update-MgGroupDriveListColumn.md)
+### [Update-MgBetaGroupDriveListColumn](Update-MgBetaGroupDriveListColumn.md)
 Update the navigation property columns in groups
 
-### [Update-MgGroupDriveListContentType](Update-MgGroupDriveListContentType.md)
+### [Update-MgBetaGroupDriveListContentType](Update-MgBetaGroupDriveListContentType.md)
 Update the navigation property contentTypes in groups
 
-### [Update-MgGroupDriveListContentTypeColumn](Update-MgGroupDriveListContentTypeColumn.md)
+### [Update-MgBetaGroupDriveListContentTypeColumn](Update-MgBetaGroupDriveListContentTypeColumn.md)
 Update the navigation property columns in groups
 
-### [Update-MgGroupDriveListContentTypeColumnLink](Update-MgGroupDriveListContentTypeColumnLink.md)
+### [Update-MgBetaGroupDriveListContentTypeColumnLink](Update-MgBetaGroupDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
 
-### [Update-MgGroupDriveListItem](Update-MgGroupDriveListItem.md)
+### [Update-MgBetaGroupDriveListItem](Update-MgBetaGroupDriveListItem.md)
 Update the navigation property items in groups
 
-### [Update-MgGroupDriveListItemDocumentSetVersion](Update-MgGroupDriveListItemDocumentSetVersion.md)
+### [Update-MgBetaGroupDriveListItemDocumentSetVersion](Update-MgBetaGroupDriveListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in groups
 
-### [Update-MgGroupDriveListItemField](Update-MgGroupDriveListItemField.md)
+### [Update-MgBetaGroupDriveListItemField](Update-MgBetaGroupDriveListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgGroupDriveListItemVersion](Update-MgGroupDriveListItemVersion.md)
+### [Update-MgBetaGroupDriveListItemVersion](Update-MgBetaGroupDriveListItemVersion.md)
 Update the navigation property versions in groups
 
-### [Update-MgGroupDriveListItemVersionField](Update-MgGroupDriveListItemVersionField.md)
+### [Update-MgBetaGroupDriveListItemVersionField](Update-MgBetaGroupDriveListItemVersionField.md)
 Update the navigation property fields in groups
 
-### [Update-MgGroupDriveListOperation](Update-MgGroupDriveListOperation.md)
+### [Update-MgBetaGroupDriveListOperation](Update-MgBetaGroupDriveListOperation.md)
 Update the navigation property operations in groups
 
-### [Update-MgGroupDriveListSubscription](Update-MgGroupDriveListSubscription.md)
+### [Update-MgBetaGroupDriveListSubscription](Update-MgBetaGroupDriveListSubscription.md)
 Update the navigation property subscriptions in groups
 
-### [Update-MgGroupDriveRoot](Update-MgGroupDriveRoot.md)
+### [Update-MgBetaGroupDriveRoot](Update-MgBetaGroupDriveRoot.md)
 Update the navigation property root in groups
 
-### [Update-MgGroupDriveRootListItem](Update-MgGroupDriveRootListItem.md)
+### [Update-MgBetaGroupDriveRootListItem](Update-MgBetaGroupDriveRootListItem.md)
 Update the navigation property listItem in groups
 
-### [Update-MgGroupDriveRootListItemDocumentSetVersion](Update-MgGroupDriveRootListItemDocumentSetVersion.md)
+### [Update-MgBetaGroupDriveRootListItemDocumentSetVersion](Update-MgBetaGroupDriveRootListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in groups
 
-### [Update-MgGroupDriveRootListItemField](Update-MgGroupDriveRootListItemField.md)
+### [Update-MgBetaGroupDriveRootListItemField](Update-MgBetaGroupDriveRootListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgGroupDriveRootListItemVersion](Update-MgGroupDriveRootListItemVersion.md)
+### [Update-MgBetaGroupDriveRootListItemVersion](Update-MgBetaGroupDriveRootListItemVersion.md)
 Update the navigation property versions in groups
 
-### [Update-MgGroupDriveRootListItemVersionField](Update-MgGroupDriveRootListItemVersionField.md)
+### [Update-MgBetaGroupDriveRootListItemVersionField](Update-MgBetaGroupDriveRootListItemVersionField.md)
 Update the navigation property fields in groups
 
-### [Update-MgGroupDriveRootPermission](Update-MgGroupDriveRootPermission.md)
+### [Update-MgBetaGroupDriveRootPermission](Update-MgBetaGroupDriveRootPermission.md)
 Update the navigation property permissions in groups
 
-### [Update-MgGroupDriveRootSubscription](Update-MgGroupDriveRootSubscription.md)
+### [Update-MgBetaGroupDriveRootSubscription](Update-MgBetaGroupDriveRootSubscription.md)
 Update the navigation property subscriptions in groups
 
-### [Update-MgGroupDriveRootThumbnail](Update-MgGroupDriveRootThumbnail.md)
+### [Update-MgBetaGroupDriveRootThumbnail](Update-MgBetaGroupDriveRootThumbnail.md)
 Update the navigation property thumbnails in groups
 
-### [Update-MgGroupDriveRootVersion](Update-MgGroupDriveRootVersion.md)
+### [Update-MgBetaGroupDriveRootVersion](Update-MgBetaGroupDriveRootVersion.md)
 Update the navigation property versions in groups
 
-### [Update-MgShareList](Update-MgShareList.md)
+### [Update-MgBetaShareList](Update-MgBetaShareList.md)
 Update the navigation property list in shares
 
-### [Update-MgShareListColumn](Update-MgShareListColumn.md)
+### [Update-MgBetaShareListColumn](Update-MgBetaShareListColumn.md)
 Update the navigation property columns in shares
 
-### [Update-MgShareListContentType](Update-MgShareListContentType.md)
+### [Update-MgBetaShareListContentType](Update-MgBetaShareListContentType.md)
 Update the navigation property contentTypes in shares
 
-### [Update-MgShareListContentTypeColumn](Update-MgShareListContentTypeColumn.md)
+### [Update-MgBetaShareListContentTypeColumn](Update-MgBetaShareListContentTypeColumn.md)
 Update the navigation property columns in shares
 
-### [Update-MgShareListContentTypeColumnLink](Update-MgShareListContentTypeColumnLink.md)
+### [Update-MgBetaShareListContentTypeColumnLink](Update-MgBetaShareListContentTypeColumnLink.md)
 Update the navigation property columnLinks in shares
 
-### [Update-MgShareListItem](Update-MgShareListItem.md)
+### [Update-MgBetaShareListItem](Update-MgBetaShareListItem.md)
 Update the navigation property items in shares
 
-### [Update-MgShareListItemDocumentSetVersion](Update-MgShareListItemDocumentSetVersion.md)
+### [Update-MgBetaShareListItemDocumentSetVersion](Update-MgBetaShareListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in shares
 
-### [Update-MgShareListItemField](Update-MgShareListItemField.md)
+### [Update-MgBetaShareListItemField](Update-MgBetaShareListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgShareListItemVersion](Update-MgShareListItemVersion.md)
+### [Update-MgBetaShareListItemVersion](Update-MgBetaShareListItemVersion.md)
 Update the navigation property versions in shares
 
-### [Update-MgShareListItemVersionField](Update-MgShareListItemVersionField.md)
+### [Update-MgBetaShareListItemVersionField](Update-MgBetaShareListItemVersionField.md)
 Update the navigation property fields in shares
 
-### [Update-MgShareListOperation](Update-MgShareListOperation.md)
+### [Update-MgBetaShareListOperation](Update-MgBetaShareListOperation.md)
 Update the navigation property operations in shares
 
-### [Update-MgShareListSubscription](Update-MgShareListSubscription.md)
+### [Update-MgBetaShareListSubscription](Update-MgBetaShareListSubscription.md)
 Update the navigation property subscriptions in shares
 
-### [Update-MgSharePermission](Update-MgSharePermission.md)
+### [Update-MgBetaSharePermission](Update-MgBetaSharePermission.md)
 Update the navigation property permission in shares
 
-### [Update-MgShareSharedDriveItemSharedDriveItem](Update-MgShareSharedDriveItemSharedDriveItem.md)
+### [Update-MgBetaShareSharedDriveItemSharedDriveItem](Update-MgBetaShareSharedDriveItemSharedDriveItem.md)
 Update entity in shares
 
-### [Update-MgUserDrive](Update-MgUserDrive.md)
+### [Update-MgBetaUserDrive](Update-MgBetaUserDrive.md)
 Update the navigation property drives in users
 
-### [Update-MgUserDriveItem](Update-MgUserDriveItem.md)
+### [Update-MgBetaUserDriveItem](Update-MgBetaUserDriveItem.md)
 Update the navigation property items in users
 
-### [Update-MgUserDriveItemListItem](Update-MgUserDriveItemListItem.md)
+### [Update-MgBetaUserDriveItemListItem](Update-MgBetaUserDriveItemListItem.md)
 Update the navigation property listItem in users
 
-### [Update-MgUserDriveItemListItemDocumentSetVersion](Update-MgUserDriveItemListItemDocumentSetVersion.md)
+### [Update-MgBetaUserDriveItemListItemDocumentSetVersion](Update-MgBetaUserDriveItemListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in users
 
-### [Update-MgUserDriveItemListItemField](Update-MgUserDriveItemListItemField.md)
+### [Update-MgBetaUserDriveItemListItemField](Update-MgBetaUserDriveItemListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgUserDriveItemListItemVersion](Update-MgUserDriveItemListItemVersion.md)
+### [Update-MgBetaUserDriveItemListItemVersion](Update-MgBetaUserDriveItemListItemVersion.md)
 Update the navigation property versions in users
 
-### [Update-MgUserDriveItemListItemVersionField](Update-MgUserDriveItemListItemVersionField.md)
+### [Update-MgBetaUserDriveItemListItemVersionField](Update-MgBetaUserDriveItemListItemVersionField.md)
 Update the navigation property fields in users
 
-### [Update-MgUserDriveItemPermission](Update-MgUserDriveItemPermission.md)
+### [Update-MgBetaUserDriveItemPermission](Update-MgBetaUserDriveItemPermission.md)
 Update the navigation property permissions in users
 
-### [Update-MgUserDriveItemSubscription](Update-MgUserDriveItemSubscription.md)
+### [Update-MgBetaUserDriveItemSubscription](Update-MgBetaUserDriveItemSubscription.md)
 Update the navigation property subscriptions in users
 
-### [Update-MgUserDriveItemThumbnail](Update-MgUserDriveItemThumbnail.md)
+### [Update-MgBetaUserDriveItemThumbnail](Update-MgBetaUserDriveItemThumbnail.md)
 Update the navigation property thumbnails in users
 
-### [Update-MgUserDriveItemVersion](Update-MgUserDriveItemVersion.md)
+### [Update-MgBetaUserDriveItemVersion](Update-MgBetaUserDriveItemVersion.md)
 Update the navigation property versions in users
 
-### [Update-MgUserDriveList](Update-MgUserDriveList.md)
+### [Update-MgBetaUserDriveList](Update-MgBetaUserDriveList.md)
 Update the navigation property list in users
 
-### [Update-MgUserDriveListColumn](Update-MgUserDriveListColumn.md)
+### [Update-MgBetaUserDriveListColumn](Update-MgBetaUserDriveListColumn.md)
 Update the navigation property columns in users
 
-### [Update-MgUserDriveListContentType](Update-MgUserDriveListContentType.md)
+### [Update-MgBetaUserDriveListContentType](Update-MgBetaUserDriveListContentType.md)
 Update the navigation property contentTypes in users
 
-### [Update-MgUserDriveListContentTypeColumn](Update-MgUserDriveListContentTypeColumn.md)
+### [Update-MgBetaUserDriveListContentTypeColumn](Update-MgBetaUserDriveListContentTypeColumn.md)
 Update the navigation property columns in users
 
-### [Update-MgUserDriveListContentTypeColumnLink](Update-MgUserDriveListContentTypeColumnLink.md)
+### [Update-MgBetaUserDriveListContentTypeColumnLink](Update-MgBetaUserDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in users
 
-### [Update-MgUserDriveListItem](Update-MgUserDriveListItem.md)
+### [Update-MgBetaUserDriveListItem](Update-MgBetaUserDriveListItem.md)
 Update the navigation property items in users
 
-### [Update-MgUserDriveListItemDocumentSetVersion](Update-MgUserDriveListItemDocumentSetVersion.md)
+### [Update-MgBetaUserDriveListItemDocumentSetVersion](Update-MgBetaUserDriveListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in users
 
-### [Update-MgUserDriveListItemField](Update-MgUserDriveListItemField.md)
+### [Update-MgBetaUserDriveListItemField](Update-MgBetaUserDriveListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgUserDriveListItemVersion](Update-MgUserDriveListItemVersion.md)
+### [Update-MgBetaUserDriveListItemVersion](Update-MgBetaUserDriveListItemVersion.md)
 Update the navigation property versions in users
 
-### [Update-MgUserDriveListItemVersionField](Update-MgUserDriveListItemVersionField.md)
+### [Update-MgBetaUserDriveListItemVersionField](Update-MgBetaUserDriveListItemVersionField.md)
 Update the navigation property fields in users
 
-### [Update-MgUserDriveListOperation](Update-MgUserDriveListOperation.md)
+### [Update-MgBetaUserDriveListOperation](Update-MgBetaUserDriveListOperation.md)
 Update the navigation property operations in users
 
-### [Update-MgUserDriveListSubscription](Update-MgUserDriveListSubscription.md)
+### [Update-MgBetaUserDriveListSubscription](Update-MgBetaUserDriveListSubscription.md)
 Update the navigation property subscriptions in users
 
-### [Update-MgUserDriveRoot](Update-MgUserDriveRoot.md)
+### [Update-MgBetaUserDriveRoot](Update-MgBetaUserDriveRoot.md)
 Update the navigation property root in users
 
-### [Update-MgUserDriveRootListItem](Update-MgUserDriveRootListItem.md)
+### [Update-MgBetaUserDriveRootListItem](Update-MgBetaUserDriveRootListItem.md)
 Update the navigation property listItem in users
 
-### [Update-MgUserDriveRootListItemDocumentSetVersion](Update-MgUserDriveRootListItemDocumentSetVersion.md)
+### [Update-MgBetaUserDriveRootListItemDocumentSetVersion](Update-MgBetaUserDriveRootListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in users
 
-### [Update-MgUserDriveRootListItemField](Update-MgUserDriveRootListItemField.md)
+### [Update-MgBetaUserDriveRootListItemField](Update-MgBetaUserDriveRootListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgUserDriveRootListItemVersion](Update-MgUserDriveRootListItemVersion.md)
+### [Update-MgBetaUserDriveRootListItemVersion](Update-MgBetaUserDriveRootListItemVersion.md)
 Update the navigation property versions in users
 
-### [Update-MgUserDriveRootListItemVersionField](Update-MgUserDriveRootListItemVersionField.md)
+### [Update-MgBetaUserDriveRootListItemVersionField](Update-MgBetaUserDriveRootListItemVersionField.md)
 Update the navigation property fields in users
 
-### [Update-MgUserDriveRootPermission](Update-MgUserDriveRootPermission.md)
+### [Update-MgBetaUserDriveRootPermission](Update-MgBetaUserDriveRootPermission.md)
 Update the navigation property permissions in users
 
-### [Update-MgUserDriveRootSubscription](Update-MgUserDriveRootSubscription.md)
+### [Update-MgBetaUserDriveRootSubscription](Update-MgBetaUserDriveRootSubscription.md)
 Update the navigation property subscriptions in users
 
-### [Update-MgUserDriveRootThumbnail](Update-MgUserDriveRootThumbnail.md)
+### [Update-MgBetaUserDriveRootThumbnail](Update-MgBetaUserDriveRootThumbnail.md)
 Update the navigation property thumbnails in users
 
-### [Update-MgUserDriveRootVersion](Update-MgUserDriveRootVersion.md)
+### [Update-MgBetaUserDriveRootVersion](Update-MgBetaUserDriveRootVersion.md)
 Update the navigation property versions in users
 

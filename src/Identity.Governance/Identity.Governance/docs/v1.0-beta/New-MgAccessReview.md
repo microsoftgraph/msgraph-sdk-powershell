@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgaccessreview
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgaccessreview
 schema: 2.0.0
 ---
 
-# New-MgAccessReview
+# New-MgBetaAccessReview
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, create a new accessReview object.
@@ -16,7 +16,7 @@ After making this request, the caller should create a programControl, to link th
 
 ### CreateExpanded (Default)
 ```
-New-MgAccessReview [-AdditionalProperties <Hashtable>] [-BusinessFlowTemplateId <String>]
+New-MgBetaAccessReview [-AdditionalProperties <Hashtable>] [-BusinessFlowTemplateId <String>]
  [-CreatedBy <IMicrosoftGraphUserIdentity>] [-Decisions <IMicrosoftGraphAccessReviewDecision[]>]
  [-Description <String>] [-DisplayName <String>] [-EndDateTime <DateTime>] [-Id <String>]
  [-Instances <IMicrosoftGraphAccessReview[]>] [-MyDecisions <IMicrosoftGraphAccessReviewDecision[]>]
@@ -27,7 +27,7 @@ New-MgAccessReview [-AdditionalProperties <Hashtable>] [-BusinessFlowTemplateId 
 
 ### Create
 ```
-New-MgAccessReview -BodyParameter <IMicrosoftGraphAccessReview> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaAccessReview -BodyParameter <IMicrosoftGraphAccessReview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,9 +37,9 @@ After making this request, the caller should create a programControl, to link th
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgAccessReview Cmdlet
+### Example 1: Using the New-MgBetaAccessReview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "TestReview"
 	StartDateTime = [System.DateTime]::Parse("2017-02-10T00:35:53.214Z")
@@ -77,10 +77,10 @@ $params = @{
 		}
 	}
 }
-New-MgAccessReview -BodyParameter $params
+New-MgBetaAccessReview -BodyParameter $params
 ```
 
-This example shows how to use the New-MgAccessReview Cmdlet.
+This example shows how to use the New-MgBetaAccessReview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ accessReview
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 Parameter Sets: Create
 Aliases:
 
@@ -138,7 +138,7 @@ userIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserIdentity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -154,7 +154,7 @@ The collection of decisions for this access review.
 To construct, please use Get-Help -Online and see NOTES section for DECISIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -234,7 +234,7 @@ The collection of access reviews instances past, present and future, if this obj
 To construct, please use Get-Help -Online and see NOTES section for INSTANCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -250,7 +250,7 @@ The collection of decisions for the caller, if the caller is a reviewer.
 To construct, please use Get-Help -Online and see NOTES section for MYDECISIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -266,7 +266,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for REVIEWEDENTITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -282,7 +282,7 @@ The collection of reviewers for an access review, if access review reviewerType 
 To construct, please use Get-Help -Online and see NOTES section for REVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -314,7 +314,7 @@ accessReviewSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -394,11 +394,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 
 ## NOTES
 

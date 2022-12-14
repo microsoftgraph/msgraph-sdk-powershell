@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationclassassignmentsubmissionoutcome
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationclassassignmentsubmissionoutcome
 schema: 2.0.0
 ---
 
-# Remove-MgEducationClassAssignmentSubmissionOutcome
+# Remove-MgBetaEducationClassAssignmentSubmissionOutcome
 
 ## SYNOPSIS
 Delete navigation property outcomes for education
@@ -14,14 +14,14 @@ Delete navigation property outcomes for education
 
 ### Delete1 (Default)
 ```
-Remove-MgEducationClassAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationClassId <String>
+Remove-MgBetaEducationClassAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationClassId <String>
  -EducationOutcomeId <String> -EducationSubmissionId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgEducationClassAssignmentSubmissionOutcome -InputObject <IEducationIdentity> [-IfMatch <String>]
+Remove-MgBetaEducationClassAssignmentSubmissionOutcome -InputObject <IEducationIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Delete navigation property outcomes for education
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEducationClassAssignmentSubmissionOutcome Cmdlet
+### Example 1: Using the Remove-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId
+Import-Module Microsoft.Graph.Beta.Education
+Remove-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId
 ```
 
-This example shows how to use the Remove-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+This example shows how to use the Remove-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -183,7 +183,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

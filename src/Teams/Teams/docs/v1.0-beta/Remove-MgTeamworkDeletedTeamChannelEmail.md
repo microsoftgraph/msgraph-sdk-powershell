@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamworkdeletedteamchannelemail
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgteamworkdeletedteamchannelemail
 schema: 2.0.0
 ---
 
-# Remove-MgTeamworkDeletedTeamChannelEmail
+# Remove-MgBetaTeamworkDeletedTeamChannelEmail
 
 ## SYNOPSIS
 Remove the email address of a channel.
@@ -15,13 +15,13 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### Remove (Default)
 ```
-Remove-MgTeamworkDeletedTeamChannelEmail -ChannelId <String> -DeletedTeamId <String> [-PassThru] [-Confirm]
+Remove-MgBetaTeamworkDeletedTeamChannelEmail -ChannelId <String> -DeletedTeamId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity
 ```
-Remove-MgTeamworkDeletedTeamChannelEmail -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaTeamworkDeletedTeamChannelEmail -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: RemoveViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

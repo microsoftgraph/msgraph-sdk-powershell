@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermailfolder
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mgusermailfolder
 schema: 2.0.0
 ---
 
-# Get-MgUserMailFolder
+# Get-MgBetaUserMailFolder
 
 ## SYNOPSIS
 The user's mail folders.
@@ -16,18 +16,18 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserMailFolder -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaUserMailFolder -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserMailFolder -MailFolderId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserMailFolder -MailFolderId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserMailFolder -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserMailFolder -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,34 +37,34 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserMailFolder Cmdlet
+### Example 1: Using the Get-MgBetaUserMailFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
+Get-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 
-This example shows how to use the Get-MgUserMailFolder Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserMailFolder Cmdlet
+### Example 2: Using the Get-MgBetaUserMailFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolder -UserId $userId
+Get-MgBetaUserMailFolder -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserMailFolder Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgUserMailFolder Cmdlet
+### Example 3: Using the Get-MgBetaUserMailFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
+Get-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 
-This example shows how to use the Get-MgUserMailFolder Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -120,7 +120,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -241,11 +241,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailFolder1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailFolder1
 
 ## NOTES
 

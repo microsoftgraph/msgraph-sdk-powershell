@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mggraphgroupdrive
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mggraphgroupdrive
 schema: 2.0.0
 ---
 
-# Invoke-MgGraphGroupDrive
+# Invoke-MgBetaGraphGroupDrive
 
 ## SYNOPSIS
 Invoke function sharedWithMe
@@ -14,14 +14,14 @@ Invoke function sharedWithMe
 
 ### Graph (Default)
 ```
-Invoke-MgGraphGroupDrive -DriveId <String> -GroupId <String> [-Count] [-Filter <String>]
+Invoke-MgBetaGraphGroupDrive -DriveId <String> -GroupId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GraphViaIdentity
 ```
-Invoke-MgGraphGroupDrive -InputObject <IGroupsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Invoke-MgBetaGraphGroupDrive -InputObject <IGroupsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GraphViaIdentity
 Aliases:
 
@@ -188,11 +188,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem
 
 ## NOTES
 

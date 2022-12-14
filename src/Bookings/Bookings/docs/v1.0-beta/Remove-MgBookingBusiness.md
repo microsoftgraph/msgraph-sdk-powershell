@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/remove-mgbookingbusiness
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/remove-mgbookingbusiness
 schema: 2.0.0
 ---
 
-# Remove-MgBookingBusiness
+# Remove-MgBetaBookingBusiness
 
 ## SYNOPSIS
 Delete a bookingBusiness object.
@@ -14,13 +14,13 @@ Delete a bookingBusiness object.
 
 ### Delete (Default)
 ```
-Remove-MgBookingBusiness -BookingBusinessId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaBookingBusiness -BookingBusinessId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBookingBusiness -InputObject <IBookingsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete a bookingBusiness object.
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgBookingBusiness Cmdlet
+### Example 1: Using the Remove-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Remove-MgBookingBusiness -BookingBusinessId $bookingBusinessId
+Import-Module Microsoft.Graph.Beta.Bookings
+Remove-MgBetaBookingBusiness -BookingBusinessId $bookingBusinessId
 ```
 
-This example shows how to use the Remove-MgBookingBusiness Cmdlet.
+This example shows how to use the Remove-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 

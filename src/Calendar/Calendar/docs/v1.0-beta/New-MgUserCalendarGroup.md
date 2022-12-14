@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mgusercalendargroup
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mgusercalendargroup
 schema: 2.0.0
 ---
 
-# New-MgUserCalendarGroup
+# New-MgBetaUserCalendarGroup
 
 ## SYNOPSIS
 Use this API to create a new CalendarGroup.
@@ -14,26 +14,26 @@ Use this API to create a new CalendarGroup.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserCalendarGroup -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserCalendarGroup -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Calendars <IMicrosoftGraphCalendar1[]>] [-ChangeKey <String>] [-ClassId <String>] [-Id <String>]
  [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserCalendarGroup -UserId <String> -BodyParameter <IMicrosoftGraphCalendarGroup> [-Confirm] [-WhatIf]
+New-MgBetaUserCalendarGroup -UserId <String> -BodyParameter <IMicrosoftGraphCalendarGroup> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserCalendarGroup -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphCalendarGroup>
+New-MgBetaUserCalendarGroup -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphCalendarGroup>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserCalendarGroup -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-Calendars <IMicrosoftGraphCalendar1[]>] [-ChangeKey <String>] [-ClassId <String>] [-Id <String>]
  [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,17 +43,17 @@ Use this API to create a new CalendarGroup.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserCalendarGroup Cmdlet
+### Example 1: Using the New-MgBetaUserCalendarGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	Name = "Personal events"
 }
 # A UPN can also be used as -UserId.
-New-MgUserCalendarGroup -UserId $userId -BodyParameter $params
+New-MgBetaUserCalendarGroup -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserCalendarGroup Cmdlet.
+This example shows how to use the New-MgBetaUserCalendarGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -78,7 +78,7 @@ calendarGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarGroup
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CALENDARS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendar1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -240,13 +240,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarGroup
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarGroup
 
 ## NOTES
 

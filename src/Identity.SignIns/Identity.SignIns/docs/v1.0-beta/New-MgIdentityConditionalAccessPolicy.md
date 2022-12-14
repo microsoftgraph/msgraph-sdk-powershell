@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityconditionalaccesspolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityconditionalaccesspolicy
 schema: 2.0.0
 ---
 
-# New-MgIdentityConditionalAccessPolicy
+# New-MgBetaIdentityConditionalAccessPolicy
 
 ## SYNOPSIS
 Create a new conditionalAccessPolicy.
@@ -14,7 +14,7 @@ Create a new conditionalAccessPolicy.
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityConditionalAccessPolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaIdentityConditionalAccessPolicy [-AdditionalProperties <Hashtable>]
  [-Conditions <IMicrosoftGraphConditionalAccessConditionSet1>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>]
  [-GrantControls <IMicrosoftGraphConditionalAccessGrantControls1>] [-Id <String>]
@@ -24,7 +24,7 @@ New-MgIdentityConditionalAccessPolicy [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgIdentityConditionalAccessPolicy -BodyParameter <IMicrosoftGraphConditionalAccessPolicy1> [-Confirm]
+New-MgBetaIdentityConditionalAccessPolicy -BodyParameter <IMicrosoftGraphConditionalAccessPolicy1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Create a new conditionalAccessPolicy.
 
 ### Example 1: Require MFA to access Exchange Online outside of trusted locations
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 
 $params = @{
@@ -73,7 +73,7 @@ $params = @{
    }
 }
 
-New-MgIdentityConditionalAccessPolicy -BodyParameter $params
+New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 
 Id                                   CreatedDateTime      Description DisplayName                ModifiedDateTime State
 --                                   ---------------      ----------- -----------                ---------------- -----
@@ -84,7 +84,7 @@ This example shows a request to require multi-factor authentication for access t
 
 ### Example 2: Block access to Exchange Online from non-trusted regions
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 $params = @{
   DisplayName = "Block access to EXO non-trusted regions."
@@ -117,7 +117,7 @@ $params = @{
     }
   }
 
-New-MgIdentityConditionalAccessPolicy -BodyParameter $params
+New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 
 Id                                   CreatedDateTime       Description DisplayName                              ModifiedDateTime State
 --                                   ---------------       ----------- -----------                              ---------------- -----
@@ -150,7 +150,7 @@ conditionalAccessPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicy1
 Parameter Sets: Create
 Aliases:
 
@@ -166,7 +166,7 @@ conditionalAccessConditionSet
 To construct, please use Get-Help -Online and see NOTES section for CONDITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessConditionSet1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessConditionSet1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -229,7 +229,7 @@ conditionalAccessGrantControls
 To construct, please use Get-Help -Online and see NOTES section for GRANTCONTROLS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessGrantControls1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessGrantControls1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -278,7 +278,7 @@ conditionalAccessSessionControls
 To construct, please use Get-Help -Online and see NOTES section for SESSIONCONTROLS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessSessionControls1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessSessionControls1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -340,11 +340,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicy1
 
 ## NOTES
 

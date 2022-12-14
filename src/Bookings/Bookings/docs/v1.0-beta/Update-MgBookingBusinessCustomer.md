@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/update-mgbookingbusinesscustomer
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/update-mgbookingbusinesscustomer
 schema: 2.0.0
 ---
 
-# Update-MgBookingBusinessCustomer
+# Update-MgBetaBookingBusinessCustomer
 
 ## SYNOPSIS
 Update the navigation property customers in bookingBusinesses
@@ -14,7 +14,7 @@ Update the navigation property customers in bookingBusinesses
 
 ### UpdateExpanded (Default)
 ```
-Update-MgBookingBusinessCustomer -BookingBusinessId <String> -BookingCustomerId <String>
+Update-MgBetaBookingBusinessCustomer -BookingBusinessId <String> -BookingCustomerId <String>
  [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphPhysicalAddress1[]>] [-DisplayName <String>]
  [-EmailAddress <String>] [-Id <String>] [-Phones <IMicrosoftGraphPhone[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgBookingBusinessCustomer -BookingBusinessId <String> -BookingCustomerId 
 
 ### Update
 ```
-Update-MgBookingBusinessCustomer -BookingBusinessId <String> -BookingCustomerId <String>
+Update-MgBetaBookingBusinessCustomer -BookingBusinessId <String> -BookingCustomerId <String>
  -BodyParameter <IMicrosoftGraphBookingCustomer> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity>
+Update-MgBetaBookingBusinessCustomer -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphBookingCustomer> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-Addresses <IMicrosoftGraphPhysicalAddress1[]>] [-DisplayName <String>] [-EmailAddress <String>]
  [-Id <String>] [-Phones <IMicrosoftGraphPhone[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -44,17 +44,17 @@ Update the navigation property customers in bookingBusinesses
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgBookingBusinessCustomer Cmdlet
+### Example 1: Using the Update-MgBetaBookingBusinessCustomer Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	DisplayName = "Adele"
 	EmailAddress = "adele@relecloud.com"
 }
-Update-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BookingCustomerId $bookingCustomerId -BodyParameter $params
+Update-MgBetaBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BookingCustomerId $bookingCustomerId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgBookingBusinessCustomer Cmdlet.
+This example shows how to use the Update-MgBetaBookingBusinessCustomer Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ Addresses associated with the customer, including home, business and other addre
 To construct, please use Get-Help -Online and see NOTES section for ADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -95,7 +95,7 @@ Represents a customer of the business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomer
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -187,7 +187,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -218,7 +218,7 @@ Phone numbers associated with the customer, including home, business and mobile 
 To construct, please use Get-Help -Online and see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhone[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -265,9 +265,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomer
 
 ## OUTPUTS
 

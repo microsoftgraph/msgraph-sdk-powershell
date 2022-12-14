@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityfilesecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityfilesecurityprofile
 schema: 2.0.0
 ---
 
-# New-MgSecurityFileSecurityProfile
+# New-MgBetaSecurityFileSecurityProfile
 
 ## SYNOPSIS
 Create new navigation property to fileSecurityProfiles for security
@@ -14,7 +14,7 @@ Create new navigation property to fileSecurityProfiles for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityFileSecurityProfile [-ActivityGroupNames <String[]>] [-AdditionalProperties <Hashtable>]
+New-MgBetaSecurityFileSecurityProfile [-ActivityGroupNames <String[]>] [-AdditionalProperties <Hashtable>]
  [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CertificateThumbprint <String>]
  [-Extensions <String[]>] [-FileType <String>] [-FirstSeenDateTime <DateTime>]
  [-Hashes <IMicrosoftGraphFileHash[]>] [-Id <String>] [-LastSeenDateTime <DateTime>]
@@ -25,7 +25,7 @@ New-MgSecurityFileSecurityProfile [-ActivityGroupNames <String[]>] [-AdditionalP
 
 ### Create
 ```
-New-MgSecurityFileSecurityProfile -BodyParameter <IMicrosoftGraphFileSecurityProfile> [-Confirm] [-WhatIf]
+New-MgBetaSecurityFileSecurityProfile -BodyParameter <IMicrosoftGraphFileSecurityProfile> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -101,7 +101,7 @@ fileSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
 Parameter Sets: Create
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for HASHES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileHash[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFileHash[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MALWARESTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMalwareState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMalwareState[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -300,7 +300,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for VULNERABILITYSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVulnerabilityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVulnerabilityState[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -363,11 +363,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
 
 ## NOTES
 

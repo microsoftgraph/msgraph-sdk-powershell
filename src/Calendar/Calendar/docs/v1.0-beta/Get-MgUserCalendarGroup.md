@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusercalendargroup
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusercalendargroup
 schema: 2.0.0
 ---
 
-# Get-MgUserCalendarGroup
+# Get-MgBetaUserCalendarGroup
 
 ## SYNOPSIS
 The user's calendar groups.
@@ -16,18 +16,18 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserCalendarGroup -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaUserCalendarGroup -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserCalendarGroup -CalendarGroupId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserCalendarGroup -CalendarGroupId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserCalendarGroup -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,24 +37,24 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserCalendarGroup Cmdlet
+### Example 1: Using the Get-MgBetaUserCalendarGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId
+Get-MgBetaUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId
 ```
 
-This example shows how to use the Get-MgUserCalendarGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserCalendarGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserCalendarGroup Cmdlet
+### Example 2: Using the Get-MgBetaUserCalendarGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserCalendarGroup -UserId $userId
+Get-MgBetaUserCalendarGroup -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserCalendarGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserCalendarGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -125,7 +125,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -231,11 +231,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarGroup
 
 ## NOTES
 

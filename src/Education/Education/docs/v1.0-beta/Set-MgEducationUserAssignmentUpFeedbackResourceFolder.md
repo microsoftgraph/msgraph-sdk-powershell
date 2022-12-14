@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationuserassignmentupfeedbackresourcefolder
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/set-mgeducationuserassignmentupfeedbackresourcefolder
 schema: 2.0.0
 ---
 
-# Set-MgEducationUserAssignmentUpFeedbackResourceFolder
+# Set-MgBetaEducationUserAssignmentUpFeedbackResourceFolder
 
 ## SYNOPSIS
 Create a SharePoint folder to upload feedback files for a given educationSubmission.
@@ -15,13 +15,13 @@ The teacher determines the resources to upload in the feedback resources folder 
 
 ### Set (Default)
 ```
-Set-MgEducationUserAssignmentUpFeedbackResourceFolder -EducationAssignmentId <String>
+Set-MgBetaEducationUserAssignmentUpFeedbackResourceFolder -EducationAssignmentId <String>
  -EducationUserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgEducationUserAssignmentUpFeedbackResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Set-MgBetaEducationUserAssignmentUpFeedbackResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -115,11 +115,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicyuploadeddefinitionfilegrouppolicyoperation
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicyuploadeddefinitionfilegrouppolicyoperation
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+# Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
 
 ## SYNOPSIS
 Update the navigation property groupPolicyOperations in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property groupPolicyOperations in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -GroupPolicyOperationId <String> -GroupPolicyUploadedDefinitionFileId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-OperationStatus <GroupPolicyOperationStatus>] [-OperationType <GroupPolicyOperationType>]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -GroupPolicyOperationId <String> -GroupPolicyUploadedDefinitionFileId <String>
  -BodyParameter <IMicrosoftGraphGroupPolicyOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -InputObject <IDeviceManagementAdministrationIdentity> -BodyParameter <IMicrosoftGraphGroupPolicyOperation>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+Update-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-OperationStatus <GroupPolicyOperationStatus>]
  [-OperationType <GroupPolicyOperationType>] [-StatusDetails <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -71,7 +71,7 @@ The entity represents an group policy operation.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 Type of Group Policy operation status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyOperationStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyOperationStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 Type of Group Policy operation.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyOperationType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyOperationType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -255,9 +255,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
 
 ## OUTPUTS
 

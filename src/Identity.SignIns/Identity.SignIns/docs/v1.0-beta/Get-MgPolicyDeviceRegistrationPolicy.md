@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicydeviceregistrationpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicydeviceregistrationpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyDeviceRegistrationPolicy
+# Get-MgBetaPolicyDeviceRegistrationPolicy
 
 ## SYNOPSIS
 Read the properties and relationships of a deviceRegistrationPolicy object.
@@ -14,7 +14,7 @@ Represents deviceRegistrationPolicy quota restrictions, additional authenticatio
 ## SYNTAX
 
 ```
-Get-MgPolicyDeviceRegistrationPolicy [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaPolicyDeviceRegistrationPolicy [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,13 +23,13 @@ Represents deviceRegistrationPolicy quota restrictions, additional authenticatio
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyDeviceRegistrationPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyDeviceRegistrationPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyDeviceRegistrationPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyDeviceRegistrationPolicy
 ```
 
-This example shows how to use the Get-MgPolicyDeviceRegistrationPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyDeviceRegistrationPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -71,7 +71,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceRegistrationPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceRegistrationPolicy
 
 ## NOTES
 

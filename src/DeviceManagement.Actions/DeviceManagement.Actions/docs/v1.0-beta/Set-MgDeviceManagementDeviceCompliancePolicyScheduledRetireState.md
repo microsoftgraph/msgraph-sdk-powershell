@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementdevicecompliancepolicyscheduledretirestate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementdevicecompliancepolicyscheduledretirestate
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementDeviceCompliancePolicyScheduledRetireState
+# Set-MgBetaDeviceManagementDeviceCompliancePolicyScheduledRetireState
 
 ## SYNOPSIS
 Invoke action setScheduledRetireState
@@ -14,14 +14,14 @@ Invoke action setScheduledRetireState
 
 ### SetExpanded (Default)
 ```
-Set-MgDeviceManagementDeviceCompliancePolicyScheduledRetireState [-AdditionalProperties <Hashtable>]
+Set-MgBetaDeviceManagementDeviceCompliancePolicyScheduledRetireState [-AdditionalProperties <Hashtable>]
  [-ManagedDeviceIds <String[]>] [-ScopedToAllDevices] [-State <ScheduledRetireState>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgDeviceManagementDeviceCompliancePolicyScheduledRetireState
+Set-MgBetaDeviceManagementDeviceCompliancePolicyScheduledRetireState
  -BodyParameter <IPathsZtf0R2DevicemanagementDevicecompliancepoliciesMicrosoftGraphSetscheduledretirestatePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZtf0R2DevicemanagementDevicecompliancepoliciesMicrosoftGraphSetscheduledretirestatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsZtf0R2DevicemanagementDevicecompliancepoliciesMicrosoftGraphSetscheduledretirestatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Set
 Aliases:
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 Cancel or confirm scheduled retire
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ScheduledRetireState
+Type: Microsoft.Graph.Beta.PowerShell.Support.ScheduledRetireState
 Parameter Sets: SetExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsZtf0R2DevicemanagementDevicecompliancepoliciesMicrosoftGraphSetscheduledretirestatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsZtf0R2DevicemanagementDevicecompliancepoliciesMicrosoftGraphSetscheduledretirestatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

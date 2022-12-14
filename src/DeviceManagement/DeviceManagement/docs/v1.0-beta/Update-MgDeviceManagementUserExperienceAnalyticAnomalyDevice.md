@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticanomalydevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticanomalydevice
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice
+# Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsAnomalyDevice in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsAnomalyDevice in deviceMan
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice -UserExperienceAnalyticsAnomalyDeviceId <String>
+Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice -UserExperienceAnalyticsAnomalyDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-AnomalyId <String>]
  [-AnomalyOnDeviceFirstOccurrenceDateTime <DateTime>] [-AnomalyOnDeviceLatestOccurrenceDateTime <DateTime>]
  [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice -UserExperienceAnal
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice -UserExperienceAnalyticsAnomalyDeviceId <String>
+Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice -UserExperienceAnalyticsAnomalyDeviceId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AnomalyId <String>]
  [-AnomalyOnDeviceFirstOccurrenceDateTime <DateTime>] [-AnomalyOnDeviceLatestOccurrenceDateTime <DateTime>]
  [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
@@ -116,7 +116,7 @@ The user experience analytics anomaly entity contains device details.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -208,7 +208,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -315,9 +315,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomalyDevice
 
 ## OUTPUTS
 

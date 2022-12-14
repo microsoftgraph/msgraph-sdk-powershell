@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupendpoint
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupendpoint
 schema: 2.0.0
 ---
 
-# New-MgGroupEndpoint
+# New-MgBetaGroupEndpoint
 
 ## SYNOPSIS
 Create new navigation property to endpoints for groups
@@ -14,26 +14,26 @@ Create new navigation property to endpoints for groups
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupEndpoint -GroupId <String> [-AdditionalProperties <Hashtable>] [-Capability <String>]
+New-MgBetaGroupEndpoint -GroupId <String> [-AdditionalProperties <Hashtable>] [-Capability <String>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-ProviderId <String>] [-ProviderName <String>]
  [-ProviderResourceId <String>] [-Uri <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupEndpoint -GroupId <String> -BodyParameter <IMicrosoftGraphEndpoint> [-Confirm] [-WhatIf]
+New-MgBetaGroupEndpoint -GroupId <String> -BodyParameter <IMicrosoftGraphEndpoint> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupEndpoint -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphEndpoint> [-Confirm]
+New-MgBetaGroupEndpoint -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphEndpoint> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupEndpoint -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Capability <String>]
+New-MgBetaGroupEndpoint -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Capability <String>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-ProviderId <String>] [-ProviderName <String>]
  [-ProviderResourceId <String>] [-Uri <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ endpoint
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEndpoint
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -261,13 +261,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEndpoint
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEndpoint
 
 ## NOTES
 

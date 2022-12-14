@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamprimarychannelemail
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamprimarychannelemail
 schema: 2.0.0
 ---
 
-# New-MgTeamPrimaryChannelEmail
+# New-MgBetaTeamPrimaryChannelEmail
 
 ## SYNOPSIS
 Provision an email address for a channel.
@@ -17,12 +17,12 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### Provision1 (Default)
 ```
-New-MgTeamPrimaryChannelEmail -TeamId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaTeamPrimaryChannelEmail -TeamId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ProvisionViaIdentity1
 ```
-New-MgTeamPrimaryChannelEmail -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaTeamPrimaryChannelEmail -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,12 +35,12 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 
-New-MgTeamChannelEmail -TeamId $teamId -ChannelId $channelId
+New-MgBetaTeamChannelEmail -TeamId $teamId -ChannelId $channelId
 ```
 
-This example shows how to use the New-MgTeamPrimaryChannelEmail Cmdlet.
+This example shows how to use the New-MgBetaTeamPrimaryChannelEmail Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: ProvisionViaIdentity1
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

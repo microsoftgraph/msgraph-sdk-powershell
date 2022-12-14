@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyserviceprincipalcreationpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyserviceprincipalcreationpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyServicePrincipalCreationPolicy
+# Get-MgBetaPolicyServicePrincipalCreationPolicy
 
 ## SYNOPSIS
 Get servicePrincipalCreationPolicies from policies
@@ -14,20 +14,20 @@ Get servicePrincipalCreationPolicies from policies
 
 ### List (Default)
 ```
-Get-MgPolicyServicePrincipalCreationPolicy [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPolicyServicePrincipalCreationPolicy [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyServicePrincipalCreationPolicy -ServicePrincipalCreationPolicyId <String>
+Get-MgBetaPolicyServicePrincipalCreationPolicy -ServicePrincipalCreationPolicyId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyServicePrincipalCreationPolicy -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaPolicyServicePrincipalCreationPolicy -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationPolicy
 
 ## NOTES
 

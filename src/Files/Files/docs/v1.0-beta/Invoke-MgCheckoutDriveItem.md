@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/invoke-mgcheckoutdriveitem
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/invoke-mgcheckoutdriveitem
 schema: 2.0.0
 ---
 
-# Invoke-MgCheckoutDriveItem
+# Invoke-MgBetaCheckoutDriveItem
 
 ## SYNOPSIS
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
@@ -14,13 +14,13 @@ Check out a **driveItem** resource to prevent others from editing the document, 
 
 ### Checkout (Default)
 ```
-Invoke-MgCheckoutDriveItem -DriveId <String> -DriveItemId <String> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaCheckoutDriveItem -DriveId <String> -DriveItemId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CheckoutViaIdentity
 ```
-Invoke-MgCheckoutDriveItem -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaCheckoutDriveItem -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,13 +28,13 @@ Check out a **driveItem** resource to prevent others from editing the document, 
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgCheckoutDriveItem Cmdlet
+### Example 1: Using the Invoke-MgBetaCheckoutDriveItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Invoke-MgCheckoutDriveItem -DriveId $driveId -DriveItemId $driveItemId
+Import-Module Microsoft.Graph.Beta.Files
+Invoke-MgBetaCheckoutDriveItem -DriveId $driveId -DriveItemId $driveItemId
 ```
 
-This example shows how to use the Invoke-MgCheckoutDriveItem Cmdlet.
+This example shows how to use the Invoke-MgBetaCheckoutDriveItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -74,7 +74,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: CheckoutViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

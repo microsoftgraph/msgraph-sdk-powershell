@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mginformationprotectionpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mginformationprotectionpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgInformationProtectionPolicy
+# Remove-MgBetaInformationProtectionPolicy
 
 ## SYNOPSIS
 Delete navigation property policy for informationProtection
@@ -13,7 +13,7 @@ Delete navigation property policy for informationProtection
 ## SYNTAX
 
 ```
-Remove-MgInformationProtectionPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaInformationProtectionPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/new-mgplannerbucket
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/new-mgplannerbucket
 schema: 2.0.0
 ---
 
-# New-MgPlannerBucket
+# New-MgBetaPlannerBucket
 
 ## SYNOPSIS
 Create a new plannerBucket object.
@@ -14,7 +14,7 @@ Create a new plannerBucket object.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgPlannerBucket [-AdditionalProperties <Hashtable>]
+New-MgBetaPlannerBucket [-AdditionalProperties <Hashtable>]
  [-CreationSource <IMicrosoftGraphPlannerBucketCreation>] [-Id <String>] [-Name <String>]
  [-OrderHint <String>] [-PlanId <String>] [-Tasks <IMicrosoftGraphPlannerTask1[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgPlannerBucket [-AdditionalProperties <Hashtable>]
 
 ### Create1
 ```
-New-MgPlannerBucket -BodyParameter <IMicrosoftGraphPlannerBucket1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPlannerBucket -BodyParameter <IMicrosoftGraphPlannerBucket1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,18 +30,18 @@ Create a new plannerBucket object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPlannerBucket Cmdlet
+### Example 1: Using the New-MgBetaPlannerBucket Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	Name = "Advertising"
 	PlanId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
 	OrderHint = " !"
 }
-New-MgPlannerBucket -BodyParameter $params
+New-MgBetaPlannerBucket -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPlannerBucket Cmdlet.
+This example shows how to use the New-MgBetaPlannerBucket Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -66,7 +66,7 @@ plannerBucket
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1
 Parameter Sets: Create1
 Aliases:
 
@@ -82,7 +82,7 @@ plannerBucketCreation
 To construct, please use Get-Help -Online and see NOTES section for CREATIONSOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucketCreation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucketCreation
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -162,7 +162,7 @@ The collection of tasks in the bucket.
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -209,11 +209,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1
 
 ## NOTES
 

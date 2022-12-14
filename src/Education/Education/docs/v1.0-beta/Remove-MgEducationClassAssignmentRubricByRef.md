@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationclassassignmentrubricbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationclassassignmentrubricbyref
 schema: 2.0.0
 ---
 
-# Remove-MgEducationClassAssignmentRubricByRef
+# Remove-MgBetaEducationClassAssignmentRubricByRef
 
 ## SYNOPSIS
 Delete ref of navigation property rubric for education
@@ -14,13 +14,13 @@ Delete ref of navigation property rubric for education
 
 ### Delete1 (Default)
 ```
-Remove-MgEducationClassAssignmentRubricByRef -EducationAssignmentId <String> -EducationClassId <String>
+Remove-MgBetaEducationClassAssignmentRubricByRef -EducationAssignmentId <String> -EducationClassId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property rubric for education
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEducationClassAssignmentRubricByRef Cmdlet
+### Example 1: Using the Remove-MgBetaEducationClassAssignmentRubricByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Import-Module Microsoft.Graph.Beta.Education
+Remove-MgBetaEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
 
-This example shows how to use the Remove-MgEducationClassAssignmentRubricByRef Cmdlet.
+This example shows how to use the Remove-MgBetaEducationClassAssignmentRubricByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

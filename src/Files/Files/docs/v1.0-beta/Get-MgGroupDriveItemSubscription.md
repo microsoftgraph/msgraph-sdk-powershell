@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mggroupdriveitemsubscription
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mggroupdriveitemsubscription
 schema: 2.0.0
 ---
 
-# Get-MgGroupDriveItemSubscription
+# Get-MgBetaGroupDriveItemSubscription
 
 ## SYNOPSIS
 The set of subscriptions on the item.
@@ -15,20 +15,20 @@ Only supported on the root of a drive.
 
 ### List1 (Default)
 ```
-Get-MgGroupDriveItemSubscription -DriveId <String> -DriveItemId <String> -GroupId <String>
+Get-MgBetaGroupDriveItemSubscription -DriveId <String> -DriveItemId <String> -GroupId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgGroupDriveItemSubscription -DriveId <String> -DriveItemId <String> -GroupId <String>
+Get-MgBetaGroupDriveItemSubscription -DriveId <String> -DriveItemId <String> -GroupId <String>
  -SubscriptionId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupDriveItemSubscription -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupDriveItemSubscription -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -272,11 +272,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscription1
 
 ## NOTES
 

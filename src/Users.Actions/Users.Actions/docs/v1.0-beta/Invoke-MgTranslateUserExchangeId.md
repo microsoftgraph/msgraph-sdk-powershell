@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgtranslateuserexchangeid
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgtranslateuserexchangeid
 schema: 2.0.0
 ---
 
-# Invoke-MgTranslateUserExchangeId
+# Invoke-MgBetaTranslateUserExchangeId
 
 ## SYNOPSIS
 Translate identifiers of Outlook-related resources between formats.
@@ -14,27 +14,27 @@ Translate identifiers of Outlook-related resources between formats.
 
 ### TranslateExpanded (Default)
 ```
-Invoke-MgTranslateUserExchangeId -UserId <String> [-AdditionalProperties <Hashtable>] [-InputIds <String[]>]
+Invoke-MgBetaTranslateUserExchangeId -UserId <String> [-AdditionalProperties <Hashtable>] [-InputIds <String[]>]
  [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Translate
 ```
-Invoke-MgTranslateUserExchangeId -UserId <String>
+Invoke-MgBetaTranslateUserExchangeId -UserId <String>
  -BodyParameter <IComponents1L8Ofp3RequestbodiesTranslateexchangeidsrequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TranslateViaIdentity
 ```
-Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaTranslateUserExchangeId -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents1L8Ofp3RequestbodiesTranslateexchangeidsrequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TranslateViaIdentityExpanded
 ```
-Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaTranslateUserExchangeId -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-InputIds <String[]>] [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -44,9 +44,9 @@ Translate identifiers of Outlook-related resources between formats.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgTranslateUserExchangeId Cmdlet
+### Example 1: Using the Invoke-MgBetaTranslateUserExchangeId Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	InputIds = @(
 		"{rest-formatted-id-1}"
@@ -56,10 +56,10 @@ $params = @{
 	TargetIdType = "restImmutableEntryId"
 }
 # A UPN can also be used as -UserId.
-Invoke-MgTranslateUserExchangeId -UserId $userId -BodyParameter $params
+Invoke-MgBetaTranslateUserExchangeId -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgTranslateUserExchangeId Cmdlet.
+This example shows how to use the Invoke-MgBetaTranslateUserExchangeId Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponents1L8Ofp3RequestbodiesTranslateexchangeidsrequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponents1L8Ofp3RequestbodiesTranslateexchangeidsrequestbodyContentApplicationJsonSchema
 Parameter Sets: Translate, TranslateViaIdentity
 Aliases:
 
@@ -115,7 +115,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: TranslateViaIdentity, TranslateViaIdentityExpanded
 Aliases:
 
@@ -207,13 +207,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponents1L8Ofp3RequestbodiesTranslateexchangeidsrequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IComponents1L8Ofp3RequestbodiesTranslateexchangeidsrequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConvertIdResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConvertIdResult
 
 ## NOTES
 

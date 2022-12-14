@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitepermission
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitepermission
 schema: 2.0.0
 ---
 
-# Get-MgSitePermission
+# Get-MgBetaSitePermission
 
 ## SYNOPSIS
 The permissions associated with the site.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgSitePermission -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSitePermission -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSitePermission -PermissionId <String> -SiteId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSitePermission -PermissionId <String> -SiteId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSitePermission -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSitePermission -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSitePermission Cmdlet
+### Example 1: Using the Get-MgBetaSitePermission Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSitePermission -SiteId $siteId -PermissionId $permissionId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId
 ```
 
-This example shows how to use the Get-MgSitePermission Cmdlet.
+This example shows how to use the Get-MgBetaSitePermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSitePermission Cmdlet
+### Example 2: Using the Get-MgBetaSitePermission Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSitePermission -SiteId $siteId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSitePermission -SiteId $siteId
 ```
 
-This example shows how to use the Get-MgSitePermission Cmdlet.
+This example shows how to use the Get-MgBetaSitePermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermission
 
 ## NOTES
 

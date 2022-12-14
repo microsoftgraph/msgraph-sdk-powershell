@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mggroupcalendarpermission
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mggroupcalendarpermission
 schema: 2.0.0
 ---
 
-# Get-MgGroupCalendarPermission
+# Get-MgBetaGroupCalendarPermission
 
 ## SYNOPSIS
 The permissions of the users with whom the calendar is shared.
@@ -14,19 +14,19 @@ The permissions of the users with whom the calendar is shared.
 
 ### List (Default)
 ```
-Get-MgGroupCalendarPermission -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaGroupCalendarPermission -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String> [-Property <String[]>]
+Get-MgBetaGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaGroupCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -208,11 +208,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarPermission
 
 ## NOTES
 

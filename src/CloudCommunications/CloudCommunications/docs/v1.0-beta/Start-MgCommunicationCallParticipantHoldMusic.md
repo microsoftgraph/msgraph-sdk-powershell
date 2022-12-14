@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/start-mgcommunicationcallparticipantholdmusic
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/start-mgcommunicationcallparticipantholdmusic
 schema: 2.0.0
 ---
 
-# Start-MgCommunicationCallParticipantHoldMusic
+# Start-MgBetaCommunicationCallParticipantHoldMusic
 
 ## SYNOPSIS
 Put a participant on hold and play music in the background.
@@ -14,28 +14,28 @@ Put a participant on hold and play music in the background.
 
 ### StartExpanded1 (Default)
 ```
-Start-MgCommunicationCallParticipantHoldMusic -CallId <String> -ParticipantId <String>
+Start-MgBetaCommunicationCallParticipantHoldMusic -CallId <String> -ParticipantId <String>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-CustomPrompt <Hashtable>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Start1
 ```
-Start-MgCommunicationCallParticipantHoldMusic -CallId <String> -ParticipantId <String>
+Start-MgBetaCommunicationCallParticipantHoldMusic -CallId <String> -ParticipantId <String>
  -BodyParameter <IPathsKtcw9WCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStartholdmusicPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StartViaIdentity1
 ```
-Start-MgCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicationsIdentity>
+Start-MgBetaCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPathsKtcw9WCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStartholdmusicPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StartViaIdentityExpanded1
 ```
-Start-MgCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicationsIdentity>
+Start-MgBetaCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-CustomPrompt <Hashtable>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -45,23 +45,23 @@ Put a participant on hold and play music in the background.
 
 ## EXAMPLES
 
-### Example 1: Using the Start-MgCommunicationCallParticipantHoldMusic Cmdlet
+### Example 1: Using the Start-MgBetaCommunicationCallParticipantHoldMusic Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	CustomPrompt = @{
-		"@odata.type" = "#microsoft.graph.mediaPrompt"
+		"@odata.type" = "#Microsoft.Graph.Beta.mediaPrompt"
 		MediaInfo = @{
-			"@odata.type" = "#microsoft.graph.mediaInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.mediaInfo"
 			Uri = "https://bot.contoso.com/onHold.wav"
 		}
 	}
 	ClientContext = "d45324c1-fcb5-430a-902c-f20af696537c"
 }
-Start-MgCommunicationCallParticipantHoldMusic -CallId $callId -ParticipantId $participantId -BodyParameter $params
+Start-MgBetaCommunicationCallParticipantHoldMusic -CallId $callId -ParticipantId $participantId -BodyParameter $params
 ```
 
-This example shows how to use the Start-MgCommunicationCallParticipantHoldMusic Cmdlet.
+This example shows how to use the Start-MgBetaCommunicationCallParticipantHoldMusic Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsKtcw9WCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStartholdmusicPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsKtcw9WCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStartholdmusicPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Start1, StartViaIdentity1
 Aliases:
 
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: StartViaIdentity1, StartViaIdentityExpanded1
 Aliases:
 
@@ -209,13 +209,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsKtcw9WCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStartholdmusicPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsKtcw9WCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStartholdmusicPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphStartHoldMusicOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphStartHoldMusicOperation
 
 ## NOTES
 

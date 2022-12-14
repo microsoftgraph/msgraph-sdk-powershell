@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/update-mgusermailfoldermessagesinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/update-mgusermailfoldermessagesinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Update-MgUserMailFolderMessageSingleValueExtendedProperty
+# Update-MgBetaUserMailFolderMessageSingleValueExtendedProperty
 
 ## SYNOPSIS
 Update the navigation property singleValueExtendedProperties in users
@@ -14,14 +14,14 @@ Update the navigation property singleValueExtendedProperties in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -MessageId <String>
+Update-MgBetaUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -MessageId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -MessageId <String>
+Update-MgBetaUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -MessageId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -29,14 +29,14 @@ Update-MgUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String>
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIdentity>
+Update-MgBetaUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIdentity>
+Update-MgBetaUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ singleValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -237,9 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## OUTPUTS
 

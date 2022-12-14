@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprivilegedaccessresourcerolesettingroledefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgprivilegedaccessresourcerolesettingroledefinition
 schema: 2.0.0
 ---
 
-# Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition
+# Update-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition
 
 ## SYNOPSIS
 Update the navigation property roleDefinition in privilegedAccess
@@ -14,7 +14,7 @@ Update the navigation property roleDefinition in privilegedAccess
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition -GovernanceResourceId <String>
+Update-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition -GovernanceResourceId <String>
  -GovernanceRoleSettingId <String> -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-ExternalId <String>] [-Id <String>] [-Resource <IMicrosoftGraphGovernanceResource>]
  [-ResourceId <String>] [-RoleSetting <IMicrosoftGraphGovernanceRoleSetting>] [-TemplateId <String>]
@@ -23,7 +23,7 @@ Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition -GovernanceResourceId
 
 ### Update
 ```
-Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition -GovernanceResourceId <String>
+Update-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition -GovernanceResourceId <String>
  -GovernanceRoleSettingId <String> -PrivilegedAccessId <String>
  -BodyParameter <IMicrosoftGraphGovernanceRoleDefinition> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -31,14 +31,14 @@ Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition -GovernanceResourceId
 
 ### UpdateViaIdentity
 ```
-Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphGovernanceRoleDefinition> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ExternalId <String>] [-Id <String>]
  [-Resource <IMicrosoftGraphGovernanceResource>] [-ResourceId <String>]
  [-RoleSetting <IMicrosoftGraphGovernanceRoleSetting>] [-TemplateId <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -72,7 +72,7 @@ governanceRoleDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -164,7 +164,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -210,7 +210,7 @@ governanceResource
 To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -242,7 +242,7 @@ governanceRoleSetting
 To construct, please use Get-Help -Online and see NOTES section for ROLESETTING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -304,9 +304,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
 
 ## OUTPUTS
 

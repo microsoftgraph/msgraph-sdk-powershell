@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgmutecommunicationcall
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mgmutecommunicationcall
 schema: 2.0.0
 ---
 
-# Invoke-MgMuteCommunicationCall
+# Invoke-MgBetaMuteCommunicationCall
 
 ## SYNOPSIS
 Allows the application to mute itself.
@@ -16,27 +16,27 @@ For more details about how to handle mute operations, see muteParticipantOperati
 
 ### MuteExpanded1 (Default)
 ```
-Invoke-MgMuteCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>] [-ClientContext <String>]
+Invoke-MgBetaMuteCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>] [-ClientContext <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Mute1
 ```
-Invoke-MgMuteCommunicationCall -CallId <String>
+Invoke-MgBetaMuteCommunicationCall -CallId <String>
  -BodyParameter <IPaths13Zt223CommunicationsCallsCallIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MuteViaIdentity1
 ```
-Invoke-MgMuteCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaMuteCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths13Zt223CommunicationsCallsCallIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MuteViaIdentityExpanded1
 ```
-Invoke-MgMuteCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaMuteCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,16 +47,16 @@ For more details about how to handle mute operations, see muteParticipantOperati
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgMuteCommunicationCall Cmdlet
+### Example 1: Using the Invoke-MgBetaMuteCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	ClientContext = "clientContext-value"
 }
-Invoke-MgMuteCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaMuteCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgMuteCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaMuteCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths13Zt223CommunicationsCallsCallIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths13Zt223CommunicationsCallsCallIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Mute1, MuteViaIdentity1
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: MuteViaIdentity1, MuteViaIdentityExpanded1
 Aliases:
 
@@ -174,13 +174,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths13Zt223CommunicationsCallsCallIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths13Zt223CommunicationsCallsCallIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMuteParticipantOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMuteParticipantOperation
 
 ## NOTES
 

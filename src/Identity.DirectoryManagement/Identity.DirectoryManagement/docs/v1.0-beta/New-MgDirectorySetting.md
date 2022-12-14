@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectorysetting
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectorysetting
 schema: 2.0.0
 ---
 
-# New-MgDirectorySetting
+# New-MgBetaDirectorySetting
 
 ## SYNOPSIS
 Create a new setting based on the templates available in directorySettingTemplates.
@@ -17,13 +17,13 @@ The template named `Group.Unified` can be used to configure tenant-wide Microsof
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectorySetting [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+New-MgBetaDirectorySetting [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-TemplateId <String>] [-Values <IMicrosoftGraphSettingValue[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectorySetting -BodyParameter <IMicrosoftGraphDirectorySetting> [-Confirm] [-WhatIf]
+New-MgBetaDirectorySetting -BodyParameter <IMicrosoftGraphDirectorySetting> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -35,9 +35,9 @@ The template named `Group.Unified` can be used to configure tenant-wide Microsof
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDirectorySetting Cmdlet
+### Example 1: Using the New-MgBetaDirectorySetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	TemplateId = "62375ab9-6b52-47ed-826b-58e47e0e304b"
 	Values = @(
@@ -59,10 +59,10 @@ $params = @{
 		}
 	)
 }
-New-MgDirectorySetting -BodyParameter $params
+New-MgBetaDirectorySetting -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDirectorySetting Cmdlet.
+This example shows how to use the New-MgBetaDirectorySetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -87,7 +87,7 @@ directorySetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 Parameter Sets: Create
 Aliases:
 
@@ -151,7 +151,7 @@ Collection of name-value pairs corresponding to the name and defaultValue proper
 To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingValue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingValue[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -198,11 +198,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 
 ## NOTES
 

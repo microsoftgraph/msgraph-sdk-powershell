@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsiterecentnotebook
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsiterecentnotebook
 schema: 2.0.0
 ---
 
-# Get-MgSiteRecentNotebook
+# Get-MgBetaSiteRecentNotebook
 
 ## SYNOPSIS
 Invoke function getRecentNotebooks
@@ -14,13 +14,13 @@ Invoke function getRecentNotebooks
 
 ### Get (Default)
 ```
-Get-MgSiteRecentNotebook -IncludePersonalNotebooks -SiteId <String> [-Count] [-Filter <String>]
+Get-MgBetaSiteRecentNotebook -IncludePersonalNotebooks -SiteId <String> [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteRecentNotebook -InputObject <ISitesIdentity> [-Count] [-Filter <String>] [-Search <String>]
+Get-MgBetaSiteRecentNotebook -InputObject <ISitesIdentity> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -157,11 +157,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecentNotebook
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecentNotebook
 
 ## NOTES
 

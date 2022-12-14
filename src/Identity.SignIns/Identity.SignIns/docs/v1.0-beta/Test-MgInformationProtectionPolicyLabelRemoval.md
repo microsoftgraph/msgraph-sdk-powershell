@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/test-mginformationprotectionpolicylabelremoval
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/test-mginformationprotectionpolicylabelremoval
 schema: 2.0.0
 ---
 
-# Test-MgInformationProtectionPolicyLabelRemoval
+# Test-MgBetaInformationProtectionPolicyLabelRemoval
 
 ## SYNOPSIS
 Indicate to the consuming application what actions it should take to remove the label information.
@@ -15,14 +15,14 @@ Given contentInfo as an input, which includes existing content metadata key/valu
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgInformationProtectionPolicyLabelRemoval [-AdditionalProperties <Hashtable>]
+Test-MgBetaInformationProtectionPolicyLabelRemoval [-AdditionalProperties <Hashtable>]
  [-ContentInfo <IMicrosoftGraphContentInfo>] [-DowngradeJustification <IMicrosoftGraphDowngradeJustification>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Evaluate
 ```
-Test-MgInformationProtectionPolicyLabelRemoval
+Test-MgBetaInformationProtectionPolicyLabelRemoval
  -BodyParameter <IPathsZ22GcjInformationprotectionPolicyLabelsMicrosoftGraphEvaluateremovalPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -33,51 +33,51 @@ Given contentInfo as an input, which includes existing content metadata key/valu
 
 ## EXAMPLES
 
-### Example 1: Using the Test-MgInformationProtectionPolicyLabelRemoval Cmdlet
+### Example 1: Using the Test-MgBetaInformationProtectionPolicyLabelRemoval Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ContentInfo = @{
-		"@odata.type" = "#microsoft.graph.contentInfo"
-		"Format@odata.type" = "#microsoft.graph.contentFormat"
+		"@odata.type" = "#Microsoft.Graph.Beta.contentInfo"
+		"Format@odata.type" = "#Microsoft.Graph.Beta.contentFormat"
 		Format = "default"
 		Identifier = $null
-		"State@odata.type" = "#microsoft.graph.contentState"
+		"State@odata.type" = "#Microsoft.Graph.Beta.contentState"
 		State = "rest"
-		"Metadata@odata.type" = "#Collection(microsoft.graph.keyValuePair)"
+		"Metadata@odata.type" = "#Collection(Microsoft.Graph.Beta.keyValuePair)"
 		Metadata = @(
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Enabled"
 				Value = "True"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Method"
 				Value = "Standard"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_SetDate"
 				Value = "1/1/0001 12:00:00 AM"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_SiteId"
 				Value = "cfa4cf1d-a337-4481-aa99-19d8f3d63f7c"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_Name"
 				Value = "General"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_ContentBits"
 				Value = "0"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.keyValuePair"
 				Name = "MSIP_Label_722a5300-ac39-4c9a-88e3-f54c46676417_ActionId"
 				Value = "00000000-0000-0000-0000-000000000000"
 			}
@@ -88,10 +88,10 @@ $params = @{
 		IsDowngradeJustified = $true
 	}
 }
-Test-MgInformationProtectionPolicyLabelRemoval -BodyParameter $params
+Test-MgBetaInformationProtectionPolicyLabelRemoval -BodyParameter $params
 ```
 
-This example shows how to use the Test-MgInformationProtectionPolicyLabelRemoval Cmdlet.
+This example shows how to use the Test-MgBetaInformationProtectionPolicyLabelRemoval Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZ22GcjInformationprotectionPolicyLabelsMicrosoftGraphEvaluateremovalPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsZ22GcjInformationprotectionPolicyLabelsMicrosoftGraphEvaluateremovalPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate
 Aliases:
 
@@ -132,7 +132,7 @@ contentInfo
 To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentInfo
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ downgradeJustification
 To construct, please use Get-Help -Online and see NOTES section for DOWNGRADEJUSTIFICATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDowngradeJustification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDowngradeJustification
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -195,11 +195,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsZ22GcjInformationprotectionPolicyLabelsMicrosoftGraphEvaluateremovalPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsZ22GcjInformationprotectionPolicyLabelsMicrosoftGraphEvaluateremovalPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionAction
 
 ## NOTES
 

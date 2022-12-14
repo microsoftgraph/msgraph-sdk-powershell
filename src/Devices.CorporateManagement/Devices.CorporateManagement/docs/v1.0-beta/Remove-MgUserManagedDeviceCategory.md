@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermanageddevicecategory
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/remove-mgusermanageddevicecategory
 schema: 2.0.0
 ---
 
-# Remove-MgUserManagedDeviceCategory
+# Remove-MgBetaUserManagedDeviceCategory
 
 ## SYNOPSIS
 Delete navigation property deviceCategory for users
@@ -14,13 +14,13 @@ Delete navigation property deviceCategory for users
 
 ### Delete (Default)
 ```
-Remove-MgUserManagedDeviceCategory -ManagedDeviceId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserManagedDeviceCategory -ManagedDeviceId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserManagedDeviceCategory -InputObject <IDevicesCorporateManagementIdentity> [-IfMatch <String>]
+Remove-MgBetaUserManagedDeviceCategory -InputObject <IDevicesCorporateManagementIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 

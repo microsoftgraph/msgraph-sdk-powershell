@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupextension
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupextension
 schema: 2.0.0
 ---
 
-# New-MgGroupExtension
+# New-MgBetaGroupExtension
 
 ## SYNOPSIS
 Create new navigation property to extensions for groups
@@ -14,24 +14,24 @@ Create new navigation property to extensions for groups
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupExtension -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
+New-MgBetaGroupExtension -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupExtension -GroupId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaGroupExtension -GroupId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaGroupExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaGroupExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -155,7 +155,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ### System.Collections.Hashtable
 

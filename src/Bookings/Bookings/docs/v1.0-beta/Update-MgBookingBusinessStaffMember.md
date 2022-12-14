@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/update-mgbookingbusinessstaffmember
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/update-mgbookingbusinessstaffmember
 schema: 2.0.0
 ---
 
-# Update-MgBookingBusinessStaffMember
+# Update-MgBetaBookingBusinessStaffMember
 
 ## SYNOPSIS
 Update the navigation property staffMembers in bookingBusinesses
@@ -14,7 +14,7 @@ Update the navigation property staffMembers in bookingBusinesses
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
+Update-MgBetaBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
  [-AdditionalProperties <Hashtable>] [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>]
  [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled]
  [-Role <String>] [-TimeZone <String>] [-UseBusinessHours]
@@ -23,19 +23,19 @@ Update-MgBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMem
 
 ### Update1
 ```
-Update-MgBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
+Update-MgBetaBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
  -BodyParameter <IMicrosoftGraphBookingStaffMember> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity>
+Update-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphBookingStaffMember> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
  [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled] [-Role <String>] [-TimeZone <String>]
  [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours1[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -47,66 +47,66 @@ Update the navigation property staffMembers in bookingBusinesses
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgBookingBusinessStaffMember Cmdlet
+### Example 1: Using the Update-MgBetaBookingBusinessStaffMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	WorkingHours = @(
 		@{
-			"@odata.type" = "#microsoft.graph.bookingWorkHours"
-			"Day@odata.type" = "#microsoft.graph.dayOfWeek"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkHours"
+			"Day@odata.type" = "#Microsoft.Graph.Beta.dayOfWeek"
 			Day = "monday"
-			"TimeSlots@odata.type" = "#Collection(microsoft.graph.bookingWorkTimeSlot)"
+			"TimeSlots@odata.type" = "#Collection(Microsoft.Graph.Beta.bookingWorkTimeSlot)"
 			TimeSlots = @(
 			)
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.bookingWorkHours"
-			"Day@odata.type" = "#microsoft.graph.dayOfWeek"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkHours"
+			"Day@odata.type" = "#Microsoft.Graph.Beta.dayOfWeek"
 			Day = "tuesday"
-			"TimeSlots@odata.type" = "#Collection(microsoft.graph.bookingWorkTimeSlot)"
+			"TimeSlots@odata.type" = "#Collection(Microsoft.Graph.Beta.bookingWorkTimeSlot)"
 			TimeSlots = @(
 				@{
-					"@odata.type" = "#microsoft.graph.bookingWorkTimeSlot"
+					"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkTimeSlot"
 					End = "17:00:00.0000000"
 					Start = "08:00:00.0000000"
 				}
 			)
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.bookingWorkHours"
-			"Day@odata.type" = "#microsoft.graph.dayOfWeek"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkHours"
+			"Day@odata.type" = "#Microsoft.Graph.Beta.dayOfWeek"
 			Day = "wednesday"
-			"TimeSlots@odata.type" = "#Collection(microsoft.graph.bookingWorkTimeSlot)"
+			"TimeSlots@odata.type" = "#Collection(Microsoft.Graph.Beta.bookingWorkTimeSlot)"
 			TimeSlots = @(
 				@{
-					"@odata.type" = "#microsoft.graph.bookingWorkTimeSlot"
+					"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkTimeSlot"
 					End = "17:00:00.0000000"
 					Start = "08:00:00.0000000"
 				}
 			)
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.bookingWorkHours"
-			"Day@odata.type" = "#microsoft.graph.dayOfWeek"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkHours"
+			"Day@odata.type" = "#Microsoft.Graph.Beta.dayOfWeek"
 			Day = "thursday"
-			"TimeSlots@odata.type" = "#Collection(microsoft.graph.bookingWorkTimeSlot)"
+			"TimeSlots@odata.type" = "#Collection(Microsoft.Graph.Beta.bookingWorkTimeSlot)"
 			TimeSlots = @(
 				@{
-					"@odata.type" = "#microsoft.graph.bookingWorkTimeSlot"
+					"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkTimeSlot"
 					End = "17:00:00.0000000"
 					Start = "08:00:00.0000000"
 				}
 			)
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.bookingWorkHours"
-			"Day@odata.type" = "#microsoft.graph.dayOfWeek"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkHours"
+			"Day@odata.type" = "#Microsoft.Graph.Beta.dayOfWeek"
 			Day = "friday"
-			"TimeSlots@odata.type" = "#Collection(microsoft.graph.bookingWorkTimeSlot)"
+			"TimeSlots@odata.type" = "#Collection(Microsoft.Graph.Beta.bookingWorkTimeSlot)"
 			TimeSlots = @(
 				@{
-					"@odata.type" = "#microsoft.graph.bookingWorkTimeSlot"
+					"@odata.type" = "#Microsoft.Graph.Beta.bookingWorkTimeSlot"
 					End = "17:00:00.0000000"
 					Start = "08:00:00.0000000"
 				}
@@ -114,10 +114,10 @@ $params = @{
 		}
 	)
 }
-Update-MgBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BookingStaffMemberId $bookingStaffMemberId -BodyParameter $params
+Update-MgBetaBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BookingStaffMemberId $bookingStaffMemberId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgBookingBusinessStaffMember Cmdlet.
+This example shows how to use the Update-MgBetaBookingBusinessStaffMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -157,7 +157,7 @@ Represents a staff member who provides services in a business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingStaffMember
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingStaffMember
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -265,7 +265,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -359,7 +359,7 @@ By default, they are initialized to be the same as the businessHours property of
 To construct, please use Get-Help -Online and see NOTES section for WORKINGHOURS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingWorkHours1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingWorkHours1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -406,9 +406,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingStaffMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingStaffMember
 
 ## OUTPUTS
 

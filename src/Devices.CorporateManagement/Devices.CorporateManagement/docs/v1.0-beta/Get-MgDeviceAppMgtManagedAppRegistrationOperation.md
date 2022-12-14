@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmanagedappregistrationoperation
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmanagedappregistrationoperation
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtManagedAppRegistrationOperation
+# Get-MgBetaDeviceAppMgtManagedAppRegistrationOperation
 
 ## SYNOPSIS
 Zero or more long running operations triggered on the app registration.
@@ -14,20 +14,20 @@ Zero or more long running operations triggered on the app registration.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtManagedAppRegistrationOperation -ManagedAppRegistrationId <String>
+Get-MgBetaDeviceAppMgtManagedAppRegistrationOperation -ManagedAppRegistrationId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtManagedAppRegistrationOperation -ManagedAppOperationId <String>
+Get-MgBetaDeviceAppMgtManagedAppRegistrationOperation -ManagedAppOperationId <String>
  -ManagedAppRegistrationId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtManagedAppRegistrationOperation -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtManagedAppRegistrationOperation -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,17 +240,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppOperation
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementManagedAppRegistrationOperation
+### Get-MgBetaDeviceAppManagementManagedAppRegistrationOperation
 
 COMPLEX PARAMETER PROPERTIES
 

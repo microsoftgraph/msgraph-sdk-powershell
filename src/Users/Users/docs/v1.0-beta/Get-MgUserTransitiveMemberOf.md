@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertransitivememberof
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusertransitivememberof
 schema: 2.0.0
 ---
 
-# Get-MgUserTransitiveMemberOf
+# Get-MgBetaUserTransitiveMemberOf
 
 ## SYNOPSIS
 The groups, including nested groups, and directory roles that a user is a member of.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserTransitiveMemberOf -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserTransitiveMemberOf -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserTransitiveMemberOf -DirectoryObjectId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserTransitiveMemberOf -DirectoryObjectId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserTransitiveMemberOf -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserTransitiveMemberOf -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -38,13 +38,13 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTransitiveMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaUserTransitiveMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
-Get-MgUserTransitiveMemberOf -UserId $userId
+Import-Module Microsoft.Graph.Beta.Users
+Get-MgBetaUserTransitiveMemberOf -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserTransitiveMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaUserTransitiveMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -267,11 +267,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

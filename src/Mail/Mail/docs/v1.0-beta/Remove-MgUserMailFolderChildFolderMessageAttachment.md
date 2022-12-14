@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/remove-mgusermailfolderchildfoldermessageattachment
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/remove-mgusermailfolderchildfoldermessageattachment
 schema: 2.0.0
 ---
 
-# Remove-MgUserMailFolderChildFolderMessageAttachment
+# Remove-MgBetaUserMailFolderChildFolderMessageAttachment
 
 ## SYNOPSIS
 Delete navigation property attachments for users
@@ -14,14 +14,14 @@ Delete navigation property attachments for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserMailFolderChildFolderMessageAttachment -AttachmentId <String> -MailFolderId <String>
+Remove-MgBetaUserMailFolderChildFolderMessageAttachment -AttachmentId <String> -MailFolderId <String>
  -MailFolderId1 <String> -MessageId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserMailFolderChildFolderMessageAttachment -InputObject <IMailIdentity> [-IfMatch <String>]
+Remove-MgBetaUserMailFolderChildFolderMessageAttachment -InputObject <IMailIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 

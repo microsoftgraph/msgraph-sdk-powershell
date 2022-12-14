@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementintentsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementintentsetting
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementIntentSetting
+# Update-MgBetaDeviceManagementIntentSetting
 
 ## SYNOPSIS
 Update the navigation property settings in deviceManagement
@@ -14,28 +14,28 @@ Update the navigation property settings in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementIntentSetting -DeviceManagementIntentId <String>
+Update-MgBetaDeviceManagementIntentSetting -DeviceManagementIntentId <String>
  -DeviceManagementSettingInstanceId <String> [-AdditionalProperties <Hashtable>] [-DefinitionId <String>]
  [-Id <String>] [-ValueJson <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementIntentSetting -DeviceManagementIntentId <String>
+Update-MgBetaDeviceManagementIntentSetting -DeviceManagementIntentId <String>
  -DeviceManagementSettingInstanceId <String> -BodyParameter <IMicrosoftGraphDeviceManagementSettingInstance>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementIntentSetting -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementIntentSetting -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementSettingInstance> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementIntentSetting -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementIntentSetting -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DefinitionId <String>] [-Id <String>] [-ValueJson <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Base type for a setting instance
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -221,9 +221,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
 
 ## OUTPUTS
 

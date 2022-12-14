@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbaseline
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbaseline
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticBaseline
+# Update-MgBetaDeviceManagementUserExperienceAnalyticBaseline
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsBaselines in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsBaselines in deviceManagem
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBaseline -UserExperienceAnalyticsBaselineId <String>
+Update-MgBetaDeviceManagementUserExperienceAnalyticBaseline -UserExperienceAnalyticsBaselineId <String>
  [-AdditionalProperties <Hashtable>] [-AppHealthMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]
  [-BatteryHealthMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]
  [-BestPracticesMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>] [-CreatedDateTime <DateTime>]
@@ -27,21 +27,21 @@ Update-MgDeviceManagementUserExperienceAnalyticBaseline -UserExperienceAnalytics
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBaseline -UserExperienceAnalyticsBaselineId <String>
+Update-MgBetaDeviceManagementUserExperienceAnalyticBaseline -UserExperienceAnalyticsBaselineId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBaseline> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBaseline -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticBaseline -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBaseline> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBaseline -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticBaseline -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AppHealthMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]
  [-BatteryHealthMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]
  [-BestPracticesMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>] [-CreatedDateTime <DateTime>]
@@ -79,7 +79,7 @@ The user experience analytics category entity contains the scores and insights f
 To construct, please use Get-Help -Online and see NOTES section for APPHEALTHMETRICS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -95,7 +95,7 @@ The user experience analytics category entity contains the scores and insights f
 To construct, please use Get-Help -Online and see NOTES section for BATTERYHEALTHMETRICS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -111,7 +111,7 @@ The user experience analytics category entity contains the scores and insights f
 To construct, please use Get-Help -Online and see NOTES section for BESTPRACTICESMETRICS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -127,7 +127,7 @@ The user experience analytics baseline entity contains baseline values against w
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBaseline
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBaseline
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ The user experience analytics category entity contains the scores and insights f
 To construct, please use Get-Help -Online and see NOTES section for DEVICEBOOTPERFORMANCEMETRICS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -205,7 +205,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -251,7 +251,7 @@ The user experience analytics category entity contains the scores and insights f
 To construct, please use Get-Help -Online and see NOTES section for REBOOTANALYTICSMETRICS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -267,7 +267,7 @@ The user experience analytics category entity contains the scores and insights f
 To construct, please use Get-Help -Online and see NOTES section for RESOURCEPERFORMANCEMETRICS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -298,7 +298,7 @@ The user experience analytics category entity contains the scores and insights f
 To construct, please use Get-Help -Online and see NOTES section for WORKFROMANYWHEREMETRICS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -345,9 +345,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBaseline
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBaseline
 
 ## OUTPUTS
 

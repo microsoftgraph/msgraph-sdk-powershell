@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementassignmentfilter
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementassignmentfilter
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementAssignmentFilter
+# Update-MgBetaDeviceManagementAssignmentFilter
 
 ## SYNOPSIS
 Update the navigation property assignmentFilters in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property assignmentFilters in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementAssignmentFilter -DeviceAndAppManagementAssignmentFilterId <String>
+Update-MgBetaDeviceManagementAssignmentFilter -DeviceAndAppManagementAssignmentFilterId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Payloads <IMicrosoftGraphPayloadByFilter[]>] [-Platform <DevicePlatformType>] [-RoleScopeTags <String[]>]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementAssignmentFilter -DeviceAndAppManagementAssignmentFilte
 
 ### Update
 ```
-Update-MgDeviceManagementAssignmentFilter -DeviceAndAppManagementAssignmentFilterId <String>
+Update-MgBetaDeviceManagementAssignmentFilter -DeviceAndAppManagementAssignmentFilterId <String>
  -BodyParameter <IMicrosoftGraphDeviceAndAppManagementAssignmentFilter> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementAssignmentFilter -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementAssignmentFilter -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceAndAppManagementAssignmentFilter> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementAssignmentFilter -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementAssignmentFilter -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Payloads <IMicrosoftGraphPayloadByFilter[]>] [-Platform <DevicePlatformType>] [-RoleScopeTags <String[]>]
@@ -71,7 +71,7 @@ A class containing the properties used for Assignment Filter.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -209,7 +209,7 @@ Associated assignments for a specific filter
 To construct, please use Get-Help -Online and see NOTES section for PAYLOADS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPayloadByFilter[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPayloadByFilter[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 Supported platform types.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DevicePlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DevicePlatformType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -301,9 +301,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
 
 ## OUTPUTS
 

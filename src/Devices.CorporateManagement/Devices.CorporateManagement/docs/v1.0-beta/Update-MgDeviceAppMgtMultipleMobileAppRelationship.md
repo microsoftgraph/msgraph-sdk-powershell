@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmultiplemobileapprelationship
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmultiplemobileapprelationship
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMultipleMobileAppRelationship
+# Update-MgBetaDeviceAppMgtMultipleMobileAppRelationship
 
 ## SYNOPSIS
 Invoke action updateRelationships
@@ -14,28 +14,28 @@ Invoke action updateRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtMultipleMobileAppRelationship -MobileAppId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtMultipleMobileAppRelationship -MobileAppId <String> [-AdditionalProperties <Hashtable>]
  [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceAppMgtMultipleMobileAppRelationship -MobileAppId <String>
+Update-MgBetaDeviceAppMgtMultipleMobileAppRelationship -MobileAppId <String>
  -BodyParameter <IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtMultipleMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMultipleMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtMultipleMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMultipleMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for RELATIONSHIPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationship[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppRelationship[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -176,9 +176,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -188,7 +188,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementMultipleMobileAppRelationship
+### Update-MgBetaDeviceAppManagementMultipleMobileAppRelationship
 
 COMPLEX PARAMETER PROPERTIES
 

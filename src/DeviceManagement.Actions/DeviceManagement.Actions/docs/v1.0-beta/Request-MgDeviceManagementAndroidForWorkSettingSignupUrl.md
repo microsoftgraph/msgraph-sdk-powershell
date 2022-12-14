@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/request-mgdevicemanagementandroidforworksettingsignupurl
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/request-mgdevicemanagementandroidforworksettingsignupurl
 schema: 2.0.0
 ---
 
-# Request-MgDeviceManagementAndroidForWorkSettingSignupUrl
+# Request-MgBetaDeviceManagementAndroidForWorkSettingSignupUrl
 
 ## SYNOPSIS
 Invoke action requestSignupUrl
@@ -14,13 +14,13 @@ Invoke action requestSignupUrl
 
 ### RequestExpanded (Default)
 ```
-Request-MgDeviceManagementAndroidForWorkSettingSignupUrl [-AdditionalProperties <Hashtable>]
+Request-MgBetaDeviceManagementAndroidForWorkSettingSignupUrl [-AdditionalProperties <Hashtable>]
  [-HostName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Request
 ```
-Request-MgDeviceManagementAndroidForWorkSettingSignupUrl
+Request-MgBetaDeviceManagementAndroidForWorkSettingSignupUrl
  -BodyParameter <IPaths4D3Ll5DevicemanagementAndroidforworksettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths4D3Ll5DevicemanagementAndroidforworksettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths4D3Ll5DevicemanagementAndroidforworksettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Request
 Aliases:
 
@@ -114,7 +114,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths4D3Ll5DevicemanagementAndroidforworksettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths4D3Ll5DevicemanagementAndroidforworksettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

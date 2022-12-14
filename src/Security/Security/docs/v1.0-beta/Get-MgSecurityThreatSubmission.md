@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritythreatsubmission
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritythreatsubmission
 schema: 2.0.0
 ---
 
-# Get-MgSecurityThreatSubmission
+# Get-MgBetaSecurityThreatSubmission
 
 ## SYNOPSIS
 A threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
@@ -13,7 +13,7 @@ A threat submission sent to Microsoft; for example, a suspicious email threat, U
 ## SYNTAX
 
 ```
-Get-MgSecurityThreatSubmission [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSecurityThreatSubmission [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityThreatSubmissionRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityThreatSubmissionRoot
 
 ## NOTES
 

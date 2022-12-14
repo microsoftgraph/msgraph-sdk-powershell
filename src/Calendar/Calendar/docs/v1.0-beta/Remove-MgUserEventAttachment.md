@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mgusereventattachment
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mgusereventattachment
 schema: 2.0.0
 ---
 
-# Remove-MgUserEventAttachment
+# Remove-MgBetaUserEventAttachment
 
 ## SYNOPSIS
 Delete navigation property attachments for users
@@ -14,13 +14,13 @@ Delete navigation property attachments for users
 
 ### Delete (Default)
 ```
-Remove-MgUserEventAttachment -AttachmentId <String> -EventId <String> -UserId <String> [-IfMatch <String>]
+Remove-MgBetaUserEventAttachment -AttachmentId <String> -EventId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserEventAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserEventAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property attachments for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserEventAttachment Cmdlet
+### Example 1: Using the Remove-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Remove-MgUserEventAttachment -UserId $userId -EventId $eventId -AttachmentId $attachmentId
+Remove-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -AttachmentId $attachmentId
 ```
 
-This example shows how to use the Remove-MgUserEventAttachment Cmdlet.
+This example shows how to use the Remove-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -168,7 +168,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

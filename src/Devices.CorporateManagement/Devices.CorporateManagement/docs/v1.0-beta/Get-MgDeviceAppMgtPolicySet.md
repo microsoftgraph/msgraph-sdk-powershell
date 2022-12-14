@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtpolicyset
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtpolicyset
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtPolicySet
+# Get-MgBetaDeviceAppMgtPolicySet
 
 ## SYNOPSIS
 The PolicySet of Policies and Applications
@@ -14,32 +14,32 @@ The PolicySet of Policies and Applications
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceAppMgtPolicySet [-AdditionalProperties <Hashtable>] [-PolicySetIds <String[]>] [-Confirm]
+Get-MgBetaDeviceAppMgtPolicySet [-AdditionalProperties <Hashtable>] [-PolicySetIds <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtPolicySet -PolicySetId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceAppMgtPolicySet -PolicySetId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgDeviceAppMgtPolicySet
+Get-MgBetaDeviceAppMgtPolicySet
  -BodyParameter <IPathsFqku8GDeviceappmanagementPolicysetsMicrosoftGraphGetpolicysetsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtPolicySet -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtPolicySet -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgDeviceAppMgtPolicySet [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDeviceAppMgtPolicySet [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsFqku8GDeviceappmanagementPolicysetsMicrosoftGraphGetpolicysetsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsFqku8GDeviceappmanagementPolicysetsMicrosoftGraphGetpolicysetsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get1
 Aliases:
 
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -315,19 +315,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsFqku8GDeviceappmanagementPolicysetsMicrosoftGraphGetpolicysetsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsFqku8GDeviceappmanagementPolicysetsMicrosoftGraphGetpolicysetsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySet
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementPolicySet
+### Get-MgBetaDeviceAppManagementPolicySet
 
 COMPLEX PARAMETER PROPERTIES
 

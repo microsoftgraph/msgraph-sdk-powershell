@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/remove-mggroupconversationthreadpostinreplytosinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/remove-mggroupconversationthreadpostinreplytosinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Remove-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty
+# Remove-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty
 
 ## SYNOPSIS
 Delete navigation property singleValueExtendedProperties for groups
@@ -14,7 +14,7 @@ Delete navigation property singleValueExtendedProperties for groups
 
 ### Delete1 (Default)
 ```
-Remove-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -ConversationId <String>
+Remove-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty -ConversationId <String>
  -ConversationThreadId <String> -GroupId <String> -PostId <String>
  -SingleValueLegacyExtendedPropertyId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Remove-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -Conver
 
 ### DeleteViaIdentity1
 ```
-Remove-MgGroupConversationThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
+Remove-MgBetaGroupConversationThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -190,7 +190,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

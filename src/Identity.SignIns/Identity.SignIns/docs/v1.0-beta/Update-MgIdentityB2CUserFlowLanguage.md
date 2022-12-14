@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityb2cuserflowlanguage
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityb2cuserflowlanguage
 schema: 2.0.0
 ---
 
-# Update-MgIdentityB2CUserFlowLanguage
+# Update-MgBetaIdentityB2CUserFlowLanguage
 
 ## SYNOPSIS
 Update the navigation property languages in identity
@@ -14,7 +14,7 @@ Update the navigation property languages in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
+Update-MgBetaIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]
  [-DisplayName <String>] [-Id <String>] [-IsEnabled] [-OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLa
 
 ### Update
 ```
-Update-MgIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
+Update-MgBetaIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
  -BodyParameter <IMicrosoftGraphUserFlowLanguageConfiguration> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphUserFlowLanguageConfiguration> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]
  [-DisplayName <String>] [-Id <String>] [-IsEnabled] [-OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -84,7 +84,7 @@ userFlowLanguageConfiguration
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -101,7 +101,7 @@ This collection does not allow any kind of modification.
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTPAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguagePage[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguagePage[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ This collection only allows to modify the content of the page, any other modific
 To construct, please use Get-Help -Online and see NOTES section for OVERRIDESPAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguagePage[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguagePage[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -258,9 +258,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration
 
 ## OUTPUTS
 

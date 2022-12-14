@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/update-mgprinttaskdefinition
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/update-mgprinttaskdefinition
 schema: 2.0.0
 ---
 
-# Update-MgPrintTaskDefinition
+# Update-MgBetaPrintTaskDefinition
 
 ## SYNOPSIS
 Update the navigation property taskDefinitions in print
@@ -14,26 +14,26 @@ Update the navigation property taskDefinitions in print
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPrintTaskDefinition -PrintTaskDefinitionId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPrintTaskDefinition -PrintTaskDefinitionId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphAppIdentity>] [-DisplayName <String>] [-Id <String>]
  [-Tasks <IMicrosoftGraphPrintTask[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgPrintTaskDefinition -PrintTaskDefinitionId <String>
+Update-MgBetaPrintTaskDefinition -PrintTaskDefinitionId <String>
  -BodyParameter <IMicrosoftGraphPrintTaskDefinition1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity>
+Update-MgBetaPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity>
  -BodyParameter <IMicrosoftGraphPrintTaskDefinition1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphAppIdentity>] [-DisplayName <String>] [-Id <String>]
  [-Tasks <IMicrosoftGraphPrintTask[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,19 +43,19 @@ Update the navigation property taskDefinitions in print
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPrintTaskDefinition Cmdlet
+### Example 1: Using the Update-MgBetaPrintTaskDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 $params = @{
 	DisplayName = "Test TaskDefinitionName"
 	CreatedBy = @{
 		DisplayName = "Requesting App Display Name"
 	}
 }
-Update-MgPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId -BodyParameter $params
+Update-MgBetaPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPrintTaskDefinition Cmdlet.
+This example shows how to use the Update-MgBetaPrintTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ printTaskDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -96,7 +96,7 @@ appIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppIdentity
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -191,7 +191,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTask[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTask[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -238,9 +238,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
 
 ## OUTPUTS
 

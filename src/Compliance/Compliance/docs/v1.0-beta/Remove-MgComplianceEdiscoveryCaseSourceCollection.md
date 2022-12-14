@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/remove-mgcomplianceediscoverycasesourcecollection
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/remove-mgcomplianceediscoverycasesourcecollection
 schema: 2.0.0
 ---
 
-# Remove-MgComplianceEdiscoveryCaseSourceCollection
+# Remove-MgBetaComplianceEdiscoveryCaseSourceCollection
 
 ## SYNOPSIS
 Delete navigation property sourceCollections for compliance
@@ -14,13 +14,13 @@ Delete navigation property sourceCollections for compliance
 
 ### Delete (Default)
 ```
-Remove-MgComplianceEdiscoveryCaseSourceCollection -CaseId <String> -SourceCollectionId <String>
+Remove-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId <String> -SourceCollectionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity> [-IfMatch <String>]
+Remove-MgBetaComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property sourceCollections for compliance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgComplianceEdiscoveryCaseSourceCollection Cmdlet
+### Example 1: Using the Remove-MgBetaComplianceEdiscoveryCaseSourceCollection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Remove-MgComplianceEdiscoveryCaseSourceCollection -CaseId $caseId -SourceCollectionId $sourceCollectionId
+Import-Module Microsoft.Graph.Beta.Compliance
+Remove-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId $caseId -SourceCollectionId $sourceCollectionId
 ```
 
-This example shows how to use the Remove-MgComplianceEdiscoveryCaseSourceCollection Cmdlet.
+This example shows how to use the Remove-MgBetaComplianceEdiscoveryCaseSourceCollection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

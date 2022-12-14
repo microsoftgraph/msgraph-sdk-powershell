@@ -1,24 +1,24 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ChangeNotifications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.changenotifications/new-mgsubscription
+Module Name: Microsoft.Graph.Beta.ChangeNotifications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.changenotifications/new-mgsubscription
 schema: 2.0.0
 ---
 
-# New-MgSubscription
+# New-MgBetaSubscription
 
 ## SYNOPSIS
-Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.
+Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft.Graph.Beta.
 See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 Some resources support the option to include encrypted resource data in change notifications.
 These resources include chatMessage, contact, event, message, onlineMeetings and presence.
-For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
+For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft.Graph.Beta.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
-New-MgSubscription [-AdditionalProperties <Hashtable>] [-ApplicationId <String>] [-ChangeType <String>]
+New-MgBetaSubscription [-AdditionalProperties <Hashtable>] [-ApplicationId <String>] [-ChangeType <String>]
  [-ClientState <String>] [-CreatorId <String>] [-EncryptionCertificate <String>]
  [-EncryptionCertificateId <String>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-IncludeResourceData]
  [-LatestSupportedTlsVersion <String>] [-LifecycleNotificationUrl <String>]
@@ -28,21 +28,21 @@ New-MgSubscription [-AdditionalProperties <Hashtable>] [-ApplicationId <String>]
 
 ### Create
 ```
-New-MgSubscription -BodyParameter <IMicrosoftGraphSubscription1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSubscription -BodyParameter <IMicrosoftGraphSubscription1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.
+Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft.Graph.Beta.
 See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 Some resources support the option to include encrypted resource data in change notifications.
 These resources include chatMessage, contact, event, message, onlineMeetings and presence.
-For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
+For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft.Graph.Beta.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSubscription Cmdlet
+### Example 1: Using the New-MgBetaSubscription Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ChangeNotifications
+Import-Module Microsoft.Graph.Beta.ChangeNotifications
 $params = @{
 	ChangeType = "created"
 	NotificationUrl = "https://webhook.azurewebsites.net/api/send/myNotifyClient"
@@ -51,10 +51,10 @@ $params = @{
 	ClientState = "secretClientValue"
 	LatestSupportedTlsVersion = "v1_2"
 }
-New-MgSubscription -BodyParameter $params
+New-MgBetaSubscription -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSubscription Cmdlet.
+This example shows how to use the New-MgBetaSubscription Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -96,7 +96,7 @@ subscription
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscription1
 Parameter Sets: Create
 Aliases:
 
@@ -254,7 +254,7 @@ The possible values are: v1_0, v1_1, v1_2, v1_3.
 For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2.
 For these subscribers, not setting this property per the timeline would result in subscription operations failing.
 For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional.
-In such cases, Microsoft Graph defaults the property to v1_2.
+In such cases, Microsoft.Graph.Beta defaults the property to v1_2.
 
 ```yaml
 Type: System.String
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 
 ### -NotificationContentType
 Optional.
-Desired content-type for Microsoft Graph change notifications for supported resource types.
+Desired content-type for Microsoft.Graph.Beta change notifications for supported resource types.
 The default content-type is application/json.
 
 ```yaml
@@ -409,11 +409,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscription1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscription1
 
 ## NOTES
 
@@ -435,9 +435,9 @@ BODYPARAMETER <IMicrosoftGraphSubscription1>: subscription
   - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.
   - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
   - `[IncludeResourceData <Boolean?>]`: Optional. When set to true, change notifications include resource data (such as content of a chat message).
-  - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
+  - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft.Graph.Beta defaults the property to v1_2.
   - `[LifecycleNotificationUrl <String>]`: Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.
-  - `[NotificationContentType <String>]`: Optional. Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
+  - `[NotificationContentType <String>]`: Optional. Desired content-type for Microsoft.Graph.Beta change notifications for supported resource types. The default content-type is application/json.
   - `[NotificationQueryOptions <String>]`: Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
   - `[NotificationUrl <String>]`: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
   - `[NotificationUrlAppId <String>]`: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.

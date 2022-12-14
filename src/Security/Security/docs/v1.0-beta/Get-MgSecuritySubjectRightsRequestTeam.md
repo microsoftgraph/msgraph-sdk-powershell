@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritysubjectrightsrequestteam
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritysubjectrightsrequestteam
 schema: 2.0.0
 ---
 
-# Get-MgSecuritySubjectRightsRequestTeam
+# Get-MgBetaSecuritySubjectRightsRequestTeam
 
 ## SYNOPSIS
 Information about the Microsoft Teams team that was created for the request.
@@ -14,13 +14,13 @@ Information about the Microsoft Teams team that was created for the request.
 
 ### Get (Default)
 ```
-Get-MgSecuritySubjectRightsRequestTeam -SubjectRightsRequestId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecuritySubjectRightsRequestTeam -SubjectRightsRequestId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecuritySubjectRightsRequestTeam -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecuritySubjectRightsRequestTeam -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeam
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeam
 
 ## NOTES
 

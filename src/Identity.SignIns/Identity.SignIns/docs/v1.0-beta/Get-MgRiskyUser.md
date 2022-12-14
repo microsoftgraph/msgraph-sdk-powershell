@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgriskyuser
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgriskyuser
 schema: 2.0.0
 ---
 
-# Get-MgRiskyUser
+# Get-MgBetaRiskyUser
 
 ## SYNOPSIS
 Users that are flagged as at-risk by Azure AD Identity Protection.
@@ -14,19 +14,19 @@ Users that are flagged as at-risk by Azure AD Identity Protection.
 
 ### List (Default)
 ```
-Get-MgRiskyUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaRiskyUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgRiskyUser -RiskyUserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaRiskyUser -RiskyUserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgRiskyUser -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaRiskyUser -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -37,9 +37,9 @@ Users that are flagged as at-risk by Azure AD Identity Protection.
 
 ### Example 1: List all risky users
 ```powershell
-Connect-MgGraph -Scopes "IdentityRiskyUser.Read.All"
-Select-MgProfile beta
-Get-MgRiskyUser | Format-Table UserDisplayName, RiskDetail, RiskLevel, RiskLastUpdatedDateTime
+Connect-MgBetaGraph -Scopes "IdentityRiskyUser.Read.All"
+Select-MgBetaProfile beta
+Get-MgBetaRiskyUser | Format-Table UserDisplayName, RiskDetail, RiskLevel, RiskLastUpdatedDateTime
 
 UserDisplayName RiskDetail                        RiskLevel RiskLastUpdatedDateTime
 --------------- ----------                        --------- -----------------------
@@ -52,9 +52,9 @@ This command returns all risky users
 
 ### Example 2: List all risky users by RiskLevel
 ```powershell
-Connect-MgGraph -Scopes "IdentityRiskyUser.Read.All"
-Select-MgProfile beta
-Get-MgRiskyUser -Filter "RiskLevel ne 'none'" | Format-Table UserDisplayName, RiskDetail, RiskLevel, RiskLastUpdatedDateTime
+Connect-MgBetaGraph -Scopes "IdentityRiskyUser.Read.All"
+Select-MgBetaProfile beta
+Get-MgBetaRiskyUser -Filter "RiskLevel ne 'none'" | Format-Table UserDisplayName, RiskDetail, RiskLevel, RiskLastUpdatedDateTime
 
 UserDisplayName RiskDetail                    RiskLevel RiskLastUpdatedDateTime
 --------------- ----------                    --------- -----------------------
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUser1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUser1
 
 ## NOTES
 

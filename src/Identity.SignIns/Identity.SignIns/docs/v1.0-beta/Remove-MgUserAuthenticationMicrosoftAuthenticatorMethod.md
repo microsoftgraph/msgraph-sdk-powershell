@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationmicrosoftauthenticatormethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mguserauthenticationmicrosoftauthenticatormethod
 schema: 2.0.0
 ---
 
-# Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod
+# Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
 Delete navigation property microsoftAuthenticatorMethods for users
@@ -14,13 +14,13 @@ Delete navigation property microsoftAuthenticatorMethods for users
 
 ### Delete (Default)
 ```
-Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod -MicrosoftAuthenticatorAuthenticationMethodId <String>
+Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod -MicrosoftAuthenticatorAuthenticationMethodId <String>
  -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod -InputObject <IIdentitySignInsIdentity>
+Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod -InputObject <IIdentitySignInsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property microsoftAuthenticatorMethods for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet
+### Example 1: Using the Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId -MicrosoftAuthenticatorAuthenticationMethodId $microsoftAuthenticatorAuthenticationMethodId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId -MicrosoftAuthenticatorAuthenticationMethodId $microsoftAuthenticatorAuthenticationMethodId
 ```
 
-This example shows how to use the Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet.
+This example shows how to use the Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

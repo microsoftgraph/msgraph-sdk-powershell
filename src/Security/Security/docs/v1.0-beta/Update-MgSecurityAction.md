@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityaction
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityaction
 schema: 2.0.0
 ---
 
-# Update-MgSecurityAction
+# Update-MgBetaSecurityAction
 
 ## SYNOPSIS
 Update the navigation property securityActions in security
@@ -14,7 +14,7 @@ Update the navigation property securityActions in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityAction -SecurityActionId <String> [-ActionReason <String>]
+Update-MgBetaSecurityAction -SecurityActionId <String> [-ActionReason <String>]
  [-AdditionalProperties <Hashtable>] [-AppId <String>] [-AzureTenantId <String>] [-ClientContext <String>]
  [-CompletedDateTime <DateTime>] [-CreatedDateTime <DateTime>] [-ErrorInfo <IMicrosoftGraphResultInfo>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-Name <String>]
@@ -25,19 +25,19 @@ Update-MgSecurityAction -SecurityActionId <String> [-ActionReason <String>]
 
 ### Update
 ```
-Update-MgSecurityAction -SecurityActionId <String> -BodyParameter <IMicrosoftGraphSecurityAction> [-PassThru]
+Update-MgBetaSecurityAction -SecurityActionId <String> -BodyParameter <IMicrosoftGraphSecurityAction> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityAction -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphSecurityAction>
+Update-MgBetaSecurityAction -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphSecurityAction>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityAction -InputObject <ISecurityIdentity> [-ActionReason <String>]
+Update-MgBetaSecurityAction -InputObject <ISecurityIdentity> [-ActionReason <String>]
  [-AdditionalProperties <Hashtable>] [-AppId <String>] [-AzureTenantId <String>] [-ClientContext <String>]
  [-CompletedDateTime <DateTime>] [-CreatedDateTime <DateTime>] [-ErrorInfo <IMicrosoftGraphResultInfo>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-Name <String>]
@@ -120,7 +120,7 @@ securityAction
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAction
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAction
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -185,7 +185,7 @@ resultInfo
 To construct, please use Get-Help -Online and see NOTES section for ERRORINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResultInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -266,7 +266,7 @@ Required.
 To construct, please use Get-Help -Online and see NOTES section for PARAMETERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -312,7 +312,7 @@ Collection of securityActionState to keep the history of an action.
 To construct, please use Get-Help -Online and see NOTES section for STATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityActionState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityActionState[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -359,7 +359,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -406,9 +406,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAction
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

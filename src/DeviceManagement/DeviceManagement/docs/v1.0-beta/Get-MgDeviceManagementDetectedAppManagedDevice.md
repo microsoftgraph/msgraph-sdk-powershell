@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementdetectedappmanageddevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementdetectedappmanageddevice
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDetectedAppManagedDevice
+# Get-MgBetaDeviceManagementDetectedAppManagedDevice
 
 ## SYNOPSIS
 The devices that have the discovered application installed
@@ -14,20 +14,20 @@ The devices that have the discovered application installed
 
 ### List (Default)
 ```
-Get-MgDeviceManagementDetectedAppManagedDevice -DetectedAppId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementDetectedAppManagedDevice -DetectedAppId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementDetectedAppManagedDevice -DetectedAppId <String> -ManagedDeviceId <String>
+Get-MgBetaDeviceManagementDetectedAppManagedDevice -DetectedAppId <String> -ManagedDeviceId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDetectedAppManagedDevice -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementDetectedAppManagedDevice -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDevice1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDevice1
 
 ## NOTES
 

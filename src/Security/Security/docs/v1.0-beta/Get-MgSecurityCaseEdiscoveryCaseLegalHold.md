@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycaselegalhold
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycaselegalhold
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseLegalHold
+# Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold
 
 ## SYNOPSIS
 Returns a list of case eDiscoveryHoldPolicy objects for this case.
@@ -14,20 +14,20 @@ Returns a list of case eDiscoveryHoldPolicy objects for this case.
 
 ### List (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId <String> -EdiscoveryHoldPolicyId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId <String> -EdiscoveryHoldPolicyId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityCaseEdiscoveryCaseLegalHold -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Returns a list of case eDiscoveryHoldPolicy objects for this case.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet
+### Example 1: Using the Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryHoldPolicyId $ediscoveryHoldPolicyId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryHoldPolicyId $ediscoveryHoldPolicyId
 ```
 
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet
+### Example 2: Using the Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId $ediscoveryCaseId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryHoldPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryHoldPolicy
 
 ## NOTES
 

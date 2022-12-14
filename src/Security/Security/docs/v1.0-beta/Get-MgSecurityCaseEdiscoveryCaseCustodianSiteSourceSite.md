@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasecustodiansitesourcesite
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasecustodiansitesourcesite
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSourceSite
+# Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSourceSite
 
 ## SYNOPSIS
 The SharePoint site associated with the siteSource.
@@ -14,14 +14,14 @@ The SharePoint site associated with the siteSource.
 
 ### Get1 (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSourceSite -EdiscoveryCaseId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSourceSite -EdiscoveryCaseId <String>
  -EdiscoveryCustodianId <String> -SiteSourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSourceSite -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSourceSite -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -128,11 +128,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSite
 
 ## NOTES
 

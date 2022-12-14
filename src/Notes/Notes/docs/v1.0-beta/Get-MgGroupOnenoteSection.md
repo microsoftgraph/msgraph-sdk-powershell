@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mggrouponenotesection
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mggrouponenotesection
 schema: 2.0.0
 ---
 
-# Get-MgGroupOnenoteSection
+# Get-MgBetaGroupOnenoteSection
 
 ## SYNOPSIS
 The sections in all OneNote notebooks that are owned by the user or group.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgGroupOnenoteSection -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaGroupOnenoteSection -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgGroupOnenoteSection -GroupId <String> -OnenoteSectionId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupOnenoteSection -GroupId <String> -OnenoteSectionId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupOnenoteSection -InputObject <INotesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupOnenoteSection -InputObject <INotesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -244,11 +244,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteSection1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteSection1
 
 ## NOTES
 

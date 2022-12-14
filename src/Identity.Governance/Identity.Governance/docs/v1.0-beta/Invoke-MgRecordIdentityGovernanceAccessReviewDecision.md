@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgrecordidentitygovernanceaccessreviewdecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgrecordidentitygovernanceaccessreviewdecision
 schema: 2.0.0
 ---
 
-# Invoke-MgRecordIdentityGovernanceAccessReviewDecision
+# Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision
 
 ## SYNOPSIS
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
@@ -15,14 +15,14 @@ If no IDs are specified, the decisions will apply to every **accessReviewInstanc
 
 ### RecordExpanded (Default)
 ```
-Invoke-MgRecordIdentityGovernanceAccessReviewDecision [-AdditionalProperties <Hashtable>] [-Decision <String>]
+Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision [-AdditionalProperties <Hashtable>] [-Decision <String>]
  [-Justification <String>] [-PrincipalId <String>] [-ResourceId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Record
 ```
-Invoke-MgRecordIdentityGovernanceAccessReviewDecision
+Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision
  -BodyParameter <IPathsAn1WrsIdentitygovernanceAccessreviewsDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -55,7 +55,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsAn1WrsIdentitygovernanceAccessreviewsDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsAn1WrsIdentitygovernanceAccessreviewsDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Record
 Aliases:
 
@@ -177,7 +177,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsAn1WrsIdentitygovernanceAccessreviewsDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsAn1WrsIdentitygovernanceAccessreviewsDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

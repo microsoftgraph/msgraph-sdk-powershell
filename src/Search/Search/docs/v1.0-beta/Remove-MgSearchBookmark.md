@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/remove-mgsearchbookmark
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/remove-mgsearchbookmark
 schema: 2.0.0
 ---
 
-# Remove-MgSearchBookmark
+# Remove-MgBetaSearchBookmark
 
 ## SYNOPSIS
 Delete navigation property bookmarks for search
@@ -14,13 +14,13 @@ Delete navigation property bookmarks for search
 
 ### Delete (Default)
 ```
-Remove-MgSearchBookmark -BookmarkId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaSearchBookmark -BookmarkId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSearchBookmark -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaSearchBookmark -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property bookmarks for search
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgSearchBookmark Cmdlet
+### Example 1: Using the Remove-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Remove-MgSearchBookmark -BookmarkId $bookmarkId
+Import-Module Microsoft.Graph.Beta.Search
+Remove-MgBetaSearchBookmark -BookmarkId $bookmarkId
 ```
 
-This example shows how to use the Remove-MgSearchBookmark Cmdlet.
+This example shows how to use the Remove-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 

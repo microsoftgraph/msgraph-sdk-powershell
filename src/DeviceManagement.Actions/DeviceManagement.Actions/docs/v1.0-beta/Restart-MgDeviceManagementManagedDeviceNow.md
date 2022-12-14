@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/restart-mgdevicemanagementmanageddevicenow
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/restart-mgdevicemanagementmanageddevicenow
 schema: 2.0.0
 ---
 
-# Restart-MgDeviceManagementManagedDeviceNow
+# Restart-MgBetaDeviceManagementManagedDeviceNow
 
 ## SYNOPSIS
 Reboot device
@@ -14,13 +14,13 @@ Reboot device
 
 ### Reboot (Default)
 ```
-Restart-MgDeviceManagementManagedDeviceNow -ManagedDeviceId <String> [-PassThru] [-Confirm] [-WhatIf]
+Restart-MgBetaDeviceManagementManagedDeviceNow -ManagedDeviceId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### RebootViaIdentity
 ```
-Restart-MgDeviceManagementManagedDeviceNow -InputObject <IDeviceManagementActionsIdentity> [-PassThru]
+Restart-MgBetaDeviceManagementManagedDeviceNow -InputObject <IDeviceManagementActionsIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RebootViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

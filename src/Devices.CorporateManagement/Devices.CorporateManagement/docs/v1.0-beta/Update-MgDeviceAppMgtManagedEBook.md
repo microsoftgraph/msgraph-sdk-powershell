@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebook
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebook
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtManagedEBook
+# Update-MgBetaDeviceAppMgtManagedEBook
 
 ## SYNOPSIS
 Update the navigation property managedEBooks in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property managedEBooks in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtManagedEBook -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtManagedEBook -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphManagedEBookAssignment1[]>]
  [-Categories <IMicrosoftGraphManagedEBookCategory[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>] [-DisplayName <String>] [-Id <String>]
@@ -27,19 +27,19 @@ Update-MgDeviceAppMgtManagedEBook -ManagedEBookId <String> [-AdditionalPropertie
 
 ### Update
 ```
-Update-MgDeviceAppMgtManagedEBook -ManagedEBookId <String> -BodyParameter <IMicrosoftGraphManagedEBook1>
+Update-MgBetaDeviceAppMgtManagedEBook -ManagedEBookId <String> -BodyParameter <IMicrosoftGraphManagedEBook1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedEBook1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphManagedEBookAssignment1[]>]
  [-Categories <IMicrosoftGraphManagedEBookCategory[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>] [-DisplayName <String>] [-Id <String>]
@@ -77,7 +77,7 @@ The list of assignments for this eBook.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -93,7 +93,7 @@ An abstract class containing the base properties for Managed eBook.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBook1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -109,7 +109,7 @@ The list of categories for this eBook.
 To construct, please use Get-Help -Online and see NOTES section for CATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookCategory[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -155,7 +155,7 @@ The list of installation states for this eBook.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -233,7 +233,7 @@ Contains properties for the installation summary of a book for a device.
 To construct, please use Get-Help -Online and see NOTES section for INSTALLSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -249,7 +249,7 @@ Contains properties for a generic mime content.
 To construct, please use Get-Help -Online and see NOTES section for LARGECOVER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMimeContent
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -355,7 +355,7 @@ The list of installation states for this eBook.
 To construct, please use Get-Help -Online and see NOTES section for USERSTATESUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -402,9 +402,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBook1
 
 ## OUTPUTS
 
@@ -414,7 +414,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementManagedEBook
+### Update-MgBetaDeviceAppManagementManagedEBook
 
 COMPLEX PARAMETER PROPERTIES
 

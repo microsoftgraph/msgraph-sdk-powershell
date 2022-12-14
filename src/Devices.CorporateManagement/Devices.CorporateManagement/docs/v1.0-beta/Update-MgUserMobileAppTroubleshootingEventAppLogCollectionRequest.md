@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgusermobileapptroubleshootingeventapplogcollectionrequest
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgusermobileapptroubleshootingeventapplogcollectionrequest
 schema: 2.0.0
 ---
 
-# Update-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest
+# Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
 
 ## SYNOPSIS
 Update the navigation property appLogCollectionRequests in users
@@ -14,7 +14,7 @@ Update the navigation property appLogCollectionRequests in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollectionRequestId <String>
+Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollectionRequestId <String>
  -MobileAppTroubleshootingEventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-CompletedDateTime <DateTime>] [-CustomLogFolders <String[]>] [-ErrorMessage <String>] [-Id <String>]
  [-Status <AppLogUploadState>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollect
 
 ### Update
 ```
-Update-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollectionRequestId <String>
+Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollectionRequestId <String>
  -MobileAppTroubleshootingEventId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphAppLogCollectionRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest
+Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphAppLogCollectionRequest>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest
+Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-CompletedDateTime <DateTime>] [-CustomLogFolders <String[]>] [-ErrorMessage <String>] [-Id <String>]
  [-Status <AppLogUploadState>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -84,7 +84,7 @@ AppLogCollectionRequest Entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 AppLogUploadStatus
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AppLogUploadState
+Type: Microsoft.Graph.Beta.PowerShell.Support.AppLogUploadState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -268,9 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgdeviceappmgtwindowinformationprotectionpolicy
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/remove-mgdeviceappmgtwindowinformationprotectionpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceAppMgtWindowInformationProtectionPolicy
+# Remove-MgBetaDeviceAppMgtWindowInformationProtectionPolicy
 
 ## SYNOPSIS
 Delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
@@ -14,13 +14,13 @@ Delete navigation property windowsInformationProtectionPolicies for deviceAppMan
 
 ### Delete (Default)
 ```
-Remove-MgDeviceAppMgtWindowInformationProtectionPolicy -WindowsInformationProtectionPolicyId <String>
+Remove-MgBetaDeviceAppMgtWindowInformationProtectionPolicy -WindowsInformationProtectionPolicyId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceAppMgtWindowInformationProtectionPolicy -InputObject <IDevicesCorporateManagementIdentity>
+Remove-MgBetaDeviceAppMgtWindowInformationProtectionPolicy -InputObject <IDevicesCorporateManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgDeviceAppManagementWindowInformationProtectionPolicy
+### Remove-MgBetaDeviceAppManagementWindowInformationProtectionPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguserprofilewebsite
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguserprofilewebsite
 schema: 2.0.0
 ---
 
-# Get-MgUserProfileWebsite
+# Get-MgBetaUserProfileWebsite
 
 ## SYNOPSIS
 Represents detailed information about websites associated with a user in various services.
@@ -14,20 +14,20 @@ Represents detailed information about websites associated with a user in various
 
 ### List (Default)
 ```
-Get-MgUserProfileWebsite -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserProfileWebsite -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserProfileWebsite -PersonWebsiteId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserProfileWebsite -PersonWebsiteId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserProfileWebsite -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserProfileWebsite -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Represents detailed information about websites associated with a user in various
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserProfileWebsite Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileWebsite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileWebsite -UserId $userId -PersonWebsiteId $personWebsiteId
+Get-MgBetaUserProfileWebsite -UserId $userId -PersonWebsiteId $personWebsiteId
 ```
 
-This example shows how to use the Get-MgUserProfileWebsite Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileWebsite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserProfileWebsite Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileWebsite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileWebsite -UserId $userId
+Get-MgBetaUserProfileWebsite -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserProfileWebsite Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileWebsite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonWebsite
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonWebsite
 
 ## NOTES
 

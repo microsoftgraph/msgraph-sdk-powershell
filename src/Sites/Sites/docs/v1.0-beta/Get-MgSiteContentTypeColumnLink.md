@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitecontenttypecolumnlink
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitecontenttypecolumnlink
 schema: 2.0.0
 ---
 
-# Get-MgSiteContentTypeColumnLink
+# Get-MgBetaSiteContentTypeColumnLink
 
 ## SYNOPSIS
 The collection of columns that are required by this content type
@@ -14,20 +14,20 @@ The collection of columns that are required by this content type
 
 ### List (Default)
 ```
-Get-MgSiteContentTypeColumnLink -ContentTypeId <String> [-SiteId <String>] [-ExpandProperty <String[]>]
+Get-MgBetaSiteContentTypeColumnLink -ContentTypeId <String> [-SiteId <String>] [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSiteContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> [-SiteId <String>]
+Get-MgBetaSiteContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> [-SiteId <String>]
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteContentTypeColumnLink -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSiteContentTypeColumnLink -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnLink
 
 ## NOTES
 

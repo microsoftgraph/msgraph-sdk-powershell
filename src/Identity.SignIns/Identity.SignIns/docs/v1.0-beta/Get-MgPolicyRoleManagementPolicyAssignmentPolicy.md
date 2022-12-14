@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyrolemanagementpolicyassignmentpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyrolemanagementpolicyassignmentpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyRoleManagementPolicyAssignmentPolicy
+# Get-MgBetaPolicyRoleManagementPolicyAssignmentPolicy
 
 ## SYNOPSIS
 The policy that's associated with a policy assignment.
@@ -15,13 +15,13 @@ Supports $expand and a nested $expand of the rules and effectiveRules relationsh
 
 ### Get (Default)
 ```
-Get-MgPolicyRoleManagementPolicyAssignmentPolicy -UnifiedRoleManagementPolicyAssignmentId <String>
+Get-MgBetaPolicyRoleManagementPolicyAssignmentPolicy -UnifiedRoleManagementPolicyAssignmentId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyRoleManagementPolicyAssignmentPolicy -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaPolicyRoleManagementPolicyAssignmentPolicy -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -99,11 +99,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy1
 
 ## NOTES
 

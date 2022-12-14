@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedaccessroleassignment
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedaccessroleassignment
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedAccessRoleAssignment
+# New-MgBetaPrivilegedAccessRoleAssignment
 
 ## SYNOPSIS
 Create new navigation property to roleAssignments for privilegedAccess
@@ -14,7 +14,7 @@ Create new navigation property to roleAssignments for privilegedAccess
 
 ### CreateExpanded (Default)
 ```
-New-MgPrivilegedAccessRoleAssignment -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaPrivilegedAccessRoleAssignment -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
  [-AssignmentState <String>] [-EndDateTime <DateTime>] [-ExternalId <String>] [-Id <String>]
  [-LinkedEligibleRoleAssignment <IMicrosoftGraphGovernanceRoleAssignment>]
  [-LinkedEligibleRoleAssignmentId <String>] [-MemberType <String>]
@@ -26,19 +26,19 @@ New-MgPrivilegedAccessRoleAssignment -PrivilegedAccessId <String> [-AdditionalPr
 
 ### Create
 ```
-New-MgPrivilegedAccessRoleAssignment -PrivilegedAccessId <String>
+New-MgBetaPrivilegedAccessRoleAssignment -PrivilegedAccessId <String>
  -BodyParameter <IMicrosoftGraphGovernanceRoleAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPrivilegedAccessRoleAssignment -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedAccessRoleAssignment -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphGovernanceRoleAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPrivilegedAccessRoleAssignment -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedAccessRoleAssignment -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignmentState <String>] [-EndDateTime <DateTime>]
  [-ExternalId <String>] [-Id <String>]
  [-LinkedEligibleRoleAssignment <IMicrosoftGraphGovernanceRoleAssignment>]
@@ -92,7 +92,7 @@ governanceRoleAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -156,7 +156,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -172,7 +172,7 @@ governanceRoleAssignment
 To construct, please use Get-Help -Online and see NOTES section for LINKEDELIGIBLEROLEASSIGNMENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -234,7 +234,7 @@ governanceResource
 To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -266,7 +266,7 @@ governanceRoleDefinition
 To construct, please use Get-Help -Online and see NOTES section for ROLEDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -330,7 +330,7 @@ governanceSubject
 To construct, please use Get-Help -Online and see NOTES section for SUBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceSubject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceSubject
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -393,13 +393,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
 
 ## NOTES
 

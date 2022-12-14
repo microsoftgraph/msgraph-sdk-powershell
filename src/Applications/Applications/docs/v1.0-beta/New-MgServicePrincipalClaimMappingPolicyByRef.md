@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgserviceprincipalclaimmappingpolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgserviceprincipalclaimmappingpolicybyref
 schema: 2.0.0
 ---
 
-# New-MgServicePrincipalClaimMappingPolicyByRef
+# New-MgBetaServicePrincipalClaimMappingPolicyByRef
 
 ## SYNOPSIS
 Create new navigation property ref to claimsMappingPolicies for servicePrincipals
@@ -14,25 +14,25 @@ Create new navigation property ref to claimsMappingPolicies for servicePrincipal
 
 ### CreateExpanded (Default)
 ```
-New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <String> -BodyParameter <IReferenceCreate>
+New-MgBetaServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <String> -BodyParameter <IReferenceCreate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgServicePrincipalClaimMappingPolicyByRef -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalClaimMappingPolicyByRef -InputObject <IApplicationsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgServicePrincipalClaimMappingPolicyByRef -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalClaimMappingPolicyByRef -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to claimsMappingPolicies for servicePrincipal
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgServicePrincipalClaimMappingPolicyByRef Cmdlet
+### Example 1: Using the New-MgBetaServicePrincipalClaimMappingPolicyByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/policies/claimsMappingPolicies/cd3d9b57-0aee-4f25-8ee3-ac74ef5986a9"
 }
-New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+New-MgBetaServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgServicePrincipalClaimMappingPolicyByRef Cmdlet.
+This example shows how to use the New-MgBetaServicePrincipalClaimMappingPolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

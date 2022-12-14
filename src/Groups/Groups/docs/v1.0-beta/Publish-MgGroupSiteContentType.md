@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/publish-mggroupsitecontenttype
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/publish-mggroupsitecontenttype
 schema: 2.0.0
 ---
 
-# Publish-MgGroupSiteContentType
+# Publish-MgBetaGroupSiteContentType
 
 ## SYNOPSIS
 Publishes a [contentType][] present in a content type hub site.
@@ -14,13 +14,13 @@ Publishes a [contentType][] present in a content type hub site.
 
 ### Publish (Default)
 ```
-Publish-MgGroupSiteContentType -ContentTypeId <String> -GroupId <String> -SiteId <String> [-PassThru]
+Publish-MgBetaGroupSiteContentType -ContentTypeId <String> -GroupId <String> -SiteId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PublishViaIdentity
 ```
-Publish-MgGroupSiteContentType -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Publish-MgBetaGroupSiteContentType -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: PublishViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginformationprotectiondatalosspreventionpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mginformationprotectiondatalosspreventionpolicy
 schema: 2.0.0
 ---
 
-# New-MgInformationProtectionDataLossPreventionPolicy
+# New-MgBetaInformationProtectionDataLossPreventionPolicy
 
 ## SYNOPSIS
 Create new navigation property to dataLossPreventionPolicies for informationProtection
@@ -14,13 +14,13 @@ Create new navigation property to dataLossPreventionPolicies for informationProt
 
 ### CreateExpanded (Default)
 ```
-New-MgInformationProtectionDataLossPreventionPolicy [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaInformationProtectionDataLossPreventionPolicy [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgInformationProtectionDataLossPreventionPolicy -BodyParameter <IMicrosoftGraphDataLossPreventionPolicy>
+New-MgBetaInformationProtectionDataLossPreventionPolicy -BodyParameter <IMicrosoftGraphDataLossPreventionPolicy>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ dataLossPreventionPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 Parameter Sets: Create
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 
 ## NOTES
 

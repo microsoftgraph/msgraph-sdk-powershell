@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicyb2cauthenticationmethodpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicyb2cauthenticationmethodpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyB2CAuthenticationMethodPolicy
+# Remove-MgBetaPolicyB2CAuthenticationMethodPolicy
 
 ## SYNOPSIS
 Delete navigation property b2cAuthenticationMethodsPolicy for policies
@@ -13,7 +13,7 @@ Delete navigation property b2cAuthenticationMethodsPolicy for policies
 ## SYNTAX
 
 ```
-Remove-MgPolicyB2CAuthenticationMethodPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPolicyB2CAuthenticationMethodPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

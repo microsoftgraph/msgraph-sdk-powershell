@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mgusertodolist
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/remove-mgusertodolist
 schema: 2.0.0
 ---
 
-# Remove-MgUserTodoList
+# Remove-MgBetaUserTodoList
 
 ## SYNOPSIS
 Delete navigation property lists for users
@@ -14,13 +14,13 @@ Delete navigation property lists for users
 
 ### Delete (Default)
 ```
-Remove-MgUserTodoList -TodoTaskListId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserTodoList -TodoTaskListId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserTodoList -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaUserTodoList -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property lists for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserTodoList Cmdlet
+### Example 1: Using the Remove-MgBetaUserTodoList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Remove-MgUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
+Remove-MgBetaUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
 ```
 
-This example shows how to use the Remove-MgUserTodoList Cmdlet.
+This example shows how to use the Remove-MgBetaUserTodoList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

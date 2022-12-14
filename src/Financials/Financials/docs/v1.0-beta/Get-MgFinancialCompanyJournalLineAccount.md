@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanyjournallineaccount
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanyjournallineaccount
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanyJournalLineAccount
+# Get-MgBetaFinancialCompanyJournalLineAccount
 
 ## SYNOPSIS
 Get account from financials
@@ -14,25 +14,25 @@ Get account from financials
 
 ### Get (Default)
 ```
-Get-MgFinancialCompanyJournalLineAccount -CompanyId <String> -JournalLineId <String>
+Get-MgBetaFinancialCompanyJournalLineAccount -CompanyId <String> -JournalLineId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgFinancialCompanyJournalLineAccount -CompanyId <String> -JournalId <String> -JournalLineId <String>
+Get-MgBetaFinancialCompanyJournalLineAccount -CompanyId <String> -JournalId <String> -JournalLineId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanyJournalLineAccount -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaFinancialCompanyJournalLineAccount -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgFinancialCompanyJournalLineAccount -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaFinancialCompanyJournalLineAccount -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -78,7 +78,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -139,11 +139,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationmerubric
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationmerubric
 schema: 2.0.0
 ---
 
-# Get-MgEducationMeRubric
+# Get-MgBetaEducationMeRubric
 
 ## SYNOPSIS
 When set, the grading rubric attached to the assignment.
@@ -14,20 +14,20 @@ When set, the grading rubric attached to the assignment.
 
 ### List (Default)
 ```
-Get-MgEducationMeRubric [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaEducationMeRubric [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEducationMeRubric -EducationRubricId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationMeRubric -EducationRubricId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationMeRubric -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationMeRubric -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ When set, the grading rubric attached to the assignment.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationMeRubric Cmdlet
+### Example 1: Using the Get-MgBetaEducationMeRubric Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationMeRubric -EducationRubricId $educationRubricId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationMeRubric -EducationRubricId $educationRubricId
 ```
 
-This example shows how to use the Get-MgEducationMeRubric Cmdlet.
+This example shows how to use the Get-MgBetaEducationMeRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEducationMeRubric Cmdlet
+### Example 2: Using the Get-MgBetaEducationMeRubric Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationMeRubric
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationMeRubric
 ```
 
-This example shows how to use the Get-MgEducationMeRubric Cmdlet.
+This example shows how to use the Get-MgBetaEducationMeRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationRubric
 
 ## NOTES
 

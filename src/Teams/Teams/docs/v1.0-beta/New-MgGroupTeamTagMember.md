@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mggroupteamtagmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mggroupteamtagmember
 schema: 2.0.0
 ---
 
-# New-MgGroupTeamTagMember
+# New-MgBetaGroupTeamTagMember
 
 ## SYNOPSIS
 Create a new teamworkTagMember object in a team.
@@ -14,26 +14,26 @@ Create a new teamworkTagMember object in a team.
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupTeamTagMember -GroupId <String> -TeamworkTagId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupTeamTagMember -GroupId <String> -TeamworkTagId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-TenantId <String>] [-UserId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupTeamTagMember -GroupId <String> -TeamworkTagId <String>
+New-MgBetaGroupTeamTagMember -GroupId <String> -TeamworkTagId <String>
  -BodyParameter <IMicrosoftGraphTeamworkTagMember> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupTeamTagMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTagMember>
+New-MgBetaGroupTeamTagMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTagMember>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupTeamTagMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupTeamTagMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-TenantId <String>] [-UserId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ teamworkTagMember
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -219,13 +219,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 
 ## NOTES
 

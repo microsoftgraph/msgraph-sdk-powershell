@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementintentuserstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementintentuserstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementIntentUserState
+# Update-MgBetaDeviceManagementIntentUserState
 
 ## SYNOPSIS
 Update the navigation property userStates in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userStates in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementIntentUserState -DeviceManagementIntentId <String>
+Update-MgBetaDeviceManagementIntentUserState -DeviceManagementIntentId <String>
  -DeviceManagementIntentUserStateId <String> [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>]
  [-Id <String>] [-LastReportedDateTime <DateTime>] [-State <String>] [-UserName <String>]
  [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgDeviceManagementIntentUserState -DeviceManagementIntentId <String>
 
 ### Update
 ```
-Update-MgDeviceManagementIntentUserState -DeviceManagementIntentId <String>
+Update-MgBetaDeviceManagementIntentUserState -DeviceManagementIntentId <String>
  -DeviceManagementIntentUserStateId <String> -BodyParameter <IMicrosoftGraphDeviceManagementIntentUserState>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementIntentUserState> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>] [-Id <String>] [-LastReportedDateTime <DateTime>]
  [-State <String>] [-UserName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ Entity that represents user state for an intent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -268,9 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
 
 ## OUTPUTS
 

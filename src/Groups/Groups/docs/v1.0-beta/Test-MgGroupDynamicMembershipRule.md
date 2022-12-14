@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/test-mggroupdynamicmembershiprule
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/test-mggroupdynamicmembershiprule
 schema: 2.0.0
 ---
 
-# Test-MgGroupDynamicMembershipRule
+# Test-MgBetaGroupDynamicMembershipRule
 
 ## SYNOPSIS
 Evaluate whether a user or device is or would be a member of a dynamic group.
@@ -16,13 +16,13 @@ You can complete this operation in the following ways:
 
 ### EvaluateExpanded1 (Default)
 ```
-Test-MgGroupDynamicMembershipRule [-AdditionalProperties <Hashtable>] [-MemberId <String>]
+Test-MgBetaGroupDynamicMembershipRule [-AdditionalProperties <Hashtable>] [-MemberId <String>]
  [-MembershipRule <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Evaluate1
 ```
-Test-MgGroupDynamicMembershipRule
+Test-MgBetaGroupDynamicMembershipRule
  -BodyParameter <IPaths1R12J7LGroupsMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -34,17 +34,17 @@ You can complete this operation in the following ways:
 
 ## EXAMPLES
 
-### Example 1: Using the Test-MgGroupDynamicMembershipRule Cmdlet
+### Example 1: Using the Test-MgBetaGroupDynamicMembershipRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	MemberId = "319b41e8-d9e4-42f8-bdc9-741113f48b33"
 	MembershipRule = "(user.displayName -startsWith "EndTestUser")"
 }
-Test-MgGroupDynamicMembershipRule -BodyParameter $params
+Test-MgBetaGroupDynamicMembershipRule -BodyParameter $params
 ```
 
-This example shows how to use the Test-MgGroupDynamicMembershipRule Cmdlet.
+This example shows how to use the Test-MgBetaGroupDynamicMembershipRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1R12J7LGroupsMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1R12J7LGroupsMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate1
 Aliases:
 
@@ -146,11 +146,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1R12J7LGroupsMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1R12J7LGroupsMicrosoftGraphEvaluatedynamicmembershipPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvaluateDynamicMembershipResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvaluateDynamicMembershipResult
 
 ## NOTES
 

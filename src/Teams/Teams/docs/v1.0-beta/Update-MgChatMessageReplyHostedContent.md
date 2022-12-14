@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgchatmessagereplyhostedcontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgchatmessagereplyhostedcontent
 schema: 2.0.0
 ---
 
-# Update-MgChatMessageReplyHostedContent
+# Update-MgBetaChatMessageReplyHostedContent
 
 ## SYNOPSIS
 Update the navigation property hostedContents in chats
@@ -14,7 +14,7 @@ Update the navigation property hostedContents in chats
 
 ### UpdateExpanded (Default)
 ```
-Update-MgChatMessageReplyHostedContent -ChatId <String> -ChatMessageHostedContentId <String>
+Update-MgBetaChatMessageReplyHostedContent -ChatId <String> -ChatMessageHostedContentId <String>
  -ChatMessageId <String> -ChatMessageId1 <String> [-AdditionalProperties <Hashtable>]
  [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgChatMessageReplyHostedContent -ChatId <String> -ChatMessageHostedConten
 
 ### Update
 ```
-Update-MgChatMessageReplyHostedContent -ChatId <String> -ChatMessageHostedContentId <String>
+Update-MgBetaChatMessageReplyHostedContent -ChatId <String> -ChatMessageHostedContentId <String>
  -ChatMessageId <String> -ChatMessageId1 <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgChatMessageReplyHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaChatMessageReplyHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgChatMessageReplyHostedContent -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaChatMessageReplyHostedContent -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -191,7 +191,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,7 +253,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ### System.Collections.Hashtable
 

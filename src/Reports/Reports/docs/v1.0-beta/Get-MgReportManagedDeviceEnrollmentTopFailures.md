@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportmanageddeviceenrollmenttopfailures
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportmanageddeviceenrollmenttopfailures
 schema: 2.0.0
 ---
 
-# Get-MgReportManagedDeviceEnrollmentTopFailures
+# Get-MgBetaReportManagedDeviceEnrollmentTopFailures
 
 ## SYNOPSIS
 Invoke function managedDeviceEnrollmentTopFailures
@@ -14,18 +14,18 @@ Invoke function managedDeviceEnrollmentTopFailures
 
 ### Top (Default)
 ```
-Get-MgReportManagedDeviceEnrollmentTopFailures -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportManagedDeviceEnrollmentTopFailures -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### Top1
 ```
-Get-MgReportManagedDeviceEnrollmentTopFailures -Period <String> -OutFile <String> [-PassThru]
+Get-MgBetaReportManagedDeviceEnrollmentTopFailures -Period <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### TopViaIdentity
 ```
-Get-MgReportManagedDeviceEnrollmentTopFailures -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportManagedDeviceEnrollmentTopFailures -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -41,7 +41,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: TopViaIdentity
 Aliases:
 
@@ -102,7 +102,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

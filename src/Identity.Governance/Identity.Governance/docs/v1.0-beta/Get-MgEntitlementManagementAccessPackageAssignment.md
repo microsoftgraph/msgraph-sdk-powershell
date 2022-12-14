@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageassignment
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageassignment
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageAssignment
+# Get-MgBetaEntitlementManagementAccessPackageAssignment
 
 ## SYNOPSIS
 The assignment of an access package to a subject for a period of time.
@@ -14,32 +14,32 @@ The assignment of an access package to a subject for a period of time.
 
 ### ListAll (Default)
 ```
-Get-MgEntitlementManagementAccessPackageAssignment [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageAssignment [-ExpandProperty <String[]>] [-Property <String[]>]
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageAssignment -AccessPackageAssignmentId <String>
+Get-MgBetaEntitlementManagementAccessPackageAssignment -AccessPackageAssignmentId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageAssignment -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackageAssignment -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgEntitlementManagementAccessPackageAssignment [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementAccessPackageAssignment [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### ListByAccessPackageId
 ```
-Get-MgEntitlementManagementAccessPackageAssignment -AccessPackageId <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageAssignment -AccessPackageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
@@ -48,31 +48,31 @@ The assignment of an access package to a subject for a period of time.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEntitlementManagementAccessPackageAssignment Cmdlet
+### Example 1: Using the Get-MgBetaEntitlementManagementAccessPackageAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageAssignment -AccessPackageAssignmentId $accessPackageAssignmentId -ExpandProperty "target" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageAssignment -AccessPackageAssignmentId $accessPackageAssignmentId -ExpandProperty "target" 
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageAssignment Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEntitlementManagementAccessPackageAssignment Cmdlet
+### Example 2: Using the Get-MgBetaEntitlementManagementAccessPackageAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageAssignment -AccessPackageAssignmentId $accessPackageAssignmentId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageAssignment -AccessPackageAssignmentId $accessPackageAssignmentId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageAssignment Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgEntitlementManagementAccessPackageAssignment Cmdlet
+### Example 3: Using the Get-MgBetaEntitlementManagementAccessPackageAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageAssignment
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageAssignment
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageAssignment Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -173,7 +173,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -279,13 +279,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment1
 
 ## NOTES
 

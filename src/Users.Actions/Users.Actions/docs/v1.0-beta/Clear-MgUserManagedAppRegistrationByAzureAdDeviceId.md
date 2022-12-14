@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/clear-mgusermanagedappregistrationbyazureaddeviceid
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/clear-mgusermanagedappregistrationbyazureaddeviceid
 schema: 2.0.0
 ---
 
-# Clear-MgUserManagedAppRegistrationByAzureAdDeviceId
+# Clear-MgBetaUserManagedAppRegistrationByAzureAdDeviceId
 
 ## SYNOPSIS
 Issues a wipe operation on an app registration with specified aad device Id.
@@ -14,27 +14,27 @@ Issues a wipe operation on an app registration with specified aad device Id.
 
 ### WipeExpanded (Default)
 ```
-Clear-MgUserManagedAppRegistrationByAzureAdDeviceId -UserId <String> [-AdditionalProperties <Hashtable>]
+Clear-MgBetaUserManagedAppRegistrationByAzureAdDeviceId -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AzureAdDeviceId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Wipe
 ```
-Clear-MgUserManagedAppRegistrationByAzureAdDeviceId -UserId <String>
+Clear-MgBetaUserManagedAppRegistrationByAzureAdDeviceId -UserId <String>
  -BodyParameter <IComponents1WfyhtaRequestbodiesWipemanagedappregistrationsbyazureaddeviceidrequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### WipeViaIdentity
 ```
-Clear-MgUserManagedAppRegistrationByAzureAdDeviceId -InputObject <IUsersActionsIdentity>
+Clear-MgBetaUserManagedAppRegistrationByAzureAdDeviceId -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents1WfyhtaRequestbodiesWipemanagedappregistrationsbyazureaddeviceidrequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### WipeViaIdentityExpanded
 ```
-Clear-MgUserManagedAppRegistrationByAzureAdDeviceId -InputObject <IUsersActionsIdentity>
+Clear-MgBetaUserManagedAppRegistrationByAzureAdDeviceId -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-AzureAdDeviceId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponents1WfyhtaRequestbodiesWipemanagedappregistrationsbyazureaddeviceidrequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponents1WfyhtaRequestbodiesWipemanagedappregistrationsbyazureaddeviceidrequestbodyContentApplicationJsonSchema
 Parameter Sets: Wipe, WipeViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: WipeViaIdentity, WipeViaIdentityExpanded
 Aliases:
 
@@ -174,9 +174,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponents1WfyhtaRequestbodiesWipemanagedappregistrationsbyazureaddeviceidrequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IComponents1WfyhtaRequestbodiesWipemanagedappregistrationsbyazureaddeviceidrequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

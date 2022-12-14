@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mguseronlinemeetingvirtualappointment
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/update-mguseronlinemeetingvirtualappointment
 schema: 2.0.0
 ---
 
-# Update-MgUserOnlineMeetingVirtualAppointment
+# Update-MgBetaUserOnlineMeetingVirtualAppointment
 
 ## SYNOPSIS
 Update the navigation property virtualAppointment in users
@@ -14,7 +14,7 @@ Update the navigation property virtualAppointment in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserOnlineMeetingVirtualAppointment -OnlineMeetingId <String> -UserId <String>
+Update-MgBetaUserOnlineMeetingVirtualAppointment -OnlineMeetingId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-AppointmentClientJoinWebUrl <String>]
  [-AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>] [-ExternalAppointmentId <String>]
  [-ExternalAppointmentUrl <String>] [-Id <String>] [-Settings <IMicrosoftGraphVirtualAppointmentSettings>]
@@ -23,19 +23,19 @@ Update-MgUserOnlineMeetingVirtualAppointment -OnlineMeetingId <String> -UserId <
 
 ### Update
 ```
-Update-MgUserOnlineMeetingVirtualAppointment -OnlineMeetingId <String> -UserId <String>
+Update-MgBetaUserOnlineMeetingVirtualAppointment -OnlineMeetingId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphVirtualAppointment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserOnlineMeetingVirtualAppointment -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaUserOnlineMeetingVirtualAppointment -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphVirtualAppointment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserOnlineMeetingVirtualAppointment -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaUserOnlineMeetingVirtualAppointment -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AppointmentClientJoinWebUrl <String>]
  [-AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>] [-ExternalAppointmentId <String>]
  [-ExternalAppointmentUrl <String>] [-Id <String>] [-Settings <IMicrosoftGraphVirtualAppointmentSettings>]
@@ -86,7 +86,7 @@ Optional.
 To construct, please use Get-Help -Online and see NOTES section for APPOINTMENTCLIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualAppointmentUser[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualAppointmentUser[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ virtualAppointment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualAppointment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualAppointment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -166,7 +166,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ virtualAppointmentSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualAppointmentSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualAppointmentSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -274,9 +274,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualAppointment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualAppointment
 
 ## OUTPUTS
 

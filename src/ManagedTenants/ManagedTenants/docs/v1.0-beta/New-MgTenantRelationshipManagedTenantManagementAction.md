@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementaction
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementaction
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantManagementAction
+# New-MgBetaTenantRelationshipManagedTenantManagementAction
 
 ## SYNOPSIS
 Create new navigation property to managementActions for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managementActions for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantManagementAction [-AdditionalProperties <Hashtable>] [-Category <String>]
+New-MgBetaTenantRelationshipManagedTenantManagementAction [-AdditionalProperties <Hashtable>] [-Category <String>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-ReferenceTemplateId <String>]
  [-ReferenceTemplateVersion <Int32>] [-WorkloadActions <IMicrosoftGraphManagedTenantsWorkloadAction[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgTenantRelationshipManagedTenantManagementAction [-AdditionalProperties <Ha
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantManagementAction
+New-MgBetaTenantRelationshipManagedTenantManagementAction
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementAction> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ managementAction
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
 Parameter Sets: Create
 Aliases:
 
@@ -168,7 +168,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for WORKLOADACTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWorkloadAction[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWorkloadAction[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -215,11 +215,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementAction
 
 ## NOTES
 

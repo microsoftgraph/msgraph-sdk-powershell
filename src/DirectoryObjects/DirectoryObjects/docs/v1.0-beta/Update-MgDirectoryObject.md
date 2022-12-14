@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DirectoryObjects
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.directoryobjects/update-mgdirectoryobject
+Module Name: Microsoft.Graph.Beta.DirectoryObjects
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.directoryobjects/update-mgdirectoryobject
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryObject
+# Update-MgBetaDirectoryObject
 
 ## SYNOPSIS
 Update entity in directoryObjects
@@ -14,25 +14,25 @@ Update entity in directoryObjects
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDirectoryObject -DirectoryObjectId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectoryObject -DirectoryObjectId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgDirectoryObject -DirectoryObjectId <String> -BodyParameter <IMicrosoftGraphDirectoryObject>
+Update-MgBetaDirectoryObject -DirectoryObjectId <String> -BodyParameter <IMicrosoftGraphDirectoryObject>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity>
+Update-MgBetaDirectoryObject -InputObject <IDirectoryObjectsIdentity>
  -BodyParameter <IMicrosoftGraphDirectoryObject> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ directoryObject
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDirectoryObjectsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDirectoryObjectsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -188,9 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDirectoryObjectsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDirectoryObjectsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## OUTPUTS
 

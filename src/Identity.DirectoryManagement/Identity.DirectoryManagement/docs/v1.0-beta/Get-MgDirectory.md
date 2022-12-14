@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectory
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectory
 schema: 2.0.0
 ---
 
-# Get-MgDirectory
+# Get-MgBetaDirectory
 
 ## SYNOPSIS
 Get directory
@@ -13,7 +13,7 @@ Get directory
 ## SYNTAX
 
 ```
-Get-MgDirectory [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaDirectory [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectory
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/update-mgbookingbusiness
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/update-mgbookingbusiness
 schema: 2.0.0
 ---
 
-# Update-MgBookingBusiness
+# Update-MgBetaBookingBusiness
 
 ## SYNOPSIS
 Update the properties of a bookingBusiness object.
@@ -14,7 +14,7 @@ Update the properties of a bookingBusiness object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgBookingBusiness -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaBookingBusiness -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPhysicalAddress1>] [-Appointments <IMicrosoftGraphBookingAppointment1[]>]
  [-BusinessHours <IMicrosoftGraphBookingWorkHours1[]>] [-BusinessType <String>]
  [-CalendarView <IMicrosoftGraphBookingAppointment1[]>] [-Customers <IMicrosoftGraphBookingCustomer[]>]
@@ -27,19 +27,19 @@ Update-MgBookingBusiness -BookingBusinessId <String> [-AdditionalProperties <Has
 
 ### Update
 ```
-Update-MgBookingBusiness -BookingBusinessId <String> -BodyParameter <IMicrosoftGraphBookingBusiness>
+Update-MgBetaBookingBusiness -BookingBusinessId <String> -BodyParameter <IMicrosoftGraphBookingBusiness>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgBookingBusiness -InputObject <IBookingsIdentity> -BodyParameter <IMicrosoftGraphBookingBusiness>
+Update-MgBetaBookingBusiness -InputObject <IBookingsIdentity> -BodyParameter <IMicrosoftGraphBookingBusiness>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBookingBusiness -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPhysicalAddress1>] [-Appointments <IMicrosoftGraphBookingAppointment1[]>]
  [-BusinessHours <IMicrosoftGraphBookingWorkHours1[]>] [-BusinessType <String>]
  [-CalendarView <IMicrosoftGraphBookingAppointment1[]>] [-Customers <IMicrosoftGraphBookingCustomer[]>]
@@ -55,9 +55,9 @@ Update the properties of a bookingBusiness object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgBookingBusiness Cmdlet
+### Example 1: Using the Update-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	Email = "admin@fabrikam.com"
 	SchedulingPolicy = @{
@@ -68,10 +68,10 @@ $params = @{
 		AllowStaffSelection = $true
 	}
 }
-Update-MgBookingBusiness -BookingBusinessId $bookingBusinessId -BodyParameter $params
+Update-MgBetaBookingBusiness -BookingBusinessId $bookingBusinessId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgBookingBusiness Cmdlet.
+This example shows how to use the Update-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -96,7 +96,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -114,7 +114,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for APPOINTMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ Represents a Microsot Bookings Business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingBusiness
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ The hours of operation for the business.
 To construct, please use Get-Help -Online and see NOTES section for BUSINESSHOURS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingWorkHours1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingWorkHours1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CALENDARVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomer[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -230,7 +230,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMQUESTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomQuestion[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomQuestion[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -307,7 +307,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -369,7 +369,7 @@ This type represents the set of policies that dictate how bookings can be create
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULINGPOLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -387,7 +387,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SERVICES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingService1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -405,7 +405,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for STAFFMEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingStaffMember[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingStaffMember[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -468,9 +468,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingBusiness
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mggroupteamtagmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mggroupteamtagmember
 schema: 2.0.0
 ---
 
-# Update-MgGroupTeamTagMember
+# Update-MgBetaGroupTeamTagMember
 
 ## SYNOPSIS
 Update the navigation property members in groups
@@ -14,26 +14,26 @@ Update the navigation property members in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupTeamTagMember -GroupId <String> -TeamworkTagId <String> -TeamworkTagMemberId <String>
+Update-MgBetaGroupTeamTagMember -GroupId <String> -TeamworkTagId <String> -TeamworkTagMemberId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-TenantId <String>]
  [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupTeamTagMember -GroupId <String> -TeamworkTagId <String> -TeamworkTagMemberId <String>
+Update-MgBetaGroupTeamTagMember -GroupId <String> -TeamworkTagId <String> -TeamworkTagMemberId <String>
  -BodyParameter <IMicrosoftGraphTeamworkTagMember> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupTeamTagMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTagMember>
+Update-MgBetaGroupTeamTagMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTagMember>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupTeamTagMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupTeamTagMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-TenantId <String>] [-UserId <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ teamworkTagMember
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -249,9 +249,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

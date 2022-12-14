@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprivilegedroleassignmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgprivilegedroleassignmentrequest
 schema: 2.0.0
 ---
 
-# Update-MgPrivilegedRoleAssignmentRequest
+# Update-MgBetaPrivilegedRoleAssignmentRequest
 
 ## SYNOPSIS
 Update entity in privilegedRoleAssignmentRequests
@@ -14,7 +14,7 @@ Update entity in privilegedRoleAssignmentRequests
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String>
+Update-MgBetaPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String>
  [-AdditionalProperties <Hashtable>] [-AssignmentState <String>] [-Duration <String>] [-Id <String>]
  [-Reason <String>] [-RequestedDateTime <DateTime>] [-RoleId <String>]
  [-RoleInfo <IMicrosoftGraphPrivilegedRole>] [-Schedule <IMicrosoftGraphGovernanceSchedule>]
@@ -24,21 +24,21 @@ Update-MgPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <Str
 
 ### Update
 ```
-Update-MgPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String>
+Update-MgBetaPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String>
  -BodyParameter <IMicrosoftGraphPrivilegedRoleAssignmentRequest> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphPrivilegedRoleAssignmentRequest> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignmentState <String>] [-Duration <String>] [-Id <String>]
  [-Reason <String>] [-RequestedDateTime <DateTime>] [-RoleId <String>]
  [-RoleInfo <IMicrosoftGraphPrivilegedRole>] [-Schedule <IMicrosoftGraphGovernanceSchedule>]
@@ -89,7 +89,7 @@ privilegedRoleAssignmentRequest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -230,7 +230,7 @@ privilegedRole
 To construct, please use Get-Help -Online and see NOTES section for ROLEINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -246,7 +246,7 @@ governanceSchedule
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceSchedule
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceSchedule
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -370,9 +370,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
 
 ## OUTPUTS
 

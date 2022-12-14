@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgdeprovisiondevicemanagementmanageddevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgdeprovisiondevicemanagementmanageddevice
 schema: 2.0.0
 ---
 
-# Invoke-MgDeprovisionDeviceManagementManagedDevice
+# Invoke-MgBetaDeprovisionDeviceManagementManagedDevice
 
 ## SYNOPSIS
 Invoke action deprovision
@@ -14,28 +14,28 @@ Invoke action deprovision
 
 ### DeprovisionExpanded (Default)
 ```
-Invoke-MgDeprovisionDeviceManagementManagedDevice -ManagedDeviceId <String>
+Invoke-MgBetaDeprovisionDeviceManagementManagedDevice -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-DeprovisionReason <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Deprovision
 ```
-Invoke-MgDeprovisionDeviceManagementManagedDevice -ManagedDeviceId <String>
+Invoke-MgBetaDeprovisionDeviceManagementManagedDevice -ManagedDeviceId <String>
  -BodyParameter <IPathsE4HznvDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeprovisionViaIdentity
 ```
-Invoke-MgDeprovisionDeviceManagementManagedDevice -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaDeprovisionDeviceManagementManagedDevice -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsE4HznvDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeprovisionViaIdentityExpanded
 ```
-Invoke-MgDeprovisionDeviceManagementManagedDevice -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaDeprovisionDeviceManagementManagedDevice -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-DeprovisionReason <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsE4HznvDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsE4HznvDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Deprovision, DeprovisionViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: DeprovisionViaIdentity, DeprovisionViaIdentityExpanded
 Aliases:
 
@@ -175,9 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsE4HznvDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsE4HznvDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeprovisionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

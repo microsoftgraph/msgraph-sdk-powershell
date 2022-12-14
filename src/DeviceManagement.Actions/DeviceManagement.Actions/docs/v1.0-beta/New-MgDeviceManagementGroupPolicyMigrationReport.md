@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementgrouppolicymigrationreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementgrouppolicymigrationreport
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementGroupPolicyMigrationReport
+# New-MgBetaDeviceManagementGroupPolicyMigrationReport
 
 ## SYNOPSIS
 Invoke action createMigrationReport
@@ -14,13 +14,13 @@ Invoke action createMigrationReport
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementGroupPolicyMigrationReport [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementGroupPolicyMigrationReport [-AdditionalProperties <Hashtable>]
  [-GroupPolicyObjectFile <IMicrosoftGraphGroupPolicyObjectFile>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementGroupPolicyMigrationReport
+New-MgBetaDeviceManagementGroupPolicyMigrationReport
  -BodyParameter <IPathsDjtigpDevicemanagementGrouppolicymigrationreportsMicrosoftGraphCreatemigrationreportPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsDjtigpDevicemanagementGrouppolicymigrationreportsMicrosoftGraphCreatemigrationreportPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsDjtigpDevicemanagementGrouppolicymigrationreportsMicrosoftGraphCreatemigrationreportPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create
 Aliases:
 
@@ -68,7 +68,7 @@ The Group Policy Object file uploaded by admin.
 To construct, please use Get-Help -Online and see NOTES section for GROUPPOLICYOBJECTFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -115,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsDjtigpDevicemanagementGrouppolicymigrationreportsMicrosoftGraphCreatemigrationreportPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsDjtigpDevicemanagementGrouppolicymigrationreportsMicrosoftGraphCreatemigrationreportPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassgroup
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationclassgroup
 schema: 2.0.0
 ---
 
-# Get-MgEducationClassGroup
+# Get-MgBetaEducationClassGroup
 
 ## SYNOPSIS
 Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
@@ -14,13 +14,13 @@ Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**
 
 ### Get1 (Default)
 ```
-Get-MgEducationClassGroup -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationClassGroup -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgEducationClassGroup -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationClassGroup -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationClassGroup Cmdlet
+### Example 1: Using the Get-MgBetaEducationClassGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClassGroup -EducationClassId $educationClassId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationClassGroup -EducationClassId $educationClassId
 ```
 
-This example shows how to use the Get-MgEducationClassGroup Cmdlet.
+This example shows how to use the Get-MgBetaEducationClassGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroup
 
 ## NOTES
 

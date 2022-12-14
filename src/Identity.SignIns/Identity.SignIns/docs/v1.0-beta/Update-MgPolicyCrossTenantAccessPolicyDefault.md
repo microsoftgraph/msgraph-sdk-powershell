@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicycrosstenantaccesspolicydefault
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicycrosstenantaccesspolicydefault
 schema: 2.0.0
 ---
 
-# Update-MgPolicyCrossTenantAccessPolicyDefault
+# Update-MgBetaPolicyCrossTenantAccessPolicyDefault
 
 ## SYNOPSIS
 Update the default configuration of a cross-tenant access policy.
@@ -14,7 +14,7 @@ Update the default configuration of a cross-tenant access policy.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyCrossTenantAccessPolicyDefault [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyCrossTenantAccessPolicyDefault [-AdditionalProperties <Hashtable>]
  [-B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BCollaborationOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BDirectConnectInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
@@ -26,7 +26,7 @@ Update-MgPolicyCrossTenantAccessPolicyDefault [-AdditionalProperties <Hashtable>
 
 ### Update
 ```
-Update-MgPolicyCrossTenantAccessPolicyDefault
+Update-MgBetaPolicyCrossTenantAccessPolicyDefault
  -BodyParameter <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -36,9 +36,9 @@ Update the default configuration of a cross-tenant access policy.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet
+### Example 1: Using the Update-MgBetaPolicyCrossTenantAccessPolicyDefault Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	B2bCollaborationOutbound = @{
 		UsersAndGroups = @{
@@ -61,10 +61,10 @@ $params = @{
 		}
 	}
 }
-Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
+Update-MgBetaPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet.
+This example shows how to use the Update-MgBetaPolicyCrossTenantAccessPolicyDefault Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -89,7 +89,7 @@ crossTenantAccessPolicyB2BSetting
 To construct, please use Get-Help -Online and see NOTES section for B2BCOLLABORATIONINBOUND properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -105,7 +105,7 @@ crossTenantAccessPolicyB2BSetting
 To construct, please use Get-Help -Online and see NOTES section for B2BCOLLABORATIONOUTBOUND properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -121,7 +121,7 @@ crossTenantAccessPolicyB2BSetting
 To construct, please use Get-Help -Online and see NOTES section for B2BDIRECTCONNECTINBOUND properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -137,7 +137,7 @@ crossTenantAccessPolicyB2BSetting
 To construct, please use Get-Help -Online and see NOTES section for B2BDIRECTCONNECTOUTBOUND properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -153,7 +153,7 @@ crossTenantAccessPolicyConfigurationDefault
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1
 Parameter Sets: Update
 Aliases:
 
@@ -185,7 +185,7 @@ crossTenantAccessPolicyInboundTrust
 To construct, please use Get-Help -Online and see NOTES section for INBOUNDTRUST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyInboundTrust
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyInboundTrust
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ crossTenantAccessPolicyTenantRestrictions
 To construct, please use Get-Help -Online and see NOTES section for TENANTRESTRICTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyTenantRestrictions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyTenantRestrictions
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -279,7 +279,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1
 
 ## OUTPUTS
 

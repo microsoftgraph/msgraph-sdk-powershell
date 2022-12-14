@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernanceaccessreviewdefinitioninstancecontactedreviewer
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernanceaccessreviewdefinitioninstancecontactedreviewer
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer
+# Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer
 
 ## SYNOPSIS
 Returns the collection of reviewers who were contacted to complete this review.
@@ -17,7 +17,7 @@ Read-only.
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer -AccessReviewInstanceId <String>
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -25,14 +25,14 @@ Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer -AccessR
 
 ### Get
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer -AccessReviewInstanceId <String>
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer -AccessReviewInstanceId <String>
  -AccessReviewReviewerId <String> -AccessReviewScheduleDefinitionId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -45,13 +45,13 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanycountryregion
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanycountryregion
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyCountryRegion
+# Update-MgBetaFinancialCompanyCountryRegion
 
 ## SYNOPSIS
 Update the navigation property countriesRegions in financials
@@ -14,26 +14,26 @@ Update the navigation property countriesRegions in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyCountryRegion -CompanyId <String> -CountryRegionId <String>
+Update-MgBetaFinancialCompanyCountryRegion -CompanyId <String> -CountryRegionId <String>
  [-AdditionalProperties <Hashtable>] [-AddressFormat <String>] [-Code <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgFinancialCompanyCountryRegion -CompanyId <String> -CountryRegionId <String>
+Update-MgBetaFinancialCompanyCountryRegion -CompanyId <String> -CountryRegionId <String>
  -BodyParameter <IMicrosoftGraphCountryRegion> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphCountryRegion> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-AddressFormat <String>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -80,7 +80,7 @@ countryRegion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCountryRegion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCountryRegion
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -172,7 +172,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -249,9 +249,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCountryRegion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCountryRegion
 
 ## OUTPUTS
 

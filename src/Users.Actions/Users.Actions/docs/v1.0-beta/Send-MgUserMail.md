@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/send-mgusermail
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/send-mgusermail
 schema: 2.0.0
 ---
 
-# Send-MgUserMail
+# Send-MgBetaUserMail
 
 ## SYNOPSIS
 Send the message specified in the request body using either JSON or MIME format.
@@ -19,27 +19,27 @@ To learn more about the steps involved in the backend before a mail is delivered
 
 ### SendExpanded (Default)
 ```
-Send-MgUserMail -UserId <String> [-AdditionalProperties <Hashtable>] [-Message <IMicrosoftGraphMessage>]
+Send-MgBetaUserMail -UserId <String> [-AdditionalProperties <Hashtable>] [-Message <IMicrosoftGraphMessage>]
  [-SaveToSentItems] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
 ```
-Send-MgUserMail -UserId <String>
+Send-MgBetaUserMail -UserId <String>
  -BodyParameter <IComponentsVsh1S1RequestbodiesSendmailrequestbodyContentApplicationJsonSchema1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
-Send-MgUserMail -InputObject <IUsersActionsIdentity>
+Send-MgBetaUserMail -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponentsVsh1S1RequestbodiesSendmailrequestbodyContentApplicationJsonSchema1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentityExpanded
 ```
-Send-MgUserMail -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Send-MgBetaUserMail -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Message <IMicrosoftGraphMessage>] [-SaveToSentItems] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,9 +53,9 @@ To learn more about the steps involved in the backend before a mail is delivered
 
 ## EXAMPLES
 
-### Example 1: Using the Send-MgUserMail Cmdlet
+### Example 1: Using the Send-MgBetaUserMail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Message = @{
 		Subject = "Meet for lunch?"
@@ -81,15 +81,15 @@ $params = @{
 	SaveToSentItems = "false"
 }
 # A UPN can also be used as -UserId.
-Send-MgUserMail -UserId $userId -BodyParameter $params
+Send-MgBetaUserMail -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Send-MgUserMail Cmdlet.
+This example shows how to use the Send-MgBetaUserMail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Send-MgUserMail Cmdlet
+### Example 2: Using the Send-MgBetaUserMail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Message = @{
 		Subject = "Meet for lunch?"
@@ -106,7 +106,7 @@ $params = @{
 		)
 		Attachments = @(
 			@{
-				"@odata.type" = "#microsoft.graph.fileAttachment"
+				"@odata.type" = "#Microsoft.Graph.Beta.fileAttachment"
 				Name = "attachment.txt"
 				ContentType = "text/plain"
 				ContentBytes = "SGVsbG8gV29ybGQh"
@@ -115,15 +115,15 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Send-MgUserMail -UserId $userId -BodyParameter $params
+Send-MgBetaUserMail -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Send-MgUserMail Cmdlet.
+This example shows how to use the Send-MgBetaUserMail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Send-MgUserMail Cmdlet
+### Example 3: Using the Send-MgBetaUserMail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Message = @{
 		Subject = "9/9/2018: concert"
@@ -151,15 +151,15 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Send-MgUserMail -UserId $userId -BodyParameter $params
+Send-MgBetaUserMail -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Send-MgUserMail Cmdlet.
+This example shows how to use the Send-MgBetaUserMail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Send-MgUserMail Cmdlet
+### Example 4: Using the Send-MgBetaUserMail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Message = @{
 		Subject = "Project kickoff"
@@ -182,10 +182,10 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Send-MgUserMail -UserId $userId -BodyParameter $params
+Send-MgBetaUserMail -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Send-MgUserMail Cmdlet.
+This example shows how to use the Send-MgBetaUserMail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponentsVsh1S1RequestbodiesSendmailrequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponentsVsh1S1RequestbodiesSendmailrequestbodyContentApplicationJsonSchema1
 Parameter Sets: Send, SendViaIdentity
 Aliases:
 
@@ -226,7 +226,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: SendViaIdentity, SendViaIdentityExpanded
 Aliases:
 
@@ -242,7 +242,7 @@ message
 To construct, please use Get-Help -Online and see NOTES section for MESSAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
 Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
@@ -334,9 +334,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponentsVsh1S1RequestbodiesSendmailrequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IComponentsVsh1S1RequestbodiesSendmailrequestbodyContentApplicationJsonSchema1
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

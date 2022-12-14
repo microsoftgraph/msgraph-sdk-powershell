@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritythreatsubmissionurlthreat
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritythreatsubmissionurlthreat
 schema: 2.0.0
 ---
 
-# Update-MgSecurityThreatSubmissionUrlThreat
+# Update-MgBetaSecurityThreatSubmissionUrlThreat
 
 ## SYNOPSIS
 Update the navigation property urlThreats in security
@@ -14,7 +14,7 @@ Update the navigation property urlThreats in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String> [-AdditionalProperties <Hashtable>]
  [-AdminReview <IMicrosoftGraphSecuritySubmissionAdminReview>] [-Category <String>] [-ClientSource <String>]
  [-ContentType <String>] [-CreatedBy <IMicrosoftGraphSecuritySubmissionUserIdentity>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-Result <IMicrosoftGraphSecuritySubmissionResult>]
@@ -24,21 +24,21 @@ Update-MgSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String> [-Add
 
 ### Update
 ```
-Update-MgSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String>
+Update-MgBetaSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String>
  -BodyParameter <IMicrosoftGraphSecurityUrlThreatSubmission> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityUrlThreatSubmission> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-AdminReview <IMicrosoftGraphSecuritySubmissionAdminReview>]
  [-Category <String>] [-ClientSource <String>] [-ContentType <String>]
  [-CreatedBy <IMicrosoftGraphSecuritySubmissionUserIdentity>] [-CreatedDateTime <DateTime>] [-Id <String>]
@@ -73,7 +73,7 @@ submissionAdminReview
 To construct, please use Get-Help -Online and see NOTES section for ADMINREVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionAdminReview
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionAdminReview
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -89,7 +89,7 @@ urlThreatSubmission
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -150,7 +150,7 @@ submissionUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionUserIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -198,7 +198,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -229,7 +229,7 @@ submissionResult
 To construct, please use Get-Help -Online and see NOTES section for RESULT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionResult
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionResult
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -353,9 +353,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

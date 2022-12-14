@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementintentdevicestate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementintentdevicestate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementIntentDeviceState
+# Get-MgBetaDeviceManagementIntentDeviceState
 
 ## SYNOPSIS
 Collection of states of all devices that the intent is applied to
@@ -14,20 +14,20 @@ Collection of states of all devices that the intent is applied to
 
 ### List (Default)
 ```
-Get-MgDeviceManagementIntentDeviceState -DeviceManagementIntentId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementIntentDeviceState -DeviceManagementIntentId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementIntentDeviceState -DeviceManagementIntentDeviceStateId <String>
+Get-MgBetaDeviceManagementIntentDeviceState -DeviceManagementIntentDeviceStateId <String>
  -DeviceManagementIntentId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementIntentDeviceState -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementIntentDeviceState -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentDeviceState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentDeviceState
 
 ## NOTES
 

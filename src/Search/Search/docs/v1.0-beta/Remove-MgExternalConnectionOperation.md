@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/remove-mgexternalconnectionoperation
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/remove-mgexternalconnectionoperation
 schema: 2.0.0
 ---
 
-# Remove-MgExternalConnectionOperation
+# Remove-MgBetaExternalConnectionOperation
 
 ## SYNOPSIS
 Delete navigation property operations for external
@@ -14,13 +14,13 @@ Delete navigation property operations for external
 
 ### Delete (Default)
 ```
-Remove-MgExternalConnectionOperation -ConnectionOperationId <String> -ExternalConnectionId <String>
+Remove-MgBetaExternalConnectionOperation -ConnectionOperationId <String> -ExternalConnectionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgExternalConnectionOperation -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaExternalConnectionOperation -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 

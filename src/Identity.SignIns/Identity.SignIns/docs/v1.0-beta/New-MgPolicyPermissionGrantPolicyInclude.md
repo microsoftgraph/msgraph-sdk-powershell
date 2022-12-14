@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicypermissiongrantpolicyinclude
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicypermissiongrantpolicyinclude
 schema: 2.0.0
 ---
 
-# New-MgPolicyPermissionGrantPolicyInclude
+# New-MgBetaPolicyPermissionGrantPolicyInclude
 
 ## SYNOPSIS
 Add conditions under which a permission grant event is *included* in a permission grant policy.
@@ -15,7 +15,7 @@ You do this by adding a permissionGrantConditionSet to the **includes** collecti
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-CertifiedClientApplicationsOnly] [-ClientApplicationIds <String[]>]
  [-ClientApplicationPublisherIds <String[]>] [-ClientApplicationsFromVerifiedPublisherOnly]
  [-ClientApplicationTenantIds <String[]>] [-Id <String>] [-PermissionClassification <String>]
@@ -25,19 +25,19 @@ New-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId <String> [-Add
 
 ### Create
 ```
-New-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId <String>
+New-MgBetaPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId <String>
  -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
+New-MgBetaPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
+New-MgBetaPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CertifiedClientApplicationsOnly] [-ClientApplicationIds <String[]>]
  [-ClientApplicationPublisherIds <String[]>] [-ClientApplicationsFromVerifiedPublisherOnly]
  [-ClientApplicationTenantIds <String[]>] [-Id <String>] [-PermissionClassification <String>]
@@ -53,8 +53,8 @@ You do this by adding a permissionGrantConditionSet to the **includes** collecti
 
 ### Example 1: Create a permission grant policy include 
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
-New-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -PermissionType "application" -ResourceApplication "00000000-0000-0000-0000-000000000000" -Permissions "00000000-0000-0000-0000-000000000000"  | fl
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+New-MgBetaPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -PermissionType "application" -ResourceApplication "00000000-0000-0000-0000-000000000000" -Permissions "00000000-0000-0000-0000-000000000000"  | fl
 
 ClientApplicationIds                        : {all}
 ClientApplicationPublisherIds               : {all}
@@ -92,7 +92,7 @@ permissionGrantConditionSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -206,7 +206,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -335,13 +335,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet1
 
 ## NOTES
 

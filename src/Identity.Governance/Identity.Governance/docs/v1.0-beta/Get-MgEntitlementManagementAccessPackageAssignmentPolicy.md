@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentpolicy
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentpolicy
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageAssignmentPolicy
+# Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy
 
 ## SYNOPSIS
 Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
@@ -14,39 +14,39 @@ Represents the policy that governs which subjects can request or be assigned an 
 
 ### ListAll (Default)
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicy [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy [-ExpandProperty <String[]>] [-Property <String[]>]
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId <String>
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicy -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicy [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### ListByDisplayNameContains
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicy -DisplayNameContains <String>
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy -DisplayNameContains <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [<CommonParameters>]
 ```
 
 ### ListByDisplayNameEq
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentPolicy -DisplayNameEq <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy -DisplayNameEq <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
@@ -57,13 +57,13 @@ Represents the policy that governs which subjects can request or be assigned an 
 
 ### Example 1: Get all access package policy assignment policies
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageAssignmentPolicy | Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy | Format-List
 
-AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage
-AccessPackageCatalog    : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageCatalog
+AccessPackage           : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackage
+AccessPackageCatalog    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageCatalog
 AccessPackageId         : b90cbf24-66b9-4cd8-b270-863b6fca641c
-AccessReviewSettings    : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAssignmentReviewSettings
+AccessReviewSettings    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAssignmentReviewSettings
 CanExtend               : False
 CreatedBy               : admin@M365x814237.onmicrosoft.com
 CreatedDateTime         : 9/15/2021 7:23:44 AM
@@ -75,8 +75,8 @@ Id                      : 138874b9-326b-4e77-826b-6ac08a130938
 ModifiedBy              : admin@M365x814237.onmicrosoft.com
 ModifiedDateTime        : 9/15/2021 7:23:44 AM
 Questions               : {}
-RequestApprovalSettings : Microsoft.Graph.PowerShell.Models.MicrosoftGraphApprovalSettings
-RequestorSettings       : Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestorSettings
+RequestApprovalSettings : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphApprovalSettings
+RequestorSettings       : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphRequestorSettings
 AdditionalProperties    : {}
 ```
 
@@ -195,7 +195,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -301,13 +301,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy1
 
 ## NOTES
 

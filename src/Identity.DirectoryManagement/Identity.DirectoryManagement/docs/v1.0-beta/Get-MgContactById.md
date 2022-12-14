@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactbyid
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgcontactbyid
 schema: 2.0.0
 ---
 
-# Get-MgContactById
+# Get-MgBetaContactById
 
 ## SYNOPSIS
 Return the directory objects specified in a list of IDs.
@@ -15,13 +15,13 @@ Some common uses for this function are to:
 
 ### GetExpanded1 (Default)
 ```
-Get-MgContactById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Types <String[]>] [-Confirm]
+Get-MgBetaContactById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Types <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgContactById
+Get-MgBetaContactById
  -BodyParameter <IPaths12Azg33ContactsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -34,7 +34,7 @@ Some common uses for this function are to:
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	Ids = @(
@@ -50,10 +50,10 @@ $params = @{
 	)
 }
 
-Get-MgDirectoryObjectById -BodyParameter $params
+Get-MgBetaDirectoryObjectById -BodyParameter $params
 ```
 
-This example shows how to use the Get-MgContactById Cmdlet.
+This example shows how to use the Get-MgBetaContactById Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths12Azg33ContactsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths12Azg33ContactsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Get1
 Aliases:
 
@@ -156,11 +156,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths12Azg33ContactsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths12Azg33ContactsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

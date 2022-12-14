@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgserviceprincipallicensedetail
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgserviceprincipallicensedetail
 schema: 2.0.0
 ---
 
-# Update-MgServicePrincipalLicenseDetail
+# Update-MgBetaServicePrincipalLicenseDetail
 
 ## SYNOPSIS
 Update the navigation property licenseDetails in servicePrincipals
@@ -14,26 +14,26 @@ Update the navigation property licenseDetails in servicePrincipals
 
 ### UpdateExpanded (Default)
 ```
-Update-MgServicePrincipalLicenseDetail -LicenseDetailsId <String> -ServicePrincipalId <String>
+Update-MgBetaServicePrincipalLicenseDetail -LicenseDetailsId <String> -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>]
  [-SkuId <String>] [-SkuPartNumber <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgServicePrincipalLicenseDetail -LicenseDetailsId <String> -ServicePrincipalId <String>
+Update-MgBetaServicePrincipalLicenseDetail -LicenseDetailsId <String> -ServicePrincipalId <String>
  -BodyParameter <IMicrosoftGraphLicenseDetails> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgServicePrincipalLicenseDetail -InputObject <IApplicationsIdentity>
+Update-MgBetaServicePrincipalLicenseDetail -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphLicenseDetails> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgServicePrincipalLicenseDetail -InputObject <IApplicationsIdentity>
+Update-MgBetaServicePrincipalLicenseDetail -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>]
  [-SkuId <String>] [-SkuPartNumber <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ licenseDetails
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLicenseDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLicenseDetails
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -144,7 +144,7 @@ Read-only, Not nullable
 To construct, please use Get-Help -Online and see NOTES section for SERVICEPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePlanInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePlanInfo[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -240,9 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLicenseDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLicenseDetails
 
 ## OUTPUTS
 

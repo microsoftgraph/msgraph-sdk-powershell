@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementintent
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementintent
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementIntent
+# Set-MgBetaDeviceManagementIntent
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,28 +14,28 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementIntent -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaDeviceManagementIntent -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementIntentAssignment[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgDeviceManagementIntent -DeviceManagementIntentId <String>
+Set-MgBetaDeviceManagementIntent -DeviceManagementIntentId <String>
  -BodyParameter <IPathsPuxi5DevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementIntent -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementIntent -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsPuxi5DevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementIntent -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementIntent -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphDeviceManagementIntentAssignment[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsPuxi5DevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsPuxi5DevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -176,9 +176,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsPuxi5DevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsPuxi5DevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

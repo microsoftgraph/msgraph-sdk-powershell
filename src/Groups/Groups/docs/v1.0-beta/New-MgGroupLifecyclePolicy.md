@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggrouplifecyclepolicy
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggrouplifecyclepolicy
 schema: 2.0.0
 ---
 
-# New-MgGroupLifecyclePolicy
+# New-MgBetaGroupLifecyclePolicy
 
 ## SYNOPSIS
 Creates a new groupLifecyclePolicy.
@@ -14,14 +14,14 @@ Creates a new groupLifecyclePolicy.
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupLifecyclePolicy [-AdditionalProperties <Hashtable>] [-AlternateNotificationEmails <String>]
+New-MgBetaGroupLifecyclePolicy [-AdditionalProperties <Hashtable>] [-AlternateNotificationEmails <String>]
  [-GroupLifetimeInDays <Int32>] [-Id <String>] [-ManagedGroupTypes <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupLifecyclePolicy -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Confirm] [-WhatIf]
+New-MgBetaGroupLifecyclePolicy -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,18 +30,18 @@ Creates a new groupLifecyclePolicy.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgGroupLifecyclePolicy Cmdlet
+### Example 1: Using the New-MgBetaGroupLifecyclePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	GroupLifetimeInDays = 100
 	ManagedGroupTypes = "Selected"
 	AlternateNotificationEmails = "admin@contoso.com"
 }
-New-MgGroupLifecyclePolicy -BodyParameter $params
+New-MgBetaGroupLifecyclePolicy -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupLifecyclePolicy Cmdlet.
+This example shows how to use the New-MgBetaGroupLifecyclePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -82,7 +82,7 @@ groupLifecyclePolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
 Parameter Sets: Create
 Aliases:
 
@@ -177,11 +177,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
 
 ## NOTES
 

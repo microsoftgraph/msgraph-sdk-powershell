@@ -1,237 +1,237 @@
 ---
-Module Name: Microsoft.Graph.Users
+Module Name: Microsoft.Graph.Beta.Users
 Module Guid: bf0d07bf-16bd-4740-820e-0a2e6b49d735
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.users
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Users Module
+# Microsoft.Graph.Beta.Users Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Users Cmdlets
-### [Get-MgUser](Get-MgUser.md)
+## Microsoft.Graph.Beta.Users Cmdlets
+### [Get-MgBetaUser](Get-MgBetaUser.md)
 Retrieve the properties and relationships of user object.
 This operation returns by default only a subset of the more commonly used properties for each user.
 These _default_ properties are noted in the Properties section.
 To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option.
 Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 
-### [Get-MgUserCreatedObject](Get-MgUserCreatedObject.md)
+### [Get-MgBetaUserCreatedObject](Get-MgBetaUserCreatedObject.md)
 Directory objects that were created by the user.
 Read-only.
 Nullable.
 
-### [Get-MgUserDirectReport](Get-MgUserDirectReport.md)
+### [Get-MgBetaUserDirectReport](Get-MgBetaUserDirectReport.md)
 The users and contacts that report to the user.
 (The users and contacts that have their manager property set to this user.) Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgUserExtension](Get-MgUserExtension.md)
+### [Get-MgBetaUserExtension](Get-MgBetaUserExtension.md)
 The collection of open extensions defined for the user.
 Supports $expand.
 Nullable.
 
-### [Get-MgUserLicenseDetail](Get-MgUserLicenseDetail.md)
+### [Get-MgBetaUserLicenseDetail](Get-MgBetaUserLicenseDetail.md)
 Get licenseDetails from users
 
-### [Get-MgUserManager](Get-MgUserManager.md)
+### [Get-MgBetaUserManager](Get-MgBetaUserManager.md)
 Returns the user or organizational contact assigned as the user's manager.
 Optionally, you can expand the manager's chain up to the root node.
 
-### [Get-MgUserManagerByRef](Get-MgUserManagerByRef.md)
+### [Get-MgBetaUserManagerByRef](Get-MgBetaUserManagerByRef.md)
 Returns the user or organizational contact assigned as the user's manager.
 Optionally, you can expand the manager's chain up to the root node.
 
-### [Get-MgUserMemberOf](Get-MgUserMemberOf.md)
+### [Get-MgBetaUserMemberOf](Get-MgBetaUserMemberOf.md)
 The groups, directory roles and administrative units that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgUserNotification](Get-MgUserNotification.md)
+### [Get-MgBetaUserNotification](Get-MgBetaUserNotification.md)
 Get notifications from users
 
-### [Get-MgUserOauth2PermissionGrant](Get-MgUserOauth2PermissionGrant.md)
+### [Get-MgBetaUserOauth2PermissionGrant](Get-MgBetaUserOauth2PermissionGrant.md)
 Get oauth2PermissionGrants from users
 
-### [Get-MgUserOutlookMasterCategory](Get-MgUserOutlookMasterCategory.md)
+### [Get-MgBetaUserOutlookMasterCategory](Get-MgBetaUserOutlookMasterCategory.md)
 A list of categories defined for the user.
 
-### [Get-MgUserOutlookTask](Get-MgUserOutlookTask.md)
+### [Get-MgBetaUserOutlookTask](Get-MgBetaUserOutlookTask.md)
 Get tasks from users
 
-### [Get-MgUserOutlookTaskAttachment](Get-MgUserOutlookTaskAttachment.md)
+### [Get-MgBetaUserOutlookTaskAttachment](Get-MgBetaUserOutlookTaskAttachment.md)
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskFolder](Get-MgUserOutlookTaskFolder.md)
+### [Get-MgBetaUserOutlookTaskFolder](Get-MgBetaUserOutlookTaskFolder.md)
 Get taskFolders from users
 
-### [Get-MgUserOutlookTaskFolderMultiValueExtendedProperty](Get-MgUserOutlookTaskFolderMultiValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskFolderMultiValueExtendedProperty](Get-MgBetaUserOutlookTaskFolderMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the task folder.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskFolderSingleValueExtendedProperty](Get-MgUserOutlookTaskFolderSingleValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskFolderSingleValueExtendedProperty](Get-MgBetaUserOutlookTaskFolderSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the task folder.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskFolderTask](Get-MgUserOutlookTaskFolderTask.md)
+### [Get-MgBetaUserOutlookTaskFolderTask](Get-MgBetaUserOutlookTaskFolderTask.md)
 The tasks in this task folder.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskFolderTaskAttachment](Get-MgUserOutlookTaskFolderTaskAttachment.md)
+### [Get-MgBetaUserOutlookTaskFolderTaskAttachment](Get-MgBetaUserOutlookTaskFolderTaskAttachment.md)
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty](Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty](Get-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty](Get-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty](Get-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskGroup](Get-MgUserOutlookTaskGroup.md)
+### [Get-MgBetaUserOutlookTaskGroup](Get-MgBetaUserOutlookTaskGroup.md)
 Get taskGroups from users
 
-### [Get-MgUserOutlookTaskGroupTaskFolder](Get-MgUserOutlookTaskGroupTaskFolder.md)
+### [Get-MgBetaUserOutlookTaskGroupTaskFolder](Get-MgBetaUserOutlookTaskGroupTaskFolder.md)
 The collection of task folders in the task group.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](Get-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](Get-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the task folder.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty](Get-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty](Get-MgBetaUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the task folder.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskGroupTaskFolderTask](Get-MgUserOutlookTaskGroupTaskFolderTask.md)
+### [Get-MgBetaUserOutlookTaskGroupTaskFolderTask](Get-MgBetaUserOutlookTaskGroupTaskFolderTask.md)
 The tasks in this task folder.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment](Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment.md)
+### [Get-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment](Get-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment.md)
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](Get-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](Get-MgBetaUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty](Get-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty](Get-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskMultiValueExtendedProperty](Get-MgUserOutlookTaskMultiValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskMultiValueExtendedProperty](Get-MgBetaUserOutlookTaskMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOutlookTaskSingleValueExtendedProperty](Get-MgUserOutlookTaskSingleValueExtendedProperty.md)
+### [Get-MgBetaUserOutlookTaskSingleValueExtendedProperty](Get-MgBetaUserOutlookTaskSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the task.
 Read-only.
 Nullable.
 
-### [Get-MgUserOwnedDevice](Get-MgUserOwnedDevice.md)
+### [Get-MgBetaUserOwnedDevice](Get-MgBetaUserOwnedDevice.md)
 Devices that are owned by the user.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgUserOwnedObject](Get-MgUserOwnedObject.md)
+### [Get-MgBetaUserOwnedObject](Get-MgBetaUserOwnedObject.md)
 Directory objects that are owned by the user.
 Read-only.
 Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
-### [Get-MgUserPhoto](Get-MgUserPhoto.md)
+### [Get-MgBetaUserPhoto](Get-MgBetaUserPhoto.md)
 The user's profile photo.
 Read-only.
 
-### [Get-MgUserPhotoContent](Get-MgUserPhotoContent.md)
+### [Get-MgBetaUserPhotoContent](Get-MgBetaUserPhotoContent.md)
 Get media content for the navigation property photo from users
 
-### [Get-MgUserRegisteredDevice](Get-MgUserRegisteredDevice.md)
+### [Get-MgBetaUserRegisteredDevice](Get-MgBetaUserRegisteredDevice.md)
 Devices that are registered for the user.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgUserSetting](Get-MgUserSetting.md)
+### [Get-MgBetaUserSetting](Get-MgBetaUserSetting.md)
 Get settings from users
 
-### [Get-MgUserSettingContactMergeSuggestion](Get-MgUserSettingContactMergeSuggestion.md)
+### [Get-MgBetaUserSettingContactMergeSuggestion](Get-MgBetaUserSettingContactMergeSuggestion.md)
 Read the properties and relationships of a contactMergeSuggestions object.
 
-### [Get-MgUserSettingItemInsight](Get-MgUserSettingItemInsight.md)
+### [Get-MgBetaUserSettingItemInsight](Get-MgBetaUserSettingItemInsight.md)
 Get the user-customizable privacy settings for itemInsights and meeting hours insights.
 
-### [Get-MgUserSettingRegionalAndLanguageSetting](Get-MgUserSettingRegionalAndLanguageSetting.md)
+### [Get-MgBetaUserSettingRegionalAndLanguageSetting](Get-MgBetaUserSettingRegionalAndLanguageSetting.md)
 Get the properties of a regionalAndLanguageSettings object.
 
-### [Get-MgUserSettingShiftPreference](Get-MgUserSettingShiftPreference.md)
+### [Get-MgBetaUserSettingShiftPreference](Get-MgBetaUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
 
-### [Get-MgUserTodoList](Get-MgUserTodoList.md)
+### [Get-MgBetaUserTodoList](Get-MgBetaUserTodoList.md)
 The task lists in the users mailbox.
 
-### [Get-MgUserTodoListExtension](Get-MgUserTodoListExtension.md)
+### [Get-MgBetaUserTodoListExtension](Get-MgBetaUserTodoListExtension.md)
 The collection of open extensions defined for the task list.
 Nullable.
 
-### [Get-MgUserTodoListTask](Get-MgUserTodoListTask.md)
+### [Get-MgBetaUserTodoListTask](Get-MgBetaUserTodoListTask.md)
 The tasks in this task list.
 Read-only.
 Nullable.
 
-### [Get-MgUserTodoListTaskAttachment](Get-MgUserTodoListTaskAttachment.md)
+### [Get-MgBetaUserTodoListTaskAttachment](Get-MgBetaUserTodoListTaskAttachment.md)
 A collection of file attachments for the task.
 
-### [Get-MgUserTodoListTaskAttachmentContent](Get-MgUserTodoListTaskAttachmentContent.md)
+### [Get-MgBetaUserTodoListTaskAttachmentContent](Get-MgBetaUserTodoListTaskAttachmentContent.md)
 Get media content for the navigation property attachments from users
 
-### [Get-MgUserTodoListTaskAttachmentSession](Get-MgUserTodoListTaskAttachmentSession.md)
+### [Get-MgBetaUserTodoListTaskAttachmentSession](Get-MgBetaUserTodoListTaskAttachmentSession.md)
 Get attachmentSessions from users
 
-### [Get-MgUserTodoListTaskAttachmentSessionContent](Get-MgUserTodoListTaskAttachmentSessionContent.md)
+### [Get-MgBetaUserTodoListTaskAttachmentSessionContent](Get-MgBetaUserTodoListTaskAttachmentSessionContent.md)
 The content streams that are uploaded.
 
-### [Get-MgUserTodoListTaskChecklistItem](Get-MgUserTodoListTaskChecklistItem.md)
+### [Get-MgBetaUserTodoListTaskChecklistItem](Get-MgBetaUserTodoListTaskChecklistItem.md)
 A collection of smaller subtasks linked to the more complex parent task.
 
-### [Get-MgUserTodoListTaskExtension](Get-MgUserTodoListTaskExtension.md)
+### [Get-MgBetaUserTodoListTaskExtension](Get-MgBetaUserTodoListTaskExtension.md)
 The collection of open extensions defined for the task.
 Nullable.
 
-### [Get-MgUserTodoListTaskLinkedResource](Get-MgUserTodoListTaskLinkedResource.md)
+### [Get-MgBetaUserTodoListTaskLinkedResource](Get-MgBetaUserTodoListTaskLinkedResource.md)
 A collection of resources linked to the task.
 
-### [Get-MgUserTransitiveMemberOf](Get-MgUserTransitiveMemberOf.md)
+### [Get-MgBetaUserTransitiveMemberOf](Get-MgBetaUserTransitiveMemberOf.md)
 The groups, including nested groups, and directory roles that a user is a member of.
 Nullable.
 
-### [Get-MgUserTransitiveReport](Get-MgUserTransitiveReport.md)
+### [Get-MgBetaUserTransitiveReport](Get-MgBetaUserTransitiveReport.md)
 The transitive reports for a user.
 Read-only.
 
-### [New-MgUser](New-MgUser.md)
+### [New-MgBetaUser](New-MgBetaUser.md)
 Create a new user.\nThe request body contains the user to create.
 At a minimum, you must specify the required properties for the user.
 You can optionally specify any other writable properties.
@@ -239,331 +239,331 @@ This operation returns by default only a subset of the properties for each user.
 These default properties are noted in the Properties section.
 To get properties that are not returned by default, do a GET operation and specify the properties in a `$select` OData query option.
 
-### [New-MgUserExtension](New-MgUserExtension.md)
+### [New-MgBetaUserExtension](New-MgBetaUserExtension.md)
 Create new navigation property to extensions for users
 
-### [New-MgUserNotification](New-MgUserNotification.md)
+### [New-MgBetaUserNotification](New-MgBetaUserNotification.md)
 Create new navigation property to notifications for users
 
-### [New-MgUserOutlookMasterCategory](New-MgUserOutlookMasterCategory.md)
+### [New-MgBetaUserOutlookMasterCategory](New-MgBetaUserOutlookMasterCategory.md)
 Create an outlookCategory object in the user's master list of categories.
 
-### [New-MgUserOutlookTask](New-MgUserOutlookTask.md)
+### [New-MgBetaUserOutlookTask](New-MgBetaUserOutlookTask.md)
 Create an Outlook task in the specified task folder.
 The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
 
-### [New-MgUserOutlookTaskAttachment](New-MgUserOutlookTaskAttachment.md)
+### [New-MgBetaUserOutlookTaskAttachment](New-MgBetaUserOutlookTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 
-### [New-MgUserOutlookTaskFolder](New-MgUserOutlookTaskFolder.md)
+### [New-MgBetaUserOutlookTaskFolder](New-MgBetaUserOutlookTaskFolder.md)
 Create new navigation property to taskFolders for users
 
-### [New-MgUserOutlookTaskFolderMultiValueExtendedProperty](New-MgUserOutlookTaskFolderMultiValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskFolderMultiValueExtendedProperty](New-MgBetaUserOutlookTaskFolderMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskFolderSingleValueExtendedProperty](New-MgUserOutlookTaskFolderSingleValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskFolderSingleValueExtendedProperty](New-MgBetaUserOutlookTaskFolderSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskFolderTask](New-MgUserOutlookTaskFolderTask.md)
+### [New-MgBetaUserOutlookTaskFolderTask](New-MgBetaUserOutlookTaskFolderTask.md)
 Create new navigation property to tasks for users
 
-### [New-MgUserOutlookTaskFolderTaskAttachment](New-MgUserOutlookTaskFolderTaskAttachment.md)
+### [New-MgBetaUserOutlookTaskFolderTaskAttachment](New-MgBetaUserOutlookTaskFolderTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 
-### [New-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty](New-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty](New-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty](New-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty](New-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskGroup](New-MgUserOutlookTaskGroup.md)
+### [New-MgBetaUserOutlookTaskGroup](New-MgBetaUserOutlookTaskGroup.md)
 Create an Outlook task group in the user's mailbox.
 
-### [New-MgUserOutlookTaskGroupTaskFolder](New-MgUserOutlookTaskGroupTaskFolder.md)
+### [New-MgBetaUserOutlookTaskGroupTaskFolder](New-MgBetaUserOutlookTaskGroupTaskFolder.md)
 Create new navigation property to taskFolders for users
 
-### [New-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](New-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](New-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty](New-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty](New-MgBetaUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskGroupTaskFolderTask](New-MgUserOutlookTaskGroupTaskFolderTask.md)
+### [New-MgBetaUserOutlookTaskGroupTaskFolderTask](New-MgBetaUserOutlookTaskGroupTaskFolderTask.md)
 Create new navigation property to tasks for users
 
-### [New-MgUserOutlookTaskGroupTaskFolderTaskAttachment](New-MgUserOutlookTaskGroupTaskFolderTaskAttachment.md)
+### [New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment](New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 
-### [New-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](New-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](New-MgBetaUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty](New-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty](New-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskMultiValueExtendedProperty](New-MgUserOutlookTaskMultiValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskMultiValueExtendedProperty](New-MgBetaUserOutlookTaskMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserOutlookTaskSingleValueExtendedProperty](New-MgUserOutlookTaskSingleValueExtendedProperty.md)
+### [New-MgBetaUserOutlookTaskSingleValueExtendedProperty](New-MgBetaUserOutlookTaskSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserTodoList](New-MgUserTodoList.md)
+### [New-MgBetaUserTodoList](New-MgBetaUserTodoList.md)
 Create a new lists object.
 
-### [New-MgUserTodoListExtension](New-MgUserTodoListExtension.md)
+### [New-MgBetaUserTodoListExtension](New-MgBetaUserTodoListExtension.md)
 Create new navigation property to extensions for users
 
-### [New-MgUserTodoListTask](New-MgUserTodoListTask.md)
+### [New-MgBetaUserTodoListTask](New-MgBetaUserTodoListTask.md)
 Create a new task object in a specified todoTaskList.
 
-### [New-MgUserTodoListTaskAttachment](New-MgUserTodoListTaskAttachment.md)
+### [New-MgBetaUserTodoListTaskAttachment](New-MgBetaUserTodoListTaskAttachment.md)
 Add a new taskFileAttachment object to a todoTask.
 This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 
-### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
+### [New-MgBetaUserTodoListTaskChecklistItem](New-MgBetaUserTodoListTaskChecklistItem.md)
 Create new navigation property to checklistItems for users
 
-### [New-MgUserTodoListTaskExtension](New-MgUserTodoListTaskExtension.md)
+### [New-MgBetaUserTodoListTaskExtension](New-MgBetaUserTodoListTaskExtension.md)
 Create new navigation property to extensions for users
 
-### [New-MgUserTodoListTaskLinkedResource](New-MgUserTodoListTaskLinkedResource.md)
+### [New-MgBetaUserTodoListTaskLinkedResource](New-MgBetaUserTodoListTaskLinkedResource.md)
 Create a linkedResource object to associate a specified task with an item in a partner application.
 For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association.
 You can also create a **linkedResource** object while creating a todoTask.
 
-### [Remove-MgUser](Remove-MgUser.md)
+### [Remove-MgBetaUser](Remove-MgBetaUser.md)
 Delete user.
  When deleted, user resources are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
 To learn more, see deletedItems.
 
-### [Remove-MgUserExtension](Remove-MgUserExtension.md)
+### [Remove-MgBetaUserExtension](Remove-MgBetaUserExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserLicenseDetail](Remove-MgUserLicenseDetail.md)
+### [Remove-MgBetaUserLicenseDetail](Remove-MgBetaUserLicenseDetail.md)
 Delete navigation property licenseDetails for users
 
-### [Remove-MgUserManagerByRef](Remove-MgUserManagerByRef.md)
+### [Remove-MgBetaUserManagerByRef](Remove-MgBetaUserManagerByRef.md)
 Delete ref of navigation property manager for users
 
-### [Remove-MgUserNotification](Remove-MgUserNotification.md)
+### [Remove-MgBetaUserNotification](Remove-MgBetaUserNotification.md)
 Delete navigation property notifications for users
 
-### [Remove-MgUserOutlookMasterCategory](Remove-MgUserOutlookMasterCategory.md)
+### [Remove-MgBetaUserOutlookMasterCategory](Remove-MgBetaUserOutlookMasterCategory.md)
 Delete navigation property masterCategories for users
 
-### [Remove-MgUserOutlookTask](Remove-MgUserOutlookTask.md)
+### [Remove-MgBetaUserOutlookTask](Remove-MgBetaUserOutlookTask.md)
 Delete navigation property tasks for users
 
-### [Remove-MgUserOutlookTaskAttachment](Remove-MgUserOutlookTaskAttachment.md)
+### [Remove-MgBetaUserOutlookTaskAttachment](Remove-MgBetaUserOutlookTaskAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserOutlookTaskFolder](Remove-MgUserOutlookTaskFolder.md)
+### [Remove-MgBetaUserOutlookTaskFolder](Remove-MgBetaUserOutlookTaskFolder.md)
 Delete navigation property taskFolders for users
 
-### [Remove-MgUserOutlookTaskFolderMultiValueExtendedProperty](Remove-MgUserOutlookTaskFolderMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskFolderMultiValueExtendedProperty](Remove-MgBetaUserOutlookTaskFolderMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskFolderSingleValueExtendedProperty](Remove-MgUserOutlookTaskFolderSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskFolderSingleValueExtendedProperty](Remove-MgBetaUserOutlookTaskFolderSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskFolderTask](Remove-MgUserOutlookTaskFolderTask.md)
+### [Remove-MgBetaUserOutlookTaskFolderTask](Remove-MgBetaUserOutlookTaskFolderTask.md)
 Delete navigation property tasks for users
 
-### [Remove-MgUserOutlookTaskFolderTaskAttachment](Remove-MgUserOutlookTaskFolderTaskAttachment.md)
+### [Remove-MgBetaUserOutlookTaskFolderTaskAttachment](Remove-MgBetaUserOutlookTaskFolderTaskAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty](Remove-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty](Remove-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty](Remove-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty](Remove-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskGroup](Remove-MgUserOutlookTaskGroup.md)
+### [Remove-MgBetaUserOutlookTaskGroup](Remove-MgBetaUserOutlookTaskGroup.md)
 Delete navigation property taskGroups for users
 
-### [Remove-MgUserOutlookTaskGroupTaskFolder](Remove-MgUserOutlookTaskGroupTaskFolder.md)
+### [Remove-MgBetaUserOutlookTaskGroupTaskFolder](Remove-MgBetaUserOutlookTaskGroupTaskFolder.md)
 Delete navigation property taskFolders for users
 
-### [Remove-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](Remove-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](Remove-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty](Remove-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty](Remove-MgBetaUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskGroupTaskFolderTask](Remove-MgUserOutlookTaskGroupTaskFolderTask.md)
+### [Remove-MgBetaUserOutlookTaskGroupTaskFolderTask](Remove-MgBetaUserOutlookTaskGroupTaskFolderTask.md)
 Delete navigation property tasks for users
 
-### [Remove-MgUserOutlookTaskGroupTaskFolderTaskAttachment](Remove-MgUserOutlookTaskGroupTaskFolderTaskAttachment.md)
+### [Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment](Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](Remove-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty](Remove-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty](Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskMultiValueExtendedProperty](Remove-MgUserOutlookTaskMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskMultiValueExtendedProperty](Remove-MgBetaUserOutlookTaskMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserOutlookTaskSingleValueExtendedProperty](Remove-MgUserOutlookTaskSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserOutlookTaskSingleValueExtendedProperty](Remove-MgBetaUserOutlookTaskSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserSetting](Remove-MgUserSetting.md)
+### [Remove-MgBetaUserSetting](Remove-MgBetaUserSetting.md)
 Delete navigation property settings for users
 
-### [Remove-MgUserSettingContactMergeSuggestion](Remove-MgUserSettingContactMergeSuggestion.md)
+### [Remove-MgBetaUserSettingContactMergeSuggestion](Remove-MgBetaUserSettingContactMergeSuggestion.md)
 Delete navigation property contactMergeSuggestions for users
 
-### [Remove-MgUserSettingItemInsight](Remove-MgUserSettingItemInsight.md)
+### [Remove-MgBetaUserSettingItemInsight](Remove-MgBetaUserSettingItemInsight.md)
 Delete navigation property itemInsights for users
 
-### [Remove-MgUserSettingRegionalAndLanguageSetting](Remove-MgUserSettingRegionalAndLanguageSetting.md)
+### [Remove-MgBetaUserSettingRegionalAndLanguageSetting](Remove-MgBetaUserSettingRegionalAndLanguageSetting.md)
 Delete navigation property regionalAndLanguageSettings for users
 
-### [Remove-MgUserSettingShiftPreference](Remove-MgUserSettingShiftPreference.md)
+### [Remove-MgBetaUserSettingShiftPreference](Remove-MgBetaUserSettingShiftPreference.md)
 Delete navigation property shiftPreferences for users
 
-### [Remove-MgUserTodoList](Remove-MgUserTodoList.md)
+### [Remove-MgBetaUserTodoList](Remove-MgBetaUserTodoList.md)
 Delete navigation property lists for users
 
-### [Remove-MgUserTodoListExtension](Remove-MgUserTodoListExtension.md)
+### [Remove-MgBetaUserTodoListExtension](Remove-MgBetaUserTodoListExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserTodoListTask](Remove-MgUserTodoListTask.md)
+### [Remove-MgBetaUserTodoListTask](Remove-MgBetaUserTodoListTask.md)
 Delete navigation property tasks for users
 
-### [Remove-MgUserTodoListTaskAttachment](Remove-MgUserTodoListTaskAttachment.md)
+### [Remove-MgBetaUserTodoListTaskAttachment](Remove-MgBetaUserTodoListTaskAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserTodoListTaskAttachmentSession](Remove-MgUserTodoListTaskAttachmentSession.md)
+### [Remove-MgBetaUserTodoListTaskAttachmentSession](Remove-MgBetaUserTodoListTaskAttachmentSession.md)
 Delete navigation property attachmentSessions for users
 
-### [Remove-MgUserTodoListTaskChecklistItem](Remove-MgUserTodoListTaskChecklistItem.md)
+### [Remove-MgBetaUserTodoListTaskChecklistItem](Remove-MgBetaUserTodoListTaskChecklistItem.md)
 Delete navigation property checklistItems for users
 
-### [Remove-MgUserTodoListTaskExtension](Remove-MgUserTodoListTaskExtension.md)
+### [Remove-MgBetaUserTodoListTaskExtension](Remove-MgBetaUserTodoListTaskExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserTodoListTaskLinkedResource](Remove-MgUserTodoListTaskLinkedResource.md)
+### [Remove-MgBetaUserTodoListTaskLinkedResource](Remove-MgBetaUserTodoListTaskLinkedResource.md)
 Delete navigation property linkedResources for users
 
-### [Set-MgUserManagerByRef](Set-MgUserManagerByRef.md)
+### [Set-MgBetaUserManagerByRef](Set-MgBetaUserManagerByRef.md)
 Update the ref of navigation property manager in users
 
-### [Set-MgUserPhotoContent](Set-MgUserPhotoContent.md)
+### [Set-MgBetaUserPhotoContent](Set-MgBetaUserPhotoContent.md)
 Update media content for the navigation property photo in users
 
-### [Set-MgUserTodoListTaskAttachmentContent](Set-MgUserTodoListTaskAttachmentContent.md)
+### [Set-MgBetaUserTodoListTaskAttachmentContent](Set-MgBetaUserTodoListTaskAttachmentContent.md)
 Update media content for the navigation property attachments in users
 
-### [Set-MgUserTodoListTaskAttachmentSessionContent](Set-MgUserTodoListTaskAttachmentSessionContent.md)
+### [Set-MgBetaUserTodoListTaskAttachmentSessionContent](Set-MgBetaUserTodoListTaskAttachmentSessionContent.md)
 The content streams that are uploaded.
 
-### [Update-MgUser](Update-MgUser.md)
+### [Update-MgBetaUser](Update-MgBetaUser.md)
 Update the properties of a user object.
 Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
 Compare member and guest default permissions to see properties they can manage.
 
-### [Update-MgUserExtension](Update-MgUserExtension.md)
+### [Update-MgBetaUserExtension](Update-MgBetaUserExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserLicenseDetail](Update-MgUserLicenseDetail.md)
+### [Update-MgBetaUserLicenseDetail](Update-MgBetaUserLicenseDetail.md)
 Update the navigation property licenseDetails in users
 
-### [Update-MgUserNotification](Update-MgUserNotification.md)
+### [Update-MgBetaUserNotification](Update-MgBetaUserNotification.md)
 Update the navigation property notifications in users
 
-### [Update-MgUserOutlookMasterCategory](Update-MgUserOutlookMasterCategory.md)
+### [Update-MgBetaUserOutlookMasterCategory](Update-MgBetaUserOutlookMasterCategory.md)
 Update the navigation property masterCategories in users
 
-### [Update-MgUserOutlookTask](Update-MgUserOutlookTask.md)
+### [Update-MgBetaUserOutlookTask](Update-MgBetaUserOutlookTask.md)
 Update the navigation property tasks in users
 
-### [Update-MgUserOutlookTaskFolder](Update-MgUserOutlookTaskFolder.md)
+### [Update-MgBetaUserOutlookTaskFolder](Update-MgBetaUserOutlookTaskFolder.md)
 Update the navigation property taskFolders in users
 
-### [Update-MgUserOutlookTaskFolderMultiValueExtendedProperty](Update-MgUserOutlookTaskFolderMultiValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskFolderMultiValueExtendedProperty](Update-MgBetaUserOutlookTaskFolderMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskFolderSingleValueExtendedProperty](Update-MgUserOutlookTaskFolderSingleValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskFolderSingleValueExtendedProperty](Update-MgBetaUserOutlookTaskFolderSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskFolderTask](Update-MgUserOutlookTaskFolderTask.md)
+### [Update-MgBetaUserOutlookTaskFolderTask](Update-MgBetaUserOutlookTaskFolderTask.md)
 Update the navigation property tasks in users
 
-### [Update-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty](Update-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty](Update-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty](Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty](Update-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskGroup](Update-MgUserOutlookTaskGroup.md)
+### [Update-MgBetaUserOutlookTaskGroup](Update-MgBetaUserOutlookTaskGroup.md)
 Update the navigation property taskGroups in users
 
-### [Update-MgUserOutlookTaskGroupTaskFolder](Update-MgUserOutlookTaskGroupTaskFolder.md)
+### [Update-MgBetaUserOutlookTaskGroupTaskFolder](Update-MgBetaUserOutlookTaskGroupTaskFolder.md)
 Update the navigation property taskFolders in users
 
-### [Update-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](Update-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](Update-MgBetaUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty](Update-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty](Update-MgBetaUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskGroupTaskFolderTask](Update-MgUserOutlookTaskGroupTaskFolderTask.md)
+### [Update-MgBetaUserOutlookTaskGroupTaskFolderTask](Update-MgBetaUserOutlookTaskGroupTaskFolderTask.md)
 Update the navigation property tasks in users
 
-### [Update-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](Update-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](Update-MgBetaUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty](Update-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty](Update-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskMultiValueExtendedProperty](Update-MgUserOutlookTaskMultiValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskMultiValueExtendedProperty](Update-MgBetaUserOutlookTaskMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserOutlookTaskSingleValueExtendedProperty](Update-MgUserOutlookTaskSingleValueExtendedProperty.md)
+### [Update-MgBetaUserOutlookTaskSingleValueExtendedProperty](Update-MgBetaUserOutlookTaskSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserPhoto](Update-MgUserPhoto.md)
+### [Update-MgBetaUserPhoto](Update-MgBetaUserPhoto.md)
 Update the navigation property photo in users
 
-### [Update-MgUserSetting](Update-MgUserSetting.md)
+### [Update-MgBetaUserSetting](Update-MgBetaUserSetting.md)
 Update the navigation property settings in users
 
-### [Update-MgUserSettingContactMergeSuggestion](Update-MgUserSettingContactMergeSuggestion.md)
+### [Update-MgBetaUserSettingContactMergeSuggestion](Update-MgBetaUserSettingContactMergeSuggestion.md)
 Update the properties of a contactMergeSuggestions object.
 
-### [Update-MgUserSettingItemInsight](Update-MgUserSettingItemInsight.md)
+### [Update-MgBetaUserSettingItemInsight](Update-MgBetaUserSettingItemInsight.md)
 Update the privacy settings for itemInsights and meeting hours insights of a user.
 
-### [Update-MgUserSettingRegionalAndLanguageSetting](Update-MgUserSettingRegionalAndLanguageSetting.md)
+### [Update-MgBetaUserSettingRegionalAndLanguageSetting](Update-MgBetaUserSettingRegionalAndLanguageSetting.md)
 Update the navigation property regionalAndLanguageSettings in users
 
-### [Update-MgUserSettingShiftPreference](Update-MgUserSettingShiftPreference.md)
+### [Update-MgBetaUserSettingShiftPreference](Update-MgBetaUserSettingShiftPreference.md)
 Update the properties and relationships of a shiftPreferences object.
 
-### [Update-MgUserTodoList](Update-MgUserTodoList.md)
+### [Update-MgBetaUserTodoList](Update-MgBetaUserTodoList.md)
 Update the navigation property lists in users
 
-### [Update-MgUserTodoListExtension](Update-MgUserTodoListExtension.md)
+### [Update-MgBetaUserTodoListExtension](Update-MgBetaUserTodoListExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserTodoListTask](Update-MgUserTodoListTask.md)
+### [Update-MgBetaUserTodoListTask](Update-MgBetaUserTodoListTask.md)
 Update the navigation property tasks in users
 
-### [Update-MgUserTodoListTaskAttachmentSession](Update-MgUserTodoListTaskAttachmentSession.md)
+### [Update-MgBetaUserTodoListTaskAttachmentSession](Update-MgBetaUserTodoListTaskAttachmentSession.md)
 Update the navigation property attachmentSessions in users
 
-### [Update-MgUserTodoListTaskChecklistItem](Update-MgUserTodoListTaskChecklistItem.md)
+### [Update-MgBetaUserTodoListTaskChecklistItem](Update-MgBetaUserTodoListTaskChecklistItem.md)
 Update the navigation property checklistItems in users
 
-### [Update-MgUserTodoListTaskExtension](Update-MgUserTodoListTaskExtension.md)
+### [Update-MgBetaUserTodoListTaskExtension](Update-MgBetaUserTodoListTaskExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserTodoListTaskLinkedResource](Update-MgUserTodoListTaskLinkedResource.md)
+### [Update-MgBetaUserTodoListTaskLinkedResource](Update-MgBetaUserTodoListTaskLinkedResource.md)
 Update the navigation property linkedResources in users
 

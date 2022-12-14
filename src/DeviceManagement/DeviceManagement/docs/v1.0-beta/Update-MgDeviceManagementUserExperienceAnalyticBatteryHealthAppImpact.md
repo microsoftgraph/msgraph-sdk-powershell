@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthappimpact
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthappimpact
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
+# Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in 
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
  -UserExperienceAnalyticsBatteryHealthAppImpactId <String> [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>] [-AppName <String>] [-AppPublisher <String>]
  [-BatteryUsagePercentage <Double>] [-Id <String>] [-IsForegroundApp] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
  -UserExperienceAnalyticsBatteryHealthAppImpactId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -31,14 +31,14 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact -InputObject <IDeviceManagementIdentity>
  [-ActiveDevices <Int32>] [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>] [-AppName <String>]
  [-AppPublisher <String>] [-BatteryUsagePercentage <Double>] [-Id <String>] [-IsForegroundApp] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -152,7 +152,7 @@ The user experience analytics battery health app impact entity contains battery 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -184,7 +184,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -276,9 +276,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
 
 ## OUTPUTS
 

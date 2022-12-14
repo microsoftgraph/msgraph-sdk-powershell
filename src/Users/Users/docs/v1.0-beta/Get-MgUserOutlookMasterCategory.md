@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguseroutlookmastercategory
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguseroutlookmastercategory
 schema: 2.0.0
 ---
 
-# Get-MgUserOutlookMasterCategory
+# Get-MgBetaUserOutlookMasterCategory
 
 ## SYNOPSIS
 A list of categories defined for the user.
@@ -14,19 +14,19 @@ A list of categories defined for the user.
 
 ### List1 (Default)
 ```
-Get-MgUserOutlookMasterCategory -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaUserOutlookMasterCategory -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String> [-Property <String[]>]
+Get-MgBetaUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserOutlookMasterCategory -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,24 +34,24 @@ A list of categories defined for the user.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOutlookMasterCategory Cmdlet
+### Example 1: Using the Get-MgBetaUserOutlookMasterCategory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOutlookMasterCategory -UserId $userId
+Get-MgBetaUserOutlookMasterCategory -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserOutlookMasterCategory Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookMasterCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserOutlookMasterCategory Cmdlet
+### Example 2: Using the Get-MgBetaUserOutlookMasterCategory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
+Get-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
 ```
 
-This example shows how to use the Get-MgUserOutlookMasterCategory Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookMasterCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -228,11 +228,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookCategory
 
 ## NOTES
 

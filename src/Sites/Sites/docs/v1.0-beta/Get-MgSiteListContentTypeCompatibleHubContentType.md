@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistcontenttypecompatiblehubcontenttype
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelistcontenttypecompatiblehubcontenttype
 schema: 2.0.0
 ---
 
-# Get-MgSiteListContentTypeCompatibleHubContentType
+# Get-MgBetaSiteListContentTypeCompatibleHubContentType
 
 ## SYNOPSIS
 Invoke function getCompatibleHubContentTypes
@@ -14,14 +14,14 @@ Invoke function getCompatibleHubContentTypes
 
 ### Get (Default)
 ```
-Get-MgSiteListContentTypeCompatibleHubContentType -ListId <String> -SiteId <String> [-Count]
+Get-MgBetaSiteListContentTypeCompatibleHubContentType -ListId <String> -SiteId <String> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteListContentTypeCompatibleHubContentType -InputObject <ISitesIdentity> [-Count] [-Filter <String>]
+Get-MgBetaSiteListContentTypeCompatibleHubContentType -InputObject <ISitesIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -31,13 +31,13 @@ Invoke function getCompatibleHubContentTypes
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteListContentTypeCompatibleHubContentType Cmdlet
+### Example 1: Using the Get-MgBetaSiteListContentTypeCompatibleHubContentType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListContentTypeCompatibleHubContentType -SiteId $siteId -ListId $listId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListContentTypeCompatibleHubContentType -SiteId $siteId -ListId $listId
 ```
 
-This example shows how to use the Get-MgSiteListContentTypeCompatibleHubContentType Cmdlet.
+This example shows how to use the Get-MgBetaSiteListContentTypeCompatibleHubContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -198,11 +198,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 
 ## NOTES
 

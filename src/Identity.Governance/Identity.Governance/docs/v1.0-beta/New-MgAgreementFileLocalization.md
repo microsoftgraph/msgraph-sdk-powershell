@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgagreementfilelocalization
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgagreementfilelocalization
 schema: 2.0.0
 ---
 
-# New-MgAgreementFileLocalization
+# New-MgBetaAgreementFileLocalization
 
 ## SYNOPSIS
 Create new navigation property to localizations for agreements
@@ -14,7 +14,7 @@ Create new navigation property to localizations for agreements
 
 ### CreateExpanded (Default)
 ```
-New-MgAgreementFileLocalization -AgreementId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaAgreementFileLocalization -AgreementId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-FileData <IMicrosoftGraphAgreementFileData>]
  [-FileName <String>] [-Id <String>] [-IsDefault] [-IsMajorVersion] [-Language <String>]
  [-Versions <IMicrosoftGraphAgreementFileVersion[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgAgreementFileLocalization -AgreementId <String> [-AdditionalProperties <Ha
 
 ### Create
 ```
-New-MgAgreementFileLocalization -AgreementId <String>
+New-MgBetaAgreementFileLocalization -AgreementId <String>
  -BodyParameter <IMicrosoftGraphAgreementFileLocalization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgAgreementFileLocalization -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaAgreementFileLocalization -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAgreementFileLocalization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgAgreementFileLocalization -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaAgreementFileLocalization -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-FileData <IMicrosoftGraphAgreementFileData>]
  [-FileName <String>] [-Id <String>] [-IsDefault] [-IsMajorVersion] [-Language <String>]
  [-Versions <IMicrosoftGraphAgreementFileVersion[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -82,7 +82,7 @@ agreementFileLocalization
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ agreementFileData
 To construct, please use Get-Help -Online and see NOTES section for FILEDATA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -247,7 +247,7 @@ Customized versions of the terms of use agreement in the Azure AD tenant.
 To construct, please use Get-Help -Online and see NOTES section for VERSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileVersion[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileVersion[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -294,13 +294,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
 
 ## NOTES
 

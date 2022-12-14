@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointdeviceimage
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointdeviceimage
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointDeviceImage
+# Get-MgBetaDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
 The image resource on Cloud PC.
@@ -14,20 +14,20 @@ The image resource on Cloud PC.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointDeviceImage [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementVirtualEndpointDeviceImage [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementAdministrationIdentity>
+Get-MgBetaDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementAdministrationIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The image resource on Cloud PC.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
+### Example 1: Using the Get-MgBetaDeviceManagementVirtualEndpointDeviceImage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Get-MgDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Get-MgBetaDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointDeviceImage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
+### Example 2: Using the Get-MgBetaDeviceManagementVirtualEndpointDeviceImage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Get-MgDeviceManagementVirtualEndpointDeviceImage
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Get-MgBetaDeviceManagementVirtualEndpointDeviceImage
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointDeviceImage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
 
 ## NOTES
 

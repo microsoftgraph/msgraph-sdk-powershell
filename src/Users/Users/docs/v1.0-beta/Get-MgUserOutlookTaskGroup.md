@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguseroutlooktaskgroup
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguseroutlooktaskgroup
 schema: 2.0.0
 ---
 
-# Get-MgUserOutlookTaskGroup
+# Get-MgBetaUserOutlookTaskGroup
 
 ## SYNOPSIS
 Get taskGroups from users
@@ -14,19 +14,19 @@ Get taskGroups from users
 
 ### List (Default)
 ```
-Get-MgUserOutlookTaskGroup -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaUserOutlookTaskGroup -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserOutlookTaskGroup -OutlookTaskGroupId <String> -UserId <String> [-Property <String[]>]
+Get-MgBetaUserOutlookTaskGroup -OutlookTaskGroupId <String> -UserId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserOutlookTaskGroup -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserOutlookTaskGroup -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,24 +34,24 @@ Get taskGroups from users
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOutlookTaskGroup Cmdlet
+### Example 1: Using the Get-MgBetaUserOutlookTaskGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOutlookTaskGroup -UserId $userId -OutlookTaskGroupId $outlookTaskGroupId
+Get-MgBetaUserOutlookTaskGroup -UserId $userId -OutlookTaskGroupId $outlookTaskGroupId
 ```
 
-This example shows how to use the Get-MgUserOutlookTaskGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookTaskGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserOutlookTaskGroup Cmdlet
+### Example 2: Using the Get-MgBetaUserOutlookTaskGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOutlookTaskGroup -UserId $userId
+Get-MgBetaUserOutlookTaskGroup -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserOutlookTaskGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookTaskGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -228,11 +228,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTaskGroup
 
 ## NOTES
 

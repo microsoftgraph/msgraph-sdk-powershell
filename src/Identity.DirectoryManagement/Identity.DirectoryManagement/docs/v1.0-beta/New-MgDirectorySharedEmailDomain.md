@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectorysharedemaildomain
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectorysharedemaildomain
 schema: 2.0.0
 ---
 
-# New-MgDirectorySharedEmailDomain
+# New-MgBetaDirectorySharedEmailDomain
 
 ## SYNOPSIS
 Create new navigation property to sharedEmailDomains for directory
@@ -14,13 +14,13 @@ Create new navigation property to sharedEmailDomains for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectorySharedEmailDomain [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaDirectorySharedEmailDomain [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-ProvisioningStatus <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectorySharedEmailDomain -BodyParameter <IMicrosoftGraphSharedEmailDomain> [-Confirm] [-WhatIf]
+New-MgBetaDirectorySharedEmailDomain -BodyParameter <IMicrosoftGraphSharedEmailDomain> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ sharedEmailDomain
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
 Parameter Sets: Create
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
 
 ## NOTES
 

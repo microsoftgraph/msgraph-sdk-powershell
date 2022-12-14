@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.SchemaExtensions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.schemaextensions/remove-mgschemaextension
+Module Name: Microsoft.Graph.Beta.SchemaExtensions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.schemaextensions/remove-mgschemaextension
 schema: 2.0.0
 ---
 
-# Remove-MgSchemaExtension
+# Remove-MgBetaSchemaExtension
 
 ## SYNOPSIS
 Delete the definition of a schema extension.
@@ -16,13 +16,13 @@ Deleting a schema extension definition does not affect accessing custom data tha
 
 ### Delete (Default)
 ```
-Remove-MgSchemaExtension -SchemaExtensionId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaSchemaExtension -SchemaExtensionId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -33,13 +33,13 @@ Deleting a schema extension definition does not affect accessing custom data tha
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgSchemaExtension Cmdlet
+### Example 1: Using the Remove-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
-Remove-MgSchemaExtension -SchemaExtensionId $schemaExtensionId
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
+Remove-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId
 ```
 
-This example shows how to use the Remove-MgSchemaExtension Cmdlet.
+This example shows how to use the Remove-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -64,7 +64,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISchemaExtensionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISchemaExtensionsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -141,7 +141,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISchemaExtensionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISchemaExtensionsIdentity
 
 ## OUTPUTS
 

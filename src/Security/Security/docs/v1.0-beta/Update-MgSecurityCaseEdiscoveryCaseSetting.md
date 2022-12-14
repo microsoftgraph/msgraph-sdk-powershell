@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritycaseediscoverycasesetting
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritycaseediscoverycasesetting
 schema: 2.0.0
 ---
 
-# Update-MgSecurityCaseEdiscoveryCaseSetting
+# Update-MgBetaSecurityCaseEdiscoveryCaseSetting
 
 ## SYNOPSIS
 Update the properties of an ediscoveryCaseSettings object.
@@ -14,7 +14,7 @@ Update the properties of an ediscoveryCaseSettings object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Ocr <IMicrosoftGraphSecurityOcrSettings>]
  [-RedundancyDetection <IMicrosoftGraphSecurityRedundancyDetectionSettings>]
  [-TopicModeling <IMicrosoftGraphSecurityTopicModelingSettings>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ Update-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId <String> [-Addition
 
 ### Update
 ```
-Update-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId <String>
+Update-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId <String>
  -BodyParameter <IMicrosoftGraphSecurityEdiscoveryCaseSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityEdiscoveryCaseSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Ocr <IMicrosoftGraphSecurityOcrSettings>]
  [-RedundancyDetection <IMicrosoftGraphSecurityRedundancyDetectionSettings>]
  [-TopicModeling <IMicrosoftGraphSecurityTopicModelingSettings>] [-PassThru] [-Confirm] [-WhatIf]
@@ -49,25 +49,25 @@ Update the properties of an ediscoveryCaseSettings object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityCaseEdiscoveryCaseSetting Cmdlet
+### Example 1: Using the Update-MgBetaSecurityCaseEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
-	"@odata.type" = "#microsoft.graph.security.ediscoveryCaseSettings"
+	"@odata.type" = "#Microsoft.Graph.Beta.security.ediscoveryCaseSettings"
 	RedundancyDetection = @{
-		"@odata.type" = "microsoft.graph.security.redundancyDetectionSettings"
+		"@odata.type" = "Microsoft.Graph.Beta.security.redundancyDetectionSettings"
 	}
 	TopicModeling = @{
-		"@odata.type" = "microsoft.graph.security.topicModelingSettings"
+		"@odata.type" = "Microsoft.Graph.Beta.security.topicModelingSettings"
 	}
 	Ocr = @{
-		"@odata.type" = "microsoft.graph.security.ocrSettings"
+		"@odata.type" = "Microsoft.Graph.Beta.security.ocrSettings"
 	}
 }
-Update-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+Update-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityCaseEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Update-MgBetaSecurityCaseEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -92,7 +92,7 @@ ediscoveryCaseSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCaseSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCaseSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -155,7 +155,7 @@ ocrSettings
 To construct, please use Get-Help -Online and see NOTES section for OCR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityOcrSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityOcrSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ redundancyDetectionSettings
 To construct, please use Get-Help -Online and see NOTES section for REDUNDANCYDETECTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRedundancyDetectionSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRedundancyDetectionSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -202,7 +202,7 @@ topicModelingSettings
 To construct, please use Get-Help -Online and see NOTES section for TOPICMODELING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityTopicModelingSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityTopicModelingSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -249,9 +249,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCaseSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCaseSettings
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

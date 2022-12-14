@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementdeviceconfigurationconflictsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementdeviceconfigurationconflictsummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceConfigurationConflictSummary
+# Get-MgBetaDeviceManagementDeviceConfigurationConflictSummary
 
 ## SYNOPSIS
 Summary of policies in conflict state for this account.
@@ -14,20 +14,20 @@ Summary of policies in conflict state for this account.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementDeviceConfigurationConflictSummary [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementDeviceConfigurationConflictSummary [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementDeviceConfigurationConflictSummary -DeviceConfigurationConflictSummaryId <String>
+Get-MgBetaDeviceManagementDeviceConfigurationConflictSummary -DeviceConfigurationConflictSummaryId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceConfigurationConflictSummary -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementDeviceConfigurationConflictSummary -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
 
 ## NOTES
 

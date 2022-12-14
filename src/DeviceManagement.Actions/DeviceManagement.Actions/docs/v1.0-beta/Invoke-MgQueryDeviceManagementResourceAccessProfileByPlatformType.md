@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgquerydevicemanagementresourceaccessprofilebyplatformtype
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgquerydevicemanagementresourceaccessprofilebyplatformtype
 schema: 2.0.0
 ---
 
-# Invoke-MgQueryDeviceManagementResourceAccessProfileByPlatformType
+# Invoke-MgBetaQueryDeviceManagementResourceAccessProfileByPlatformType
 
 ## SYNOPSIS
 Invoke action queryByPlatformType
@@ -14,13 +14,13 @@ Invoke action queryByPlatformType
 
 ### QueryExpanded (Default)
 ```
-Invoke-MgQueryDeviceManagementResourceAccessProfileByPlatformType [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaQueryDeviceManagementResourceAccessProfileByPlatformType [-AdditionalProperties <Hashtable>]
  [-PlatformType <PolicyPlatformType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Query
 ```
-Invoke-MgQueryDeviceManagementResourceAccessProfileByPlatformType
+Invoke-MgBetaQueryDeviceManagementResourceAccessProfileByPlatformType
  -BodyParameter <IPaths1Aw4396DevicemanagementResourceaccessprofilesMicrosoftGraphQuerybyplatformtypePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Aw4396DevicemanagementResourceaccessprofilesMicrosoftGraphQuerybyplatformtypePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Aw4396DevicemanagementResourceaccessprofilesMicrosoftGraphQuerybyplatformtypePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Query
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicyPlatformType
 Parameter Sets: QueryExpanded
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Aw4396DevicemanagementResourceaccessprofilesMicrosoftGraphQuerybyplatformtypePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Aw4396DevicemanagementResourceaccessprofilesMicrosoftGraphQuerybyplatformtypePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileBase
 
 ## NOTES
 

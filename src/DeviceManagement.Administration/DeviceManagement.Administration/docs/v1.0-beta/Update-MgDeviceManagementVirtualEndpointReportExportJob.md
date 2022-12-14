@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointreportexportjob
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointreportexportjob
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointReportExportJob
+# Update-MgBetaDeviceManagementVirtualEndpointReportExportJob
 
 ## SYNOPSIS
 Update the navigation property exportJobs in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property exportJobs in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId <String>
+Update-MgBetaDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId <String>
  [-AdditionalProperties <Hashtable>] [-ExpirationDateTime <DateTime>] [-ExportJobStatus <String>]
  [-ExportUrl <String>] [-Filter <String>] [-Format <String>] [-Id <String>] [-Property <String[]>]
  [-ReportName <String>] [-RequestDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId <Str
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId <String>
+Update-MgBetaDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId <String>
  -BodyParameter <IMicrosoftGraphCloudPcExportJob> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementVirtualEndpointReportExportJob -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementVirtualEndpointReportExportJob -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphCloudPcExportJob> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementVirtualEndpointReportExportJob -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementVirtualEndpointReportExportJob -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-ExpirationDateTime <DateTime>] [-ExportJobStatus <String>]
  [-ExportUrl <String>] [-Filter <String>] [-Format <String>] [-Id <String>] [-Property <String[]>]
  [-ReportName <String>] [-RequestDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ cloudPcExportJob
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -296,9 +296,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
 
 ## OUTPUTS
 

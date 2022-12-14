@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgonpremisepublishingprofilepublishedresource
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgonpremisepublishingprofilepublishedresource
 schema: 2.0.0
 ---
 
-# New-MgOnPremisePublishingProfilePublishedResource
+# New-MgBetaOnPremisePublishingProfilePublishedResource
 
 ## SYNOPSIS
 Create a new publishedResource object.
@@ -14,7 +14,7 @@ Create a new publishedResource object.
 
 ### CreateExpanded (Default)
 ```
-New-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
+New-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
  [-AdditionalProperties <Hashtable>] [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>]
  [-DisplayName <String>] [-Id <String>] [-PublishingType <String>] [-ResourceName <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId
 
 ### Create
 ```
-New-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
+New-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
  -BodyParameter <IMicrosoftGraphPublishedResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphPublishedResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>]
  [-DisplayName <String>] [-Id <String>] [-PublishingType <String>] [-ResourceName <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -45,17 +45,17 @@ Create a new publishedResource object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgOnPremisePublishingProfilePublishedResource Cmdlet
+### Example 1: Using the New-MgBetaOnPremisePublishingProfilePublishedResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	DisplayName = "New provisioning"
 	ResourceName = "domain1.contoso.com"
 }
-New-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -BodyParameter $params
+New-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgOnPremisePublishingProfilePublishedResource Cmdlet.
+This example shows how to use the New-MgBetaOnPremisePublishingProfilePublishedResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -82,7 +82,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for AGENTGROUPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ publishedResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -237,13 +237,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 
 ## NOTES
 

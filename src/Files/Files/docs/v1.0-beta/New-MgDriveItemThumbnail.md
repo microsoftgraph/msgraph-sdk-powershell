@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/new-mgdriveitemthumbnail
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/new-mgdriveitemthumbnail
 schema: 2.0.0
 ---
 
-# New-MgDriveItemThumbnail
+# New-MgBetaDriveItemThumbnail
 
 ## SYNOPSIS
 Create new navigation property to thumbnails for drives
@@ -14,7 +14,7 @@ Create new navigation property to thumbnails for drives
 
 ### CreateExpanded (Default)
 ```
-New-MgDriveItemThumbnail -DriveId <String> -DriveItemId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDriveItemThumbnail -DriveId <String> -DriveItemId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Large <IMicrosoftGraphThumbnail>] [-Medium <IMicrosoftGraphThumbnail>]
  [-Small <IMicrosoftGraphThumbnail>] [-Source <IMicrosoftGraphThumbnail>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgDriveItemThumbnail -DriveId <String> -DriveItemId <String> [-AdditionalPro
 
 ### Create
 ```
-New-MgDriveItemThumbnail -DriveId <String> -DriveItemId <String> -BodyParameter <IMicrosoftGraphThumbnailSet>
+New-MgBetaDriveItemThumbnail -DriveId <String> -DriveItemId <String> -BodyParameter <IMicrosoftGraphThumbnailSet>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDriveItemThumbnail -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphThumbnailSet> [-Confirm]
+New-MgBetaDriveItemThumbnail -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphThumbnailSet> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDriveItemThumbnail -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaDriveItemThumbnail -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Large <IMicrosoftGraphThumbnail>] [-Medium <IMicrosoftGraphThumbnail>] [-Small <IMicrosoftGraphThumbnail>]
  [-Source <IMicrosoftGraphThumbnail>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ thumbnailSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnailSet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnailSet
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -144,7 +144,7 @@ thumbnail
 To construct, please use Get-Help -Online and see NOTES section for LARGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnail
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ thumbnail
 To construct, please use Get-Help -Online and see NOTES section for MEDIUM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnail
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ thumbnail
 To construct, please use Get-Help -Online and see NOTES section for SMALL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnail
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ thumbnail
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnail
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -239,13 +239,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnailSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnailSet
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThumbnailSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThumbnailSet
 
 ## NOTES
 

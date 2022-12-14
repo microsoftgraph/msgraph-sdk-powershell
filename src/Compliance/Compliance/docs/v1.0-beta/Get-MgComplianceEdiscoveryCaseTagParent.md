@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycasetagparent
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycasetagparent
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseTagParent
+# Get-MgBetaComplianceEdiscoveryCaseTagParent
 
 ## SYNOPSIS
 Returns the parent tag of the specified tag.
@@ -14,13 +14,13 @@ Returns the parent tag of the specified tag.
 
 ### Get (Default)
 ```
-Get-MgComplianceEdiscoveryCaseTagParent -CaseId <String> -TagId <String> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseTagParent -CaseId <String> -TagId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseTagParent -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseTagParent -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,11 +112,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
 
 ## NOTES
 

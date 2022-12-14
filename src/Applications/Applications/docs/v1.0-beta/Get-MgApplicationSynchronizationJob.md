@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationsynchronizationjob
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationsynchronizationjob
 schema: 2.0.0
 ---
 
-# Get-MgApplicationSynchronizationJob
+# Get-MgBetaApplicationSynchronizationJob
 
 ## SYNOPSIS
 Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
@@ -14,20 +14,20 @@ Performs synchronization by periodically running in the background, polling for 
 
 ### List (Default)
 ```
-Get-MgApplicationSynchronizationJob -ApplicationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaApplicationSynchronizationJob -ApplicationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgApplicationSynchronizationJob -ApplicationId <String> -SynchronizationJobId <String>
+Get-MgBetaApplicationSynchronizationJob -ApplicationId <String> -SynchronizationJobId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationJob
 
 ## NOTES
 

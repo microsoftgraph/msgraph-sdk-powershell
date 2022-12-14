@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/restart-mgdevicemanagementvirtualendpointcloudpc
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/restart-mgdevicemanagementvirtualendpointcloudpc
 schema: 2.0.0
 ---
 
-# Restart-MgDeviceManagementVirtualEndpointCloudPc
+# Restart-MgBetaDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
 Reboot a specific Cloud PC.
@@ -14,13 +14,13 @@ Reboot a specific Cloud PC.
 
 ### Reboot (Default)
 ```
-Restart-MgDeviceManagementVirtualEndpointCloudPc -CloudPcId <String> [-PassThru] [-Confirm] [-WhatIf]
+Restart-MgBetaDeviceManagementVirtualEndpointCloudPc -CloudPcId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### RebootViaIdentity
 ```
-Restart-MgDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementActionsIdentity> [-PassThru]
+Restart-MgBetaDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementActionsIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Reboot a specific Cloud PC.
 
 ## EXAMPLES
 
-### Example 1: Using the Restart-MgDeviceManagementVirtualEndpointCloudPc Cmdlet
+### Example 1: Using the Restart-MgBetaDeviceManagementVirtualEndpointCloudPc Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
-Restart-MgDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+Restart-MgBetaDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId
 ```
 
-This example shows how to use the Restart-MgDeviceManagementVirtualEndpointCloudPc Cmdlet.
+This example shows how to use the Restart-MgBetaDeviceManagementVirtualEndpointCloudPc Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RebootViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

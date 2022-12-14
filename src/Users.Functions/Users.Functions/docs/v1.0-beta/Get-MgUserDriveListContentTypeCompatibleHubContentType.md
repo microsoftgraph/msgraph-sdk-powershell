@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mguserdrivelistcontenttypecompatiblehubcontenttype
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mguserdrivelistcontenttypecompatiblehubcontenttype
 schema: 2.0.0
 ---
 
-# Get-MgUserDriveListContentTypeCompatibleHubContentType
+# Get-MgBetaUserDriveListContentTypeCompatibleHubContentType
 
 ## SYNOPSIS
 Invoke function getCompatibleHubContentTypes
@@ -14,14 +14,14 @@ Invoke function getCompatibleHubContentTypes
 
 ### Get1 (Default)
 ```
-Get-MgUserDriveListContentTypeCompatibleHubContentType -DriveId <String> -UserId <String> [-Count]
+Get-MgBetaUserDriveListContentTypeCompatibleHubContentType -DriveId <String> -UserId <String> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserDriveListContentTypeCompatibleHubContentType -InputObject <IUsersFunctionsIdentity> [-Count]
+Get-MgBetaUserDriveListContentTypeCompatibleHubContentType -InputObject <IUsersFunctionsIdentity> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -189,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 
 ## NOTES
 

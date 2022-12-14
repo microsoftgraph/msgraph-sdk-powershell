@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityb2cuserflowlanguage
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityb2cuserflowlanguage
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityB2CUserFlowLanguage
+# Remove-MgBetaIdentityB2CUserFlowLanguage
 
 ## SYNOPSIS
 Delete navigation property languages for identity
@@ -14,13 +14,13 @@ Delete navigation property languages for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
+Remove-MgBetaIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property languages for identity
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityB2CUserFlowLanguage Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityB2CUserFlowLanguage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityB2CUserFlowLanguage -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaIdentityB2CUserFlowLanguage -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
 ```
 
-This example shows how to use the Remove-MgIdentityB2CUserFlowLanguage Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityB2CUserFlowLanguage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

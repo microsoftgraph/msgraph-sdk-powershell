@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtemplate
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtemplate
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowTemplate
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate
 
 ## SYNOPSIS
 The workflow templates in the lifecycle workflow instance.
@@ -14,20 +14,20 @@ The workflow templates in the lifecycle workflow instance.
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTemplate [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTemplate -WorkflowTemplateId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate -WorkflowTemplateId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTemplate -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,31 +36,31 @@ The workflow templates in the lifecycle workflow instance.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowTemplate -WorkflowTemplateId $workflowTemplateId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate -WorkflowTemplateId $workflowTemplateId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowTemplate -Filter "category eq 'leaver'" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate -Filter "category eq 'leaver'" 
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
+### Example 3: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowTemplate
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflowTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflowTemplate
 
 ## NOTES
 

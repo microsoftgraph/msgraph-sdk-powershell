@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationschooluserbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationschooluserbyref
 schema: 2.0.0
 ---
 
-# Get-MgEducationSchoolUserByRef
+# Get-MgBetaEducationSchoolUserByRef
 
 ## SYNOPSIS
 Retrieve a list of users at a school.
@@ -13,7 +13,7 @@ Retrieve a list of users at a school.
 ## SYNTAX
 
 ```
-Get-MgEducationSchoolUserByRef -EducationSchoolId <String> [-Filter <String>] [-Search <String>]
+Get-MgBetaEducationSchoolUserByRef -EducationSchoolId <String> [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```

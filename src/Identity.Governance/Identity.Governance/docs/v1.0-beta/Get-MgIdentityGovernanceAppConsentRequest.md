@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernanceappconsentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernanceappconsentrequest
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceAppConsentRequest
+# Get-MgBetaIdentityGovernanceAppConsentRequest
 
 ## SYNOPSIS
 A collection of userConsentRequest objects for a specific application.
@@ -14,20 +14,20 @@ A collection of userConsentRequest objects for a specific application.
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceAppConsentRequest [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaIdentityGovernanceAppConsentRequest [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityGovernanceAppConsentRequest -AppConsentRequestId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityGovernanceAppConsentRequest -AppConsentRequestId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceAppConsentRequest -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceAppConsentRequest -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,40 +36,40 @@ A collection of userConsentRequest objects for a specific application.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceAppConsentRequest Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAppConsentRequest -AppConsentRequestId $appConsentRequestId -Filter "userConsentRequests/any(u:u/status eq 'InProgress')" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAppConsentRequest -AppConsentRequestId $appConsentRequestId -Filter "userConsentRequests/any(u:u/status eq 'InProgress')" 
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAppConsentRequest Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceAppConsentRequest Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAppConsentRequest -AppConsentRequestId $appConsentRequestId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAppConsentRequest -AppConsentRequestId $appConsentRequestId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAppConsentRequest Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityGovernanceAppConsentRequest Cmdlet
+### Example 3: Using the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAppConsentRequest
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAppConsentRequest
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAppConsentRequest Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgIdentityGovernanceAppConsentRequest Cmdlet
+### Example 4: Using the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAppConsentRequest -Filter "userConsentRequests/any (u:u/status eq 'InProgress')" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAppConsentRequest -Filter "userConsentRequests/any (u:u/status eq 'InProgress')" 
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAppConsentRequest Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppConsentRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppConsentRequest1
 
 ## NOTES
 

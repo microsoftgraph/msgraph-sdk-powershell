@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantapinotification
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantapinotification
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantApiNotification
+# New-MgBetaTenantRelationshipManagedTenantApiNotification
 
 ## SYNOPSIS
 Create new navigation property to managedTenantApiNotifications for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managedTenantApiNotifications for tenantRelati
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantApiNotification [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantApiNotification [-AdditionalProperties <Hashtable>]
  [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-IsAcknowledged] [-LastActionByUserId <String>]
  [-LastActionDateTime <DateTime>] [-Message <String>] [-Title <String>] [-UserId <String>] [-Confirm]
@@ -23,7 +23,7 @@ New-MgTenantRelationshipManagedTenantApiNotification [-AdditionalProperties <Has
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantApiNotification
+New-MgBetaTenantRelationshipManagedTenantApiNotification
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantApiNotification> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -55,7 +55,7 @@ managedTenantAlert
 To construct, please use Get-Help -Online and see NOTES section for ALERT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -71,7 +71,7 @@ managedTenantApiNotification
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
 Parameter Sets: Create
 Aliases:
 
@@ -254,11 +254,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
 
 ## NOTES
 

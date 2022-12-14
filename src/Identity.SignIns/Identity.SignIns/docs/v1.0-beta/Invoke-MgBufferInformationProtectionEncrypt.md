@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mgbufferinformationprotectionencrypt
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/invoke-mgbufferinformationprotectionencrypt
 schema: 2.0.0
 ---
 
-# Invoke-MgBufferInformationProtectionEncrypt
+# Invoke-MgBetaBufferInformationProtectionEncrypt
 
 ## SYNOPSIS
 Invoke action encryptBuffer
@@ -14,13 +14,13 @@ Invoke action encryptBuffer
 
 ### BufferExpanded (Default)
 ```
-Invoke-MgBufferInformationProtectionEncrypt [-AdditionalProperties <Hashtable>] [-BufferInputFile <String>]
+Invoke-MgBetaBufferInformationProtectionEncrypt [-AdditionalProperties <Hashtable>] [-BufferInputFile <String>]
  [-LabelId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Buffer
 ```
-Invoke-MgBufferInformationProtectionEncrypt
+Invoke-MgBetaBufferInformationProtectionEncrypt
  -BodyParameter <IPathsBetdbaInformationprotectionMicrosoftGraphEncryptbufferPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBetdbaInformationprotectionMicrosoftGraphEncryptbufferPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsBetdbaInformationprotectionMicrosoftGraphEncryptbufferPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Buffer
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsBetdbaInformationprotectionMicrosoftGraphEncryptbufferPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsBetdbaInformationprotectionMicrosoftGraphEncryptbufferPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBufferEncryptionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBufferEncryptionResult
 
 ## NOTES
 

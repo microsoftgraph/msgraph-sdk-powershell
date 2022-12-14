@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationonlinemeetingregistration
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationonlinemeetingregistration
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationOnlineMeetingRegistration
+# Get-MgBetaCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
 Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
@@ -14,13 +14,13 @@ Get the meetingRegistration details associated with an onlineMeeting on behalf o
 
 ### Get (Default)
 ```
-Get-MgCommunicationOnlineMeetingRegistration -OnlineMeetingId <String> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationOnlineMeetingRegistration -OnlineMeetingId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity>
+Get-MgBetaCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistration
 
 ## NOTES
 

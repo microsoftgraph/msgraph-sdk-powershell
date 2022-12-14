@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgriskyuser
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgriskyuser
 schema: 2.0.0
 ---
 
-# New-MgRiskyUser
+# New-MgBetaRiskyUser
 
 ## SYNOPSIS
 Create new navigation property to riskyUsers for identityProtection
@@ -14,7 +14,7 @@ Create new navigation property to riskyUsers for identityProtection
 
 ### CreateExpanded (Default)
 ```
-New-MgRiskyUser [-AdditionalProperties <Hashtable>] [-History <IMicrosoftGraphRiskyUserHistoryItem1[]>]
+New-MgBetaRiskyUser [-AdditionalProperties <Hashtable>] [-History <IMicrosoftGraphRiskyUserHistoryItem1[]>]
  [-Id <String>] [-IsDeleted] [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>]
  [-RiskLevel <String>] [-RiskState <String>] [-UserDisplayName <String>] [-UserPrincipalName <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgRiskyUser [-AdditionalProperties <Hashtable>] [-History <IMicrosoftGraphRi
 
 ### Create
 ```
-New-MgRiskyUser -BodyParameter <IMicrosoftGraphRiskyUser1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaRiskyUser -BodyParameter <IMicrosoftGraphRiskyUser1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,7 +52,7 @@ riskyUser
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUser1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUser1
 Parameter Sets: Create
 Aliases:
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -254,11 +254,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUser1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUser1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUser1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUser1
 
 ## NOTES
 

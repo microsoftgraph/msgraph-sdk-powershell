@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationownerbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationownerbyref
 schema: 2.0.0
 ---
 
-# Get-MgApplicationOwnerByRef
+# Get-MgBetaApplicationOwnerByRef
 
 ## SYNOPSIS
 Directory objects that are owners of the application.
@@ -16,7 +16,7 @@ Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count 
 ## SYNTAX
 
 ```
-Get-MgApplicationOwnerByRef -ApplicationId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Get-MgBetaApplicationOwnerByRef -ApplicationId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

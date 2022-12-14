@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/remove-mgcomplianceediscoverycasereviewsetquery
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/remove-mgcomplianceediscoverycasereviewsetquery
 schema: 2.0.0
 ---
 
-# Remove-MgComplianceEdiscoveryCaseReviewSetQuery
+# Remove-MgBetaComplianceEdiscoveryCaseReviewSetQuery
 
 ## SYNOPSIS
 Delete navigation property queries for compliance
@@ -14,13 +14,13 @@ Delete navigation property queries for compliance
 
 ### Delete (Default)
 ```
-Remove-MgComplianceEdiscoveryCaseReviewSetQuery -CaseId <String> -ReviewSetId <String>
+Remove-MgBetaComplianceEdiscoveryCaseReviewSetQuery -CaseId <String> -ReviewSetId <String>
  -ReviewSetQueryId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgComplianceEdiscoveryCaseReviewSetQuery -InputObject <IComplianceIdentity> [-IfMatch <String>]
+Remove-MgBetaComplianceEdiscoveryCaseReviewSetQuery -InputObject <IComplianceIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property queries for compliance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgComplianceEdiscoveryCaseReviewSetQuery Cmdlet
+### Example 1: Using the Remove-MgBetaComplianceEdiscoveryCaseReviewSetQuery Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Remove-MgComplianceEdiscoveryCaseReviewSetQuery -CaseId $caseId -ReviewSetId $reviewSetId -ReviewSetQueryId $reviewSetQueryId
+Import-Module Microsoft.Graph.Beta.Compliance
+Remove-MgBetaComplianceEdiscoveryCaseReviewSetQuery -CaseId $caseId -ReviewSetId $reviewSetId -ReviewSetQueryId $reviewSetQueryId
 ```
 
-This example shows how to use the Remove-MgComplianceEdiscoveryCaseReviewSetQuery Cmdlet.
+This example shows how to use the Remove-MgBetaComplianceEdiscoveryCaseReviewSetQuery Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

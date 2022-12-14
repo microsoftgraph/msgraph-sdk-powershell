@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgdeclinegroupevent
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgdeclinegroupevent
 schema: 2.0.0
 ---
 
-# Invoke-MgDeclineGroupEvent
+# Invoke-MgBetaDeclineGroupEvent
 
 ## SYNOPSIS
 Decline invitation to the specified event in a user calendar.
@@ -16,28 +16,28 @@ For more information on how to propose a time, and how to receive and accept a n
 
 ### DeclineExpanded (Default)
 ```
-Invoke-MgDeclineGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaDeclineGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Decline
 ```
-Invoke-MgDeclineGroupEvent -EventId <String> -GroupId <String>
+Invoke-MgBetaDeclineGroupEvent -EventId <String> -GroupId <String>
  -BodyParameter <IPaths19YagsdGroupsGroupIdEventsEventIdMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeclineViaIdentity
 ```
-Invoke-MgDeclineGroupEvent -InputObject <IGroupsIdentity>
+Invoke-MgBetaDeclineGroupEvent -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths19YagsdGroupsGroupIdEventsEventIdMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeclineViaIdentityExpanded
 ```
-Invoke-MgDeclineGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaDeclineGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -51,7 +51,7 @@ For more information on how to propose a time, and how to receive and accept a n
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Comment = "I won't be able to make this week. How about next week?"
@@ -69,10 +69,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgDeclineUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
+Invoke-MgBetaDeclineUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgDeclineGroupEvent Cmdlet.
+This example shows how to use the Invoke-MgBetaDeclineGroupEvent Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths19YagsdGroupsGroupIdEventsEventIdMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths19YagsdGroupsGroupIdEventsEventIdMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Decline, DeclineViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeclineViaIdentity, DeclineViaIdentityExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ timeSlot
 To construct, please use Get-Help -Online and see NOTES section for PROPOSEDNEWTIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeSlot
 Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
 Aliases:
 
@@ -252,9 +252,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths19YagsdGroupsGroupIdEventsEventIdMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths19YagsdGroupsGroupIdEventsEventIdMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

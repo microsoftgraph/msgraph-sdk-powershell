@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgauditlogdirectoryaudit
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgauditlogdirectoryaudit
 schema: 2.0.0
 ---
 
-# Get-MgAuditLogDirectoryAudit
+# Get-MgBetaAuditLogDirectoryAudit
 
 ## SYNOPSIS
 Get directoryAudits from auditLogs
@@ -14,20 +14,20 @@ Get directoryAudits from auditLogs
 
 ### List (Default)
 ```
-Get-MgAuditLogDirectoryAudit [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaAuditLogDirectoryAudit [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAuditLogDirectoryAudit -DirectoryAuditId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaAuditLogDirectoryAudit -DirectoryAuditId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAuditLogDirectoryAudit -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaAuditLogDirectoryAudit -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get directoryAudits from auditLogs
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAuditLogDirectoryAudit Cmdlet
+### Example 1: Using the Get-MgBetaAuditLogDirectoryAudit Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogDirectoryAudit -DirectoryAuditId $directoryAuditId
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogDirectoryAudit -DirectoryAuditId $directoryAuditId
 ```
 
-This example shows how to use the Get-MgAuditLogDirectoryAudit Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogDirectoryAudit Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgAuditLogDirectoryAudit Cmdlet
+### Example 2: Using the Get-MgBetaAuditLogDirectoryAudit Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogDirectoryAudit
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogDirectoryAudit
 ```
 
-This example shows how to use the Get-MgAuditLogDirectoryAudit Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogDirectoryAudit Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryAudit1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryAudit1
 
 ## NOTES
 

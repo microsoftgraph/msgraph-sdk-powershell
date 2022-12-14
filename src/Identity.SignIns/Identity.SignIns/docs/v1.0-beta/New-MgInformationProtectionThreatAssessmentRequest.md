@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginformationprotectionthreatassessmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mginformationprotectionthreatassessmentrequest
 schema: 2.0.0
 ---
 
-# New-MgInformationProtectionThreatAssessmentRequest
+# New-MgBetaInformationProtectionThreatAssessmentRequest
 
 ## SYNOPSIS
 Create a new threat assessment request.
@@ -15,7 +15,7 @@ A threat assessment request can be one of the following types:
 
 ### CreateExpanded (Default)
 ```
-New-MgInformationProtectionThreatAssessmentRequest [-AdditionalProperties <Hashtable>] [-Category <String>]
+New-MgBetaInformationProtectionThreatAssessmentRequest [-AdditionalProperties <Hashtable>] [-Category <String>]
  [-ContentType <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-ExpectedAssessment <String>] [-Id <String>] [-RequestSource <String>]
  [-Results <IMicrosoftGraphThreatAssessmentResult[]>] [-Status <String>] [-Confirm] [-WhatIf]
@@ -24,7 +24,7 @@ New-MgInformationProtectionThreatAssessmentRequest [-AdditionalProperties <Hasht
 
 ### Create
 ```
-New-MgInformationProtectionThreatAssessmentRequest -BodyParameter <IMicrosoftGraphThreatAssessmentRequest>
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter <IMicrosoftGraphThreatAssessmentRequest>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -34,67 +34,67 @@ A threat assessment request can be one of the following types:
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgInformationProtectionThreatAssessmentRequest Cmdlet
+### Example 1: Using the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.emailFileAssessmentRequest"
+	"@odata.type" = "#Microsoft.Graph.Beta.emailFileAssessmentRequest"
 	RecipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
 	ExpectedAssessment = "block"
 	Category = "malware"
 	ContentData = "UmVjZWl2ZWQ6IGZyb20gTVcyUFIwME1CMDMxNC5uYW1wcmQwMC....."
 }
-New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 
-This example shows how to use the New-MgInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgInformationProtectionThreatAssessmentRequest Cmdlet
+### Example 2: Using the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.fileAssessmentRequest"
+	"@odata.type" = "#Microsoft.Graph.Beta.fileAssessmentRequest"
 	ExpectedAssessment = "block"
 	Category = "malware"
 	FileName = "test.txt"
 	ContentData = "VGhpcyBpcyBhIHRlc3QgZmlsZQ=="
 }
-New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 
-This example shows how to use the New-MgInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgInformationProtectionThreatAssessmentRequest Cmdlet
+### Example 3: Using the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.mailAssessmentRequest"
+	"@odata.type" = "#Microsoft.Graph.Beta.mailAssessmentRequest"
 	RecipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
 	ExpectedAssessment = "block"
 	Category = "spam"
 	MessageUri = "https://graph.microsoft.com/beta/users/c52ce8db-3e4b-4181-93c4-7d6b6bffaf60/messages/AAMkADU3MWUxOTU0LWNlOTEt="
 }
-New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 
-This example shows how to use the New-MgInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgInformationProtectionThreatAssessmentRequest Cmdlet
+### Example 4: Using the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "#microsoft.graph.urlAssessmentRequest"
+	"@odata.type" = "#Microsoft.Graph.Beta.urlAssessmentRequest"
 	Url = "http://test.com"
 	ExpectedAssessment = "block"
 	Category = "phishing"
 }
-New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 
-This example shows how to use the New-MgInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -119,7 +119,7 @@ threatAssessmentRequest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest
 Parameter Sets: Create
 Aliases:
 
@@ -165,7 +165,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -245,7 +245,7 @@ By default, a GET /threatAssessmentRequests/{id} does not return this property u
 To construct, please use Get-Help -Online and see NOTES section for RESULTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentResult[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentResult[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -307,11 +307,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest
 
 ## NOTES
 

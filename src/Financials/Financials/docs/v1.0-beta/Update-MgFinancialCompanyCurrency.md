@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanycurrency
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanycurrency
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyCurrency
+# Update-MgBetaFinancialCompanyCurrency
 
 ## SYNOPSIS
 Update the navigation property currencies in financials
@@ -14,7 +14,7 @@ Update the navigation property currencies in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyCurrency -CompanyId <String> -CurrencyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyCurrency -CompanyId <String> -CurrencyId <String> [-AdditionalProperties <Hashtable>]
  [-AmountDecimalPlaces <String>] [-AmountRoundingPrecision <Decimal>] [-Code <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Symbol <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgFinancialCompanyCurrency -CompanyId <String> -CurrencyId <String> [-Add
 
 ### Update
 ```
-Update-MgFinancialCompanyCurrency -CompanyId <String> -CurrencyId <String>
+Update-MgBetaFinancialCompanyCurrency -CompanyId <String> -CurrencyId <String>
  -BodyParameter <IMicrosoftGraphCurrency> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyCurrency -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphCurrency>
+Update-MgBetaFinancialCompanyCurrency -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphCurrency>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyCurrency -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyCurrency -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-AmountDecimalPlaces <String>] [-AmountRoundingPrecision <Decimal>] [-Code <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Symbol <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -97,7 +97,7 @@ currency
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCurrency
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -281,9 +281,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCurrency
 
 ## OUTPUTS
 

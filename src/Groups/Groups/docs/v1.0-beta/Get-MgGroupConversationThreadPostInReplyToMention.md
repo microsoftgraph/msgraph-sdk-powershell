@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupconversationthreadpostinreplytomention
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupconversationthreadpostinreplytomention
 schema: 2.0.0
 ---
 
-# Get-MgGroupConversationThreadPostInReplyToMention
+# Get-MgBetaGroupConversationThreadPostInReplyToMention
 
 ## SYNOPSIS
 Get mentions from groups
@@ -14,7 +14,7 @@ Get mentions from groups
 
 ### List (Default)
 ```
-Get-MgGroupConversationThreadPostInReplyToMention -ConversationId <String> -ConversationThreadId <String>
+Get-MgBetaGroupConversationThreadPostInReplyToMention -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgGroupConversationThreadPostInReplyToMention -ConversationId <String> -Conv
 
 ### Get
 ```
-Get-MgGroupConversationThreadPostInReplyToMention -ConversationId <String> -ConversationThreadId <String>
+Get-MgBetaGroupConversationThreadPostInReplyToMention -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -MentionId <String> -PostId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupConversationThreadPostInReplyToMention -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupConversationThreadPostInReplyToMention -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -272,11 +272,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMention
 
 ## NOTES
 

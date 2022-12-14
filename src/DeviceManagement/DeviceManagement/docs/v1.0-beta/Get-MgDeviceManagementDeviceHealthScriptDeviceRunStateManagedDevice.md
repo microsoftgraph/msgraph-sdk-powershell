@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementdevicehealthscriptdevicerunstatemanageddevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementdevicehealthscriptdevicerunstatemanageddevice
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice
+# Get-MgBetaDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice
 
 ## SYNOPSIS
 The managed device on which the device health script executed
@@ -14,13 +14,13 @@ The managed device on which the device health script executed
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice -DeviceHealthScriptDeviceStateId <String>
+Get-MgBetaDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice -DeviceHealthScriptDeviceStateId <String>
  -DeviceHealthScriptId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,11 +112,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDevice1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDevice1
 
 ## NOTES
 

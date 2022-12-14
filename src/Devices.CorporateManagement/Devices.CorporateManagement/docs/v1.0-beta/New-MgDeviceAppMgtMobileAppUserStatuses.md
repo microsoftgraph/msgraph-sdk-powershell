@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmobileappuserstatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmobileappuserstatuses
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtMobileAppUserStatuses
+# New-MgBetaDeviceAppMgtMobileAppUserStatuses
 
 ## SYNOPSIS
 Create new navigation property to userStatuses for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to userStatuses for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtMobileAppUserStatuses -MobileAppId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtMobileAppUserStatuses -MobileAppId <String> [-AdditionalProperties <Hashtable>]
  [-App <IMicrosoftGraphMobileApp1>] [-DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]
  [-FailedDeviceCount <Int32>] [-Id <String>] [-InstalledDeviceCount <Int32>]
  [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ New-MgDeviceAppMgtMobileAppUserStatuses -MobileAppId <String> [-AdditionalProper
 
 ### Create
 ```
-New-MgDeviceAppMgtMobileAppUserStatuses -MobileAppId <String>
+New-MgBetaDeviceAppMgtMobileAppUserStatuses -MobileAppId <String>
  -BodyParameter <IMicrosoftGraphUserAppInstallStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtMobileAppUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtMobileAppUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserAppInstallStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtMobileAppUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtMobileAppUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-App <IMicrosoftGraphMobileApp1>]
  [-DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>] [-FailedDeviceCount <Int32>] [-Id <String>]
  [-InstalledDeviceCount <Int32>] [-NotInstalledDeviceCount <Int32>] [-UserName <String>]
@@ -69,7 +69,7 @@ An abstract class containing the base properties for Intune mobile apps.
 To construct, please use Get-Help -Online and see NOTES section for APP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -85,7 +85,7 @@ Contains properties for the installation status for a user.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -101,7 +101,7 @@ The install state of the app on devices.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -270,19 +270,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementMobileAppUserStatuses
+### New-MgBetaDeviceAppManagementMobileAppUserStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

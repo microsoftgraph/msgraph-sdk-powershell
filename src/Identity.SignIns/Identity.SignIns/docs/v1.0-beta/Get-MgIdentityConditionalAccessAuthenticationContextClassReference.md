@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityconditionalaccessauthenticationcontextclassreference
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityconditionalaccessauthenticationcontextclassreference
 schema: 2.0.0
 ---
 
-# Get-MgIdentityConditionalAccessAuthenticationContextClassReference
+# Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
 Read-only.
@@ -16,21 +16,21 @@ Returns a collection of the specified authentication context class references.
 
 ### List1 (Default)
 ```
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference [-ExpandProperty <String[]>]
+Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference
+Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
  -AuthenticationContextClassReferenceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -41,31 +41,31 @@ Returns a collection of the specified authentication context class references.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
+### Example 1: Using the Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
 ```
 
-This example shows how to use the Get-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
+This example shows how to use the Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
+### Example 2: Using the Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
 ```
 
-This example shows how to use the Get-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
+This example shows how to use the Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
+### Example 3: Using the Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
 ```
 
-This example shows how to use the Get-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
+This example shows how to use the Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
 
 ## NOTES
 

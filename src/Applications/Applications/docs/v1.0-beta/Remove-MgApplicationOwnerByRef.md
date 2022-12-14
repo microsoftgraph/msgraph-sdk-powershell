@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgapplicationownerbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgapplicationownerbyref
 schema: 2.0.0
 ---
 
-# Remove-MgApplicationOwnerByRef
+# Remove-MgBetaApplicationOwnerByRef
 
 ## SYNOPSIS
 Delete ref of navigation property owners for applications
@@ -14,13 +14,13 @@ Delete ref of navigation property owners for applications
 
 ### Delete1 (Default)
 ```
-Remove-MgApplicationOwnerByRef -ApplicationId <String> -DirectoryObjectId <String> [-Id <String>]
+Remove-MgBetaApplicationOwnerByRef -ApplicationId <String> -DirectoryObjectId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgApplicationOwnerByRef -InputObject <IApplicationsIdentity> [-Id <String>] [-IfMatch <String>]
+Remove-MgBetaApplicationOwnerByRef -InputObject <IApplicationsIdentity> [-Id <String>] [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property owners for applications
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgApplicationOwnerByRef Cmdlet
+### Example 1: Using the Remove-MgBetaApplicationOwnerByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgApplicationOwnerByRef -ApplicationId $applicationId -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaApplicationOwnerByRef -ApplicationId $applicationId -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Remove-MgApplicationOwnerByRef Cmdlet.
+This example shows how to use the Remove-MgBetaApplicationOwnerByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

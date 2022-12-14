@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointorganizationsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointorganizationsetting
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointOrganizationSetting
+# Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
 Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
@@ -14,7 +14,7 @@ A tenant has only one **cloudPcOrganizationSettings** object.
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementVirtualEndpointOrganizationSetting [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -24,13 +24,13 @@ A tenant has only one **cloudPcOrganizationSettings** object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceManagementVirtualEndpointOrganizationSetting Cmdlet
+### Example 1: Using the Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Get-MgDeviceManagementVirtualEndpointOrganizationSetting
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointOrganizationSetting Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -72,7 +72,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOrganizationSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOrganizationSettings
 
 ## NOTES
 

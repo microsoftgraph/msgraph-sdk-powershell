@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationonlinemeetingregistration
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/update-mgcommunicationonlinemeetingregistration
 schema: 2.0.0
 ---
 
-# Update-MgCommunicationOnlineMeetingRegistration
+# Update-MgBetaCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
 Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
@@ -14,7 +14,7 @@ Update the details of a meetingRegistration object assciated with an onlineMeeti
 
 ### UpdateExpanded (Default)
 ```
-Update-MgCommunicationOnlineMeetingRegistration -OnlineMeetingId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaCommunicationOnlineMeetingRegistration -OnlineMeetingId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedRegistrant <String>] [-CustomQuestions <IMicrosoftGraphMeetingRegistrationQuestion[]>]
  [-Description <String>] [-EndDateTime <DateTime>] [-Id <String>]
  [-Registrants <IMicrosoftGraphMeetingRegistrantBase[]>] [-RegistrationPageViewCount <Int32>]
@@ -24,19 +24,19 @@ Update-MgCommunicationOnlineMeetingRegistration -OnlineMeetingId <String> [-Addi
 
 ### Update
 ```
-Update-MgCommunicationOnlineMeetingRegistration -OnlineMeetingId <String>
+Update-MgBetaCommunicationOnlineMeetingRegistration -OnlineMeetingId <String>
  -BodyParameter <IMicrosoftGraphMeetingRegistration> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphMeetingRegistration> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AllowedRegistrant <String>]
  [-CustomQuestions <IMicrosoftGraphMeetingRegistrationQuestion[]>] [-Description <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Registrants <IMicrosoftGraphMeetingRegistrantBase[]>]
@@ -87,7 +87,7 @@ meetingRegistration
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistration
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ Custom registration questions.
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMQUESTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -211,7 +211,7 @@ Registrants of the online meeting.
 To construct, please use Get-Help -Online and see NOTES section for REGISTRANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistrantBase[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrantBase[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ The meeting speaker's information.
 To construct, please use Get-Help -Online and see NOTES section for SPEAKERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingSpeaker[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingSpeaker[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -336,9 +336,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingRegistration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistration
 
 ## OUTPUTS
 

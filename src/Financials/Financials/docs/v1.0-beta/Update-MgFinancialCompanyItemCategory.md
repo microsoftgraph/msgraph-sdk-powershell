@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyitemcategory
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanyitemcategory
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyItemCategory
+# Update-MgBetaFinancialCompanyItemCategory
 
 ## SYNOPSIS
 Update the navigation property itemCategories in financials
@@ -14,52 +14,52 @@ Update the navigation property itemCategories in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyItemCategory -CompanyId <String> -ItemCategoryId <String>
+Update-MgBetaFinancialCompanyItemCategory -CompanyId <String> -ItemCategoryId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgFinancialCompanyItemCategory -CompanyId <String> -ItemCategoryId <String>
+Update-MgBetaFinancialCompanyItemCategory -CompanyId <String> -ItemCategoryId <String>
  -BodyParameter <IMicrosoftGraphItemCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanyItemCategory -CompanyId <String> -ItemId <String>
+Update-MgBetaFinancialCompanyItemCategory -CompanyId <String> -ItemId <String>
  -BodyParameter <IMicrosoftGraphItemCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanyItemCategory -CompanyId <String> -ItemId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyItemCategory -CompanyId <String> -ItemId <String> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyItemCategory -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyItemCategory -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphItemCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanyItemCategory -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyItemCategory -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphItemCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyItemCategory -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyItemCategory -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanyItemCategory -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyItemCategory -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -91,7 +91,7 @@ itemCategory
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -168,7 +168,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -275,9 +275,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 
 ## OUTPUTS
 

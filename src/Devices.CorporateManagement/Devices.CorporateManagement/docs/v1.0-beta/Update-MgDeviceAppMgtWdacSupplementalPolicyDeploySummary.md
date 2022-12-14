@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtwdacsupplementalpolicydeploysummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtwdacsupplementalpolicydeploysummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary
+# Update-MgBetaDeviceAppMgtWdacSupplementalPolicyDeploySummary
 
 ## SYNOPSIS
 Update the navigation property deploySummary in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property deploySummary in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary
+Update-MgBetaDeviceAppMgtWdacSupplementalPolicyDeploySummary
  -WindowsDefenderApplicationControlSupplementalPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-DeployedDeviceCount <Int32>] [-FailedDeviceCount <Int32>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary
 
 ### Update
 ```
-Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary
+Update-MgBetaDeviceAppMgtWdacSupplementalPolicyDeploySummary
  -WindowsDefenderApplicationControlSupplementalPolicyId <String>
  -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,14 +30,14 @@ Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtWdacSupplementalPolicyDeploySummary -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtWdacSupplementalPolicyDeploySummary -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeployedDeviceCount <Int32>] [-FailedDeviceCount <Int32>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Contains properties for the deployment summary of a WindowsDefenderApplicationCo
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -208,9 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary
 
 ## OUTPUTS
 
@@ -220,7 +220,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementWdacSupplementalPolicyDeploySummary
+### Update-MgBetaDeviceAppManagementWdacSupplementalPolicyDeploySummary
 
 COMPLEX PARAMETER PROPERTIES
 

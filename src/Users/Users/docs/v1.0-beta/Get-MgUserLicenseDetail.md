@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguserlicensedetail
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguserlicensedetail
 schema: 2.0.0
 ---
 
-# Get-MgUserLicenseDetail
+# Get-MgBetaUserLicenseDetail
 
 ## SYNOPSIS
 Get licenseDetails from users
@@ -14,20 +14,20 @@ Get licenseDetails from users
 
 ### List (Default)
 ```
-Get-MgUserLicenseDetail -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserLicenseDetail -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserLicenseDetail -LicenseDetailsId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserLicenseDetail -LicenseDetailsId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserLicenseDetail -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserLicenseDetail -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,7 +38,7 @@ Get licenseDetails from users
 
 ### Example 1: Get a user's license details
 ```powershell
-Get-MgUserLicenseDetail -UserId '0ec3a5e8-b4b6-4678-90ff-ce786055065f' | Format-List
+Get-MgBetaUserLicenseDetail -UserId '0ec3a5e8-b4b6-4678-90ff-ce786055065f' | Format-List
 
 Id                   : BF5i-6pS2kKxDRTxGV1mX6sU3Mts2TBMufRq2nzcHUY
 ServicePlans         : {WINDOWSUPDATEFORBUSINESS_DEPLOYMENTSERVICE, UNIVERSAL_PRINT_01, M365_LIGHTHOUSE_CUSTOMER_PLAN1, POWER_VIRTUAL_AGENTS_O365_P3...}
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLicenseDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLicenseDetails
 
 ## NOTES
 

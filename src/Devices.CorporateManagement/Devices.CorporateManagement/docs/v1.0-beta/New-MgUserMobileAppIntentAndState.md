@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgusermobileappintentandstate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgusermobileappintentandstate
 schema: 2.0.0
 ---
 
-# New-MgUserMobileAppIntentAndState
+# New-MgBetaUserMobileAppIntentAndState
 
 ## SYNOPSIS
 Create new navigation property to mobileAppIntentAndStates for users
@@ -14,26 +14,26 @@ Create new navigation property to mobileAppIntentAndStates for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserMobileAppIntentAndState -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaUserMobileAppIntentAndState -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-ManagedDeviceIdentifier <String>] [-MobileAppList <IMicrosoftGraphMobileAppIntentAndStateDetail[]>]
  [-UserId1 <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserMobileAppIntentAndState -UserId <String> -BodyParameter <IMicrosoftGraphMobileAppIntentAndState>
+New-MgBetaUserMobileAppIntentAndState -UserId <String> -BodyParameter <IMicrosoftGraphMobileAppIntentAndState>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphMobileAppIntentAndState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity> [-UserId <String>]
+New-MgBetaUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity> [-UserId <String>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ManagedDeviceIdentifier <String>]
  [-MobileAppList <IMicrosoftGraphMobileAppIntentAndStateDetail[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ MobileApp Intent and Install State for a given device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -128,7 +128,7 @@ The list of payload intents and states for the tenant.
 To construct, please use Get-Help -Online and see NOTES section for MOBILEAPPLIST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndStateDetail[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndStateDetail[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -205,13 +205,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
 
 ## NOTES
 

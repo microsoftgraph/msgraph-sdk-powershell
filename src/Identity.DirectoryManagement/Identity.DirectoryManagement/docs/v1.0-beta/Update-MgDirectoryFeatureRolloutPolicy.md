@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryfeaturerolloutpolicy
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectoryfeaturerolloutpolicy
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryFeatureRolloutPolicy
+# Update-MgBetaDirectoryFeatureRolloutPolicy
 
 ## SYNOPSIS
 Update the navigation property featureRolloutPolicies in directory
@@ -14,7 +14,7 @@ Update the navigation property featureRolloutPolicies in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Description <String>] [-DisplayName <String>]
  [-Feature <String>] [-Id <String>] [-IsAppliedToOrganization] [-IsEnabled] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-Additi
 
 ### Update
 ```
-Update-MgDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String>
+Update-MgBetaDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String>
  -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Description <String>]
  [-DisplayName <String>] [-Feature <String>] [-Id <String>] [-IsAppliedToOrganization] [-IsEnabled]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -68,7 +68,7 @@ Specifies a list of directoryObjects that feature is enabled for.
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -84,7 +84,7 @@ featureRolloutPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -176,7 +176,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -268,9 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
 
 ## OUTPUTS
 

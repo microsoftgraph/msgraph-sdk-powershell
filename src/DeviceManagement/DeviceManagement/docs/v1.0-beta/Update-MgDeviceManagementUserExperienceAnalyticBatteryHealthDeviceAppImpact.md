@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthdeviceappimpact
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthdeviceappimpact
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
+# Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsBatteryHealthDeviceAppImpact in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsBatteryHealthDeviceAppImpa
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
  -UserExperienceAnalyticsBatteryHealthDeviceAppImpactId <String> [-AdditionalProperties <Hashtable>]
  [-AppDisplayName <String>] [-AppName <String>] [-AppPublisher <String>] [-BatteryUsagePercentage <Double>]
  [-DeviceId <String>] [-Id <String>] [-IsForegroundApp] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
  -UserExperienceAnalyticsBatteryHealthDeviceAppImpactId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDeviceAppImpact> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDeviceAppImpact> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>]
  [-AppName <String>] [-AppPublisher <String>] [-BatteryUsagePercentage <Double>] [-DeviceId <String>]
  [-Id <String>] [-IsForegroundApp] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -136,7 +136,7 @@ The user experience analytics battery health device app impact entity contains b
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDeviceAppImpact
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDeviceAppImpact
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -183,7 +183,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -275,9 +275,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDeviceAppImpact
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDeviceAppImpact
 
 ## OUTPUTS
 

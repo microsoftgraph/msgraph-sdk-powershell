@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/new-mgsearchqna
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/new-mgsearchqna
 schema: 2.0.0
 ---
 
-# New-MgSearchQna
+# New-MgBetaSearchQna
 
 ## SYNOPSIS
 Create a new qna object.
@@ -14,7 +14,7 @@ Create a new qna object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSearchQna [-AdditionalProperties <Hashtable>] [-AvailabilityEndDateTime <DateTime>]
+New-MgBetaSearchQna [-AdditionalProperties <Hashtable>] [-AvailabilityEndDateTime <DateTime>]
  [-AvailabilityStartDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-GroupIds <String[]>] [-Id <String>] [-IsSuggested] [-Keywords <IMicrosoftGraphSearchAnswerKeyword>]
  [-LanguageTags <String[]>] [-LastModifiedBy <IMicrosoftGraphSearchIdentitySet>]
@@ -25,7 +25,7 @@ New-MgSearchQna [-AdditionalProperties <Hashtable>] [-AvailabilityEndDateTime <D
 
 ### Create
 ```
-New-MgSearchQna -BodyParameter <IMicrosoftGraphSearchQna> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSearchQna -BodyParameter <IMicrosoftGraphSearchQna> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,9 +33,9 @@ Create a new qna object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSearchQna Cmdlet
+### Example 1: Using the New-MgBetaSearchQna Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	DisplayName = "Global Country Holidays"
 	WebUrl = "http://www.contoso.com/"
@@ -67,10 +67,10 @@ $params = @{
 	)
 	State = "published"
 }
-New-MgSearchQna -BodyParameter $params
+New-MgBetaSearchQna -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSearchQna Cmdlet.
+This example shows how to use the New-MgBetaSearchQna Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -127,7 +127,7 @@ qna
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchQna
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchQna
 Parameter Sets: Create
 Aliases:
 
@@ -220,7 +220,7 @@ answerKeyword
 To construct, please use Get-Help -Online and see NOTES section for KEYWORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAnswerKeyword
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAnswerKeyword
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -254,7 +254,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -286,7 +286,7 @@ List of devices and operating systems able to view this qna.
 Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DevicePlatformType[]
+Type: Microsoft.Graph.Beta.PowerShell.Support.DevicePlatformType[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -319,7 +319,7 @@ The date and group settings will apply to all variations.
 To construct, please use Get-Help -Online and see NOTES section for TARGETEDVARIATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAnswerVariant[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAnswerVariant[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -382,11 +382,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchQna
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchQna
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchQna
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchQna
 
 ## NOTES
 

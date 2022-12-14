@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/update-mggroupsitelistitemfield
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/update-mggroupsitelistitemfield
 schema: 2.0.0
 ---
 
-# Update-MgGroupSiteListItemField
+# Update-MgBetaGroupSiteListItemField
 
 ## SYNOPSIS
 Update the properties on a **[listItem][]**.
@@ -14,25 +14,25 @@ Update the properties on a **[listItem][]**.
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupSiteListItemField -GroupId <String> -ListId <String> -ListItemId <String> -SiteId <String>
+Update-MgBetaGroupSiteListItemField -GroupId <String> -ListId <String> -ListItemId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgGroupSiteListItemField -GroupId <String> -ListId <String> -ListItemId <String> -SiteId <String>
+Update-MgBetaGroupSiteListItemField -GroupId <String> -ListId <String> -ListItemId <String> -SiteId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupSiteListItemField -InputObject <ISitesIdentity> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaGroupSiteListItemField -InputObject <ISitesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupSiteListItemField -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupSiteListItemField -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -109,7 +109,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -216,7 +216,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ### System.Collections.Hashtable
 

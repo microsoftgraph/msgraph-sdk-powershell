@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementconfigurationpolicy
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementconfigurationpolicy
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementConfigurationPolicy
+# New-MgBetaDeviceManagementConfigurationPolicy
 
 ## SYNOPSIS
 Create new navigation property to configurationPolicies for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to configurationPolicies for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementConfigurationPolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementConfigurationPolicy [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
  [-CreationSource <String>] [-Description <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>]
@@ -27,7 +27,7 @@ New-MgDeviceManagementConfigurationPolicy [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementConfigurationPolicy -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicy>
+New-MgBetaDeviceManagementConfigurationPolicy -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicy>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -58,7 +58,7 @@ Policy assignments
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -74,7 +74,7 @@ Device Management Configuration Policy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicy
 Parameter Sets: Create
 Aliases:
 
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 Supported platform types.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationPlatforms
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationPlatforms
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -196,7 +196,7 @@ Priority metadata of the policy.
 To construct, please use Get-Help -Online and see NOTES section for PRIORITYMETADATA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPriorityMetaData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementPriorityMetaData
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -242,7 +242,7 @@ Policy settings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 Describes which technology this setting can be deployed with
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationTechnologies
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationTechnologies
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -273,7 +273,7 @@ Policy template reference information
 To construct, please use Get-Help -Online and see NOTES section for TEMPLATEREFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -320,11 +320,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicy
 
 ## NOTES
 

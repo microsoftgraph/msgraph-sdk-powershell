@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mguserevent
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mguserevent
 schema: 2.0.0
 ---
 
-# Get-MgUserEvent
+# Get-MgBetaUserEvent
 
 ## SYNOPSIS
 The user's events.
@@ -17,18 +17,18 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserEvent -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
+Get-MgBetaUserEvent -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserEvent -EventId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserEvent -EventId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserEvent -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserEvent -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,64 +39,64 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserEvent Cmdlet
+### Example 1: Using the Get-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview" 
+Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview" 
 ```
 
-This example shows how to use the Get-MgUserEvent Cmdlet.
+This example shows how to use the Get-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserEvent Cmdlet
+### Example 2: Using the Get-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,locations" 
+Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,locations" 
 ```
 
-This example shows how to use the Get-MgUserEvent Cmdlet.
+This example shows how to use the Get-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgUserEvent Cmdlet
+### Example 3: Using the Get-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,hideAttendees" 
+Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,hideAttendees" 
 ```
 
-This example shows how to use the Get-MgUserEvent Cmdlet.
+This example shows how to use the Get-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgUserEvent Cmdlet
+### Example 4: Using the Get-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,start,end,occurrenceId,exceptionOccurrences,cancelledOccurrences" -ExpandProperty "exceptionOccurrences" 
+Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,start,end,occurrenceId,exceptionOccurrences,cancelledOccurrences" -ExpandProperty "exceptionOccurrences" 
 ```
 
-This example shows how to use the Get-MgUserEvent Cmdlet.
+This example shows how to use the Get-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Get-MgUserEvent Cmdlet
+### Example 5: Using the Get-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEvent -UserId $userId -Property "subject,body,bodyPreview" 
+Get-MgBetaUserEvent -UserId $userId -Property "subject,body,bodyPreview" 
 ```
 
-This example shows how to use the Get-MgUserEvent Cmdlet.
+This example shows how to use the Get-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the Get-MgUserEvent Cmdlet
+### Example 6: Using the Get-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEvent -UserId $userId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location" 
+Get-MgBetaUserEvent -UserId $userId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location" 
 ```
 
-This example shows how to use the Get-MgUserEvent Cmdlet.
+This example shows how to use the Get-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 
 ## NOTES
 

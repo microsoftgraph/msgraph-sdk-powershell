@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectorydeleteditem
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectorydeleteditem
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryDeletedItem
+# Update-MgBetaDirectoryDeletedItem
 
 ## SYNOPSIS
 Update the navigation property deletedItems in directory
@@ -14,25 +14,25 @@ Update the navigation property deletedItems in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryDeletedItem -DirectoryObjectId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectoryDeletedItem -DirectoryObjectId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryDeletedItem -DirectoryObjectId <String> -BodyParameter <IMicrosoftGraphDirectoryObject>
+Update-MgBetaDirectoryDeletedItem -DirectoryObjectId <String> -BodyParameter <IMicrosoftGraphDirectoryObject>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphDirectoryObject> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Id <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -64,7 +64,7 @@ directoryObject
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## OUTPUTS
 

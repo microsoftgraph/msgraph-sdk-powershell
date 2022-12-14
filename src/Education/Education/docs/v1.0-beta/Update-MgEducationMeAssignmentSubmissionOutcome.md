@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationmeassignmentsubmissionoutcome
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/update-mgeducationmeassignmentsubmissionoutcome
 schema: 2.0.0
 ---
 
-# Update-MgEducationMeAssignmentSubmissionOutcome
+# Update-MgBetaEducationMeAssignmentSubmissionOutcome
 
 ## SYNOPSIS
 Update the navigation property outcomes in education
@@ -14,7 +14,7 @@ Update the navigation property outcomes in education
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEducationMeAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationOutcomeId <String>
+Update-MgBetaEducationMeAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationOutcomeId <String>
  -EducationSubmissionId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgEducationMeAssignmentSubmissionOutcome -EducationAssignmentId <String> 
 
 ### Update
 ```
-Update-MgEducationMeAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationOutcomeId <String>
+Update-MgBetaEducationMeAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationOutcomeId <String>
  -EducationSubmissionId <String> -BodyParameter <IMicrosoftGraphEducationOutcome> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
+Update-MgBetaEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationOutcome> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
+Update-MgBetaEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ educationOutcome
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationOutcome
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationOutcome
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -239,9 +239,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationOutcome
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationOutcome
 
 ## OUTPUTS
 

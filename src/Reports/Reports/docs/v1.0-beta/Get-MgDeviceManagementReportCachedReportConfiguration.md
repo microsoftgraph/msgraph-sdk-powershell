@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgdevicemanagementreportcachedreportconfiguration
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgdevicemanagementreportcachedreportconfiguration
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementReportCachedReportConfiguration
+# Get-MgBetaDeviceManagementReportCachedReportConfiguration
 
 ## SYNOPSIS
 Entity representing the configuration of a cached report
@@ -14,20 +14,20 @@ Entity representing the configuration of a cached report
 
 ### List (Default)
 ```
-Get-MgDeviceManagementReportCachedReportConfiguration [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementReportCachedReportConfiguration [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementReportCachedReportConfiguration -DeviceManagementCachedReportConfigurationId <String>
+Get-MgBetaDeviceManagementReportCachedReportConfiguration -DeviceManagementCachedReportConfigurationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementReportCachedReportConfiguration -InputObject <IReportsIdentity>
+Get-MgBetaDeviceManagementReportCachedReportConfiguration -InputObject <IReportsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementCachedReportConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementCachedReportConfiguration
 
 ## NOTES
 

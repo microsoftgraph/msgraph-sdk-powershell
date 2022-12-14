@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationwindowhelloforbusinessmethoddeviceregisteredownerbyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationwindowhelloforbusinessmethoddeviceregisteredownerbyref
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef
+# Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
 The user that cloud joined the device or registered their personal device.
@@ -18,7 +18,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef -UserId <String>
+Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]

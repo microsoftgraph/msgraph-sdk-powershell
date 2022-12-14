@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementwindowdriverupdateprofile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementwindowdriverupdateprofile
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementWindowDriverUpdateProfile
+# Set-MgBetaDeviceManagementWindowDriverUpdateProfile
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,28 +14,28 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementWindowDriverUpdateProfile -WindowsDriverUpdateProfileId <String>
+Set-MgBetaDeviceManagementWindowDriverUpdateProfile -WindowsDriverUpdateProfileId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphWindowsDriverUpdateProfileAssignment[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgDeviceManagementWindowDriverUpdateProfile -WindowsDriverUpdateProfileId <String>
+Set-MgBetaDeviceManagementWindowDriverUpdateProfile -WindowsDriverUpdateProfileId <String>
  -BodyParameter <IPaths1F83Ez2DevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementWindowDriverUpdateProfile -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementWindowDriverUpdateProfile -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1F83Ez2DevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementWindowDriverUpdateProfile -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementWindowDriverUpdateProfile -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphWindowsDriverUpdateProfileAssignment[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDriverUpdateProfileAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDriverUpdateProfileAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1F83Ez2DevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1F83Ez2DevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -176,9 +176,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1F83Ez2DevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1F83Ez2DevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

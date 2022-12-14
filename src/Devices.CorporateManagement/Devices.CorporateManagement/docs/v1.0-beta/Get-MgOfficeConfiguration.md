@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgofficeconfiguration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgofficeconfiguration
 schema: 2.0.0
 ---
 
-# Get-MgOfficeConfiguration
+# Get-MgBetaOfficeConfiguration
 
 ## SYNOPSIS
 Get officeConfiguration
@@ -13,7 +13,7 @@ Get officeConfiguration
 ## SYNTAX
 
 ```
-Get-MgOfficeConfiguration [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaOfficeConfiguration [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeConfiguration
 
 ## NOTES
 

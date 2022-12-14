@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusercalendarevent
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusercalendarevent
 schema: 2.0.0
 ---
 
-# Get-MgUserCalendarEvent
+# Get-MgBetaUserCalendarEvent
 
 ## SYNOPSIS
 Retrieve a list of events in a calendar.
@@ -16,7 +16,7 @@ To get expanded event instances, you can get the calendar view, or\nget the inst
 ## SYNTAX
 
 ```
-Get-MgUserCalendarEvent -CalendarId <String> -UserId <String> [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserCalendarEvent -CalendarId <String> -UserId <String> [-Filter <String>] [-Property <String[]>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 
 ## NOTES
 

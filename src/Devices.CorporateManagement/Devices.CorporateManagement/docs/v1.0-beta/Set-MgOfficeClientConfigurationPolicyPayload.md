@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/set-mgofficeclientconfigurationpolicypayload
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/set-mgofficeclientconfigurationpolicypayload
 schema: 2.0.0
 ---
 
-# Set-MgOfficeClientConfigurationPolicyPayload
+# Set-MgBetaOfficeClientConfigurationPolicyPayload
 
 ## SYNOPSIS
 Policy settings JSON string in binary format, these values cannot be changed by the user.
@@ -14,13 +14,13 @@ Policy settings JSON string in binary format, these values cannot be changed by 
 
 ### Set (Default)
 ```
-Set-MgOfficeClientConfigurationPolicyPayload -OfficeClientConfigurationId <String> -InFile <String>
+Set-MgBetaOfficeClientConfigurationPolicyPayload -OfficeClientConfigurationId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgOfficeClientConfigurationPolicyPayload -InputObject <IDevicesCorporateManagementIdentity>
+Set-MgBetaOfficeClientConfigurationPolicyPayload -InputObject <IDevicesCorporateManagementIdentity>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### System.IO.Stream
 

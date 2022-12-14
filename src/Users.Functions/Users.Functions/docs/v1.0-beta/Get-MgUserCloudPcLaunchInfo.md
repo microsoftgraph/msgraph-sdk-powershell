@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusercloudpclaunchinfo
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusercloudpclaunchinfo
 schema: 2.0.0
 ---
 
-# Get-MgUserCloudPcLaunchInfo
+# Get-MgBetaUserCloudPcLaunchInfo
 
 ## SYNOPSIS
 Invoke function getCloudPcLaunchInfo
@@ -14,12 +14,12 @@ Invoke function getCloudPcLaunchInfo
 
 ### Get (Default)
 ```
-Get-MgUserCloudPcLaunchInfo -CloudPcId <String> -UserId <String> [<CommonParameters>]
+Get-MgBetaUserCloudPcLaunchInfo -CloudPcId <String> -UserId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserCloudPcLaunchInfo -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgBetaUserCloudPcLaunchInfo -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,14 +27,14 @@ Invoke function getCloudPcLaunchInfo
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserCloudPcLaunchInfo Cmdlet
+### Example 1: Using the Get-MgBetaUserCloudPcLaunchInfo Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Functions
+Import-Module Microsoft.Graph.Beta.Users.Functions
 # A UPN can also be used as -UserId.
-Get-MgUserCloudPcLaunchInfo -UserId $userId -CloudPCId $cloudPCId
+Get-MgBetaUserCloudPcLaunchInfo -UserId $userId -CloudPCId $cloudPCId
 ```
 
-This example shows how to use the Get-MgUserCloudPcLaunchInfo Cmdlet.
+This example shows how to use the Get-MgBetaUserCloudPcLaunchInfo Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -59,7 +59,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -90,11 +90,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcLaunchInfo
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcLaunchInfo
 
 ## NOTES
 

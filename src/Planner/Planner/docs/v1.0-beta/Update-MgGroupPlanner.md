@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mggroupplanner
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/update-mggroupplanner
 schema: 2.0.0
 ---
 
-# Update-MgGroupPlanner
+# Update-MgBetaGroupPlanner
 
 ## SYNOPSIS
 Update the navigation property planner in groups
@@ -14,25 +14,25 @@ Update the navigation property planner in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupPlanner -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaGroupPlanner -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Plans <IMicrosoftGraphPlannerPlan1[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupPlanner -GroupId <String> -BodyParameter <IMicrosoftGraphPlannerGroup> [-PassThru] [-Confirm]
+Update-MgBetaGroupPlanner -GroupId <String> -BodyParameter <IMicrosoftGraphPlannerGroup> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupPlanner -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerGroup> [-PassThru]
+Update-MgBetaGroupPlanner -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerGroup> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupPlanner -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaGroupPlanner -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Plans <IMicrosoftGraphPlannerPlan1[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ plannerGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerGroup
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -143,7 +143,7 @@ Returns the plannerPlans owned by the group.
 To construct, please use Get-Help -Online and see NOTES section for PLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerGroup
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgteampermissiongrant
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgteampermissiongrant
 schema: 2.0.0
 ---
 
-# Update-MgTeamPermissionGrant
+# Update-MgBetaTeamPermissionGrant
 
 ## SYNOPSIS
 Update the navigation property permissionGrants in teams
@@ -14,7 +14,7 @@ Update the navigation property permissionGrants in teams
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId <String>
+Update-MgBetaTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId <String>
  [-AdditionalProperties <Hashtable>] [-ClientAppId <String>] [-ClientId <String>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-Permission <String>] [-PermissionType <String>]
  [-ResourceAppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId
 
 ### Update
 ```
-Update-MgTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId <String>
+Update-MgBetaTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId <String>
  -BodyParameter <IMicrosoftGraphResourceSpecificPermissionGrant> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTeamPermissionGrant -InputObject <ITeamsIdentity>
+Update-MgBetaTeamPermissionGrant -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphResourceSpecificPermissionGrant> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTeamPermissionGrant -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaTeamPermissionGrant -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ClientAppId <String>] [-ClientId <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
  [-Permission <String>] [-PermissionType <String>] [-ResourceAppId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ resourceSpecificPermissionGrant
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -290,9 +290,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

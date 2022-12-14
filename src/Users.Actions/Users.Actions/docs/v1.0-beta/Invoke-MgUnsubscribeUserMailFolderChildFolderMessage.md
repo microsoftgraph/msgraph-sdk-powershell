@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgunsubscribeusermailfolderchildfoldermessage
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgunsubscribeusermailfolderchildfoldermessage
 schema: 2.0.0
 ---
 
-# Invoke-MgUnsubscribeUserMailFolderChildFolderMessage
+# Invoke-MgBetaUnsubscribeUserMailFolderChildFolderMessage
 
 ## SYNOPSIS
 Submits a email request on behalf of the signed-in user to unsubscribe from an email distribution list.
@@ -22,13 +22,13 @@ The actual exclusion of the user from future mail distribution is managed by the
 
 ### Unsubscribe (Default)
 ```
-Invoke-MgUnsubscribeUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
+Invoke-MgBetaUnsubscribeUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnsubscribeViaIdentity
 ```
-Invoke-MgUnsubscribeUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity> [-PassThru]
+Invoke-MgBetaUnsubscribeUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: UnsubscribeViaIdentity
 Aliases:
 
@@ -174,7 +174,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

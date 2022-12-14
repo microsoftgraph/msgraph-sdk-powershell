@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementgrouppolicyconfigurationdefinitionvaluepresentationvalue
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementgrouppolicyconfigurationdefinitionvaluepresentationvalue
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+# Get-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
 
 ## SYNOPSIS
 The associated group policy presentation values with the definition value.
@@ -14,7 +14,7 @@ The associated group policy presentation values with the definition value.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+Get-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
  -GroupPolicyConfigurationId <String> -GroupPolicyDefinitionValueId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
 
 ### Get
 ```
-Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+Get-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
  -GroupPolicyConfigurationId <String> -GroupPolicyDefinitionValueId <String>
  -GroupPolicyPresentationValueId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -30,7 +30,7 @@ Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
+Get-MgBetaDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue
  -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -153,7 +153,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentationValue
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentationValue
 
 ## NOTES
 

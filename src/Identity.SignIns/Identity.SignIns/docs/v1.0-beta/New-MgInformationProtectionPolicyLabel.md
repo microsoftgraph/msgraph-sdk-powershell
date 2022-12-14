@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginformationprotectionpolicylabel
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mginformationprotectionpolicylabel
 schema: 2.0.0
 ---
 
-# New-MgInformationProtectionPolicyLabel
+# New-MgBetaInformationProtectionPolicyLabel
 
 ## SYNOPSIS
 Create new navigation property to labels for informationProtection
@@ -14,7 +14,7 @@ Create new navigation property to labels for informationProtection
 
 ### CreateExpanded (Default)
 ```
-New-MgInformationProtectionPolicyLabel [-AdditionalProperties <Hashtable>] [-Color <String>]
+New-MgBetaInformationProtectionPolicyLabel [-AdditionalProperties <Hashtable>] [-Color <String>]
  [-Description <String>] [-Id <String>] [-IsActive] [-Name <String>]
  [-Parent <IMicrosoftGraphParentLabelDetails>] [-Sensitivity <Int32>] [-Tooltip <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgInformationProtectionPolicyLabel [-AdditionalProperties <Hashtable>] [-Col
 
 ### Create
 ```
-New-MgInformationProtectionPolicyLabel -BodyParameter <IMicrosoftGraphInformationProtectionLabel> [-Confirm]
+New-MgBetaInformationProtectionPolicyLabel -BodyParameter <IMicrosoftGraphInformationProtectionLabel> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ informationProtectionLabel
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
 Parameter Sets: Create
 Aliases:
 
@@ -146,7 +146,7 @@ parentLabelDetails
 To construct, please use Get-Help -Online and see NOTES section for PARENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParentLabelDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParentLabelDetails
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -223,11 +223,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
 
 ## NOTES
 

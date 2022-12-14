@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/update-mggroupdrivelistcontenttypecolumn
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/update-mggroupdrivelistcontenttypecolumn
 schema: 2.0.0
 ---
 
-# Update-MgGroupDriveListContentTypeColumn
+# Update-MgBetaGroupDriveListContentTypeColumn
 
 ## SYNOPSIS
 Update the navigation property columns in groups
@@ -14,7 +14,7 @@ Update the navigation property columns in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupDriveListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String>
+Update-MgBetaGroupDriveListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String>
  -DriveId <String> -GroupId <String> [-AdditionalProperties <Hashtable>] [-Boolean <Hashtable>]
  [-Calculated <IMicrosoftGraphCalculatedColumn>] [-Choice <IMicrosoftGraphChoiceColumn>]
  [-ColumnGroup <String>] [-ContentApprovalStatus <Hashtable>] [-Currency <IMicrosoftGraphCurrencyColumn>]
@@ -31,20 +31,20 @@ Update-MgGroupDriveListContentTypeColumn -ColumnDefinitionId <String> -ContentTy
 
 ### Update1
 ```
-Update-MgGroupDriveListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String>
+Update-MgBetaGroupDriveListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String>
  -DriveId <String> -GroupId <String> -BodyParameter <IMicrosoftGraphColumnDefinition1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupDriveListContentTypeColumn -InputObject <IFilesIdentity>
+Update-MgBetaGroupDriveListContentTypeColumn -InputObject <IFilesIdentity>
  -BodyParameter <IMicrosoftGraphColumnDefinition1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupDriveListContentTypeColumn -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupDriveListContentTypeColumn -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Boolean <Hashtable>] [-Calculated <IMicrosoftGraphCalculatedColumn>]
  [-Choice <IMicrosoftGraphChoiceColumn>] [-ColumnGroup <String>] [-ContentApprovalStatus <Hashtable>]
  [-Currency <IMicrosoftGraphCurrencyColumn>] [-DateTime <IMicrosoftGraphDateTimeColumn>]
@@ -86,7 +86,7 @@ columnDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -117,7 +117,7 @@ calculatedColumn
 To construct, please use Get-Help -Online and see NOTES section for CALCULATED properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalculatedColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalculatedColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -133,7 +133,7 @@ choiceColumn
 To construct, please use Get-Help -Online and see NOTES section for CHOICE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChoiceColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChoiceColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -210,7 +210,7 @@ currencyColumn
 To construct, please use Get-Help -Online and see NOTES section for CURRENCY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrencyColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCurrencyColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -226,7 +226,7 @@ dateTimeColumn
 To construct, please use Get-Help -Online and see NOTES section for DATETIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -242,7 +242,7 @@ defaultColumnValue
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTVALUE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultColumnValue
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultColumnValue
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -363,7 +363,7 @@ hyperlinkOrPictureColumn
 To construct, please use Get-Help -Online and see NOTES section for HYPERLINKORPICTURE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHyperlinkOrPictureColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHyperlinkOrPictureColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -410,7 +410,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -472,7 +472,7 @@ lookupColumn
 To construct, please use Get-Help -Online and see NOTES section for LOOKUP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLookupColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLookupColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -504,7 +504,7 @@ numberColumn
 To construct, please use Get-Help -Online and see NOTES section for NUMBER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNumberColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNumberColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -535,7 +535,7 @@ personOrGroupColumn
 To construct, please use Get-Help -Online and see NOTES section for PERSONORGROUP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonOrGroupColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonOrGroupColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -596,7 +596,7 @@ columnDefinition
 To construct, please use Get-Help -Online and see NOTES section for SOURCECOLUMN properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -612,7 +612,7 @@ contentTypeInfo
 To construct, please use Get-Help -Online and see NOTES section for SOURCECONTENTTYPE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentTypeInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentTypeInfo
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -628,7 +628,7 @@ termColumn
 To construct, please use Get-Help -Online and see NOTES section for TERM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermColumn1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermColumn1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -644,7 +644,7 @@ textColumn
 To construct, please use Get-Help -Online and see NOTES section for TEXT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTextColumn
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTextColumn
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -690,7 +690,7 @@ columnValidation
 To construct, please use Get-Help -Online and see NOTES section for VALIDATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnValidation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnValidation
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -737,9 +737,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 
 ## OUTPUTS
 

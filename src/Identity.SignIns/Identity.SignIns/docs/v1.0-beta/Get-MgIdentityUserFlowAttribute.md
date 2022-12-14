@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityuserflowattribute
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityuserflowattribute
 schema: 2.0.0
 ---
 
-# Get-MgIdentityUserFlowAttribute
+# Get-MgBetaIdentityUserFlowAttribute
 
 ## SYNOPSIS
 Represents entry point for identity userflow attributes.
@@ -14,20 +14,20 @@ Represents entry point for identity userflow attributes.
 
 ### List (Default)
 ```
-Get-MgIdentityUserFlowAttribute [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaIdentityUserFlowAttribute [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityUserFlowAttribute -IdentityUserFlowAttributeId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityUserFlowAttribute -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityUserFlowAttribute -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Represents entry point for identity userflow attributes.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityUserFlowAttribute Cmdlet
+### Example 1: Using the Get-MgBetaIdentityUserFlowAttribute Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId
 ```
 
-This example shows how to use the Get-MgIdentityUserFlowAttribute Cmdlet.
+This example shows how to use the Get-MgBetaIdentityUserFlowAttribute Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityUserFlowAttribute Cmdlet
+### Example 2: Using the Get-MgBetaIdentityUserFlowAttribute Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityUserFlowAttribute
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityUserFlowAttribute
 ```
 
-This example shows how to use the Get-MgIdentityUserFlowAttribute Cmdlet.
+This example shows how to use the Get-MgBetaIdentityUserFlowAttribute Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
 
 ## NOTES
 

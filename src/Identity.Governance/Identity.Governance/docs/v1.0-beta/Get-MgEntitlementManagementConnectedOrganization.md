@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementconnectedorganization
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementconnectedorganization
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementConnectedOrganization
+# Get-MgBetaEntitlementManagementConnectedOrganization
 
 ## SYNOPSIS
 Represents references to a directory or domain of another organization whose users can request access.
@@ -14,38 +14,38 @@ Represents references to a directory or domain of another organization whose use
 
 ### ListAll (Default)
 ```
-Get-MgEntitlementManagementConnectedOrganization [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEntitlementManagementConnectedOrganization [-ExpandProperty <String[]>] [-Property <String[]>]
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgEntitlementManagementConnectedOrganization -ConnectedOrganizationId <String>
+Get-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgEntitlementManagementConnectedOrganization -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementConnectedOrganization -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgEntitlementManagementConnectedOrganization [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementConnectedOrganization [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### ListByDisplayNameContains
 ```
-Get-MgEntitlementManagementConnectedOrganization -DisplayNameContains <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementConnectedOrganization -DisplayNameContains <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
 ### ListByDisplayNameEq
 ```
-Get-MgEntitlementManagementConnectedOrganization -DisplayNameEq <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementConnectedOrganization -DisplayNameEq <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
@@ -54,22 +54,22 @@ Represents references to a directory or domain of another organization whose use
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEntitlementManagementConnectedOrganization Cmdlet
+### Example 1: Using the Get-MgBetaEntitlementManagementConnectedOrganization Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementConnectedOrganization Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementConnectedOrganization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEntitlementManagementConnectedOrganization Cmdlet
+### Example 2: Using the Get-MgBetaEntitlementManagementConnectedOrganization Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementConnectedOrganization
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementConnectedOrganization
 ```
 
-This example shows how to use the Get-MgEntitlementManagementConnectedOrganization Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementConnectedOrganization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -185,7 +185,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -291,13 +291,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 
 ## NOTES
 

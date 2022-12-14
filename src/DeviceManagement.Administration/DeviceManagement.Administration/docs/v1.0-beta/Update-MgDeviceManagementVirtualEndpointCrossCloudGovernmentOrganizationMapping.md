@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointcrosscloudgovernmentorganizationmapping
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointcrosscloudgovernmentorganizationmapping
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping
+# Update-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping
 
 ## SYNOPSIS
 Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
@@ -14,14 +14,14 @@ Update the navigation property crossCloudGovernmentOrganizationMapping in device
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping
+Update-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrganizationIdsInUsGovCloud <String[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping
+Update-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping
  -BodyParameter <IMicrosoftGraphCloudPcCrossCloudGovernmentOrganizationMapping> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ cloudPcCrossCloudGovernmentOrganizationMapping
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcCrossCloudGovernmentOrganizationMapping
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcCrossCloudGovernmentOrganizationMapping
 Parameter Sets: Update
 Aliases:
 
@@ -147,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcCrossCloudGovernmentOrganizationMapping
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcCrossCloudGovernmentOrganizationMapping
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationclassassignmentdefault
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/update-mgeducationclassassignmentdefault
 schema: 2.0.0
 ---
 
-# Update-MgEducationClassAssignmentDefault
+# Update-MgBetaEducationClassAssignmentDefault
 
 ## SYNOPSIS
 Update the properties of an educationAssignmentDefaults object.
@@ -15,28 +15,28 @@ Only teachers can update these settings.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEducationClassAssignmentDefault -EducationClassId <String> [-AddedStudentAction <String>]
+Update-MgBetaEducationClassAssignmentDefault -EducationClassId <String> [-AddedStudentAction <String>]
  [-AdditionalProperties <Hashtable>] [-AddToCalendarAction <String>] [-DueTime <String>] [-Id <String>]
  [-NotificationChannelUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgEducationClassAssignmentDefault -EducationClassId <String>
+Update-MgBetaEducationClassAssignmentDefault -EducationClassId <String>
  -BodyParameter <IMicrosoftGraphEducationAssignmentDefaults> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgEducationClassAssignmentDefault -InputObject <IEducationIdentity>
+Update-MgBetaEducationClassAssignmentDefault -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationAssignmentDefaults> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationClassAssignmentDefault -InputObject <IEducationIdentity> [-AddedStudentAction <String>]
+Update-MgBetaEducationClassAssignmentDefault -InputObject <IEducationIdentity> [-AddedStudentAction <String>]
  [-AdditionalProperties <Hashtable>] [-AddToCalendarAction <String>] [-DueTime <String>] [-Id <String>]
  [-NotificationChannelUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,18 +47,18 @@ Only teachers can update these settings.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgEducationClassAssignmentDefault Cmdlet
+### Example 1: Using the Update-MgBetaEducationClassAssignmentDefault Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	AddedStudentAction = "assignIfOpen"
 	AddToCalendarAction = "studentsAndTeamOwners"
 	NotificationChannelUrl = "https://graph.microsoft.com/beta/teams('id')/channels('id')"
 }
-Update-MgEducationClassAssignmentDefault -EducationClassId $educationClassId -BodyParameter $params
+Update-MgBetaEducationClassAssignmentDefault -EducationClassId $educationClassId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgEducationClassAssignmentDefault Cmdlet.
+This example shows how to use the Update-MgBetaEducationClassAssignmentDefault Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ educationAssignmentDefaults
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentDefaults
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentDefaults
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -176,7 +176,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -254,9 +254,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentDefaults
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentDefaults
 
 ## OUTPUTS
 

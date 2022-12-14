@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementnotificationmessagetemplate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementnotificationmessagetemplate
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementNotificationMessageTemplate
+# Remove-MgBetaDeviceManagementNotificationMessageTemplate
 
 ## SYNOPSIS
 Delete navigation property notificationMessageTemplates for deviceManagement
@@ -14,13 +14,13 @@ Delete navigation property notificationMessageTemplates for deviceManagement
 
 ### Delete1 (Default)
 ```
-Remove-MgDeviceManagementNotificationMessageTemplate -NotificationMessageTemplateId <String>
+Remove-MgBetaDeviceManagementNotificationMessageTemplate -NotificationMessageTemplateId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgDeviceManagementNotificationMessageTemplate -InputObject <IDeviceManagementIdentity>
+Remove-MgBetaDeviceManagementNotificationMessageTemplate -InputObject <IDeviceManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

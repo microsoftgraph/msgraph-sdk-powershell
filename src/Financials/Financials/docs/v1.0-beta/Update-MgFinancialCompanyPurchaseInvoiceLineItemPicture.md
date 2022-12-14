@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanypurchaseinvoicelineitempicture
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanypurchaseinvoicelineitempicture
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture
+# Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture
 
 ## SYNOPSIS
 Update the navigation property picture in financials
@@ -14,7 +14,7 @@ Update the navigation property picture in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
  -PurchaseInvoiceLineId <String> [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>]
  [-ContentType <String>] [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -Pic
 
 ### Update
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
  -PurchaseInvoiceLineId <String> -BodyParameter <IMicrosoftGraphPicture> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
  -PurchaseInvoiceId <String> -PurchaseInvoiceLineId <String> -BodyParameter <IMicrosoftGraphPicture>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
  -PurchaseInvoiceId <String> -PurchaseInvoiceLineId <String> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>] [-Id <String>] [-Width <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -44,26 +44,26 @@ Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -CompanyId <String> -Pic
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPicture> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPicture> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
  [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
  [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -95,7 +95,7 @@ picture
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -187,7 +187,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -309,9 +309,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 
 ## OUTPUTS
 

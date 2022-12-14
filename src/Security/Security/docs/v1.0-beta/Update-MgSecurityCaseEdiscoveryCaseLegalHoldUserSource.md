@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritycaseediscoverycaselegalholdusersource
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritycaseediscoverycaselegalholdusersource
 schema: 2.0.0
 ---
 
-# Update-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource
+# Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource
 
 ## SYNOPSIS
 Update the navigation property userSources in security
@@ -14,7 +14,7 @@ Update the navigation property userSources in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource -EdiscoveryCaseId <String>
+Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource -EdiscoveryCaseId <String>
  -EdiscoveryHoldPolicyId <String> -UserSourceId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Email <String>] [-HoldStatus <String>] [-Id <String>] [-IncludedSources <String>] [-SiteWebUrl <String>]
@@ -23,20 +23,20 @@ Update-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource -EdiscoveryCaseId <String
 
 ### Update
 ```
-Update-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource -EdiscoveryCaseId <String>
+Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource -EdiscoveryCaseId <String>
  -EdiscoveryHoldPolicyId <String> -UserSourceId <String> -BodyParameter <IMicrosoftGraphSecurityUserSource>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityUserSource> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Email <String>] [-HoldStatus <String>] [-Id <String>] [-IncludedSources <String>]
  [-SiteWebUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ userSource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUserSource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUserSource
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -223,7 +223,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -316,9 +316,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUserSource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUserSource
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

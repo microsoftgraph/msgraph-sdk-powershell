@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggroupendpoint
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/update-mggroupendpoint
 schema: 2.0.0
 ---
 
-# Update-MgGroupEndpoint
+# Update-MgBetaGroupEndpoint
 
 ## SYNOPSIS
 Update the navigation property endpoints in groups
@@ -14,7 +14,7 @@ Update the navigation property endpoints in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupEndpoint -EndpointId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupEndpoint -EndpointId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-Capability <String>] [-DeletedDateTime <DateTime>] [-Id <String>] [-ProviderId <String>]
  [-ProviderName <String>] [-ProviderResourceId <String>] [-Uri <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgGroupEndpoint -EndpointId <String> -GroupId <String> [-AdditionalProper
 
 ### Update
 ```
-Update-MgGroupEndpoint -EndpointId <String> -GroupId <String> -BodyParameter <IMicrosoftGraphEndpoint>
+Update-MgBetaGroupEndpoint -EndpointId <String> -GroupId <String> -BodyParameter <IMicrosoftGraphEndpoint>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupEndpoint -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphEndpoint> [-PassThru]
+Update-MgBetaGroupEndpoint -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphEndpoint> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupEndpoint -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupEndpoint -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Capability <String>] [-DeletedDateTime <DateTime>] [-Id <String>] [-ProviderId <String>]
  [-ProviderName <String>] [-ProviderResourceId <String>] [-Uri <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -67,7 +67,7 @@ endpoint
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEndpoint
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -293,9 +293,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEndpoint
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointsnapshot
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointsnapshot
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointSnapshot
+# New-MgBetaDeviceManagementVirtualEndpointSnapshot
 
 ## SYNOPSIS
 Create new navigation property to snapshots for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to snapshots for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointSnapshot [-AdditionalProperties <Hashtable>] [-CloudPcId <String>]
+New-MgBetaDeviceManagementVirtualEndpointSnapshot [-AdditionalProperties <Hashtable>] [-CloudPcId <String>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-LastRestoredDateTime <DateTime>] [-Status <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointSnapshot -BodyParameter <IMicrosoftGraphCloudPcSnapshot> [-Confirm]
+New-MgBetaDeviceManagementVirtualEndpointSnapshot -BodyParameter <IMicrosoftGraphCloudPcSnapshot> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ cloudPcSnapshot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSnapshot
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSnapshot
 Parameter Sets: Create
 Aliases:
 
@@ -179,11 +179,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSnapshot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSnapshot
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSnapshot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSnapshot
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtenterprisecodesigningcertificate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtenterprisecodesigningcertificate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate
+# Update-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate
 
 ## SYNOPSIS
 Update the navigation property enterpriseCodeSigningCertificates in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property enterpriseCodeSigningCertificates in deviceAppMan
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCertificateId <String>
+Update-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCertificateId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-Issuer <String>] [-IssuerName <String>] [-Status <String>] [-Subject <String>]
  [-SubjectName <String>] [-UploadDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCert
 
 ### Update
 ```
-Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCertificateId <String>
+Update-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCertificateId <String>
  -BodyParameter <IMicrosoftGraphEnterpriseCodeSigningCertificate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphEnterpriseCodeSigningCertificate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-Issuer <String>] [-IssuerName <String>] [-Status <String>] [-Subject <String>]
  [-SubjectName <String>] [-UploadDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ enterpriseCodeSigningCertificate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -298,9 +298,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
 
 ## OUTPUTS
 
@@ -310,7 +310,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementEnterpriseCodeSigningCertificate
+### Update-MgBetaDeviceAppManagementEnterpriseCodeSigningCertificate
 
 COMPLEX PARAMETER PROPERTIES
 

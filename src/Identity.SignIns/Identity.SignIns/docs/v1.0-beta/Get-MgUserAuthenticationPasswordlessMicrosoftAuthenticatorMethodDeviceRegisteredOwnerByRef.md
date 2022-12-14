@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceregisteredownerbyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceregisteredownerbyref
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
+# Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
 The user that cloud joined the device or registered their personal device.
@@ -18,7 +18,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
+Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]

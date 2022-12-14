@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprivilegedoperationevent
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgprivilegedoperationevent
 schema: 2.0.0
 ---
 
-# Update-MgPrivilegedOperationEvent
+# Update-MgBetaPrivilegedOperationEvent
 
 ## SYNOPSIS
 Update entity in privilegedOperationEvents
@@ -14,7 +14,7 @@ Update entity in privilegedOperationEvents
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPrivilegedOperationEvent -PrivilegedOperationEventId <String> [-AdditionalInformation <String>]
+Update-MgBetaPrivilegedOperationEvent -PrivilegedOperationEventId <String> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-CreationDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-ReferenceKey <String>] [-ReferenceSystem <String>] [-RequestorId <String>]
  [-RequestorName <String>] [-RequestType <String>] [-RoleId <String>] [-RoleName <String>]
@@ -24,21 +24,21 @@ Update-MgPrivilegedOperationEvent -PrivilegedOperationEventId <String> [-Additio
 
 ### Update
 ```
-Update-MgPrivilegedOperationEvent -PrivilegedOperationEventId <String>
+Update-MgBetaPrivilegedOperationEvent -PrivilegedOperationEventId <String>
  -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPrivilegedOperationEvent -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedOperationEvent -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPrivilegedOperationEvent -InputObject <IIdentityGovernanceIdentity> [-AdditionalInformation <String>]
+Update-MgBetaPrivilegedOperationEvent -InputObject <IIdentityGovernanceIdentity> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-CreationDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-ReferenceKey <String>] [-ReferenceSystem <String>] [-RequestorId <String>]
  [-RequestorName <String>] [-RequestType <String>] [-RoleId <String>] [-RoleName <String>]
@@ -88,7 +88,7 @@ privilegedOperationEvent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedOperationEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedOperationEvent
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -150,7 +150,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -395,9 +395,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedOperationEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedOperationEvent
 
 ## OUTPUTS
 

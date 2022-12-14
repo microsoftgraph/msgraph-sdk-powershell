@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbookingbusinesscustomer
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/new-mgbookingbusinesscustomer
 schema: 2.0.0
 ---
 
-# New-MgBookingBusinessCustomer
+# New-MgBetaBookingBusinessCustomer
 
 ## SYNOPSIS
 Create a new bookingCustomer object.
@@ -14,26 +14,26 @@ Create a new bookingCustomer object.
 
 ### CreateExpanded (Default)
 ```
-New-MgBookingBusinessCustomer -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaBookingBusinessCustomer -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
  [-Addresses <IMicrosoftGraphPhysicalAddress1[]>] [-DisplayName <String>] [-EmailAddress <String>]
  [-Id <String>] [-Phones <IMicrosoftGraphPhone[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBookingBusinessCustomer -BookingBusinessId <String> -BodyParameter <IMicrosoftGraphBookingCustomer>
+New-MgBetaBookingBusinessCustomer -BookingBusinessId <String> -BodyParameter <IMicrosoftGraphBookingCustomer>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> -BodyParameter <IMicrosoftGraphBookingCustomer>
+New-MgBetaBookingBusinessCustomer -InputObject <IBookingsIdentity> -BodyParameter <IMicrosoftGraphBookingCustomer>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-Addresses <IMicrosoftGraphPhysicalAddress1[]>] [-DisplayName <String>] [-EmailAddress <String>]
  [-Id <String>] [-Phones <IMicrosoftGraphPhone[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,9 +43,9 @@ Create a new bookingCustomer object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgBookingBusinessCustomer Cmdlet
+### Example 1: Using the New-MgBetaBookingBusinessCustomer Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	DisplayName = "Joni Sherman"
 	EmailAddress = "jonis@relecloud.com"
@@ -80,10 +80,10 @@ $params = @{
 		}
 	)
 }
-New-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BodyParameter $params
+New-MgBetaBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgBookingBusinessCustomer Cmdlet.
+This example shows how to use the New-MgBetaBookingBusinessCustomer Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -108,7 +108,7 @@ Addresses associated with the customer, including home, business and other addre
 To construct, please use Get-Help -Online and see NOTES section for ADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -124,7 +124,7 @@ Represents a customer of the business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomer
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -201,7 +201,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ Phone numbers associated with the customer, including home, business and mobile 
 To construct, please use Get-Help -Online and see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhone[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -264,13 +264,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomer
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomer
 
 ## NOTES
 

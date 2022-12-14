@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticdevicestartuphistory
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticdevicestartuphistory
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
+# New-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupHistory
 
 ## SYNOPSIS
 Create new navigation property to userExperienceAnalyticsDeviceStartupHistory for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userExperienceAnalyticsDeviceStartupHistory fo
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupHistory [-AdditionalProperties <Hashtable>]
  [-CoreBootTimeInMS <Int32>] [-CoreLoginTimeInMS <Int32>] [-DeviceId <String>]
  [-FeatureUpdateBootTimeInMS <Int32>] [-GroupPolicyBootTimeInMS <Int32>] [-GroupPolicyLoginTimeInMS <Int32>]
  [-Id <String>] [-IsFeatureUpdate] [-IsFirstLogin] [-OperatingSystemVersion <String>]
@@ -26,7 +26,7 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory [-AdditionalPro
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
+New-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupHistory
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -58,7 +58,7 @@ The user experience analytics device startup history entity contains device boot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
 Parameter Sets: Create
 Aliases:
 
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 Operating System restart category
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsOperatingSystemRestartCategory
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsOperatingSystemRestartCategory
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -363,11 +363,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory
 
 ## NOTES
 

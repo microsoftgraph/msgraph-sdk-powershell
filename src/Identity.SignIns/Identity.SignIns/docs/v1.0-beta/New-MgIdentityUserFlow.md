@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityuserflow
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityuserflow
 schema: 2.0.0
 ---
 
-# New-MgIdentityUserFlow
+# New-MgBetaIdentityUserFlow
 
 ## SYNOPSIS
 Create a new userFlow object.
@@ -14,13 +14,13 @@ Create a new userFlow object.
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityUserFlow [-AdditionalProperties <Hashtable>] [-Id <String>] [-UserFlowType <String>]
+New-MgBetaIdentityUserFlow [-AdditionalProperties <Hashtable>] [-Id <String>] [-UserFlowType <String>]
  [-UserFlowTypeVersion <Single>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityUserFlow -BodyParameter <IMicrosoftGraphIdentityUserFlow> [-Confirm] [-WhatIf]
+New-MgBetaIdentityUserFlow -BodyParameter <IMicrosoftGraphIdentityUserFlow> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,18 +29,18 @@ Create a new userFlow object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityUserFlow Cmdlet
+### Example 1: Using the New-MgBetaIdentityUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "Pol1"
 	UserFlowType = "signUpOrSignIn"
 	UserFlowTypeVersion = 1
 }
-New-MgIdentityUserFlow -BodyParameter $params
+New-MgBetaIdentityUserFlow -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityUserFlow Cmdlet.
+This example shows how to use the New-MgBetaIdentityUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -65,7 +65,7 @@ identityUserFlow
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
 Parameter Sets: Create
 Aliases:
 
@@ -158,11 +158,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
 
 ## NOTES
 

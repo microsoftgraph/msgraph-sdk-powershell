@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2xuserflowuserattributeassignmentorder
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2xuserflowuserattributeassignmentorder
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2XUserFlowUserAttributeAssignmentOrder
+# Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder
 
 ## SYNOPSIS
 Invoke function getOrder
@@ -14,12 +14,12 @@ Invoke function getOrder
 
 ### Get1 (Default)
 ```
-Get-MgIdentityB2XUserFlowUserAttributeAssignmentOrder -B2XIdentityUserFlowId <String> [<CommonParameters>]
+Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder -B2XIdentityUserFlowId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgIdentityB2XUserFlowUserAttributeAssignmentOrder -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder -InputObject <IIdentitySignInsIdentity>
  [<CommonParameters>]
 ```
 
@@ -50,7 +50,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -66,7 +66,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

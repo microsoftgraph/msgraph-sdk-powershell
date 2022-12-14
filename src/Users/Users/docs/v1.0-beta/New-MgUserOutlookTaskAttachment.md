@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguseroutlooktaskattachment
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/new-mguseroutlooktaskattachment
 schema: 2.0.0
 ---
 
-# New-MgUserOutlookTaskAttachment
+# New-MgBetaUserOutlookTaskAttachment
 
 ## SYNOPSIS
 Use this API to add an attachment to an outlookTask.
@@ -15,26 +15,26 @@ The attachment can be a file (of fileAttachment type) or Outlook item (itemAttac
 
 ### CreateExpanded (Default)
 ```
-New-MgUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
  [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String>
+New-MgBetaUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOutlookTaskAttachment -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphAttachment>
+New-MgBetaUserOutlookTaskAttachment -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphAttachment>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserOutlookTaskAttachment -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserOutlookTaskAttachment -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
  [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,37 +45,37 @@ The attachment can be a file (of fileAttachment type) or Outlook item (itemAttac
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserOutlookTaskAttachment Cmdlet
+### Example 1: Using the New-MgBetaUserOutlookTaskAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
-	"@odata.type" = "#microsoft.graph.fileAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.fileAttachment"
 	Name = "menu.txt"
 	ContentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk="
 }
 # A UPN can also be used as -UserId.
-New-MgUserOutlookTaskAttachment -UserId $userId -OutlookTaskId $outlookTaskId -BodyParameter $params
+New-MgBetaUserOutlookTaskAttachment -UserId $userId -OutlookTaskId $outlookTaskId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserOutlookTaskAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserOutlookTaskAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgUserOutlookTaskAttachment Cmdlet
+### Example 2: Using the New-MgBetaUserOutlookTaskAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
-	"@odata.type" = "#microsoft.graph.itemAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.itemAttachment"
 	Name = "Holiday event"
 	Item = @{
-		"@odata.type" = "microsoft.graph.event"
+		"@odata.type" = "Microsoft.Graph.Beta.event"
 		Subject = "Discuss gifts for children"
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserOutlookTaskAttachment -UserId $userId -OutlookTaskId $outlookTaskId -BodyParameter $params
+New-MgBetaUserOutlookTaskAttachment -UserId $userId -OutlookTaskId $outlookTaskId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserOutlookTaskAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserOutlookTaskAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -100,7 +100,7 @@ attachment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -285,13 +285,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

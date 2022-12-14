@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/stop-mgprivilegedaccessresourceroleassignmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/stop-mgprivilegedaccessresourceroleassignmentrequest
 schema: 2.0.0
 ---
 
-# Stop-MgPrivilegedAccessResourceRoleAssignmentRequest
+# Stop-MgBetaPrivilegedAccessResourceRoleAssignmentRequest
 
 ## SYNOPSIS
 Invoke action cancel
@@ -14,14 +14,14 @@ Invoke action cancel
 
 ### Cancel (Default)
 ```
-Stop-MgPrivilegedAccessResourceRoleAssignmentRequest -GovernanceResourceId <String>
+Stop-MgBetaPrivilegedAccessResourceRoleAssignmentRequest -GovernanceResourceId <String>
  -GovernanceRoleAssignmentRequestId <String> -PrivilegedAccessId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgPrivilegedAccessResourceRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity> [-PassThru]
+Stop-MgBetaPrivilegedAccessResourceRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CancelViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

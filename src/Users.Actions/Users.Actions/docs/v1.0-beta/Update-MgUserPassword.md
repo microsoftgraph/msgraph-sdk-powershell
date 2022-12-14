@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/update-mguserpassword
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/update-mguserpassword
 schema: 2.0.0
 ---
 
-# Update-MgUserPassword
+# Update-MgBetaUserPassword
 
 ## SYNOPSIS
 Enable the user to update their password.
@@ -15,27 +15,27 @@ Any user can update their password without belonging to any administrator role.
 
 ### ChangeExpanded (Default)
 ```
-Update-MgUserPassword -UserId <String> [-AdditionalProperties <Hashtable>] [-CurrentPassword <String>]
+Update-MgBetaUserPassword -UserId <String> [-AdditionalProperties <Hashtable>] [-CurrentPassword <String>]
  [-NewPassword <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Change
 ```
-Update-MgUserPassword -UserId <String>
+Update-MgBetaUserPassword -UserId <String>
  -BodyParameter <IComponents89FyhbRequestbodiesChangepasswordrequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentity
 ```
-Update-MgUserPassword -InputObject <IUsersActionsIdentity>
+Update-MgBetaUserPassword -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents89FyhbRequestbodiesChangepasswordrequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentityExpanded
 ```
-Update-MgUserPassword -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserPassword -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-CurrentPassword <String>] [-NewPassword <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,18 +45,18 @@ Any user can update their password without belonging to any administrator role.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserPassword Cmdlet
+### Example 1: Using the Update-MgBetaUserPassword Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	CurrentPassword = "xWwvJ]6NMw+bWH-d"
 	NewPassword = "0eM85N54wFxWwvJ]"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserPassword -UserId $userId -BodyParameter $params
+Update-MgBetaUserPassword -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserPassword Cmdlet.
+This example shows how to use the Update-MgBetaUserPassword Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponents89FyhbRequestbodiesChangepasswordrequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponents89FyhbRequestbodiesChangepasswordrequestbodyContentApplicationJsonSchema
 Parameter Sets: Change, ChangeViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ChangeViaIdentity, ChangeViaIdentityExpanded
 Aliases:
 
@@ -204,9 +204,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponents89FyhbRequestbodiesChangepasswordrequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IComponents89FyhbRequestbodiesChangepasswordrequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

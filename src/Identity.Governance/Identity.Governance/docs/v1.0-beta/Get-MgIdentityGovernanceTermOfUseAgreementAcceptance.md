@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancetermofuseagreementacceptance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancetermofuseagreementacceptance
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceTermOfUseAgreementAcceptance
+# Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance
 
 ## SYNOPSIS
 Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -14,38 +14,38 @@ Represents the current status of a user's response to a company's customizable t
 
 ### List2 (Default)
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementAcceptance [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get2
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get3
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String> -AgreementId <String>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String> -AgreementId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List3
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -153,7 +153,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
 
 ## NOTES
 

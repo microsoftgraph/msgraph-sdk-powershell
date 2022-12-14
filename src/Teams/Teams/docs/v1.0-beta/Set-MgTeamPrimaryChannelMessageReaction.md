@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgteamprimarychannelmessagereaction
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/set-mgteamprimarychannelmessagereaction
 schema: 2.0.0
 ---
 
-# Set-MgTeamPrimaryChannelMessageReaction
+# Set-MgBetaTeamPrimaryChannelMessageReaction
 
 ## SYNOPSIS
 Invoke action setReaction
@@ -14,28 +14,28 @@ Invoke action setReaction
 
 ### SetExpanded (Default)
 ```
-Set-MgTeamPrimaryChannelMessageReaction -ChatMessageId <String> -TeamId <String>
+Set-MgBetaTeamPrimaryChannelMessageReaction -ChatMessageId <String> -TeamId <String>
  [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgTeamPrimaryChannelMessageReaction -ChatMessageId <String> -TeamId <String>
+Set-MgBetaTeamPrimaryChannelMessageReaction -ChatMessageId <String> -TeamId <String>
  -BodyParameter <IPathsUiuaf2TeamsTeamIdPrimarychannelMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgTeamPrimaryChannelMessageReaction -InputObject <ITeamsIdentity>
+Set-MgBetaTeamPrimaryChannelMessageReaction -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsUiuaf2TeamsTeamIdPrimarychannelMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-MgTeamPrimaryChannelMessageReaction -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaTeamPrimaryChannelMessageReaction -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsUiuaf2TeamsTeamIdPrimarychannelMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsUiuaf2TeamsTeamIdPrimarychannelMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsUiuaf2TeamsTeamIdPrimarychannelMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsUiuaf2TeamsTeamIdPrimarychannelMessagesChatmessageIdMicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganizationbranding
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgorganizationbranding
 schema: 2.0.0
 ---
 
-# Get-MgOrganizationBranding
+# Get-MgBetaOrganizationBranding
 
 ## SYNOPSIS
 Retrieve the default organizational branding object, if the **Accept-Language** header is set to `0` or `default`.
@@ -18,13 +18,13 @@ To retrieve Stream types of the default branding, for example, **bannerLogo** an
 
 ### Get (Default)
 ```
-Get-MgOrganizationBranding -OrganizationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaOrganizationBranding -OrganizationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -37,31 +37,31 @@ To retrieve Stream types of the default branding, for example, **bannerLogo** an
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOrganizationBranding Cmdlet
+### Example 1: Using the Get-MgBetaOrganizationBranding Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganizationBranding -OrganizationId $organizationId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
 ```
 
-This example shows how to use the Get-MgOrganizationBranding Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationBranding Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgOrganizationBranding Cmdlet
+### Example 2: Using the Get-MgBetaOrganizationBranding Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganizationBranding -OrganizationId $organizationId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
 ```
 
-This example shows how to use the Get-MgOrganizationBranding Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationBranding Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgOrganizationBranding Cmdlet
+### Example 3: Using the Get-MgBetaOrganizationBranding Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganizationBranding -OrganizationId $organizationId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
 ```
 
-This example shows how to use the Get-MgOrganizationBranding Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationBranding Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -132,11 +132,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationalBranding1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganizationalBranding1
 
 ## NOTES
 

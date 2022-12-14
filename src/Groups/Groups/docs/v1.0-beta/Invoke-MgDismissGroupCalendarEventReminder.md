@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgdismissgroupcalendareventreminder
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgdismissgroupcalendareventreminder
 schema: 2.0.0
 ---
 
-# Invoke-MgDismissGroupCalendarEventReminder
+# Invoke-MgBetaDismissGroupCalendarEventReminder
 
 ## SYNOPSIS
 Dismiss a reminder that has been triggered for an event in a user calendar.
@@ -14,13 +14,13 @@ Dismiss a reminder that has been triggered for an event in a user calendar.
 
 ### Dismiss (Default)
 ```
-Invoke-MgDismissGroupCalendarEventReminder -EventId <String> -GroupId <String> [-PassThru] [-Confirm]
+Invoke-MgBetaDismissGroupCalendarEventReminder -EventId <String> -GroupId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DismissViaIdentity
 ```
-Invoke-MgDismissGroupCalendarEventReminder -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaDismissGroupCalendarEventReminder -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ Dismiss a reminder that has been triggered for an event in a user calendar.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 # A UPN can also be used as -UserId.
-Invoke-MgDismissUserEventReminder -UserId $userId -EventId $eventId
+Invoke-MgBetaDismissUserEventReminder -UserId $userId -EventId $eventId
 ```
 
-This example shows how to use the Invoke-MgDismissGroupCalendarEventReminder Cmdlet.
+This example shows how to use the Invoke-MgBetaDismissGroupCalendarEventReminder Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -78,7 +78,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DismissViaIdentity
 Aliases:
 
@@ -140,7 +140,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

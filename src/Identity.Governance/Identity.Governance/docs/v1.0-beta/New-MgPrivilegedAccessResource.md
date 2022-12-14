@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedaccessresource
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedaccessresource
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedAccessResource
+# New-MgBetaPrivilegedAccessResource
 
 ## SYNOPSIS
 Create new navigation property to resources for privilegedAccess
@@ -14,7 +14,7 @@ Create new navigation property to resources for privilegedAccess
 
 ### CreateExpanded (Default)
 ```
-New-MgPrivilegedAccessResource -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaPrivilegedAccessResource -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-ExternalId <String>] [-Id <String>] [-Parent <IMicrosoftGraphGovernanceResource>]
  [-RegisteredDateTime <DateTime>] [-RegisteredRoot <String>]
  [-RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]
@@ -26,19 +26,19 @@ New-MgPrivilegedAccessResource -PrivilegedAccessId <String> [-AdditionalProperti
 
 ### Create
 ```
-New-MgPrivilegedAccessResource -PrivilegedAccessId <String> -BodyParameter <IMicrosoftGraphGovernanceResource>
+New-MgBetaPrivilegedAccessResource -PrivilegedAccessId <String> -BodyParameter <IMicrosoftGraphGovernanceResource>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphGovernanceResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-ExternalId <String>] [-Id <String>] [-Parent <IMicrosoftGraphGovernanceResource>]
  [-RegisteredDateTime <DateTime>] [-RegisteredRoot <String>]
  [-RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]
@@ -75,7 +75,7 @@ governanceResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -154,7 +154,7 @@ governanceResource
 To construct, please use Get-Help -Online and see NOTES section for PARENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -216,7 +216,7 @@ The collection of role assignment requests for the resource.
 To construct, please use Get-Help -Online and see NOTES section for ROLEASSIGNMENTREQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ The collection of role assignments for the resource.
 To construct, please use Get-Help -Online and see NOTES section for ROLEASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -248,7 +248,7 @@ The collection of role defintions for the resource.
 To construct, please use Get-Help -Online and see NOTES section for ROLEDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -264,7 +264,7 @@ The collection of role settings for the resource.
 To construct, please use Get-Help -Online and see NOTES section for ROLESETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -345,13 +345,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 
 ## NOTES
 

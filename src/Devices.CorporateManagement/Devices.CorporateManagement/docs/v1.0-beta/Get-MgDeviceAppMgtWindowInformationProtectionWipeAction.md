@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtwindowinformationprotectionwipeaction
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtwindowinformationprotectionwipeaction
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtWindowInformationProtectionWipeAction
+# Get-MgBetaDeviceAppMgtWindowInformationProtectionWipeAction
 
 ## SYNOPSIS
 Windows information protection wipe actions.
@@ -14,20 +14,20 @@ Windows information protection wipe actions.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtWindowInformationProtectionWipeAction [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceAppMgtWindowInformationProtectionWipeAction [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtWindowInformationProtectionWipeAction -WindowsInformationProtectionWipeActionId <String>
+Get-MgBetaDeviceAppMgtWindowInformationProtectionWipeAction -WindowsInformationProtectionWipeActionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtWindowInformationProtectionWipeAction -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtWindowInformationProtectionWipeAction -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,17 +225,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionWipeAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionWipeAction
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementWindowInformationProtectionWipeAction
+### Get-MgBetaDeviceAppManagementWindowInformationProtectionWipeAction
 
 COMPLEX PARAMETER PROPERTIES
 

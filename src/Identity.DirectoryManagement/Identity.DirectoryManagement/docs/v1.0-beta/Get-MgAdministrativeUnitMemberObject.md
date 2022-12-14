@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgadministrativeunitmemberobject
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgadministrativeunitmemberobject
 schema: 2.0.0
 ---
 
-# Get-MgAdministrativeUnitMemberObject
+# Get-MgBetaAdministrativeUnitMemberObject
 
 ## SYNOPSIS
 Invoke action getMemberObjects
@@ -14,27 +14,27 @@ Invoke action getMemberObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgAdministrativeUnitMemberObject -AdministrativeUnitId <String> [-AdditionalProperties <Hashtable>]
+Get-MgBetaAdministrativeUnitMemberObject -AdministrativeUnitId <String> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAdministrativeUnitMemberObject -AdministrativeUnitId <String>
+Get-MgBetaAdministrativeUnitMemberObject -AdministrativeUnitId <String>
  -BodyParameter <IPaths7Xm0QcAdministrativeunitsAdministrativeunitIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAdministrativeUnitMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaAdministrativeUnitMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPaths7Xm0QcAdministrativeunitsAdministrativeunitIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgAdministrativeUnitMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaAdministrativeUnitMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths7Xm0QcAdministrativeunitsAdministrativeunitIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths7Xm0QcAdministrativeunitsAdministrativeunitIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -158,9 +158,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths7Xm0QcAdministrativeunitsAdministrativeunitIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths7Xm0QcAdministrativeunitsAdministrativeunitIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernanceappconsentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernanceappconsentrequest
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceAppConsentRequest
+# New-MgBetaIdentityGovernanceAppConsentRequest
 
 ## SYNOPSIS
 Create new navigation property to appConsentRequests for identityGovernance
@@ -14,7 +14,7 @@ Create new navigation property to appConsentRequests for identityGovernance
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityGovernanceAppConsentRequest [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>]
+New-MgBetaIdentityGovernanceAppConsentRequest [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>]
  [-AppId <String>] [-ConsentType <String>] [-Id <String>]
  [-PendingScopes <IMicrosoftGraphAppConsentRequestScope[]>]
  [-UserConsentRequests <IMicrosoftGraphUserConsentRequest1[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgIdentityGovernanceAppConsentRequest [-AdditionalProperties <Hashtable>] [-
 
 ### Create
 ```
-New-MgIdentityGovernanceAppConsentRequest -BodyParameter <IMicrosoftGraphAppConsentRequest1> [-Confirm]
+New-MgBetaIdentityGovernanceAppConsentRequest -BodyParameter <IMicrosoftGraphAppConsentRequest1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -87,7 +87,7 @@ appConsentRequest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppConsentRequest1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppConsentRequest1
 Parameter Sets: Create
 Aliases:
 
@@ -140,7 +140,7 @@ Required.
 To construct, please use Get-Help -Online and see NOTES section for PENDINGSCOPES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppConsentRequestScope[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppConsentRequestScope[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -157,7 +157,7 @@ Supports $filter (eq).
 To construct, please use Get-Help -Online and see NOTES section for USERCONSENTREQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserConsentRequest1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserConsentRequest1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -204,11 +204,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppConsentRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppConsentRequest1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppConsentRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppConsentRequest1
 
 ## NOTES
 

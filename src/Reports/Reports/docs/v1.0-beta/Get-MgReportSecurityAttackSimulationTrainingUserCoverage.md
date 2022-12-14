@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportsecurityattacksimulationtrainingusercoverage
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportsecurityattacksimulationtrainingusercoverage
 schema: 2.0.0
 ---
 
-# Get-MgReportSecurityAttackSimulationTrainingUserCoverage
+# Get-MgBetaReportSecurityAttackSimulationTrainingUserCoverage
 
 ## SYNOPSIS
 Invoke function getAttackSimulationTrainingUserCoverage
@@ -13,7 +13,7 @@ Invoke function getAttackSimulationTrainingUserCoverage
 ## SYNTAX
 
 ```
-Get-MgReportSecurityAttackSimulationTrainingUserCoverage [-Count] [-Filter <String>] [-Search <String>]
+Get-MgBetaReportSecurityAttackSimulationTrainingUserCoverage [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function getAttackSimulationTrainingUserCoverage
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgReportSecurityAttackSimulationTrainingUserCoverage Cmdlet
+### Example 1: Using the Get-MgBetaReportSecurityAttackSimulationTrainingUserCoverage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportSecurityAttackSimulationTrainingUserCoverage
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportSecurityAttackSimulationTrainingUserCoverage
 ```
 
-This example shows how to use the Get-MgReportSecurityAttackSimulationTrainingUserCoverage Cmdlet.
+This example shows how to use the Get-MgBetaReportSecurityAttackSimulationTrainingUserCoverage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -115,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttackSimulationTrainingUserCoverage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttackSimulationTrainingUserCoverage
 
 ## NOTES
 

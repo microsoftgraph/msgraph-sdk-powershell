@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgchatmessagehostedcontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgchatmessagehostedcontent
 schema: 2.0.0
 ---
 
-# New-MgChatMessageHostedContent
+# New-MgBetaChatMessageHostedContent
 
 ## SYNOPSIS
 Create new navigation property to hostedContents for chats
@@ -14,26 +14,26 @@ Create new navigation property to hostedContents for chats
 
 ### CreateExpanded (Default)
 ```
-New-MgChatMessageHostedContent -ChatId <String> -ChatMessageId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaChatMessageHostedContent -ChatId <String> -ChatMessageId <String> [-AdditionalProperties <Hashtable>]
  [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgChatMessageHostedContent -ChatId <String> -ChatMessageId <String> -BodyParameter <Hashtable> [-Confirm]
+New-MgBetaChatMessageHostedContent -ChatId <String> -ChatMessageId <String> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgChatMessageHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaChatMessageHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgChatMessageHostedContent -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaChatMessageHostedContent -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -159,7 +159,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -206,13 +206,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ### System.Collections.Hashtable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementgrouppolicyconfigurationassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementgrouppolicyconfigurationassignment
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyConfigurationAssignment
+# Update-MgBetaDeviceManagementGroupPolicyConfigurationAssignment
 
 ## SYNOPSIS
 Update the navigation property assignments in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property assignments in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyConfigurationAssignment -GroupPolicyConfigurationAssignmentId <String>
+Update-MgBetaDeviceManagementGroupPolicyConfigurationAssignment -GroupPolicyConfigurationAssignmentId <String>
  -GroupPolicyConfigurationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgDeviceManagementGroupPolicyConfigurationAssignment -GroupPolicyConfigur
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyConfigurationAssignment -GroupPolicyConfigurationAssignmentId <String>
+Update-MgBetaDeviceManagementGroupPolicyConfigurationAssignment -GroupPolicyConfigurationAssignmentId <String>
  -GroupPolicyConfigurationId <String> -BodyParameter <IMicrosoftGraphGroupPolicyConfigurationAssignment>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyConfigurationAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementGroupPolicyConfigurationAssignment -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphGroupPolicyConfigurationAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyConfigurationAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementGroupPolicyConfigurationAssignment -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ The group policy configuration assignment entity assigns one or more AAD groups 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -224,9 +224,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment
 
 ## OUTPUTS
 

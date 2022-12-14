@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgofficeclientconfigurationpolicypayload
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgofficeclientconfigurationpolicypayload
 schema: 2.0.0
 ---
 
-# Get-MgOfficeClientConfigurationPolicyPayload
+# Get-MgBetaOfficeClientConfigurationPolicyPayload
 
 ## SYNOPSIS
 Policy settings JSON string in binary format, these values cannot be changed by the user.
@@ -14,13 +14,13 @@ Policy settings JSON string in binary format, these values cannot be changed by 
 
 ### Get (Default)
 ```
-Get-MgOfficeClientConfigurationPolicyPayload -OfficeClientConfigurationId <String> -OutFile <String>
+Get-MgBetaOfficeClientConfigurationPolicyPayload -OfficeClientConfigurationId <String> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOfficeClientConfigurationPolicyPayload -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaOfficeClientConfigurationPolicyPayload -InputObject <IDevicesCorporateManagementIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 

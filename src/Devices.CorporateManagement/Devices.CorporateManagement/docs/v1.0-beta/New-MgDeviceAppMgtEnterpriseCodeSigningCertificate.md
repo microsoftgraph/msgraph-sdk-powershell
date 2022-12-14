@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtenterprisecodesigningcertificate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtenterprisecodesigningcertificate
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtEnterpriseCodeSigningCertificate
+# New-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate
 
 ## SYNOPSIS
 Create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to enterpriseCodeSigningCertificates for deviceAp
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtEnterpriseCodeSigningCertificate [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-Issuer <String>]
  [-IssuerName <String>] [-Status <String>] [-Subject <String>] [-SubjectName <String>]
  [-UploadDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceAppMgtEnterpriseCodeSigningCertificate [-AdditionalProperties <Hasht
 
 ### Create
 ```
-New-MgDeviceAppMgtEnterpriseCodeSigningCertificate
+New-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate
  -BodyParameter <IMicrosoftGraphEnterpriseCodeSigningCertificate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ enterpriseCodeSigningCertificate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
 Parameter Sets: Create
 Aliases:
 
@@ -236,17 +236,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementEnterpriseCodeSigningCertificate
+### New-MgBetaDeviceAppManagementEnterpriseCodeSigningCertificate
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgpreviewgroupdriveroot
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgpreviewgroupdriveroot
 schema: 2.0.0
 ---
 
-# Invoke-MgPreviewGroupDriveRoot
+# Invoke-MgBetaPreviewGroupDriveRoot
 
 ## SYNOPSIS
 Invoke action preview
@@ -14,28 +14,28 @@ Invoke action preview
 
 ### PreviewExpanded (Default)
 ```
-Invoke-MgPreviewGroupDriveRoot -DriveId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaPreviewGroupDriveRoot -DriveId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-AllowEdit] [-Chromeless] [-Page <String>] [-Viewer <String>] [-Zoom <Double>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Preview
 ```
-Invoke-MgPreviewGroupDriveRoot -DriveId <String> -GroupId <String>
+Invoke-MgBetaPreviewGroupDriveRoot -DriveId <String> -GroupId <String>
  -BodyParameter <IPathsTu9U98GroupsGroupIdDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PreviewViaIdentity
 ```
-Invoke-MgPreviewGroupDriveRoot -InputObject <IGroupsIdentity>
+Invoke-MgBetaPreviewGroupDriveRoot -InputObject <IGroupsIdentity>
  -BodyParameter <IPathsTu9U98GroupsGroupIdDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PreviewViaIdentityExpanded
 ```
-Invoke-MgPreviewGroupDriveRoot -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-AllowEdit]
+Invoke-MgBetaPreviewGroupDriveRoot -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-AllowEdit]
  [-Chromeless] [-Page <String>] [-Viewer <String>] [-Zoom <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsTu9U98GroupsGroupIdDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsTu9U98GroupsGroupIdDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Preview, PreviewViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: PreviewViaIdentity, PreviewViaIdentityExpanded
 Aliases:
 
@@ -234,13 +234,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsTu9U98GroupsGroupIdDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsTu9U98GroupsGroupIdDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPreviewInfo
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPreviewInfo
 
 ## NOTES
 

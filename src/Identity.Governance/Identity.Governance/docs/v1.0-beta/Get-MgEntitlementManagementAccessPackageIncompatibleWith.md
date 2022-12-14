@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageincompatiblewith
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageincompatiblewith
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageIncompatibleWith
+# Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith
 
 ## SYNOPSIS
 The access packages that are incompatible with this package.
@@ -15,20 +15,20 @@ Read-only.
 
 ### List (Default)
 ```
-Get-MgEntitlementManagementAccessPackageIncompatibleWith -AccessPackageId <String>
+Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith -AccessPackageId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageIncompatibleWith -AccessPackageId <String> -AccessPackageId1 <String>
+Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith -AccessPackageId <String> -AccessPackageId1 <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageIncompatibleWith -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,13 +38,13 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEntitlementManagementAccessPackageIncompatibleWith Cmdlet
+### Example 1: Using the Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageIncompatibleWith -AccessPackageId $accessPackageId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith -AccessPackageId $accessPackageId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageIncompatibleWith Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -251,11 +251,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackage
 
 ## NOTES
 

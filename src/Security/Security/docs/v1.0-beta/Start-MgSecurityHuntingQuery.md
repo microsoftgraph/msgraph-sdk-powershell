@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/start-mgsecurityhuntingquery
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/start-mgsecurityhuntingquery
 schema: 2.0.0
 ---
 
-# Start-MgSecurityHuntingQuery
+# Start-MgBetaSecurityHuntingQuery
 
 ## SYNOPSIS
 Invoke action runHuntingQuery
@@ -14,13 +14,13 @@ Invoke action runHuntingQuery
 
 ### RunExpanded (Default)
 ```
-Start-MgSecurityHuntingQuery [-AdditionalProperties <Hashtable>] [-Query <String>] [-Confirm] [-WhatIf]
+Start-MgBetaSecurityHuntingQuery [-AdditionalProperties <Hashtable>] [-Query <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Run
 ```
-Start-MgSecurityHuntingQuery
+Start-MgBetaSecurityHuntingQuery
  -BodyParameter <IPathsU5PqctSecurityMicrosoftGraphSecurityRunhuntingqueryPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsU5PqctSecurityMicrosoftGraphSecurityRunhuntingqueryPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsU5PqctSecurityMicrosoftGraphSecurityRunhuntingqueryPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Run
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsU5PqctSecurityMicrosoftGraphSecurityRunhuntingqueryPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsU5PqctSecurityMicrosoftGraphSecurityRunhuntingqueryPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityHuntingQueryResults
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityHuntingQueryResults
 
 ## NOTES
 

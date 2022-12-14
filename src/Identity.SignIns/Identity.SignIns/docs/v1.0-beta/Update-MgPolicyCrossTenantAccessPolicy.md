@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicycrosstenantaccesspolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicycrosstenantaccesspolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyCrossTenantAccessPolicy
+# Update-MgBetaPolicyCrossTenantAccessPolicy
 
 ## SYNOPSIS
 Update the properties of a cross-tenant access policy.
@@ -14,7 +14,7 @@ Update the properties of a cross-tenant access policy.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyCrossTenantAccessPolicy [-AdditionalProperties <Hashtable>] [-AllowedCloudEndpoints <String[]>]
+Update-MgBetaPolicyCrossTenantAccessPolicy [-AdditionalProperties <Hashtable>] [-AllowedCloudEndpoints <String[]>]
  [-Default <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1>] [-Definition <String[]>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Partners <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgPolicyCrossTenantAccessPolicy [-AdditionalProperties <Hashtable>] [-All
 
 ### Update
 ```
-Update-MgPolicyCrossTenantAccessPolicy -BodyParameter <IMicrosoftGraphCrossTenantAccessPolicy1> [-PassThru]
+Update-MgBetaPolicyCrossTenantAccessPolicy -BodyParameter <IMicrosoftGraphCrossTenantAccessPolicy1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -32,19 +32,19 @@ Update the properties of a cross-tenant access policy.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyCrossTenantAccessPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyCrossTenantAccessPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	AllowedCloudEndpoints = @(
 		"microsoftonline.us"
 		"partner.microsoftonline.cn"
 	)
 }
-Update-MgPolicyCrossTenantAccessPolicy -BodyParameter $params
+Update-MgBetaPolicyCrossTenantAccessPolicy -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyCrossTenantAccessPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyCrossTenantAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ crossTenantAccessPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicy1
 Parameter Sets: Update
 Aliases:
 
@@ -102,7 +102,7 @@ crossTenantAccessPolicyConfigurationDefault
 To construct, please use Get-Help -Online and see NOTES section for DEFAULT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ Defines partner-specific configurations for external Azure Active Directory orga
 To construct, please use Get-Help -Online and see NOTES section for PARTNERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicy1
 
 ## OUTPUTS
 

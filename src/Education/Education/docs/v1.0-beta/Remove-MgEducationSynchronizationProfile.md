@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationsynchronizationprofile
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationsynchronizationprofile
 schema: 2.0.0
 ---
 
-# Remove-MgEducationSynchronizationProfile
+# Remove-MgBetaEducationSynchronizationProfile
 
 ## SYNOPSIS
 Delete navigation property synchronizationProfiles for education
@@ -14,13 +14,13 @@ Delete navigation property synchronizationProfiles for education
 
 ### Delete (Default)
 ```
-Remove-MgEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-IfMatch <String>]
+Remove-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property synchronizationProfiles for education
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEducationSynchronizationProfile Cmdlet
+### Example 1: Using the Remove-MgBetaEducationSynchronizationProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
+Import-Module Microsoft.Graph.Beta.Education
+Remove-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
 ```
 
-This example shows how to use the Remove-MgEducationSynchronizationProfile Cmdlet.
+This example shows how to use the Remove-MgBetaEducationSynchronizationProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

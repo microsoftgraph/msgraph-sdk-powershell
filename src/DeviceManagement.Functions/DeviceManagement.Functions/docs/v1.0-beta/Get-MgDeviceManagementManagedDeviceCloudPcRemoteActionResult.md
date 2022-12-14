@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementmanageddevicecloudpcremoteactionresult
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementmanageddevicecloudpcremoteactionresult
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult
+# Get-MgBetaDeviceManagementManagedDeviceCloudPcRemoteActionResult
 
 ## SYNOPSIS
 Invoke function getCloudPcRemoteActionResults
@@ -14,13 +14,13 @@ Invoke function getCloudPcRemoteActionResults
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult -ManagedDeviceId <String> [-Count]
+Get-MgBetaDeviceManagementManagedDeviceCloudPcRemoteActionResult -ManagedDeviceId <String> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult -InputObject <IDeviceManagementFunctionsIdentity>
+Get-MgBetaDeviceManagementManagedDeviceCloudPcRemoteActionResult -InputObject <IDeviceManagementFunctionsIdentity>
  [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Invoke function getCloudPcRemoteActionResults
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult Cmdlet
+### Example 1: Using the Get-MgBetaDeviceManagementManagedDeviceCloudPcRemoteActionResult Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Functions
-Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult -ManagedDeviceId $managedDeviceId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Functions
+Get-MgBetaDeviceManagementManagedDeviceCloudPcRemoteActionResult -ManagedDeviceId $managedDeviceId
 ```
 
-This example shows how to use the Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementManagedDeviceCloudPcRemoteActionResult Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -151,11 +151,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcRemoteActionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcRemoteActionResult
 
 ## NOTES
 

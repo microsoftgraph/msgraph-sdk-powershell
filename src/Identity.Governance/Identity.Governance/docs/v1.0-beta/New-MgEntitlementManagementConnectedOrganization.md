@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementconnectedorganization
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgentitlementmanagementconnectedorganization
 schema: 2.0.0
 ---
 
-# New-MgEntitlementManagementConnectedOrganization
+# New-MgBetaEntitlementManagementConnectedOrganization
 
 ## SYNOPSIS
 Create a new connectedOrganization object.
@@ -14,19 +14,19 @@ Create a new connectedOrganization object.
 
 ### CreateWithDomainIdentitySource (Default)
 ```
-New-MgEntitlementManagementConnectedOrganization -DomainName <String> [-Description <String>]
+New-MgBetaEntitlementManagementConnectedOrganization -DomainName <String> [-Description <String>]
  [-DisplayName <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgEntitlementManagementConnectedOrganization -BodyParameter <IMicrosoftGraphConnectedOrganization1>
+New-MgBetaEntitlementManagementConnectedOrganization -BodyParameter <IMicrosoftGraphConnectedOrganization1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded1
 ```
-New-MgEntitlementManagementConnectedOrganization [-AdditionalProperties <Hashtable>] [-CreatedBy <String>]
+New-MgBetaEntitlementManagementConnectedOrganization [-AdditionalProperties <Hashtable>] [-CreatedBy <String>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-ExternalSponsors <IMicrosoftGraphDirectoryObject[]>] [-Id <String>]
  [-IdentitySources <IMicrosoftGraphIdentitySource[]>] [-InternalSponsors <IMicrosoftGraphDirectoryObject[]>]
@@ -39,25 +39,25 @@ Create a new connectedOrganization object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgEntitlementManagementConnectedOrganization Cmdlet
+### Example 1: Using the New-MgBetaEntitlementManagementConnectedOrganization Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Connected organization name"
 	Description = "Connected organization description"
 	IdentitySources = @(
 		@{
-			"@odata.type" = "#microsoft.graph.domainIdentitySource"
+			"@odata.type" = "#Microsoft.Graph.Beta.domainIdentitySource"
 			DomainName = "example.com"
 			DisplayName = "example.com"
 		}
 	)
 	State = "proposed"
 }
-New-MgEntitlementManagementConnectedOrganization -BodyParameter $params
+New-MgBetaEntitlementManagementConnectedOrganization -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEntitlementManagementConnectedOrganization Cmdlet.
+This example shows how to use the New-MgBetaEntitlementManagementConnectedOrganization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -82,7 +82,7 @@ connectedOrganization
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 Parameter Sets: Create1
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EXTERNALSPONSORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -209,10 +209,10 @@ The identity sources in this connected organization, one of azureActiveDirectory
 Read-only.
 Nullable.
 Supports $select and $filter(eq).
-To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
+To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/Microsoft.Graph.Beta.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySource[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySource[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -228,7 +228,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for INTERNALSPONSORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -323,13 +323,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 
 ## NOTES
 
@@ -350,7 +350,7 @@ BODYPARAMETER <IMicrosoftGraphConnectedOrganization1>: connectedOrganization
   - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
+  - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/Microsoft.Graph.Beta.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
   - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
   - `[ModifiedBy <String>]`: UPN of the user who last modified this resource. Read-only.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.

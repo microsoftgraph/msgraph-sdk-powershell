@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mguserdriverootlistitem
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mguserdriverootlistitem
 schema: 2.0.0
 ---
 
-# Get-MgUserDriveRootListItem
+# Get-MgBetaUserDriveRootListItem
 
 ## SYNOPSIS
 For drives in SharePoint, the associated document library list item.
@@ -16,13 +16,13 @@ Nullable.
 
 ### Get1 (Default)
 ```
-Get-MgUserDriveRootListItem -DriveId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserDriveRootListItem -DriveId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserDriveRootListItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserDriveRootListItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -70,7 +70,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -116,11 +116,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItem1
 
 ## NOTES
 

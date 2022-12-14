@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationonlinemeetingtranscriptcontent
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationonlinemeetingtranscriptcontent
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationOnlineMeetingTranscriptContent
+# Get-MgBetaCommunicationOnlineMeetingTranscriptContent
 
 ## SYNOPSIS
 A field representing the content of the transcript.
@@ -15,13 +15,13 @@ Read-only.
 
 ### Get (Default)
 ```
-Get-MgCommunicationOnlineMeetingTranscriptContent -CallTranscriptId <String> -OnlineMeetingId <String>
+Get-MgBetaCommunicationOnlineMeetingTranscriptContent -CallTranscriptId <String> -OnlineMeetingId <String>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgCommunicationOnlineMeetingTranscriptContent -InputObject <ICloudCommunicationsIdentity>
+Get-MgBetaCommunicationOnlineMeetingTranscriptContent -InputObject <ICloudCommunicationsIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

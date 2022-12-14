@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainsharedemaildomaininvitation
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdomainsharedemaildomaininvitation
 schema: 2.0.0
 ---
 
-# Get-MgDomainSharedEmailDomainInvitation
+# Get-MgBetaDomainSharedEmailDomainInvitation
 
 ## SYNOPSIS
 Get sharedEmailDomainInvitations from domains
@@ -14,20 +14,20 @@ Get sharedEmailDomainInvitations from domains
 
 ### List (Default)
 ```
-Get-MgDomainSharedEmailDomainInvitation -DomainId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDomainSharedEmailDomainInvitation -DomainId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDomainSharedEmailDomainInvitation -DomainId <String> -SharedEmailDomainInvitationId <String>
+Get-MgBetaDomainSharedEmailDomainInvitation -DomainId <String> -SharedEmailDomainInvitationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDomainSharedEmailDomainInvitation -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDomainSharedEmailDomainInvitation -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupowner
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupowner
 schema: 2.0.0
 ---
 
-# New-MgGroupOwner
+# New-MgBetaGroupOwner
 
 ## SYNOPSIS
 Add an owner to an Office 365 group or security group through the owners navigation property.
@@ -14,24 +14,24 @@ Add an owner to an Office 365 group or security group through the owners navigat
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupOwner -GroupId <String> [-DirectoryObjectId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaGroupOwner -GroupId <String> [-DirectoryObjectId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupOwner -GroupId <String> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm] [-WhatIf]
+New-MgBetaGroupOwner -GroupId <String> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupOwner -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm]
+New-MgBetaGroupOwner -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupOwner -InputObject <IGroupsIdentity> [-DirectoryObjectId <String>] [-Confirm] [-WhatIf]
+New-MgBetaGroupOwner -InputObject <IGroupsIdentity> [-DirectoryObjectId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -47,7 +47,7 @@ HELP MESSAGE MISSING
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -93,7 +93,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -140,13 +140,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

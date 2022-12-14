@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgchatinstalledapp
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgchatinstalledapp
 schema: 2.0.0
 ---
 
-# Get-MgChatInstalledApp
+# Get-MgBetaChatInstalledApp
 
 ## SYNOPSIS
 A collection of all the apps in the chat.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgChatInstalledApp -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaChatInstalledApp -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgChatInstalledApp -ChatId <String> -TeamsAppInstallationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaChatInstalledApp -ChatId <String> -TeamsAppInstallationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgChatInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaChatInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,40 +38,40 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgChatInstalledApp Cmdlet
+### Example 1: Using the Get-MgBetaChatInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 ```
 
-This example shows how to use the Get-MgChatInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaChatInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgChatInstalledApp Cmdlet
+### Example 2: Using the Get-MgBetaChatInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatInstalledApp -ChatId $chatId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatInstalledApp -ChatId $chatId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'" 
 ```
 
-This example shows how to use the Get-MgChatInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaChatInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgChatInstalledApp Cmdlet
+### Example 3: Using the Get-MgBetaChatInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatInstalledApp -ChatId $chatId -ExpandProperty "teamsAppDefinition(`$expand=bot)" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatInstalledApp -ChatId $chatId -ExpandProperty "teamsAppDefinition(`$expand=bot)" 
 ```
 
-This example shows how to use the Get-MgChatInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaChatInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgChatInstalledApp Cmdlet
+### Example 4: Using the Get-MgBetaChatInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatInstalledApp -ChatId $chatId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatInstalledApp -ChatId $chatId
 ```
 
-This example shows how to use the Get-MgChatInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaChatInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -157,7 +157,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -278,11 +278,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1
 
 ## NOTES
 

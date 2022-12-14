@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mggroupteamprimarychannelmessagehostedcontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mggroupteamprimarychannelmessagehostedcontent
 schema: 2.0.0
 ---
 
-# Remove-MgGroupTeamPrimaryChannelMessageHostedContent
+# Remove-MgBetaGroupTeamPrimaryChannelMessageHostedContent
 
 ## SYNOPSIS
 Delete navigation property hostedContents for groups
@@ -14,14 +14,14 @@ Delete navigation property hostedContents for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupTeamPrimaryChannelMessageHostedContent -ChatMessageHostedContentId <String>
+Remove-MgBetaGroupTeamPrimaryChannelMessageHostedContent -ChatMessageHostedContentId <String>
  -ChatMessageId <String> -GroupId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity> [-IfMatch <String>]
+Remove-MgBetaGroupTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

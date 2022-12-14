@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamscheduleschedulinggroup
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamscheduleschedulinggroup
 schema: 2.0.0
 ---
 
-# New-MgTeamScheduleSchedulingGroup
+# New-MgBetaTeamScheduleSchedulingGroup
 
 ## SYNOPSIS
 Create a new schedulingGroup.
@@ -14,7 +14,7 @@ Create a new schedulingGroup.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgTeamScheduleSchedulingGroup -TeamId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamScheduleSchedulingGroup -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-UserIds <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgTeamScheduleSchedulingGroup -TeamId <String> [-AdditionalProperties <Hasht
 
 ### Create1
 ```
-New-MgTeamScheduleSchedulingGroup -TeamId <String> -BodyParameter <IMicrosoftGraphSchedulingGroup1> [-Confirm]
+New-MgBetaTeamScheduleSchedulingGroup -TeamId <String> -BodyParameter <IMicrosoftGraphSchedulingGroup1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity>
+New-MgBetaTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphSchedulingGroup1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-UserIds <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -45,9 +45,9 @@ Create a new schedulingGroup.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTeamScheduleSchedulingGroup Cmdlet
+### Example 1: Using the New-MgBetaTeamScheduleSchedulingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "Cashiers"
 	IsActive = $true
@@ -56,10 +56,10 @@ $params = @{
 		"2a4296b3-a28a-44ba-bc66-0274b9b95851"
 	)
 }
-New-MgTeamScheduleSchedulingGroup -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamScheduleSchedulingGroup -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTeamScheduleSchedulingGroup Cmdlet.
+This example shows how to use the New-MgBetaTeamScheduleSchedulingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ schedulingGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -100,7 +100,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -164,7 +164,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -242,13 +242,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchedulingGroup1
 
 ## NOTES
 

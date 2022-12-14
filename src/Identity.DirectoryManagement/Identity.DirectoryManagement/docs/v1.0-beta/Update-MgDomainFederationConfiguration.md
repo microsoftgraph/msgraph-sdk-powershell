@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomainfederationconfiguration
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdomainfederationconfiguration
 schema: 2.0.0
 ---
 
-# Update-MgDomainFederationConfiguration
+# Update-MgBetaDomainFederationConfiguration
 
 ## SYNOPSIS
 Update the navigation property federationConfiguration in domains
@@ -14,7 +14,7 @@ Update the navigation property federationConfiguration in domains
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDomainFederationConfiguration -DomainId <String> -InternalDomainFederationId <String>
+Update-MgBetaDomainFederationConfiguration -DomainId <String> -InternalDomainFederationId <String>
  [-ActiveSignInUri <String>] [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-FederatedIdpMfaBehavior <String>] [-Id <String>] [-IsSignedAuthenticationRequestRequired]
  [-IssuerUri <String>] [-MetadataExchangeUri <String>] [-NextSigningCertificate <String>]
@@ -26,21 +26,21 @@ Update-MgDomainFederationConfiguration -DomainId <String> -InternalDomainFederat
 
 ### Update
 ```
-Update-MgDomainFederationConfiguration -DomainId <String> -InternalDomainFederationId <String>
+Update-MgBetaDomainFederationConfiguration -DomainId <String> -InternalDomainFederationId <String>
  -BodyParameter <IMicrosoftGraphInternalDomainFederation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDomainFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDomainFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphInternalDomainFederation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDomainFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDomainFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
  [-ActiveSignInUri <String>] [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-FederatedIdpMfaBehavior <String>] [-Id <String>] [-IsSignedAuthenticationRequestRequired]
  [-IssuerUri <String>] [-MetadataExchangeUri <String>] [-NextSigningCertificate <String>]
@@ -57,7 +57,7 @@ Update the navigation property federationConfiguration in domains
 
 ### Example 1: Update the federation settings for a federated domain
 ```powershell
-Update-MgDomainFederationConfiguration -DomainId 'contoso.com' -InternalDomainFederationId '2a8ce608-bb34-473f-9e0f-f373ee4cbc5a' -DisplayName "Contoso name change" 
+Update-MgBetaDomainFederationConfiguration -DomainId 'contoso.com' -InternalDomainFederationId '2a8ce608-bb34-473f-9e0f-f373ee4cbc5a' -DisplayName "Contoso name change" 
 ```
 
 This example updates the DisplayName setting.
@@ -100,7 +100,7 @@ internalDomainFederation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInternalDomainFederation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInternalDomainFederation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -177,7 +177,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -351,7 +351,7 @@ signingCertificateUpdateStatus
 To construct, please use Get-Help -Online and see NOTES section for SIGNINGCERTIFICATEUPDATESTATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSigningCertificateUpdateStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSigningCertificateUpdateStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -414,9 +414,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInternalDomainFederation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInternalDomainFederation
 
 ## OUTPUTS
 

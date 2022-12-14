@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgcreateorgetcommunicationonlinemeeting
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mgcreateorgetcommunicationonlinemeeting
 schema: 2.0.0
 ---
 
-# Invoke-MgCreateOrGetCommunicationOnlineMeeting
+# Invoke-MgBetaCreateOrGetCommunicationOnlineMeeting
 
 ## SYNOPSIS
 Create an onlineMeeting object with a custom specified external ID.
@@ -15,7 +15,7 @@ If the external ID already exists, this API will return the onlineMeeting object
 
 ### CreateExpanded3 (Default)
 ```
-Invoke-MgCreateOrGetCommunicationOnlineMeeting [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaCreateOrGetCommunicationOnlineMeeting [-AdditionalProperties <Hashtable>]
  [-ChatInfo <IMicrosoftGraphChatInfo>] [-EndDateTime <DateTime>] [-ExternalId <String>]
  [-Participants <IMicrosoftGraphMeetingParticipants1>] [-StartDateTime <DateTime>] [-Subject <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,7 +23,7 @@ Invoke-MgCreateOrGetCommunicationOnlineMeeting [-AdditionalProperties <Hashtable
 
 ### Create3
 ```
-Invoke-MgCreateOrGetCommunicationOnlineMeeting
+Invoke-MgBetaCreateOrGetCommunicationOnlineMeeting
  -BodyParameter <IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -36,7 +36,7 @@ If the external ID already exists, this API will return the onlineMeeting object
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	StartDateTime = [System.DateTime]::Parse("2020-02-06T01:49:21.3524945+00:00")
@@ -58,10 +58,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
+Invoke-MgBetaCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgCreateOrGetCommunicationOnlineMeeting Cmdlet.
+This example shows how to use the Invoke-MgBetaCreateOrGetCommunicationOnlineMeeting Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Create3
 Aliases:
 
@@ -103,7 +103,7 @@ chatInfo
 To construct, please use Get-Help -Online and see NOTES section for CHATINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatInfo
 Parameter Sets: CreateExpanded3
 Aliases:
 
@@ -149,7 +149,7 @@ meetingParticipants
 To construct, please use Get-Help -Online and see NOTES section for PARTICIPANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingParticipants1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingParticipants1
 Parameter Sets: CreateExpanded3
 Aliases:
 
@@ -226,11 +226,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 
 ## NOTES
 

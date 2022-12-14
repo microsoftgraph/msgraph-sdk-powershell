@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationmeassignment
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/new-mgeducationmeassignment
 schema: 2.0.0
 ---
 
-# New-MgEducationMeAssignment
+# New-MgBetaEducationMeAssignment
 
 ## SYNOPSIS
 Create new navigation property to assignments for education
@@ -14,7 +14,7 @@ Create new navigation property to assignments for education
 
 ### CreateExpanded1 (Default)
 ```
-New-MgEducationMeAssignment [-AddedStudentAction <String>] [-AdditionalProperties <Hashtable>]
+New-MgBetaEducationMeAssignment [-AddedStudentAction <String>] [-AdditionalProperties <Hashtable>]
  [-AddToCalendarAction <String>] [-AllowLateSubmissions] [-AllowStudentsToAddResourcesToSubmission]
  [-AssignTo <Hashtable>] [-Categories <IMicrosoftGraphEducationCategory[]>] [-ClassId <String>]
  [-CloseDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>]
@@ -27,7 +27,7 @@ New-MgEducationMeAssignment [-AddedStudentAction <String>] [-AdditionalPropertie
 
 ### Create1
 ```
-New-MgEducationMeAssignment -BodyParameter <IMicrosoftGraphEducationAssignment> [-Confirm] [-WhatIf]
+New-MgBetaEducationMeAssignment -BodyParameter <IMicrosoftGraphEducationAssignment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ educationAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 Parameter Sets: Create1
 Aliases:
 
@@ -152,7 +152,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationCategory[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -202,7 +202,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -281,7 +281,7 @@ educationItemBody
 To construct, please use Get-Help -Online and see NOTES section for INSTRUCTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationItemBody
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -297,7 +297,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -333,7 +333,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentResource[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentResource[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -349,7 +349,7 @@ educationRubric
 To construct, please use Get-Help -Online and see NOTES section for RUBRIC properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationRubric
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -382,7 +382,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SUBMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -429,11 +429,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

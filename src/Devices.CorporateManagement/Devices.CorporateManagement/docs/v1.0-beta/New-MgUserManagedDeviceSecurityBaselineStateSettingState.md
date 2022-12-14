@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgusermanageddevicesecuritybaselinestatesettingstate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgusermanageddevicesecuritybaselinestatesettingstate
 schema: 2.0.0
 ---
 
-# New-MgUserManagedDeviceSecurityBaselineStateSettingState
+# New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState
 
 ## SYNOPSIS
 Create new navigation property to settingStates for users
@@ -14,7 +14,7 @@ Create new navigation property to settingStates for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserManagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
+New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
  -SecurityBaselineStateId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>] [-ErrorCode <String>]
  [-Id <String>] [-SettingCategoryId <String>] [-SettingCategoryName <String>] [-SettingId <String>]
@@ -24,20 +24,20 @@ New-MgUserManagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <Strin
 
 ### Create
 ```
-New-MgUserManagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
+New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
  -SecurityBaselineStateId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserManagedDeviceSecurityBaselineStateSettingState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserManagedDeviceSecurityBaselineStateSettingState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>] [-ErrorCode <String>]
  [-Id <String>] [-SettingCategoryId <String>] [-SettingCategoryName <String>] [-SettingId <String>]
@@ -72,7 +72,7 @@ The security baseline compliance state of a setting for a device
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -88,7 +88,7 @@ The policies that contribute to this setting instance
 To construct, please use Get-Help -Online and see NOTES section for CONTRIBUTINGPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineContributingPolicy[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineContributingPolicy[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -135,7 +135,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -241,7 +241,7 @@ The policies that contribute to this setting instance
 To construct, please use Get-Help -Online and see NOTES section for SOURCEPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingSource[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingSource[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 Security Baseline Compliance State
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.SecurityBaselineComplianceState
+Type: Microsoft.Graph.Beta.PowerShell.Support.SecurityBaselineComplianceState
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -318,13 +318,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
 
 ## NOTES
 

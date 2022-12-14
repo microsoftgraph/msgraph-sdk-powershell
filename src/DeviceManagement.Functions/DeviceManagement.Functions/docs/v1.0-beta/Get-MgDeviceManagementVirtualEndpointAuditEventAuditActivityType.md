@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementvirtualendpointauditeventauditactivitytype
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementvirtualendpointauditeventauditactivitytype
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType
+# Get-MgBetaDeviceManagementVirtualEndpointAuditEventAuditActivityType
 
 ## SYNOPSIS
 Invoke function getAuditActivityTypes
@@ -13,7 +13,7 @@ Invoke function getAuditActivityTypes
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType [-Count] [-Filter <String>]
+Get-MgBetaDeviceManagementVirtualEndpointAuditEventAuditActivityType [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function getAuditActivityTypes
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType Cmdlet
+### Example 1: Using the Get-MgBetaDeviceManagementVirtualEndpointAuditEventAuditActivityType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Functions
-Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Functions
+Get-MgBetaDeviceManagementVirtualEndpointAuditEventAuditActivityType
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointAuditEventAuditActivityType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS

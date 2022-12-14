@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgentitlementmanagementaccesspackageincompatiblegroupbyref
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgentitlementmanagementaccesspackageincompatiblegroupbyref
 schema: 2.0.0
 ---
 
-# Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef
+# Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef
 
 ## SYNOPSIS
 Delete ref of navigation property incompatibleGroups for identityGovernance
@@ -14,13 +14,13 @@ Delete ref of navigation property incompatibleGroups for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -AccessPackageId <String> -GroupId <String>
+Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef -AccessPackageId <String> -GroupId <String>
  [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -InputObject <IIdentityGovernanceIdentity>
+Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef -InputObject <IIdentityGovernanceIdentity>
  [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property incompatibleGroups for identityGovernance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef Cmdlet
+### Example 1: Using the Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -AccessPackageId $accessPackageId -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef -AccessPackageId $accessPackageId -GroupId $groupId
 ```
 
-This example shows how to use the Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

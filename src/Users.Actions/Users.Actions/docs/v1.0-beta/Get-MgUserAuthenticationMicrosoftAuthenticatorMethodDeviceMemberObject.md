@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/get-mguserauthenticationmicrosoftauthenticatormethoddevicememberobject
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/get-mguserauthenticationmicrosoftauthenticatormethoddevicememberobject
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
+# Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
 
 ## SYNOPSIS
 Invoke action getMemberObjects
@@ -14,14 +14,14 @@ Invoke action getMemberObjects
 
 ### GetExpanded1 (Default)
 ```
-Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
+Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
+Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  -BodyParameter <IPaths66Y6W9UsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,14 +29,14 @@ Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
 
 ### GetViaIdentity1
 ```
-Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths66Y6W9UsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded1
 ```
-Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,16 +47,16 @@ Invoke action getMemberObjects
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	SecurityEnabledOnly = $true
 }
 
-Get-MgDirectoryObjectMemberObject -DirectoryObjectId $directoryObjectId -BodyParameter $params
+Get-MgBetaDirectoryObjectMemberObject -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
 
-This example shows how to use the Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths66Y6W9UsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths66Y6W9UsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get1, GetViaIdentity1
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: GetViaIdentity1, GetViaIdentityExpanded1
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths66Y6W9UsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths66Y6W9UsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

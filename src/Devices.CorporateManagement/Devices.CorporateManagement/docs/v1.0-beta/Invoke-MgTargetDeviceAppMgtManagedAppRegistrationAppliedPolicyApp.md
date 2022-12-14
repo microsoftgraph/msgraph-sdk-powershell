@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/invoke-mgtargetdeviceappmgtmanagedappregistrationappliedpolicyapp
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/invoke-mgtargetdeviceappmgtmanagedappregistrationappliedpolicyapp
 schema: 2.0.0
 ---
 
-# Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp
+# Invoke-MgBetaTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp
 
 ## SYNOPSIS
 Invoke action targetApps
@@ -14,14 +14,14 @@ Invoke action targetApps
 
 ### TargetExpanded1 (Default)
 ```
-Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp -ManagedAppPolicyId <String>
+Invoke-MgBetaTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp -ManagedAppPolicyId <String>
  -ManagedAppRegistrationId <String> [-AdditionalProperties <Hashtable>]
  [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Target1
 ```
-Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp -ManagedAppPolicyId <String>
+Invoke-MgBetaTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp -ManagedAppPolicyId <String>
  -ManagedAppRegistrationId <String>
  -BodyParameter <IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp -ManagedAppPol
 
 ### TargetViaIdentity1
 ```
-Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp
+Invoke-MgBetaTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp
 
 ### TargetViaIdentityExpanded1
 ```
-Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp
+Invoke-MgBetaTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for APPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
 Parameter Sets: TargetExpanded1, TargetViaIdentityExpanded1
 Aliases:
 
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Target1, TargetViaIdentity1
 Aliases:
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: TargetViaIdentity1, TargetViaIdentityExpanded1
 Aliases:
 
@@ -193,9 +193,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

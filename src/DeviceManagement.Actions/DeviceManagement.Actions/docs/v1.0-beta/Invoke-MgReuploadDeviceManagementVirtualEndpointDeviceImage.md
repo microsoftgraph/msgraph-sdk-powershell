@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgreuploaddevicemanagementvirtualendpointdeviceimage
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgreuploaddevicemanagementvirtualendpointdeviceimage
 schema: 2.0.0
 ---
 
-# Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage
+# Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
 Reupload a cloudPcDeviceImage object that failed to upload.
@@ -14,13 +14,13 @@ Reupload a cloudPcDeviceImage object that failed to upload.
 
 ### Reupload (Default)
 ```
-Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String> [-PassThru]
+Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReuploadViaIdentity
 ```
-Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Reupload a cloudPcDeviceImage object that failed to upload.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage Cmdlet
+### Example 1: Using the Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
-Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
 ```
 
-This example shows how to use the Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+This example shows how to use the Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: ReuploadViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

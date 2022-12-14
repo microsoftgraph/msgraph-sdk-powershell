@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/confirm-mguserinformationprotectionsignature
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/confirm-mguserinformationprotectionsignature
 schema: 2.0.0
 ---
 
-# Confirm-MgUserInformationProtectionSignature
+# Confirm-MgBetaUserInformationProtectionSignature
 
 ## SYNOPSIS
 Invoke action verifySignature
@@ -14,28 +14,28 @@ Invoke action verifySignature
 
 ### VerifyExpanded (Default)
 ```
-Confirm-MgUserInformationProtectionSignature -UserId <String> [-AdditionalProperties <Hashtable>]
+Confirm-MgBetaUserInformationProtectionSignature -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DigestInputFile <String>] [-SignatureInputFile <String>] [-SigningKeyId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Verify
 ```
-Confirm-MgUserInformationProtectionSignature -UserId <String>
+Confirm-MgBetaUserInformationProtectionSignature -UserId <String>
  -BodyParameter <IPaths8Fa3LmUsersUserIdInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### VerifyViaIdentity
 ```
-Confirm-MgUserInformationProtectionSignature -InputObject <IUsersActionsIdentity>
+Confirm-MgBetaUserInformationProtectionSignature -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths8Fa3LmUsersUserIdInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### VerifyViaIdentityExpanded
 ```
-Confirm-MgUserInformationProtectionSignature -InputObject <IUsersActionsIdentity>
+Confirm-MgBetaUserInformationProtectionSignature -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-DigestInputFile <String>] [-SignatureInputFile <String>]
  [-SigningKeyId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths8Fa3LmUsersUserIdInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths8Fa3LmUsersUserIdInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Verify, VerifyViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: VerifyViaIdentity, VerifyViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths8Fa3LmUsersUserIdInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths8Fa3LmUsersUserIdInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

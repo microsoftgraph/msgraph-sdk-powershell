@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthenticationmethodpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyauthenticationmethodpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyAuthenticationMethodPolicy
+# Get-MgBetaPolicyAuthenticationMethodPolicy
 
 ## SYNOPSIS
 Read the properties and relationships of an authenticationMethodsPolicy object.
@@ -13,7 +13,7 @@ Read the properties and relationships of an authenticationMethodsPolicy object.
 ## SYNTAX
 
 ```
-Get-MgPolicyAuthenticationMethodPolicy [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPolicyAuthenticationMethodPolicy [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Read the properties and relationships of an authenticationMethodsPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyAuthenticationMethodPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyAuthenticationMethodPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyAuthenticationMethodPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyAuthenticationMethodPolicy
 ```
 
-This example shows how to use the Get-MgPolicyAuthenticationMethodPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyAuthenticationMethodPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy
 
 ## NOTES
 

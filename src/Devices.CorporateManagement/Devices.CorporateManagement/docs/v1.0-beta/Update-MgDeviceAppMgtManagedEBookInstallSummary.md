@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebookinstallsummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebookinstallsummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtManagedEBookInstallSummary
+# Update-MgBetaDeviceAppMgtManagedEBookInstallSummary
 
 ## SYNOPSIS
 Update the navigation property installSummary in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property installSummary in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtManagedEBookInstallSummary -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtManagedEBookInstallSummary -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
  [-FailedDeviceCount <Int32>] [-FailedUserCount <Int32>] [-Id <String>] [-InstalledDeviceCount <Int32>]
  [-InstalledUserCount <Int32>] [-NotInstalledDeviceCount <Int32>] [-NotInstalledUserCount <Int32>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgDeviceAppMgtManagedEBookInstallSummary -ManagedEBookId <String> [-Addit
 
 ### Update
 ```
-Update-MgDeviceAppMgtManagedEBookInstallSummary -ManagedEBookId <String>
+Update-MgBetaDeviceAppMgtManagedEBookInstallSummary -ManagedEBookId <String>
  -BodyParameter <IMicrosoftGraphEBookInstallSummary> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtManagedEBookInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedEBookInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphEBookInstallSummary> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtManagedEBookInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedEBookInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-FailedDeviceCount <Int32>] [-FailedUserCount <Int32>] [-Id <String>]
  [-InstalledDeviceCount <Int32>] [-InstalledUserCount <Int32>] [-NotInstalledDeviceCount <Int32>]
  [-NotInstalledUserCount <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ Contains properties for the installation summary of a book for a device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -266,9 +266,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
 
 ## OUTPUTS
 
@@ -278,7 +278,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementManagedEBookInstallSummary
+### Update-MgBetaDeviceAppManagementManagedEBookInstallSummary
 
 COMPLEX PARAMETER PROPERTIES
 

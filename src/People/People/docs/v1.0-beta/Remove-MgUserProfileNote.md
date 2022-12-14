@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/remove-mguserprofilenote
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/remove-mguserprofilenote
 schema: 2.0.0
 ---
 
-# Remove-MgUserProfileNote
+# Remove-MgBetaUserProfileNote
 
 ## SYNOPSIS
 Delete navigation property notes for users
@@ -14,13 +14,13 @@ Delete navigation property notes for users
 
 ### Delete (Default)
 ```
-Remove-MgUserProfileNote -PersonAnnotationId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserProfileNote -PersonAnnotationId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserProfileNote -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaUserProfileNote -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property notes for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserProfileNote Cmdlet
+### Example 1: Using the Remove-MgBetaUserProfileNote Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
-Remove-MgUserProfileNote -UserId $userId -PersonAnnotationId $personAnnotationId
+Import-Module Microsoft.Graph.Beta.People
+Remove-MgBetaUserProfileNote -UserId $userId -PersonAnnotationId $personAnnotationId
 ```
 
-This example shows how to use the Remove-MgUserProfileNote Cmdlet.
+This example shows how to use the Remove-MgBetaUserProfileNote Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 

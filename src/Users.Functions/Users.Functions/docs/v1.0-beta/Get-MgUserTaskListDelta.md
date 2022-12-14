@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusertasklistdelta
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusertasklistdelta
 schema: 2.0.0
 ---
 
-# Get-MgUserTaskListDelta
+# Get-MgBetaUserTaskListDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -14,13 +14,13 @@ Invoke function delta
 
 ### Delta (Default)
 ```
-Get-MgUserTaskListDelta -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaUserTaskListDelta -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgUserTaskListDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaUserTaskListDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -30,14 +30,14 @@ Invoke function delta
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTaskListDelta Cmdlet
+### Example 1: Using the Get-MgBetaUserTaskListDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Functions
+Import-Module Microsoft.Graph.Beta.Users.Functions
 # A UPN can also be used as -UserId.
-Get-MgUserTaskListDelta -UserId $userId
+Get-MgBetaUserTaskListDelta -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserTaskListDelta Cmdlet.
+This example shows how to use the Get-MgBetaUserTaskListDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: DeltaViaIdentity
 Aliases:
 
@@ -183,11 +183,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBaseTaskList
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBaseTaskList
 
 ## NOTES
 

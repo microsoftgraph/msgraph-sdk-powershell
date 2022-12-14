@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritysecurescorecontrolprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritysecurescorecontrolprofile
 schema: 2.0.0
 ---
 
-# New-MgSecuritySecureScoreControlProfile
+# New-MgBetaSecuritySecureScoreControlProfile
 
 ## SYNOPSIS
 Create new navigation property to secureScoreControlProfiles for security
@@ -14,7 +14,7 @@ Create new navigation property to secureScoreControlProfiles for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecuritySecureScoreControlProfile [-ActionType <String>] [-ActionUrl <String>]
+New-MgBetaSecuritySecureScoreControlProfile [-ActionType <String>] [-ActionUrl <String>]
  [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
  [-ComplianceInformation <IMicrosoftGraphComplianceInformation[]>] [-ControlCategory <String>]
  [-ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>] [-Deprecated] [-Id <String>]
@@ -26,7 +26,7 @@ New-MgSecuritySecureScoreControlProfile [-ActionType <String>] [-ActionUrl <Stri
 
 ### Create
 ```
-New-MgSecuritySecureScoreControlProfile -BodyParameter <IMicrosoftGraphSecureScoreControlProfile> [-Confirm]
+New-MgBetaSecuritySecureScoreControlProfile -BodyParameter <IMicrosoftGraphSecureScoreControlProfile> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -102,7 +102,7 @@ secureScoreControlProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
 Parameter Sets: Create
 Aliases:
 
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for COMPLIANCEINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceInformation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceInformation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for CONTROLSTATEUPDATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlStateUpdate[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScoreControlStateUpdate[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -362,7 +362,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -409,11 +409,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
 
 ## NOTES
 

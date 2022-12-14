@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementroleassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementroleassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementRoleAssignment
+# New-MgBetaDeviceManagementRoleAssignment
 
 ## SYNOPSIS
 Create new navigation property to roleAssignments for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to roleAssignments for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementRoleAssignment [-AdditionalProperties <Hashtable>] [-Description <String>]
+New-MgBetaDeviceManagementRoleAssignment [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-Members <String[]>] [-ResourceScopes <String[]>]
  [-RoleDefinition <IMicrosoftGraphRoleDefinition1>] [-RoleScopeTags <IMicrosoftGraphRoleScopeTag[]>]
  [-ScopeMembers <String[]>] [-ScopeType <RoleAssignmentScopeType>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementRoleAssignment [-AdditionalProperties <Hashtable>] [-Descr
 
 ### Create
 ```
-New-MgDeviceManagementRoleAssignment -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment>
+New-MgBetaDeviceManagementRoleAssignment -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ This applies to custom and built-in roles.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
 Parameter Sets: Create
 Aliases:
 
@@ -156,7 +156,7 @@ Create custom roles if you want to define a role that allows any of the availabl
 To construct, please use Get-Help -Online and see NOTES section for ROLEDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleDefinition1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -172,7 +172,7 @@ The set of Role Scope Tags defined on the Role Assignment.
 To construct, please use Get-Help -Online and see NOTES section for ROLESCOPETAGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTag[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTag[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 Specifies the type of scope for a Role Assignment.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.RoleAssignmentScopeType
+Type: Microsoft.Graph.Beta.PowerShell.Support.RoleAssignmentScopeType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ChangeNotifications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.changenotifications/get-mgsubscription
+Module Name: Microsoft.Graph.Beta.ChangeNotifications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.changenotifications/get-mgsubscription
 schema: 2.0.0
 ---
 
-# Get-MgSubscription
+# Get-MgBetaSubscription
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a subscription.
@@ -15,18 +15,18 @@ See the table in the Permissions section for the list of resources that support 
 
 ### List (Default)
 ```
-Get-MgSubscription [-Property <String[]>] [-Search <String>] [-All] [-CountVariable <String>]
+Get-MgBetaSubscription [-Property <String[]>] [-Search <String>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSubscription -SubscriptionId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSubscription -SubscriptionId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSubscription -InputObject <IChangeNotificationsIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSubscription -InputObject <IChangeNotificationsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,22 +35,22 @@ See the table in the Permissions section for the list of resources that support 
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSubscription Cmdlet
+### Example 1: Using the Get-MgBetaSubscription Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ChangeNotifications
-Get-MgSubscription -SubscriptionId $subscriptionId
+Import-Module Microsoft.Graph.Beta.ChangeNotifications
+Get-MgBetaSubscription -SubscriptionId $subscriptionId
 ```
 
-This example shows how to use the Get-MgSubscription Cmdlet.
+This example shows how to use the Get-MgBetaSubscription Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSubscription Cmdlet
+### Example 2: Using the Get-MgBetaSubscription Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ChangeNotifications
-Get-MgSubscription
+Import-Module Microsoft.Graph.Beta.ChangeNotifications
+Get-MgBetaSubscription
 ```
 
-This example shows how to use the Get-MgSubscription Cmdlet.
+This example shows how to use the Get-MgBetaSubscription Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IChangeNotificationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -167,11 +167,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IChangeNotificationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscription1
 
 ## NOTES
 

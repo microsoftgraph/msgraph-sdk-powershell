@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgonpremisepublishingprofile
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgonpremisepublishingprofile
 schema: 2.0.0
 ---
 
-# Get-MgOnPremisePublishingProfile
+# Get-MgBetaOnPremisePublishingProfile
 
 ## SYNOPSIS
 Get entity from onPremisesPublishingProfiles by key
@@ -14,20 +14,20 @@ Get entity from onPremisesPublishingProfiles by key
 
 ### List (Default)
 ```
-Get-MgOnPremisePublishingProfile [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaOnPremisePublishingProfile [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgOnPremisePublishingProfile -OnPremisesPublishingProfileId <String> [-ExpandProperty <String[]>]
+Get-MgBetaOnPremisePublishingProfile -OnPremisesPublishingProfileId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOnPremisePublishingProfile -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaOnPremisePublishingProfile -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get entity from onPremisesPublishingProfiles by key
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOnPremisePublishingProfile Cmdlet
+### Example 1: Using the Get-MgBetaOnPremisePublishingProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgOnPremisePublishingProfile -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ExpandProperty "publishedResources,agents,agentGroups" 
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaOnPremisePublishingProfile -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ExpandProperty "publishedResources,agents,agentGroups" 
 ```
 
-This example shows how to use the Get-MgOnPremisePublishingProfile Cmdlet.
+This example shows how to use the Get-MgBetaOnPremisePublishingProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesPublishingProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesPublishingProfile
 
 ## NOTES
 

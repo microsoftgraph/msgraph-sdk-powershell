@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/enable-mgusermanageddevicelostmode
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/enable-mgusermanageddevicelostmode
 schema: 2.0.0
 ---
 
-# Enable-MgUserManagedDeviceLostMode
+# Enable-MgBetaUserManagedDeviceLostMode
 
 ## SYNOPSIS
 Enable lost mode
@@ -14,28 +14,28 @@ Enable lost mode
 
 ### EnableExpanded (Default)
 ```
-Enable-MgUserManagedDeviceLostMode -ManagedDeviceId <String> -UserId <String>
+Enable-MgBetaUserManagedDeviceLostMode -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Footer <String>] [-Message <String>] [-PhoneNumber <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Enable
 ```
-Enable-MgUserManagedDeviceLostMode -ManagedDeviceId <String> -UserId <String>
+Enable-MgBetaUserManagedDeviceLostMode -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPathsM5KcdlUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EnableViaIdentity
 ```
-Enable-MgUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity>
+Enable-MgBetaUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsM5KcdlUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EnableViaIdentityExpanded
 ```
-Enable-MgUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Enable-MgBetaUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Footer <String>] [-Message <String>] [-PhoneNumber <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsM5KcdlUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsM5KcdlUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Enable, EnableViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: EnableViaIdentity, EnableViaIdentityExpanded
 Aliases:
 
@@ -220,9 +220,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsM5KcdlUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsM5KcdlUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

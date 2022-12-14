@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgttask
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgttask
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtTask
+# Get-MgBetaDeviceAppMgtTask
 
 ## SYNOPSIS
 Device app management tasks.
@@ -14,20 +14,20 @@ Device app management tasks.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtTask [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDeviceAppMgtTask [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtTask -DeviceAppManagementTaskId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceAppMgtTask -DeviceAppManagementTaskId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtTask -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtTask -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,17 +225,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementTask
+### Get-MgBetaDeviceAppManagementTask
 
 COMPLEX PARAMETER PROPERTIES
 

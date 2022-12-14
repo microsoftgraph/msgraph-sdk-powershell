@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/invoke-mgunarchiveserviceannouncementmessage
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/invoke-mgunarchiveserviceannouncementmessage
 schema: 2.0.0
 ---
 
-# Invoke-MgUnarchiveServiceAnnouncementMessage
+# Invoke-MgBetaUnarchiveServiceAnnouncementMessage
 
 ## SYNOPSIS
 Unarchive a list of serviceUpdateMessages for the signed in user.
@@ -14,13 +14,13 @@ Unarchive a list of serviceUpdateMessages for the signed in user.
 
 ### UnarchiveExpanded (Default)
 ```
-Invoke-MgUnarchiveServiceAnnouncementMessage [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
+Invoke-MgBetaUnarchiveServiceAnnouncementMessage [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Unarchive
 ```
-Invoke-MgUnarchiveServiceAnnouncementMessage
+Invoke-MgBetaUnarchiveServiceAnnouncementMessage
  -BodyParameter <IPathsYkfdhbAdminServiceannouncementMessagesMicrosoftGraphUnarchivePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,19 +30,19 @@ Unarchive a list of serviceUpdateMessages for the signed in user.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgUnarchiveServiceAnnouncementMessage Cmdlet
+### Example 1: Using the Invoke-MgBetaUnarchiveServiceAnnouncementMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 $params = @{
 	MessageIds = @(
 		"MC172851"
 		"MC167983"
 	)
 }
-Invoke-MgUnarchiveServiceAnnouncementMessage -BodyParameter $params
+Invoke-MgBetaUnarchiveServiceAnnouncementMessage -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgUnarchiveServiceAnnouncementMessage Cmdlet.
+This example shows how to use the Invoke-MgBetaUnarchiveServiceAnnouncementMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsYkfdhbAdminServiceannouncementMessagesMicrosoftGraphUnarchivePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsYkfdhbAdminServiceannouncementMessagesMicrosoftGraphUnarchivePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Unarchive
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsYkfdhbAdminServiceannouncementMessagesMicrosoftGraphUnarchivePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsYkfdhbAdminServiceannouncementMessagesMicrosoftGraphUnarchivePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

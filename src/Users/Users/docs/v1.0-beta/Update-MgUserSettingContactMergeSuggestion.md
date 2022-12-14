@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusersettingcontactmergesuggestion
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mgusersettingcontactmergesuggestion
 schema: 2.0.0
 ---
 
-# Update-MgUserSettingContactMergeSuggestion
+# Update-MgBetaUserSettingContactMergeSuggestion
 
 ## SYNOPSIS
 Update the properties of a contactMergeSuggestions object.
@@ -14,25 +14,25 @@ Update the properties of a contactMergeSuggestions object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserSettingContactMergeSuggestion -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaUserSettingContactMergeSuggestion -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-IsEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserSettingContactMergeSuggestion -UserId <String>
+Update-MgBetaUserSettingContactMergeSuggestion -UserId <String>
  -BodyParameter <IMicrosoftGraphContactMergeSuggestions> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity>
+Update-MgBetaUserSettingContactMergeSuggestion -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphContactMergeSuggestions> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-IsEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,17 +41,17 @@ Update the properties of a contactMergeSuggestions object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserSettingContactMergeSuggestion Cmdlet
+### Example 1: Using the Update-MgBetaUserSettingContactMergeSuggestion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	IsEnabled = $false
 }
 # A UPN can also be used as -UserId.
-Update-MgUserSettingContactMergeSuggestion -UserId $userId -BodyParameter $params
+Update-MgBetaUserSettingContactMergeSuggestion -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserSettingContactMergeSuggestion Cmdlet.
+This example shows how to use the Update-MgBetaUserSettingContactMergeSuggestion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -76,7 +76,7 @@ contactMergeSuggestions
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -201,9 +201,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

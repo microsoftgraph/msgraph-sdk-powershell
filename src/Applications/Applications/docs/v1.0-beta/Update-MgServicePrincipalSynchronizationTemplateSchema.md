@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgserviceprincipalsynchronizationtemplateschema
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgserviceprincipalsynchronizationtemplateschema
 schema: 2.0.0
 ---
 
-# Update-MgServicePrincipalSynchronizationTemplateSchema
+# Update-MgBetaServicePrincipalSynchronizationTemplateSchema
 
 ## SYNOPSIS
 Update the navigation property schema in servicePrincipals
@@ -14,7 +14,7 @@ Update the navigation property schema in servicePrincipals
 
 ### UpdateExpanded (Default)
 ```
-Update-MgServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
+Update-MgBetaServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
  -SynchronizationTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>]
  [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-Version <String>] [-PassThru] [-Confirm]
@@ -23,20 +23,20 @@ Update-MgServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <Stri
 
 ### Update
 ```
-Update-MgServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
+Update-MgBetaServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
  -SynchronizationTemplateId <String> -BodyParameter <IMicrosoftGraphSynchronizationSchema> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsIdentity>
+Update-MgBetaServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphSynchronizationSchema> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsIdentity>
+Update-MgBetaServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>]
  [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-Version <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ synchronizationSchema
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ Contains the collection of directories and all of their objects.
 To construct, please use Get-Help -Online and see NOTES section for DIRECTORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ A collection of synchronization rules configured for the synchronizationJob or s
 To construct, please use Get-Help -Online and see NOTES section for SYNCHRONIZATIONRULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationRule[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationRule[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -240,9 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
 
 ## OUTPUTS
 

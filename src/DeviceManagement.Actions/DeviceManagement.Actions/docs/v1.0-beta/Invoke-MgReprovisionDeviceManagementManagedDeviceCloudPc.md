@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgreprovisiondevicemanagementmanageddevicecloudpc
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgreprovisiondevicemanagementmanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc
+# Invoke-MgBetaReprovisionDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
 Reprovision a Cloud PC with an Intune managed device ID.
@@ -14,13 +14,13 @@ Reprovision a Cloud PC with an Intune managed device ID.
 
 ### Cloud (Default)
 ```
-Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc -ManagedDeviceId <String> [-PassThru] [-Confirm]
+Invoke-MgBetaReprovisionDeviceManagementManagedDeviceCloudPc -ManagedDeviceId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CloudViaIdentity
 ```
-Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaReprovisionDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Reprovision a Cloud PC with an Intune managed device ID.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc Cmdlet
+### Example 1: Using the Invoke-MgBetaReprovisionDeviceManagementManagedDeviceCloudPc Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
-Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc -ManagedDeviceId $managedDeviceId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+Invoke-MgBetaReprovisionDeviceManagementManagedDeviceCloudPc -ManagedDeviceId $managedDeviceId
 ```
 
-This example shows how to use the Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc Cmdlet.
+This example shows how to use the Invoke-MgBetaReprovisionDeviceManagementManagedDeviceCloudPc Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -45,7 +45,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CloudViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 
@@ -132,7 +132,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgCloudDeviceManagementManagedDevice
+### Invoke-MgBetaCloudDeviceManagementManagedDevice
 
 COMPLEX PARAMETER PROPERTIES
 

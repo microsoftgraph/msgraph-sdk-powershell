@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointreportexportjob
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointreportexportjob
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointReportExportJob
+# Get-MgBetaDeviceManagementVirtualEndpointReportExportJob
 
 ## SYNOPSIS
 The export jobs created for downloading reports.
@@ -14,20 +14,20 @@ The export jobs created for downloading reports.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointReportExportJob [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementVirtualEndpointReportExportJob [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementVirtualEndpointReportExportJob -InputObject <IDeviceManagementAdministrationIdentity>
+Get-MgBetaDeviceManagementVirtualEndpointReportExportJob -InputObject <IDeviceManagementAdministrationIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
 
 ## NOTES
 

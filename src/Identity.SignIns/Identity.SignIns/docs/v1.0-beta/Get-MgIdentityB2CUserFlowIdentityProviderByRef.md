@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2cuserflowidentityproviderbyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2cuserflowidentityproviderbyref
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2CUserFlowIdentityProviderByRef
+# Get-MgBetaIdentityB2CUserFlowIdentityProviderByRef
 
 ## SYNOPSIS
 Get the identity providers in a b2cIdentityUserFlow object.
@@ -13,7 +13,7 @@ Get the identity providers in a b2cIdentityUserFlow object.
 ## SYNTAX
 
 ```
-Get-MgIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String> [-Filter <String>]
+Get-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String> [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

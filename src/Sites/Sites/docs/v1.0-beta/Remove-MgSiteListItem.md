@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mgsitelistitem
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/remove-mgsitelistitem
 schema: 2.0.0
 ---
 
-# Remove-MgSiteListItem
+# Remove-MgBetaSiteListItem
 
 ## SYNOPSIS
 Delete navigation property items for sites
@@ -14,13 +14,13 @@ Delete navigation property items for sites
 
 ### Delete (Default)
 ```
-Remove-MgSiteListItem -ListId <String> -ListItemId <String> -SiteId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaSiteListItem -ListId <String> -ListItemId <String> -SiteId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSiteListItem -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaSiteListItem -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property items for sites
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgSiteListItem Cmdlet
+### Example 1: Using the Remove-MgBetaSiteListItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Remove-MgSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId
+Import-Module Microsoft.Graph.Beta.Sites
+Remove-MgBetaSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId
 ```
 
-This example shows how to use the Remove-MgSiteListItem Cmdlet.
+This example shows how to use the Remove-MgBetaSiteListItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

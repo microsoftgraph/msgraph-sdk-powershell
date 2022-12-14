@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintoperation
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprintoperation
 schema: 2.0.0
 ---
 
-# Get-MgPrintOperation
+# Get-MgBetaPrintOperation
 
 ## SYNOPSIS
 Get operations from print
@@ -14,20 +14,20 @@ Get operations from print
 
 ### List (Default)
 ```
-Get-MgPrintOperation [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaPrintOperation [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPrintOperation -PrintOperationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPrintOperation -PrintOperationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrintOperation -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrintOperation -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get operations from print
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintOperation Cmdlet
+### Example 1: Using the Get-MgBetaPrintOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintOperation -PrintOperationId $printOperationId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintOperation -PrintOperationId $printOperationId
 ```
 
-This example shows how to use the Get-MgPrintOperation Cmdlet.
+This example shows how to use the Get-MgBetaPrintOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintOperation
 
 ## NOTES
 

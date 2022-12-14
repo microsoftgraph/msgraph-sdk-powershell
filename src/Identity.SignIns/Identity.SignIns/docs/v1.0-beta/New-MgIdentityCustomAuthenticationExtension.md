@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentitycustomauthenticationextension
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentitycustomauthenticationextension
 schema: 2.0.0
 ---
 
-# New-MgIdentityCustomAuthenticationExtension
+# New-MgBetaIdentityCustomAuthenticationExtension
 
 ## SYNOPSIS
 Create new navigation property to customAuthenticationExtensions for identity
@@ -14,7 +14,7 @@ Create new navigation property to customAuthenticationExtensions for identity
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityCustomAuthenticationExtension [-AdditionalProperties <Hashtable>]
+New-MgBetaIdentityCustomAuthenticationExtension [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>]
  [-ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>] [-Description <String>]
  [-DisplayName <String>] [-EndpointConfiguration <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgIdentityCustomAuthenticationExtension [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgIdentityCustomAuthenticationExtension -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaIdentityCustomAuthenticationExtension -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ customExtensionClientConfiguration
 To construct, please use Get-Help -Online and see NOTES section for CLIENTCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomExtensionClientConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomExtensionClientConfiguration
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -196,7 +196,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomAuthenticationExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAuthenticationExtension
 
 ## NOTES
 

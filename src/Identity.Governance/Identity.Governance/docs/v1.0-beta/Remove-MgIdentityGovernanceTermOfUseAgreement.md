@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernancetermofuseagreement
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernancetermofuseagreement
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceTermOfUseAgreement
+# Remove-MgBetaIdentityGovernanceTermOfUseAgreement
 
 ## SYNOPSIS
 Delete navigation property agreements for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property agreements for identityGovernance
 
 ### Delete1 (Default)
 ```
-Remove-MgIdentityGovernanceTermOfUseAgreement -AgreementId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
+Remove-MgBetaIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property agreements for identityGovernance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId
 ```
 
-This example shows how to use the Remove-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

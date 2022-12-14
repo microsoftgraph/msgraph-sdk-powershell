@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgusermanageddevicewindowprotectionstate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgusermanageddevicewindowprotectionstate
 schema: 2.0.0
 ---
 
-# Update-MgUserManagedDeviceWindowProtectionState
+# Update-MgBetaUserManagedDeviceWindowProtectionState
 
 ## SYNOPSIS
 Update the navigation property windowsProtectionState in users
@@ -14,7 +14,7 @@ Update the navigation property windowsProtectionState in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserManagedDeviceWindowProtectionState -ManagedDeviceId <String> -UserId <String>
+Update-MgBetaUserManagedDeviceWindowProtectionState -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-AntiMalwareVersion <String>]
  [-DetectedMalwareState <IMicrosoftGraphWindowsDeviceMalwareState[]>]
  [-DeviceState <WindowsDeviceHealthState>] [-EngineVersion <String>] [-FullScanOverdue] [-FullScanRequired]
@@ -28,19 +28,19 @@ Update-MgUserManagedDeviceWindowProtectionState -ManagedDeviceId <String> -UserI
 
 ### Update
 ```
-Update-MgUserManagedDeviceWindowProtectionState -ManagedDeviceId <String> -UserId <String>
+Update-MgBetaUserManagedDeviceWindowProtectionState -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserManagedDeviceWindowProtectionState -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaUserManagedDeviceWindowProtectionState -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserManagedDeviceWindowProtectionState -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaUserManagedDeviceWindowProtectionState -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AntiMalwareVersion <String>]
  [-DetectedMalwareState <IMicrosoftGraphWindowsDeviceMalwareState[]>]
  [-DeviceState <WindowsDeviceHealthState>] [-EngineVersion <String>] [-FullScanOverdue] [-FullScanRequired]
@@ -94,7 +94,7 @@ Device protection status entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsProtectionState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsProtectionState
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -110,7 +110,7 @@ Device malware list
 To construct, please use Get-Help -Online and see NOTES section for DETECTEDMALWARESTATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDeviceMalwareState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDeviceMalwareState[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 Computer endpoint protection state
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.WindowsDeviceHealthState
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsDeviceHealthState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -202,7 +202,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -367,7 +367,7 @@ Accept wildcard characters: False
 Product Status of Windows Defender
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.WindowsDefenderProductStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsDefenderProductStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -519,9 +519,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsProtectionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsProtectionState
 
 ## OUTPUTS
 

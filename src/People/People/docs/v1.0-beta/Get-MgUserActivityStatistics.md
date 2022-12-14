@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguseractivitystatistics
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguseractivitystatistics
 schema: 2.0.0
 ---
 
-# Get-MgUserActivityStatistics
+# Get-MgBetaUserActivityStatistics
 
 ## SYNOPSIS
 The collection of work activities that a user spent time on during and outside of working hours.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserActivityStatistics -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserActivityStatistics -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserActivityStatistics -ActivityStatisticsId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserActivityStatistics -ActivityStatisticsId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserActivityStatistics -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserActivityStatistics -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,14 +40,14 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserActivityStatistics Cmdlet
+### Example 1: Using the Get-MgBetaUserActivityStatistics Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserActivityStatistics -UserId $userId
+Get-MgBetaUserActivityStatistics -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserActivityStatistics Cmdlet.
+This example shows how to use the Get-MgBetaUserActivityStatistics Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -254,11 +254,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityStatistics
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityStatistics
 
 ## NOTES
 

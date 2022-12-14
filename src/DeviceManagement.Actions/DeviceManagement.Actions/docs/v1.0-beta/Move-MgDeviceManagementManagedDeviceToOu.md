@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/move-mgdevicemanagementmanageddevicetoou
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/move-mgdevicemanagementmanageddevicetoou
 schema: 2.0.0
 ---
 
-# Move-MgDeviceManagementManagedDeviceToOu
+# Move-MgBetaDeviceManagementManagedDeviceToOu
 
 ## SYNOPSIS
 Invoke action moveDevicesToOU
@@ -14,13 +14,13 @@ Invoke action moveDevicesToOU
 
 ### MoveExpanded (Default)
 ```
-Move-MgDeviceManagementManagedDeviceToOu [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>]
+Move-MgBetaDeviceManagementManagedDeviceToOu [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>]
  [-OrganizationalUnitPath <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Move
 ```
-Move-MgDeviceManagementManagedDeviceToOu
+Move-MgBetaDeviceManagementManagedDeviceToOu
  -BodyParameter <IPaths1Tm5YpiDevicemanagementManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Tm5YpiDevicemanagementManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Tm5YpiDevicemanagementManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Move
 Aliases:
 
@@ -144,7 +144,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Tm5YpiDevicemanagementManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Tm5YpiDevicemanagementManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

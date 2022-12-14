@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgpreviewuserdriveitem
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgpreviewuserdriveitem
 schema: 2.0.0
 ---
 
-# Invoke-MgPreviewUserDriveItem
+# Invoke-MgBetaPreviewUserDriveItem
 
 ## SYNOPSIS
 Invoke action preview
@@ -14,28 +14,28 @@ Invoke action preview
 
 ### PreviewExpanded1 (Default)
 ```
-Invoke-MgPreviewUserDriveItem -DriveId <String> -DriveItemId <String> -UserId <String>
+Invoke-MgBetaPreviewUserDriveItem -DriveId <String> -DriveItemId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-AllowEdit] [-Chromeless] [-Page <String>] [-Viewer <String>]
  [-Zoom <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Preview1
 ```
-Invoke-MgPreviewUserDriveItem -DriveId <String> -DriveItemId <String> -UserId <String>
+Invoke-MgBetaPreviewUserDriveItem -DriveId <String> -DriveItemId <String> -UserId <String>
  -BodyParameter <IPathsZ9C15KUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PreviewViaIdentity1
 ```
-Invoke-MgPreviewUserDriveItem -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaPreviewUserDriveItem -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsZ9C15KUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PreviewViaIdentityExpanded1
 ```
-Invoke-MgPreviewUserDriveItem -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaPreviewUserDriveItem -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowEdit] [-Chromeless] [-Page <String>] [-Viewer <String>] [-Zoom <Double>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZ9C15KUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsZ9C15KUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Preview1, PreviewViaIdentity1
 Aliases:
 
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: PreviewViaIdentity1, PreviewViaIdentityExpanded1
 Aliases:
 
@@ -250,13 +250,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsZ9C15KUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsZ9C15KUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPreviewInfo
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPreviewInfo
 
 ## NOTES
 

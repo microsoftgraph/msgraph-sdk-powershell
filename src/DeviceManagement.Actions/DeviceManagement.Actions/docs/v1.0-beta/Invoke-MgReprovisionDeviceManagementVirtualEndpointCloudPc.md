@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgreprovisiondevicemanagementvirtualendpointcloudpc
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgreprovisiondevicemanagementvirtualendpointcloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc
+# Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
 Reprovision a specific Cloud PC.
@@ -14,28 +14,28 @@ Reprovision a specific Cloud PC.
 
 ### ReprovisionExpanded (Default)
 ```
-Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc -CloudPcId <String>
+Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc -CloudPcId <String>
  [-AdditionalProperties <Hashtable>] [-OSVersion <String>] [-UserAccountType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Reprovision
 ```
-Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc -CloudPcId <String>
+Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc -CloudPcId <String>
  -BodyParameter <IPaths1U4M8FzDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphReprovisionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReprovisionViaIdentity
 ```
-Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1U4M8FzDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphReprovisionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReprovisionViaIdentityExpanded
 ```
-Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-OSVersion <String>] [-UserAccountType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -45,17 +45,17 @@ Reprovision a specific Cloud PC.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc Cmdlet
+### Example 1: Using the Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
 $params = @{
 	UserAccountType = "administrator"
 	OsVersion = "windows10"
 }
-Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId -BodyParameter $params
+Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc Cmdlet.
+This example shows how to use the Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1U4M8FzDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphReprovisionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1U4M8FzDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphReprovisionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Reprovision, ReprovisionViaIdentity
 Aliases:
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: ReprovisionViaIdentity, ReprovisionViaIdentityExpanded
 Aliases:
 
@@ -203,9 +203,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1U4M8FzDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphReprovisionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1U4M8FzDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphReprovisionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

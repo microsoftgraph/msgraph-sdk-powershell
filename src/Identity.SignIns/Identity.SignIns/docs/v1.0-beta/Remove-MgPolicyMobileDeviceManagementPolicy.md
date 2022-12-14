@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicymobiledevicemanagementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicymobiledevicemanagementpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyMobileDeviceManagementPolicy
+# Remove-MgBetaPolicyMobileDeviceManagementPolicy
 
 ## SYNOPSIS
 Delete navigation property mobileDeviceManagementPolicies for policies
@@ -14,13 +14,13 @@ Delete navigation property mobileDeviceManagementPolicies for policies
 
 ### Delete (Default)
 ```
-Remove-MgPolicyMobileDeviceManagementPolicy -MobilityManagementPolicyId <String> [-IfMatch <String>]
+Remove-MgBetaPolicyMobileDeviceManagementPolicy -MobilityManagementPolicyId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPolicyMobileDeviceManagementPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaPolicyMobileDeviceManagementPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,22 +29,22 @@ Delete navigation property mobileDeviceManagementPolicies for policies
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPolicyMobileDeviceManagementPolicy Cmdlet
+### Example 1: Using the Remove-MgBetaPolicyMobileDeviceManagementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyMobileDeviceManagementPolicy -MobilityManagementPolicyId $mobilityManagementPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaPolicyMobileDeviceManagementPolicy -MobilityManagementPolicyId $mobilityManagementPolicyId
 ```
 
-This example shows how to use the Remove-MgPolicyMobileDeviceManagementPolicy Cmdlet.
+This example shows how to use the Remove-MgBetaPolicyMobileDeviceManagementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Remove-MgPolicyMobileDeviceManagementPolicy Cmdlet
+### Example 2: Using the Remove-MgBetaPolicyMobileDeviceManagementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyMobileDeviceManagementPolicy -MobilityManagementPolicyId $mobilityManagementPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaPolicyMobileDeviceManagementPolicy -MobilityManagementPolicyId $mobilityManagementPolicyId
 ```
 
-This example shows how to use the Remove-MgPolicyMobileDeviceManagementPolicy Cmdlet.
+This example shows how to use the Remove-MgBetaPolicyMobileDeviceManagementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

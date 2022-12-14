@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernanceaccessreviewdecisioninstancedefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernanceaccessreviewdecisioninstancedefinition
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceAccessReviewDecisionInstanceDefinition
+# Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDefinition
 
 ## SYNOPSIS
 There is exactly one accessReviewScheduleDefinition associated with each instance.
@@ -15,13 +15,13 @@ It is the parent schedule for the instance, where instances are created for each
 
 ### Get (Default)
 ```
-Get-MgIdentityGovernanceAccessReviewDecisionInstanceDefinition -AccessReviewInstanceDecisionItemId <String>
+Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDefinition -AccessReviewInstanceDecisionItemId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceAccessReviewDecisionInstanceDefinition -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDefinition -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -99,11 +99,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleDefinition1
 
 ## NOTES
 

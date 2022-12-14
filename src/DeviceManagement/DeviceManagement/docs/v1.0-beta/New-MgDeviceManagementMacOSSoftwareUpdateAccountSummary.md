@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementmacossoftwareupdateaccountsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementmacossoftwareupdateaccountsummary
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementMacOSSoftwareUpdateAccountSummary
+# New-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummary
 
 ## SYNOPSIS
 Create new navigation property to macOSSoftwareUpdateAccountSummaries for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to macOSSoftwareUpdateAccountSummaries for device
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementMacOSSoftwareUpdateAccountSummary [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummary [-AdditionalProperties <Hashtable>]
  [-CategorySummaries <IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]>] [-DeviceId <String>]
  [-DeviceName <String>] [-DisplayName <String>] [-FailedUpdateCount <Int32>] [-Id <String>]
  [-LastUpdatedDateTime <DateTime>] [-OSVersion <String>] [-SuccessfulUpdateCount <Int32>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementMacOSSoftwareUpdateAccountSummary [-AdditionalProperties <
 
 ### Create
 ```
-New-MgDeviceManagementMacOSSoftwareUpdateAccountSummary
+New-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummary
  -BodyParameter <IMicrosoftGraphMacOSSoftwareUpdateAccountSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ MacOS software update account summary report for a device and user
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
 Parameter Sets: Create
 Aliases:
 
@@ -71,7 +71,7 @@ Summary of the updates by category.
 To construct, please use Get-Help -Online and see NOTES section for CATEGORYSUMMARIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -284,11 +284,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
 
 ## NOTES
 

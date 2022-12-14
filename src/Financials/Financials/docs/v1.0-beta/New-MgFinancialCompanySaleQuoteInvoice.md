@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanysalequoteinvoice
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanysalequoteinvoice
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanySaleQuoteInvoice
+# New-MgBetaFinancialCompanySaleQuoteInvoice
 
 ## SYNOPSIS
 Invoke action makeInvoice
@@ -14,13 +14,13 @@ Invoke action makeInvoice
 
 ### Make (Default)
 ```
-New-MgFinancialCompanySaleQuoteInvoice -CompanyId <String> -SalesQuoteId <String> [-PassThru] [-Confirm]
+New-MgBetaFinancialCompanySaleQuoteInvoice -CompanyId <String> -SalesQuoteId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### MakeViaIdentity
 ```
-New-MgFinancialCompanySaleQuoteInvoice -InputObject <IFinancialsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+New-MgBetaFinancialCompanySaleQuoteInvoice -InputObject <IFinancialsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: MakeViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

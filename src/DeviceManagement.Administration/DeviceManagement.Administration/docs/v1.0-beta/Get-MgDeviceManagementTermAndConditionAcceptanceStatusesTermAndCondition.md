@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementtermandconditionacceptancestatusestermandcondition
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementtermandconditionacceptancestatusestermandcondition
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition
+# Get-MgBetaDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition
 
 ## SYNOPSIS
 Navigation link to the terms and conditions that are assigned.
@@ -14,14 +14,14 @@ Navigation link to the terms and conditions that are assigned.
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition
+Get-MgBetaDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition
  -TermsAndConditionsAcceptanceStatusId <String> -TermsAndConditionsId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition
+Get-MgBetaDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition
  -InputObject <IDeviceManagementAdministrationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditions
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditions
 
 ## NOTES
 

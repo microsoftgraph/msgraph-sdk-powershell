@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistcolumn
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelistcolumn
 schema: 2.0.0
 ---
 
-# Get-MgSiteListColumn
+# Get-MgBetaSiteListColumn
 
 ## SYNOPSIS
 Get columns from sites
@@ -14,20 +14,20 @@ Get columns from sites
 
 ### List (Default)
 ```
-Get-MgSiteListColumn -ListId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaSiteListColumn -ListId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSiteListColumn -ColumnDefinitionId <String> -ListId <String> -SiteId <String>
+Get-MgBetaSiteListColumn -ColumnDefinitionId <String> -ListId <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteListColumn -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteListColumn -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get columns from sites
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteListColumn Cmdlet
+### Example 1: Using the Get-MgBetaSiteListColumn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListColumn -SiteId $siteId -ListId $listId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListColumn -SiteId $siteId -ListId $listId
 ```
 
-This example shows how to use the Get-MgSiteListColumn Cmdlet.
+This example shows how to use the Get-MgBetaSiteListColumn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -264,11 +264,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition
 
 ## NOTES
 

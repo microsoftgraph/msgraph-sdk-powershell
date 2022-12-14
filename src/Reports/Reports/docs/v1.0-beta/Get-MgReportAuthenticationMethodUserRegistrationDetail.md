@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportauthenticationmethoduserregistrationdetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportauthenticationmethoduserregistrationdetail
 schema: 2.0.0
 ---
 
-# Get-MgReportAuthenticationMethodUserRegistrationDetail
+# Get-MgBetaReportAuthenticationMethodUserRegistrationDetail
 
 ## SYNOPSIS
 Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
@@ -14,20 +14,20 @@ Represents the state of a user's authentication methods, including which methods
 
 ### List (Default)
 ```
-Get-MgReportAuthenticationMethodUserRegistrationDetail [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaReportAuthenticationMethodUserRegistrationDetail [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
+Get-MgBetaReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity>
+Get-MgBetaReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Represents the state of a user's authentication methods, including which methods
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgReportAuthenticationMethodUserRegistrationDetail Cmdlet
+### Example 1: Using the Get-MgBetaReportAuthenticationMethodUserRegistrationDetail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId $userRegistrationDetailsId
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId $userRegistrationDetailsId
 ```
 
-This example shows how to use the Get-MgReportAuthenticationMethodUserRegistrationDetail Cmdlet.
+This example shows how to use the Get-MgBetaReportAuthenticationMethodUserRegistrationDetail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgReportAuthenticationMethodUserRegistrationDetail Cmdlet
+### Example 2: Using the Get-MgBetaReportAuthenticationMethodUserRegistrationDetail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportAuthenticationMethodUserRegistrationDetail
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportAuthenticationMethodUserRegistrationDetail
 ```
 
-This example shows how to use the Get-MgReportAuthenticationMethodUserRegistrationDetail Cmdlet.
+This example shows how to use the Get-MgBetaReportAuthenticationMethodUserRegistrationDetail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
 
 ## NOTES
 

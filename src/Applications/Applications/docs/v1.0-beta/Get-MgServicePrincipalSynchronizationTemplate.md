@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalsynchronizationtemplate
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipalsynchronizationtemplate
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalSynchronizationTemplate
+# Get-MgBetaServicePrincipalSynchronizationTemplate
 
 ## SYNOPSIS
 Pre-configured synchronization settings for a particular application.
@@ -14,20 +14,20 @@ Pre-configured synchronization settings for a particular application.
 
 ### List (Default)
 ```
-Get-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId <String> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalSynchronizationTemplate -ServicePrincipalId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId <String> -SynchronizationTemplateId <String>
+Get-MgBetaServicePrincipalSynchronizationTemplate -ServicePrincipalId <String> -SynchronizationTemplateId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentity>
+Get-MgBetaServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Pre-configured synchronization settings for a particular application.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServicePrincipalSynchronizationTemplate Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalSynchronizationTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId $servicePrincipalId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalSynchronizationTemplate -ServicePrincipalId $servicePrincipalId
 ```
 
-This example shows how to use the Get-MgServicePrincipalSynchronizationTemplate Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalSynchronizationTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
 
 ## NOTES
 

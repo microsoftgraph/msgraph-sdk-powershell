@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamphotocontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamphotocontent
 schema: 2.0.0
 ---
 
-# Get-MgTeamPhotoContent
+# Get-MgBetaTeamPhotoContent
 
 ## SYNOPSIS
 Get media content for the navigation property photo from teams
@@ -14,12 +14,12 @@ Get media content for the navigation property photo from teams
 
 ### Get1 (Default)
 ```
-Get-MgTeamPhotoContent -TeamId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaTeamPhotoContent -TeamId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamPhotoContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaTeamPhotoContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -95,7 +95,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

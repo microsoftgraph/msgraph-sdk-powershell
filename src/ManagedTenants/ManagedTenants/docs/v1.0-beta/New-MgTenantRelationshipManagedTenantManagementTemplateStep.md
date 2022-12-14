@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementtemplatestep
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementtemplatestep
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantManagementTemplateStep
+# New-MgBetaTenantRelationshipManagedTenantManagementTemplateStep
 
 ## SYNOPSIS
 Create new navigation property to managementTemplateSteps for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managementTemplateSteps for tenantRelationship
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantManagementTemplateStep
+New-MgBetaTenantRelationshipManagedTenantManagementTemplateStep
  [-AcceptedVersion <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>]
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
@@ -27,7 +27,7 @@ New-MgTenantRelationshipManagedTenantManagementTemplateStep
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantManagementTemplateStep
+New-MgBetaTenantRelationshipManagedTenantManagementTemplateStep
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStep> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -44,7 +44,7 @@ managementTemplateStepVersion
 To construct, please use Get-Help -Online and see NOTES section for ACCEPTEDVERSION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -75,7 +75,7 @@ managementTemplateStep
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
 Parameter Sets: Create
 Aliases:
 
@@ -212,7 +212,7 @@ managementTemplate
 To construct, please use Get-Help -Online and see NOTES section for MANAGEMENTTEMPLATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -228,7 +228,7 @@ actionUrl
 To construct, please use Get-Help -Online and see NOTES section for PORTALLINK properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActionUrl
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActionUrl
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for VERSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -306,11 +306,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
 
 ## NOTES
 

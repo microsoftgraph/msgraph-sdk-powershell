@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/set-mgfinancialcompanysaleinvoicelineitempicturecontent
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/set-mgfinancialcompanysaleinvoicelineitempicturecontent
 schema: 2.0.0
 ---
 
-# Set-MgFinancialCompanySaleInvoiceLineItemPictureContent
+# Set-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent
 
 ## SYNOPSIS
 Update content for the navigation property picture in financials
@@ -14,27 +14,27 @@ Update content for the navigation property picture in financials
 
 ### Set (Default)
 ```
-Set-MgFinancialCompanySaleInvoiceLineItemPictureContent -CompanyId <String> -PictureId <String>
+Set-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent -CompanyId <String> -PictureId <String>
  -SalesInvoiceLineId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Set1
 ```
-Set-MgFinancialCompanySaleInvoiceLineItemPictureContent -CompanyId <String> -PictureId <String>
+Set-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent -CompanyId <String> -PictureId <String>
  -SalesInvoiceId <String> -SalesInvoiceLineId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgFinancialCompanySaleInvoiceLineItemPictureContent -InputObject <IFinancialsIdentity> -InFile <String>
+Set-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent -InputObject <IFinancialsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgFinancialCompanySaleInvoiceLineItemPictureContent -InputObject <IFinancialsIdentity> -InFile <String>
+Set-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent -InputObject <IFinancialsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentity1
 Aliases:
 
@@ -204,7 +204,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### System.IO.Stream
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementroledefinitionroleassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementroledefinitionroleassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementRoleDefinitionRoleAssignment
+# New-MgBetaDeviceManagementRoleDefinitionRoleAssignment
 
 ## SYNOPSIS
 Create new navigation property to roleAssignments for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to roleAssignments for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementRoleDefinitionRoleAssignment -RoleDefinitionId <String>
+New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -RoleDefinitionId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-ResourceScopes <String[]>] [-RoleDefinition <IMicrosoftGraphRoleDefinition1>] [-ScopeMembers <String[]>]
  [-ScopeType <RoleAssignmentScopeType>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgDeviceManagementRoleDefinitionRoleAssignment -RoleDefinitionId <String>
 
 ### Create
 ```
-New-MgDeviceManagementRoleDefinitionRoleAssignment -RoleDefinitionId <String>
+New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -RoleDefinitionId <String>
  -BodyParameter <IMicrosoftGraphRoleAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
+New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphRoleAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
+New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-ResourceScopes <String[]>] [-RoleDefinition <IMicrosoftGraphRoleDefinition1>] [-ScopeMembers <String[]>]
  [-ScopeType <RoleAssignmentScopeType>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -70,7 +70,7 @@ This applies to custom and built-in roles.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -170,7 +170,7 @@ Create custom roles if you want to define a role that allows any of the availabl
 To construct, please use Get-Help -Online and see NOTES section for ROLEDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleDefinition1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 Specifies the type of scope for a Role Assignment.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.RoleAssignmentScopeType
+Type: Microsoft.Graph.Beta.PowerShell.Support.RoleAssignmentScopeType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -263,13 +263,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleAssignment
 
 ## NOTES
 

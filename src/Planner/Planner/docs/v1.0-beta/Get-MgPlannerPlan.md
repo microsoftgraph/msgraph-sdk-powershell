@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mgplannerplan
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mgplannerplan
 schema: 2.0.0
 ---
 
-# Get-MgPlannerPlan
+# Get-MgBetaPlannerPlan
 
 ## SYNOPSIS
 Read-only.
@@ -16,20 +16,20 @@ Returns a collection of the specified plans
 
 ### List1 (Default)
 ```
-Get-MgPlannerPlan [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaPlannerPlan [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgPlannerPlan -PlannerPlanId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPlannerPlan -PlannerPlanId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPlannerPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPlannerPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -40,22 +40,22 @@ Returns a collection of the specified plans
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPlannerPlan Cmdlet
+### Example 1: Using the Get-MgBetaPlannerPlan Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgPlannerPlan -PlannerPlanId $plannerPlanId
+Import-Module Microsoft.Graph.Beta.Planner
+Get-MgBetaPlannerPlan -PlannerPlanId $plannerPlanId
 ```
 
-This example shows how to use the Get-MgPlannerPlan Cmdlet.
+This example shows how to use the Get-MgBetaPlannerPlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPlannerPlan Cmdlet
+### Example 2: Using the Get-MgBetaPlannerPlan Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgPlannerPlan
+Import-Module Microsoft.Graph.Beta.Planner
+Get-MgBetaPlannerPlan
 ```
 
-This example shows how to use the Get-MgPlannerPlan Cmdlet.
+This example shows how to use the Get-MgBetaPlannerPlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -247,11 +247,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 
 ## NOTES
 

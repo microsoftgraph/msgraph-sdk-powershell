@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggrouptransitivememberof
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggrouptransitivememberof
 schema: 2.0.0
 ---
 
-# Get-MgGroupTransitiveMemberOf
+# Get-MgBetaGroupTransitiveMemberOf
 
 ## SYNOPSIS
 The groups that a group is a member of, either directly and through nested membership.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgGroupTransitiveMemberOf -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaGroupTransitiveMemberOf -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupTransitiveMemberOf -DirectoryObjectId <String> -GroupId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupTransitiveMemberOf -DirectoryObjectId <String> -GroupId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTransitiveMemberOf -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupTransitiveMemberOf -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -38,13 +38,13 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupTransitiveMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaGroupTransitiveMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupTransitiveMemberOf -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupTransitiveMemberOf -GroupId $groupId
 ```
 
-This example shows how to use the Get-MgGroupTransitiveMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaGroupTransitiveMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -267,11 +267,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

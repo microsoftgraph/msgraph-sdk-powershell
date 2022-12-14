@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermailfolderchildfolderuserconfiguration
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mgusermailfolderchildfolderuserconfiguration
 schema: 2.0.0
 ---
 
-# Get-MgUserMailFolderChildFolderUserConfiguration
+# Get-MgBetaUserMailFolderChildFolderUserConfiguration
 
 ## SYNOPSIS
 Get userConfigurations from users
@@ -14,20 +14,20 @@ Get userConfigurations from users
 
 ### List (Default)
 ```
-Get-MgUserMailFolderChildFolderUserConfiguration -MailFolderId <String> -MailFolderId1 <String>
+Get-MgBetaUserMailFolderChildFolderUserConfiguration -MailFolderId <String> -MailFolderId1 <String>
  -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserMailFolderChildFolderUserConfiguration -MailFolderId <String> -MailFolderId1 <String>
+Get-MgBetaUserMailFolderChildFolderUserConfiguration -MailFolderId <String> -MailFolderId1 <String>
  -UserConfigurationId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserMailFolderChildFolderUserConfiguration -InputObject <IMailIdentity> [-Property <String[]>]
+Get-MgBetaUserMailFolderChildFolderUserConfiguration -InputObject <IMailIdentity> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -89,7 +89,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserConfiguration
 
 ## NOTES
 

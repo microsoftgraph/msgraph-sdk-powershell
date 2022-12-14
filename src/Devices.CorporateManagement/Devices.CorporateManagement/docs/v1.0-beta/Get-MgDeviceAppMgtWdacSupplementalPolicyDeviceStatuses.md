@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtwdacsupplementalpolicydevicestatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtwdacsupplementalpolicydevicestatuses
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
+# Get-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
 
 ## SYNOPSIS
 The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
@@ -14,7 +14,7 @@ The list of device deployment states for this WindowsDefenderApplicationControl 
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
+Get-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
  -WindowsDefenderApplicationControlSupplementalPolicyId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
 
 ### Get
 ```
-Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
+Get-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
  -WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>
  -WindowsDefenderApplicationControlSupplementalPolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -30,7 +30,7 @@ Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtWdacSupplementalPolicyDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,17 +243,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementWdacSupplementalPolicyDeviceStatuses
+### Get-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

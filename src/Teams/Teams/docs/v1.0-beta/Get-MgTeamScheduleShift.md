@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamscheduleshift
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamscheduleshift
 schema: 2.0.0
 ---
 
-# Get-MgTeamScheduleShift
+# Get-MgBetaTeamScheduleShift
 
 ## SYNOPSIS
 The shifts in the schedule.
@@ -14,19 +14,19 @@ The shifts in the schedule.
 
 ### List1 (Default)
 ```
-Get-MgTeamScheduleShift -TeamId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaTeamScheduleShift -TeamId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgTeamScheduleShift -ShiftId <String> -TeamId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaTeamScheduleShift -ShiftId <String> -TeamId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamScheduleShift -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaTeamScheduleShift -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,22 +34,22 @@ The shifts in the schedule.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamScheduleShift Cmdlet
+### Example 1: Using the Get-MgBetaTeamScheduleShift Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleShift -TeamId $teamId -Filter "sharedShift/startDateTime ge 2019-03-11T00:00:00.000Z and sharedShift/endDateTime le 2019-03-18T00:00:00.000Z and draftShift/startDateTime ge 2019-03-11T00:00:00.000Z and draftShift/endDateTime le 2019-03-18T00:00:00.000Z" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamScheduleShift -TeamId $teamId -Filter "sharedShift/startDateTime ge 2019-03-11T00:00:00.000Z and sharedShift/endDateTime le 2019-03-18T00:00:00.000Z and draftShift/startDateTime ge 2019-03-11T00:00:00.000Z and draftShift/endDateTime le 2019-03-18T00:00:00.000Z" 
 ```
 
-This example shows how to use the Get-MgTeamScheduleShift Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleShift Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamScheduleShift Cmdlet
+### Example 2: Using the Get-MgBetaTeamScheduleShift Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleShift -TeamId $teamId -ShiftId $shiftId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamScheduleShift -TeamId $teamId -ShiftId $shiftId
 ```
 
-This example shows how to use the Get-MgTeamScheduleShift Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleShift Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -241,11 +241,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShift1
 
 ## NOTES
 

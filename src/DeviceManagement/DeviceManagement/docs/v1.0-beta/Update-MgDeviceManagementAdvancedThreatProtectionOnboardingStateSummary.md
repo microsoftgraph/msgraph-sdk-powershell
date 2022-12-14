@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementadvancedthreatprotectiononboardingstatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementadvancedthreatprotectiononboardingstatesummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
+# Update-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
 
 ## SYNOPSIS
 Update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property advancedThreatProtectionOnboardingStateSummary in
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary [-AdditionalProperties <Hashtable>]
  [-AdvancedThreatProtectionOnboardingDeviceSettingStates <IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState[]>]
  [-CompliantDeviceCount <Int32>] [-ConflictDeviceCount <Int32>] [-ErrorDeviceCount <Int32>] [-Id <String>]
  [-NonCompliantDeviceCount <Int32>] [-NotApplicableDeviceCount <Int32>] [-NotAssignedDeviceCount <Int32>]
@@ -24,7 +24,7 @@ Update-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary [-Additi
 
 ### Update
 ```
-Update-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
+Update-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
  -BodyParameter <IMicrosoftGraphAdvancedThreatProtectionOnboardingStateSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -56,7 +56,7 @@ Not yet documented
 To construct, please use Get-Help -Online and see NOTES section for ADVANCEDTHREATPROTECTIONONBOARDINGDEVICESETTINGSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ Windows defender advanced threat protection onboarding state summary across the 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingStateSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingStateSummary
 Parameter Sets: Update
 Aliases:
 
@@ -270,7 +270,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingStateSummary
 
 ## OUTPUTS
 

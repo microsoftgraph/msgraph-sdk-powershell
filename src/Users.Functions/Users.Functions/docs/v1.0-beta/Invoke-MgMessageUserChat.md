@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgmessageuserchat
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/invoke-mgmessageuserchat
 schema: 2.0.0
 ---
 
-# Invoke-MgMessageUserChat
+# Invoke-MgBetaMessageUserChat
 
 ## SYNOPSIS
 Invoke function allMessages
@@ -14,13 +14,13 @@ Invoke function allMessages
 
 ### Messages (Default)
 ```
-Invoke-MgMessageUserChat -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
+Invoke-MgBetaMessageUserChat -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### MessagesViaIdentity
 ```
-Invoke-MgMessageUserChat -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Invoke-MgBetaMessageUserChat -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: MessagesViaIdentity
 Aliases:
 
@@ -173,11 +173,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage1
 
 ## NOTES
 

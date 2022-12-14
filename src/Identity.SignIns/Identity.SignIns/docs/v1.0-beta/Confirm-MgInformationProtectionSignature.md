@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/confirm-mginformationprotectionsignature
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/confirm-mginformationprotectionsignature
 schema: 2.0.0
 ---
 
-# Confirm-MgInformationProtectionSignature
+# Confirm-MgBetaInformationProtectionSignature
 
 ## SYNOPSIS
 Invoke action verifySignature
@@ -14,13 +14,13 @@ Invoke action verifySignature
 
 ### VerifyExpanded (Default)
 ```
-Confirm-MgInformationProtectionSignature [-AdditionalProperties <Hashtable>] [-DigestInputFile <String>]
+Confirm-MgBetaInformationProtectionSignature [-AdditionalProperties <Hashtable>] [-DigestInputFile <String>]
  [-SignatureInputFile <String>] [-SigningKeyId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Verify
 ```
-Confirm-MgInformationProtectionSignature
+Confirm-MgBetaInformationProtectionSignature
  -BodyParameter <IPathsSit1AcInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsSit1AcInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsSit1AcInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Verify
 Aliases:
 
@@ -144,7 +144,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsSit1AcInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsSit1AcInformationprotectionMicrosoftGraphVerifysignaturePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

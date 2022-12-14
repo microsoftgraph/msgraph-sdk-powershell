@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyclaimmappingpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyclaimmappingpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyClaimMappingPolicy
+# Get-MgBetaPolicyClaimMappingPolicy
 
 ## SYNOPSIS
 The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
@@ -14,20 +14,20 @@ The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect proto
 
 ### List (Default)
 ```
-Get-MgPolicyClaimMappingPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPolicyClaimMappingPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyClaimMappingPolicy -ClaimsMappingPolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyClaimMappingPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyClaimMappingPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect proto
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyClaimMappingPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyClaimMappingPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyClaimMappingPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyClaimMappingPolicy
 ```
 
-This example shows how to use the Get-MgPolicyClaimMappingPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyClaimMappingPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPolicyClaimMappingPolicy Cmdlet
+### Example 2: Using the Get-MgBetaPolicyClaimMappingPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
 ```
 
-This example shows how to use the Get-MgPolicyClaimMappingPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyClaimMappingPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphClaimsMappingPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphClaimsMappingPolicy1
 
 ## NOTES
 

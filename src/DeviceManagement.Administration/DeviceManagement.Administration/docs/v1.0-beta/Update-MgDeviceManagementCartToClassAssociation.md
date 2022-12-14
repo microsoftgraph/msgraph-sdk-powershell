@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementcarttoclassassociation
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementcarttoclassassociation
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementCartToClassAssociation
+# Update-MgBetaDeviceManagementCartToClassAssociation
 
 ## SYNOPSIS
 Update the navigation property cartToClassAssociations in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property cartToClassAssociations in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementCartToClassAssociation -CartToClassAssociationId <String>
+Update-MgBetaDeviceManagementCartToClassAssociation -CartToClassAssociationId <String>
  [-AdditionalProperties <Hashtable>] [-ClassroomIds <String[]>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DeviceCartIds <String[]>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Version <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgDeviceManagementCartToClassAssociation -CartToClassAssociationId <Strin
 
 ### Update
 ```
-Update-MgDeviceManagementCartToClassAssociation -CartToClassAssociationId <String>
+Update-MgBetaDeviceManagementCartToClassAssociation -CartToClassAssociationId <String>
  -BodyParameter <IMicrosoftGraphCartToClassAssociation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementCartToClassAssociation -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementCartToClassAssociation -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphCartToClassAssociation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementCartToClassAssociation -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementCartToClassAssociation -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-ClassroomIds <String[]>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DeviceCartIds <String[]>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Version <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ CartToClassAssociation for associating device carts with classrooms.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -281,9 +281,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
 
 ## OUTPUTS
 

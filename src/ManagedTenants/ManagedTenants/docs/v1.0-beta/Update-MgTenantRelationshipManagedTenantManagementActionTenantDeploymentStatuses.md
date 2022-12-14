@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementactiontenantdeploymentstatuses
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementactiontenantdeploymentstatuses
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+# Update-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
 
 ## SYNOPSIS
 Update the navigation property managementActionTenantDeploymentStatuses in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managementActionTenantDeploymentStatuses in tenan
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+Update-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
  -ManagementActionTenantDeploymentStatusId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Statuses <IMicrosoftGraphManagedTenantsManagementActionDeploymentStatus[]>] [-TenantGroupId <String>]
  [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+Update-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
  -ManagementActionTenantDeploymentStatusId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+Update-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
  -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+Update-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Statuses <IMicrosoftGraphManagedTenantsManagementActionDeploymentStatus[]>] [-TenantGroupId <String>]
  [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -71,7 +71,7 @@ managementActionTenantDeploymentStatus
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ Optional.
 To construct, please use Get-Help -Online and see NOTES section for STATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionDeploymentStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionDeploymentStatus[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -231,9 +231,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
 
 ## OUTPUTS
 

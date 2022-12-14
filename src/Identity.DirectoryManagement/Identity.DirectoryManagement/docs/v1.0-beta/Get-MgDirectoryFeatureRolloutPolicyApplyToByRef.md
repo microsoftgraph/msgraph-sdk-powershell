@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryfeaturerolloutpolicyapplytobyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryfeaturerolloutpolicyapplytobyref
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryFeatureRolloutPolicyApplyToByRef
+# Get-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef
 
 ## SYNOPSIS
 Nullable.
@@ -14,7 +14,7 @@ Specifies a list of directoryObjects that feature is enabled for.
 ## SYNTAX
 
 ```
-Get-MgDirectoryFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String> [-Filter <String>]
+Get-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String> [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

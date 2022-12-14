@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserinformationprotectiondatalosspreventionpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mguserinformationprotectiondatalosspreventionpolicy
 schema: 2.0.0
 ---
 
-# New-MgUserInformationProtectionDataLossPreventionPolicy
+# New-MgBetaUserInformationProtectionDataLossPreventionPolicy
 
 ## SYNOPSIS
 Create new navigation property to dataLossPreventionPolicies for users
@@ -14,25 +14,25 @@ Create new navigation property to dataLossPreventionPolicies for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserInformationProtectionDataLossPreventionPolicy -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserInformationProtectionDataLossPreventionPolicy -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserInformationProtectionDataLossPreventionPolicy -UserId <String>
+New-MgBetaUserInformationProtectionDataLossPreventionPolicy -UserId <String>
  -BodyParameter <IMicrosoftGraphDataLossPreventionPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphDataLossPreventionPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ dataLossPreventionPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -95,7 +95,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -172,13 +172,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 
 ## NOTES
 

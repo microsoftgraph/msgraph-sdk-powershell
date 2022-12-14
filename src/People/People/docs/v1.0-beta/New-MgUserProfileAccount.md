@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofileaccount
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/new-mguserprofileaccount
 schema: 2.0.0
 ---
 
-# New-MgUserProfileAccount
+# New-MgBetaUserProfileAccount
 
 ## SYNOPSIS
 Create a new userAccountInformation object in a user's profile.
@@ -14,7 +14,7 @@ Create a new userAccountInformation object in a user's profile.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserProfileAccount -UserId <String> [-AdditionalProperties <Hashtable>] [-AgeGroup <String>]
+New-MgBetaUserProfileAccount -UserId <String> [-AdditionalProperties <Hashtable>] [-AgeGroup <String>]
  [-AllowedAudiences <String>] [-CountryCode <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
@@ -24,19 +24,19 @@ New-MgUserProfileAccount -UserId <String> [-AdditionalProperties <Hashtable>] [-
 
 ### Create
 ```
-New-MgUserProfileAccount -UserId <String> -BodyParameter <IMicrosoftGraphUserAccountInformation> [-Confirm]
+New-MgBetaUserProfileAccount -UserId <String> -BodyParameter <IMicrosoftGraphUserAccountInformation> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfileAccount -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphUserAccountInformation>
+New-MgBetaUserProfileAccount -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphUserAccountInformation>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserProfileAccount -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfileAccount -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AgeGroup <String>] [-AllowedAudiences <String>] [-CountryCode <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -50,18 +50,18 @@ Create a new userAccountInformation object in a user's profile.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserProfileAccount Cmdlet
+### Example 1: Using the New-MgBetaUserProfileAccount Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	AllowedAudiences = "organization"
 	CountryCode = "NO"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileAccount -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileAccount -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserProfileAccount Cmdlet.
+This example shows how to use the New-MgBetaUserProfileAccount Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -117,7 +117,7 @@ userAccountInformation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAccountInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAccountInformation
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -148,7 +148,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -211,7 +211,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -242,7 +242,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -273,7 +273,7 @@ localeInfo
 To construct, please use Get-Help -Online and see NOTES section for PREFERREDLANGUAGETAG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocaleInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocaleInfo
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -289,7 +289,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -366,13 +366,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAccountInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAccountInformation
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAccountInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAccountInformation
 
 ## NOTES
 

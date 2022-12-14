@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/invoke-mgreportserviceannouncementissueincident
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/invoke-mgreportserviceannouncementissueincident
 schema: 2.0.0
 ---
 
-# Invoke-MgReportServiceAnnouncementIssueIncident
+# Invoke-MgBetaReportServiceAnnouncementIssueIncident
 
 ## SYNOPSIS
 Invoke function incidentReport
@@ -14,13 +14,13 @@ Invoke function incidentReport
 
 ### Report (Default)
 ```
-Invoke-MgReportServiceAnnouncementIssueIncident -ServiceHealthIssueId <String> -OutFile <String> [-PassThru]
+Invoke-MgBetaReportServiceAnnouncementIssueIncident -ServiceHealthIssueId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### ReportViaIdentity
 ```
-Invoke-MgReportServiceAnnouncementIssueIncident -InputObject <IDevicesServiceAnnouncementIdentity>
+Invoke-MgBetaReportServiceAnnouncementIssueIncident -InputObject <IDevicesServiceAnnouncementIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Invoke function incidentReport
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgReportServiceAnnouncementIssueIncident Cmdlet
+### Example 1: Using the Invoke-MgBetaReportServiceAnnouncementIssueIncident Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Invoke-MgReportServiceAnnouncementIssueIncident -ServiceHealthIssueId $serviceHealthIssueId
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Invoke-MgBetaReportServiceAnnouncementIssueIncident -ServiceHealthIssueId $serviceHealthIssueId
 ```
 
-This example shows how to use the Invoke-MgReportServiceAnnouncementIssueIncident Cmdlet.
+This example shows how to use the Invoke-MgBetaReportServiceAnnouncementIssueIncident Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -45,7 +45,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 Parameter Sets: ReportViaIdentity
 Aliases:
 
@@ -106,7 +106,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ## OUTPUTS
 

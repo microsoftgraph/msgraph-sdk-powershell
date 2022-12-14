@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mggroupapproleassignment
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mggroupapproleassignment
 schema: 2.0.0
 ---
 
-# Remove-MgGroupAppRoleAssignment
+# Remove-MgBetaGroupAppRoleAssignment
 
 ## SYNOPSIS
 Delete navigation property appRoleAssignments for groups
@@ -14,13 +14,13 @@ Delete navigation property appRoleAssignments for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String> [-IfMatch <String>]
+Remove-MgBetaGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property appRoleAssignments for groups
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgGroupAppRoleAssignment Cmdlet
+### Example 1: Using the Remove-MgBetaGroupAppRoleAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgGroupAppRoleAssignment -GroupId $groupId -AppRoleAssignmentId $appRoleAssignmentId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaGroupAppRoleAssignment -GroupId $groupId -AppRoleAssignmentId $appRoleAssignmentId
 ```
 
-This example shows how to use the Remove-MgGroupAppRoleAssignment Cmdlet.
+This example shows how to use the Remove-MgBetaGroupAppRoleAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

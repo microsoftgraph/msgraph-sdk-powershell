@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementcarttoclassassociation
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementcarttoclassassociation
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementCartToClassAssociation
+# New-MgBetaDeviceManagementCartToClassAssociation
 
 ## SYNOPSIS
 Create new navigation property to cartToClassAssociations for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to cartToClassAssociations for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementCartToClassAssociation [-AdditionalProperties <Hashtable>] [-ClassroomIds <String[]>]
+New-MgBetaDeviceManagementCartToClassAssociation [-AdditionalProperties <Hashtable>] [-ClassroomIds <String[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DeviceCartIds <String[]>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Version <Int32>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementCartToClassAssociation [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementCartToClassAssociation -BodyParameter <IMicrosoftGraphCartToClassAssociation> [-Confirm]
+New-MgBetaDeviceManagementCartToClassAssociation -BodyParameter <IMicrosoftGraphCartToClassAssociation> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ CartToClassAssociation for associating device carts with classrooms.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
 Parameter Sets: Create
 Aliases:
 
@@ -221,11 +221,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCartToClassAssociation
 
 ## NOTES
 

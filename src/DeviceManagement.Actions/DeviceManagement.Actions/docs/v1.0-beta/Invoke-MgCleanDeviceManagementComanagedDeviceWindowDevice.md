@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgcleandevicemanagementcomanageddevicewindowdevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgcleandevicemanagementcomanageddevicewindowdevice
 schema: 2.0.0
 ---
 
-# Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice
+# Invoke-MgBetaCleanDeviceManagementComanagedDeviceWindowDevice
 
 ## SYNOPSIS
 Clean Windows device
@@ -14,27 +14,27 @@ Clean Windows device
 
 ### CleanExpanded (Default)
 ```
-Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice -ManagedDeviceId <String>
+Invoke-MgBetaCleanDeviceManagementComanagedDeviceWindowDevice -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-KeepUserData] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Clean
 ```
-Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice -ManagedDeviceId <String>
+Invoke-MgBetaCleanDeviceManagementComanagedDeviceWindowDevice -ManagedDeviceId <String>
  -BodyParameter <IPathsI15RiiDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CleanViaIdentity
 ```
-Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaCleanDeviceManagementComanagedDeviceWindowDevice -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsI15RiiDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CleanViaIdentityExpanded
 ```
-Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaCleanDeviceManagementComanagedDeviceWindowDevice -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-KeepUserData] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsI15RiiDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsI15RiiDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Clean, CleanViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CleanViaIdentity, CleanViaIdentityExpanded
 Aliases:
 
@@ -173,9 +173,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsI15RiiDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsI15RiiDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

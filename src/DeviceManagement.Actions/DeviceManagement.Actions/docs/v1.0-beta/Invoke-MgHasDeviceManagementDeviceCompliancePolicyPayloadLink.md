@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mghasdevicemanagementdevicecompliancepolicypayloadlink
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mghasdevicemanagementdevicecompliancepolicypayloadlink
 schema: 2.0.0
 ---
 
-# Invoke-MgHasDeviceManagementDeviceCompliancePolicyPayloadLink
+# Invoke-MgBetaHasDeviceManagementDeviceCompliancePolicyPayloadLink
 
 ## SYNOPSIS
 Invoke action hasPayloadLinks
@@ -14,13 +14,13 @@ Invoke action hasPayloadLinks
 
 ### HasExpanded (Default)
 ```
-Invoke-MgHasDeviceManagementDeviceCompliancePolicyPayloadLink [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaHasDeviceManagementDeviceCompliancePolicyPayloadLink [-AdditionalProperties <Hashtable>]
  [-PayloadIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Has
 ```
-Invoke-MgHasDeviceManagementDeviceCompliancePolicyPayloadLink
+Invoke-MgBetaHasDeviceManagementDeviceCompliancePolicyPayloadLink
  -BodyParameter <IPathsJjrzryDevicemanagementDevicecompliancepoliciesMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsJjrzryDevicemanagementDevicecompliancepoliciesMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsJjrzryDevicemanagementDevicecompliancepoliciesMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Has
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsJjrzryDevicemanagementDevicecompliancepoliciesMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsJjrzryDevicemanagementDevicecompliancepoliciesMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
 
 ## NOTES
 

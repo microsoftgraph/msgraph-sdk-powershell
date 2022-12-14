@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/get-mgwindowsupdatesdeployment
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/get-mgwindowsupdatesdeployment
 schema: 2.0.0
 ---
 
-# Get-MgWindowsUpdatesDeployment
+# Get-MgBetaWindowsUpdatesDeployment
 
 ## SYNOPSIS
 Deployments created using the deployment service.
@@ -15,20 +15,20 @@ Read-only.
 
 ### List (Default)
 ```
-Get-MgWindowsUpdatesDeployment [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaWindowsUpdatesDeployment [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgWindowsUpdatesDeployment -DeploymentId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaWindowsUpdatesDeployment -DeploymentId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgWindowsUpdatesDeployment Cmdlet
+### Example 1: Using the Get-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Get-MgWindowsUpdatesDeployment -DeploymentId $deploymentId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Get-MgBetaWindowsUpdatesDeployment -DeploymentId $deploymentId
 ```
 
-This example shows how to use the Get-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the Get-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgWindowsUpdatesDeployment Cmdlet
+### Example 2: Using the Get-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Get-MgWindowsUpdatesDeployment
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Get-MgBetaWindowsUpdatesDeployment
 ```
 
-This example shows how to use the Get-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the Get-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -245,17 +245,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
 
 ## NOTES
 
 ALIASES
 
-### Get-MgWuDeployment
+### Get-MgBetaWuDeployment
 
 COMPLEX PARAMETER PROPERTIES
 

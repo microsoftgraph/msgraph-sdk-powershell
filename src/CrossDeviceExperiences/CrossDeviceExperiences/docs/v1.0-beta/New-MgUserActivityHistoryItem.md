@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/new-mguseractivityhistoryitem
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/new-mguseractivityhistoryitem
 schema: 2.0.0
 ---
 
-# New-MgUserActivityHistoryItem
+# New-MgBetaUserActivityHistoryItem
 
 ## SYNOPSIS
 Create new navigation property to historyItems for users
@@ -14,7 +14,7 @@ Create new navigation property to historyItems for users
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserActivityHistoryItem -UserActivityId <String> -UserId <String> [-ActiveDurationSeconds <Int32>]
+New-MgBetaUserActivityHistoryItem -UserActivityId <String> -UserId <String> [-ActiveDurationSeconds <Int32>]
  [-Activity <IMicrosoftGraphUserActivity1>] [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastActiveDateTime <DateTime>]
  [-LastModifiedDateTime <DateTime>] [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>]
@@ -23,19 +23,19 @@ New-MgUserActivityHistoryItem -UserActivityId <String> -UserId <String> [-Active
 
 ### Create1
 ```
-New-MgUserActivityHistoryItem -UserActivityId <String> -UserId <String>
+New-MgBetaUserActivityHistoryItem -UserActivityId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
+New-MgBetaUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
  -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> [-ActiveDurationSeconds <Int32>]
+New-MgBetaUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> [-ActiveDurationSeconds <Int32>]
  [-Activity <IMicrosoftGraphUserActivity1>] [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastActiveDateTime <DateTime>]
  [-LastModifiedDateTime <DateTime>] [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>]
@@ -69,7 +69,7 @@ userActivity
 To construct, please use Get-Help -Online and see NOTES section for ACTIVITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity1
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -100,7 +100,7 @@ activityHistoryItem
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -165,7 +165,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -323,13 +323,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 
 ## NOTES
 

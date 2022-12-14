@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgappcatalogteamappdefinitionoutlineicon
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgappcatalogteamappdefinitionoutlineicon
 schema: 2.0.0
 ---
 
-# Get-MgAppCatalogTeamAppDefinitionOutlineIcon
+# Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon
 
 ## SYNOPSIS
 Retrieve a Teams app icon associated with a specific definition of an app.
@@ -14,13 +14,13 @@ Retrieve a Teams app icon associated with a specific definition of an app.
 
 ### Get (Default)
 ```
-Get-MgAppCatalogTeamAppDefinitionOutlineIcon -TeamsAppDefinitionId <String> -TeamsAppId <String>
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon -TeamsAppDefinitionId <String> -TeamsAppId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAppCatalogTeamAppDefinitionOutlineIcon -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,31 +29,31 @@ Retrieve a Teams app icon associated with a specific definition of an app.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAppCatalogTeamAppDefinitionOutlineIcon Cmdlet
+### Example 1: Using the Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgAppCatalogTeamAppDefinitionOutlineIcon -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId
 ```
 
-This example shows how to use the Get-MgAppCatalogTeamAppDefinitionOutlineIcon Cmdlet.
+This example shows how to use the Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgAppCatalogTeamAppDefinitionOutlineIcon Cmdlet
+### Example 2: Using the Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgAppCatalogTeamAppDefinitionOutlineIcon -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId
 ```
 
-This example shows how to use the Get-MgAppCatalogTeamAppDefinitionOutlineIcon Cmdlet.
+This example shows how to use the Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgAppCatalogTeamAppDefinitionOutlineIcon Cmdlet
+### Example 3: Using the Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgAppCatalogTeamAppDefinitionOutlineIcon -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgAppCatalogTeamAppDefinitionOutlineIcon Cmdlet.
+This example shows how to use the Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -78,7 +78,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -139,11 +139,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppIcon
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppIcon
 
 ## NOTES
 

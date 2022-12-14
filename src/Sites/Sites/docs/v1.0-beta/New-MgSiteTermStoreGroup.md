@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/new-mgsitetermstoregroup
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/new-mgsitetermstoregroup
 schema: 2.0.0
 ---
 
-# New-MgSiteTermStoreGroup
+# New-MgBetaSiteTermStoreGroup
 
 ## SYNOPSIS
 Create a new group object.
@@ -14,26 +14,26 @@ Create a new group object.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgSiteTermStoreGroup -SiteId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
+New-MgBetaSiteTermStoreGroup -SiteId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-ParentSiteId <String>] [-Scope <String>]
  [-Sets <IMicrosoftGraphTermStoreSet1[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgSiteTermStoreGroup -SiteId <String> -BodyParameter <IMicrosoftGraphTermStoreGroup> [-Confirm] [-WhatIf]
+New-MgBetaSiteTermStoreGroup -SiteId <String> -BodyParameter <IMicrosoftGraphTermStoreGroup> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgSiteTermStoreGroup -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphTermStoreGroup>
+New-MgBetaSiteTermStoreGroup -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphTermStoreGroup>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgSiteTermStoreGroup -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaSiteTermStoreGroup -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-ParentSiteId <String>] [-Scope <String>] [-Sets <IMicrosoftGraphTermStoreSet1[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -66,7 +66,7 @@ group
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreGroup
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -190,7 +190,7 @@ All sets under the group in a term [store].
 To construct, please use Get-Help -Online and see NOTES section for SETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreSet1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreSet1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -252,13 +252,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreGroup
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreGroup
 
 ## NOTES
 

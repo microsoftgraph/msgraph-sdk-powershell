@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgchatpermissiongrantmembergroup
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgchatpermissiongrantmembergroup
 schema: 2.0.0
 ---
 
-# Get-MgChatPermissionGrantMemberGroup
+# Get-MgBetaChatPermissionGrantMemberGroup
 
 ## SYNOPSIS
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -15,27 +15,27 @@ This function is transitive.
 
 ### GetExpanded (Default)
 ```
-Get-MgChatPermissionGrantMemberGroup -ChatId <String> -ResourceSpecificPermissionGrantId <String>
+Get-MgBetaChatPermissionGrantMemberGroup -ChatId <String> -ResourceSpecificPermissionGrantId <String>
  [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgChatPermissionGrantMemberGroup -ChatId <String> -ResourceSpecificPermissionGrantId <String>
+Get-MgBetaChatPermissionGrantMemberGroup -ChatId <String> -ResourceSpecificPermissionGrantId <String>
  -BodyParameter <IPaths1SfuvzaChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgChatPermissionGrantMemberGroup -InputObject <ITeamsIdentity>
+Get-MgBetaChatPermissionGrantMemberGroup -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1SfuvzaChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgChatPermissionGrantMemberGroup -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Get-MgBetaChatPermissionGrantMemberGroup -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1SfuvzaChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1SfuvzaChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -175,9 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1SfuvzaChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1SfuvzaChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/start-mgdevicemanagementmanageddeviceconfigurationmanageraction
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/start-mgdevicemanagementmanageddeviceconfigurationmanageraction
 schema: 2.0.0
 ---
 
-# Start-MgDeviceManagementManagedDeviceConfigurationManagerAction
+# Start-MgBetaDeviceManagementManagedDeviceConfigurationManagerAction
 
 ## SYNOPSIS
 Trigger action on ConfigurationManager client
@@ -14,21 +14,21 @@ Trigger action on ConfigurationManager client
 
 ### TriggerExpanded (Default)
 ```
-Start-MgDeviceManagementManagedDeviceConfigurationManagerAction -ManagedDeviceId <String>
+Start-MgBetaDeviceManagementManagedDeviceConfigurationManagerAction -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-ConfigurationManagerAction <IMicrosoftGraphConfigurationManagerAction>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Trigger
 ```
-Start-MgDeviceManagementManagedDeviceConfigurationManagerAction -ManagedDeviceId <String>
+Start-MgBetaDeviceManagementManagedDeviceConfigurationManagerAction -ManagedDeviceId <String>
  -BodyParameter <IPathsIgvhbiDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TriggerViaIdentity
 ```
-Start-MgDeviceManagementManagedDeviceConfigurationManagerAction
+Start-MgBetaDeviceManagementManagedDeviceConfigurationManagerAction
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsIgvhbiDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ Start-MgDeviceManagementManagedDeviceConfigurationManagerAction
 
 ### TriggerViaIdentityExpanded
 ```
-Start-MgDeviceManagementManagedDeviceConfigurationManagerAction
+Start-MgBetaDeviceManagementManagedDeviceConfigurationManagerAction
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ConfigurationManagerAction <IMicrosoftGraphConfigurationManagerAction>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsIgvhbiDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsIgvhbiDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Trigger, TriggerViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ Parameter for action triggerConfigurationManagerAction
 To construct, please use Get-Help -Online and see NOTES section for CONFIGURATIONMANAGERACTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConfigurationManagerAction
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConfigurationManagerAction
 Parameter Sets: TriggerExpanded, TriggerViaIdentityExpanded
 Aliases:
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: TriggerViaIdentity, TriggerViaIdentityExpanded
 Aliases:
 
@@ -178,9 +178,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsIgvhbiDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsIgvhbiDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

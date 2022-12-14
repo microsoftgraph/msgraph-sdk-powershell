@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementcomanageddevicesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementcomanageddevicesummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementComanagedDeviceSummary
+# Get-MgBetaDeviceManagementComanagedDeviceSummary
 
 ## SYNOPSIS
 Invoke function getComanagedDevicesSummary
@@ -13,7 +13,7 @@ Invoke function getComanagedDevicesSummary
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementComanagedDeviceSummary [<CommonParameters>]
+Get-MgBetaDeviceManagementComanagedDeviceSummary [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,7 +30,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComanagedDevicesSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComanagedDevicesSummary
 
 ## NOTES
 

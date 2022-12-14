@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mguserinformationprotection
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mguserinformationprotection
 schema: 2.0.0
 ---
 
-# Update-MgUserInformationProtection
+# Update-MgBetaUserInformationProtection
 
 ## SYNOPSIS
 Update the navigation property informationProtection in users
@@ -14,7 +14,7 @@ Update the navigation property informationProtection in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserInformationProtection -UserId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserInformationProtection -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Bitlocker <IMicrosoftGraphBitlocker>]
  [-DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>] [-Id <String>]
  [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
@@ -26,19 +26,19 @@ Update-MgUserInformationProtection -UserId <String> [-AdditionalProperties <Hash
 
 ### Update
 ```
-Update-MgUserInformationProtection -UserId <String> -BodyParameter <IMicrosoftGraphInformationProtection>
+Update-MgBetaUserInformationProtection -UserId <String> -BodyParameter <IMicrosoftGraphInformationProtection>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserInformationProtection -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserInformationProtection -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphInformationProtection> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserInformationProtection -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserInformationProtection -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-Bitlocker <IMicrosoftGraphBitlocker>]
  [-DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>] [-Id <String>]
  [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
@@ -75,7 +75,7 @@ bitlocker
 To construct, please use Get-Help -Online and see NOTES section for BITLOCKER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlocker
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlocker
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -91,7 +91,7 @@ informationProtection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtection
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DATALOSSPREVENTIONPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -170,7 +170,7 @@ informationProtectionPolicy
 To construct, please use Get-Help -Online and see NOTES section for POLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionPolicy
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SENSITIVITYLABELS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityLabel[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityLabel[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -202,7 +202,7 @@ sensitivityPolicySettings
 To construct, please use Get-Help -Online and see NOTES section for SENSITIVITYPOLICYSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for THREATASSESSMENTREQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -280,9 +280,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtection
 
 ## OUTPUTS
 

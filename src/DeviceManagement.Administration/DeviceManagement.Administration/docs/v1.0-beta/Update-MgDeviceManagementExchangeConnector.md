@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementexchangeconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementexchangeconnector
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementExchangeConnector
+# Update-MgBetaDeviceManagementExchangeConnector
 
 ## SYNOPSIS
 Update the navigation property exchangeConnectors in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property exchangeConnectors in deviceManagement
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
+Update-MgBetaDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
  [-AdditionalProperties <Hashtable>] [-ConnectorServerName <String>] [-ExchangeAlias <String>]
  [-ExchangeConnectorType <DeviceManagementExchangeConnectorType>] [-ExchangeOrganization <String>]
  [-Id <String>] [-LastSyncDateTime <DateTime>] [-PrimarySmtpAddress <String>] [-ServerName <String>]
@@ -24,21 +24,21 @@ Update-MgDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId 
 
 ### Update1
 ```
-Update-MgDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
+Update-MgBetaDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-ConnectorServerName <String>] [-ExchangeAlias <String>]
  [-ExchangeConnectorType <DeviceManagementExchangeConnectorType>] [-ExchangeOrganization <String>]
  [-Id <String>] [-LastSyncDateTime <DateTime>] [-PrimarySmtpAddress <String>] [-ServerName <String>]
@@ -73,7 +73,7 @@ Entity which represents a connection to an Exchange environment.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 The type of Exchange Connector.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementExchangeConnectorType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementExchangeConnectorType
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -180,7 +180,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 The current status of the Exchange Connector.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementExchangeConnectorStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementExchangeConnectorStatus
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -317,9 +317,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
 
 ## OUTPUTS
 

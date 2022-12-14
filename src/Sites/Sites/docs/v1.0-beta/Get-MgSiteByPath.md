@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitebypath
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitebypath
 schema: 2.0.0
 ---
 
-# Get-MgSiteByPath
+# Get-MgBetaSiteByPath
 
 ## SYNOPSIS
 Invoke function getByPath
@@ -14,12 +14,12 @@ Invoke function getByPath
 
 ### Get (Default)
 ```
-Get-MgSiteByPath -Path <String> -SiteId <String> [<CommonParameters>]
+Get-MgBetaSiteByPath -Path <String> -SiteId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteByPath -InputObject <ISitesIdentity> [<CommonParameters>]
+Get-MgBetaSiteByPath -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -80,11 +80,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSite1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportauthenticationmethod
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportauthenticationmethod
 schema: 2.0.0
 ---
 
-# Get-MgReportAuthenticationMethod
+# Get-MgBetaReportAuthenticationMethod
 
 ## SYNOPSIS
 Container for navigation properties for Azure AD authentication methods resources.
@@ -13,7 +13,7 @@ Container for navigation properties for Azure AD authentication methods resource
 ## SYNTAX
 
 ```
-Get-MgReportAuthenticationMethod [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaReportAuthenticationMethod [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsRoot
 
 ## NOTES
 

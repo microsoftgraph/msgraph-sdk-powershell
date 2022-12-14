@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticdevicescope
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticdevicescope
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticDeviceScope
+# New-MgBetaDeviceManagementUserExperienceAnalyticDeviceScope
 
 ## SYNOPSIS
 Create new navigation property to userExperienceAnalyticsDeviceScopes for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userExperienceAnalyticsDeviceScopes for device
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticDeviceScope [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementUserExperienceAnalyticDeviceScope [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DeviceScopeName <String>] [-Enabled] [-Id <String>] [-IsBuiltIn]
  [-LastModifiedDateTime <DateTime>] [-Operator <DeviceScopeOperator>] [-OwnerId <String>]
  [-Parameter <DeviceScopeParameter>] [-Status <DeviceScopeStatus>] [-Value <String>] [-ValueObjectId <String>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceScope [-AdditionalProperties <
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticDeviceScope
+New-MgBetaDeviceManagementUserExperienceAnalyticDeviceScope
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScope> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ The user experience analytics device scope entity contains device scope configur
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScope
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScope
 Parameter Sets: Create
 Aliases:
 
@@ -168,7 +168,7 @@ Possible values are: equals, notEquals, contains, notContains, greaterThan, less
 Default value: equals.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceScopeOperator
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceScopeOperator
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -201,7 +201,7 @@ Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, de
 Default value: scopeTag.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceScopeParameter
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceScopeParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -218,7 +218,7 @@ Possible values are: none, computing, insufficientData or completed.
 Default value is none.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceScopeStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceScopeStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -295,11 +295,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScope
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScope
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScope
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScope
 
 ## NOTES
 

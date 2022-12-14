@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2xuserflowuserattributeassignmentuserattribute
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2xuserflowuserattributeassignmentuserattribute
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2XUserFlowUserAttributeAssignmentUserAttribute
+# Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentUserAttribute
 
 ## SYNOPSIS
 The user attribute that you want to add to your user flow.
@@ -14,14 +14,14 @@ The user attribute that you want to add to your user flow.
 
 ### Get1 (Default)
 ```
-Get-MgIdentityB2XUserFlowUserAttributeAssignmentUserAttribute -B2XIdentityUserFlowId <String>
+Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentUserAttribute -B2XIdentityUserFlowId <String>
  -IdentityUserFlowAttributeAssignmentId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgIdentityB2XUserFlowUserAttributeAssignmentUserAttribute -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentUserAttribute -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -113,11 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
 
 ## NOTES
 

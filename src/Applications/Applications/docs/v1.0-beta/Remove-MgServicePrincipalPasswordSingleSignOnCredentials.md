@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgserviceprincipalpasswordsinglesignoncredentials
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgserviceprincipalpasswordsinglesignoncredentials
 schema: 2.0.0
 ---
 
-# Remove-MgServicePrincipalPasswordSingleSignOnCredentials
+# Remove-MgBetaServicePrincipalPasswordSingleSignOnCredentials
 
 ## SYNOPSIS
 Delete single sign-on credentials using a password for a user or group.
@@ -14,27 +14,27 @@ Delete single sign-on credentials using a password for a user or group.
 
 ### DeleteExpanded (Default)
 ```
-Remove-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
+Remove-MgBetaServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
+Remove-MgBetaServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
  -BodyParameter <IPathsB2Zp6SServiceprincipalsServiceprincipalIdMicrosoftGraphDeletepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicationsIdentity>
+Remove-MgBetaServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicationsIdentity>
  -BodyParameter <IPathsB2Zp6SServiceprincipalsServiceprincipalIdMicrosoftGraphDeletepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentityExpanded
 ```
-Remove-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicationsIdentity>
+Remove-MgBetaServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,16 +43,16 @@ Delete single sign-on credentials using a password for a user or group.
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgServicePrincipalPasswordSingleSignOnCredentials Cmdlet
+### Example 1: Using the Remove-MgBetaServicePrincipalPasswordSingleSignOnCredentials Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	Id = "5793aa3b-cca9-4794-679a240f8b58"
 }
-Remove-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+Remove-MgBetaServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 
-This example shows how to use the Remove-MgServicePrincipalPasswordSingleSignOnCredentials Cmdlet.
+This example shows how to use the Remove-MgBetaServicePrincipalPasswordSingleSignOnCredentials Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsB2Zp6SServiceprincipalsServiceprincipalIdMicrosoftGraphDeletepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsB2Zp6SServiceprincipalsServiceprincipalIdMicrosoftGraphDeletepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Delete, DeleteViaIdentity
 Aliases:
 
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity, DeleteViaIdentityExpanded
 Aliases:
 
@@ -185,9 +185,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsB2Zp6SServiceprincipalsServiceprincipalIdMicrosoftGraphDeletepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsB2Zp6SServiceprincipalsServiceprincipalIdMicrosoftGraphDeletepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

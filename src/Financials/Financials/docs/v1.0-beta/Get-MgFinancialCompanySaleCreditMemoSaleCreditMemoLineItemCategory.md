@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysalecreditmemosalecreditmemolineitemcategory
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanysalecreditmemosalecreditmemolineitemcategory
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory
+# Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory
 
 ## SYNOPSIS
 Get itemCategory from financials
@@ -14,14 +14,14 @@ Get itemCategory from financials
 
 ### Get (Default)
 ```
-Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory -CompanyId <String>
+Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory -CompanyId <String>
  -SalesCreditMemoId <String> -SalesCreditMemoLineId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory -InputObject <IFinancialsIdentity>
+Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory -InputObject <IFinancialsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -128,11 +128,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanytaxgroup
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanytaxgroup
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyTaxGroup
+# New-MgBetaFinancialCompanyTaxGroup
 
 ## SYNOPSIS
 Create new navigation property to taxGroups for financials
@@ -14,26 +14,26 @@ Create new navigation property to taxGroups for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyTaxGroup -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
+New-MgBetaFinancialCompanyTaxGroup -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-TaxType <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgFinancialCompanyTaxGroup -CompanyId <String> -BodyParameter <IMicrosoftGraphTaxGroup> [-Confirm]
+New-MgBetaFinancialCompanyTaxGroup -CompanyId <String> -BodyParameter <IMicrosoftGraphTaxGroup> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyTaxGroup -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphTaxGroup>
+New-MgBetaFinancialCompanyTaxGroup -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphTaxGroup>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyTaxGroup -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyTaxGroup -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-TaxType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ taxGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxGroup
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -219,13 +219,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxGroup
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxGroup
 
 ## NOTES
 

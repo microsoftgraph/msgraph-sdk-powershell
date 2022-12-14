@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationclassassignmentsubmissionresource
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationclassassignmentsubmissionresource
 schema: 2.0.0
 ---
 
-# Remove-MgEducationClassAssignmentSubmissionResource
+# Remove-MgBetaEducationClassAssignmentSubmissionResource
 
 ## SYNOPSIS
 Delete navigation property resources for education
@@ -14,14 +14,14 @@ Delete navigation property resources for education
 
 ### Delete1 (Default)
 ```
-Remove-MgEducationClassAssignmentSubmissionResource -EducationAssignmentId <String> -EducationClassId <String>
+Remove-MgBetaEducationClassAssignmentSubmissionResource -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> -EducationSubmissionResourceId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity> [-IfMatch <String>]
+Remove-MgBetaEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Delete navigation property resources for education
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEducationClassAssignmentSubmissionResource Cmdlet
+### Example 1: Using the Remove-MgBetaEducationClassAssignmentSubmissionResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
+Import-Module Microsoft.Graph.Beta.Education
+Remove-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
 ```
 
-This example shows how to use the Remove-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the Remove-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -183,7 +183,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

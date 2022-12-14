@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintshareallowedgroup
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprintshareallowedgroup
 schema: 2.0.0
 ---
 
-# Get-MgPrintShareAllowedGroup
+# Get-MgBetaPrintShareAllowedGroup
 
 ## SYNOPSIS
 Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
@@ -13,7 +13,7 @@ Retrieve a list of groups that have been granted access to submit print jobs to 
 ## SYNTAX
 
 ```
-Get-MgPrintShareAllowedGroup -PrinterShareId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPrintShareAllowedGroup -PrinterShareId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,13 +23,13 @@ Retrieve a list of groups that have been granted access to submit print jobs to 
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintShareAllowedGroup Cmdlet
+### Example 1: Using the Get-MgBetaPrintShareAllowedGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintShareAllowedGroup -PrinterShareId $printerShareId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintShareAllowedGroup -PrinterShareId $printerShareId
 ```
 
-This example shows how to use the Get-MgPrintShareAllowedGroup Cmdlet.
+This example shows how to use the Get-MgBetaPrintShareAllowedGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -207,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroup1
 
 ## NOTES
 

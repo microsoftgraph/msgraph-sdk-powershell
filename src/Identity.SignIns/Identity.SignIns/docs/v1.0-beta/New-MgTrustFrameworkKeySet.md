@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgtrustframeworkkeyset
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgtrustframeworkkeyset
 schema: 2.0.0
 ---
 
-# New-MgTrustFrameworkKeySet
+# New-MgBetaTrustFrameworkKeySet
 
 ## SYNOPSIS
 Create a new trustFrameworkKeySet.
@@ -16,13 +16,13 @@ The modified ID will be available in the response and in the location header.
 
 ### CreateExpanded (Default)
 ```
-New-MgTrustFrameworkKeySet [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaTrustFrameworkKeySet [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Keys <IMicrosoftGraphTrustFrameworkKey[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTrustFrameworkKeySet -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> [-Confirm] [-WhatIf]
+New-MgBetaTrustFrameworkKeySet -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -33,9 +33,9 @@ The modified ID will be available in the response and in the location header.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTrustFrameworkKeySet Cmdlet
+### Example 1: Using the New-MgBetaTrustFrameworkKeySet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "keyset1"
 	Keys = @(
@@ -61,22 +61,22 @@ $params = @{
 		}
 	)
 }
-New-MgTrustFrameworkKeySet -BodyParameter $params
+New-MgBetaTrustFrameworkKeySet -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTrustFrameworkKeySet Cmdlet.
+This example shows how to use the New-MgBetaTrustFrameworkKeySet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgTrustFrameworkKeySet Cmdlet
+### Example 2: Using the New-MgBetaTrustFrameworkKeySet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "keyset1"
 }
-New-MgTrustFrameworkKeySet -BodyParameter $params
+New-MgBetaTrustFrameworkKeySet -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTrustFrameworkKeySet Cmdlet.
+This example shows how to use the New-MgBetaTrustFrameworkKeySet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -101,7 +101,7 @@ trustFrameworkKeySet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
 Parameter Sets: Create
 Aliases:
 
@@ -133,7 +133,7 @@ A collection of the keys.
 To construct, please use Get-Help -Online and see NOTES section for KEYS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -180,11 +180,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
 
 ## NOTES
 

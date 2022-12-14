@@ -1,396 +1,396 @@
 ---
-Module Name: Microsoft.Graph.Mail
+Module Name: Microsoft.Graph.Beta.Mail
 Module Guid: 6dd54432-f738-4ddb-95a3-0b484a31ab73
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.mail
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Mail Module
+# Microsoft.Graph.Beta.Mail Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Mail Cmdlets
-### [Get-MgUserInferenceClassification](Get-MgUserInferenceClassification.md)
+## Microsoft.Graph.Beta.Mail Cmdlets
+### [Get-MgBetaUserInferenceClassification](Get-MgBetaUserInferenceClassification.md)
 Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 
-### [Get-MgUserInferenceClassificationOverride](Get-MgUserInferenceClassificationOverride.md)
+### [Get-MgBetaUserInferenceClassificationOverride](Get-MgBetaUserInferenceClassificationOverride.md)
 A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
 Read-only.
 Nullable.
 
-### [Get-MgUserMailFolder](Get-MgUserMailFolder.md)
+### [Get-MgBetaUserMailFolder](Get-MgBetaUserMailFolder.md)
 The user's mail folders.
 Read-only.
 Nullable.
 
-### [Get-MgUserMailFolderChildFolder](Get-MgUserMailFolderChildFolder.md)
+### [Get-MgBetaUserMailFolderChildFolder](Get-MgBetaUserMailFolderChildFolder.md)
 The collection of child folders in the mailFolder.
 
-### [Get-MgUserMailFolderChildFolderMessage](Get-MgUserMailFolderChildFolderMessage.md)
+### [Get-MgBetaUserMailFolderChildFolderMessage](Get-MgBetaUserMailFolderChildFolderMessage.md)
 The collection of messages in the mailFolder.
 
-### [Get-MgUserMailFolderChildFolderMessageAttachment](Get-MgUserMailFolderChildFolderMessageAttachment.md)
+### [Get-MgBetaUserMailFolderChildFolderMessageAttachment](Get-MgBetaUserMailFolderChildFolderMessageAttachment.md)
 The fileAttachment and itemAttachment attachments for the message.
 
-### [Get-MgUserMailFolderChildFolderMessageContent](Get-MgUserMailFolderChildFolderMessageContent.md)
+### [Get-MgBetaUserMailFolderChildFolderMessageContent](Get-MgBetaUserMailFolderChildFolderMessageContent.md)
 Get media content for the navigation property messages from users
 
-### [Get-MgUserMailFolderChildFolderMessageExtension](Get-MgUserMailFolderChildFolderMessageExtension.md)
+### [Get-MgBetaUserMailFolderChildFolderMessageExtension](Get-MgBetaUserMailFolderChildFolderMessageExtension.md)
 The collection of open extensions defined for the message.
 Nullable.
 
-### [Get-MgUserMailFolderChildFolderMessageMention](Get-MgUserMailFolderChildFolderMessageMention.md)
+### [Get-MgBetaUserMailFolderChildFolderMessageMention](Get-MgBetaUserMailFolderChildFolderMessageMention.md)
 A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest.
 By default, a GET /messages does not return this property unless you apply $expand on the property.
 
-### [Get-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](Get-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
+### [Get-MgBetaUserMailFolderChildFolderMessageMultiValueExtendedProperty](Get-MgBetaUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the message.
 Nullable.
 
-### [Get-MgUserMailFolderChildFolderMessageRule](Get-MgUserMailFolderChildFolderMessageRule.md)
+### [Get-MgBetaUserMailFolderChildFolderMessageRule](Get-MgBetaUserMailFolderChildFolderMessageRule.md)
 The collection of rules that apply to the user's Inbox folder.
 
-### [Get-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](Get-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
+### [Get-MgBetaUserMailFolderChildFolderMessageSingleValueExtendedProperty](Get-MgBetaUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the message.
 Nullable.
 
-### [Get-MgUserMailFolderChildFolderMultiValueExtendedProperty](Get-MgUserMailFolderChildFolderMultiValueExtendedProperty.md)
+### [Get-MgBetaUserMailFolderChildFolderMultiValueExtendedProperty](Get-MgBetaUserMailFolderChildFolderMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the mailFolder.
 Read-only.
 Nullable.
 
-### [Get-MgUserMailFolderChildFolderSingleValueExtendedProperty](Get-MgUserMailFolderChildFolderSingleValueExtendedProperty.md)
+### [Get-MgBetaUserMailFolderChildFolderSingleValueExtendedProperty](Get-MgBetaUserMailFolderChildFolderSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the mailFolder.
 Read-only.
 Nullable.
 
-### [Get-MgUserMailFolderChildFolderUserConfiguration](Get-MgUserMailFolderChildFolderUserConfiguration.md)
+### [Get-MgBetaUserMailFolderChildFolderUserConfiguration](Get-MgBetaUserMailFolderChildFolderUserConfiguration.md)
 Get userConfigurations from users
 
-### [Get-MgUserMailFolderMessage](Get-MgUserMailFolderMessage.md)
+### [Get-MgBetaUserMailFolderMessage](Get-MgBetaUserMailFolderMessage.md)
 The collection of messages in the mailFolder.
 
-### [Get-MgUserMailFolderMessageAttachment](Get-MgUserMailFolderMessageAttachment.md)
+### [Get-MgBetaUserMailFolderMessageAttachment](Get-MgBetaUserMailFolderMessageAttachment.md)
 The fileAttachment and itemAttachment attachments for the message.
 
-### [Get-MgUserMailFolderMessageContent](Get-MgUserMailFolderMessageContent.md)
+### [Get-MgBetaUserMailFolderMessageContent](Get-MgBetaUserMailFolderMessageContent.md)
 Get media content for the navigation property messages from users
 
-### [Get-MgUserMailFolderMessageExtension](Get-MgUserMailFolderMessageExtension.md)
+### [Get-MgBetaUserMailFolderMessageExtension](Get-MgBetaUserMailFolderMessageExtension.md)
 The collection of open extensions defined for the message.
 Nullable.
 
-### [Get-MgUserMailFolderMessageMention](Get-MgUserMailFolderMessageMention.md)
+### [Get-MgBetaUserMailFolderMessageMention](Get-MgBetaUserMailFolderMessageMention.md)
 A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest.
 By default, a GET /messages does not return this property unless you apply $expand on the property.
 
-### [Get-MgUserMailFolderMessageMultiValueExtendedProperty](Get-MgUserMailFolderMessageMultiValueExtendedProperty.md)
+### [Get-MgBetaUserMailFolderMessageMultiValueExtendedProperty](Get-MgBetaUserMailFolderMessageMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the message.
 Nullable.
 
-### [Get-MgUserMailFolderMessageRule](Get-MgUserMailFolderMessageRule.md)
+### [Get-MgBetaUserMailFolderMessageRule](Get-MgBetaUserMailFolderMessageRule.md)
 The collection of rules that apply to the user's Inbox folder.
 
-### [Get-MgUserMailFolderMessageSingleValueExtendedProperty](Get-MgUserMailFolderMessageSingleValueExtendedProperty.md)
+### [Get-MgBetaUserMailFolderMessageSingleValueExtendedProperty](Get-MgBetaUserMailFolderMessageSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the message.
 Nullable.
 
-### [Get-MgUserMailFolderMultiValueExtendedProperty](Get-MgUserMailFolderMultiValueExtendedProperty.md)
+### [Get-MgBetaUserMailFolderMultiValueExtendedProperty](Get-MgBetaUserMailFolderMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the mailFolder.
 Read-only.
 Nullable.
 
-### [Get-MgUserMailFolderSingleValueExtendedProperty](Get-MgUserMailFolderSingleValueExtendedProperty.md)
+### [Get-MgBetaUserMailFolderSingleValueExtendedProperty](Get-MgBetaUserMailFolderSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the mailFolder.
 Read-only.
 Nullable.
 
-### [Get-MgUserMailFolderUserConfiguration](Get-MgUserMailFolderUserConfiguration.md)
+### [Get-MgBetaUserMailFolderUserConfiguration](Get-MgBetaUserMailFolderUserConfiguration.md)
 Get userConfigurations from users
 
-### [Get-MgUserMessage](Get-MgUserMessage.md)
+### [Get-MgBetaUserMessage](Get-MgBetaUserMessage.md)
 The messages in a mailbox or folder.
 Read-only.
 Nullable.
 
-### [Get-MgUserMessageAttachment](Get-MgUserMessageAttachment.md)
+### [Get-MgBetaUserMessageAttachment](Get-MgBetaUserMessageAttachment.md)
 The fileAttachment and itemAttachment attachments for the message.
 
-### [Get-MgUserMessageContent](Get-MgUserMessageContent.md)
+### [Get-MgBetaUserMessageContent](Get-MgBetaUserMessageContent.md)
 Get media content for the navigation property messages from users
 
-### [Get-MgUserMessageExtension](Get-MgUserMessageExtension.md)
+### [Get-MgBetaUserMessageExtension](Get-MgBetaUserMessageExtension.md)
 The collection of open extensions defined for the message.
 Nullable.
 
-### [Get-MgUserMessageMention](Get-MgUserMessageMention.md)
+### [Get-MgBetaUserMessageMention](Get-MgBetaUserMessageMention.md)
 A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest.
 By default, a GET /messages does not return this property unless you apply $expand on the property.
 
-### [Get-MgUserMessageMultiValueExtendedProperty](Get-MgUserMessageMultiValueExtendedProperty.md)
+### [Get-MgBetaUserMessageMultiValueExtendedProperty](Get-MgBetaUserMessageMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the message.
 Nullable.
 
-### [Get-MgUserMessageSingleValueExtendedProperty](Get-MgUserMessageSingleValueExtendedProperty.md)
+### [Get-MgBetaUserMessageSingleValueExtendedProperty](Get-MgBetaUserMessageSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the message.
 Nullable.
 
-### [New-MgUserInferenceClassificationOverride](New-MgUserInferenceClassificationOverride.md)
+### [New-MgBetaUserInferenceClassificationOverride](New-MgBetaUserInferenceClassificationOverride.md)
 Create a focused Inbox override for a sender identified by an SMTP address.
 Future messages from that SMTP address will be consistently classified\nas specified in the override.
 
-### [New-MgUserMailFolder](New-MgUserMailFolder.md)
+### [New-MgBetaUserMailFolder](New-MgBetaUserMailFolder.md)
 Use this API to create a new mail folder in the root folder of the user's mailbox.
 If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
-### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
+### [New-MgBetaUserMailFolderChildFolder](New-MgBetaUserMailFolderChildFolder.md)
 Use this API to create a new child mailFolder.
 If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
-### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
+### [New-MgBetaUserMailFolderChildFolderMessage](New-MgBetaUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
 
-### [New-MgUserMailFolderChildFolderMessageAttachment](New-MgUserMailFolderChildFolderMessageAttachment.md)
+### [New-MgBetaUserMailFolderChildFolderMessageAttachment](New-MgBetaUserMailFolderChildFolderMessageAttachment.md)
 Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
-### [New-MgUserMailFolderChildFolderMessageExtension](New-MgUserMailFolderChildFolderMessageExtension.md)
+### [New-MgBetaUserMailFolderChildFolderMessageExtension](New-MgBetaUserMailFolderChildFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserMailFolderChildFolderMessageMention](New-MgUserMailFolderChildFolderMessageMention.md)
+### [New-MgBetaUserMailFolderChildFolderMessageMention](New-MgBetaUserMailFolderChildFolderMessageMention.md)
 Create new navigation property to mentions for users
 
-### [New-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](New-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
+### [New-MgBetaUserMailFolderChildFolderMessageMultiValueExtendedProperty](New-MgBetaUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserMailFolderChildFolderMessageRule](New-MgUserMailFolderChildFolderMessageRule.md)
+### [New-MgBetaUserMailFolderChildFolderMessageRule](New-MgBetaUserMailFolderChildFolderMessageRule.md)
 Create new navigation property to messageRules for users
 
-### [New-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](New-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
+### [New-MgBetaUserMailFolderChildFolderMessageSingleValueExtendedProperty](New-MgBetaUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserMailFolderChildFolderMultiValueExtendedProperty](New-MgUserMailFolderChildFolderMultiValueExtendedProperty.md)
+### [New-MgBetaUserMailFolderChildFolderMultiValueExtendedProperty](New-MgBetaUserMailFolderChildFolderMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserMailFolderChildFolderSingleValueExtendedProperty](New-MgUserMailFolderChildFolderSingleValueExtendedProperty.md)
+### [New-MgBetaUserMailFolderChildFolderSingleValueExtendedProperty](New-MgBetaUserMailFolderChildFolderSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserMailFolderMessage](New-MgUserMailFolderMessage.md)
+### [New-MgBetaUserMailFolderMessage](New-MgBetaUserMailFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
 
-### [New-MgUserMailFolderMessageAttachment](New-MgUserMailFolderMessageAttachment.md)
+### [New-MgBetaUserMailFolderMessageAttachment](New-MgBetaUserMailFolderMessageAttachment.md)
 Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
-### [New-MgUserMailFolderMessageExtension](New-MgUserMailFolderMessageExtension.md)
+### [New-MgBetaUserMailFolderMessageExtension](New-MgBetaUserMailFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserMailFolderMessageMention](New-MgUserMailFolderMessageMention.md)
+### [New-MgBetaUserMailFolderMessageMention](New-MgBetaUserMailFolderMessageMention.md)
 Create new navigation property to mentions for users
 
-### [New-MgUserMailFolderMessageMultiValueExtendedProperty](New-MgUserMailFolderMessageMultiValueExtendedProperty.md)
+### [New-MgBetaUserMailFolderMessageMultiValueExtendedProperty](New-MgBetaUserMailFolderMessageMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserMailFolderMessageRule](New-MgUserMailFolderMessageRule.md)
+### [New-MgBetaUserMailFolderMessageRule](New-MgBetaUserMailFolderMessageRule.md)
 Create new navigation property to messageRules for users
 
-### [New-MgUserMailFolderMessageSingleValueExtendedProperty](New-MgUserMailFolderMessageSingleValueExtendedProperty.md)
+### [New-MgBetaUserMailFolderMessageSingleValueExtendedProperty](New-MgBetaUserMailFolderMessageSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserMailFolderMultiValueExtendedProperty](New-MgUserMailFolderMultiValueExtendedProperty.md)
+### [New-MgBetaUserMailFolderMultiValueExtendedProperty](New-MgBetaUserMailFolderMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserMailFolderSingleValueExtendedProperty](New-MgUserMailFolderSingleValueExtendedProperty.md)
+### [New-MgBetaUserMailFolderSingleValueExtendedProperty](New-MgBetaUserMailFolderSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserMessage](New-MgUserMessage.md)
+### [New-MgBetaUserMessage](New-MgBetaUserMessage.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserMessageAttachment](New-MgUserMessageAttachment.md)
+### [New-MgBetaUserMessageAttachment](New-MgBetaUserMessageAttachment.md)
 Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
-### [New-MgUserMessageExtension](New-MgUserMessageExtension.md)
+### [New-MgBetaUserMessageExtension](New-MgBetaUserMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserMessageMention](New-MgUserMessageMention.md)
+### [New-MgBetaUserMessageMention](New-MgBetaUserMessageMention.md)
 Create new navigation property to mentions for users
 
-### [New-MgUserMessageMultiValueExtendedProperty](New-MgUserMessageMultiValueExtendedProperty.md)
+### [New-MgBetaUserMessageMultiValueExtendedProperty](New-MgBetaUserMessageMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserMessageSingleValueExtendedProperty](New-MgUserMessageSingleValueExtendedProperty.md)
+### [New-MgBetaUserMessageSingleValueExtendedProperty](New-MgBetaUserMessageSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [Remove-MgUserInferenceClassificationOverride](Remove-MgUserInferenceClassificationOverride.md)
+### [Remove-MgBetaUserInferenceClassificationOverride](Remove-MgBetaUserInferenceClassificationOverride.md)
 Delete navigation property overrides for users
 
-### [Remove-MgUserMailFolder](Remove-MgUserMailFolder.md)
+### [Remove-MgBetaUserMailFolder](Remove-MgBetaUserMailFolder.md)
 Delete navigation property mailFolders for users
 
-### [Remove-MgUserMailFolderChildFolder](Remove-MgUserMailFolderChildFolder.md)
+### [Remove-MgBetaUserMailFolderChildFolder](Remove-MgBetaUserMailFolderChildFolder.md)
 Delete navigation property childFolders for users
 
-### [Remove-MgUserMailFolderChildFolderMessage](Remove-MgUserMailFolderChildFolderMessage.md)
+### [Remove-MgBetaUserMailFolderChildFolderMessage](Remove-MgBetaUserMailFolderChildFolderMessage.md)
 Delete navigation property messages for users
 
-### [Remove-MgUserMailFolderChildFolderMessageAttachment](Remove-MgUserMailFolderChildFolderMessageAttachment.md)
+### [Remove-MgBetaUserMailFolderChildFolderMessageAttachment](Remove-MgBetaUserMailFolderChildFolderMessageAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserMailFolderChildFolderMessageExtension](Remove-MgUserMailFolderChildFolderMessageExtension.md)
+### [Remove-MgBetaUserMailFolderChildFolderMessageExtension](Remove-MgBetaUserMailFolderChildFolderMessageExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserMailFolderChildFolderMessageMention](Remove-MgUserMailFolderChildFolderMessageMention.md)
+### [Remove-MgBetaUserMailFolderChildFolderMessageMention](Remove-MgBetaUserMailFolderChildFolderMessageMention.md)
 Delete navigation property mentions for users
 
-### [Remove-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](Remove-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserMailFolderChildFolderMessageMultiValueExtendedProperty](Remove-MgBetaUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserMailFolderChildFolderMessageRule](Remove-MgUserMailFolderChildFolderMessageRule.md)
+### [Remove-MgBetaUserMailFolderChildFolderMessageRule](Remove-MgBetaUserMailFolderChildFolderMessageRule.md)
 Delete navigation property messageRules for users
 
-### [Remove-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](Remove-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserMailFolderChildFolderMessageSingleValueExtendedProperty](Remove-MgBetaUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserMailFolderChildFolderMultiValueExtendedProperty](Remove-MgUserMailFolderChildFolderMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserMailFolderChildFolderMultiValueExtendedProperty](Remove-MgBetaUserMailFolderChildFolderMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserMailFolderChildFolderSingleValueExtendedProperty](Remove-MgUserMailFolderChildFolderSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserMailFolderChildFolderSingleValueExtendedProperty](Remove-MgBetaUserMailFolderChildFolderSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserMailFolderMessage](Remove-MgUserMailFolderMessage.md)
+### [Remove-MgBetaUserMailFolderMessage](Remove-MgBetaUserMailFolderMessage.md)
 Delete navigation property messages for users
 
-### [Remove-MgUserMailFolderMessageAttachment](Remove-MgUserMailFolderMessageAttachment.md)
+### [Remove-MgBetaUserMailFolderMessageAttachment](Remove-MgBetaUserMailFolderMessageAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserMailFolderMessageExtension](Remove-MgUserMailFolderMessageExtension.md)
+### [Remove-MgBetaUserMailFolderMessageExtension](Remove-MgBetaUserMailFolderMessageExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserMailFolderMessageMention](Remove-MgUserMailFolderMessageMention.md)
+### [Remove-MgBetaUserMailFolderMessageMention](Remove-MgBetaUserMailFolderMessageMention.md)
 Delete navigation property mentions for users
 
-### [Remove-MgUserMailFolderMessageMultiValueExtendedProperty](Remove-MgUserMailFolderMessageMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserMailFolderMessageMultiValueExtendedProperty](Remove-MgBetaUserMailFolderMessageMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserMailFolderMessageRule](Remove-MgUserMailFolderMessageRule.md)
+### [Remove-MgBetaUserMailFolderMessageRule](Remove-MgBetaUserMailFolderMessageRule.md)
 Delete navigation property messageRules for users
 
-### [Remove-MgUserMailFolderMessageSingleValueExtendedProperty](Remove-MgUserMailFolderMessageSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserMailFolderMessageSingleValueExtendedProperty](Remove-MgBetaUserMailFolderMessageSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserMailFolderMultiValueExtendedProperty](Remove-MgUserMailFolderMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserMailFolderMultiValueExtendedProperty](Remove-MgBetaUserMailFolderMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserMailFolderSingleValueExtendedProperty](Remove-MgUserMailFolderSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserMailFolderSingleValueExtendedProperty](Remove-MgBetaUserMailFolderSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserMessage](Remove-MgUserMessage.md)
+### [Remove-MgBetaUserMessage](Remove-MgBetaUserMessage.md)
 Delete navigation property messages for users
 
-### [Remove-MgUserMessageAttachment](Remove-MgUserMessageAttachment.md)
+### [Remove-MgBetaUserMessageAttachment](Remove-MgBetaUserMessageAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserMessageExtension](Remove-MgUserMessageExtension.md)
+### [Remove-MgBetaUserMessageExtension](Remove-MgBetaUserMessageExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserMessageMention](Remove-MgUserMessageMention.md)
+### [Remove-MgBetaUserMessageMention](Remove-MgBetaUserMessageMention.md)
 Delete navigation property mentions for users
 
-### [Remove-MgUserMessageMultiValueExtendedProperty](Remove-MgUserMessageMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserMessageMultiValueExtendedProperty](Remove-MgBetaUserMessageMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserMessageSingleValueExtendedProperty](Remove-MgUserMessageSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserMessageSingleValueExtendedProperty](Remove-MgBetaUserMessageSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Set-MgUserMailFolderChildFolderMessageContent](Set-MgUserMailFolderChildFolderMessageContent.md)
+### [Set-MgBetaUserMailFolderChildFolderMessageContent](Set-MgBetaUserMailFolderChildFolderMessageContent.md)
 Update media content for the navigation property messages in users
 
-### [Set-MgUserMailFolderMessageContent](Set-MgUserMailFolderMessageContent.md)
+### [Set-MgBetaUserMailFolderMessageContent](Set-MgBetaUserMailFolderMessageContent.md)
 Update media content for the navigation property messages in users
 
-### [Set-MgUserMessageContent](Set-MgUserMessageContent.md)
+### [Set-MgBetaUserMessageContent](Set-MgBetaUserMessageContent.md)
 Update media content for the navigation property messages in users
 
-### [Update-MgUserInferenceClassification](Update-MgUserInferenceClassification.md)
+### [Update-MgBetaUserInferenceClassification](Update-MgBetaUserInferenceClassification.md)
 Update the navigation property inferenceClassification in users
 
-### [Update-MgUserInferenceClassificationOverride](Update-MgUserInferenceClassificationOverride.md)
+### [Update-MgBetaUserInferenceClassificationOverride](Update-MgBetaUserInferenceClassificationOverride.md)
 Update the navigation property overrides in users
 
-### [Update-MgUserMailFolder](Update-MgUserMailFolder.md)
+### [Update-MgBetaUserMailFolder](Update-MgBetaUserMailFolder.md)
 Update the navigation property mailFolders in users
 
-### [Update-MgUserMailFolderChildFolder](Update-MgUserMailFolderChildFolder.md)
+### [Update-MgBetaUserMailFolderChildFolder](Update-MgBetaUserMailFolderChildFolder.md)
 Update the navigation property childFolders in users
 
-### [Update-MgUserMailFolderChildFolderMessage](Update-MgUserMailFolderChildFolderMessage.md)
+### [Update-MgBetaUserMailFolderChildFolderMessage](Update-MgBetaUserMailFolderChildFolderMessage.md)
 Update the navigation property messages in users
 
-### [Update-MgUserMailFolderChildFolderMessageExtension](Update-MgUserMailFolderChildFolderMessageExtension.md)
+### [Update-MgBetaUserMailFolderChildFolderMessageExtension](Update-MgBetaUserMailFolderChildFolderMessageExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](Update-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
+### [Update-MgBetaUserMailFolderChildFolderMessageMultiValueExtendedProperty](Update-MgBetaUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserMailFolderChildFolderMessageRule](Update-MgUserMailFolderChildFolderMessageRule.md)
+### [Update-MgBetaUserMailFolderChildFolderMessageRule](Update-MgBetaUserMailFolderChildFolderMessageRule.md)
 Update the navigation property messageRules in users
 
-### [Update-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](Update-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
+### [Update-MgBetaUserMailFolderChildFolderMessageSingleValueExtendedProperty](Update-MgBetaUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserMailFolderChildFolderMultiValueExtendedProperty](Update-MgUserMailFolderChildFolderMultiValueExtendedProperty.md)
+### [Update-MgBetaUserMailFolderChildFolderMultiValueExtendedProperty](Update-MgBetaUserMailFolderChildFolderMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserMailFolderChildFolderSingleValueExtendedProperty](Update-MgUserMailFolderChildFolderSingleValueExtendedProperty.md)
+### [Update-MgBetaUserMailFolderChildFolderSingleValueExtendedProperty](Update-MgBetaUserMailFolderChildFolderSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserMailFolderMessage](Update-MgUserMailFolderMessage.md)
+### [Update-MgBetaUserMailFolderMessage](Update-MgBetaUserMailFolderMessage.md)
 Update the navigation property messages in users
 
-### [Update-MgUserMailFolderMessageExtension](Update-MgUserMailFolderMessageExtension.md)
+### [Update-MgBetaUserMailFolderMessageExtension](Update-MgBetaUserMailFolderMessageExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserMailFolderMessageMultiValueExtendedProperty](Update-MgUserMailFolderMessageMultiValueExtendedProperty.md)
+### [Update-MgBetaUserMailFolderMessageMultiValueExtendedProperty](Update-MgBetaUserMailFolderMessageMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserMailFolderMessageRule](Update-MgUserMailFolderMessageRule.md)
+### [Update-MgBetaUserMailFolderMessageRule](Update-MgBetaUserMailFolderMessageRule.md)
 Update the navigation property messageRules in users
 
-### [Update-MgUserMailFolderMessageSingleValueExtendedProperty](Update-MgUserMailFolderMessageSingleValueExtendedProperty.md)
+### [Update-MgBetaUserMailFolderMessageSingleValueExtendedProperty](Update-MgBetaUserMailFolderMessageSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserMailFolderMultiValueExtendedProperty](Update-MgUserMailFolderMultiValueExtendedProperty.md)
+### [Update-MgBetaUserMailFolderMultiValueExtendedProperty](Update-MgBetaUserMailFolderMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserMailFolderSingleValueExtendedProperty](Update-MgUserMailFolderSingleValueExtendedProperty.md)
+### [Update-MgBetaUserMailFolderSingleValueExtendedProperty](Update-MgBetaUserMailFolderSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserMessage](Update-MgUserMessage.md)
+### [Update-MgBetaUserMessage](Update-MgBetaUserMessage.md)
 Update the navigation property messages in users
 
-### [Update-MgUserMessageExtension](Update-MgUserMessageExtension.md)
+### [Update-MgBetaUserMessageExtension](Update-MgBetaUserMessageExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserMessageMultiValueExtendedProperty](Update-MgUserMessageMultiValueExtendedProperty.md)
+### [Update-MgBetaUserMessageMultiValueExtendedProperty](Update-MgBetaUserMessageMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserMessageSingleValueExtendedProperty](Update-MgUserMessageSingleValueExtendedProperty.md)
+### [Update-MgBetaUserMessageSingleValueExtendedProperty](Update-MgBetaUserMessageSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantdevicecompliancepolicysettingstatesummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantdevicecompliancepolicysettingstatesummary
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+# New-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
 
 ## SYNOPSIS
 Create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to deviceCompliancePolicySettingStateSummaries fo
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+New-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
  [-AdditionalProperties <Hashtable>] [-ConflictDeviceCount <Int32>] [-ErrorDeviceCount <Int32>]
  [-FailedDeviceCount <Int32>] [-Id <String>] [-IntuneAccountId <String>] [-IntuneSettingId <String>]
  [-LastRefreshedDateTime <DateTime>] [-NotApplicableDeviceCount <Int32>] [-PendingDeviceCount <Int32>]
@@ -24,7 +24,7 @@ New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+New-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
  -BodyParameter <IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -56,7 +56,7 @@ deviceCompliancePolicySettingStateSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
 Parameter Sets: Create
 Aliases:
 
@@ -340,11 +340,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
 
 ## NOTES
 

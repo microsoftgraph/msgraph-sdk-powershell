@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/new-mgwindowsupdatesresourceconnection
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/new-mgwindowsupdatesresourceconnection
 schema: 2.0.0
 ---
 
-# New-MgWindowsUpdatesResourceConnection
+# New-MgBetaWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
 Create a new operationalInsightsConnection object.
@@ -14,13 +14,13 @@ Create a new operationalInsightsConnection object.
 
 ### CreateExpanded (Default)
 ```
-New-MgWindowsUpdatesResourceConnection [-AdditionalProperties <Hashtable>] [-Id <String>] [-State <String>]
+New-MgBetaWindowsUpdatesResourceConnection [-AdditionalProperties <Hashtable>] [-Id <String>] [-State <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgWindowsUpdatesResourceConnection -BodyParameter <IMicrosoftGraphWindowsUpdatesResourceConnection>
+New-MgBetaWindowsUpdatesResourceConnection -BodyParameter <IMicrosoftGraphWindowsUpdatesResourceConnection>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,19 +29,19 @@ Create a new operationalInsightsConnection object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgWindowsUpdatesResourceConnection Cmdlet
+### Example 1: Using the New-MgBetaWindowsUpdatesResourceConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
-	"@odata.type" = "#microsoft.graph.windowsUpdates.operationalInsightsConnection"
+	"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.operationalInsightsConnection"
 	AzureSubscriptionId = "322ec614-e9c2-4cd5-a55c-5711fdecf02e"
 	AzureResourceGroupName = "target-resource-group"
 	WorkspaceName = "my-workspace"
 }
-New-MgWindowsUpdatesResourceConnection -BodyParameter $params
+New-MgBetaWindowsUpdatesResourceConnection -BodyParameter $params
 ```
 
-This example shows how to use the New-MgWindowsUpdatesResourceConnection Cmdlet.
+This example shows how to use the New-MgBetaWindowsUpdatesResourceConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -66,7 +66,7 @@ resourceConnection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
 Parameter Sets: Create
 Aliases:
 
@@ -144,17 +144,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
 
 ## NOTES
 
 ALIASES
 
-### New-MgWuResourceConnection
+### New-MgBetaWuResourceConnection
 
 COMPLEX PARAMETER PROPERTIES
 

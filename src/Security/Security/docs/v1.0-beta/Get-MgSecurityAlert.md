@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityalert
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecurityalert
 schema: 2.0.0
 ---
 
-# Get-MgSecurityAlert
+# Get-MgBetaSecurityAlert
 
 ## SYNOPSIS
 Notifications for suspicious or potential security issues in a customer’s tenant.
@@ -14,19 +14,19 @@ Notifications for suspicious or potential security issues in a customer’s tena
 
 ### List (Default)
 ```
-Get-MgSecurityAlert [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaSecurityAlert [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgSecurityAlert -AlertId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSecurityAlert -AlertId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSecurityAlert -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecurityAlert -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -35,22 +35,22 @@ Notifications for suspicious or potential security issues in a customer’s tena
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityAlert Cmdlet
+### Example 1: Using the Get-MgBetaSecurityAlert Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAlert -AlertId $alertId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAlert -AlertId $alertId
 ```
 
-This example shows how to use the Get-MgSecurityAlert Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAlert Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityAlert Cmdlet
+### Example 2: Using the Get-MgBetaSecurityAlert Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAlert
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAlert
 ```
 
-This example shows how to use the Get-MgSecurityAlert Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAlert Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlert
 
 ## NOTES
 

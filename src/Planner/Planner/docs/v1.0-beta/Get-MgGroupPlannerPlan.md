@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mggroupplannerplan
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mggroupplannerplan
 schema: 2.0.0
 ---
 
-# Get-MgGroupPlannerPlan
+# Get-MgBetaGroupPlannerPlan
 
 ## SYNOPSIS
 Read-only.
@@ -16,20 +16,20 @@ Returns the plannerPlans owned by the group.
 
 ### List1 (Default)
 ```
-Get-MgGroupPlannerPlan -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaGroupPlannerPlan -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgGroupPlannerPlan -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupPlannerPlan -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupPlannerPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupPlannerPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -40,13 +40,13 @@ Returns the plannerPlans owned by the group.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupPlannerPlan Cmdlet
+### Example 1: Using the Get-MgBetaGroupPlannerPlan Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgGroupPlannerPlan -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Planner
+Get-MgBetaGroupPlannerPlan -GroupId $groupId
 ```
 
-This example shows how to use the Get-MgGroupPlannerPlan Cmdlet.
+This example shows how to use the Get-MgBetaGroupPlannerPlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 
 ## NOTES
 

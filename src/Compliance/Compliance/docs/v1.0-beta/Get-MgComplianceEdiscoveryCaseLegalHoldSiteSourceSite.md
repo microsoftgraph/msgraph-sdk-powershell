@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycaselegalholdsitesourcesite
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycaselegalholdsitesourcesite
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseLegalHoldSiteSourceSite
+# Get-MgBetaComplianceEdiscoveryCaseLegalHoldSiteSourceSite
 
 ## SYNOPSIS
 The SharePoint site associated with the siteSource.
@@ -14,13 +14,13 @@ The SharePoint site associated with the siteSource.
 
 ### Get (Default)
 ```
-Get-MgComplianceEdiscoveryCaseLegalHoldSiteSourceSite -CaseId <String> -LegalHoldId <String>
+Get-MgBetaComplianceEdiscoveryCaseLegalHoldSiteSourceSite -CaseId <String> -LegalHoldId <String>
  -SiteSourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseLegalHoldSiteSourceSite -InputObject <IComplianceIdentity>
+Get-MgBetaComplianceEdiscoveryCaseLegalHoldSiteSourceSite -InputObject <IComplianceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSite
 
 ## NOTES
 

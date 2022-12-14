@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintprintercapability
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprintprintercapability
 schema: 2.0.0
 ---
 
-# Get-MgPrintPrinterCapability
+# Get-MgBetaPrintPrinterCapability
 
 ## SYNOPSIS
 Invoke function getCapabilities
@@ -14,12 +14,12 @@ Invoke function getCapabilities
 
 ### Get (Default)
 ```
-Get-MgPrintPrinterCapability -PrinterId <String> [<CommonParameters>]
+Get-MgBetaPrintPrinterCapability -PrinterId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrintPrinterCapability -InputObject <IDevicesCloudPrintIdentity> [<CommonParameters>]
+Get-MgBetaPrintPrinterCapability -InputObject <IDevicesCloudPrintIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,13 +27,13 @@ Invoke function getCapabilities
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintPrinterCapability Cmdlet
+### Example 1: Using the Get-MgBetaPrintPrinterCapability Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintPrinterCapability -PrinterId $printerId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintPrinterCapability -PrinterId $printerId
 ```
 
-This example shows how to use the Get-MgPrintPrinterCapability Cmdlet.
+This example shows how to use the Get-MgBetaPrintPrinterCapability Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -43,7 +43,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -74,11 +74,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterCapabilities1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrinterCapabilities1
 
 ## NOTES
 

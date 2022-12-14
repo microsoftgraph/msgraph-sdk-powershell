@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/remove-mgprintprintershareallowedgroupbyref
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/remove-mgprintprintershareallowedgroupbyref
 schema: 2.0.0
 ---
 
-# Remove-MgPrintPrinterShareAllowedGroupByRef
+# Remove-MgBetaPrintPrinterShareAllowedGroupByRef
 
 ## SYNOPSIS
 Delete ref of navigation property allowedGroups for print
@@ -14,13 +14,13 @@ Delete ref of navigation property allowedGroups for print
 
 ### Delete (Default)
 ```
-Remove-MgPrintPrinterShareAllowedGroupByRef -GroupId <String> -PrinterShareId <String> [-Id <String>]
+Remove-MgBetaPrintPrinterShareAllowedGroupByRef -GroupId <String> -PrinterShareId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPrintPrinterShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
+Remove-MgBetaPrintPrinterShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 

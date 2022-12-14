@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemanalytic
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelistitemanalytic
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemAnalytic
+# Get-MgBetaSiteListItemAnalytic
 
 ## SYNOPSIS
 Analytics about the view activities that took place on this item.
@@ -14,13 +14,13 @@ Analytics about the view activities that took place on this item.
 
 ### Get (Default)
 ```
-Get-MgSiteListItemAnalytic -ListId <String> -ListItemId <String> -SiteId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSiteListItemAnalytic -ListId <String> -ListItemId <String> -SiteId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteListItemAnalytic -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteListItemAnalytic -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemAnalytics
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemAnalytics
 
 ## NOTES
 

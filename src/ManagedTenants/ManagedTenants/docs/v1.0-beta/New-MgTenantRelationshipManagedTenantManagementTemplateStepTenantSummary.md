@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementtemplatesteptenantsummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementtemplatesteptenantsummary
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
+# New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
 
 ## SYNOPSIS
 Create new navigation property to managementTemplateStepTenantSummaries for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managementTemplateStepTenantSummaries for tena
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary [-AdditionalProperties <Hashtable>]
  [-AssignedTenantsCount <Int32>] [-CompliantTenantsCount <Int32>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-DismissedTenantsCount <Int32>] [-Id <String>]
  [-IneligibleTenantsCount <Int32>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
@@ -26,7 +26,7 @@ New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary [-Addit
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
+New-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -73,7 +73,7 @@ managementTemplateStepTenantSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
 Parameter Sets: Create
 Aliases:
 
@@ -346,11 +346,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
 
 ## NOTES
 

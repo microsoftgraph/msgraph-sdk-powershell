@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/update-mgwindowsupdatesdeploymentaudiencebyid
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/update-mgwindowsupdatesdeploymentaudiencebyid
 schema: 2.0.0
 ---
 
-# Update-MgWindowsUpdatesDeploymentAudienceById
+# Update-MgBetaWindowsUpdatesDeploymentAudienceById
 
 ## SYNOPSIS
 Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.
@@ -17,7 +17,7 @@ You can also use the method updateAudience to update the **deploymentAudience**.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId <String> [-AddExclusions <String[]>]
+Update-MgBetaWindowsUpdatesDeploymentAudienceById -DeploymentId <String> [-AddExclusions <String[]>]
  [-AdditionalProperties <Hashtable>] [-AddMembers <String[]>] [-MemberEntityType <String>]
  [-RemoveExclusions <String[]>] [-RemoveMembers <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -25,21 +25,21 @@ Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId <String> [-AddExclus
 
 ### Update
 ```
-Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId <String>
+Update-MgBetaWindowsUpdatesDeploymentAudienceById -DeploymentId <String>
  -BodyParameter <IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdentity>
+Update-MgBetaWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdentity>
+Update-MgBetaWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdentity>
  [-AddExclusions <String[]>] [-AdditionalProperties <Hashtable>] [-AddMembers <String[]>]
  [-MemberEntityType <String>] [-RemoveExclusions <String[]>] [-RemoveMembers <String[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -53,9 +53,9 @@ You can also use the method updateAudience to update the **deploymentAudience**.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgWindowsUpdatesDeploymentAudienceById Cmdlet
+### Example 1: Using the Update-MgBetaWindowsUpdatesDeploymentAudienceById Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	MemberEntityType = "String"
 	AddMembers = @(
@@ -71,10 +71,10 @@ $params = @{
 		"String"
 	)
 }
-Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId $deploymentId -BodyParameter $params
+Update-MgBetaWindowsUpdatesDeploymentAudienceById -DeploymentId $deploymentId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgWindowsUpdatesDeploymentAudienceById Cmdlet.
+This example shows how to use the Update-MgBetaWindowsUpdatesDeploymentAudienceById Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -160,7 +160,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -267,9 +267,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -279,7 +279,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgWuDeploymentAudienceGraphBPreId
+### Update-MgBetaWuDeploymentAudienceGraphBPreId
 
 COMPLEX PARAMETER PROPERTIES
 

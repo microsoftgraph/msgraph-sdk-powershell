@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceextension
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceextension
 schema: 2.0.0
 ---
 
-# Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension
+# Remove-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension
 
 ## SYNOPSIS
 Delete navigation property extensions for users
@@ -14,14 +14,14 @@ Delete navigation property extensions for users
 
 ### Delete (Default)
 ```
-Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension -ExtensionId <String>
+Remove-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension -ExtensionId <String>
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension
+Remove-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension
  -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -160,7 +160,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

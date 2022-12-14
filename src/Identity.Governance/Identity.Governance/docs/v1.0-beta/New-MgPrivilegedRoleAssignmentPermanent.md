@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedroleassignmentpermanent
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedroleassignmentpermanent
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedRoleAssignmentPermanent
+# New-MgBetaPrivilegedRoleAssignmentPermanent
 
 ## SYNOPSIS
 Make the role assignment permanent.
@@ -14,28 +14,28 @@ Make the role assignment permanent.
 
 ### MakeExpanded (Default)
 ```
-New-MgPrivilegedRoleAssignmentPermanent -PrivilegedRoleAssignmentId <String>
+New-MgBetaPrivilegedRoleAssignmentPermanent -PrivilegedRoleAssignmentId <String>
  [-AdditionalProperties <Hashtable>] [-Reason <String>] [-TicketNumber <String>] [-TicketSystem <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Make
 ```
-New-MgPrivilegedRoleAssignmentPermanent -PrivilegedRoleAssignmentId <String>
+New-MgBetaPrivilegedRoleAssignmentPermanent -PrivilegedRoleAssignmentId <String>
  -BodyParameter <IPaths1Ao8IriPrivilegedroleassignmentsPrivilegedroleassignmentIdMicrosoftGraphMakepermanentPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MakeViaIdentity
 ```
-New-MgPrivilegedRoleAssignmentPermanent -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedRoleAssignmentPermanent -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1Ao8IriPrivilegedroleassignmentsPrivilegedroleassignmentIdMicrosoftGraphMakepermanentPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MakeViaIdentityExpanded
 ```
-New-MgPrivilegedRoleAssignmentPermanent -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedRoleAssignmentPermanent -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Reason <String>] [-TicketNumber <String>] [-TicketSystem <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,18 +45,18 @@ Make the role assignment permanent.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPrivilegedRoleAssignmentPermanent Cmdlet
+### Example 1: Using the New-MgBetaPrivilegedRoleAssignmentPermanent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	Reason = "reason-value"
 	TicketNumber = "ticketNumber-value"
 	TicketSystem = "ticketSystem-value"
 }
-New-MgPrivilegedRoleAssignmentPermanent -PrivilegedRoleAssignmentId $privilegedRoleAssignmentId -BodyParameter $params
+New-MgBetaPrivilegedRoleAssignmentPermanent -PrivilegedRoleAssignmentId $privilegedRoleAssignmentId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedRoleAssignmentPermanent Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedRoleAssignmentPermanent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Ao8IriPrivilegedroleassignmentsPrivilegedroleassignmentIdMicrosoftGraphMakepermanentPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ao8IriPrivilegedroleassignmentsPrivilegedroleassignmentIdMicrosoftGraphMakepermanentPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Make, MakeViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: MakeViaIdentity, MakeViaIdentityExpanded
 Aliases:
 
@@ -204,13 +204,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Ao8IriPrivilegedroleassignmentsPrivilegedroleassignmentIdMicrosoftGraphMakepermanentPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ao8IriPrivilegedroleassignmentsPrivilegedroleassignmentIdMicrosoftGraphMakepermanentPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## NOTES
 

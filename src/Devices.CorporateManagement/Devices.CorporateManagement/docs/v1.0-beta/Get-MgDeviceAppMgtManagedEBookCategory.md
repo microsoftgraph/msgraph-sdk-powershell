@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmanagedebookcategory
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmanagedebookcategory
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtManagedEBookCategory
+# Get-MgBetaDeviceAppMgtManagedEBookCategory
 
 ## SYNOPSIS
 The mobile eBook categories.
@@ -14,38 +14,38 @@ The mobile eBook categories.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtManagedEBookCategory [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDeviceAppMgtManagedEBookCategory [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtManagedEBookCategory -ManagedEBookCategoryId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtManagedEBookCategory -ManagedEBookCategoryId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgDeviceAppMgtManagedEBookCategory -ManagedEBookCategoryId <String> -ManagedEBookId <String>
+Get-MgBetaDeviceAppMgtManagedEBookCategory -ManagedEBookCategoryId <String> -ManagedEBookId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgDeviceAppMgtManagedEBookCategory -ManagedEBookId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtManagedEBookCategory -ManagedEBookId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -259,17 +259,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookCategory
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementManagedEBookCategory
+### Get-MgBetaDeviceAppManagementManagedEBookCategory
 
 COMPLEX PARAMETER PROPERTIES
 

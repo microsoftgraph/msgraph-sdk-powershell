@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantconditionalaccesspolicycoverage
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantconditionalaccesspolicycoverage
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+# Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
 
 ## SYNOPSIS
 Update the navigation property conditionalAccessPolicyCoverages in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property conditionalAccessPolicyCoverages in tenantRelatio
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
  -ConditionalAccessPolicyCoverageId <String> [-AdditionalProperties <Hashtable>]
  [-ConditionalAccessPolicyState <String>] [-Id <String>] [-LatestPolicyModifiedDateTime <DateTime>]
  [-RequiresDeviceCompliance] [-TenantDisplayName <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
  -ConditionalAccessPolicyCoverageId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -31,14 +31,14 @@ Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-ConditionalAccessPolicyState <String>] [-Id <String>]
  [-LatestPolicyModifiedDateTime <DateTime>] [-RequiresDeviceCompliance] [-TenantDisplayName <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -71,7 +71,7 @@ conditionalAccessPolicyCoverage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -249,9 +249,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
 
 ## OUTPUTS
 

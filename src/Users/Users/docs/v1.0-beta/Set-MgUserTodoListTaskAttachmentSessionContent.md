@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/set-mgusertodolisttaskattachmentsessioncontent
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/set-mgusertodolisttaskattachmentsessioncontent
 schema: 2.0.0
 ---
 
-# Set-MgUserTodoListTaskAttachmentSessionContent
+# Set-MgBetaUserTodoListTaskAttachmentSessionContent
 
 ## SYNOPSIS
 The content streams that are uploaded.
@@ -14,14 +14,14 @@ The content streams that are uploaded.
 
 ### Set (Default)
 ```
-Set-MgUserTodoListTaskAttachmentSessionContent -AttachmentSessionId <String> -TodoTaskId <String>
+Set-MgBetaUserTodoListTaskAttachmentSessionContent -AttachmentSessionId <String> -TodoTaskId <String>
  -TodoTaskListId <String> -UserId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgUserTodoListTaskAttachmentSessionContent -InputObject <IUsersIdentity> -InFile <String>
+Set-MgBetaUserTodoListTaskAttachmentSessionContent -InputObject <IUsersIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -191,7 +191,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ### System.IO.Stream
 

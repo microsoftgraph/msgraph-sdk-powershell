@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/invoke-mgforcedomaindelete
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/invoke-mgforcedomaindelete
 schema: 2.0.0
 ---
 
-# Invoke-MgForceDomainDelete
+# Invoke-MgBetaForceDomainDelete
 
 ## SYNOPSIS
 Deletes a domain using an asynchronous operation.
@@ -18,27 +18,27 @@ If the domain was successfully deleted, a 404 HTTP response code will be returne
 
 ### ForceExpanded (Default)
 ```
-Invoke-MgForceDomainDelete -DomainId <String> [-AdditionalProperties <Hashtable>] [-DisableUserAccounts]
+Invoke-MgBetaForceDomainDelete -DomainId <String> [-AdditionalProperties <Hashtable>] [-DisableUserAccounts]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Force
 ```
-Invoke-MgForceDomainDelete -DomainId <String>
+Invoke-MgBetaForceDomainDelete -DomainId <String>
  -BodyParameter <IPathsUasdopDomainsDomainIdMicrosoftGraphForcedeletePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForceViaIdentity
 ```
-Invoke-MgForceDomainDelete -InputObject <IIdentityDirectoryManagementIdentity>
+Invoke-MgBetaForceDomainDelete -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPathsUasdopDomainsDomainIdMicrosoftGraphForcedeletePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForceViaIdentityExpanded
 ```
-Invoke-MgForceDomainDelete -InputObject <IIdentityDirectoryManagementIdentity>
+Invoke-MgBetaForceDomainDelete -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisableUserAccounts] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -52,16 +52,16 @@ If the domain was successfully deleted, a 404 HTTP response code will be returne
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgForceDomainDelete Cmdlet
+### Example 1: Using the Invoke-MgBetaForceDomainDelete Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	DisableUserAccounts = $true
 }
-Invoke-MgForceDomainDelete -DomainId $domainId -BodyParameter $params
+Invoke-MgBetaForceDomainDelete -DomainId $domainId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgForceDomainDelete Cmdlet.
+This example shows how to use the Invoke-MgBetaForceDomainDelete Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsUasdopDomainsDomainIdMicrosoftGraphForcedeletePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsUasdopDomainsDomainIdMicrosoftGraphForcedeletePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Force, ForceViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: ForceViaIdentity, ForceViaIdentityExpanded
 Aliases:
 
@@ -194,9 +194,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsUasdopDomainsDomainIdMicrosoftGraphForcedeletePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsUasdopDomainsDomainIdMicrosoftGraphForcedeletePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

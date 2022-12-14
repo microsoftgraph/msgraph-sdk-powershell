@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportemailappusageversionusercount
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportemailappusageversionusercount
 schema: 2.0.0
 ---
 
-# Get-MgReportEmailAppUsageVersionUserCount
+# Get-MgBetaReportEmailAppUsageVersionUserCount
 
 ## SYNOPSIS
 Invoke function getEmailAppUsageVersionsUserCounts
@@ -14,12 +14,12 @@ Invoke function getEmailAppUsageVersionsUserCounts
 
 ### Get1 (Default)
 ```
-Get-MgReportEmailAppUsageVersionUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportEmailAppUsageVersionUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgReportEmailAppUsageVersionUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportEmailAppUsageVersionUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

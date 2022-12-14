@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgbulkreprovisionusermanageddevicecloudpc
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgbulkreprovisionusermanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgBulkReprovisionUserManagedDeviceCloudPc
+# Invoke-MgBetaBulkReprovisionUserManagedDeviceCloudPc
 
 ## SYNOPSIS
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
@@ -14,27 +14,27 @@ Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 
 ### BulkExpanded (Default)
 ```
-Invoke-MgBulkReprovisionUserManagedDeviceCloudPc -UserId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaBulkReprovisionUserManagedDeviceCloudPc -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ManagedDeviceIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Bulk
 ```
-Invoke-MgBulkReprovisionUserManagedDeviceCloudPc -UserId <String>
+Invoke-MgBetaBulkReprovisionUserManagedDeviceCloudPc -UserId <String>
  -BodyParameter <IPaths1Ue24DiUsersUserIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### BulkViaIdentity
 ```
-Invoke-MgBulkReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaBulkReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Ue24DiUsersUserIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### BulkViaIdentityExpanded
 ```
-Invoke-MgBulkReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaBulkReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ManagedDeviceIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Ue24DiUsersUserIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ue24DiUsersUserIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Bulk, BulkViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: BulkViaIdentity, BulkViaIdentityExpanded
 Aliases:
 
@@ -158,19 +158,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Ue24DiUsersUserIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ue24DiUsersUserIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
 
 ## NOTES
 
 ALIASES
 
-### Invoke-MgBulkUserManagedDeviceReprovisionCloudPc
+### Invoke-MgBetaBulkUserManagedDeviceReprovisionCloudPc
 
 COMPLEX PARAMETER PROPERTIES
 

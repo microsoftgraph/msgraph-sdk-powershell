@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mgsitelistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/remove-mgsitelistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# Remove-MgSiteListItemDocumentSetVersion
+# Remove-MgBetaSiteListItemDocumentSetVersion
 
 ## SYNOPSIS
 Delete navigation property documentSetVersions for sites
@@ -14,13 +14,13 @@ Delete navigation property documentSetVersions for sites
 
 ### Delete (Default)
 ```
-Remove-MgSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -ListId <String> -ListItemId <String>
+Remove-MgBetaSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -ListId <String> -ListItemId <String>
  -SiteId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property documentSetVersions for sites
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgSiteListItemDocumentSetVersion Cmdlet
+### Example 1: Using the Remove-MgBetaSiteListItemDocumentSetVersion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Remove-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
+Import-Module Microsoft.Graph.Beta.Sites
+Remove-MgBetaSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
 ```
 
-This example shows how to use the Remove-MgSiteListItemDocumentSetVersion Cmdlet.
+This example shows how to use the Remove-MgBetaSiteListItemDocumentSetVersion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -182,7 +182,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

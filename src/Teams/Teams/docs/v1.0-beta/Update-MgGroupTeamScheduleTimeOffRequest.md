@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mggroupteamscheduletimeoffrequest
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mggroupteamscheduletimeoffrequest
 schema: 2.0.0
 ---
 
-# Update-MgGroupTeamScheduleTimeOffRequest
+# Update-MgBetaGroupTeamScheduleTimeOffRequest
 
 ## SYNOPSIS
 Update the navigation property timeOffRequests in groups
@@ -14,7 +14,7 @@ Update the navigation property timeOffRequests in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupTeamScheduleTimeOffRequest -GroupId <String> -TimeOffRequestId <String>
+Update-MgBetaGroupTeamScheduleTimeOffRequest -GroupId <String> -TimeOffRequestId <String>
  [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-EndDateTime <DateTime>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-ManagerActionMessage <String>] [-SenderMessage <String>] [-StartDateTime <DateTime>] [-State <String>]
@@ -23,19 +23,19 @@ Update-MgGroupTeamScheduleTimeOffRequest -GroupId <String> -TimeOffRequestId <St
 
 ### Update
 ```
-Update-MgGroupTeamScheduleTimeOffRequest -GroupId <String> -TimeOffRequestId <String>
+Update-MgBetaGroupTeamScheduleTimeOffRequest -GroupId <String> -TimeOffRequestId <String>
  -BodyParameter <IMicrosoftGraphTimeOffRequest1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupTeamScheduleTimeOffRequest -InputObject <ITeamsIdentity>
+Update-MgBetaGroupTeamScheduleTimeOffRequest -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphTimeOffRequest1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupTeamScheduleTimeOffRequest -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupTeamScheduleTimeOffRequest -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-EndDateTime <DateTime>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ManagerActionMessage <String>] [-SenderMessage <String>]
  [-StartDateTime <DateTime>] [-State <String>] [-TimeOffReasonId <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -84,7 +84,7 @@ timeOffRequest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffRequest1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOffRequest1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -332,9 +332,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOffRequest1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

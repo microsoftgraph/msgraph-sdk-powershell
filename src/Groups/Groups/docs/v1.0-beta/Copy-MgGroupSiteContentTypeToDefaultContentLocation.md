@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/copy-mggroupsitecontenttypetodefaultcontentlocation
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/copy-mggroupsitecontenttypetodefaultcontentlocation
 schema: 2.0.0
 ---
 
-# Copy-MgGroupSiteContentTypeToDefaultContentLocation
+# Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
 Copy a file to a default content location in a [content type][contentType].
@@ -15,28 +15,28 @@ The file can then be added as a default file or template via a POST operation.
 
 ### CopyExpanded (Default)
 ```
-Copy-MgGroupSiteContentTypeToDefaultContentLocation -ContentTypeId <String> -GroupId <String> -SiteId <String>
+Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation -ContentTypeId <String> -GroupId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
  [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy
 ```
-Copy-MgGroupSiteContentTypeToDefaultContentLocation -ContentTypeId <String> -GroupId <String> -SiteId <String>
+Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation -ContentTypeId <String> -GroupId <String> -SiteId <String>
  -BodyParameter <IPaths1He4W7OGroupsGroupIdSitesSiteIdContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
-Copy-MgGroupSiteContentTypeToDefaultContentLocation -InputObject <IGroupsIdentity>
+Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1He4W7OGroupsGroupIdSitesSiteIdContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
-Copy-MgGroupSiteContentTypeToDefaultContentLocation -InputObject <IGroupsIdentity>
+Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
  [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -49,7 +49,7 @@ The file can then be added as a default file or template via a POST operation.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	SourceFile = @{
@@ -61,10 +61,10 @@ $params = @{
 	DestinationFileName = "newname.txt"
 }
 
-Copy-MgSiteContentTypeToDefaultContentLocation -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+Copy-MgBetaSiteContentTypeToDefaultContentLocation -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
 
-This example shows how to use the Copy-MgGroupSiteContentTypeToDefaultContentLocation Cmdlet.
+This example shows how to use the Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1He4W7OGroupsGroupIdSitesSiteIdContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1He4W7OGroupsGroupIdSitesSiteIdContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Copy, CopyViaIdentity
 Aliases:
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ itemReference
 To construct, please use Get-Help -Online and see NOTES section for SOURCEFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemReference
 Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
@@ -244,9 +244,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1He4W7OGroupsGroupIdSitesSiteIdContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1He4W7OGroupsGroupIdSitesSiteIdContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

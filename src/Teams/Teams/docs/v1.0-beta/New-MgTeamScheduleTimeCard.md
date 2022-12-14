@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamscheduletimecard
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamscheduletimecard
 schema: 2.0.0
 ---
 
-# New-MgTeamScheduleTimeCard
+# New-MgBetaTeamScheduleTimeCard
 
 ## SYNOPSIS
 Create new navigation property to timeCards for teams
@@ -14,7 +14,7 @@ Create new navigation property to timeCards for teams
 
 ### CreateExpanded (Default)
 ```
-New-MgTeamScheduleTimeCard -TeamId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamScheduleTimeCard -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-Breaks <IMicrosoftGraphTimeCardBreak[]>] [-ClockInEvent <IMicrosoftGraphTimeCardEvent>]
  [-ClockOutEvent <IMicrosoftGraphTimeCardEvent>] [-ConfirmedBy <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -24,19 +24,19 @@ New-MgTeamScheduleTimeCard -TeamId <String> [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgTeamScheduleTimeCard -TeamId <String> -BodyParameter <IMicrosoftGraphTimeCard> [-Confirm] [-WhatIf]
+New-MgBetaTeamScheduleTimeCard -TeamId <String> -BodyParameter <IMicrosoftGraphTimeCard> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgTeamScheduleTimeCard -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTimeCard> [-Confirm]
+New-MgBetaTeamScheduleTimeCard -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTimeCard> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Breaks <IMicrosoftGraphTimeCardBreak[]>] [-ClockInEvent <IMicrosoftGraphTimeCardEvent>]
  [-ClockOutEvent <IMicrosoftGraphTimeCardEvent>] [-ConfirmedBy <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -49,9 +49,9 @@ Create new navigation property to timeCards for teams
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTeamScheduleTimeCard Cmdlet
+### Example 1: Using the New-MgBetaTeamScheduleTimeCard Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	OnBehalfOfUserId = "a3601044-a1b5-438e-b742-f78d01d68a67"
 	ClockInEvent = @{
@@ -84,10 +84,10 @@ $params = @{
 		}
 	)
 }
-New-MgTeamScheduleTimeCard -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamScheduleTimeCard -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTeamScheduleTimeCard Cmdlet.
+This example shows how to use the New-MgBetaTeamScheduleTimeCard Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -112,7 +112,7 @@ timeCard
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCard
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCard
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ The list of breaks associated with the timeCard.
 To construct, please use Get-Help -Online and see NOTES section for BREAKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCardBreak[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCardBreak[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -144,7 +144,7 @@ timeCardEvent
 To construct, please use Get-Help -Online and see NOTES section for CLOCKINEVENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCardEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCardEvent
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ timeCardEvent
 To construct, please use Get-Help -Online and see NOTES section for CLOCKOUTEVENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCardEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCardEvent
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -191,7 +191,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -223,7 +223,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -239,7 +239,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -255,7 +255,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for NOTES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -271,7 +271,7 @@ timeCardEntry
 To construct, please use Get-Help -Online and see NOTES section for ORIGINALENTRY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCardEntry
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCardEntry
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -363,13 +363,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCard
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCard
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCard
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCard
 
 ## NOTES
 

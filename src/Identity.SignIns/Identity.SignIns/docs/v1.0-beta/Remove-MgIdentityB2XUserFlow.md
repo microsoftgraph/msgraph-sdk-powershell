@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityb2xuserflow
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityb2xuserflow
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityB2XUserFlow
+# Remove-MgBetaIdentityB2XUserFlow
 
 ## SYNOPSIS
 Delete navigation property b2xUserFlows for identity
@@ -14,13 +14,13 @@ Delete navigation property b2xUserFlows for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityB2XUserFlow -B2XIdentityUserFlowId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaIdentityB2XUserFlow -B2XIdentityUserFlowId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityB2XUserFlow -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaIdentityB2XUserFlow -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property b2xUserFlows for identity
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityB2XUserFlow Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityB2XUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityB2XUserFlow -B2xIdentityUserFlowId $b2xIdentityUserFlowId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaIdentityB2XUserFlow -B2xIdentityUserFlowId $b2xIdentityUserFlowId
 ```
 
-This example shows how to use the Remove-MgIdentityB2XUserFlow Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityB2XUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/send-mgdevicemanagementcustomnotificationtocompanyportal
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/send-mgdevicemanagementcustomnotificationtocompanyportal
 schema: 2.0.0
 ---
 
-# Send-MgDeviceManagementCustomNotificationToCompanyPortal
+# Send-MgBetaDeviceManagementCustomNotificationToCompanyPortal
 
 ## SYNOPSIS
 Invoke action sendCustomNotificationToCompanyPortal
@@ -14,14 +14,14 @@ Invoke action sendCustomNotificationToCompanyPortal
 
 ### SendExpanded (Default)
 ```
-Send-MgDeviceManagementCustomNotificationToCompanyPortal [-AdditionalProperties <Hashtable>]
+Send-MgBetaDeviceManagementCustomNotificationToCompanyPortal [-AdditionalProperties <Hashtable>]
  [-GroupsToNotify <String[]>] [-NotificationBody <String>] [-NotificationTitle <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
 ```
-Send-MgDeviceManagementCustomNotificationToCompanyPortal
+Send-MgBetaDeviceManagementCustomNotificationToCompanyPortal
  -BodyParameter <IPaths1RrfeupDevicemanagementMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1RrfeupDevicemanagementMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1RrfeupDevicemanagementMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Send
 Aliases:
 
@@ -160,7 +160,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1RrfeupDevicemanagementMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1RrfeupDevicemanagementMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanytaxgroup
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanytaxgroup
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyTaxGroup
+# Update-MgBetaFinancialCompanyTaxGroup
 
 ## SYNOPSIS
 Update the navigation property taxGroups in financials
@@ -14,26 +14,26 @@ Update the navigation property taxGroups in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyTaxGroup -CompanyId <String> -TaxGroupId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyTaxGroup -CompanyId <String> -TaxGroupId <String> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-TaxType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgFinancialCompanyTaxGroup -CompanyId <String> -TaxGroupId <String>
+Update-MgBetaFinancialCompanyTaxGroup -CompanyId <String> -TaxGroupId <String>
  -BodyParameter <IMicrosoftGraphTaxGroup> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyTaxGroup -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphTaxGroup>
+Update-MgBetaFinancialCompanyTaxGroup -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphTaxGroup>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyTaxGroup -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyTaxGroup -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-TaxType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ taxGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxGroup
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -249,9 +249,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxGroup
 
 ## OUTPUTS
 

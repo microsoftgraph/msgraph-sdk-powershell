@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgexecutedevicemanagementwindowdriverupdateprofileaction
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgexecutedevicemanagementwindowdriverupdateprofileaction
 schema: 2.0.0
 ---
 
-# Invoke-MgExecuteDeviceManagementWindowDriverUpdateProfileAction
+# Invoke-MgBetaExecuteDeviceManagementWindowDriverUpdateProfileAction
 
 ## SYNOPSIS
 Invoke action executeAction
@@ -14,21 +14,21 @@ Invoke action executeAction
 
 ### ExecuteExpanded (Default)
 ```
-Invoke-MgExecuteDeviceManagementWindowDriverUpdateProfileAction -WindowsDriverUpdateProfileId <String>
+Invoke-MgBetaExecuteDeviceManagementWindowDriverUpdateProfileAction -WindowsDriverUpdateProfileId <String>
  [-ActionName <DriverApprovalAction>] [-AdditionalProperties <Hashtable>] [-DeploymentDate <DateTime>]
  [-DriverIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Execute
 ```
-Invoke-MgExecuteDeviceManagementWindowDriverUpdateProfileAction -WindowsDriverUpdateProfileId <String>
+Invoke-MgBetaExecuteDeviceManagementWindowDriverUpdateProfileAction -WindowsDriverUpdateProfileId <String>
  -BodyParameter <IPathsYsc0TiDevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExecuteViaIdentity
 ```
-Invoke-MgExecuteDeviceManagementWindowDriverUpdateProfileAction
+Invoke-MgBetaExecuteDeviceManagementWindowDriverUpdateProfileAction
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsYsc0TiDevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ Invoke-MgExecuteDeviceManagementWindowDriverUpdateProfileAction
 
 ### ExecuteViaIdentityExpanded
 ```
-Invoke-MgExecuteDeviceManagementWindowDriverUpdateProfileAction
+Invoke-MgBetaExecuteDeviceManagementWindowDriverUpdateProfileAction
  -InputObject <IDeviceManagementActionsIdentity> [-ActionName <DriverApprovalAction>]
  [-AdditionalProperties <Hashtable>] [-DeploymentDate <DateTime>] [-DriverIds <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -53,7 +53,7 @@ Invoke action executeAction
 An enum type to represent approval actions of single or list of drivers.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DriverApprovalAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.DriverApprovalAction
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsYsc0TiDevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsYsc0TiDevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Execute, ExecuteViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: ExecuteViaIdentity, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -192,13 +192,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsYsc0TiDevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsYsc0TiDevicemanagementWindowsdriverupdateprofilesWindowsdriverupdateprofileIdMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBulkDriverActionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBulkDriverActionResult
 
 ## NOTES
 

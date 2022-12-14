@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/get-mguserchatpermissiongrantbyid
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/get-mguserchatpermissiongrantbyid
 schema: 2.0.0
 ---
 
-# Get-MgUserChatPermissionGrantById
+# Get-MgBetaUserChatPermissionGrantById
 
 ## SYNOPSIS
 Return the directory objects specified in a list of IDs.
@@ -15,27 +15,27 @@ Some common uses for this function are to:
 
 ### GetExpanded (Default)
 ```
-Get-MgUserChatPermissionGrantById -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Get-MgBetaUserChatPermissionGrantById -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserChatPermissionGrantById -ChatId <String> -UserId <String>
+Get-MgBetaUserChatPermissionGrantById -ChatId <String> -UserId <String>
  -BodyParameter <IPaths16Qv7TeUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserChatPermissionGrantById -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserChatPermissionGrantById -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths16Qv7TeUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgUserChatPermissionGrantById -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Get-MgBetaUserChatPermissionGrantById -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths16Qv7TeUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths16Qv7TeUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -190,13 +190,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths16Qv7TeUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths16Qv7TeUsersUserIdChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

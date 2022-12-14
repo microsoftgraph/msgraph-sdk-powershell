@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/move-mgentitlementmanagementaccesspackagetocatalog
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/move-mgentitlementmanagementaccesspackagetocatalog
 schema: 2.0.0
 ---
 
-# Move-MgEntitlementManagementAccessPackageToCatalog
+# Move-MgBetaEntitlementManagementAccessPackageToCatalog
 
 ## SYNOPSIS
 In Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
@@ -15,28 +15,28 @@ The resources in the access package must be present in the target catalog.
 
 ### MoveExpanded (Default)
 ```
-Move-MgEntitlementManagementAccessPackageToCatalog -AccessPackageId <String>
+Move-MgBetaEntitlementManagementAccessPackageToCatalog -AccessPackageId <String>
  [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Move
 ```
-Move-MgEntitlementManagementAccessPackageToCatalog -AccessPackageId <String>
+Move-MgBetaEntitlementManagementAccessPackageToCatalog -AccessPackageId <String>
  -BodyParameter <IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentity
 ```
-Move-MgEntitlementManagementAccessPackageToCatalog -InputObject <IIdentityGovernanceIdentity>
+Move-MgBetaEntitlementManagementAccessPackageToCatalog -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentityExpanded
 ```
-Move-MgEntitlementManagementAccessPackageToCatalog -InputObject <IIdentityGovernanceIdentity>
+Move-MgBetaEntitlementManagementAccessPackageToCatalog -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Move, MoveViaIdentity
 Aliases:
 
@@ -115,7 +115,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: MoveViaIdentity, MoveViaIdentityExpanded
 Aliases:
 
@@ -177,9 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

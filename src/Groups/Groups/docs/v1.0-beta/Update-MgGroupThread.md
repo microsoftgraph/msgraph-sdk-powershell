@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggroupthread
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/update-mggroupthread
 schema: 2.0.0
 ---
 
-# Update-MgGroupThread
+# Update-MgBetaGroupThread
 
 ## SYNOPSIS
 Update the navigation property threads in groups
@@ -14,7 +14,7 @@ Update the navigation property threads in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupThread -ConversationThreadId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupThread -ConversationThreadId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-CcRecipients <IMicrosoftGraphRecipient[]>] [-HasAttachments] [-Id <String>] [-IsLocked]
  [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost1[]>] [-Preview <String>] [-Topic <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueSenders <String[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ Update-MgGroupThread -ConversationThreadId <String> -GroupId <String> [-Addition
 
 ### Update
 ```
-Update-MgGroupThread -ConversationThreadId <String> -GroupId <String>
+Update-MgBetaGroupThread -ConversationThreadId <String> -GroupId <String>
  -BodyParameter <IMicrosoftGraphConversationThread1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupThread -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversationThread1>
+Update-MgBetaGroupThread -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversationThread1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-CcRecipients <IMicrosoftGraphRecipient[]>] [-HasAttachments] [-Id <String>] [-IsLocked]
  [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost1[]>] [-Preview <String>] [-Topic <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueSenders <String[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -47,9 +47,9 @@ Update the navigation property threads in groups
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgGroupThread Cmdlet
+### Example 1: Using the Update-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	OriginalStartTimeZone = "originalStartTimeZone-value"
 	OriginalEndTimeZone = "originalEndTimeZone-value"
@@ -57,10 +57,10 @@ $params = @{
 	ReminderMinutesBeforeStart = 
 	IsReminderOn = $true
 }
-Update-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
+Update-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgGroupThread Cmdlet.
+This example shows how to use the Update-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -85,7 +85,7 @@ conversationThread
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationThread1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -102,7 +102,7 @@ Returned only on $select.
 To construct, please use Get-Help -Online and see NOTES section for CCRECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecipient[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for POSTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPost1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -294,7 +294,7 @@ Returned only on $select.
 To construct, please use Get-Help -Online and see NOTES section for TORECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecipient[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -357,9 +357,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationThread1
 
 ## OUTPUTS
 

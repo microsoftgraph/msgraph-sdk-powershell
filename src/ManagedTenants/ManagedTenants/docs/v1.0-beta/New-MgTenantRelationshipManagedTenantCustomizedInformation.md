@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantcustomizedinformation
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantcustomizedinformation
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantCustomizedInformation
+# New-MgBetaTenantRelationshipManagedTenantCustomizedInformation
 
 ## SYNOPSIS
 Create new navigation property to tenantsCustomizedInformation for tenantRelationships
@@ -14,14 +14,14 @@ Create new navigation property to tenantsCustomizedInformation for tenantRelatio
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantCustomizedInformation [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantCustomizedInformation [-AdditionalProperties <Hashtable>]
  [-Contacts <IMicrosoftGraphManagedTenantsTenantContactInformation[]>] [-DisplayName <String>] [-Id <String>]
  [-TenantId <String>] [-Website <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantCustomizedInformation
+New-MgBetaTenantRelationshipManagedTenantCustomizedInformation
  -BodyParameter <IMicrosoftGraphManagedTenantsTenantCustomizedInformation> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ tenantCustomizedInformation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
 Parameter Sets: Create
 Aliases:
 
@@ -70,7 +70,7 @@ Optional.
 To construct, please use Get-Help -Online and see NOTES section for CONTACTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantContactInformation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantContactInformation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -183,11 +183,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
 
 ## NOTES
 

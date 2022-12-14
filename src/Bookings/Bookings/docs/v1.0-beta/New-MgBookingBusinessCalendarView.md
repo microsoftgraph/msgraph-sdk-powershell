@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbookingbusinesscalendarview
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/new-mgbookingbusinesscalendarview
 schema: 2.0.0
 ---
 
-# New-MgBookingBusinessCalendarView
+# New-MgBetaBookingBusinessCalendarView
 
 ## SYNOPSIS
 Create new navigation property to calendarView for bookingBusinesses
@@ -14,7 +14,7 @@ Create new navigation property to calendarView for bookingBusinesses
 
 ### CreateExpanded (Default)
 ```
-New-MgBookingBusinessCalendarView -BookingBusinessId <String> [-AdditionalInformation <String>]
+New-MgBetaBookingBusinessCalendarView -BookingBusinessId <String> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-CustomerEmailAddress <String>]
  [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation1>] [-CustomerName <String>]
  [-CustomerNotes <String>] [-CustomerPhone <String>]
@@ -31,19 +31,19 @@ New-MgBookingBusinessCalendarView -BookingBusinessId <String> [-AdditionalInform
 
 ### Create
 ```
-New-MgBookingBusinessCalendarView -BookingBusinessId <String>
+New-MgBetaBookingBusinessCalendarView -BookingBusinessId <String>
  -BodyParameter <IMicrosoftGraphBookingAppointment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity>
+New-MgBetaBookingBusinessCalendarView -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphBookingAppointment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
+New-MgBetaBookingBusinessCalendarView -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-CustomerEmailAddress <String>]
  [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation1>] [-CustomerName <String>]
  [-CustomerNotes <String>] [-CustomerPhone <String>]
@@ -115,7 +115,7 @@ Represents a booked appointment of a service by a customer in a business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -178,7 +178,7 @@ location
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMERLOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -243,7 +243,7 @@ An appointment will contain a list of customer information and each unit will in
 Optional.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomerInformationBase[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomerInformationBase[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -275,7 +275,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for END properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -307,7 +307,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -338,7 +338,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for INVOICEDATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -523,7 +523,7 @@ Accept wildcard characters: False
 Represents the type of pricing of a booking service.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.BookingPriceType
+Type: Microsoft.Graph.Beta.PowerShell.Support.BookingPriceType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -540,7 +540,7 @@ The value of this property is available only when reading this bookingAppointmen
 To construct, please use Get-Help -Online and see NOTES section for REMINDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingReminder1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingReminder1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -586,7 +586,7 @@ location
 To construct, please use Get-Help -Online and see NOTES section for SERVICELOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -665,7 +665,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for START properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -712,13 +712,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 
 ## NOTES
 

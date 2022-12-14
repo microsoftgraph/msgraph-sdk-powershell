@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtwindowinformationprotectiondeviceregistration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtwindowinformationprotectiondeviceregistration
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+# Get-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
 
 ## SYNOPSIS
 Windows information protection device registrations that are not MDM enrolled.
@@ -14,21 +14,21 @@ Windows information protection device registrations that are not MDM enrolled.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+Get-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
  -WindowsInformationProtectionDeviceRegistrationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+Get-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
  -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -227,17 +227,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementWindowInformationProtectionDeviceRegistration
+### Get-MgBetaDeviceAppManagementWindowInformationProtectionDeviceRegistration
 
 COMPLEX PARAMETER PROPERTIES
 

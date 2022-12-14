@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationsynchronizationjobschemadirectory
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationsynchronizationjobschemadirectory
 schema: 2.0.0
 ---
 
-# Get-MgApplicationSynchronizationJobSchemaDirectory
+# Get-MgBetaApplicationSynchronizationJobSchemaDirectory
 
 ## SYNOPSIS
 Contains the collection of directories and all of their objects.
@@ -14,20 +14,20 @@ Contains the collection of directories and all of their objects.
 
 ### List (Default)
 ```
-Get-MgApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -SynchronizationJobId <String>
+Get-MgBetaApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -SynchronizationJobId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -DirectoryDefinitionId <String>
+Get-MgBetaApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -DirectoryDefinitionId <String>
  -SynchronizationJobId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
+Get-MgBetaApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
 
 ## NOTES
 

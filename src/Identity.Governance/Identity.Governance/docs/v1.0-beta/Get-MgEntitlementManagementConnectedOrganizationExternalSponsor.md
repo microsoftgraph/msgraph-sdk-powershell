@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementconnectedorganizationexternalsponsor
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementconnectedorganizationexternalsponsor
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementConnectedOrganizationExternalSponsor
+# Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor
 
 ## SYNOPSIS
 Retrieve a list of a connectedOrganization's external sponsors.
@@ -14,7 +14,7 @@ The external sponsors are a set of users who can approve requests on behalf of o
 ## SYNTAX
 
 ```
-Get-MgEntitlementManagementConnectedOrganizationExternalSponsor -ConnectedOrganizationId <String>
+Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor -ConnectedOrganizationId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -25,13 +25,13 @@ The external sponsors are a set of users who can approve requests on behalf of o
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEntitlementManagementConnectedOrganizationExternalSponsor Cmdlet
+### Example 1: Using the Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementConnectedOrganizationExternalSponsor -ConnectedOrganizationId $connectedOrganizationId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor -ConnectedOrganizationId $connectedOrganizationId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementConnectedOrganizationExternalSponsor Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -209,7 +209,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

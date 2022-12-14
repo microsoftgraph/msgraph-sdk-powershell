@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementintentcategory
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementintentcategory
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementIntentCategory
+# Update-MgBetaDeviceManagementIntentCategory
 
 ## SYNOPSIS
 Update the navigation property categories in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property categories in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementIntentCategory -DeviceManagementIntentId <String>
+Update-MgBetaDeviceManagementIntentCategory -DeviceManagementIntentId <String>
  -DeviceManagementIntentSettingCategoryId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-HasRequiredSetting] [-Id <String>]
  [-SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>]
@@ -24,7 +24,7 @@ Update-MgDeviceManagementIntentCategory -DeviceManagementIntentId <String>
 
 ### Update
 ```
-Update-MgDeviceManagementIntentCategory -DeviceManagementIntentId <String>
+Update-MgBetaDeviceManagementIntentCategory -DeviceManagementIntentId <String>
  -DeviceManagementIntentSettingCategoryId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementIntentSettingCategory> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -32,14 +32,14 @@ Update-MgDeviceManagementIntentCategory -DeviceManagementIntentId <String>
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementIntentCategory -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementIntentCategory -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementIntentSettingCategory> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementIntentCategory -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementIntentCategory -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HasRequiredSetting] [-Id <String>]
  [-SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>]
  [-Settings <IMicrosoftGraphDeviceManagementSettingInstance[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -73,7 +73,7 @@ Entity representing an intent setting category
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentSettingCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentSettingCategory
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -165,7 +165,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -196,7 +196,7 @@ The setting definitions this category contains
 To construct, please use Get-Help -Online and see NOTES section for SETTINGDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ The settings this category contains
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -259,9 +259,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentSettingCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentSettingCategory
 
 ## OUTPUTS
 

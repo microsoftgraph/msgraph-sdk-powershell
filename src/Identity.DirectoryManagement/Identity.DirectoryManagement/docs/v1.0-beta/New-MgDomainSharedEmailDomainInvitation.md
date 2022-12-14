@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainsharedemaildomaininvitation
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdomainsharedemaildomaininvitation
 schema: 2.0.0
 ---
 
-# New-MgDomainSharedEmailDomainInvitation
+# New-MgBetaDomainSharedEmailDomainInvitation
 
 ## SYNOPSIS
 Create new navigation property to sharedEmailDomainInvitations for domains
@@ -14,26 +14,26 @@ Create new navigation property to sharedEmailDomainInvitations for domains
 
 ### CreateExpanded (Default)
 ```
-New-MgDomainSharedEmailDomainInvitation -DomainId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDomainSharedEmailDomainInvitation -DomainId <String> [-AdditionalProperties <Hashtable>]
  [-ExpiryTime <DateTime>] [-Id <String>] [-InvitationDomain <String>] [-InvitationStatus <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDomainSharedEmailDomainInvitation -DomainId <String>
+New-MgBetaDomainSharedEmailDomainInvitation -DomainId <String>
  -BodyParameter <IMicrosoftGraphSharedEmailDomainInvitation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDomainSharedEmailDomainInvitation -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDomainSharedEmailDomainInvitation -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphSharedEmailDomainInvitation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDomainSharedEmailDomainInvitation -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDomainSharedEmailDomainInvitation -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ExpiryTime <DateTime>] [-Id <String>] [-InvitationDomain <String>]
  [-InvitationStatus <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ sharedEmailDomainInvitation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -204,13 +204,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation
 
 ## NOTES
 

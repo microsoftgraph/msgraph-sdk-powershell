@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgsupporteduseroutlooklanguage
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/invoke-mgsupporteduseroutlooklanguage
 schema: 2.0.0
 ---
 
-# Invoke-MgSupportedUserOutlookLanguage
+# Invoke-MgBetaSupportedUserOutlookLanguage
 
 ## SYNOPSIS
 Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
@@ -16,13 +16,13 @@ You can subsequently get the preferred language by \ngetting the user's mailbox 
 
 ### Supported1 (Default)
 ```
-Invoke-MgSupportedUserOutlookLanguage -UserId <String> [-Count] [-Filter <String>] [-Search <String>]
+Invoke-MgBetaSupportedUserOutlookLanguage -UserId <String> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### SupportedViaIdentity1
 ```
-Invoke-MgSupportedUserOutlookLanguage -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Invoke-MgBetaSupportedUserOutlookLanguage -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -33,14 +33,14 @@ You can subsequently get the preferred language by \ngetting the user's mailbox 
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgSupportedUserOutlookLanguage Cmdlet
+### Example 1: Using the Invoke-MgBetaSupportedUserOutlookLanguage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Functions
+Import-Module Microsoft.Graph.Beta.Users.Functions
 # A UPN can also be used as -UserId.
-Invoke-MgSupportedUserOutlookLanguage -UserId $userId
+Invoke-MgBetaSupportedUserOutlookLanguage -UserId $userId
 ```
 
-This example shows how to use the Invoke-MgSupportedUserOutlookLanguage Cmdlet.
+This example shows how to use the Invoke-MgBetaSupportedUserOutlookLanguage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: SupportedViaIdentity1
 Aliases:
 
@@ -156,11 +156,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocaleInfo
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocaleInfo
 
 ## NOTES
 

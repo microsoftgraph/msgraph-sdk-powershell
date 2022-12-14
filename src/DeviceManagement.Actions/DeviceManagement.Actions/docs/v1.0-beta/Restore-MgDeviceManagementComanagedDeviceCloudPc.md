@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/restore-mgdevicemanagementcomanageddevicecloudpc
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/restore-mgdevicemanagementcomanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Restore-MgDeviceManagementComanagedDeviceCloudPc
+# Restore-MgBetaDeviceManagementComanagedDeviceCloudPc
 
 ## SYNOPSIS
 Restore a Cloud PC device to a previous state with an Intune managed device ID.
@@ -14,27 +14,27 @@ Restore a Cloud PC device to a previous state with an Intune managed device ID.
 
 ### RestoreExpanded (Default)
 ```
-Restore-MgDeviceManagementComanagedDeviceCloudPc -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
+Restore-MgBetaDeviceManagementComanagedDeviceCloudPc -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
  [-CloudPcSnapshotId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Restore
 ```
-Restore-MgDeviceManagementComanagedDeviceCloudPc -ManagedDeviceId <String>
+Restore-MgBetaDeviceManagementComanagedDeviceCloudPc -ManagedDeviceId <String>
  -BodyParameter <IPathsFdxkkcDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgDeviceManagementComanagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
+Restore-MgBetaDeviceManagementComanagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsFdxkkcDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentityExpanded
 ```
-Restore-MgDeviceManagementComanagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
+Restore-MgBetaDeviceManagementComanagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-CloudPcSnapshotId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsFdxkkcDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsFdxkkcDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Restore, RestoreViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RestoreViaIdentity, RestoreViaIdentityExpanded
 Aliases:
 
@@ -174,9 +174,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsFdxkkcDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsFdxkkcDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

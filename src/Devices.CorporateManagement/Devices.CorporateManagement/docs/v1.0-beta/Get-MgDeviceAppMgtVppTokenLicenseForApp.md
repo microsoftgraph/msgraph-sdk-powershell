@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtvpptokenlicenseforapp
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtvpptokenlicenseforapp
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtVppTokenLicenseForApp
+# Get-MgBetaDeviceAppMgtVppTokenLicenseForApp
 
 ## SYNOPSIS
 Invoke function getLicensesForApp
@@ -14,13 +14,13 @@ Invoke function getLicensesForApp
 
 ### Get (Default)
 ```
-Get-MgDeviceAppMgtVppTokenLicenseForApp -BundleId <String> [-Count] [-Filter <String>] [-Search <String>]
+Get-MgBetaDeviceAppMgtVppTokenLicenseForApp -BundleId <String> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtVppTokenLicenseForApp -InputObject <IDevicesCorporateManagementIdentity> [-Count]
+Get-MgBetaDeviceAppMgtVppTokenLicenseForApp -InputObject <IDevicesCorporateManagementIdentity> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -142,17 +142,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppTokenLicenseSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVppTokenLicenseSummary
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementVppTokenLicenseGraphFPreApp
+### Get-MgBetaDeviceAppManagementVppTokenLicenseGraphFPreApp
 
 COMPLEX PARAMETER PROPERTIES
 

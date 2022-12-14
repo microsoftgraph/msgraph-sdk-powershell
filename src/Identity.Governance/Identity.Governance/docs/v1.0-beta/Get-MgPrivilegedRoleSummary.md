@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedrolesummary
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedrolesummary
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedRoleSummary
+# Get-MgBetaPrivilegedRoleSummary
 
 ## SYNOPSIS
 Retrieve the properties and relationships of privilegedRoleSummary object.
@@ -14,13 +14,13 @@ Retrieve the properties and relationships of privilegedRoleSummary object.
 
 ### Get (Default)
 ```
-Get-MgPrivilegedRoleSummary -PrivilegedRoleId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPrivilegedRoleSummary -PrivilegedRoleId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedRoleSummary -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedRoleSummary -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Retrieve the properties and relationships of privilegedRoleSummary object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrivilegedRoleSummary Cmdlet
+### Example 1: Using the Get-MgBetaPrivilegedRoleSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedRoleSummary -PrivilegedRoleId $privilegedRoleId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedRoleSummary -PrivilegedRoleId $privilegedRoleId
 ```
 
-This example shows how to use the Get-MgPrivilegedRoleSummary Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedRoleSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSummary
 
 ## NOTES
 

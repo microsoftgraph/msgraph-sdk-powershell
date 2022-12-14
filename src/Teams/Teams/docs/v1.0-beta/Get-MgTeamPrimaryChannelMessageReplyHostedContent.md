@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamprimarychannelmessagereplyhostedcontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamprimarychannelmessagereplyhostedcontent
 schema: 2.0.0
 ---
 
-# Get-MgTeamPrimaryChannelMessageReplyHostedContent
+# Get-MgBetaTeamPrimaryChannelMessageReplyHostedContent
 
 ## SYNOPSIS
 Content in a message hosted by Microsoft Teams - for example, images or code snippets.
@@ -14,7 +14,7 @@ Content in a message hosted by Microsoft Teams - for example, images or code sni
 
 ### List1 (Default)
 ```
-Get-MgTeamPrimaryChannelMessageReplyHostedContent -ChatMessageId <String> -ChatMessageId1 <String>
+Get-MgBetaTeamPrimaryChannelMessageReplyHostedContent -ChatMessageId <String> -ChatMessageId1 <String>
  -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgTeamPrimaryChannelMessageReplyHostedContent -ChatMessageId <String> -ChatM
 
 ### Get1
 ```
-Get-MgTeamPrimaryChannelMessageReplyHostedContent -ChatMessageHostedContentId <String> -ChatMessageId <String>
+Get-MgBetaTeamPrimaryChannelMessageReplyHostedContent -ChatMessageHostedContentId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamPrimaryChannelMessageReplyHostedContent -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaTeamPrimaryChannelMessageReplyHostedContent -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -272,11 +272,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
 
 ## NOTES
 

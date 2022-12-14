@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamprimarychannelemail
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgteamprimarychannelemail
 schema: 2.0.0
 ---
 
-# Remove-MgTeamPrimaryChannelEmail
+# Remove-MgBetaTeamPrimaryChannelEmail
 
 ## SYNOPSIS
 Remove the email address of a channel.
@@ -15,12 +15,12 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### Remove1 (Default)
 ```
-Remove-MgTeamPrimaryChannelEmail -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaTeamPrimaryChannelEmail -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity1
 ```
-Remove-MgTeamPrimaryChannelEmail -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaTeamPrimaryChannelEmail -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,12 +32,12 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 
-Remove-MgTeamChannelEmail -TeamId $teamId -ChannelId $channelId
+Remove-MgBetaTeamChannelEmail -TeamId $teamId -ChannelId $channelId
 ```
 
-This example shows how to use the Remove-MgTeamPrimaryChannelEmail Cmdlet.
+This example shows how to use the Remove-MgBetaTeamPrimaryChannelEmail Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -48,7 +48,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: RemoveViaIdentity1
 Aliases:
 
@@ -125,7 +125,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

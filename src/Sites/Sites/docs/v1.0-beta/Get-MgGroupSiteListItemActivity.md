@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mggroupsitelistitemactivity
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mggroupsitelistitemactivity
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteListItemActivity
+# Get-MgBetaGroupSiteListItemActivity
 
 ## SYNOPSIS
 The list of recent activities that took place on this item.
@@ -13,7 +13,7 @@ The list of recent activities that took place on this item.
 ## SYNTAX
 
 ```
-Get-MgGroupSiteListItemActivity -GroupId <String> -ListId <String> -ListItemId <String> -SiteId <String>
+Get-MgBetaGroupSiteListItemActivity -GroupId <String> -ListId <String> -ListItemId <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -243,7 +243,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityOld
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemActivityOld
 
 ## NOTES
 

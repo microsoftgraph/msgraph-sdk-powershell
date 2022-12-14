@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritysecurescorecontrolprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritysecurescorecontrolprofile
 schema: 2.0.0
 ---
 
-# Update-MgSecuritySecureScoreControlProfile
+# Update-MgBetaSecuritySecureScoreControlProfile
 
 ## SYNOPSIS
 Update the navigation property secureScoreControlProfiles in security
@@ -14,7 +14,7 @@ Update the navigation property secureScoreControlProfiles in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId <String> [-ActionType <String>]
+Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId <String> [-ActionType <String>]
  [-ActionUrl <String>] [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
  [-ComplianceInformation <IMicrosoftGraphComplianceInformation[]>] [-ControlCategory <String>]
  [-ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>] [-Deprecated] [-Id <String>]
@@ -27,21 +27,21 @@ Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId <String>
 
 ### Update
 ```
-Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId <String>
+Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId <String>
  -BodyParameter <IMicrosoftGraphSecureScoreControlProfile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity>
+Update-MgBetaSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecureScoreControlProfile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity> [-ActionType <String>]
+Update-MgBetaSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity> [-ActionType <String>]
  [-ActionUrl <String>] [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
  [-ComplianceInformation <IMicrosoftGraphComplianceInformation[]>] [-ControlCategory <String>]
  [-ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>] [-Deprecated] [-Id <String>]
@@ -57,16 +57,16 @@ Update the navigation property secureScoreControlProfiles in security
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecuritySecureScoreControlProfile Cmdlet
+### Example 1: Using the Update-MgBetaSecuritySecureScoreControlProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	ControlStateUpdates = "controlStateUpdates-value"
 }
-Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
+Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecuritySecureScoreControlProfile Cmdlet.
+This example shows how to use the Update-MgBetaSecuritySecureScoreControlProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -136,7 +136,7 @@ secureScoreControlProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for COMPLIANCEINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceInformation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComplianceInformation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for CONTROLSTATEUPDATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlStateUpdate[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScoreControlStateUpdate[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -245,7 +245,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -442,7 +442,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -489,9 +489,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationschooluserbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationschooluserbyref
 schema: 2.0.0
 ---
 
-# Remove-MgEducationSchoolUserByRef
+# Remove-MgBetaEducationSchoolUserByRef
 
 ## SYNOPSIS
 Delete ref of navigation property users for education
@@ -14,13 +14,13 @@ Delete ref of navigation property users for education
 
 ### Delete (Default)
 ```
-Remove-MgEducationSchoolUserByRef -EducationSchoolId <String> -EducationUserId <String> [-Id <String>]
+Remove-MgBetaEducationSchoolUserByRef -EducationSchoolId <String> -EducationUserId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationSchoolUserByRef -InputObject <IEducationIdentity> [-Id <String>] [-IfMatch <String>]
+Remove-MgBetaEducationSchoolUserByRef -InputObject <IEducationIdentity> [-Id <String>] [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

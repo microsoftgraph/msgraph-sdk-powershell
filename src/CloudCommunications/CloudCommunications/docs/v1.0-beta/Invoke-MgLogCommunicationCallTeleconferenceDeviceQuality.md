@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mglogcommunicationcallteleconferencedevicequality
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mglogcommunicationcallteleconferencedevicequality
 schema: 2.0.0
 ---
 
-# Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality
+# Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality
 
 ## SYNOPSIS
 Log video teleconferencing device quality data.
@@ -20,13 +20,13 @@ This method is only for the CVI partners to provide their media quality data.
 
 ### LogExpanded1 (Default)
 ```
-Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality [-AdditionalProperties <Hashtable>]
  [-Quality <IMicrosoftGraphTeleconferenceDeviceQuality>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Log1
 ```
-Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality
+Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality
  -BodyParameter <IPaths1JbdsmaCommunicationsCallsMicrosoftGraphLogteleconferencedevicequalityPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -42,12 +42,12 @@ This method is only for the CVI partners to provide their media quality data.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality Cmdlet
+### Example 1: Using the Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Quality = @{
-		"@odata.type" = "#microsoft.graph.teleconferenceDeviceQuality"
+		"@odata.type" = "#Microsoft.Graph.Beta.teleconferenceDeviceQuality"
 		CallChainId = "0622673d-9f69-49b3-9d4f-5ec64f42ecce"
 		ParticipantId = "ea078406-b5d4-4d3c-b85e-90103dcec7f6"
 		MediaLegId = "bd9ee398-4b9d-42c7-8b8d-4e8efad9435f"
@@ -55,7 +55,7 @@ $params = @{
 		DeviceDescription = "TestDescription"
 		MediaQualityList = @(
 			@{
-				"@odata.type" = "#microsoft.graph.teleconferenceDeviceAudioQuality"
+				"@odata.type" = "#Microsoft.Graph.Beta.teleconferenceDeviceAudioQuality"
 				ChannelIndex = 1
 				MediaDuration = "PT20M"
 				NetworkLinkSpeedInBytes = 13000
@@ -79,7 +79,7 @@ $params = @{
 				MaximumOutboundJitter = "PT0.024S"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.teleconferenceDeviceVideoQuality"
+				"@odata.type" = "#Microsoft.Graph.Beta.teleconferenceDeviceVideoQuality"
 				ChannelIndex = 1
 				MediaDuration = "PT20M"
 				NetworkLinkSpeedInBytes = 13000
@@ -103,7 +103,7 @@ $params = @{
 				MaximumOutboundJitter = "PT0.024S"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.teleconferenceDeviceScreenSharingQuality"
+				"@odata.type" = "#Microsoft.Graph.Beta.teleconferenceDeviceScreenSharingQuality"
 				ChannelIndex = 1
 				MediaDuration = "PT20M"
 				NetworkLinkSpeedInBytes = 13000
@@ -129,10 +129,10 @@ $params = @{
 		)
 	}
 }
-Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality -BodyParameter $params
+Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality Cmdlet.
+This example shows how to use the Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1JbdsmaCommunicationsCallsMicrosoftGraphLogteleconferencedevicequalityPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1JbdsmaCommunicationsCallsMicrosoftGraphLogteleconferencedevicequalityPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Log1
 Aliases:
 
@@ -188,7 +188,7 @@ teleconferenceDeviceQuality
 To construct, please use Get-Help -Online and see NOTES section for QUALITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeleconferenceDeviceQuality
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeleconferenceDeviceQuality
 Parameter Sets: LogExpanded1
 Aliases:
 
@@ -235,7 +235,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1JbdsmaCommunicationsCallsMicrosoftGraphLogteleconferencedevicequalityPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1JbdsmaCommunicationsCallsMicrosoftGraphLogteleconferencedevicequalityPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -254,7 +254,7 @@ BODYPARAMETER <IPaths1JbdsmaCommunicationsCallsMicrosoftGraphLogteleconferencede
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Quality <IMicrosoftGraphTeleconferenceDeviceQuality>]`: teleconferenceDeviceQuality
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CallChainId <String>]`: A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+    - `[CallChainId <String>]`: A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Beta.Call.CallChainId.
     - `[CloudServiceDeploymentEnvironment <String>]`: A geo-region where the service is deployed, such as ProdNoam.
     - `[CloudServiceDeploymentId <String>]`: A unique deployment identifier assigned by Azure.
     - `[CloudServiceInstanceName <String>]`: The Azure deployed cloud service instance name, such as FrontEnd_IN_3.
@@ -288,7 +288,7 @@ BODYPARAMETER <IPaths1JbdsmaCommunicationsCallsMicrosoftGraphLogteleconferencede
 
 QUALITY <IMicrosoftGraphTeleconferenceDeviceQuality>: teleconferenceDeviceQuality
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CallChainId <String>]`: A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+  - `[CallChainId <String>]`: A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Beta.Call.CallChainId.
   - `[CloudServiceDeploymentEnvironment <String>]`: A geo-region where the service is deployed, such as ProdNoam.
   - `[CloudServiceDeploymentId <String>]`: A unique deployment identifier assigned by Azure.
   - `[CloudServiceInstanceName <String>]`: The Azure deployed cloud service instance name, such as FrontEnd_IN_3.

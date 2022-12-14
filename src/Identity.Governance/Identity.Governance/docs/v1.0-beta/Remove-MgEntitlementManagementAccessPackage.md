@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgentitlementmanagementaccesspackage
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgentitlementmanagementaccesspackage
 schema: 2.0.0
 ---
 
-# Remove-MgEntitlementManagementAccessPackage
+# Remove-MgBetaEntitlementManagementAccessPackage
 
 ## SYNOPSIS
 Delete navigation property accessPackages for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property accessPackages for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgEntitlementManagementAccessPackage -AccessPackageId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaEntitlementManagementAccessPackage -AccessPackageId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
+Remove-MgBetaEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,8 +31,8 @@ Delete navigation property accessPackages for identityGovernance
 
 ### Example 1: Remove an access package
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Remove-MgEntitlementManagementAccessPackage -AccessPackageId 'bc041fda-b3ba-41fc-b911-ca95f7aac656'
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Remove-MgBetaEntitlementManagementAccessPackage -AccessPackageId 'bc041fda-b3ba-41fc-b911-ca95f7aac656'
 ```
 
 This example removes the specified access package.
@@ -74,7 +74,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

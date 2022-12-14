@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/publish-mgsecuritycaseediscoverycasenoncustodialdatasource
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/publish-mgsecuritycaseediscoverycasenoncustodialdatasource
 schema: 2.0.0
 ---
 
-# Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource
+# Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource
 
 ## SYNOPSIS
 Release the non-custodial data source from the case.
@@ -14,13 +14,13 @@ Release the non-custodial data source from the case.
 
 ### Release1 (Default)
 ```
-Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId <String>
+Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId <String>
  -EdiscoveryNoncustodialDataSourceId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReleaseViaIdentity1
 ```
-Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -InputObject <ISecurityIdentity> [-PassThru]
+Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource -InputObject <ISecurityIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Release the non-custodial data source from the case.
 
 ## EXAMPLES
 
-### Example 1: Using the Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet
+### Example 1: Using the Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryNoncustodialDataSourceId $ediscoveryNoncustodialDataSourceId
+Import-Module Microsoft.Graph.Beta.Security
+Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryNoncustodialDataSourceId $ediscoveryNoncustodialDataSourceId
 ```
 
-This example shows how to use the Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet.
+This example shows how to use the Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: ReleaseViaIdentity1
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

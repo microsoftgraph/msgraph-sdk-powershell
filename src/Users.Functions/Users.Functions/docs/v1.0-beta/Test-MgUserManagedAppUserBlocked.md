@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/test-mgusermanagedappuserblocked
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/test-mgusermanagedappuserblocked
 schema: 2.0.0
 ---
 
-# Test-MgUserManagedAppUserBlocked
+# Test-MgBetaUserManagedAppUserBlocked
 
 ## SYNOPSIS
 Gets the blocked state of a managed app user.
@@ -14,12 +14,12 @@ Gets the blocked state of a managed app user.
 
 ### Is (Default)
 ```
-Test-MgUserManagedAppUserBlocked -UserId <String> [<CommonParameters>]
+Test-MgBetaUserManagedAppUserBlocked -UserId <String> [<CommonParameters>]
 ```
 
 ### IsViaIdentity
 ```
-Test-MgUserManagedAppUserBlocked -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Test-MgBetaUserManagedAppUserBlocked -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: IsViaIdentity
 Aliases:
 
@@ -65,7 +65,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 

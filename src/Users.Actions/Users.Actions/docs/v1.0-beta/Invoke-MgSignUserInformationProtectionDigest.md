@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgsignuserinformationprotectiondigest
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgsignuserinformationprotectiondigest
 schema: 2.0.0
 ---
 
-# Invoke-MgSignUserInformationProtectionDigest
+# Invoke-MgBetaSignUserInformationProtectionDigest
 
 ## SYNOPSIS
 Invoke action signDigest
@@ -14,27 +14,27 @@ Invoke action signDigest
 
 ### SignExpanded (Default)
 ```
-Invoke-MgSignUserInformationProtectionDigest -UserId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaSignUserInformationProtectionDigest -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DigestInputFile <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Sign
 ```
-Invoke-MgSignUserInformationProtectionDigest -UserId <String>
+Invoke-MgBetaSignUserInformationProtectionDigest -UserId <String>
  -BodyParameter <IPaths8U0Ks2UsersUserIdInformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SignViaIdentity
 ```
-Invoke-MgSignUserInformationProtectionDigest -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaSignUserInformationProtectionDigest -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths8U0Ks2UsersUserIdInformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SignViaIdentityExpanded
 ```
-Invoke-MgSignUserInformationProtectionDigest -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaSignUserInformationProtectionDigest -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-DigestInputFile <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths8U0Ks2UsersUserIdInformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths8U0Ks2UsersUserIdInformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Sign, SignViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: SignViaIdentity, SignViaIdentityExpanded
 Aliases:
 
@@ -158,13 +158,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths8U0Ks2UsersUserIdInformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths8U0Ks2UsersUserIdInformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSigningResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSigningResult
 
 ## NOTES
 

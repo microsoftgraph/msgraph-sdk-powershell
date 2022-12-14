@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicycrosstenantaccesspolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicycrosstenantaccesspolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyCrossTenantAccessPolicy
+# Remove-MgBetaPolicyCrossTenantAccessPolicy
 
 ## SYNOPSIS
 Delete navigation property crossTenantAccessPolicy for policies
@@ -13,7 +13,7 @@ Delete navigation property crossTenantAccessPolicy for policies
 ## SYNTAX
 
 ```
-Remove-MgPolicyCrossTenantAccessPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPolicyCrossTenantAccessPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

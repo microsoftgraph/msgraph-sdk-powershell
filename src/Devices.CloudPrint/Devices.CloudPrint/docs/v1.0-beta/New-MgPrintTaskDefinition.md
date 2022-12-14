@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprinttaskdefinition
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/new-mgprinttaskdefinition
 schema: 2.0.0
 ---
 
-# New-MgPrintTaskDefinition
+# New-MgBetaPrintTaskDefinition
 
 ## SYNOPSIS
 Create a new task definition.
@@ -15,14 +15,14 @@ For details about how to use this API to add pull printing support to Universal 
 
 ### CreateExpanded1 (Default)
 ```
-New-MgPrintTaskDefinition [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphAppIdentity>]
+New-MgBetaPrintTaskDefinition [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphAppIdentity>]
  [-DisplayName <String>] [-Id <String>] [-Tasks <IMicrosoftGraphPrintTask[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgPrintTaskDefinition -BodyParameter <IMicrosoftGraphPrintTaskDefinition1> [-Confirm] [-WhatIf]
+New-MgBetaPrintTaskDefinition -BodyParameter <IMicrosoftGraphPrintTaskDefinition1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,19 +32,19 @@ For details about how to use this API to add pull printing support to Universal 
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPrintTaskDefinition Cmdlet
+### Example 1: Using the New-MgBetaPrintTaskDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 $params = @{
 	DisplayName = "Test TaskDefinitionName"
 	CreatedBy = @{
 		DisplayName = "Requesting App Display Name"
 	}
 }
-New-MgPrintTaskDefinition -BodyParameter $params
+New-MgBetaPrintTaskDefinition -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrintTaskDefinition Cmdlet.
+This example shows how to use the New-MgBetaPrintTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ printTaskDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
 Parameter Sets: Create1
 Aliases:
 
@@ -85,7 +85,7 @@ appIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppIdentity
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -134,7 +134,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTask[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTask[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -181,11 +181,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
 
 ## NOTES
 

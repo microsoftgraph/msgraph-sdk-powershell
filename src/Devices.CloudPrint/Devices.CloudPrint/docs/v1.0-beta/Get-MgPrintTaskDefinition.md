@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprinttaskdefinition
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprinttaskdefinition
 schema: 2.0.0
 ---
 
-# Get-MgPrintTaskDefinition
+# Get-MgBetaPrintTaskDefinition
 
 ## SYNOPSIS
 Get taskDefinitions from print
@@ -14,32 +14,32 @@ Get taskDefinitions from print
 
 ### List1 (Default)
 ```
-Get-MgPrintTaskDefinition [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPrintTaskDefinition [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get2
 ```
-Get-MgPrintTaskDefinition -PrintTaskDefinitionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPrintTaskDefinition -PrintTaskDefinitionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### Get3
 ```
-Get-MgPrintTaskDefinition -PrintTaskDefinitionId <String> -PrintTaskId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPrintTaskDefinition -PrintTaskDefinitionId <String> -PrintTaskId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -48,22 +48,22 @@ Get taskDefinitions from print
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintTaskDefinition Cmdlet
+### Example 1: Using the Get-MgBetaPrintTaskDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId
 ```
 
-This example shows how to use the Get-MgPrintTaskDefinition Cmdlet.
+This example shows how to use the Get-MgBetaPrintTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPrintTaskDefinition Cmdlet
+### Example 2: Using the Get-MgBetaPrintTaskDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintTaskDefinition
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintTaskDefinition
 ```
 
-This example shows how to use the Get-MgPrintTaskDefinition Cmdlet.
+This example shows how to use the Get-MgBetaPrintTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicyauthorizationpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicyauthorizationpolicy
 schema: 2.0.0
 ---
 
-# New-MgPolicyAuthorizationPolicy
+# New-MgBetaPolicyAuthorizationPolicy
 
 ## SYNOPSIS
 Create new navigation property to authorizationPolicy for policies
@@ -14,7 +14,7 @@ Create new navigation property to authorizationPolicy for policies
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyAuthorizationPolicy [-AdditionalProperties <Hashtable>] [-AllowedToSignUpEmailBasedSubscriptions]
+New-MgBetaPolicyAuthorizationPolicy [-AdditionalProperties <Hashtable>] [-AllowedToSignUpEmailBasedSubscriptions]
  [-AllowedToUseSspr] [-AllowEmailVerifiedUsersToJoinOrganization] [-AllowInvitesFrom <String>]
  [-AllowUserConsentForRiskyApps] [-BlockMsolPowerShell]
  [-DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]
@@ -26,7 +26,7 @@ New-MgPolicyAuthorizationPolicy [-AdditionalProperties <Hashtable>] [-AllowedToS
 
 ### Create
 ```
-New-MgPolicyAuthorizationPolicy -BodyParameter <IMicrosoftGraphAuthorizationPolicy1> [-Confirm] [-WhatIf]
+New-MgBetaPolicyAuthorizationPolicy -BodyParameter <IMicrosoftGraphAuthorizationPolicy1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ### -BlockMsolPowerShell
 To disable the use of the MSOnline PowerShell module set this property to true.
 This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module.
-This does not affect Azure AD Connect or Microsoft Graph.
+This does not affect Azure AD Connect or Microsoft.Graph.Beta.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -150,7 +150,7 @@ authorizationPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
 Parameter Sets: Create
 Aliases:
 
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTUSERROLEOVERRIDES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ defaultUserRolePermissions
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTUSERROLEPERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultUserRolePermissions1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultUserRolePermissions1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -342,11 +342,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
 
 ## NOTES
 
@@ -368,7 +368,7 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy1>: authorizationPolicy
   - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
   - `[AllowedToUseSspr <Boolean?>]`: Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
-  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
+  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft.Graph.Beta.
   - `[DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[IsDefault <Boolean?>]`: 

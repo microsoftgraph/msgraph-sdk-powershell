@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgapplication
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgapplication
 schema: 2.0.0
 ---
 
-# Remove-MgApplication
+# Remove-MgBetaApplication
 
 ## SYNOPSIS
 Deletes an application.
@@ -16,13 +16,13 @@ After that time, they are permanently deleted.
 
 ### Delete1 (Default)
 ```
-Remove-MgApplication -ApplicationId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaApplication -ApplicationId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgApplication -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaApplication -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ After that time, they are permanently deleted.
 
 ### Example 1: Delete an application
 ```powershell
-Remove-MgApplication -ApplicationId '1bc44759-ef10-46de-b199-40c077768fff'
+Remove-MgBetaApplication -ApplicationId '1bc44759-ef10-46de-b199-40c077768fff'
 ```
 
 This example deletes the specified application.
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

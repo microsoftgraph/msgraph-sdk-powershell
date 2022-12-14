@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementcomanageddeviceassignmentfilterevaluationstatusdetail
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementcomanageddeviceassignmentfilterevaluationstatusdetail
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
+# New-MgBetaDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
 
 ## SYNOPSIS
 Create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
@@ -14,21 +14,21 @@ Create new navigation property to assignmentFilterEvaluationStatusDetails for de
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail -ManagedDeviceId <String>
+New-MgBetaDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PayloadId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail -ManagedDeviceId <String>
+New-MgBetaDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail -ManagedDeviceId <String>
  -BodyParameter <IMicrosoftGraphAssignmentFilterEvaluationStatusDetails> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
+New-MgBetaDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphAssignmentFilterEvaluationStatusDetails> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ New-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
+New-MgBetaDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PayloadId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ A class containing information about the payloads on which filter has been appli
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -177,13 +177,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
 
 ## NOTES
 

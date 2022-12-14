@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementintentdevicesettingstatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementintentdevicesettingstatesummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementIntentDeviceSettingStateSummary
+# Update-MgBetaDeviceManagementIntentDeviceSettingStateSummary
 
 ## SYNOPSIS
 Update the navigation property deviceSettingStateSummaries in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceSettingStateSummaries in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementIntentDeviceSettingStateSummary
+Update-MgBetaDeviceManagementIntentDeviceSettingStateSummary
  -DeviceManagementIntentDeviceSettingStateSummaryId <String> -DeviceManagementIntentId <String>
  [-AdditionalProperties <Hashtable>] [-CompliantCount <Int32>] [-ConflictCount <Int32>] [-ErrorCount <Int32>]
  [-Id <String>] [-NonCompliantCount <Int32>] [-NotApplicableCount <Int32>] [-RemediatedCount <Int32>]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementIntentDeviceSettingStateSummary
 
 ### Update
 ```
-Update-MgDeviceManagementIntentDeviceSettingStateSummary
+Update-MgBetaDeviceManagementIntentDeviceSettingStateSummary
  -DeviceManagementIntentDeviceSettingStateSummaryId <String> -DeviceManagementIntentId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementIntentDeviceSettingStateSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -31,14 +31,14 @@ Update-MgDeviceManagementIntentDeviceSettingStateSummary
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementIntentDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementIntentDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementIntentDeviceSettingStateSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementIntentDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementIntentDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CompliantCount <Int32>] [-ConflictCount <Int32>] [-ErrorCount <Int32>]
  [-Id <String>] [-NonCompliantCount <Int32>] [-NotApplicableCount <Int32>] [-RemediatedCount <Int32>]
  [-SettingName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -71,7 +71,7 @@ Entity that represents device setting state summary for an intent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentDeviceSettingStateSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentDeviceSettingStateSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -178,7 +178,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -300,9 +300,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentDeviceSettingStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentDeviceSettingStateSummary
 
 ## OUTPUTS
 

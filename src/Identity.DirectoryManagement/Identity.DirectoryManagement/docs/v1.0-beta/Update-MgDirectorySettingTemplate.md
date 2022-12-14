@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectorysettingtemplate
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectorysettingtemplate
 schema: 2.0.0
 ---
 
-# Update-MgDirectorySettingTemplate
+# Update-MgBetaDirectorySettingTemplate
 
 ## SYNOPSIS
 Update entity in directorySettingTemplates
@@ -14,28 +14,28 @@ Update entity in directorySettingTemplates
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectorySettingTemplate -DirectorySettingTemplateId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectorySettingTemplate -DirectorySettingTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Values <IMicrosoftGraphSettingTemplateValue[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectorySettingTemplate -DirectorySettingTemplateId <String>
+Update-MgBetaDirectorySettingTemplate -DirectorySettingTemplateId <String>
  -BodyParameter <IMicrosoftGraphDirectorySettingTemplate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphDirectorySettingTemplate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-Values <IMicrosoftGraphSettingTemplateValue[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -68,7 +68,7 @@ directorySettingTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingTemplateValue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingTemplateValue[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -242,9 +242,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
 
 ## OUTPUTS
 

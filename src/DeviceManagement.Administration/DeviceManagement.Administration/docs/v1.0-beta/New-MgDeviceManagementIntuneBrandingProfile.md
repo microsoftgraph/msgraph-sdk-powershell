@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementintunebrandingprofile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementintunebrandingprofile
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementIntuneBrandingProfile
+# New-MgBetaDeviceManagementIntuneBrandingProfile
 
 ## SYNOPSIS
 Create new navigation property to intuneBrandingProfiles for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to intuneBrandingProfiles for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementIntuneBrandingProfile [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementIntuneBrandingProfile [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphIntuneBrandingProfileAssignment[]>]
  [-CompanyPortalBlockedActions <IMicrosoftGraphCompanyPortalBlockedAction[]>]
  [-ContactItEmailAddress <String>] [-ContactItName <String>] [-ContactItNotes <String>]
@@ -33,7 +33,7 @@ New-MgDeviceManagementIntuneBrandingProfile [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementIntuneBrandingProfile -BodyParameter <IMicrosoftGraphIntuneBrandingProfile> [-Confirm]
+New-MgBetaDeviceManagementIntuneBrandingProfile -BodyParameter <IMicrosoftGraphIntuneBrandingProfile> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -64,7 +64,7 @@ The list of group assignments for the branding profile
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfileAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfileAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -80,7 +80,7 @@ This entity contains data which is used in customizing the tenant level appearan
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfile
 Parameter Sets: Create
 Aliases:
 
@@ -96,7 +96,7 @@ Collection of blocked actions on the company portal as per platform and device o
 To construct, please use Get-Help -Online and see NOTES section for COMPANYPORTALBLOCKEDACTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompanyPortalBlockedAction[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCompanyPortalBlockedAction[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 Options available for enrollment flow customization
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.EnrollmentAvailabilityOptions
+Type: Microsoft.Graph.Beta.PowerShell.Support.EnrollmentAvailabilityOptions
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -339,7 +339,7 @@ Contains properties for a generic mime content.
 To construct, please use Get-Help -Online and see NOTES section for LANDINGPAGECUSTOMIZEDIMAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMimeContent
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -370,7 +370,7 @@ Contains properties for a generic mime content.
 To construct, please use Get-Help -Online and see NOTES section for LIGHTBACKGROUNDLOGO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMimeContent
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -566,7 +566,7 @@ Color in RGB.
 To construct, please use Get-Help -Online and see NOTES section for THEMECOLOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRgbColor
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRgbColor
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -582,7 +582,7 @@ Contains properties for a generic mime content.
 To construct, please use Get-Help -Online and see NOTES section for THEMECOLORLOGO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMimeContent
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -629,11 +629,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfile
 
 ## NOTES
 

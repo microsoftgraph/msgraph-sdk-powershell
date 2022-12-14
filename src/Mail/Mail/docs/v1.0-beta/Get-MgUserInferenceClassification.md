@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mguserinferenceclassification
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mguserinferenceclassification
 schema: 2.0.0
 ---
 
-# Get-MgUserInferenceClassification
+# Get-MgBetaUserInferenceClassification
 
 ## SYNOPSIS
 Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
@@ -14,12 +14,12 @@ Relevance classification of the user's messages based on explicit designations w
 
 ### Get (Default)
 ```
-Get-MgUserInferenceClassification -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserInferenceClassification -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserInferenceClassification -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserInferenceClassification -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -80,11 +80,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceClassification
 
 ## NOTES
 

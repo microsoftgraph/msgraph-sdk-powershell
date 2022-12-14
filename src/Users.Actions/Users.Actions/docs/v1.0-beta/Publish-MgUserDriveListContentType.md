@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/publish-mguserdrivelistcontenttype
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/publish-mguserdrivelistcontenttype
 schema: 2.0.0
 ---
 
-# Publish-MgUserDriveListContentType
+# Publish-MgBetaUserDriveListContentType
 
 ## SYNOPSIS
 Publishes a [contentType][] present in a content type hub site.
@@ -14,13 +14,13 @@ Publishes a [contentType][] present in a content type hub site.
 
 ### Publish1 (Default)
 ```
-Publish-MgUserDriveListContentType -ContentTypeId <String> -DriveId <String> -UserId <String> [-PassThru]
+Publish-MgBetaUserDriveListContentType -ContentTypeId <String> -DriveId <String> -UserId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PublishViaIdentity1
 ```
-Publish-MgUserDriveListContentType -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Publish-MgBetaUserDriveListContentType -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,12 +31,12 @@ Publishes a [contentType][] present in a content type hub site.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
-Publish-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+Publish-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
 ```
 
-This example shows how to use the Publish-MgUserDriveListContentType Cmdlet.
+This example shows how to use the Publish-MgBetaUserDriveListContentType Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: PublishViaIdentity1
 Aliases:
 
@@ -154,7 +154,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

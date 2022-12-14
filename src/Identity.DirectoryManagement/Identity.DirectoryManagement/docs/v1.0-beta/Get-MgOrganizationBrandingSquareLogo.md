@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganizationbrandingsquarelogo
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgorganizationbrandingsquarelogo
 schema: 2.0.0
 ---
 
-# Get-MgOrganizationBrandingSquareLogo
+# Get-MgBetaOrganizationBrandingSquareLogo
 
 ## SYNOPSIS
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
@@ -16,13 +16,13 @@ We recommend using a transparent image with no padding around the logo.
 
 ### Get (Default)
 ```
-Get-MgOrganizationBrandingSquareLogo -OrganizationId <String> -OutFile <String> [-PassThru]
+Get-MgBetaOrganizationBrandingSquareLogo -OrganizationId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOrganizationBrandingSquareLogo -InputObject <IIdentityDirectoryManagementIdentity> -OutFile <String>
+Get-MgBetaOrganizationBrandingSquareLogo -InputObject <IIdentityDirectoryManagementIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
@@ -40,7 +40,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -101,7 +101,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

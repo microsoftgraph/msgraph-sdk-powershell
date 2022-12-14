@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicydeviceregistrationpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicydeviceregistrationpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyDeviceRegistrationPolicy
+# Update-MgBetaPolicyDeviceRegistrationPolicy
 
 ## SYNOPSIS
 Update the navigation property deviceRegistrationPolicy in policies
@@ -14,7 +14,7 @@ Update the navigation property deviceRegistrationPolicy in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyDeviceRegistrationPolicy [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyDeviceRegistrationPolicy [-AdditionalProperties <Hashtable>]
  [-AzureAdJoin <IMicrosoftGraphAzureAdJoinPolicy>]
  [-AzureAdRegistration <IMicrosoftGraphAzureAdRegistrationPolicy>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-MultiFactorAuthConfiguration <String>] [-UserDeviceQuota <Int32>]
@@ -23,7 +23,7 @@ Update-MgPolicyDeviceRegistrationPolicy [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgPolicyDeviceRegistrationPolicy -BodyParameter <IMicrosoftGraphDeviceRegistrationPolicy> [-PassThru]
+Update-MgBetaPolicyDeviceRegistrationPolicy -BodyParameter <IMicrosoftGraphDeviceRegistrationPolicy> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ azureAdJoinPolicy
 To construct, please use Get-Help -Online and see NOTES section for AZUREADJOIN properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAzureAdJoinPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAzureAdJoinPolicy
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -70,7 +70,7 @@ azureADRegistrationPolicy
 To construct, please use Get-Help -Online and see NOTES section for AZUREADREGISTRATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAzureAdRegistrationPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAzureAdRegistrationPolicy
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ deviceRegistrationPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceRegistrationPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceRegistrationPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -230,7 +230,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceRegistrationPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceRegistrationPolicy
 
 ## OUTPUTS
 

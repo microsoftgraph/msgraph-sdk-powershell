@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mguserauthenticationmicrosoftauthenticatormethoddevice
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mguserauthenticationmicrosoftauthenticatormethoddevice
 schema: 2.0.0
 ---
 
-# Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice
+# Update-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDevice
 
 ## SYNOPSIS
 Update the navigation property device in users
@@ -14,7 +14,7 @@ Update the navigation property device in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice
+Update-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDevice
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-AccountEnabled]
  [-AdditionalProperties <Hashtable>] [-AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]
  [-ApproximateLastSignInDateTime <DateTime>] [-Commands <IMicrosoftGraphCommand[]>]
@@ -35,20 +35,20 @@ Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice
 
 ### Update
 ```
-Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice
+Update-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDevice
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphDevice1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDevice -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphDevice1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDevice -InputObject <IIdentitySignInsIdentity>
  [-AccountEnabled] [-AdditionalProperties <Hashtable>]
  [-AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]
  [-ApproximateLastSignInDateTime <DateTime>] [-Commands <IMicrosoftGraphCommand[]>]
@@ -114,7 +114,7 @@ Supports $filter (eq, not, ge, le).
 To construct, please use Get-Help -Online and see NOTES section for ALTERNATIVESECURITYIDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlternativeSecurityId[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlternativeSecurityId[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ device
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -164,7 +164,7 @@ Set of commands sent to this device.
 To construct, please use Get-Help -Online and see NOTES section for COMMANDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -361,7 +361,7 @@ onPremisesExtensionAttributes
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONATTRIBUTES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesExtensionAttributes
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesExtensionAttributes
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -379,7 +379,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -426,7 +426,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -577,7 +577,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for MEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -779,7 +779,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for REGISTEREDOWNERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -799,7 +799,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for REGISTEREDUSERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -867,7 +867,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for TRANSITIVEMEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -901,7 +901,7 @@ Represents the usage rights a device has been granted.
 To construct, please use Get-Help -Online and see NOTES section for USAGERIGHTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -963,9 +963,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice1
 
 ## OUTPUTS
 

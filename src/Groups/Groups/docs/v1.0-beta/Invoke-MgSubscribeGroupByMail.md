@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgsubscribegroupbymail
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgsubscribegroupbymail
 schema: 2.0.0
 ---
 
-# Invoke-MgSubscribeGroupByMail
+# Invoke-MgBetaSubscribeGroupByMail
 
 ## SYNOPSIS
 Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
@@ -15,12 +15,12 @@ Supported for Microsoft 365 groups only.
 
 ### Subscribe (Default)
 ```
-Invoke-MgSubscribeGroupByMail -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaSubscribeGroupByMail -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SubscribeViaIdentity
 ```
-Invoke-MgSubscribeGroupByMail -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaSubscribeGroupByMail -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Supported for Microsoft 365 groups only.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgSubscribeGroupByMail Cmdlet
+### Example 1: Using the Invoke-MgBetaSubscribeGroupByMail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Invoke-MgSubscribeGroupByMail -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Invoke-MgBetaSubscribeGroupByMail -GroupId $groupId
 ```
 
-This example shows how to use the Invoke-MgSubscribeGroupByMail Cmdlet.
+This example shows how to use the Invoke-MgBetaSubscribeGroupByMail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: SubscribeViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

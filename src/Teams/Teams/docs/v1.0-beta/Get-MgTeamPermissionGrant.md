@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteampermissiongrant
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteampermissiongrant
 schema: 2.0.0
 ---
 
-# Get-MgTeamPermissionGrant
+# Get-MgBetaTeamPermissionGrant
 
 ## SYNOPSIS
 A collection of permissions granted to apps to access the team.
@@ -14,20 +14,20 @@ A collection of permissions granted to apps to access the team.
 
 ### List (Default)
 ```
-Get-MgTeamPermissionGrant -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTeamPermissionGrant -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId <String>
+Get-MgBetaTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamPermissionGrant -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamPermissionGrant -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ A collection of permissions granted to apps to access the team.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamPermissionGrant Cmdlet
+### Example 1: Using the Get-MgBetaTeamPermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamPermissionGrant -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamPermissionGrant -TeamId $teamId
 ```
 
-This example shows how to use the Get-MgTeamPermissionGrant Cmdlet.
+This example shows how to use the Get-MgBetaTeamPermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
 
 ## NOTES
 

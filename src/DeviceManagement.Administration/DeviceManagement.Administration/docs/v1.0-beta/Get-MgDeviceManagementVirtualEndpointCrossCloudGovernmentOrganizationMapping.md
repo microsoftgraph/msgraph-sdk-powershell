@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointcrosscloudgovernmentorganizationmapping
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointcrosscloudgovernmentorganizationmapping
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping
+# Get-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping
 
 ## SYNOPSIS
 Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
@@ -13,7 +13,7 @@ Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizati
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcCrossCloudGovernmentOrganizationMapping
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcCrossCloudGovernmentOrganizationMapping
 
 ## NOTES
 

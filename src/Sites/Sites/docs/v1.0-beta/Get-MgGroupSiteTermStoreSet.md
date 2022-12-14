@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mggroupsitetermstoreset
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mggroupsitetermstoreset
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteTermStoreSet
+# Get-MgBetaGroupSiteTermStoreSet
 
 ## SYNOPSIS
 Collection of all sets available in the term store.
@@ -14,13 +14,13 @@ Collection of all sets available in the term store.
 
 ### Get (Default)
 ```
-Get-MgGroupSiteTermStoreSet -GroupId <String> -SetId <String> -SiteId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupSiteTermStoreSet -GroupId <String> -SetId <String> -SiteId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupSiteTermStoreSet -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupSiteTermStoreSet -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreSet1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreSet1
 
 ## NOTES
 

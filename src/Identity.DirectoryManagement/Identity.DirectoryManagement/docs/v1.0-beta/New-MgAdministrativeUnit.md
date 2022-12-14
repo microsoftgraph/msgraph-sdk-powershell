@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgadministrativeunit
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgadministrativeunit
 schema: 2.0.0
 ---
 
-# New-MgAdministrativeUnit
+# New-MgBetaAdministrativeUnit
 
 ## SYNOPSIS
 Use this API to create a new administrativeUnit.
@@ -14,7 +14,7 @@ Use this API to create a new administrativeUnit.
 
 ### CreateExpanded (Default)
 ```
-New-MgAdministrativeUnit [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
+New-MgBetaAdministrativeUnit [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
  [-IsMemberManagementRestricted] [-Members <IMicrosoftGraphDirectoryObject[]>]
  [-ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Visibility <String>] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgAdministrativeUnit [-AdditionalProperties <Hashtable>] [-DeletedDateTime <
 
 ### Create
 ```
-New-MgAdministrativeUnit -BodyParameter <IMicrosoftGraphAdministrativeUnit1> [-Confirm] [-WhatIf]
+New-MgBetaAdministrativeUnit -BodyParameter <IMicrosoftGraphAdministrativeUnit1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,9 +32,9 @@ Use this API to create a new administrativeUnit.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgAdministrativeUnit Cmdlet
+### Example 1: Using the New-MgBetaAdministrativeUnit Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	DisplayName = "Seattle District Technical Schools"
 	Description = "Seattle district technical schools administration"
@@ -42,10 +42,10 @@ $params = @{
 	MembershipRule = "(user.country -eq "United States")"
 	MembershipRuleProcessingState = "On"
 }
-New-MgAdministrativeUnit -BodyParameter $params
+New-MgBetaAdministrativeUnit -BodyParameter $params
 ```
 
-This example shows how to use the New-MgAdministrativeUnit Cmdlet.
+This example shows how to use the New-MgBetaAdministrativeUnit Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ administrativeUnit
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
 Parameter Sets: Create
 Aliases:
 
@@ -135,7 +135,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -183,7 +183,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -199,7 +199,7 @@ Scoped-role members of this administrative unit.
 To construct, please use Get-Help -Online and see NOTES section for SCOPEDROLEMEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -264,11 +264,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
 
 ## NOTES
 

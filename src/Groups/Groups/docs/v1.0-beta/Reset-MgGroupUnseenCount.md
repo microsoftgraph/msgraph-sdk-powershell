@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/reset-mggroupunseencount
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/reset-mggroupunseencount
 schema: 2.0.0
 ---
 
-# Reset-MgGroupUnseenCount
+# Reset-MgBetaGroupUnseenCount
 
 ## SYNOPSIS
 Reset the unseenCount of all the posts that the current user has not seen since their last visit.
@@ -15,12 +15,12 @@ Supported for Microsoft 365 groups only.
 
 ### Reset (Default)
 ```
-Reset-MgGroupUnseenCount -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Reset-MgBetaGroupUnseenCount -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgGroupUnseenCount -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Reset-MgBetaGroupUnseenCount -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,13 +29,13 @@ Supported for Microsoft 365 groups only.
 
 ## EXAMPLES
 
-### Example 1: Using the Reset-MgGroupUnseenCount Cmdlet
+### Example 1: Using the Reset-MgBetaGroupUnseenCount Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Reset-MgGroupUnseenCount -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Reset-MgBetaGroupUnseenCount -GroupId $groupId
 ```
 
-This example shows how to use the Reset-MgGroupUnseenCount Cmdlet.
+This example shows how to use the Reset-MgBetaGroupUnseenCount Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

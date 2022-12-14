@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgserviceprincipalsynchronizationjob
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgserviceprincipalsynchronizationjob
 schema: 2.0.0
 ---
 
-# New-MgServicePrincipalSynchronizationJob
+# New-MgBetaServicePrincipalSynchronizationJob
 
 ## SYNOPSIS
 Create new synchronization job with a default synchronization schema.
@@ -16,7 +16,7 @@ Call Start job to start synchronization.
 
 ### CreateExpanded (Default)
 ```
-New-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Schedule <IMicrosoftGraphSynchronizationSchedule>]
  [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Status <IMicrosoftGraphSynchronizationStatus>]
  [-SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>] [-TemplateId <String>] [-Confirm] [-WhatIf]
@@ -25,19 +25,19 @@ New-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String> [-Addition
 
 ### Create
 ```
-New-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String>
+New-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId <String>
  -BodyParameter <IMicrosoftGraphSynchronizationJob> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphSynchronizationJob> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Schedule <IMicrosoftGraphSynchronizationSchedule>]
  [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Status <IMicrosoftGraphSynchronizationStatus>]
  [-SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>] [-TemplateId <String>] [-Confirm] [-WhatIf]
@@ -51,16 +51,16 @@ Call Start job to start synchronization.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgServicePrincipalSynchronizationJob Cmdlet
+### Example 1: Using the New-MgBetaServicePrincipalSynchronizationJob Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	TemplateId = "BoxOutDelta"
 }
-New-MgServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+New-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgServicePrincipalSynchronizationJob Cmdlet.
+This example shows how to use the New-MgBetaServicePrincipalSynchronizationJob Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -85,7 +85,7 @@ synchronizationJob
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationJob
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationJob
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -133,7 +133,7 @@ synchronizationSchedule
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSchedule
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSchedule
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -149,7 +149,7 @@ synchronizationSchema
 To construct, please use Get-Help -Online and see NOTES section for SCHEMA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ synchronizationStatus
 To construct, please use Get-Help -Online and see NOTES section for STATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationStatus
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ Some settings are inherited from the template.
 To construct, please use Get-Help -Online and see NOTES section for SYNCHRONIZATIONJOBSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -259,13 +259,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationJob
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationJob
 
 ## NOTES
 

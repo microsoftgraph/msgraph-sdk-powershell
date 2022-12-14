@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementapplepushnotificationcertificate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementapplepushnotificationcertificate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementApplePushNotificationCertificate
+# Update-MgBetaDeviceManagementApplePushNotificationCertificate
 
 ## SYNOPSIS
 Update the navigation property applePushNotificationCertificate in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property applePushNotificationCertificate in deviceManagem
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementApplePushNotificationCertificate [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementApplePushNotificationCertificate [-AdditionalProperties <Hashtable>]
  [-AppleIdentifier <String>] [-Certificate <String>] [-CertificateUploadFailureReason <String>]
  [-CertificateUploadStatus <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-TopicIdentifier <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementApplePushNotificationCertificate [-AdditionalProperties
 
 ### Update
 ```
-Update-MgDeviceManagementApplePushNotificationCertificate
+Update-MgBetaDeviceManagementApplePushNotificationCertificate
  -BodyParameter <IMicrosoftGraphApplePushNotificationCertificate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -70,7 +70,7 @@ Apple push notification certificate.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
 Parameter Sets: Update
 Aliases:
 
@@ -238,7 +238,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
 
 ## OUTPUTS
 

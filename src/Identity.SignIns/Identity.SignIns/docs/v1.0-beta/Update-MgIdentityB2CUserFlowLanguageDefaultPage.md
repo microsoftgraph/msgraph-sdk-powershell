@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityb2cuserflowlanguagedefaultpage
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityb2cuserflowlanguagedefaultpage
 schema: 2.0.0
 ---
 
-# Update-MgIdentityB2CUserFlowLanguageDefaultPage
+# Update-MgBetaIdentityB2CUserFlowLanguageDefaultPage
 
 ## SYNOPSIS
 Update the navigation property defaultPages in identity
@@ -14,27 +14,27 @@ Update the navigation property defaultPages in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityB2CUserFlowLanguageDefaultPage -B2CIdentityUserFlowId <String>
+Update-MgBetaIdentityB2CUserFlowLanguageDefaultPage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgIdentityB2CUserFlowLanguageDefaultPage -B2CIdentityUserFlowId <String>
+Update-MgBetaIdentityB2CUserFlowLanguageDefaultPage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityB2CUserFlowLanguageDefaultPage -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityB2CUserFlowLanguageDefaultPage -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityB2CUserFlowLanguageDefaultPage -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityB2CUserFlowLanguageDefaultPage -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -203,7 +203,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.Collections.Hashtable
 

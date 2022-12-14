@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportuserarchivedprintjob
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportuserarchivedprintjob
 schema: 2.0.0
 ---
 
-# Get-MgReportUserArchivedPrintJob
+# Get-MgBetaReportUserArchivedPrintJob
 
 ## SYNOPSIS
 Invoke function getUserArchivedPrintJobs
@@ -14,13 +14,13 @@ Invoke function getUserArchivedPrintJobs
 
 ### Get (Default)
 ```
-Get-MgReportUserArchivedPrintJob -EndDateTime <DateTime> -StartDateTime <DateTime> -UserId <String> [-Count]
+Get-MgBetaReportUserArchivedPrintJob -EndDateTime <DateTime> -StartDateTime <DateTime> -UserId <String> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportUserArchivedPrintJob -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaReportUserArchivedPrintJob -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -172,11 +172,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphArchivedPrintJob1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphArchivedPrintJob1
 
 ## NOTES
 

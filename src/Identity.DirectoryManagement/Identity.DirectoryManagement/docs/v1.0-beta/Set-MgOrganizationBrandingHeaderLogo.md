@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/set-mgorganizationbrandingheaderlogo
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/set-mgorganizationbrandingheaderlogo
 schema: 2.0.0
 ---
 
-# Set-MgOrganizationBrandingHeaderLogo
+# Set-MgBetaOrganizationBrandingHeaderLogo
 
 ## SYNOPSIS
 Update headerLogo for the navigation property branding in organization
@@ -14,13 +14,13 @@ Update headerLogo for the navigation property branding in organization
 
 ### Set (Default)
 ```
-Set-MgOrganizationBrandingHeaderLogo -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaOrganizationBrandingHeaderLogo -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgOrganizationBrandingHeaderLogo -InputObject <IIdentityDirectoryManagementIdentity> -InFile <String>
+Set-MgBetaOrganizationBrandingHeaderLogo -InputObject <IIdentityDirectoryManagementIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### System.IO.Stream
 

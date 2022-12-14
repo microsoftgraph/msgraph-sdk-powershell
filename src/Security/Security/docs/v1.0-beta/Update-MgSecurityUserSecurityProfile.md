@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityusersecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityusersecurityprofile
 schema: 2.0.0
 ---
 
-# Update-MgSecurityUserSecurityProfile
+# Update-MgBetaSecurityUserSecurityProfile
 
 ## SYNOPSIS
 Update the navigation property userSecurityProfiles in security
@@ -14,7 +14,7 @@ Update the navigation property userSecurityProfiles in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityUserSecurityProfile -UserSecurityProfileId <String>
+Update-MgBetaSecurityUserSecurityProfile -UserSecurityProfileId <String>
  [-Accounts <IMicrosoftGraphUserAccount[]>] [-AdditionalProperties <Hashtable>]
  [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-RiskScore <String>]
@@ -25,19 +25,19 @@ Update-MgSecurityUserSecurityProfile -UserSecurityProfileId <String>
 
 ### Update
 ```
-Update-MgSecurityUserSecurityProfile -UserSecurityProfileId <String>
+Update-MgBetaSecurityUserSecurityProfile -UserSecurityProfileId <String>
  -BodyParameter <IMicrosoftGraphUserSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityUserSecurityProfile -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityUserSecurityProfile -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphUserSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityUserSecurityProfile -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityUserSecurityProfile -InputObject <ISecurityIdentity>
  [-Accounts <IMicrosoftGraphUserAccount[]>] [-AdditionalProperties <Hashtable>]
  [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-RiskScore <String>]
@@ -58,7 +58,7 @@ Update the navigation property userSecurityProfiles in security
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAccount[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAccount[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -119,7 +119,7 @@ userSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -287,7 +287,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -334,9 +334,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

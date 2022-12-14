@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementtemplatecategoryrecommendedsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementtemplatecategoryrecommendedsetting
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementTemplateCategoryRecommendedSetting
+# Get-MgBetaDeviceManagementTemplateCategoryRecommendedSetting
 
 ## SYNOPSIS
 The settings this category contains
@@ -14,7 +14,7 @@ The settings this category contains
 
 ### List (Default)
 ```
-Get-MgDeviceManagementTemplateCategoryRecommendedSetting -DeviceManagementTemplateId <String>
+Get-MgBetaDeviceManagementTemplateCategoryRecommendedSetting -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateSettingCategoryId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgDeviceManagementTemplateCategoryRecommendedSetting -DeviceManagementTempla
 
 ### Get
 ```
-Get-MgDeviceManagementTemplateCategoryRecommendedSetting -DeviceManagementSettingInstanceId <String>
+Get-MgBetaDeviceManagementTemplateCategoryRecommendedSetting -DeviceManagementSettingInstanceId <String>
  -DeviceManagementTemplateId <String> -DeviceManagementTemplateSettingCategoryId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementTemplateCategoryRecommendedSetting -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementTemplateCategoryRecommendedSetting -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
 
 ## NOTES
 

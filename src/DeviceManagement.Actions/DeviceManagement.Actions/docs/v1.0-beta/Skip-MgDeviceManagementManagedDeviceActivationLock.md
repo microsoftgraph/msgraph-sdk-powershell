@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/skip-mgdevicemanagementmanageddeviceactivationlock
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/skip-mgdevicemanagementmanageddeviceactivationlock
 schema: 2.0.0
 ---
 
-# Skip-MgDeviceManagementManagedDeviceActivationLock
+# Skip-MgBetaDeviceManagementManagedDeviceActivationLock
 
 ## SYNOPSIS
 Bypass activation lock
@@ -14,13 +14,13 @@ Bypass activation lock
 
 ### Bypass (Default)
 ```
-Skip-MgDeviceManagementManagedDeviceActivationLock -ManagedDeviceId <String> [-PassThru] [-Confirm] [-WhatIf]
+Skip-MgBetaDeviceManagementManagedDeviceActivationLock -ManagedDeviceId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### BypassViaIdentity
 ```
-Skip-MgDeviceManagementManagedDeviceActivationLock -InputObject <IDeviceManagementActionsIdentity> [-PassThru]
+Skip-MgBetaDeviceManagementManagedDeviceActivationLock -InputObject <IDeviceManagementActionsIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: BypassViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

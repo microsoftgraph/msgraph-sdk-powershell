@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementcertificateconnectordetailhealthmetric
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementcertificateconnectordetailhealthmetric
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementCertificateConnectorDetailHealthMetric
+# Get-MgBetaDeviceManagementCertificateConnectorDetailHealthMetric
 
 ## SYNOPSIS
 Invoke action getHealthMetrics
@@ -14,27 +14,27 @@ Invoke action getHealthMetrics
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementCertificateConnectorDetailHealthMetric -CertificateConnectorDetailsId <String>
+Get-MgBetaDeviceManagementCertificateConnectorDetailHealthMetric -CertificateConnectorDetailsId <String>
  [-AdditionalProperties <Hashtable>] [-MetricNames <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementCertificateConnectorDetailHealthMetric -CertificateConnectorDetailsId <String>
+Get-MgBetaDeviceManagementCertificateConnectorDetailHealthMetric -CertificateConnectorDetailsId <String>
  -BodyParameter <IPathsAsw265DevicemanagementCertificateconnectordetailsIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementCertificateConnectorDetailHealthMetric -InputObject <IDeviceManagementActionsIdentity>
+Get-MgBetaDeviceManagementCertificateConnectorDetailHealthMetric -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsAsw265DevicemanagementCertificateconnectordetailsIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgDeviceManagementCertificateConnectorDetailHealthMetric -InputObject <IDeviceManagementActionsIdentity>
+Get-MgBetaDeviceManagementCertificateConnectorDetailHealthMetric -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-MetricNames <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsAsw265DevicemanagementCertificateconnectordetailsIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsAsw265DevicemanagementCertificateconnectordetailsIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -158,13 +158,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsAsw265DevicemanagementCertificateconnectordetailsIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsAsw265DevicemanagementCertificateconnectordetailsIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyLongValuePair
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyLongValuePair
 
 ## NOTES
 

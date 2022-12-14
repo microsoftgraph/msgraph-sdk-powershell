@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupacceptedsenderbyref
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupacceptedsenderbyref
 schema: 2.0.0
 ---
 
-# New-MgGroupAcceptedSenderByRef
+# New-MgBetaGroupAcceptedSenderByRef
 
 ## SYNOPSIS
 Create new navigation property ref to acceptedSenders for groups
@@ -14,25 +14,25 @@ Create new navigation property ref to acceptedSenders for groups
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupAcceptedSenderByRef -GroupId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
+New-MgBetaGroupAcceptedSenderByRef -GroupId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupAcceptedSenderByRef -GroupId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
+New-MgBetaGroupAcceptedSenderByRef -GroupId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> -BodyParameter <IReferenceCreate> [-PassThru]
+New-MgBetaGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> -BodyParameter <IReferenceCreate> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to acceptedSenders for groups
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgGroupAcceptedSenderByRef Cmdlet
+### Example 1: Using the New-MgBetaGroupAcceptedSenderByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/users/alexd@contoso.com"
 }
-New-MgGroupAcceptedSenderByRef -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupAcceptedSenderByRef -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupAcceptedSenderByRef Cmdlet.
+This example shows how to use the New-MgBetaGroupAcceptedSenderByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

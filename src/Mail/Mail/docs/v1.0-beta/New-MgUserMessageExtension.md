@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/new-mgusermessageextension
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/new-mgusermessageextension
 schema: 2.0.0
 ---
 
-# New-MgUserMessageExtension
+# New-MgBetaUserMessageExtension
 
 ## SYNOPSIS
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -17,25 +17,25 @@ The table in the Permissions section lists the resources that support open exten
 
 ### CreateExpanded (Default)
 ```
-New-MgUserMessageExtension -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserMessageExtension -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserMessageExtension -MessageId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm]
+New-MgBetaUserMessageExtension -MessageId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserMessageExtension -InputObject <IMailIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaUserMessageExtension -InputObject <IMailIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserMessageExtension -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaUserMessageExtension -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,21 +47,21 @@ The table in the Permissions section lists the resources that support open exten
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserMessageExtension Cmdlet
+### Example 1: Using the New-MgBetaUserMessageExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
-	"@odata.type" = "microsoft.graph.openTypeExtension"
+	"@odata.type" = "Microsoft.Graph.Beta.openTypeExtension"
 	ExtensionName = "Com.Contoso.Referral"
 	CompanyName = "Wingtip Toys"
 	DealValue = 
 	ExpirationDate = "2015-12-03T10:00:00.000Z"
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessageExtension -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageExtension -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserMessageExtension Cmdlet.
+This example shows how to use the New-MgBetaUserMessageExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ### System.Collections.Hashtable
 

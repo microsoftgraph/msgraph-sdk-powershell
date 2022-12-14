@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgadministrativeunitscopedrolemember
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgadministrativeunitscopedrolemember
 schema: 2.0.0
 ---
 
-# New-MgAdministrativeUnitScopedRoleMember
+# New-MgBetaAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
 Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
@@ -15,26 +15,26 @@ For a list of roles that can be assigned with administrative unit scope, see Ass
 
 ### CreateExpanded (Default)
 ```
-New-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> [-AdditionalProperties <Hashtable>]
  [-AdministrativeUnitId1 <String>] [-Id <String>] [-RoleId <String>]
  [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String>
+New-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String>
  -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdministrativeUnitId <String>] [-AdditionalProperties <Hashtable>] [-Id <String>] [-RoleId <String>]
  [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,19 +45,19 @@ For a list of roles that can be assigned with administrative unit scope, see Ass
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgAdministrativeUnitScopedRoleMember Cmdlet
+### Example 1: Using the New-MgBetaAdministrativeUnitScopedRoleMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	RoleId = "roleId-value"
 	RoleMemberInfo = @{
 		Id = "id-value"
 	}
 }
-New-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
+New-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgAdministrativeUnitScopedRoleMember Cmdlet.
+This example shows how to use the New-MgBetaAdministrativeUnitScopedRoleMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -112,7 +112,7 @@ scopedRoleMembership
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -175,7 +175,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for ROLEMEMBERINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -222,13 +222,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
 ## NOTES
 

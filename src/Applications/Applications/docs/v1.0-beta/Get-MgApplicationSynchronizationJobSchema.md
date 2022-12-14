@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationsynchronizationjobschema
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationsynchronizationjobschema
 schema: 2.0.0
 ---
 
-# Get-MgApplicationSynchronizationJobSchema
+# Get-MgBetaApplicationSynchronizationJobSchema
 
 ## SYNOPSIS
 Retrieve the schema for a given synchronization job or template.
@@ -14,13 +14,13 @@ Retrieve the schema for a given synchronization job or template.
 
 ### Get (Default)
 ```
-Get-MgApplicationSynchronizationJobSchema -ApplicationId <String> -SynchronizationJobId <String>
+Get-MgBetaApplicationSynchronizationJobSchema -ApplicationId <String> -SynchronizationJobId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationSynchronizationJobSchema -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationSynchronizationJobSchema -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,11 +112,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
 
 ## NOTES
 

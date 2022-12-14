@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/invoke-mgestimatecomplianceediscoverycasesourcecollectionstatistics
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/invoke-mgestimatecomplianceediscoverycasesourcecollectionstatistics
 schema: 2.0.0
 ---
 
-# Invoke-MgEstimateComplianceEdiscoveryCaseSourceCollectionStatistics
+# Invoke-MgBetaEstimateComplianceEdiscoveryCaseSourceCollectionStatistics
 
 ## SYNOPSIS
 Run an estimate of the number of emails and documents in the source collection.
@@ -15,13 +15,13 @@ To learn more about source collections (also known as searches in eDiscovery), s
 
 ### Estimate (Default)
 ```
-Invoke-MgEstimateComplianceEdiscoveryCaseSourceCollectionStatistics -CaseId <String>
+Invoke-MgBetaEstimateComplianceEdiscoveryCaseSourceCollectionStatistics -CaseId <String>
  -SourceCollectionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EstimateViaIdentity
 ```
-Invoke-MgEstimateComplianceEdiscoveryCaseSourceCollectionStatistics -InputObject <IComplianceIdentity>
+Invoke-MgBetaEstimateComplianceEdiscoveryCaseSourceCollectionStatistics -InputObject <IComplianceIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ To learn more about source collections (also known as searches in eDiscovery), s
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgEstimateComplianceEdiscoveryCaseSourceCollectionStatistics Cmdlet
+### Example 1: Using the Invoke-MgBetaEstimateComplianceEdiscoveryCaseSourceCollectionStatistics Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Invoke-MgEstimateComplianceEdiscoveryCaseSourceCollectionStatistics -CaseId $caseId -SourceCollectionId $sourceCollectionId
+Import-Module Microsoft.Graph.Beta.Compliance
+Invoke-MgBetaEstimateComplianceEdiscoveryCaseSourceCollectionStatistics -CaseId $caseId -SourceCollectionId $sourceCollectionId
 ```
 
-This example shows how to use the Invoke-MgEstimateComplianceEdiscoveryCaseSourceCollectionStatistics Cmdlet.
+This example shows how to use the Invoke-MgBetaEstimateComplianceEdiscoveryCaseSourceCollectionStatistics Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: EstimateViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

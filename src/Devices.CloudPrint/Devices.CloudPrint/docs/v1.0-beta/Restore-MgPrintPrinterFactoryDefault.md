@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/restore-mgprintprinterfactorydefault
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/restore-mgprintprinterfactorydefault
 schema: 2.0.0
 ---
 
-# Restore-MgPrintPrinterFactoryDefault
+# Restore-MgBetaPrintPrinterFactoryDefault
 
 ## SYNOPSIS
 Restore a printer's default settings to the values specified by the manufacturer.
@@ -14,12 +14,12 @@ Restore a printer's default settings to the values specified by the manufacturer
 
 ### Restore1 (Default)
 ```
-Restore-MgPrintPrinterFactoryDefault -PrinterId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgBetaPrintPrinterFactoryDefault -PrinterId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity1
 ```
-Restore-MgPrintPrinterFactoryDefault -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [-Confirm]
+Restore-MgBetaPrintPrinterFactoryDefault -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -28,13 +28,13 @@ Restore a printer's default settings to the values specified by the manufacturer
 
 ## EXAMPLES
 
-### Example 1: Using the Restore-MgPrintPrinterFactoryDefault Cmdlet
+### Example 1: Using the Restore-MgBetaPrintPrinterFactoryDefault Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Restore-MgPrintPrinterFactoryDefault -PrinterId $printerId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Restore-MgBetaPrintPrinterFactoryDefault -PrinterId $printerId
 ```
 
-This example shows how to use the Restore-MgPrintPrinterFactoryDefault Cmdlet.
+This example shows how to use the Restore-MgBetaPrintPrinterFactoryDefault Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -44,7 +44,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: RestoreViaIdentity1
 Aliases:
 
@@ -121,7 +121,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 

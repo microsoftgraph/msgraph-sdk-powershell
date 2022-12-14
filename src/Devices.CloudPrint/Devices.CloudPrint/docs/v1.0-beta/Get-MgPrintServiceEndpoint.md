@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintserviceendpoint
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprintserviceendpoint
 schema: 2.0.0
 ---
 
-# Get-MgPrintServiceEndpoint
+# Get-MgBetaPrintServiceEndpoint
 
 ## SYNOPSIS
 Endpoints that can be used to access the service.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgPrintServiceEndpoint -PrintServiceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPrintServiceEndpoint -PrintServiceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgPrintServiceEndpoint -PrintServiceEndpointId <String> -PrintServiceId <String>
+Get-MgBetaPrintServiceEndpoint -PrintServiceEndpointId <String> -PrintServiceId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,22 +40,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintServiceEndpoint Cmdlet
+### Example 1: Using the Get-MgBetaPrintServiceEndpoint Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintServiceEndpoint -PrintServiceId $printServiceId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintServiceEndpoint -PrintServiceId $printServiceId
 ```
 
-This example shows how to use the Get-MgPrintServiceEndpoint Cmdlet.
+This example shows how to use the Get-MgBetaPrintServiceEndpoint Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPrintServiceEndpoint Cmdlet
+### Example 2: Using the Get-MgBetaPrintServiceEndpoint Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintServiceEndpoint -PrintServiceId $printServiceId -PrintServiceEndpointId $printServiceEndpointId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintServiceEndpoint -PrintServiceId $printServiceId -PrintServiceEndpointId $printServiceEndpointId
 ```
 
-This example shows how to use the Get-MgPrintServiceEndpoint Cmdlet.
+This example shows how to use the Get-MgBetaPrintServiceEndpoint Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -262,11 +262,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
 
 ## NOTES
 

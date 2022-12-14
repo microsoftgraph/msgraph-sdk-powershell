@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamscheduletimeoffreason
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamscheduletimeoffreason
 schema: 2.0.0
 ---
 
-# New-MgTeamScheduleTimeOffReason
+# New-MgBetaTeamScheduleTimeOffReason
 
 ## SYNOPSIS
 Create a new timeOffReason.
@@ -14,26 +14,26 @@ Create a new timeOffReason.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgTeamScheduleTimeOffReason -TeamId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamScheduleTimeOffReason -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>] [-IconType <String>] [-Id <String>]
  [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgTeamScheduleTimeOffReason -TeamId <String> -BodyParameter <IMicrosoftGraphTimeOffReason1> [-Confirm]
+New-MgBetaTeamScheduleTimeOffReason -TeamId <String> -BodyParameter <IMicrosoftGraphTimeOffReason1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTimeOffReason1>
+New-MgBetaTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTimeOffReason1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>] [-IconType <String>] [-Id <String>]
  [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,18 +43,18 @@ Create a new timeOffReason.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTeamScheduleTimeOffReason Cmdlet
+### Example 1: Using the New-MgBetaTeamScheduleTimeOffReason Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "Vacation"
 	IconType = "plane"
 	IsActive = $true
 }
-New-MgTeamScheduleTimeOffReason -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamScheduleTimeOffReason -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTeamScheduleTimeOffReason Cmdlet.
+This example shows how to use the New-MgBetaTeamScheduleTimeOffReason Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ timeOffReason
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffReason1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOffReason1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -95,7 +95,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -190,7 +190,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -252,13 +252,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffReason1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOffReason1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffReason1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOffReason1
 
 ## NOTES
 

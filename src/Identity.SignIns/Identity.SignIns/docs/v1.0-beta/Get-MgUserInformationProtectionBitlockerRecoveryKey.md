@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserinformationprotectionbitlockerrecoverykey
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserinformationprotectionbitlockerrecoverykey
 schema: 2.0.0
 ---
 
-# Get-MgUserInformationProtectionBitlockerRecoveryKey
+# Get-MgBetaUserInformationProtectionBitlockerRecoveryKey
 
 ## SYNOPSIS
 The recovery keys associated with the bitlocker entity.
@@ -14,20 +14,20 @@ The recovery keys associated with the bitlocker entity.
 
 ### List (Default)
 ```
-Get-MgUserInformationProtectionBitlockerRecoveryKey -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserInformationProtectionBitlockerRecoveryKey -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserInformationProtectionBitlockerRecoveryKey -BitlockerRecoveryKeyId <String> -UserId <String>
+Get-MgBetaUserInformationProtectionBitlockerRecoveryKey -BitlockerRecoveryKeyId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserInformationProtectionBitlockerRecoveryKey -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserInformationProtectionBitlockerRecoveryKey -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey
 
 ## NOTES
 

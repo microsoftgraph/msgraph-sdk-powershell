@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityuserflow
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityuserflow
 schema: 2.0.0
 ---
 
-# Update-MgIdentityUserFlow
+# Update-MgBetaIdentityUserFlow
 
 ## SYNOPSIS
 Update the navigation property userFlows in identity
@@ -14,26 +14,26 @@ Update the navigation property userFlows in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityUserFlow -IdentityUserFlowId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaIdentityUserFlow -IdentityUserFlowId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-UserFlowType <String>] [-UserFlowTypeVersion <Single>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgIdentityUserFlow -IdentityUserFlowId <String> -BodyParameter <IMicrosoftGraphIdentityUserFlow>
+Update-MgBetaIdentityUserFlow -IdentityUserFlowId <String> -BodyParameter <IMicrosoftGraphIdentityUserFlow>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityUserFlow -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityUserFlow -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphIdentityUserFlow> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityUserFlow -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityUserFlow -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-UserFlowType <String>] [-UserFlowTypeVersion <Single>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ identityUserFlow
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -204,9 +204,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlow
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityusersecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityusersecurityprofile
 schema: 2.0.0
 ---
 
-# New-MgSecurityUserSecurityProfile
+# New-MgBetaSecurityUserSecurityProfile
 
 ## SYNOPSIS
 Create new navigation property to userSecurityProfiles for security
@@ -14,7 +14,7 @@ Create new navigation property to userSecurityProfiles for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityUserSecurityProfile [-Accounts <IMicrosoftGraphUserAccount[]>]
+New-MgBetaSecurityUserSecurityProfile [-Accounts <IMicrosoftGraphUserAccount[]>]
  [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-RiskScore <String>] [-Tags <String[]>] [-UserPrincipalName <String>]
@@ -23,7 +23,7 @@ New-MgSecurityUserSecurityProfile [-Accounts <IMicrosoftGraphUserAccount[]>]
 
 ### Create
 ```
-New-MgSecurityUserSecurityProfile -BodyParameter <IMicrosoftGraphUserSecurityProfile> [-Confirm] [-WhatIf]
+New-MgBetaSecurityUserSecurityProfile -BodyParameter <IMicrosoftGraphUserSecurityProfile> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -39,7 +39,7 @@ Create new navigation property to userSecurityProfiles for security
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAccount[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAccount[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ userSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
 Parameter Sets: Create
 Aliases:
 
@@ -222,7 +222,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -269,11 +269,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSecurityProfile
 
 ## NOTES
 

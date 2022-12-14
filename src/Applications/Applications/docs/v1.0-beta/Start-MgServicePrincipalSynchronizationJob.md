@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/start-mgserviceprincipalsynchronizationjob
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/start-mgserviceprincipalsynchronizationjob
 schema: 2.0.0
 ---
 
-# Start-MgServicePrincipalSynchronizationJob
+# Start-MgBetaServicePrincipalSynchronizationJob
 
 ## SYNOPSIS
 Start an existing synchronization job.
@@ -18,13 +18,13 @@ Use the start job only when the job is currently paused or in quarantine.
 
 ### Start (Default)
 ```
-Start-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String> -SynchronizationJobId <String>
+Start-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId <String> -SynchronizationJobId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StartViaIdentity
 ```
-Start-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm]
+Start-MgBetaServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -37,13 +37,13 @@ Use the start job only when the job is currently paused or in quarantine.
 
 ## EXAMPLES
 
-### Example 1: Using the Start-MgServicePrincipalSynchronizationJob Cmdlet
+### Example 1: Using the Start-MgBetaServicePrincipalSynchronizationJob Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Start-MgServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Start-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
 
-This example shows how to use the Start-MgServicePrincipalSynchronizationJob Cmdlet.
+This example shows how to use the Start-MgBetaServicePrincipalSynchronizationJob Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: StartViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

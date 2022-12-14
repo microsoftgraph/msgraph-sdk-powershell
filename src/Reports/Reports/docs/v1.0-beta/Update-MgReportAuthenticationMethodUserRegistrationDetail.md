@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/update-mgreportauthenticationmethoduserregistrationdetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/update-mgreportauthenticationmethoduserregistrationdetail
 schema: 2.0.0
 ---
 
-# Update-MgReportAuthenticationMethodUserRegistrationDetail
+# Update-MgBetaReportAuthenticationMethodUserRegistrationDetail
 
 ## SYNOPSIS
 Update the navigation property userRegistrationDetails in reports
@@ -14,7 +14,7 @@ Update the navigation property userRegistrationDetails in reports
 
 ### UpdateExpanded (Default)
 ```
-Update-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
+Update-MgBetaReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
  [-AdditionalProperties <Hashtable>] [-DefaultMfaMethod <String>] [-Id <String>] [-IsAdmin] [-IsMfaCapable]
  [-IsMfaRegistered] [-IsPasswordlessCapable] [-IsSsprCapable] [-IsSsprEnabled] [-IsSsprRegistered]
  [-MethodsRegistered <String[]>] [-UserDisplayName <String>] [-UserPrincipalName <String>]
@@ -23,19 +23,19 @@ Update-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetai
 
 ### Update
 ```
-Update-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
+Update-MgBetaReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
  -BodyParameter <IMicrosoftGraphUserRegistrationDetails> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity>
+Update-MgBetaReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity>
  -BodyParameter <IMicrosoftGraphUserRegistrationDetails> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity>
+Update-MgBetaReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity>
  [-AdditionalProperties <Hashtable>] [-DefaultMfaMethod <String>] [-Id <String>] [-IsAdmin] [-IsMfaCapable]
  [-IsMfaRegistered] [-IsPasswordlessCapable] [-IsSsprCapable] [-IsSsprEnabled] [-IsSsprRegistered]
  [-MethodsRegistered <String[]>] [-UserDisplayName <String>] [-UserPrincipalName <String>]
@@ -69,7 +69,7 @@ userRegistrationDetails
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -372,9 +372,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

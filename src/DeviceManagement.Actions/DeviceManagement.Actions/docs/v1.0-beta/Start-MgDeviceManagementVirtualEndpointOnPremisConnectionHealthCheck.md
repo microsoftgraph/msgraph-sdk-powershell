@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/start-mgdevicemanagementvirtualendpointonpremisconnectionhealthcheck
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/start-mgdevicemanagementvirtualendpointonpremisconnectionhealthcheck
 schema: 2.0.0
 ---
 
-# Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck
+# Start-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck
 
 ## SYNOPSIS
 Run health checks on the cloudPcOnPremisesConnection object.
@@ -15,13 +15,13 @@ This will trigger a new health check for this cloudPcOnPremisesConnection object
 
 ### Run (Default)
 ```
-Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck -CloudPcOnPremisesConnectionId <String>
+Start-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck -CloudPcOnPremisesConnectionId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RunViaIdentity
 ```
-Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck
+Start-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck
  -InputObject <IDeviceManagementActionsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ This will trigger a new health check for this cloudPcOnPremisesConnection object
 
 ## EXAMPLES
 
-### Example 1: Using the Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck Cmdlet
+### Example 1: Using the Start-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
-Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+Start-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId
 ```
 
-This example shows how to use the Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck Cmdlet.
+This example shows how to use the Start-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RunViaIdentity
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

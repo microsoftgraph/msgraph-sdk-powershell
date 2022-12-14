@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementvirtualendpointreportdailyaggregatedremoteconnectionreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementvirtualendpointreportdailyaggregatedremoteconnectionreport
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport
+# Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport
 
 ## SYNOPSIS
 Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
@@ -14,7 +14,7 @@ Get the daily aggregated remote connection reports, such as round trip time, ava
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport -OutFile <String>
+Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport
 
 ### Get
 ```
-Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport
+Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport
  -BodyParameter <IPaths11L0XtbDevicemanagementVirtualendpointReportsMicrosoftGraphGetdailyaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths11L0XtbDevicemanagementVirtualendpointReportsMicrosoftGraphGetdailyaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths11L0XtbDevicemanagementVirtualendpointReportsMicrosoftGraphGetdailyaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -236,7 +236,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths11L0XtbDevicemanagementVirtualendpointReportsMicrosoftGraphGetdailyaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths11L0XtbDevicemanagementVirtualendpointReportsMicrosoftGraphGetdailyaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

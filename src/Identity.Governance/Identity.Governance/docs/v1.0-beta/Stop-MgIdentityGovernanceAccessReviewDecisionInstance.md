@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/stop-mgidentitygovernanceaccessreviewdecisioninstance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/stop-mgidentitygovernanceaccessreviewdecisioninstance
 schema: 2.0.0
 ---
 
-# Stop-MgIdentityGovernanceAccessReviewDecisionInstance
+# Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance
 
 ## SYNOPSIS
 Stop a currently active accessReviewInstance.
@@ -17,13 +17,13 @@ To prevent a recurring access review from starting future instances, update the 
 
 ### Stop (Default)
 ```
-Stop-MgIdentityGovernanceAccessReviewDecisionInstance -AccessReviewInstanceDecisionItemId <String> [-PassThru]
+Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance -AccessReviewInstanceDecisionItemId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StopViaIdentity
 ```
-Stop-MgIdentityGovernanceAccessReviewDecisionInstance -InputObject <IIdentityGovernanceIdentity> [-PassThru]
+Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance -InputObject <IIdentityGovernanceIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -57,7 +57,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: StopViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

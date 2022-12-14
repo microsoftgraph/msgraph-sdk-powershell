@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusercalendarpermission
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusercalendarpermission
 schema: 2.0.0
 ---
 
-# Get-MgUserCalendarPermission
+# Get-MgBetaUserCalendarPermission
 
 ## SYNOPSIS
 The permissions of the users with whom the calendar is shared.
@@ -14,35 +14,35 @@ The permissions of the users with whom the calendar is shared.
 
 ### List (Default)
 ```
-Get-MgUserCalendarPermission -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaUserCalendarPermission -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserCalendarPermission -CalendarPermissionId <String> -UserId <String> [-Property <String[]>]
+Get-MgBetaUserCalendarPermission -CalendarPermissionId <String> -UserId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserCalendarPermission -CalendarId <String> -CalendarPermissionId <String> -UserId <String>
+Get-MgBetaUserCalendarPermission -CalendarId <String> -CalendarPermissionId <String> -UserId <String>
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgUserCalendarPermission -CalendarId <String> -UserId <String> [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserCalendarPermission -CalendarId <String> -UserId <String> [-Filter <String>] [-Property <String[]>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
@@ -52,13 +52,13 @@ The permissions of the users with whom the calendar is shared.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserCalendarPermission Cmdlet
+### Example 1: Using the Get-MgBetaUserCalendarPermission Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
 ```
 
-This example shows how to use the Get-MgUserCalendarPermission Cmdlet.
+This example shows how to use the Get-MgBetaUserCalendarPermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCalendarPermission
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mguserjoinedteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mguserjoinedteam
 schema: 2.0.0
 ---
 
-# Get-MgUserJoinedTeam
+# Get-MgBetaUserJoinedTeam
 
 ## SYNOPSIS
 Get the teams in Microsoft Teams that the user is a direct member of.
@@ -13,7 +13,7 @@ Get the teams in Microsoft Teams that the user is a direct member of.
 ## SYNTAX
 
 ```
-Get-MgUserJoinedTeam -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserJoinedTeam -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,14 +23,14 @@ Get the teams in Microsoft Teams that the user is a direct member of.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserJoinedTeam Cmdlet
+### Example 1: Using the Get-MgBetaUserJoinedTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 # A UPN can also be used as -UserId.
-Get-MgUserJoinedTeam -UserId $userId
+Get-MgBetaUserJoinedTeam -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserJoinedTeam Cmdlet.
+This example shows how to use the Get-MgBetaUserJoinedTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -208,7 +208,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeam
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeam
 
 ## NOTES
 

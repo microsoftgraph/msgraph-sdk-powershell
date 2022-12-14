@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/rename-mgcommunicationcallscreensharingrole
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/rename-mgcommunicationcallscreensharingrole
 schema: 2.0.0
 ---
 
-# Rename-MgCommunicationCallScreenSharingRole
+# Rename-MgBetaCommunicationCallScreenSharingRole
 
 ## SYNOPSIS
 Allow applications to share screen content with the participants of a group call.
@@ -14,27 +14,27 @@ Allow applications to share screen content with the participants of a group call
 
 ### ChangeExpanded1 (Default)
 ```
-Rename-MgCommunicationCallScreenSharingRole -CallId <String> [-AdditionalProperties <Hashtable>]
+Rename-MgBetaCommunicationCallScreenSharingRole -CallId <String> [-AdditionalProperties <Hashtable>]
  [-Role <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Change1
 ```
-Rename-MgCommunicationCallScreenSharingRole -CallId <String>
+Rename-MgBetaCommunicationCallScreenSharingRole -CallId <String>
  -BodyParameter <IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentity1
 ```
-Rename-MgCommunicationCallScreenSharingRole -InputObject <ICloudCommunicationsIdentity>
+Rename-MgBetaCommunicationCallScreenSharingRole -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentityExpanded1
 ```
-Rename-MgCommunicationCallScreenSharingRole -InputObject <ICloudCommunicationsIdentity>
+Rename-MgBetaCommunicationCallScreenSharingRole -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Role <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,16 +43,16 @@ Allow applications to share screen content with the participants of a group call
 
 ## EXAMPLES
 
-### Example 1: Using the Rename-MgCommunicationCallScreenSharingRole Cmdlet
+### Example 1: Using the Rename-MgBetaCommunicationCallScreenSharingRole Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Role = "viewer"
 }
-Rename-MgCommunicationCallScreenSharingRole -CallId $callId -BodyParameter $params
+Rename-MgBetaCommunicationCallScreenSharingRole -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Rename-MgCommunicationCallScreenSharingRole Cmdlet.
+This example shows how to use the Rename-MgBetaCommunicationCallScreenSharingRole Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Change1, ChangeViaIdentity1
 Aliases:
 
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: ChangeViaIdentity1, ChangeViaIdentityExpanded1
 Aliases:
 
@@ -185,9 +185,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

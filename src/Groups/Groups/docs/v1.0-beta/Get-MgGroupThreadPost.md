@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupthreadpost
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupthreadpost
 schema: 2.0.0
 ---
 
-# Get-MgGroupThreadPost
+# Get-MgBetaGroupThreadPost
 
 ## SYNOPSIS
 Get posts from groups
@@ -14,32 +14,32 @@ Get posts from groups
 
 ### List (Default)
 ```
-Get-MgGroupThreadPost -ConversationThreadId <String> -GroupId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupThreadPost -ConversationThreadId <String> -GroupId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupThreadPost -ConversationThreadId <String> -GroupId <String> -PostId <String>
+Get-MgBetaGroupThreadPost -ConversationThreadId <String> -GroupId <String> -PostId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgGroupThreadPost -ConversationThreadId <String> -GroupId <String> -PostId <String>
+Get-MgBetaGroupThreadPost -ConversationThreadId <String> -GroupId <String> -PostId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupThreadPost -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupThreadPost -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupThreadPost -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupThreadPost -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -48,13 +48,13 @@ Get posts from groups
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupThreadPost Cmdlet
+### Example 1: Using the Get-MgBetaGroupThreadPost Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId
 ```
 
-This example shows how to use the Get-MgGroupThreadPost Cmdlet.
+This example shows how to use the Get-MgBetaGroupThreadPost Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPost1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/update-mgusermessageextension
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/update-mgusermessageextension
 schema: 2.0.0
 ---
 
-# Update-MgUserMessageExtension
+# Update-MgBetaUserMessageExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in users
@@ -14,25 +14,25 @@ Update the navigation property extensions in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserMessageExtension -ExtensionId <String> -MessageId <String> -UserId <String>
+Update-MgBetaUserMessageExtension -ExtensionId <String> -MessageId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserMessageExtension -ExtensionId <String> -MessageId <String> -UserId <String>
+Update-MgBetaUserMessageExtension -ExtensionId <String> -MessageId <String> -UserId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserMessageExtension -InputObject <IMailIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Update-MgBetaUserMessageExtension -InputObject <IMailIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserMessageExtension -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaUserMessageExtension -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -109,7 +109,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -201,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ### System.Collections.Hashtable
 

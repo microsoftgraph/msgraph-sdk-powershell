@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernancelifecycleworkflowversion
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernancelifecycleworkflowversion
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceLifecycleWorkflowVersion
+# Remove-MgBetaIdentityGovernanceLifecycleWorkflowVersion
 
 ## SYNOPSIS
 Delete navigation property versions for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property versions for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgIdentityGovernanceLifecycleWorkflowVersion -WorkflowId <String> -WorkflowVersionNumber <Int32>
+Remove-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId <String> -WorkflowVersionNumber <Int32>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityGovernanceLifecycleWorkflowVersion -InputObject <IIdentityGovernanceIdentity>
+Remove-MgBetaIdentityGovernanceLifecycleWorkflowVersion -InputObject <IIdentityGovernanceIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

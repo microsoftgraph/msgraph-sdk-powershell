@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgusermanageddevicesecuritybaselinestate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgusermanageddevicesecuritybaselinestate
 schema: 2.0.0
 ---
 
-# New-MgUserManagedDeviceSecurityBaselineState
+# New-MgBetaUserManagedDeviceSecurityBaselineState
 
 ## SYNOPSIS
 Create new navigation property to securityBaselineStates for users
@@ -14,7 +14,7 @@ Create new navigation property to securityBaselineStates for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String> -UserId <String>
+New-MgBetaUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
  [-State <SecurityBaselineComplianceState>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ New-MgUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String> -UserId <
 
 ### Create
 ```
-New-MgUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String> -UserId <String>
+New-MgBetaUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
  [-State <SecurityBaselineComplianceState>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
@@ -69,7 +69,7 @@ Security baseline state for a device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ The security baseline state for different settings for a device
 To construct, please use Get-Help -Online and see NOTES section for SETTINGSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 Security Baseline Compliance State
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.SecurityBaselineComplianceState
+Type: Microsoft.Graph.Beta.PowerShell.Support.SecurityBaselineComplianceState
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -254,13 +254,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
 
 ## NOTES
 

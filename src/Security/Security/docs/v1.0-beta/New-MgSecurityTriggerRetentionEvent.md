@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritytriggerretentionevent
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritytriggerretentionevent
 schema: 2.0.0
 ---
 
-# New-MgSecurityTriggerRetentionEvent
+# New-MgBetaSecurityTriggerRetentionEvent
 
 ## SYNOPSIS
 Create a new retentionEvent object.
@@ -14,7 +14,7 @@ Create a new retentionEvent object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityTriggerRetentionEvent [-AdditionalProperties <Hashtable>]
+New-MgBetaSecurityTriggerRetentionEvent [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-EventPropagationResults <IMicrosoftGraphSecurityEventPropagationResult[]>]
  [-EventQueries <IMicrosoftGraphSecurityEventQuery[]>]
@@ -26,7 +26,7 @@ New-MgSecurityTriggerRetentionEvent [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgSecurityTriggerRetentionEvent -BodyParameter <IMicrosoftGraphSecurityRetentionEvent> [-Confirm]
+New-MgBetaSecurityTriggerRetentionEvent -BodyParameter <IMicrosoftGraphSecurityRetentionEvent> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -35,36 +35,36 @@ Create a new retentionEvent object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSecurityTriggerRetentionEvent Cmdlet
+### Example 1: Using the New-MgBetaSecurityTriggerRetentionEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
-	"@odata.type" = "#microsoft.graph.security.retentionEvent"
+	"@odata.type" = "#Microsoft.Graph.Beta.security.retentionEvent"
 	DisplayName = "String"
 	Description = "String"
 	EventQueries = @(
 		@{
-			"@odata.type" = "microsoft.graph.security.eventQueries"
+			"@odata.type" = "Microsoft.Graph.Beta.security.eventQueries"
 		}
 	)
 	EventTriggerDateTime = [System.DateTime]::Parse("String (timestamp)")
 	CreatedBy = @{
-		"@odata.type" = "microsoft.graph.identitySet"
+		"@odata.type" = "Microsoft.Graph.Beta.identitySet"
 	}
 	EventPropagationResults = @(
 		@{
-			"@odata.type" = "microsoft.graph.security.eventPropagationResult"
+			"@odata.type" = "Microsoft.Graph.Beta.security.eventPropagationResult"
 		}
 	)
 	EventStatus = @{
-		"@odata.type" = "microsoft.graph.security.retentionEventStatus"
+		"@odata.type" = "Microsoft.Graph.Beta.security.retentionEventStatus"
 	}
 	LastStatusUpdateDateTime = [System.DateTime]::Parse("String (timestamp)")
 }
-New-MgSecurityTriggerRetentionEvent -BodyParameter $params
+New-MgBetaSecurityTriggerRetentionEvent -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSecurityTriggerRetentionEvent Cmdlet.
+This example shows how to use the New-MgBetaSecurityTriggerRetentionEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -89,7 +89,7 @@ retentionEvent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
 Parameter Sets: Create
 Aliases:
 
@@ -105,7 +105,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EVENTPROPAGATIONRESULTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEventPropagationResult[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEventPropagationResult[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ Represents the workload (SharePoint Online, OneDrive for Business, Exchange Onli
 To construct, please use Get-Help -Online and see NOTES section for EVENTQUERIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEventQuery[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEventQuery[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -198,7 +198,7 @@ retentionEventStatus
 To construct, please use Get-Help -Online and see NOTES section for EVENTSTATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -245,7 +245,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -291,7 +291,7 @@ retentionEventType
 To construct, please use Get-Help -Online and see NOTES section for RETENTIONEVENTTYPE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -338,11 +338,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
 
 ## NOTES
 

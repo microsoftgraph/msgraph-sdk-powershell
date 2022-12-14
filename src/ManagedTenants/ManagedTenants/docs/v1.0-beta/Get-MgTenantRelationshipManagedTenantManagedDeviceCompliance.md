@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanageddevicecompliance
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanageddevicecompliance
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance
+# Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance
 
 ## SYNOPSIS
 The collection of compliance for managed devices across managed tenants.
@@ -14,20 +14,20 @@ The collection of compliance for managed devices across managed tenants.
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance -ManagedDeviceComplianceId <String>
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance -ManagedDeviceComplianceId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The collection of compliance for managed devices across managed tenants.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance -ManagedDeviceComplianceId $managedDeviceComplianceId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance -ManagedDeviceComplianceId $managedDeviceComplianceId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagedDeviceCompliance Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
 
 ## NOTES
 

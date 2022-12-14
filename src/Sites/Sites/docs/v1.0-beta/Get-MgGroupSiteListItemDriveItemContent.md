@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mggroupsitelistitemdriveitemcontent
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mggroupsitelistitemdriveitemcontent
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteListItemDriveItemContent
+# Get-MgBetaGroupSiteListItemDriveItemContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,13 +14,13 @@ The content stream, if the item represents a file.
 
 ### Get1 (Default)
 ```
-Get-MgGroupSiteListItemDriveItemContent -GroupId <String> -ListId <String> -ListItemId <String>
+Get-MgBetaGroupSiteListItemDriveItemContent -GroupId <String> -ListId <String> -ListItemId <String>
  -SiteId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupSiteListItemDriveItemContent -InputObject <ISitesIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaGroupSiteListItemDriveItemContent -InputObject <ISitesIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

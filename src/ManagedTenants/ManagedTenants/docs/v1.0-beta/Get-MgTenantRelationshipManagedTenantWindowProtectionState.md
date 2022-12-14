@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantwindowprotectionstate
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantwindowprotectionstate
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantWindowProtectionState
+# Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState
 
 ## SYNOPSIS
 The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
@@ -14,20 +14,20 @@ The protection state for Windows devices, registered with Microsoft Endpoint Man
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantWindowProtectionState [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantWindowProtectionState -WindowsProtectionStateId <String>
+Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState -WindowsProtectionStateId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantWindowProtectionState -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The protection state for Windows devices, registered with Microsoft Endpoint Man
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantWindowProtectionState Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantWindowProtectionState -WindowsProtectionStateId $windowsProtectionStateId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState -WindowsProtectionStateId $windowsProtectionStateId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantWindowProtectionState Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantWindowProtectionState Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantWindowProtectionState
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantWindowProtectionState Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantWindowProtectionState Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsWindowsProtectionState
 
 ## NOTES
 

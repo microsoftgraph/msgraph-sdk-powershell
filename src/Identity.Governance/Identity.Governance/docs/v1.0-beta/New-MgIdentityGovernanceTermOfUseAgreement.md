@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernancetermofuseagreement
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernancetermofuseagreement
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceTermOfUseAgreement
+# New-MgBetaIdentityGovernanceTermOfUseAgreement
 
 ## SYNOPSIS
 Create a new agreement object.
@@ -14,7 +14,7 @@ Create a new agreement object.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgIdentityGovernanceTermOfUseAgreement [-Acceptances <IMicrosoftGraphAgreementAcceptance[]>]
+New-MgBetaIdentityGovernanceTermOfUseAgreement [-Acceptances <IMicrosoftGraphAgreementAcceptance[]>]
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-File <IMicrosoftGraphAgreementFile>]
  [-Files <IMicrosoftGraphAgreementFileLocalization[]>] [-Id <String>] [-IsPerDeviceAcceptanceRequired]
  [-IsViewingBeforeAcceptanceRequired] [-TermsExpiration <IMicrosoftGraphTermsExpiration>]
@@ -23,7 +23,7 @@ New-MgIdentityGovernanceTermOfUseAgreement [-Acceptances <IMicrosoftGraphAgreeme
 
 ### Create1
 ```
-New-MgIdentityGovernanceTermOfUseAgreement -BodyParameter <IMicrosoftGraphAgreement> [-Confirm] [-WhatIf]
+New-MgBetaIdentityGovernanceTermOfUseAgreement -BodyParameter <IMicrosoftGraphAgreement> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,9 +32,9 @@ Create a new agreement object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+### Example 1: Using the New-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Contoso ToU for guest users"
 	IsViewingBeforeAcceptanceRequired = $true
@@ -49,10 +49,10 @@ $params = @{
 		}
 	)
 }
-New-MgIdentityGovernanceTermOfUseAgreement -BodyParameter $params
+New-MgBetaIdentityGovernanceTermOfUseAgreement -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -63,7 +63,7 @@ Information about acceptances of this agreement.
 To construct, please use Get-Help -Online and see NOTES section for ACCEPTANCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -94,7 +94,7 @@ agreement
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
 Parameter Sets: Create1
 Aliases:
 
@@ -127,7 +127,7 @@ agreementFile
 To construct, please use Get-Help -Online and see NOTES section for FILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFile
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -146,7 +146,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for FILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -211,7 +211,7 @@ termsExpiration
 To construct, please use Get-Help -Online and see NOTES section for TERMSEXPIRATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsExpiration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsExpiration
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -275,11 +275,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
 
 ## NOTES
 

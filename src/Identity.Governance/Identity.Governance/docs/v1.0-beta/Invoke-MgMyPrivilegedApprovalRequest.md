@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgmyprivilegedapprovalrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgmyprivilegedapprovalrequest
 schema: 2.0.0
 ---
 
-# Invoke-MgMyPrivilegedApprovalRequest
+# Invoke-MgBetaMyPrivilegedApprovalRequest
 
 ## SYNOPSIS
 Invoke function myRequests
@@ -13,7 +13,7 @@ Invoke function myRequests
 ## SYNTAX
 
 ```
-Invoke-MgMyPrivilegedApprovalRequest [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Invoke-MgBetaMyPrivilegedApprovalRequest [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function myRequests
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgMyPrivilegedApprovalRequest Cmdlet
+### Example 1: Using the Invoke-MgBetaMyPrivilegedApprovalRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Invoke-MgMyPrivilegedApprovalRequest
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Invoke-MgBetaMyPrivilegedApprovalRequest
 ```
 
-This example shows how to use the Invoke-MgMyPrivilegedApprovalRequest Cmdlet.
+This example shows how to use the Invoke-MgBetaMyPrivilegedApprovalRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
 
 ## NOTES
 

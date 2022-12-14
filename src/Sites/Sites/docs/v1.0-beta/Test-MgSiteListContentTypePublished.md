@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/test-mgsitelistcontenttypepublished
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/test-mgsitelistcontenttypepublished
 schema: 2.0.0
 ---
 
-# Test-MgSiteListContentTypePublished
+# Test-MgBetaSiteListContentTypePublished
 
 ## SYNOPSIS
 Invoke function isPublished
@@ -14,13 +14,13 @@ Invoke function isPublished
 
 ### Is (Default)
 ```
-Test-MgSiteListContentTypePublished -ContentTypeId <String> -ListId <String> -SiteId <String>
+Test-MgBetaSiteListContentTypePublished -ContentTypeId <String> -ListId <String> -SiteId <String>
  [<CommonParameters>]
 ```
 
 ### IsViaIdentity
 ```
-Test-MgSiteListContentTypePublished -InputObject <ISitesIdentity> [<CommonParameters>]
+Test-MgBetaSiteListContentTypePublished -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,7 +50,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: IsViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

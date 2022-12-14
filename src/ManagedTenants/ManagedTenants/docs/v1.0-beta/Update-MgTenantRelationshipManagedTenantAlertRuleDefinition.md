@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantalertruledefinition
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantalertruledefinition
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantAlertRuleDefinition
+# Update-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition
 
 ## SYNOPSIS
 Update the navigation property managedTenantAlertRuleDefinitions in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managedTenantAlertRuleDefinitions in tenantRelati
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantAlertRuleDefinition -ManagedTenantAlertRuleDefinitionId <String>
+Update-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition -ManagedTenantAlertRuleDefinitionId <String>
  [-AdditionalProperties <Hashtable>] [-AlertRules <IMicrosoftGraphManagedTenantsManagedTenantAlertRule[]>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DefinitionTemplate <IMicrosoftGraphManagedTenantsAlertRuleDefinitionTemplate>] [-DisplayName <String>]
@@ -24,21 +24,21 @@ Update-MgTenantRelationshipManagedTenantAlertRuleDefinition -ManagedTenantAlertR
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantAlertRuleDefinition -ManagedTenantAlertRuleDefinitionId <String>
+Update-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition -ManagedTenantAlertRuleDefinitionId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantAlertRuleDefinition -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantAlertRuleDefinition -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-AlertRules <IMicrosoftGraphManagedTenantsManagedTenantAlertRule[]>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DefinitionTemplate <IMicrosoftGraphManagedTenantsAlertRuleDefinitionTemplate>] [-DisplayName <String>]
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ALERTRULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -89,7 +89,7 @@ managedTenantAlertRuleDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -135,7 +135,7 @@ alertRuleDefinitionTemplate
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONTEMPLATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAlertRuleDefinitionTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAlertRuleDefinitionTemplate
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -289,9 +289,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
 
 ## OUTPUTS
 

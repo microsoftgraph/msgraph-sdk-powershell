@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicymigrationreportgrouppolicysettingmapping
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicymigrationreportgrouppolicysettingmapping
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
+# Update-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
 
 ## SYNOPSIS
 Update the navigation property groupPolicySettingMappings in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property groupPolicySettingMappings in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
+Update-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
  -GroupPolicyMigrationReportId <String> -GroupPolicySettingMappingId <String>
  [-AdditionalProperties <Hashtable>] [-AdmxSettingDefinitionId <String>] [-ChildIdList <String[]>]
  [-Id <String>] [-IntuneSettingDefinitionId <String>] [-IntuneSettingUriList <String[]>] [-IsMdmSupported]
@@ -28,7 +28,7 @@ Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
+Update-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
  -GroupPolicyMigrationReportId <String> -GroupPolicySettingMappingId <String>
  -BodyParameter <IMicrosoftGraphGroupPolicySettingMapping> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
+Update-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphGroupPolicySettingMapping> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -44,7 +44,7 @@ Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
+Update-MgBetaDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-AdmxSettingDefinitionId <String>] [-ChildIdList <String[]>] [-Id <String>]
  [-IntuneSettingDefinitionId <String>] [-IntuneSettingUriList <String[]>] [-IsMdmSupported]
@@ -98,7 +98,7 @@ The Group Policy setting to MDM/Intune mapping.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicySettingMapping
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicySettingMapping
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -175,7 +175,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -280,7 +280,7 @@ Accept wildcard characters: False
 Mdm Support Status of the setting.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MdmSupportedState
+Type: Microsoft.Graph.Beta.PowerShell.Support.MdmSupportedState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -400,7 +400,7 @@ Accept wildcard characters: False
 Scope of the group policy setting.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicySettingScope
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicySettingScope
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -415,7 +415,7 @@ Accept wildcard characters: False
 Setting type of the group policy.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicySettingType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicySettingType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -507,9 +507,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicySettingMapping
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicySettingMapping
 
 ## OUTPUTS
 

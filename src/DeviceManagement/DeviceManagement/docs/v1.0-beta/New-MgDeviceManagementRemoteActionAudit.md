@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementremoteactionaudit
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementremoteactionaudit
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementRemoteActionAudit
+# New-MgBetaDeviceManagementRemoteActionAudit
 
 ## SYNOPSIS
 Create new navigation property to remoteActionAudits for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to remoteActionAudits for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementRemoteActionAudit [-Action <RemoteAction>] [-ActionState <String>]
+New-MgBetaDeviceManagementRemoteActionAudit [-Action <RemoteAction>] [-ActionState <String>]
  [-AdditionalProperties <Hashtable>] [-DeviceDisplayName <String>] [-DeviceImei <String>]
  [-DeviceOwnerUserPrincipalName <String>] [-Id <String>] [-InitiatedByUserPrincipalName <String>]
  [-ManagedDeviceId <String>] [-RequestDateTime <DateTime>] [-UserName <String>] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgDeviceManagementRemoteActionAudit [-Action <RemoteAction>] [-ActionState <
 
 ### Create
 ```
-New-MgDeviceManagementRemoteActionAudit -BodyParameter <IMicrosoftGraphRemoteActionAudit> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementRemoteActionAudit -BodyParameter <IMicrosoftGraphRemoteActionAudit> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -38,7 +38,7 @@ Create new navigation property to remoteActionAudits for deviceManagement
 Remote actions Intune supports.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.RemoteAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.RemoteAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -84,7 +84,7 @@ Report of remote actions initiated on the devices belonging to a certain tenant.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
 Parameter Sets: Create
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteActionAudit
 
 ## NOTES
 

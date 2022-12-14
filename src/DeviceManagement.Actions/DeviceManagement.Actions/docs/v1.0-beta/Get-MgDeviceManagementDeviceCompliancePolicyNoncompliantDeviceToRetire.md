@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementdevicecompliancepolicynoncompliantdevicetoretire
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementdevicecompliancepolicynoncompliantdevicetoretire
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire
+# Get-MgBetaDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire
 
 ## SYNOPSIS
 Invoke action getNoncompliantDevicesToRetire
@@ -14,7 +14,7 @@ Invoke action getNoncompliantDevicesToRetire
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire -OutFile <String>
+Get-MgBetaDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Name <String>]
  [-Property <String[]>] [-Search <String>] [-SessionId <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire -OutFile 
 
 ### Get
 ```
-Get-MgDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire
+Get-MgBetaDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire
  -BodyParameter <IPathsPosmw2DevicemanagementDevicecompliancepoliciesMicrosoftGraphGetnoncompliantdevicestoretirePostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsPosmw2DevicemanagementDevicecompliancepoliciesMicrosoftGraphGetnoncompliantdevicestoretirePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsPosmw2DevicemanagementDevicecompliancepoliciesMicrosoftGraphGetnoncompliantdevicestoretirePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -266,7 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsPosmw2DevicemanagementDevicecompliancepoliciesMicrosoftGraphGetnoncompliantdevicestoretirePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsPosmw2DevicemanagementDevicecompliancepoliciesMicrosoftGraphGetnoncompliantdevicestoretirePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

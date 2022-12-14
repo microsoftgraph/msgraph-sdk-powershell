@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryoutboundshareduserprofile
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectoryoutboundshareduserprofile
 schema: 2.0.0
 ---
 
-# New-MgDirectoryOutboundSharedUserProfile
+# New-MgBetaDirectoryOutboundSharedUserProfile
 
 ## SYNOPSIS
 Create new navigation property to outboundSharedUserProfiles for directory
@@ -14,13 +14,13 @@ Create new navigation property to outboundSharedUserProfiles for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryOutboundSharedUserProfile [-AdditionalProperties <Hashtable>]
+New-MgBetaDirectoryOutboundSharedUserProfile [-AdditionalProperties <Hashtable>]
  [-Tenants <IMicrosoftGraphTenantReference[]>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryOutboundSharedUserProfile -BodyParameter <IMicrosoftGraphOutboundSharedUserProfile> [-Confirm]
+New-MgBetaDirectoryOutboundSharedUserProfile -BodyParameter <IMicrosoftGraphOutboundSharedUserProfile> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ outboundSharedUserProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutboundSharedUserProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutboundSharedUserProfile
 Parameter Sets: Create
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TENANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantReference[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTenantReference[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutboundSharedUserProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutboundSharedUserProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutboundSharedUserProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutboundSharedUserProfile
 
 ## NOTES
 

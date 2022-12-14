@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgoauth2permissiongrant
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgoauth2permissiongrant
 schema: 2.0.0
 ---
 
-# Update-MgOauth2PermissionGrant
+# Update-MgBetaOauth2PermissionGrant
 
 ## SYNOPSIS
 Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant.
@@ -15,7 +15,7 @@ An **oAuth2PermissionGrant** can be updated to change which delegated permission
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOauth2PermissionGrant -OAuth2PermissionGrantId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId <String> [-AdditionalProperties <Hashtable>]
  [-ClientId <String>] [-ConsentType <String>] [-ExpiryTime <DateTime>] [-Id <String>] [-PrincipalId <String>]
  [-ResourceId <String>] [-Scope <String>] [-StartTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -23,19 +23,19 @@ Update-MgOauth2PermissionGrant -OAuth2PermissionGrantId <String> [-AdditionalPro
 
 ### Update
 ```
-Update-MgOauth2PermissionGrant -OAuth2PermissionGrantId <String>
+Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId <String>
  -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-ClientId <String>] [-ConsentType <String>] [-ExpiryTime <DateTime>] [-Id <String>] [-PrincipalId <String>]
  [-ResourceId <String>] [-Scope <String>] [-StartTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -47,16 +47,16 @@ An **oAuth2PermissionGrant** can be updated to change which delegated permission
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgOauth2PermissionGrant Cmdlet
+### Example 1: Using the Update-MgBetaOauth2PermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Scope = "User.ReadBasic.All Group.ReadWrite.All"
 }
-Update-MgOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
+Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgOauth2PermissionGrant Cmdlet.
+This example shows how to use the Update-MgBetaOauth2PermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ oAuth2PermissionGrant
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -313,9 +313,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
 
 ## OUTPUTS
 

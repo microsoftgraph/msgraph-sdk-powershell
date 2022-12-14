@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementdomainjoinconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementdomainjoinconnector
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDomainJoinConnector
+# Update-MgBetaDeviceManagementDomainJoinConnector
 
 ## SYNOPSIS
 Update the navigation property domainJoinConnectors in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property domainJoinConnectors in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDomainJoinConnector -DeviceManagementDomainJoinConnectorId <String>
+Update-MgBetaDeviceManagementDomainJoinConnector -DeviceManagementDomainJoinConnectorId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-State <DeviceManagementDomainJoinConnectorState>] [-Version <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgDeviceManagementDomainJoinConnector -DeviceManagementDomainJoinConnecto
 
 ### Update
 ```
-Update-MgDeviceManagementDomainJoinConnector -DeviceManagementDomainJoinConnectorId <String>
+Update-MgBetaDeviceManagementDomainJoinConnector -DeviceManagementDomainJoinConnectorId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementDomainJoinConnector> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDomainJoinConnector -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementDomainJoinConnector -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementDomainJoinConnector> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDomainJoinConnector -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementDomainJoinConnector -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-State <DeviceManagementDomainJoinConnectorState>] [-Version <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ A Domain Join Connector is a connector that is responsible to allocate (and dele
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 The ODJ request states.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementDomainJoinConnectorState
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementDomainJoinConnectorState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -238,9 +238,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryinboundshareduserprofile
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectoryinboundshareduserprofile
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryInboundSharedUserProfile
+# Update-MgBetaDirectoryInboundSharedUserProfile
 
 ## SYNOPSIS
 Update the navigation property inboundSharedUserProfiles in directory
@@ -14,28 +14,28 @@ Update the navigation property inboundSharedUserProfiles in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryInboundSharedUserProfile -InboundSharedUserProfileUserId <String>
+Update-MgBetaDirectoryInboundSharedUserProfile -InboundSharedUserProfileUserId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HomeTenantId <String>] [-UserId <String>]
  [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryInboundSharedUserProfile -InboundSharedUserProfileUserId <String>
+Update-MgBetaDirectoryInboundSharedUserProfile -InboundSharedUserProfileUserId <String>
  -BodyParameter <IMicrosoftGraphInboundSharedUserProfile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryInboundSharedUserProfile -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryInboundSharedUserProfile -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphInboundSharedUserProfile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryInboundSharedUserProfile -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryInboundSharedUserProfile -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HomeTenantId <String>] [-UserId <String>]
  [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ inboundSharedUserProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInboundSharedUserProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInboundSharedUserProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -220,9 +220,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInboundSharedUserProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInboundSharedUserProfile
 
 ## OUTPUTS
 

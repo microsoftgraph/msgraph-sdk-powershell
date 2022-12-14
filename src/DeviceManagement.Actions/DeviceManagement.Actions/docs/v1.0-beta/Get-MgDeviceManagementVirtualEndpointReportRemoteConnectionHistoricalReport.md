@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementvirtualendpointreportremoteconnectionhistoricalreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementvirtualendpointreportremoteconnectionhistoricalreport
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport
+# Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport
 
 ## SYNOPSIS
 Get the remote connection history records of a Cloud PC during a given period.
@@ -14,7 +14,7 @@ Get the remote connection history records of a Cloud PC during a given period.
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport -OutFile <String>
+Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport -Out
 
 ### Get
 ```
-Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport
+Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport
  -BodyParameter <IPathsP1Ye10DevicemanagementVirtualendpointReportsMicrosoftGraphGetremoteconnectionhistoricalreportsPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsP1Ye10DevicemanagementVirtualendpointReportsMicrosoftGraphGetremoteconnectionhistoricalreportsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsP1Ye10DevicemanagementVirtualendpointReportsMicrosoftGraphGetremoteconnectionhistoricalreportsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -236,7 +236,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsP1Ye10DevicemanagementVirtualendpointReportsMicrosoftGraphGetremoteconnectionhistoricalreportsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsP1Ye10DevicemanagementVirtualendpointReportsMicrosoftGraphGetremoteconnectionhistoricalreportsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

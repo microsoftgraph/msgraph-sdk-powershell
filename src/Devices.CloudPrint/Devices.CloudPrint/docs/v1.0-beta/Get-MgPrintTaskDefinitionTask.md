@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprinttaskdefinitiontask
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprinttaskdefinitiontask
 schema: 2.0.0
 ---
 
-# Get-MgPrintTaskDefinitionTask
+# Get-MgBetaPrintTaskDefinitionTask
 
 ## SYNOPSIS
 A list of tasks that have been created based on this definition.
@@ -16,20 +16,20 @@ Read-only.
 
 ### List1 (Default)
 ```
-Get-MgPrintTaskDefinitionTask -PrintTaskDefinitionId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPrintTaskDefinitionTask -PrintTaskDefinitionId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgPrintTaskDefinitionTask -PrintTaskDefinitionId <String> -PrintTaskId <String>
+Get-MgBetaPrintTaskDefinitionTask -PrintTaskDefinitionId <String> -PrintTaskId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,22 +40,22 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintTaskDefinitionTask Cmdlet
+### Example 1: Using the Get-MgBetaPrintTaskDefinitionTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId
 ```
 
-This example shows how to use the Get-MgPrintTaskDefinitionTask Cmdlet.
+This example shows how to use the Get-MgBetaPrintTaskDefinitionTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPrintTaskDefinitionTask Cmdlet
+### Example 2: Using the Get-MgBetaPrintTaskDefinitionTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId
 ```
 
-This example shows how to use the Get-MgPrintTaskDefinitionTask Cmdlet.
+This example shows how to use the Get-MgBetaPrintTaskDefinitionTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -262,11 +262,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTask
 
 ## NOTES
 

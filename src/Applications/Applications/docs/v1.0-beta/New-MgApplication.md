@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplication
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgapplication
 schema: 2.0.0
 ---
 
-# New-MgApplication
+# New-MgBetaApplication
 
 ## SYNOPSIS
 Create a new application object.
@@ -14,7 +14,7 @@ Create a new application object.
 
 ### CreateExpanded (Default)
 ```
-New-MgApplication [-AdditionalProperties <Hashtable>] [-Api <IMicrosoftGraphApiApplication1>]
+New-MgBetaApplication [-AdditionalProperties <Hashtable>] [-Api <IMicrosoftGraphApiApplication1>]
  [-AppId <String>] [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]
  [-AppRoles <IMicrosoftGraphAppRole[]>] [-Certification <IMicrosoftGraphCertification>]
  [-ConnectorGroup <IMicrosoftGraphConnectorGroup>] [-CreatedDateTime <DateTime>]
@@ -44,7 +44,7 @@ New-MgApplication [-AdditionalProperties <Hashtable>] [-Api <IMicrosoftGraphApiA
 
 ### Create
 ```
-New-MgApplication -BodyParameter <IMicrosoftGraphApplication> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaApplication -BodyParameter <IMicrosoftGraphApplication> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +54,7 @@ Create a new application object.
 
 ### Example 1: Create a new application
 ```powershell
-New-MgApplication -DisplayName 'New app' | 
+New-MgBetaApplication -DisplayName 'New app' | 
   Format-List Id, DisplayName, AppId, SignInAudience, PublisherDomain
 
 Id              : 0f0aec7b-ac5b-4f89-9fac-e9044ba5a309
@@ -88,7 +88,7 @@ apiApplication
 To construct, please use Get-Help -Online and see NOTES section for API properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApiApplication1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApiApplication1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -122,7 +122,7 @@ The appManagementPolicy applied to this application.
 To construct, please use Get-Help -Online and see NOTES section for APPMANAGEMENTPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppManagementPolicy[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -140,7 +140,7 @@ Not nullable.
 To construct, please use Get-Help -Online and see NOTES section for APPROLES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRole[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppRole[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -156,7 +156,7 @@ application
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplication
 Parameter Sets: Create
 Aliases:
 
@@ -172,7 +172,7 @@ certification
 To construct, please use Get-Help -Online and see NOTES section for CERTIFICATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCertification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCertification
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -188,7 +188,7 @@ connectorGroup
 To construct, please use Get-Help -Online and see NOTES section for CONNECTORGROUP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectorGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectorGroup
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -223,7 +223,7 @@ directoryObject
 To construct, please use Get-Help -Online and see NOTES section for CREATEDONBEHALFOF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -326,7 +326,7 @@ Supports $expand and $filter (/$count eq 0, /$count ne 0).
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtensionProperty[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -343,7 +343,7 @@ Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 To construct, please use Get-Help -Online and see NOTES section for FEDERATEDIDENTITYCREDENTIALS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -375,7 +375,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for HOMEREALMDISCOVERYPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHomeRealmDiscoveryPolicy1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHomeRealmDiscoveryPolicy1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -427,7 +427,7 @@ informationalUrl
 To construct, please use Get-Help -Online and see NOTES section for INFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationalUrl
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationalUrl
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -480,7 +480,7 @@ Supports $filter (eq, not, ge, le).
 To construct, please use Get-Help -Online and see NOTES section for KEYCREDENTIALS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyCredential[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyCredential[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -527,7 +527,7 @@ onPremisesPublishing
 To construct, please use Get-Help -Online and see NOTES section for ONPREMISESPUBLISHING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesPublishing
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesPublishing
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -543,7 +543,7 @@ optionalClaims
 To construct, please use Get-Help -Online and see NOTES section for OPTIONALCLAIMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOptionalClaims
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOptionalClaims
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -562,7 +562,7 @@ Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count 
 To construct, please use Get-Help -Online and see NOTES section for OWNERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -578,7 +578,7 @@ parentalControlSettings
 To construct, please use Get-Help -Online and see NOTES section for PARENTALCONTROLSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParentalControlSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParentalControlSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -595,7 +595,7 @@ Not nullable.
 To construct, please use Get-Help -Online and see NOTES section for PASSWORDCREDENTIALS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPasswordCredential[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPasswordCredential[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -611,7 +611,7 @@ publicClientApplication
 To construct, please use Get-Help -Online and see NOTES section for PUBLICCLIENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublicClientApplication
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublicClientApplication
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -644,7 +644,7 @@ requestSignatureVerification
 To construct, please use Get-Help -Online and see NOTES section for REQUESTSIGNATUREVERIFICATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRequestSignatureVerification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRequestSignatureVerification
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -667,7 +667,7 @@ Supports $filter (eq, not, ge, le).
 To construct, please use Get-Help -Online and see NOTES section for REQUIREDRESOURCEACCESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRequiredResourceAccess[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRequiredResourceAccess[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -716,7 +716,7 @@ servicePrincipalLockConfiguration
 To construct, please use Get-Help -Online and see NOTES section for SERVICEPRINCIPALLOCKCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalLockConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalLockConfiguration
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -752,7 +752,7 @@ spaApplication
 To construct, please use Get-Help -Online and see NOTES section for SPA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSpaApplication
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSpaApplication
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -768,7 +768,7 @@ synchronization
 To construct, please use Get-Help -Online and see NOTES section for SYNCHRONIZATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronization
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronization
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -817,7 +817,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TOKENISSUANCEPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -834,7 +834,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for TOKENLIFETIMEPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenLifetimePolicy1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTokenLifetimePolicy1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -867,7 +867,7 @@ verifiedPublisher
 To construct, please use Get-Help -Online and see NOTES section for VERIFIEDPUBLISHER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVerifiedPublisher
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVerifiedPublisher
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -883,7 +883,7 @@ webApplication
 To construct, please use Get-Help -Online and see NOTES section for WEB properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWebApplication1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWebApplication1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -899,7 +899,7 @@ windowsApplication
 To construct, please use Get-Help -Online and see NOTES section for WINDOWS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsApplication
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsApplication
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -946,11 +946,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplication
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplication
 
 ## NOTES
 
@@ -971,7 +971,7 @@ API <IMicrosoftGraphApiApplication1>: apiApplication
     - `[Id <String>]`: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
     - `[IsEnabled <Boolean?>]`: When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
     - `[Origin <String>]`: 
-    - `[Type <String>]`: The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
+    - `[Type <String>]`: The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft.Graph.Beta defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
     - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
     - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
     - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
@@ -1023,7 +1023,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
       - `[Id <String>]`: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
       - `[IsEnabled <Boolean?>]`: When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
       - `[Origin <String>]`: 
-      - `[Type <String>]`: The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
+      - `[Type <String>]`: The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft.Graph.Beta defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
       - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
       - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
       - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
@@ -1435,7 +1435,7 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
         - `[Id <String>]`: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
         - `[IsEnabled <Boolean?>]`: When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
         - `[Origin <String>]`: 
-        - `[Type <String>]`: The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
+        - `[Type <String>]`: The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft.Graph.Beta defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
         - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
         - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
         - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..

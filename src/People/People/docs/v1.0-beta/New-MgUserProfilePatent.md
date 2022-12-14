@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofilepatent
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/new-mguserprofilepatent
 schema: 2.0.0
 ---
 
-# New-MgUserProfilePatent
+# New-MgBetaUserProfilePatent
 
 ## SYNOPSIS
 Create a new itemPatent object within a user's profile.
@@ -14,7 +14,7 @@ Create a new itemPatent object within a user's profile.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserProfilePatent -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
+New-MgBetaUserProfilePatent -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsPending]
  [-IsSearchable] [-IssuedDate <DateTime>] [-IssuingAuthority <String>]
@@ -24,19 +24,19 @@ New-MgUserProfilePatent -UserId <String> [-AdditionalProperties <Hashtable>] [-A
 
 ### Create
 ```
-New-MgUserProfilePatent -UserId <String> -BodyParameter <IMicrosoftGraphItemPatent> [-Confirm] [-WhatIf]
+New-MgBetaUserProfilePatent -UserId <String> -BodyParameter <IMicrosoftGraphItemPatent> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfilePatent -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemPatent> [-Confirm]
+New-MgBetaUserProfilePatent -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemPatent> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserProfilePatent -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfilePatent -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-IsPending] [-IsSearchable] [-IssuedDate <DateTime>] [-IssuingAuthority <String>]
@@ -49,9 +49,9 @@ Create a new itemPatent object within a user's profile.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserProfilePatent Cmdlet
+### Example 1: Using the New-MgBetaUserProfilePatent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Description = "Calculating the intent of a user to purchase an item based on the amount of time they hover their mouse over a given pixel."
 	DisplayName = "Inferring User Intent through browsing behaviors"
@@ -60,10 +60,10 @@ $params = @{
 	WebUrl = "https://patents.gov/3954432633"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfilePatent -UserId $userId -BodyParameter $params
+New-MgBetaUserProfilePatent -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserProfilePatent Cmdlet.
+This example shows how to use the New-MgBetaUserProfilePatent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -103,7 +103,7 @@ itemPatent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPatent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPatent
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -196,7 +196,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -288,7 +288,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -334,7 +334,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -411,13 +411,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPatent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPatent
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPatent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPatent
 
 ## NOTES
 

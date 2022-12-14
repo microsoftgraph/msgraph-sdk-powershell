@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguseroutlooktaskfoldertaskattachment
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/new-mguseroutlooktaskfoldertaskattachment
 schema: 2.0.0
 ---
 
-# New-MgUserOutlookTaskFolderTaskAttachment
+# New-MgBetaUserOutlookTaskFolderTaskAttachment
 
 ## SYNOPSIS
 Use this API to add an attachment to an outlookTask.
@@ -15,26 +15,26 @@ The attachment can be a file (of fileAttachment type) or Outlook item (itemAttac
 
 ### CreateExpanded (Default)
 ```
-New-MgUserOutlookTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskId <String>
+New-MgBetaUserOutlookTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
  [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserOutlookTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskId <String>
+New-MgBetaUserOutlookTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskId <String>
  -UserId <String> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOutlookTaskFolderTaskAttachment -InputObject <IUsersIdentity>
+New-MgBetaUserOutlookTaskFolderTaskAttachment -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserOutlookTaskFolderTaskAttachment -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserOutlookTaskFolderTaskAttachment -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
  [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ attachment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -267,13 +267,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

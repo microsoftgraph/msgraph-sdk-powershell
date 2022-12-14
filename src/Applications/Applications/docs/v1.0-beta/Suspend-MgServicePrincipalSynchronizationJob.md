@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/suspend-mgserviceprincipalsynchronizationjob
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/suspend-mgserviceprincipalsynchronizationjob
 schema: 2.0.0
 ---
 
-# Suspend-MgServicePrincipalSynchronizationJob
+# Suspend-MgBetaServicePrincipalSynchronizationJob
 
 ## SYNOPSIS
 Temporarily stop a running synchronization job.
@@ -15,13 +15,13 @@ All the progress, including job state, is persisted, and the job will continue f
 
 ### Pause (Default)
 ```
-Suspend-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String> -SynchronizationJobId <String>
+Suspend-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId <String> -SynchronizationJobId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PauseViaIdentity
 ```
-Suspend-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm]
+Suspend-MgBetaServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ All the progress, including job state, is persisted, and the job will continue f
 
 ## EXAMPLES
 
-### Example 1: Using the Suspend-MgServicePrincipalSynchronizationJob Cmdlet
+### Example 1: Using the Suspend-MgBetaServicePrincipalSynchronizationJob Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Suspend-MgServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Suspend-MgBetaServicePrincipalSynchronizationJob -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
 
-This example shows how to use the Suspend-MgServicePrincipalSynchronizationJob Cmdlet.
+This example shows how to use the Suspend-MgBetaServicePrincipalSynchronizationJob Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -47,7 +47,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: PauseViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

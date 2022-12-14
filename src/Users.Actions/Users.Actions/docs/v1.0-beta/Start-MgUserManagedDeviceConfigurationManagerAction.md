@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/start-mgusermanageddeviceconfigurationmanageraction
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/start-mgusermanageddeviceconfigurationmanageraction
 schema: 2.0.0
 ---
 
-# Start-MgUserManagedDeviceConfigurationManagerAction
+# Start-MgBetaUserManagedDeviceConfigurationManagerAction
 
 ## SYNOPSIS
 Trigger action on ConfigurationManager client
@@ -14,28 +14,28 @@ Trigger action on ConfigurationManager client
 
 ### TriggerExpanded (Default)
 ```
-Start-MgUserManagedDeviceConfigurationManagerAction -ManagedDeviceId <String> -UserId <String>
+Start-MgBetaUserManagedDeviceConfigurationManagerAction -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ConfigurationManagerAction <IMicrosoftGraphConfigurationManagerAction>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Trigger
 ```
-Start-MgUserManagedDeviceConfigurationManagerAction -ManagedDeviceId <String> -UserId <String>
+Start-MgBetaUserManagedDeviceConfigurationManagerAction -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPathsA6Tcp7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TriggerViaIdentity
 ```
-Start-MgUserManagedDeviceConfigurationManagerAction -InputObject <IUsersActionsIdentity>
+Start-MgBetaUserManagedDeviceConfigurationManagerAction -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsA6Tcp7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TriggerViaIdentityExpanded
 ```
-Start-MgUserManagedDeviceConfigurationManagerAction -InputObject <IUsersActionsIdentity>
+Start-MgBetaUserManagedDeviceConfigurationManagerAction -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ConfigurationManagerAction <IMicrosoftGraphConfigurationManagerAction>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsA6Tcp7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsA6Tcp7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Trigger, TriggerViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Parameter for action triggerConfigurationManagerAction
 To construct, please use Get-Help -Online and see NOTES section for CONFIGURATIONMANAGERACTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConfigurationManagerAction
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConfigurationManagerAction
 Parameter Sets: TriggerExpanded, TriggerViaIdentityExpanded
 Aliases:
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: TriggerViaIdentity, TriggerViaIdentityExpanded
 Aliases:
 
@@ -191,9 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsA6Tcp7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsA6Tcp7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphTriggerconfigurationmanageractionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

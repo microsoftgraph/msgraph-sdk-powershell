@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplicationtemplate
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgapplicationtemplate
 schema: 2.0.0
 ---
 
-# New-MgApplicationTemplate
+# New-MgBetaApplicationTemplate
 
 ## SYNOPSIS
 Add new entity to applicationTemplates
@@ -14,7 +14,7 @@ Add new entity to applicationTemplates
 
 ### CreateExpanded (Default)
 ```
-New-MgApplicationTemplate [-AdditionalProperties <Hashtable>] [-Categories <String[]>] [-Description <String>]
+New-MgBetaApplicationTemplate [-AdditionalProperties <Hashtable>] [-Categories <String[]>] [-Description <String>]
  [-DisplayName <String>] [-HomePageUrl <String>] [-Id <String>]
  [-InformationalUrls <IMicrosoftGraphInformationalUrls>] [-LogoUrl <String>] [-Publisher <String>]
  [-SupportedClaimConfiguration <IMicrosoftGraphSupportedClaimConfiguration>]
@@ -24,7 +24,7 @@ New-MgApplicationTemplate [-AdditionalProperties <Hashtable>] [-Categories <Stri
 
 ### Create
 ```
-New-MgApplicationTemplate -BodyParameter <IMicrosoftGraphApplicationTemplate> [-Confirm] [-WhatIf]
+New-MgBetaApplicationTemplate -BodyParameter <IMicrosoftGraphApplicationTemplate> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ applicationTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplicationTemplate
 Parameter Sets: Create
 Aliases:
 
@@ -148,7 +148,7 @@ informationalUrls
 To construct, please use Get-Help -Online and see NOTES section for INFORMATIONALURLS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationalUrls
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationalUrls
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ supportedClaimConfiguration
 To construct, please use Get-Help -Online and see NOTES section for SUPPORTEDCLAIMCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSupportedClaimConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSupportedClaimConfiguration
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplicationTemplate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplicationTemplate
 
 ## NOTES
 

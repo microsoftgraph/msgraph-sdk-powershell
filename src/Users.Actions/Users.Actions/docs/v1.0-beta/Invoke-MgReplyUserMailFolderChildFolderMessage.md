@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgreplyusermailfolderchildfoldermessage
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgreplyusermailfolderchildfoldermessage
 schema: 2.0.0
 ---
 
-# Invoke-MgReplyUserMailFolderChildFolderMessage
+# Invoke-MgBetaReplyUserMailFolderChildFolderMessage
 
 ## SYNOPSIS
 Reply to the sender of a message using either JSON or MIME format.
@@ -19,14 +19,14 @@ Alternatively, create a draft to reply to a message, and send it later.
 
 ### ReplyExpanded (Default)
 ```
-Invoke-MgReplyUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
+Invoke-MgBetaReplyUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-Message <IMicrosoftGraphMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Reply
 ```
-Invoke-MgReplyUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
+Invoke-MgBetaReplyUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String>
  -BodyParameter <IPathsSp3FzmUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -34,14 +34,14 @@ Invoke-MgReplyUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolde
 
 ### ReplyViaIdentity
 ```
-Invoke-MgReplyUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaReplyUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsSp3FzmUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReplyViaIdentityExpanded
 ```
-Invoke-MgReplyUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaReplyUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -58,7 +58,7 @@ Alternatively, create a draft to reply to a message, and send it later.
 
 ### Example 1: Reply in JSON format to an existing message
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Message = @{
@@ -81,10 +81,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgReplyUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Invoke-MgBetaReplyUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgReplyUserMailFolderChildFolderMessage Cmdlet.
+This example shows how to use the Invoke-MgBetaReplyUserMailFolderChildFolderMessage Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsSp3FzmUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsSp3FzmUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Reply, ReplyViaIdentity
 Aliases:
 
@@ -141,7 +141,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ReplyViaIdentity, ReplyViaIdentityExpanded
 Aliases:
 
@@ -187,7 +187,7 @@ message
 To construct, please use Get-Help -Online and see NOTES section for MESSAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
 Parameter Sets: ReplyExpanded, ReplyViaIdentityExpanded
 Aliases:
 
@@ -279,9 +279,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsSp3FzmUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsSp3FzmUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

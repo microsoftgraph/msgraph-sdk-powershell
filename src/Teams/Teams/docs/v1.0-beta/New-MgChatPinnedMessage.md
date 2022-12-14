@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgchatpinnedmessage
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgchatpinnedmessage
 schema: 2.0.0
 ---
 
-# New-MgChatPinnedMessage
+# New-MgBetaChatPinnedMessage
 
 ## SYNOPSIS
 Pin a chat message in the specified chat.
@@ -15,25 +15,25 @@ This API cannot create a new chat; you must use the list chats method to retriev
 
 ### CreateExpanded (Default)
 ```
-New-MgChatPinnedMessage -ChatId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaChatPinnedMessage -ChatId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Message <IMicrosoftGraphChatMessage>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgChatPinnedMessage -ChatId <String> -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo1> [-Confirm]
+New-MgBetaChatPinnedMessage -ChatId <String> -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgChatPinnedMessage -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo1>
+New-MgBetaChatPinnedMessage -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Message <IMicrosoftGraphChatMessage>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,16 +43,16 @@ This API cannot create a new chat; you must use the list chats method to retriev
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgChatPinnedMessage Cmdlet
+### Example 1: Using the New-MgBetaChatPinnedMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"Message@odata.bind" = "https://graph.microsoft.com/beta/chats/19:2da4c29f6d7041eca70b638b43d45437@thread.v2/messages/1616964509832"
 }
-New-MgChatPinnedMessage -ChatId $chatId -BodyParameter $params
+New-MgBetaChatPinnedMessage -ChatId $chatId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgChatPinnedMessage Cmdlet.
+This example shows how to use the New-MgBetaChatPinnedMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ pinnedChatMessageInfo
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -140,7 +140,7 @@ chatMessage
 To construct, please use Get-Help -Online and see NOTES section for MESSAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -187,13 +187,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
 
 ## NOTES
 

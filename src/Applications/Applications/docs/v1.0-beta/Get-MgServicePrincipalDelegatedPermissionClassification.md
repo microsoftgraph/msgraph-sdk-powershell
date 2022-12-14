@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipaldelegatedpermissionclassification
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipaldelegatedpermissionclassification
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalDelegatedPermissionClassification
+# Get-MgBetaServicePrincipalDelegatedPermissionClassification
 
 ## SYNOPSIS
 The permission classifications for delegated permissions exposed by the app that this service principal represents.
@@ -15,20 +15,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String>
+Get-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
+Get-MgBetaServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
  -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
+Get-MgBetaServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,13 +38,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServicePrincipalDelegatedPermissionClassification Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId
 ```
 
-This example shows how to use the Get-MgServicePrincipalDelegatedPermissionClassification Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -251,11 +251,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
 
 ## NOTES
 

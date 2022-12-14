@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgonpremisepublishingprofileconnectorgroup
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgonpremisepublishingprofileconnectorgroup
 schema: 2.0.0
 ---
 
-# Remove-MgOnPremisePublishingProfileConnectorGroup
+# Remove-MgBetaOnPremisePublishingProfileConnectorGroup
 
 ## SYNOPSIS
 Delete navigation property connectorGroups for onPremisesPublishingProfiles
@@ -14,14 +14,14 @@ Delete navigation property connectorGroups for onPremisesPublishingProfiles
 
 ### Delete (Default)
 ```
-Remove-MgOnPremisePublishingProfileConnectorGroup -ConnectorGroupId <String>
+Remove-MgBetaOnPremisePublishingProfileConnectorGroup -ConnectorGroupId <String>
  -OnPremisesPublishingProfileId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgOnPremisePublishingProfileConnectorGroup -InputObject <IApplicationsIdentity> [-IfMatch <String>]
+Remove-MgBetaOnPremisePublishingProfileConnectorGroup -InputObject <IApplicationsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Delete navigation property connectorGroups for onPremisesPublishingProfiles
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgOnPremisePublishingProfileConnectorGroup Cmdlet
+### Example 1: Using the Remove-MgBetaOnPremisePublishingProfileConnectorGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgOnPremisePublishingProfileConnectorGroup -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorGroupId $connectorGroupId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaOnPremisePublishingProfileConnectorGroup -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorGroupId $connectorGroupId
 ```
 
-This example shows how to use the Remove-MgOnPremisePublishingProfileConnectorGroup Cmdlet.
+This example shows how to use the Remove-MgBetaOnPremisePublishingProfileConnectorGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -76,7 +76,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

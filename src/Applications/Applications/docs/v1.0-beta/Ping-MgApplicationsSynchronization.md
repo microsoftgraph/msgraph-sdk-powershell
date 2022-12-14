@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/ping-mgapplicationssynchronization
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/ping-mgapplicationssynchronization
 schema: 2.0.0
 ---
 
-# Ping-MgApplicationsSynchronization
+# Ping-MgBetaApplicationsSynchronization
 
 ## SYNOPSIS
 Invoke function Ping
@@ -14,12 +14,12 @@ Invoke function Ping
 
 ### Ping (Default)
 ```
-Ping-MgApplicationsSynchronization -ApplicationId <String> [<CommonParameters>]
+Ping-MgBetaApplicationsSynchronization -ApplicationId <String> [<CommonParameters>]
 ```
 
 ### PingViaIdentity
 ```
-Ping-MgApplicationsSynchronization -InputObject <IApplicationsIdentity> [<CommonParameters>]
+Ping-MgBetaApplicationsSynchronization -InputObject <IApplicationsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: PingViaIdentity
 Aliases:
 
@@ -65,7 +65,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

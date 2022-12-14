@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mgusermanageddevicename
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/set-mgusermanageddevicename
 schema: 2.0.0
 ---
 
-# Set-MgUserManagedDeviceName
+# Set-MgBetaUserManagedDeviceName
 
 ## SYNOPSIS
 Set device name of the device.
@@ -14,27 +14,27 @@ Set device name of the device.
 
 ### SetExpanded (Default)
 ```
-Set-MgUserManagedDeviceName -ManagedDeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaUserManagedDeviceName -ManagedDeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgUserManagedDeviceName -ManagedDeviceId <String> -UserId <String>
+Set-MgBetaUserManagedDeviceName -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths1Lr0Hk2UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgUserManagedDeviceName -InputObject <IUsersActionsIdentity>
+Set-MgBetaUserManagedDeviceName -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Lr0Hk2UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-MgUserManagedDeviceName -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaUserManagedDeviceName -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DeviceName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Lr0Hk2UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Lr0Hk2UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
@@ -188,9 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Lr0Hk2UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Lr0Hk2UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

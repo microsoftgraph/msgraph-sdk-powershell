@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupsetting
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupsetting
 schema: 2.0.0
 ---
 
-# New-MgGroupSetting
+# New-MgBetaGroupSetting
 
 ## SYNOPSIS
 Create a new setting based on the templates available in directorySettingTemplates.
@@ -17,26 +17,26 @@ The template named `Group.Unified` can be used to configure tenant-wide Microsof
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupSetting -GroupId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaGroupSetting -GroupId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-TemplateId <String>] [-Values <IMicrosoftGraphSettingValue[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupSetting -GroupId <String> -BodyParameter <IMicrosoftGraphDirectorySetting> [-Confirm] [-WhatIf]
+New-MgBetaGroupSetting -GroupId <String> -BodyParameter <IMicrosoftGraphDirectorySetting> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupSetting -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphDirectorySetting> [-Confirm]
+New-MgBetaGroupSetting -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphDirectorySetting> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupSetting -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaGroupSetting -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-TemplateId <String>] [-Values <IMicrosoftGraphSettingValue[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -49,9 +49,9 @@ The template named `Group.Unified` can be used to configure tenant-wide Microsof
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgGroupSetting Cmdlet
+### Example 1: Using the New-MgBetaGroupSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	TemplateId = "08d542b9-071f-4e16-94b0-74abb372e3d9"
 	Values = @(
@@ -61,10 +61,10 @@ $params = @{
 		}
 	)
 }
-New-MgGroupSetting -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupSetting -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupSetting Cmdlet.
+This example shows how to use the New-MgBetaGroupSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -89,7 +89,7 @@ directorySetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -184,7 +184,7 @@ Collection of name-value pairs corresponding to the name and defaultValue proper
 To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingValue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingValue[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -231,13 +231,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 
 ## NOTES
 

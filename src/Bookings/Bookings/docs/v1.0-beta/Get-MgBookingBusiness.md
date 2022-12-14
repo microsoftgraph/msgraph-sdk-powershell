@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/get-mgbookingbusiness
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/get-mgbookingbusiness
 schema: 2.0.0
 ---
 
-# Get-MgBookingBusiness
+# Get-MgBetaBookingBusiness
 
 ## SYNOPSIS
 Get the properties and relationships of a bookingBusiness object.
@@ -14,20 +14,20 @@ Get the properties and relationships of a bookingBusiness object.
 
 ### List (Default)
 ```
-Get-MgBookingBusiness [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaBookingBusiness [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBookingBusiness -BookingBusinessId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaBookingBusiness -BookingBusinessId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBookingBusiness -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,31 +36,31 @@ Get the properties and relationships of a bookingBusiness object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgBookingBusiness Cmdlet
+### Example 1: Using the Get-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusiness -BookingBusinessId $bookingBusinessId
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusiness -BookingBusinessId $bookingBusinessId
 ```
 
-This example shows how to use the Get-MgBookingBusiness Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgBookingBusiness Cmdlet
+### Example 2: Using the Get-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusiness
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusiness
 ```
 
-This example shows how to use the Get-MgBookingBusiness Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgBookingBusiness Cmdlet
+### Example 3: Using the Get-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusiness -Query "Adventure" 
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusiness -Query "Adventure" 
 ```
 
-This example shows how to use the Get-MgBookingBusiness Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingBusiness
 
 ## NOTES
 

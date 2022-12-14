@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedebookassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedebookassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtManagedEBookAssignment
+# New-MgBetaDeviceAppMgtManagedEBookAssignment
 
 ## SYNOPSIS
 Create new navigation property to assignments for deviceAppManagement
@@ -14,26 +14,26 @@ Create new navigation property to assignments for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtManagedEBookAssignment -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtManagedEBookAssignment -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-InstallIntent <InstallIntent>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtManagedEBookAssignment -ManagedEBookId <String>
+New-MgBetaDeviceAppMgtManagedEBookAssignment -ManagedEBookId <String>
  -BodyParameter <IMicrosoftGraphManagedEBookAssignment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtManagedEBookAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtManagedEBookAssignment -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedEBookAssignment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtManagedEBookAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtManagedEBookAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-InstallIntent <InstallIntent>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ Contains properties used to assign a eBook to a group.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 Possible values for the install intent chosen by the admin.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.InstallIntent
+Type: Microsoft.Graph.Beta.PowerShell.Support.InstallIntent
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -143,7 +143,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -190,19 +190,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementManagedEBookAssignment
+### New-MgBetaDeviceAppManagementManagedEBookAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmdmwindowinformationprotectionpolicy
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmdmwindowinformationprotectionpolicy
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy
+# Update-MgBetaDeviceAppMgtMdmWindowInformationProtectionPolicy
 
 ## SYNOPSIS
 Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property mdmWindowsInformationProtectionPolicies in device
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy -MdmWindowsInformationProtectionPolicyId <String>
+Update-MgBetaDeviceAppMgtMdmWindowInformationProtectionPolicy -MdmWindowsInformationProtectionPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]
  [-AzureRightsManagementServicesAllowed] [-CreatedDateTime <DateTime>]
  [-DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]
@@ -41,19 +41,19 @@ Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy -MdmWindowsInformation
 
 ### Update
 ```
-Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy -MdmWindowsInformationProtectionPolicyId <String>
+Update-MgBetaDeviceAppMgtMdmWindowInformationProtectionPolicy -MdmWindowsInformationProtectionPolicyId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMdmWindowInformationProtectionPolicy -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMdmWindowInformationProtectionPolicy -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]
  [-AzureRightsManagementServicesAllowed] [-CreatedDateTime <DateTime>]
  [-DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]
@@ -105,7 +105,7 @@ Navigation property to list of security groups targeted for policy.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -166,7 +166,7 @@ Windows Information Protection DataRecoveryCertificate
 To construct, please use Get-Help -Online and see NOTES section for DATARECOVERYCERTIFICATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 Possible values for WIP Protection enforcement levels
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionEnforcementLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsInformationProtectionEnforcementLevel
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -246,7 +246,7 @@ The proxies are only leveraged in configuring the EnterpriseProxiedDomains polic
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEINTERNALPROXYSERVERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -264,7 +264,7 @@ These locations will be considered a safe destination for enterprise data to be 
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEIPRANGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -297,7 +297,7 @@ Data from one of these domains that is sent to a device will be considered enter
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISENETWORKDOMAINNAMES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -313,7 +313,7 @@ List of enterprise domains to be protected
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROTECTEDDOMAINNAMES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -332,7 +332,7 @@ A proxy server used for this purpose must also be configured using the Enterpris
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROXIEDDOMAINS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionProxiedDomainCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionProxiedDomainCollection[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -349,7 +349,7 @@ Any server not on this list is considered non-enterprise
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROXYSERVERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -381,7 +381,7 @@ Another way to input exempt apps through xml files
 To construct, please use Get-Help -Online and see NOTES section for EXEMPTAPPLOCKERFILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -398,7 +398,7 @@ This is because some critical enterprise applications may have compatibility pro
 To construct, please use Get-Help -Online and see NOTES section for EXEMPTAPPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -461,7 +461,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -522,7 +522,7 @@ List of domain names that can used for work or personal resource
 To construct, please use Get-Help -Online and see NOTES section for NEUTRALDOMAINRESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -553,7 +553,7 @@ Another way to input protected apps through xml files
 To construct, please use Get-Help -Online and see NOTES section for PROTECTEDAPPLOCKERFILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -569,7 +569,7 @@ Protected applications can access enterprise data and the data handled by those 
 To construct, please use Get-Help -Online and see NOTES section for PROTECTEDAPPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -648,7 +648,7 @@ Specifies a list of file extensions, so that files with these extensions are enc
 To construct, please use Get-Help -Online and see NOTES section for SMBAUTOENCRYPTEDFILEEXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -710,7 +710,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### System.Collections.Hashtable
 
@@ -722,7 +722,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementMdmWindowInformationProtectionPolicy
+### Update-MgBetaDeviceAppManagementMdmWindowInformationProtectionPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

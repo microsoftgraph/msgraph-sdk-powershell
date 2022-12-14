@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityinformationprotectionsensitivitylabelparent
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecurityinformationprotectionsensitivitylabelparent
 schema: 2.0.0
 ---
 
-# Get-MgSecurityInformationProtectionSensitivityLabelParent
+# Get-MgBetaSecurityInformationProtectionSensitivityLabelParent
 
 ## SYNOPSIS
 The parent label associated with a child label.
@@ -15,13 +15,13 @@ Null if the label has no parent.
 
 ### Get (Default)
 ```
-Get-MgSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
+Get-MgBetaSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -99,11 +99,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 
 ## NOTES
 

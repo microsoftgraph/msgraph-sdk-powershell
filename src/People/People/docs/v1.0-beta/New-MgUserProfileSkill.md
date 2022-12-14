@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofileskill
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/new-mguserprofileskill
 schema: 2.0.0
 ---
 
-# New-MgUserProfileSkill
+# New-MgBetaUserProfileSkill
 
 ## SYNOPSIS
 Use this API to create a new skillProficiency object in a user's profile.
@@ -14,7 +14,7 @@ Use this API to create a new skillProficiency object in a user's profile.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserProfileSkill -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
+New-MgBetaUserProfileSkill -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
  [-Categories <String[]>] [-CollaborationTags <String[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -24,19 +24,19 @@ New-MgUserProfileSkill -UserId <String> [-AdditionalProperties <Hashtable>] [-Al
 
 ### Create
 ```
-New-MgUserProfileSkill -UserId <String> -BodyParameter <IMicrosoftGraphSkillProficiency> [-Confirm] [-WhatIf]
+New-MgBetaUserProfileSkill -UserId <String> -BodyParameter <IMicrosoftGraphSkillProficiency> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfileSkill -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphSkillProficiency>
+New-MgBetaUserProfileSkill -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphSkillProficiency>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserProfileSkill -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfileSkill -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-Categories <String[]>] [-CollaborationTags <String[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
@@ -50,9 +50,9 @@ Use this API to create a new skillProficiency object in a user's profile.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserProfileSkill Cmdlet
+### Example 1: Using the New-MgBetaUserProfileSkill Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Categories = @(
 		"Professional"
@@ -65,10 +65,10 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileSkill -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileSkill -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserProfileSkill Cmdlet.
+This example shows how to use the New-MgBetaUserProfileSkill Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -108,7 +108,7 @@ skillProficiency
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSkillProficiency
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSkillProficiency
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -155,7 +155,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -233,7 +233,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -264,7 +264,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -310,7 +310,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -402,13 +402,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSkillProficiency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSkillProficiency
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSkillProficiency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSkillProficiency
 
 ## NOTES
 

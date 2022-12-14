@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/submit-mgsecuritytiindicator
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/submit-mgsecuritytiindicator
 schema: 2.0.0
 ---
 
-# Submit-MgSecurityTiIndicator
+# Submit-MgBetaSecurityTiIndicator
 
 ## SYNOPSIS
 Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
@@ -14,13 +14,13 @@ Upload multiple threat intelligence (TI) indicators in one request instead of mu
 
 ### SubmitExpanded (Default)
 ```
-Submit-MgSecurityTiIndicator [-AdditionalProperties <Hashtable>] [-Value <IMicrosoftGraphTiIndicator[]>]
+Submit-MgBetaSecurityTiIndicator [-AdditionalProperties <Hashtable>] [-Value <IMicrosoftGraphTiIndicator[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Submit
 ```
-Submit-MgSecurityTiIndicator
+Submit-MgBetaSecurityTiIndicator
  -BodyParameter <IPaths18Nbj75SecurityTiindicatorsMicrosoftGraphSubmittiindicatorsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,9 +30,9 @@ Upload multiple threat intelligence (TI) indicators in one request instead of mu
 
 ## EXAMPLES
 
-### Example 1: Using the Submit-MgSecurityTiIndicator Cmdlet
+### Example 1: Using the Submit-MgBetaSecurityTiIndicator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Value = @(
 		@{
@@ -77,10 +77,10 @@ $params = @{
 		}
 	)
 }
-Submit-MgSecurityTiIndicator -BodyParameter $params
+Submit-MgBetaSecurityTiIndicator -BodyParameter $params
 ```
 
-This example shows how to use the Submit-MgSecurityTiIndicator Cmdlet.
+This example shows how to use the Submit-MgBetaSecurityTiIndicator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths18Nbj75SecurityTiindicatorsMicrosoftGraphSubmittiindicatorsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths18Nbj75SecurityTiindicatorsMicrosoftGraphSubmittiindicatorsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Submit
 Aliases:
 
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for VALUE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator[]
 Parameter Sets: SubmitExpanded
 Aliases:
 
@@ -168,11 +168,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths18Nbj75SecurityTiindicatorsMicrosoftGraphSubmittiindicatorsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths18Nbj75SecurityTiindicatorsMicrosoftGraphSubmittiindicatorsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
 
 ## NOTES
 

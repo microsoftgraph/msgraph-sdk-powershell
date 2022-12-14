@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/split-mgentitlementmanagementconnectedorganization
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/split-mgentitlementmanagementconnectedorganization
 schema: 2.0.0
 ---
 
-# Split-MgEntitlementManagementConnectedOrganization
+# Split-MgBetaEntitlementManagementConnectedOrganization
 
 ## SYNOPSIS
 Split elements of a connectedOrganization
@@ -13,12 +13,12 @@ Split elements of a connectedOrganization
 ## SYNTAX
 
 ```
-Split-MgEntitlementManagementConnectedOrganization -ByIdentitySource
+Split-MgBetaEntitlementManagementConnectedOrganization -ByIdentitySource
  [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgEntitlementManagementConnectedOrganization, to simplify reporting.
+Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgBetaEntitlementManagementConnectedOrganization, to simplify reporting.
 
 ## EXAMPLES
 
@@ -44,7 +44,7 @@ The connected organization.
 To construct, please use Get-Help -Online and see NOTES section for CONNECTEDORGANIZATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization[]
 Parameter Sets: (All)
 Aliases:
 
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization[]
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectedOrganization[]
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/copy-mggrouponenotesectiontosectiongroup
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/copy-mggrouponenotesectiontosectiongroup
 schema: 2.0.0
 ---
 
-# Copy-MgGroupOnenoteSectionToSectionGroup
+# Copy-MgBetaGroupOnenoteSectionToSectionGroup
 
 ## SYNOPSIS
 Copies a section to a specific section group.
@@ -15,28 +15,28 @@ For Copy operations, you follow an asynchronous calling pattern:  First call the
 
 ### CopyExpanded (Default)
 ```
-Copy-MgGroupOnenoteSectionToSectionGroup -GroupId <String> -OnenoteSectionId <String>
+Copy-MgBetaGroupOnenoteSectionToSectionGroup -GroupId <String> -OnenoteSectionId <String>
  [-AdditionalProperties <Hashtable>] [-GroupId1 <String>] [-Id <String>] [-RenameAs <String>]
  [-SiteCollectionId <String>] [-SiteId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy
 ```
-Copy-MgGroupOnenoteSectionToSectionGroup -GroupId <String> -OnenoteSectionId <String>
+Copy-MgBetaGroupOnenoteSectionToSectionGroup -GroupId <String> -OnenoteSectionId <String>
  -BodyParameter <IPaths7006K8GroupsGroupIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
-Copy-MgGroupOnenoteSectionToSectionGroup -InputObject <IGroupsIdentity>
+Copy-MgBetaGroupOnenoteSectionToSectionGroup -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths7006K8GroupsGroupIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
-Copy-MgGroupOnenoteSectionToSectionGroup -InputObject <IGroupsIdentity> [-GroupId <String>]
+Copy-MgBetaGroupOnenoteSectionToSectionGroup -InputObject <IGroupsIdentity> [-GroupId <String>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-RenameAs <String>] [-SiteCollectionId <String>]
  [-SiteId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -49,7 +49,7 @@ For Copy operations, you follow an asynchronous calling pattern:  First call the
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Id = "id-value"
@@ -58,10 +58,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Copy-MgUserOnenoteSectionToSectionGroup -UserId $userId -OnenoteSectionId $onenoteSectionId -BodyParameter $params
+Copy-MgBetaUserOnenoteSectionToSectionGroup -UserId $userId -OnenoteSectionId $onenoteSectionId -BodyParameter $params
 ```
 
-This example shows how to use the Copy-MgGroupOnenoteSectionToSectionGroup Cmdlet.
+This example shows how to use the Copy-MgBetaGroupOnenoteSectionToSectionGroup Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths7006K8GroupsGroupIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths7006K8GroupsGroupIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Copy, CopyViaIdentity
 Aliases:
 
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
 Aliases:
 
@@ -255,13 +255,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths7006K8GroupsGroupIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths7006K8GroupsGroupIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytosectiongroupPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteOperation
 
 ## NOTES
 

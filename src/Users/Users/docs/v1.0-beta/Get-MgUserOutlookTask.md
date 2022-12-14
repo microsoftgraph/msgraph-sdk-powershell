@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguseroutlooktask
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguseroutlooktask
 schema: 2.0.0
 ---
 
-# Get-MgUserOutlookTask
+# Get-MgBetaUserOutlookTask
 
 ## SYNOPSIS
 Get tasks from users
@@ -14,18 +14,18 @@ Get tasks from users
 
 ### List (Default)
 ```
-Get-MgUserOutlookTask -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaUserOutlookTask -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserOutlookTask -OutlookTaskId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserOutlookTask -OutlookTaskId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserOutlookTask -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserOutlookTask -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,34 +33,34 @@ Get tasks from users
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOutlookTask Cmdlet
+### Example 1: Using the Get-MgBetaUserOutlookTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
+Get-MgBetaUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
 ```
 
-This example shows how to use the Get-MgUserOutlookTask Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserOutlookTask Cmdlet
+### Example 2: Using the Get-MgBetaUserOutlookTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
+Get-MgBetaUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
 ```
 
-This example shows how to use the Get-MgUserOutlookTask Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgUserOutlookTask Cmdlet
+### Example 3: Using the Get-MgBetaUserOutlookTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOutlookTask -UserId $userId
+Get-MgBetaUserOutlookTask -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserOutlookTask Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -237,11 +237,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTask
 
 ## NOTES
 

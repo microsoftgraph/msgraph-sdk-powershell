@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgteamtag
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgteamtag
 schema: 2.0.0
 ---
 
-# Update-MgTeamTag
+# Update-MgBetaTeamTag
 
 ## SYNOPSIS
 Update the navigation property tags in teams
@@ -14,7 +14,7 @@ Update the navigation property tags in teams
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgTeamTag -TeamId <String> -TeamworkTagId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaTeamTag -TeamId <String> -TeamworkTagId <String> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-MemberCount <Int32>]
  [-Members <IMicrosoftGraphTeamworkTagMember[]>] [-TagType <String>] [-TeamId1 <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgTeamTag -TeamId <String> -TeamworkTagId <String> [-AdditionalProperties
 
 ### Update1
 ```
-Update-MgTeamTag -TeamId <String> -TeamworkTagId <String> -BodyParameter <IMicrosoftGraphTeamworkTag>
+Update-MgBetaTeamTag -TeamId <String> -TeamworkTagId <String> -BodyParameter <IMicrosoftGraphTeamworkTag>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgTeamTag -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTag> [-PassThru]
+Update-MgBetaTeamTag -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTag> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgTeamTag -InputObject <ITeamsIdentity> [-TeamId <String>] [-AdditionalProperties <Hashtable>]
+Update-MgBetaTeamTag -InputObject <ITeamsIdentity> [-TeamId <String>] [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-MemberCount <Int32>]
  [-Members <IMicrosoftGraphTeamworkTagMember[]>] [-TagType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -45,16 +45,16 @@ Update the navigation property tags in teams
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgTeamTag Cmdlet
+### Example 1: Using the Update-MgBetaTeamTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "Finance"
 }
-Update-MgTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
+Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgTeamTag Cmdlet.
+This example shows how to use the Update-MgBetaTeamTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ teamworkTag
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTag
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTag
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -141,7 +141,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -172,7 +172,7 @@ Users assigned to the tag.
 To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -294,9 +294,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTag
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/find-mguserroomlist
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/find-mguserroomlist
 schema: 2.0.0
 ---
 
-# Find-MgUserRoomList
+# Find-MgBetaUserRoomList
 
 ## SYNOPSIS
 Get the room lists defined in a tenant, as represented by their emailAddress objects.
@@ -16,13 +16,13 @@ In this API, each meeting room and room list is represented by an emailAddress i
 
 ### Find (Default)
 ```
-Find-MgUserRoomList -UserId <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Find-MgBetaUserRoomList -UserId <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FindViaIdentity
 ```
-Find-MgUserRoomList -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
+Find-MgBetaUserRoomList -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -33,14 +33,14 @@ In this API, each meeting room and room list is represented by an emailAddress i
 
 ## EXAMPLES
 
-### Example 1: Using the Find-MgUserRoomList Cmdlet
+### Example 1: Using the Find-MgBetaUserRoomList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Functions
+Import-Module Microsoft.Graph.Beta.Users.Functions
 # A UPN can also be used as -UserId.
-Find-MgUserRoomList -UserId $userId
+Find-MgBetaUserRoomList -UserId $userId
 ```
 
-This example shows how to use the Find-MgUserRoomList Cmdlet.
+This example shows how to use the Find-MgBetaUserRoomList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: FindViaIdentity
 Aliases:
 
@@ -156,11 +156,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 
 ## NOTES
 

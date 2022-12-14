@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggrouplifecyclepolicybygroup
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggrouplifecyclepolicybygroup
 schema: 2.0.0
 ---
 
-# Get-MgGroupLifecyclePolicyByGroup
+# Get-MgBetaGroupLifecyclePolicyByGroup
 
 ## SYNOPSIS
 Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
@@ -13,7 +13,7 @@ Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 ## SYNTAX
 
 ```
-Get-MgGroupLifecyclePolicyByGroup -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaGroupLifecyclePolicyByGroup -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,13 +23,13 @@ Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupLifecyclePolicyByGroup Cmdlet
+### Example 1: Using the Get-MgBetaGroupLifecyclePolicyByGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupLifecyclePolicyByGroup -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupLifecyclePolicyByGroup -GroupId $groupId
 ```
 
-This example shows how to use the Get-MgGroupLifecyclePolicyByGroup Cmdlet.
+This example shows how to use the Get-MgBetaGroupLifecyclePolicyByGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -207,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
 
 ## NOTES
 

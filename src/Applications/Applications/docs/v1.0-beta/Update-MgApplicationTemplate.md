@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgapplicationtemplate
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgapplicationtemplate
 schema: 2.0.0
 ---
 
-# Update-MgApplicationTemplate
+# Update-MgBetaApplicationTemplate
 
 ## SYNOPSIS
 Update entity in applicationTemplates
@@ -14,7 +14,7 @@ Update entity in applicationTemplates
 
 ### UpdateExpanded (Default)
 ```
-Update-MgApplicationTemplate -ApplicationTemplateId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaApplicationTemplate -ApplicationTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
  [-Id <String>] [-InformationalUrls <IMicrosoftGraphInformationalUrls>] [-LogoUrl <String>]
  [-Publisher <String>] [-SupportedClaimConfiguration <IMicrosoftGraphSupportedClaimConfiguration>]
@@ -24,19 +24,19 @@ Update-MgApplicationTemplate -ApplicationTemplateId <String> [-AdditionalPropert
 
 ### Update
 ```
-Update-MgApplicationTemplate -ApplicationTemplateId <String>
+Update-MgBetaApplicationTemplate -ApplicationTemplateId <String>
  -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgApplicationTemplate -InputObject <IApplicationsIdentity>
+Update-MgBetaApplicationTemplate -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgApplicationTemplate -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaApplicationTemplate -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
  [-Id <String>] [-InformationalUrls <IMicrosoftGraphInformationalUrls>] [-LogoUrl <String>]
  [-Publisher <String>] [-SupportedClaimConfiguration <IMicrosoftGraphSupportedClaimConfiguration>]
@@ -86,7 +86,7 @@ applicationTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplicationTemplate
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -179,7 +179,7 @@ informationalUrls
 To construct, please use Get-Help -Online and see NOTES section for INFORMATIONALURLS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationalUrls
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationalUrls
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -256,7 +256,7 @@ supportedClaimConfiguration
 To construct, please use Get-Help -Online and see NOTES section for SUPPORTEDCLAIMCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSupportedClaimConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSupportedClaimConfiguration
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -335,9 +335,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplicationTemplate
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/test-mgdrivelistcontenttypepublished
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/test-mgdrivelistcontenttypepublished
 schema: 2.0.0
 ---
 
-# Test-MgDriveListContentTypePublished
+# Test-MgBetaDriveListContentTypePublished
 
 ## SYNOPSIS
 Invoke function isPublished
@@ -14,12 +14,12 @@ Invoke function isPublished
 
 ### Is (Default)
 ```
-Test-MgDriveListContentTypePublished -ContentTypeId <String> -DriveId <String> [<CommonParameters>]
+Test-MgBetaDriveListContentTypePublished -ContentTypeId <String> -DriveId <String> [<CommonParameters>]
 ```
 
 ### IsViaIdentity
 ```
-Test-MgDriveListContentTypePublished -InputObject <IFilesIdentity> [<CommonParameters>]
+Test-MgBetaDriveListContentTypePublished -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,7 +64,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: IsViaIdentity
 Aliases:
 
@@ -80,7 +80,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

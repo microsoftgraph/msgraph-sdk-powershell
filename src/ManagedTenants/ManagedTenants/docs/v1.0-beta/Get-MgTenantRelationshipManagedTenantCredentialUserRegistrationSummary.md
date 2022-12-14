@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantcredentialuserregistrationsummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantcredentialuserregistrationsummary
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+# Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
 
 ## SYNOPSIS
 Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
@@ -14,21 +14,21 @@ Summary information for user registration for multi-factor authentication and se
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -CredentialUserRegistrationsSummaryId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -37,22 +37,22 @@ Summary information for user registration for multi-factor authentication and se
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary -CredentialUserRegistrationsSummaryId $credentialUserRegistrationsSummaryId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary -CredentialUserRegistrationsSummaryId $credentialUserRegistrationsSummaryId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -244,11 +244,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
 
 ## NOTES
 

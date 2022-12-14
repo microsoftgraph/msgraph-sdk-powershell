@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/test-mgsharelistcontenttypepublished
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/test-mgsharelistcontenttypepublished
 schema: 2.0.0
 ---
 
-# Test-MgShareListContentTypePublished
+# Test-MgBetaShareListContentTypePublished
 
 ## SYNOPSIS
 Invoke function isPublished
@@ -14,12 +14,12 @@ Invoke function isPublished
 
 ### Is1 (Default)
 ```
-Test-MgShareListContentTypePublished -ContentTypeId <String> -SharedDriveItemId <String> [<CommonParameters>]
+Test-MgBetaShareListContentTypePublished -ContentTypeId <String> -SharedDriveItemId <String> [<CommonParameters>]
 ```
 
 ### IsViaIdentity1
 ```
-Test-MgShareListContentTypePublished -InputObject <IFilesIdentity> [<CommonParameters>]
+Test-MgBetaShareListContentTypePublished -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: IsViaIdentity1
 Aliases:
 
@@ -80,7 +80,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

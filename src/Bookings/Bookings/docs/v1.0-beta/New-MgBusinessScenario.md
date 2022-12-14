@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbusinessscenario
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/new-mgbusinessscenario
 schema: 2.0.0
 ---
 
-# New-MgBusinessScenario
+# New-MgBetaBusinessScenario
 
 ## SYNOPSIS
 Create new navigation property to businessScenarios for solutions
@@ -14,7 +14,7 @@ Create new navigation property to businessScenarios for solutions
 
 ### CreateExpanded (Default)
 ```
-New-MgBusinessScenario [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
+New-MgBetaBusinessScenario [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-OwnerAppIds <String[]>]
  [-Planner <IMicrosoftGraphBusinessScenarioPlanner>] [-UniqueName <String>] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgBusinessScenario [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicroso
 
 ### Create
 ```
-New-MgBusinessScenario -BodyParameter <IMicrosoftGraphBusinessScenario> [-Confirm] [-WhatIf]
+New-MgBetaBusinessScenario -BodyParameter <IMicrosoftGraphBusinessScenario> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ businessScenario
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessScenario
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessScenario
 Parameter Sets: Create
 Aliases:
 
@@ -70,7 +70,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -132,7 +132,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ businessScenarioPlanner
 To construct, please use Get-Help -Online and see NOTES section for PLANNER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessScenarioPlanner
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessScenarioPlanner
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessScenario
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessScenario
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessScenario
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessScenario
 
 ## NOTES
 

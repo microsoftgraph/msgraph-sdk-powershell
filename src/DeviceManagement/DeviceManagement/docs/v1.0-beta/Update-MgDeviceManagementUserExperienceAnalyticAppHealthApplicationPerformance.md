@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticapphealthapplicationperformance
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticapphealthapplicationperformance
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
+# Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformance in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsAppHealthApplicationPerfor
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
  -UserExperienceAnalyticsAppHealthApplicationPerformanceId <String> [-ActiveDeviceCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-AppCrashCount <Int32>] [-AppDisplayName <String>]
  [-AppHangCount <Int32>] [-AppHealthScore <Double>] [-AppHealthStatus <String>] [-AppName <String>]
@@ -24,7 +24,7 @@ Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
  -UserExperienceAnalyticsAppHealthApplicationPerformanceId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -32,7 +32,7 @@ Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -40,7 +40,7 @@ Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
  -InputObject <IDeviceManagementIdentity> [-ActiveDeviceCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-AppCrashCount <Int32>] [-AppDisplayName <String>] [-AppHangCount <Int32>] [-AppHealthScore <Double>]
  [-AppHealthStatus <String>] [-AppName <String>] [-AppPublisher <String>] [-AppUsageDuration <Int32>]
@@ -214,7 +214,7 @@ The user experience analytics application performance entity contains app perfor
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -246,7 +246,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -339,9 +339,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance
 
 ## OUTPUTS
 

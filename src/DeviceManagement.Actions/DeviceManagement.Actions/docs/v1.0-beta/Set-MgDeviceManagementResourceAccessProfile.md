@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementresourceaccessprofile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementresourceaccessprofile
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementResourceAccessProfile
+# Set-MgBetaDeviceManagementResourceAccessProfile
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,7 +14,7 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfileBaseId <String>
+Set-MgBetaDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfileBaseId <String>
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,21 +22,21 @@ Set-MgDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfi
 
 ### Assign
 ```
-Set-MgDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfileBaseId <String>
+Set-MgBetaDeviceManagementResourceAccessProfile -DeviceManagementResourceAccessProfileBaseId <String>
  -BodyParameter <IPaths16HigzcDevicemanagementResourceaccessprofilesDevicemanagementresourceaccessprofilebaseIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementResourceAccessProfile -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementResourceAccessProfile -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths16HigzcDevicemanagementResourceaccessprofilesDevicemanagementresourceaccessprofilebaseIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementResourceAccessProfile -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementResourceAccessProfile -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths16HigzcDevicemanagementResourceaccessprofilesDevicemanagementresourceaccessprofilebaseIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths16HigzcDevicemanagementResourceaccessprofilesDevicemanagementresourceaccessprofilebaseIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -163,13 +163,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths16HigzcDevicemanagementResourceaccessprofilesDevicemanagementresourceaccessprofilebaseIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths16HigzcDevicemanagementResourceaccessprofilesDevicemanagementresourceaccessprofilebaseIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment
 
 ## NOTES
 

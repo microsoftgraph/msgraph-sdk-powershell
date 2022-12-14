@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/stop-mgdevicemanagementzebrafotadeployment
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/stop-mgdevicemanagementzebrafotadeployment
 schema: 2.0.0
 ---
 
-# Stop-MgDeviceManagementZebraFotaDeployment
+# Stop-MgBetaDeviceManagementZebraFotaDeployment
 
 ## SYNOPSIS
 Invoke action cancel
@@ -14,13 +14,13 @@ Invoke action cancel
 
 ### Cancel (Default)
 ```
-Stop-MgDeviceManagementZebraFotaDeployment -ZebraFotaDeploymentId <String> [-Confirm] [-WhatIf]
+Stop-MgBetaDeviceManagementZebraFotaDeployment -ZebraFotaDeploymentId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgDeviceManagementZebraFotaDeployment -InputObject <IDeviceManagementActionsIdentity> [-Confirm]
+Stop-MgBetaDeviceManagementZebraFotaDeployment -InputObject <IDeviceManagementActionsIdentity> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CancelViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

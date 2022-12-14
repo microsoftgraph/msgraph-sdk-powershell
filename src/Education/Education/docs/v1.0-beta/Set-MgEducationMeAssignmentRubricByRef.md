@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationmeassignmentrubricbyref
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/set-mgeducationmeassignmentrubricbyref
 schema: 2.0.0
 ---
 
-# Set-MgEducationMeAssignmentRubricByRef
+# Set-MgBetaEducationMeAssignmentRubricByRef
 
 ## SYNOPSIS
 Update the ref of navigation property rubric in education
@@ -14,25 +14,25 @@ Update the ref of navigation property rubric in education
 
 ### SetExpanded (Default)
 ```
-Set-MgEducationMeAssignmentRubricByRef -EducationAssignmentId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaEducationMeAssignmentRubricByRef -EducationAssignmentId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgEducationMeAssignmentRubricByRef -EducationAssignmentId <String> -BodyParameter <IReferenceUpdate>
+Set-MgBetaEducationMeAssignmentRubricByRef -EducationAssignmentId <String> -BodyParameter <IReferenceUpdate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgEducationMeAssignmentRubricByRef -InputObject <IEducationIdentity> -BodyParameter <IReferenceUpdate>
+Set-MgBetaEducationMeAssignmentRubricByRef -InputObject <IEducationIdentity> -BodyParameter <IReferenceUpdate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-MgEducationMeAssignmentRubricByRef -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaEducationMeAssignmentRubricByRef -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceUpdate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceUpdate
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -94,7 +94,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
@@ -186,9 +186,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceUpdate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceUpdate
 
 ## OUTPUTS
 

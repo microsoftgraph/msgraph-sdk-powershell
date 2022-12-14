@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/stop-mgapplicationsynchronizationjob
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/stop-mgapplicationsynchronizationjob
 schema: 2.0.0
 ---
 
-# Stop-MgApplicationSynchronizationJob
+# Stop-MgBetaApplicationSynchronizationJob
 
 ## SYNOPSIS
 Invoke action stop
@@ -14,13 +14,13 @@ Invoke action stop
 
 ### Stop (Default)
 ```
-Stop-MgApplicationSynchronizationJob -ApplicationId <String> -SynchronizationJobId <String> [-PassThru]
+Stop-MgBetaApplicationSynchronizationJob -ApplicationId <String> -SynchronizationJobId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StopViaIdentity
 ```
-Stop-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Stop-MgBetaApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: StopViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

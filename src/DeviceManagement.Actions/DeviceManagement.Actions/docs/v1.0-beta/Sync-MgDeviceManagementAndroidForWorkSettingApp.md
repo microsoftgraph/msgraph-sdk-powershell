@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/sync-mgdevicemanagementandroidforworksettingapp
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/sync-mgdevicemanagementandroidforworksettingapp
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceManagementAndroidForWorkSettingApp
+# Sync-MgBetaDeviceManagementAndroidForWorkSettingApp
 
 ## SYNOPSIS
 Invoke action syncApps
@@ -13,7 +13,7 @@ Invoke action syncApps
 ## SYNTAX
 
 ```
-Sync-MgDeviceManagementAndroidForWorkSettingApp [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Sync-MgBetaDeviceManagementAndroidForWorkSettingApp [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

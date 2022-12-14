@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritysecurescore
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritysecurescore
 schema: 2.0.0
 ---
 
-# Update-MgSecuritySecureScore
+# Update-MgBetaSecuritySecureScore
 
 ## SYNOPSIS
 Update the navigation property secureScores in security
@@ -14,7 +14,7 @@ Update the navigation property secureScores in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecuritySecureScore -SecureScoreId <String> [-ActiveUserCount <Int32>]
+Update-MgBetaSecuritySecureScore -SecureScoreId <String> [-ActiveUserCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-AverageComparativeScores <IMicrosoftGraphAverageComparativeScore[]>]
  [-AzureTenantId <String>] [-ControlScores <IMicrosoftGraphControlScore[]>] [-CreatedDateTime <DateTime>]
  [-CurrentScore <Double>] [-EnabledServices <String[]>] [-Id <String>] [-LicensedUserCount <Int32>]
@@ -24,19 +24,19 @@ Update-MgSecuritySecureScore -SecureScoreId <String> [-ActiveUserCount <Int32>]
 
 ### Update
 ```
-Update-MgSecuritySecureScore -SecureScoreId <String> -BodyParameter <IMicrosoftGraphSecureScore> [-PassThru]
+Update-MgBetaSecuritySecureScore -SecureScoreId <String> -BodyParameter <IMicrosoftGraphSecureScore> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecuritySecureScore -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphSecureScore>
+Update-MgBetaSecuritySecureScore -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphSecureScore>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecuritySecureScore -InputObject <ISecurityIdentity> [-ActiveUserCount <Int32>]
+Update-MgBetaSecuritySecureScore -InputObject <ISecurityIdentity> [-ActiveUserCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-AverageComparativeScores <IMicrosoftGraphAverageComparativeScore[]>]
  [-AzureTenantId <String>] [-ControlScores <IMicrosoftGraphControlScore[]>] [-CreatedDateTime <DateTime>]
  [-CurrentScore <Double>] [-EnabledServices <String[]>] [-Id <String>] [-LicensedUserCount <Int32>]
@@ -86,7 +86,7 @@ Average score by different scopes (for example, average by industry, average by 
 To construct, please use Get-Help -Online and see NOTES section for AVERAGECOMPARATIVESCORES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAverageComparativeScore[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAverageComparativeScore[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ secureScore
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScore
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScore
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Contains tenant scores for a set of controls.
 To construct, please use Get-Help -Online and see NOTES section for CONTROLSCORES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphControlScore[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphControlScore[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -210,7 +210,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -286,7 +286,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -333,9 +333,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScore
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScore
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

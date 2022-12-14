@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mggroupevent
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mggroupevent
 schema: 2.0.0
 ---
 
-# Get-MgGroupEvent
+# Get-MgBetaGroupEvent
 
 ## SYNOPSIS
 The group's events.
@@ -14,18 +14,18 @@ The group's events.
 
 ### List (Default)
 ```
-Get-MgGroupEvent -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaGroupEvent -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupEvent -EventId <String> -GroupId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaGroupEvent -EventId <String> -GroupId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupEvent -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaGroupEvent -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,22 +33,22 @@ The group's events.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupEvent Cmdlet
+### Example 1: Using the Get-MgBetaGroupEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgGroupEvent -GroupId $groupId -EventId $eventId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
 ```
 
-This example shows how to use the Get-MgGroupEvent Cmdlet.
+This example shows how to use the Get-MgBetaGroupEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgGroupEvent Cmdlet
+### Example 2: Using the Get-MgBetaGroupEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgGroupEvent -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaGroupEvent -GroupId $groupId
 ```
 
-This example shows how to use the Get-MgGroupEvent Cmdlet.
+This example shows how to use the Get-MgBetaGroupEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 
 ## NOTES
 

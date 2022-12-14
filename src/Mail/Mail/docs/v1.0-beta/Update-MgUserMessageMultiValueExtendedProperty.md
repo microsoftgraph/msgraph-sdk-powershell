@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/update-mgusermessagemultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/update-mgusermessagemultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Update-MgUserMessageMultiValueExtendedProperty
+# Update-MgBetaUserMessageMultiValueExtendedProperty
 
 ## SYNOPSIS
 Update the navigation property multiValueExtendedProperties in users
@@ -14,14 +14,14 @@ Update the navigation property multiValueExtendedProperties in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserMessageMultiValueExtendedProperty -MessageId <String>
+Update-MgBetaUserMessageMultiValueExtendedProperty -MessageId <String>
  -MultiValueLegacyExtendedPropertyId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Value <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserMessageMultiValueExtendedProperty -MessageId <String>
+Update-MgBetaUserMessageMultiValueExtendedProperty -MessageId <String>
  -MultiValueLegacyExtendedPropertyId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphMultiValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -29,14 +29,14 @@ Update-MgUserMessageMultiValueExtendedProperty -MessageId <String>
 
 ### UpdateViaIdentity
 ```
-Update-MgUserMessageMultiValueExtendedProperty -InputObject <IMailIdentity>
+Update-MgBetaUserMessageMultiValueExtendedProperty -InputObject <IMailIdentity>
  -BodyParameter <IMicrosoftGraphMultiValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserMessageMultiValueExtendedProperty -InputObject <IMailIdentity>
+Update-MgBetaUserMessageMultiValueExtendedProperty -InputObject <IMailIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ multiValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -222,9 +222,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 
 ## OUTPUTS
 

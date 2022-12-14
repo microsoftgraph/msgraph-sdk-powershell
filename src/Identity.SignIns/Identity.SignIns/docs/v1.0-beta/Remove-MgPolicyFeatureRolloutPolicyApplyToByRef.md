@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicyfeaturerolloutpolicyapplytobyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicyfeaturerolloutpolicyapplytobyref
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyFeatureRolloutPolicyApplyToByRef
+# Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef
 
 ## SYNOPSIS
 Delete ref of navigation property appliesTo for policies
@@ -14,13 +14,13 @@ Delete ref of navigation property appliesTo for policies
 
 ### Delete (Default)
 ```
-Remove-MgPolicyFeatureRolloutPolicyApplyToByRef -DirectoryObjectId <String> -FeatureRolloutPolicyId <String>
+Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -DirectoryObjectId <String> -FeatureRolloutPolicyId <String>
  [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity> [-Id <String>]
+Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property appliesTo for policies
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPolicyFeatureRolloutPolicyApplyToByRef Cmdlet
+### Example 1: Using the Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId $featureRolloutPolicyId -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId $featureRolloutPolicyId -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Remove-MgPolicyFeatureRolloutPolicyApplyToByRef Cmdlet.
+This example shows how to use the Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

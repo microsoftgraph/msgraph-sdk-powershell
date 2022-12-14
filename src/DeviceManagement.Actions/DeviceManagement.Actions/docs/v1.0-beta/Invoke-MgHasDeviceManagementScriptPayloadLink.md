@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mghasdevicemanagementscriptpayloadlink
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mghasdevicemanagementscriptpayloadlink
 schema: 2.0.0
 ---
 
-# Invoke-MgHasDeviceManagementScriptPayloadLink
+# Invoke-MgBetaHasDeviceManagementScriptPayloadLink
 
 ## SYNOPSIS
 Invoke action hasPayloadLinks
@@ -14,13 +14,13 @@ Invoke action hasPayloadLinks
 
 ### HasExpanded (Default)
 ```
-Invoke-MgHasDeviceManagementScriptPayloadLink [-AdditionalProperties <Hashtable>] [-PayloadIds <String[]>]
+Invoke-MgBetaHasDeviceManagementScriptPayloadLink [-AdditionalProperties <Hashtable>] [-PayloadIds <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Has
 ```
-Invoke-MgHasDeviceManagementScriptPayloadLink
+Invoke-MgBetaHasDeviceManagementScriptPayloadLink
  -BodyParameter <IPathsHo5CjoDevicemanagementDevicemanagementscriptsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsHo5CjoDevicemanagementDevicemanagementscriptsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsHo5CjoDevicemanagementDevicemanagementscriptsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Has
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsHo5CjoDevicemanagementDevicemanagementscriptsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsHo5CjoDevicemanagementDevicemanagementscriptsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
 
 ## NOTES
 

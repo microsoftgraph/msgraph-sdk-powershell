@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementwindowqualityupdateprofile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementwindowqualityupdateprofile
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementWindowQualityUpdateProfile
+# Set-MgBetaDeviceManagementWindowQualityUpdateProfile
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,28 +14,28 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementWindowQualityUpdateProfile -WindowsQualityUpdateProfileId <String>
+Set-MgBetaDeviceManagementWindowQualityUpdateProfile -WindowsQualityUpdateProfileId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphWindowsQualityUpdateProfileAssignment[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgDeviceManagementWindowQualityUpdateProfile -WindowsQualityUpdateProfileId <String>
+Set-MgBetaDeviceManagementWindowQualityUpdateProfile -WindowsQualityUpdateProfileId <String>
  -BodyParameter <IPaths16Xnlm3DevicemanagementWindowsqualityupdateprofilesWindowsqualityupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementWindowQualityUpdateProfile -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementWindowQualityUpdateProfile -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths16Xnlm3DevicemanagementWindowsqualityupdateprofilesWindowsqualityupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementWindowQualityUpdateProfile -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementWindowQualityUpdateProfile -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphWindowsQualityUpdateProfileAssignment[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsQualityUpdateProfileAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsQualityUpdateProfileAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths16Xnlm3DevicemanagementWindowsqualityupdateprofilesWindowsqualityupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths16Xnlm3DevicemanagementWindowsqualityupdateprofilesWindowsqualityupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -176,9 +176,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths16Xnlm3DevicemanagementWindowsqualityupdateprofilesWindowsqualityupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths16Xnlm3DevicemanagementWindowsqualityupdateprofilesWindowsqualityupdateprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

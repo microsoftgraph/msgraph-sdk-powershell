@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtandroidmanagedappprotection
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtandroidmanagedappprotection
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtAndroidManagedAppProtection
+# New-MgBetaDeviceAppMgtAndroidManagedAppProtection
 
 ## SYNOPSIS
 Create new navigation property to androidManagedAppProtections for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to androidManagedAppProtections for deviceAppMana
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>]
  [-AllowedAndroidDeviceManufacturers <String>] [-AllowedAndroidDeviceModels <String[]>]
  [-AllowedDataIngestionLocations <ManagedAppDataIngestionLocation[]>]
  [-AllowedDataStorageLocations <ManagedAppDataStorageLocation[]>]
@@ -75,7 +75,7 @@ New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>
 
 ### Create
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection1>
+New-MgBetaDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 Data storage locations where a user may store managed data.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataIngestionLocation[]
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppDataIngestionLocation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 Data storage locations where a user may store managed data.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataStorageLocation[]
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppDataStorageLocation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 Data can be transferred from/to these classes of apps
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataTransferLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppDataTransferLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 Represents the level to which the device's clipboard may be shared between apps
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppClipboardSharingLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppClipboardSharingLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 Data can be transferred from/to these classes of apps
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataTransferLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppDataTransferLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -317,7 +317,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -377,7 +377,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.TargetedManagedAppGroupType
+Type: Microsoft.Graph.Beta.PowerShell.Support.TargetedManagedAppGroupType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -409,7 +409,7 @@ A key should be Android package id for a keyboard and value should be a friendly
 To construct, please use Get-Help -Online and see NOTES section for APPROVEDKEYBOARDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -425,7 +425,7 @@ List of apps to which the policy is deployed.
 To construct, please use Get-Help -Online and see NOTES section for APPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -441,7 +441,7 @@ Navigation property to list of inclusion and exclusion groups to which the polic
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -502,7 +502,7 @@ Policy used to configure detailed management settings targeted to specific secur
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 Parameter Sets: Create
 Aliases:
 
@@ -653,7 +653,7 @@ The ManagedAppEntity is the base entity type for all other entity types under ap
 To construct, please use Get-Help -Online and see NOTES section for DEPLOYMENTSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -713,7 +713,7 @@ Accept wildcard characters: False
 The classes of apps that are allowed to click-to-open a phone number, for making phone calls or sending text messages.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppPhoneNumberRedirectLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppPhoneNumberRedirectLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -789,7 +789,7 @@ App packages in this list will be exempt from the policy and will be able to rec
 To construct, please use Get-Help -Online and see NOTES section for EXEMPTEDAPPPACKAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -913,7 +913,7 @@ Accept wildcard characters: False
 Type of managed browser
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedBrowserType
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedBrowserType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -943,7 +943,7 @@ Accept wildcard characters: False
 The maxium threat level allowed for an app to be compliant.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppDeviceThreatLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppDeviceThreatLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1213,7 +1213,7 @@ Accept wildcard characters: False
 Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MobileThreatDefensePartnerPriority
+Type: Microsoft.Graph.Beta.PowerShell.Support.MobileThreatDefensePartnerPriority
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1228,7 +1228,7 @@ Accept wildcard characters: False
 An admin initiated action to be applied on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppRemediationAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppRemediationAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1243,7 +1243,7 @@ Accept wildcard characters: False
 Restrict managed app notification
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppNotificationRestriction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppNotificationRestriction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1333,7 +1333,7 @@ Accept wildcard characters: False
 Character set which is to be used for a user's app PIN
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppPinCharacterSet
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppPinCharacterSet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1423,7 +1423,7 @@ Accept wildcard characters: False
 An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AndroidManagedAppSafetyNetAppsVerificationType
+Type: Microsoft.Graph.Beta.PowerShell.Support.AndroidManagedAppSafetyNetAppsVerificationType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1438,7 +1438,7 @@ Accept wildcard characters: False
 An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AndroidManagedAppSafetyNetDeviceAttestationType
+Type: Microsoft.Graph.Beta.PowerShell.Support.AndroidManagedAppSafetyNetDeviceAttestationType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1453,7 +1453,7 @@ Accept wildcard characters: False
 An admin enforced Android SafetyNet evaluation type requirement on a managed app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AndroidManagedAppSafetyNetEvaluationType
+Type: Microsoft.Graph.Beta.PowerShell.Support.AndroidManagedAppSafetyNetEvaluationType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1543,7 +1543,7 @@ Accept wildcard characters: False
 Management levels for apps
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AppManagementLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.AppManagementLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1635,17 +1635,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementAndroidManagedAppProtection
+### New-MgBetaDeviceAppManagementAndroidManagedAppProtection
 
 COMPLEX PARAMETER PROPERTIES
 

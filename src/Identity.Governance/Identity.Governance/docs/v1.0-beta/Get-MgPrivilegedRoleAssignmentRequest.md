@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedroleassignmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedroleassignmentrequest
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedRoleAssignmentRequest
+# Get-MgBetaPrivilegedRoleAssignmentRequest
 
 ## SYNOPSIS
 Get entity from privilegedRoleAssignmentRequests by key
@@ -14,20 +14,20 @@ Get entity from privilegedRoleAssignmentRequests by key
 
 ### List (Default)
 ```
-Get-MgPrivilegedRoleAssignmentRequest [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPrivilegedRoleAssignmentRequest [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get entity from privilegedRoleAssignmentRequests by key
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrivilegedRoleAssignmentRequest Cmdlet
+### Example 1: Using the Get-MgBetaPrivilegedRoleAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedRoleAssignmentRequest
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedRoleAssignmentRequest
 ```
 
-This example shows how to use the Get-MgPrivilegedRoleAssignmentRequest Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedRoleAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
 
 ## NOTES
 

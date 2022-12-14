@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/get-mguserdevicecommand
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/get-mguserdevicecommand
 schema: 2.0.0
 ---
 
-# Get-MgUserDeviceCommand
+# Get-MgBetaUserDeviceCommand
 
 ## SYNOPSIS
 Set of commands sent to this device.
@@ -14,20 +14,20 @@ Set of commands sent to this device.
 
 ### List (Default)
 ```
-Get-MgUserDeviceCommand -DeviceId <String> -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserDeviceCommand -DeviceId <String> -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserDeviceCommand -CommandId <String> -DeviceId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserDeviceCommand -CommandId <String> -DeviceId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserDeviceCommand -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserDeviceCommand -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 
 ## NOTES
 

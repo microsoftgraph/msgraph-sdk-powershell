@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgbusinessflowtemplate
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgbusinessflowtemplate
 schema: 2.0.0
 ---
 
-# New-MgBusinessFlowTemplate
+# New-MgBetaBusinessFlowTemplate
 
 ## SYNOPSIS
 Add new entity to businessFlowTemplates
@@ -14,13 +14,13 @@ Add new entity to businessFlowTemplates
 
 ### CreateExpanded (Default)
 ```
-New-MgBusinessFlowTemplate [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+New-MgBetaBusinessFlowTemplate [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBusinessFlowTemplate -BodyParameter <IMicrosoftGraphBusinessFlowTemplate> [-Confirm] [-WhatIf]
+New-MgBetaBusinessFlowTemplate -BodyParameter <IMicrosoftGraphBusinessFlowTemplate> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ businessFlowTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessFlowTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessFlowTemplate
 Parameter Sets: Create
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessFlowTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessFlowTemplate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessFlowTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessFlowTemplate
 
 ## NOTES
 

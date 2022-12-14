@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2cuserflowlanguage
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2cuserflowlanguage
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2CUserFlowLanguage
+# Get-MgBetaIdentityB2CUserFlowLanguage
 
 ## SYNOPSIS
 The languages supported for customization within the user flow.
@@ -15,20 +15,20 @@ Language customization is not enabled by default in B2C user flows.
 
 ### List (Default)
 ```
-Get-MgIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
+Get-MgBetaIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,31 +38,31 @@ Language customization is not enabled by default in B2C user flows.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityB2CUserFlowLanguage Cmdlet
+### Example 1: Using the Get-MgBetaIdentityB2CUserFlowLanguage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlowLanguage -B2cIdentityUserFlowId $b2cIdentityUserFlowId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlowLanguage -B2cIdentityUserFlowId $b2cIdentityUserFlowId
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlowLanguage Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlowLanguage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityB2CUserFlowLanguage Cmdlet
+### Example 2: Using the Get-MgBetaIdentityB2CUserFlowLanguage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlowLanguage -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlowLanguage -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlowLanguage Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlowLanguage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityB2CUserFlowLanguage Cmdlet
+### Example 3: Using the Get-MgBetaIdentityB2CUserFlowLanguage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlowLanguage -B2cIdentityUserFlowId $b2cIdentityUserFlowId -Filter "isEnabled eq true" 
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlowLanguage -B2cIdentityUserFlowId $b2cIdentityUserFlowId -Filter "isEnabled eq true" 
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlowLanguage Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlowLanguage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -269,11 +269,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration
 
 ## NOTES
 

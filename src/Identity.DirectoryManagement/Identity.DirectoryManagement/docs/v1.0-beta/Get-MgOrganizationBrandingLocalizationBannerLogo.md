@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganizationbrandinglocalizationbannerlogo
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgorganizationbrandinglocalizationbannerlogo
 schema: 2.0.0
 ---
 
-# Get-MgOrganizationBrandingLocalizationBannerLogo
+# Get-MgBetaOrganizationBrandingLocalizationBannerLogo
 
 ## SYNOPSIS
 A banner version of your company logo that appears on the sign-in page.
@@ -16,13 +16,13 @@ We recommend using a transparent image with no padding around the logo.
 
 ### Get (Default)
 ```
-Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationalBrandingLocalizationId <String>
+Get-MgBetaOrganizationBrandingLocalizationBannerLogo -OrganizationalBrandingLocalizationId <String>
  -OrganizationId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOrganizationBrandingLocalizationBannerLogo -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaOrganizationBrandingLocalizationBannerLogo -InputObject <IIdentityDirectoryManagementIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -33,31 +33,31 @@ We recommend using a transparent image with no padding around the logo.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet
+### Example 1: Using the Get-MgBetaOrganizationBrandingLocalizationBannerLogo Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationBrandingLocalizationBannerLogo Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet
+### Example 2: Using the Get-MgBetaOrganizationBrandingLocalizationBannerLogo Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 ```
 
-This example shows how to use the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationBrandingLocalizationBannerLogo Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet
+### Example 3: Using the Get-MgBetaOrganizationBrandingLocalizationBannerLogo Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 ```
 
-This example shows how to use the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationBrandingLocalizationBannerLogo Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

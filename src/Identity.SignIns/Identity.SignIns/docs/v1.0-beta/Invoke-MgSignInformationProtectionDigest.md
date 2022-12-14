@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mgsigninformationprotectiondigest
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/invoke-mgsigninformationprotectiondigest
 schema: 2.0.0
 ---
 
-# Invoke-MgSignInformationProtectionDigest
+# Invoke-MgBetaSignInformationProtectionDigest
 
 ## SYNOPSIS
 Invoke action signDigest
@@ -14,13 +14,13 @@ Invoke action signDigest
 
 ### SignExpanded (Default)
 ```
-Invoke-MgSignInformationProtectionDigest [-AdditionalProperties <Hashtable>] [-DigestInputFile <String>]
+Invoke-MgBetaSignInformationProtectionDigest [-AdditionalProperties <Hashtable>] [-DigestInputFile <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Sign
 ```
-Invoke-MgSignInformationProtectionDigest
+Invoke-MgBetaSignInformationProtectionDigest
  -BodyParameter <IPathsHk0601InformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsHk0601InformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsHk0601InformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Sign
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsHk0601InformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsHk0601InformationprotectionMicrosoftGraphSigndigestPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSigningResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSigningResult
 
 ## NOTES
 

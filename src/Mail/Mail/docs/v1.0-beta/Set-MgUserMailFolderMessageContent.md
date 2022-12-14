@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/set-mgusermailfoldermessagecontent
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/set-mgusermailfoldermessagecontent
 schema: 2.0.0
 ---
 
-# Set-MgUserMailFolderMessageContent
+# Set-MgBetaUserMailFolderMessageContent
 
 ## SYNOPSIS
 Update media content for the navigation property messages in users
@@ -14,13 +14,13 @@ Update media content for the navigation property messages in users
 
 ### Set1 (Default)
 ```
-Set-MgUserMailFolderMessageContent -MailFolderId <String> -MessageId <String> -UserId <String>
+Set-MgBetaUserMailFolderMessageContent -MailFolderId <String> -MessageId <String> -UserId <String>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgUserMailFolderMessageContent -InputObject <IMailIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaUserMailFolderMessageContent -InputObject <IMailIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: SetViaIdentity1
 Aliases:
 
@@ -175,7 +175,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ### System.IO.Stream
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityb2cuserflowlanguagedefaultpage
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityb2cuserflowlanguagedefaultpage
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityB2CUserFlowLanguageDefaultPage
+# Remove-MgBetaIdentityB2CUserFlowLanguageDefaultPage
 
 ## SYNOPSIS
 Delete navigation property defaultPages for identity
@@ -14,14 +14,14 @@ Delete navigation property defaultPages for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityB2CUserFlowLanguageDefaultPage -B2CIdentityUserFlowId <String>
+Remove-MgBetaIdentityB2CUserFlowLanguageDefaultPage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityB2CUserFlowLanguageDefaultPage -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaIdentityB2CUserFlowLanguageDefaultPage -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

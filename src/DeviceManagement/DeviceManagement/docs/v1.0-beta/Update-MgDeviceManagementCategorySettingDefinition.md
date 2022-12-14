@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementcategorysettingdefinition
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementcategorysettingdefinition
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementCategorySettingDefinition
+# Update-MgBetaDeviceManagementCategorySettingDefinition
 
 ## SYNOPSIS
 Update the navigation property settingDefinitions in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property settingDefinitions in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementCategorySettingDefinition -DeviceManagementSettingCategoryId <String>
+Update-MgBetaDeviceManagementCategorySettingDefinition -DeviceManagementSettingCategoryId <String>
  -DeviceManagementSettingDefinitionId <String> [-AdditionalProperties <Hashtable>]
  [-Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]
  [-Dependencies <IMicrosoftGraphDeviceManagementSettingDependency[]>] [-Description <String>]
@@ -25,7 +25,7 @@ Update-MgDeviceManagementCategorySettingDefinition -DeviceManagementSettingCateg
 
 ### Update
 ```
-Update-MgDeviceManagementCategorySettingDefinition -DeviceManagementSettingCategoryId <String>
+Update-MgBetaDeviceManagementCategorySettingDefinition -DeviceManagementSettingCategoryId <String>
  -DeviceManagementSettingDefinitionId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementSettingDefinition> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -33,14 +33,14 @@ Update-MgDeviceManagementCategorySettingDefinition -DeviceManagementSettingCateg
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementCategorySettingDefinition -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementCategorySettingDefinition -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementSettingDefinition> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementCategorySettingDefinition -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementCategorySettingDefinition -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]
  [-Dependencies <IMicrosoftGraphDeviceManagementSettingDependency[]>] [-Description <String>]
  [-DisplayName <String>] [-DocumentationUrl <String>] [-HeaderSubtitle <String>] [-HeaderTitle <String>]
@@ -75,7 +75,7 @@ Entity representing the defintion for a given setting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 Collection of constraints for the setting value
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConstraint[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConstraint[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -106,7 +106,7 @@ Collection of dependencies on other settings
 To construct, please use Get-Help -Online and see NOTES section for DEPENDENCIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDependency[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDependency[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -243,7 +243,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 deviceManangementIntentValueType
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManangementIntentValueType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManangementIntentValueType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -365,9 +365,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
 
 ## OUTPUTS
 

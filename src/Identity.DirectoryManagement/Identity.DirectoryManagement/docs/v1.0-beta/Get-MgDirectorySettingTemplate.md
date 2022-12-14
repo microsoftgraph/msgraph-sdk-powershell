@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectorysettingtemplate
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectorysettingtemplate
 schema: 2.0.0
 ---
 
-# Get-MgDirectorySettingTemplate
+# Get-MgBetaDirectorySettingTemplate
 
 ## SYNOPSIS
 A directory setting template represents a template of settings from which settings may be created within a tenant.
@@ -15,20 +15,20 @@ This operation allows retrieval of the properties of the **directorySettingTempl
 
 ### List (Default)
 ```
-Get-MgDirectorySettingTemplate [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDirectorySettingTemplate [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDirectorySettingTemplate -DirectorySettingTemplateId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDirectorySettingTemplate -DirectorySettingTemplateId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ This operation allows retrieval of the properties of the **directorySettingTempl
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDirectorySettingTemplate Cmdlet
+### Example 1: Using the Get-MgBetaDirectorySettingTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectorySettingTemplate -DirectorySettingTemplateId $directorySettingTemplateId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectorySettingTemplate -DirectorySettingTemplateId $directorySettingTemplateId
 ```
 
-This example shows how to use the Get-MgDirectorySettingTemplate Cmdlet.
+This example shows how to use the Get-MgBetaDirectorySettingTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgDirectorySettingTemplate Cmdlet
+### Example 2: Using the Get-MgBetaDirectorySettingTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectorySettingTemplate
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectorySettingTemplate
 ```
 
-This example shows how to use the Get-MgDirectorySettingTemplate Cmdlet.
+This example shows how to use the Get-MgBetaDirectorySettingTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -245,11 +245,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
 
 ## NOTES
 

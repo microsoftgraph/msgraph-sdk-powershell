@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/stop-mgdevicemanagementcomanageddeviceremotehelpsession
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/stop-mgdevicemanagementcomanageddeviceremotehelpsession
 schema: 2.0.0
 ---
 
-# Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession
+# Stop-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession
 
 ## SYNOPSIS
 Remote help - End ACS session, Pubsub session and delete Remote help session
@@ -14,28 +14,28 @@ Remote help - End ACS session, Pubsub session and delete Remote help session
 
 ### EndExpanded (Default)
 ```
-Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession -ManagedDeviceId <String>
+Stop-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-SessionKey <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### End
 ```
-Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession -ManagedDeviceId <String>
+Stop-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession -ManagedDeviceId <String>
  -BodyParameter <IPathsFl7F7XDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EndViaIdentity
 ```
-Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession -InputObject <IDeviceManagementActionsIdentity>
+Stop-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsFl7F7XDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EndViaIdentityExpanded
 ```
-Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession -InputObject <IDeviceManagementActionsIdentity>
+Stop-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-SessionKey <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsFl7F7XDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsFl7F7XDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: End, EndViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: EndViaIdentity, EndViaIdentityExpanded
 Aliases:
 
@@ -175,9 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsFl7F7XDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsFl7F7XDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

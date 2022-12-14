@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mggroupteamprimarychannelmessagehostedcontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mggroupteamprimarychannelmessagehostedcontent
 schema: 2.0.0
 ---
 
-# New-MgGroupTeamPrimaryChannelMessageHostedContent
+# New-MgBetaGroupTeamPrimaryChannelMessageHostedContent
 
 ## SYNOPSIS
 Create new navigation property to hostedContents for groups
@@ -14,26 +14,26 @@ Create new navigation property to hostedContents for groups
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupTeamPrimaryChannelMessageHostedContent -ChatMessageId <String> -GroupId <String>
+New-MgBetaGroupTeamPrimaryChannelMessageHostedContent -ChatMessageId <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupTeamPrimaryChannelMessageHostedContent -ChatMessageId <String> -GroupId <String>
+New-MgBetaGroupTeamPrimaryChannelMessageHostedContent -ChatMessageId <String> -GroupId <String>
  -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable>
+New-MgBetaGroupTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity>
+New-MgBetaGroupTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -159,7 +159,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -206,13 +206,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ### System.Collections.Hashtable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
 
 ## NOTES
 

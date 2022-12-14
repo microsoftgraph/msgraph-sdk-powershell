@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguseroutlookmastercategory
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/new-mguseroutlookmastercategory
 schema: 2.0.0
 ---
 
-# New-MgUserOutlookMasterCategory
+# New-MgBetaUserOutlookMasterCategory
 
 ## SYNOPSIS
 Create an outlookCategory object in the user's master list of categories.
@@ -14,25 +14,25 @@ Create an outlookCategory object in the user's master list of categories.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserOutlookMasterCategory -UserId <String> [-AdditionalProperties <Hashtable>] [-Color <String>]
+New-MgBetaUserOutlookMasterCategory -UserId <String> [-AdditionalProperties <Hashtable>] [-Color <String>]
  [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserOutlookMasterCategory -UserId <String> -BodyParameter <IMicrosoftGraphOutlookCategory> [-Confirm]
+New-MgBetaUserOutlookMasterCategory -UserId <String> -BodyParameter <IMicrosoftGraphOutlookCategory> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookCategory>
+New-MgBetaUserOutlookMasterCategory -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookCategory>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-Color <String>] [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,18 +41,18 @@ Create an outlookCategory object in the user's master list of categories.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserOutlookMasterCategory Cmdlet
+### Example 1: Using the New-MgBetaUserOutlookMasterCategory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	DisplayName = "Project expenses"
 	Color = "preset9"
 }
 # A UPN can also be used as -UserId.
-New-MgUserOutlookMasterCategory -UserId $userId -BodyParameter $params
+New-MgBetaUserOutlookMasterCategory -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserOutlookMasterCategory Cmdlet.
+This example shows how to use the New-MgBetaUserOutlookMasterCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ outlookCategory
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookCategory
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -141,7 +141,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -203,13 +203,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookCategory
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookCategory
 
 ## NOTES
 

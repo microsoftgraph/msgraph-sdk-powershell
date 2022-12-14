@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/invoke-mgfilterserviceprincipalsynchronizationjobschemaoperator
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/invoke-mgfilterserviceprincipalsynchronizationjobschemaoperator
 schema: 2.0.0
 ---
 
-# Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator
+# Invoke-MgBetaFilterServicePrincipalSynchronizationJobSchemaOperator
 
 ## SYNOPSIS
 Invoke function filterOperators
@@ -14,14 +14,14 @@ Invoke function filterOperators
 
 ### Filter (Default)
 ```
-Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator -ServicePrincipalId <String>
+Invoke-MgBetaFilterServicePrincipalSynchronizationJobSchemaOperator -ServicePrincipalId <String>
  -SynchronizationJobId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FilterViaIdentity
 ```
-Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator -InputObject <IApplicationsIdentity> [-Count]
+Invoke-MgBetaFilterServicePrincipalSynchronizationJobSchemaOperator -InputObject <IApplicationsIdentity> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
@@ -31,13 +31,13 @@ Invoke function filterOperators
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator Cmdlet
+### Example 1: Using the Invoke-MgBetaFilterServicePrincipalSynchronizationJobSchemaOperator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Invoke-MgBetaFilterServicePrincipalSynchronizationJobSchemaOperator -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
 
-This example shows how to use the Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator Cmdlet.
+This example shows how to use the Invoke-MgBetaFilterServicePrincipalSynchronizationJobSchemaOperator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: FilterViaIdentity
 Aliases:
 
@@ -198,11 +198,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFilterOperatorSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFilterOperatorSchema
 
 ## NOTES
 

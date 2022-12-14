@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernanceaccessreviewdefinitioninstance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernanceaccessreviewdefinitioninstance
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceAccessReviewDefinitionInstance
+# Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance
 
 ## SYNOPSIS
 Set of access reviews instances for this access review series.
@@ -15,21 +15,21 @@ Access reviews that do not recur will only have one instance; otherwise, there i
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId <String>
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewInstanceId <String>
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstance -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -39,31 +39,31 @@ Access reviews that do not recur will only have one instance; otherwise, there i
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
+### Example 3: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -Top 100 -Skip 0 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -Top 100 -Skip 0 
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -164,7 +164,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewInstance1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewInstance1
 
 ## NOTES
 

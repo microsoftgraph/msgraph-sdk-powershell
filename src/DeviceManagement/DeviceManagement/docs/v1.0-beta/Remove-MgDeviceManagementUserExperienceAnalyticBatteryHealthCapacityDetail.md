@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementuserexperienceanalyticbatteryhealthcapacitydetail
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementuserexperienceanalyticbatteryhealthcapacitydetail
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail
+# Remove-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail
 
 ## SYNOPSIS
 Delete navigation property userExperienceAnalyticsBatteryHealthCapacityDetails for deviceManagement
@@ -13,7 +13,7 @@ Delete navigation property userExperienceAnalyticsBatteryHealthCapacityDetails f
 ## SYNTAX
 
 ```
-Remove-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail [-IfMatch <String>] [-PassThru]
+Remove-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 

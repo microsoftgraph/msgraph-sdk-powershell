@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementandroiddeviceownerenrollmentprofiletoken
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementandroiddeviceownerenrollmentprofiletoken
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken
+# New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken
 
 ## SYNOPSIS
 Invoke action createToken
@@ -14,28 +14,28 @@ Invoke action createToken
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken -AndroidDeviceOwnerEnrollmentProfileId <String>
+New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken -AndroidDeviceOwnerEnrollmentProfileId <String>
  [-AdditionalProperties <Hashtable>] [-TokenValidityInSeconds <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken -AndroidDeviceOwnerEnrollmentProfileId <String>
+New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken -AndroidDeviceOwnerEnrollmentProfileId <String>
  -BodyParameter <IPaths11AjevhDevicemanagementAndroiddeviceownerenrollmentprofilesAndroiddeviceownerenrollmentprofileIdMicrosoftGraphCreatetokenPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths11AjevhDevicemanagementAndroiddeviceownerenrollmentprofilesAndroiddeviceownerenrollmentprofileIdMicrosoftGraphCreatetokenPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-TokenValidityInSeconds <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths11AjevhDevicemanagementAndroiddeviceownerenrollmentprofilesAndroiddeviceownerenrollmentprofileIdMicrosoftGraphCreatetokenPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths11AjevhDevicemanagementAndroiddeviceownerenrollmentprofilesAndroiddeviceownerenrollmentprofileIdMicrosoftGraphCreatetokenPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -175,9 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths11AjevhDevicemanagementAndroiddeviceownerenrollmentprofilesAndroiddeviceownerenrollmentprofileIdMicrosoftGraphCreatetokenPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths11AjevhDevicemanagementAndroiddeviceownerenrollmentprofilesAndroiddeviceownerenrollmentprofileIdMicrosoftGraphCreatetokenPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

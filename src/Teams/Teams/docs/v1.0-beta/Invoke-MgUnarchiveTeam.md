@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mgunarchiveteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mgunarchiveteam
 schema: 2.0.0
 ---
 
-# Invoke-MgUnarchiveTeam
+# Invoke-MgBetaUnarchiveTeam
 
 ## SYNOPSIS
 Restore an archived team.
@@ -18,12 +18,12 @@ A team is unarchived once the async operation completes successfully, which may 
 
 ### Unarchive1 (Default)
 ```
-Invoke-MgUnarchiveTeam -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaUnarchiveTeam -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnarchiveViaIdentity1
 ```
-Invoke-MgUnarchiveTeam -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaUnarchiveTeam -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,13 +35,13 @@ A team is unarchived once the async operation completes successfully, which may 
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgUnarchiveTeam Cmdlet
+### Example 1: Using the Invoke-MgBetaUnarchiveTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Invoke-MgUnarchiveTeam -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Invoke-MgBetaUnarchiveTeam -TeamId $teamId
 ```
 
-This example shows how to use the Invoke-MgUnarchiveTeam Cmdlet.
+This example shows how to use the Invoke-MgBetaUnarchiveTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UnarchiveViaIdentity1
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointprovisioningpolicyassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointprovisioningpolicyassignment
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
+# Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 
 ## SYNOPSIS
 Update the navigation property assignments in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property assignments in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
+Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment
  -CloudPcProvisioningPolicyAssignmentId <String> -CloudPcProvisioningPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Target <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
+Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment
  -CloudPcProvisioningPolicyAssignmentId <String> -CloudPcProvisioningPolicyId <String>
  -BodyParameter <IMicrosoftGraphCloudPcProvisioningPolicyAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,7 +30,7 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
+Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphCloudPcProvisioningPolicyAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
+Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Target <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -70,7 +70,7 @@ cloudPcProvisioningPolicyAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicyAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicyAssignment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -209,9 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicyAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicyAssignment
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupmember
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupmember
 schema: 2.0.0
 ---
 
-# Get-MgGroupMember
+# Get-MgBetaGroupMember
 
 ## SYNOPSIS
 Direct members of this group, who can be users, devices, other groups, or service principals.
@@ -17,7 +17,7 @@ For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayNa
 ## SYNTAX
 
 ```
-Get-MgGroupMember -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaGroupMember -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -33,7 +33,7 @@ For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayNa
 
 ### Example 1: Get members of a group
 ```powershell
-Get-MgGroupMember -GroupId '7b7be3ab-d2b3-441c-8111-2e89b8493fff'
+Get-MgBetaGroupMember -GroupId '7b7be3ab-d2b3-441c-8111-2e89b8493fff'
 
 Id                                   DeletedDateTime
 --                                   ---------------
@@ -236,7 +236,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

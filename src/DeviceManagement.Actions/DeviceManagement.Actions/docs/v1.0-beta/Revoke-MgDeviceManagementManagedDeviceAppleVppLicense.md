@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/revoke-mgdevicemanagementmanageddeviceapplevpplicense
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/revoke-mgdevicemanagementmanageddeviceapplevpplicense
 schema: 2.0.0
 ---
 
-# Revoke-MgDeviceManagementManagedDeviceAppleVppLicense
+# Revoke-MgBetaDeviceManagementManagedDeviceAppleVppLicense
 
 ## SYNOPSIS
 Revoke all Apple Vpp licenses for a device
@@ -14,13 +14,13 @@ Revoke all Apple Vpp licenses for a device
 
 ### Revoke (Default)
 ```
-Revoke-MgDeviceManagementManagedDeviceAppleVppLicense -ManagedDeviceId <String> [-PassThru] [-Confirm]
+Revoke-MgBetaDeviceManagementManagedDeviceAppleVppLicense -ManagedDeviceId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentity
 ```
-Revoke-MgDeviceManagementManagedDeviceAppleVppLicense -InputObject <IDeviceManagementActionsIdentity>
+Revoke-MgBetaDeviceManagementManagedDeviceAppleVppLicense -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RevokeViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

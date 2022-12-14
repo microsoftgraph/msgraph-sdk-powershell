@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementuserpfxcertificate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementuserpfxcertificate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserPfxCertificate
+# Update-MgBetaDeviceManagementUserPfxCertificate
 
 ## SYNOPSIS
 Update the navigation property userPfxCertificates in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userPfxCertificates in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserPfxCertificate -UserPfxCertificateId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementUserPfxCertificate -UserPfxCertificateId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-EncryptedPfxBlobInputFile <String>] [-EncryptedPfxPassword <String>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-IntendedPurpose <UserPfxIntendedPurpose>]
  [-KeyName <String>] [-LastModifiedDateTime <DateTime>] [-PaddingScheme <UserPfxPaddingScheme>]
@@ -24,19 +24,19 @@ Update-MgDeviceManagementUserPfxCertificate -UserPfxCertificateId <String> [-Add
 
 ### Update
 ```
-Update-MgDeviceManagementUserPfxCertificate -UserPfxCertificateId <String>
+Update-MgBetaDeviceManagementUserPfxCertificate -UserPfxCertificateId <String>
  -BodyParameter <IMicrosoftGraphUserPfxCertificate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserPfxCertificate -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementUserPfxCertificate -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphUserPfxCertificate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserPfxCertificate -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementUserPfxCertificate -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-EncryptedPfxBlobInputFile <String>]
  [-EncryptedPfxPassword <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-IntendedPurpose <UserPfxIntendedPurpose>] [-KeyName <String>] [-LastModifiedDateTime <DateTime>]
@@ -71,7 +71,7 @@ Entity that encapsulates all information required for a user's PFX certificates.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 Supported values for the intended purpose of a user PFX certificate.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserPfxIntendedPurpose
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserPfxIntendedPurpose
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 Supported values for the padding scheme used by encryption provider.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserPfxPaddingScheme
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserPfxPaddingScheme
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -360,9 +360,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
 
 ## OUTPUTS
 

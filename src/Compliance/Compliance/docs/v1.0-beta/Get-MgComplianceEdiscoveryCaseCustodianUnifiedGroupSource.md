@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycasecustodianunifiedgroupsource
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycasecustodianunifiedgroupsource
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource
+# Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource
 
 ## SYNOPSIS
 Data source entity for groups associated with the custodian.
@@ -14,20 +14,20 @@ Data source entity for groups associated with the custodian.
 
 ### List (Default)
 ```
-Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId <String> -CustodianId <String>
+Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId <String> -CustodianId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId <String> -CustodianId <String>
+Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId <String> -CustodianId <String>
  -UnifiedGroupSourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource -InputObject <IComplianceIdentity>
+Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource -InputObject <IComplianceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Data source entity for groups associated with the custodian.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId $caseId -CustodianId $custodianId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId $caseId -CustodianId $custodianId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet
+### Example 2: Using the Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId $caseId -CustodianId $custodianId -UnifiedGroupSourceId $unifiedGroupSourceId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId $caseId -CustodianId $custodianId -UnifiedGroupSourceId $unifiedGroupSourceId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryUnifiedGroupSource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryUnifiedGroupSource
 
 ## NOTES
 

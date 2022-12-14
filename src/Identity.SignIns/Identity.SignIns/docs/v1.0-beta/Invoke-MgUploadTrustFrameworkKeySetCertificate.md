@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mguploadtrustframeworkkeysetcertificate
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/invoke-mguploadtrustframeworkkeysetcertificate
 schema: 2.0.0
 ---
 
-# Invoke-MgUploadTrustFrameworkKeySetCertificate
+# Invoke-MgBetaUploadTrustFrameworkKeySetCertificate
 
 ## SYNOPSIS
 Upload a certificate to a trustFrameworkKeyset.
@@ -16,27 +16,27 @@ This method returns trustFrameworkKey.
 
 ### UploadExpanded (Default)
 ```
-Invoke-MgUploadTrustFrameworkKeySetCertificate -TrustFrameworkKeySetId <String>
+Invoke-MgBetaUploadTrustFrameworkKeySetCertificate -TrustFrameworkKeySetId <String>
  [-AdditionalProperties <Hashtable>] [-Key <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Upload
 ```
-Invoke-MgUploadTrustFrameworkKeySetCertificate -TrustFrameworkKeySetId <String>
+Invoke-MgBetaUploadTrustFrameworkKeySetCertificate -TrustFrameworkKeySetId <String>
  -BodyParameter <IPaths19SkfwzTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadcertificatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
 ```
-Invoke-MgUploadTrustFrameworkKeySetCertificate -InputObject <IIdentitySignInsIdentity>
+Invoke-MgBetaUploadTrustFrameworkKeySetCertificate -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths19SkfwzTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadcertificatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentityExpanded
 ```
-Invoke-MgUploadTrustFrameworkKeySetCertificate -InputObject <IIdentitySignInsIdentity>
+Invoke-MgBetaUploadTrustFrameworkKeySetCertificate -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Key <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,16 +47,16 @@ This method returns trustFrameworkKey.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgUploadTrustFrameworkKeySetCertificate Cmdlet
+### Example 1: Using the Invoke-MgBetaUploadTrustFrameworkKeySetCertificate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Key = "key-value"
 }
-Invoke-MgUploadTrustFrameworkKeySetCertificate -TrustFrameworkKeySetId $trustFrameworkKeySetId -BodyParameter $params
+Invoke-MgBetaUploadTrustFrameworkKeySetCertificate -TrustFrameworkKeySetId $trustFrameworkKeySetId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgUploadTrustFrameworkKeySetCertificate Cmdlet.
+This example shows how to use the Invoke-MgBetaUploadTrustFrameworkKeySetCertificate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths19SkfwzTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadcertificatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths19SkfwzTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadcertificatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Upload, UploadViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UploadViaIdentity, UploadViaIdentityExpanded
 Aliases:
 
@@ -174,13 +174,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths19SkfwzTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadcertificatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths19SkfwzTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadcertificatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
 
 ## NOTES
 

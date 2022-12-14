@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/invoke-mgascomplianceediscoverycasetaghierarchy
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/invoke-mgascomplianceediscoverycasetaghierarchy
 schema: 2.0.0
 ---
 
-# Invoke-MgAsComplianceEdiscoveryCaseTagHierarchy
+# Invoke-MgBetaAsComplianceEdiscoveryCaseTagHierarchy
 
 ## SYNOPSIS
 Invoke function asHierarchy
@@ -14,14 +14,14 @@ Invoke function asHierarchy
 
 ### As (Default)
 ```
-Invoke-MgAsComplianceEdiscoveryCaseTagHierarchy -CaseId <String> [-Count] [-Filter <String>]
+Invoke-MgBetaAsComplianceEdiscoveryCaseTagHierarchy -CaseId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### AsViaIdentity
 ```
-Invoke-MgAsComplianceEdiscoveryCaseTagHierarchy -InputObject <IComplianceIdentity> [-Count] [-Filter <String>]
+Invoke-MgBetaAsComplianceEdiscoveryCaseTagHierarchy -InputObject <IComplianceIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -31,13 +31,13 @@ Invoke function asHierarchy
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgAsComplianceEdiscoveryCaseTagHierarchy Cmdlet
+### Example 1: Using the Invoke-MgBetaAsComplianceEdiscoveryCaseTagHierarchy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Invoke-MgAsComplianceEdiscoveryCaseTagHierarchy -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Invoke-MgBetaAsComplianceEdiscoveryCaseTagHierarchy -CaseId $caseId
 ```
 
-This example shows how to use the Invoke-MgAsComplianceEdiscoveryCaseTagHierarchy Cmdlet.
+This example shows how to use the Invoke-MgBetaAsComplianceEdiscoveryCaseTagHierarchy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -92,7 +92,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: AsViaIdentity
 Aliases:
 
@@ -183,11 +183,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
 
 ## NOTES
 

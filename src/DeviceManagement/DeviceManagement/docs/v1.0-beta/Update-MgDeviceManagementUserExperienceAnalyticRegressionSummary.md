@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticregressionsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticregressionsummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary
+# Update-MgBetaDeviceManagementUserExperienceAnalyticRegressionSummary
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsRegressionSummary in devic
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementUserExperienceAnalyticRegressionSummary [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-ManufacturerRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]
  [-ModelRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]
  [-OperatingSystemRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>] [-PassThru] [-Confirm]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary [-AdditionalPro
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary
+Update-MgBetaDeviceManagementUserExperienceAnalyticRegressionSummary
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsRegressionSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -55,7 +55,7 @@ The user experience analytics Regression Summary.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRegressionSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRegressionSummary
 Parameter Sets: Update
 Aliases:
 
@@ -87,7 +87,7 @@ The metric values for the user experience analytics Manufacturer regression.
 To construct, please use Get-Help -Online and see NOTES section for MANUFACTURERREGRESSION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -103,7 +103,7 @@ The metric values for the user experience analytics model regression.
 To construct, please use Get-Help -Online and see NOTES section for MODELREGRESSION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -119,7 +119,7 @@ The metric values for the user experience analytics operating system regression.
 To construct, please use Get-Help -Online and see NOTES section for OPERATINGSYSTEMREGRESSION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRegressionSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRegressionSummary
 
 ## OUTPUTS
 

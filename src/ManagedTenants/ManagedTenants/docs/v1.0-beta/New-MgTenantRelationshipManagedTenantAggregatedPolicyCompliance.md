@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantaggregatedpolicycompliance
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantaggregatedpolicycompliance
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance
+# New-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance
 
 ## SYNOPSIS
 Create new navigation property to aggregatedPolicyCompliances for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to aggregatedPolicyCompliances for tenantRelation
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance [-AdditionalProperties <Hashtable>]
  [-CompliancePolicyId <String>] [-CompliancePolicyName <String>] [-CompliancePolicyPlatform <String>]
  [-CompliancePolicyType <String>] [-Id <String>] [-LastRefreshedDateTime <DateTime>]
  [-NumberOfCompliantDevices <Int64>] [-NumberOfErrorDevices <Int64>] [-NumberOfNonCompliantDevices <Int64>]
@@ -24,7 +24,7 @@ New-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance [-AdditionalProp
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance
+New-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance
  -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -56,7 +56,7 @@ aggregatedPolicyCompliance
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
 Parameter Sets: Create
 Aliases:
 
@@ -307,11 +307,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
 
 ## NOTES
 

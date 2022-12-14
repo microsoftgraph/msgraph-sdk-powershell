@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmobileapprelatedappstate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmobileapprelatedappstate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtMobileAppRelatedAppState
+# Get-MgBetaDeviceAppMgtMobileAppRelatedAppState
 
 ## SYNOPSIS
 Invoke function getRelatedAppStates
@@ -14,14 +14,14 @@ Invoke function getRelatedAppStates
 
 ### Get (Default)
 ```
-Get-MgDeviceAppMgtMobileAppRelatedAppState -DeviceId <String> -MobileAppId <String>
+Get-MgBetaDeviceAppMgtMobileAppRelatedAppState -DeviceId <String> -MobileAppId <String>
  -UserPrincipalName <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtMobileAppRelatedAppState -InputObject <IDevicesCorporateManagementIdentity> [-Count]
+Get-MgBetaDeviceAppMgtMobileAppRelatedAppState -InputObject <IDevicesCorporateManagementIdentity> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -173,17 +173,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationshipState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppRelationshipState
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementMobileAppRelatedAppState
+### Get-MgBetaDeviceAppManagementMobileAppRelatedAppState
 
 COMPLEX PARAMETER PROPERTIES
 

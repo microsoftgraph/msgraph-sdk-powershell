@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantgroup
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantgroup
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantGroup
+# New-MgBetaTenantRelationshipManagedTenantGroup
 
 ## SYNOPSIS
 Create new navigation property to tenantGroups for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to tenantGroups for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantGroup [-AdditionalProperties <Hashtable>] [-AllTenantsIncluded]
+New-MgBetaTenantRelationshipManagedTenantGroup [-AdditionalProperties <Hashtable>] [-AllTenantsIncluded]
  [-DisplayName <String>] [-Id <String>]
  [-ManagementActions <IMicrosoftGraphManagedTenantsManagementActionInfo[]>]
  [-ManagementIntents <IMicrosoftGraphManagedTenantsManagementIntentInfo[]>] [-TenantIds <String[]>] [-Confirm]
@@ -23,7 +23,7 @@ New-MgTenantRelationshipManagedTenantGroup [-AdditionalProperties <Hashtable>] [
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantGroup -BodyParameter <IMicrosoftGraphManagedTenantsTenantGroup>
+New-MgBetaTenantRelationshipManagedTenantGroup -BodyParameter <IMicrosoftGraphManagedTenantsTenantGroup>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -71,7 +71,7 @@ tenantGroup
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantGroup
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantGroup
 Parameter Sets: Create
 Aliases:
 
@@ -122,7 +122,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for MANAGEMENTACTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionInfo[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -140,7 +140,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for MANAGEMENTINTENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementIntentInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementIntentInfo[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -204,11 +204,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantGroup
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantGroup
 
 ## NOTES
 

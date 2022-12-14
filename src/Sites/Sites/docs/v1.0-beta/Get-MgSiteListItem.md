@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitem
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelistitem
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItem
+# Get-MgBetaSiteListItem
 
 ## SYNOPSIS
 All items contained in the list.
@@ -14,20 +14,20 @@ All items contained in the list.
 
 ### List (Default)
 ```
-Get-MgSiteListItem -ListId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaSiteListItem -ListId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSiteListItem -ListId <String> -ListItemId <String> -SiteId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSiteListItem -ListId <String> -ListItemId <String> -SiteId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteListItem -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteListItem -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ All items contained in the list.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteListItem Cmdlet
+### Example 1: Using the Get-MgBetaSiteListItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId -ExpandProperty "fields" 
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId -ExpandProperty "fields" 
 ```
 
-This example shows how to use the Get-MgSiteListItem Cmdlet.
+This example shows how to use the Get-MgBetaSiteListItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -264,11 +264,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItem
 
 ## NOTES
 

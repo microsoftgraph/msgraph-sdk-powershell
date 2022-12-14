@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementmanageddevicesecuritybaselinestate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementmanageddevicesecuritybaselinestate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementManagedDeviceSecurityBaselineState
+# New-MgBetaDeviceManagementManagedDeviceSecurityBaselineState
 
 ## SYNOPSIS
 Create new navigation property to securityBaselineStates for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to securityBaselineStates for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementManagedDeviceSecurityBaselineState -ManagedDeviceId <String>
+New-MgBetaDeviceManagementManagedDeviceSecurityBaselineState -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
  [-State <SecurityBaselineComplianceState>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ New-MgDeviceManagementManagedDeviceSecurityBaselineState -ManagedDeviceId <Strin
 
 ### Create
 ```
-New-MgDeviceManagementManagedDeviceSecurityBaselineState -ManagedDeviceId <String>
+New-MgBetaDeviceManagementManagedDeviceSecurityBaselineState -ManagedDeviceId <String>
  -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementManagedDeviceSecurityBaselineState -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementManagedDeviceSecurityBaselineState -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementManagedDeviceSecurityBaselineState -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementManagedDeviceSecurityBaselineState -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
  [-State <SecurityBaselineComplianceState>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
@@ -69,7 +69,7 @@ Security baseline state for a device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ The security baseline state for different settings for a device
 To construct, please use Get-Help -Online and see NOTES section for SETTINGSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 Security Baseline Compliance State
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.SecurityBaselineComplianceState
+Type: Microsoft.Graph.Beta.PowerShell.Support.SecurityBaselineComplianceState
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -239,13 +239,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
 
 ## NOTES
 

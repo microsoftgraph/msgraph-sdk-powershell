@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportattacksimulationusercoverage
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportattacksimulationusercoverage
 schema: 2.0.0
 ---
 
-# Get-MgReportAttackSimulationUserCoverage
+# Get-MgBetaReportAttackSimulationUserCoverage
 
 ## SYNOPSIS
 Invoke function getAttackSimulationSimulationUserCoverage
@@ -13,7 +13,7 @@ Invoke function getAttackSimulationSimulationUserCoverage
 ## SYNTAX
 
 ```
-Get-MgReportAttackSimulationUserCoverage [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Get-MgBetaReportAttackSimulationUserCoverage [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function getAttackSimulationSimulationUserCoverage
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgReportAttackSimulationUserCoverage Cmdlet
+### Example 1: Using the Get-MgBetaReportAttackSimulationUserCoverage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportAttackSimulationUserCoverage
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportAttackSimulationUserCoverage
 ```
 
-This example shows how to use the Get-MgReportAttackSimulationUserCoverage Cmdlet.
+This example shows how to use the Get-MgBetaReportAttackSimulationUserCoverage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -115,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttackSimulationUserCoverage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttackSimulationUserCoverage
 
 ## NOTES
 

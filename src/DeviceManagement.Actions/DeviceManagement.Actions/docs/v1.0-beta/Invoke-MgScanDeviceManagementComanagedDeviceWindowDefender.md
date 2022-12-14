@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgscandevicemanagementcomanageddevicewindowdefender
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgscandevicemanagementcomanageddevicewindowdefender
 schema: 2.0.0
 ---
 
-# Invoke-MgScanDeviceManagementComanagedDeviceWindowDefender
+# Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowDefender
 
 ## SYNOPSIS
 Invoke action windowsDefenderScan
@@ -14,27 +14,27 @@ Invoke action windowsDefenderScan
 
 ### ScanExpanded (Default)
 ```
-Invoke-MgScanDeviceManagementComanagedDeviceWindowDefender -ManagedDeviceId <String>
+Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowDefender -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-QuickScan] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Scan
 ```
-Invoke-MgScanDeviceManagementComanagedDeviceWindowDefender -ManagedDeviceId <String>
+Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowDefender -ManagedDeviceId <String>
  -BodyParameter <IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ScanViaIdentity
 ```
-Invoke-MgScanDeviceManagementComanagedDeviceWindowDefender -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowDefender -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ScanViaIdentityExpanded
 ```
-Invoke-MgScanDeviceManagementComanagedDeviceWindowDefender -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowDefender -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-QuickScan] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Scan, ScanViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: ScanViaIdentity, ScanViaIdentityExpanded
 Aliases:
 
@@ -173,9 +173,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

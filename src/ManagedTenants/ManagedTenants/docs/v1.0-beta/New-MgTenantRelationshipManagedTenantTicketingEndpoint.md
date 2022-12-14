@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantticketingendpoint
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantticketingendpoint
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantTicketingEndpoint
+# New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint
 
 ## SYNOPSIS
 Create new navigation property to managedTenantTicketingEndpoints for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managedTenantTicketingEndpoints for tenantRela
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantTicketingEndpoint [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint [-AdditionalProperties <Hashtable>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-EmailAddress <String>]
  [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-PhoneNumber <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgTenantRelationshipManagedTenantTicketingEndpoint [-AdditionalProperties <H
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantTicketingEndpoint
+New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ managedTenantTicketingEndpoint
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
 Parameter Sets: Create
 Aliases:
 
@@ -222,11 +222,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementassignmentfilter
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementassignmentfilter
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementAssignmentFilter
+# New-MgBetaDeviceManagementAssignmentFilter
 
 ## SYNOPSIS
 Create new navigation property to assignmentFilters for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to assignmentFilters for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementAssignmentFilter [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
+New-MgBetaDeviceManagementAssignmentFilter [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Payloads <IMicrosoftGraphPayloadByFilter[]>] [-Platform <DevicePlatformType>] [-RoleScopeTags <String[]>]
  [-Rule <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementAssignmentFilter [-AdditionalProperties <Hashtable>] [-Cre
 
 ### Create
 ```
-New-MgDeviceManagementAssignmentFilter -BodyParameter <IMicrosoftGraphDeviceAndAppManagementAssignmentFilter>
+New-MgBetaDeviceManagementAssignmentFilter -BodyParameter <IMicrosoftGraphDeviceAndAppManagementAssignmentFilter>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ A class containing the properties used for Assignment Filter.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
 Parameter Sets: Create
 Aliases:
 
@@ -145,7 +145,7 @@ Associated assignments for a specific filter
 To construct, please use Get-Help -Online and see NOTES section for PAYLOADS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPayloadByFilter[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPayloadByFilter[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 Supported platform types.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DevicePlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DevicePlatformType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -237,11 +237,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentFilter
 
 ## NOTES
 

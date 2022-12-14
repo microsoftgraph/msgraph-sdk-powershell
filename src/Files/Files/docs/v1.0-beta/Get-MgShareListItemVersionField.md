@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgsharelistitemversionfield
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgsharelistitemversionfield
 schema: 2.0.0
 ---
 
-# Get-MgShareListItemVersionField
+# Get-MgBetaShareListItemVersionField
 
 ## SYNOPSIS
 A collection of the fields and values for this version of the list item.
@@ -14,25 +14,25 @@ A collection of the fields and values for this version of the list item.
 
 ### Get3 (Default)
 ```
-Get-MgShareListItemVersionField -ListItemVersionId <String> -SharedDriveItemId <String>
+Get-MgBetaShareListItemVersionField -ListItemVersionId <String> -SharedDriveItemId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get2
 ```
-Get-MgShareListItemVersionField -ListItemId <String> -ListItemVersionId <String> -SharedDriveItemId <String>
+Get-MgBetaShareListItemVersionField -ListItemId <String> -ListItemVersionId <String> -SharedDriveItemId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgShareListItemVersionField -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaShareListItemVersionField -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgShareListItemVersionField -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaShareListItemVersionField -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

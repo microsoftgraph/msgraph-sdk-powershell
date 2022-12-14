@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/set-mgorganizationbrandingbannerlogo
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/set-mgorganizationbrandingbannerlogo
 schema: 2.0.0
 ---
 
-# Set-MgOrganizationBrandingBannerLogo
+# Set-MgBetaOrganizationBrandingBannerLogo
 
 ## SYNOPSIS
 A banner version of your company logo that appears on the sign-in page.
@@ -16,13 +16,13 @@ We recommend using a transparent image with no padding around the logo.
 
 ### Set (Default)
 ```
-Set-MgOrganizationBrandingBannerLogo -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaOrganizationBrandingBannerLogo -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgOrganizationBrandingBannerLogo -InputObject <IIdentityDirectoryManagementIdentity> -InFile <String>
+Set-MgBetaOrganizationBrandingBannerLogo -InputObject <IIdentityDirectoryManagementIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -72,7 +72,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -149,7 +149,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### System.IO.Stream
 

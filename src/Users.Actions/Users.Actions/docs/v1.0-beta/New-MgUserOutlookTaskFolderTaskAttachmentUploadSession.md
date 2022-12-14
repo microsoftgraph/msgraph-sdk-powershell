@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mguseroutlooktaskfoldertaskattachmentuploadsession
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/new-mguseroutlooktaskfoldertaskattachmentuploadsession
 schema: 2.0.0
 ---
 
-# New-MgUserOutlookTaskFolderTaskAttachmentUploadSession
+# New-MgBetaUserOutlookTaskFolderTaskAttachmentUploadSession
 
 ## SYNOPSIS
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
@@ -21,14 +21,14 @@ The following are the steps to attach a file to an Outlook item using an upload 
 
 ### CreateExpanded (Default)
 ```
-New-MgUserOutlookTaskFolderTaskAttachmentUploadSession -OutlookTaskFolderId <String> -OutlookTaskId <String>
+New-MgBetaUserOutlookTaskFolderTaskAttachmentUploadSession -OutlookTaskFolderId <String> -OutlookTaskId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-AttachmentItem <IMicrosoftGraphAttachmentItem>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserOutlookTaskFolderTaskAttachmentUploadSession -OutlookTaskFolderId <String> -OutlookTaskId <String>
+New-MgBetaUserOutlookTaskFolderTaskAttachmentUploadSession -OutlookTaskFolderId <String> -OutlookTaskId <String>
  -UserId <String>
  -BodyParameter <IPaths93Ov0OUsersUserIdOutlookTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,14 +36,14 @@ New-MgUserOutlookTaskFolderTaskAttachmentUploadSession -OutlookTaskFolderId <Str
 
 ### CreateViaIdentity
 ```
-New-MgUserOutlookTaskFolderTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
+New-MgBetaUserOutlookTaskFolderTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths93Ov0OUsersUserIdOutlookTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserOutlookTaskFolderTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
+New-MgBetaUserOutlookTaskFolderTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ attachmentItem
 To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTITEM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentItem
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths93Ov0OUsersUserIdOutlookTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths93Ov0OUsersUserIdOutlookTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -206,13 +206,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths93Ov0OUsersUserIdOutlookTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths93Ov0OUsersUserIdOutlookTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUploadSession
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUploadSession
 
 ## NOTES
 

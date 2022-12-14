@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/test-mgentitlementmanagementconnectedorganizationexternalsponsorproperty
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/test-mgentitlementmanagementconnectedorganizationexternalsponsorproperty
 schema: 2.0.0
 ---
 
-# Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty
+# Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty
 
 ## SYNOPSIS
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -22,21 +22,21 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ### ValidateExpanded1 (Default)
 ```
-Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty -ConnectedOrganizationId <String>
+Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty -ConnectedOrganizationId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EntityType <String>] [-MailNickname <String>]
  [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate1
 ```
-Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty -ConnectedOrganizationId <String>
+Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty -ConnectedOrganizationId <String>
  -BodyParameter <IPaths1Q3Hv6BIdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity1
 ```
-Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty
+Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1Q3Hv6BIdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -44,7 +44,7 @@ Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty
 
 ### ValidateViaIdentityExpanded1
 ```
-Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty
+Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Q3Hv6BIdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Q3Hv6BIdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate1, ValidateViaIdentity1
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: ValidateViaIdentity1, ValidateViaIdentityExpanded1
 Aliases:
 
@@ -238,9 +238,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Q3Hv6BIdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Q3Hv6BIdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

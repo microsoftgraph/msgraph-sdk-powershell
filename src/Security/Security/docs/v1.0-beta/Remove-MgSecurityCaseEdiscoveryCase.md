@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecuritycaseediscoverycase
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/remove-mgsecuritycaseediscoverycase
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityCaseEdiscoveryCase
+# Remove-MgBetaSecurityCaseEdiscoveryCase
 
 ## SYNOPSIS
 Delete navigation property ediscoveryCases for security
@@ -14,13 +14,13 @@ Delete navigation property ediscoveryCases for security
 
 ### Delete (Default)
 ```
-Remove-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property ediscoveryCases for security
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgSecurityCaseEdiscoveryCase Cmdlet
+### Example 1: Using the Remove-MgBetaSecurityCaseEdiscoveryCase Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Remove-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
+Import-Module Microsoft.Graph.Beta.Security
+Remove-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
-This example shows how to use the Remove-MgSecurityCaseEdiscoveryCase Cmdlet.
+This example shows how to use the Remove-MgBetaSecurityCaseEdiscoveryCase Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgorganizationsetting
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgorganizationsetting
 schema: 2.0.0
 ---
 
-# Update-MgOrganizationSetting
+# Update-MgBetaOrganizationSetting
 
 ## SYNOPSIS
 Update the navigation property settings in organization
@@ -14,7 +14,7 @@ Update the navigation property settings in organization
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOrganizationSetting -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaOrganizationSetting -OrganizationId <String> [-AdditionalProperties <Hashtable>]
  [-ContactInsights <IMicrosoftGraphInsightsSettings>] [-Id <String>]
  [-ItemInsights <IMicrosoftGraphInsightsSettings>]
  [-MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]
@@ -25,19 +25,19 @@ Update-MgOrganizationSetting -OrganizationId <String> [-AdditionalProperties <Ha
 
 ### Update
 ```
-Update-MgOrganizationSetting -OrganizationId <String> -BodyParameter <IMicrosoftGraphOrganizationSettings>
+Update-MgBetaOrganizationSetting -OrganizationId <String> -BodyParameter <IMicrosoftGraphOrganizationSettings>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphOrganizationSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ContactInsights <IMicrosoftGraphInsightsSettings>] [-Id <String>]
  [-ItemInsights <IMicrosoftGraphInsightsSettings>]
  [-MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]
@@ -73,7 +73,7 @@ organizationSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganizationSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -89,7 +89,7 @@ insightsSettings
 To construct, please use Get-Help -Online and see NOTES section for CONTACTINSIGHTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInsightsSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -137,7 +137,7 @@ insightsSettings
 To construct, please use Get-Help -Online and see NOTES section for ITEMINSIGHTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInsightsSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -153,7 +153,7 @@ microsoftApplicationDataAccessSettings
 To construct, please use Get-Help -Online and see NOTES section for MICROSOFTAPPLICATIONDATAACCESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftApplicationDataAccessSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftApplicationDataAccessSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -199,7 +199,7 @@ insightsSettings
 To construct, please use Get-Help -Online and see NOTES section for PEOPLEINSIGHTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInsightsSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -216,7 +216,7 @@ Get organization settings returns the properties configured for profile cards fo
 To construct, please use Get-Help -Online and see NOTES section for PROFILECARDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfileCardProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfileCardProperty[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -263,9 +263,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganizationSettings
 
 ## OUTPUTS
 

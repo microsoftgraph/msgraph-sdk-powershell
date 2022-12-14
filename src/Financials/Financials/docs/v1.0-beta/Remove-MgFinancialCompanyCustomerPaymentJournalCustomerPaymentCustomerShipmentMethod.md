@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanycustomerpaymentjournalcustomerpaymentcustomershipmentmethod
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/remove-mgfinancialcompanycustomerpaymentjournalcustomerpaymentcustomershipmentmethod
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod
+# Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod
 
 ## SYNOPSIS
 Delete navigation property shipmentMethod for financials
@@ -14,14 +14,14 @@ Delete navigation property shipmentMethod for financials
 
 ### Delete (Default)
 ```
-Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod -CompanyId <String>
+Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod -CompanyId <String>
  -CustomerPaymentId <String> -CustomerPaymentJournalId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod
+Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod
  -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

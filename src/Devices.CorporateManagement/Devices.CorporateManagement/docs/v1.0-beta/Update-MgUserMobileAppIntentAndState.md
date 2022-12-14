@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgusermobileappintentandstate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgusermobileappintentandstate
 schema: 2.0.0
 ---
 
-# Update-MgUserMobileAppIntentAndState
+# Update-MgBetaUserMobileAppIntentAndState
 
 ## SYNOPSIS
 Update the navigation property mobileAppIntentAndStates in users
@@ -14,7 +14,7 @@ Update the navigation property mobileAppIntentAndStates in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserMobileAppIntentAndState -MobileAppIntentAndStateId <String> -UserId <String>
+Update-MgBetaUserMobileAppIntentAndState -MobileAppIntentAndStateId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ManagedDeviceIdentifier <String>]
  [-MobileAppList <IMicrosoftGraphMobileAppIntentAndStateDetail[]>] [-UserId1 <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgUserMobileAppIntentAndState -MobileAppIntentAndStateId <String> -UserId
 
 ### Update
 ```
-Update-MgUserMobileAppIntentAndState -MobileAppIntentAndStateId <String> -UserId <String>
+Update-MgBetaUserMobileAppIntentAndState -MobileAppIntentAndStateId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphMobileAppIntentAndState> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphMobileAppIntentAndState> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity> [-UserId <String>]
+Update-MgBetaUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity> [-UserId <String>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ManagedDeviceIdentifier <String>]
  [-MobileAppList <IMicrosoftGraphMobileAppIntentAndStateDetail[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -67,7 +67,7 @@ MobileApp Intent and Install State for a given device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ The list of payload intents and states for the tenant.
 To construct, please use Get-Help -Online and see NOTES section for MOBILEAPPLIST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndStateDetail[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndStateDetail[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -237,9 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
 
 ## OUTPUTS
 

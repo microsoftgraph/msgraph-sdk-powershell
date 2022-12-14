@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprintsharealloweduserbyref
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/new-mgprintsharealloweduserbyref
 schema: 2.0.0
 ---
 
-# New-MgPrintShareAllowedUserByRef
+# New-MgBetaPrintShareAllowedUserByRef
 
 ## SYNOPSIS
 Create new navigation property ref to allowedUsers for print
@@ -14,25 +14,25 @@ Create new navigation property ref to allowedUsers for print
 
 ### CreateExpanded1 (Default)
 ```
-New-MgPrintShareAllowedUserByRef -PrinterShareId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaPrintShareAllowedUserByRef -PrinterShareId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgPrintShareAllowedUserByRef -PrinterShareId <String> -BodyParameter <IReferenceCreate> [-PassThru]
+New-MgBetaPrintShareAllowedUserByRef -PrinterShareId <String> -BodyParameter <IReferenceCreate> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgPrintShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <IReferenceCreate>
+New-MgBetaPrintShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <IReferenceCreate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgPrintShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaPrintShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,16 +41,16 @@ Create new navigation property ref to allowedUsers for print
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPrintShareAllowedUserByRef Cmdlet
+### Example 1: Using the New-MgBetaPrintShareAllowedUserByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/users/{id}"
 }
-New-MgPrintShareAllowedUserByRef -PrinterShareId $printerShareId -BodyParameter $params
+New-MgBetaPrintShareAllowedUserByRef -PrinterShareId $printerShareId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrintShareAllowedUserByRef Cmdlet.
+This example shows how to use the New-MgBetaPrintShareAllowedUserByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

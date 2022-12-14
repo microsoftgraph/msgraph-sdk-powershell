@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtioslobappprovisioningconfiguration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtioslobappprovisioningconfiguration
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration
+# New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfiguration
 
 ## SYNOPSIS
 Create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to iosLobAppProvisioningConfigurations for device
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfiguration [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
  [-DisplayName <String>] [-ExpirationDateTime <DateTime>]
@@ -27,7 +27,7 @@ New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration [-AdditionalProperties <Has
 
 ### Create
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfiguration
  -BodyParameter <IMicrosoftGraphIosLobAppProvisioningConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -58,7 +58,7 @@ The associated group assignments for IosLobAppProvisioningConfiguration.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -74,7 +74,7 @@ This topic provides descriptions of the declared methods, properties and relatio
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfiguration
 Parameter Sets: Create
 Aliases:
 
@@ -120,7 +120,7 @@ The list of device installation states for this mobile app configuration.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -166,7 +166,7 @@ The associated group assignments.
 To construct, please use Get-Help -Online and see NOTES section for GROUPASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ The list of user installation states for this mobile app configuration.
 To construct, please use Get-Help -Online and see NOTES section for USERSTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -321,17 +321,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfiguration
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfiguration
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementiOSLobAppProvisioningConfiguration
+### New-MgBetaDeviceAppManagementiOSLobAppProvisioningConfiguration
 
 COMPLEX PARAMETER PROPERTIES
 

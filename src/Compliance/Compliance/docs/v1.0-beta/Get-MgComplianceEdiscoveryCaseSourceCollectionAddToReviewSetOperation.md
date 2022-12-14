@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycasesourcecollectionaddtoreviewsetoperation
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycasesourcecollectionaddtoreviewsetoperation
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation
+# Get-MgBetaComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation
 
 ## SYNOPSIS
 Get the last addToReviewSetOperation object associated with a source collection.
@@ -14,13 +14,13 @@ Get the last addToReviewSetOperation object associated with a source collection.
 
 ### Get (Default)
 ```
-Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -CaseId <String>
+Get-MgBetaComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -CaseId <String>
  -SourceCollectionId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -InputObject <IComplianceIdentity>
+Get-MgBetaComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -InputObject <IComplianceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Get the last addToReviewSetOperation object associated with a source collection.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -CaseId $caseId -SourceCollectionId $sourceCollectionId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -CaseId $caseId -SourceCollectionId $sourceCollectionId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -121,11 +121,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryAddToReviewSetOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryAddToReviewSetOperation
 
 ## NOTES
 

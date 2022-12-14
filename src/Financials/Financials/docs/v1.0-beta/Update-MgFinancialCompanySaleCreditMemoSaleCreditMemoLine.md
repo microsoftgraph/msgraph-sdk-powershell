@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysalecreditmemosalecreditmemoline
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysalecreditmemosalecreditmemoline
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine
+# Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine
 
 ## SYNOPSIS
 Update the navigation property salesCreditMemoLines in financials
@@ -14,7 +14,7 @@ Update the navigation property salesCreditMemoLines in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -SalesCreditMemoId <String>
+Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -SalesCreditMemoId <String>
  -SalesCreditMemoLineId <String> [-Account <IMicrosoftGraphAccount>] [-AccountId <String>]
  [-AdditionalProperties <Hashtable>] [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>]
  [-Description <String>] [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>]
@@ -27,20 +27,20 @@ Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -S
 
 ### Update
 ```
-Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -SalesCreditMemoId <String>
+Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -SalesCreditMemoId <String>
  -SalesCreditMemoLineId <String> -BodyParameter <IMicrosoftGraphSalesCreditMemoLine> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphSalesCreditMemoLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -63,7 +63,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -139,7 +139,7 @@ salesCreditMemoLine
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -261,7 +261,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -292,7 +292,7 @@ item
 To construct, please use Get-Help -Online and see NOTES section for ITEM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -579,9 +579,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine
 
 ## OUTPUTS
 

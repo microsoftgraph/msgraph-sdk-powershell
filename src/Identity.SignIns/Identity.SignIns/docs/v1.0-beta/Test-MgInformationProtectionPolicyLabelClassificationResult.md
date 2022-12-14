@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/test-mginformationprotectionpolicylabelclassificationresult
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/test-mginformationprotectionpolicylabelclassificationresult
 schema: 2.0.0
 ---
 
-# Test-MgInformationProtectionPolicyLabelClassificationResult
+# Test-MgBetaInformationProtectionPolicyLabelClassificationResult
 
 ## SYNOPSIS
 Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
@@ -17,14 +17,14 @@ The API returns an informationProtectionAction that contains one of more of the 
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgInformationProtectionPolicyLabelClassificationResult [-AdditionalProperties <Hashtable>]
+Test-MgBetaInformationProtectionPolicyLabelClassificationResult [-AdditionalProperties <Hashtable>]
  [-ClassificationResults <IMicrosoftGraphClassificationResult[]>] [-ContentInfo <IMicrosoftGraphContentInfo>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Evaluate
 ```
-Test-MgInformationProtectionPolicyLabelClassificationResult
+Test-MgBetaInformationProtectionPolicyLabelClassificationResult
  -BodyParameter <IPathsLeqqhcInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -37,16 +37,16 @@ The API returns an informationProtectionAction that contains one of more of the 
 
 ## EXAMPLES
 
-### Example 1: Using the Test-MgInformationProtectionPolicyLabelClassificationResult Cmdlet
+### Example 1: Using the Test-MgBetaInformationProtectionPolicyLabelClassificationResult Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ContentInfo = @{
-		"@odata.type" = "#microsoft.graph.contentInfo"
-		"Format@odata.type" = "#microsoft.graph.contentFormat"
+		"@odata.type" = "#Microsoft.Graph.Beta.contentInfo"
+		"Format@odata.type" = "#Microsoft.Graph.Beta.contentFormat"
 		Format = "default"
 		Identifier = $null
-		"State@odata.type" = "#microsoft.graph.contentState"
+		"State@odata.type" = "#Microsoft.Graph.Beta.contentState"
 		State = "rest"
 	}
 	ClassificationResults = @(
@@ -57,10 +57,10 @@ $params = @{
 		}
 	)
 }
-Test-MgInformationProtectionPolicyLabelClassificationResult -BodyParameter $params
+Test-MgBetaInformationProtectionPolicyLabelClassificationResult -BodyParameter $params
 ```
 
-This example shows how to use the Test-MgInformationProtectionPolicyLabelClassificationResult Cmdlet.
+This example shows how to use the Test-MgBetaInformationProtectionPolicyLabelClassificationResult Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsLeqqhcInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsLeqqhcInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate
 Aliases:
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for CLASSIFICATIONRESULTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphClassificationResult[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphClassificationResult[]
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ contentInfo
 To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentInfo
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -164,11 +164,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsLeqqhcInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsLeqqhcInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionAction
 
 ## NOTES
 

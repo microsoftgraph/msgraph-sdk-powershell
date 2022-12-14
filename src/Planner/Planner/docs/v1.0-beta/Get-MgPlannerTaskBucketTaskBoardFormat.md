@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mgplannertaskbuckettaskboardformat
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mgplannertaskbuckettaskboardformat
 schema: 2.0.0
 ---
 
-# Get-MgPlannerTaskBucketTaskBoardFormat
+# Get-MgBetaPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
 Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
@@ -14,13 +14,13 @@ Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat*
 
 ### Get1 (Default)
 ```
-Get-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPlannerTaskBucketTaskBoardFormat -PlannerTaskId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat*
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPlannerTaskBucketTaskBoardFormat Cmdlet
+### Example 1: Using the Get-MgBetaPlannerTaskBucketTaskBoardFormat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId
+Import-Module Microsoft.Graph.Beta.Planner
+Get-MgBetaPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId
 ```
 
-This example shows how to use the Get-MgPlannerTaskBucketTaskBoardFormat Cmdlet.
+This example shows how to use the Get-MgBetaPlannerTaskBucketTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1
 
 ## NOTES
 

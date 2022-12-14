@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationconnectorgroupbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationconnectorgroupbyref
 schema: 2.0.0
 ---
 
-# Get-MgApplicationConnectorGroupByRef
+# Get-MgBetaApplicationConnectorGroupByRef
 
 ## SYNOPSIS
 The connectorGroup the application is using with Azure AD Application Proxy.
@@ -15,12 +15,12 @@ Nullable.
 
 ### Get (Default)
 ```
-Get-MgApplicationConnectorGroupByRef -ApplicationId <String> [<CommonParameters>]
+Get-MgBetaApplicationConnectorGroupByRef -ApplicationId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> [<CommonParameters>]
+Get-MgBetaApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -67,7 +67,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

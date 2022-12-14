@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/move-mgusertaskalltask
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/move-mgusertaskalltask
 schema: 2.0.0
 ---
 
-# Move-MgUserTaskAlltask
+# Move-MgBetaUserTaskAlltask
 
 ## SYNOPSIS
 Move a baseTask object from one baseTaskList to another.
@@ -14,27 +14,27 @@ Move a baseTask object from one baseTaskList to another.
 
 ### MoveExpanded (Default)
 ```
-Move-MgUserTaskAlltask -BaseTaskId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Move-MgBetaUserTaskAlltask -BaseTaskId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DestinationTaskListId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Move
 ```
-Move-MgUserTaskAlltask -BaseTaskId <String> -UserId <String>
+Move-MgBetaUserTaskAlltask -BaseTaskId <String> -UserId <String>
  -BodyParameter <IPaths1366F6KUsersUserIdTasksAlltasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentity
 ```
-Move-MgUserTaskAlltask -InputObject <IUsersActionsIdentity>
+Move-MgBetaUserTaskAlltask -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1366F6KUsersUserIdTasksAlltasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentityExpanded
 ```
-Move-MgUserTaskAlltask -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Move-MgBetaUserTaskAlltask -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DestinationTaskListId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1366F6KUsersUserIdTasksAlltasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1366F6KUsersUserIdTasksAlltasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Move, MoveViaIdentity
 Aliases:
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: MoveViaIdentity, MoveViaIdentityExpanded
 Aliases:
 
@@ -173,13 +173,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1366F6KUsersUserIdTasksAlltasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1366F6KUsersUserIdTasksAlltasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBaseTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBaseTask
 
 ## NOTES
 

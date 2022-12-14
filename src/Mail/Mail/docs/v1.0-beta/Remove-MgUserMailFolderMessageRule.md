@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/remove-mgusermailfoldermessagerule
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/remove-mgusermailfoldermessagerule
 schema: 2.0.0
 ---
 
-# Remove-MgUserMailFolderMessageRule
+# Remove-MgBetaUserMailFolderMessageRule
 
 ## SYNOPSIS
 Delete navigation property messageRules for users
@@ -14,13 +14,13 @@ Delete navigation property messageRules for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserMailFolderMessageRule -MailFolderId <String> -MessageRuleId <String> -UserId <String>
+Remove-MgBetaUserMailFolderMessageRule -MailFolderId <String> -MessageRuleId <String> -UserId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserMailFolderMessageRule -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserMailFolderMessageRule -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property messageRules for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserMailFolderMessageRule Cmdlet
+### Example 1: Using the Remove-MgBetaUserMailFolderMessageRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Remove-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId
+Remove-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId
 ```
 
-This example shows how to use the Remove-MgUserMailFolderMessageRule Cmdlet.
+This example shows how to use the Remove-MgBetaUserMailFolderMessageRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -168,7 +168,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 

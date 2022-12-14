@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedaccessroleassignmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedaccessroleassignmentrequest
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedAccessRoleAssignmentRequest
+# New-MgBetaPrivilegedAccessRoleAssignmentRequest
 
 ## SYNOPSIS
 Create a role assignment request to represent the operation you want on a role assignment.
@@ -15,7 +15,7 @@ The following table lists the operations.
 
 ### CreateExpanded (Default)
 ```
-New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
  [-AssignmentState <String>] [-Id <String>] [-LinkedEligibleRoleAssignmentId <String>] [-Reason <String>]
  [-RequestedDateTime <DateTime>] [-Resource <IMicrosoftGraphGovernanceResource>] [-ResourceId <String>]
  [-RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>] [-RoleDefinitionId <String>]
@@ -27,19 +27,19 @@ New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId <String> [-Addit
 
 ### Create
 ```
-New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId <String>
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId <String>
  -BodyParameter <IMicrosoftGraphGovernanceRoleAssignmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPrivilegedAccessRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphGovernanceRoleAssignmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPrivilegedAccessRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignmentState <String>] [-Id <String>]
  [-LinkedEligibleRoleAssignmentId <String>] [-Reason <String>] [-RequestedDateTime <DateTime>]
  [-Resource <IMicrosoftGraphGovernanceResource>] [-ResourceId <String>]
@@ -56,9 +56,9 @@ The following table lists the operations.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet
+### Example 1: Using the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	RoleDefinitionId = "ea48ad5e-e3b0-4d10-af54-39a45bbfe68d"
 	ResourceId = "e5e7d29d-5465-45ac-885f-4716a5ee74b5"
@@ -72,15 +72,15 @@ $params = @{
 		Type = "Once"
 	}
 }
-New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet
+### Example 2: Using the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	RoleDefinitionId = "8b4d1d51-08e9-4254-b0a6-b16177aae376"
 	ResourceId = "e5e7d29d-5465-45ac-885f-4716a5ee74b5"
@@ -95,15 +95,15 @@ $params = @{
 	}
 	LinkedEligibleRoleAssignmentId = "e327f4be-42a0-47a2-8579-0a39b025b394"
 }
-New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet
+### Example 3: Using the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	RoleDefinitionId = "bc75b4e6-7403-4243-bf2f-d1f6990be122"
 	ResourceId = "fb016e3a-c3ed-4d9d-96b6-a54cd4f0b735"
@@ -113,15 +113,15 @@ $params = @{
 	Reason = "Deactivate the role"
 	LinkedEligibleRoleAssignmentId = "cb8a533e-02d5-42ad-8499-916b1e4822ec"
 }
-New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet
+### Example 4: Using the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	RoleDefinitionId = "65bb4622-61f5-4f25-9d75-d0e20cf92019"
 	ResourceId = "e5e7d29d-5465-45ac-885f-4716a5ee74b5"
@@ -129,15 +129,15 @@ $params = @{
 	AssignmentState = "Eligible"
 	Type = "AdminRemove"
 }
-New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet
+### Example 5: Using the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	RoleDefinitionId = "70521f3e-3b95-4e51-b4d2-a2f485b02103"
 	ResourceId = "e5e7d29d-5465-45ac-885f-4716a5ee74b5"
@@ -150,15 +150,15 @@ $params = @{
 		EndDateTime = [System.DateTime]::Parse("2018-06-05T05:42:31.000Z")
 	}
 }
-New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet
+### Example 6: Using the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	RoleDefinitionId = "0e88fd18-50f5-4ee1-9104-01c3ed910065"
 	ResourceId = "e5e7d29d-5465-45ac-885f-4716a5ee74b5"
@@ -172,10 +172,10 @@ $params = @{
 		EndDateTime = [System.DateTime]::Parse("2018-08-10T23:53:55.327Z")
 	}
 }
-New-MgPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
+New-MgBetaPrivilegedAccessRoleAssignmentRequest -PrivilegedAccessId $privilegedAccessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedAccessRoleAssignmentRequest Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedAccessRoleAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -217,7 +217,7 @@ governanceRoleAssignmentRequest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -249,7 +249,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -328,7 +328,7 @@ governanceResource
 To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -361,7 +361,7 @@ governanceRoleDefinition
 To construct, please use Get-Help -Online and see NOTES section for ROLEDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -393,7 +393,7 @@ governanceSchedule
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceSchedule
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceSchedule
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -409,7 +409,7 @@ governanceRoleAssignmentRequestStatus
 To construct, please use Get-Help -Online and see NOTES section for STATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequestStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequestStatus
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -425,7 +425,7 @@ governanceSubject
 To construct, please use Get-Help -Online and see NOTES section for SUBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceSubject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceSubject
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -506,13 +506,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest
 
 ## NOTES
 

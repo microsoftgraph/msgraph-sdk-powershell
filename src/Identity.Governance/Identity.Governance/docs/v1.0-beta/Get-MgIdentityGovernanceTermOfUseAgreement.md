@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancetermofuseagreement
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancetermofuseagreement
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceTermOfUseAgreement
+# Get-MgBetaIdentityGovernanceTermOfUseAgreement
 
 ## SYNOPSIS
 Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
@@ -14,20 +14,20 @@ Represents a tenant's customizable terms of use agreement that's created and man
 
 ### List1 (Default)
 ```
-Get-MgIdentityGovernanceTermOfUseAgreement [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaIdentityGovernanceTermOfUseAgreement [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgIdentityGovernanceTermOfUseAgreement -AgreementId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,40 +36,40 @@ Represents a tenant's customizable terms of use agreement that's created and man
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId -ExpandProperty "files" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId -ExpandProperty "files" 
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+### Example 3: Using the Get-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceTermOfUseAgreement
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceTermOfUseAgreement
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+### Example 4: Using the Get-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId -ExpandProperty "files" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId -ExpandProperty "files" 
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
 
 ## NOTES
 

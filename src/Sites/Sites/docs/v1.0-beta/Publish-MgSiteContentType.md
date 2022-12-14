@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/publish-mgsitecontenttype
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/publish-mgsitecontenttype
 schema: 2.0.0
 ---
 
-# Publish-MgSiteContentType
+# Publish-MgBetaSiteContentType
 
 ## SYNOPSIS
 Publishes a [contentType][] present in a content type hub site.
@@ -14,13 +14,13 @@ Publishes a [contentType][] present in a content type hub site.
 
 ### Publish (Default)
 ```
-Publish-MgSiteContentType -ContentTypeId <String> -SiteId <String> [-PassThru] [-Confirm] [-WhatIf]
+Publish-MgBetaSiteContentType -ContentTypeId <String> -SiteId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### PublishViaIdentity
 ```
-Publish-MgSiteContentType -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgBetaSiteContentType -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,13 +28,13 @@ Publishes a [contentType][] present in a content type hub site.
 
 ## EXAMPLES
 
-### Example 1: Using the Publish-MgSiteContentType Cmdlet
+### Example 1: Using the Publish-MgBetaSiteContentType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Publish-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+Import-Module Microsoft.Graph.Beta.Sites
+Publish-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
 ```
 
-This example shows how to use the Publish-MgSiteContentType Cmdlet.
+This example shows how to use the Publish-MgBetaSiteContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -59,7 +59,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: PublishViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

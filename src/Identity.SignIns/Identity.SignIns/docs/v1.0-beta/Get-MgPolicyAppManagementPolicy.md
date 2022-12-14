@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyappmanagementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyappmanagementpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyAppManagementPolicy
+# Get-MgBetaPolicyAppManagementPolicy
 
 ## SYNOPSIS
 The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
@@ -14,20 +14,20 @@ The policies that enforce app management restrictions for specific applications 
 
 ### List (Default)
 ```
-Get-MgPolicyAppManagementPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPolicyAppManagementPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyAppManagementPolicy -AppManagementPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyAppManagementPolicy -AppManagementPolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The policies that enforce app management restrictions for specific applications 
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyAppManagementPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyAppManagementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyAppManagementPolicy -AppManagementPolicyId $appManagementPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyAppManagementPolicy -AppManagementPolicyId $appManagementPolicyId
 ```
 
-This example shows how to use the Get-MgPolicyAppManagementPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyAppManagementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPolicyAppManagementPolicy Cmdlet
+### Example 2: Using the Get-MgBetaPolicyAppManagementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyAppManagementPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyAppManagementPolicy
 ```
 
-This example shows how to use the Get-MgPolicyAppManagementPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyAppManagementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
 
 ## NOTES
 

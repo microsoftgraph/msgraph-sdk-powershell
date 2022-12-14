@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyitem
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanyitem
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyItem
+# Update-MgBetaFinancialCompanyItem
 
 ## SYNOPSIS
 Update the navigation property items in financials
@@ -14,7 +14,7 @@ Update the navigation property items in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyItem -CompanyId <String> -ItemId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyItem -CompanyId <String> -ItemId <String> [-AdditionalProperties <Hashtable>]
  [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>] [-Gtin <String>] [-Id <String>]
  [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>] [-ItemCategoryCode <String>]
  [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
@@ -25,19 +25,19 @@ Update-MgFinancialCompanyItem -CompanyId <String> -ItemId <String> [-AdditionalP
 
 ### Update
 ```
-Update-MgFinancialCompanyItem -CompanyId <String> -ItemId <String> -BodyParameter <IMicrosoftGraphItem>
+Update-MgBetaFinancialCompanyItem -CompanyId <String> -ItemId <String> -BodyParameter <IMicrosoftGraphItem>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyItem -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphItem>
+Update-MgBetaFinancialCompanyItem -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphItem>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyItem -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyItem -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>] [-Gtin <String>] [-Id <String>]
  [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>] [-ItemCategoryCode <String>]
  [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
@@ -103,7 +103,7 @@ item
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -180,7 +180,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -211,7 +211,7 @@ itemCategory
 To construct, please use Get-Help -Online and see NOTES section for ITEMCATEGORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -317,7 +317,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PICTURE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -454,9 +454,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 
 ## OUTPUTS
 

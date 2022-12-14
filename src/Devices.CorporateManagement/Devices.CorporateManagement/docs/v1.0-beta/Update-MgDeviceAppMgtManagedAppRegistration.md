@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedappregistration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedappregistration
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtManagedAppRegistration
+# Update-MgBetaDeviceAppMgtManagedAppRegistration
 
 ## SYNOPSIS
 Update the navigation property managedAppRegistrations in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property managedAppRegistrations in deviceAppManagement
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceAppMgtManagedAppRegistration -ManagedAppRegistrationId <String>
+Update-MgBetaDeviceAppMgtManagedAppRegistration -ManagedAppRegistrationId <String>
  [-AdditionalProperties <Hashtable>] [-AppIdentifier <Hashtable>] [-ApplicationVersion <String>]
  [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>] [-AzureAdDeviceId <String>]
  [-CreatedDateTime <DateTime>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
@@ -27,19 +27,19 @@ Update-MgDeviceAppMgtManagedAppRegistration -ManagedAppRegistrationId <String>
 
 ### Update1
 ```
-Update-MgDeviceAppMgtManagedAppRegistration -ManagedAppRegistrationId <String>
+Update-MgBetaDeviceAppMgtManagedAppRegistration -ManagedAppRegistrationId <String>
  -BodyParameter <IMicrosoftGraphManagedAppRegistration1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgDeviceAppMgtManagedAppRegistration -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedAppRegistration -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedAppRegistration1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgDeviceAppMgtManagedAppRegistration -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedAppRegistration -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AppIdentifier <Hashtable>] [-ApplicationVersion <String>]
  [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>] [-AzureAdDeviceId <String>]
  [-CreatedDateTime <DateTime>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
@@ -107,7 +107,7 @@ Zero or more policys already applied on the registered app when it last synchron
 To construct, please use Get-Help -Online and see NOTES section for APPLIEDPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -139,7 +139,7 @@ The ManagedAppEntity is the base entity type for all other entity types under ap
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -247,7 +247,7 @@ E.g.
 app running on rooted device
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedAppFlaggedReason[]
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedAppFlaggedReason[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -279,7 +279,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -295,7 +295,7 @@ Zero or more policies admin intended for the app as of now.
 To construct, please use Get-Help -Online and see NOTES section for INTENDEDPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -372,7 +372,7 @@ Zero or more long running operations triggered on the app registration.
 To construct, please use Get-Help -Online and see NOTES section for OPERATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppOperation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppOperation[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -479,9 +479,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
 
 ## OUTPUTS
 
@@ -491,7 +491,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementManagedAppRegistration
+### Update-MgBetaDeviceAppManagementManagedAppRegistration
 
 COMPLEX PARAMETER PROPERTIES
 

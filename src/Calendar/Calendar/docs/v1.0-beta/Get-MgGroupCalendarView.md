@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mggroupcalendarview
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mggroupcalendarview
 schema: 2.0.0
 ---
 
-# Get-MgGroupCalendarView
+# Get-MgBetaGroupCalendarView
 
 ## SYNOPSIS
 The calendar view for the calendar.
@@ -15,7 +15,7 @@ Read-only.
 ## SYNTAX
 
 ```
-Get-MgGroupCalendarView -GroupId <String> -EndDateTime <String> -StartDateTime <String> [-Filter <String>]
+Get-MgBetaGroupCalendarView -GroupId <String> -EndDateTime <String> -StartDateTime <String> [-Filter <String>]
  [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -204,7 +204,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 
 ## NOTES
 

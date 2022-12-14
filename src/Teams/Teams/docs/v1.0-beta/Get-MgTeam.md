@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteam
 schema: 2.0.0
 ---
 
-# Get-MgTeam
+# Get-MgBetaTeam
 
 ## SYNOPSIS
 Retrieve the properties and relationships of the specified team.
@@ -14,19 +14,19 @@ Retrieve the properties and relationships of the specified team.
 
 ### List (Default)
 ```
-Get-MgTeam [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaTeam [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTeam -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaTeam -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -35,49 +35,49 @@ Retrieve the properties and relationships of the specified team.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeam Cmdlet
+### Example 1: Using the Get-MgBetaTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeam -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeam -TeamId $teamId
 ```
 
-This example shows how to use the Get-MgTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeam Cmdlet
+### Example 2: Using the Get-MgBetaTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeam -Filter "displayName eq 'A Contoso Team'" -Property "id,description" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeam -Filter "displayName eq 'A Contoso Team'" -Property "id,description" 
 ```
 
-This example shows how to use the Get-MgTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgTeam Cmdlet
+### Example 3: Using the Get-MgBetaTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeam -Filter "startswith(displayName, 'A')" -Top 2 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeam -Filter "startswith(displayName, 'A')" -Top 2 
 ```
 
-This example shows how to use the Get-MgTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgTeam Cmdlet
+### Example 4: Using the Get-MgBetaTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeam
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeam
 ```
 
-This example shows how to use the Get-MgTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Get-MgTeam Cmdlet
+### Example 5: Using the Get-MgBetaTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeam -Filter "displayName eq 'A Contoso Team'" -Property "id,description"  -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeam -Filter "displayName eq 'A Contoso Team'" -Property "id,description"  -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -269,11 +269,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeam
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeam
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgfollowuserdriveroot
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgfollowuserdriveroot
 schema: 2.0.0
 ---
 
-# Invoke-MgFollowUserDriveRoot
+# Invoke-MgBetaFollowUserDriveRoot
 
 ## SYNOPSIS
 Follow a driveItem.
@@ -14,12 +14,12 @@ Follow a driveItem.
 
 ### Follow (Default)
 ```
-Invoke-MgFollowUserDriveRoot -DriveId <String> -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaFollowUserDriveRoot -DriveId <String> -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### FollowViaIdentity
 ```
-Invoke-MgFollowUserDriveRoot -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaFollowUserDriveRoot -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: FollowViaIdentity
 Aliases:
 
@@ -111,11 +111,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem
 
 ## NOTES
 

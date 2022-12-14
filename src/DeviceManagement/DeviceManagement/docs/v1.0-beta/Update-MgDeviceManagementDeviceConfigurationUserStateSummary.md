@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdeviceconfigurationuserstatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdeviceconfigurationuserstatesummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceConfigurationUserStateSummary
+# Update-MgBetaDeviceManagementDeviceConfigurationUserStateSummary
 
 ## SYNOPSIS
 Update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceConfigurationUserStateSummaries in deviceMa
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceConfigurationUserStateSummary [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementDeviceConfigurationUserStateSummary [-AdditionalProperties <Hashtable>]
  [-CompliantUserCount <Int32>] [-ConflictUserCount <Int32>] [-ErrorUserCount <Int32>] [-Id <String>]
  [-NonCompliantUserCount <Int32>] [-NotApplicableUserCount <Int32>] [-RemediatedUserCount <Int32>]
  [-UnknownUserCount <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementDeviceConfigurationUserStateSummary [-AdditionalPropert
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceConfigurationUserStateSummary
+Update-MgBetaDeviceManagementDeviceConfigurationUserStateSummary
  -BodyParameter <IMicrosoftGraphDeviceConfigurationUserStateSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ deviceConfigurationUserStateSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationUserStateSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationUserStateSummary
 Parameter Sets: Update
 Aliases:
 
@@ -237,7 +237,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationUserStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationUserStateSummary
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mgcommunicationcall
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mgcommunicationcall
 schema: 2.0.0
 ---
 
-# New-MgCommunicationCall
+# New-MgBetaCommunicationCall
 
 ## SYNOPSIS
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
@@ -15,7 +15,7 @@ You will need to register the calling bot and go through the list of permissions
 
 ### CreateExpanded1 (Default)
 ```
-New-MgCommunicationCall [-ActiveModalities <String[]>] [-AdditionalProperties <Hashtable>]
+New-MgBetaCommunicationCall [-ActiveModalities <String[]>] [-AdditionalProperties <Hashtable>]
  [-AnsweredBy <IMicrosoftGraphParticipantInfo1>] [-AudioRoutingGroups <IMicrosoftGraphAudioRoutingGroup1[]>]
  [-CallbackUri <String>] [-CallChainId <String>] [-CallOptions <IMicrosoftGraphCallOptions>]
  [-CallRoutes <IMicrosoftGraphCallRoute[]>] [-ChatInfo <IMicrosoftGraphChatInfo>]
@@ -33,7 +33,7 @@ New-MgCommunicationCall [-ActiveModalities <String[]>] [-AdditionalProperties <H
 
 ### Create1
 ```
-New-MgCommunicationCall -BodyParameter <IMicrosoftGraphCall1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaCommunicationCall -BodyParameter <IMicrosoftGraphCall1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,18 +42,18 @@ You will need to register the calling bot and go through the list of permissions
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgCommunicationCall Cmdlet
+### Example 1: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.participantInfo"
 		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			Application = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				DisplayName = "Calling Bot"
 				Id = "2891555a-92ff-42e6-80fa-6e1300c6b5c6"
 			}
@@ -63,11 +63,11 @@ $params = @{
 	}
 	Targets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					DisplayName = "John"
 					Id = "112f7296-5fa4-42ca-bae8-6a692b15d4b8"
 				}
@@ -78,29 +78,29 @@ $params = @{
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.appHostedMediaConfig"
 		Blob = "<Media Session Configuration>"
 	}
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgCommunicationCall Cmdlet
+### Example 2: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	Targets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					DisplayName = "John"
 					Id = "112f7296-5fa4-42ca-bae8-6a692b15d4b8"
 				}
@@ -111,31 +111,31 @@ $params = @{
 		"audio"
 	)
 	CallOptions = @{
-		"@odata.type" = "#microsoft.graph.outgoingCallOptions"
+		"@odata.type" = "#Microsoft.Graph.Beta.outgoingCallOptions"
 		IsContentSharingNotificationEnabled = $true
 	}
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.serviceHostedMediaConfig"
 	}
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgCommunicationCall Cmdlet
+### Example 3: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.participantInfo"
 		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			ApplicationInstance = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				DisplayName = "Calling Bot"
 				Id = "3d913abb-aec0-4964-8fa6-3c6850c4f278"
 			}
@@ -147,11 +147,11 @@ $params = @{
 	}
 	Targets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				Phone = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "+12345678901"
 				}
 			}
@@ -161,28 +161,28 @@ $params = @{
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.serviceHostedMediaConfig"
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgCommunicationCall Cmdlet
+### Example 4: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.participantInfo"
 		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			ApplicationInstance = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				DisplayName = "Calling Bot"
 				Id = "3d913abb-aec0-4964-8fa6-3c6850c4f278"
 			}
@@ -194,11 +194,11 @@ $params = @{
 	}
 	Targets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				Phone = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					Id = "+12345678901"
 				}
 			}
@@ -208,31 +208,31 @@ $params = @{
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.appHostedMediaConfig"
 		Blob = "<Media Session Configuration>"
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the New-MgCommunicationCall Cmdlet
+### Example 5: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	Direction = "outgoing"
 	Subject = "Create a group call with app hosted media"
 	CallbackUri = "https://bot.contoso.com/callback"
 	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.participantInfo"
 		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			Application = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				DisplayName = "TestBot"
 				Id = "dd3885da-f9ab-486b-bfae-85de3d445555"
 			}
@@ -240,22 +240,22 @@ $params = @{
 	}
 	Targets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					DisplayName = "user1"
 					Id = "98da8a1a-1b87-452c-a713-65d3f10b5555"
 				}
 			}
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.participantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.participantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					DisplayName = "user2"
 					Id = "bf5aae9a-d11d-47a8-93b1-782504c95555"
 				}
@@ -266,32 +266,32 @@ $params = @{
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.appHostedMediaConfig"
 		Blob = "<Media Session Configuration>"
 		RemoveFromDefaultAudioGroup = $false
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the New-MgCommunicationCall Cmdlet
+### Example 6: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	Direction = "outgoing"
 	Subject = "Create a group call with service hosted media"
 	CallbackUri = "https://bot.contoso.com/callback"
 	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.participantInfo"
 		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			Application = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				DisplayName = "TestBot"
 				Id = "dd3885da-f9ab-486b-bfae-85de3d445555"
 			}
@@ -299,22 +299,22 @@ $params = @{
 	}
 	Targets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					DisplayName = "user1"
 					Id = "98da8a1a-1b87-452c-a713-65d3f10b5555"
 				}
 			}
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.participantInfo"
+			"@odata.type" = "#Microsoft.Graph.Beta.participantInfo"
 			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
+				"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
+					"@odata.type" = "#Microsoft.Graph.Beta.identity"
 					DisplayName = "user2"
 					Id = "bf5aae9a-d11d-47a8-93b1-782504c95555"
 				}
@@ -325,29 +325,29 @@ $params = @{
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.serviceHostedMediaConfig"
 		RemoveFromDefaultAudioGroup = $false
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 7: Using the New-MgCommunicationCall Cmdlet
+### Example 7: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.participantInfo"
 		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			Guest = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				DisplayName = "Guest User"
 				Id = "d7a3b999-17ac-4bca-9e77-e6a730d2ec2e"
 			}
@@ -357,21 +357,21 @@ $params = @{
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.serviceHostedMediaConfig"
 		PreFetchMedia = @(
 		)
 	}
 	ChatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.chatInfo"
 		ThreadId = "19:cbee7c1c860e465f8258e3cebf7bee0d@thread.skype"
 		MessageId = "1533758867081"
 	}
 	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.organizerMeetingInfo"
 		Organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
 				TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 				DisplayName = "Bob"
@@ -380,37 +380,37 @@ $params = @{
 		AllowConversationWithoutHost = $true
 	}
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 8: Using the New-MgCommunicationCall Cmdlet
+### Example 8: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	RequestedModalities = @(
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.serviceHostedMediaConfig"
 		PreFetchMedia = @(
 		)
 	}
 	ChatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.chatInfo"
 		ThreadId = "19:cbee7c1c860e465f8258e3cebf7bee0d@thread.skype"
 		MessageId = "1533758867081"
 	}
 	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.organizerMeetingInfo"
 		Organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
 				TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 				DisplayName = "Bob"
@@ -419,37 +419,37 @@ $params = @{
 		AllowConversationWithoutHost = $true
 	}
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 9: Using the New-MgCommunicationCall Cmdlet
+### Example 9: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	Direction = "outgoing"
 	CallbackUri = "https://bot.contoso.com/callback"
 	RequestedModalities = @(
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.appHostedMediaConfig"
 		Blob = "<Media Session Configuration>"
 	}
 	ChatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.chatInfo"
 		ThreadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
 		MessageId = "0"
 	}
 	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.organizerMeetingInfo"
 		Organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
 				TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 				DisplayName = "Bob"
@@ -459,37 +459,37 @@ $params = @{
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 10: Using the New-MgCommunicationCall Cmdlet
+### Example 10: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	RequestedModalities = @(
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.serviceHostedMediaConfig"
 		PreFetchMedia = @(
 		)
 	}
 	ChatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.chatInfo"
 		ThreadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
 		MessageId = "0"
 	}
 	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.organizerMeetingInfo"
 		Organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
 				TenantId = "9f386a15-f9cc-445b-8106-ac85e314a07b"
 				DisplayName = "Bob"
@@ -499,64 +499,64 @@ $params = @{
 	}
 	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 11: Using the New-MgCommunicationCall Cmdlet
+### Example 11: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	RequestedModalities = @(
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.serviceHostedMediaConfig"
 		PreFetchMedia = @(
 		)
 	}
 	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.joinMeetingIdMeetingInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.joinMeetingIdMeetingInfo"
 		JoinMeetingId = "1234567"
 		Passcode = "psw123"
 	}
 	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 12: Using the New-MgCommunicationCall Cmdlet
+### Example 12: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
-	"@odata.type" = "#microsoft.graph.call"
+	"@odata.type" = "#Microsoft.Graph.Beta.call"
 	CallbackUri = "https://bot.contoso.com/callback"
 	RequestedModalities = @(
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.serviceHostedMediaConfig"
 		PreFetchMedia = @(
 		)
 	}
 	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.joinMeetingIdMeetingInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.joinMeetingIdMeetingInfo"
 		JoinMeetingId = "1234567"
 		Passcode = $null
 	}
 	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -598,7 +598,7 @@ participantInfo
 To construct, please use Get-Help -Online and see NOTES section for ANSWEREDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipantInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipantInfo1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -614,7 +614,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for AUDIOROUTINGGROUPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -630,7 +630,7 @@ call
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCall1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCall1
 Parameter Sets: Create1
 Aliases:
 
@@ -659,7 +659,7 @@ Accept wildcard characters: False
 
 ### -CallChainId
 A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.
-This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+This needs to be copied over from Microsoft.Graph.Beta.Call.CallChainId.
 
 ```yaml
 Type: System.String
@@ -678,7 +678,7 @@ callOptions
 To construct, please use Get-Help -Online and see NOTES section for CALLOPTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallOptions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallOptions
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -695,7 +695,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for CALLROUTES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRoute[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRoute[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -711,7 +711,7 @@ chatInfo
 To construct, please use Get-Help -Online and see NOTES section for CHATINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatInfo
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -727,7 +727,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for CONTENTSHARINGSESSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentSharingSession[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentSharingSession[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -774,7 +774,7 @@ incomingContext
 To construct, please use Get-Help -Online and see NOTES section for INCOMINGCONTEXT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIncomingContext
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIncomingContext
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -790,7 +790,7 @@ mediaConfig
 To construct, please use Get-Help -Online and see NOTES section for MEDIACONFIG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMediaConfig1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMediaConfig1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -806,7 +806,7 @@ callMediaState
 To construct, please use Get-Help -Online and see NOTES section for MEDIASTATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallMediaState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallMediaState
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -822,7 +822,7 @@ meetingCapability
 To construct, please use Get-Help -Online and see NOTES section for MEETINGCAPABILITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingCapability
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingCapability
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -838,7 +838,7 @@ meetingInfo
 To construct, please use Get-Help -Online and see NOTES section for MEETINGINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingInfo1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -869,7 +869,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for OPERATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommsOperation[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -885,7 +885,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PARTICIPANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipant1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipant1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -916,7 +916,7 @@ resultInfo
 To construct, please use Get-Help -Online and see NOTES section for RESULTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResultInfo
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -962,7 +962,7 @@ participantInfo
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipantInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipantInfo1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -1008,7 +1008,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TARGETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInvitationParticipantInfo1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInvitationParticipantInfo1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -1054,7 +1054,7 @@ toneInfo
 To construct, please use Get-Help -Online and see NOTES section for TONEINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphToneInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphToneInfo
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -1070,7 +1070,7 @@ callTranscriptionInfo
 To construct, please use Get-Help -Online and see NOTES section for TRANSCRIPTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallTranscriptionInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallTranscriptionInfo
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -1117,11 +1117,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCall1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCall1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCall1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCall1
 
 ## NOTES
 
@@ -1182,7 +1182,7 @@ BODYPARAMETER <IMicrosoftGraphCall1>: call
     - `[Receivers <String[]>]`: List of receiving participant ids.
     - `[RoutingMode <String>]`: 
     - `[Sources <String[]>]`: List of source participant ids.
-  - `[CallChainId <String>]`: A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+  - `[CallChainId <String>]`: A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Beta.Call.CallChainId.
   - `[CallOptions <IMicrosoftGraphCallOptions>]`: callOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[HideBotAfterEscalation <Boolean?>]`: Indicates whether to hide the app after the call is escalated.

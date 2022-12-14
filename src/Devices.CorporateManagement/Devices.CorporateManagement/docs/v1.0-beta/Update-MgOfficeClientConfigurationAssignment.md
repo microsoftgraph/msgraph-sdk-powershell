@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgofficeclientconfigurationassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgofficeclientconfigurationassignment
 schema: 2.0.0
 ---
 
-# Update-MgOfficeClientConfigurationAssignment
+# Update-MgBetaOfficeClientConfigurationAssignment
 
 ## SYNOPSIS
 Update the navigation property assignments in officeConfiguration
@@ -14,28 +14,28 @@ Update the navigation property assignments in officeConfiguration
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOfficeClientConfigurationAssignment -OfficeClientConfigurationAssignmentId <String>
+Update-MgBetaOfficeClientConfigurationAssignment -OfficeClientConfigurationAssignmentId <String>
  -OfficeClientConfigurationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Target <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgOfficeClientConfigurationAssignment -OfficeClientConfigurationAssignmentId <String>
+Update-MgBetaOfficeClientConfigurationAssignment -OfficeClientConfigurationAssignmentId <String>
  -OfficeClientConfigurationId <String> -BodyParameter <IMicrosoftGraphOfficeClientConfigurationAssignment>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphOfficeClientConfigurationAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Target <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ officeClientConfigurationAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -206,9 +206,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment
 
 ## OUTPUTS
 

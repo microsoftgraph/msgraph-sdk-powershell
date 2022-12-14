@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolisttaskattachmentsession
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusertodolisttaskattachmentsession
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoListTaskAttachmentSession
+# Get-MgBetaUserTodoListTaskAttachmentSession
 
 ## SYNOPSIS
 Get attachmentSessions from users
@@ -14,20 +14,20 @@ Get attachmentSessions from users
 
 ### List (Default)
 ```
-Get-MgUserTodoListTaskAttachmentSession -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+Get-MgBetaUserTodoListTaskAttachmentSession -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserTodoListTaskAttachmentSession -AttachmentSessionId <String> -TodoTaskId <String>
+Get-MgBetaUserTodoListTaskAttachmentSession -AttachmentSessionId <String> -TodoTaskId <String>
  -TodoTaskListId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserTodoListTaskAttachmentSession -InputObject <IUsersIdentity> [-Property <String[]>]
+Get-MgBetaUserTodoListTaskAttachmentSession -InputObject <IUsersIdentity> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentSession
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentSession
 
 ## NOTES
 

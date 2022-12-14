@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationfederatedidentitycredential
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationfederatedidentitycredential
 schema: 2.0.0
 ---
 
-# Get-MgApplicationFederatedIdentityCredential
+# Get-MgBetaApplicationFederatedIdentityCredential
 
 ## SYNOPSIS
 Federated identities for applications.
@@ -15,20 +15,20 @@ Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 
 ### List (Default)
 ```
-Get-MgApplicationFederatedIdentityCredential -ApplicationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationFederatedIdentityCredential -ApplicationId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgApplicationFederatedIdentityCredential -ApplicationId <String> -FederatedIdentityCredentialId <String>
+Get-MgBetaApplicationFederatedIdentityCredential -ApplicationId <String> -FederatedIdentityCredentialId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgApplicationFederatedIdentityCredential Cmdlet
+### Example 1: Using the Get-MgBetaApplicationFederatedIdentityCredential Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
 ```
 
-This example shows how to use the Get-MgApplicationFederatedIdentityCredential Cmdlet.
+This example shows how to use the Get-MgBetaApplicationFederatedIdentityCredential Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgApplicationFederatedIdentityCredential Cmdlet
+### Example 2: Using the Get-MgBetaApplicationFederatedIdentityCredential Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId
 ```
 
-This example shows how to use the Get-MgApplicationFederatedIdentityCredential Cmdlet.
+This example shows how to use the Get-MgBetaApplicationFederatedIdentityCredential Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -154,7 +154,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential
 
 ## NOTES
 

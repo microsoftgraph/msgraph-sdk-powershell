@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgshareshareddriveitemshareddriveitem
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgshareshareddriveitemshareddriveitem
 schema: 2.0.0
 ---
 
-# Get-MgShareSharedDriveItemSharedDriveItem
+# Get-MgBetaShareSharedDriveItemSharedDriveItem
 
 ## SYNOPSIS
 Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL.
@@ -15,20 +15,20 @@ To use a sharing URL with this API, your app needs to transform the URL into a s
 
 ### List1 (Default)
 ```
-Get-MgShareSharedDriveItemSharedDriveItem [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaShareSharedDriveItemSharedDriveItem [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgShareSharedDriveItemSharedDriveItem -SharedDriveItemId <String> [-ExpandProperty <String[]>]
+Get-MgBetaShareSharedDriveItemSharedDriveItem -SharedDriveItemId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgShareSharedDriveItemSharedDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaShareSharedDriveItemSharedDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,13 +38,13 @@ To use a sharing URL with this API, your app needs to transform the URL into a s
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgShareSharedDriveItemSharedDriveItem Cmdlet
+### Example 1: Using the Get-MgBetaShareSharedDriveItemSharedDriveItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Get-MgShareSharedDriveItemSharedDriveItem -SharedDriveItemId $sharedDriveItemId
+Import-Module Microsoft.Graph.Beta.Files
+Get-MgBetaShareSharedDriveItemSharedDriveItem -SharedDriveItemId $sharedDriveItemId
 ```
 
-This example shows how to use the Get-MgShareSharedDriveItemSharedDriveItem Cmdlet.
+This example shows how to use the Get-MgBetaShareSharedDriveItemSharedDriveItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -115,7 +115,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -236,11 +236,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedDriveItem1
 
 ## NOTES
 

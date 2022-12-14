@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupthread
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupthread
 schema: 2.0.0
 ---
 
-# New-MgGroupThread
+# New-MgBetaGroupThread
 
 ## SYNOPSIS
 Start a new group conversation by first creating a thread.
@@ -17,7 +17,7 @@ Note: You can also start a new thread in an existing conversation.
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupThread -GroupId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupThread -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-CcRecipients <IMicrosoftGraphRecipient[]>] [-HasAttachments] [-Id <String>] [-IsLocked]
  [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost1[]>] [-Preview <String>] [-Topic <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueSenders <String[]>] [-Confirm] [-WhatIf]
@@ -26,19 +26,19 @@ New-MgGroupThread -GroupId <String> [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgGroupThread -GroupId <String> -BodyParameter <IMicrosoftGraphConversationThread1> [-Confirm] [-WhatIf]
+New-MgBetaGroupThread -GroupId <String> -BodyParameter <IMicrosoftGraphConversationThread1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupThread -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversationThread1>
+New-MgBetaGroupThread -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversationThread1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-CcRecipients <IMicrosoftGraphRecipient[]>] [-HasAttachments] [-Id <String>] [-IsLocked]
  [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost1[]>] [-Preview <String>] [-Topic <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueSenders <String[]>] [-Confirm] [-WhatIf]
@@ -53,9 +53,9 @@ Note: You can also start a new thread in an existing conversation.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgGroupThread Cmdlet
+### Example 1: Using the New-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Topic = "New Conversation Thread Topic"
 	Posts = @(
@@ -75,10 +75,10 @@ $params = @{
 		}
 	)
 }
-New-MgGroupThread -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupThread -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupThread Cmdlet.
+This example shows how to use the New-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -103,7 +103,7 @@ conversationThread
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationThread1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -120,7 +120,7 @@ Returned only on $select.
 To construct, please use Get-Help -Online and see NOTES section for CCRECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecipient[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -183,7 +183,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for POSTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPost1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -282,7 +282,7 @@ Returned only on $select.
 To construct, please use Get-Help -Online and see NOTES section for TORECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecipient[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -345,13 +345,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationThread1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationThread1
 
 ## NOTES
 

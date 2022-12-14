@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageincompatibleaccesspackage
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageincompatibleaccesspackage
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage
+# Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage
 
 ## SYNOPSIS
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
@@ -13,7 +13,7 @@ Retrieve a list of the accessPackage objects that have been marked as incompatib
 ## SYNTAX
 
 ```
-Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage -AccessPackageId <String>
+Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage -AccessPackageId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,13 +23,13 @@ Retrieve a list of the accessPackage objects that have been marked as incompatib
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage Cmdlet
+### Example 1: Using the Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage -AccessPackageId $accessPackageId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage -AccessPackageId $accessPackageId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -207,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackage
 
 ## NOTES
 

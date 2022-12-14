@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/remove-mguseronenotesectiongroup
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/remove-mguseronenotesectiongroup
 schema: 2.0.0
 ---
 
-# Remove-MgUserOnenoteSectionGroup
+# Remove-MgBetaUserOnenoteSectionGroup
 
 ## SYNOPSIS
 Delete navigation property sectionGroups for users
@@ -14,13 +14,13 @@ Delete navigation property sectionGroups for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserOnenoteSectionGroup -InputObject <INotesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserOnenoteSectionGroup -InputObject <INotesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 

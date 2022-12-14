@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthosperformance
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticbatteryhealthosperformance
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
+# Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
  -UserExperienceAnalyticsBatteryHealthOSPerformanceId <String> [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-AverageBatteryAgeInDays <Int32>]
  [-AverageEstimatedRuntimeInMinutes <Int32>] [-AverageMaxCapacityPercentage <Int32>] [-Id <String>]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
  -UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -31,7 +31,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -39,7 +39,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
  -InputObject <IDeviceManagementIdentity> [-ActiveDevices <Int32>] [-AdditionalProperties <Hashtable>]
  [-AverageBatteryAgeInDays <Int32>] [-AverageEstimatedRuntimeInMinutes <Int32>]
  [-AverageMaxCapacityPercentage <Int32>] [-Id <String>] [-OSBuildNumber <String>] [-OSVersion <String>]
@@ -141,7 +141,7 @@ The user experience analytics battery health os performance entity contains batt
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -173,7 +173,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -280,9 +280,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgadministrativeunitscopedrolemember
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgadministrativeunitscopedrolemember
 schema: 2.0.0
 ---
 
-# Update-MgAdministrativeUnitScopedRoleMember
+# Update-MgBetaAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
 Update the navigation property scopedRoleMembers in administrativeUnits
@@ -14,26 +14,26 @@ Update the navigation property scopedRoleMembers in administrativeUnits
 
 ### UpdateExpanded (Default)
 ```
-Update-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> -ScopedRoleMembershipId <String>
+Update-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> -ScopedRoleMembershipId <String>
  [-AdditionalProperties <Hashtable>] [-AdministrativeUnitId1 <String>] [-Id <String>] [-RoleId <String>]
  [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> -ScopedRoleMembershipId <String>
+Update-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> -ScopedRoleMembershipId <String>
  -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdministrativeUnitId <String>] [-AdditionalProperties <Hashtable>] [-Id <String>] [-RoleId <String>]
  [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -95,7 +95,7 @@ scopedRoleMembership
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -173,7 +173,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for ROLEMEMBERINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -235,9 +235,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
 ## OUTPUTS
 

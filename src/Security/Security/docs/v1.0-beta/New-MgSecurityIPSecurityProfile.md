@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityipsecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityipsecurityprofile
 schema: 2.0.0
 ---
 
-# New-MgSecurityIPSecurityProfile
+# New-MgBetaSecurityIPSecurityProfile
 
 ## SYNOPSIS
 Create new navigation property to ipSecurityProfiles for security
@@ -14,7 +14,7 @@ Create new navigation property to ipSecurityProfiles for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityIPSecurityProfile [-ActivityGroupNames <String[]>] [-AdditionalProperties <Hashtable>]
+New-MgBetaSecurityIPSecurityProfile [-ActivityGroupNames <String[]>] [-AdditionalProperties <Hashtable>]
  [-Address <String>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CountHits <Int32>]
  [-CountHosts <Int32>] [-FirstSeenDateTime <DateTime>] [-Id <String>]
  [-IPCategories <IMicrosoftGraphIPCategory[]>] [-IPReferenceData <IMicrosoftGraphIPReferenceData[]>]
@@ -24,7 +24,7 @@ New-MgSecurityIPSecurityProfile [-ActivityGroupNames <String[]>] [-AdditionalPro
 
 ### Create
 ```
-New-MgSecurityIPSecurityProfile -BodyParameter <IMicrosoftGraphIPSecurityProfile> [-Confirm] [-WhatIf]
+New-MgBetaSecurityIPSecurityProfile -BodyParameter <IMicrosoftGraphIPSecurityProfile> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -115,7 +115,7 @@ ipSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
 Parameter Sets: Create
 Aliases:
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IPCATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPCategory[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IPREFERENCEDATA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPReferenceData[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPReferenceData[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -269,7 +269,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -316,11 +316,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
 
 ## NOTES
 

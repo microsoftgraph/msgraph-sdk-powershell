@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgserviceprincipalriskdetection
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgserviceprincipalriskdetection
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalRiskDetection
+# Get-MgBetaServicePrincipalRiskDetection
 
 ## SYNOPSIS
 Represents information about detected at-risk service principals in an Azure AD tenant.
@@ -14,20 +14,20 @@ Represents information about detected at-risk service principals in an Azure AD 
 
 ### List (Default)
 ```
-Get-MgServicePrincipalRiskDetection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaServicePrincipalRiskDetection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,31 +36,31 @@ Represents information about detected at-risk service principals in an Azure AD 
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServicePrincipalRiskDetection Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalRiskDetection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId $servicePrincipalRiskDetectionId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId $servicePrincipalRiskDetectionId
 ```
 
-This example shows how to use the Get-MgServicePrincipalRiskDetection Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalRiskDetection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgServicePrincipalRiskDetection Cmdlet
+### Example 2: Using the Get-MgBetaServicePrincipalRiskDetection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgServicePrincipalRiskDetection -Filter "riskEventType eq 'investigationsThreatIntelligence' or riskLevel eq 'medium'" 
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaServicePrincipalRiskDetection -Filter "riskEventType eq 'investigationsThreatIntelligence' or riskLevel eq 'medium'" 
 ```
 
-This example shows how to use the Get-MgServicePrincipalRiskDetection Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalRiskDetection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgServicePrincipalRiskDetection Cmdlet
+### Example 3: Using the Get-MgBetaServicePrincipalRiskDetection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgServicePrincipalRiskDetection
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaServicePrincipalRiskDetection
 ```
 
-This example shows how to use the Get-MgServicePrincipalRiskDetection Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalRiskDetection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
 
 ## NOTES
 

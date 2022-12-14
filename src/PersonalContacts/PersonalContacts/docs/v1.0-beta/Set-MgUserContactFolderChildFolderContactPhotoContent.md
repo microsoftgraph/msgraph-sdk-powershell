@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/set-mgusercontactfolderchildfoldercontactphotocontent
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/set-mgusercontactfolderchildfoldercontactphotocontent
 schema: 2.0.0
 ---
 
-# Set-MgUserContactFolderChildFolderContactPhotoContent
+# Set-MgBetaUserContactFolderChildFolderContactPhotoContent
 
 ## SYNOPSIS
 Update media content for the navigation property photo in users
@@ -14,14 +14,14 @@ Update media content for the navigation property photo in users
 
 ### Set1 (Default)
 ```
-Set-MgUserContactFolderChildFolderContactPhotoContent -ContactFolderId <String> -ContactFolderId1 <String>
+Set-MgBetaUserContactFolderChildFolderContactPhotoContent -ContactFolderId <String> -ContactFolderId1 <String>
  -ContactId <String> -UserId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgUserContactFolderChildFolderContactPhotoContent -InputObject <IPersonalContactsIdentity>
+Set-MgBetaUserContactFolderChildFolderContactPhotoContent -InputObject <IPersonalContactsIdentity>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: SetViaIdentity1
 Aliases:
 
@@ -191,7 +191,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ### System.IO.Stream
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernancetermofuseagreementacceptance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernancetermofuseagreementacceptance
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceTermOfUseAgreementAcceptance
+# New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance
 
 ## SYNOPSIS
 Create new navigation property to agreementAcceptances for identityGovernance
@@ -14,7 +14,7 @@ Create new navigation property to agreementAcceptances for identityGovernance
 
 ### CreateExpanded2 (Default)
 ```
-New-MgIdentityGovernanceTermOfUseAgreementAcceptance [-AgreementId <String>]
+New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance [-AgreementId <String>]
  [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>] [-DeviceDisplayName <String>]
  [-DeviceId <String>] [-DeviceOSType <String>] [-DeviceOSVersion <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-RecordedDateTime <DateTime>] [-State <String>] [-UserDisplayName <String>]
@@ -24,19 +24,19 @@ New-MgIdentityGovernanceTermOfUseAgreementAcceptance [-AgreementId <String>]
 
 ### Create2
 ```
-New-MgIdentityGovernanceTermOfUseAgreementAcceptance -BodyParameter <IMicrosoftGraphAgreementAcceptance>
+New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -BodyParameter <IMicrosoftGraphAgreementAcceptance>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create3
 ```
-New-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String>
+New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String>
  -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded3
 ```
-New-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String> [-AdditionalProperties <Hashtable>]
  [-AgreementFileId <String>] [-AgreementId1 <String>] [-DeviceDisplayName <String>] [-DeviceId <String>]
  [-DeviceOSType <String>] [-DeviceOSVersion <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-RecordedDateTime <DateTime>] [-State <String>] [-UserDisplayName <String>] [-UserEmail <String>]
@@ -45,13 +45,13 @@ New-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String> [-Add
 
 ### CreateViaIdentity1
 ```
-New-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-AgreementId <String>] [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceOSType <String>] [-DeviceOSVersion <String>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-RecordedDateTime <DateTime>] [-State <String>]
@@ -131,7 +131,7 @@ agreementAcceptance
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
 Parameter Sets: Create2, Create3, CreateViaIdentity1
 Aliases:
 
@@ -242,7 +242,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -381,13 +381,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
 
 ## NOTES
 

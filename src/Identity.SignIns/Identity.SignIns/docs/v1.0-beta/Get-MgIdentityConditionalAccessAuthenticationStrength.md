@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityconditionalaccessauthenticationstrength
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityconditionalaccessauthenticationstrength
 schema: 2.0.0
 ---
 
-# Get-MgIdentityConditionalAccessAuthenticationStrength
+# Get-MgBetaIdentityConditionalAccessAuthenticationStrength
 
 ## SYNOPSIS
 Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
@@ -13,7 +13,7 @@ Defines the authentication strength policies, valid authentication method combin
 ## SYNTAX
 
 ```
-Get-MgIdentityConditionalAccessAuthenticationStrength [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaIdentityConditionalAccessAuthenticationStrength [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
 
 ## NOTES
 

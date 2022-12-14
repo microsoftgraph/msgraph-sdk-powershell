@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationclassassignmentsetting
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/update-mgeducationclassassignmentsetting
 schema: 2.0.0
 ---
 
-# Update-MgEducationClassAssignmentSetting
+# Update-MgBetaEducationClassAssignmentSetting
 
 ## SYNOPSIS
 Update the properties of an educationAssignmentSettings object.
@@ -15,27 +15,27 @@ Only Teachers can update these settings.
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgEducationClassAssignmentSetting -EducationClassId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaEducationClassAssignmentSetting -EducationClassId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-SubmissionAnimationDisabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgEducationClassAssignmentSetting -EducationClassId <String>
+Update-MgBetaEducationClassAssignmentSetting -EducationClassId <String>
  -BodyParameter <IMicrosoftGraphEducationAssignmentSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgEducationClassAssignmentSetting -InputObject <IEducationIdentity>
+Update-MgBetaEducationClassAssignmentSetting -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationAssignmentSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgEducationClassAssignmentSetting -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaEducationClassAssignmentSetting -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-SubmissionAnimationDisabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,16 +45,16 @@ Only Teachers can update these settings.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgEducationClassAssignmentSetting Cmdlet
+### Example 1: Using the Update-MgBetaEducationClassAssignmentSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	SubmissionAnimationDisabled = $true
 }
-Update-MgEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
+Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgEducationClassAssignmentSetting Cmdlet.
+This example shows how to use the Update-MgBetaEducationClassAssignmentSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ educationAssignmentSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentSettings
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -205,9 +205,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentSettings
 
 ## OUTPUTS
 

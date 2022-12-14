@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgforwardusermailfolderchildfoldermessage
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgforwardusermailfolderchildfoldermessage
 schema: 2.0.0
 ---
 
-# Invoke-MgForwardUserMailFolderChildFolderMessage
+# Invoke-MgBetaForwardUserMailFolderChildFolderMessage
 
 ## SYNOPSIS
 Forward a message using either JSON or MIME format.
@@ -20,7 +20,7 @@ Alternatively, create a draft to forward a message, and send it later.
 
 ### ForwardExpanded (Default)
 ```
-Invoke-MgForwardUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
+Invoke-MgBetaForwardUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-Message <IMicrosoftGraphMessage>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -28,7 +28,7 @@ Invoke-MgForwardUserMailFolderChildFolderMessage -MailFolderId <String> -MailFol
 
 ### Forward
 ```
-Invoke-MgForwardUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
+Invoke-MgBetaForwardUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String>
  -BodyParameter <IPaths1Wmvjo1UsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,14 +36,14 @@ Invoke-MgForwardUserMailFolderChildFolderMessage -MailFolderId <String> -MailFol
 
 ### ForwardViaIdentity
 ```
-Invoke-MgForwardUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaForwardUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Wmvjo1UsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentityExpanded
 ```
-Invoke-MgForwardUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaForwardUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-Message <IMicrosoftGraphMessage>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -61,7 +61,7 @@ Alternatively, create a draft to forward a message, and send it later.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Comment = "comment-value"
@@ -76,10 +76,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgForwardUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Invoke-MgBetaForwardUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgForwardUserMailFolderChildFolderMessage Cmdlet.
+This example shows how to use the Invoke-MgBetaForwardUserMailFolderChildFolderMessage Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Wmvjo1UsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Wmvjo1UsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Forward, ForwardViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ForwardViaIdentity, ForwardViaIdentityExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ message
 To construct, please use Get-Help -Online and see NOTES section for MESSAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
 Parameter Sets: ForwardExpanded, ForwardViaIdentityExpanded
 Aliases:
 
@@ -228,7 +228,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TORECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecipient[]
 Parameter Sets: ForwardExpanded, ForwardViaIdentityExpanded
 Aliases:
 
@@ -290,9 +290,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Wmvjo1UsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Wmvjo1UsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema1
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

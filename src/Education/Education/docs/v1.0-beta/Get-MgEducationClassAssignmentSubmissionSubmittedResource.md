@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassassignmentsubmissionsubmittedresource
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationclassassignmentsubmissionsubmittedresource
 schema: 2.0.0
 ---
 
-# Get-MgEducationClassAssignmentSubmissionSubmittedResource
+# Get-MgBetaEducationClassAssignmentSubmissionSubmittedResource
 
 ## SYNOPSIS
 Get submittedResources from education
@@ -14,7 +14,7 @@ Get submittedResources from education
 
 ### List1 (Default)
 ```
-Get-MgEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
+Get-MgBetaEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
  -EducationClassId <String> -EducationSubmissionId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId
 
 ### Get1
 ```
-Get-MgEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
+Get-MgBetaEducationClassAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
  -EducationClassId <String> -EducationSubmissionId <String> -EducationSubmissionResourceId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgEducationClassAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
+Get-MgBetaEducationClassAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -166,7 +166,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -272,11 +272,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
 
 ## NOTES
 

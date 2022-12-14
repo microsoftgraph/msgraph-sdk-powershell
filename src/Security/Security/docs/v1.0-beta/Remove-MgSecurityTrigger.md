@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecuritytrigger
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/remove-mgsecuritytrigger
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityTrigger
+# Remove-MgBetaSecurityTrigger
 
 ## SYNOPSIS
 Delete navigation property triggers for security
@@ -13,7 +13,7 @@ Delete navigation property triggers for security
 ## SYNTAX
 
 ```
-Remove-MgSecurityTrigger [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaSecurityTrigger [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

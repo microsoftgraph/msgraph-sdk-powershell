@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mguserplanner
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mguserplanner
 schema: 2.0.0
 ---
 
-# Get-MgUserPlanner
+# Get-MgBetaUserPlanner
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a plannerUser object.
@@ -15,30 +15,30 @@ The returned properties include the user's favorite plans and recently viewed pl
 
 ### Get1 (Default)
 ```
-Get-MgUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get2
 ```
-Get-MgUserPlanner -PlannerDeltaId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserPlanner -PlannerDeltaId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -49,14 +49,14 @@ The returned properties include the user's favorite plans and recently viewed pl
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserPlanner Cmdlet
+### Example 1: Using the Get-MgBetaUserPlanner Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 # A UPN can also be used as -UserId.
-Get-MgUserPlanner -UserId $userId
+Get-MgBetaUserPlanner -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserPlanner Cmdlet.
+This example shows how to use the Get-MgBetaUserPlanner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: GetViaIdentity1, GetViaIdentity2
 Aliases:
 
@@ -263,13 +263,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerDelta
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerDelta
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerUser
 
 ### System.String
 

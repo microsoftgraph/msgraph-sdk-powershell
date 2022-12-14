@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mggroupeventexceptionoccurrenceinstanceextension
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mggroupeventexceptionoccurrenceinstanceextension
 schema: 2.0.0
 ---
 
-# Remove-MgGroupEventExceptionOccurrenceInstanceExtension
+# Remove-MgBetaGroupEventExceptionOccurrenceInstanceExtension
 
 ## SYNOPSIS
 Delete navigation property extensions for groups
@@ -14,14 +14,14 @@ Delete navigation property extensions for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupEventExceptionOccurrenceInstanceExtension -EventId <String> -EventId1 <String>
+Remove-MgBetaGroupEventExceptionOccurrenceInstanceExtension -EventId <String> -EventId1 <String>
  -EventId2 <String> -ExtensionId <String> -GroupId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupEventExceptionOccurrenceInstanceExtension -InputObject <ICalendarIdentity> [-IfMatch <String>]
+Remove-MgBetaGroupEventExceptionOccurrenceInstanceExtension -InputObject <ICalendarIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

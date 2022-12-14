@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamprimarychannel
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamprimarychannel
 schema: 2.0.0
 ---
 
-# Get-MgTeamPrimaryChannel
+# Get-MgBetaTeamPrimaryChannel
 
 ## SYNOPSIS
 Get the default channel, **General**, of a team.
@@ -14,13 +14,13 @@ Get the default channel, **General**, of a team.
 
 ### Get1 (Default)
 ```
-Get-MgTeamPrimaryChannel -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamPrimaryChannel -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamPrimaryChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamPrimaryChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Get the default channel, **General**, of a team.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamPrimaryChannel Cmdlet
+### Example 1: Using the Get-MgBetaTeamPrimaryChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamPrimaryChannel -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamPrimaryChannel -TeamId $teamId
 ```
 
-This example shows how to use the Get-MgTeamPrimaryChannel Cmdlet.
+This example shows how to use the Get-MgBetaTeamPrimaryChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChannel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChannel
 
 ## NOTES
 

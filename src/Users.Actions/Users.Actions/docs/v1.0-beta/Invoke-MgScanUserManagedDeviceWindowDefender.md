@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgscanusermanageddevicewindowdefender
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgscanusermanageddevicewindowdefender
 schema: 2.0.0
 ---
 
-# Invoke-MgScanUserManagedDeviceWindowDefender
+# Invoke-MgBetaScanUserManagedDeviceWindowDefender
 
 ## SYNOPSIS
 Invoke action windowsDefenderScan
@@ -14,27 +14,27 @@ Invoke action windowsDefenderScan
 
 ### ScanExpanded (Default)
 ```
-Invoke-MgScanUserManagedDeviceWindowDefender -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaScanUserManagedDeviceWindowDefender -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-QuickScan] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Scan
 ```
-Invoke-MgScanUserManagedDeviceWindowDefender -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaScanUserManagedDeviceWindowDefender -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths1FegpkwUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ScanViaIdentity
 ```
-Invoke-MgScanUserManagedDeviceWindowDefender -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaScanUserManagedDeviceWindowDefender -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1FegpkwUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ScanViaIdentityExpanded
 ```
-Invoke-MgScanUserManagedDeviceWindowDefender -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaScanUserManagedDeviceWindowDefender -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-QuickScan] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1FegpkwUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1FegpkwUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Scan, ScanViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ScanViaIdentity, ScanViaIdentityExpanded
 Aliases:
 
@@ -188,9 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1FegpkwUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1FegpkwUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

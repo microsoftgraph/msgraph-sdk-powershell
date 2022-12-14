@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgserviceprincipalendpoint
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgserviceprincipalendpoint
 schema: 2.0.0
 ---
 
-# Update-MgServicePrincipalEndpoint
+# Update-MgBetaServicePrincipalEndpoint
 
 ## SYNOPSIS
 Update the navigation property endpoints in servicePrincipals
@@ -14,7 +14,7 @@ Update the navigation property endpoints in servicePrincipals
 
 ### UpdateExpanded (Default)
 ```
-Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
+Update-MgBetaServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Capability <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
  [-ProviderId <String>] [-ProviderName <String>] [-ProviderResourceId <String>] [-Uri <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <Stri
 
 ### Update
 ```
-Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
+Update-MgBetaServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
  -BodyParameter <IMicrosoftGraphEndpoint> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgServicePrincipalEndpoint -InputObject <IApplicationsIdentity>
+Update-MgBetaServicePrincipalEndpoint -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphEndpoint> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgServicePrincipalEndpoint -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaServicePrincipalEndpoint -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-Capability <String>] [-DeletedDateTime <DateTime>] [-Id <String>] [-ProviderId <String>]
  [-ProviderName <String>] [-ProviderResourceId <String>] [-Uri <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -67,7 +67,7 @@ endpoint
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEndpoint
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -282,9 +282,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEndpoint
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysaleorderlineitempicturecontent
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanysaleorderlineitempicturecontent
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanySaleOrderLineItemPictureContent
+# Get-MgBetaFinancialCompanySaleOrderLineItemPictureContent
 
 ## SYNOPSIS
 Get content for the navigation property picture from financials
@@ -14,25 +14,25 @@ Get content for the navigation property picture from financials
 
 ### Get (Default)
 ```
-Get-MgFinancialCompanySaleOrderLineItemPictureContent -CompanyId <String> -PictureId <String>
+Get-MgBetaFinancialCompanySaleOrderLineItemPictureContent -CompanyId <String> -PictureId <String>
  -SalesOrderLineId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgFinancialCompanySaleOrderLineItemPictureContent -CompanyId <String> -PictureId <String>
+Get-MgBetaFinancialCompanySaleOrderLineItemPictureContent -CompanyId <String> -PictureId <String>
  -SalesOrderId <String> -SalesOrderLineId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanySaleOrderLineItemPictureContent -InputObject <IFinancialsIdentity> -OutFile <String>
+Get-MgBetaFinancialCompanySaleOrderLineItemPictureContent -InputObject <IFinancialsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgFinancialCompanySaleOrderLineItemPictureContent -InputObject <IFinancialsIdentity> -OutFile <String>
+Get-MgBetaFinancialCompanySaleOrderLineItemPictureContent -InputObject <IFinancialsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -154,7 +154,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

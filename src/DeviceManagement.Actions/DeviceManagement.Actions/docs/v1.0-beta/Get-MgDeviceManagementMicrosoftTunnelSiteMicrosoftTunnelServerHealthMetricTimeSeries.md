@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelserverhealthmetrictimeseries
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelserverhealthmetrictimeseries
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
+# Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
 
 ## SYNOPSIS
 Invoke action getHealthMetricTimeSeries
@@ -14,7 +14,7 @@ Invoke action getHealthMetricTimeSeries
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
+Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
  -MicrosoftTunnelServerId <String> -MicrosoftTunnelSiteId <String> [-AdditionalProperties <Hashtable>]
  [-EndDateTime <DateTime>] [-MetricName <String>] [-StartDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSe
 
 ### Get
 ```
-Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
+Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
  -MicrosoftTunnelServerId <String> -MicrosoftTunnelSiteId <String>
  -BodyParameter <IPathsV1Rk0UDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetrictimeseriesPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSe
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
+Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsV1Rk0UDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetrictimeseriesPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSe
 
 ### GetViaIdentityExpanded
 ```
-Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
+Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>]
  [-MetricName <String>] [-StartDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsV1Rk0UDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetrictimeseriesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsV1Rk0UDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetrictimeseriesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -208,13 +208,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsV1Rk0UDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetrictimeseriesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsV1Rk0UDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetrictimeseriesPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMetricTimeSeriesDataPoint
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMetricTimeSeriesDataPoint
 
 ## NOTES
 

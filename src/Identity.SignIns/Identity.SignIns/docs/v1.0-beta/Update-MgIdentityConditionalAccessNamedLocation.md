@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityconditionalaccessnamedlocation
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityconditionalaccessnamedlocation
 schema: 2.0.0
 ---
 
-# Update-MgIdentityConditionalAccessNamedLocation
+# Update-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
 Update the navigation property namedLocations in identity
@@ -14,26 +14,26 @@ Update the navigation property namedLocations in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-ModifiedDateTime <DateTime>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgIdentityConditionalAccessNamedLocation -NamedLocationId <String>
+Update-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId <String>
  -BodyParameter <IMicrosoftGraphNamedLocation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphNamedLocation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-ModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,10 +45,10 @@ Update the navigation property namedLocations in identity
 
 ### Example 1: Update a country named location by adding to the list of countries
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 $params = @{
-"@odata.type" = "#microsoft.graph.countryNamedLocation"
+"@odata.type" = "#Microsoft.Graph.Beta.countryNamedLocation"
 DisplayName = "Named location with unknown countries and regions"
 CountriesAndRegions = @(
     "US"
@@ -59,7 +59,7 @@ CountriesAndRegions = @(
 IncludeUnknownCountriesAndRegions = $true
 }
 
-Update-MgIdentityConditionalAccessNamedLocation -NamedLocationId '1f0fd623-bf8f-4003-9627-32a68c3cdcc1' -BodyParameter $params
+Update-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId '1f0fd623-bf8f-4003-9627-32a68c3cdcc1' -BodyParameter $params
 ```
 
 This example updates the details of an existing named location.
@@ -88,7 +88,7 @@ namedLocation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNamedLocation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNamedLocation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -246,9 +246,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNamedLocation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNamedLocation
 
 ## OUTPUTS
 

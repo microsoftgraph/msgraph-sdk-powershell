@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasenoncustodialdatasourcelastindexoperation
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasenoncustodialdatasourcelastindexoperation
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation
+# Get-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation
 
 ## SYNOPSIS
 Operation entity that represents the latest indexing for the non-custodial data source.
@@ -14,14 +14,14 @@ Operation entity that represents the latest indexing for the non-custodial data 
 
 ### Get1 (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation -EdiscoveryCaseId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation -EdiscoveryCaseId <String>
  -EdiscoveryNoncustodialDataSourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -113,11 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryIndexOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryIndexOperation
 
 ## NOTES
 

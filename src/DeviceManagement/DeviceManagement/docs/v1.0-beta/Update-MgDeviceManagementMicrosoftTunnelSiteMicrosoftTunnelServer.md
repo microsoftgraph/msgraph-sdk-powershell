@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelserver
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelserver
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer
+# Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer
 
 ## SYNOPSIS
 Update the navigation property microsoftTunnelServers in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property microsoftTunnelServers in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -MicrosoftTunnelServerId <String>
+Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -MicrosoftTunnelServerId <String>
  -MicrosoftTunnelSiteId <String> [-AdditionalProperties <Hashtable>] [-AgentImageDigest <String>]
  [-DisplayName <String>] [-Id <String>] [-LastCheckinDateTime <DateTime>] [-ServerImageDigest <String>]
  [-TunnelServerHealthStatus <MicrosoftTunnelServerHealthStatus>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,20 +23,20 @@ Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -MicrosoftTunn
 
 ### Update
 ```
-Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -MicrosoftTunnelServerId <String>
+Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -MicrosoftTunnelServerId <String>
  -MicrosoftTunnelSiteId <String> -BodyParameter <IMicrosoftGraphMicrosoftTunnelServer> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphMicrosoftTunnelServer> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AgentImageDigest <String>] [-DisplayName <String>] [-Id <String>]
  [-LastCheckinDateTime <DateTime>] [-ServerImageDigest <String>]
  [-TunnelServerHealthStatus <MicrosoftTunnelServerHealthStatus>] [-PassThru] [-Confirm] [-WhatIf]
@@ -85,7 +85,7 @@ Entity that represents a single Microsoft Tunnel server
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServer
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 Enum of possible MicrosoftTunnelServer health status types
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MicrosoftTunnelServerHealthStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.MicrosoftTunnelServerHealthStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -270,9 +270,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServer
 
 ## OUTPUTS
 

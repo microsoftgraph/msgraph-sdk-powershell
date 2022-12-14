@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclass
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationclass
 schema: 2.0.0
 ---
 
-# Get-MgEducationClass
+# Get-MgBetaEducationClass
 
 ## SYNOPSIS
 Get classes from education
@@ -14,20 +14,20 @@ Get classes from education
 
 ### List (Default)
 ```
-Get-MgEducationClass [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaEducationClass [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgEducationClass -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationClass -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgEducationClass -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEducationClass -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get classes from education
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationClass Cmdlet
+### Example 1: Using the Get-MgBetaEducationClass Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClass
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationClass
 ```
 
-This example shows how to use the Get-MgEducationClass Cmdlet.
+This example shows how to use the Get-MgBetaEducationClass Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEducationClass Cmdlet
+### Example 2: Using the Get-MgBetaEducationClass Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClass -EducationClassId $educationClassId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationClass -EducationClassId $educationClassId
 ```
 
-This example shows how to use the Get-MgEducationClass Cmdlet.
+This example shows how to use the Get-MgBetaEducationClass Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationClass
 
 ## NOTES
 

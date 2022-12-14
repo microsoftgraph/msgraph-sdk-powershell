@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalsynchronizationtemplateschema
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipalsynchronizationtemplateschema
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalSynchronizationTemplateSchema
+# Get-MgBetaServicePrincipalSynchronizationTemplateSchema
 
 ## SYNOPSIS
 Default synchronization schema for the jobs based on this template.
@@ -14,13 +14,13 @@ Default synchronization schema for the jobs based on this template.
 
 ### Get (Default)
 ```
-Get-MgServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
+Get-MgBetaServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
  -SynchronizationTemplateId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsIdentity>
+Get-MgBetaServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,11 +112,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
 
 ## NOTES
 

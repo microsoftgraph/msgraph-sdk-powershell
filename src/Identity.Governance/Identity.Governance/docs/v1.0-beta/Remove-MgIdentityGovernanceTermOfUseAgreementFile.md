@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernancetermofuseagreementfile
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernancetermofuseagreementfile
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceTermOfUseAgreementFile
+# Remove-MgBetaIdentityGovernanceTermOfUseAgreementFile
 
 ## SYNOPSIS
 Delete navigation property file for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property file for identityGovernance
 
 ### Delete1 (Default)
 ```
-Remove-MgIdentityGovernanceTermOfUseAgreementFile -AgreementId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaIdentityGovernanceTermOfUseAgreementFile -AgreementId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgIdentityGovernanceTermOfUseAgreementFile -InputObject <IIdentityGovernanceIdentity>
+Remove-MgBetaIdentityGovernanceTermOfUseAgreementFile -InputObject <IIdentityGovernanceIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

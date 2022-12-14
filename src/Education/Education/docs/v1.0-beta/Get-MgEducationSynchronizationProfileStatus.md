@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationsynchronizationprofilestatus
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationsynchronizationprofilestatus
 schema: 2.0.0
 ---
 
-# Get-MgEducationSynchronizationProfileStatus
+# Get-MgBetaEducationSynchronizationProfileStatus
 
 ## SYNOPSIS
 Get the status of a specific school data synchronization profile in the tenant.
@@ -15,13 +15,13 @@ The response will indicate the status of the sync.
 
 ### Get (Default)
 ```
-Get-MgEducationSynchronizationProfileStatus -EducationSynchronizationProfileId <String>
+Get-MgBetaEducationSynchronizationProfileStatus -EducationSynchronizationProfileId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationSynchronizationProfileStatus -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ The response will indicate the status of the sync.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationSynchronizationProfileStatus Cmdlet
+### Example 1: Using the Get-MgBetaEducationSynchronizationProfileStatus Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationSynchronizationProfileStatus -EducationSynchronizationProfileId $educationSynchronizationProfileId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationSynchronizationProfileStatus -EducationSynchronizationProfileId $educationSynchronizationProfileId
 ```
 
-This example shows how to use the Get-MgEducationSynchronizationProfileStatus Cmdlet.
+This example shows how to use the Get-MgBetaEducationSynchronizationProfileStatus Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -108,11 +108,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
 
 ## NOTES
 

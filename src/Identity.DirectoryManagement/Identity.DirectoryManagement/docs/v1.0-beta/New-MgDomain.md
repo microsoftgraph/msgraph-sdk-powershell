@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomain
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdomain
 schema: 2.0.0
 ---
 
-# New-MgDomain
+# New-MgBetaDomain
 
 ## SYNOPSIS
 Adds a domain to the tenant.
@@ -20,7 +20,7 @@ For example, subdomain.contoso.com is automatically be verified if contoso.com h
 
 ### CreateExpanded (Default)
 ```
-New-MgDomain [-AdditionalProperties <Hashtable>] [-AuthenticationType <String>] [-AvailabilityStatus <String>]
+New-MgBetaDomain [-AdditionalProperties <Hashtable>] [-AuthenticationType <String>] [-AvailabilityStatus <String>]
  [-DomainNameReferences <IMicrosoftGraphDirectoryObject[]>]
  [-FederationConfiguration <IMicrosoftGraphInternalDomainFederation[]>] [-Id <String>] [-IsAdminManaged]
  [-IsDefault] [-IsInitial] [-IsRoot] [-IsVerified] [-PasswordNotificationWindowInDays <Int32>]
@@ -32,7 +32,7 @@ New-MgDomain [-AdditionalProperties <Hashtable>] [-AuthenticationType <String>] 
 
 ### Create
 ```
-New-MgDomain -BodyParameter <IMicrosoftGraphDomain> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDomain -BodyParameter <IMicrosoftGraphDomain> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,16 +46,16 @@ For example, subdomain.contoso.com is automatically be verified if contoso.com h
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDomain Cmdlet
+### Example 1: Using the New-MgBetaDomain Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	Id = "contoso.com"
 }
-New-MgDomain -BodyParameter $params
+New-MgBetaDomain -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDomain Cmdlet.
+This example shows how to use the New-MgBetaDomain Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -116,7 +116,7 @@ domain
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomain
 Parameter Sets: Create
 Aliases:
 
@@ -131,11 +131,11 @@ Accept wildcard characters: False
 The objects such as users and groups that reference the domain ID.
 Read-only, Nullable.
 Supports $expand and $filter by the OData type of objects returned.
-For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+For example /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.user and /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.group.
 To construct, please use Get-Help -Online and see NOTES section for DOMAINNAMEREFERENCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -152,7 +152,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for FEDERATIONCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInternalDomainFederation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInternalDomainFederation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -302,7 +302,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for SERVICECONFIGURATIONRECORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SHAREDEMAILDOMAININVITATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -334,7 +334,7 @@ domainState
 To construct, please use Get-Help -Online and see NOTES section for STATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -370,7 +370,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for VERIFICATIONDNSRECORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -417,11 +417,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomain
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomain
 
 ## NOTES
 
@@ -437,7 +437,7 @@ BODYPARAMETER <IMicrosoftGraphDomain>: domain
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AuthenticationType <String>]`: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
   - `[AvailabilityStatus <String>]`: This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
-  - `[DomainNameReferences <IMicrosoftGraphDirectoryObject[]>]`: The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+  - `[DomainNameReferences <IMicrosoftGraphDirectoryObject[]>]`: The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.user and /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.group.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[FederationConfiguration <IMicrosoftGraphInternalDomainFederation[]>]`: Domain settings configured by customer when federated with Azure AD. Supports $expand.
@@ -485,7 +485,7 @@ BODYPARAMETER <IMicrosoftGraphDomain>: domain
   - `[SupportedServices <String[]>]`: The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
   - `[VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>]`: DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
 
-DOMAINNAMEREFERENCES <IMicrosoftGraphDirectoryObject[]>: The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+DOMAINNAMEREFERENCES <IMicrosoftGraphDirectoryObject[]>: The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.user and /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.group.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 

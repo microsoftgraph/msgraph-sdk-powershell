@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/set-mgidentityb2xuserflowlanguageoverridepagecontent
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/set-mgidentityb2xuserflowlanguageoverridepagecontent
 schema: 2.0.0
 ---
 
-# Set-MgIdentityB2XUserFlowLanguageOverridePageContent
+# Set-MgBetaIdentityB2XUserFlowLanguageOverridePageContent
 
 ## SYNOPSIS
 Update media content for the navigation property overridesPages in identity
@@ -14,14 +14,14 @@ Update media content for the navigation property overridesPages in identity
 
 ### Set1 (Default)
 ```
-Set-MgIdentityB2XUserFlowLanguageOverridePageContent -B2XIdentityUserFlowId <String>
+Set-MgBetaIdentityB2XUserFlowLanguageOverridePageContent -B2XIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgIdentityB2XUserFlowLanguageOverridePageContent -InputObject <IIdentitySignInsIdentity> -InFile <String>
+Set-MgBetaIdentityB2XUserFlowLanguageOverridePageContent -InputObject <IIdentitySignInsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: SetViaIdentity1
 Aliases:
 
@@ -176,7 +176,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.IO.Stream
 

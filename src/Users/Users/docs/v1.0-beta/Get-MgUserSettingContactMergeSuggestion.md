@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusersettingcontactmergesuggestion
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusersettingcontactmergesuggestion
 schema: 2.0.0
 ---
 
-# Get-MgUserSettingContactMergeSuggestion
+# Get-MgBetaUserSettingContactMergeSuggestion
 
 ## SYNOPSIS
 Read the properties and relationships of a contactMergeSuggestions object.
@@ -14,13 +14,13 @@ Read the properties and relationships of a contactMergeSuggestions object.
 
 ### Get (Default)
 ```
-Get-MgUserSettingContactMergeSuggestion -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserSettingContactMergeSuggestion -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Read the properties and relationships of a contactMergeSuggestions object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserSettingContactMergeSuggestion Cmdlet
+### Example 1: Using the Get-MgBetaUserSettingContactMergeSuggestion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserSettingContactMergeSuggestion -UserId $userId
+Get-MgBetaUserSettingContactMergeSuggestion -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserSettingContactMergeSuggestion Cmdlet.
+This example shows how to use the Get-MgBetaUserSettingContactMergeSuggestion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -107,11 +107,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
 
 ## NOTES
 

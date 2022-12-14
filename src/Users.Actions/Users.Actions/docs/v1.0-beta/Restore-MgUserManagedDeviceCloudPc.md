@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/restore-mgusermanageddevicecloudpc
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/restore-mgusermanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Restore-MgUserManagedDeviceCloudPc
+# Restore-MgBetaUserManagedDeviceCloudPc
 
 ## SYNOPSIS
 Restore a Cloud PC device to a previous state with an Intune managed device ID.
@@ -14,28 +14,28 @@ Restore a Cloud PC device to a previous state with an Intune managed device ID.
 
 ### RestoreExpanded (Default)
 ```
-Restore-MgUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
+Restore-MgBetaUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-CloudPcSnapshotId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Restore
 ```
-Restore-MgUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
+Restore-MgBetaUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths13BxhwsUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
+Restore-MgBetaUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths13BxhwsUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentityExpanded
 ```
-Restore-MgUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Restore-MgBetaUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-CloudPcSnapshotId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths13BxhwsUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths13BxhwsUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Restore, RestoreViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: RestoreViaIdentity, RestoreViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths13BxhwsUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths13BxhwsUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphRestorecloudpcPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

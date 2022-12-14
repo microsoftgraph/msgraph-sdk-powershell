@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprivilegedroleassignmentrequestroleinfo
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgprivilegedroleassignmentrequestroleinfo
 schema: 2.0.0
 ---
 
-# Update-MgPrivilegedRoleAssignmentRequestRoleInfo
+# Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfo
 
 ## SYNOPSIS
 Update the navigation property roleInfo in privilegedRoleAssignmentRequests
@@ -14,7 +14,7 @@ Update the navigation property roleInfo in privilegedRoleAssignmentRequests
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPrivilegedRoleAssignmentRequestRoleInfo -PrivilegedRoleAssignmentRequestId <String>
+Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfo -PrivilegedRoleAssignmentRequestId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphPrivilegedRoleAssignment[]>] [-Id <String>]
  [-Name <String>] [-Settings <IMicrosoftGraphPrivilegedRoleSettings>]
  [-Summary <IMicrosoftGraphPrivilegedRoleSummary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgPrivilegedRoleAssignmentRequestRoleInfo -PrivilegedRoleAssignmentReques
 
 ### Update
 ```
-Update-MgPrivilegedRoleAssignmentRequestRoleInfo -PrivilegedRoleAssignmentRequestId <String>
+Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfo -PrivilegedRoleAssignmentRequestId <String>
  -BodyParameter <IMicrosoftGraphPrivilegedRole> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPrivilegedRoleAssignmentRequestRoleInfo -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfo -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphPrivilegedRole> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPrivilegedRoleAssignmentRequestRoleInfo -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfo -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphPrivilegedRoleAssignment[]>] [-Id <String>]
  [-Name <String>] [-Settings <IMicrosoftGraphPrivilegedRoleSettings>]
  [-Summary <IMicrosoftGraphPrivilegedRoleSummary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -85,7 +85,7 @@ privilegedRole
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ privilegedRoleSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ privilegedRoleSummary
 To construct, please use Get-Help -Online and see NOTES section for SUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSummary
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -241,9 +241,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 
 ## OUTPUTS
 

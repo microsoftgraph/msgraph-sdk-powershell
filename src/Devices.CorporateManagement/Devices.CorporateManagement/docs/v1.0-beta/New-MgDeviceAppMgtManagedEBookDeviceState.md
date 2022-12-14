@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedebookdevicestate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedebookdevicestate
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtManagedEBookDeviceState
+# New-MgBetaDeviceAppMgtManagedEBookDeviceState
 
 ## SYNOPSIS
 Create new navigation property to deviceStates for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceStates for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtManagedEBookDeviceState -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtManagedEBookDeviceState -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceId <String>] [-DeviceName <String>] [-ErrorCode <String>] [-Id <String>]
  [-InstallState <InstallState>] [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>]
  [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgDeviceAppMgtManagedEBookDeviceState -ManagedEBookId <String> [-AdditionalP
 
 ### Create
 ```
-New-MgDeviceAppMgtManagedEBookDeviceState -ManagedEBookId <String>
+New-MgBetaDeviceAppMgtManagedEBookDeviceState -ManagedEBookId <String>
  -BodyParameter <IMicrosoftGraphDeviceInstallState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtManagedEBookDeviceState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtManagedEBookDeviceState -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceInstallState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtManagedEBookDeviceState -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtManagedEBookDeviceState -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeviceId <String>] [-DeviceName <String>] [-ErrorCode <String>]
  [-Id <String>] [-InstallState <InstallState>] [-LastSyncDateTime <DateTime>] [-OSDescription <String>]
  [-OSVersion <String>] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ Contains properties for the installation state for a device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 Possible values for install state.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.InstallState
+Type: Microsoft.Graph.Beta.PowerShell.Support.InstallState
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -281,19 +281,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementManagedEBookDeviceState
+### New-MgBetaDeviceAppManagementManagedEBookDeviceState
 
 COMPLEX PARAMETER PROPERTIES
 

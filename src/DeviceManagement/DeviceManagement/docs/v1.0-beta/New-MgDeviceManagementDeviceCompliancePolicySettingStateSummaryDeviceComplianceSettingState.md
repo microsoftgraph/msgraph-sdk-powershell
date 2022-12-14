@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementdevicecompliancepolicysettingstatesummarydevicecompliancesettingstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementdevicecompliancepolicysettingstatesummarydevicecompliancesettingstate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
+# New-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
 
 ## SYNOPSIS
 Create new navigation property to deviceComplianceSettingStates for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceComplianceSettingStates for deviceManage
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
+New-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
  -DeviceCompliancePolicySettingStateSummaryId <String> [-AdditionalProperties <Hashtable>]
  [-ComplianceGracePeriodExpirationDateTime <DateTime>] [-DeviceId <String>] [-DeviceModel <String>]
  [-DeviceName <String>] [-Id <String>] [-PlatformType <DeviceType>] [-Setting <String>]
@@ -24,21 +24,21 @@ New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceS
 
 ### Create
 ```
-New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
+New-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
  -DeviceCompliancePolicySettingStateSummaryId <String>
  -BodyParameter <IMicrosoftGraphDeviceComplianceSettingState1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
+New-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphDeviceComplianceSettingState1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
+New-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ComplianceGracePeriodExpirationDateTime <DateTime>] [-DeviceId <String>] [-DeviceModel <String>]
  [-DeviceName <String>] [-Id <String>] [-PlatformType <DeviceType>] [-Setting <String>]
@@ -73,7 +73,7 @@ Device compliance setting State for a given device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceSettingState1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceSettingState1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -180,7 +180,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 Device type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -347,13 +347,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceSettingState1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceSettingState1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceSettingState1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceSettingState1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgcontract
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgcontract
 schema: 2.0.0
 ---
 
-# New-MgContract
+# New-MgBetaContract
 
 ## SYNOPSIS
 Add new entity to contracts
@@ -14,14 +14,14 @@ Add new entity to contracts
 
 ### CreateExpanded1 (Default)
 ```
-New-MgContract [-AdditionalProperties <Hashtable>] [-ContractType <String>] [-CustomerId <String>]
+New-MgBetaContract [-AdditionalProperties <Hashtable>] [-ContractType <String>] [-CustomerId <String>]
  [-DefaultDomainName <String>] [-DeletedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgContract -BodyParameter <IMicrosoftGraphContract> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaContract -BodyParameter <IMicrosoftGraphContract> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ contract
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContract
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContract
 Parameter Sets: Create1
 Aliases:
 
@@ -197,11 +197,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContract
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContract
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContract
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContract
 
 ## NOTES
 

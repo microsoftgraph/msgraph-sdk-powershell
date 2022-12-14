@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedappstatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedappstatuses
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtManagedAppStatuses
+# New-MgBetaDeviceAppMgtManagedAppStatuses
 
 ## SYNOPSIS
 Create new navigation property to managedAppStatuses for deviceAppManagement
@@ -14,13 +14,13 @@ Create new navigation property to managedAppStatuses for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtManagedAppStatuses [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceAppMgtManagedAppStatuses [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtManagedAppStatuses -BodyParameter <IMicrosoftGraphManagedAppStatus> [-Confirm] [-WhatIf]
+New-MgBetaDeviceAppMgtManagedAppStatuses -BodyParameter <IMicrosoftGraphManagedAppStatus> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Represents app protection and configuration status for the organization.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppStatus
 Parameter Sets: Create
 Aliases:
 
@@ -144,17 +144,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppStatus
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppStatus
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementManagedAppStatuses
+### New-MgBetaDeviceAppManagementManagedAppStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

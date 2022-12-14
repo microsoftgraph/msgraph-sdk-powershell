@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mggroupteamphotocontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/set-mggroupteamphotocontent
 schema: 2.0.0
 ---
 
-# Set-MgGroupTeamPhotoContent
+# Set-MgBetaGroupTeamPhotoContent
 
 ## SYNOPSIS
 Update media content for the navigation property photo in groups
@@ -14,13 +14,13 @@ Update media content for the navigation property photo in groups
 
 ### Set (Default)
 ```
-Set-MgGroupTeamPhotoContent -GroupId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
+Set-MgBetaGroupTeamPhotoContent -GroupId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgGroupTeamPhotoContent -InputObject <ITeamsIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaGroupTeamPhotoContent -InputObject <ITeamsIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ### System.IO.Stream
 

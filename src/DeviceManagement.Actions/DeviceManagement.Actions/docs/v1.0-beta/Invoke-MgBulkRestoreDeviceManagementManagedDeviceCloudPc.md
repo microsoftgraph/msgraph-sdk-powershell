@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkrestoredevicemanagementmanageddevicecloudpc
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgbulkrestoredevicemanagementmanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc
+# Invoke-MgBetaBulkRestoreDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
 Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
@@ -14,14 +14,14 @@ Restore multiple Cloud PC devices with a single request that includes the IDs of
 
 ### BulkExpanded (Default)
 ```
-Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaBulkRestoreDeviceManagementManagedDeviceCloudPc [-AdditionalProperties <Hashtable>]
  [-ManagedDeviceIds <String[]>] [-RestorePointDateTime <DateTime>] [-TimeRange <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Bulk
 ```
-Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc
+Invoke-MgBetaBulkRestoreDeviceManagementManagedDeviceCloudPc
  -BodyParameter <IPaths2F9570DevicemanagementManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -31,9 +31,9 @@ Restore multiple Cloud PC devices with a single request that includes the IDs of
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc Cmdlet
+### Example 1: Using the Invoke-MgBetaBulkRestoreDeviceManagementManagedDeviceCloudPc Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
 $params = @{
 	ManagedDeviceIds = @(
 		"30d0e128-de93-41dc-89ec-33d84bb662a0"
@@ -42,10 +42,10 @@ $params = @{
 	RestorePointDateTime = [System.DateTime]::Parse("2021-09-23T04:00:00.0000000")
 	TimeRange = "before"
 }
-Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc -BodyParameter $params
+Invoke-MgBetaBulkRestoreDeviceManagementManagedDeviceCloudPc -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc Cmdlet.
+This example shows how to use the Invoke-MgBetaBulkRestoreDeviceManagementManagedDeviceCloudPc Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths2F9570DevicemanagementManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths2F9570DevicemanagementManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Bulk
 Aliases:
 
@@ -162,17 +162,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths2F9570DevicemanagementManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths2F9570DevicemanagementManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
 
 ## NOTES
 
 ALIASES
 
-### Invoke-MgBulkDeviceManagementManagedDeviceRestoreCloudPc
+### Invoke-MgBetaBulkDeviceManagementManagedDeviceRestoreCloudPc
 
 COMPLEX PARAMETER PROPERTIES
 

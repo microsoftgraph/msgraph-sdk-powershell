@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceregisteredowner
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceregisteredowner
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwner
+# Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwner
 
 ## SYNOPSIS
 The user that cloud joined the device or registered their personal device.
@@ -18,7 +18,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwner
+Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwner
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
@@ -241,7 +241,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

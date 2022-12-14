@@ -1,112 +1,112 @@
 ---
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 Module Guid: 7994126f-4d79-40f6-bdc9-d5361209b88d
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Devices.ServiceAnnouncement Module
+# Microsoft.Graph.Beta.Devices.ServiceAnnouncement Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Devices.ServiceAnnouncement Cmdlets
-### [Get-MgServiceAnnouncementHealthOverview](Get-MgServiceAnnouncementHealthOverview.md)
+## Microsoft.Graph.Beta.Devices.ServiceAnnouncement Cmdlets
+### [Get-MgBetaServiceAnnouncementHealthOverview](Get-MgBetaServiceAnnouncementHealthOverview.md)
 A collection of service health information for tenant.
 This property is a contained navigation property, it is nullable and readonly.
 
-### [Get-MgServiceAnnouncementHealthOverviewIssue](Get-MgServiceAnnouncementHealthOverviewIssue.md)
+### [Get-MgBetaServiceAnnouncementHealthOverviewIssue](Get-MgBetaServiceAnnouncementHealthOverviewIssue.md)
 A collection of issues that happened on the service, with detailed information for each issue.
 
-### [Get-MgServiceAnnouncementIssue](Get-MgServiceAnnouncementIssue.md)
+### [Get-MgBetaServiceAnnouncementIssue](Get-MgBetaServiceAnnouncementIssue.md)
 A collection of service issues for tenant.
 This property is a contained navigation property, it is nullable and readonly.
 
-### [Get-MgServiceAnnouncementMessage](Get-MgServiceAnnouncementMessage.md)
+### [Get-MgBetaServiceAnnouncementMessage](Get-MgBetaServiceAnnouncementMessage.md)
 A collection of service messages for tenant.
 This property is a contained navigation property, it is nullable and readonly.
 
-### [Get-MgServiceAnnouncementMessageAttachment](Get-MgServiceAnnouncementMessageAttachment.md)
+### [Get-MgBetaServiceAnnouncementMessageAttachment](Get-MgBetaServiceAnnouncementMessageAttachment.md)
 A collection of serviceAnnouncementAttachments.
 
-### [Get-MgServiceAnnouncementMessageAttachmentArchive](Get-MgServiceAnnouncementMessageAttachmentArchive.md)
+### [Get-MgBetaServiceAnnouncementMessageAttachmentArchive](Get-MgBetaServiceAnnouncementMessageAttachmentArchive.md)
 The zip file of all attachments for a message.
 
-### [Get-MgServiceAnnouncementMessageAttachmentContent](Get-MgServiceAnnouncementMessageAttachmentContent.md)
+### [Get-MgBetaServiceAnnouncementMessageAttachmentContent](Get-MgBetaServiceAnnouncementMessageAttachmentContent.md)
 The attachment content.
 
-### [Invoke-MgArchiveServiceAnnouncementMessage](Invoke-MgArchiveServiceAnnouncementMessage.md)
+### [Invoke-MgBetaArchiveServiceAnnouncementMessage](Invoke-MgBetaArchiveServiceAnnouncementMessage.md)
 Archive a list of serviceUpdateMessages for the signed in user.
 
-### [Invoke-MgFavoriteServiceAnnouncementMessage](Invoke-MgFavoriteServiceAnnouncementMessage.md)
+### [Invoke-MgBetaFavoriteServiceAnnouncementMessage](Invoke-MgBetaFavoriteServiceAnnouncementMessage.md)
 Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
 
-### [Invoke-MgMarkServiceAnnouncementMessageRead](Invoke-MgMarkServiceAnnouncementMessageRead.md)
+### [Invoke-MgBetaMarkServiceAnnouncementMessageRead](Invoke-MgBetaMarkServiceAnnouncementMessageRead.md)
 Mark a list of serviceUpdateMessages as **read** for the signed in user.
 
-### [Invoke-MgMarkServiceAnnouncementMessageUnread](Invoke-MgMarkServiceAnnouncementMessageUnread.md)
+### [Invoke-MgBetaMarkServiceAnnouncementMessageUnread](Invoke-MgBetaMarkServiceAnnouncementMessageUnread.md)
 Mark a list of serviceUpdateMessages as **unread** for the signed in user.
 
-### [Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident](Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident.md)
+### [Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident](Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident.md)
 Invoke function incidentReport
 
-### [Invoke-MgReportServiceAnnouncementIssueIncident](Invoke-MgReportServiceAnnouncementIssueIncident.md)
+### [Invoke-MgBetaReportServiceAnnouncementIssueIncident](Invoke-MgBetaReportServiceAnnouncementIssueIncident.md)
 Invoke function incidentReport
 
-### [Invoke-MgUnarchiveServiceAnnouncementMessage](Invoke-MgUnarchiveServiceAnnouncementMessage.md)
+### [Invoke-MgBetaUnarchiveServiceAnnouncementMessage](Invoke-MgBetaUnarchiveServiceAnnouncementMessage.md)
 Unarchive a list of serviceUpdateMessages for the signed in user.
 
-### [Invoke-MgUnfavoriteServiceAnnouncementMessage](Invoke-MgUnfavoriteServiceAnnouncementMessage.md)
+### [Invoke-MgBetaUnfavoriteServiceAnnouncementMessage](Invoke-MgBetaUnfavoriteServiceAnnouncementMessage.md)
 Remove the favorite status of serviceUpdateMessages for the signed in user.
 
-### [New-MgServiceAnnouncementHealthOverview](New-MgServiceAnnouncementHealthOverview.md)
+### [New-MgBetaServiceAnnouncementHealthOverview](New-MgBetaServiceAnnouncementHealthOverview.md)
 Create new navigation property to healthOverviews for admin
 
-### [New-MgServiceAnnouncementHealthOverviewIssue](New-MgServiceAnnouncementHealthOverviewIssue.md)
+### [New-MgBetaServiceAnnouncementHealthOverviewIssue](New-MgBetaServiceAnnouncementHealthOverviewIssue.md)
 Create new navigation property to issues for admin
 
-### [New-MgServiceAnnouncementIssue](New-MgServiceAnnouncementIssue.md)
+### [New-MgBetaServiceAnnouncementIssue](New-MgBetaServiceAnnouncementIssue.md)
 Create new navigation property to issues for admin
 
-### [New-MgServiceAnnouncementMessage](New-MgServiceAnnouncementMessage.md)
+### [New-MgBetaServiceAnnouncementMessage](New-MgBetaServiceAnnouncementMessage.md)
 Create new navigation property to messages for admin
 
-### [New-MgServiceAnnouncementMessageAttachment](New-MgServiceAnnouncementMessageAttachment.md)
+### [New-MgBetaServiceAnnouncementMessageAttachment](New-MgBetaServiceAnnouncementMessageAttachment.md)
 Create new navigation property to attachments for admin
 
-### [Remove-MgServiceAnnouncementHealthOverview](Remove-MgServiceAnnouncementHealthOverview.md)
+### [Remove-MgBetaServiceAnnouncementHealthOverview](Remove-MgBetaServiceAnnouncementHealthOverview.md)
 Delete navigation property healthOverviews for admin
 
-### [Remove-MgServiceAnnouncementHealthOverviewIssue](Remove-MgServiceAnnouncementHealthOverviewIssue.md)
+### [Remove-MgBetaServiceAnnouncementHealthOverviewIssue](Remove-MgBetaServiceAnnouncementHealthOverviewIssue.md)
 Delete navigation property issues for admin
 
-### [Remove-MgServiceAnnouncementIssue](Remove-MgServiceAnnouncementIssue.md)
+### [Remove-MgBetaServiceAnnouncementIssue](Remove-MgBetaServiceAnnouncementIssue.md)
 Delete navigation property issues for admin
 
-### [Remove-MgServiceAnnouncementMessage](Remove-MgServiceAnnouncementMessage.md)
+### [Remove-MgBetaServiceAnnouncementMessage](Remove-MgBetaServiceAnnouncementMessage.md)
 Delete navigation property messages for admin
 
-### [Remove-MgServiceAnnouncementMessageAttachment](Remove-MgServiceAnnouncementMessageAttachment.md)
+### [Remove-MgBetaServiceAnnouncementMessageAttachment](Remove-MgBetaServiceAnnouncementMessageAttachment.md)
 Delete navigation property attachments for admin
 
-### [Set-MgServiceAnnouncementMessageAttachmentArchive](Set-MgServiceAnnouncementMessageAttachmentArchive.md)
+### [Set-MgBetaServiceAnnouncementMessageAttachmentArchive](Set-MgBetaServiceAnnouncementMessageAttachmentArchive.md)
 The zip file of all attachments for a message.
 
-### [Set-MgServiceAnnouncementMessageAttachmentContent](Set-MgServiceAnnouncementMessageAttachmentContent.md)
+### [Set-MgBetaServiceAnnouncementMessageAttachmentContent](Set-MgBetaServiceAnnouncementMessageAttachmentContent.md)
 The attachment content.
 
-### [Update-MgServiceAnnouncementHealthOverview](Update-MgServiceAnnouncementHealthOverview.md)
+### [Update-MgBetaServiceAnnouncementHealthOverview](Update-MgBetaServiceAnnouncementHealthOverview.md)
 Update the navigation property healthOverviews in admin
 
-### [Update-MgServiceAnnouncementHealthOverviewIssue](Update-MgServiceAnnouncementHealthOverviewIssue.md)
+### [Update-MgBetaServiceAnnouncementHealthOverviewIssue](Update-MgBetaServiceAnnouncementHealthOverviewIssue.md)
 Update the navigation property issues in admin
 
-### [Update-MgServiceAnnouncementIssue](Update-MgServiceAnnouncementIssue.md)
+### [Update-MgBetaServiceAnnouncementIssue](Update-MgBetaServiceAnnouncementIssue.md)
 Update the navigation property issues in admin
 
-### [Update-MgServiceAnnouncementMessage](Update-MgServiceAnnouncementMessage.md)
+### [Update-MgBetaServiceAnnouncementMessage](Update-MgBetaServiceAnnouncementMessage.md)
 Update the navigation property messages in admin
 
-### [Update-MgServiceAnnouncementMessageAttachment](Update-MgServiceAnnouncementMessageAttachment.md)
+### [Update-MgBetaServiceAnnouncementMessageAttachment](Update-MgBetaServiceAnnouncementMessageAttachment.md)
 Update the navigation property attachments in admin
 

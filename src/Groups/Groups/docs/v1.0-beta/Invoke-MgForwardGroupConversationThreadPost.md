@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgforwardgroupconversationthreadpost
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgforwardgroupconversationthreadpost
 schema: 2.0.0
 ---
 
-# Invoke-MgForwardGroupConversationThreadPost
+# Invoke-MgBetaForwardGroupConversationThreadPost
 
 ## SYNOPSIS
 Forward a post to a recipient.
@@ -15,14 +15,14 @@ You can specify both the parent conversation and thread in the request, \nor, yo
 
 ### ForwardExpanded1 (Default)
 ```
-Invoke-MgForwardGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
+Invoke-MgBetaForwardGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Forward1
 ```
-Invoke-MgForwardGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
+Invoke-MgBetaForwardGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String>
  -BodyParameter <IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,14 +30,14 @@ Invoke-MgForwardGroupConversationThreadPost -ConversationId <String> -Conversati
 
 ### ForwardViaIdentity1
 ```
-Invoke-MgForwardGroupConversationThreadPost -InputObject <IGroupsIdentity>
+Invoke-MgBetaForwardGroupConversationThreadPost -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentityExpanded1
 ```
-Invoke-MgForwardGroupConversationThreadPost -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaForwardGroupConversationThreadPost -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -50,7 +50,7 @@ You can specify both the parent conversation and thread in the request, \nor, yo
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 
 $params = @{
 	Comment = "comment-value"
@@ -64,10 +64,10 @@ $params = @{
 	)
 }
 
-Invoke-MgForwardGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
+Invoke-MgBetaForwardGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgForwardGroupConversationThreadPost Cmdlet.
+This example shows how to use the Invoke-MgBetaForwardGroupConversationThreadPost Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Forward1, ForwardViaIdentity1
 Aliases:
 
@@ -169,7 +169,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: ForwardViaIdentity1, ForwardViaIdentityExpanded1
 Aliases:
 
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TORECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecipient[]
 Parameter Sets: ForwardExpanded1, ForwardViaIdentityExpanded1
 Aliases:
 
@@ -262,9 +262,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

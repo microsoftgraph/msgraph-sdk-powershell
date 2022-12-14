@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicytokenissuancepolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicytokenissuancepolicy
 schema: 2.0.0
 ---
 
-# New-MgPolicyTokenIssuancePolicy
+# New-MgBetaPolicyTokenIssuancePolicy
 
 ## SYNOPSIS
 Create a new tokenIssuancePolicy object.
@@ -14,7 +14,7 @@ Create a new tokenIssuancePolicy object.
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyTokenIssuancePolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaPolicyTokenIssuancePolicy [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Definition <String[]>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsOrganizationDefault] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgPolicyTokenIssuancePolicy [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgPolicyTokenIssuancePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPolicyTokenIssuancePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,9 +30,9 @@ Create a new tokenIssuancePolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPolicyTokenIssuancePolicy Cmdlet
+### Example 1: Using the New-MgBetaPolicyTokenIssuancePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Definition = @(
 		"definition-value"
@@ -40,10 +40,10 @@ $params = @{
 	DisplayName = "displayName-value"
 	IsOrganizationDefault = $true
 }
-New-MgPolicyTokenIssuancePolicy -BodyParameter $params
+New-MgBetaPolicyTokenIssuancePolicy -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPolicyTokenIssuancePolicy Cmdlet.
+This example shows how to use the New-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
 
 ## NOTES
 

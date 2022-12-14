@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgserviceprincipalapproleassignment
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgserviceprincipalapproleassignment
 schema: 2.0.0
 ---
 
-# New-MgServicePrincipalAppRoleAssignment
+# New-MgBetaServicePrincipalAppRoleAssignment
 
 ## SYNOPSIS
 Assign an app role to a client service principal.
@@ -17,7 +17,7 @@ To grant an app role assignment to a client service principal, you need three id
 
 ### CreateExpanded (Default)
 ```
-New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaServicePrincipalAppRoleAssignment -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
  [-AppRoleId <String>] [-CreationTimestamp <DateTime>] [-Id <String>] [-PrincipalDisplayName <String>]
  [-PrincipalId <String>] [-PrincipalType <String>] [-ResourceDisplayName <String>] [-ResourceId <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -25,19 +25,19 @@ New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId <String> [-Additiona
 
 ### Create
 ```
-New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId <String>
+New-MgBetaServicePrincipalAppRoleAssignment -ServicePrincipalId <String>
  -BodyParameter <IMicrosoftGraphAppRoleAssignment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphAppRoleAssignment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AppRoleId <String>] [-CreationTimestamp <DateTime>] [-Id <String>]
  [-PrincipalDisplayName <String>] [-PrincipalId <String>] [-PrincipalType <String>]
  [-ResourceDisplayName <String>] [-ResourceId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -51,18 +51,18 @@ To grant an app role assignment to a client service principal, you need three id
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgServicePrincipalAppRoleAssignment Cmdlet
+### Example 1: Using the New-MgBetaServicePrincipalAppRoleAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	PrincipalId = "9028d19c-26a9-4809-8e3f-20ff73e2d75e"
 	ResourceId = "8fce32da-1246-437b-99cd-76d1d4677bd5"
 	AppRoleId = "498476ce-e0fe-48b0-b801-37ba7e2685c6"
 }
-New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+New-MgBetaServicePrincipalAppRoleAssignment -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgServicePrincipalAppRoleAssignment Cmdlet.
+This example shows how to use the New-MgBetaServicePrincipalAppRoleAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ appRoleAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -300,13 +300,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppRoleAssignment1
 
 ## NOTES
 

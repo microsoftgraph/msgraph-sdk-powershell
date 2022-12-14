@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementtemplatecollectiontenantsummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementtemplatecollectiontenantsummary
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
+# Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
 
 ## SYNOPSIS
 Update the navigation property managementTemplateCollectionTenantSummaries in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managementTemplateCollectionTenantSummaries in te
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
  -ManagementTemplateCollectionTenantSummaryId <String> [-AdditionalProperties <Hashtable>]
  [-CompleteStepsCount <Int32>] [-CompleteUsersCount <Int32>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-DismissedStepsCount <Int32>] [-ExcludedUsersCount <Int32>]
@@ -27,7 +27,7 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummar
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
  -ManagementTemplateCollectionTenantSummaryId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -35,7 +35,7 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummar
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
  -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -43,7 +43,7 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummar
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>] [-CompleteStepsCount <Int32>]
  [-CompleteUsersCount <Int32>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DismissedStepsCount <Int32>] [-ExcludedUsersCount <Int32>] [-ExcludedUsersDistinctCount <Int32>]
@@ -80,7 +80,7 @@ managementTemplateCollectionTenantSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -262,7 +262,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -429,9 +429,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary
 
 ## OUTPUTS
 

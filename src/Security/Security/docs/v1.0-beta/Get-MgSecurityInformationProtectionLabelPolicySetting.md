@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityinformationprotectionlabelpolicysetting
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecurityinformationprotectionlabelpolicysetting
 schema: 2.0.0
 ---
 
-# Get-MgSecurityInformationProtectionLabelPolicySetting
+# Get-MgBetaSecurityInformationProtectionLabelPolicySetting
 
 ## SYNOPSIS
 Read the properties and relationships of an informationProtectionPolicySetting object.
@@ -14,7 +14,7 @@ The settings exposed by this API should be used in applications to populate the 
 ## SYNTAX
 
 ```
-Get-MgSecurityInformationProtectionLabelPolicySetting [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecurityInformationProtectionLabelPolicySetting [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
 
 ## NOTES
 

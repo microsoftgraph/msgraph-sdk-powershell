@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/export-mgdevicemanagementdeponboardingsettingenrollmentprofilemobileconfig
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/export-mgdevicemanagementdeponboardingsettingenrollmentprofilemobileconfig
 schema: 2.0.0
 ---
 
-# Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig
+# Export-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig
 
 ## SYNOPSIS
 Exports the mobile configuration
@@ -14,13 +14,13 @@ Exports the mobile configuration
 
 ### Export (Default)
 ```
-Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig -DepOnboardingSettingId <String>
+Export-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig -DepOnboardingSettingId <String>
  -EnrollmentProfileId <String> [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
-Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig
+Export-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig
  -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: ExportViaIdentity
 Aliases:
 
@@ -82,7 +82,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 

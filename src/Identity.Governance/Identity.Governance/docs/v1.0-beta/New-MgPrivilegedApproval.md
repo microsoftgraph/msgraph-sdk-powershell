@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedapproval
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedapproval
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedApproval
+# New-MgBetaPrivilegedApproval
 
 ## SYNOPSIS
 Use this API to create a new privilegedApproval.
@@ -14,7 +14,7 @@ Use this API to create a new privilegedApproval.
 
 ### CreateExpanded (Default)
 ```
-New-MgPrivilegedApproval [-AdditionalProperties <Hashtable>] [-ApprovalDuration <TimeSpan>]
+New-MgBetaPrivilegedApproval [-AdditionalProperties <Hashtable>] [-ApprovalDuration <TimeSpan>]
  [-ApprovalState <String>] [-ApprovalType <String>] [-ApproverReason <String>] [-EndDateTime <DateTime>]
  [-Id <String>] [-Request <IMicrosoftGraphPrivilegedRoleAssignmentRequest>] [-RequestorReason <String>]
  [-RoleId <String>] [-RoleInfo <IMicrosoftGraphPrivilegedRole>] [-StartDateTime <DateTime>] [-UserId <String>]
@@ -23,7 +23,7 @@ New-MgPrivilegedApproval [-AdditionalProperties <Hashtable>] [-ApprovalDuration 
 
 ### Create
 ```
-New-MgPrivilegedApproval -BodyParameter <IMicrosoftGraphPrivilegedApproval> [-Confirm] [-WhatIf]
+New-MgBetaPrivilegedApproval -BodyParameter <IMicrosoftGraphPrivilegedApproval> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,9 +32,9 @@ Use this API to create a new privilegedApproval.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPrivilegedApproval Cmdlet
+### Example 1: Using the New-MgBetaPrivilegedApproval Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	UserId = "userId-value"
 	RoleId = "roleId-value"
@@ -42,10 +42,10 @@ $params = @{
 	ApprovalState = "approvalState-value"
 	ApprovalDuration = "datetime-value"
 }
-New-MgPrivilegedApproval -BodyParameter $params
+New-MgBetaPrivilegedApproval -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedApproval Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedApproval Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -130,7 +130,7 @@ privilegedApproval
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
 Parameter Sets: Create
 Aliases:
 
@@ -178,7 +178,7 @@ privilegedRoleAssignmentRequest
 To construct, please use Get-Help -Online and see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -224,7 +224,7 @@ privilegedRole
 To construct, please use Get-Help -Online and see NOTES section for ROLEINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -302,11 +302,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
 
 ## NOTES
 

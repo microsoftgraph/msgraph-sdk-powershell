@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolisttaskattachmentsessioncontent
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusertodolisttaskattachmentsessioncontent
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoListTaskAttachmentSessionContent
+# Get-MgBetaUserTodoListTaskAttachmentSessionContent
 
 ## SYNOPSIS
 The content streams that are uploaded.
@@ -14,13 +14,13 @@ The content streams that are uploaded.
 
 ### Get (Default)
 ```
-Get-MgUserTodoListTaskAttachmentSessionContent -AttachmentSessionId <String> -TodoTaskId <String>
+Get-MgBetaUserTodoListTaskAttachmentSessionContent -AttachmentSessionId <String> -TodoTaskId <String>
  -TodoTaskListId <String> -UserId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserTodoListTaskAttachmentSessionContent -InputObject <IUsersIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaUserTodoListTaskAttachmentSessionContent -InputObject <IUsersIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantauditevent
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantauditevent
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantAuditEvent
+# Update-MgBetaTenantRelationshipManagedTenantAuditEvent
 
 ## SYNOPSIS
 Update the navigation property auditEvents in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property auditEvents in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantAuditEvent -AuditEventId <String> [-Activity <String>]
+Update-MgBetaTenantRelationshipManagedTenantAuditEvent -AuditEventId <String> [-Activity <String>]
  [-ActivityDateTime <DateTime>] [-ActivityId <String>] [-AdditionalProperties <Hashtable>]
  [-Category <String>] [-HttpVerb <String>] [-Id <String>] [-InitiatedByAppId <String>]
  [-InitiatedByUpn <String>] [-InitiatedByUserId <String>] [-IPAddress <String>] [-RequestBody <String>]
@@ -24,21 +24,21 @@ Update-MgTenantRelationshipManagedTenantAuditEvent -AuditEventId <String> [-Acti
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantAuditEvent -AuditEventId <String>
+Update-MgBetaTenantRelationshipManagedTenantAuditEvent -AuditEventId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsAuditEvent> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantAuditEvent -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantAuditEvent -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsAuditEvent> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantAuditEvent -InputObject <IManagedTenantsIdentity> [-Activity <String>]
+Update-MgBetaTenantRelationshipManagedTenantAuditEvent -InputObject <IManagedTenantsIdentity> [-Activity <String>]
  [-ActivityDateTime <DateTime>] [-ActivityId <String>] [-AdditionalProperties <Hashtable>]
  [-Category <String>] [-HttpVerb <String>] [-Id <String>] [-InitiatedByAppId <String>]
  [-InitiatedByUpn <String>] [-InitiatedByUserId <String>] [-IPAddress <String>] [-RequestBody <String>]
@@ -139,7 +139,7 @@ auditEvent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -256,7 +256,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -405,9 +405,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
 
 ## OUTPUTS
 

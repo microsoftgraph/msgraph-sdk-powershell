@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationme
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationme
 schema: 2.0.0
 ---
 
-# Remove-MgEducationMe
+# Remove-MgBetaEducationMe
 
 ## SYNOPSIS
 Delete navigation property me for education
@@ -13,7 +13,7 @@ Delete navigation property me for education
 ## SYNTAX
 
 ```
-Remove-MgEducationMe [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaEducationMe [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

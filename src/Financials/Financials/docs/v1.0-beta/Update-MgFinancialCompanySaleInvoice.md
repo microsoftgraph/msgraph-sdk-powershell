@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysaleinvoice
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysaleinvoice
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleInvoice
+# Update-MgBetaFinancialCompanySaleInvoice
 
 ## SYNOPSIS
 Update the navigation property salesInvoices in financials
@@ -14,7 +14,7 @@ Update the navigation property salesInvoices in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String>
+Update-MgBetaFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String>
  [-AdditionalProperties <Hashtable>] [-BillingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-BillToCustomerId <String>] [-BillToCustomerNumber <String>] [-BillToName <String>]
  [-Currency <IMicrosoftGraphCurrency>] [-CurrencyCode <String>] [-CurrencyId <String>]
@@ -34,19 +34,19 @@ Update-MgFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String
 
 ### Update
 ```
-Update-MgFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String>
+Update-MgBetaFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String>
  -BodyParameter <IMicrosoftGraphSalesInvoice> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphSalesInvoice> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-BillingPostalAddress <IMicrosoftGraphPostalAddressType>] [-BillToCustomerId <String>]
  [-BillToCustomerNumber <String>] [-BillToName <String>] [-Currency <IMicrosoftGraphCurrency>]
  [-CurrencyCode <String>] [-CurrencyId <String>] [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>]
@@ -90,7 +90,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for BILLINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -151,7 +151,7 @@ salesInvoice
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesInvoice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesInvoice
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -182,7 +182,7 @@ currency
 To construct, please use Get-Help -Online and see NOTES section for CURRENCY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCurrency
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -228,7 +228,7 @@ customer
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -395,7 +395,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -501,7 +501,7 @@ paymentTerm
 To construct, please use Get-Help -Online and see NOTES section for PAYMENTTERM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -577,7 +577,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SALESINVOICELINES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesInvoiceLine[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesInvoiceLine[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -608,7 +608,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for SELLINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -624,7 +624,7 @@ shipmentMethod
 To construct, please use Get-Help -Online and see NOTES section for SHIPMENTMETHOD properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShipmentMethod
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -655,7 +655,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for SHIPPINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -792,9 +792,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesInvoice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesInvoice
 
 ## OUTPUTS
 

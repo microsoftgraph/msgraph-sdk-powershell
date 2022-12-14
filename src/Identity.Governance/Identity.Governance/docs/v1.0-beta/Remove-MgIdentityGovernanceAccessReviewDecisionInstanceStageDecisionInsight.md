@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernanceaccessreviewdecisioninstancestagedecisioninsight
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernanceaccessreviewdecisioninstancestagedecisioninsight
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
+# Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
 
 ## SYNOPSIS
 Delete navigation property insights for identityGovernance
@@ -14,7 +14,7 @@ Delete navigation property insights for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
+Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewInstanceDecisionItemId1 <String>
  -AccessReviewStageId <String> -GovernanceInsightId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
+Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
  -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -176,7 +176,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

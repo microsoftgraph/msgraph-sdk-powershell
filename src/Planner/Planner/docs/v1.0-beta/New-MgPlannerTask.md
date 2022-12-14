@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/new-mgplannertask
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/new-mgplannertask
 schema: 2.0.0
 ---
 
-# New-MgPlannerTask
+# New-MgBetaPlannerTask
 
 ## SYNOPSIS
 Create a new **plannerTask**.
@@ -14,7 +14,7 @@ Create a new **plannerTask**.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgPlannerTask [-ActiveChecklistItemCount <Int32>] [-AdditionalProperties <Hashtable>]
+New-MgBetaPlannerTask [-ActiveChecklistItemCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-AppliedCategories <Hashtable>]
  [-AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1>]
  [-AssigneePriority <String>] [-Assignments <Hashtable>] [-BucketId <String>]
@@ -30,7 +30,7 @@ New-MgPlannerTask [-ActiveChecklistItemCount <Int32>] [-AdditionalProperties <Ha
 
 ### Create1
 ```
-New-MgPlannerTask -BodyParameter <IMicrosoftGraphPlannerTask1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPlannerTask -BodyParameter <IMicrosoftGraphPlannerTask1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,24 +38,24 @@ Create a new **plannerTask**.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPlannerTask Cmdlet
+### Example 1: Using the New-MgBetaPlannerTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	PlanId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
 	BucketId = "hsOf2dhOJkqyYYZEtdzDe2QAIUCR"
 	Title = "Update client list"
 	Assignments = @{
 		"Fbab97d0-4932-4511-b675-204639209557" = @{
-			"@odata.type" = "#microsoft.graph.plannerAssignment"
+			"@odata.type" = "#Microsoft.Graph.Beta.plannerAssignment"
 			OrderHint = " !"
 		}
 	}
 }
-New-MgPlannerTask -BodyParameter $params
+New-MgBetaPlannerTask -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPlannerTask Cmdlet.
+This example shows how to use the New-MgBetaPlannerTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -110,7 +110,7 @@ plannerAssignedToTaskBoardTaskFormat
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNEDTOTASKBOARDFORMAT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -157,7 +157,7 @@ plannerTask
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1
 Parameter Sets: Create1
 Aliases:
 
@@ -191,7 +191,7 @@ plannerBucketTaskBoardTaskFormat
 To construct, please use Get-Help -Online and see NOTES section for BUCKETTASKBOARDFORMAT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -222,7 +222,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for COMPLETEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -272,7 +272,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -306,7 +306,7 @@ plannerTaskCreation
 To construct, please use Get-Help -Online and see NOTES section for CREATIONSOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskCreation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTaskCreation
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -322,7 +322,7 @@ plannerTaskDetails
 To construct, please use Get-Help -Online and see NOTES section for DETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -467,7 +467,7 @@ plannerProgressTaskBoardTaskFormat
 To construct, please use Get-Help -Online and see NOTES section for PROGRESSTASKBOARDFORMAT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -561,11 +561,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1
 
 ## NOTES
 

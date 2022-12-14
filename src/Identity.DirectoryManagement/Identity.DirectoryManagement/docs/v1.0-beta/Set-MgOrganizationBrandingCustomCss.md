@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/set-mgorganizationbrandingcustomcss
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/set-mgorganizationbrandingcustomcss
 schema: 2.0.0
 ---
 
-# Set-MgOrganizationBrandingCustomCss
+# Set-MgBetaOrganizationBrandingCustomCss
 
 ## SYNOPSIS
 Update customCSS for the navigation property branding in organization
@@ -14,13 +14,13 @@ Update customCSS for the navigation property branding in organization
 
 ### Set (Default)
 ```
-Set-MgOrganizationBrandingCustomCss -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaOrganizationBrandingCustomCss -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgOrganizationBrandingCustomCss -InputObject <IIdentityDirectoryManagementIdentity> -InFile <String>
+Set-MgBetaOrganizationBrandingCustomCss -InputObject <IIdentityDirectoryManagementIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### System.IO.Stream
 

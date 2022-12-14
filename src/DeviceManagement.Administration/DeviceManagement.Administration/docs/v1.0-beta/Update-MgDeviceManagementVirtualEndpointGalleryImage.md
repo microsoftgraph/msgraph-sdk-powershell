@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointgalleryimage
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointgalleryimage
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointGalleryImage
+# Update-MgBetaDeviceManagementVirtualEndpointGalleryImage
 
 ## SYNOPSIS
 Update the navigation property galleryImages in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property galleryImages in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointGalleryImage -CloudPcGalleryImageId <String>
+Update-MgBetaDeviceManagementVirtualEndpointGalleryImage -CloudPcGalleryImageId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EndDate <DateTime>]
  [-ExpirationDate <DateTime>] [-Id <String>] [-Offer <String>] [-OfferDisplayName <String>]
  [-Publisher <String>] [-RecommendedSku <String>] [-SizeInGb <Int32>] [-Sku <String>]
@@ -24,19 +24,19 @@ Update-MgDeviceManagementVirtualEndpointGalleryImage -CloudPcGalleryImageId <Str
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointGalleryImage -CloudPcGalleryImageId <String>
+Update-MgBetaDeviceManagementVirtualEndpointGalleryImage -CloudPcGalleryImageId <String>
  -BodyParameter <IMicrosoftGraphCloudPcGalleryImage> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementVirtualEndpointGalleryImage -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementVirtualEndpointGalleryImage -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphCloudPcGalleryImage> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementVirtualEndpointGalleryImage -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementVirtualEndpointGalleryImage -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EndDate <DateTime>]
  [-ExpirationDate <DateTime>] [-Id <String>] [-Offer <String>] [-OfferDisplayName <String>]
  [-Publisher <String>] [-RecommendedSku <String>] [-SizeInGb <Int32>] [-Sku <String>]
@@ -71,7 +71,7 @@ cloudPcGalleryImage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -377,9 +377,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcGalleryImage
 
 ## OUTPUTS
 

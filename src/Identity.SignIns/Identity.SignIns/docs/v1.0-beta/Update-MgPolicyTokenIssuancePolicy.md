@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicytokenissuancepolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicytokenissuancepolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyTokenIssuancePolicy
+# Update-MgBetaPolicyTokenIssuancePolicy
 
 ## SYNOPSIS
 Update the navigation property tokenIssuancePolicies in policies
@@ -14,7 +14,7 @@ Update the navigation property tokenIssuancePolicies in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyTokenIssuancePolicy -TokenIssuancePolicyId <String> [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Definition <String[]>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsOrganizationDefault] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId <String> [-AdditionalP
 
 ### Update
 ```
-Update-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId <String> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaPolicyTokenIssuancePolicy -TokenIssuancePolicyId <String> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> -BodyParameter <Hashtable>
+Update-MgBetaPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Definition <String[]>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsOrganizationDefault] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -45,9 +45,9 @@ Update the navigation property tokenIssuancePolicies in policies
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyTokenIssuancePolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyTokenIssuancePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Definition = @(
 		"definition-value"
@@ -55,10 +55,10 @@ $params = @{
 	DisplayName = "displayName-value"
 	IsOrganizationDefault = $true
 }
-Update-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId -BodyParameter $params
+Update-MgBetaPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyTokenIssuancePolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -289,7 +289,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.Collections.Hashtable
 

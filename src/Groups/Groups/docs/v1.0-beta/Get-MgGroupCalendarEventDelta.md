@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupcalendareventdelta
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupcalendareventdelta
 schema: 2.0.0
 ---
 
-# Get-MgGroupCalendarEventDelta
+# Get-MgBetaGroupCalendarEventDelta
 
 ## SYNOPSIS
 Get a set of event resources that have been added, deleted, or updated in one or more calendars.
@@ -21,13 +21,13 @@ The following table lists the differences between the **delta** function on even
 
 ### Delta (Default)
 ```
-Get-MgGroupCalendarEventDelta -GroupId <String> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaGroupCalendarEventDelta -GroupId <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgGroupCalendarEventDelta -InputObject <IGroupsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaGroupCalendarEventDelta -InputObject <IGroupsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeltaViaIdentity
 Aliases:
 
@@ -187,11 +187,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
 
 ## NOTES
 

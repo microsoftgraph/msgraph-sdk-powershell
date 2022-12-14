@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicyauthenticationflowpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicyauthenticationflowpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyAuthenticationFlowPolicy
+# Remove-MgBetaPolicyAuthenticationFlowPolicy
 
 ## SYNOPSIS
 Delete navigation property authenticationFlowsPolicy for policies
@@ -13,7 +13,7 @@ Delete navigation property authenticationFlowsPolicy for policies
 ## SYNTAX
 
 ```
-Remove-MgPolicyAuthenticationFlowPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPolicyAuthenticationFlowPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

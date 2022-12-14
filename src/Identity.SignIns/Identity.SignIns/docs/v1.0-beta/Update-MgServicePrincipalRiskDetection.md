@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgserviceprincipalriskdetection
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgserviceprincipalriskdetection
 schema: 2.0.0
 ---
 
-# Update-MgServicePrincipalRiskDetection
+# Update-MgBetaServicePrincipalRiskDetection
 
 ## SYNOPSIS
 Update the navigation property servicePrincipalRiskDetections in identityProtection
@@ -14,7 +14,7 @@ Update the navigation property servicePrincipalRiskDetections in identityProtect
 
 ### UpdateExpanded (Default)
 ```
-Update-MgServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String> [-Activity <String>]
+Update-MgBetaServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String> [-Activity <String>]
  [-ActivityDateTime <DateTime>] [-AdditionalInfo <String>] [-AdditionalProperties <Hashtable>]
  [-AppId <String>] [-CorrelationId <String>] [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>]
  [-Id <String>] [-IPAddress <String>] [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>]
@@ -26,21 +26,21 @@ Update-MgServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String>
 
 ### Update
 ```
-Update-MgServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String>
+Update-MgBetaServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String>
  -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity> [-Activity <String>]
+Update-MgBetaServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity> [-Activity <String>]
  [-ActivityDateTime <DateTime>] [-AdditionalInfo <String>] [-AdditionalProperties <Hashtable>]
  [-AppId <String>] [-CorrelationId <String>] [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>]
  [-Id <String>] [-IPAddress <String>] [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>]
@@ -140,7 +140,7 @@ servicePrincipalRiskDetection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -220,7 +220,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -281,7 +281,7 @@ signInLocation
 To construct, please use Get-Help -Online and see NOTES section for LOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSignInLocation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSignInLocation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -499,9 +499,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
 
 ## OUTPUTS
 

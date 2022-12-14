@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritysecurescore
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritysecurescore
 schema: 2.0.0
 ---
 
-# New-MgSecuritySecureScore
+# New-MgBetaSecuritySecureScore
 
 ## SYNOPSIS
 Create new navigation property to secureScores for security
@@ -14,7 +14,7 @@ Create new navigation property to secureScores for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecuritySecureScore [-ActiveUserCount <Int32>] [-AdditionalProperties <Hashtable>]
+New-MgBetaSecuritySecureScore [-ActiveUserCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-AverageComparativeScores <IMicrosoftGraphAverageComparativeScore[]>] [-AzureTenantId <String>]
  [-ControlScores <IMicrosoftGraphControlScore[]>] [-CreatedDateTime <DateTime>] [-CurrentScore <Double>]
  [-EnabledServices <String[]>] [-Id <String>] [-LicensedUserCount <Int32>] [-MaxScore <Double>]
@@ -23,7 +23,7 @@ New-MgSecuritySecureScore [-ActiveUserCount <Int32>] [-AdditionalProperties <Has
 
 ### Create
 ```
-New-MgSecuritySecureScore -BodyParameter <IMicrosoftGraphSecureScore> [-Confirm] [-WhatIf]
+New-MgBetaSecuritySecureScore -BodyParameter <IMicrosoftGraphSecureScore> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ Average score by different scopes (for example, average by industry, average by 
 To construct, please use Get-Help -Online and see NOTES section for AVERAGECOMPARATIVESCORES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAverageComparativeScore[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAverageComparativeScore[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ secureScore
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScore
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScore
 Parameter Sets: Create
 Aliases:
 
@@ -116,7 +116,7 @@ Contains tenant scores for a set of controls.
 To construct, please use Get-Help -Online and see NOTES section for CONTROLSCORES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphControlScore[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphControlScore[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -223,7 +223,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScore
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScore
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScore
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScore
 
 ## NOTES
 

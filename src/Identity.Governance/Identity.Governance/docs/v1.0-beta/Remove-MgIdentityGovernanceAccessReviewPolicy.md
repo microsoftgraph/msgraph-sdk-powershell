@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernanceaccessreviewpolicy
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernanceaccessreviewpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceAccessReviewPolicy
+# Remove-MgBetaIdentityGovernanceAccessReviewPolicy
 
 ## SYNOPSIS
 Delete navigation property policy for identityGovernance
@@ -13,7 +13,7 @@ Delete navigation property policy for identityGovernance
 ## SYNTAX
 
 ```
-Remove-MgIdentityGovernanceAccessReviewPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaIdentityGovernanceAccessReviewPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

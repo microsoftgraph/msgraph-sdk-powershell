@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/test-mgdevicemanagementdevicecompliancepolicycompliancescript
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/test-mgdevicemanagementdevicecompliancepolicycompliancescript
 schema: 2.0.0
 ---
 
-# Test-MgDeviceManagementDeviceCompliancePolicyComplianceScript
+# Test-MgBetaDeviceManagementDeviceCompliancePolicyComplianceScript
 
 ## SYNOPSIS
 Invoke action validateComplianceScript
@@ -14,14 +14,14 @@ Invoke action validateComplianceScript
 
 ### ValidateExpanded (Default)
 ```
-Test-MgDeviceManagementDeviceCompliancePolicyComplianceScript [-AdditionalProperties <Hashtable>]
+Test-MgBetaDeviceManagementDeviceCompliancePolicyComplianceScript [-AdditionalProperties <Hashtable>]
  [-DeviceCompliancePolicyScript <IMicrosoftGraphDeviceCompliancePolicyScript>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Validate
 ```
-Test-MgDeviceManagementDeviceCompliancePolicyComplianceScript
+Test-MgBetaDeviceManagementDeviceCompliancePolicyComplianceScript
  -BodyParameter <IPathsV2Sh76DevicemanagementDevicecompliancepoliciesMicrosoftGraphValidatecompliancescriptPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsV2Sh76DevicemanagementDevicecompliancepoliciesMicrosoftGraphValidatecompliancescriptPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsV2Sh76DevicemanagementDevicecompliancepoliciesMicrosoftGraphValidatecompliancescriptPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate
 Aliases:
 
@@ -69,7 +69,7 @@ deviceCompliancePolicyScript
 To construct, please use Get-Help -Online and see NOTES section for DEVICECOMPLIANCEPOLICYSCRIPT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyScript
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyScript
 Parameter Sets: ValidateExpanded
 Aliases:
 
@@ -116,11 +116,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsV2Sh76DevicemanagementDevicecompliancepoliciesMicrosoftGraphValidatecompliancescriptPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsV2Sh76DevicemanagementDevicecompliancepoliciesMicrosoftGraphValidatecompliancescriptPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceComplianceScriptValidationResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceScriptValidationResult
 
 ## NOTES
 

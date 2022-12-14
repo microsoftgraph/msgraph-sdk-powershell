@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysalequotecustomerpicture
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanysalequotecustomerpicture
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanySaleQuoteCustomerPicture
+# Get-MgBetaFinancialCompanySaleQuoteCustomerPicture
 
 ## SYNOPSIS
 Get picture from financials
@@ -14,20 +14,20 @@ Get picture from financials
 
 ### List (Default)
 ```
-Get-MgFinancialCompanySaleQuoteCustomerPicture -CompanyId <String> -SalesQuoteId <String>
+Get-MgBetaFinancialCompanySaleQuoteCustomerPicture -CompanyId <String> -SalesQuoteId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgFinancialCompanySaleQuoteCustomerPicture -CompanyId <String> -PictureId <String> -SalesQuoteId <String>
+Get-MgBetaFinancialCompanySaleQuoteCustomerPicture -CompanyId <String> -PictureId <String> -SalesQuoteId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanySaleQuoteCustomerPicture -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaFinancialCompanySaleQuoteCustomerPicture -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 
 ## NOTES
 

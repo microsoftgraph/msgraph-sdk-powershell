@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementpartner
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementpartner
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementPartner
+# New-MgBetaDeviceManagementPartner
 
 ## SYNOPSIS
 Create new navigation property to deviceManagementPartners for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceManagementPartners for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementPartner [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceManagementPartner [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-GroupsRequiringPartnerEnrollment <IMicrosoftGraphDeviceManagementPartnerAssignment[]>] [-Id <String>]
  [-IsConfigured] [-LastHeartbeatDateTime <DateTime>] [-PartnerAppType <DeviceManagementPartnerAppType>]
  [-PartnerState <DeviceManagementPartnerTenantState>] [-SingleTenantAppId <String>]
@@ -26,7 +26,7 @@ New-MgDeviceManagementPartner [-AdditionalProperties <Hashtable>] [-DisplayName 
 
 ### Create
 ```
-New-MgDeviceManagementPartner -BodyParameter <IMicrosoftGraphDeviceManagementPartner> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementPartner -BodyParameter <IMicrosoftGraphDeviceManagementPartner> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -57,7 +57,7 @@ Entity which represents a connection to device management partner.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner
 Parameter Sets: Create
 Aliases:
 
@@ -88,7 +88,7 @@ User groups that specifies whether enrollment is through partner.
 To construct, please use Get-Help -Online and see NOTES section for GROUPSREQUIRINGPARTNERENROLLMENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPartnerAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementPartnerAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Partner App Type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementPartnerAppType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementPartnerAppType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 Partner state of this tenant.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementPartnerTenantState
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementPartnerTenantState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -288,11 +288,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner
 
 ## NOTES
 

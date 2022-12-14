@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanagementactiontenantdeploymentstatuses
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanagementactiontenantdeploymentstatuses
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+# Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
 
 ## SYNOPSIS
 The tenant level status of management actions across managed tenants.
@@ -14,21 +14,21 @@ The tenant level status of management actions across managed tenants.
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
  -ManagementActionTenantDeploymentStatusId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
  -InputObject <IManagedTenantsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -38,22 +38,22 @@ The tenant level status of management actions across managed tenants.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses -ManagementActionTenantDeploymentStatusId $managementActionTenantDeploymentStatusId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses -ManagementActionTenantDeploymentStatusId $managementActionTenantDeploymentStatusId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -245,11 +245,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
 
 ## NOTES
 

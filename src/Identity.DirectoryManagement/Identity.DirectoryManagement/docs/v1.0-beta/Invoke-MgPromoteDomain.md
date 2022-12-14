@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/invoke-mgpromotedomain
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/invoke-mgpromotedomain
 schema: 2.0.0
 ---
 
-# Invoke-MgPromoteDomain
+# Invoke-MgBetaPromoteDomain
 
 ## SYNOPSIS
 Promote a verified subdomain to the root domain.
@@ -15,12 +15,12 @@ A verified domain has its **isVerified** property set to `true`.
 
 ### Promote (Default)
 ```
-Invoke-MgPromoteDomain -DomainId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaPromoteDomain -DomainId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PromoteViaIdentity
 ```
-Invoke-MgPromoteDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf]
+Invoke-MgBetaPromoteDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ A verified domain has its **isVerified** property set to `true`.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgPromoteDomain Cmdlet
+### Example 1: Using the Invoke-MgBetaPromoteDomain Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Invoke-MgPromoteDomain -DomainId $domainId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Invoke-MgBetaPromoteDomain -DomainId $domainId
 ```
 
-This example shows how to use the Invoke-MgPromoteDomain Cmdlet.
+This example shows how to use the Invoke-MgBetaPromoteDomain Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: PromoteViaIdentity
 Aliases:
 
@@ -108,7 +108,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

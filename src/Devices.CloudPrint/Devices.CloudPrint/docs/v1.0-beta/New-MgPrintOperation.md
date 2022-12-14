@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprintoperation
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/new-mgprintoperation
 schema: 2.0.0
 ---
 
-# New-MgPrintOperation
+# New-MgBetaPrintOperation
 
 ## SYNOPSIS
 Create new navigation property to operations for print
@@ -14,13 +14,13 @@ Create new navigation property to operations for print
 
 ### CreateExpanded (Default)
 ```
-New-MgPrintOperation [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>]
+New-MgBetaPrintOperation [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-Status <IMicrosoftGraphPrintOperationStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPrintOperation -BodyParameter <IMicrosoftGraphPrintOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPrintOperation -BodyParameter <IMicrosoftGraphPrintOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,7 +50,7 @@ printOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintOperation
 Parameter Sets: Create
 Aliases:
 
@@ -98,7 +98,7 @@ printOperationStatus
 To construct, please use Get-Help -Online and see NOTES section for STATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperationStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintOperationStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -145,11 +145,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintOperation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintOperation
 
 ## NOTES
 

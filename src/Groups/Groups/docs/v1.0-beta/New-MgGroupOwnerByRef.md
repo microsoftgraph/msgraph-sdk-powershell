@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupownerbyref
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupownerbyref
 schema: 2.0.0
 ---
 
-# New-MgGroupOwnerByRef
+# New-MgBetaGroupOwnerByRef
 
 ## SYNOPSIS
 Create new navigation property ref to owners for groups
@@ -14,25 +14,25 @@ Create new navigation property ref to owners for groups
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupOwnerByRef -GroupId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru]
+New-MgBetaGroupOwnerByRef -GroupId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupOwnerByRef -GroupId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf]
+New-MgBetaGroupOwnerByRef -GroupId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupOwnerByRef -InputObject <IGroupsIdentity> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
+New-MgBetaGroupOwnerByRef -InputObject <IGroupsIdentity> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupOwnerByRef -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
+New-MgBetaGroupOwnerByRef -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,7 +47,7 @@ $newGroupOwner =@{
   "@odata.id"= "https://graph.microsoft.com/v1.0/users/{4de19c17-6a28-4a91-86d1-f717c3c8c229}"
   }
 
-New-MgGroupOwnerByRef -GroupId '1cb7317c-9c49-4dc8-a358-67ad8e95217c' -BodyParameter $newGroupOwner
+New-MgBetaGroupOwnerByRef -GroupId '1cb7317c-9c49-4dc8-a358-67ad8e95217c' -BodyParameter $newGroupOwner
 ```
 
 In this example, the first command defines the value of the $newGroupOwner variable.
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -183,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

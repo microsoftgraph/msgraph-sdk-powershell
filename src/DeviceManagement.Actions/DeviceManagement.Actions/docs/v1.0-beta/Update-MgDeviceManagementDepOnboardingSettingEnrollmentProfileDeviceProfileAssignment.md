@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/update-mgdevicemanagementdeponboardingsettingenrollmentprofiledeviceprofileassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/update-mgdevicemanagementdeponboardingsettingenrollmentprofiledeviceprofileassignment
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
+# Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
 
 ## SYNOPSIS
 Invoke action updateDeviceProfileAssignment
@@ -14,14 +14,14 @@ Invoke action updateDeviceProfileAssignment
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
+Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
  -DepOnboardingSettingId <String> -EnrollmentProfileId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
+Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
  -DepOnboardingSettingId <String> -EnrollmentProfileId <String>
  -BodyParameter <IPaths1Blj3ZqDevicemanagementDeponboardingsettingsDeponboardingsettingIdEnrollmentprofilesEnrollmentprofileIdMicrosoftGraphUpdatedeviceprofileassignmentPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssig
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
+Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1Blj3ZqDevicemanagementDeponboardingsettingsDeponboardingsettingIdEnrollmentprofilesEnrollmentprofileIdMicrosoftGraphUpdatedeviceprofileassignmentPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssig
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
+Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Blj3ZqDevicemanagementDeponboardingsettingsDeponboardingsettingIdEnrollmentprofilesEnrollmentprofileIdMicrosoftGraphUpdatedeviceprofileassignmentPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Blj3ZqDevicemanagementDeponboardingsettingsDeponboardingsettingIdEnrollmentprofilesEnrollmentprofileIdMicrosoftGraphUpdatedeviceprofileassignmentPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -192,9 +192,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Blj3ZqDevicemanagementDeponboardingsettingsDeponboardingsettingIdEnrollmentprofilesEnrollmentprofileIdMicrosoftGraphUpdatedeviceprofileassignmentPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Blj3ZqDevicemanagementDeponboardingsettingsDeponboardingsettingIdEnrollmentprofilesEnrollmentprofileIdMicrosoftGraphUpdatedeviceprofileassignmentPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

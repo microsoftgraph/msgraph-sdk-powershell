@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggrouprejectedsender
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggrouprejectedsender
 schema: 2.0.0
 ---
 
-# Get-MgGroupRejectedSender
+# Get-MgBetaGroupRejectedSender
 
 ## SYNOPSIS
 Get a list of users or groups that are in the rejected-senders list for this group.
@@ -15,7 +15,7 @@ Make sure you do not specify the same user or group in the rejected senders and 
 ## SYNTAX
 
 ```
-Get-MgGroupRejectedSender -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+Get-MgBetaGroupRejectedSender -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
@@ -26,13 +26,13 @@ Make sure you do not specify the same user or group in the rejected senders and 
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupRejectedSender Cmdlet
+### Example 1: Using the Get-MgBetaGroupRejectedSender Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupRejectedSender -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupRejectedSender -GroupId $groupId
 ```
 
-This example shows how to use the Get-MgGroupRejectedSender Cmdlet.
+This example shows how to use the Get-MgBetaGroupRejectedSender Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -180,7 +180,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

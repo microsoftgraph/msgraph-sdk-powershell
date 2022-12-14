@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationclassassignmentupresourcefolder
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/set-mgeducationclassassignmentupresourcefolder
 schema: 2.0.0
 ---
 
-# Set-MgEducationClassAssignmentUpResourceFolder
+# Set-MgBetaEducationClassAssignmentUpResourceFolder
 
 ## SYNOPSIS
 Create a SharePoint folder to upload files for a given educationAssignment.
@@ -15,13 +15,13 @@ The teacher determines the resources to upload in the assignment's folder.
 
 ### Set1 (Default)
 ```
-Set-MgEducationClassAssignmentUpResourceFolder -EducationAssignmentId <String> -EducationClassId <String>
+Set-MgBetaEducationClassAssignmentUpResourceFolder -EducationAssignmentId <String> -EducationClassId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgEducationClassAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Set-MgBetaEducationClassAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,15 +31,15 @@ The teacher determines the resources to upload in the assignment's folder.
 
 ## EXAMPLES
 
-### Example 1: Using the Set-MgEducationClassAssignmentUpResourceFolder Cmdlet
+### Example 1: Using the Set-MgBetaEducationClassAssignmentUpResourceFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 }
-Set-MgEducationClassAssignmentUpResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+Set-MgBetaEducationClassAssignmentUpResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
 
-This example shows how to use the Set-MgEducationClassAssignmentUpResourceFolder Cmdlet.
+This example shows how to use the Set-MgBetaEducationClassAssignmentUpResourceFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: SetViaIdentity1
 Aliases:
 
@@ -126,11 +126,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

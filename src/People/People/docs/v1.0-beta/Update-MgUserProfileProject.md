@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/update-mguserprofileproject
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/update-mguserprofileproject
 schema: 2.0.0
 ---
 
-# Update-MgUserProfileProject
+# Update-MgBetaUserProfileProject
 
 ## SYNOPSIS
 Update the navigation property projects in users
@@ -14,7 +14,7 @@ Update the navigation property projects in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserProfileProject -ProjectParticipationId <String> -UserId <String>
+Update-MgBetaUserProfileProject -ProjectParticipationId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>] [-Categories <String[]>]
  [-Client <IMicrosoftGraphCompanyDetail>] [-CollaborationTags <String[]>]
  [-Colleagues <IMicrosoftGraphRelatedPerson[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
@@ -27,19 +27,19 @@ Update-MgUserProfileProject -ProjectParticipationId <String> -UserId <String>
 
 ### Update
 ```
-Update-MgUserProfileProject -ProjectParticipationId <String> -UserId <String>
+Update-MgBetaUserProfileProject -ProjectParticipationId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphProjectParticipation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserProfileProject -InputObject <IPeopleIdentity>
+Update-MgBetaUserProfileProject -InputObject <IPeopleIdentity>
  -BodyParameter <IMicrosoftGraphProjectParticipation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserProfileProject -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserProfileProject -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-Categories <String[]>] [-Client <IMicrosoftGraphCompanyDetail>]
  [-CollaborationTags <String[]>] [-Colleagues <IMicrosoftGraphRelatedPerson[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
@@ -55,9 +55,9 @@ Update the navigation property projects in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserProfileProject Cmdlet
+### Example 1: Using the Update-MgBetaUserProfileProject Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	AllowedAudiences = "organization"
 	Client = @{
@@ -66,10 +66,10 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Update-MgUserProfileProject -UserId $userId -ProjectParticipationId $projectParticipationId -BodyParameter $params
+Update-MgBetaUserProfileProject -UserId $userId -ProjectParticipationId $projectParticipationId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserProfileProject Cmdlet.
+This example shows how to use the Update-MgBetaUserProfileProject Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -109,7 +109,7 @@ projectParticipation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProjectParticipation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProjectParticipation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -140,7 +140,7 @@ companyDetail
 To construct, please use Get-Help -Online and see NOTES section for CLIENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompanyDetail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCompanyDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -172,7 +172,7 @@ Lists people that also worked on the project.
 To construct, please use Get-Help -Online and see NOTES section for COLLEAGUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedPerson[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRelatedPerson[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -188,7 +188,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -219,7 +219,7 @@ positionDetail
 To construct, please use Get-Help -Online and see NOTES section for DETAIL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPositionDetail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPositionDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -266,7 +266,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -282,7 +282,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -313,7 +313,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -374,7 +374,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -390,7 +390,7 @@ The Person or people who sponsored the project.
 To construct, please use Get-Help -Online and see NOTES section for SPONSORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedPerson[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRelatedPerson[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -467,9 +467,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProjectParticipation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProjectParticipation
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 

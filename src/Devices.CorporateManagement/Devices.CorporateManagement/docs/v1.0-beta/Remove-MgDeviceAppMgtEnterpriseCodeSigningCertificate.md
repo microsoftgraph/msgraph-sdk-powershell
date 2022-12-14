@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgdeviceappmgtenterprisecodesigningcertificate
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/remove-mgdeviceappmgtenterprisecodesigningcertificate
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceAppMgtEnterpriseCodeSigningCertificate
+# Remove-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate
 
 ## SYNOPSIS
 Delete navigation property enterpriseCodeSigningCertificates for deviceAppManagement
@@ -14,13 +14,13 @@ Delete navigation property enterpriseCodeSigningCertificates for deviceAppManage
 
 ### Delete (Default)
 ```
-Remove-MgDeviceAppMgtEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCertificateId <String>
+Remove-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCertificateId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceAppMgtEnterpriseCodeSigningCertificate -InputObject <IDevicesCorporateManagementIdentity>
+Remove-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate -InputObject <IDevicesCorporateManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgDeviceAppManagementEnterpriseCodeSigningCertificate
+### Remove-MgBetaDeviceAppManagementEnterpriseCodeSigningCertificate
 
 COMPLEX PARAMETER PROPERTIES
 

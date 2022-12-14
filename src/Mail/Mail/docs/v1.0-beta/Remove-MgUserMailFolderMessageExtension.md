@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/remove-mgusermailfoldermessageextension
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/remove-mgusermailfoldermessageextension
 schema: 2.0.0
 ---
 
-# Remove-MgUserMailFolderMessageExtension
+# Remove-MgBetaUserMailFolderMessageExtension
 
 ## SYNOPSIS
 Delete navigation property extensions for users
@@ -14,13 +14,13 @@ Delete navigation property extensions for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserMailFolderMessageExtension -ExtensionId <String> -MailFolderId <String> -MessageId <String>
+Remove-MgBetaUserMailFolderMessageExtension -ExtensionId <String> -MailFolderId <String> -MessageId <String>
  -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserMailFolderMessageExtension -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserMailFolderMessageExtension -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -173,7 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 

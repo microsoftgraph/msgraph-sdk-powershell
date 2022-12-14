@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdeviceusagerights
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdeviceusagerights
 schema: 2.0.0
 ---
 
-# New-MgDeviceUsageRights
+# New-MgBetaDeviceUsageRights
 
 ## SYNOPSIS
 Create new navigation property to usageRights for devices
@@ -14,25 +14,25 @@ Create new navigation property to usageRights for devices
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceUsageRights -DeviceId <String> [-AdditionalProperties <Hashtable>] [-CatalogId <String>]
+New-MgBetaDeviceUsageRights -DeviceId <String> [-AdditionalProperties <Hashtable>] [-CatalogId <String>]
  [-Id <String>] [-ServiceIdentifier <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceUsageRights -DeviceId <String> -BodyParameter <IMicrosoftGraphUsageRight> [-Confirm] [-WhatIf]
+New-MgBetaDeviceUsageRights -DeviceId <String> -BodyParameter <IMicrosoftGraphUsageRight> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphUsageRight> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-Id <String>] [-ServiceIdentifier <String>]
  [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -64,7 +64,7 @@ usageRight
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -203,13 +203,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 
 ## NOTES
 

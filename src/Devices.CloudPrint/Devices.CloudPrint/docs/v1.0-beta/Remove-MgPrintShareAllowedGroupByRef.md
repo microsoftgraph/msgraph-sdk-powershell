@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/remove-mgprintshareallowedgroupbyref
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/remove-mgprintshareallowedgroupbyref
 schema: 2.0.0
 ---
 
-# Remove-MgPrintShareAllowedGroupByRef
+# Remove-MgBetaPrintShareAllowedGroupByRef
 
 ## SYNOPSIS
 Delete ref of navigation property allowedGroups for print
@@ -14,13 +14,13 @@ Delete ref of navigation property allowedGroups for print
 
 ### Delete1 (Default)
 ```
-Remove-MgPrintShareAllowedGroupByRef -GroupId <String> -PrinterShareId <String> [-Id <String>]
+Remove-MgBetaPrintShareAllowedGroupByRef -GroupId <String> -PrinterShareId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgPrintShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
+Remove-MgBetaPrintShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property allowedGroups for print
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPrintShareAllowedGroupByRef Cmdlet
+### Example 1: Using the Remove-MgBetaPrintShareAllowedGroupByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Remove-MgPrintShareAllowedGroupByRef -PrinterShareId $printerShareId -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Remove-MgBetaPrintShareAllowedGroupByRef -PrinterShareId $printerShareId -GroupId $groupId
 ```
 
-This example shows how to use the Remove-MgPrintShareAllowedGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaPrintShareAllowedGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 

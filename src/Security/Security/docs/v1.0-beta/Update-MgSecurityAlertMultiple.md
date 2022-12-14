@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityalertmultiple
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityalertmultiple
 schema: 2.0.0
 ---
 
-# Update-MgSecurityAlertMultiple
+# Update-MgBetaSecurityAlertMultiple
 
 ## SYNOPSIS
 Update multiple alerts in one request instead of multiple requests.
@@ -14,13 +14,13 @@ Update multiple alerts in one request instead of multiple requests.
 
 ### UpdateExpanded2 (Default)
 ```
-Update-MgSecurityAlertMultiple [-AdditionalProperties <Hashtable>] [-Value <IMicrosoftGraphAlert[]>]
+Update-MgBetaSecurityAlertMultiple [-AdditionalProperties <Hashtable>] [-Value <IMicrosoftGraphAlert[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update2
 ```
-Update-MgSecurityAlertMultiple
+Update-MgBetaSecurityAlertMultiple
  -BodyParameter <IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,9 +30,9 @@ Update multiple alerts in one request instead of multiple requests.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityAlertMultiple Cmdlet
+### Example 1: Using the Update-MgBetaSecurityAlertMultiple Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Value = @(
 		@{
@@ -42,11 +42,11 @@ $params = @{
 				"String"
 			)
 			Feedback = @{
-				"@odata.type" = "microsoft.graph.alertFeedback"
+				"@odata.type" = "Microsoft.Graph.Beta.alertFeedback"
 			}
 			Id = "String (identifier)"
 			Status = @{
-				"@odata.type" = "microsoft.graph.alertStatus"
+				"@odata.type" = "Microsoft.Graph.Beta.alertStatus"
 			}
 			Tags = @(
 				"String"
@@ -58,10 +58,10 @@ $params = @{
 		}
 	)
 }
-Update-MgSecurityAlertMultiple -BodyParameter $params
+Update-MgBetaSecurityAlertMultiple -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityAlertMultiple Cmdlet.
+This example shows how to use the Update-MgBetaSecurityAlertMultiple Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update2
 Aliases:
 
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for VALUE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlert[]
 Parameter Sets: UpdateExpanded2
 Aliases:
 
@@ -149,11 +149,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlert
 
 ## NOTES
 

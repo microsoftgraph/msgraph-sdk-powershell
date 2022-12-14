@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicydefaultappmanagementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicydefaultappmanagementpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyDefaultAppManagementPolicy
+# Remove-MgBetaPolicyDefaultAppManagementPolicy
 
 ## SYNOPSIS
 Delete navigation property defaultAppManagementPolicy for policies
@@ -13,7 +13,7 @@ Delete navigation property defaultAppManagementPolicy for policies
 ## SYNTAX
 
 ```
-Remove-MgPolicyDefaultAppManagementPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPolicyDefaultAppManagementPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

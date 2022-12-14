@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgonpremisepublishingprofileagentgroup
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgonpremisepublishingprofileagentgroup
 schema: 2.0.0
 ---
 
-# Remove-MgOnPremisePublishingProfileAgentGroup
+# Remove-MgBetaOnPremisePublishingProfileAgentGroup
 
 ## SYNOPSIS
 Delete navigation property agentGroups for onPremisesPublishingProfiles
@@ -14,14 +14,14 @@ Delete navigation property agentGroups for onPremisesPublishingProfiles
 
 ### Delete (Default)
 ```
-Remove-MgOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
+Remove-MgBetaOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity> [-IfMatch <String>]
+Remove-MgBetaOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Delete navigation property agentGroups for onPremisesPublishingProfiles
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgOnPremisePublishingProfileAgentGroup Cmdlet
+### Example 1: Using the Remove-MgBetaOnPremisePublishingProfileAgentGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgOnPremisePublishingProfileAgentGroup -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -OnPremisesAgentGroupId $onPremisesAgentGroupId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaOnPremisePublishingProfileAgentGroup -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -OnPremisesAgentGroupId $onPremisesAgentGroupId
 ```
 
-This example shows how to use the Remove-MgOnPremisePublishingProfileAgentGroup Cmdlet.
+This example shows how to use the Remove-MgBetaOnPremisePublishingProfileAgentGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

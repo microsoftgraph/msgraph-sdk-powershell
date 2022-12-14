@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuserassignment
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationuserassignment
 schema: 2.0.0
 ---
 
-# Get-MgEducationUserAssignment
+# Get-MgBetaEducationUserAssignment
 
 ## SYNOPSIS
 List of assignments for the user.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgEducationUserAssignment -EducationUserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEducationUserAssignment -EducationUserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEducationUserAssignment -EducationAssignmentId <String> -EducationUserId <String>
+Get-MgBetaEducationUserAssignment -EducationAssignmentId <String> -EducationUserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationUserAssignment -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationUserAssignment -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationUserAssignment Cmdlet
+### Example 1: Using the Get-MgBetaEducationUserAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationUserAssignment -EducationUserId $educationUserId -ExpandProperty "submissions" 
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationUserAssignment -EducationUserId $educationUserId -ExpandProperty "submissions" 
 ```
 
-This example shows how to use the Get-MgEducationUserAssignment Cmdlet.
+This example shows how to use the Get-MgBetaEducationUserAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEducationUserAssignment Cmdlet
+### Example 2: Using the Get-MgBetaEducationUserAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationUserAssignment -EducationUserId $educationUserId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationUserAssignment -EducationUserId $educationUserId
 ```
 
-This example shows how to use the Get-MgEducationUserAssignment Cmdlet.
+This example shows how to use the Get-MgBetaEducationUserAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -154,7 +154,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

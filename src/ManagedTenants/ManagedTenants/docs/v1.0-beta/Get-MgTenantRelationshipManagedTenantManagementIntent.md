@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanagementintent
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanagementintent
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantManagementIntent
+# Get-MgBetaTenantRelationshipManagedTenantManagementIntent
 
 ## SYNOPSIS
 The collection of baseline management intents across managed tenants.
@@ -14,20 +14,20 @@ The collection of baseline management intents across managed tenants.
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantManagementIntent [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTenantRelationshipManagedTenantManagementIntent [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantManagementIntent -ManagementIntentId <String>
+Get-MgBetaTenantRelationshipManagedTenantManagementIntent -ManagementIntentId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantManagementIntent -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantManagementIntent -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The collection of baseline management intents across managed tenants.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantManagementIntent Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantManagementIntent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagementIntent -ManagementIntentId $managementIntentId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagementIntent -ManagementIntentId $managementIntentId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementIntent Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagementIntent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantManagementIntent Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantManagementIntent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagementIntent
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagementIntent
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementIntent Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagementIntent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementIntent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementIntent
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgdatapolicyoperation
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgdatapolicyoperation
 schema: 2.0.0
 ---
 
-# Update-MgDataPolicyOperation
+# Update-MgBetaDataPolicyOperation
 
 ## SYNOPSIS
 Update entity in dataPolicyOperations
@@ -14,7 +14,7 @@ Update entity in dataPolicyOperations
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDataPolicyOperation -DataPolicyOperationId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDataPolicyOperation -DataPolicyOperationId <String> [-AdditionalProperties <Hashtable>]
  [-CompletedDateTime <DateTime>] [-Id <String>] [-Progress <Double>] [-Status <String>]
  [-StorageLocation <String>] [-SubmittedDateTime <DateTime>] [-UserId <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgDataPolicyOperation -DataPolicyOperationId <String> [-AdditionalPropert
 
 ### Update
 ```
-Update-MgDataPolicyOperation -DataPolicyOperationId <String>
+Update-MgBetaDataPolicyOperation -DataPolicyOperationId <String>
  -BodyParameter <IMicrosoftGraphDataPolicyOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDataPolicyOperation -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaDataPolicyOperation -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphDataPolicyOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDataPolicyOperation -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDataPolicyOperation -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-CompletedDateTime <DateTime>] [-Id <String>] [-Progress <Double>] [-Status <String>]
  [-StorageLocation <String>] [-SubmittedDateTime <DateTime>] [-UserId <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ dataPolicyOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -269,9 +269,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
 
 ## OUTPUTS
 

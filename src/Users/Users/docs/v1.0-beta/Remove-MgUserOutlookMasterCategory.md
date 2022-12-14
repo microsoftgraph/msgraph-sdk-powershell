@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mguseroutlookmastercategory
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/remove-mguseroutlookmastercategory
 schema: 2.0.0
 ---
 
-# Remove-MgUserOutlookMasterCategory
+# Remove-MgBetaUserOutlookMasterCategory
 
 ## SYNOPSIS
 Delete navigation property masterCategories for users
@@ -14,13 +14,13 @@ Delete navigation property masterCategories for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String> [-IfMatch <String>]
+Remove-MgBetaUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserOutlookMasterCategory -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property masterCategories for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserOutlookMasterCategory Cmdlet
+### Example 1: Using the Remove-MgBetaUserOutlookMasterCategory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Remove-MgUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
+Remove-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
 ```
 
-This example shows how to use the Remove-MgUserOutlookMasterCategory Cmdlet.
+This example shows how to use the Remove-MgBetaUserOutlookMasterCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

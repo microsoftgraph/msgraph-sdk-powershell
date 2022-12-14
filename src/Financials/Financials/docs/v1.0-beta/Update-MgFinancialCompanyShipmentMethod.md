@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyshipmentmethod
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanyshipmentmethod
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyShipmentMethod
+# Update-MgBetaFinancialCompanyShipmentMethod
 
 ## SYNOPSIS
 Update the navigation property shipmentMethods in financials
@@ -14,26 +14,26 @@ Update the navigation property shipmentMethods in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyShipmentMethod -CompanyId <String> -ShipmentMethodId <String>
+Update-MgBetaFinancialCompanyShipmentMethod -CompanyId <String> -ShipmentMethodId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgFinancialCompanyShipmentMethod -CompanyId <String> -ShipmentMethodId <String>
+Update-MgBetaFinancialCompanyShipmentMethod -CompanyId <String> -ShipmentMethodId <String>
  -BodyParameter <IMicrosoftGraphShipmentMethod> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphShipmentMethod> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyShipmentMethod -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ shipmentMethod
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShipmentMethod
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -234,9 +234,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShipmentMethod
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritysecurescore
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritysecurescore
 schema: 2.0.0
 ---
 
-# Get-MgSecuritySecureScore
+# Get-MgBetaSecuritySecureScore
 
 ## SYNOPSIS
 Measurements of tenants’ security posture to help protect them from threats.
@@ -14,20 +14,20 @@ Measurements of tenants’ security posture to help protect them from threats.
 
 ### List (Default)
 ```
-Get-MgSecuritySecureScore [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSecuritySecureScore [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecuritySecureScore -SecureScoreId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecuritySecureScore -SecureScoreId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecuritySecureScore -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecuritySecureScore -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Measurements of tenants’ security posture to help protect them from threats.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecuritySecureScore Cmdlet
+### Example 1: Using the Get-MgBetaSecuritySecureScore Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecuritySecureScore -Top 1 
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecuritySecureScore -Top 1 
 ```
 
-This example shows how to use the Get-MgSecuritySecureScore Cmdlet.
+This example shows how to use the Get-MgBetaSecuritySecureScore Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScore
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScore
 
 ## NOTES
 

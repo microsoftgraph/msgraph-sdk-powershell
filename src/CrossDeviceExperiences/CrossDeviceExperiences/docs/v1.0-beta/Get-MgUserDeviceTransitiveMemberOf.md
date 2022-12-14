@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/get-mguserdevicetransitivememberof
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/get-mguserdevicetransitivememberof
 schema: 2.0.0
 ---
 
-# Get-MgUserDeviceTransitiveMemberOf
+# Get-MgBetaUserDeviceTransitiveMemberOf
 
 ## SYNOPSIS
 Groups and administrative units that this device is a member of.
@@ -16,7 +16,7 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgUserDeviceTransitiveMemberOf -DeviceId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserDeviceTransitiveMemberOf -DeviceId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -24,13 +24,13 @@ Get-MgUserDeviceTransitiveMemberOf -DeviceId <String> -UserId <String> [-ExpandP
 
 ### Get
 ```
-Get-MgUserDeviceTransitiveMemberOf -DeviceId <String> -DirectoryObjectId <String> -UserId <String>
+Get-MgBetaUserDeviceTransitiveMemberOf -DeviceId <String> -DirectoryObjectId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserDeviceTransitiveMemberOf -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserDeviceTransitiveMemberOf -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -276,11 +276,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mguserauthenticationwindowhelloforbusinessmethoddeviceextension
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mguserauthenticationwindowhelloforbusinessmethoddeviceextension
 schema: 2.0.0
 ---
 
-# Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension
+# Update-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in users
@@ -14,27 +14,27 @@ Update the navigation property extensions in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -ExtensionId <String> -UserId <String>
+Update-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -ExtensionId <String> -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -ExtensionId <String> -UserId <String>
+Update-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -ExtensionId <String> -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -203,7 +203,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.Collections.Hashtable
 

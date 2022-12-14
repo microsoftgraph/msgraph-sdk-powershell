@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityconditionalaccessnamedlocation
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityconditionalaccessnamedlocation
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityConditionalAccessNamedLocation
+# Remove-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
 Delete navigation property namedLocations for identity
@@ -14,13 +14,13 @@ Delete navigation property namedLocations for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,9 +31,9 @@ Delete navigation property namedLocations for identity
 
 ### Example 1: Remove a named location
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
-Remove-MgIdentityConditionalAccessNamedLocation -NamedLocationId $namedLocationId
+Remove-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId $namedLocationId
 ```
 
 This example removed the named location specified by `$namedLocationId`.
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

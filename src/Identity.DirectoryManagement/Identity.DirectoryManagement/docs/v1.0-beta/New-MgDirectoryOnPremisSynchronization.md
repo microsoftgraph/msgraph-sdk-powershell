@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryonpremissynchronization
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectoryonpremissynchronization
 schema: 2.0.0
 ---
 
-# New-MgDirectoryOnPremisSynchronization
+# New-MgBetaDirectoryOnPremisSynchronization
 
 ## SYNOPSIS
 Create new navigation property to onPremisesSynchronization for directory
@@ -14,7 +14,7 @@ Create new navigation property to onPremisesSynchronization for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryOnPremisSynchronization [-AdditionalProperties <Hashtable>]
+New-MgBetaDirectoryOnPremisSynchronization [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]
  [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDirectoryOnPremisSynchronization [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDirectoryOnPremisSynchronization -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization>
+New-MgBetaDirectoryOnPremisSynchronization -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ onPremisesDirectorySynchronization
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
 Parameter Sets: Create
 Aliases:
 
@@ -69,7 +69,7 @@ onPremisesDirectorySynchronizationConfiguration
 To construct, please use Get-Help -Online and see NOTES section for CONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -85,7 +85,7 @@ onPremisesDirectorySynchronizationFeature
 To construct, please use Get-Help -Online and see NOTES section for FEATURES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationFeature
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationFeature
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -148,11 +148,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
 
 ## NOTES
 

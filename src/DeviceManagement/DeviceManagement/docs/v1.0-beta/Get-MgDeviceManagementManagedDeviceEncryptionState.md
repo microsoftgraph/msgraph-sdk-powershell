@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementmanageddeviceencryptionstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementmanageddeviceencryptionstate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementManagedDeviceEncryptionState
+# Get-MgBetaDeviceManagementManagedDeviceEncryptionState
 
 ## SYNOPSIS
 Encryption report for devices in this account
@@ -14,20 +14,20 @@ Encryption report for devices in this account
 
 ### List (Default)
 ```
-Get-MgDeviceManagementManagedDeviceEncryptionState [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementManagedDeviceEncryptionState [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementManagedDeviceEncryptionState -ManagedDeviceEncryptionStateId <String>
+Get-MgBetaDeviceManagementManagedDeviceEncryptionState -ManagedDeviceEncryptionStateId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementManagedDeviceEncryptionState -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementManagedDeviceEncryptionState -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
 
 ## NOTES
 

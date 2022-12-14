@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityapiconnector
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityapiconnector
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityApiConnector
+# Remove-MgBetaIdentityApiConnector
 
 ## SYNOPSIS
 Delete navigation property apiConnectors for identity
@@ -14,13 +14,13 @@ Delete navigation property apiConnectors for identity
 
 ### Delete1 (Default)
 ```
-Remove-MgIdentityApiConnector -IdentityApiConnectorId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaIdentityApiConnector -IdentityApiConnectorId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property apiConnectors for identity
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityApiConnector Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId
 ```
 
-This example shows how to use the Remove-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

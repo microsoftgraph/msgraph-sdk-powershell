@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/invoke-mgreauthorizesharelistsubscription
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/invoke-mgreauthorizesharelistsubscription
 schema: 2.0.0
 ---
 
-# Invoke-MgReauthorizeShareListSubscription
+# Invoke-MgBetaReauthorizeShareListSubscription
 
 ## SYNOPSIS
 Invoke action reauthorize
@@ -14,13 +14,13 @@ Invoke action reauthorize
 
 ### Reauthorize1 (Default)
 ```
-Invoke-MgReauthorizeShareListSubscription -SharedDriveItemId <String> -SubscriptionId <String> [-PassThru]
+Invoke-MgBetaReauthorizeShareListSubscription -SharedDriveItemId <String> -SubscriptionId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReauthorizeViaIdentity1
 ```
-Invoke-MgReauthorizeShareListSubscription -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaReauthorizeShareListSubscription -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: ReauthorizeViaIdentity1
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

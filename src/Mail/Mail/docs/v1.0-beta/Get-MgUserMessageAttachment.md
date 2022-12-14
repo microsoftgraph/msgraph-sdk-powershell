@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermessageattachment
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mgusermessageattachment
 schema: 2.0.0
 ---
 
-# Get-MgUserMessageAttachment
+# Get-MgBetaUserMessageAttachment
 
 ## SYNOPSIS
 The fileAttachment and itemAttachment attachments for the message.
@@ -14,20 +14,20 @@ The fileAttachment and itemAttachment attachments for the message.
 
 ### List (Default)
 ```
-Get-MgUserMessageAttachment -MessageId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserMessageAttachment -MessageId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserMessageAttachment -AttachmentId <String> -MessageId <String> -UserId <String>
+Get-MgBetaUserMessageAttachment -AttachmentId <String> -MessageId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserMessageAttachment -InputObject <IMailIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserMessageAttachment -InputObject <IMailIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,34 +36,34 @@ The fileAttachment and itemAttachment attachments for the message.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserMessageAttachment Cmdlet
+### Example 1: Using the Get-MgBetaUserMessageAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId
+Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId
 ```
 
-This example shows how to use the Get-MgUserMessageAttachment Cmdlet.
+This example shows how to use the Get-MgBetaUserMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserMessageAttachment Cmdlet
+### Example 2: Using the Get-MgBetaUserMessageAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
+Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
 ```
 
-This example shows how to use the Get-MgUserMessageAttachment Cmdlet.
+This example shows how to use the Get-MgBetaUserMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgUserMessageAttachment Cmdlet
+### Example 3: Using the Get-MgBetaUserMessageAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId
+Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId
 ```
 
-This example shows how to use the Get-MgUserMessageAttachment Cmdlet.
+This example shows how to use the Get-MgBetaUserMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

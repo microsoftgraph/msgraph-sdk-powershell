@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantcloudpcoverview
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantcloudpcoverview
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantCloudPcOverview
+# New-MgBetaTenantRelationshipManagedTenantCloudPcOverview
 
 ## SYNOPSIS
 Create new navigation property to cloudPcsOverview for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to cloudPcsOverview for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantCloudPcOverview [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaTenantRelationshipManagedTenantCloudPcOverview [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-NumberOfCloudPcConnectionStatusFailed <Int32>]
  [-NumberOfCloudPcConnectionStatusPassed <Int32>] [-NumberOfCloudPcConnectionStatusPending <Int32>]
  [-NumberOfCloudPcConnectionStatusRunning <Int32>] [-NumberOfCloudPcConnectionStatusUnkownFutureValue <Int32>]
@@ -29,7 +29,7 @@ New-MgTenantRelationshipManagedTenantCloudPcOverview [-AdditionalProperties <Has
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantCloudPcOverview
+New-MgBetaTenantRelationshipManagedTenantCloudPcOverview
  -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -60,7 +60,7 @@ cloudPcOverview
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
 Parameter Sets: Create
 Aliases:
 
@@ -461,11 +461,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
 
 ## NOTES
 

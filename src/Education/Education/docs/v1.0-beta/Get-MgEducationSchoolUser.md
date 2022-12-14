@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationschooluser
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationschooluser
 schema: 2.0.0
 ---
 
-# Get-MgEducationSchoolUser
+# Get-MgBetaEducationSchoolUser
 
 ## SYNOPSIS
 Retrieve a list of users at a school.
@@ -13,7 +13,7 @@ Retrieve a list of users at a school.
 ## SYNTAX
 
 ```
-Get-MgEducationSchoolUser -EducationSchoolId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEducationSchoolUser -EducationSchoolId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,13 +23,13 @@ Retrieve a list of users at a school.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationSchoolUser Cmdlet
+### Example 1: Using the Get-MgBetaEducationSchoolUser Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationSchoolUser -EducationSchoolId $educationSchoolId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationSchoolUser -EducationSchoolId $educationSchoolId
 ```
 
-This example shows how to use the Get-MgEducationSchoolUser Cmdlet.
+This example shows how to use the Get-MgBetaEducationSchoolUser Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -207,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationUser
 
 ## NOTES
 

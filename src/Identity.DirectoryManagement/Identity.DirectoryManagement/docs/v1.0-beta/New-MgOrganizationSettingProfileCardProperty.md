@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgorganizationsettingprofilecardproperty
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgorganizationsettingprofilecardproperty
 schema: 2.0.0
 ---
 
-# New-MgOrganizationSettingProfileCardProperty
+# New-MgBetaOrganizationSettingProfileCardProperty
 
 ## SYNOPSIS
 Create a new profileCardProperty for an organization.
@@ -16,26 +16,26 @@ For more information on adding properties to the profile card for an organizatio
 
 ### CreateExpanded (Default)
 ```
-New-MgOrganizationSettingProfileCardProperty -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaOrganizationSettingProfileCardProperty -OrganizationId <String> [-AdditionalProperties <Hashtable>]
  [-Annotations <IMicrosoftGraphProfileCardAnnotation[]>] [-DirectoryPropertyName <String>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOrganizationSettingProfileCardProperty -OrganizationId <String>
+New-MgBetaOrganizationSettingProfileCardProperty -OrganizationId <String>
  -BodyParameter <IMicrosoftGraphProfileCardProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphProfileCardProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Annotations <IMicrosoftGraphProfileCardAnnotation[]>]
  [-DirectoryPropertyName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,9 +47,9 @@ For more information on adding properties to the profile card for an organizatio
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgOrganizationSettingProfileCardProperty Cmdlet
+### Example 1: Using the New-MgBetaOrganizationSettingProfileCardProperty Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	DirectoryPropertyName = "CustomAttribute1"
 	Annotations = @(
@@ -64,10 +64,10 @@ $params = @{
 		}
 	)
 }
-New-MgOrganizationSettingProfileCardProperty -OrganizationId $organizationId -BodyParameter $params
+New-MgBetaOrganizationSettingProfileCardProperty -OrganizationId $organizationId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgOrganizationSettingProfileCardProperty Cmdlet.
+This example shows how to use the New-MgBetaOrganizationSettingProfileCardProperty Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -92,7 +92,7 @@ Allows an administrator to set a custom display label for the directory property
 To construct, please use Get-Help -Online and see NOTES section for ANNOTATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfileCardAnnotation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfileCardAnnotation[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -108,7 +108,7 @@ profileCardProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfileCardProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfileCardProperty
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -220,13 +220,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfileCardProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfileCardProperty
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfileCardProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfileCardProperty
 
 ## NOTES
 

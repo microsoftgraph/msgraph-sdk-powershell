@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/sync-mgdeviceappmgtvpptokenlicensecount
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/sync-mgdeviceappmgtvpptokenlicensecount
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceAppMgtVppTokenLicenseCount
+# Sync-MgBetaDeviceAppMgtVppTokenLicenseCount
 
 ## SYNOPSIS
 Invoke action syncLicenseCounts
@@ -13,7 +13,7 @@ Invoke action syncLicenseCounts
 ## SYNTAX
 
 ```
-Sync-MgDeviceAppMgtVppTokenLicenseCount [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Sync-MgBetaDeviceAppMgtVppTokenLicenseCount [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -82,7 +82,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Sync-MgDeviceAppManagementVppTokenLicenseCount
+### Sync-MgBetaDeviceAppManagementVppTokenLicenseCount
 
 ## RELATED LINKS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusercloudpcsupportedcloudpcremoteaction
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mgusercloudpcsupportedcloudpcremoteaction
 schema: 2.0.0
 ---
 
-# Get-MgUserCloudPcSupportedCloudPcRemoteAction
+# Get-MgBetaUserCloudPcSupportedCloudPcRemoteAction
 
 ## SYNOPSIS
 Invoke function getSupportedCloudPcRemoteActions
@@ -14,13 +14,13 @@ Invoke function getSupportedCloudPcRemoteActions
 
 ### Get (Default)
 ```
-Get-MgUserCloudPcSupportedCloudPcRemoteAction -CloudPcId <String> -UserId <String> [-Count] [-Filter <String>]
+Get-MgBetaUserCloudPcSupportedCloudPcRemoteAction -CloudPcId <String> -UserId <String> [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserCloudPcSupportedCloudPcRemoteAction -InputObject <IUsersFunctionsIdentity> [-Count]
+Get-MgBetaUserCloudPcSupportedCloudPcRemoteAction -InputObject <IUsersFunctionsIdentity> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -157,11 +157,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcRemoteActionCapability
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcRemoteActionCapability
 
 ## NOTES
 

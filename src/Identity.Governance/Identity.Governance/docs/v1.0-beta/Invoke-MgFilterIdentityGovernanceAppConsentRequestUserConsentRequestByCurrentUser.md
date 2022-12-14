@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgfilteridentitygovernanceappconsentrequestuserconsentrequestbycurrentuser
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgfilteridentitygovernanceappconsentrequestuserconsentrequestbycurrentuser
 schema: 2.0.0
 ---
 
-# Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser
+# Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser
 
 ## SYNOPSIS
 Invoke function filterByCurrentUser
@@ -14,14 +14,14 @@ Invoke function filterByCurrentUser
 
 ### Filter (Default)
 ```
-Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser
+Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser
  -AppConsentRequestId <String> -On <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FilterViaIdentity
 ```
-Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser
+Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser
  -InputObject <IIdentityGovernanceIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: FilterViaIdentity
 Aliases:
 
@@ -189,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserConsentRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserConsentRequest1
 
 ## NOTES
 

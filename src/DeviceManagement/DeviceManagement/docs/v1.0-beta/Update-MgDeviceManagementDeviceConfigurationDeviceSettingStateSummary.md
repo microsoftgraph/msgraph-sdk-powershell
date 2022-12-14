@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdeviceconfigurationdevicesettingstatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdeviceconfigurationdevicesettingstatesummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary
+# Update-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary
 
 ## SYNOPSIS
 Update the navigation property deviceSettingStateSummaries in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceSettingStateSummaries in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfigurationId <String>
+Update-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfigurationId <String>
  -SettingStateDeviceSummaryId <String> [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>]
  [-ConflictDeviceCount <Int32>] [-ErrorDeviceCount <Int32>] [-Id <String>] [-InstancePath <String>]
  [-NonCompliantDeviceCount <Int32>] [-NotApplicableDeviceCount <Int32>] [-RemediatedDeviceCount <Int32>]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceCon
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfigurationId <String>
+Update-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfigurationId <String>
  -SettingStateDeviceSummaryId <String> -BodyParameter <IMicrosoftGraphSettingStateDeviceSummary> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphSettingStateDeviceSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>] [-ConflictDeviceCount <Int32>]
  [-ErrorDeviceCount <Int32>] [-Id <String>] [-InstancePath <String>] [-NonCompliantDeviceCount <Int32>]
  [-NotApplicableDeviceCount <Int32>] [-RemediatedDeviceCount <Int32>] [-SettingName <String>]
@@ -71,7 +71,7 @@ Device Compilance Policy and Configuration for a Setting State summary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -330,9 +330,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
 
 ## OUTPUTS
 

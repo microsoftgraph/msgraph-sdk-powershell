@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/reset-mgaccessreviewinstancedecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/reset-mgaccessreviewinstancedecision
 schema: 2.0.0
 ---
 
-# Reset-MgAccessReviewInstanceDecision
+# Reset-MgBetaAccessReviewInstanceDecision
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
@@ -16,13 +16,13 @@ Previous decisions are no longer recorded, but reviewers can continue to update 
 
 ### Reset (Default)
 ```
-Reset-MgAccessReviewInstanceDecision -AccessReviewId <String> -AccessReviewId1 <String> [-PassThru] [-Confirm]
+Reset-MgBetaAccessReviewInstanceDecision -AccessReviewId <String> -AccessReviewId1 <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm]
+Reset-MgBetaAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -70,7 +70,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernanceaccessreviewdecisioninstancecontactedreviewer
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernanceaccessreviewdecisioninstancecontactedreviewer
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
+# New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
 
 ## SYNOPSIS
 Create new navigation property to contactedReviewers for identityGovernance
@@ -14,7 +14,7 @@ Create new navigation property to contactedReviewers for identityGovernance
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
+New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
  -AccessReviewInstanceDecisionItemId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-UserPrincipalName <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ New-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
 
 ### Create
 ```
-New-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
+New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
  -AccessReviewInstanceDecisionItemId <String> -BodyParameter <IMicrosoftGraphAccessReviewReviewer> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
+New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
  -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphAccessReviewReviewer> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
+New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -84,7 +84,7 @@ accessReviewReviewer
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -208,13 +208,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 
 ## NOTES
 

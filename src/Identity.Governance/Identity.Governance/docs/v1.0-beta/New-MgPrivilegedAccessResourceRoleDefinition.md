@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedaccessresourceroledefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedaccessresourceroledefinition
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedAccessResourceRoleDefinition
+# New-MgBetaPrivilegedAccessResourceRoleDefinition
 
 ## SYNOPSIS
 Create new navigation property to roleDefinitions for privilegedAccess
@@ -14,7 +14,7 @@ Create new navigation property to roleDefinitions for privilegedAccess
 
 ### CreateExpanded (Default)
 ```
-New-MgPrivilegedAccessResourceRoleDefinition -GovernanceResourceId <String> -PrivilegedAccessId <String>
+New-MgBetaPrivilegedAccessResourceRoleDefinition -GovernanceResourceId <String> -PrivilegedAccessId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ExternalId <String>] [-Id <String>]
  [-Resource <IMicrosoftGraphGovernanceResource>] [-ResourceId <String>]
  [-RoleSetting <IMicrosoftGraphGovernanceRoleSetting>] [-TemplateId <String>] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ New-MgPrivilegedAccessResourceRoleDefinition -GovernanceResourceId <String> -Pri
 
 ### Create
 ```
-New-MgPrivilegedAccessResourceRoleDefinition -GovernanceResourceId <String> -PrivilegedAccessId <String>
+New-MgBetaPrivilegedAccessResourceRoleDefinition -GovernanceResourceId <String> -PrivilegedAccessId <String>
  -BodyParameter <IMicrosoftGraphGovernanceRoleDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPrivilegedAccessResourceRoleDefinition -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedAccessResourceRoleDefinition -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphGovernanceRoleDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPrivilegedAccessResourceRoleDefinition -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaPrivilegedAccessResourceRoleDefinition -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ExternalId <String>] [-Id <String>]
  [-Resource <IMicrosoftGraphGovernanceResource>] [-ResourceId <String>]
  [-RoleSetting <IMicrosoftGraphGovernanceRoleSetting>] [-TemplateId <String>] [-Confirm] [-WhatIf]
@@ -69,7 +69,7 @@ governanceRoleDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ governanceResource
 To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -209,7 +209,7 @@ governanceRoleSetting
 To construct, please use Get-Help -Online and see NOTES section for ROLESETTING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -271,13 +271,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
 
 ## NOTES
 

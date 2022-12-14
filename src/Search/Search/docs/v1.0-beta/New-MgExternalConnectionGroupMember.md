@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/new-mgexternalconnectiongroupmember
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/new-mgexternalconnectiongroupmember
 schema: 2.0.0
 ---
 
-# New-MgExternalConnectionGroupMember
+# New-MgBetaExternalConnectionGroupMember
 
 ## SYNOPSIS
 Create a new externalGroupMember object.
@@ -14,25 +14,25 @@ Create a new externalGroupMember object.
 
 ### CreateExpanded (Default)
 ```
-New-MgExternalConnectionGroupMember -ExternalConnectionId <String> -ExternalGroupId <String>
+New-MgBetaExternalConnectionGroupMember -ExternalConnectionId <String> -ExternalGroupId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgExternalConnectionGroupMember -ExternalConnectionId <String> -ExternalGroupId <String>
+New-MgBetaExternalConnectionGroupMember -ExternalConnectionId <String> -ExternalGroupId <String>
  -BodyParameter <IMicrosoftGraphExternalConnectorsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgExternalConnectionGroupMember -InputObject <ISearchIdentity>
+New-MgBetaExternalConnectionGroupMember -InputObject <ISearchIdentity>
  -BodyParameter <IMicrosoftGraphExternalConnectorsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgExternalConnectionGroupMember -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaExternalConnectionGroupMember -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,43 +41,43 @@ Create a new externalGroupMember object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgExternalConnectionGroupMember Cmdlet
+### Example 1: Using the New-MgBetaExternalConnectionGroupMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	Id = "e811976d-83df-4cbd-8b9b-5215b18aa874"
 	Type = "user"
 }
-New-MgExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
+New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgExternalConnectionGroupMember Cmdlet.
+This example shows how to use the New-MgBetaExternalConnectionGroupMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgExternalConnectionGroupMember Cmdlet
+### Example 2: Using the New-MgBetaExternalConnectionGroupMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	Id = "e5477431-1038-484e-bf69-1dfedb97a110"
 	Type = "externalGroup"
 }
-New-MgExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
+New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgExternalConnectionGroupMember Cmdlet.
+This example shows how to use the New-MgBetaExternalConnectionGroupMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgExternalConnectionGroupMember Cmdlet
+### Example 3: Using the New-MgBetaExternalConnectionGroupMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	Id = "1431b9c38ee647f6a"
 	Type = "externalGroup"
 }
-New-MgExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
+New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgExternalConnectionGroupMember Cmdlet.
+This example shows how to use the New-MgBetaExternalConnectionGroupMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -102,7 +102,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -164,7 +164,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -226,13 +226,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationonlinemeetingattendancereport
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/update-mgcommunicationonlinemeetingattendancereport
 schema: 2.0.0
 ---
 
-# Update-MgCommunicationOnlineMeetingAttendanceReport
+# Update-MgBetaCommunicationOnlineMeetingAttendanceReport
 
 ## SYNOPSIS
 Update the navigation property attendanceReports in communications
@@ -14,7 +14,7 @@ Update the navigation property attendanceReports in communications
 
 ### UpdateExpanded2 (Default)
 ```
-Update-MgCommunicationOnlineMeetingAttendanceReport -OnlineMeetingId <String>
+Update-MgBetaCommunicationOnlineMeetingAttendanceReport -OnlineMeetingId <String>
  [-AdditionalProperties <Hashtable>] [-AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>] [-Id <String>]
  [-MeetingEndDateTime <DateTime>] [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgCommunicationOnlineMeetingAttendanceReport -OnlineMeetingId <String>
 
 ### Update1
 ```
-Update-MgCommunicationOnlineMeetingAttendanceReport -MeetingAttendanceReportId <String>
+Update-MgBetaCommunicationOnlineMeetingAttendanceReport -MeetingAttendanceReportId <String>
  -OnlineMeetingId <String> -BodyParameter <IMicrosoftGraphMeetingAttendanceReport1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update2
 ```
-Update-MgCommunicationOnlineMeetingAttendanceReport -OnlineMeetingId <String>
+Update-MgBetaCommunicationOnlineMeetingAttendanceReport -OnlineMeetingId <String>
  -BodyParameter <IMicrosoftGraphMeetingAttendanceReport1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgCommunicationOnlineMeetingAttendanceReport -MeetingAttendanceReportId <String>
+Update-MgBetaCommunicationOnlineMeetingAttendanceReport -MeetingAttendanceReportId <String>
  -OnlineMeetingId <String> [-AdditionalProperties <Hashtable>]
  [-AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>] [-Id <String>] [-MeetingEndDateTime <DateTime>]
  [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>] [-PassThru] [-Confirm] [-WhatIf]
@@ -45,21 +45,21 @@ Update-MgCommunicationOnlineMeetingAttendanceReport -MeetingAttendanceReportId <
 
 ### UpdateViaIdentity1
 ```
-Update-MgCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphMeetingAttendanceReport1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity2
 ```
-Update-MgCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphMeetingAttendanceReport1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>] [-Id <String>]
  [-MeetingEndDateTime <DateTime>] [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ Update-MgCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunic
 
 ### UpdateViaIdentityExpanded2
 ```
-Update-MgCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
+Update-MgBetaCommunicationOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>] [-Id <String>]
  [-MeetingEndDateTime <DateTime>] [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -101,7 +101,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for ATTENDANCERECORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendanceRecord1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendanceRecord1[]
 Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
@@ -117,7 +117,7 @@ meetingAttendanceReport
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
 Parameter Sets: Update1, Update2, UpdateViaIdentity1, UpdateViaIdentity2
 Aliases:
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentity2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
@@ -289,9 +289,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
 
 ## OUTPUTS
 

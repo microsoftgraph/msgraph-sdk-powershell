@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserinformationprotectionthreatassessmentrequestresult
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserinformationprotectionthreatassessmentrequestresult
 schema: 2.0.0
 ---
 
-# Get-MgUserInformationProtectionThreatAssessmentRequestResult
+# Get-MgBetaUserInformationProtectionThreatAssessmentRequestResult
 
 ## SYNOPSIS
 A collection of threat assessment results.
@@ -16,7 +16,7 @@ By default, a GET /threatAssessmentRequests/{id} does not return this property u
 
 ### List (Default)
 ```
-Get-MgUserInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRequestId <String>
+Get-MgBetaUserInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRequestId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -24,14 +24,14 @@ Get-MgUserInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRe
 
 ### Get
 ```
-Get-MgUserInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRequestId <String>
+Get-MgBetaUserInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRequestId <String>
  -ThreatAssessmentResultId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserInformationProtectionThreatAssessmentRequestResult -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserInformationProtectionThreatAssessmentRequestResult -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentResult
 
 ## NOTES
 

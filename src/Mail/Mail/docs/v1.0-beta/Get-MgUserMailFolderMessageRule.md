@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermailfoldermessagerule
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mgusermailfoldermessagerule
 schema: 2.0.0
 ---
 
-# Get-MgUserMailFolderMessageRule
+# Get-MgBetaUserMailFolderMessageRule
 
 ## SYNOPSIS
 The collection of rules that apply to the user's Inbox folder.
@@ -14,20 +14,20 @@ The collection of rules that apply to the user's Inbox folder.
 
 ### List1 (Default)
 ```
-Get-MgUserMailFolderMessageRule -MailFolderId <String> -UserId <String> [-Filter <String>]
+Get-MgBetaUserMailFolderMessageRule -MailFolderId <String> -UserId <String> [-Filter <String>]
  [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserMailFolderMessageRule -MailFolderId <String> -MessageRuleId <String> -UserId <String>
+Get-MgBetaUserMailFolderMessageRule -MailFolderId <String> -MessageRuleId <String> -UserId <String>
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserMailFolderMessageRule -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserMailFolderMessageRule -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,24 +35,24 @@ The collection of rules that apply to the user's Inbox folder.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserMailFolderMessageRule Cmdlet
+### Example 1: Using the Get-MgBetaUserMailFolderMessageRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId
+Get-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId
 ```
 
-This example shows how to use the Get-MgUserMailFolderMessageRule Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolderMessageRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserMailFolderMessageRule Cmdlet
+### Example 2: Using the Get-MgBetaUserMailFolderMessageRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId
+Get-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId
 ```
 
-This example shows how to use the Get-MgUserMailFolderMessageRule Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolderMessageRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -244,11 +244,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRule
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessageRule
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/disconnect-mgdevicemanagementchromeosonboardingsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/disconnect-mgdevicemanagementchromeosonboardingsetting
 schema: 2.0.0
 ---
 
-# Disconnect-MgDeviceManagementChromeOSOnboardingSetting
+# Disconnect-MgBetaDeviceManagementChromeOSOnboardingSetting
 
 ## SYNOPSIS
 Invoke action disconnect
@@ -13,7 +13,7 @@ Invoke action disconnect
 ## SYNTAX
 
 ```
-Disconnect-MgDeviceManagementChromeOSOnboardingSetting [-Confirm] [-WhatIf] [<CommonParameters>]
+Disconnect-MgBetaDeviceManagementChromeOSOnboardingSetting [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Support.ChromeOSOnboardingStatus
+### Microsoft.Graph.Beta.PowerShell.Support.ChromeOSOnboardingStatus
 
 ## NOTES
 

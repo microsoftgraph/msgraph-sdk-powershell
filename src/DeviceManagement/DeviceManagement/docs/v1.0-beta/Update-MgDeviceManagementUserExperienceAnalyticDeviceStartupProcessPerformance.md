@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticdevicestartupprocessperformance
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticdevicestartupprocessperformance
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
+# Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsDeviceStartupProcessPerformance in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsDeviceStartupProcessPerfor
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
  -UserExperienceAnalyticsDeviceStartupProcessPerformanceId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceCount <Int64>] [-Id <String>] [-MedianImpactInMS <Int32>] [-MedianImpactInMs2 <Int64>]
  [-ProcessName <String>] [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int32>]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
  -UserExperienceAnalyticsDeviceStartupProcessPerformanceId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -31,7 +31,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -39,7 +39,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceCount <Int64>]
  [-Id <String>] [-MedianImpactInMS <Int32>] [-MedianImpactInMs2 <Int64>] [-ProcessName <String>]
  [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int32>] [-TotalImpactInMs2 <Int64>]
@@ -73,7 +73,7 @@ The user experience analytics device startup process performance.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -120,7 +120,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -302,9 +302,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance
 
 ## OUTPUTS
 

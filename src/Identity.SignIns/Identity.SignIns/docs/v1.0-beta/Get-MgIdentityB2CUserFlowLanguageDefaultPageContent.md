@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2cuserflowlanguagedefaultpagecontent
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2cuserflowlanguagedefaultpagecontent
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2CUserFlowLanguageDefaultPageContent
+# Get-MgBetaIdentityB2CUserFlowLanguageDefaultPageContent
 
 ## SYNOPSIS
 Get media content for the navigation property defaultPages from identity
@@ -14,14 +14,14 @@ Get media content for the navigation property defaultPages from identity
 
 ### Get (Default)
 ```
-Get-MgIdentityB2CUserFlowLanguageDefaultPageContent -B2CIdentityUserFlowId <String>
+Get-MgBetaIdentityB2CUserFlowLanguageDefaultPageContent -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityB2CUserFlowLanguageDefaultPageContent -InputObject <IIdentitySignInsIdentity> -OutFile <String>
+Get-MgBetaIdentityB2CUserFlowLanguageDefaultPageContent -InputObject <IIdentitySignInsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Get media content for the navigation property defaultPages from identity
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityB2CUserFlowLanguageDefaultPageContent Cmdlet
+### Example 1: Using the Get-MgBetaIdentityB2CUserFlowLanguageDefaultPageContent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlowLanguageDefaultPageContent -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId -UserFlowLanguagePageId $userFlowLanguagePageId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlowLanguageDefaultPageContent -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId -UserFlowLanguagePageId $userFlowLanguagePageId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlowLanguageDefaultPageContent Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlowLanguageDefaultPageContent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

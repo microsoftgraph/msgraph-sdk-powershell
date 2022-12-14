@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityattacksimulation
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityattacksimulation
 schema: 2.0.0
 ---
 
-# New-MgSecurityAttackSimulation
+# New-MgBetaSecurityAttackSimulation
 
 ## SYNOPSIS
 Create new navigation property to simulations for security
@@ -14,7 +14,7 @@ Create new navigation property to simulations for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityAttackSimulation [-AdditionalProperties <Hashtable>] [-AttackTechnique <String>]
+New-MgBetaSecurityAttackSimulation [-AdditionalProperties <Hashtable>] [-AttackTechnique <String>]
  [-AttackType <String>] [-AutomationId <String>] [-CompletionDateTime <DateTime>]
  [-CreatedBy <IMicrosoftGraphEmailIdentity>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsAutomated] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
@@ -24,7 +24,7 @@ New-MgSecurityAttackSimulation [-AdditionalProperties <Hashtable>] [-AttackTechn
 
 ### Create
 ```
-New-MgSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-Confirm] [-WhatIf]
+New-MgBetaSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -100,7 +100,7 @@ simulation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulation
 Parameter Sets: Create
 Aliases:
 
@@ -132,7 +132,7 @@ emailIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailIdentity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ emailIdentity
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailIdentity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -288,7 +288,7 @@ simulationReport
 To construct, please use Get-Help -Online and see NOTES section for REPORT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationReport
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulationReport
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -350,11 +350,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulation
 
 ## NOTES
 

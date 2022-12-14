@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityincident
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityincident
 schema: 2.0.0
 ---
 
-# Update-MgSecurityIncident
+# Update-MgBetaSecurityIncident
 
 ## SYNOPSIS
 Update the navigation property incidents in security
@@ -14,7 +14,7 @@ Update the navigation property incidents in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityIncident -IncidentId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityIncident -IncidentId <String> [-AdditionalProperties <Hashtable>]
  [-Alerts <IMicrosoftGraphSecurityAlert[]>] [-AssignedTo <String>] [-Classification <String>]
  [-Comments <IMicrosoftGraphSecurityAlertComment[]>] [-CreatedDateTime <DateTime>] [-Determination <String>]
  [-DisplayName <String>] [-Id <String>] [-IncidentWebUrl <String>] [-LastUpdateDateTime <DateTime>]
@@ -24,19 +24,19 @@ Update-MgSecurityIncident -IncidentId <String> [-AdditionalProperties <Hashtable
 
 ### Update
 ```
-Update-MgSecurityIncident -IncidentId <String> -BodyParameter <IMicrosoftGraphSecurityIncident> [-PassThru]
+Update-MgBetaSecurityIncident -IncidentId <String> -BodyParameter <IMicrosoftGraphSecurityIncident> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityIncident -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphSecurityIncident>
+Update-MgBetaSecurityIncident -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphSecurityIncident>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityIncident -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityIncident -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
  [-Alerts <IMicrosoftGraphSecurityAlert[]>] [-AssignedTo <String>] [-Classification <String>]
  [-Comments <IMicrosoftGraphSecurityAlertComment[]>] [-CreatedDateTime <DateTime>] [-Determination <String>]
  [-DisplayName <String>] [-Id <String>] [-IncidentWebUrl <String>] [-LastUpdateDateTime <DateTime>]
@@ -49,9 +49,9 @@ Update the navigation property incidents in security
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityIncident Cmdlet
+### Example 1: Using the Update-MgBetaSecurityIncident Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Classification = "TruePositive"
 	Determination = "MultiStagedAttack"
@@ -59,10 +59,10 @@ $params = @{
 		"Demo"
 	)
 }
-Update-MgSecurityIncident -IncidentId $incidentId -BodyParameter $params
+Update-MgBetaSecurityIncident -IncidentId $incidentId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityIncident Cmdlet.
+This example shows how to use the Update-MgBetaSecurityIncident Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -88,7 +88,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for ALERTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAlert[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAlert[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -120,7 +120,7 @@ incident
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityIncident
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -151,7 +151,7 @@ Array of comments created by the Security Operations (SecOps) team when the inci
 To construct, please use Get-Help -Online and see NOTES section for COMMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAlertComment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAlertComment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -258,7 +258,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -411,9 +411,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityIncident
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

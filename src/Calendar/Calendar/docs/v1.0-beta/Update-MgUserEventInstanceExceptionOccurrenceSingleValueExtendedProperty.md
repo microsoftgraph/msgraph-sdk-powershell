@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/update-mgusereventinstanceexceptionoccurrencesinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/update-mgusereventinstanceexceptionoccurrencesinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty
+# Update-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty
 
 ## SYNOPSIS
 Update the navigation property singleValueExtendedProperties in users
@@ -14,7 +14,7 @@ Update the navigation property singleValueExtendedProperties in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
+Update-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
  -EventId2 <String> -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -EventI
 
 ### Update
 ```
-Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
+Update-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
  -EventId2 <String> -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,14 +30,14 @@ Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -EventI
 
 ### UpdateViaIdentity
 ```
-Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+Update-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+Update-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ singleValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,9 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## OUTPUTS
 

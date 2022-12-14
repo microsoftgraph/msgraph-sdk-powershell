@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mggroupeventattachment
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mggroupeventattachment
 schema: 2.0.0
 ---
 
-# Remove-MgGroupEventAttachment
+# Remove-MgBetaGroupEventAttachment
 
 ## SYNOPSIS
 Delete navigation property attachments for groups
@@ -14,13 +14,13 @@ Delete navigation property attachments for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupEventAttachment -AttachmentId <String> -EventId <String> -GroupId <String> [-IfMatch <String>]
+Remove-MgBetaGroupEventAttachment -AttachmentId <String> -EventId <String> -GroupId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupEventAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaGroupEventAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

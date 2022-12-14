@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/new-mgwindowsupdatesupdatableasset
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/new-mgwindowsupdatesupdatableasset
 schema: 2.0.0
 ---
 
-# New-MgWindowsUpdatesUpdatableAsset
+# New-MgBetaWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
 Create a new updatableAssetGroup object.
@@ -15,13 +15,13 @@ The **updatableAssetGroup** resource inherits from updatableAsset.
 
 ### CreateExpanded (Default)
 ```
-New-MgWindowsUpdatesUpdatableAsset [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
+New-MgBetaWindowsUpdatesUpdatableAsset [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgWindowsUpdatesUpdatableAsset -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaWindowsUpdatesUpdatableAsset -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,16 +30,16 @@ The **updatableAssetGroup** resource inherits from updatableAsset.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgWindowsUpdatesUpdatableAsset Cmdlet
+### Example 1: Using the New-MgBetaWindowsUpdatesUpdatableAsset Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
-	"@odata.type" = "#microsoft.graph.windowsUpdates.updatableAssetGroup"
+	"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.updatableAssetGroup"
 }
-New-MgWindowsUpdatesUpdatableAsset -BodyParameter $params
+New-MgBetaWindowsUpdatesUpdatableAsset -BodyParameter $params
 ```
 
-This example shows how to use the New-MgWindowsUpdatesUpdatableAsset Cmdlet.
+This example shows how to use the New-MgBetaWindowsUpdatesUpdatableAsset Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -136,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### New-MgWuUpdatableAsset
+### New-MgBetaWuUpdatableAsset
 
 ## RELATED LINKS
 

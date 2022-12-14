@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageresourcerequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageresourcerequest
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageResourceRequest
+# Get-MgBetaEntitlementManagementAccessPackageResourceRequest
 
 ## SYNOPSIS
 Represents a request to add or remove a resource to or from a catalog respectively.
@@ -14,20 +14,20 @@ Represents a request to add or remove a resource to or from a catalog respective
 
 ### List (Default)
 ```
-Get-MgEntitlementManagementAccessPackageResourceRequest [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementAccessPackageResourceRequest [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageResourceRequest -AccessPackageResourceRequestId <String>
+Get-MgBetaEntitlementManagementAccessPackageResourceRequest -AccessPackageResourceRequestId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageResourceRequest -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackageResourceRequest -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,8 +38,8 @@ Represents a request to add or remove a resource to or from a catalog respective
 
 ### Example 1: Get all access package resource requests
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageResourceRequest
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageResourceRequest
 
 Id                                   CatalogId                            ExecuteImmediately ExpirationDateTime IsValidationOnly Justification RequestState   RequestStatus RequestType
 --                                   ---------                            ------------------ ------------------ ---------------- ------------- ------------   ------------- -----------
@@ -56,8 +56,8 @@ This example gets all access package resource requests.
 
 ### Example 2: Get all access package resource requests
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageResourceRequest -AccessPackageResourceRequestId '88098a60-489a-4c28-bfe7-9fecd4713b81'
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageResourceRequest -AccessPackageResourceRequestId '88098a60-489a-4c28-bfe7-9fecd4713b81'
 ```
 
 This examples gets the access package resource request for the specified resource request id.
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -251,11 +251,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
 
 ## NOTES
 

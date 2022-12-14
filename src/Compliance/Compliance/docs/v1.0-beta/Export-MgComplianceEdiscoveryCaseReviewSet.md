@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/export-mgcomplianceediscoverycasereviewset
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/export-mgcomplianceediscoverycasereviewset
 schema: 2.0.0
 ---
 
-# Export-MgComplianceEdiscoveryCaseReviewSet
+# Export-MgBetaComplianceEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
 Initiate an export from a **reviewSet**.
@@ -15,7 +15,7 @@ For details, see Export documents from a review set in Advanced eDiscovery.
 
 ### ExportExpanded (Default)
 ```
-Export-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String>
+Export-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String>
  [-AdditionalProperties <Hashtable>] [-AzureBlobContainer <String>] [-AzureBlobToken <String>]
  [-Description <String>] [-ExportOptions <String>] [-ExportStructure <String>] [-OutputName <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,21 +23,21 @@ Export-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String
 
 ### Export
 ```
-Export-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String>
+Export-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String>
  -BodyParameter <IPaths2D0MecComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryExportPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
-Export-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
+Export-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
  -BodyParameter <IPaths2D0MecComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryExportPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentityExpanded
 ```
-Export-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
+Export-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
  [-AdditionalProperties <Hashtable>] [-AzureBlobContainer <String>] [-AzureBlobToken <String>]
  [-Description <String>] [-ExportOptions <String>] [-ExportStructure <String>] [-OutputName <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -49,19 +49,19 @@ For details, see Export documents from a review set in Advanced eDiscovery.
 
 ## EXAMPLES
 
-### Example 1: Using the Export-MgComplianceEdiscoveryCaseReviewSet Cmdlet
+### Example 1: Using the Export-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	OutputName = "2020-12-06 Contoso investigation export"
 	Description = "Export for the Contoso investigation"
 	ExportOptions = "originalFiles,fileInfo,tags"
 	ExportStructure = "directory"
 }
-Export-MgComplianceEdiscoveryCaseReviewSet -CaseId $caseId -ReviewSetId $reviewSetId -BodyParameter $params
+Export-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId $caseId -ReviewSetId $reviewSetId -BodyParameter $params
 ```
 
-This example shows how to use the Export-MgComplianceEdiscoveryCaseReviewSet Cmdlet.
+This example shows how to use the Export-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths2D0MecComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryExportPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths2D0MecComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryExportPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Export, ExportViaIdentity
 Aliases:
 
@@ -192,7 +192,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: ExportViaIdentity, ExportViaIdentityExpanded
 Aliases:
 
@@ -284,9 +284,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths2D0MecComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryExportPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths2D0MecComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryExportPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

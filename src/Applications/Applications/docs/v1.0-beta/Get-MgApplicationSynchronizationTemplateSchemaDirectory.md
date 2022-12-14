@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationsynchronizationtemplateschemadirectory
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationsynchronizationtemplateschemadirectory
 schema: 2.0.0
 ---
 
-# Get-MgApplicationSynchronizationTemplateSchemaDirectory
+# Get-MgBetaApplicationSynchronizationTemplateSchemaDirectory
 
 ## SYNOPSIS
 Contains the collection of directories and all of their objects.
@@ -14,7 +14,7 @@ Contains the collection of directories and all of their objects.
 
 ### List (Default)
 ```
-Get-MgApplicationSynchronizationTemplateSchemaDirectory -ApplicationId <String>
+Get-MgBetaApplicationSynchronizationTemplateSchemaDirectory -ApplicationId <String>
  -SynchronizationTemplateId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgApplicationSynchronizationTemplateSchemaDirectory -ApplicationId <String>
 
 ### Get
 ```
-Get-MgApplicationSynchronizationTemplateSchemaDirectory -ApplicationId <String>
+Get-MgBetaApplicationSynchronizationTemplateSchemaDirectory -ApplicationId <String>
  -DirectoryDefinitionId <String> -SynchronizationTemplateId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationSynchronizationTemplateSchemaDirectory -InputObject <IApplicationsIdentity>
+Get-MgBetaApplicationSynchronizationTemplateSchemaDirectory -InputObject <IApplicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupmember
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupmember
 schema: 2.0.0
 ---
 
-# New-MgGroupMember
+# New-MgBetaGroupMember
 
 ## SYNOPSIS
 Add a member to an Office 365 group or security group through the members navigation property.
@@ -14,24 +14,24 @@ Add a member to an Office 365 group or security group through the members naviga
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupMember -GroupId <String> [-DirectoryObjectId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaGroupMember -GroupId <String> [-DirectoryObjectId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupMember -GroupId <String> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm] [-WhatIf]
+New-MgBetaGroupMember -GroupId <String> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupMember -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm]
+New-MgBetaGroupMember -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupMember -InputObject <IGroupsIdentity> [-DirectoryObjectId <String>] [-Confirm] [-WhatIf]
+New-MgBetaGroupMember -InputObject <IGroupsIdentity> [-DirectoryObjectId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -42,7 +42,7 @@ Add a member to an Office 365 group or security group through the members naviga
 
 ### Example 1: Add a member to a group.
 ```powershell
-New-MgGroupMember -GroupId '872648e7-b23a-4328-bd46-f1bd431c2354' -DirectoryObjectId '8a7c50d3-fcbd-4727-a889-8ab232dfea01'
+New-MgBetaGroupMember -GroupId '872648e7-b23a-4328-bd46-f1bd431c2354' -DirectoryObjectId '8a7c50d3-fcbd-4727-a889-8ab232dfea01'
 ```
 
 This example adds a member specified by the DirectoryObjectId to the specified group.
@@ -54,7 +54,7 @@ HELP MESSAGE MISSING
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -147,13 +147,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

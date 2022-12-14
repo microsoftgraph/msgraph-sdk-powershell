@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/get-mguserauthenticationwindowhelloforbusinessmethoddevicemembergroup
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/get-mguserauthenticationwindowhelloforbusinessmethoddevicemembergroup
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup
+# Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup
 
 ## SYNOPSIS
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -15,14 +15,14 @@ This function is transitive.
 
 ### GetExpanded (Default)
 ```
-Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <String>
+Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <String>
+Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String>
  -BodyParameter <IPathsC8UkhhUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,14 +30,14 @@ Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -UserId <S
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsC8UkhhUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
+Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -49,32 +49,32 @@ This function is transitive.
 
 ### Example 1: Check group memberships for a directory object
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	SecurityEnabledOnly = $false
 }
 
-Get-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
+Get-MgBetaDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
 
-This example shows how to use the Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Check group memberships for the signed-in user
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	SecurityEnabledOnly = $true
 }
 
 # A UPN can also be used as -UserId.
-Get-MgUserMemberGroup -UserId $userId -BodyParameter $params
+Get-MgBetaUserMemberGroup -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsC8UkhhUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsC8UkhhUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -208,9 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsC8UkhhUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsC8UkhhUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtdefaultmanagedappprotectiondeploymentsummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtdefaultmanagedappprotectiondeploymentsummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary
+# Get-MgBetaDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary
 
 ## SYNOPSIS
 Navigation property to deployment summary of the configuration.
@@ -14,13 +14,13 @@ Navigation property to deployment summary of the configuration.
 
 ### Get (Default)
 ```
-Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary -DefaultManagedAppProtectionId <String>
+Get-MgBetaDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary -DefaultManagedAppProtectionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary
+Get-MgBetaDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary
  -InputObject <IDevicesCorporateManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -98,17 +98,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementDefaultManagedAppProtectionDeploymentSummary
+### Get-MgBetaDeviceAppManagementDefaultManagedAppProtectionDeploymentSummary
 
 COMPLEX PARAMETER PROPERTIES
 

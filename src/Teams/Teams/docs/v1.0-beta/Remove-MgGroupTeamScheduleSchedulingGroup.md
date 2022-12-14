@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mggroupteamscheduleschedulinggroup
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mggroupteamscheduleschedulinggroup
 schema: 2.0.0
 ---
 
-# Remove-MgGroupTeamScheduleSchedulingGroup
+# Remove-MgBetaGroupTeamScheduleSchedulingGroup
 
 ## SYNOPSIS
 Delete navigation property schedulingGroups for groups
@@ -14,13 +14,13 @@ Delete navigation property schedulingGroups for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupTeamScheduleSchedulingGroup -GroupId <String> -SchedulingGroupId <String> [-IfMatch <String>]
+Remove-MgBetaGroupTeamScheduleSchedulingGroup -GroupId <String> -SchedulingGroupId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaGroupTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

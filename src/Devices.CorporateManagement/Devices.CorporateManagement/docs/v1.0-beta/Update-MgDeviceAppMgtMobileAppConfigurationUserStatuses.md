@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappconfigurationuserstatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappconfigurationuserstatuses
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses
+# Update-MgBetaDeviceAppMgtMobileAppConfigurationUserStatuses
 
 ## SYNOPSIS
 Update the navigation property userStatuses in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property userStatuses in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses -ManagedDeviceMobileAppConfigurationId <String>
+Update-MgBetaDeviceAppMgtMobileAppConfigurationUserStatuses -ManagedDeviceMobileAppConfigurationId <String>
  -ManagedDeviceMobileAppConfigurationUserStatusId <String> [-AdditionalProperties <Hashtable>]
  [-DevicesCount <Int32>] [-Id <String>] [-LastReportedDateTime <DateTime>] [-Status <String>]
  [-UserDisplayName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses -ManagedDeviceMobileAppC
 
 ### Update
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses -ManagedDeviceMobileAppConfigurationId <String>
+Update-MgBetaDeviceAppMgtMobileAppConfigurationUserStatuses -ManagedDeviceMobileAppConfigurationId <String>
  -ManagedDeviceMobileAppConfigurationUserStatusId <String>
  -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -31,14 +31,14 @@ Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses -ManagedDeviceMobileAppC
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMobileAppConfigurationUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtMobileAppConfigurationUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DevicesCount <Int32>] [-Id <String>] [-LastReportedDateTime <DateTime>]
  [-Status <String>] [-UserDisplayName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -71,7 +71,7 @@ Contains properties, inherited properties and actions for an MDM mobile app conf
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -118,7 +118,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -270,9 +270,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus
 
 ## OUTPUTS
 
@@ -282,7 +282,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementMobileAppConfigurationUserStatuses
+### Update-MgBetaDeviceAppManagementMobileAppConfigurationUserStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

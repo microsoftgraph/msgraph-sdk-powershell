@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysalequoteline
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanysalequoteline
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanySaleQuoteLine
+# Get-MgBetaFinancialCompanySaleQuoteLine
 
 ## SYNOPSIS
 Get salesQuoteLines from financials
@@ -14,38 +14,38 @@ Get salesQuoteLines from financials
 
 ### List (Default)
 ```
-Get-MgFinancialCompanySaleQuoteLine -CompanyId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaFinancialCompanySaleQuoteLine -CompanyId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteLineId <String>
+Get-MgBetaFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteLineId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> -SalesQuoteLineId <String>
+Get-MgBetaFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> -SalesQuoteLineId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> [-ExpandProperty <String[]>]
+Get-MgBetaFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -274,11 +274,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesQuoteLine
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesQuoteLine
 
 ## NOTES
 

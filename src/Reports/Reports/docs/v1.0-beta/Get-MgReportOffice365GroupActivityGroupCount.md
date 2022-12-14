@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportoffice365groupactivitygroupcount
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportoffice365groupactivitygroupcount
 schema: 2.0.0
 ---
 
-# Get-MgReportOffice365GroupActivityGroupCount
+# Get-MgBetaReportOffice365GroupActivityGroupCount
 
 ## SYNOPSIS
 Invoke function getOffice365GroupsActivityGroupCounts
@@ -14,14 +14,14 @@ Invoke function getOffice365GroupsActivityGroupCounts
 
 ### Get1 (Default)
 ```
-Get-MgReportOffice365GroupActivityGroupCount -Period <String> [-Count] [-Filter <String>]
+Get-MgBetaReportOffice365GroupActivityGroupCount -Period <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgReportOffice365GroupActivityGroupCount -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaReportOffice365GroupActivityGroupCount -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -174,11 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOffice365GroupsActivityGroupCounts
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOffice365GroupsActivityGroupCounts
 
 ## NOTES
 

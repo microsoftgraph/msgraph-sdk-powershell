@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationsynchronizationprofilestatus
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/update-mgeducationsynchronizationprofilestatus
 schema: 2.0.0
 ---
 
-# Update-MgEducationSynchronizationProfileStatus
+# Update-MgBetaEducationSynchronizationProfileStatus
 
 ## SYNOPSIS
 Update the navigation property profileStatus in education
@@ -14,7 +14,7 @@ Update the navigation property profileStatus in education
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEducationSynchronizationProfileStatus -EducationSynchronizationProfileId <String>
+Update-MgBetaEducationSynchronizationProfileStatus -EducationSynchronizationProfileId <String>
  [-AdditionalProperties <Hashtable>] [-ErrorCount <Int64>] [-Id <String>] [-LastActivityDateTime <DateTime>]
  [-LastSynchronizationDateTime <DateTime>] [-Status <String>] [-StatusMessage <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgEducationSynchronizationProfileStatus -EducationSynchronizationProfileI
 
 ### Update
 ```
-Update-MgEducationSynchronizationProfileStatus -EducationSynchronizationProfileId <String>
+Update-MgBetaEducationSynchronizationProfileStatus -EducationSynchronizationProfileId <String>
  -BodyParameter <IMicrosoftGraphEducationSynchronizationProfileStatus> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
+Update-MgBetaEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationSynchronizationProfileStatus> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
+Update-MgBetaEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-ErrorCount <Int64>] [-Id <String>] [-LastActivityDateTime <DateTime>]
  [-LastSynchronizationDateTime <DateTime>] [-Status <String>] [-StatusMessage <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ educationSynchronizationProfileStatus
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,9 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/update-mgbusinessscenario
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/update-mgbusinessscenario
 schema: 2.0.0
 ---
 
-# Update-MgBusinessScenario
+# Update-MgBetaBusinessScenario
 
 ## SYNOPSIS
 Update the navigation property businessScenarios in solutions
@@ -14,7 +14,7 @@ Update the navigation property businessScenarios in solutions
 
 ### UpdateExpanded (Default)
 ```
-Update-MgBusinessScenario -BusinessScenarioId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaBusinessScenario -BusinessScenarioId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-OwnerAppIds <String[]>] [-Planner <IMicrosoftGraphBusinessScenarioPlanner>] [-UniqueName <String>]
@@ -23,19 +23,19 @@ Update-MgBusinessScenario -BusinessScenarioId <String> [-AdditionalProperties <H
 
 ### Update
 ```
-Update-MgBusinessScenario -BusinessScenarioId <String> -BodyParameter <IMicrosoftGraphBusinessScenario>
+Update-MgBetaBusinessScenario -BusinessScenarioId <String> -BodyParameter <IMicrosoftGraphBusinessScenario>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgBusinessScenario -InputObject <IBookingsIdentity> -BodyParameter <IMicrosoftGraphBusinessScenario>
+Update-MgBetaBusinessScenario -InputObject <IBookingsIdentity> -BodyParameter <IMicrosoftGraphBusinessScenario>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBusinessScenario -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaBusinessScenario -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-OwnerAppIds <String[]>] [-Planner <IMicrosoftGraphBusinessScenarioPlanner>] [-UniqueName <String>]
@@ -69,7 +69,7 @@ businessScenario
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessScenario
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessScenario
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -239,7 +239,7 @@ businessScenarioPlanner
 To construct, please use Get-Help -Online and see NOTES section for PLANNER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessScenarioPlanner
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessScenarioPlanner
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -301,9 +301,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessScenario
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessScenario
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/move-mgcommunicationcall
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/move-mgcommunicationcall
 schema: 2.0.0
 ---
 
-# Move-MgCommunicationCall
+# Move-MgBetaCommunicationCall
 
 ## SYNOPSIS
 Transfer an active peer-to-peer call or group call.
@@ -16,28 +16,28 @@ This is opposed to transfering the call directly.
 
 ### TransferExpanded1 (Default)
 ```
-Move-MgCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>]
+Move-MgBetaCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>]
  [-Transferee <IMicrosoftGraphParticipantInfo1>] [-TransferTarget <IMicrosoftGraphInvitationParticipantInfo1>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Transfer1
 ```
-Move-MgCommunicationCall -CallId <String>
+Move-MgBetaCommunicationCall -CallId <String>
  -BodyParameter <IPaths4Zbm7LCommunicationsCallsCallIdMicrosoftGraphTransferPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TransferViaIdentity1
 ```
-Move-MgCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Move-MgBetaCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths4Zbm7LCommunicationsCallsCallIdMicrosoftGraphTransferPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TransferViaIdentityExpanded1
 ```
-Move-MgCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
+Move-MgBetaCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-Transferee <IMicrosoftGraphParticipantInfo1>] [-TransferTarget <IMicrosoftGraphInvitationParticipantInfo1>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -49,9 +49,9 @@ This is opposed to transfering the call directly.
 
 ## EXAMPLES
 
-### Example 1: Using the Move-MgCommunicationCall Cmdlet
+### Example 1: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
 		EndpointType = "default"
@@ -66,23 +66,23 @@ $params = @{
 		Region = "region-value"
 	}
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Move-MgCommunicationCall Cmdlet
+### Example 2: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
-		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 		EndpointType = "default"
 		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				Id = "550fae72-d251-43ec-868c-373732c2704f"
 				TenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
 				DisplayName = "Heidi Steen"
@@ -93,21 +93,21 @@ $params = @{
 		ReplacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
 	}
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Move-MgCommunicationCall Cmdlet
+### Example 3: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
 		EndpointType = "default"
 		Identity = @{
 			Phone = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				Id = "+12345678901"
 			}
 		}
@@ -115,23 +115,23 @@ $params = @{
 		Region = "region-value"
 	}
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Move-MgCommunicationCall Cmdlet
+### Example 4: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
-		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.invitationParticipantInfo"
 		EndpointType = "default"
 		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
+			"@odata.type" = "#Microsoft.Graph.Beta.identitySet"
 			Phone = @{
-				"@odata.type" = "#microsoft.graph.identity"
+				"@odata.type" = "#Microsoft.Graph.Beta.identity"
 				Id = "+12345678901"
 			}
 		}
@@ -140,15 +140,15 @@ $params = @{
 		ReplacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
 	}
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Move-MgCommunicationCall Cmdlet
+### Example 5: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
 		EndpointType = "default"
@@ -172,10 +172,10 @@ $params = @{
 	LanguageId = "languageId-value"
 	Region = "region-value"
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths4Zbm7LCommunicationsCallsCallIdMicrosoftGraphTransferPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths4Zbm7LCommunicationsCallsCallIdMicrosoftGraphTransferPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Transfer1, TransferViaIdentity1
 Aliases:
 
@@ -231,7 +231,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: TransferViaIdentity1, TransferViaIdentityExpanded1
 Aliases:
 
@@ -262,7 +262,7 @@ participantInfo
 To construct, please use Get-Help -Online and see NOTES section for TRANSFEREE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipantInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipantInfo1
 Parameter Sets: TransferExpanded1, TransferViaIdentityExpanded1
 Aliases:
 
@@ -278,7 +278,7 @@ invitationParticipantInfo
 To construct, please use Get-Help -Online and see NOTES section for TRANSFERTARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInvitationParticipantInfo1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInvitationParticipantInfo1
 Parameter Sets: TransferExpanded1, TransferViaIdentityExpanded1
 Aliases:
 
@@ -325,9 +325,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths4Zbm7LCommunicationsCallsCallIdMicrosoftGraphTransferPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths4Zbm7LCommunicationsCallsCallIdMicrosoftGraphTransferPostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 

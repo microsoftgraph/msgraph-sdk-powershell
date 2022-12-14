@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportsecurity
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportsecurity
 schema: 2.0.0
 ---
 
-# Get-MgReportSecurity
+# Get-MgBetaReportSecurity
 
 ## SYNOPSIS
 Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
@@ -13,7 +13,7 @@ Provides the ability to launch a realistic simulated phishing attack that organi
 ## SYNTAX
 
 ```
-Get-MgReportSecurity [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaReportSecurity [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

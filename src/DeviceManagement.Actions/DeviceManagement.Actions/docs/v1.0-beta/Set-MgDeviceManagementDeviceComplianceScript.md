@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementdevicecompliancescript
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementdevicecompliancescript
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementDeviceComplianceScript
+# Set-MgBetaDeviceManagementDeviceComplianceScript
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,7 +14,7 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementDeviceComplianceScript -DeviceComplianceScriptId <String>
+Set-MgBetaDeviceManagementDeviceComplianceScript -DeviceComplianceScriptId <String>
  [-AdditionalProperties <Hashtable>]
  [-DeviceHealthScriptAssignments <IMicrosoftGraphDeviceHealthScriptAssignment[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Set-MgDeviceManagementDeviceComplianceScript -DeviceComplianceScriptId <String>
 
 ### Assign
 ```
-Set-MgDeviceManagementDeviceComplianceScript -DeviceComplianceScriptId <String>
+Set-MgBetaDeviceManagementDeviceComplianceScript -DeviceComplianceScriptId <String>
  -BodyParameter <IPathsQg6Va1DevicemanagementDevicecompliancescriptsDevicecompliancescriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementDeviceComplianceScript -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementDeviceComplianceScript -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsQg6Va1DevicemanagementDevicecompliancescriptsDevicecompliancescriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementDeviceComplianceScript -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementDeviceComplianceScript -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>]
  [-DeviceHealthScriptAssignments <IMicrosoftGraphDeviceHealthScriptAssignment[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsQg6Va1DevicemanagementDevicecompliancescriptsDevicecompliancescriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsQg6Va1DevicemanagementDevicecompliancescriptsDevicecompliancescriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DEVICEHEALTHSCRIPTASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -178,9 +178,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsQg6Va1DevicemanagementDevicecompliancescriptsDevicecompliancescriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsQg6Va1DevicemanagementDevicecompliancescriptsDevicecompliancescriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

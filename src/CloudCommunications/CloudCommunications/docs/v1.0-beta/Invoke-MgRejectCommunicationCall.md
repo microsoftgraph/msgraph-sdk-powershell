@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgrejectcommunicationcall
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mgrejectcommunicationcall
 schema: 2.0.0
 ---
 
-# Invoke-MgRejectCommunicationCall
+# Invoke-MgBetaRejectCommunicationCall
 
 ## SYNOPSIS
 Enable a bot to reject an incoming call.
@@ -20,27 +20,27 @@ Use delete call to end a call.
 
 ### RejectExpanded1 (Default)
 ```
-Invoke-MgRejectCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>] [-CallbackUri <String>]
+Invoke-MgBetaRejectCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>] [-CallbackUri <String>]
  [-Reason <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Reject1
 ```
-Invoke-MgRejectCommunicationCall -CallId <String>
+Invoke-MgBetaRejectCommunicationCall -CallId <String>
  -BodyParameter <IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RejectViaIdentity1
 ```
-Invoke-MgRejectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaRejectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RejectViaIdentityExpanded1
 ```
-Invoke-MgRejectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaRejectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-CallbackUri <String>] [-Reason <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -56,28 +56,28 @@ Use delete call to end a call.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgRejectCommunicationCall Cmdlet
+### Example 1: Using the Invoke-MgBetaRejectCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Reason = "none"
 }
-Invoke-MgRejectCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaRejectCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgRejectCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaRejectCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Invoke-MgRejectCommunicationCall Cmdlet
+### Example 2: Using the Invoke-MgBetaRejectCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Reason = "busy"
 }
-Invoke-MgRejectCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaRejectCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgRejectCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaRejectCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Reject1, RejectViaIdentity1
 Aliases:
 
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: RejectViaIdentity1, RejectViaIdentityExpanded1
 Aliases:
 
@@ -225,9 +225,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

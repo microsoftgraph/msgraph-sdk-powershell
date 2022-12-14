@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdeviceusagerights
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdeviceusagerights
 schema: 2.0.0
 ---
 
-# Update-MgDeviceUsageRights
+# Update-MgBetaDeviceUsageRights
 
 ## SYNOPSIS
 Update the navigation property usageRights in devices
@@ -14,26 +14,26 @@ Update the navigation property usageRights in devices
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceUsageRights -DeviceId <String> -UsageRightId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceUsageRights -DeviceId <String> -UsageRightId <String> [-AdditionalProperties <Hashtable>]
  [-CatalogId <String>] [-Id <String>] [-ServiceIdentifier <String>] [-State <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceUsageRights -DeviceId <String> -UsageRightId <String>
+Update-MgBetaDeviceUsageRights -DeviceId <String> -UsageRightId <String>
  -BodyParameter <IMicrosoftGraphUsageRight> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphUsageRight> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDeviceUsageRights -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-Id <String>] [-ServiceIdentifier <String>]
  [-State <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ usageRight
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -234,9 +234,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 
 ## OUTPUTS
 

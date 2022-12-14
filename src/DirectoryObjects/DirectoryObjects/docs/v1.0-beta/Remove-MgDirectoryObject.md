@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DirectoryObjects
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.directoryobjects/remove-mgdirectoryobject
+Module Name: Microsoft.Graph.Beta.DirectoryObjects
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.directoryobjects/remove-mgdirectoryobject
 schema: 2.0.0
 ---
 
-# Remove-MgDirectoryObject
+# Remove-MgBetaDirectoryObject
 
 ## SYNOPSIS
 Delete a directory object, for example, a group, user, application, or service principal.
@@ -14,13 +14,13 @@ Delete a directory object, for example, a group, user, application, or service p
 
 ### Delete1 (Default)
 ```
-Remove-MgDirectoryObject -DirectoryObjectId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaDirectoryObject -DirectoryObjectId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete a directory object, for example, a group, user, application, or service p
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgDirectoryObject Cmdlet
+### Example 1: Using the Remove-MgBetaDirectoryObject Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
-Remove-MgDirectoryObject -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
+Remove-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Remove-MgDirectoryObject Cmdlet.
+This example shows how to use the Remove-MgBetaDirectoryObject Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDirectoryObjectsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDirectoryObjectsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDirectoryObjectsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDirectoryObjectsIdentity
 
 ## OUTPUTS
 

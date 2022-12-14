@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mguserplannerfavoriteplan
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mguserplannerfavoriteplan
 schema: 2.0.0
 ---
 
-# Get-MgUserPlannerFavoritePlan
+# Get-MgBetaUserPlannerFavoritePlan
 
 ## SYNOPSIS
 Read-only.
@@ -16,20 +16,20 @@ Returns the plannerPlans that the user marked as favorites.
 
 ### List (Default)
 ```
-Get-MgUserPlannerFavoritePlan -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserPlannerFavoritePlan -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserPlannerFavoritePlan -PlannerPlanId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserPlannerFavoritePlan -PlannerPlanId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserPlannerFavoritePlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserPlannerFavoritePlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,14 +40,14 @@ Returns the plannerPlans that the user marked as favorites.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserPlannerFavoritePlan Cmdlet
+### Example 1: Using the Get-MgBetaUserPlannerFavoritePlan Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 # A UPN can also be used as -UserId.
-Get-MgUserPlannerFavoritePlan -UserId $userId
+Get-MgBetaUserPlannerFavoritePlan -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserPlannerFavoritePlan Cmdlet.
+This example shows how to use the Get-MgBetaUserPlannerFavoritePlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -118,7 +118,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -254,11 +254,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 
 ## NOTES
 

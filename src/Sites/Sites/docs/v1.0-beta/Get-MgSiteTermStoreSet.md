@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitetermstoreset
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitetermstoreset
 schema: 2.0.0
 ---
 
-# Get-MgSiteTermStoreSet
+# Get-MgBetaSiteTermStoreSet
 
 ## SYNOPSIS
 Collection of all sets available in the term store.
@@ -14,13 +14,13 @@ Collection of all sets available in the term store.
 
 ### Get1 (Default)
 ```
-Get-MgSiteTermStoreSet -SetId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteTermStoreSet -SetId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSiteTermStoreSet -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteTermStoreSet -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Collection of all sets available in the term store.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteTermStoreSet Cmdlet
+### Example 1: Using the Get-MgBetaSiteTermStoreSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteTermStoreSet -SiteId $siteId -SetId $setId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteTermStoreSet -SiteId $siteId -SetId $setId
 ```
 
-This example shows how to use the Get-MgSiteTermStoreSet Cmdlet.
+This example shows how to use the Get-MgBetaSiteTermStoreSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -121,11 +121,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreSet1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreSet1
 
 ## NOTES
 

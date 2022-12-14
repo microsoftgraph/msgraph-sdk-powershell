@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/add-mgaccessreviewdecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/add-mgaccessreviewdecision
 schema: 2.0.0
 ---
 
-# Add-MgAccessReviewDecision
+# Add-MgBetaAccessReviewDecision
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
@@ -23,12 +23,12 @@ If you want to change a group that originates on-premises, download the results 
 
 ### Apply (Default)
 ```
-Add-MgAccessReviewDecision -AccessReviewId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-MgBetaAccessReviewDecision -AccessReviewId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentity
 ```
-Add-MgAccessReviewDecision -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Add-MgBetaAccessReviewDecision -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -46,13 +46,13 @@ If you want to change a group that originates on-premises, download the results 
 
 ## EXAMPLES
 
-### Example 1: Using the Add-MgAccessReviewDecision Cmdlet
+### Example 1: Using the Add-MgBetaAccessReviewDecision Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Add-MgAccessReviewDecision -AccessReviewId $accessReviewId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Add-MgBetaAccessReviewDecision -AccessReviewId $accessReviewId
 ```
 
-This example shows how to use the Add-MgAccessReviewDecision Cmdlet.
+This example shows how to use the Add-MgBetaAccessReviewDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: ApplyViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

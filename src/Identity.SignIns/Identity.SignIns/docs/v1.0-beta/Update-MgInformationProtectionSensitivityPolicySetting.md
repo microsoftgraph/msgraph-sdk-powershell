@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mginformationprotectionsensitivitypolicysetting
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mginformationprotectionsensitivitypolicysetting
 schema: 2.0.0
 ---
 
-# Update-MgInformationProtectionSensitivityPolicySetting
+# Update-MgBetaInformationProtectionSensitivityPolicySetting
 
 ## SYNOPSIS
 Update the navigation property sensitivityPolicySettings in informationProtection
@@ -14,14 +14,14 @@ Update the navigation property sensitivityPolicySettings in informationProtectio
 
 ### UpdateExpanded (Default)
 ```
-Update-MgInformationProtectionSensitivityPolicySetting [-AdditionalProperties <Hashtable>]
+Update-MgBetaInformationProtectionSensitivityPolicySetting [-AdditionalProperties <Hashtable>]
  [-ApplicableTo <String>] [-DowngradeSensitivityRequiresJustification] [-HelpWebUrl <String>] [-Id <String>]
  [-IsMandatory] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgInformationProtectionSensitivityPolicySetting
+Update-MgBetaInformationProtectionSensitivityPolicySetting
  -BodyParameter <IMicrosoftGraphSensitivityPolicySettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ sensitivityPolicySettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
 Parameter Sets: Update
 Aliases:
 
@@ -191,7 +191,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
 
 ## OUTPUTS
 

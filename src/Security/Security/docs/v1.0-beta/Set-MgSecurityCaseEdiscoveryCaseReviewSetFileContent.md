@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/set-mgsecuritycaseediscoverycasereviewsetfilecontent
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/set-mgsecuritycaseediscoverycasereviewsetfilecontent
 schema: 2.0.0
 ---
 
-# Set-MgSecurityCaseEdiscoveryCaseReviewSetFileContent
+# Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent
 
 ## SYNOPSIS
 Update content for the navigation property files in security
@@ -14,14 +14,14 @@ Update content for the navigation property files in security
 
 ### Set (Default)
 ```
-Set-MgSecurityCaseEdiscoveryCaseReviewSetFileContent -EdiscoveryCaseId <String> -EdiscoveryFileId <String>
+Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent -EdiscoveryCaseId <String> -EdiscoveryFileId <String>
  -EdiscoveryReviewSetId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgSecurityCaseEdiscoveryCaseReviewSetFileContent -InputObject <ISecurityIdentity> -InFile <String>
+Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent -InputObject <ISecurityIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -176,7 +176,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ### System.IO.Stream
 

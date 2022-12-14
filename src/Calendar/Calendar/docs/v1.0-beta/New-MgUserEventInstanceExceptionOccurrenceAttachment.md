@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mgusereventinstanceexceptionoccurrenceattachment
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mgusereventinstanceexceptionoccurrenceattachment
 schema: 2.0.0
 ---
 
-# New-MgUserEventInstanceExceptionOccurrenceAttachment
+# New-MgBetaUserEventInstanceExceptionOccurrenceAttachment
 
 ## SYNOPSIS
 Use this API to add an attachment to an existing event.
@@ -16,26 +16,26 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 
 ### CreateExpanded (Default)
 ```
-New-MgUserEventInstanceExceptionOccurrenceAttachment -EventId <String> -EventId1 <String> -EventId2 <String>
+New-MgBetaUserEventInstanceExceptionOccurrenceAttachment -EventId <String> -EventId1 <String> -EventId2 <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
  [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserEventInstanceExceptionOccurrenceAttachment -EventId <String> -EventId1 <String> -EventId2 <String>
+New-MgBetaUserEventInstanceExceptionOccurrenceAttachment -EventId <String> -EventId1 <String> -EventId2 <String>
  -UserId <String> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserEventInstanceExceptionOccurrenceAttachment -InputObject <ICalendarIdentity>
+New-MgBetaUserEventInstanceExceptionOccurrenceAttachment -InputObject <ICalendarIdentity>
  -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserEventInstanceExceptionOccurrenceAttachment -InputObject <ICalendarIdentity>
+New-MgBetaUserEventInstanceExceptionOccurrenceAttachment -InputObject <ICalendarIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
  [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ attachment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -284,13 +284,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

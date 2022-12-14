@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mguseronlinemeetingrecording
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mguseronlinemeetingrecording
 schema: 2.0.0
 ---
 
-# Get-MgUserOnlineMeetingRecording
+# Get-MgBetaUserOnlineMeetingRecording
 
 ## SYNOPSIS
 The content stream of the recording of a Teams live event.
@@ -15,13 +15,13 @@ Read-only.
 
 ### Get (Default)
 ```
-Get-MgUserOnlineMeetingRecording -OnlineMeetingId <String> -UserId <String> -OutFile <String> [-PassThru]
+Get-MgBetaUserOnlineMeetingRecording -OnlineMeetingId <String> -UserId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -31,14 +31,14 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOnlineMeetingRecording Cmdlet
+### Example 1: Using the Get-MgBetaUserOnlineMeetingRecording Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 # A UPN can also be used as -UserId.
-Get-MgUserOnlineMeetingRecording -UserId $userId -OnlineMeetingId $onlineMeetingId
+Get-MgBetaUserOnlineMeetingRecording -UserId $userId -OnlineMeetingId $onlineMeetingId
 ```
 
-This example shows how to use the Get-MgUserOnlineMeetingRecording Cmdlet.
+This example shows how to use the Get-MgBetaUserOnlineMeetingRecording Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -48,7 +48,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

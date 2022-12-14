@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgchatmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgchatmember
 schema: 2.0.0
 ---
 
-# Remove-MgChatMember
+# Remove-MgBetaChatMember
 
 ## SYNOPSIS
 Delete navigation property members for chats
@@ -14,13 +14,13 @@ Delete navigation property members for chats
 
 ### Delete (Default)
 ```
-Remove-MgChatMember -ChatId <String> -ConversationMemberId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaChatMember -ChatId <String> -ConversationMemberId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgChatMember -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaChatMember -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property members for chats
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgChatMember Cmdlet
+### Example 1: Using the Remove-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgChatMember -ChatId $chatId -ConversationMemberId $conversationMemberId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaChatMember -ChatId $chatId -ConversationMemberId $conversationMemberId
 ```
 
-This example shows how to use the Remove-MgChatMember Cmdlet.
+This example shows how to use the Remove-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguserowneddevice
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguserowneddevice
 schema: 2.0.0
 ---
 
-# Get-MgUserOwnedDevice
+# Get-MgBetaUserOwnedDevice
 
 ## SYNOPSIS
 Devices that are owned by the user.
@@ -17,20 +17,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgUserOwnedDevice -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserOwnedDevice -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserOwnedDevice -DirectoryObjectId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserOwnedDevice -DirectoryObjectId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserOwnedDevice -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserOwnedDevice -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -42,14 +42,14 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOwnedDevice Cmdlet
+### Example 1: Using the Get-MgBetaUserOwnedDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOwnedDevice -UserId $userId
+Get-MgBetaUserOwnedDevice -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserOwnedDevice Cmdlet.
+This example shows how to use the Get-MgBetaUserOwnedDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -272,11 +272,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

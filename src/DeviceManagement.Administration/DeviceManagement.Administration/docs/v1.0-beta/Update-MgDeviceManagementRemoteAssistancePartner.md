@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementremoteassistancepartner
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementremoteassistancepartner
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementRemoteAssistancePartner
+# Update-MgBetaDeviceManagementRemoteAssistancePartner
 
 ## SYNOPSIS
 Update the navigation property remoteAssistancePartners in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property remoteAssistancePartners in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <String>
+Update-MgBetaDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-OnboardingRequestExpiryDateTime <DateTime>]
  [-OnboardingStatus <RemoteAssistanceOnboardingStatus>] [-OnboardingUrl <String>] [-PassThru] [-Confirm]
@@ -23,19 +23,19 @@ Update-MgDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <Str
 
 ### Update
 ```
-Update-MgDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <String>
+Update-MgBetaDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <String>
  -BodyParameter <IMicrosoftGraphRemoteAssistancePartner> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphRemoteAssistancePartner> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-OnboardingRequestExpiryDateTime <DateTime>]
  [-OnboardingStatus <RemoteAssistanceOnboardingStatus>] [-OnboardingUrl <String>] [-PassThru] [-Confirm]
@@ -69,7 +69,7 @@ RemoteAssistPartner resources represent the metadata and status of a given Remot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 The current TeamViewer connector status
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.RemoteAssistanceOnboardingStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.RemoteAssistanceOnboardingStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,9 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/test-mggroupproperty
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/test-mggroupproperty
 schema: 2.0.0
 ---
 
-# Test-MgGroupProperty
+# Test-MgBetaGroupProperty
 
 ## SYNOPSIS
 Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -19,27 +19,27 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ### ValidateExpanded (Default)
 ```
-Test-MgGroupProperty -GroupId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+Test-MgBetaGroupProperty -GroupId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate
 ```
-Test-MgGroupProperty -GroupId <String>
+Test-MgBetaGroupProperty -GroupId <String>
  -BodyParameter <IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity
 ```
-Test-MgGroupProperty -InputObject <IGroupsIdentity>
+Test-MgBetaGroupProperty -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentityExpanded
 ```
-Test-MgGroupProperty -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Test-MgBetaGroupProperty -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -54,18 +54,18 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ## EXAMPLES
 
-### Example 1: Using the Test-MgGroupProperty Cmdlet
+### Example 1: Using the Test-MgBetaGroupProperty Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	DisplayName = "Myprefix_test_mysuffix"
 	MailNickname = "Myprefix_test_mysuffix"
 	OnBehalfOfUserId = "onBehalfOfUserId-value"
 }
-Test-MgGroupProperty -GroupId $groupId -BodyParameter $params
+Test-MgBetaGroupProperty -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the Test-MgGroupProperty Cmdlet.
+This example shows how to use the Test-MgBetaGroupProperty Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate, ValidateViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: ValidateViaIdentity, ValidateViaIdentityExpanded
 Aliases:
 
@@ -228,9 +228,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

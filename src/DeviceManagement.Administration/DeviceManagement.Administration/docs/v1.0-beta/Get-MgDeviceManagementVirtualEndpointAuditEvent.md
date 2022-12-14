@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointauditevent
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointauditevent
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointAuditEvent
+# Get-MgBetaDeviceManagementVirtualEndpointAuditEvent
 
 ## SYNOPSIS
 Cloud PC audit event.
@@ -14,20 +14,20 @@ Cloud PC audit event.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointAuditEvent [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementVirtualEndpointAuditEvent [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementVirtualEndpointAuditEvent -CloudPcAuditEventId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementVirtualEndpointAuditEvent -CloudPcAuditEventId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementVirtualEndpointAuditEvent -InputObject <IDeviceManagementAdministrationIdentity>
+Get-MgBetaDeviceManagementVirtualEndpointAuditEvent -InputObject <IDeviceManagementAdministrationIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Cloud PC audit event.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDeviceManagementVirtualEndpointAuditEvent Cmdlet
+### Example 1: Using the Get-MgBetaDeviceManagementVirtualEndpointAuditEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Get-MgDeviceManagementVirtualEndpointAuditEvent -CloudPcAuditEventId $cloudPcAuditEventId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Get-MgBetaDeviceManagementVirtualEndpointAuditEvent -CloudPcAuditEventId $cloudPcAuditEventId
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointAuditEvent Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointAuditEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgDeviceManagementVirtualEndpointAuditEvent Cmdlet
+### Example 2: Using the Get-MgBetaDeviceManagementVirtualEndpointAuditEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
-Get-MgDeviceManagementVirtualEndpointAuditEvent
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+Get-MgBetaDeviceManagementVirtualEndpointAuditEvent
 ```
 
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointAuditEvent Cmdlet.
+This example shows how to use the Get-MgBetaDeviceManagementVirtualEndpointAuditEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcAuditEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcAuditEvent
 
 ## NOTES
 

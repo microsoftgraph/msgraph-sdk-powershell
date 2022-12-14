@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgaccessreview
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgaccessreview
 schema: 2.0.0
 ---
 
-# Get-MgAccessReview
+# Get-MgBetaAccessReview
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, retrieve an accessReview object.
@@ -19,20 +19,20 @@ Each past and current instance will have decisions.
 
 ### List (Default)
 ```
-Get-MgAccessReview [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaAccessReview [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAccessReview -AccessReviewId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaAccessReview -AccessReviewId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAccessReview -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaAccessReview -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -46,22 +46,22 @@ Each past and current instance will have decisions.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAccessReview Cmdlet
+### Example 1: Using the Get-MgBetaAccessReview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgAccessReview -AccessReviewId $accessReviewId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaAccessReview -AccessReviewId $accessReviewId
 ```
 
-This example shows how to use the Get-MgAccessReview Cmdlet.
+This example shows how to use the Get-MgBetaAccessReview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgAccessReview Cmdlet
+### Example 2: Using the Get-MgBetaAccessReview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgAccessReview -Filter "businessFlowTemplateId eq '6e4f3d20-c5c3-407f-9695-8460952bcc68'" -Top 100 -Skip 0 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaAccessReview -Filter "businessFlowTemplateId eq '6e4f3d20-c5c3-407f-9695-8460952bcc68'" -Top 100 -Skip 0 
 ```
 
-This example shows how to use the Get-MgAccessReview Cmdlet.
+This example shows how to use the Get-MgBetaAccessReview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 
 ## NOTES
 

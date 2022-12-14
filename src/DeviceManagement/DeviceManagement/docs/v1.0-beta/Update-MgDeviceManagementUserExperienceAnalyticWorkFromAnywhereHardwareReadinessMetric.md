@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticworkfromanywherehardwarereadinessmetric
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticworkfromanywherehardwarereadinessmetric
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric
+# Update-MgBetaDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsWorkFromAnywhereHardwareRe
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric
+Update-MgBetaDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-OSCheckFailedPercentage <Double>]
  [-Processor64BitCheckFailedPercentage <Double>] [-ProcessorCoreCountCheckFailedPercentage <Double>]
  [-ProcessorFamilyCheckFailedPercentage <Double>] [-ProcessorSpeedCheckFailedPercentage <Double>]
@@ -25,7 +25,7 @@ Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadiness
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric
+Update-MgBetaDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -57,7 +57,7 @@ The user experience analytics hardware readiness entity contains account level i
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
 Parameter Sets: Update
 Aliases:
 
@@ -311,7 +311,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/new-mgcomplianceediscoverycasereviewset
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/new-mgcomplianceediscoverycasereviewset
 schema: 2.0.0
 ---
 
-# New-MgComplianceEdiscoveryCaseReviewSet
+# New-MgBetaComplianceEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
 Create a new reviewSet object.
@@ -15,7 +15,7 @@ The request body contains the display name of the review set, which is the only 
 
 ### CreateExpanded (Default)
 ```
-New-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -23,19 +23,19 @@ New-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> [-AdditionalProperties 
 
 ### Create
 ```
-New-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet>
+New-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String> -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
+New-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
  -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -47,16 +47,16 @@ The request body contains the display name of the review set, which is the only 
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgComplianceEdiscoveryCaseReviewSet Cmdlet
+### Example 1: Using the New-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	DisplayName = "My Reviewset 3"
 }
-New-MgComplianceEdiscoveryCaseReviewSet -CaseId $caseId -BodyParameter $params
+New-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId $caseId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgComplianceEdiscoveryCaseReviewSet Cmdlet.
+This example shows how to use the New-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ reviewSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for QUERIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSetQuery[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSetQuery[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -241,13 +241,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
 
 ## NOTES
 

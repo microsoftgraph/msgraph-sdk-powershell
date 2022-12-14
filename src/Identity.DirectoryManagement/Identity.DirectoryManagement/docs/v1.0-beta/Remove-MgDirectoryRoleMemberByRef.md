@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryrolememberbyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/remove-mgdirectoryrolememberbyref
 schema: 2.0.0
 ---
 
-# Remove-MgDirectoryRoleMemberByRef
+# Remove-MgBetaDirectoryRoleMemberByRef
 
 ## SYNOPSIS
 Delete ref of navigation property members for directoryRoles
@@ -14,13 +14,13 @@ Delete ref of navigation property members for directoryRoles
 
 ### Delete (Default)
 ```
-Remove-MgDirectoryRoleMemberByRef -DirectoryObjectId <String> -DirectoryRoleId <String> [-Id <String>]
+Remove-MgBetaDirectoryRoleMemberByRef -DirectoryObjectId <String> -DirectoryRoleId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDirectoryRoleMemberByRef -InputObject <IIdentityDirectoryManagementIdentity> [-Id <String>]
+Remove-MgBetaDirectoryRoleMemberByRef -InputObject <IIdentityDirectoryManagementIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property members for directoryRoles
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgDirectoryRoleMemberByRef Cmdlet
+### Example 1: Using the Remove-MgBetaDirectoryRoleMemberByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDirectoryRoleMemberByRef -DirectoryRoleId $directoryRoleId -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Remove-MgBetaDirectoryRoleMemberByRef -DirectoryRoleId $directoryRoleId -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Remove-MgDirectoryRoleMemberByRef Cmdlet.
+This example shows how to use the Remove-MgBetaDirectoryRoleMemberByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

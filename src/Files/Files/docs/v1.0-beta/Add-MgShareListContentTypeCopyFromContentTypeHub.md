@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/add-mgsharelistcontenttypecopyfromcontenttypehub
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/add-mgsharelistcontenttypecopyfromcontenttypehub
 schema: 2.0.0
 ---
 
-# Add-MgShareListContentTypeCopyFromContentTypeHub
+# Add-MgBetaShareListContentTypeCopyFromContentTypeHub
 
 ## SYNOPSIS
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -17,27 +17,27 @@ For more information, see getCompatibleHubContentTypes and the blog post Syntex 
 
 ### AddExpanded1 (Default)
 ```
-Add-MgShareListContentTypeCopyFromContentTypeHub -SharedDriveItemId <String>
+Add-MgBetaShareListContentTypeCopyFromContentTypeHub -SharedDriveItemId <String>
  [-AdditionalProperties <Hashtable>] [-ContentTypeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add1
 ```
-Add-MgShareListContentTypeCopyFromContentTypeHub -SharedDriveItemId <String>
+Add-MgBetaShareListContentTypeCopyFromContentTypeHub -SharedDriveItemId <String>
  -BodyParameter <IPathsJlb25XSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity1
 ```
-Add-MgShareListContentTypeCopyFromContentTypeHub -InputObject <IFilesIdentity>
+Add-MgBetaShareListContentTypeCopyFromContentTypeHub -InputObject <IFilesIdentity>
  -BodyParameter <IPathsJlb25XSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded1
 ```
-Add-MgShareListContentTypeCopyFromContentTypeHub -InputObject <IFilesIdentity>
+Add-MgBetaShareListContentTypeCopyFromContentTypeHub -InputObject <IFilesIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentTypeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsJlb25XSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsJlb25XSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add1, AddViaIdentity1
 Aliases:
 
@@ -102,7 +102,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
 Aliases:
 
@@ -164,13 +164,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsJlb25XSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsJlb25XSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 
 ## NOTES
 

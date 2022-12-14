@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementmacossoftwareupdateaccountsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementmacossoftwareupdateaccountsummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummary
+# Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummary
 
 ## SYNOPSIS
 Update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property macOSSoftwareUpdateAccountSummaries in deviceMana
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummary -MacOSSoftwareUpdateAccountSummaryId <String>
+Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummary -MacOSSoftwareUpdateAccountSummaryId <String>
  [-AdditionalProperties <Hashtable>]
  [-CategorySummaries <IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]>] [-DeviceId <String>]
  [-DeviceName <String>] [-DisplayName <String>] [-FailedUpdateCount <Int32>] [-Id <String>]
@@ -25,21 +25,21 @@ Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummary -MacOSSoftwareUpdateA
 
 ### Update
 ```
-Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummary -MacOSSoftwareUpdateAccountSummaryId <String>
+Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummary -MacOSSoftwareUpdateAccountSummaryId <String>
  -BodyParameter <IMicrosoftGraphMacOSSoftwareUpdateAccountSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummary -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummary -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphMacOSSoftwareUpdateAccountSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementMacOSSoftwareUpdateAccountSummary -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementMacOSSoftwareUpdateAccountSummary -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-CategorySummaries <IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]>] [-DeviceId <String>]
  [-DeviceName <String>] [-DisplayName <String>] [-FailedUpdateCount <Int32>] [-Id <String>]
@@ -75,7 +75,7 @@ MacOS software update account summary report for a device and user
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -91,7 +91,7 @@ Summary of the updates by category.
 To construct, please use Get-Help -Online and see NOTES section for CATEGORYSUMMARIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -183,7 +183,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -350,9 +350,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMacOSSoftwareUpdateAccountSummary
 
 ## OUTPUTS
 

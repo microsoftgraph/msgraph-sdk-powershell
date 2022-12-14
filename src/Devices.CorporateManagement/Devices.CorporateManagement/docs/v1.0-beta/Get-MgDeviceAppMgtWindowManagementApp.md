@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtwindowmanagementapp
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtwindowmanagementapp
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtWindowManagementApp
+# Get-MgBetaDeviceAppMgtWindowManagementApp
 
 ## SYNOPSIS
 Windows management app.
@@ -13,7 +13,7 @@ Windows management app.
 ## SYNTAX
 
 ```
-Get-MgDeviceAppMgtWindowManagementApp [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaDeviceAppMgtWindowManagementApp [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,13 +60,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsManagementApp
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsManagementApp
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementWindowManagementApp
+### Get-MgBetaDeviceAppManagementWindowManagementApp
 
 ## RELATED LINKS
 

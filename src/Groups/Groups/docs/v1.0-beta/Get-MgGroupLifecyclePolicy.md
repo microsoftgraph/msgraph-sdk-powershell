@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggrouplifecyclepolicy
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggrouplifecyclepolicy
 schema: 2.0.0
 ---
 
-# Get-MgGroupLifecyclePolicy
+# Get-MgBetaGroupLifecyclePolicy
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a groupLifecyclePolicies object.
@@ -14,20 +14,20 @@ Retrieve the properties and relationships of a groupLifecyclePolicies object.
 
 ### List (Default)
 ```
-Get-MgGroupLifecyclePolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaGroupLifecyclePolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupLifecyclePolicy -GroupLifecyclePolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Retrieve the properties and relationships of a groupLifecyclePolicies object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupLifecyclePolicy Cmdlet
+### Example 1: Using the Get-MgBetaGroupLifecyclePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
 ```
 
-This example shows how to use the Get-MgGroupLifecyclePolicy Cmdlet.
+This example shows how to use the Get-MgBetaGroupLifecyclePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgGroupLifecyclePolicy Cmdlet
+### Example 2: Using the Get-MgBetaGroupLifecyclePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupLifecyclePolicy
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupLifecyclePolicy
 ```
 
-This example shows how to use the Get-MgGroupLifecyclePolicy Cmdlet.
+This example shows how to use the Get-MgBetaGroupLifecyclePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
 
 ## NOTES
 

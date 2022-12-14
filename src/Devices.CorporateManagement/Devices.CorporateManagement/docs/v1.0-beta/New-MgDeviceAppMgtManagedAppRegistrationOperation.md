@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedappregistrationoperation
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedappregistrationoperation
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtManagedAppRegistrationOperation
+# New-MgBetaDeviceAppMgtManagedAppRegistrationOperation
 
 ## SYNOPSIS
 Create new navigation property to operations for deviceAppManagement
@@ -14,26 +14,26 @@ Create new navigation property to operations for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtManagedAppRegistrationOperation -ManagedAppRegistrationId <String>
+New-MgBetaDeviceAppMgtManagedAppRegistrationOperation -ManagedAppRegistrationId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-State <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtManagedAppRegistrationOperation -ManagedAppRegistrationId <String>
+New-MgBetaDeviceAppMgtManagedAppRegistrationOperation -ManagedAppRegistrationId <String>
  -BodyParameter <IMicrosoftGraphManagedAppOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtManagedAppRegistrationOperation -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtManagedAppRegistrationOperation -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedAppOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtManagedAppRegistrationOperation -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtManagedAppRegistrationOperation -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-State <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ Represents an operation applied against an app registration.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppOperation
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -219,19 +219,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppOperation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppOperation
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementManagedAppRegistrationOperation
+### New-MgBetaDeviceAppManagementManagedAppRegistrationOperation
 
 COMPLEX PARAMETER PROPERTIES
 

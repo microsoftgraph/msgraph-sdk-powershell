@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusereventinstancesinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusereventinstancesinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgUserEventInstanceSingleValueExtendedProperty
+# Get-MgBetaUserEventInstanceSingleValueExtendedProperty
 
 ## SYNOPSIS
 The collection of single-value extended properties defined for the event.
@@ -16,21 +16,21 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserEventInstanceSingleValueExtendedProperty -EventId <String> -EventId1 <String> -UserId <String>
+Get-MgBetaUserEventInstanceSingleValueExtendedProperty -EventId <String> -EventId1 <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserEventInstanceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
+Get-MgBetaUserEventInstanceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserEventInstanceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+Get-MgBetaUserEventInstanceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -275,11 +275,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

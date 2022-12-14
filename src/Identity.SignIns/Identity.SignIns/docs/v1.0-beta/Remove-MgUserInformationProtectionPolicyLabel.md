@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mguserinformationprotectionpolicylabel
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mguserinformationprotectionpolicylabel
 schema: 2.0.0
 ---
 
-# Remove-MgUserInformationProtectionPolicyLabel
+# Remove-MgBetaUserInformationProtectionPolicyLabel
 
 ## SYNOPSIS
 Delete navigation property labels for users
@@ -14,13 +14,13 @@ Delete navigation property labels for users
 
 ### Delete (Default)
 ```
-Remove-MgUserInformationProtectionPolicyLabel -InformationProtectionLabelId <String> -UserId <String>
+Remove-MgBetaUserInformationProtectionPolicyLabel -InformationProtectionLabelId <String> -UserId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaUserInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

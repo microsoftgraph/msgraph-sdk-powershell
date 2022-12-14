@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamchannelmessagereplydelta
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamchannelmessagereplydelta
 schema: 2.0.0
 ---
 
-# Get-MgTeamChannelMessageReplyDelta
+# Get-MgBetaTeamChannelMessageReplyDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -14,14 +14,14 @@ Invoke function delta
 
 ### Delta1 (Default)
 ```
-Get-MgTeamChannelMessageReplyDelta -ChannelId <String> -ChatMessageId <String> -TeamId <String> [-Count]
+Get-MgBetaTeamChannelMessageReplyDelta -ChannelId <String> -ChatMessageId <String> -TeamId <String> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity1
 ```
-Get-MgTeamChannelMessageReplyDelta -InputObject <ITeamsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaTeamChannelMessageReplyDelta -InputObject <ITeamsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeltaViaIdentity1
 Aliases:
 
@@ -204,11 +204,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessage
 
 ## NOTES
 

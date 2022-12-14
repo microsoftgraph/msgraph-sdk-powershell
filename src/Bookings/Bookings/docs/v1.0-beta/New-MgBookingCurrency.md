@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbookingcurrency
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/new-mgbookingcurrency
 schema: 2.0.0
 ---
 
-# New-MgBookingCurrency
+# New-MgBetaBookingCurrency
 
 ## SYNOPSIS
 Add new entity to bookingCurrencies
@@ -14,13 +14,13 @@ Add new entity to bookingCurrencies
 
 ### CreateExpanded1 (Default)
 ```
-New-MgBookingCurrency [-AdditionalProperties <Hashtable>] [-Id <String>] [-Symbol <String>] [-Confirm]
+New-MgBetaBookingCurrency [-AdditionalProperties <Hashtable>] [-Id <String>] [-Symbol <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgBookingCurrency -BodyParameter <IMicrosoftGraphBookingCurrency> [-Confirm] [-WhatIf]
+New-MgBetaBookingCurrency -BodyParameter <IMicrosoftGraphBookingCurrency> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ bookingCurrency
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCurrency
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCurrency
 Parameter Sets: Create1
 Aliases:
 
@@ -130,11 +130,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCurrency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCurrency
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCurrency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCurrency
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicyserviceprincipalcreationpolicyinclude
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicyserviceprincipalcreationpolicyinclude
 schema: 2.0.0
 ---
 
-# New-MgPolicyServicePrincipalCreationPolicyInclude
+# New-MgBetaPolicyServicePrincipalCreationPolicyInclude
 
 ## SYNOPSIS
 Create new navigation property to includes for policies
@@ -14,7 +14,7 @@ Create new navigation property to includes for policies
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyServicePrincipalCreationPolicyInclude -ServicePrincipalCreationPolicyId <String>
+New-MgBetaPolicyServicePrincipalCreationPolicyInclude -ServicePrincipalCreationPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-ApplicationIds <String[]>] [-ApplicationPublisherIds <String[]>]
  [-ApplicationsFromVerifiedPublisherOnly] [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ New-MgPolicyServicePrincipalCreationPolicyInclude -ServicePrincipalCreationPolic
 
 ### Create
 ```
-New-MgPolicyServicePrincipalCreationPolicyInclude -ServicePrincipalCreationPolicyId <String>
+New-MgBetaPolicyServicePrincipalCreationPolicyInclude -ServicePrincipalCreationPolicyId <String>
  -BodyParameter <IMicrosoftGraphServicePrincipalCreationConditionSet> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPolicyServicePrincipalCreationPolicyInclude -InputObject <IIdentitySignInsIdentity>
+New-MgBetaPolicyServicePrincipalCreationPolicyInclude -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphServicePrincipalCreationConditionSet> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPolicyServicePrincipalCreationPolicyInclude -InputObject <IIdentitySignInsIdentity>
+New-MgBetaPolicyServicePrincipalCreationPolicyInclude -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicationIds <String[]>] [-ApplicationPublisherIds <String[]>]
  [-ApplicationsFromVerifiedPublisherOnly] [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -129,7 +129,7 @@ servicePrincipalCreationConditionSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -176,7 +176,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -238,13 +238,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
 
 ## NOTES
 

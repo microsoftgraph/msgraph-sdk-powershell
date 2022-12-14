@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgentitlementmanagementaccesspackageassignmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgentitlementmanagementaccesspackageassignmentrequest
 schema: 2.0.0
 ---
 
-# Remove-MgEntitlementManagementAccessPackageAssignmentRequest
+# Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest
 
 ## SYNOPSIS
 Delete navigation property accessPackageAssignmentRequests for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property accessPackageAssignmentRequests for identityGovernanc
 
 ### Delete (Default)
 ```
-Remove-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId <String>
+Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEntitlementManagementAccessPackageAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
+Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property accessPackageAssignmentRequests for identityGovernanc
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEntitlementManagementAccessPackageAssignmentRequest Cmdlet
+### Example 1: Using the Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId $accessPackageAssignmentRequestId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId $accessPackageAssignmentRequestId
 ```
 
-This example shows how to use the Remove-MgEntitlementManagementAccessPackageAssignmentRequest Cmdlet.
+This example shows how to use the Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

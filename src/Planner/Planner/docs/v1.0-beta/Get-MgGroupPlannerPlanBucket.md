@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mggroupplannerplanbucket
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mggroupplannerplanbucket
 schema: 2.0.0
 ---
 
-# Get-MgGroupPlannerPlanBucket
+# Get-MgBetaGroupPlannerPlanBucket
 
 ## SYNOPSIS
 Retrieve a list of plannerBucket objects contained by a plannerPlan object.
@@ -13,7 +13,7 @@ Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 ## SYNTAX
 
 ```
-Get-MgGroupPlannerPlanBucket -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupPlannerPlanBucket -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -213,7 +213,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1
 
 ## NOTES
 

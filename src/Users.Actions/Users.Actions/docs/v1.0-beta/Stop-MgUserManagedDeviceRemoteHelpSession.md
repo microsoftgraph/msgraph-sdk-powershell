@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/stop-mgusermanageddeviceremotehelpsession
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/stop-mgusermanageddeviceremotehelpsession
 schema: 2.0.0
 ---
 
-# Stop-MgUserManagedDeviceRemoteHelpSession
+# Stop-MgBetaUserManagedDeviceRemoteHelpSession
 
 ## SYNOPSIS
 Remote help - End ACS session, Pubsub session and delete Remote help session
@@ -14,28 +14,28 @@ Remote help - End ACS session, Pubsub session and delete Remote help session
 
 ### EndExpanded (Default)
 ```
-Stop-MgUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -UserId <String>
+Stop-MgBetaUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-SessionKey <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### End
 ```
-Stop-MgUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -UserId <String>
+Stop-MgBetaUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths17G8R7ZUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EndViaIdentity
 ```
-Stop-MgUserManagedDeviceRemoteHelpSession -InputObject <IUsersActionsIdentity>
+Stop-MgBetaUserManagedDeviceRemoteHelpSession -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths17G8R7ZUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EndViaIdentityExpanded
 ```
-Stop-MgUserManagedDeviceRemoteHelpSession -InputObject <IUsersActionsIdentity>
+Stop-MgBetaUserManagedDeviceRemoteHelpSession -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-SessionKey <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths17G8R7ZUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths17G8R7ZUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: End, EndViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: EndViaIdentity, EndViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths17G8R7ZUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths17G8R7ZUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphEndremotehelpsessionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

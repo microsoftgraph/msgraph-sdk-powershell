@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/stop-mgidentitygovernanceaccessreviewdefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/stop-mgidentitygovernanceaccessreviewdefinition
 schema: 2.0.0
 ---
 
-# Stop-MgIdentityGovernanceAccessReviewDefinition
+# Stop-MgBetaIdentityGovernanceAccessReviewDefinition
 
 ## SYNOPSIS
 Invoke action stop
@@ -14,13 +14,13 @@ Invoke action stop
 
 ### Stop (Default)
 ```
-Stop-MgIdentityGovernanceAccessReviewDefinition -AccessReviewScheduleDefinitionId <String> [-PassThru]
+Stop-MgBetaIdentityGovernanceAccessReviewDefinition -AccessReviewScheduleDefinitionId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StopViaIdentity
 ```
-Stop-MgIdentityGovernanceAccessReviewDefinition -InputObject <IIdentityGovernanceIdentity> [-PassThru]
+Stop-MgBetaIdentityGovernanceAccessReviewDefinition -InputObject <IIdentityGovernanceIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: StopViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

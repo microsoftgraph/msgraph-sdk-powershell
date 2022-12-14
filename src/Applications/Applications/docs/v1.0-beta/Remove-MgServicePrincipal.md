@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgserviceprincipal
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgserviceprincipal
 schema: 2.0.0
 ---
 
-# Remove-MgServicePrincipal
+# Remove-MgBetaServicePrincipal
 
 ## SYNOPSIS
 Delete a servicePrincipal object.
@@ -14,13 +14,13 @@ Delete a servicePrincipal object.
 
 ### Delete (Default)
 ```
-Remove-MgServicePrincipal -ServicePrincipalId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaServicePrincipal -ServicePrincipalId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServicePrincipal -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaServicePrincipal -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete a servicePrincipal object.
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgServicePrincipal Cmdlet
+### Example 1: Using the Remove-MgBetaServicePrincipal Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgServicePrincipal -ServicePrincipalId $servicePrincipalId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaServicePrincipal -ServicePrincipalId $servicePrincipalId
 ```
 
-This example shows how to use the Remove-MgServicePrincipal Cmdlet.
+This example shows how to use the Remove-MgBetaServicePrincipal Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

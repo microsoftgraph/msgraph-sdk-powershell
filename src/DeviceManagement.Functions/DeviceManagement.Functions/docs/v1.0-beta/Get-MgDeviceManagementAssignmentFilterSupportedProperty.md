@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementassignmentfiltersupportedproperty
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementassignmentfiltersupportedproperty
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementAssignmentFilterSupportedProperty
+# Get-MgBetaDeviceManagementAssignmentFilterSupportedProperty
 
 ## SYNOPSIS
 Invoke function getSupportedProperties
@@ -14,13 +14,13 @@ Invoke function getSupportedProperties
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementAssignmentFilterSupportedProperty -DeviceAndAppManagementAssignmentFilterId <String>
+Get-MgBetaDeviceManagementAssignmentFilterSupportedProperty -DeviceAndAppManagementAssignmentFilterId <String>
  [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementAssignmentFilterSupportedProperty -InputObject <IDeviceManagementFunctionsIdentity>
+Get-MgBetaDeviceManagementAssignmentFilterSupportedProperty -InputObject <IDeviceManagementFunctionsIdentity>
  [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -142,11 +142,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignmentFilterSupportedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterSupportedProperty
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mguserpresence
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/update-mguserpresence
 schema: 2.0.0
 ---
 
-# Update-MgUserPresence
+# Update-MgBetaUserPresence
 
 ## SYNOPSIS
 Update the navigation property presence in users
@@ -14,26 +14,26 @@ Update the navigation property presence in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserPresence -UserId <String> [-Activity <String>] [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserPresence -UserId <String> [-Activity <String>] [-AdditionalProperties <Hashtable>]
  [-Availability <String>] [-Id <String>] [-OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserPresence -UserId <String> -BodyParameter <IMicrosoftGraphPresence1> [-PassThru] [-Confirm]
+Update-MgBetaUserPresence -UserId <String> -BodyParameter <IMicrosoftGraphPresence1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphPresence1>
+Update-MgBetaUserPresence -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphPresence1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> [-Activity <String>]
+Update-MgBetaUserPresence -InputObject <ICloudCommunicationsIdentity> [-Activity <String>]
  [-AdditionalProperties <Hashtable>] [-Availability <String>] [-Id <String>]
  [-OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -98,7 +98,7 @@ presence
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPresence1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ outOfOfficeSettings
 To construct, please use Get-Help -Online and see NOTES section for OUTOFOFFICESETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutOfOfficeSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutOfOfficeSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -223,9 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPresence1
 
 ## OUTPUTS
 

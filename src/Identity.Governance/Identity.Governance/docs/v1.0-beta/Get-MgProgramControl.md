@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprogramcontrol
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprogramcontrol
 schema: 2.0.0
 ---
 
-# Get-MgProgramControl
+# Get-MgBetaProgramControl
 
 ## SYNOPSIS
 Get entity from programControls by key
@@ -14,57 +14,57 @@ Get entity from programControls by key
 
 ### List (Default)
 ```
-Get-MgProgramControl [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaProgramControl [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgProgramControl -ProgramControlId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaProgramControl -ProgramControlId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgProgramControl -ProgramControlId <String> -ProgramControlId1 <String> [-ExpandProperty <String[]>]
+Get-MgBetaProgramControl -ProgramControlId <String> -ProgramControlId1 <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get2
 ```
-Get-MgProgramControl -ProgramControlId <String> -ProgramId <String> [-ExpandProperty <String[]>]
+Get-MgBetaProgramControl -ProgramControlId <String> -ProgramId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgProgramControl -ProgramControlId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaProgramControl -ProgramControlId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### List2
 ```
-Get-MgProgramControl -ProgramId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaProgramControl -ProgramId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -74,13 +74,13 @@ Get entity from programControls by key
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgProgramControl Cmdlet
+### Example 1: Using the Get-MgBetaProgramControl Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgProgramControl
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaProgramControl
 ```
 
-This example shows how to use the Get-MgProgramControl Cmdlet.
+This example shows how to use the Get-MgBetaProgramControl Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1, GetViaIdentity2
 Aliases:
 
@@ -302,11 +302,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControl
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControl
 
 ## NOTES
 

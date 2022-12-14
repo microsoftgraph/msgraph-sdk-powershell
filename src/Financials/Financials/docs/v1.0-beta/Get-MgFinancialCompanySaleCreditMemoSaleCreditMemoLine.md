@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysalecreditmemosalecreditmemoline
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanysalecreditmemosalecreditmemoline
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine
+# Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine
 
 ## SYNOPSIS
 Get salesCreditMemoLines from financials
@@ -14,20 +14,20 @@ Get salesCreditMemoLines from financials
 
 ### List (Default)
 ```
-Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -SalesCreditMemoId <String>
+Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -SalesCreditMemoId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -SalesCreditMemoId <String>
+Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine -CompanyId <String> -SalesCreditMemoId <String>
  -SalesCreditMemoLineId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine -InputObject <IFinancialsIdentity>
+Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine -InputObject <IFinancialsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine
 
 ## NOTES
 

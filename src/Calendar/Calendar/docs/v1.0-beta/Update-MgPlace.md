@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/update-mgplace
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/update-mgplace
 schema: 2.0.0
 ---
 
-# Update-MgPlace
+# Update-MgBetaPlace
 
 ## SYNOPSIS
 Update the properties of place object, which can be a room, workspace, or roomList.
@@ -15,7 +15,7 @@ You can identify the **room**, **workspace**, or **roomList** by specifying the 
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPlace -PlaceId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlace -PlaceId <String> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPhysicalAddress1>] [-DisplayName <String>]
  [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-Phone <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,19 +23,19 @@ Update-MgPlace -PlaceId <String> [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgPlace -PlaceId <String> -BodyParameter <IMicrosoftGraphPlace> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaPlace -PlaceId <String> -BodyParameter <IMicrosoftGraphPlace> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPlace -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphPlace> [-PassThru] [-Confirm]
+Update-MgBetaPlace -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphPlace> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPlace -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlace -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPhysicalAddress1>] [-DisplayName <String>]
  [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-Phone <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -47,28 +47,28 @@ You can identify the **room**, **workspace**, or **roomList** by specifying the 
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPlace Cmdlet
+### Example 1: Using the Update-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
-	"@odata.type" = "microsoft.graph.room"
+	"@odata.type" = "Microsoft.Graph.Beta.room"
 	Nickname = "Conf Room"
 	Building = "1"
 	Label = "100"
 	Capacity = 
 	IsWheelChairAccessible = $false
 }
-Update-MgPlace -PlaceId $placeId -BodyParameter $params
+Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPlace Cmdlet.
+This example shows how to use the Update-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Update-MgPlace Cmdlet
+### Example 2: Using the Update-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
-	"@odata.type" = "microsoft.graph.roomList"
+	"@odata.type" = "Microsoft.Graph.Beta.roomList"
 	DisplayName = "Building 1"
 	Phone = "555-555-0100"
 	Address = @{
@@ -86,27 +86,27 @@ $params = @{
 		AltitudeAccuracy = $null
 	}
 }
-Update-MgPlace -PlaceId $placeId -BodyParameter $params
+Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPlace Cmdlet.
+This example shows how to use the Update-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Update-MgPlace Cmdlet
+### Example 3: Using the Update-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
-	"@odata.type" = "microsoft.graph.workspace"
+	"@odata.type" = "Microsoft.Graph.Beta.workspace"
 	Nickname = "Conf Room"
 	Building = "1"
 	Label = "100"
 	Capacity = 
 	IsWheelChairAccessible = $false
 }
-Update-MgPlace -PlaceId $placeId -BodyParameter $params
+Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPlace Cmdlet.
+This example shows how to use the Update-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -131,7 +131,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -147,7 +147,7 @@ place
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlace
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -178,7 +178,7 @@ outlookGeoCoordinates
 To construct, please use Get-Help -Online and see NOTES section for GEOCOORDINATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookGeoCoordinates
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookGeoCoordinates
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -210,7 +210,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -302,9 +302,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlace
 
 ## OUTPUTS
 

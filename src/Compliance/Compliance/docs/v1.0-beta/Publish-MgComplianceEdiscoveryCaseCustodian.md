@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/publish-mgcomplianceediscoverycasecustodian
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/publish-mgcomplianceediscoverycasecustodian
 schema: 2.0.0
 ---
 
-# Publish-MgComplianceEdiscoveryCaseCustodian
+# Publish-MgBetaComplianceEdiscoveryCaseCustodian
 
 ## SYNOPSIS
 Release a custodian from a case.
@@ -15,13 +15,13 @@ For details, see Release a custodian from a case.
 
 ### Release (Default)
 ```
-Publish-MgComplianceEdiscoveryCaseCustodian -CaseId <String> -CustodianId <String> [-PassThru] [-Confirm]
+Publish-MgBetaComplianceEdiscoveryCaseCustodian -CaseId <String> -CustodianId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReleaseViaIdentity
 ```
-Publish-MgComplianceEdiscoveryCaseCustodian -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
+Publish-MgBetaComplianceEdiscoveryCaseCustodian -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ For details, see Release a custodian from a case.
 
 ## EXAMPLES
 
-### Example 1: Using the Publish-MgComplianceEdiscoveryCaseCustodian Cmdlet
+### Example 1: Using the Publish-MgBetaComplianceEdiscoveryCaseCustodian Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Publish-MgComplianceEdiscoveryCaseCustodian -CaseId $caseId -CustodianId $custodianId
+Import-Module Microsoft.Graph.Beta.Compliance
+Publish-MgBetaComplianceEdiscoveryCaseCustodian -CaseId $caseId -CustodianId $custodianId
 ```
 
-This example shows how to use the Publish-MgComplianceEdiscoveryCaseCustodian Cmdlet.
+This example shows how to use the Publish-MgBetaComplianceEdiscoveryCaseCustodian Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: ReleaseViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

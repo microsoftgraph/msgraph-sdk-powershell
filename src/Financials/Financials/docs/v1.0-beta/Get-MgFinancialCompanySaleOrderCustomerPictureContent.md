@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysaleordercustomerpicturecontent
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanysaleordercustomerpicturecontent
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanySaleOrderCustomerPictureContent
+# Get-MgBetaFinancialCompanySaleOrderCustomerPictureContent
 
 ## SYNOPSIS
 Get content for the navigation property picture from financials
@@ -14,13 +14,13 @@ Get content for the navigation property picture from financials
 
 ### Get (Default)
 ```
-Get-MgFinancialCompanySaleOrderCustomerPictureContent -CompanyId <String> -PictureId <String>
+Get-MgBetaFinancialCompanySaleOrderCustomerPictureContent -CompanyId <String> -PictureId <String>
  -SalesOrderId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanySaleOrderCustomerPictureContent -InputObject <IFinancialsIdentity> -OutFile <String>
+Get-MgBetaFinancialCompanySaleOrderCustomerPictureContent -InputObject <IFinancialsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

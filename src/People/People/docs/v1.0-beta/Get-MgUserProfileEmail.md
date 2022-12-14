@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguserprofileemail
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguserprofileemail
 schema: 2.0.0
 ---
 
-# Get-MgUserProfileEmail
+# Get-MgBetaUserProfileEmail
 
 ## SYNOPSIS
 Represents detailed information about email addresses associated with the user.
@@ -14,20 +14,20 @@ Represents detailed information about email addresses associated with the user.
 
 ### List (Default)
 ```
-Get-MgUserProfileEmail -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserProfileEmail -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserProfileEmail -ItemEmailId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserProfileEmail -ItemEmailId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserProfileEmail -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserProfileEmail -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,23 +36,23 @@ Represents detailed information about email addresses associated with the user.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserProfileEmail Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileEmail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileEmail -UserId $userId
+Get-MgBetaUserProfileEmail -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserProfileEmail Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileEmail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserProfileEmail Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileEmail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
-Get-MgUserProfileEmail -UserId $userId -ItemEmailId $itemEmailId
+Import-Module Microsoft.Graph.Beta.People
+Get-MgBetaUserProfileEmail -UserId $userId -ItemEmailId $itemEmailId
 ```
 
-This example shows how to use the Get-MgUserProfileEmail Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileEmail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemEmail
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemEmail
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusersettingshiftpreference
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusersettingshiftpreference
 schema: 2.0.0
 ---
 
-# Get-MgUserSettingShiftPreference
+# Get-MgBetaUserSettingShiftPreference
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a shiftPreferences object by ID.
@@ -14,13 +14,13 @@ Retrieve the properties and relationships of a shiftPreferences object by ID.
 
 ### Get (Default)
 ```
-Get-MgUserSettingShiftPreference -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserSettingShiftPreference -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserSettingShiftPreference -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserSettingShiftPreference -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Retrieve the properties and relationships of a shiftPreferences object by ID.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserSettingShiftPreference Cmdlet
+### Example 1: Using the Get-MgBetaUserSettingShiftPreference Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
-Get-MgUserSettingShiftPreference -UserId $userId
+Import-Module Microsoft.Graph.Beta.Users
+Get-MgBetaUserSettingShiftPreference -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserSettingShiftPreference Cmdlet.
+This example shows how to use the Get-MgBetaUserSettingShiftPreference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShiftPreferences
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShiftPreferences
 
 ## NOTES
 

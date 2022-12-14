@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/set-mgsitelistitemdriveitemcontent
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/set-mgsitelistitemdriveitemcontent
 schema: 2.0.0
 ---
 
-# Set-MgSiteListItemDriveItemContent
+# Set-MgBetaSiteListItemDriveItemContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,13 +14,13 @@ The content stream, if the item represents a file.
 
 ### Set (Default)
 ```
-Set-MgSiteListItemDriveItemContent -ListId <String> -ListItemId <String> -SiteId <String> -InFile <String>
+Set-MgBetaSiteListItemDriveItemContent -ListId <String> -ListItemId <String> -SiteId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgSiteListItemDriveItemContent -InputObject <ISitesIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaSiteListItemDriveItemContent -InputObject <ISitesIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -175,7 +175,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ### System.IO.Stream
 

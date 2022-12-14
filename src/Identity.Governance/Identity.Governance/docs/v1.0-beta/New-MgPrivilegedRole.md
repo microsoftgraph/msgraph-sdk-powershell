@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedrole
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedrole
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedRole
+# New-MgBetaPrivilegedRole
 
 ## SYNOPSIS
 Add new entity to privilegedRoles
@@ -14,7 +14,7 @@ Add new entity to privilegedRoles
 
 ### CreateExpanded (Default)
 ```
-New-MgPrivilegedRole [-AdditionalProperties <Hashtable>]
+New-MgBetaPrivilegedRole [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphPrivilegedRoleAssignment[]>] [-Id <String>] [-Name <String>]
  [-Settings <IMicrosoftGraphPrivilegedRoleSettings>] [-Summary <IMicrosoftGraphPrivilegedRoleSummary>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgPrivilegedRole [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgPrivilegedRole -BodyParameter <IMicrosoftGraphPrivilegedRole> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPrivilegedRole -BodyParameter <IMicrosoftGraphPrivilegedRole> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +54,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -70,7 +70,7 @@ privilegedRole
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 Parameter Sets: Create
 Aliases:
 
@@ -117,7 +117,7 @@ privilegedRoleSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -133,7 +133,7 @@ privilegedRoleSummary
 To construct, please use Get-Help -Online and see NOTES section for SUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSummary
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -180,11 +180,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 
 ## NOTES
 

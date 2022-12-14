@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgofficeclientconfigurationuserpreferencepayload
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgofficeclientconfigurationuserpreferencepayload
 schema: 2.0.0
 ---
 
-# Get-MgOfficeClientConfigurationUserPreferencePayload
+# Get-MgBetaOfficeClientConfigurationUserPreferencePayload
 
 ## SYNOPSIS
 Preference settings JSON string in binary format, these values can be overridden by the user.
@@ -14,13 +14,13 @@ Preference settings JSON string in binary format, these values can be overridden
 
 ### Get (Default)
 ```
-Get-MgOfficeClientConfigurationUserPreferencePayload -OfficeClientConfigurationId <String> -OutFile <String>
+Get-MgBetaOfficeClientConfigurationUserPreferencePayload -OfficeClientConfigurationId <String> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOfficeClientConfigurationUserPreferencePayload -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaOfficeClientConfigurationUserPreferencePayload -InputObject <IDevicesCorporateManagementIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 

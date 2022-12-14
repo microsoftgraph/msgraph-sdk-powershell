@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyjournal
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanyjournal
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyJournal
+# Update-MgBetaFinancialCompanyJournal
 
 ## SYNOPSIS
 Update the navigation property journals in financials
@@ -14,7 +14,7 @@ Update the navigation property journals in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyJournal -CompanyId <String> -JournalId <String> [-Account <IMicrosoftGraphAccount>]
+Update-MgBetaFinancialCompanyJournal -CompanyId <String> -JournalId <String> [-Account <IMicrosoftGraphAccount>]
  [-AdditionalProperties <Hashtable>] [-BalancingAccountId <String>] [-BalancingAccountNumber <String>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-JournalLines <IMicrosoftGraphJournalLine[]>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgFinancialCompanyJournal -CompanyId <String> -JournalId <String> [-Accou
 
 ### Update
 ```
-Update-MgFinancialCompanyJournal -CompanyId <String> -JournalId <String>
+Update-MgBetaFinancialCompanyJournal -CompanyId <String> -JournalId <String>
  -BodyParameter <IMicrosoftGraphJournal> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyJournal -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphJournal>
+Update-MgBetaFinancialCompanyJournal -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphJournal>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyJournal -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
+Update-MgBetaFinancialCompanyJournal -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
  [-AdditionalProperties <Hashtable>] [-BalancingAccountId <String>] [-BalancingAccountNumber <String>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-JournalLines <IMicrosoftGraphJournalLine[]>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -52,7 +52,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -113,7 +113,7 @@ journal
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJournal
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournal
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -190,7 +190,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for JOURNALLINES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJournalLine[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournalLine[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -298,9 +298,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJournal
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournal
 
 ## OUTPUTS
 

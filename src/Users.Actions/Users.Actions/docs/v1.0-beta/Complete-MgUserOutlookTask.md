@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/complete-mguseroutlooktask
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/complete-mguseroutlooktask
 schema: 2.0.0
 ---
 
-# Complete-MgUserOutlookTask
+# Complete-MgBetaUserOutlookTask
 
 ## SYNOPSIS
 Invoke action complete
@@ -14,12 +14,12 @@ Invoke action complete
 
 ### Complete (Default)
 ```
-Complete-MgUserOutlookTask -OutlookTaskId <String> -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Complete-MgBetaUserOutlookTask -OutlookTaskId <String> -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CompleteViaIdentity
 ```
-Complete-MgUserOutlookTask -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Complete-MgBetaUserOutlookTask -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,14 +27,14 @@ Invoke action complete
 
 ## EXAMPLES
 
-### Example 1: Using the Complete-MgUserOutlookTask Cmdlet
+### Example 1: Using the Complete-MgBetaUserOutlookTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 # A UPN can also be used as -UserId.
-Complete-MgUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
+Complete-MgBetaUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
 ```
 
-This example shows how to use the Complete-MgUserOutlookTask Cmdlet.
+This example shows how to use the Complete-MgBetaUserOutlookTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -44,7 +44,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CompleteViaIdentity
 Aliases:
 
@@ -121,11 +121,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTask
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/new-mgwindowsupdatesdeployment
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/new-mgwindowsupdatesdeployment
 schema: 2.0.0
 ---
 
-# New-MgWindowsUpdatesDeployment
+# New-MgBetaWindowsUpdatesDeployment
 
 ## SYNOPSIS
 Create a new deployment object.
@@ -14,7 +14,7 @@ Create a new deployment object.
 
 ### CreateExpanded (Default)
 ```
-New-MgWindowsUpdatesDeployment [-AdditionalProperties <Hashtable>]
+New-MgBetaWindowsUpdatesDeployment [-AdditionalProperties <Hashtable>]
  [-Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>] [-Content <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Settings <IMicrosoftGraphWindowsUpdatesDeploymentSettings>]
@@ -23,7 +23,7 @@ New-MgWindowsUpdatesDeployment [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgWindowsUpdatesDeployment -BodyParameter <IMicrosoftGraphWindowsUpdatesDeployment> [-Confirm] [-WhatIf]
+New-MgBetaWindowsUpdatesDeployment -BodyParameter <IMicrosoftGraphWindowsUpdatesDeployment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,24 +32,24 @@ Create a new deployment object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgWindowsUpdatesDeployment Cmdlet
+### Example 1: Using the New-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
-	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
+	"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.deployment"
 	Content = @{
-		"@odata.type" = "microsoft.graph.windowsUpdates.featureUpdateReference"
+		"@odata.type" = "Microsoft.Graph.Beta.windowsUpdates.featureUpdateReference"
 		Version = "20H2"
 	}
 	Settings = @{
-		"@odata.type" = "microsoft.graph.windowsUpdates.windowsDeploymentSettings"
+		"@odata.type" = "Microsoft.Graph.Beta.windowsUpdates.windowsDeploymentSettings"
 		Rollout = @{
 			DevicesPerOffer = 100
 		}
 		Monitoring = @{
 			MonitoringRules = @(
 				@{
-					"@odata.type" = "#microsoft.graph.windowsUpdates.monitoringRule"
+					"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.monitoringRule"
 					Signal = "rollback"
 					Threshold = 5
 					Action = "pauseDeployment"
@@ -58,10 +58,10 @@ $params = @{
 		}
 	}
 }
-New-MgWindowsUpdatesDeployment -BodyParameter $params
+New-MgBetaWindowsUpdatesDeployment -BodyParameter $params
 ```
 
-This example shows how to use the New-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the New-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ deploymentAudience
 To construct, please use Get-Help -Online and see NOTES section for AUDIENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentAudience
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentAudience
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ deployment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
 Parameter Sets: Create
 Aliases:
 
@@ -183,7 +183,7 @@ deploymentSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -199,7 +199,7 @@ deploymentState
 To construct, please use Get-Help -Online and see NOTES section for STATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -246,17 +246,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
 
 ## NOTES
 
 ALIASES
 
-### New-MgWuDeployment
+### New-MgBetaWuDeployment
 
 COMPLEX PARAMETER PROPERTIES
 

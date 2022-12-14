@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/get-mguserdeviceregisteredownerbyref
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/get-mguserdeviceregisteredownerbyref
 schema: 2.0.0
 ---
 
-# Get-MgUserDeviceRegisteredOwnerByRef
+# Get-MgBetaUserDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
 The user that cloud joined the device or registered their personal device.
@@ -18,7 +18,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgUserDeviceRegisteredOwnerByRef -DeviceId <String> -UserId <String> [-Filter <String>] [-Search <String>]
+Get-MgBetaUserDeviceRegisteredOwnerByRef -DeviceId <String> -UserId <String> [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```

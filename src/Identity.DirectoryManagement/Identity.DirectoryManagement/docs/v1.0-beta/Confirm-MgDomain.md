@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/confirm-mgdomain
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/confirm-mgdomain
 schema: 2.0.0
 ---
 
-# Confirm-MgDomain
+# Confirm-MgBetaDomain
 
 ## SYNOPSIS
 Validates the ownership of the domain.
@@ -14,12 +14,12 @@ Validates the ownership of the domain.
 
 ### Verify (Default)
 ```
-Confirm-MgDomain -DomainId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Confirm-MgBetaDomain -DomainId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### VerifyViaIdentity
 ```
-Confirm-MgDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Confirm-MgBetaDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,13 +27,13 @@ Validates the ownership of the domain.
 
 ## EXAMPLES
 
-### Example 1: Using the Confirm-MgDomain Cmdlet
+### Example 1: Using the Confirm-MgBetaDomain Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Confirm-MgDomain -DomainId $domainId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Confirm-MgBetaDomain -DomainId $domainId
 ```
 
-This example shows how to use the Confirm-MgDomain Cmdlet.
+This example shows how to use the Confirm-MgBetaDomain Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -58,7 +58,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: VerifyViaIdentity
 Aliases:
 
@@ -105,11 +105,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomain
 
 ## NOTES
 

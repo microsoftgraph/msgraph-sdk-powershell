@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationmerubric
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/new-mgeducationmerubric
 schema: 2.0.0
 ---
 
-# New-MgEducationMeRubric
+# New-MgBetaEducationMeRubric
 
 ## SYNOPSIS
 Create a new educationRubric object.
@@ -14,7 +14,7 @@ Create a new educationRubric object.
 
 ### CreateExpanded (Default)
 ```
-New-MgEducationMeRubric [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
+New-MgBetaEducationMeRubric [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-Description <IMicrosoftGraphEducationItemBody>] [-DisplayName <String>] [-Grading <Hashtable>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Levels <IMicrosoftGraphRubricLevel[]>]
  [-Qualities <IMicrosoftGraphRubricQuality[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgEducationMeRubric [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicros
 
 ### Create
 ```
-New-MgEducationMeRubric -BodyParameter <IMicrosoftGraphEducationRubric> [-Confirm] [-WhatIf]
+New-MgBetaEducationMeRubric -BodyParameter <IMicrosoftGraphEducationRubric> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,9 +31,9 @@ Create a new educationRubric object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgEducationMeRubric Cmdlet
+### Example 1: Using the New-MgBetaEducationMeRubric Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	DisplayName = "Example Credit Rubric"
 	Description = @{
@@ -99,15 +99,15 @@ $params = @{
 		}
 	)
 }
-New-MgEducationMeRubric -BodyParameter $params
+New-MgBetaEducationMeRubric -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationMeRubric Cmdlet.
+This example shows how to use the New-MgBetaEducationMeRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgEducationMeRubric Cmdlet
+### Example 2: Using the New-MgBetaEducationMeRubric Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	DisplayName = "Example Points Rubric"
 	Description = @{
@@ -122,7 +122,7 @@ $params = @{
 				ContentType = "text"
 			}
 			Grading = @{
-				"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
+				"@odata.type" = "#Microsoft.Graph.Beta.educationAssignmentPointsGradeType"
 				MaxPoints = 
 			}
 		}
@@ -133,7 +133,7 @@ $params = @{
 				ContentType = "text"
 			}
 			Grading = @{
-				"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
+				"@odata.type" = "#Microsoft.Graph.Beta.educationAssignmentPointsGradeType"
 				MaxPoints = 
 			}
 		}
@@ -183,13 +183,13 @@ $params = @{
 		}
 	)
 	Grading = @{
-		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
+		"@odata.type" = "#Microsoft.Graph.Beta.educationAssignmentPointsGradeType"
 	}
 }
-New-MgEducationMeRubric -BodyParameter $params
+New-MgBetaEducationMeRubric -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationMeRubric Cmdlet.
+This example shows how to use the New-MgBetaEducationMeRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -214,7 +214,7 @@ educationRubric
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationRubric
 Parameter Sets: Create
 Aliases:
 
@@ -230,7 +230,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -246,7 +246,7 @@ educationItemBody
 To construct, please use Get-Help -Online and see NOTES section for DESCRIPTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationItemBody
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -308,7 +308,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -324,7 +324,7 @@ The collection of levels making up this rubric.
 To construct, please use Get-Help -Online and see NOTES section for LEVELS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRubricLevel[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRubricLevel[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -340,7 +340,7 @@ The collection of qualities making up this rubric.
 To construct, please use Get-Help -Online and see NOTES section for QUALITIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRubricQuality[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRubricQuality[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -387,11 +387,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationRubric
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationRubric
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysalequote
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysalequote
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleQuote
+# Update-MgBetaFinancialCompanySaleQuote
 
 ## SYNOPSIS
 Update the navigation property salesQuotes in financials
@@ -14,7 +14,7 @@ Update the navigation property salesQuotes in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleQuote -CompanyId <String> -SalesQuoteId <String> [-AcceptedDate <DateTime>]
+Update-MgBetaFinancialCompanySaleQuote -CompanyId <String> -SalesQuoteId <String> [-AcceptedDate <DateTime>]
  [-AdditionalProperties <Hashtable>] [-BillingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-BillToCustomerId <String>] [-BillToCustomerNumber <String>] [-BillToName <String>]
  [-Currency <IMicrosoftGraphCurrency>] [-CurrencyCode <String>] [-CurrencyId <String>]
@@ -33,19 +33,19 @@ Update-MgFinancialCompanySaleQuote -CompanyId <String> -SalesQuoteId <String> [-
 
 ### Update
 ```
-Update-MgFinancialCompanySaleQuote -CompanyId <String> -SalesQuoteId <String>
+Update-MgBetaFinancialCompanySaleQuote -CompanyId <String> -SalesQuoteId <String>
  -BodyParameter <IMicrosoftGraphSalesQuote> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleQuote -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleQuote -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphSalesQuote> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleQuote -InputObject <IFinancialsIdentity> [-AcceptedDate <DateTime>]
+Update-MgBetaFinancialCompanySaleQuote -InputObject <IFinancialsIdentity> [-AcceptedDate <DateTime>]
  [-AdditionalProperties <Hashtable>] [-BillingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-BillToCustomerId <String>] [-BillToCustomerNumber <String>] [-BillToName <String>]
  [-Currency <IMicrosoftGraphCurrency>] [-CurrencyCode <String>] [-CurrencyId <String>]
@@ -104,7 +104,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for BILLINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ salesQuote
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesQuote
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesQuote
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -196,7 +196,7 @@ currency
 To construct, please use Get-Help -Online and see NOTES section for CURRENCY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCurrency
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -242,7 +242,7 @@ customer
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -394,7 +394,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -455,7 +455,7 @@ paymentTerm
 To construct, please use Get-Help -Online and see NOTES section for PAYMENTTERM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -531,7 +531,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SALESQUOTELINES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesQuoteLine[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesQuoteLine[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -547,7 +547,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for SELLINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -578,7 +578,7 @@ shipmentMethod
 To construct, please use Get-Help -Online and see NOTES section for SHIPMENTMETHOD properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShipmentMethod
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -609,7 +609,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for SHIPPINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -761,9 +761,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesQuote
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesQuote
 
 ## OUTPUTS
 

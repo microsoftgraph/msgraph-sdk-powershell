@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgusereventattachment
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgusereventattachment
 schema: 2.0.0
 ---
 
-# Get-MgUserEventAttachment
+# Get-MgBetaUserEventAttachment
 
 ## SYNOPSIS
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
@@ -17,20 +17,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserEventAttachment -EventId <String> -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserEventAttachment -EventId <String> -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserEventAttachment -AttachmentId <String> -EventId <String> -UserId <String>
+Get-MgBetaUserEventAttachment -AttachmentId <String> -EventId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserEventAttachment -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserEventAttachment -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -42,24 +42,24 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserEventAttachment Cmdlet
+### Example 1: Using the Get-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEventAttachment -UserId $userId -EventId $eventId
+Get-MgBetaUserEventAttachment -UserId $userId -EventId $eventId
 ```
 
-This example shows how to use the Get-MgUserEventAttachment Cmdlet.
+This example shows how to use the Get-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserEventAttachment Cmdlet
+### Example 2: Using the Get-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserEventAttachment -UserId $userId -EventId $eventId -AttachmentId $attachmentId
+Get-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -AttachmentId $attachmentId
 ```
 
-This example shows how to use the Get-MgUserEventAttachment Cmdlet.
+This example shows how to use the Get-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -160,7 +160,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -266,11 +266,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

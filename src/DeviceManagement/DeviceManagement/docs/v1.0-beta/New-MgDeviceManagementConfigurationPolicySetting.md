@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementconfigurationpolicysetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementconfigurationpolicysetting
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementConfigurationPolicySetting
+# New-MgBetaDeviceManagementConfigurationPolicySetting
 
 ## SYNOPSIS
 Create new navigation property to settings for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to settings for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementConfigurationPolicySetting -DeviceManagementConfigurationPolicyId <String>
+New-MgBetaDeviceManagementConfigurationPolicySetting -DeviceManagementConfigurationPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]
  [-SettingInstance <IMicrosoftGraphDeviceManagementConfigurationSettingInstance>] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ New-MgDeviceManagementConfigurationPolicySetting -DeviceManagementConfigurationP
 
 ### Create
 ```
-New-MgDeviceManagementConfigurationPolicySetting -DeviceManagementConfigurationPolicyId <String>
+New-MgBetaDeviceManagementConfigurationPolicySetting -DeviceManagementConfigurationPolicyId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSetting> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementConfigurationPolicySetting -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementConfigurationPolicySetting -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSetting> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementConfigurationPolicySetting -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementConfigurationPolicySetting -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]
  [-SettingInstance <IMicrosoftGraphDeviceManagementConfigurationSettingInstance>] [-Confirm] [-WhatIf]
@@ -71,7 +71,7 @@ Setting instance within policy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -118,7 +118,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -135,7 +135,7 @@ This property is read-only.
 To construct, please use Get-Help -Online and see NOTES section for SETTINGDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -151,7 +151,7 @@ Setting instance within policy
 To construct, please use Get-Help -Online and see NOTES section for SETTINGINSTANCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingInstance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingInstance
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -198,13 +198,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSetting
 
 ## NOTES
 

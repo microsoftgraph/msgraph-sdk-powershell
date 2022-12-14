@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/unpublish-mgsharelistcontenttype
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/unpublish-mgsharelistcontenttype
 schema: 2.0.0
 ---
 
-# Unpublish-MgShareListContentType
+# Unpublish-MgBetaShareListContentType
 
 ## SYNOPSIS
 Unpublish a [contentType][] from a content type hub site.
@@ -14,13 +14,13 @@ Unpublish a [contentType][] from a content type hub site.
 
 ### Unpublish1 (Default)
 ```
-Unpublish-MgShareListContentType -ContentTypeId <String> -SharedDriveItemId <String> [-PassThru] [-Confirm]
+Unpublish-MgBetaShareListContentType -ContentTypeId <String> -SharedDriveItemId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnpublishViaIdentity1
 ```
-Unpublish-MgShareListContentType -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Unpublish-MgBetaShareListContentType -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UnpublishViaIdentity1
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

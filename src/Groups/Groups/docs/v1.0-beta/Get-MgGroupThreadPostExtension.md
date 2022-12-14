@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupthreadpostextension
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupthreadpostextension
 schema: 2.0.0
 ---
 
-# Get-MgGroupThreadPostExtension
+# Get-MgBetaGroupThreadPostExtension
 
 ## SYNOPSIS
 The collection of open extensions defined for the post.
@@ -17,20 +17,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgGroupThreadPostExtension -ConversationThreadId <String> -GroupId <String> -PostId <String>
+Get-MgBetaGroupThreadPostExtension -ConversationThreadId <String> -GroupId <String> -PostId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupThreadPostExtension -ConversationThreadId <String> -ExtensionId <String> -GroupId <String>
+Get-MgBetaGroupThreadPostExtension -ConversationThreadId <String> -ExtensionId <String> -GroupId <String>
  -PostId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupThreadPostExtension -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupThreadPostExtension -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -42,13 +42,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupThreadPostExtension Cmdlet
+### Example 1: Using the Get-MgBetaGroupThreadPostExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
 ```
 
-This example shows how to use the Get-MgGroupThreadPostExtension Cmdlet.
+This example shows how to use the Get-MgBetaGroupThreadPostExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -164,7 +164,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension
 
 ### System.String
 

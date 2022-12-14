@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementadvancedthreatprotectiononboardingstatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementadvancedthreatprotectiononboardingstatesummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
+# Get-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
 
 ## SYNOPSIS
 The summary state of ATP onboarding state for this account.
@@ -13,7 +13,7 @@ The summary state of ATP onboarding state for this account.
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingStateSummary
 
 ## NOTES
 

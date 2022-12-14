@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/remove-mguseronlinemeetingregistration
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/remove-mguseronlinemeetingregistration
 schema: 2.0.0
 ---
 
-# Remove-MgUserOnlineMeetingRegistration
+# Remove-MgBetaUserOnlineMeetingRegistration
 
 ## SYNOPSIS
 Disable and delete the externalMeetingRegistration of an onlineMeeting.
@@ -14,13 +14,13 @@ Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### Delete (Default)
 ```
-Remove-MgUserOnlineMeetingRegistration -OnlineMeetingId <String> -UserId <String> [-IfMatch <String>]
+Remove-MgBetaUserOnlineMeetingRegistration -OnlineMeetingId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>]
+Remove-MgBetaUserOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,24 +29,24 @@ Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserOnlineMeetingRegistration Cmdlet
+### Example 1: Using the Remove-MgBetaUserOnlineMeetingRegistration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 # A UPN can also be used as -UserId.
-Remove-MgUserOnlineMeetingRegistration -UserId $userId -OnlineMeetingId $onlineMeetingId
+Remove-MgBetaUserOnlineMeetingRegistration -UserId $userId -OnlineMeetingId $onlineMeetingId
 ```
 
-This example shows how to use the Remove-MgUserOnlineMeetingRegistration Cmdlet.
+This example shows how to use the Remove-MgBetaUserOnlineMeetingRegistration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Remove-MgUserOnlineMeetingRegistration Cmdlet
+### Example 2: Using the Remove-MgBetaUserOnlineMeetingRegistration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 # A UPN can also be used as -UserId.
-Remove-MgUserOnlineMeetingRegistration -UserId $userId -OnlineMeetingId $onlineMeetingId
+Remove-MgBetaUserOnlineMeetingRegistration -UserId $userId -OnlineMeetingId $onlineMeetingId
 ```
 
-This example shows how to use the Remove-MgUserOnlineMeetingRegistration Cmdlet.
+This example shows how to use the Remove-MgBetaUserOnlineMeetingRegistration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -71,7 +71,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

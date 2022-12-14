@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecuritythreatsubmissionurlthreat
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/remove-mgsecuritythreatsubmissionurlthreat
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityThreatSubmissionUrlThreat
+# Remove-MgBetaSecurityThreatSubmissionUrlThreat
 
 ## SYNOPSIS
 Delete navigation property urlThreats for security
@@ -14,13 +14,13 @@ Delete navigation property urlThreats for security
 
 ### Delete (Default)
 ```
-Remove-MgSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

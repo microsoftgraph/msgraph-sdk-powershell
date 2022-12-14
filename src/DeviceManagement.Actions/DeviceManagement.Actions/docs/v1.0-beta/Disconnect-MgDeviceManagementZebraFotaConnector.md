@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/disconnect-mgdevicemanagementzebrafotaconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/disconnect-mgdevicemanagementzebrafotaconnector
 schema: 2.0.0
 ---
 
-# Disconnect-MgDeviceManagementZebraFotaConnector
+# Disconnect-MgBetaDeviceManagementZebraFotaConnector
 
 ## SYNOPSIS
 Invoke action disconnect
@@ -13,7 +13,7 @@ Invoke action disconnect
 ## SYNTAX
 
 ```
-Disconnect-MgDeviceManagementZebraFotaConnector [-Confirm] [-WhatIf] [<CommonParameters>]
+Disconnect-MgBetaDeviceManagementZebraFotaConnector [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

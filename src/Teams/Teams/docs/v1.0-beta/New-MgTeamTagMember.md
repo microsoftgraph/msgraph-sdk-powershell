@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamtagmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamtagmember
 schema: 2.0.0
 ---
 
-# New-MgTeamTagMember
+# New-MgBetaTeamTagMember
 
 ## SYNOPSIS
 Create a new teamworkTagMember object in a team.
@@ -14,26 +14,26 @@ Create a new teamworkTagMember object in a team.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgTeamTagMember -TeamId <String> -TeamworkTagId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaTeamTagMember -TeamId <String> -TeamworkTagId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-TenantId <String>] [-UserId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgTeamTagMember -TeamId <String> -TeamworkTagId <String> -BodyParameter <IMicrosoftGraphTeamworkTagMember>
+New-MgBetaTeamTagMember -TeamId <String> -TeamworkTagId <String> -BodyParameter <IMicrosoftGraphTeamworkTagMember>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgTeamTagMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTagMember> [-Confirm]
+New-MgBetaTeamTagMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTagMember> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgTeamTagMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaTeamTagMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-TenantId <String>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -42,16 +42,16 @@ Create a new teamworkTagMember object in a team.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTeamTagMember Cmdlet
+### Example 1: Using the New-MgBetaTeamTagMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	UserId = "97f62344-57dc-409c-88ad-c4af14158ff5"
 }
-New-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
+New-MgBetaTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTeamTagMember Cmdlet.
+This example shows how to use the New-MgBetaTeamTagMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -76,7 +76,7 @@ teamworkTagMember
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -230,13 +230,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkTagMember
 
 ## NOTES
 

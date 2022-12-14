@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementtemplatemigratabletoinstance
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementtemplatemigratabletoinstance
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementTemplateMigratableToInstance
+# New-MgBetaDeviceManagementTemplateMigratableToInstance
 
 ## SYNOPSIS
 Invoke action createInstance
@@ -14,7 +14,7 @@ Invoke action createInstance
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementTemplateMigratableToInstance -DeviceManagementTemplateId <String>
+New-MgBetaDeviceManagementTemplateMigratableToInstance -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateId1 <String> [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-RoleScopeTagIds <String[]>]
  [-SettingsDelta <IMicrosoftGraphDeviceManagementSettingInstance[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementTemplateMigratableToInstance -DeviceManagementTemplateId <
 
 ### Create
 ```
-New-MgDeviceManagementTemplateMigratableToInstance -DeviceManagementTemplateId <String>
+New-MgBetaDeviceManagementTemplateMigratableToInstance -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateId1 <String>
  -BodyParameter <IPathsPamc92DevicemanagementTemplatesDevicemanagementtemplateIdMigratabletoDevicemanagementtemplateId1MicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,14 +30,14 @@ New-MgDeviceManagementTemplateMigratableToInstance -DeviceManagementTemplateId <
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementTemplateMigratableToInstance -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementTemplateMigratableToInstance -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsPamc92DevicemanagementTemplatesDevicemanagementtemplateIdMigratabletoDevicemanagementtemplateId1MicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementTemplateMigratableToInstance -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementTemplateMigratableToInstance -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
  [-RoleScopeTagIds <String[]>] [-SettingsDelta <IMicrosoftGraphDeviceManagementSettingInstance[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsPamc92DevicemanagementTemplatesDevicemanagementtemplateIdMigratabletoDevicemanagementtemplateId1MicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsPamc92DevicemanagementTemplatesDevicemanagementtemplateIdMigratabletoDevicemanagementtemplateId1MicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SETTINGSDELTA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -224,13 +224,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsPamc92DevicemanagementTemplatesDevicemanagementtemplateIdMigratabletoDevicemanagementtemplateId1MicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsPamc92DevicemanagementTemplatesDevicemanagementtemplateIdMigratabletoDevicemanagementtemplateId1MicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntent
 
 ## NOTES
 

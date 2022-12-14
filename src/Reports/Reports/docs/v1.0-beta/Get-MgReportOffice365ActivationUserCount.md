@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportoffice365activationusercount
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportoffice365activationusercount
 schema: 2.0.0
 ---
 
-# Get-MgReportOffice365ActivationUserCount
+# Get-MgBetaReportOffice365ActivationUserCount
 
 ## SYNOPSIS
 Invoke function getOffice365ActivationsUserCounts
@@ -13,7 +13,7 @@ Invoke function getOffice365ActivationsUserCounts
 ## SYNTAX
 
 ```
-Get-MgReportOffice365ActivationUserCount -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportOffice365ActivationUserCount -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

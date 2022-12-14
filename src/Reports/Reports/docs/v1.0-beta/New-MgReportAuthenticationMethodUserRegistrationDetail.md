@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/new-mgreportauthenticationmethoduserregistrationdetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/new-mgreportauthenticationmethoduserregistrationdetail
 schema: 2.0.0
 ---
 
-# New-MgReportAuthenticationMethodUserRegistrationDetail
+# New-MgBetaReportAuthenticationMethodUserRegistrationDetail
 
 ## SYNOPSIS
 Create new navigation property to userRegistrationDetails for reports
@@ -14,7 +14,7 @@ Create new navigation property to userRegistrationDetails for reports
 
 ### CreateExpanded (Default)
 ```
-New-MgReportAuthenticationMethodUserRegistrationDetail [-AdditionalProperties <Hashtable>]
+New-MgBetaReportAuthenticationMethodUserRegistrationDetail [-AdditionalProperties <Hashtable>]
  [-DefaultMfaMethod <String>] [-Id <String>] [-IsAdmin] [-IsMfaCapable] [-IsMfaRegistered]
  [-IsPasswordlessCapable] [-IsSsprCapable] [-IsSsprEnabled] [-IsSsprRegistered]
  [-MethodsRegistered <String[]>] [-UserDisplayName <String>] [-UserPrincipalName <String>]
@@ -23,7 +23,7 @@ New-MgReportAuthenticationMethodUserRegistrationDetail [-AdditionalProperties <H
 
 ### Create
 ```
-New-MgReportAuthenticationMethodUserRegistrationDetail -BodyParameter <IMicrosoftGraphUserRegistrationDetails>
+New-MgBetaReportAuthenticationMethodUserRegistrationDetail -BodyParameter <IMicrosoftGraphUserRegistrationDetails>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ userRegistrationDetails
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
 Parameter Sets: Create
 Aliases:
 
@@ -311,11 +311,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdevice
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdevice
 schema: 2.0.0
 ---
 
-# New-MgDevice
+# New-MgBetaDevice
 
 ## SYNOPSIS
 Create a new device.
@@ -14,7 +14,7 @@ Create a new device.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDevice [-AccountEnabled] [-AdditionalProperties <Hashtable>]
+New-MgBetaDevice [-AccountEnabled] [-AdditionalProperties <Hashtable>]
  [-AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]
  [-ApproximateLastSignInDateTime <DateTime>] [-Commands <IMicrosoftGraphCommand[]>]
  [-ComplianceExpirationDateTime <DateTime>] [-DeletedDateTime <DateTime>] [-DeviceCategory <String>]
@@ -34,7 +34,7 @@ New-MgDevice [-AccountEnabled] [-AdditionalProperties <Hashtable>]
 
 ### Create1
 ```
-New-MgDevice -BodyParameter <IMicrosoftGraphDevice1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDevice -BodyParameter <IMicrosoftGraphDevice1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,9 +42,9 @@ Create a new device.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDevice Cmdlet
+### Example 1: Using the New-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	AccountEnabled = $true
 	AlternativeSecurityIds = @(
@@ -59,10 +59,10 @@ $params = @{
 	DeviceMetadata = "deviceMetadata-value"
 	DeviceVersion = 99
 }
-New-MgDevice -BodyParameter $params
+New-MgBetaDevice -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDevice Cmdlet.
+This example shows how to use the New-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -107,7 +107,7 @@ Supports $filter (eq, not, ge, le).
 To construct, please use Get-Help -Online and see NOTES section for ALTERNATIVESECURITYIDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlternativeSecurityId[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlternativeSecurityId[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -141,7 +141,7 @@ device
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice1
 Parameter Sets: Create1
 Aliases:
 
@@ -157,7 +157,7 @@ Set of commands sent to this device.
 To construct, please use Get-Help -Online and see NOTES section for COMMANDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -354,7 +354,7 @@ onPremisesExtensionAttributes
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONATTRIBUTES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesExtensionAttributes
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesExtensionAttributes
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -372,7 +372,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -554,7 +554,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for MEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -726,7 +726,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for REGISTEREDOWNERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -746,7 +746,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for REGISTEREDUSERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -814,7 +814,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for TRANSITIVEMEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -848,7 +848,7 @@ Represents the usage rights a device has been granted.
 To construct, please use Get-Help -Online and see NOTES section for USAGERIGHTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -895,11 +895,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice1
 
 ## NOTES
 

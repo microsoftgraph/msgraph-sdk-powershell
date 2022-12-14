@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgidentitygovernanceaccessreviewpolicy
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgidentitygovernanceaccessreviewpolicy
 schema: 2.0.0
 ---
 
-# Update-MgIdentityGovernanceAccessReviewPolicy
+# Update-MgBetaIdentityGovernanceAccessReviewPolicy
 
 ## SYNOPSIS
 Update the properties of an accessReviewPolicy object.
@@ -14,14 +14,14 @@ Update the properties of an accessReviewPolicy object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityGovernanceAccessReviewPolicy [-AdditionalProperties <Hashtable>] [-Description <String>]
+Update-MgBetaIdentityGovernanceAccessReviewPolicy [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsGroupOwnerManagementEnabled] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgIdentityGovernanceAccessReviewPolicy -BodyParameter <IMicrosoftGraphAccessReviewPolicy> [-PassThru]
+Update-MgBetaIdentityGovernanceAccessReviewPolicy -BodyParameter <IMicrosoftGraphAccessReviewPolicy> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,16 +30,16 @@ Update the properties of an accessReviewPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgIdentityGovernanceAccessReviewPolicy Cmdlet
+### Example 1: Using the Update-MgBetaIdentityGovernanceAccessReviewPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	IsGroupOwnerManagementEnabled = $true
 }
-Update-MgIdentityGovernanceAccessReviewPolicy -BodyParameter $params
+Update-MgBetaIdentityGovernanceAccessReviewPolicy -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityGovernanceAccessReviewPolicy Cmdlet.
+This example shows how to use the Update-MgBetaIdentityGovernanceAccessReviewPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -64,7 +64,7 @@ accessReviewPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
 
 ## OUTPUTS
 

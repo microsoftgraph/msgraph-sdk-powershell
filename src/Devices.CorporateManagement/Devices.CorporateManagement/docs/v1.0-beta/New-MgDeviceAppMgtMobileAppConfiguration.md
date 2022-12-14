@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmobileappconfiguration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmobileappconfiguration
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtMobileAppConfiguration
+# New-MgBetaDeviceAppMgtMobileAppConfiguration
 
 ## SYNOPSIS
 Create new navigation property to mobileAppConfigurations for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to mobileAppConfigurations for deviceAppManagemen
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtMobileAppConfiguration [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtMobileAppConfiguration [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
@@ -28,7 +28,7 @@ New-MgDeviceAppMgtMobileAppConfiguration [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceAppMgtMobileAppConfiguration -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfiguration1>
+New-MgBetaDeviceAppMgtMobileAppConfiguration -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfiguration1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -59,7 +59,7 @@ The list of group assignemenets for app configration.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -75,7 +75,7 @@ An abstract class for Mobile app configuration for enrolled devices.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
 Parameter Sets: Create
 Aliases:
 
@@ -121,7 +121,7 @@ List of ManagedDeviceMobileAppConfigurationDeviceStatus.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -137,7 +137,7 @@ Contains properties, inherited properties and actions for an MDM mobile app conf
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -229,7 +229,7 @@ List of ManagedDeviceMobileAppConfigurationUserStatus.
 To construct, please use Get-Help -Online and see NOTES section for USERSTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -245,7 +245,7 @@ Contains properties, inherited properties and actions for an MDM mobile app conf
 To construct, please use Get-Help -Online and see NOTES section for USERSTATUSSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -307,17 +307,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementMobileAppConfiguration
+### New-MgBetaDeviceAppManagementMobileAppConfiguration
 
 COMPLEX PARAMETER PROPERTIES
 

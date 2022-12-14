@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/get-mgserviceannouncementmessageattachmentcontent
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/get-mgserviceannouncementmessageattachmentcontent
 schema: 2.0.0
 ---
 
-# Get-MgServiceAnnouncementMessageAttachmentContent
+# Get-MgBetaServiceAnnouncementMessageAttachmentContent
 
 ## SYNOPSIS
 The attachment content.
@@ -14,13 +14,13 @@ The attachment content.
 
 ### Get (Default)
 ```
-Get-MgServiceAnnouncementMessageAttachmentContent -ServiceAnnouncementAttachmentId <String>
+Get-MgBetaServiceAnnouncementMessageAttachmentContent -ServiceAnnouncementAttachmentId <String>
  -ServiceUpdateMessageId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServiceAnnouncementMessageAttachmentContent -InputObject <IDevicesServiceAnnouncementIdentity>
+Get-MgBetaServiceAnnouncementMessageAttachmentContent -InputObject <IDevicesServiceAnnouncementIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -29,22 +29,22 @@ The attachment content.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServiceAnnouncementMessageAttachmentContent Cmdlet
+### Example 1: Using the Get-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId
 ```
 
-This example shows how to use the Get-MgServiceAnnouncementMessageAttachmentContent Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgServiceAnnouncementMessageAttachmentContent Cmdlet
+### Example 2: Using the Get-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgServiceAnnouncementMessageAttachmentContent Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -54,7 +54,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ## OUTPUTS
 

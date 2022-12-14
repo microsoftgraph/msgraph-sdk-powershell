@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentresourcerole
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentresourcerole
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageAssignmentResourceRole
+# Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole
 
 ## SYNOPSIS
 Represents the resource-specific role which a subject has been assigned through an access package assignment.
@@ -14,20 +14,20 @@ Represents the resource-specific role which a subject has been assigned through 
 
 ### List (Default)
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentResourceRole [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentResourceRole -AccessPackageAssignmentResourceRoleId <String>
+Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole -AccessPackageAssignmentResourceRoleId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentResourceRole -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Represents the resource-specific role which a subject has been assigned through 
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEntitlementManagementAccessPackageAssignmentResourceRole Cmdlet
+### Example 1: Using the Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageAssignmentResourceRole -AccessPackageAssignmentResourceRoleId $accessPackageAssignmentResourceRoleId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole -AccessPackageAssignmentResourceRoleId $accessPackageAssignmentResourceRoleId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageAssignmentResourceRole Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEntitlementManagementAccessPackageAssignmentResourceRole Cmdlet
+### Example 2: Using the Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageAssignmentResourceRole
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageAssignmentResourceRole Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentResourceRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentResourceRole
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernanceaccessreviewdecisioninstancestagedecisioninsight
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernanceaccessreviewdecisioninstancestagedecisioninsight
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
+# Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
 
 ## SYNOPSIS
 Insights are recommendations to reviewers on whether to approve or deny a decision.
@@ -15,7 +15,7 @@ There can be multiple insights associated with an accessReviewInstanceDecisionIt
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
+Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewInstanceDecisionItemId1 <String>
  -AccessReviewStageId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
@@ -24,7 +24,7 @@ Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
 
 ### Get
 ```
-Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
+Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewInstanceDecisionItemId1 <String>
  -AccessReviewStageId <String> -GovernanceInsightId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -32,7 +32,7 @@ Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
+Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -171,7 +171,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -277,11 +277,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceInsight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceInsight
 
 ## NOTES
 

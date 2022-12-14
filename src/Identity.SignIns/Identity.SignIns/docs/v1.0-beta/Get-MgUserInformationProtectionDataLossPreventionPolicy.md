@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserinformationprotectiondatalosspreventionpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserinformationprotectiondatalosspreventionpolicy
 schema: 2.0.0
 ---
 
-# Get-MgUserInformationProtectionDataLossPreventionPolicy
+# Get-MgBetaUserInformationProtectionDataLossPreventionPolicy
 
 ## SYNOPSIS
 Get dataLossPreventionPolicies from users
@@ -14,20 +14,20 @@ Get dataLossPreventionPolicies from users
 
 ### List (Default)
 ```
-Get-MgUserInformationProtectionDataLossPreventionPolicy -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserInformationProtectionDataLossPreventionPolicy -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserInformationProtectionDataLossPreventionPolicy -DataLossPreventionPolicyId <String> -UserId <String>
+Get-MgBetaUserInformationProtectionDataLossPreventionPolicy -DataLossPreventionPolicyId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserInformationProtectionDataLossPreventionPolicy -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy
 
 ## NOTES
 

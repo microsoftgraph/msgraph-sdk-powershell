@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritythreatsubmissionurlthreat
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritythreatsubmissionurlthreat
 schema: 2.0.0
 ---
 
-# Get-MgSecurityThreatSubmissionUrlThreat
+# Get-MgBetaSecurityThreatSubmissionUrlThreat
 
 ## SYNOPSIS
 Get urlThreats from security
@@ -14,20 +14,20 @@ Get urlThreats from security
 
 ### List (Default)
 ```
-Get-MgSecurityThreatSubmissionUrlThreat [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSecurityThreatSubmissionUrlThreat [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get urlThreats from security
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityThreatSubmissionUrlThreat Cmdlet
+### Example 1: Using the Get-MgBetaSecurityThreatSubmissionUrlThreat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId $urlThreatSubmissionId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId $urlThreatSubmissionId
 ```
 
-This example shows how to use the Get-MgSecurityThreatSubmissionUrlThreat Cmdlet.
+This example shows how to use the Get-MgBetaSecurityThreatSubmissionUrlThreat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityThreatSubmissionUrlThreat Cmdlet
+### Example 2: Using the Get-MgBetaSecurityThreatSubmissionUrlThreat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityThreatSubmissionUrlThreat
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityThreatSubmissionUrlThreat
 ```
 
-This example shows how to use the Get-MgSecurityThreatSubmissionUrlThreat Cmdlet.
+This example shows how to use the Get-MgBetaSecurityThreatSubmissionUrlThreat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
 
 ## NOTES
 

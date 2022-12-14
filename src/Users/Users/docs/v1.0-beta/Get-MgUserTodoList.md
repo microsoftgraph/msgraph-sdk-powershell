@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolist
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusertodolist
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoList
+# Get-MgBetaUserTodoList
 
 ## SYNOPSIS
 The task lists in the users mailbox.
@@ -14,20 +14,20 @@ The task lists in the users mailbox.
 
 ### List (Default)
 ```
-Get-MgUserTodoList -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserTodoList -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserTodoList -TodoTaskListId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserTodoList -TodoTaskListId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserTodoList -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserTodoList -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ The task lists in the users mailbox.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTodoList Cmdlet
+### Example 1: Using the Get-MgBetaUserTodoList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoList -UserId $userId
+Get-MgBetaUserTodoList -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserTodoList Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserTodoList Cmdlet
+### Example 2: Using the Get-MgBetaUserTodoList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
+Get-MgBetaUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
 ```
 
-This example shows how to use the Get-MgUserTodoList Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTaskList
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTodoTaskList
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementexchangeconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementexchangeconnector
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementExchangeConnector
+# New-MgBetaDeviceManagementExchangeConnector
 
 ## SYNOPSIS
 Create new navigation property to exchangeConnectors for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to exchangeConnectors for deviceManagement
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceManagementExchangeConnector [-AdditionalProperties <Hashtable>] [-ConnectorServerName <String>]
+New-MgBetaDeviceManagementExchangeConnector [-AdditionalProperties <Hashtable>] [-ConnectorServerName <String>]
  [-ExchangeAlias <String>] [-ExchangeConnectorType <DeviceManagementExchangeConnectorType>]
  [-ExchangeOrganization <String>] [-Id <String>] [-LastSyncDateTime <DateTime>] [-PrimarySmtpAddress <String>]
  [-ServerName <String>] [-Status <DeviceManagementExchangeConnectorStatus>] [-Version <String>] [-Confirm]
@@ -23,7 +23,7 @@ New-MgDeviceManagementExchangeConnector [-AdditionalProperties <Hashtable>] [-Co
 
 ### Create1
 ```
-New-MgDeviceManagementExchangeConnector -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector>
+New-MgBetaDeviceManagementExchangeConnector -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ Entity which represents a connection to an Exchange environment.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
 Parameter Sets: Create1
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 The type of Exchange Connector.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementExchangeConnectorType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementExchangeConnectorType
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 The current status of the Exchange Connector.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementExchangeConnectorStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementExchangeConnectorStatus
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
 
 ## NOTES
 

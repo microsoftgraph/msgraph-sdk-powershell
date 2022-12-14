@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticresourceperformance
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticresourceperformance
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticResourcePerformance
+# Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsResourcePerformance in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsResourcePerformance in dev
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticResourcePerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
  -UserExperienceAnalyticsResourcePerformanceId <String> [-AdditionalProperties <Hashtable>]
  [-AverageSpikeTimeScore <Int32>] [-CpuSpikeTimePercentage <Double>]
  [-CpuSpikeTimePercentageThreshold <Double>] [-CpuSpikeTimeScore <Int32>] [-DeviceCount <Int64>]
@@ -26,7 +26,7 @@ Update-MgDeviceManagementUserExperienceAnalyticResourcePerformance
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticResourcePerformance
+Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
  -UserExperienceAnalyticsResourcePerformanceId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -34,14 +34,14 @@ Update-MgDeviceManagementUserExperienceAnalyticResourcePerformance
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticResourcePerformance -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticResourcePerformance -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AverageSpikeTimeScore <Int32>] [-CpuSpikeTimePercentage <Double>]
  [-CpuSpikeTimePercentageThreshold <Double>] [-CpuSpikeTimeScore <Int32>] [-DeviceCount <Int64>]
  [-DeviceId <String>] [-DeviceName <String>] [-DeviceResourcePerformanceScore <Int32>] [-Id <String>]
@@ -93,7 +93,7 @@ The user experience analytics resource performance entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -234,7 +234,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -389,9 +389,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
 
 ## OUTPUTS
 

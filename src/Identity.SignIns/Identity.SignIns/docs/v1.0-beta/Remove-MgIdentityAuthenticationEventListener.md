@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityauthenticationeventlistener
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityauthenticationeventlistener
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityAuthenticationEventListener
+# Remove-MgBetaIdentityAuthenticationEventListener
 
 ## SYNOPSIS
 Delete navigation property authenticationEventListeners for identity
@@ -14,13 +14,13 @@ Delete navigation property authenticationEventListeners for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityAuthenticationEventListener -AuthenticationEventListenerId <String> [-IfMatch <String>]
+Remove-MgBetaIdentityAuthenticationEventListener -AuthenticationEventListenerId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

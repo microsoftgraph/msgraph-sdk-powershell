@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/send-mgdevicemanagementmanageddevicecustomnotificationtocompanyportal
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/send-mgdevicemanagementmanageddevicecustomnotificationtocompanyportal
 schema: 2.0.0
 ---
 
-# Send-MgDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
+# Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
 
 ## SYNOPSIS
 Invoke action sendCustomNotificationToCompanyPortal
@@ -14,21 +14,21 @@ Invoke action sendCustomNotificationToCompanyPortal
 
 ### SendExpanded (Default)
 ```
-Send-MgDeviceManagementManagedDeviceCustomNotificationToCompanyPortal -ManagedDeviceId <String>
+Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-NotificationBody <String>] [-NotificationTitle <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
 ```
-Send-MgDeviceManagementManagedDeviceCustomNotificationToCompanyPortal -ManagedDeviceId <String>
+Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal -ManagedDeviceId <String>
  -BodyParameter <IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
-Send-MgDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
+Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ Send-MgDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
 
 ### SendViaIdentityExpanded
 ```
-Send-MgDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
+Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-NotificationBody <String>] [-NotificationTitle <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Send, SendViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: SendViaIdentity, SendViaIdentityExpanded
 Aliases:
 
@@ -192,9 +192,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

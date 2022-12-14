@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/close-mgcomplianceediscoverycase
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/close-mgcomplianceediscoverycase
 schema: 2.0.0
 ---
 
-# Close-MgComplianceEdiscoveryCase
+# Close-MgBetaComplianceEdiscoveryCase
 
 ## SYNOPSIS
 Close an eDiscovery case.
@@ -15,12 +15,12 @@ For details, see Close a case.
 
 ### Close (Default)
 ```
-Close-MgComplianceEdiscoveryCase -CaseId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Close-MgBetaComplianceEdiscoveryCase -CaseId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CloseViaIdentity
 ```
-Close-MgComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Close-MgBetaComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ For details, see Close a case.
 
 ## EXAMPLES
 
-### Example 1: Using the Close-MgComplianceEdiscoveryCase Cmdlet
+### Example 1: Using the Close-MgBetaComplianceEdiscoveryCase Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Close-MgComplianceEdiscoveryCase -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Close-MgBetaComplianceEdiscoveryCase -CaseId $caseId
 ```
 
-This example shows how to use the Close-MgComplianceEdiscoveryCase Cmdlet.
+This example shows how to use the Close-MgBetaComplianceEdiscoveryCase Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: CloseViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

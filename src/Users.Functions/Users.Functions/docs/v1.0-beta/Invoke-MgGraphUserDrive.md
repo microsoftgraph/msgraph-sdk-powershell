@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mggraphuserdrive
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/invoke-mggraphuserdrive
 schema: 2.0.0
 ---
 
-# Invoke-MgGraphUserDrive
+# Invoke-MgBetaGraphUserDrive
 
 ## SYNOPSIS
 Invoke function sharedWithMe
@@ -14,13 +14,13 @@ Invoke function sharedWithMe
 
 ### Graph1 (Default)
 ```
-Invoke-MgGraphUserDrive -DriveId <String> -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
+Invoke-MgBetaGraphUserDrive -DriveId <String> -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GraphViaIdentity1
 ```
-Invoke-MgGraphUserDrive -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+Invoke-MgBetaGraphUserDrive -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: GraphViaIdentity1
 Aliases:
 
@@ -188,11 +188,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityapiconnector
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityapiconnector
 schema: 2.0.0
 ---
 
-# New-MgIdentityApiConnector
+# New-MgBetaIdentityApiConnector
 
 ## SYNOPSIS
 Create a new identityApiConnector object.
@@ -14,13 +14,13 @@ Create a new identityApiConnector object.
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityApiConnector [-AdditionalProperties <Hashtable>] [-AuthenticationConfiguration <Hashtable>]
+New-MgBetaIdentityApiConnector [-AdditionalProperties <Hashtable>] [-AuthenticationConfiguration <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-TargetUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityApiConnector -BodyParameter <IMicrosoftGraphIdentityApiConnector> [-Confirm] [-WhatIf]
+New-MgBetaIdentityApiConnector -BodyParameter <IMicrosoftGraphIdentityApiConnector> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,58 +29,58 @@ Create a new identityApiConnector object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityApiConnector Cmdlet
+### Example 1: Using the New-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"
 	TargetUrl = "https://someapi.com/api"
 	AuthenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.basicAuthentication"
+		"@odata.type" = "#Microsoft.Graph.Beta.basicAuthentication"
 		Username = "<USERNAME>"
 		Password = "<PASSWORD>"
 	}
 }
-New-MgIdentityApiConnector -BodyParameter $params
+New-MgBetaIdentityApiConnector -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+This example shows how to use the New-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgIdentityApiConnector Cmdlet
+### Example 2: Using the New-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"
 	TargetUrl = "https://someotherapi.com/api"
 	AuthenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
+		"@odata.type" = "#Microsoft.Graph.Beta.pkcs12Certificate"
 		Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
 		Password = "<password>"
 	}
 }
-New-MgIdentityApiConnector -BodyParameter $params
+New-MgBetaIdentityApiConnector -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+This example shows how to use the New-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgIdentityApiConnector Cmdlet
+### Example 3: Using the New-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"
 	TargetUrl = "https://someotherapi.com/api"
 	AuthenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
+		"@odata.type" = "#Microsoft.Graph.Beta.pkcs12Certificate"
 		Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
 		Password = "<password>"
 	}
 }
-New-MgIdentityApiConnector -BodyParameter $params
+New-MgBetaIdentityApiConnector -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+This example shows how to use the New-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -120,7 +120,7 @@ identityApiConnector
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
 Parameter Sets: Create
 Aliases:
 
@@ -213,11 +213,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
 
 ## NOTES
 

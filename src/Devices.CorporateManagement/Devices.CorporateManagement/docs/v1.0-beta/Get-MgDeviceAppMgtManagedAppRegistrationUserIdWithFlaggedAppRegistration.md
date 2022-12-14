@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmanagedappregistrationuseridwithflaggedappregistration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmanagedappregistrationuseridwithflaggedappregistration
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtManagedAppRegistrationUserIdWithFlaggedAppRegistration
+# Get-MgBetaDeviceAppMgtManagedAppRegistrationUserIdWithFlaggedAppRegistration
 
 ## SYNOPSIS
 Invoke function getUserIdsWithFlaggedAppRegistration
@@ -13,7 +13,7 @@ Invoke function getUserIdsWithFlaggedAppRegistration
 ## SYNTAX
 
 ```
-Get-MgDeviceAppMgtManagedAppRegistrationUserIdWithFlaggedAppRegistration [-Count] [-Filter <String>]
+Get-MgBetaDeviceAppMgtManagedAppRegistrationUserIdWithFlaggedAppRegistration [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -112,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Get-MgDeviceAppManagementManagedAppRegistrationUserIdGraphWPreFlaggedAppRegistration
+### Get-MgBetaDeviceAppManagementManagedAppRegistrationUserIdGraphWPreFlaggedAppRegistration
 
 ## RELATED LINKS
 

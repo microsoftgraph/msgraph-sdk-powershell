@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectorysharedemaildomain
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectorysharedemaildomain
 schema: 2.0.0
 ---
 
-# Update-MgDirectorySharedEmailDomain
+# Update-MgBetaDirectorySharedEmailDomain
 
 ## SYNOPSIS
 Update the navigation property sharedEmailDomains in directory
@@ -14,25 +14,25 @@ Update the navigation property sharedEmailDomains in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectorySharedEmailDomain -SharedEmailDomainId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectorySharedEmailDomain -SharedEmailDomainId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-ProvisioningStatus <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectorySharedEmailDomain -SharedEmailDomainId <String>
+Update-MgBetaDirectorySharedEmailDomain -SharedEmailDomainId <String>
  -BodyParameter <IMicrosoftGraphSharedEmailDomain> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectorySharedEmailDomain -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectorySharedEmailDomain -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphSharedEmailDomain> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectorySharedEmailDomain -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectorySharedEmailDomain -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ProvisioningStatus <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -64,7 +64,7 @@ sharedEmailDomain
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -188,9 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
 
 ## OUTPUTS
 

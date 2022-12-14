@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainverificationdnsrecord
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdomainverificationdnsrecord
 schema: 2.0.0
 ---
 
-# Get-MgDomainVerificationDnsRecord
+# Get-MgBetaDomainVerificationDnsRecord
 
 ## SYNOPSIS
 DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
@@ -16,20 +16,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgDomainVerificationDnsRecord -DomainId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDomainVerificationDnsRecord -DomainId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDomainVerificationDnsRecord -DomainDnsRecordId <String> -DomainId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDomainVerificationDnsRecord -DomainDnsRecordId <String> -DomainId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,13 +40,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDomainVerificationDnsRecord Cmdlet
+### Example 1: Using the Get-MgBetaDomainVerificationDnsRecord Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDomainVerificationDnsRecord -DomainId $domainId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDomainVerificationDnsRecord -DomainId $domainId
 ```
 
-This example shows how to use the Get-MgDomainVerificationDnsRecord Cmdlet.
+This example shows how to use the Get-MgBetaDomainVerificationDnsRecord Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/invoke-mgenrollwindowsupdatesdeploymentaudienceexclusionassetbyid
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/invoke-mgenrollwindowsupdatesdeploymentaudienceexclusionassetbyid
 schema: 2.0.0
 ---
 
-# Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById
+# Invoke-MgBetaEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById
 
 ## SYNOPSIS
 Invoke action enrollAssetsById
@@ -14,28 +14,28 @@ Invoke action enrollAssetsById
 
 ### EnrollExpanded (Default)
 ```
-Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById -DeploymentId <String>
+Invoke-MgBetaEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById -DeploymentId <String>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-UpdateCategory <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Enroll
 ```
-Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById -DeploymentId <String>
+Invoke-MgBetaEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById -DeploymentId <String>
  -BodyParameter <IPathsUi9WwcAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EnrollViaIdentity
 ```
-Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById -InputObject <IWindowsUpdatesIdentity>
+Invoke-MgBetaEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPathsUi9WwcAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EnrollViaIdentityExpanded
 ```
-Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById -InputObject <IWindowsUpdatesIdentity>
+Invoke-MgBetaEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById -InputObject <IWindowsUpdatesIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-UpdateCategory <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsUi9WwcAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsUi9WwcAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Enroll, EnrollViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: EnrollViaIdentity, EnrollViaIdentityExpanded
 Aliases:
 
@@ -205,9 +205,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsUi9WwcAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsUi9WwcAdminWindowsUpdatesDeploymentsDeploymentIdAudienceExclusionsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -217,7 +217,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgEnrollWuDeploymentAudienceExclusionAssetGraphBPreId
+### Invoke-MgBetaEnrollWuDeploymentAudienceExclusionAssetGraphBPreId
 
 COMPLEX PARAMETER PROPERTIES
 

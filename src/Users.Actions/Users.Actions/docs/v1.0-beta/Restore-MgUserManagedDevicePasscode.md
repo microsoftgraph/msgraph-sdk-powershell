@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/restore-mgusermanageddevicepasscode
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/restore-mgusermanageddevicepasscode
 schema: 2.0.0
 ---
 
-# Restore-MgUserManagedDevicePasscode
+# Restore-MgBetaUserManagedDevicePasscode
 
 ## SYNOPSIS
 Recover passcode
@@ -14,13 +14,13 @@ Recover passcode
 
 ### Recover (Default)
 ```
-Restore-MgUserManagedDevicePasscode -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm]
+Restore-MgBetaUserManagedDevicePasscode -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecoverViaIdentity
 ```
-Restore-MgUserManagedDevicePasscode -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaUserManagedDevicePasscode -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: RecoverViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

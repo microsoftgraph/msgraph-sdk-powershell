@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityauthenticationeventlistener
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityauthenticationeventlistener
 schema: 2.0.0
 ---
 
-# Update-MgIdentityAuthenticationEventListener
+# Update-MgBetaIdentityAuthenticationEventListener
 
 ## SYNOPSIS
 Update the navigation property authenticationEventListeners in identity
@@ -14,7 +14,7 @@ Update the navigation property authenticationEventListeners in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityAuthenticationEventListener -AuthenticationEventListenerId <String>
+Update-MgBetaIdentityAuthenticationEventListener -AuthenticationEventListenerId <String>
  [-AdditionalProperties <Hashtable>] [-AuthenticationEventsFlowId <String>]
  [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>]
  [-Tags <IMicrosoftGraphKeyValuePair[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgIdentityAuthenticationEventListener -AuthenticationEventListenerId <Str
 
 ### Update
 ```
-Update-MgIdentityAuthenticationEventListener -AuthenticationEventListenerId <String>
+Update-MgBetaIdentityAuthenticationEventListener -AuthenticationEventListenerId <String>
  -BodyParameter <IMicrosoftGraphAuthenticationEventListener> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphAuthenticationEventListener> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-AuthenticationEventsFlowId <String>]
  [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>]
  [-Tags <IMicrosoftGraphKeyValuePair[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -99,7 +99,7 @@ authenticationEventListener
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -115,7 +115,7 @@ authenticationConditions
 To construct, please use Get-Help -Online and see NOTES section for CONDITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationConditions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationConditions
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TAGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -240,9 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
 
 ## OUTPUTS
 

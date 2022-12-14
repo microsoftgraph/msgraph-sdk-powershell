@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/new-mgusercontactfolderchildfolder
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/new-mgusercontactfolderchildfolder
 schema: 2.0.0
 ---
 
-# New-MgUserContactFolderChildFolder
+# New-MgBetaUserContactFolderChildFolder
 
 ## SYNOPSIS
 Create a new contactFolder as a child of a specified folder.
@@ -15,7 +15,7 @@ You can also create a new contactFolder under the user's default contact folder.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserContactFolderChildFolder -ContactFolderId <String> -UserId <String>
+New-MgBetaUserContactFolderChildFolder -ContactFolderId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ChildFolders <IMicrosoftGraphContactFolder1[]>]
  [-Contacts <IMicrosoftGraphContact1[]>] [-DisplayName <String>] [-Id <String>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
@@ -26,19 +26,19 @@ New-MgUserContactFolderChildFolder -ContactFolderId <String> -UserId <String>
 
 ### Create1
 ```
-New-MgUserContactFolderChildFolder -ContactFolderId <String> -UserId <String>
+New-MgBetaUserContactFolderChildFolder -ContactFolderId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphContactFolder1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity>
+New-MgBetaUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity>
  -BodyParameter <IMicrosoftGraphContactFolder1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity>
+New-MgBetaUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity>
  [-AdditionalProperties <Hashtable>] [-ChildFolders <IMicrosoftGraphContactFolder1[]>]
  [-Contacts <IMicrosoftGraphContact1[]>] [-DisplayName <String>] [-Id <String>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
@@ -53,17 +53,17 @@ You can also create a new contactFolder under the user's default contact folder.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserContactFolderChildFolder Cmdlet
+### Example 1: Using the New-MgBetaUserContactFolderChildFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 $params = @{
 	DisplayName = "Family"
 }
 # A UPN can also be used as -UserId.
-New-MgUserContactFolderChildFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
+New-MgBetaUserContactFolderChildFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserContactFolderChildFolder Cmdlet.
+This example shows how to use the New-MgBetaUserContactFolderChildFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -88,7 +88,7 @@ contactFolder
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactFolder1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactFolder1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -107,7 +107,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CHILDFOLDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactFolder1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactFolder1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -141,7 +141,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CONTACTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -187,7 +187,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -205,7 +205,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -238,7 +238,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -316,13 +316,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactFolder1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactFolder1
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactFolder1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactFolder1
 
 ## NOTES
 

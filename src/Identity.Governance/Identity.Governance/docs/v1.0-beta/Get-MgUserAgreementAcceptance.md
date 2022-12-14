@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mguseragreementacceptance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mguseragreementacceptance
 schema: 2.0.0
 ---
 
-# Get-MgUserAgreementAcceptance
+# Get-MgBetaUserAgreementAcceptance
 
 ## SYNOPSIS
 The user's terms of use acceptance statuses.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserAgreementAcceptance -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserAgreementAcceptance -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserAgreementAcceptance -AgreementAcceptanceId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserAgreementAcceptance -AgreementAcceptanceId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserAgreementAcceptance -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserAgreementAcceptance -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,14 +40,14 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserAgreementAcceptance Cmdlet
+### Example 1: Using the Get-MgBetaUserAgreementAcceptance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 # A UPN can also be used as -UserId.
-Get-MgUserAgreementAcceptance -UserId $userId
+Get-MgBetaUserAgreementAcceptance -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserAgreementAcceptance Cmdlet.
+This example shows how to use the Get-MgBetaUserAgreementAcceptance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -254,11 +254,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
 
 ## NOTES
 

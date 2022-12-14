@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicyuploadeddefinitionfilegrouppolicyoperation
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicyuploadeddefinitionfilegrouppolicyoperation
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+# New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
 
 ## SYNOPSIS
 Create new navigation property to groupPolicyOperations for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to groupPolicyOperations for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -GroupPolicyUploadedDefinitionFileId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-OperationStatus <GroupPolicyOperationStatus>]
  [-OperationType <GroupPolicyOperationType>] [-StatusDetails <String>] [-Confirm] [-WhatIf]
@@ -23,21 +23,21 @@ New-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
 
 ### Create
 ```
-New-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -GroupPolicyUploadedDefinitionFileId <String> -BodyParameter <IMicrosoftGraphGroupPolicyOperation> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -InputObject <IDeviceManagementAdministrationIdentity> -BodyParameter <IMicrosoftGraphGroupPolicyOperation>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+New-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-OperationStatus <GroupPolicyOperationStatus>]
  [-OperationType <GroupPolicyOperationType>] [-StatusDetails <String>] [-Confirm] [-WhatIf]
@@ -71,7 +71,7 @@ The entity represents an group policy operation.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -118,7 +118,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 Type of Group Policy operation status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyOperationStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyOperationStatus
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 Type of Group Policy operation.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyOperationType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyOperationType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -225,13 +225,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
 
 ## NOTES
 

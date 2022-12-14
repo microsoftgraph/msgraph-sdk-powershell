@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationsynchronizationprofile
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/new-mgeducationsynchronizationprofile
 schema: 2.0.0
 ---
 
-# New-MgEducationSynchronizationProfile
+# New-MgBetaEducationSynchronizationProfile
 
 ## SYNOPSIS
 Create new navigation property to synchronizationProfiles for education
@@ -14,7 +14,7 @@ Create new navigation property to synchronizationProfiles for education
 
 ### CreateExpanded (Default)
 ```
-New-MgEducationSynchronizationProfile [-AdditionalProperties <Hashtable>] [-DataProvider <Hashtable>]
+New-MgBetaEducationSynchronizationProfile [-AdditionalProperties <Hashtable>] [-DataProvider <Hashtable>]
  [-DisplayName <String>] [-Errors <IMicrosoftGraphEducationSynchronizationError[]>]
  [-ExpirationDate <DateTime>] [-HandleSpecialCharacterConstraint] [-Id <String>]
  [-IdentitySynchronizationConfiguration <Hashtable>]
@@ -25,7 +25,7 @@ New-MgEducationSynchronizationProfile [-AdditionalProperties <Hashtable>] [-Data
 
 ### Create
 ```
-New-MgEducationSynchronizationProfile -BodyParameter <IMicrosoftGraphEducationSynchronizationProfile>
+New-MgBetaEducationSynchronizationProfile -BodyParameter <IMicrosoftGraphEducationSynchronizationProfile>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ educationSynchronizationProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
 Parameter Sets: Create
 Aliases:
 
@@ -102,7 +102,7 @@ All errors associated with this synchronization profile.
 To construct, please use Get-Help -Online and see NOTES section for ERRORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ License setup configuration.
 To construct, please use Get-Help -Online and see NOTES section for LICENSESTOASSIGN properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationLicenseAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationLicenseAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -198,7 +198,7 @@ educationSynchronizationProfileStatus
 To construct, please use Get-Help -Online and see NOTES section for PROFILESTATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationcalloperation
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationcalloperation
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationCallOperation
+# Get-MgBetaCommunicationCallOperation
 
 ## SYNOPSIS
 Get operations from communications
@@ -14,20 +14,20 @@ Get operations from communications
 
 ### List1 (Default)
 ```
-Get-MgCommunicationCallOperation -CallId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaCommunicationCallOperation -CallId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationCallOperation -CallId <String> -CommsOperationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get operations from communications
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgCommunicationCallOperation Cmdlet
+### Example 1: Using the Get-MgBetaCommunicationCallOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallOperation -CallId $callId -CommsOperationId $commsOperationId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallOperation -CallId $callId -CommsOperationId $commsOperationId
 ```
 
-This example shows how to use the Get-MgCommunicationCallOperation Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommsOperation
 
 ## NOTES
 

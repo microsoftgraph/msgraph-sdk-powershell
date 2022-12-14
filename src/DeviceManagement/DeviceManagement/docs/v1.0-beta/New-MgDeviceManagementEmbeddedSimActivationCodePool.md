@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementembeddedsimactivationcodepool
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementembeddedsimactivationcodepool
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementEmbeddedSimActivationCodePool
+# New-MgBetaDeviceManagementEmbeddedSimActivationCodePool
 
 ## SYNOPSIS
 Create new navigation property to embeddedSIMActivationCodePools for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to embeddedSIMActivationCodePools for deviceManag
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementEmbeddedSimActivationCodePool [-ActivationCodeCount <Int32>]
+New-MgBetaDeviceManagementEmbeddedSimActivationCodePool [-ActivationCodeCount <Int32>]
  [-ActivationCodes <IMicrosoftGraphEmbeddedSimActivationCode[]>] [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment[]>] [-CreatedDateTime <DateTime>]
  [-DeviceStates <IMicrosoftGraphEmbeddedSimDeviceState[]>] [-DisplayName <String>] [-Id <String>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementEmbeddedSimActivationCodePool [-ActivationCodeCount <Int32
 
 ### Create
 ```
-New-MgDeviceManagementEmbeddedSimActivationCodePool
+New-MgBetaDeviceManagementEmbeddedSimActivationCodePool
  -BodyParameter <IMicrosoftGraphEmbeddedSimActivationCodePool> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ This navigation property is used to post activation codes to Intune but cannot b
 To construct, please use Get-Help -Online and see NOTES section for ACTIVATIONCODES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCode[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCode[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ Navigational property to a list of targets to which this pool is assigned.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ A pool represents a group of embedded SIM activation codes.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
 Parameter Sets: Create
 Aliases:
 
@@ -134,7 +134,7 @@ Navigational property to a list of device states for this pool.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimDeviceState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimDeviceState[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -228,11 +228,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
 
 ## NOTES
 

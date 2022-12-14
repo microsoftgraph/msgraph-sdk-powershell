@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/invoke-mgunfavoriteserviceannouncementmessage
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/invoke-mgunfavoriteserviceannouncementmessage
 schema: 2.0.0
 ---
 
-# Invoke-MgUnfavoriteServiceAnnouncementMessage
+# Invoke-MgBetaUnfavoriteServiceAnnouncementMessage
 
 ## SYNOPSIS
 Remove the favorite status of serviceUpdateMessages for the signed in user.
@@ -14,13 +14,13 @@ Remove the favorite status of serviceUpdateMessages for the signed in user.
 
 ### UnfavoriteExpanded (Default)
 ```
-Invoke-MgUnfavoriteServiceAnnouncementMessage [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
+Invoke-MgBetaUnfavoriteServiceAnnouncementMessage [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Unfavorite
 ```
-Invoke-MgUnfavoriteServiceAnnouncementMessage
+Invoke-MgBetaUnfavoriteServiceAnnouncementMessage
  -BodyParameter <IPaths1U36FhAdminServiceannouncementMessagesMicrosoftGraphUnfavoritePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,19 +30,19 @@ Remove the favorite status of serviceUpdateMessages for the signed in user.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgUnfavoriteServiceAnnouncementMessage Cmdlet
+### Example 1: Using the Invoke-MgBetaUnfavoriteServiceAnnouncementMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 $params = @{
 	MessageIds = @(
 		"MC172851"
 		"MC167983"
 	)
 }
-Invoke-MgUnfavoriteServiceAnnouncementMessage -BodyParameter $params
+Invoke-MgBetaUnfavoriteServiceAnnouncementMessage -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgUnfavoriteServiceAnnouncementMessage Cmdlet.
+This example shows how to use the Invoke-MgBetaUnfavoriteServiceAnnouncementMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1U36FhAdminServiceannouncementMessagesMicrosoftGraphUnfavoritePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1U36FhAdminServiceannouncementMessagesMicrosoftGraphUnfavoritePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Unfavorite
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1U36FhAdminServiceannouncementMessagesMicrosoftGraphUnfavoritePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1U36FhAdminServiceannouncementMessagesMicrosoftGraphUnfavoritePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

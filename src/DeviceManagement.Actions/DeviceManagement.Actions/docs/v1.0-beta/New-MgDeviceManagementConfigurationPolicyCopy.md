@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementconfigurationpolicycopy
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementconfigurationpolicycopy
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementConfigurationPolicyCopy
+# New-MgBetaDeviceManagementConfigurationPolicyCopy
 
 ## SYNOPSIS
 Invoke action createCopy
@@ -14,28 +14,28 @@ Invoke action createCopy
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementConfigurationPolicyCopy -DeviceManagementConfigurationPolicyId <String>
+New-MgBetaDeviceManagementConfigurationPolicyCopy -DeviceManagementConfigurationPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementConfigurationPolicyCopy -DeviceManagementConfigurationPolicyId <String>
+New-MgBetaDeviceManagementConfigurationPolicyCopy -DeviceManagementConfigurationPolicyId <String>
  -BodyParameter <IPaths1Kgt4HiDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementConfigurationPolicyCopy -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementConfigurationPolicyCopy -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1Kgt4HiDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementConfigurationPolicyCopy -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementConfigurationPolicyCopy -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Kgt4HiDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Kgt4HiDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -175,13 +175,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Kgt4HiDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Kgt4HiDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicy
 
 ## NOTES
 

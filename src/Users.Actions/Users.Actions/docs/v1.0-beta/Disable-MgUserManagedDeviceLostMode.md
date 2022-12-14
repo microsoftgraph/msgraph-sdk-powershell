@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/disable-mgusermanageddevicelostmode
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/disable-mgusermanageddevicelostmode
 schema: 2.0.0
 ---
 
-# Disable-MgUserManagedDeviceLostMode
+# Disable-MgBetaUserManagedDeviceLostMode
 
 ## SYNOPSIS
 Disable lost mode
@@ -14,13 +14,13 @@ Disable lost mode
 
 ### Disable (Default)
 ```
-Disable-MgUserManagedDeviceLostMode -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm]
+Disable-MgBetaUserManagedDeviceLostMode -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DisableViaIdentity
 ```
-Disable-MgUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Disable-MgBetaUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: DisableViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

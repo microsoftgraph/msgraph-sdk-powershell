@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdevicecommand
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdevicecommand
 schema: 2.0.0
 ---
 
-# New-MgDeviceCommand
+# New-MgBetaDeviceCommand
 
 ## SYNOPSIS
 Create new navigation property to commands for devices
@@ -14,7 +14,7 @@ Create new navigation property to commands for devices
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceCommand -DeviceId <String> [-AdditionalProperties <Hashtable>] [-AppServiceName <String>]
+New-MgBetaDeviceCommand -DeviceId <String> [-AdditionalProperties <Hashtable>] [-AppServiceName <String>]
  [-Error <String>] [-Id <String>] [-PackageFamilyName <String>] [-Payload <Hashtable>]
  [-PermissionTicket <String>] [-PostBackUri <String>] [-Responsepayload <Hashtable>] [-Status <String>]
  [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgDeviceCommand -DeviceId <String> [-AdditionalProperties <Hashtable>] [-App
 
 ### Create
 ```
-New-MgDeviceCommand -DeviceId <String> -BodyParameter <IMicrosoftGraphCommand> [-Confirm] [-WhatIf]
+New-MgBetaDeviceCommand -DeviceId <String> -BodyParameter <IMicrosoftGraphCommand> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphCommand> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-AppServiceName <String>] [-Error <String>] [-Id <String>] [-PackageFamilyName <String>]
  [-Payload <Hashtable>] [-PermissionTicket <String>] [-PostBackUri <String>] [-Responsepayload <Hashtable>]
  [-Status <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -82,7 +82,7 @@ command
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -296,13 +296,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 
 ## NOTES
 

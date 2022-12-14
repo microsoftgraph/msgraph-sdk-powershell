@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgtrustframeworkkeysetactivekey
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgtrustframeworkkeysetactivekey
 schema: 2.0.0
 ---
 
-# Get-MgTrustFrameworkKeySetActiveKey
+# Get-MgBetaTrustFrameworkKeySetActiveKey
 
 ## SYNOPSIS
 Invoke function getActiveKey
@@ -14,12 +14,12 @@ Invoke function getActiveKey
 
 ### Get (Default)
 ```
-Get-MgTrustFrameworkKeySetActiveKey -TrustFrameworkKeySetId <String> [<CommonParameters>]
+Get-MgBetaTrustFrameworkKeySetActiveKey -TrustFrameworkKeySetId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTrustFrameworkKeySetActiveKey -InputObject <IIdentitySignInsIdentity> [<CommonParameters>]
+Get-MgBetaTrustFrameworkKeySetActiveKey -InputObject <IIdentitySignInsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,13 +27,13 @@ Invoke function getActiveKey
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTrustFrameworkKeySetActiveKey Cmdlet
+### Example 1: Using the Get-MgBetaTrustFrameworkKeySetActiveKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgTrustFrameworkKeySetActiveKey -TrustFrameworkKeySetId $trustFrameworkKeySetId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaTrustFrameworkKeySetActiveKey -TrustFrameworkKeySetId $trustFrameworkKeySetId
 ```
 
-This example shows how to use the Get-MgTrustFrameworkKeySetActiveKey Cmdlet.
+This example shows how to use the Get-MgBetaTrustFrameworkKeySetActiveKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -43,7 +43,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -74,11 +74,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
 
 ## NOTES
 

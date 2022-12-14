@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementtermandcondition
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementtermandcondition
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementTermAndCondition
+# New-MgBetaDeviceManagementTermAndCondition
 
 ## SYNOPSIS
 Create new navigation property to termsAndConditions for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to termsAndConditions for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementTermAndCondition [-AcceptanceStatement <String>]
+New-MgBetaDeviceManagementTermAndCondition [-AcceptanceStatement <String>]
  [-AcceptanceStatuses <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>]
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTermsAndConditionsAssignment1[]>]
  [-BodyText <String>] [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
@@ -25,7 +25,7 @@ New-MgDeviceManagementTermAndCondition [-AcceptanceStatement <String>]
 
 ### Create
 ```
-New-MgDeviceManagementTermAndCondition -BodyParameter <IMicrosoftGraphTermsAndConditions> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementTermAndCondition -BodyParameter <IMicrosoftGraphTermsAndConditions> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -57,7 +57,7 @@ The list of acceptance statuses for this T&C policy.
 To construct, please use Get-Help -Online and see NOTES section for ACCEPTANCESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -88,7 +88,7 @@ The list of assignments for this T&C policy.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -106,7 +106,7 @@ They enable administrators to communicate the provisions to which a user must ag
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditions
 Parameter Sets: Create
 Aliases:
 
@@ -183,7 +183,7 @@ The list of group assignments for this T&C policy.
 To construct, please use Get-Help -Online and see NOTES section for GROUPASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsGroupAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsGroupAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -323,11 +323,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditions
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditions
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditions
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditions
 
 ## NOTES
 

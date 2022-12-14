@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyserviceprincipalcreationpolicyexclude
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyserviceprincipalcreationpolicyexclude
 schema: 2.0.0
 ---
 
-# Update-MgPolicyServicePrincipalCreationPolicyExclude
+# Update-MgBetaPolicyServicePrincipalCreationPolicyExclude
 
 ## SYNOPSIS
 Update the navigation property excludes in policies
@@ -14,7 +14,7 @@ Update the navigation property excludes in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyServicePrincipalCreationPolicyExclude -ServicePrincipalCreationConditionSetId <String>
+Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -ServicePrincipalCreationConditionSetId <String>
  -ServicePrincipalCreationPolicyId <String> [-AdditionalProperties <Hashtable>] [-ApplicationIds <String[]>]
  [-ApplicationPublisherIds <String[]>] [-ApplicationsFromVerifiedPublisherOnly]
  [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly] [-Id <String>] [-PassThru] [-Confirm]
@@ -23,7 +23,7 @@ Update-MgPolicyServicePrincipalCreationPolicyExclude -ServicePrincipalCreationCo
 
 ### Update
 ```
-Update-MgPolicyServicePrincipalCreationPolicyExclude -ServicePrincipalCreationConditionSetId <String>
+Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -ServicePrincipalCreationConditionSetId <String>
  -ServicePrincipalCreationPolicyId <String>
  -BodyParameter <IMicrosoftGraphServicePrincipalCreationConditionSet> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -31,14 +31,14 @@ Update-MgPolicyServicePrincipalCreationPolicyExclude -ServicePrincipalCreationCo
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyServicePrincipalCreationPolicyExclude -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphServicePrincipalCreationConditionSet> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyServicePrincipalCreationPolicyExclude -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicationIds <String[]>] [-ApplicationPublisherIds <String[]>]
  [-ApplicationsFromVerifiedPublisherOnly] [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -131,7 +131,7 @@ servicePrincipalCreationConditionSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -178,7 +178,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -270,9 +270,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
 
 ## OUTPUTS
 

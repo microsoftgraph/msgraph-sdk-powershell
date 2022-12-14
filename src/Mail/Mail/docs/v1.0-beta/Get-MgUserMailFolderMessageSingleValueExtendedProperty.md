@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermailfoldermessagesinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mgusermailfoldermessagesinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgUserMailFolderMessageSingleValueExtendedProperty
+# Get-MgBetaUserMailFolderMessageSingleValueExtendedProperty
 
 ## SYNOPSIS
 The collection of single-value extended properties defined for the message.
@@ -15,7 +15,7 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -MessageId <String>
+Get-MgBetaUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -MessageId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -23,14 +23,14 @@ Get-MgUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -M
 
 ### Get1
 ```
-Get-MgUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -MessageId <String>
+Get-MgBetaUserMailFolderMessageSingleValueExtendedProperty -MailFolderId <String> -MessageId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIdentity>
+Get-MgBetaUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -274,11 +274,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

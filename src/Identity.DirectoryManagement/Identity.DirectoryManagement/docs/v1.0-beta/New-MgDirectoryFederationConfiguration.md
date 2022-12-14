@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryfederationconfiguration
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectoryfederationconfiguration
 schema: 2.0.0
 ---
 
-# New-MgDirectoryFederationConfiguration
+# New-MgBetaDirectoryFederationConfiguration
 
 ## SYNOPSIS
 Create new navigation property to federationConfigurations for directory
@@ -14,13 +14,13 @@ Create new navigation property to federationConfigurations for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryFederationConfiguration [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDirectoryFederationConfiguration [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryFederationConfiguration -BodyParameter <IMicrosoftGraphIdentityProviderBase> [-Confirm]
+New-MgBetaDirectoryFederationConfiguration -BodyParameter <IMicrosoftGraphIdentityProviderBase> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,11 +29,11 @@ Create new navigation property to federationConfigurations for directory
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDirectoryFederationConfiguration Cmdlet
+### Example 1: Using the New-MgBetaDirectoryFederationConfiguration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
-	"@odata.type" = "microsoft.graph.samlOrWsFedExternalDomainFederation"
+	"@odata.type" = "Microsoft.Graph.Beta.samlOrWsFedExternalDomainFederation"
 	IssuerUri = "https://contoso.com/issuerUri"
 	DisplayName = "contoso display name"
 	MetadataExchangeUri = "https://contoso.com/metadataExchangeUri"
@@ -41,16 +41,16 @@ $params = @{
 	PreferredAuthenticationProtocol = "wsFed"
 	Domains = @(
 		@{
-			"@odata.type" = "microsoft.graph.externalDomainName"
+			"@odata.type" = "Microsoft.Graph.Beta.externalDomainName"
 			Id = "contoso.com"
 		}
 	)
 	SigningCertificate = "MIIDADCCAeigAwIBAgIQEX41y8r6"
 }
-New-MgDirectoryFederationConfiguration -BodyParameter $params
+New-MgBetaDirectoryFederationConfiguration -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDirectoryFederationConfiguration Cmdlet.
+This example shows how to use the New-MgBetaDirectoryFederationConfiguration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ identityProviderBase
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 Parameter Sets: Create
 Aliases:
 
@@ -153,11 +153,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 
 ## NOTES
 

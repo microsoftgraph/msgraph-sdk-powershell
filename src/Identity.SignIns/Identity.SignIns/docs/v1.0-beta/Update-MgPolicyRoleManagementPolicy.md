@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyrolemanagementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyrolemanagementpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyRoleManagementPolicy
+# Update-MgBetaPolicyRoleManagementPolicy
 
 ## SYNOPSIS
 Update the navigation property roleManagementPolicies in policies
@@ -14,7 +14,7 @@ Update the navigation property roleManagementPolicies in policies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId <String>
+Update-MgBetaPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
  [-EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>] [-Id <String>] [-IsOrganizationDefault]
  [-LastModifiedBy <IMicrosoftGraphIdentity>] [-LastModifiedDateTime <DateTime>]
@@ -24,21 +24,21 @@ Update-MgPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId <String>
 
 ### Update
 ```
-Update-MgPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId <String>
+Update-MgBetaPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId <String>
  -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicy1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicy1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
  [-EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>] [-Id <String>] [-IsOrganizationDefault]
  [-LastModifiedBy <IMicrosoftGraphIdentity>] [-LastModifiedDateTime <DateTime>]
@@ -73,7 +73,7 @@ unifiedRoleManagementPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -121,7 +121,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for EFFECTIVERULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -153,7 +153,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -233,7 +233,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for RULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -329,9 +329,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy1
 
 ## OUTPUTS
 

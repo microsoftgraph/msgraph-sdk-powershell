@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementsoftwareupdatestatussummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementsoftwareupdatestatussummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementSoftwareUpdateStatusSummary
+# Get-MgBetaDeviceManagementSoftwareUpdateStatusSummary
 
 ## SYNOPSIS
 The software update status summary.
@@ -13,7 +13,7 @@ The software update status summary.
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementSoftwareUpdateStatusSummary [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceManagementSoftwareUpdateStatusSummary [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSoftwareUpdateStatusSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSoftwareUpdateStatusSummary
 
 ## NOTES
 

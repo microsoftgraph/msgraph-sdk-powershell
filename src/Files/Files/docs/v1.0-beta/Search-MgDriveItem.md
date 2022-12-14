@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/search-mgdriveitem
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/search-mgdriveitem
 schema: 2.0.0
 ---
 
-# Search-MgDriveItem
+# Search-MgBetaDriveItem
 
 ## SYNOPSIS
 Invoke function search
@@ -14,14 +14,14 @@ Invoke function search
 
 ### Search (Default)
 ```
-Search-MgDriveItem -DriveId <String> -DriveItemId <String> -Q <String> [-Count] [-Filter <String>]
+Search-MgBetaDriveItem -DriveId <String> -DriveItemId <String> -Q <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### SearchViaIdentity
 ```
-Search-MgDriveItem -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Search-MgBetaDriveItem -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: SearchViaIdentity
 Aliases:
 
@@ -203,11 +203,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

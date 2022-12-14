@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroup
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroup
 schema: 2.0.0
 ---
 
-# Get-MgGroup
+# Get-MgBetaGroup
 
 ## SYNOPSIS
 Get the properties and relationships of a group object.
@@ -18,19 +18,19 @@ Because the **group** resource supports extensions, you can also use the `GET` o
 
 ### List1 (Default)
 ```
-Get-MgGroup [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaGroup [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroup -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaGroup -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroup -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroup -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -45,8 +45,8 @@ Because the **group** resource supports extensions, you can also use the `GET` o
 
 ### Example 1: Get a list of groups
 ```powershell
-Connect-MgGraph -Scopes 'Group.Read.All'
-Get-MgGroup | 
+Connect-MgBetaGraph -Scopes 'Group.Read.All'
+Get-MgBetaGroup | 
   Format-List Id, DisplayName, Description, GroupTypes
 
 Id          : 0a1c8435-40a3-4a72-8586-e916c12b613a
@@ -64,13 +64,13 @@ This examples retrieves a list of groups.
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ### Example 2: Get a group by the display name
 ```powershell
-Connect-MgGraph -Scopes 'Group.Read.All'
-Get-MgGroup -Filter "DisplayName eq 'Business Development'" | 
+Connect-MgBetaGraph -Scopes 'Group.Read.All'
+Get-MgBetaGroup -Filter "DisplayName eq 'Business Development'" | 
   Format-List Id, DisplayName, Description, GroupTypes
 
 Id          : a8fbb1b5-b994-4835-9183-c7421d149132
@@ -83,13 +83,13 @@ This example gets a group by the specified display name.
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ### Example 3: Get a count of all groups
 ```powershell
-Connect-MgGraph -Scopes 'Group.Read.All'
-Get-MgGroup -ConsistencyLevel eventual -Count groupCount
+Connect-MgBetaGraph -Scopes 'Group.Read.All'
+Get-MgBetaGroup -ConsistencyLevel eventual -Count groupCount
 
 Id                                   DisplayName          Description                                                            GroupTypes          AccessType
 --                                   -----------          -----------                                                            ----------          ----------
@@ -109,13 +109,13 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ### Example 4: Use -Search to get all the groups whose display name contains 'Market' including a count of the returned users
 ```powershell
-Connect-MgGraph -Scopes 'Group.Read.All'
-Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Search '"DisplayName:Market"'
+Connect-MgBetaGraph -Scopes 'Group.Read.All'
+Get-MgBetaGroup -ConsistencyLevel eventual -Count groupCount -Search '"DisplayName:Market"'
 
 Id                                   DisplayName         Description                                                            GroupTypes AccessType
 --                                   -----------         -----------                                                            ---------- ----------
@@ -131,13 +131,13 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ### Example 5: Use -Filter to get all the applications with a display name that starts with 'A' including a count of the returned users, with the results ordered by display name
 ```powershell
-Connect-MgGraph -Scopes 'Group.Read.All'
-Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "startsWith(DisplayName, 'A')" -OrderBy DisplayName
+Connect-MgBetaGraph -Scopes 'Group.Read.All'
+Get-MgBetaGroup -ConsistencyLevel eventual -Count groupCount -Filter "startsWith(DisplayName, 'A')" -OrderBy DisplayName
 
 Id                                   DisplayName   Description                                           GroupTypes          AccessType
 --                                   -----------   -----------                                           ----------          ----------
@@ -153,8 +153,8 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ## PARAMETERS
 
@@ -255,7 +255,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -361,11 +361,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroup1
 
 ## NOTES
 

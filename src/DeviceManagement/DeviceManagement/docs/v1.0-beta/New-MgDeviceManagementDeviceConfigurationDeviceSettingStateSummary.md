@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementdeviceconfigurationdevicesettingstatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementdeviceconfigurationdevicesettingstatesummary
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary
+# New-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary
 
 ## SYNOPSIS
 Create new navigation property to deviceSettingStateSummaries for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceSettingStateSummaries for deviceManageme
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfigurationId <String>
+New-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>] [-ConflictDeviceCount <Int32>]
  [-ErrorDeviceCount <Int32>] [-Id <String>] [-InstancePath <String>] [-NonCompliantDeviceCount <Int32>]
  [-NotApplicableDeviceCount <Int32>] [-RemediatedDeviceCount <Int32>] [-SettingName <String>]
@@ -23,19 +23,19 @@ New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfig
 
 ### Create
 ```
-New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfigurationId <String>
+New-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary -DeviceConfigurationId <String>
  -BodyParameter <IMicrosoftGraphSettingStateDeviceSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphSettingStateDeviceSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>] [-ConflictDeviceCount <Int32>]
  [-ErrorDeviceCount <Int32>] [-Id <String>] [-InstancePath <String>] [-NonCompliantDeviceCount <Int32>]
  [-NotApplicableDeviceCount <Int32>] [-RemediatedDeviceCount <Int32>] [-SettingName <String>]
@@ -69,7 +69,7 @@ Device Compilance Policy and Configuration for a Setting State summary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -298,13 +298,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingStateDeviceSummary
 
 ## NOTES
 

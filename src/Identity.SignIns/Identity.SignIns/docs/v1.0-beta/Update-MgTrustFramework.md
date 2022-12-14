@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgtrustframework
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgtrustframework
 schema: 2.0.0
 ---
 
-# Update-MgTrustFramework
+# Update-MgBetaTrustFramework
 
 ## SYNOPSIS
 Update trustFramework
@@ -14,13 +14,13 @@ Update trustFramework
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTrustFramework [-AdditionalProperties <Hashtable>] [-KeySets <IMicrosoftGraphTrustFrameworkKeySet[]>]
+Update-MgBetaTrustFramework [-AdditionalProperties <Hashtable>] [-KeySets <IMicrosoftGraphTrustFrameworkKeySet[]>]
  [-Policies <IMicrosoftGraphTrustFrameworkPolicy[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgTrustFramework -BodyParameter <IMicrosoftGraphTrustFramework> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaTrustFramework -BodyParameter <IMicrosoftGraphTrustFramework> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ trustFramework
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFramework
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFramework
 Parameter Sets: Update
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for KEYSETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for POLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkPolicy[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkPolicy[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFramework
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFramework
 
 ## OUTPUTS
 

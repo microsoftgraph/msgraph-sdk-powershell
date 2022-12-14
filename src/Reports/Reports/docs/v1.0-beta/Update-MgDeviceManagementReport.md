@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/update-mgdevicemanagementreport
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/update-mgdevicemanagementreport
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementReport
+# Update-MgBetaDeviceManagementReport
 
 ## SYNOPSIS
 Update the navigation property reports in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property reports in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementReport [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementReport [-AdditionalProperties <Hashtable>]
  [-CachedReportConfigurations <IMicrosoftGraphDeviceManagementCachedReportConfiguration[]>]
  [-ExportJobs <IMicrosoftGraphDeviceManagementExportJob[]>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementReport [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgDeviceManagementReport -BodyParameter <IMicrosoftGraphDeviceManagementReports1> [-PassThru]
+Update-MgBetaDeviceManagementReport -BodyParameter <IMicrosoftGraphDeviceManagementReports1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Singleton entity that acts as a container for all reports functionality.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementReports1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementReports1
 Parameter Sets: Update
 Aliases:
 
@@ -69,7 +69,7 @@ Entity representing the configuration of a cached report
 To construct, please use Get-Help -Online and see NOTES section for CACHEDREPORTCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementCachedReportConfiguration[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementCachedReportConfiguration[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -85,7 +85,7 @@ Entity representing a job to export a report
 To construct, please use Get-Help -Online and see NOTES section for EXPORTJOBS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExportJob[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExportJob[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementReports1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementReports1
 
 ## OUTPUTS
 

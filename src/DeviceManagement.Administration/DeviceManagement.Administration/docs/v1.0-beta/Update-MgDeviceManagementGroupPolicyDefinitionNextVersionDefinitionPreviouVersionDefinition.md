@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicydefinitionnextversiondefinitionpreviouversiondefinition
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicydefinitionnextversiondefinitionpreviouversiondefinition
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
+# Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
 
 ## SYNOPSIS
 Update the navigation property previousVersionDefinition in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property previousVersionDefinition in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
+Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
  -GroupPolicyDefinitionId <String> [-AdditionalProperties <Hashtable>]
  [-Category <IMicrosoftGraphGroupPolicyCategory>] [-CategoryPath <String>]
  [-ClassType <GroupPolicyDefinitionClassType>] [-DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]
@@ -28,21 +28,21 @@ Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersio
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
+Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
  -GroupPolicyDefinitionId <String> -BodyParameter <IMicrosoftGraphGroupPolicyDefinition> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
+Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
  -InputObject <IDeviceManagementAdministrationIdentity> -BodyParameter <IMicrosoftGraphGroupPolicyDefinition>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
+Update-MgBetaDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinition
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-Category <IMicrosoftGraphGroupPolicyCategory>] [-CategoryPath <String>]
  [-ClassType <GroupPolicyDefinitionClassType>] [-DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]
@@ -81,7 +81,7 @@ The entity describes all of the information about a single group policy.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ The category entity stores the category of a group policy definition
 To construct, please use Get-Help -Online and see NOTES section for CATEGORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 Group Policy Definition Class Type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyDefinitionClassType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyDefinitionClassType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ The group policy definition file also contains the languages supported as determ
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,7 +253,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -314,7 +314,7 @@ The entity describes all of the information about a single group policy.
 To construct, please use Get-Help -Online and see NOTES section for NEXTVERSIONDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -344,7 +344,7 @@ Accept wildcard characters: False
 Type of Group Policy File or Definition.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -360,7 +360,7 @@ The group policy presentations associated with the definition.
 To construct, please use Get-Help -Online and see NOTES section for PRESENTATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -376,7 +376,7 @@ The entity describes all of the information about a single group policy.
 To construct, please use Get-Help -Online and see NOTES section for PREVIOUSVERSIONDEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -453,9 +453,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 
 ## OUTPUTS
 

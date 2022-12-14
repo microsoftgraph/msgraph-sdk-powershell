@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/remove-mggrouplifecyclepolicy
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/remove-mggrouplifecyclepolicy
 schema: 2.0.0
 ---
 
-# Remove-MgGroupLifecyclePolicy
+# Remove-MgBetaGroupLifecyclePolicy
 
 ## SYNOPSIS
 Delete a groupLifecyclePolicy.
@@ -14,13 +14,13 @@ Delete a groupLifecyclePolicy.
 
 ### Delete1 (Default)
 ```
-Remove-MgGroupLifecyclePolicy -GroupLifecyclePolicyId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete a groupLifecyclePolicy.
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgGroupLifecyclePolicy Cmdlet
+### Example 1: Using the Remove-MgBetaGroupLifecyclePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
+Import-Module Microsoft.Graph.Beta.Groups
+Remove-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
 ```
 
-This example shows how to use the Remove-MgGroupLifecyclePolicy Cmdlet.
+This example shows how to use the Remove-MgBetaGroupLifecyclePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

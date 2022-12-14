@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofilepublication
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/new-mguserprofilepublication
 schema: 2.0.0
 ---
 
-# New-MgUserProfilePublication
+# New-MgBetaUserProfilePublication
 
 ## SYNOPSIS
 Create a new itemPublication object in a user's profile.
@@ -14,7 +14,7 @@ Create a new itemPublication object in a user's profile.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserProfilePublication -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
+New-MgBetaUserProfilePublication -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-PublishedDate <DateTime>]
@@ -24,19 +24,19 @@ New-MgUserProfilePublication -UserId <String> [-AdditionalProperties <Hashtable>
 
 ### Create
 ```
-New-MgUserProfilePublication -UserId <String> -BodyParameter <IMicrosoftGraphItemPublication> [-Confirm]
+New-MgBetaUserProfilePublication -UserId <String> -BodyParameter <IMicrosoftGraphItemPublication> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfilePublication -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemPublication>
+New-MgBetaUserProfilePublication -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemPublication>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserProfilePublication -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfilePublication -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
@@ -49,9 +49,9 @@ Create a new itemPublication object in a user's profile.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserProfilePublication Cmdlet
+### Example 1: Using the New-MgBetaUserProfilePublication Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Description = "One persons journey to the top of the branding management field."
 	DisplayName = "Got Brands? The story of Innocenty Popov and his journey to the top."
@@ -61,10 +61,10 @@ $params = @{
 	WebUrl = "https://www.iabm.io"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfilePublication -UserId $userId -BodyParameter $params
+New-MgBetaUserProfilePublication -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserProfilePublication Cmdlet.
+This example shows how to use the New-MgBetaUserProfilePublication Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -104,7 +104,7 @@ itemPublication
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPublication
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPublication
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -120,7 +120,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -213,7 +213,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -244,7 +244,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -305,7 +305,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -397,13 +397,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPublication
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPublication
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPublication
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPublication
 
 ## NOTES
 

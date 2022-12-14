@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprogramcontroltype
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprogramcontroltype
 schema: 2.0.0
 ---
 
-# New-MgProgramControlType
+# New-MgBetaProgramControlType
 
 ## SYNOPSIS
 Add new entity to programControlTypes
@@ -14,13 +14,13 @@ Add new entity to programControlTypes
 
 ### CreateExpanded (Default)
 ```
-New-MgProgramControlType [-AdditionalProperties <Hashtable>] [-ControlTypeGroupId <String>]
+New-MgBetaProgramControlType [-AdditionalProperties <Hashtable>] [-ControlTypeGroupId <String>]
  [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgProgramControlType -BodyParameter <IMicrosoftGraphProgramControlType> [-Confirm] [-WhatIf]
+New-MgBetaProgramControlType -BodyParameter <IMicrosoftGraphProgramControlType> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ programControlType
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControlType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControlType
 Parameter Sets: Create
 Aliases:
 
@@ -144,11 +144,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControlType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControlType
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControlType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControlType
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityconditionalaccessauthenticationstrengthauthenticationmethodmode
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityconditionalaccessauthenticationstrengthauthenticationmethodmode
 schema: 2.0.0
 ---
 
-# New-MgIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
+# New-MgBetaIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
 
 ## SYNOPSIS
 Create new navigation property to authenticationMethodModes for identity
@@ -14,14 +14,14 @@ Create new navigation property to authenticationMethodModes for identity
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
+New-MgBetaIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
  [-AdditionalProperties <Hashtable>] [-AuthenticationMethod <String>] [-DisplayName <String>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
+New-MgBetaIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
  -BodyParameter <IMicrosoftGraphAuthenticationMethodModeDetail> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ authenticationMethodModeDetail
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail
 Parameter Sets: Create
 Aliases:
 
@@ -145,11 +145,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail
 
 ## NOTES
 

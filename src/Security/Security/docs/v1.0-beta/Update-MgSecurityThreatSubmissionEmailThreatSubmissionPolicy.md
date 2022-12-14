@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritythreatsubmissionemailthreatsubmissionpolicy
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritythreatsubmissionemailthreatsubmissionpolicy
 schema: 2.0.0
 ---
 
-# Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy
+# Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy
 
 ## SYNOPSIS
 Update the navigation property emailThreatSubmissionPolicies in security
@@ -14,7 +14,7 @@ Update the navigation property emailThreatSubmissionPolicies in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId <String>
+Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-CustomizedNotificationSenderEmailAddress <String>]
  [-CustomizedReportRecipientEmailAddress <String>] [-Id <String>] [-IsAlwaysReportEnabledForUsers]
  [-IsAskMeEnabledForUsers] [-IsCustomizedMessageEnabled] [-IsCustomizedMessageEnabledForPhishing]
@@ -25,21 +25,21 @@ Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmiss
 
 ### Update
 ```
-Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId <String>
+Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId <String>
  -BodyParameter <IMicrosoftGraphSecurityEmailThreatSubmissionPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityEmailThreatSubmissionPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-CustomizedNotificationSenderEmailAddress <String>]
  [-CustomizedReportRecipientEmailAddress <String>] [-Id <String>] [-IsAlwaysReportEnabledForUsers]
  [-IsAskMeEnabledForUsers] [-IsCustomizedMessageEnabled] [-IsCustomizedMessageEnabledForPhishing]
@@ -53,16 +53,16 @@ Update the navigation property emailThreatSubmissionPolicies in security
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet
+### Example 1: Using the Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	IsReportToMicrosoftEnabled = $false
 }
-Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId $emailThreatSubmissionPolicyId -BodyParameter $params
+Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy -EmailThreatSubmissionPolicyId $emailThreatSubmissionPolicyId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet.
+This example shows how to use the Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -87,7 +87,7 @@ emailThreatSubmissionPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -168,7 +168,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -417,9 +417,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmissionPolicy
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

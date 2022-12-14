@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/set-mguseronenotesectionpagecontent
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/set-mguseronenotesectionpagecontent
 schema: 2.0.0
 ---
 
-# Set-MgUserOnenoteSectionPageContent
+# Set-MgBetaUserOnenoteSectionPageContent
 
 ## SYNOPSIS
 The page's HTML content.
@@ -14,13 +14,13 @@ The page's HTML content.
 
 ### Set (Default)
 ```
-Set-MgUserOnenoteSectionPageContent -OnenotePageId <String> -OnenoteSectionId <String> -UserId <String>
+Set-MgBetaUserOnenoteSectionPageContent -OnenotePageId <String> -OnenoteSectionId <String> -UserId <String>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgUserOnenoteSectionPageContent -InputObject <INotesIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaUserOnenoteSectionPageContent -InputObject <INotesIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -175,7 +175,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ### System.IO.Stream
 

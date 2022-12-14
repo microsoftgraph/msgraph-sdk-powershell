@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenant
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenant
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenant
+# New-MgBetaTenantRelationshipManagedTenant
 
 ## SYNOPSIS
 Create new navigation property to tenants for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to tenants for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenant [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenant [-AdditionalProperties <Hashtable>]
  [-Contract <IMicrosoftGraphManagedTenantsTenantContract>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-TenantId <String>]
  [-TenantStatusInformation <IMicrosoftGraphManagedTenantsTenantStatusInformation>] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgTenantRelationshipManagedTenant [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenant -BodyParameter <IMicrosoftGraphManagedTenantsTenant> [-Confirm]
+New-MgBetaTenantRelationshipManagedTenant -BodyParameter <IMicrosoftGraphManagedTenantsTenant> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ tenant
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
 Parameter Sets: Create
 Aliases:
 
@@ -70,7 +70,7 @@ tenantContract
 To construct, please use Get-Help -Online and see NOTES section for CONTRACT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantContract
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantContract
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -170,7 +170,7 @@ tenantStatusInformation
 To construct, please use Get-Help -Online and see NOTES section for TENANTSTATUSINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantStatusInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantStatusInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -217,11 +217,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomainverificationdnsrecord
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdomainverificationdnsrecord
 schema: 2.0.0
 ---
 
-# Update-MgDomainVerificationDnsRecord
+# Update-MgBetaDomainVerificationDnsRecord
 
 ## SYNOPSIS
 Update the navigation property verificationDnsRecords in domains
@@ -14,26 +14,26 @@ Update the navigation property verificationDnsRecords in domains
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDomainVerificationDnsRecord -DomainDnsRecordId <String> -DomainId <String>
+Update-MgBetaDomainVerificationDnsRecord -DomainDnsRecordId <String> -DomainId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsOptional] [-Label <String>] [-RecordType <String>]
  [-SupportedService <String>] [-Ttl <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDomainVerificationDnsRecord -DomainDnsRecordId <String> -DomainId <String>
+Update-MgBetaDomainVerificationDnsRecord -DomainDnsRecordId <String> -DomainId <String>
  -BodyParameter <IMicrosoftGraphDomainDnsRecord> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphDomainDnsRecord> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsOptional] [-Label <String>] [-RecordType <String>]
  [-SupportedService <String>] [-Ttl <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ domainDnsRecord
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -265,9 +265,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/new-mgsearchbookmark
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/new-mgsearchbookmark
 schema: 2.0.0
 ---
 
-# New-MgSearchBookmark
+# New-MgBetaSearchBookmark
 
 ## SYNOPSIS
 Create a new bookmark object.
@@ -14,7 +14,7 @@ Create a new bookmark object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSearchBookmark [-AdditionalProperties <Hashtable>] [-AvailabilityEndDateTime <DateTime>]
+New-MgBetaSearchBookmark [-AdditionalProperties <Hashtable>] [-AvailabilityEndDateTime <DateTime>]
  [-AvailabilityStartDateTime <DateTime>] [-Categories <String[]>] [-Description <String>]
  [-DisplayName <String>] [-GroupIds <String[]>] [-Id <String>] [-IsSuggested]
  [-Keywords <IMicrosoftGraphSearchAnswerKeyword>] [-LanguageTags <String[]>]
@@ -26,7 +26,7 @@ New-MgSearchBookmark [-AdditionalProperties <Hashtable>] [-AvailabilityEndDateTi
 
 ### Create
 ```
-New-MgSearchBookmark -BodyParameter <IMicrosoftGraphSearchBookmark> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSearchBookmark -BodyParameter <IMicrosoftGraphSearchBookmark> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,9 +34,9 @@ Create a new bookmark object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSearchBookmark Cmdlet
+### Example 1: Using the New-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	DisplayName = "Contoso Install Site"
 	WebUrl = "http://www.contoso.com/"
@@ -65,10 +65,10 @@ $params = @{
 	)
 	State = "published"
 }
-New-MgSearchBookmark -BodyParameter $params
+New-MgBetaSearchBookmark -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSearchBookmark Cmdlet.
+This example shows how to use the New-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -125,7 +125,7 @@ bookmark
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchBookmark
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchBookmark
 Parameter Sets: Create
 Aliases:
 
@@ -234,7 +234,7 @@ answerKeyword
 To construct, please use Get-Help -Online and see NOTES section for KEYWORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAnswerKeyword
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAnswerKeyword
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -268,7 +268,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -300,7 +300,7 @@ List of devices and operating systems able to view this bookmark.
 Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DevicePlatformType[]
+Type: Microsoft.Graph.Beta.PowerShell.Support.DevicePlatformType[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -349,7 +349,7 @@ The date and group settings will apply to all variations.
 To construct, please use Get-Help -Online and see NOTES section for TARGETEDVARIATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAnswerVariant[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAnswerVariant[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -412,11 +412,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchBookmark
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchBookmark
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchBookmark
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchBookmark
 
 ## NOTES
 

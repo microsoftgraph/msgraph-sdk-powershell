@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgdriveitemdelta
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgdriveitemdelta
 schema: 2.0.0
 ---
 
-# Get-MgDriveItemDelta
+# Get-MgBetaDriveItemDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -14,27 +14,27 @@ Invoke function delta
 
 ### Delta (Default)
 ```
-Get-MgDriveItemDelta -DriveId <String> -DriveItemId <String> [-Count] [-Filter <String>]
+Get-MgBetaDriveItemDelta -DriveId <String> -DriveItemId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### Delta1
 ```
-Get-MgDriveItemDelta -DriveId <String> -DriveItemId <String> -Token <String> [-Count] [-Filter <String>]
+Get-MgBetaDriveItemDelta -DriveId <String> -DriveItemId <String> -Token <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgDriveItemDelta -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDriveItemDelta -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity1
 ```
-Get-MgDriveItemDelta -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDriveItemDelta -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: DeltaViaIdentity, DeltaViaIdentity1
 Aliases:
 
@@ -216,11 +216,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtaskdefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtaskdefinition
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition
 
 ## SYNOPSIS
 The definition of tasks within the lifecycle workflows instance.
@@ -14,20 +14,20 @@ The definition of tasks within the lifecycle workflows instance.
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition -TaskDefinitionId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition -TaskDefinitionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,31 +36,31 @@ The definition of tasks within the lifecycle workflows instance.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition -TaskDefinitionId $taskDefinitionId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition -TaskDefinitionId $taskDefinitionId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition -Filter "category eq 'joiner,leaver' OR category eq 'joiner'" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition -Filter "category eq 'joiner,leaver' OR category eq 'joiner'" 
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet
+### Example 3: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskDefinition
 
 ## NOTES
 

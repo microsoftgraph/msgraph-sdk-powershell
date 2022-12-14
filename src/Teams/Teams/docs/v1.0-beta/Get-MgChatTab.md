@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgchattab
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgchattab
 schema: 2.0.0
 ---
 
-# Get-MgChatTab
+# Get-MgBetaChatTab
 
 ## SYNOPSIS
 A collection of all the tabs in the chat.
@@ -15,20 +15,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgChatTab -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaChatTab -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgChatTab -ChatId <String> -TeamsTabId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaChatTab -ChatId <String> -TeamsTabId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgChatTab -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaChatTab -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,31 +38,31 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgChatTab Cmdlet
+### Example 1: Using the Get-MgBetaChatTab Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -ExpandProperty "teamsApp" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatTab -ChatId $chatId -TeamsTabId $teamsTabId -ExpandProperty "teamsApp" 
 ```
 
-This example shows how to use the Get-MgChatTab Cmdlet.
+This example shows how to use the Get-MgBetaChatTab Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgChatTab Cmdlet
+### Example 2: Using the Get-MgBetaChatTab Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'" 
 ```
 
-This example shows how to use the Get-MgChatTab Cmdlet.
+This example shows how to use the Get-MgBetaChatTab Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgChatTab Cmdlet
+### Example 3: Using the Get-MgBetaChatTab Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp" 
 ```
 
-This example shows how to use the Get-MgChatTab Cmdlet.
+This example shows how to use the Get-MgBetaChatTab Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -269,11 +269,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsTab1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsTab1
 
 ## NOTES
 

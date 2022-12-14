@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mggroupsitelistcontenttypecolumn
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mggroupsitelistcontenttypecolumn
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteListContentTypeColumn
+# Get-MgBetaGroupSiteListContentTypeColumn
 
 ## SYNOPSIS
 The collection of column definitions for this contentType.
@@ -14,7 +14,7 @@ The collection of column definitions for this contentType.
 
 ### List1 (Default)
 ```
-Get-MgGroupSiteListContentTypeColumn -ContentTypeId <String> -GroupId <String> -ListId <String>
+Get-MgBetaGroupSiteListContentTypeColumn -ContentTypeId <String> -GroupId <String> -ListId <String>
  -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -22,13 +22,13 @@ Get-MgGroupSiteListContentTypeColumn -ContentTypeId <String> -GroupId <String> -
 
 ### Get1
 ```
-Get-MgGroupSiteListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String> -GroupId <String>
+Get-MgBetaGroupSiteListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String> -GroupId <String>
  -ListId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupSiteListContentTypeColumn -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupSiteListContentTypeColumn -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -150,7 +150,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -286,11 +286,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition
 
 ## NOTES
 

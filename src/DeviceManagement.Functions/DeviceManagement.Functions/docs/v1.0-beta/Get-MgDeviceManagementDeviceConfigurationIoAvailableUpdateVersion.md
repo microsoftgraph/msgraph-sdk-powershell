@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementdeviceconfigurationioavailableupdateversion
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementdeviceconfigurationioavailableupdateversion
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceConfigurationIoAvailableUpdateVersion
+# Get-MgBetaDeviceManagementDeviceConfigurationIoAvailableUpdateVersion
 
 ## SYNOPSIS
 Invoke function getIosAvailableUpdateVersions
@@ -13,7 +13,7 @@ Invoke function getIosAvailableUpdateVersions
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementDeviceConfigurationIoAvailableUpdateVersion [-Count] [-Filter <String>]
+Get-MgBetaDeviceManagementDeviceConfigurationIoAvailableUpdateVersion [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -106,7 +106,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosAvailableUpdateVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosAvailableUpdateVersion
 
 ## NOTES
 

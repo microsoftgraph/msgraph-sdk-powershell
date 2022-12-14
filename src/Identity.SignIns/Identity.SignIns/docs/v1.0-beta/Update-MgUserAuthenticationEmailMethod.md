@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mguserauthenticationemailmethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mguserauthenticationemailmethod
 schema: 2.0.0
 ---
 
-# Update-MgUserAuthenticationEmailMethod
+# Update-MgBetaUserAuthenticationEmailMethod
 
 ## SYNOPSIS
 Update the navigation property emailMethods in users
@@ -14,28 +14,28 @@ Update the navigation property emailMethods in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserAuthenticationEmailMethod -EmailAuthenticationMethodId <String> -UserId <String>
+Update-MgBetaUserAuthenticationEmailMethod -EmailAuthenticationMethodId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-EmailAddress <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserAuthenticationEmailMethod -EmailAuthenticationMethodId <String> -UserId <String>
+Update-MgBetaUserAuthenticationEmailMethod -EmailAuthenticationMethodId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-EmailAddress <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -45,16 +45,16 @@ Update the navigation property emailMethods in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserAuthenticationEmailMethod Cmdlet
+### Example 1: Using the Update-MgBetaUserAuthenticationEmailMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	EmailAddress = "kim@contoso.com"
 }
-Update-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
+Update-MgBetaUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserAuthenticationEmailMethod Cmdlet.
+This example shows how to use the Update-MgBetaUserAuthenticationEmailMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ emailAuthenticationMethod
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -141,7 +141,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -218,9 +218,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
 
 ## OUTPUTS
 

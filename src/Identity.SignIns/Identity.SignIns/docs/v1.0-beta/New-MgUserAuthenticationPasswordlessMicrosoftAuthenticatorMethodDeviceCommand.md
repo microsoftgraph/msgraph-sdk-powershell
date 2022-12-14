@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddevicecommand
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddevicecommand
 schema: 2.0.0
 ---
 
-# New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
+# New-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
 
 ## SYNOPSIS
 Create new navigation property to commands for users
@@ -14,7 +14,7 @@ Create new navigation property to commands for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
+New-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-AppServiceName <String>] [-Error <String>] [-Id <String>]
  [-PackageFamilyName <String>] [-Payload <Hashtable>] [-PermissionTicket <String>] [-PostBackUri <String>]
@@ -23,21 +23,21 @@ New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
 
 ### Create
 ```
-New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
+New-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphCommand> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
+New-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
  -InputObject <IIdentitySignInsIdentity> -BodyParameter <IMicrosoftGraphCommand> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
+New-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>] [-AppServiceName <String>]
  [-Error <String>] [-Id <String>] [-PackageFamilyName <String>] [-Payload <Hashtable>]
  [-PermissionTicket <String>] [-PostBackUri <String>] [-Responsepayload <Hashtable>] [-Status <String>]
@@ -86,7 +86,7 @@ command
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -315,13 +315,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 
 ## NOTES
 

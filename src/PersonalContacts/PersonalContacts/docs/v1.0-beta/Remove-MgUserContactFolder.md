@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/remove-mgusercontactfolder
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/remove-mgusercontactfolder
 schema: 2.0.0
 ---
 
-# Remove-MgUserContactFolder
+# Remove-MgBetaUserContactFolder
 
 ## SYNOPSIS
 Delete navigation property contactFolders for users
@@ -14,13 +14,13 @@ Delete navigation property contactFolders for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserContactFolder -ContactFolderId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserContactFolder -ContactFolderId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserContactFolder -InputObject <IPersonalContactsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserContactFolder -InputObject <IPersonalContactsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property contactFolders for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserContactFolder Cmdlet
+### Example 1: Using the Remove-MgBetaUserContactFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 # A UPN can also be used as -UserId.
-Remove-MgUserContactFolder -UserId $userId -ContactFolderId $contactFolderId
+Remove-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId
 ```
 
-This example shows how to use the Remove-MgUserContactFolder Cmdlet.
+This example shows how to use the Remove-MgBetaUserContactFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -76,7 +76,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 

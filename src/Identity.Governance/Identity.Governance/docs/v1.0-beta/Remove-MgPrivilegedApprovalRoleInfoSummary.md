@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgprivilegedapprovalroleinfosummary
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgprivilegedapprovalroleinfosummary
 schema: 2.0.0
 ---
 
-# Remove-MgPrivilegedApprovalRoleInfoSummary
+# Remove-MgBetaPrivilegedApprovalRoleInfoSummary
 
 ## SYNOPSIS
 Delete navigation property summary for privilegedApproval
@@ -14,13 +14,13 @@ Delete navigation property summary for privilegedApproval
 
 ### Delete (Default)
 ```
-Remove-MgPrivilegedApprovalRoleInfoSummary -PrivilegedApprovalId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaPrivilegedApprovalRoleInfoSummary -PrivilegedApprovalId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPrivilegedApprovalRoleInfoSummary -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
+Remove-MgBetaPrivilegedApprovalRoleInfoSummary -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

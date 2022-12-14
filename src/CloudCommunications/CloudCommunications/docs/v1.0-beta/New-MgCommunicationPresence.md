@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mgcommunicationpresence
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mgcommunicationpresence
 schema: 2.0.0
 ---
 
-# New-MgCommunicationPresence
+# New-MgBetaCommunicationPresence
 
 ## SYNOPSIS
 Create new navigation property to presences for communications
@@ -14,14 +14,14 @@ Create new navigation property to presences for communications
 
 ### CreateExpanded (Default)
 ```
-New-MgCommunicationPresence [-Activity <String>] [-AdditionalProperties <Hashtable>] [-Availability <String>]
+New-MgBetaCommunicationPresence [-Activity <String>] [-AdditionalProperties <Hashtable>] [-Availability <String>]
  [-Id <String>] [-OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgCommunicationPresence -BodyParameter <IMicrosoftGraphPresence1> [-Confirm] [-WhatIf]
+New-MgBetaCommunicationPresence -BodyParameter <IMicrosoftGraphPresence1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ presence
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPresence1
 Parameter Sets: Create
 Aliases:
 
@@ -116,7 +116,7 @@ outOfOfficeSettings
 To construct, please use Get-Help -Online and see NOTES section for OUTOFOFFICESETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutOfOfficeSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutOfOfficeSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -163,11 +163,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPresence1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPresence1
 
 ## NOTES
 

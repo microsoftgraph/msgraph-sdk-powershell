@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationclassassignmentsubmissionoutcome
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/new-mgeducationclassassignmentsubmissionoutcome
 schema: 2.0.0
 ---
 
-# New-MgEducationClassAssignmentSubmissionOutcome
+# New-MgBetaEducationClassAssignmentSubmissionOutcome
 
 ## SYNOPSIS
 Create a new feedback resource for a submission.
@@ -17,7 +17,7 @@ If the file doesn't exist or is not in that folder, the `POST` request will fail
 
 ### CreateExpanded1 (Default)
 ```
-New-MgEducationClassAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationClassId <String>
+New-MgBetaEducationClassAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -25,20 +25,20 @@ New-MgEducationClassAssignmentSubmissionOutcome -EducationAssignmentId <String> 
 
 ### Create1
 ```
-New-MgEducationClassAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationClassId <String>
+New-MgBetaEducationClassAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> -BodyParameter <IMicrosoftGraphEducationOutcome> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgEducationClassAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
+New-MgBetaEducationClassAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationOutcome> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgEducationClassAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
+New-MgBetaEducationClassAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -51,20 +51,20 @@ If the file doesn't exist or is not in that folder, the `POST` request will fail
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgEducationClassAssignmentSubmissionOutcome Cmdlet
+### Example 1: Using the New-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
-	"@odata.type" = "#microsoft.graph.educationFeedbackResourceOutcome"
+	"@odata.type" = "#Microsoft.Graph.Beta.educationFeedbackResourceOutcome"
 	FeedbackResource = @{
-		"@odata.type" = "#microsoft.graph.educationWordResource"
+		"@odata.type" = "#Microsoft.Graph.Beta.educationWordResource"
 		DisplayName = "Document1.docx"
 	}
 }
-New-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+New-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -89,7 +89,7 @@ educationOutcome
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationOutcome
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationOutcome
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -166,7 +166,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -182,7 +182,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -246,13 +246,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationOutcome
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationOutcome
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationOutcome
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationOutcome
 
 ## NOTES
 

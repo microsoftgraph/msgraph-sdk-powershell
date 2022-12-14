@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamscheduleopenshiftchangerequest
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamscheduleopenshiftchangerequest
 schema: 2.0.0
 ---
 
-# Get-MgTeamScheduleOpenShiftChangeRequest
+# Get-MgBetaTeamScheduleOpenShiftChangeRequest
 
 ## SYNOPSIS
 Get openShiftChangeRequests from teams
@@ -14,20 +14,20 @@ Get openShiftChangeRequests from teams
 
 ### List1 (Default)
 ```
-Get-MgTeamScheduleOpenShiftChangeRequest -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTeamScheduleOpenShiftChangeRequest -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgTeamScheduleOpenShiftChangeRequest -OpenShiftChangeRequestId <String> -TeamId <String>
+Get-MgBetaTeamScheduleOpenShiftChangeRequest -OpenShiftChangeRequestId <String> -TeamId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamScheduleOpenShiftChangeRequest -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaTeamScheduleOpenShiftChangeRequest -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get openShiftChangeRequests from teams
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamScheduleOpenShiftChangeRequest Cmdlet
+### Example 1: Using the Get-MgBetaTeamScheduleOpenShiftChangeRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleOpenShiftChangeRequest -TeamId $teamId -OpenShiftChangeRequestId $openShiftChangeRequestId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamScheduleOpenShiftChangeRequest -TeamId $teamId -OpenShiftChangeRequestId $openShiftChangeRequestId
 ```
 
-This example shows how to use the Get-MgTeamScheduleOpenShiftChangeRequest Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleOpenShiftChangeRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamScheduleOpenShiftChangeRequest Cmdlet
+### Example 2: Using the Get-MgBetaTeamScheduleOpenShiftChangeRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleOpenShiftChangeRequest -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamScheduleOpenShiftChangeRequest -TeamId $teamId
 ```
 
-This example shows how to use the Get-MgTeamScheduleOpenShiftChangeRequest Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleOpenShiftChangeRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShiftChangeRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOpenShiftChangeRequest1
 
 ## NOTES
 

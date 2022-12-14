@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritytriggertyperetentioneventtype
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritytriggertyperetentioneventtype
 schema: 2.0.0
 ---
 
-# New-MgSecurityTriggerTypeRetentionEventType
+# New-MgBetaSecurityTriggerTypeRetentionEventType
 
 ## SYNOPSIS
 Create a new retentionEventType object.
@@ -14,7 +14,7 @@ Create a new retentionEventType object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityTriggerTypeRetentionEventType [-AdditionalProperties <Hashtable>]
+New-MgBetaSecurityTriggerTypeRetentionEventType [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgSecurityTriggerTypeRetentionEventType [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgSecurityTriggerTypeRetentionEventType -BodyParameter <IMicrosoftGraphSecurityRetentionEventType>
+New-MgBetaSecurityTriggerTypeRetentionEventType -BodyParameter <IMicrosoftGraphSecurityRetentionEventType>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,21 +31,21 @@ Create a new retentionEventType object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSecurityTriggerTypeRetentionEventType Cmdlet
+### Example 1: Using the New-MgBetaSecurityTriggerTypeRetentionEventType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
-	"@odata.type" = "#microsoft.graph.security.retentionEventType"
+	"@odata.type" = "#Microsoft.Graph.Beta.security.retentionEventType"
 	DisplayName = "String"
 	Description = "String"
 	CreatedBy = @{
-		"@odata.type" = "microsoft.graph.identitySet"
+		"@odata.type" = "Microsoft.Graph.Beta.identitySet"
 	}
 }
-New-MgSecurityTriggerTypeRetentionEventType -BodyParameter $params
+New-MgBetaSecurityTriggerTypeRetentionEventType -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSecurityTriggerTypeRetentionEventType Cmdlet.
+This example shows how to use the New-MgBetaSecurityTriggerTypeRetentionEventType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ retentionEventType
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
 Parameter Sets: Create
 Aliases:
 
@@ -86,7 +86,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEventType
 
 ## NOTES
 

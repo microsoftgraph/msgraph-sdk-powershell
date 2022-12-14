@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementnotificationmessagetemplate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementnotificationmessagetemplate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementNotificationMessageTemplate
+# New-MgBetaDeviceManagementNotificationMessageTemplate
 
 ## SYNOPSIS
 Create new navigation property to notificationMessageTemplates for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to notificationMessageTemplates for deviceManagem
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceManagementNotificationMessageTemplate [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementNotificationMessageTemplate [-AdditionalProperties <Hashtable>]
  [-BrandingOptions <NotificationTemplateBrandingOptions>] [-DefaultLocale <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementNotificationMessageTemplate [-AdditionalProperties <Hashta
 
 ### Create1
 ```
-New-MgDeviceManagementNotificationMessageTemplate -BodyParameter <IMicrosoftGraphNotificationMessageTemplate1>
+New-MgBetaDeviceManagementNotificationMessageTemplate -BodyParameter <IMicrosoftGraphNotificationMessageTemplate1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ Use the notificationMessageTemplate object to create your own custom notificatio
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
 Parameter Sets: Create1
 Aliases:
 
@@ -72,7 +72,7 @@ Branding Options for the Message Template.
 Branding is defined in the Intune Admin Console.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.NotificationTemplateBrandingOptions
+Type: Microsoft.Graph.Beta.PowerShell.Support.NotificationTemplateBrandingOptions
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -149,7 +149,7 @@ The list of localized messages for this Notification Message Template.
 To construct, please use Get-Help -Online and see NOTES section for LOCALIZEDNOTIFICATIONMESSAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -211,11 +211,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
 
 ## NOTES
 

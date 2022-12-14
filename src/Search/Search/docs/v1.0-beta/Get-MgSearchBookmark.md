@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearchbookmark
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/get-mgsearchbookmark
 schema: 2.0.0
 ---
 
-# Get-MgSearchBookmark
+# Get-MgBetaSearchBookmark
 
 ## SYNOPSIS
 Administrative answer in Microsoft Search results for common search queries in an organization.
@@ -14,20 +14,20 @@ Administrative answer in Microsoft Search results for common search queries in a
 
 ### List (Default)
 ```
-Get-MgSearchBookmark [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaSearchBookmark [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSearchBookmark -BookmarkId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSearchBookmark -BookmarkId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSearchBookmark -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSearchBookmark -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Administrative answer in Microsoft Search results for common search queries in a
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSearchBookmark Cmdlet
+### Example 1: Using the Get-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgSearchBookmark -BookmarkId $bookmarkId
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaSearchBookmark -BookmarkId $bookmarkId
 ```
 
-This example shows how to use the Get-MgSearchBookmark Cmdlet.
+This example shows how to use the Get-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSearchBookmark Cmdlet
+### Example 2: Using the Get-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgSearchBookmark
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaSearchBookmark
 ```
 
-This example shows how to use the Get-MgSearchBookmark Cmdlet.
+This example shows how to use the Get-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchBookmark
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchBookmark
 
 ## NOTES
 

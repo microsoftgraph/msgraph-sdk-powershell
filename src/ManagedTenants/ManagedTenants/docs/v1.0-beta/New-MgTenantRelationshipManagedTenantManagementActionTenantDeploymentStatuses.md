@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementactiontenantdeploymentstatuses
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementactiontenantdeploymentstatuses
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+# New-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
 
 ## SYNOPSIS
 Create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managementActionTenantDeploymentStatuses for t
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+New-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Statuses <IMicrosoftGraphManagedTenantsManagementActionDeploymentStatus[]>] [-TenantGroupId <String>]
  [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+New-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ managementActionTenantDeploymentStatus
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
 Parameter Sets: Create
 Aliases:
 
@@ -87,7 +87,7 @@ Optional.
 To construct, please use Get-Help -Online and see NOTES section for STATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionDeploymentStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionDeploymentStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -168,11 +168,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus
 
 ## NOTES
 

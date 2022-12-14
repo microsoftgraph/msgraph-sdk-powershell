@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgchatpermissiongrantbyid
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgchatpermissiongrantbyid
 schema: 2.0.0
 ---
 
-# Get-MgChatPermissionGrantById
+# Get-MgBetaChatPermissionGrantById
 
 ## SYNOPSIS
 Return the directory objects specified in a list of IDs.
@@ -15,27 +15,27 @@ Some common uses for this function are to:
 
 ### GetExpanded (Default)
 ```
-Get-MgChatPermissionGrantById -ChatId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
+Get-MgBetaChatPermissionGrantById -ChatId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgChatPermissionGrantById -ChatId <String>
+Get-MgBetaChatPermissionGrantById -ChatId <String>
  -BodyParameter <IPaths1DfjtojChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgChatPermissionGrantById -InputObject <ITeamsIdentity>
+Get-MgBetaChatPermissionGrantById -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1DfjtojChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
-Get-MgChatPermissionGrantById -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Get-MgBetaChatPermissionGrantById -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1DfjtojChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1DfjtojChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -175,13 +175,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1DfjtojChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1DfjtojChatsChatIdPermissiongrantsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

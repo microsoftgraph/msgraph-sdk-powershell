@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementmanageddevicemobileappconfigurationstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementmanageddevicemobileappconfigurationstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementManagedDeviceMobileAppConfigurationState
+# Update-MgBetaDeviceManagementManagedDeviceMobileAppConfigurationState
 
 ## SYNOPSIS
 Update the navigation property managedDeviceMobileAppConfigurationStates in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property managedDeviceMobileAppConfigurationStates in devi
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
+Update-MgBetaDeviceManagementManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
  -ManagedDeviceMobileAppConfigurationStateId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphManagedDeviceMobileAppConfigurationSettingState[]>] [-State <String>]
@@ -24,7 +24,7 @@ Update-MgDeviceManagementManagedDeviceMobileAppConfigurationState -ManagedDevice
 
 ### Update
 ```
-Update-MgDeviceManagementManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
+Update-MgBetaDeviceManagementManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
  -ManagedDeviceMobileAppConfigurationStateId <String>
  -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationState> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -32,14 +32,14 @@ Update-MgDeviceManagementManagedDeviceMobileAppConfigurationState -ManagedDevice
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementManagedDeviceMobileAppConfigurationState -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementManagedDeviceMobileAppConfigurationState -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationState> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementManagedDeviceMobileAppConfigurationState -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementManagedDeviceMobileAppConfigurationState -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphManagedDeviceMobileAppConfigurationSettingState[]>] [-State <String>]
@@ -74,7 +74,7 @@ Managed Device Mobile App Configuration State for a given device.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicyPlatformType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SETTINGSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationSettingState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationSettingState[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -319,9 +319,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationState
 
 ## OUTPUTS
 

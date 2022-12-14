@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointreport
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointReport
+# Get-MgBetaDeviceManagementVirtualEndpointReport
 
 ## SYNOPSIS
 Cloud PC related reports.
@@ -13,7 +13,7 @@ Cloud PC related reports.
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementVirtualEndpointReport [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceManagementVirtualEndpointReport [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcReports
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcReports
 
 ## NOTES
 

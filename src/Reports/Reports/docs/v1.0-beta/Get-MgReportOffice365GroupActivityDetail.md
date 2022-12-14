@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportoffice365groupactivitydetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportoffice365groupactivitydetail
 schema: 2.0.0
 ---
 
-# Get-MgReportOffice365GroupActivityDetail
+# Get-MgBetaReportOffice365GroupActivityDetail
 
 ## SYNOPSIS
 Invoke function getOffice365GroupsActivityDetail
@@ -14,26 +14,26 @@ Invoke function getOffice365GroupsActivityDetail
 
 ### Get2 (Default)
 ```
-Get-MgReportOffice365GroupActivityDetail -Date <DateTime> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaReportOffice365GroupActivityDetail -Date <DateTime> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get3
 ```
-Get-MgReportOffice365GroupActivityDetail -Period <String> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaReportOffice365GroupActivityDetail -Period <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgReportOffice365GroupActivityDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaReportOffice365GroupActivityDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgReportOffice365GroupActivityDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaReportOffice365GroupActivityDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -95,7 +95,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
@@ -201,11 +201,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOffice365GroupsActivityDetail
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOffice365GroupsActivityDetail
 
 ## NOTES
 

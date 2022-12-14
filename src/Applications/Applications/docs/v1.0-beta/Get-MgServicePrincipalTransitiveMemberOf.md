@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipaltransitivememberof
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipaltransitivememberof
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalTransitiveMemberOf
+# Get-MgBetaServicePrincipalTransitiveMemberOf
 
 ## SYNOPSIS
 Get transitiveMemberOf from servicePrincipals
@@ -14,7 +14,7 @@ Get transitiveMemberOf from servicePrincipals
 
 ### List (Default)
 ```
-Get-MgServicePrincipalTransitiveMemberOf -ServicePrincipalId <String> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalTransitiveMemberOf -ServicePrincipalId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -22,13 +22,13 @@ Get-MgServicePrincipalTransitiveMemberOf -ServicePrincipalId <String> [-ExpandPr
 
 ### Get
 ```
-Get-MgServicePrincipalTransitiveMemberOf -DirectoryObjectId <String> -ServicePrincipalId <String>
+Get-MgBetaServicePrincipalTransitiveMemberOf -DirectoryObjectId <String> -ServicePrincipalId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalTransitiveMemberOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaServicePrincipalTransitiveMemberOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -37,13 +37,13 @@ Get transitiveMemberOf from servicePrincipals
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServicePrincipalTransitiveMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalTransitiveMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalTransitiveMemberOf -ServicePrincipalId $servicePrincipalId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalTransitiveMemberOf -ServicePrincipalId $servicePrincipalId
 ```
 
-This example shows how to use the Get-MgServicePrincipalTransitiveMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalTransitiveMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -145,7 +145,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -266,11 +266,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgorganizationsettingpersoninsight
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgorganizationsettingpersoninsight
 schema: 2.0.0
 ---
 
-# Update-MgOrganizationSettingPersonInsight
+# Update-MgBetaOrganizationSettingPersonInsight
 
 ## SYNOPSIS
 Update the privacy settings to display or return the specified type of insights in an organization.
@@ -16,26 +16,26 @@ To learn more about customizing insights privacy for your organization, see:\n- 
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOrganizationSettingPersonInsight -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaOrganizationSettingPersonInsight -OrganizationId <String> [-AdditionalProperties <Hashtable>]
  [-DisabledForGroup <String>] [-Id <String>] [-IsEnabledInOrganization] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgOrganizationSettingPersonInsight -OrganizationId <String>
+Update-MgBetaOrganizationSettingPersonInsight -OrganizationId <String>
  -BodyParameter <IMicrosoftGraphInsightsSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphInsightsSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisabledForGroup <String>] [-Id <String>] [-IsEnabledInOrganization]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,17 +47,17 @@ To learn more about customizing insights privacy for your organization, see:\n- 
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgOrganizationSettingPersonInsight Cmdlet
+### Example 1: Using the Update-MgBetaOrganizationSettingPersonInsight Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	IsEnabledInOrganization = $true
 	DisabledForGroup = "edbfe4fb-ec70-4300-928f-dbb2ae86c981"
 }
-Update-MgOrganizationSettingPersonInsight -OrganizationId $organizationId -BodyParameter $params
+Update-MgBetaOrganizationSettingPersonInsight -OrganizationId $organizationId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgOrganizationSettingPersonInsight Cmdlet.
+This example shows how to use the Update-MgBetaOrganizationSettingPersonInsight Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -82,7 +82,7 @@ insightsSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInsightsSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -225,9 +225,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInsightsSettings
 
 ## OUTPUTS
 

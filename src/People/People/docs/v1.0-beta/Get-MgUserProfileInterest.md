@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguserprofileinterest
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguserprofileinterest
 schema: 2.0.0
 ---
 
-# Get-MgUserProfileInterest
+# Get-MgBetaUserProfileInterest
 
 ## SYNOPSIS
 Provides detailed information about interests the user has associated with themselves in various services.
@@ -14,20 +14,20 @@ Provides detailed information about interests the user has associated with thems
 
 ### List (Default)
 ```
-Get-MgUserProfileInterest -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserProfileInterest -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserProfileInterest -PersonInterestId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserProfileInterest -PersonInterestId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserProfileInterest -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserProfileInterest -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Provides detailed information about interests the user has associated with thems
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserProfileInterest Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileInterest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileInterest -UserId $userId
+Get-MgBetaUserProfileInterest -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserProfileInterest Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileInterest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserProfileInterest Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileInterest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileInterest -UserId $userId -PersonInterestId $personInterestId
+Get-MgBetaUserProfileInterest -UserId $userId -PersonInterestId $personInterestId
 ```
 
-This example shows how to use the Get-MgUserProfileInterest Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileInterest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonInterest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonInterest
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointsupportedregion
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointsupportedregion
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointSupportedRegion
+# New-MgBetaDeviceManagementVirtualEndpointSupportedRegion
 
 ## SYNOPSIS
 Create new navigation property to supportedRegions for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to supportedRegions for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointSupportedRegion [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementVirtualEndpointSupportedRegion [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-RegionGroup <String>] [-RegionStatus <String>]
  [-SupportedSolution <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointSupportedRegion -BodyParameter <IMicrosoftGraphCloudPcSupportedRegion>
+New-MgBetaDeviceManagementVirtualEndpointSupportedRegion -BodyParameter <IMicrosoftGraphCloudPcSupportedRegion>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ cloudPcSupportedRegion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSupportedRegion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSupportedRegion
 Parameter Sets: Create
 Aliases:
 
@@ -176,11 +176,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSupportedRegion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSupportedRegion
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSupportedRegion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSupportedRegion
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamworkdeletedteamchannelsharedwithteamallowedmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamworkdeletedteamchannelsharedwithteamallowedmember
 schema: 2.0.0
 ---
 
-# Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember
+# Get-MgBetaTeamworkDeletedTeamChannelSharedWithTeamAllowedMember
 
 ## SYNOPSIS
 A collection of team members who have access to the shared channel.
@@ -14,7 +14,7 @@ A collection of team members who have access to the shared channel.
 
 ### List (Default)
 ```
-Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -DeletedTeamId <String>
+Get-MgBetaTeamworkDeletedTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -DeletedTeamId <String>
  -SharedWithChannelTeamInfoId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember -ChannelId <String> 
 
 ### Get
 ```
-Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -ConversationMemberId <String>
+Get-MgBetaTeamworkDeletedTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -ConversationMemberId <String>
  -DeletedTeamId <String> -SharedWithChannelTeamInfoId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember -InputObject <ITeamsIdentity>
+Get-MgBetaTeamworkDeletedTeamChannelSharedWithTeamAllowedMember -InputObject <ITeamsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -272,11 +272,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 
 ## NOTES
 

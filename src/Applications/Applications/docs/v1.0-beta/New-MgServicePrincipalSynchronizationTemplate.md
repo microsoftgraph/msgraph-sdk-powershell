@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgserviceprincipalsynchronizationtemplate
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgserviceprincipalsynchronizationtemplate
 schema: 2.0.0
 ---
 
-# New-MgServicePrincipalSynchronizationTemplate
+# New-MgBetaServicePrincipalSynchronizationTemplate
 
 ## SYNOPSIS
 Create new navigation property to templates for servicePrincipals
@@ -14,7 +14,7 @@ Create new navigation property to templates for servicePrincipals
 
 ### CreateExpanded (Default)
 ```
-New-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaServicePrincipalSynchronizationTemplate -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
  [-ApplicationId <String>] [-Default] [-Description <String>] [-Discoverable] [-FactoryTag <String>]
  [-Id <String>] [-Metadata <IMicrosoftGraphMetadataEntry[]>] [-Schema <IMicrosoftGraphSynchronizationSchema>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId <String> [-Add
 
 ### Create
 ```
-New-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId <String>
+New-MgBetaServicePrincipalSynchronizationTemplate -ServicePrincipalId <String>
  -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentity>
+New-MgBetaServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicationId <String>] [-Default] [-Description <String>]
  [-Discoverable] [-FactoryTag <String>] [-Id <String>] [-Metadata <IMicrosoftGraphMetadataEntry[]>]
  [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -82,7 +82,7 @@ synchronizationTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -175,7 +175,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ Unless mentioned explicitly, metadata values should not be changed.
 To construct, please use Get-Help -Online and see NOTES section for METADATA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMetadataEntry[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMetadataEntry[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -208,7 +208,7 @@ synchronizationSchema
 To construct, please use Get-Help -Online and see NOTES section for SCHEMA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSchema
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -270,13 +270,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyexternalidentitypolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyexternalidentitypolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyExternalIdentityPolicy
+# Update-MgBetaPolicyExternalIdentityPolicy
 
 ## SYNOPSIS
 Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
@@ -14,14 +14,14 @@ Update the settings of the tenant-wide externalIdentitiesPolicy object that cont
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyExternalIdentityPolicy [-AdditionalProperties <Hashtable>] [-AllowDeletedIdentitiesDataRemoval]
+Update-MgBetaPolicyExternalIdentityPolicy [-AdditionalProperties <Hashtable>] [-AllowDeletedIdentitiesDataRemoval]
  [-AllowExternalIdentitiesToLeave] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPolicyExternalIdentityPolicy -BodyParameter <IMicrosoftGraphExternalIdentitiesPolicy> [-PassThru]
+Update-MgBetaPolicyExternalIdentityPolicy -BodyParameter <IMicrosoftGraphExternalIdentitiesPolicy> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ externalIdentitiesPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalIdentitiesPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalIdentitiesPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -210,7 +210,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalIdentitiesPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalIdentitiesPolicy
 
 ## OUTPUTS
 

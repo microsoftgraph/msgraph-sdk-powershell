@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritytriggerretentionevent
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritytriggerretentionevent
 schema: 2.0.0
 ---
 
-# Get-MgSecurityTriggerRetentionEvent
+# Get-MgBetaSecurityTriggerRetentionEvent
 
 ## SYNOPSIS
 Get retentionEvents from security
@@ -14,20 +14,20 @@ Get retentionEvents from security
 
 ### List (Default)
 ```
-Get-MgSecurityTriggerRetentionEvent [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSecurityTriggerRetentionEvent [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityTriggerRetentionEvent -RetentionEventId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityTriggerRetentionEvent -RetentionEventId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityTriggerRetentionEvent -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityTriggerRetentionEvent -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get retentionEvents from security
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityTriggerRetentionEvent Cmdlet
+### Example 1: Using the Get-MgBetaSecurityTriggerRetentionEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityTriggerRetentionEvent -RetentionEventId $retentionEventId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityTriggerRetentionEvent -RetentionEventId $retentionEventId
 ```
 
-This example shows how to use the Get-MgSecurityTriggerRetentionEvent Cmdlet.
+This example shows how to use the Get-MgBetaSecurityTriggerRetentionEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityTriggerRetentionEvent Cmdlet
+### Example 2: Using the Get-MgBetaSecurityTriggerRetentionEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityTriggerRetentionEvent
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityTriggerRetentionEvent
 ```
 
-This example shows how to use the Get-MgSecurityTriggerRetentionEvent Cmdlet.
+This example shows how to use the Get-MgBetaSecurityTriggerRetentionEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mgavailableidentityprovidertype
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/invoke-mgavailableidentityprovidertype
 schema: 2.0.0
 ---
 
-# Invoke-MgAvailableIdentityProviderType
+# Invoke-MgBetaAvailableIdentityProviderType
 
 ## SYNOPSIS
 Invoke function availableProviderTypes
@@ -13,7 +13,7 @@ Invoke function availableProviderTypes
 ## SYNTAX
 
 ```
-Invoke-MgAvailableIdentityProviderType [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Invoke-MgBetaAvailableIdentityProviderType [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,31 +22,31 @@ Invoke function availableProviderTypes
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgAvailableIdentityProviderType Cmdlet
+### Example 1: Using the Invoke-MgBetaAvailableIdentityProviderType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Invoke-MgAvailableIdentityProviderType
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Invoke-MgBetaAvailableIdentityProviderType
 ```
 
-This example shows how to use the Invoke-MgAvailableIdentityProviderType Cmdlet.
+This example shows how to use the Invoke-MgBetaAvailableIdentityProviderType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Invoke-MgAvailableIdentityProviderType Cmdlet
+### Example 2: Using the Invoke-MgBetaAvailableIdentityProviderType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Invoke-MgAvailableIdentityProviderType
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Invoke-MgBetaAvailableIdentityProviderType
 ```
 
-This example shows how to use the Invoke-MgAvailableIdentityProviderType Cmdlet.
+This example shows how to use the Invoke-MgBetaAvailableIdentityProviderType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Invoke-MgAvailableIdentityProviderType Cmdlet
+### Example 3: Using the Invoke-MgBetaAvailableIdentityProviderType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Invoke-MgAvailableIdentityProviderType -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Invoke-MgBetaAvailableIdentityProviderType -OutFile $outFileId
 ```
 
-This example shows how to use the Invoke-MgAvailableIdentityProviderType Cmdlet.
+This example shows how to use the Invoke-MgBetaAvailableIdentityProviderType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS

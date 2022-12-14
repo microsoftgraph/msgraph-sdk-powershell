@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdeviceregisteredownerbyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/remove-mgdeviceregisteredownerbyref
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceRegisteredOwnerByRef
+# Remove-MgBetaDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
 Delete ref of navigation property registeredOwners for devices
@@ -14,13 +14,13 @@ Delete ref of navigation property registeredOwners for devices
 
 ### Delete1 (Default)
 ```
-Remove-MgDeviceRegisteredOwnerByRef -DeviceId <String> -DirectoryObjectId <String> [-Id <String>]
+Remove-MgBetaDeviceRegisteredOwnerByRef -DeviceId <String> -DirectoryObjectId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity> [-Id <String>]
+Remove-MgBetaDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property registeredOwners for devices
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgDeviceRegisteredOwnerByRef Cmdlet
+### Example 1: Using the Remove-MgBetaDeviceRegisteredOwnerByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDeviceRegisteredOwnerByRef -DeviceId $deviceId -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Remove-MgBetaDeviceRegisteredOwnerByRef -DeviceId $deviceId -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Remove-MgDeviceRegisteredOwnerByRef Cmdlet.
+This example shows how to use the Remove-MgBetaDeviceRegisteredOwnerByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

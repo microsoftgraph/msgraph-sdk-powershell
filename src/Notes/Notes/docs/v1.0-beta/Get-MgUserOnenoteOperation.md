@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mguseronenoteoperation
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mguseronenoteoperation
 schema: 2.0.0
 ---
 
-# Get-MgUserOnenoteOperation
+# Get-MgBetaUserOnenoteOperation
 
 ## SYNOPSIS
 The status of OneNote operations.
@@ -17,13 +17,13 @@ Nullable.
 
 ### Get1 (Default)
 ```
-Get-MgUserOnenoteOperation -OnenoteOperationId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserOnenoteOperation -OnenoteOperationId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserOnenoteOperation -InputObject <INotesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserOnenoteOperation -InputObject <INotesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -35,14 +35,14 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOnenoteOperation Cmdlet
+### Example 1: Using the Get-MgBetaUserOnenoteOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteOperation -UserId $userId -OnenoteOperationId $onenoteOperationId
+Get-MgBetaUserOnenoteOperation -UserId $userId -OnenoteOperationId $onenoteOperationId
 ```
 
-This example shows how to use the Get-MgUserOnenoteOperation Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -128,11 +128,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteOperation
 
 ## NOTES
 

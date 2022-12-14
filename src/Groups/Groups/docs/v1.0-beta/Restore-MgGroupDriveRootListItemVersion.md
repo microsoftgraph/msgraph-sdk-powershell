@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/restore-mggroupdriverootlistitemversion
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/restore-mggroupdriverootlistitemversion
 schema: 2.0.0
 ---
 
-# Restore-MgGroupDriveRootListItemVersion
+# Restore-MgBetaGroupDriveRootListItemVersion
 
 ## SYNOPSIS
 Invoke action restoreVersion
@@ -14,13 +14,13 @@ Invoke action restoreVersion
 
 ### Restore (Default)
 ```
-Restore-MgGroupDriveRootListItemVersion -DriveId <String> -GroupId <String> -ListItemVersionId <String>
+Restore-MgBetaGroupDriveRootListItemVersion -DriveId <String> -GroupId <String> -ListItemVersionId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgGroupDriveRootListItemVersion -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaGroupDriveRootListItemVersion -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

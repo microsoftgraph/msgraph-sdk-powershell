@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityconditionalaccessauthenticationcontextclassreference
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityconditionalaccessauthenticationcontextclassreference
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityConditionalAccessAuthenticationContextClassReference
+# Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
 Delete navigation property authenticationContextClassReferences for identity
@@ -14,14 +14,14 @@ Delete navigation property authenticationContextClassReferences for identity
 
 ### Delete1 (Default)
 ```
-Remove-MgIdentityConditionalAccessAuthenticationContextClassReference
+Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
  -AuthenticationContextClassReferenceId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObject <IIdentitySignInsIdentity>
+Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -InputObject <IIdentitySignInsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Delete navigation property authenticationContextClassReferences for identity
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
 ```
 
-This example shows how to use the Remove-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -76,7 +76,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

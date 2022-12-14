@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/remove-mguserprofileposition
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/remove-mguserprofileposition
 schema: 2.0.0
 ---
 
-# Remove-MgUserProfilePosition
+# Remove-MgBetaUserProfilePosition
 
 ## SYNOPSIS
 Delete navigation property positions for users
@@ -14,13 +14,13 @@ Delete navigation property positions for users
 
 ### Delete (Default)
 ```
-Remove-MgUserProfilePosition -UserId <String> -WorkPositionId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserProfilePosition -UserId <String> -WorkPositionId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserProfilePosition -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserProfilePosition -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property positions for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserProfilePosition Cmdlet
+### Example 1: Using the Remove-MgBetaUserProfilePosition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Remove-MgUserProfilePosition -UserId $userId -WorkPositionId $workPositionId
+Remove-MgBetaUserProfilePosition -UserId $userId -WorkPositionId $workPositionId
 ```
 
-This example shows how to use the Remove-MgUserProfilePosition Cmdlet.
+This example shows how to use the Remove-MgBetaUserProfilePosition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 

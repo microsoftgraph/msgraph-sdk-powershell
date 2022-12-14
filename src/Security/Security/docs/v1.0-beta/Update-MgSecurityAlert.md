@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityalert
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityalert
 schema: 2.0.0
 ---
 
-# Update-MgSecurityAlert
+# Update-MgBetaSecurityAlert
 
 ## SYNOPSIS
 Update the navigation property alerts in security
@@ -14,7 +14,7 @@ Update the navigation property alerts in security
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgSecurityAlert -AlertId <String> [-ActivityGroupName <String>] [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityAlert -AlertId <String> [-ActivityGroupName <String>] [-AdditionalProperties <Hashtable>]
  [-AlertDetections <IMicrosoftGraphAlertDetection[]>] [-AssignedTo <String>] [-AzureSubscriptionId <String>]
  [-AzureTenantId <String>] [-Category <String>] [-ClosedDateTime <DateTime>]
  [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>] [-Comments <String[]>] [-Confidence <Int32>]
@@ -38,19 +38,19 @@ Update-MgSecurityAlert -AlertId <String> [-ActivityGroupName <String>] [-Additio
 
 ### Update1
 ```
-Update-MgSecurityAlert -AlertId <String> -BodyParameter <IMicrosoftGraphAlert> [-PassThru] [-Confirm]
+Update-MgBetaSecurityAlert -AlertId <String> -BodyParameter <IMicrosoftGraphAlert> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgSecurityAlert -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphAlert> [-PassThru]
+Update-MgBetaSecurityAlert -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphAlert> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <String>]
+Update-MgBetaSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <String>]
  [-AdditionalProperties <Hashtable>] [-AlertDetections <IMicrosoftGraphAlertDetection[]>]
  [-AssignedTo <String>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-Category <String>]
  [-ClosedDateTime <DateTime>] [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>]
@@ -77,17 +77,17 @@ Update the navigation property alerts in security
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityAlert Cmdlet
+### Example 1: Using the Update-MgBetaSecurityAlert Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	AssignedTo = "String"
 	ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
 	Comments = @(
 		"String"
 	)
-	Feedback = "@odata.type: microsoft.graph.alertFeedback"
-	Status = "@odata.type: microsoft.graph.alertStatus"
+	Feedback = "@odata.type: Microsoft.Graph.Beta.alertFeedback"
+	Status = "@odata.type: Microsoft.Graph.Beta.alertStatus"
 	Tags = @(
 		"String"
 	)
@@ -96,23 +96,23 @@ $params = @{
 		Vendor = "String"
 	}
 }
-Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
+Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityAlert Cmdlet.
+This example shows how to use the Update-MgBetaSecurityAlert Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Update-MgSecurityAlert Cmdlet
+### Example 2: Using the Update-MgBetaSecurityAlert Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	AssignedTo = "String"
 	ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
 	Comments = @(
 		"String"
 	)
-	Feedback = "@odata.type: microsoft.graph.alertFeedback"
-	Status = "@odata.type: microsoft.graph.alertStatus"
+	Feedback = "@odata.type: Microsoft.Graph.Beta.alertFeedback"
+	Status = "@odata.type: Microsoft.Graph.Beta.alertStatus"
 	Tags = @(
 		"String"
 	)
@@ -121,10 +121,10 @@ $params = @{
 		Vendor = "String"
 	}
 }
-Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
+Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityAlert Cmdlet.
+This example shows how to use the Update-MgBetaSecurityAlert Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ALERTDETECTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertDetection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlertDetection[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -241,7 +241,7 @@ alert
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlert
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -289,7 +289,7 @@ Security-related stateful information generated by the provider about the cloud 
 To construct, please use Get-Help -Online and see NOTES section for CLOUDAPPSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudAppSecurityState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -416,7 +416,7 @@ Security-related stateful information generated by the provider about the file(s
 To construct, please use Get-Help -Online and see NOTES section for FILESTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileSecurityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFileSecurityState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -432,7 +432,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for HISTORYSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertHistoryState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlertHistoryState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -448,7 +448,7 @@ Security-related stateful information generated by the provider about the host(s
 To construct, please use Get-Help -Online and see NOTES section for HOSTSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHostSecurityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHostSecurityState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -495,7 +495,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -511,7 +511,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for INVESTIGATIONSECURITYSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInvestigationSecurityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInvestigationSecurityState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -559,7 +559,7 @@ Threat Intelligence pertaining to malware related to this alert.
 To construct, please use Get-Help -Online and see NOTES section for MALWARESTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMalwareState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMalwareState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -575,7 +575,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MESSAGESECURITYSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageSecurityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessageSecurityState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -591,7 +591,7 @@ Security-related stateful information generated by the provider about the networ
 To construct, please use Get-Help -Online and see NOTES section for NETWORKCONNECTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNetworkConnection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNetworkConnection[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -622,7 +622,7 @@ Security-related stateful information generated by the provider about the proces
 To construct, please use Get-Help -Online and see NOTES section for PROCESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProcess[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProcess[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -653,7 +653,7 @@ Security-related stateful information generated by the provider about the regist
 To construct, please use Get-Help -Online and see NOTES section for REGISTRYKEYSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegistryKeyState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegistryKeyState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -670,7 +670,7 @@ For example, for some alerts this can have the Azure Resource value.
 To construct, please use Get-Help -Online and see NOTES section for SECURITYRESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityResource[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityResource[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -764,7 +764,7 @@ This field indicates which properties triggered the alert generation.
 To construct, please use Get-Help -Online and see NOTES section for TRIGGERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertTrigger[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlertTrigger[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -780,7 +780,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for URICLICKSECURITYSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUriClickSecurityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUriClickSecurityState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -796,7 +796,7 @@ Security-related stateful information generated by the provider about the user a
 To construct, please use Get-Help -Online and see NOTES section for USERSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSecurityState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -812,7 +812,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -828,7 +828,7 @@ Threat intelligence pertaining to one or more vulnerabilities related to this al
 To construct, please use Get-Help -Online and see NOTES section for VULNERABILITYSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVulnerabilityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVulnerabilityState[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -875,9 +875,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlert
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

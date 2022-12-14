@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupconversationthreadpostinreplytoattachment
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupconversationthreadpostinreplytoattachment
 schema: 2.0.0
 ---
 
-# New-MgGroupConversationThreadPostInReplyToAttachment
+# New-MgBetaGroupConversationThreadPostInReplyToAttachment
 
 ## SYNOPSIS
 Create new navigation property to attachments for groups
@@ -14,7 +14,7 @@ Create new navigation property to attachments for groups
 
 ### CreateExpanded1 (Default)
 ```
-New-MgGroupConversationThreadPostInReplyToAttachment -ConversationId <String> -ConversationThreadId <String>
+New-MgBetaGroupConversationThreadPostInReplyToAttachment -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>]
  [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,20 +22,20 @@ New-MgGroupConversationThreadPostInReplyToAttachment -ConversationId <String> -C
 
 ### Create1
 ```
-New-MgGroupConversationThreadPostInReplyToAttachment -ConversationId <String> -ConversationThreadId <String>
+New-MgBetaGroupConversationThreadPostInReplyToAttachment -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgGroupConversationThreadPostInReplyToAttachment -InputObject <IGroupsIdentity>
+New-MgBetaGroupConversationThreadPostInReplyToAttachment -InputObject <IGroupsIdentity>
  -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgGroupConversationThreadPostInReplyToAttachment -InputObject <IGroupsIdentity>
+New-MgBetaGroupConversationThreadPostInReplyToAttachment -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
  [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ attachment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -159,7 +159,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -282,13 +282,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

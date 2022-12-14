@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/confirm-mguserchatpermissiongrantmemberobject
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/confirm-mguserchatpermissiongrantmemberobject
 schema: 2.0.0
 ---
 
-# Confirm-MgUserChatPermissionGrantMemberObject
+# Confirm-MgBetaUserChatPermissionGrantMemberObject
 
 ## SYNOPSIS
 Invoke action checkMemberObjects
@@ -14,14 +14,14 @@ Invoke action checkMemberObjects
 
 ### CheckExpanded (Default)
 ```
-Confirm-MgUserChatPermissionGrantMemberObject -ChatId <String> -ResourceSpecificPermissionGrantId <String>
+Confirm-MgBetaUserChatPermissionGrantMemberObject -ChatId <String> -ResourceSpecificPermissionGrantId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Check
 ```
-Confirm-MgUserChatPermissionGrantMemberObject -ChatId <String> -ResourceSpecificPermissionGrantId <String>
+Confirm-MgBetaUserChatPermissionGrantMemberObject -ChatId <String> -ResourceSpecificPermissionGrantId <String>
  -UserId <String>
  -BodyParameter <IPathsFv98IqUsersUserIdChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,14 +29,14 @@ Confirm-MgUserChatPermissionGrantMemberObject -ChatId <String> -ResourceSpecific
 
 ### CheckViaIdentity
 ```
-Confirm-MgUserChatPermissionGrantMemberObject -InputObject <IUsersActionsIdentity>
+Confirm-MgBetaUserChatPermissionGrantMemberObject -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsFv98IqUsersUserIdChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentityExpanded
 ```
-Confirm-MgUserChatPermissionGrantMemberObject -InputObject <IUsersActionsIdentity>
+Confirm-MgBetaUserChatPermissionGrantMemberObject -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsFv98IqUsersUserIdChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsFv98IqUsersUserIdChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsFv98IqUsersUserIdChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsFv98IqUsersUserIdChatsChatIdPermissiongrantsResourcespecificpermissiongrantIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

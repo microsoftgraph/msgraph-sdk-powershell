@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/new-mgusermailfoldermessagemention
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/new-mgusermailfoldermessagemention
 schema: 2.0.0
 ---
 
-# New-MgUserMailFolderMessageMention
+# New-MgBetaUserMailFolderMessageMention
 
 ## SYNOPSIS
 Create new navigation property to mentions for users
@@ -14,7 +14,7 @@ Create new navigation property to mentions for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserMailFolderMessageMention -MailFolderId <String> -MessageId <String> -UserId <String>
+New-MgBetaUserMailFolderMessageMention -MailFolderId <String> -MessageId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Application <String>] [-ClientReference <String>]
  [-CreatedBy <IMicrosoftGraphEmailAddress>] [-CreatedDateTime <DateTime>] [-DeepLink <String>] [-Id <String>]
  [-Mentioned <IMicrosoftGraphEmailAddress>] [-MentionText <String>] [-ServerCreatedDateTime <DateTime>]
@@ -23,19 +23,19 @@ New-MgUserMailFolderMessageMention -MailFolderId <String> -MessageId <String> -U
 
 ### Create
 ```
-New-MgUserMailFolderMessageMention -MailFolderId <String> -MessageId <String> -UserId <String>
+New-MgBetaUserMailFolderMessageMention -MailFolderId <String> -MessageId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphMention> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserMailFolderMessageMention -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMention>
+New-MgBetaUserMailFolderMessageMention -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMention>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserMailFolderMessageMention -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserMailFolderMessageMention -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-Application <String>] [-ClientReference <String>] [-CreatedBy <IMicrosoftGraphEmailAddress>]
  [-CreatedDateTime <DateTime>] [-DeepLink <String>] [-Id <String>] [-Mentioned <IMicrosoftGraphEmailAddress>]
  [-MentionText <String>] [-ServerCreatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -85,7 +85,7 @@ mention
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMention
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -118,7 +118,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -213,7 +213,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for MENTIONED properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -324,13 +324,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMention
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMention
 
 ## NOTES
 

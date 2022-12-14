@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthenticationflowpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyauthenticationflowpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyAuthenticationFlowPolicy
+# Update-MgBetaPolicyAuthenticationFlowPolicy
 
 ## SYNOPSIS
 Update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object.
@@ -15,7 +15,7 @@ The properties **id**, **type**, and **description** cannot be modified.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyAuthenticationFlowPolicy [-AdditionalProperties <Hashtable>] [-Description <String>]
+Update-MgBetaPolicyAuthenticationFlowPolicy [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>]
  [-SelfServiceSignUp <IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -23,7 +23,7 @@ Update-MgPolicyAuthenticationFlowPolicy [-AdditionalProperties <Hashtable>] [-De
 
 ### Update
 ```
-Update-MgPolicyAuthenticationFlowPolicy -BodyParameter <IMicrosoftGraphAuthenticationFlowsPolicy> [-PassThru]
+Update-MgBetaPolicyAuthenticationFlowPolicy -BodyParameter <IMicrosoftGraphAuthenticationFlowsPolicy> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -33,18 +33,18 @@ The properties **id**, **type**, and **description** cannot be modified.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyAuthenticationFlowPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyAuthenticationFlowPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	SelfServiceSignUp = @{
 		IsEnabled = $true
 	}
 }
-Update-MgPolicyAuthenticationFlowPolicy -BodyParameter $params
+Update-MgBetaPolicyAuthenticationFlowPolicy -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyAuthenticationFlowPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyAuthenticationFlowPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ authenticationFlowsPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationFlowsPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationFlowsPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -152,7 +152,7 @@ selfServiceSignUpAuthenticationFlowConfiguration
 To construct, please use Get-Help -Online and see NOTES section for SELFSERVICESIGNUP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -199,7 +199,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationFlowsPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationFlowsPolicy
 
 ## OUTPUTS
 

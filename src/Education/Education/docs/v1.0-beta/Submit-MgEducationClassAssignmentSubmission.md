@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/submit-mgeducationclassassignmentsubmission
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/submit-mgeducationclassassignmentsubmission
 schema: 2.0.0
 ---
 
-# Submit-MgEducationClassAssignmentSubmission
+# Submit-MgBetaEducationClassAssignmentSubmission
 
 ## SYNOPSIS
 Indicate that a student is done with the work and is ready to hand in the assignment.
@@ -18,13 +18,13 @@ A teacher can also submit a student's assignment on their behalf.
 
 ### Submit1 (Default)
 ```
-Submit-MgEducationClassAssignmentSubmission -EducationAssignmentId <String> -EducationClassId <String>
+Submit-MgBetaEducationClassAssignmentSubmission -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SubmitViaIdentity1
 ```
-Submit-MgEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Submit-MgBetaEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -37,13 +37,13 @@ A teacher can also submit a student's assignment on their behalf.
 
 ## EXAMPLES
 
-### Example 1: Using the Submit-MgEducationClassAssignmentSubmission Cmdlet
+### Example 1: Using the Submit-MgBetaEducationClassAssignmentSubmission Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Submit-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+Import-Module Microsoft.Graph.Beta.Education
+Submit-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
 
-This example shows how to use the Submit-MgEducationClassAssignmentSubmission Cmdlet.
+This example shows how to use the Submit-MgBetaEducationClassAssignmentSubmission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: SubmitViaIdentity1
 Aliases:
 
@@ -145,11 +145,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
 
 ## NOTES
 

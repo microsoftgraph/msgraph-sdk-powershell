@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/enable-mgdevicemanagementmanageddevicelostmode
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/enable-mgdevicemanagementmanageddevicelostmode
 schema: 2.0.0
 ---
 
-# Enable-MgDeviceManagementManagedDeviceLostMode
+# Enable-MgBetaDeviceManagementManagedDeviceLostMode
 
 ## SYNOPSIS
 Enable lost mode
@@ -14,28 +14,28 @@ Enable lost mode
 
 ### EnableExpanded (Default)
 ```
-Enable-MgDeviceManagementManagedDeviceLostMode -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
+Enable-MgBetaDeviceManagementManagedDeviceLostMode -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
  [-Footer <String>] [-Message <String>] [-PhoneNumber <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Enable
 ```
-Enable-MgDeviceManagementManagedDeviceLostMode -ManagedDeviceId <String>
+Enable-MgBetaDeviceManagementManagedDeviceLostMode -ManagedDeviceId <String>
  -BodyParameter <IPathsK312EdDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EnableViaIdentity
 ```
-Enable-MgDeviceManagementManagedDeviceLostMode -InputObject <IDeviceManagementActionsIdentity>
+Enable-MgBetaDeviceManagementManagedDeviceLostMode -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsK312EdDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EnableViaIdentityExpanded
 ```
-Enable-MgDeviceManagementManagedDeviceLostMode -InputObject <IDeviceManagementActionsIdentity>
+Enable-MgBetaDeviceManagementManagedDeviceLostMode -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Footer <String>] [-Message <String>] [-PhoneNumber <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsK312EdDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsK312EdDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Enable, EnableViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: EnableViaIdentity, EnableViaIdentityExpanded
 Aliases:
 
@@ -205,9 +205,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsK312EdDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsK312EdDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphEnablelostmodePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

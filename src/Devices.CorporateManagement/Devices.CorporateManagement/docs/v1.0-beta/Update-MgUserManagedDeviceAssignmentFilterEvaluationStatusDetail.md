@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgusermanageddeviceassignmentfilterevaluationstatusdetail
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgusermanageddeviceassignmentfilterevaluationstatusdetail
 schema: 2.0.0
 ---
 
-# Update-MgUserManagedDeviceAssignmentFilterEvaluationStatusDetail
+# Update-MgBetaUserManagedDeviceAssignmentFilterEvaluationStatusDetail
 
 ## SYNOPSIS
 Update the navigation property assignmentFilterEvaluationStatusDetails in users
@@ -14,7 +14,7 @@ Update the navigation property assignmentFilterEvaluationStatusDetails in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserManagedDeviceAssignmentFilterEvaluationStatusDetail
+Update-MgBetaUserManagedDeviceAssignmentFilterEvaluationStatusDetail
  -AssignmentFilterEvaluationStatusDetailsId <String> -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PayloadId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgUserManagedDeviceAssignmentFilterEvaluationStatusDetail
 
 ### Update
 ```
-Update-MgUserManagedDeviceAssignmentFilterEvaluationStatusDetail
+Update-MgBetaUserManagedDeviceAssignmentFilterEvaluationStatusDetail
  -AssignmentFilterEvaluationStatusDetailsId <String> -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphAssignmentFilterEvaluationStatusDetails> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,7 +30,7 @@ Update-MgUserManagedDeviceAssignmentFilterEvaluationStatusDetail
 
 ### UpdateViaIdentity
 ```
-Update-MgUserManagedDeviceAssignmentFilterEvaluationStatusDetail
+Update-MgBetaUserManagedDeviceAssignmentFilterEvaluationStatusDetail
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphAssignmentFilterEvaluationStatusDetails> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgUserManagedDeviceAssignmentFilterEvaluationStatusDetail
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserManagedDeviceAssignmentFilterEvaluationStatusDetail
+Update-MgBetaUserManagedDeviceAssignmentFilterEvaluationStatusDetail
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PayloadId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -85,7 +85,7 @@ A class containing information about the payloads on which filter has been appli
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -224,9 +224,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
 
 ## OUTPUTS
 

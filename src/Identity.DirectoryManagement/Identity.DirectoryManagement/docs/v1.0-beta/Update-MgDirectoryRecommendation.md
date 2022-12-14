@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryrecommendation
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectoryrecommendation
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryRecommendation
+# Update-MgBetaDirectoryRecommendation
 
 ## SYNOPSIS
 Update the navigation property recommendations in directory
@@ -14,7 +14,7 @@ Update the navigation property recommendations in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryRecommendation -RecommendationId <String> [-ActionSteps <IMicrosoftGraphActionStep[]>]
+Update-MgBetaDirectoryRecommendation -RecommendationId <String> [-ActionSteps <IMicrosoftGraphActionStep[]>]
  [-AdditionalProperties <Hashtable>] [-Benefits <String>] [-Category <String>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-ImpactedResources <IMicrosoftGraphRecommendationResource[]>]
  [-ImpactStartDateTime <DateTime>] [-ImpactType <String>] [-Insights <String>]
@@ -25,19 +25,19 @@ Update-MgDirectoryRecommendation -RecommendationId <String> [-ActionSteps <IMicr
 
 ### Update
 ```
-Update-MgDirectoryRecommendation -RecommendationId <String> -BodyParameter <IMicrosoftGraphRecommendation>
+Update-MgBetaDirectoryRecommendation -RecommendationId <String> -BodyParameter <IMicrosoftGraphRecommendation>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryRecommendation -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryRecommendation -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphRecommendation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryRecommendation -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryRecommendation -InputObject <IIdentityDirectoryManagementIdentity>
  [-ActionSteps <IMicrosoftGraphActionStep[]>] [-AdditionalProperties <Hashtable>] [-Benefits <String>]
  [-Category <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-ImpactedResources <IMicrosoftGraphRecommendationResource[]>] [-ImpactStartDateTime <DateTime>]
@@ -58,7 +58,7 @@ Update the navigation property recommendations in directory
 To construct, please use Get-Help -Online and see NOTES section for ACTIONSTEPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActionStep[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActionStep[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ recommendation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IMPACTEDRESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -227,7 +227,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -409,9 +409,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendation
 
 ## OUTPUTS
 

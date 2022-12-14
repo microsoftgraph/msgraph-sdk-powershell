@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementrolescopetag
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementrolescopetag
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementRoleScopeTag
+# New-MgBetaDeviceManagementRoleScopeTag
 
 ## SYNOPSIS
 Create new navigation property to roleScopeTags for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to roleScopeTags for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementRoleScopeTag [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementRoleScopeTag [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphRoleScopeTagAutoAssignment[]>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementRoleScopeTag -BodyParameter <IMicrosoftGraphRoleScopeTag> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementRoleScopeTag -BodyParameter <IMicrosoftGraphRoleScopeTag> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ The list of assignments for this Role Scope Tag.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTagAutoAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTagAutoAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -68,7 +68,7 @@ Role Scope Tag
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTag
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTag
 Parameter Sets: Create
 Aliases:
 
@@ -161,11 +161,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTag
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTag
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgentitlementmanagementaccesspackageincompatibleaccesspackagebyref
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgentitlementmanagementaccesspackageincompatibleaccesspackagebyref
 schema: 2.0.0
 ---
 
-# Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef
+# Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef
 
 ## SYNOPSIS
 Delete ref of navigation property incompatibleAccessPackages for identityGovernance
@@ -14,14 +14,14 @@ Delete ref of navigation property incompatibleAccessPackages for identityGoverna
 
 ### Delete (Default)
 ```
-Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId <String>
+Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId <String>
  -AccessPackageId1 <String> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef
+Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef
  -InputObject <IIdentityGovernanceIdentity> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -31,13 +31,13 @@ Delete ref of navigation property incompatibleAccessPackages for identityGoverna
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet
+### Example 1: Using the Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId $accessPackageId -AccessPackageId1 $accessPackageId1
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId $accessPackageId -AccessPackageId1 $accessPackageId1
 ```
 
-This example shows how to use the Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet.
+This example shows how to use the Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -169,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

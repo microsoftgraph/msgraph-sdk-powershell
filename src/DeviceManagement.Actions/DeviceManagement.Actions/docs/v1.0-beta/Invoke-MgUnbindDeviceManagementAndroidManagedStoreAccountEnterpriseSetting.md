@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgunbinddevicemanagementandroidmanagedstoreaccountenterprisesetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgunbinddevicemanagementandroidmanagedstoreaccountenterprisesetting
 schema: 2.0.0
 ---
 
-# Invoke-MgUnbindDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
+# Invoke-MgBetaUnbindDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
 
 ## SYNOPSIS
 Invoke action unbind
@@ -13,7 +13,7 @@ Invoke action unbind
 ## SYNTAX
 
 ```
-Invoke-MgUnbindDeviceManagementAndroidManagedStoreAccountEnterpriseSetting [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaUnbindDeviceManagementAndroidManagedStoreAccountEnterpriseSetting [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

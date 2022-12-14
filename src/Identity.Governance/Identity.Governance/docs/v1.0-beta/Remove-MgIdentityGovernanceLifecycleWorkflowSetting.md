@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernancelifecycleworkflowsetting
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernancelifecycleworkflowsetting
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceLifecycleWorkflowSetting
+# Remove-MgBetaIdentityGovernanceLifecycleWorkflowSetting
 
 ## SYNOPSIS
 Delete navigation property settings for identityGovernance
@@ -13,7 +13,7 @@ Delete navigation property settings for identityGovernance
 ## SYNTAX
 
 ```
-Remove-MgIdentityGovernanceLifecycleWorkflowSetting [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaIdentityGovernanceLifecycleWorkflowSetting [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mggraphchat
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mggraphchat
 schema: 2.0.0
 ---
 
-# Invoke-MgGraphChat
+# Invoke-MgBetaGraphChat
 
 ## SYNOPSIS
 Unhide a chat for a user.
@@ -14,27 +14,27 @@ Unhide a chat for a user.
 
 ### GraphExpanded1 (Default)
 ```
-Invoke-MgGraphChat -ChatId <String> [-AdditionalProperties <Hashtable>] [-TenantId <String>]
+Invoke-MgBetaGraphChat -ChatId <String> [-AdditionalProperties <Hashtable>] [-TenantId <String>]
  [-User <IMicrosoftGraphTeamworkUserIdentity1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Graph1
 ```
-Invoke-MgGraphChat -ChatId <String>
+Invoke-MgBetaGraphChat -ChatId <String>
  -BodyParameter <IPaths1Rz6UwqChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GraphViaIdentity1
 ```
-Invoke-MgGraphChat -InputObject <ITeamsIdentity>
+Invoke-MgBetaGraphChat -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1Rz6UwqChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GraphViaIdentityExpanded1
 ```
-Invoke-MgGraphChat -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-TenantId <String>]
+Invoke-MgBetaGraphChat -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-TenantId <String>]
  [-User <IMicrosoftGraphTeamworkUserIdentity1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,19 +43,19 @@ Unhide a chat for a user.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgGraphChat Cmdlet
+### Example 1: Using the Invoke-MgBetaGraphChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	User = @{
 		Id = "d864e79f-a516-4d0f-9fee-0eeb4d61fdc2"
 	}
 	TenantId = "2a690434-97d9-4eed-83a6-f5f13600199a"
 }
-Invoke-MgGraphChat -ChatId $chatId -BodyParameter $params
+Invoke-MgBetaGraphChat -ChatId $chatId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgGraphChat Cmdlet.
+This example shows how to use the Invoke-MgBetaGraphChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Rz6UwqChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Rz6UwqChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Graph1, GraphViaIdentity1
 Aliases:
 
@@ -111,7 +111,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GraphViaIdentity1, GraphViaIdentityExpanded1
 Aliases:
 
@@ -157,7 +157,7 @@ teamworkUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for USER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
 Parameter Sets: GraphExpanded1, GraphViaIdentityExpanded1
 Aliases:
 
@@ -204,9 +204,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Rz6UwqChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Rz6UwqChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

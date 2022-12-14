@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportusercredentialusagedetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportusercredentialusagedetail
 schema: 2.0.0
 ---
 
-# Get-MgReportUserCredentialUsageDetail
+# Get-MgBetaReportUserCredentialUsageDetail
 
 ## SYNOPSIS
 Represents the self-service password reset (SSPR) usage for a given tenant.
@@ -14,20 +14,20 @@ Represents the self-service password reset (SSPR) usage for a given tenant.
 
 ### List (Default)
 ```
-Get-MgReportUserCredentialUsageDetail [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaReportUserCredentialUsageDetail [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgReportUserCredentialUsageDetail -UserCredentialUsageDetailsId <String> [-ExpandProperty <String[]>]
+Get-MgBetaReportUserCredentialUsageDetail -UserCredentialUsageDetailsId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportUserCredentialUsageDetail -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaReportUserCredentialUsageDetail -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Represents the self-service password reset (SSPR) usage for a given tenant.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgReportUserCredentialUsageDetail Cmdlet
+### Example 1: Using the Get-MgBetaReportUserCredentialUsageDetail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportUserCredentialUsageDetail
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportUserCredentialUsageDetail
 ```
 
-This example shows how to use the Get-MgReportUserCredentialUsageDetail Cmdlet.
+This example shows how to use the Get-MgBetaReportUserCredentialUsageDetail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserCredentialUsageDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserCredentialUsageDetails
 
 ## NOTES
 

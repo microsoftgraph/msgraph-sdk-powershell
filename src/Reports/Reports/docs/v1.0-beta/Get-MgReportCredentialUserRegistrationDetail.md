@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportcredentialuserregistrationdetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportcredentialuserregistrationdetail
 schema: 2.0.0
 ---
 
-# Get-MgReportCredentialUserRegistrationDetail
+# Get-MgBetaReportCredentialUserRegistrationDetail
 
 ## SYNOPSIS
 Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
@@ -14,20 +14,20 @@ Details of the usage of self-service password reset and multi-factor authenticat
 
 ### List (Default)
 ```
-Get-MgReportCredentialUserRegistrationDetail [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaReportCredentialUserRegistrationDetail [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgReportCredentialUserRegistrationDetail -CredentialUserRegistrationDetailsId <String>
+Get-MgBetaReportCredentialUserRegistrationDetail -CredentialUserRegistrationDetailsId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportCredentialUserRegistrationDetail -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaReportCredentialUserRegistrationDetail -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Details of the usage of self-service password reset and multi-factor authenticat
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgReportCredentialUserRegistrationDetail Cmdlet
+### Example 1: Using the Get-MgBetaReportCredentialUserRegistrationDetail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportCredentialUserRegistrationDetail
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportCredentialUserRegistrationDetail
 ```
 
-This example shows how to use the Get-MgReportCredentialUserRegistrationDetail Cmdlet.
+This example shows how to use the Get-MgBetaReportCredentialUserRegistrationDetail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCredentialUserRegistrationDetails
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCredentialUserRegistrationDetails
 
 ## NOTES
 

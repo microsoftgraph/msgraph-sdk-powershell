@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/invoke-mghasdeviceappmgtioslobappprovisioningconfigurationpayloadlink
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/invoke-mghasdeviceappmgtioslobappprovisioningconfigurationpayloadlink
 schema: 2.0.0
 ---
 
-# Invoke-MgHasDeviceAppMgtiOSLobAppProvisioningConfigurationPayloadLink
+# Invoke-MgBetaHasDeviceAppMgtiOSLobAppProvisioningConfigurationPayloadLink
 
 ## SYNOPSIS
 Invoke action hasPayloadLinks
@@ -14,13 +14,13 @@ Invoke action hasPayloadLinks
 
 ### HasExpanded (Default)
 ```
-Invoke-MgHasDeviceAppMgtiOSLobAppProvisioningConfigurationPayloadLink [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaHasDeviceAppMgtiOSLobAppProvisioningConfigurationPayloadLink [-AdditionalProperties <Hashtable>]
  [-PayloadIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Has
 ```
-Invoke-MgHasDeviceAppMgtiOSLobAppProvisioningConfigurationPayloadLink
+Invoke-MgBetaHasDeviceAppMgtiOSLobAppProvisioningConfigurationPayloadLink
  -BodyParameter <IPaths9Fmuz0DeviceappmanagementIoslobappprovisioningconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths9Fmuz0DeviceappmanagementIoslobappprovisioningconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths9Fmuz0DeviceappmanagementIoslobappprovisioningconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Has
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths9Fmuz0DeviceappmanagementIoslobappprovisioningconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths9Fmuz0DeviceappmanagementIoslobappprovisioningconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
 
 ## NOTES
 

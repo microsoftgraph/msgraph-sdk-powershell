@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprintprintershareallowedgroupbyref
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/new-mgprintprintershareallowedgroupbyref
 schema: 2.0.0
 ---
 
-# New-MgPrintPrinterShareAllowedGroupByRef
+# New-MgBetaPrintPrinterShareAllowedGroupByRef
 
 ## SYNOPSIS
 Create new navigation property ref to allowedGroups for print
@@ -14,25 +14,25 @@ Create new navigation property ref to allowedGroups for print
 
 ### CreateExpanded (Default)
 ```
-New-MgPrintPrinterShareAllowedGroupByRef -PrinterShareId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaPrintPrinterShareAllowedGroupByRef -PrinterShareId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPrintPrinterShareAllowedGroupByRef -PrinterShareId <String> -BodyParameter <IReferenceCreate>
+New-MgBetaPrintPrinterShareAllowedGroupByRef -PrinterShareId <String> -BodyParameter <IReferenceCreate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPrintPrinterShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity>
+New-MgBetaPrintPrinterShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPrintPrinterShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity>
+New-MgBetaPrintPrinterShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -79,7 +79,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -171,9 +171,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

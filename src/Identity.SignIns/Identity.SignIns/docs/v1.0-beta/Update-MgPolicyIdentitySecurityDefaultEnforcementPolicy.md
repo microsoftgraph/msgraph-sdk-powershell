@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyidentitysecuritydefaultenforcementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyidentitysecuritydefaultenforcementpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
+# Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
 Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
@@ -14,14 +14,14 @@ Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsEnabled]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
+Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy
  -BodyParameter <IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -31,16 +31,16 @@ Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	IsEnabled = $false
 }
-Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
+Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -65,7 +65,7 @@ identitySecurityDefaultsEnforcementPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1
 Parameter Sets: Update
 Aliases:
 
@@ -206,7 +206,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1
 
 ## OUTPUTS
 

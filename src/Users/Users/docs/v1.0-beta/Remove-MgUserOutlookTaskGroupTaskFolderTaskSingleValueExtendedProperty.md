@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mguseroutlooktaskgrouptaskfoldertasksinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/remove-mguseroutlooktaskgrouptaskfoldertasksinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Remove-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty
+# Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty
 
 ## SYNOPSIS
 Delete navigation property singleValueExtendedProperties for users
@@ -14,14 +14,14 @@ Delete navigation property singleValueExtendedProperties for users
 
 ### Delete (Default)
 ```
-Remove-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty -OutlookTaskFolderId <String>
+Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty -OutlookTaskFolderId <String>
  -OutlookTaskGroupId <String> -OutlookTaskId <String> -SingleValueLegacyExtendedPropertyId <String>
  -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty -InputObject <IUsersIdentity>
+Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty -InputObject <IUsersIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

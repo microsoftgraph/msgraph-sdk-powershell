@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecuritylabel
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/remove-mgsecuritylabel
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityLabel
+# Remove-MgBetaSecurityLabel
 
 ## SYNOPSIS
 Delete navigation property labels for security
@@ -13,7 +13,7 @@ Delete navigation property labels for security
 ## SYNTAX
 
 ```
-Remove-MgSecurityLabel [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaSecurityLabel [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

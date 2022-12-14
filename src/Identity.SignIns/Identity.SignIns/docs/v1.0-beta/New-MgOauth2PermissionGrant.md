@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgoauth2permissiongrant
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgoauth2permissiongrant
 schema: 2.0.0
 ---
 
-# New-MgOauth2PermissionGrant
+# New-MgBetaOauth2PermissionGrant
 
 ## SYNOPSIS
 Create a delegated permission grant, represented by an oAuth2PermissionGrant object.
@@ -15,14 +15,14 @@ A delegated permission grant authorizes a client service principal (representing
 
 ### CreateExpanded (Default)
 ```
-New-MgOauth2PermissionGrant [-AdditionalProperties <Hashtable>] [-ClientId <String>] [-ConsentType <String>]
+New-MgBetaOauth2PermissionGrant [-AdditionalProperties <Hashtable>] [-ClientId <String>] [-ConsentType <String>]
  [-ExpiryTime <DateTime>] [-Id <String>] [-PrincipalId <String>] [-ResourceId <String>] [-Scope <String>]
  [-StartTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOauth2PermissionGrant -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant1> [-Confirm] [-WhatIf]
+New-MgBetaOauth2PermissionGrant -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,9 +32,9 @@ A delegated permission grant authorizes a client service principal (representing
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgOauth2PermissionGrant Cmdlet
+### Example 1: Using the New-MgBetaOauth2PermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ClientId = "ef969797-201d-4f6b-960c-e9ed5f31dab5"
 	ConsentType = "AllPrincipals"
@@ -43,10 +43,10 @@ $params = @{
 	StartTime = [System.DateTime]::Parse("2022-03-17T00:00:00Z")
 	ExpiryTime = [System.DateTime]::Parse("2023-03-17T00:00:00Z")
 }
-New-MgOauth2PermissionGrant -BodyParameter $params
+New-MgBetaOauth2PermissionGrant -BodyParameter $params
 ```
 
-This example shows how to use the New-MgOauth2PermissionGrant Cmdlet.
+This example shows how to use the New-MgBetaOauth2PermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -71,7 +71,7 @@ oAuth2PermissionGrant
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
 Parameter Sets: Create
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
 
 ## NOTES
 

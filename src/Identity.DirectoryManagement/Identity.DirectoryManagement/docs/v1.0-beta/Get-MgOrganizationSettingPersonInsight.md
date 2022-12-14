@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganizationsettingpersoninsight
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgorganizationsettingpersoninsight
 schema: 2.0.0
 ---
 
-# Get-MgOrganizationSettingPersonInsight
+# Get-MgBetaOrganizationSettingPersonInsight
 
 ## SYNOPSIS
 Get the properties of an insightsSettings object for displaying or returning people insights in an organization.
@@ -15,13 +15,13 @@ To learn how to customize privacy for people insights in an organization, see Cu
 
 ### Get (Default)
 ```
-Get-MgOrganizationSettingPersonInsight -OrganizationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaOrganizationSettingPersonInsight -OrganizationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ To learn how to customize privacy for people insights in an organization, see Cu
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOrganizationSettingPersonInsight Cmdlet
+### Example 1: Using the Get-MgBetaOrganizationSettingPersonInsight Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganizationSettingPersonInsight -OrganizationId $organizationId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaOrganizationSettingPersonInsight -OrganizationId $organizationId
 ```
 
-This example shows how to use the Get-MgOrganizationSettingPersonInsight Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationSettingPersonInsight Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -108,11 +108,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInsightsSettings
 
 ## NOTES
 

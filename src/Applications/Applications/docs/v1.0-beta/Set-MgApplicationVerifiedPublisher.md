@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/set-mgapplicationverifiedpublisher
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/set-mgapplicationverifiedpublisher
 schema: 2.0.0
 ---
 
-# Set-MgApplicationVerifiedPublisher
+# Set-MgBetaApplicationVerifiedPublisher
 
 ## SYNOPSIS
 Set the the verifiedPublisher on an application.
@@ -15,27 +15,27 @@ For more information, including prerequisites to setting a verified publisher, s
 
 ### SetExpanded1 (Default)
 ```
-Set-MgApplicationVerifiedPublisher -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaApplicationVerifiedPublisher -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-VerifiedPublisherId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set1
 ```
-Set-MgApplicationVerifiedPublisher -ApplicationId <String>
+Set-MgBetaApplicationVerifiedPublisher -ApplicationId <String>
  -BodyParameter <IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgApplicationVerifiedPublisher -InputObject <IApplicationsIdentity>
+Set-MgBetaApplicationVerifiedPublisher -InputObject <IApplicationsIdentity>
  -BodyParameter <IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded1
 ```
-Set-MgApplicationVerifiedPublisher -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaApplicationVerifiedPublisher -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-VerifiedPublisherId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,16 +45,16 @@ For more information, including prerequisites to setting a verified publisher, s
 
 ## EXAMPLES
 
-### Example 1: Using the Set-MgApplicationVerifiedPublisher Cmdlet
+### Example 1: Using the Set-MgBetaApplicationVerifiedPublisher Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	VerifiedPublisherId = "1234567"
 }
-Set-MgApplicationVerifiedPublisher -ApplicationId $applicationId -BodyParameter $params
+Set-MgBetaApplicationVerifiedPublisher -ApplicationId $applicationId -BodyParameter $params
 ```
 
-This example shows how to use the Set-MgApplicationVerifiedPublisher Cmdlet.
+This example shows how to use the Set-MgBetaApplicationVerifiedPublisher Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
@@ -187,9 +187,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

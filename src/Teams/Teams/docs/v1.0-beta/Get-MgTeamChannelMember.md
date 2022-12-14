@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamchannelmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamchannelmember
 schema: 2.0.0
 ---
 
-# Get-MgTeamChannelMember
+# Get-MgBetaTeamChannelMember
 
 ## SYNOPSIS
 A collection of membership records associated with the channel.
@@ -14,20 +14,20 @@ A collection of membership records associated with the channel.
 
 ### List1 (Default)
 ```
-Get-MgTeamChannelMember -ChannelId <String> -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTeamChannelMember -ChannelId <String> -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgTeamChannelMember -ChannelId <String> -ConversationMemberId <String> -TeamId <String>
+Get-MgBetaTeamChannelMember -ChannelId <String> -ConversationMemberId <String> -TeamId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamChannelMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamChannelMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ A collection of membership records associated with the channel.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamChannelMember Cmdlet
+### Example 1: Using the Get-MgBetaTeamChannelMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId
 ```
 
-This example shows how to use the Get-MgTeamChannelMember Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannelMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamChannelMember Cmdlet
+### Example 2: Using the Get-MgBetaTeamChannelMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId
 ```
 
-This example shows how to use the Get-MgTeamChannelMember Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannelMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 
 ## NOTES
 

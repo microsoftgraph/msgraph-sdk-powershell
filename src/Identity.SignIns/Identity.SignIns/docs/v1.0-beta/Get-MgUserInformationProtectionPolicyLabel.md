@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserinformationprotectionpolicylabel
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserinformationprotectionpolicylabel
 schema: 2.0.0
 ---
 
-# Get-MgUserInformationProtectionPolicyLabel
+# Get-MgBetaUserInformationProtectionPolicyLabel
 
 ## SYNOPSIS
 Get labels from users
@@ -14,20 +14,20 @@ Get labels from users
 
 ### List (Default)
 ```
-Get-MgUserInformationProtectionPolicyLabel -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserInformationProtectionPolicyLabel -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserInformationProtectionPolicyLabel -InformationProtectionLabelId <String> -UserId <String>
+Get-MgBetaUserInformationProtectionPolicyLabel -InformationProtectionLabelId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Get labels from users
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserInformationProtectionPolicyLabel Cmdlet
+### Example 1: Using the Get-MgBetaUserInformationProtectionPolicyLabel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserInformationProtectionPolicyLabel -UserId $userId -InformationProtectionLabelId $informationProtectionLabelId
+Get-MgBetaUserInformationProtectionPolicyLabel -UserId $userId -InformationProtectionLabelId $informationProtectionLabelId
 ```
 
-This example shows how to use the Get-MgUserInformationProtectionPolicyLabel Cmdlet.
+This example shows how to use the Get-MgBetaUserInformationProtectionPolicyLabel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserInformationProtectionPolicyLabel Cmdlet
+### Example 2: Using the Get-MgBetaUserInformationProtectionPolicyLabel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserInformationProtectionPolicyLabel -UserId $userId
+Get-MgBetaUserInformationProtectionPolicyLabel -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserInformationProtectionPolicyLabel Cmdlet.
+This example shows how to use the Get-MgBetaUserInformationProtectionPolicyLabel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
 
 ## NOTES
 

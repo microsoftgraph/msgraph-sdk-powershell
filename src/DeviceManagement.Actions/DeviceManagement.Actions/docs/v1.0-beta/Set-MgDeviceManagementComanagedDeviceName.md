@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementcomanageddevicename
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementcomanageddevicename
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementComanagedDeviceName
+# Set-MgBetaDeviceManagementComanagedDeviceName
 
 ## SYNOPSIS
 Set device name of the device.
@@ -14,27 +14,27 @@ Set device name of the device.
 
 ### SetExpanded (Default)
 ```
-Set-MgDeviceManagementComanagedDeviceName -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaDeviceManagementComanagedDeviceName -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgDeviceManagementComanagedDeviceName -ManagedDeviceId <String>
+Set-MgBetaDeviceManagementComanagedDeviceName -ManagedDeviceId <String>
  -BodyParameter <IPathsCjyki9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgDeviceManagementComanagedDeviceName -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementComanagedDeviceName -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsCjyki9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-MgDeviceManagementComanagedDeviceName -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementComanagedDeviceName -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-DeviceName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsCjyki9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsCjyki9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
@@ -174,9 +174,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsCjyki9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsCjyki9DevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphSetdevicenamePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

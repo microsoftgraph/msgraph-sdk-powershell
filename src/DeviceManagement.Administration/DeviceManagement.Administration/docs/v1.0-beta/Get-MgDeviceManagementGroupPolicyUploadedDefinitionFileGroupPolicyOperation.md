@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementgrouppolicyuploadeddefinitionfilegrouppolicyoperation
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementgrouppolicyuploadeddefinitionfilegrouppolicyoperation
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+# Get-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
 
 ## SYNOPSIS
 The list of operations on the uploaded ADMX file.
@@ -14,7 +14,7 @@ The list of operations on the uploaded ADMX file.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+Get-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -GroupPolicyUploadedDefinitionFileId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
 
 ### Get
 ```
-Get-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation -GroupPolicyOperationId <String>
+Get-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation -GroupPolicyOperationId <String>
  -GroupPolicyUploadedDefinitionFileId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
+Get-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFileGroupPolicyOperation
  -InputObject <IDeviceManagementAdministrationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyOperation
 
 ## NOTES
 

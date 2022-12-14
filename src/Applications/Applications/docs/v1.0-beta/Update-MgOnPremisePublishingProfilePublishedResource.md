@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgonpremisepublishingprofilepublishedresource
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgonpremisepublishingprofilepublishedresource
 schema: 2.0.0
 ---
 
-# Update-MgOnPremisePublishingProfilePublishedResource
+# Update-MgBetaOnPremisePublishingProfilePublishedResource
 
 ## SYNOPSIS
 Update the navigation property publishedResources in onPremisesPublishingProfiles
@@ -14,7 +14,7 @@ Update the navigation property publishedResources in onPremisesPublishingProfile
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
+Update-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
  -PublishedResourceId <String> [-AdditionalProperties <Hashtable>]
  [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>] [-DisplayName <String>] [-Id <String>]
  [-PublishingType <String>] [-ResourceName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfil
 
 ### Update
 ```
-Update-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
+Update-MgBetaOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId <String>
  -PublishedResourceId <String> -BodyParameter <IMicrosoftGraphPublishedResource> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
+Update-MgBetaOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphPublishedResource> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
+Update-MgBetaOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>]
  [-DisplayName <String>] [-Id <String>] [-PublishingType <String>] [-ResourceName <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -70,7 +70,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for AGENTGROUPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ publishedResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -255,9 +255,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPublishedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPublishedResource
 
 ## OUTPUTS
 

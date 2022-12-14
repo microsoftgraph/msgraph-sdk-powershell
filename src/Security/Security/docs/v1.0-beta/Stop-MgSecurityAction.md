@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/stop-mgsecurityaction
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/stop-mgsecurityaction
 schema: 2.0.0
 ---
 
-# Stop-MgSecurityAction
+# Stop-MgBetaSecurityAction
 
 ## SYNOPSIS
 Cancel a security operation.
@@ -14,12 +14,12 @@ Cancel a security operation.
 
 ### Cancel (Default)
 ```
-Stop-MgSecurityAction -SecurityActionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Stop-MgBetaSecurityAction -SecurityActionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgSecurityAction -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Stop-MgBetaSecurityAction -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,13 +27,13 @@ Cancel a security operation.
 
 ## EXAMPLES
 
-### Example 1: Using the Stop-MgSecurityAction Cmdlet
+### Example 1: Using the Stop-MgBetaSecurityAction Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Stop-MgSecurityAction -SecurityActionId $securityActionId
+Import-Module Microsoft.Graph.Beta.Security
+Stop-MgBetaSecurityAction -SecurityActionId $securityActionId
 ```
 
-This example shows how to use the Stop-MgSecurityAction Cmdlet.
+This example shows how to use the Stop-MgBetaSecurityAction Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -43,7 +43,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: CancelViaIdentity
 Aliases:
 
@@ -120,7 +120,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

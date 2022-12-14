@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicycrosstenantaccesspolicypartner
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicycrosstenantaccesspolicypartner
 schema: 2.0.0
 ---
 
-# New-MgPolicyCrossTenantAccessPolicyPartner
+# New-MgBetaPolicyCrossTenantAccessPolicyPartner
 
 ## SYNOPSIS
 Create a new partner configuration in a cross-tenant access policy.
@@ -14,7 +14,7 @@ Create a new partner configuration in a cross-tenant access policy.
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyCrossTenantAccessPolicyPartner [-AdditionalProperties <Hashtable>]
+New-MgBetaPolicyCrossTenantAccessPolicyPartner [-AdditionalProperties <Hashtable>]
  [-B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BCollaborationOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BDirectConnectInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
@@ -26,7 +26,7 @@ New-MgPolicyCrossTenantAccessPolicyPartner [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgPolicyCrossTenantAccessPolicyPartner
+New-MgBetaPolicyCrossTenantAccessPolicyPartner
  -BodyParameter <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -36,9 +36,9 @@ Create a new partner configuration in a cross-tenant access policy.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPolicyCrossTenantAccessPolicyPartner Cmdlet
+### Example 1: Using the New-MgBetaPolicyCrossTenantAccessPolicyPartner Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	TenantId = "3d0f5dec-5d3d-455c-8016-e2af1ae4d31a"
 	B2bDirectConnectOutbound = @{
@@ -64,10 +64,10 @@ $params = @{
 		}
 	}
 }
-New-MgPolicyCrossTenantAccessPolicyPartner -BodyParameter $params
+New-MgBetaPolicyCrossTenantAccessPolicyPartner -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPolicyCrossTenantAccessPolicyPartner Cmdlet.
+This example shows how to use the New-MgBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -92,7 +92,7 @@ crossTenantAccessPolicyB2BSetting
 To construct, please use Get-Help -Online and see NOTES section for B2BCOLLABORATIONINBOUND properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -108,7 +108,7 @@ crossTenantAccessPolicyB2BSetting
 To construct, please use Get-Help -Online and see NOTES section for B2BCOLLABORATIONOUTBOUND properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -124,7 +124,7 @@ crossTenantAccessPolicyB2BSetting
 To construct, please use Get-Help -Online and see NOTES section for B2BDIRECTCONNECTINBOUND properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -140,7 +140,7 @@ crossTenantAccessPolicyB2BSetting
 To construct, please use Get-Help -Online and see NOTES section for B2BDIRECTCONNECTOUTBOUND properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyB2BSetting
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -156,7 +156,7 @@ crossTenantAccessPolicyConfigurationPartner
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1
 Parameter Sets: Create
 Aliases:
 
@@ -172,7 +172,7 @@ crossTenantAccessPolicyInboundTrust
 To construct, please use Get-Help -Online and see NOTES section for INBOUNDTRUST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyInboundTrust
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyInboundTrust
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -220,7 +220,7 @@ crossTenantAccessPolicyTenantRestrictions
 To construct, please use Get-Help -Online and see NOTES section for TENANTRESTRICTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyTenantRestrictions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyTenantRestrictions
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -267,11 +267,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1
 
 ## NOTES
 

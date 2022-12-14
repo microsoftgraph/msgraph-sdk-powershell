@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/new-mgserviceannouncementmessage
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/new-mgserviceannouncementmessage
 schema: 2.0.0
 ---
 
-# New-MgServiceAnnouncementMessage
+# New-MgBetaServiceAnnouncementMessage
 
 ## SYNOPSIS
 Create new navigation property to messages for admin
@@ -14,7 +14,7 @@ Create new navigation property to messages for admin
 
 ### CreateExpanded (Default)
 ```
-New-MgServiceAnnouncementMessage [-ActionRequiredByDateTime <DateTime>] [-AdditionalProperties <Hashtable>]
+New-MgBetaServiceAnnouncementMessage [-ActionRequiredByDateTime <DateTime>] [-AdditionalProperties <Hashtable>]
  [-Attachments <IMicrosoftGraphServiceAnnouncementAttachment[]>] [-AttachmentsArchiveInputFile <String>]
  [-Body <IMicrosoftGraphItemBody>] [-Category <String>] [-Details <IMicrosoftGraphKeyValuePair[]>]
  [-EndDateTime <DateTime>] [-HasAttachments] [-Id <String>] [-IsMajorChange]
@@ -25,7 +25,7 @@ New-MgServiceAnnouncementMessage [-ActionRequiredByDateTime <DateTime>] [-Additi
 
 ### Create
 ```
-New-MgServiceAnnouncementMessage -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-Confirm] [-WhatIf]
+New-MgBetaServiceAnnouncementMessage -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -71,7 +71,7 @@ A collection of serviceAnnouncementAttachments.
 To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceAnnouncementAttachment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceAnnouncementAttachment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -118,7 +118,7 @@ serviceUpdateMessage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
 Parameter Sets: Create
 Aliases:
 
@@ -150,7 +150,7 @@ This property doesn't support filters.
 To construct, please use Get-Help -Online and see NOTES section for DETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -318,7 +318,7 @@ serviceUpdateMessageViewpoint
 To construct, please use Get-Help -Online and see NOTES section for VIEWPOINT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceUpdateMessageViewpoint
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceUpdateMessageViewpoint
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -365,11 +365,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/new-mguserinferenceclassificationoverride
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/new-mguserinferenceclassificationoverride
 schema: 2.0.0
 ---
 
-# New-MgUserInferenceClassificationOverride
+# New-MgBetaUserInferenceClassificationOverride
 
 ## SYNOPSIS
 Create a focused Inbox override for a sender identified by an SMTP address.
@@ -15,26 +15,26 @@ Future messages from that SMTP address will be consistently classified\nas speci
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserInferenceClassificationOverride -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserInferenceClassificationOverride -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ClassifyAs <String>] [-Id <String>] [-SenderEmailAddress <IMicrosoftGraphEmailAddress>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserInferenceClassificationOverride -UserId <String>
+New-MgBetaUserInferenceClassificationOverride -UserId <String>
  -BodyParameter <IMicrosoftGraphInferenceClassificationOverride> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserInferenceClassificationOverride -InputObject <IMailIdentity>
+New-MgBetaUserInferenceClassificationOverride -InputObject <IMailIdentity>
  -BodyParameter <IMicrosoftGraphInferenceClassificationOverride> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserInferenceClassificationOverride -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-ClassifyAs <String>] [-Id <String>] [-SenderEmailAddress <IMicrosoftGraphEmailAddress>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -45,9 +45,9 @@ Future messages from that SMTP address will be consistently classified\nas speci
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserInferenceClassificationOverride Cmdlet
+### Example 1: Using the New-MgBetaUserInferenceClassificationOverride Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	ClassifyAs = "focused"
 	SenderEmailAddress = @{
@@ -56,10 +56,10 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserInferenceClassificationOverride -UserId $userId -BodyParameter $params
+New-MgBetaUserInferenceClassificationOverride -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserInferenceClassificationOverride Cmdlet.
+This example shows how to use the New-MgBetaUserInferenceClassificationOverride Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ inferenceClassificationOverride
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -147,7 +147,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for SENDEREMAILADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -209,13 +209,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
 
 ## NOTES
 

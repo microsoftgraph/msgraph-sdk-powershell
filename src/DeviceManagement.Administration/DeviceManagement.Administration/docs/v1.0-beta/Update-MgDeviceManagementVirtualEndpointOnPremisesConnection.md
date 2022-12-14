@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointonpremisesconnection
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementvirtualendpointonpremisesconnection
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointOnPremisesConnection
+# Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
 Update the navigation property onPremisesConnections in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property onPremisesConnections in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId <String>
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId <String>
  [-AdditionalProperties <Hashtable>] [-AdDomainName <String>] [-AdDomainPassword <String>]
  [-AdDomainUsername <String>] [-AlternateResourceUrl <String>] [-DisplayName <String>]
  [-HealthCheckStatus <String>]
@@ -26,14 +26,14 @@ Update-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesC
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId <String>
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId <String>
  -BodyParameter <IMicrosoftGraphCloudPcOnPremisesConnection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementVirtualEndpointOnPremisesConnection
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphCloudPcOnPremisesConnection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -41,7 +41,7 @@ Update-MgDeviceManagementVirtualEndpointOnPremisesConnection
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementVirtualEndpointOnPremisesConnection
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-AdDomainName <String>] [-AdDomainPassword <String>] [-AdDomainUsername <String>]
  [-AlternateResourceUrl <String>] [-DisplayName <String>] [-HealthCheckStatus <String>]
@@ -56,11 +56,11 @@ Update the navigation property onPremisesConnections in deviceManagement
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+### Example 1: Using the Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcOnPremisesConnection"
+	"@odata.type" = "#Microsoft.Graph.Beta.cloudPcOnPremisesConnection"
 	DisplayName = "Display Name value"
 	SubscriptionId = "0ac520ee-14c0-480f-b6c9-0a90c585ffff"
 	SubscriptionName = "Subscription Name value"
@@ -71,10 +71,10 @@ $params = @{
 	VirtualNetworkId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/ExampleRG/providers/Microsoft.Network/virtualNetworks/ExampleVNet"
 	SubnetId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c585ffff/resourceGroups/ExampleRG/providers/Microsoft.Network/virtualNetworks/ExampleVNet/subnets/default"
 }
-Update-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId -BodyParameter $params
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+This example shows how to use the Update-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -163,7 +163,7 @@ cloudPcOnPremisesConnection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -224,7 +224,7 @@ cloudPcOnPremisesConnectionStatusDetails
 To construct, please use Get-Help -Online and see NOTES section for HEALTHCHECKSTATUSDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -256,7 +256,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -464,9 +464,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
 
 ## OUTPUTS
 

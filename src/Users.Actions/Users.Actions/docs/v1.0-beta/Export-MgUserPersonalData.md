@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/export-mguserpersonaldata
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/export-mguserpersonaldata
 schema: 2.0.0
 ---
 
-# Export-MgUserPersonalData
+# Export-MgBetaUserPersonalData
 
 ## SYNOPSIS
 Submit a data policy operation request from a company administrator or an application to export an organizational user's data.
@@ -16,27 +16,27 @@ For more guidance about exporting data while complying with regulations, see Dat
 
 ### ExportExpanded (Default)
 ```
-Export-MgUserPersonalData -UserId <String> [-AdditionalProperties <Hashtable>] [-StorageLocation <String>]
+Export-MgBetaUserPersonalData -UserId <String> [-AdditionalProperties <Hashtable>] [-StorageLocation <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Export
 ```
-Export-MgUserPersonalData -UserId <String>
+Export-MgBetaUserPersonalData -UserId <String>
  -BodyParameter <IComponents1Fpckw4RequestbodiesExportpersonaldatarequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
-Export-MgUserPersonalData -InputObject <IUsersActionsIdentity>
+Export-MgBetaUserPersonalData -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents1Fpckw4RequestbodiesExportpersonaldatarequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentityExpanded
 ```
-Export-MgUserPersonalData -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Export-MgBetaUserPersonalData -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-StorageLocation <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,16 +47,16 @@ For more guidance about exporting data while complying with regulations, see Dat
 
 ## EXAMPLES
 
-### Example 1: Using the Export-MgUserPersonalData Cmdlet
+### Example 1: Using the Export-MgBetaUserPersonalData Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	StorageLocation = "storageLocation-value"
 }
-Export-MgUserPersonalData -UserId $userId -BodyParameter $params
+Export-MgBetaUserPersonalData -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Export-MgUserPersonalData Cmdlet.
+This example shows how to use the Export-MgBetaUserPersonalData Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComponents1Fpckw4RequestbodiesExportpersonaldatarequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComponents1Fpckw4RequestbodiesExportpersonaldatarequestbodyContentApplicationJsonSchema
 Parameter Sets: Export, ExportViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ExportViaIdentity, ExportViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComponents1Fpckw4RequestbodiesExportpersonaldatarequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IComponents1Fpckw4RequestbodiesExportpersonaldatarequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

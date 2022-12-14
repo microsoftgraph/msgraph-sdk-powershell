@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementdevicecompliancepolicydevicescheduledtoretire
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementdevicecompliancepolicydevicescheduledtoretire
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire
+# Get-MgBetaDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire
 
 ## SYNOPSIS
 Invoke function getDevicesScheduledToRetire
@@ -13,7 +13,7 @@ Invoke function getDevicesScheduledToRetire
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire [-Count] [-Filter <String>]
+Get-MgBetaDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire [-Count] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -106,7 +106,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRetireScheduledManagedDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRetireScheduledManagedDevice
 
 ## NOTES
 

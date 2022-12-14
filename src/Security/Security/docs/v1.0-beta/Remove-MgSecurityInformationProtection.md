@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecurityinformationprotection
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/remove-mgsecurityinformationprotection
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityInformationProtection
+# Remove-MgBetaSecurityInformationProtection
 
 ## SYNOPSIS
 Delete navigation property informationProtection for security
@@ -13,7 +13,7 @@ Delete navigation property informationProtection for security
 ## SYNTAX
 
 ```
-Remove-MgSecurityInformationProtection [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaSecurityInformationProtection [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

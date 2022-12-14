@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/copy-mgsharelistcontenttypetodefaultcontentlocation
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/copy-mgsharelistcontenttypetodefaultcontentlocation
 schema: 2.0.0
 ---
 
-# Copy-MgShareListContentTypeToDefaultContentLocation
+# Copy-MgBetaShareListContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
 Copy a file to a default content location in a [content type][contentType].
@@ -15,28 +15,28 @@ The file can then be added as a default file or template via a POST operation.
 
 ### CopyExpanded1 (Default)
 ```
-Copy-MgShareListContentTypeToDefaultContentLocation -ContentTypeId <String> -SharedDriveItemId <String>
+Copy-MgBetaShareListContentTypeToDefaultContentLocation -ContentTypeId <String> -SharedDriveItemId <String>
  [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
  [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy1
 ```
-Copy-MgShareListContentTypeToDefaultContentLocation -ContentTypeId <String> -SharedDriveItemId <String>
+Copy-MgBetaShareListContentTypeToDefaultContentLocation -ContentTypeId <String> -SharedDriveItemId <String>
  -BodyParameter <IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity1
 ```
-Copy-MgShareListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
+Copy-MgBetaShareListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded1
 ```
-Copy-MgShareListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
+Copy-MgBetaShareListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
  [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
  [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Copy1, CopyViaIdentity1
 Aliases:
 
@@ -115,7 +115,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: CopyViaIdentity1, CopyViaIdentityExpanded1
 Aliases:
 
@@ -161,7 +161,7 @@ itemReference
 To construct, please use Get-Help -Online and see NOTES section for SOURCEFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemReference
 Parameter Sets: CopyExpanded1, CopyViaIdentityExpanded1
 Aliases:
 
@@ -208,9 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

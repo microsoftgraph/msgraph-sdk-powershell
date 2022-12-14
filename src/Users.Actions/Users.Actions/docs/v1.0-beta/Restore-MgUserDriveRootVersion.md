@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/restore-mguserdriverootversion
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/restore-mguserdriverootversion
 schema: 2.0.0
 ---
 
-# Restore-MgUserDriveRootVersion
+# Restore-MgBetaUserDriveRootVersion
 
 ## SYNOPSIS
 Restore a previous version of a DriveItem to be the current version.
@@ -15,13 +15,13 @@ This will create a new version with the contents of the previous version, but pr
 
 ### Restore (Default)
 ```
-Restore-MgUserDriveRootVersion -DriveId <String> -DriveItemVersionId <String> -UserId <String> [-PassThru]
+Restore-MgBetaUserDriveRootVersion -DriveId <String> -DriveItemVersionId <String> -UserId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgUserDriveRootVersion -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaUserDriveRootVersion -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -33,12 +33,12 @@ This will create a new version with the contents of the previous version, but pr
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Files
+Import-Module Microsoft.Graph.Beta.Files
 
-Restore-MgDriveItemVersion -DriveId $driveId -DriveItemId $driveItemId -DriveItemVersionId $driveItemVersionId
+Restore-MgBetaDriveItemVersion -DriveId $driveId -DriveItemId $driveItemId -DriveItemVersionId $driveItemVersionId
 ```
 
-This example shows how to use the Restore-MgUserDriveRootVersion Cmdlet.
+This example shows how to use the Restore-MgBetaUserDriveRootVersion Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -79,7 +79,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -156,7 +156,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

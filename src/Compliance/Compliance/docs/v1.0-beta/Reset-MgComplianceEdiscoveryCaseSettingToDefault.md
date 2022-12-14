@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/reset-mgcomplianceediscoverycasesettingtodefault
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/reset-mgcomplianceediscoverycasesettingtodefault
 schema: 2.0.0
 ---
 
-# Reset-MgComplianceEdiscoveryCaseSettingToDefault
+# Reset-MgBetaComplianceEdiscoveryCaseSettingToDefault
 
 ## SYNOPSIS
 Reset a caseSettings object to the default values.
@@ -14,13 +14,13 @@ Reset a caseSettings object to the default values.
 
 ### Reset (Default)
 ```
-Reset-MgComplianceEdiscoveryCaseSettingToDefault -CaseId <String> [-PassThru] [-Confirm] [-WhatIf]
+Reset-MgBetaComplianceEdiscoveryCaseSettingToDefault -CaseId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgComplianceEdiscoveryCaseSettingToDefault -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
+Reset-MgBetaComplianceEdiscoveryCaseSettingToDefault -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Reset a caseSettings object to the default values.
 
 ## EXAMPLES
 
-### Example 1: Using the Reset-MgComplianceEdiscoveryCaseSettingToDefault Cmdlet
+### Example 1: Using the Reset-MgBetaComplianceEdiscoveryCaseSettingToDefault Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Reset-MgComplianceEdiscoveryCaseSettingToDefault -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Reset-MgBetaComplianceEdiscoveryCaseSettingToDefault -CaseId $caseId
 ```
 
-This example shows how to use the Reset-MgComplianceEdiscoveryCaseSettingToDefault Cmdlet.
+This example shows how to use the Reset-MgBetaComplianceEdiscoveryCaseSettingToDefault Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

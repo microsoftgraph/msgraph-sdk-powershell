@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/unpublish-mgbookingbusiness
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/unpublish-mgbookingbusiness
 schema: 2.0.0
 ---
 
-# Unpublish-MgBookingBusiness
+# Unpublish-MgBetaBookingBusiness
 
 ## SYNOPSIS
 Make the scheduling page of this business not available to external customers.
@@ -15,12 +15,12 @@ Set the **isPublished** property to false, and **publicUrl** property to null.
 
 ### Unpublish (Default)
 ```
-Unpublish-MgBookingBusiness -BookingBusinessId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Unpublish-MgBetaBookingBusiness -BookingBusinessId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnpublishViaIdentity
 ```
-Unpublish-MgBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Unpublish-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Set the **isPublished** property to false, and **publicUrl** property to null.
 
 ## EXAMPLES
 
-### Example 1: Using the Unpublish-MgBookingBusiness Cmdlet
+### Example 1: Using the Unpublish-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Unpublish-MgBookingBusiness -BookingBusinessId $bookingBusinessId
+Import-Module Microsoft.Graph.Beta.Bookings
+Unpublish-MgBetaBookingBusiness -BookingBusinessId $bookingBusinessId
 ```
 
-This example shows how to use the Unpublish-MgBookingBusiness Cmdlet.
+This example shows how to use the Unpublish-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: UnpublishViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 

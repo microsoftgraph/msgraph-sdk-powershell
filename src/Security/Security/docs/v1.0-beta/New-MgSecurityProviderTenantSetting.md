@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityprovidertenantsetting
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityprovidertenantsetting
 schema: 2.0.0
 ---
 
-# New-MgSecurityProviderTenantSetting
+# New-MgBetaSecurityProviderTenantSetting
 
 ## SYNOPSIS
 Create new navigation property to providerTenantSettings for security
@@ -14,14 +14,14 @@ Create new navigation property to providerTenantSettings for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityProviderTenantSetting [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>] [-Enabled]
+New-MgBetaSecurityProviderTenantSetting [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>] [-Enabled]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityProviderTenantSetting -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-Confirm] [-WhatIf]
+New-MgBetaSecurityProviderTenantSetting -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ providerTenantSetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
 Parameter Sets: Create
 Aliases:
 
@@ -190,11 +190,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
 
 ## NOTES
 

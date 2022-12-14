@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgapplicationsynchronization
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgapplicationsynchronization
 schema: 2.0.0
 ---
 
-# Remove-MgApplicationSynchronization
+# Remove-MgBetaApplicationSynchronization
 
 ## SYNOPSIS
 Delete navigation property synchronization for applications
@@ -14,13 +14,13 @@ Delete navigation property synchronization for applications
 
 ### Delete (Default)
 ```
-Remove-MgApplicationSynchronization -ApplicationId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaApplicationSynchronization -ApplicationId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgApplicationSynchronization -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaApplicationSynchronization -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

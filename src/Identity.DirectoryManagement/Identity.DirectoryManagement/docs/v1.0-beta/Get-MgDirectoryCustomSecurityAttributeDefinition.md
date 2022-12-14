@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectorycustomsecurityattributedefinition
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectorycustomsecurityattributedefinition
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryCustomSecurityAttributeDefinition
+# Get-MgBetaDirectoryCustomSecurityAttributeDefinition
 
 ## SYNOPSIS
 Schema of a custom security attributes (key-value pairs).
@@ -14,20 +14,20 @@ Schema of a custom security attributes (key-value pairs).
 
 ### List (Default)
 ```
-Get-MgDirectoryCustomSecurityAttributeDefinition [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDirectoryCustomSecurityAttributeDefinition [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDirectoryCustomSecurityAttributeDefinition -CustomSecurityAttributeDefinitionId <String>
+Get-MgBetaDirectoryCustomSecurityAttributeDefinition -CustomSecurityAttributeDefinitionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDirectoryCustomSecurityAttributeDefinition -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaDirectoryCustomSecurityAttributeDefinition -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,40 +36,40 @@ Schema of a custom security attributes (key-value pairs).
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
+### Example 1: Using the Get-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryCustomSecurityAttributeDefinition -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectoryCustomSecurityAttributeDefinition -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId
 ```
 
-This example shows how to use the Get-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
+### Example 2: Using the Get-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryCustomSecurityAttributeDefinition -Filter "attributeSet eq 'Engineering' and status eq 'Available' and type eq 'String'" 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectoryCustomSecurityAttributeDefinition -Filter "attributeSet eq 'Engineering' and status eq 'Available' and type eq 'String'" 
 ```
 
-This example shows how to use the Get-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
+### Example 3: Using the Get-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryCustomSecurityAttributeDefinition -Filter "name eq 'Project' and status eq 'Available'" 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectoryCustomSecurityAttributeDefinition -Filter "name eq 'Project' and status eq 'Available'" 
 ```
 
-This example shows how to use the Get-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
+### Example 4: Using the Get-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryCustomSecurityAttributeDefinition
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDirectoryCustomSecurityAttributeDefinition
 ```
 
-This example shows how to use the Get-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomSecurityAttributeDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomSecurityAttributeDefinition
 
 ## NOTES
 

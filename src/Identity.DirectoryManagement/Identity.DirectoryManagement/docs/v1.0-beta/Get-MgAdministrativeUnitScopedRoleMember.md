@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgadministrativeunitscopedrolemember
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgadministrativeunitscopedrolemember
 schema: 2.0.0
 ---
 
-# Get-MgAdministrativeUnitScopedRoleMember
+# Get-MgBetaAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
 Scoped-role members of this administrative unit.
@@ -14,20 +14,20 @@ Scoped-role members of this administrative unit.
 
 ### List (Default)
 ```
-Get-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> [-ExpandProperty <String[]>]
+Get-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> -ScopedRoleMembershipId <String>
+Get-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> -ScopedRoleMembershipId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Scoped-role members of this administrative unit.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAdministrativeUnitScopedRoleMember Cmdlet
+### Example 1: Using the Get-MgBetaAdministrativeUnitScopedRoleMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -ScopedRoleMembershipId $scopedRoleMembershipId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -ScopedRoleMembershipId $scopedRoleMembershipId
 ```
 
-This example shows how to use the Get-MgAdministrativeUnitScopedRoleMember Cmdlet.
+This example shows how to use the Get-MgBetaAdministrativeUnitScopedRoleMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgAdministrativeUnitScopedRoleMember Cmdlet
+### Example 2: Using the Get-MgBetaAdministrativeUnitScopedRoleMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId
 ```
 
-This example shows how to use the Get-MgAdministrativeUnitScopedRoleMember Cmdlet.
+This example shows how to use the Get-MgBetaAdministrativeUnitScopedRoleMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
 ## NOTES
 

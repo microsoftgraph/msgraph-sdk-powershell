@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceusagerights
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceusagerights
 schema: 2.0.0
 ---
 
-# Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
+# Update-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
 
 ## SYNOPSIS
 Update the navigation property usageRights in users
@@ -14,7 +14,7 @@ Update the navigation property usageRights in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
+Update-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UsageRightId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-Id <String>] [-ServiceIdentifier <String>]
  [-State <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRi
 
 ### Update
 ```
-Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
+Update-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UsageRightId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphUsageRight> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
+Update-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
  -InputObject <IIdentitySignInsIdentity> -BodyParameter <IMicrosoftGraphUsageRight> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
+Update-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>] [-CatalogId <String>]
  [-Id <String>] [-ServiceIdentifier <String>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ usageRight
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,9 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 
 ## OUTPUTS
 

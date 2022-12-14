@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/clear-mgapplicationverifiedpublisher
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/clear-mgapplicationverifiedpublisher
 schema: 2.0.0
 ---
 
-# Clear-MgApplicationVerifiedPublisher
+# Clear-MgBetaApplicationVerifiedPublisher
 
 ## SYNOPSIS
 Unset the the verifiedPublisher previously set on an application, removing all verified publisher properties.
@@ -15,13 +15,13 @@ For more information, see Publisher verification.
 
 ### Unset1 (Default)
 ```
-Clear-MgApplicationVerifiedPublisher -ApplicationId <String> [-PassThru] [-Confirm] [-WhatIf]
+Clear-MgBetaApplicationVerifiedPublisher -ApplicationId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UnsetViaIdentity1
 ```
-Clear-MgApplicationVerifiedPublisher -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Clear-MgBetaApplicationVerifiedPublisher -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ For more information, see Publisher verification.
 
 ## EXAMPLES
 
-### Example 1: Using the Clear-MgApplicationVerifiedPublisher Cmdlet
+### Example 1: Using the Clear-MgBetaApplicationVerifiedPublisher Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Clear-MgApplicationVerifiedPublisher -ApplicationId $applicationId
+Import-Module Microsoft.Graph.Beta.Applications
+Clear-MgBetaApplicationVerifiedPublisher -ApplicationId $applicationId
 ```
 
-This example shows how to use the Clear-MgApplicationVerifiedPublisher Cmdlet.
+This example shows how to use the Clear-MgBetaApplicationVerifiedPublisher Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UnsetViaIdentity1
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

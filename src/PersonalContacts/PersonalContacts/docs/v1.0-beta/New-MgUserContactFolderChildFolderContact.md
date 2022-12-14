@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/new-mgusercontactfolderchildfoldercontact
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/new-mgusercontactfolderchildfoldercontact
 schema: 2.0.0
 ---
 
-# New-MgUserContactFolderChildFolderContact
+# New-MgBetaUserContactFolderChildFolderContact
 
 ## SYNOPSIS
 Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
@@ -14,7 +14,7 @@ Add a contact to the root Contacts folder or to the `contacts` endpoint of anoth
 
 ### CreateExpanded (Default)
 ```
-New-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
+New-MgBetaUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-AssistantName <String>] [-Birthday <DateTime>]
  [-Categories <String[]>] [-ChangeKey <String>] [-Children <String[]>] [-CompanyName <String>]
  [-CreatedDateTime <DateTime>] [-Department <String>] [-DisplayName <String>]
@@ -34,19 +34,19 @@ New-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFold
 
 ### Create
 ```
-New-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
+New-MgBetaUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
  -UserId <String> -BodyParameter <IMicrosoftGraphContact1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
+New-MgBetaUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
  -BodyParameter <IMicrosoftGraphContact1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
+New-MgBetaUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
  [-AdditionalProperties <Hashtable>] [-AssistantName <String>] [-Birthday <DateTime>] [-Categories <String[]>]
  [-ChangeKey <String>] [-Children <String[]>] [-CompanyName <String>] [-CreatedDateTime <DateTime>]
  [-Department <String>] [-DisplayName <String>] [-EmailAddresses <IMicrosoftGraphTypedEmailAddress[]>]
@@ -123,7 +123,7 @@ contact
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -281,7 +281,7 @@ The contact's email addresses.
 To construct, please use Get-Help -Online and see NOTES section for EMAILADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTypedEmailAddress[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTypedEmailAddress[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -298,7 +298,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -329,7 +329,7 @@ followupFlag
 To construct, please use Get-Help -Online and see NOTES section for FLAG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFollowupFlag
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFollowupFlag
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -435,7 +435,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -529,7 +529,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -605,7 +605,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhone[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -621,7 +621,7 @@ profilePhoto
 To construct, please use Get-Help -Online and see NOTES section for PHOTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfilePhoto
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -637,7 +637,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for POSTALADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -670,7 +670,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -746,7 +746,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for WEBSITES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWebsite[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWebsite[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -853,13 +853,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact1
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact1
 
 ## NOTES
 

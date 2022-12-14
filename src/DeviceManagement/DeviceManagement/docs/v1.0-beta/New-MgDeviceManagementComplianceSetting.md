@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementcompliancesetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementcompliancesetting
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementComplianceSetting
+# New-MgBetaDeviceManagementComplianceSetting
 
 ## SYNOPSIS
 Create new navigation property to complianceSettings for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to complianceSettings for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementComplianceSetting [-AccessTypes <String>] [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementComplianceSetting [-AccessTypes <String>] [-AdditionalProperties <Hashtable>]
  [-Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>] [-BaseUri <String>]
  [-CategoryId <String>] [-Description <String>] [-DisplayName <String>] [-HelpText <String>] [-Id <String>]
  [-InfoUrls <String[]>] [-Keywords <String[]>] [-Name <String>]
@@ -27,7 +27,7 @@ New-MgDeviceManagementComplianceSetting [-AccessTypes <String>] [-AdditionalProp
 
 ### Create
 ```
-New-MgDeviceManagementComplianceSetting
+New-MgBetaDeviceManagementComplianceSetting
  -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -74,7 +74,7 @@ deviceManagementConfigurationSettingApplicability
 To construct, please use Get-Help -Online and see NOTES section for APPLICABILITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingApplicability
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingApplicability
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -105,7 +105,7 @@ deviceManagementConfigurationSettingDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
 Parameter Sets: Create
 Aliases:
 
@@ -242,7 +242,7 @@ deviceManagementConfigurationSettingOccurrence
 To construct, please use Get-Help -Online and see NOTES section for OCCURRENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -273,7 +273,7 @@ List of referred setting information.
 To construct, please use Get-Help -Online and see NOTES section for REFERREDSETTINGINFORMATIONLIST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 Supported setting types
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationSettingUsage
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationSettingUsage
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 Setting control type representation in the UX
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationControlType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationControlType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -348,7 +348,7 @@ Accept wildcard characters: False
 Supported setting types
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationSettingVisibility
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationSettingVisibility
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -395,11 +395,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
 
 ## NOTES
 

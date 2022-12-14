@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/remove-mgcomplianceediscoverycasereviewset
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/remove-mgcomplianceediscoverycasereviewset
 schema: 2.0.0
 ---
 
-# Remove-MgComplianceEdiscoveryCaseReviewSet
+# Remove-MgBetaComplianceEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
 Delete navigation property reviewSets for compliance
@@ -14,13 +14,13 @@ Delete navigation property reviewSets for compliance
 
 ### Delete (Default)
 ```
-Remove-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String> [-IfMatch <String>]
+Remove-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

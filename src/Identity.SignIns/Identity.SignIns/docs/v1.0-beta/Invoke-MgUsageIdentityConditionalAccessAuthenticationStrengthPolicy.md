@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mgusageidentityconditionalaccessauthenticationstrengthpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/invoke-mgusageidentityconditionalaccessauthenticationstrengthpolicy
 schema: 2.0.0
 ---
 
-# Invoke-MgUsageIdentityConditionalAccessAuthenticationStrengthPolicy
+# Invoke-MgBetaUsageIdentityConditionalAccessAuthenticationStrengthPolicy
 
 ## SYNOPSIS
 Invoke function usage
@@ -14,13 +14,13 @@ Invoke function usage
 
 ### Usage (Default)
 ```
-Invoke-MgUsageIdentityConditionalAccessAuthenticationStrengthPolicy -AuthenticationStrengthPolicyId <String>
+Invoke-MgBetaUsageIdentityConditionalAccessAuthenticationStrengthPolicy -AuthenticationStrengthPolicyId <String>
  [<CommonParameters>]
 ```
 
 ### UsageViaIdentity
 ```
-Invoke-MgUsageIdentityConditionalAccessAuthenticationStrengthPolicy -InputObject <IIdentitySignInsIdentity>
+Invoke-MgBetaUsageIdentityConditionalAccessAuthenticationStrengthPolicy -InputObject <IIdentitySignInsIdentity>
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UsageViaIdentity
 Aliases:
 
@@ -67,11 +67,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthUsage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthUsage
 
 ## NOTES
 

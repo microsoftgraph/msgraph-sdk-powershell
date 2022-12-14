@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamworkdeletedteamchannelfilefoldercontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamworkdeletedteamchannelfilefoldercontent
 schema: 2.0.0
 ---
 
-# Get-MgTeamworkDeletedTeamChannelFileFolderContent
+# Get-MgBetaTeamworkDeletedTeamChannelFileFolderContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,13 +14,13 @@ The content stream, if the item represents a file.
 
 ### Get (Default)
 ```
-Get-MgTeamworkDeletedTeamChannelFileFolderContent -ChannelId <String> -DeletedTeamId <String>
+Get-MgBetaTeamworkDeletedTeamChannelFileFolderContent -ChannelId <String> -DeletedTeamId <String>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamworkDeletedTeamChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaTeamworkDeletedTeamChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

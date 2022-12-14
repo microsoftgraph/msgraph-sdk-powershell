@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/remove-mgplannertaskbuckettaskboardformat
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/remove-mgplannertaskbuckettaskboardformat
 schema: 2.0.0
 ---
 
-# Remove-MgPlannerTaskBucketTaskBoardFormat
+# Remove-MgBetaPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
 Delete navigation property bucketTaskBoardFormat for planner
@@ -14,13 +14,13 @@ Delete navigation property bucketTaskBoardFormat for planner
 
 ### Delete1 (Default)
 ```
-Remove-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaPlannerTaskBucketTaskBoardFormat -PlannerTaskId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

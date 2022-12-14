@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgprogramcontrol
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgprogramcontrol
 schema: 2.0.0
 ---
 
-# Remove-MgProgramControl
+# Remove-MgBetaProgramControl
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, delete a programControl object.
@@ -15,37 +15,37 @@ This unlinks an access review from a program.
 
 ### Delete (Default)
 ```
-Remove-MgProgramControl -ProgramControlId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaProgramControl -ProgramControlId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Delete1
 ```
-Remove-MgProgramControl -ProgramControlId <String> -ProgramControlId1 <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaProgramControl -ProgramControlId <String> -ProgramControlId1 <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete2
 ```
-Remove-MgProgramControl -ProgramControlId <String> -ProgramId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaProgramControl -ProgramControlId <String> -ProgramId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity2
 ```
-Remove-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,13 +55,13 @@ This unlinks an access review from a program.
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgProgramControl Cmdlet
+### Example 1: Using the Remove-MgBetaProgramControl Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgProgramControl -ProgramControlId $programControlId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaProgramControl -ProgramControlId $programControlId
 ```
 
-This example shows how to use the Remove-MgProgramControl Cmdlet.
+This example shows how to use the Remove-MgBetaProgramControl Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -86,7 +86,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1, DeleteViaIdentity2
 Aliases:
 
@@ -193,7 +193,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

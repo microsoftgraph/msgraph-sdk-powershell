@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanysalecreditmemosalecreditmemolineitemcategory
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/remove-mgfinancialcompanysalecreditmemosalecreditmemolineitemcategory
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory
+# Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory
 
 ## SYNOPSIS
 Delete navigation property itemCategory for financials
@@ -14,14 +14,14 @@ Delete navigation property itemCategory for financials
 
 ### Delete (Default)
 ```
-Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory -CompanyId <String>
+Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory -CompanyId <String>
  -SalesCreditMemoId <String> -SalesCreditMemoLineId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory -InputObject <IFinancialsIdentity>
+Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory -InputObject <IFinancialsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

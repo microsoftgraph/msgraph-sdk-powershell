@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmobileappconfigurationdevicestatussummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmobileappconfigurationdevicestatussummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
+# Get-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatusSummary
 
 ## SYNOPSIS
 App configuration device status summary.
@@ -14,13 +14,13 @@ App configuration device status summary.
 
 ### Get (Default)
 ```
-Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -ManagedDeviceMobileAppConfigurationId <String>
+Get-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -ManagedDeviceMobileAppConfigurationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatusSummary -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,17 +97,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatusSummary
+### Get-MgBetaDeviceAppManagementMobileAppConfigurationDeviceStatusSummary
 
 COMPLEX PARAMETER PROPERTIES
 

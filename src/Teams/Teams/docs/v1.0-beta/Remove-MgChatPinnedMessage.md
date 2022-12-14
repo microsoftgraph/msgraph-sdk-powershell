@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgchatpinnedmessage
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgchatpinnedmessage
 schema: 2.0.0
 ---
 
-# Remove-MgChatPinnedMessage
+# Remove-MgBetaChatPinnedMessage
 
 ## SYNOPSIS
 Delete navigation property pinnedMessages for chats
@@ -14,13 +14,13 @@ Delete navigation property pinnedMessages for chats
 
 ### Delete (Default)
 ```
-Remove-MgChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgChatPinnedMessage -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaChatPinnedMessage -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property pinnedMessages for chats
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgChatPinnedMessage Cmdlet
+### Example 1: Using the Remove-MgBetaChatPinnedMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgChatPinnedMessage -ChatId $chatId -PinnedChatMessageInfoId $pinnedChatMessageInfoId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaChatPinnedMessage -ChatId $chatId -PinnedChatMessageInfoId $pinnedChatMessageInfoId
 ```
 
-This example shows how to use the Remove-MgChatPinnedMessage Cmdlet.
+This example shows how to use the Remove-MgBetaChatPinnedMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

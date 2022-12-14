@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/find-mguserroom
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/find-mguserroom
 schema: 2.0.0
 ---
 
-# Find-MgUserRoom
+# Find-MgBetaUserRoom
 
 ## SYNOPSIS
 Invoke function findRooms
@@ -14,25 +14,25 @@ Invoke function findRooms
 
 ### Find (Default)
 ```
-Find-MgUserRoom -UserId <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>]
+Find-MgBetaUserRoom -UserId <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### Find1
 ```
-Find-MgUserRoom -RoomList <String> -UserId <String> [-Count] [-Filter <String>] [-Search <String>]
+Find-MgBetaUserRoom -RoomList <String> -UserId <String> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FindViaIdentity
 ```
-Find-MgUserRoom -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
+Find-MgBetaUserRoom -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FindViaIdentity1
 ```
-Find-MgUserRoom -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
+Find-MgBetaUserRoom -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -41,14 +41,14 @@ Invoke function findRooms
 
 ## EXAMPLES
 
-### Example 1: Using the Find-MgUserRoom Cmdlet
+### Example 1: Using the Find-MgBetaUserRoom Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Functions
+Import-Module Microsoft.Graph.Beta.Users.Functions
 # A UPN can also be used as -UserId.
-Find-MgUserRoom -UserId $userId
+Find-MgBetaUserRoom -UserId $userId
 ```
 
-This example shows how to use the Find-MgUserRoom Cmdlet.
+This example shows how to use the Find-MgBetaUserRoom Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -88,7 +88,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: FindViaIdentity, FindViaIdentity1
 Aliases:
 
@@ -179,11 +179,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 
 ## NOTES
 

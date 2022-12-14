@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/test-mgidentitycustomauthenticationextensionauthenticationconfiguration
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/test-mgidentitycustomauthenticationextensionauthenticationconfiguration
 schema: 2.0.0
 ---
 
-# Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration
+# Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration
 
 ## SYNOPSIS
 Invoke action validateAuthenticationConfiguration
@@ -14,27 +14,27 @@ Invoke action validateAuthenticationConfiguration
 
 ### ValidateExpanded (Default)
 ```
-Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration [-AdditionalProperties <Hashtable>]
+Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>] [-EndpointConfiguration <Hashtable>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Validate
 ```
-Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration
+Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration
  -CustomAuthenticationExtensionId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate1
 ```
-Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration
+Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration
  -BodyParameter <IPaths1Pa4Ae0IdentityCustomauthenticationextensionsMicrosoftGraphValidateauthenticationconfigurationPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity
 ```
-Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration
+Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration
  -InputObject <IIdentitySignInsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Pa4Ae0IdentityCustomauthenticationextensionsMicrosoftGraphValidateauthenticationconfigurationPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pa4Ae0IdentityCustomauthenticationextensionsMicrosoftGraphValidateauthenticationconfigurationPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate1
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: ValidateViaIdentity
 Aliases:
 
@@ -173,13 +173,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Pa4Ae0IdentityCustomauthenticationextensionsMicrosoftGraphValidateauthenticationconfigurationPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pa4Ae0IdentityCustomauthenticationextensionsMicrosoftGraphValidateauthenticationconfigurationPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationConfigurationValidation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationConfigurationValidation
 
 ## NOTES
 

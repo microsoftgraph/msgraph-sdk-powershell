@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mggroupsitelistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mggroupsitelistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteListItemDocumentSetVersion
+# Get-MgBetaGroupSiteListItemDocumentSetVersion
 
 ## SYNOPSIS
 Version information for a document set version created by a user.
@@ -14,7 +14,7 @@ Version information for a document set version created by a user.
 
 ### List1 (Default)
 ```
-Get-MgGroupSiteListItemDocumentSetVersion -GroupId <String> -ListId <String> -ListItemId <String>
+Get-MgBetaGroupSiteListItemDocumentSetVersion -GroupId <String> -ListId <String> -ListItemId <String>
  -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgGroupSiteListItemDocumentSetVersion -GroupId <String> -ListId <String> -Li
 
 ### Get1
 ```
-Get-MgGroupSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -GroupId <String> -ListId <String>
+Get-MgBetaGroupSiteListItemDocumentSetVersion -DocumentSetVersionId <String> -GroupId <String> -ListId <String>
  -ListItemId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -287,11 +287,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
 
 ## NOTES
 

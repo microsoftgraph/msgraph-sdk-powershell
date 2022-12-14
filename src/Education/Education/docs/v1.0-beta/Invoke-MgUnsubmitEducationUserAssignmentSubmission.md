@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/invoke-mgunsubmiteducationuserassignmentsubmission
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/invoke-mgunsubmiteducationuserassignmentsubmission
 schema: 2.0.0
 ---
 
-# Invoke-MgUnsubmitEducationUserAssignmentSubmission
+# Invoke-MgBetaUnsubmitEducationUserAssignmentSubmission
 
 ## SYNOPSIS
 Indicate that a student wants to work on the submitted assignment after it was turned in.
@@ -18,13 +18,13 @@ A teacher can also unsubmit a student's assignment on their behalf.
 
 ### Unsubmit (Default)
 ```
-Invoke-MgUnsubmitEducationUserAssignmentSubmission -EducationAssignmentId <String>
+Invoke-MgBetaUnsubmitEducationUserAssignmentSubmission -EducationAssignmentId <String>
  -EducationSubmissionId <String> -EducationUserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnsubmitViaIdentity
 ```
-Invoke-MgUnsubmitEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Invoke-MgBetaUnsubmitEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -39,12 +39,12 @@ A teacher can also unsubmit a student's assignment on their behalf.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 
-Invoke-MgUnsubmitEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+Invoke-MgBetaUnsubmitEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
 
-This example shows how to use the Invoke-MgUnsubmitEducationUserAssignmentSubmission Cmdlet.
+This example shows how to use the Invoke-MgBetaUnsubmitEducationUserAssignmentSubmission Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UnsubmitViaIdentity
 Aliases:
 
@@ -147,11 +147,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
 
 ## NOTES
 

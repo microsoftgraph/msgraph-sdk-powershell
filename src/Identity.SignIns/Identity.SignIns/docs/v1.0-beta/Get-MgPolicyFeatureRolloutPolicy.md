@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyfeaturerolloutpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyfeaturerolloutpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyFeatureRolloutPolicy
+# Get-MgBetaPolicyFeatureRolloutPolicy
 
 ## SYNOPSIS
 The feature rollout policy associated with a directory object.
@@ -14,20 +14,20 @@ The feature rollout policy associated with a directory object.
 
 ### List (Default)
 ```
-Get-MgPolicyFeatureRolloutPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPolicyFeatureRolloutPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyFeatureRolloutPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyFeatureRolloutPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,31 +36,31 @@ The feature rollout policy associated with a directory object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyFeatureRolloutPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyFeatureRolloutPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyFeatureRolloutPolicy
 ```
 
-This example shows how to use the Get-MgPolicyFeatureRolloutPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPolicyFeatureRolloutPolicy Cmdlet
+### Example 2: Using the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -ExpandProperty "appliesTo" 
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -ExpandProperty "appliesTo" 
 ```
 
-This example shows how to use the Get-MgPolicyFeatureRolloutPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgPolicyFeatureRolloutPolicy Cmdlet
+### Example 3: Using the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId
 ```
 
-This example shows how to use the Get-MgPolicyFeatureRolloutPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
 
 ## NOTES
 

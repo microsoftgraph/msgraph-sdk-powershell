@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernanceaccessreviewdefinitioninstancedecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernanceaccessreviewdefinitioninstancedecision
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision
+# Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision
 
 ## SYNOPSIS
 Delete navigation property decisions for identityGovernance
@@ -14,14 +14,14 @@ Delete navigation property decisions for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceDecisionItemId <String>
+Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceDecisionItemId <String>
  -AccessReviewInstanceId <String> -AccessReviewScheduleDefinitionId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -InputObject <IIdentityGovernanceIdentity>
+Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -InputObject <IIdentityGovernanceIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

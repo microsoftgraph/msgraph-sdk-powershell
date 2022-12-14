@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/remove-mgusermailfoldermultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/remove-mgusermailfoldermultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Remove-MgUserMailFolderMultiValueExtendedProperty
+# Remove-MgBetaUserMailFolderMultiValueExtendedProperty
 
 ## SYNOPSIS
 Delete navigation property multiValueExtendedProperties for users
@@ -14,14 +14,14 @@ Delete navigation property multiValueExtendedProperties for users
 
 ### Delete (Default)
 ```
-Remove-MgUserMailFolderMultiValueExtendedProperty -MailFolderId <String>
+Remove-MgBetaUserMailFolderMultiValueExtendedProperty -MailFolderId <String>
  -MultiValueLegacyExtendedPropertyId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserMailFolderMultiValueExtendedProperty -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserMailFolderMultiValueExtendedProperty -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 

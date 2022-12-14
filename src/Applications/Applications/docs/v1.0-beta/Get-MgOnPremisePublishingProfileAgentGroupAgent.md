@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgonpremisepublishingprofileagentgroupagent
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgonpremisepublishingprofileagentgroupagent
 schema: 2.0.0
 ---
 
-# Get-MgOnPremisePublishingProfileAgentGroupAgent
+# Get-MgBetaOnPremisePublishingProfileAgentGroupAgent
 
 ## SYNOPSIS
 List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
@@ -16,7 +16,7 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
+Get-MgBetaOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -24,14 +24,14 @@ Get-MgOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
 
 ### Get
 ```
-Get-MgOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String> -OnPremisesAgentId <String>
+Get-MgBetaOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String> -OnPremisesAgentId <String>
  -OnPremisesPublishingProfileId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOnPremisePublishingProfileAgentGroupAgent -InputObject <IApplicationsIdentity>
+Get-MgBetaOnPremisePublishingProfileAgentGroupAgent -InputObject <IApplicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
 
 ## NOTES
 

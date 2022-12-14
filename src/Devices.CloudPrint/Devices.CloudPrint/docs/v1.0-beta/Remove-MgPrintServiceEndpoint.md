@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/remove-mgprintserviceendpoint
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/remove-mgprintserviceendpoint
 schema: 2.0.0
 ---
 
-# Remove-MgPrintServiceEndpoint
+# Remove-MgBetaPrintServiceEndpoint
 
 ## SYNOPSIS
 Delete navigation property endpoints for print
@@ -14,13 +14,13 @@ Delete navigation property endpoints for print
 
 ### Delete1 (Default)
 ```
-Remove-MgPrintServiceEndpoint -PrintServiceEndpointId <String> -PrintServiceId <String> [-IfMatch <String>]
+Remove-MgBetaPrintServiceEndpoint -PrintServiceEndpointId <String> -PrintServiceId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 

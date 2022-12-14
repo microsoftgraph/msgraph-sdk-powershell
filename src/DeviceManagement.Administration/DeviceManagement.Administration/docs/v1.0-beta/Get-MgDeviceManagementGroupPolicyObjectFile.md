@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementgrouppolicyobjectfile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementgrouppolicyobjectfile
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementGroupPolicyObjectFile
+# Get-MgBetaDeviceManagementGroupPolicyObjectFile
 
 ## SYNOPSIS
 A list of Group Policy Object files uploaded.
@@ -14,20 +14,20 @@ A list of Group Policy Object files uploaded.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementGroupPolicyObjectFile [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementGroupPolicyObjectFile [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAdministrationIdentity>
+Get-MgBetaDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAdministrationIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
 
 ## NOTES
 

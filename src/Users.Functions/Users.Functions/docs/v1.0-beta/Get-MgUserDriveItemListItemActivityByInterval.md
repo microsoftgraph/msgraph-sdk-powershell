@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mguserdriveitemlistitemactivitybyinterval
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/get-mguserdriveitemlistitemactivitybyinterval
 schema: 2.0.0
 ---
 
-# Get-MgUserDriveItemListItemActivityByInterval
+# Get-MgBetaUserDriveItemListItemActivityByInterval
 
 ## SYNOPSIS
 Invoke function getActivitiesByInterval
@@ -14,7 +14,7 @@ Invoke function getActivitiesByInterval
 
 ### Get (Default)
 ```
-Get-MgUserDriveItemListItemActivityByInterval -DriveId <String> -DriveItemId <String> -EndDateTime <String>
+Get-MgBetaUserDriveItemListItemActivityByInterval -DriveId <String> -DriveItemId <String> -EndDateTime <String>
  -Interval <String> -StartDateTime <String> -UserId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgUserDriveItemListItemActivityByInterval -DriveId <String> -DriveItemId <St
 
 ### GetViaIdentity
 ```
-Get-MgUserDriveItemListItemActivityByInterval -InputObject <IUsersFunctionsIdentity> [-Count]
+Get-MgBetaUserDriveItemListItemActivityByInterval -InputObject <IUsersFunctionsIdentity> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemActivityStat1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityaction
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecurityaction
 schema: 2.0.0
 ---
 
-# New-MgSecurityAction
+# New-MgBetaSecurityAction
 
 ## SYNOPSIS
 Create a new securityAction object.
@@ -14,7 +14,7 @@ Create a new securityAction object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityAction [-ActionReason <String>] [-AdditionalProperties <Hashtable>] [-AppId <String>]
+New-MgBetaSecurityAction [-ActionReason <String>] [-AdditionalProperties <Hashtable>] [-AppId <String>]
  [-AzureTenantId <String>] [-ClientContext <String>] [-CompletedDateTime <DateTime>]
  [-CreatedDateTime <DateTime>] [-ErrorInfo <IMicrosoftGraphResultInfo>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-Name <String>] [-Parameters <IMicrosoftGraphKeyValuePair[]>]
@@ -24,7 +24,7 @@ New-MgSecurityAction [-ActionReason <String>] [-AdditionalProperties <Hashtable>
 
 ### Create
 ```
-New-MgSecurityAction -BodyParameter <IMicrosoftGraphSecurityAction> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityAction -BodyParameter <IMicrosoftGraphSecurityAction> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,9 +32,9 @@ Create a new securityAction object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSecurityAction Cmdlet
+### Example 1: Using the New-MgBetaSecurityAction Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Name = "BlockIp"
 	ActionReason = "Test"
@@ -49,10 +49,10 @@ $params = @{
 		Vendor = "Microsoft"
 	}
 }
-New-MgSecurityAction -BodyParameter $params
+New-MgBetaSecurityAction -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSecurityAction Cmdlet.
+This example shows how to use the New-MgBetaSecurityAction Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ securityAction
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAction
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAction
 Parameter Sets: Create
 Aliases:
 
@@ -189,7 +189,7 @@ resultInfo
 To construct, please use Get-Help -Online and see NOTES section for ERRORINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResultInfo
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -254,7 +254,7 @@ Required.
 To construct, please use Get-Help -Online and see NOTES section for PARAMETERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -270,7 +270,7 @@ Collection of securityActionState to keep the history of an action.
 To construct, please use Get-Help -Online and see NOTES section for STATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityActionState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityActionState[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -317,7 +317,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -364,11 +364,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAction
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAction
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/add-mggroupsitecontenttypecopy
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/add-mggroupsitecontenttypecopy
 schema: 2.0.0
 ---
 
-# Add-MgGroupSiteContentTypeCopy
+# Add-MgBetaGroupSiteContentTypeCopy
 
 ## SYNOPSIS
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
@@ -14,27 +14,27 @@ Add a copy of a [content type][contentType] from a [site][site] to a [list][list
 
 ### AddExpanded (Default)
 ```
-Add-MgGroupSiteContentTypeCopy -GroupId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
+Add-MgBetaGroupSiteContentTypeCopy -GroupId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
-Add-MgGroupSiteContentTypeCopy -GroupId <String> -SiteId <String>
+Add-MgBetaGroupSiteContentTypeCopy -GroupId <String> -SiteId <String>
  -BodyParameter <IPathsVrsotcGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-MgGroupSiteContentTypeCopy -InputObject <IGroupsIdentity>
+Add-MgBetaGroupSiteContentTypeCopy -InputObject <IGroupsIdentity>
  -BodyParameter <IPathsVrsotcGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
-Add-MgGroupSiteContentTypeCopy -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Add-MgBetaGroupSiteContentTypeCopy -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,16 +45,16 @@ Add a copy of a [content type][contentType] from a [site][site] to a [list][list
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	ContentType = "https://graph.microsoft.com/v1.0/sites/{site-id}/contentTypes/0x0101"
 }
 
-Add-MgSiteListContentTypeCopy -SiteId $siteId -ListId $listId -BodyParameter $params
+Add-MgBetaSiteListContentTypeCopy -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgGroupSiteContentTypeCopy Cmdlet.
+This example shows how to use the Add-MgBetaGroupSiteContentTypeCopy Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsVrsotcGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsVrsotcGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add, AddViaIdentity
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
 Aliases:
 
@@ -188,13 +188,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsVrsotcGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsVrsotcGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType
 
 ## NOTES
 

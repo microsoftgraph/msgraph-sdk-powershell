@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/test-mguserproperty
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/test-mguserproperty
 schema: 2.0.0
 ---
 
-# Test-MgUserProperty
+# Test-MgBetaUserProperty
 
 ## SYNOPSIS
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -22,13 +22,13 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ### ValidateExpanded (Default)
 ```
-Test-MgUserProperty [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EntityType <String>]
+Test-MgBetaUserProperty [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EntityType <String>]
  [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate
 ```
-Test-MgUserProperty
+Test-MgBetaUserProperty
  -BodyParameter <IPaths1Tz6Rb9UsersMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -48,7 +48,7 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	EntityType = "Group"
@@ -57,10 +57,10 @@ $params = @{
 	OnBehalfOfUserId = "onBehalfOfUserId-value"
 }
 
-Test-MgDirectoryObjectProperty -BodyParameter $params
+Test-MgBetaDirectoryObjectProperty -BodyParameter $params
 ```
 
-This example shows how to use the Test-MgUserProperty Cmdlet.
+This example shows how to use the Test-MgBetaUserProperty Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Tz6Rb9UsersMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Tz6Rb9UsersMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate
 Aliases:
 
@@ -208,7 +208,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Tz6Rb9UsersMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Tz6Rb9UsersMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

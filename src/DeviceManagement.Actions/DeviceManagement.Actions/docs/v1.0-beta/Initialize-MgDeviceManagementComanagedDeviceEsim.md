@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/initialize-mgdevicemanagementcomanageddeviceesim
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/initialize-mgdevicemanagementcomanageddeviceesim
 schema: 2.0.0
 ---
 
-# Initialize-MgDeviceManagementComanagedDeviceEsim
+# Initialize-MgBetaDeviceManagementComanagedDeviceEsim
 
 ## SYNOPSIS
 Activate eSIM on the device.
@@ -14,27 +14,27 @@ Activate eSIM on the device.
 
 ### ActivateExpanded (Default)
 ```
-Initialize-MgDeviceManagementComanagedDeviceEsim -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
+Initialize-MgBetaDeviceManagementComanagedDeviceEsim -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>]
  [-CarrierUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Activate
 ```
-Initialize-MgDeviceManagementComanagedDeviceEsim -ManagedDeviceId <String>
+Initialize-MgBetaDeviceManagementComanagedDeviceEsim -ManagedDeviceId <String>
  -BodyParameter <IPathsV0Rv5SDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphActivatedeviceesimPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ActivateViaIdentity
 ```
-Initialize-MgDeviceManagementComanagedDeviceEsim -InputObject <IDeviceManagementActionsIdentity>
+Initialize-MgBetaDeviceManagementComanagedDeviceEsim -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsV0Rv5SDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphActivatedeviceesimPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ActivateViaIdentityExpanded
 ```
-Initialize-MgDeviceManagementComanagedDeviceEsim -InputObject <IDeviceManagementActionsIdentity>
+Initialize-MgBetaDeviceManagementComanagedDeviceEsim -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsV0Rv5SDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphActivatedeviceesimPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsV0Rv5SDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphActivatedeviceesimPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Activate, ActivateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: ActivateViaIdentity, ActivateViaIdentityExpanded
 Aliases:
 
@@ -174,9 +174,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsV0Rv5SDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphActivatedeviceesimPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsV0Rv5SDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphActivatedeviceesimPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

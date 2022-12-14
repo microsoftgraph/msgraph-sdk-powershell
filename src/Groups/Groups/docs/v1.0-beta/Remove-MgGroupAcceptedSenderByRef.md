@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/remove-mggroupacceptedsenderbyref
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/remove-mggroupacceptedsenderbyref
 schema: 2.0.0
 ---
 
-# Remove-MgGroupAcceptedSenderByRef
+# Remove-MgBetaGroupAcceptedSenderByRef
 
 ## SYNOPSIS
 Delete ref of navigation property acceptedSenders for groups
@@ -14,13 +14,13 @@ Delete ref of navigation property acceptedSenders for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupAcceptedSenderByRef -DirectoryObjectId <String> -GroupId <String> [-Id <String>]
+Remove-MgBetaGroupAcceptedSenderByRef -DirectoryObjectId <String> -GroupId <String> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> [-Id <String>] [-IfMatch <String>]
+Remove-MgBetaGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> [-Id <String>] [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/update-mgsharelistitemfield
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/update-mgsharelistitemfield
 schema: 2.0.0
 ---
 
-# Update-MgShareListItemField
+# Update-MgBetaShareListItemField
 
 ## SYNOPSIS
 Update the properties on a **[listItem][]**.
@@ -14,49 +14,49 @@ Update the properties on a **[listItem][]**.
 
 ### UpdateExpanded3 (Default)
 ```
-Update-MgShareListItemField -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaShareListItemField -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update2
 ```
-Update-MgShareListItemField -ListItemId <String> -SharedDriveItemId <String> -BodyParameter <Hashtable>
+Update-MgBetaShareListItemField -ListItemId <String> -SharedDriveItemId <String> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update3
 ```
-Update-MgShareListItemField -SharedDriveItemId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Update-MgBetaShareListItemField -SharedDriveItemId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded2
 ```
-Update-MgShareListItemField -ListItemId <String> -SharedDriveItemId <String>
+Update-MgBetaShareListItemField -ListItemId <String> -SharedDriveItemId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity2
 ```
-Update-MgShareListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Update-MgBetaShareListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity3
 ```
-Update-MgShareListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Update-MgBetaShareListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded2
 ```
-Update-MgShareListItemField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaShareListItemField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded3
 ```
-Update-MgShareListItemField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaShareListItemField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -118,7 +118,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UpdateViaIdentity2, UpdateViaIdentity3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
 Aliases:
 
@@ -210,7 +210,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### System.Collections.Hashtable
 

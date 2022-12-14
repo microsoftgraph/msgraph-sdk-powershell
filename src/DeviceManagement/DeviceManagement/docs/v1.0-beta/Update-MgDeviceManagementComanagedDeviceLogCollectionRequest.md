@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementcomanageddevicelogcollectionrequest
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementcomanageddevicelogcollectionrequest
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementComanagedDeviceLogCollectionRequest
+# Update-MgBetaDeviceManagementComanagedDeviceLogCollectionRequest
 
 ## SYNOPSIS
 Update the navigation property logCollectionRequests in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property logCollectionRequests in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementComanagedDeviceLogCollectionRequest -DeviceLogCollectionResponseId <String>
+Update-MgBetaDeviceManagementComanagedDeviceLogCollectionRequest -DeviceLogCollectionResponseId <String>
  -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>] [-EnrolledByUser <String>] [-ErrorCode <Int64>]
  [-ExpirationDateTimeUtc <DateTime>] [-Id <String>] [-InitiatedByUserPrincipalName <String>]
  [-ManagedDeviceId1 <String>] [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementComanagedDeviceLogCollectionRequest -DeviceLogCollectio
 
 ### Update
 ```
-Update-MgDeviceManagementComanagedDeviceLogCollectionRequest -DeviceLogCollectionResponseId <String>
+Update-MgBetaDeviceManagementComanagedDeviceLogCollectionRequest -DeviceLogCollectionResponseId <String>
  -ManagedDeviceId <String> -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementComanagedDeviceLogCollectionRequest -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementComanagedDeviceLogCollectionRequest -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementComanagedDeviceLogCollectionRequest -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementComanagedDeviceLogCollectionRequest -InputObject <IDeviceManagementIdentity>
  [-ManagedDeviceId <String>] [-AdditionalProperties <Hashtable>] [-EnrolledByUser <String>]
  [-ErrorCode <Int64>] [-ExpirationDateTimeUtc <DateTime>] [-Id <String>]
  [-InitiatedByUserPrincipalName <String>] [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>]
@@ -71,7 +71,7 @@ Windows Log Collection request entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -179,7 +179,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -332,9 +332,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
 
 ## OUTPUTS
 

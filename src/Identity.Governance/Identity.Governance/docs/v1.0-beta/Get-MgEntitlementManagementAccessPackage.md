@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackage
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackage
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackage
+# Get-MgBetaEntitlementManagementAccessPackage
 
 ## SYNOPSIS
 Represents access package objects.
@@ -14,44 +14,44 @@ Represents access package objects.
 
 ### ListAll (Default)
 ```
-Get-MgEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Property <String[]>]
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackage -AccessPackageId <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackage -AccessPackageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### ListByCatalogId
 ```
-Get-MgEntitlementManagementAccessPackage -CatalogId <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackage -CatalogId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
 ### ListByDisplayNameContains
 ```
-Get-MgEntitlementManagementAccessPackage -DisplayNameContains <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackage -DisplayNameContains <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
 ### ListByDisplayNameEq
 ```
-Get-MgEntitlementManagementAccessPackage -DisplayNameEq <String> [-ExpandProperty <String[]>]
+Get-MgBetaEntitlementManagementAccessPackage -DisplayNameEq <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
@@ -62,11 +62,11 @@ Represents access package objects.
 
 ### Example 1: Get a list of all access packages
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackage | Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackage | Format-List
 
 AccessPackageAssignmentPolicies :
-AccessPackageCatalog            : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageCatalog
+AccessPackageCatalog            : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageCatalog
 AccessPackageResourceRoleScopes :
 AccessPackagesIncompatibleWith  :
 CatalogId                       : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b
@@ -84,7 +84,7 @@ ModifiedDateTime                : 11/5/2021 9:08:44 AM
 AdditionalProperties            : {}
 
 AccessPackageAssignmentPolicies :
-AccessPackageCatalog            : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageCatalog
+AccessPackageCatalog            : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageCatalog
 AccessPackageResourceRoleScopes :
 AccessPackagesIncompatibleWith  :
 CatalogId                       : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b
@@ -106,12 +106,12 @@ This examples returns all access packages.
 
 ### Example 2: Get access package by Id
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackage -AccessPackageId 'bc041fda-b3ba-41fc-b911-ca95f7aac656'| Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackage -AccessPackageId 'bc041fda-b3ba-41fc-b911-ca95f7aac656'| Format-List
 
 
 AccessPackageAssignmentPolicies :
-AccessPackageCatalog            : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageCatalog
+AccessPackageCatalog            : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageCatalog
 AccessPackageResourceRoleScopes :
 AccessPackagesIncompatibleWith  :
 CatalogId                       : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b
@@ -260,7 +260,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -366,11 +366,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackage
 
 ## NOTES
 

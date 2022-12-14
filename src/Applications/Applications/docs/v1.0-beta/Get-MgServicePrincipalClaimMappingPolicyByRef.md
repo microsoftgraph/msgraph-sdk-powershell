@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalclaimmappingpolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgserviceprincipalclaimmappingpolicybyref
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalClaimMappingPolicyByRef
+# Get-MgBetaServicePrincipalClaimMappingPolicyByRef
 
 ## SYNOPSIS
 List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
@@ -13,7 +13,7 @@ List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 ## SYNTAX
 
 ```
-Get-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <String> [-Filter <String>]
+Get-MgBetaServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <String> [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

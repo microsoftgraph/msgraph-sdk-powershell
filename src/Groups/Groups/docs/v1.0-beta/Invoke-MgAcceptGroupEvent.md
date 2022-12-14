@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgacceptgroupevent
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgacceptgroupevent
 schema: 2.0.0
 ---
 
-# Invoke-MgAcceptGroupEvent
+# Invoke-MgBetaAcceptGroupEvent
 
 ## SYNOPSIS
 Accept the specified event in a user calendar.
@@ -14,27 +14,27 @@ Accept the specified event in a user calendar.
 
 ### AcceptExpanded (Default)
 ```
-Invoke-MgAcceptGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaAcceptGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Accept
 ```
-Invoke-MgAcceptGroupEvent -EventId <String> -GroupId <String>
+Invoke-MgBetaAcceptGroupEvent -EventId <String> -GroupId <String>
  -BodyParameter <IPathsEy6J5AGroupsGroupIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentity
 ```
-Invoke-MgAcceptGroupEvent -InputObject <IGroupsIdentity>
+Invoke-MgBetaAcceptGroupEvent -InputObject <IGroupsIdentity>
  -BodyParameter <IPathsEy6J5AGroupsGroupIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentityExpanded
 ```
-Invoke-MgAcceptGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaAcceptGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,7 +45,7 @@ Accept the specified event in a user calendar.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Comment = "comment-value"
@@ -53,10 +53,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgAcceptUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
+Invoke-MgBetaAcceptUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgAcceptGroupEvent Cmdlet.
+This example shows how to use the Invoke-MgBetaAcceptGroupEvent Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsEy6J5AGroupsGroupIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsEy6J5AGroupsGroupIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Accept, AcceptViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: AcceptViaIdentity, AcceptViaIdentityExpanded
 Aliases:
 
@@ -220,9 +220,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsEy6J5AGroupsGroupIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsEy6J5AGroupsGroupIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

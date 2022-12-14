@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticbatteryhealthappimpact
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticbatteryhealthappimpact
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
+# New-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
 
 ## SYNOPSIS
 Create new navigation property to userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userExperienceAnalyticsBatteryHealthAppImpact 
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact [-ActiveDevices <Int32>]
+New-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>] [-AppName <String>] [-AppPublisher <String>]
  [-BatteryUsagePercentage <Double>] [-Id <String>] [-IsForegroundApp] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact [-ActiveDevic
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
+New-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -135,7 +135,7 @@ The user experience analytics battery health app impact entity contains battery 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
 Parameter Sets: Create
 Aliases:
 
@@ -213,11 +213,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
 
 ## NOTES
 

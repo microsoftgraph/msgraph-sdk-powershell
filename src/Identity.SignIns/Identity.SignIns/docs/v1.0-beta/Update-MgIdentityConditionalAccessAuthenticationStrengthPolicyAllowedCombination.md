@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityconditionalaccessauthenticationstrengthpolicyallowedcombination
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityconditionalaccessauthenticationstrengthpolicyallowedcombination
 schema: 2.0.0
 ---
 
-# Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
+# Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
 
 ## SYNOPSIS
 Update the allowedCombinations property of an authenticationStrengthPolicy object.
@@ -15,14 +15,14 @@ To update other properties of an authenticationStrengthPolicy object, use the Up
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
+Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
  -AuthenticationStrengthPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedCombinations <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
+Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
  -AuthenticationStrengthPolicyId <String>
  -BodyParameter <IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
 
 ### UpdateViaIdentity
 ```
-Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
+Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
  -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
+Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>] [-AllowedCombinations <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -164,13 +164,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUpdateAllowedCombinationsResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUpdateAllowedCombinationsResult
 
 ## NOTES
 

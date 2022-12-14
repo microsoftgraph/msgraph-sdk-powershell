@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mggroupplannerplantask
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mggroupplannerplantask
 schema: 2.0.0
 ---
 
-# Get-MgGroupPlannerPlanTask
+# Get-MgBetaGroupPlannerPlanTask
 
 ## SYNOPSIS
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -13,7 +13,7 @@ Retrieve a list of plannerTask objects associated with a plannerPlan object.
 ## SYNTAX
 
 ```
-Get-MgGroupPlannerPlanTask -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupPlannerPlanTask -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -213,7 +213,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1
 
 ## NOTES
 

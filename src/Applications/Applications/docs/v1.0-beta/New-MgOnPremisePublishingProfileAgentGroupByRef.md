@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgonpremisepublishingprofileagentgroupbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgonpremisepublishingprofileagentgroupbyref
 schema: 2.0.0
 ---
 
-# New-MgOnPremisePublishingProfileAgentGroupByRef
+# New-MgBetaOnPremisePublishingProfileAgentGroupByRef
 
 ## SYNOPSIS
 Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
@@ -14,53 +14,53 @@ Create new navigation property ref to agentGroups for onPremisesPublishingProfil
 
 ### CreateExpanded1 (Default)
 ```
-New-MgOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentId <String>
+New-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentId <String>
  -OnPremisesPublishingProfileId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String> -OnPremisesAgentId <String>
+New-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String> -OnPremisesAgentId <String>
  -OnPremisesPublishingProfileId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentId <String>
+New-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentId <String>
  -OnPremisesPublishingProfileId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateExpanded
 ```
-New-MgOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String> -OnPremisesAgentId <String>
+New-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String> -OnPremisesAgentId <String>
  -OnPremisesPublishingProfileId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, Create1, CreateViaIdentity, CreateViaIdentity1
 Aliases:
 
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentity1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
@@ -229,9 +229,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

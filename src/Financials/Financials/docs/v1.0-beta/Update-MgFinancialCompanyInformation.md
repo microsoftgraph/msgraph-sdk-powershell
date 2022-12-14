@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyinformation
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanyinformation
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyInformation
+# Update-MgBetaFinancialCompanyInformation
 
 ## SYNOPSIS
 Update the navigation property companyInformation in financials
@@ -14,7 +14,7 @@ Update the navigation property companyInformation in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyInformation -CompanyId <String> -CompanyInformationId <String>
+Update-MgBetaFinancialCompanyInformation -CompanyId <String> -CompanyInformationId <String>
  [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPostalAddressType>] [-CurrencyCode <String>]
  [-CurrentFiscalYearStartDate <DateTime>] [-DisplayName <String>] [-Email <String>] [-FaxNumber <String>]
  [-Id <String>] [-Industry <String>] [-LastModifiedDateTime <DateTime>] [-PhoneNumber <String>]
@@ -24,19 +24,19 @@ Update-MgFinancialCompanyInformation -CompanyId <String> -CompanyInformationId <
 
 ### Update
 ```
-Update-MgFinancialCompanyInformation -CompanyId <String> -CompanyInformationId <String>
+Update-MgBetaFinancialCompanyInformation -CompanyId <String> -CompanyInformationId <String>
  -BodyParameter <IMicrosoftGraphCompanyInformation1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyInformation -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyInformation -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphCompanyInformation1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyInformation -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyInformation -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPostalAddressType>] [-CurrencyCode <String>]
  [-CurrentFiscalYearStartDate <DateTime>] [-DisplayName <String>] [-Email <String>] [-FaxNumber <String>]
  [-Id <String>] [-Industry <String>] [-LastModifiedDateTime <DateTime>] [-PhoneNumber <String>]
@@ -71,7 +71,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ companyInformation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompanyInformation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCompanyInformation1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -239,7 +239,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -376,9 +376,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompanyInformation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCompanyInformation1
 
 ## OUTPUTS
 

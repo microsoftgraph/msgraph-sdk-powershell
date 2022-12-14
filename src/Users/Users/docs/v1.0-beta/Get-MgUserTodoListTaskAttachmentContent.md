@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolisttaskattachmentcontent
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusertodolisttaskattachmentcontent
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoListTaskAttachmentContent
+# Get-MgBetaUserTodoListTaskAttachmentContent
 
 ## SYNOPSIS
 Get media content for the navigation property attachments from users
@@ -14,13 +14,13 @@ Get media content for the navigation property attachments from users
 
 ### Get (Default)
 ```
-Get-MgUserTodoListTaskAttachmentContent -AttachmentBaseId <String> -TodoTaskId <String>
+Get-MgBetaUserTodoListTaskAttachmentContent -AttachmentBaseId <String> -TodoTaskId <String>
  -TodoTaskListId <String> -UserId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserTodoListTaskAttachmentContent -InputObject <IUsersIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaUserTodoListTaskAttachmentContent -InputObject <IUsersIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

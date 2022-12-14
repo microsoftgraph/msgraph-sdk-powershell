@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mgusereventattachment
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mgusereventattachment
 schema: 2.0.0
 ---
 
-# New-MgUserEventAttachment
+# New-MgBetaUserEventAttachment
 
 ## SYNOPSIS
 Use this API to add an attachment to an existing event.
@@ -16,26 +16,26 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 
 ### CreateExpanded (Default)
 ```
-New-MgUserEventAttachment -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserEventAttachment -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
  [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserEventAttachment -EventId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment>
+New-MgBetaUserEventAttachment -EventId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserEventAttachment -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphAttachment>
+New-MgBetaUserEventAttachment -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphAttachment>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserEventAttachment -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserEventAttachment -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
  [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,61 +47,61 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserEventAttachment Cmdlet
+### Example 1: Using the New-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
-	"@odata.type" = "#microsoft.graph.fileAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.fileAttachment"
 	Name = "menu.txt"
 	ContentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk="
 }
 # A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserEventAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgUserEventAttachment Cmdlet
+### Example 2: Using the New-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
-	"@odata.type" = "#microsoft.graph.itemAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.itemAttachment"
 	Name = "Holiday event"
 	Item = @{
-		"@odata.type" = "microsoft.graph.event"
+		"@odata.type" = "Microsoft.Graph.Beta.event"
 		Subject = "Discuss gifts for children"
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserEventAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgUserEventAttachment Cmdlet
+### Example 3: Using the New-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
 	Name = "name-value"
 	Item = @{
-		"@odata.type" = "microsoft.graph.message"
+		"@odata.type" = "Microsoft.Graph.Beta.message"
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserEventAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the New-MgUserEventAttachment Cmdlet
+### Example 4: Using the New-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
-	"@odata.type" = "#microsoft.graph.referenceAttachment"
+	"@odata.type" = "#Microsoft.Graph.Beta.referenceAttachment"
 	Name = "Personal pictures"
 	SourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics"
 	ProviderType = "oneDriveConsumer"
@@ -109,10 +109,10 @@ $params = @{
 	IsFolder = "True"
 }
 # A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserEventAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ attachment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -199,7 +199,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -322,13 +322,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

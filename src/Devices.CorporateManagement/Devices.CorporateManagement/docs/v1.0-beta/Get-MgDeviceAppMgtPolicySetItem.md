@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtpolicysetitem
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtpolicysetitem
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtPolicySetItem
+# Get-MgBetaDeviceAppMgtPolicySetItem
 
 ## SYNOPSIS
 Items of the PolicySet with maximum count 100.
@@ -14,20 +14,20 @@ Items of the PolicySet with maximum count 100.
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtPolicySetItem -PolicySetId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceAppMgtPolicySetItem -PolicySetId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtPolicySetItem -PolicySetId <String> -PolicySetItemId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtPolicySetItem -PolicySetId <String> -PolicySetItemId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -104,7 +104,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,17 +240,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetItem
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementPolicySetItem
+### Get-MgBetaDeviceAppManagementPolicySetItem
 
 COMPLEX PARAMETER PROPERTIES
 

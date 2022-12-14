@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmobileapp
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmobileapp
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtMobileApp
+# New-MgBetaDeviceAppMgtMobileApp
 
 ## SYNOPSIS
 Create new navigation property to mobileApps for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to mobileApps for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtMobileApp [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtMobileApp [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphMobileAppAssignment1[]>] [-Categories <IMicrosoftGraphMobileAppCategory[]>]
  [-CreatedDateTime <DateTime>] [-DependentAppCount <Int32>] [-Description <String>] [-Developer <String>]
  [-DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>] [-DisplayName <String>] [-Id <String>]
@@ -29,7 +29,7 @@ New-MgDeviceAppMgtMobileApp [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceAppMgtMobileApp -BodyParameter <IMicrosoftGraphMobileApp1> [-Confirm] [-WhatIf]
+New-MgBetaDeviceAppMgtMobileApp -BodyParameter <IMicrosoftGraphMobileApp1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -60,7 +60,7 @@ The list of group assignments for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -76,7 +76,7 @@ An abstract class containing the base properties for Intune mobile apps.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp1
 Parameter Sets: Create
 Aliases:
 
@@ -92,7 +92,7 @@ The list of categories for this app.
 To construct, please use Get-Help -Online and see NOTES section for CATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppCategory[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -168,7 +168,7 @@ The list of installation states for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -230,7 +230,7 @@ Contains properties for the installation summary of a mobile app.
 To construct, please use Get-Help -Online and see NOTES section for INSTALLSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -276,7 +276,7 @@ Contains properties for a generic mime content.
 To construct, please use Get-Help -Online and see NOTES section for LARGEICON properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMimeContent
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -366,7 +366,7 @@ Accept wildcard characters: False
 Indicates the publishing state of an app.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MobileAppPublishingState
+Type: Microsoft.Graph.Beta.PowerShell.Support.MobileAppPublishingState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -382,7 +382,7 @@ List of relationships for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for RELATIONSHIPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationship[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppRelationship[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -458,7 +458,7 @@ The list of installation states for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for USERSTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAppInstallStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -505,17 +505,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementMobileApp
+### New-MgBetaDeviceAppManagementMobileApp
 
 COMPLEX PARAMETER PROPERTIES
 

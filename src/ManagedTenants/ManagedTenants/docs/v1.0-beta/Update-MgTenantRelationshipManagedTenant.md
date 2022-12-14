@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenant
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenant
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenant
+# Update-MgBetaTenantRelationshipManagedTenant
 
 ## SYNOPSIS
 Update the navigation property tenants in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property tenants in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenant -TenantId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaTenantRelationshipManagedTenant -TenantId <String> [-AdditionalProperties <Hashtable>]
  [-Contract <IMicrosoftGraphManagedTenantsTenantContract>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-TenantId1 <String>]
  [-TenantStatusInformation <IMicrosoftGraphManagedTenantsTenantStatusInformation>] [-PassThru] [-Confirm]
@@ -23,19 +23,19 @@ Update-MgTenantRelationshipManagedTenant -TenantId <String> [-AdditionalProperti
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenant -TenantId <String>
+Update-MgBetaTenantRelationshipManagedTenant -TenantId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsTenant> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenant -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenant -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsTenant> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenant -InputObject <IManagedTenantsIdentity> [-TenantId <String>]
+Update-MgBetaTenantRelationshipManagedTenant -InputObject <IManagedTenantsIdentity> [-TenantId <String>]
  [-AdditionalProperties <Hashtable>] [-Contract <IMicrosoftGraphManagedTenantsTenantContract>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-LastUpdatedDateTime <DateTime>]
  [-TenantStatusInformation <IMicrosoftGraphManagedTenantsTenantStatusInformation>] [-PassThru] [-Confirm]
@@ -69,7 +69,7 @@ tenant
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ tenantContract
 To construct, please use Get-Help -Online and see NOTES section for CONTRACT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantContract
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantContract
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -231,7 +231,7 @@ tenantStatusInformation
 To construct, please use Get-Help -Online and see NOTES section for TENANTSTATUSINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantStatusInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantStatusInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -278,9 +278,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
 
 ## OUTPUTS
 

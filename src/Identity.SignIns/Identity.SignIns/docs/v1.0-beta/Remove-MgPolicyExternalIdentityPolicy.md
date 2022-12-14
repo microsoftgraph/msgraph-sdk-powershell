@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicyexternalidentitypolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicyexternalidentitypolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyExternalIdentityPolicy
+# Remove-MgBetaPolicyExternalIdentityPolicy
 
 ## SYNOPSIS
 Delete navigation property externalIdentitiesPolicy for policies
@@ -13,7 +13,7 @@ Delete navigation property externalIdentitiesPolicy for policies
 ## SYNTAX
 
 ```
-Remove-MgPolicyExternalIdentityPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPolicyExternalIdentityPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

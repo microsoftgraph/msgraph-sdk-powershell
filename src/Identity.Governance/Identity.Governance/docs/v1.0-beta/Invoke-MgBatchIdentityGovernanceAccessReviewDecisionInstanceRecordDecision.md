@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgbatchidentitygovernanceaccessreviewdecisioninstancerecorddecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgbatchidentitygovernanceaccessreviewdecisioninstancerecorddecision
 schema: 2.0.0
 ---
 
-# Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
+# Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
 
 ## SYNOPSIS
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
@@ -14,7 +14,7 @@ Enables reviewers to review all accessReviewInstanceDecisionItem objects in batc
 
 ### BatchExpanded (Default)
 ```
-Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
+Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
  -AccessReviewInstanceDecisionItemId <String> [-AdditionalProperties <Hashtable>] [-Decision <String>]
  [-Justification <String>] [-PrincipalId <String>] [-ResourceId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
 
 ### Batch
 ```
-Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
+Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
  -AccessReviewInstanceDecisionItemId <String>
  -BodyParameter <IPaths1Qw0RdiIdentitygovernanceAccessreviewsDecisionsAccessreviewinstancedecisionitemIdInstanceMicrosoftGraphBatchrecorddecisionsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
 
 ### BatchViaIdentity
 ```
-Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
+Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1Qw0RdiIdentitygovernanceAccessreviewsDecisionsAccessreviewinstancedecisionitemIdInstanceMicrosoftGraphBatchrecorddecisionsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
 
 ### BatchViaIdentityExpanded
 ```
-Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
+Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-Decision <String>]
  [-Justification <String>] [-PrincipalId <String>] [-ResourceId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Qw0RdiIdentitygovernanceAccessreviewsDecisionsAccessreviewinstancedecisionitemIdInstanceMicrosoftGraphBatchrecorddecisionsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Qw0RdiIdentitygovernanceAccessreviewsDecisionsAccessreviewinstancedecisionitemIdInstanceMicrosoftGraphBatchrecorddecisionsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Batch, BatchViaIdentity
 Aliases:
 
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: BatchViaIdentity, BatchViaIdentityExpanded
 Aliases:
 
@@ -224,9 +224,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Qw0RdiIdentitygovernanceAccessreviewsDecisionsAccessreviewinstancedecisionitemIdInstanceMicrosoftGraphBatchrecorddecisionsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Qw0RdiIdentitygovernanceAccessreviewsDecisionsAccessreviewinstancedecisionitemIdInstanceMicrosoftGraphBatchrecorddecisionsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

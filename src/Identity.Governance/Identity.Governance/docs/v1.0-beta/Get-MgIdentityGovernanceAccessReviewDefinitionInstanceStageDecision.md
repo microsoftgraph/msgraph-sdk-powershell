@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernanceaccessreviewdefinitioninstancestagedecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernanceaccessreviewdefinitioninstancestagedecision
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision
+# Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision
 
 ## SYNOPSIS
 Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
@@ -14,7 +14,7 @@ Each user reviewed in an accessReviewStage has a decision item representing if t
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewInstanceId <String>
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> -AccessReviewStageId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessRevie
 
 ### Get
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> -AccessReviewStageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -30,7 +30,7 @@ Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -39,31 +39,31 @@ Each user reviewed in an accessReviewStage has a decision item representing if t
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
+### Example 3: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -194,7 +194,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -300,11 +300,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewInstanceDecisionItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewInstanceDecisionItem1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mguserdrive
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mguserdrive
 schema: 2.0.0
 ---
 
-# Get-MgUserDrive
+# Get-MgBetaUserDrive
 
 ## SYNOPSIS
 A collection of drives available for this user.
@@ -15,20 +15,20 @@ Read-only.
 
 ### List1 (Default)
 ```
-Get-MgUserDrive -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserDrive -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get3
 ```
-Get-MgUserDrive -DriveId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserDrive -DriveId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgUserDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,23 +38,23 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserDrive Cmdlet
+### Example 1: Using the Get-MgBetaUserDrive Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
+Import-Module Microsoft.Graph.Beta.Files
 # A UPN can also be used as -UserId.
-Get-MgUserDrive -UserId $userId
+Get-MgBetaUserDrive -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserDrive Cmdlet.
+This example shows how to use the Get-MgBetaUserDrive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserDrive Cmdlet
+### Example 2: Using the Get-MgBetaUserDrive Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Get-MgUserDrive -UserId $userId
+Import-Module Microsoft.Graph.Beta.Files
+Get-MgBetaUserDrive -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserDrive Cmdlet.
+This example shows how to use the Get-MgBetaUserDrive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity3
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDrive1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDrive1
 
 ## NOTES
 

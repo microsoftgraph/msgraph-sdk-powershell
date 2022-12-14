@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyadminconsentrequestpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyadminconsentrequestpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyAdminConsentRequestPolicy
+# Update-MgBetaPolicyAdminConsentRequestPolicy
 
 ## SYNOPSIS
 Update the properties of an adminConsentRequestPolicy object.
@@ -14,7 +14,7 @@ Update the properties of an adminConsentRequestPolicy object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyAdminConsentRequestPolicy [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsEnabled]
+Update-MgBetaPolicyAdminConsentRequestPolicy [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsEnabled]
  [-NotifyReviewers] [-RemindersEnabled] [-RequestDurationInDays <Int32>]
  [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>] [-Version <Int32>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgPolicyAdminConsentRequestPolicy [-AdditionalProperties <Hashtable>] [-I
 
 ### Update
 ```
-Update-MgPolicyAdminConsentRequestPolicy -BodyParameter <IMicrosoftGraphAdminConsentRequestPolicy1>
+Update-MgBetaPolicyAdminConsentRequestPolicy -BodyParameter <IMicrosoftGraphAdminConsentRequestPolicy1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ adminConsentRequestPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
 Parameter Sets: Update
 Aliases:
 
@@ -163,7 +163,7 @@ Required.
 To construct, please use Get-Help -Online and see NOTES section for REVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -227,7 +227,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
 
 ## OUTPUTS
 

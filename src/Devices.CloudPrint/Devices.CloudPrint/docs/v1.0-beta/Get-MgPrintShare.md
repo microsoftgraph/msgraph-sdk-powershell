@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintshare
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprintshare
 schema: 2.0.0
 ---
 
-# Get-MgPrintShare
+# Get-MgBetaPrintShare
 
 ## SYNOPSIS
 The list of printer shares registered in the tenant.
@@ -14,20 +14,20 @@ The list of printer shares registered in the tenant.
 
 ### List1 (Default)
 ```
-Get-MgPrintShare [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaPrintShare [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgPrintShare -PrinterShareId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPrintShare -PrinterShareId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPrintShare -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPrintShare -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The list of printer shares registered in the tenant.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintShare Cmdlet
+### Example 1: Using the Get-MgBetaPrintShare Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintShare -PrinterShareId $printerShareId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintShare -PrinterShareId $printerShareId
 ```
 
-This example shows how to use the Get-MgPrintShare Cmdlet.
+This example shows how to use the Get-MgBetaPrintShare Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPrintShare Cmdlet
+### Example 2: Using the Get-MgBetaPrintShare Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintShare
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintShare
 ```
 
-This example shows how to use the Get-MgPrintShare Cmdlet.
+This example shows how to use the Get-MgBetaPrintShare Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterShare
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrinterShare
 
 ## NOTES
 

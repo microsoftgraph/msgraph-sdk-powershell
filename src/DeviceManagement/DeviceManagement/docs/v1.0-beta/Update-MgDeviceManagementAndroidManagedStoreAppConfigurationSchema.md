@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementandroidmanagedstoreappconfigurationschema
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementandroidmanagedstoreappconfigurationschema
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema
+# Update-MgBetaDeviceManagementAndroidManagedStoreAppConfigurationSchema
 
 ## SYNOPSIS
 Update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property androidManagedStoreAppConfigurationSchemas in dev
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema
+Update-MgBetaDeviceManagementAndroidManagedStoreAppConfigurationSchema
  -AndroidManagedStoreAppConfigurationSchemaId <String> [-AdditionalProperties <Hashtable>]
  [-ExampleJsonInputFile <String>] [-Id <String>]
  [-NestedSchemaItems <IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]>]
@@ -24,7 +24,7 @@ Update-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema
 
 ### Update
 ```
-Update-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema
+Update-MgBetaDeviceManagementAndroidManagedStoreAppConfigurationSchema
  -AndroidManagedStoreAppConfigurationSchemaId <String>
  -BodyParameter <IMicrosoftGraphAndroidManagedStoreAppConfigurationSchema> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -32,14 +32,14 @@ Update-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementAndroidManagedStoreAppConfigurationSchema -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphAndroidManagedStoreAppConfigurationSchema> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementAndroidManagedStoreAppConfigurationSchema -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ExampleJsonInputFile <String>] [-Id <String>]
  [-NestedSchemaItems <IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]>]
  [-SchemaItems <IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]>] [-PassThru] [-Confirm]
@@ -88,7 +88,7 @@ Schema describing an Android application's custom configurations.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAppConfigurationSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAppConfigurationSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -135,7 +135,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -152,7 +152,7 @@ It contains a flat list of all configuration.
 To construct, please use Get-Help -Online and see NOTES section for NESTEDSCHEMAITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -184,7 +184,7 @@ It only contains the root-level configuration.
 To construct, please use Get-Help -Online and see NOTES section for SCHEMAITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -231,9 +231,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAppConfigurationSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedStoreAppConfigurationSchema
 
 ## OUTPUTS
 

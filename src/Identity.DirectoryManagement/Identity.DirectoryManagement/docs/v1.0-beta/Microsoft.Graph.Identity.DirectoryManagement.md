@@ -1,262 +1,262 @@
 ---
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
 Module Guid: 7f47b15e-5961-4e82-b64d-89b1994e12a7
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Identity.DirectoryManagement Module
+# Microsoft.Graph.Beta.Identity.DirectoryManagement Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Identity.DirectoryManagement Cmdlets
-### [Complete-MgDirectoryImpactedResource](Complete-MgDirectoryImpactedResource.md)
+## Microsoft.Graph.Beta.Identity.DirectoryManagement Cmdlets
+### [Complete-MgBetaDirectoryImpactedResource](Complete-MgBetaDirectoryImpactedResource.md)
 Invoke action complete
 
-### [Complete-MgDirectoryRecommendation](Complete-MgDirectoryRecommendation.md)
+### [Complete-MgBetaDirectoryRecommendation](Complete-MgBetaDirectoryRecommendation.md)
 Invoke action complete
 
-### [Complete-MgDirectoryRecommendationImpactedResource](Complete-MgDirectoryRecommendationImpactedResource.md)
+### [Complete-MgBetaDirectoryRecommendationImpactedResource](Complete-MgBetaDirectoryRecommendationImpactedResource.md)
 Invoke action complete
 
-### [Confirm-MgAdministrativeUnitMemberGroup](Confirm-MgAdministrativeUnitMemberGroup.md)
+### [Confirm-MgBetaAdministrativeUnitMemberGroup](Confirm-MgBetaAdministrativeUnitMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgAdministrativeUnitMemberObject](Confirm-MgAdministrativeUnitMemberObject.md)
+### [Confirm-MgBetaAdministrativeUnitMemberObject](Confirm-MgBetaAdministrativeUnitMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgContactMemberGroup](Confirm-MgContactMemberGroup.md)
+### [Confirm-MgBetaContactMemberGroup](Confirm-MgBetaContactMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgContactMemberObject](Confirm-MgContactMemberObject.md)
+### [Confirm-MgBetaContactMemberObject](Confirm-MgBetaContactMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgContractMemberGroup](Confirm-MgContractMemberGroup.md)
+### [Confirm-MgBetaContractMemberGroup](Confirm-MgBetaContractMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgContractMemberObject](Confirm-MgContractMemberObject.md)
+### [Confirm-MgBetaContractMemberObject](Confirm-MgBetaContractMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgDeviceMemberGroup](Confirm-MgDeviceMemberGroup.md)
+### [Confirm-MgBetaDeviceMemberGroup](Confirm-MgBetaDeviceMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgDeviceMemberObject](Confirm-MgDeviceMemberObject.md)
+### [Confirm-MgBetaDeviceMemberObject](Confirm-MgBetaDeviceMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgDirectoryAdministrativeUnitMemberGroup](Confirm-MgDirectoryAdministrativeUnitMemberGroup.md)
+### [Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup](Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgDirectoryAdministrativeUnitMemberObject](Confirm-MgDirectoryAdministrativeUnitMemberObject.md)
+### [Confirm-MgBetaDirectoryAdministrativeUnitMemberObject](Confirm-MgBetaDirectoryAdministrativeUnitMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgDirectoryDeletedItemMemberGroup](Confirm-MgDirectoryDeletedItemMemberGroup.md)
+### [Confirm-MgBetaDirectoryDeletedItemMemberGroup](Confirm-MgBetaDirectoryDeletedItemMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgDirectoryDeletedItemMemberObject](Confirm-MgDirectoryDeletedItemMemberObject.md)
+### [Confirm-MgBetaDirectoryDeletedItemMemberObject](Confirm-MgBetaDirectoryDeletedItemMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgDirectoryRoleMemberGroup](Confirm-MgDirectoryRoleMemberGroup.md)
+### [Confirm-MgBetaDirectoryRoleMemberGroup](Confirm-MgBetaDirectoryRoleMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgDirectoryRoleMemberObject](Confirm-MgDirectoryRoleMemberObject.md)
+### [Confirm-MgBetaDirectoryRoleMemberObject](Confirm-MgBetaDirectoryRoleMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgDirectoryRoleTemplateMemberGroup](Confirm-MgDirectoryRoleTemplateMemberGroup.md)
+### [Confirm-MgBetaDirectoryRoleTemplateMemberGroup](Confirm-MgBetaDirectoryRoleTemplateMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgDirectoryRoleTemplateMemberObject](Confirm-MgDirectoryRoleTemplateMemberObject.md)
+### [Confirm-MgBetaDirectoryRoleTemplateMemberObject](Confirm-MgBetaDirectoryRoleTemplateMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgDirectorySettingTemplateMemberGroup](Confirm-MgDirectorySettingTemplateMemberGroup.md)
+### [Confirm-MgBetaDirectorySettingTemplateMemberGroup](Confirm-MgBetaDirectorySettingTemplateMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgDirectorySettingTemplateMemberObject](Confirm-MgDirectorySettingTemplateMemberObject.md)
+### [Confirm-MgBetaDirectorySettingTemplateMemberObject](Confirm-MgBetaDirectorySettingTemplateMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Confirm-MgDomain](Confirm-MgDomain.md)
+### [Confirm-MgBetaDomain](Confirm-MgBetaDomain.md)
 Validates the ownership of the domain.
 
-### [Confirm-MgOrganizationMemberGroup](Confirm-MgOrganizationMemberGroup.md)
+### [Confirm-MgBetaOrganizationMemberGroup](Confirm-MgBetaOrganizationMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
-### [Confirm-MgOrganizationMemberObject](Confirm-MgOrganizationMemberObject.md)
+### [Confirm-MgBetaOrganizationMemberObject](Confirm-MgBetaOrganizationMemberObject.md)
 Invoke action checkMemberObjects
 
-### [Export-MgDirectoryInboundSharedUserProfilePersonalData](Export-MgDirectoryInboundSharedUserProfilePersonalData.md)
+### [Export-MgBetaDirectoryInboundSharedUserProfilePersonalData](Export-MgBetaDirectoryInboundSharedUserProfilePersonalData.md)
 Invoke action exportPersonalData
 
-### [Get-MgAdministrativeUnit](Get-MgAdministrativeUnit.md)
+### [Get-MgBetaAdministrativeUnit](Get-MgBetaAdministrativeUnit.md)
 Retrieve the properties and relationships of an administrativeUnit object.
 Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
 
-### [Get-MgAdministrativeUnitById](Get-MgAdministrativeUnitById.md)
+### [Get-MgBetaAdministrativeUnitById](Get-MgBetaAdministrativeUnitById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgAdministrativeUnitDelta](Get-MgAdministrativeUnitDelta.md)
+### [Get-MgBetaAdministrativeUnitDelta](Get-MgBetaAdministrativeUnitDelta.md)
 Invoke function delta
 
-### [Get-MgAdministrativeUnitExtension](Get-MgAdministrativeUnitExtension.md)
+### [Get-MgBetaAdministrativeUnitExtension](Get-MgBetaAdministrativeUnitExtension.md)
 The collection of open extensions defined for this administrative unit.
 Nullable.
 
-### [Get-MgAdministrativeUnitMember](Get-MgAdministrativeUnitMember.md)
+### [Get-MgBetaAdministrativeUnitMember](Get-MgBetaAdministrativeUnitMember.md)
 Users and groups that are members of this administrative unit.
 Supports $expand.
 
-### [Get-MgAdministrativeUnitMemberByRef](Get-MgAdministrativeUnitMemberByRef.md)
+### [Get-MgBetaAdministrativeUnitMemberByRef](Get-MgBetaAdministrativeUnitMemberByRef.md)
 Users and groups that are members of this administrative unit.
 Supports $expand.
 
-### [Get-MgAdministrativeUnitMemberGroup](Get-MgAdministrativeUnitMemberGroup.md)
+### [Get-MgBetaAdministrativeUnitMemberGroup](Get-MgBetaAdministrativeUnitMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgAdministrativeUnitMemberObject](Get-MgAdministrativeUnitMemberObject.md)
+### [Get-MgBetaAdministrativeUnitMemberObject](Get-MgBetaAdministrativeUnitMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgAdministrativeUnitScopedRoleMember](Get-MgAdministrativeUnitScopedRoleMember.md)
+### [Get-MgBetaAdministrativeUnitScopedRoleMember](Get-MgBetaAdministrativeUnitScopedRoleMember.md)
 Scoped-role members of this administrative unit.
 
-### [Get-MgAdministrativeUnitUserOwnedObject](Get-MgAdministrativeUnitUserOwnedObject.md)
+### [Get-MgBetaAdministrativeUnitUserOwnedObject](Get-MgBetaAdministrativeUnitUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgContact](Get-MgContact.md)
+### [Get-MgBetaContact](Get-MgBetaContact.md)
 Get the properties and relationships of an organizational contact object.
 
-### [Get-MgContactById](Get-MgContactById.md)
+### [Get-MgBetaContactById](Get-MgBetaContactById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgContactDelta](Get-MgContactDelta.md)
+### [Get-MgBetaContactDelta](Get-MgBetaContactDelta.md)
 Invoke function delta
 
-### [Get-MgContactDirectReport](Get-MgContactDirectReport.md)
+### [Get-MgBetaContactDirectReport](Get-MgBetaContactDirectReport.md)
 The contact's direct reports.
 (The users and contacts that have their manager property set to this contact.) Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgContactManager](Get-MgContactManager.md)
+### [Get-MgBetaContactManager](Get-MgBetaContactManager.md)
 Get the contact's manager
 
-### [Get-MgContactMemberGroup](Get-MgContactMemberGroup.md)
+### [Get-MgBetaContactMemberGroup](Get-MgBetaContactMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
+### [Get-MgBetaContactMemberObject](Get-MgBetaContactMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgContactMemberOf](Get-MgContactMemberOf.md)
+### [Get-MgBetaContactMemberOf](Get-MgBetaContactMemberOf.md)
 Groups that this contact is a member of.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgContactTransitiveMemberOf](Get-MgContactTransitiveMemberOf.md)
+### [Get-MgBetaContactTransitiveMemberOf](Get-MgBetaContactTransitiveMemberOf.md)
 Get transitiveMemberOf from contacts
 
-### [Get-MgContactTransitiveReport](Get-MgContactTransitiveReport.md)
+### [Get-MgBetaContactTransitiveReport](Get-MgBetaContactTransitiveReport.md)
 The transitive reports for a contact.
 Read-only.
 
-### [Get-MgContactUserOwnedObject](Get-MgContactUserOwnedObject.md)
+### [Get-MgBetaContactUserOwnedObject](Get-MgBetaContactUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgContract](Get-MgContract.md)
+### [Get-MgBetaContract](Get-MgBetaContract.md)
 Retrieve the properties and relationships of contract object.
 
-### [Get-MgContractById](Get-MgContractById.md)
+### [Get-MgBetaContractById](Get-MgBetaContractById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgContractMemberGroup](Get-MgContractMemberGroup.md)
+### [Get-MgBetaContractMemberGroup](Get-MgBetaContractMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgContractMemberObject](Get-MgContractMemberObject.md)
+### [Get-MgBetaContractMemberObject](Get-MgBetaContractMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgContractUserOwnedObject](Get-MgContractUserOwnedObject.md)
+### [Get-MgBetaContractUserOwnedObject](Get-MgBetaContractUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgDevice](Get-MgDevice.md)
+### [Get-MgBetaDevice](Get-MgBetaDevice.md)
 Get the properties and relationships of a device object.
 Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
 
-### [Get-MgDeviceById](Get-MgDeviceById.md)
+### [Get-MgBetaDeviceById](Get-MgBetaDeviceById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgDeviceCommand](Get-MgDeviceCommand.md)
+### [Get-MgBetaDeviceCommand](Get-MgBetaDeviceCommand.md)
 Set of commands sent to this device.
 
-### [Get-MgDeviceCommandResponsepayload](Get-MgDeviceCommandResponsepayload.md)
+### [Get-MgBetaDeviceCommandResponsepayload](Get-MgBetaDeviceCommandResponsepayload.md)
 Get responsepayload from devices
 
-### [Get-MgDeviceDelta](Get-MgDeviceDelta.md)
+### [Get-MgBetaDeviceDelta](Get-MgBetaDeviceDelta.md)
 Invoke function delta
 
-### [Get-MgDeviceExtension](Get-MgDeviceExtension.md)
+### [Get-MgBetaDeviceExtension](Get-MgBetaDeviceExtension.md)
 The collection of open extensions defined for the device.
 Read-only.
 Nullable.
 
-### [Get-MgDeviceMemberGroup](Get-MgDeviceMemberGroup.md)
+### [Get-MgBetaDeviceMemberGroup](Get-MgBetaDeviceMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgDeviceMemberObject](Get-MgDeviceMemberObject.md)
+### [Get-MgBetaDeviceMemberObject](Get-MgBetaDeviceMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgDeviceMemberOf](Get-MgDeviceMemberOf.md)
+### [Get-MgBetaDeviceMemberOf](Get-MgBetaDeviceMemberOf.md)
 Groups and administrative units that this device is a member of.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgDeviceRegisteredOwner](Get-MgDeviceRegisteredOwner.md)
+### [Get-MgBetaDeviceRegisteredOwner](Get-MgBetaDeviceRegisteredOwner.md)
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
 Currently, there can be only one owner.
@@ -264,7 +264,7 @@ Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgDeviceRegisteredOwnerByRef](Get-MgDeviceRegisteredOwnerByRef.md)
+### [Get-MgBetaDeviceRegisteredOwnerByRef](Get-MgBetaDeviceRegisteredOwnerByRef.md)
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
 Currently, there can be only one owner.
@@ -272,531 +272,531 @@ Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgDeviceRegisteredUser](Get-MgDeviceRegisteredUser.md)
+### [Get-MgBetaDeviceRegisteredUser](Get-MgBetaDeviceRegisteredUser.md)
 Collection of registered users of the device.
 For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgDeviceTransitiveMemberOf](Get-MgDeviceTransitiveMemberOf.md)
+### [Get-MgBetaDeviceTransitiveMemberOf](Get-MgBetaDeviceTransitiveMemberOf.md)
 Groups and administrative units that this device is a member of.
 This operation is transitive.
 Supports $expand.
 
-### [Get-MgDeviceUsageRights](Get-MgDeviceUsageRights.md)
+### [Get-MgBetaDeviceUsageRights](Get-MgBetaDeviceUsageRights.md)
 Represents the usage rights a device has been granted.
 
-### [Get-MgDeviceUserOwnedObject](Get-MgDeviceUserOwnedObject.md)
+### [Get-MgBetaDeviceUserOwnedObject](Get-MgBetaDeviceUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgDirectory](Get-MgDirectory.md)
+### [Get-MgBetaDirectory](Get-MgBetaDirectory.md)
 Get directory
 
-### [Get-MgDirectoryAdministrativeUnit](Get-MgDirectoryAdministrativeUnit.md)
+### [Get-MgBetaDirectoryAdministrativeUnit](Get-MgBetaDirectoryAdministrativeUnit.md)
 Conceptual container for user and group directory objects.
 
-### [Get-MgDirectoryAdministrativeUnitById](Get-MgDirectoryAdministrativeUnitById.md)
+### [Get-MgBetaDirectoryAdministrativeUnitById](Get-MgBetaDirectoryAdministrativeUnitById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgDirectoryAdministrativeUnitDelta](Get-MgDirectoryAdministrativeUnitDelta.md)
+### [Get-MgBetaDirectoryAdministrativeUnitDelta](Get-MgBetaDirectoryAdministrativeUnitDelta.md)
 Invoke function delta
 
-### [Get-MgDirectoryAdministrativeUnitExtension](Get-MgDirectoryAdministrativeUnitExtension.md)
+### [Get-MgBetaDirectoryAdministrativeUnitExtension](Get-MgBetaDirectoryAdministrativeUnitExtension.md)
 The collection of open extensions defined for this administrative unit.
 Nullable.
 
-### [Get-MgDirectoryAdministrativeUnitMember](Get-MgDirectoryAdministrativeUnitMember.md)
+### [Get-MgBetaDirectoryAdministrativeUnitMember](Get-MgBetaDirectoryAdministrativeUnitMember.md)
 Users and groups that are members of this administrative unit.
 Supports $expand.
 
-### [Get-MgDirectoryAdministrativeUnitMemberByRef](Get-MgDirectoryAdministrativeUnitMemberByRef.md)
+### [Get-MgBetaDirectoryAdministrativeUnitMemberByRef](Get-MgBetaDirectoryAdministrativeUnitMemberByRef.md)
 Users and groups that are members of this administrative unit.
 Supports $expand.
 
-### [Get-MgDirectoryAdministrativeUnitMemberGroup](Get-MgDirectoryAdministrativeUnitMemberGroup.md)
+### [Get-MgBetaDirectoryAdministrativeUnitMemberGroup](Get-MgBetaDirectoryAdministrativeUnitMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgDirectoryAdministrativeUnitMemberObject](Get-MgDirectoryAdministrativeUnitMemberObject.md)
+### [Get-MgBetaDirectoryAdministrativeUnitMemberObject](Get-MgBetaDirectoryAdministrativeUnitMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgDirectoryAdministrativeUnitScopedRoleMember](Get-MgDirectoryAdministrativeUnitScopedRoleMember.md)
+### [Get-MgBetaDirectoryAdministrativeUnitScopedRoleMember](Get-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
 Scoped-role members of this administrative unit.
 
-### [Get-MgDirectoryAdministrativeUnitUserOwnedObject](Get-MgDirectoryAdministrativeUnitUserOwnedObject.md)
+### [Get-MgBetaDirectoryAdministrativeUnitUserOwnedObject](Get-MgBetaDirectoryAdministrativeUnitUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgDirectoryAttributeSet](Get-MgDirectoryAttributeSet.md)
+### [Get-MgBetaDirectoryAttributeSet](Get-MgBetaDirectoryAttributeSet.md)
 Group of related custom security attribute definitions.
 
-### [Get-MgDirectoryCustomSecurityAttributeDefinition](Get-MgDirectoryCustomSecurityAttributeDefinition.md)
+### [Get-MgBetaDirectoryCustomSecurityAttributeDefinition](Get-MgBetaDirectoryCustomSecurityAttributeDefinition.md)
 Schema of a custom security attributes (key-value pairs).
 
-### [Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
+### [Get-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Get-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query.
 For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 
-### [Get-MgDirectoryDeletedItem](Get-MgDirectoryDeletedItem.md)
+### [Get-MgBetaDirectoryDeletedItem](Get-MgBetaDirectoryDeletedItem.md)
 Get deletedItems from directory
 
-### [Get-MgDirectoryDeletedItemById](Get-MgDirectoryDeletedItemById.md)
+### [Get-MgBetaDirectoryDeletedItemById](Get-MgBetaDirectoryDeletedItemById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgDirectoryDeletedItemMemberGroup](Get-MgDirectoryDeletedItemMemberGroup.md)
+### [Get-MgBetaDirectoryDeletedItemMemberGroup](Get-MgBetaDirectoryDeletedItemMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgDirectoryDeletedItemMemberObject](Get-MgDirectoryDeletedItemMemberObject.md)
+### [Get-MgBetaDirectoryDeletedItemMemberObject](Get-MgBetaDirectoryDeletedItemMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgDirectoryDeletedItemUserOwnedObject](Get-MgDirectoryDeletedItemUserOwnedObject.md)
+### [Get-MgBetaDirectoryDeletedItemUserOwnedObject](Get-MgBetaDirectoryDeletedItemUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgDirectoryFeatureRolloutPolicy](Get-MgDirectoryFeatureRolloutPolicy.md)
+### [Get-MgBetaDirectoryFeatureRolloutPolicy](Get-MgBetaDirectoryFeatureRolloutPolicy.md)
 Get featureRolloutPolicies from directory
 
-### [Get-MgDirectoryFeatureRolloutPolicyApplyTo](Get-MgDirectoryFeatureRolloutPolicyApplyTo.md)
+### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyTo](Get-MgBetaDirectoryFeatureRolloutPolicyApplyTo.md)
 Nullable.
 Specifies a list of directoryObjects that feature is enabled for.
 
-### [Get-MgDirectoryFeatureRolloutPolicyApplyToById](Get-MgDirectoryFeatureRolloutPolicyApplyToById.md)
+### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyToById](Get-MgBetaDirectoryFeatureRolloutPolicyApplyToById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgDirectoryFeatureRolloutPolicyApplyToByRef](Get-MgDirectoryFeatureRolloutPolicyApplyToByRef.md)
+### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef](Get-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef.md)
 Nullable.
 Specifies a list of directoryObjects that feature is enabled for.
 
-### [Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject](Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject.md)
+### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject](Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgDirectoryFederationConfiguration](Get-MgDirectoryFederationConfiguration.md)
+### [Get-MgBetaDirectoryFederationConfiguration](Get-MgBetaDirectoryFederationConfiguration.md)
 Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 
-### [Get-MgDirectoryImpactedResource](Get-MgDirectoryImpactedResource.md)
+### [Get-MgBetaDirectoryImpactedResource](Get-MgBetaDirectoryImpactedResource.md)
 Get impactedResources from directory
 
-### [Get-MgDirectoryInboundSharedUserProfile](Get-MgDirectoryInboundSharedUserProfile.md)
+### [Get-MgBetaDirectoryInboundSharedUserProfile](Get-MgBetaDirectoryInboundSharedUserProfile.md)
 Get inboundSharedUserProfiles from directory
 
-### [Get-MgDirectoryOnPremisSynchronization](Get-MgDirectoryOnPremisSynchronization.md)
+### [Get-MgBetaDirectoryOnPremisSynchronization](Get-MgBetaDirectoryOnPremisSynchronization.md)
 Get onPremisesSynchronization from directory
 
-### [Get-MgDirectoryOutboundSharedUserProfile](Get-MgDirectoryOutboundSharedUserProfile.md)
+### [Get-MgBetaDirectoryOutboundSharedUserProfile](Get-MgBetaDirectoryOutboundSharedUserProfile.md)
 Get outboundSharedUserProfiles from directory
 
-### [Get-MgDirectoryOutboundSharedUserProfileTenant](Get-MgDirectoryOutboundSharedUserProfileTenant.md)
+### [Get-MgBetaDirectoryOutboundSharedUserProfileTenant](Get-MgBetaDirectoryOutboundSharedUserProfileTenant.md)
 Get tenants from directory
 
-### [Get-MgDirectoryRecommendation](Get-MgDirectoryRecommendation.md)
+### [Get-MgBetaDirectoryRecommendation](Get-MgBetaDirectoryRecommendation.md)
 Get recommendations from directory
 
-### [Get-MgDirectoryRecommendationImpactedResource](Get-MgDirectoryRecommendationImpactedResource.md)
+### [Get-MgBetaDirectoryRecommendationImpactedResource](Get-MgBetaDirectoryRecommendationImpactedResource.md)
 Get impactedResources from directory
 
-### [Get-MgDirectoryRole](Get-MgDirectoryRole.md)
+### [Get-MgBetaDirectoryRole](Get-MgBetaDirectoryRole.md)
 Retrieve the properties of a directoryRole object.
 You can use both the object ID and template ID of the **directoryRole** with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
 For details, see Role template IDs.
 
-### [Get-MgDirectoryRoleById](Get-MgDirectoryRoleById.md)
+### [Get-MgBetaDirectoryRoleById](Get-MgBetaDirectoryRoleById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgDirectoryRoleDelta](Get-MgDirectoryRoleDelta.md)
+### [Get-MgBetaDirectoryRoleDelta](Get-MgBetaDirectoryRoleDelta.md)
 Invoke function delta
 
-### [Get-MgDirectoryRoleMember](Get-MgDirectoryRoleMember.md)
+### [Get-MgBetaDirectoryRoleMember](Get-MgBetaDirectoryRoleMember.md)
 Users that are members of this directory role.
 HTTP Methods: GET, POST, DELETE.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgDirectoryRoleMemberByRef](Get-MgDirectoryRoleMemberByRef.md)
+### [Get-MgBetaDirectoryRoleMemberByRef](Get-MgBetaDirectoryRoleMemberByRef.md)
 Users that are members of this directory role.
 HTTP Methods: GET, POST, DELETE.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgDirectoryRoleMemberGroup](Get-MgDirectoryRoleMemberGroup.md)
+### [Get-MgBetaDirectoryRoleMemberGroup](Get-MgBetaDirectoryRoleMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgDirectoryRoleMemberObject](Get-MgDirectoryRoleMemberObject.md)
+### [Get-MgBetaDirectoryRoleMemberObject](Get-MgBetaDirectoryRoleMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgDirectoryRoleScopedMember](Get-MgDirectoryRoleScopedMember.md)
+### [Get-MgBetaDirectoryRoleScopedMember](Get-MgBetaDirectoryRoleScopedMember.md)
 Members of this directory role that are scoped to administrative units.
 Read-only.
 Nullable.
 
-### [Get-MgDirectoryRoleTemplate](Get-MgDirectoryRoleTemplate.md)
+### [Get-MgBetaDirectoryRoleTemplate](Get-MgBetaDirectoryRoleTemplate.md)
 Retrieve the properties and relationships of a directoryroletemplate object.
 
-### [Get-MgDirectoryRoleTemplateById](Get-MgDirectoryRoleTemplateById.md)
+### [Get-MgBetaDirectoryRoleTemplateById](Get-MgBetaDirectoryRoleTemplateById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgDirectoryRoleTemplateMemberGroup](Get-MgDirectoryRoleTemplateMemberGroup.md)
+### [Get-MgBetaDirectoryRoleTemplateMemberGroup](Get-MgBetaDirectoryRoleTemplateMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgDirectoryRoleTemplateMemberObject](Get-MgDirectoryRoleTemplateMemberObject.md)
+### [Get-MgBetaDirectoryRoleTemplateMemberObject](Get-MgBetaDirectoryRoleTemplateMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgDirectoryRoleTemplateUserOwnedObject](Get-MgDirectoryRoleTemplateUserOwnedObject.md)
+### [Get-MgBetaDirectoryRoleTemplateUserOwnedObject](Get-MgBetaDirectoryRoleTemplateUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgDirectoryRoleUserOwnedObject](Get-MgDirectoryRoleUserOwnedObject.md)
+### [Get-MgBetaDirectoryRoleUserOwnedObject](Get-MgBetaDirectoryRoleUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgDirectorySetting](Get-MgDirectorySetting.md)
+### [Get-MgBetaDirectorySetting](Get-MgBetaDirectorySetting.md)
 Retrieve the properties of a specific directory setting object.
 
-### [Get-MgDirectorySettingTemplate](Get-MgDirectorySettingTemplate.md)
+### [Get-MgBetaDirectorySettingTemplate](Get-MgBetaDirectorySettingTemplate.md)
 A directory setting template represents a template of settings from which settings may be created within a tenant.
 This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
 
-### [Get-MgDirectorySettingTemplateById](Get-MgDirectorySettingTemplateById.md)
+### [Get-MgBetaDirectorySettingTemplateById](Get-MgBetaDirectorySettingTemplateById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgDirectorySettingTemplateMemberGroup](Get-MgDirectorySettingTemplateMemberGroup.md)
+### [Get-MgBetaDirectorySettingTemplateMemberGroup](Get-MgBetaDirectorySettingTemplateMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgDirectorySettingTemplateMemberObject](Get-MgDirectorySettingTemplateMemberObject.md)
+### [Get-MgBetaDirectorySettingTemplateMemberObject](Get-MgBetaDirectorySettingTemplateMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgDirectorySettingTemplateUserOwnedObject](Get-MgDirectorySettingTemplateUserOwnedObject.md)
+### [Get-MgBetaDirectorySettingTemplateUserOwnedObject](Get-MgBetaDirectorySettingTemplateUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgDirectorySharedEmailDomain](Get-MgDirectorySharedEmailDomain.md)
+### [Get-MgBetaDirectorySharedEmailDomain](Get-MgBetaDirectorySharedEmailDomain.md)
 Get sharedEmailDomains from directory
 
-### [Get-MgDomain](Get-MgDomain.md)
+### [Get-MgBetaDomain](Get-MgBetaDomain.md)
 Retrieve the properties and relationships of domain object.
 
-### [Get-MgDomainFederationConfiguration](Get-MgDomainFederationConfiguration.md)
+### [Get-MgBetaDomainFederationConfiguration](Get-MgBetaDomainFederationConfiguration.md)
 Domain settings configured by customer when federated with Azure AD.
 Supports $expand.
 
-### [Get-MgDomainNameReference](Get-MgDomainNameReference.md)
+### [Get-MgBetaDomainNameReference](Get-MgBetaDomainNameReference.md)
 The objects such as users and groups that reference the domain ID.
 Read-only, Nullable.
 Supports $expand and $filter by the OData type of objects returned.
-For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+For example /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.user and /domains/{domainId}/domainNameReferences/Microsoft.Graph.Beta.group.
 
-### [Get-MgDomainServiceConfigurationRecord](Get-MgDomainServiceConfigurationRecord.md)
+### [Get-MgBetaDomainServiceConfigurationRecord](Get-MgBetaDomainServiceConfigurationRecord.md)
 DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
 Read-only, Nullable.
 Supports $expand.
 
-### [Get-MgDomainSharedEmailDomainInvitation](Get-MgDomainSharedEmailDomainInvitation.md)
+### [Get-MgBetaDomainSharedEmailDomainInvitation](Get-MgBetaDomainSharedEmailDomainInvitation.md)
 Get sharedEmailDomainInvitations from domains
 
-### [Get-MgDomainVerificationDnsRecord](Get-MgDomainVerificationDnsRecord.md)
+### [Get-MgBetaDomainVerificationDnsRecord](Get-MgBetaDomainVerificationDnsRecord.md)
 DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
 Read-only, Nullable.
 Supports $expand.
 
-### [Get-MgOrganization](Get-MgOrganization.md)
+### [Get-MgBetaOrganization](Get-MgBetaOrganization.md)
 Get the properties and relationships of the currently authenticated organization.
 Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.
 
-### [Get-MgOrganizationBranding](Get-MgOrganizationBranding.md)
+### [Get-MgBetaOrganizationBranding](Get-MgBetaOrganizationBranding.md)
 Retrieve the default organizational branding object, if the **Accept-Language** header is set to `0` or `default`.
 If no default organizational branding object exists, this method returns a `404 Not Found` error.
 If the **Accept-Language** header is set to an existing locale identified by the value of its **id**, this method retrieves the branding for the specified locale.
 This method retrieves only non-Stream properties, for example, **usernameHintText** and **signInPageText**.
 To retrieve Stream types of the default branding, for example, **bannerLogo** and **backgroundImage**, use the GET organizationalBrandingLocalization method.
 
-### [Get-MgOrganizationBrandingBackgroundImage](Get-MgOrganizationBrandingBackgroundImage.md)
+### [Get-MgBetaOrganizationBrandingBackgroundImage](Get-MgBetaOrganizationBrandingBackgroundImage.md)
 Image that appears as the background of the sign-in page.
 The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels.
 A smaller image will reduce bandwidth requirements and make the page load faster.
 
-### [Get-MgOrganizationBrandingBannerLogo](Get-MgOrganizationBrandingBannerLogo.md)
+### [Get-MgBetaOrganizationBrandingBannerLogo](Get-MgBetaOrganizationBrandingBannerLogo.md)
 A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
-### [Get-MgOrganizationBrandingCustomCss](Get-MgOrganizationBrandingCustomCss.md)
+### [Get-MgBetaOrganizationBrandingCustomCss](Get-MgBetaOrganizationBrandingCustomCss.md)
 Get customCSS for the navigation property branding from organization
 
-### [Get-MgOrganizationBrandingFavicon](Get-MgOrganizationBrandingFavicon.md)
+### [Get-MgBetaOrganizationBrandingFavicon](Get-MgBetaOrganizationBrandingFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
-### [Get-MgOrganizationBrandingHeaderLogo](Get-MgOrganizationBrandingHeaderLogo.md)
+### [Get-MgBetaOrganizationBrandingHeaderLogo](Get-MgBetaOrganizationBrandingHeaderLogo.md)
 Get headerLogo for the navigation property branding from organization
 
-### [Get-MgOrganizationBrandingLocalization](Get-MgOrganizationBrandingLocalization.md)
+### [Get-MgBetaOrganizationBrandingLocalization](Get-MgBetaOrganizationBrandingLocalization.md)
 Add different branding based on a locale.
 
-### [Get-MgOrganizationBrandingLocalizationBackgroundImage](Get-MgOrganizationBrandingLocalizationBackgroundImage.md)
+### [Get-MgBetaOrganizationBrandingLocalizationBackgroundImage](Get-MgBetaOrganizationBrandingLocalizationBackgroundImage.md)
 Image that appears as the background of the sign-in page.
 The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels.
 A smaller image will reduce bandwidth requirements and make the page load faster.
 
-### [Get-MgOrganizationBrandingLocalizationBannerLogo](Get-MgOrganizationBrandingLocalizationBannerLogo.md)
+### [Get-MgBetaOrganizationBrandingLocalizationBannerLogo](Get-MgBetaOrganizationBrandingLocalizationBannerLogo.md)
 A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
-### [Get-MgOrganizationBrandingLocalizationCustomCss](Get-MgOrganizationBrandingLocalizationCustomCss.md)
+### [Get-MgBetaOrganizationBrandingLocalizationCustomCss](Get-MgBetaOrganizationBrandingLocalizationCustomCss.md)
 Get customCSS for the navigation property localizations from organization
 
-### [Get-MgOrganizationBrandingLocalizationFavicon](Get-MgOrganizationBrandingLocalizationFavicon.md)
+### [Get-MgBetaOrganizationBrandingLocalizationFavicon](Get-MgBetaOrganizationBrandingLocalizationFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
-### [Get-MgOrganizationBrandingLocalizationHeaderLogo](Get-MgOrganizationBrandingLocalizationHeaderLogo.md)
+### [Get-MgBetaOrganizationBrandingLocalizationHeaderLogo](Get-MgBetaOrganizationBrandingLocalizationHeaderLogo.md)
 Get headerLogo for the navigation property localizations from organization
 
-### [Get-MgOrganizationBrandingLocalizationSquareLogo](Get-MgOrganizationBrandingLocalizationSquareLogo.md)
+### [Get-MgBetaOrganizationBrandingLocalizationSquareLogo](Get-MgBetaOrganizationBrandingLocalizationSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
 Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size.
 We recommend using a transparent image with no padding around the logo.
 
-### [Get-MgOrganizationBrandingLocalizationSquareLogoDark](Get-MgOrganizationBrandingLocalizationSquareLogoDark.md)
+### [Get-MgBetaOrganizationBrandingLocalizationSquareLogoDark](Get-MgBetaOrganizationBrandingLocalizationSquareLogoDark.md)
 A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
 Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size.
 We recommend using a transparent image with no padding around the logo.
 
-### [Get-MgOrganizationBrandingSquareLogo](Get-MgOrganizationBrandingSquareLogo.md)
+### [Get-MgBetaOrganizationBrandingSquareLogo](Get-MgBetaOrganizationBrandingSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
 Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size.
 We recommend using a transparent image with no padding around the logo.
 
-### [Get-MgOrganizationBrandingSquareLogoDark](Get-MgOrganizationBrandingSquareLogoDark.md)
+### [Get-MgBetaOrganizationBrandingSquareLogoDark](Get-MgBetaOrganizationBrandingSquareLogoDark.md)
 A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
 Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size.
 We recommend using a transparent image with no padding around the logo.
 
-### [Get-MgOrganizationById](Get-MgOrganizationById.md)
+### [Get-MgBetaOrganizationById](Get-MgBetaOrganizationById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgOrganizationExtension](Get-MgOrganizationExtension.md)
+### [Get-MgBetaOrganizationExtension](Get-MgBetaOrganizationExtension.md)
 The collection of open extensions defined for the organization resource.
 Nullable.
 
-### [Get-MgOrganizationMemberGroup](Get-MgOrganizationMemberGroup.md)
+### [Get-MgBetaOrganizationMemberGroup](Get-MgBetaOrganizationMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 
-### [Get-MgOrganizationMemberObject](Get-MgOrganizationMemberObject.md)
+### [Get-MgBetaOrganizationMemberObject](Get-MgBetaOrganizationMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgOrganizationSetting](Get-MgOrganizationSetting.md)
+### [Get-MgBetaOrganizationSetting](Get-MgBetaOrganizationSetting.md)
 Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**.
 This operation does not return insightsSettings.
 Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights.
 This operation does not return microsoftApplicationDataAccessSettings.
 To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
 
-### [Get-MgOrganizationSettingContactInsight](Get-MgOrganizationSettingContactInsight.md)
+### [Get-MgBetaOrganizationSettingContactInsight](Get-MgBetaOrganizationSettingContactInsight.md)
 Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
 
-### [Get-MgOrganizationSettingItemInsight](Get-MgOrganizationSettingItemInsight.md)
+### [Get-MgBetaOrganizationSettingItemInsight](Get-MgBetaOrganizationSettingItemInsight.md)
 Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
 To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
 
-### [Get-MgOrganizationSettingMicrosoftApplicationDataAccess](Get-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+### [Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess](Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess.md)
 Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
 
-### [Get-MgOrganizationSettingPersonInsight](Get-MgOrganizationSettingPersonInsight.md)
+### [Get-MgBetaOrganizationSettingPersonInsight](Get-MgBetaOrganizationSettingPersonInsight.md)
 Get the properties of an insightsSettings object for displaying or returning people insights in an organization.
 To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.
 
-### [Get-MgOrganizationSettingProfileCardProperty](Get-MgOrganizationSettingProfileCardProperty.md)
+### [Get-MgBetaOrganizationSettingProfileCardProperty](Get-MgBetaOrganizationSettingProfileCardProperty.md)
 Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 Get organization settings returns the properties configured for profile cards for the organization.
 
-### [Get-MgOrganizationUserOwnedObject](Get-MgOrganizationUserOwnedObject.md)
+### [Get-MgBetaOrganizationUserOwnedObject](Get-MgBetaOrganizationUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
+### [Get-MgBetaSubscribedSku](Get-MgBetaSubscribedSku.md)
 Get a specific commercial subscription that an organization has acquired.
 
-### [Get-MgUserScopedRoleMemberOf](Get-MgUserScopedRoleMemberOf.md)
+### [Get-MgBetaUserScopedRoleMemberOf](Get-MgBetaUserScopedRoleMemberOf.md)
 The scoped-role administrative unit memberships for this user.
 Read-only.
 Nullable.
 
-### [Initialize-MgOrganizationService](Initialize-MgOrganizationService.md)
+### [Initialize-MgBetaOrganizationService](Initialize-MgBetaOrganizationService.md)
 Activate a service for an organization.
 
-### [Invoke-MgAvailableDirectoryFederationConfigurationProviderType](Invoke-MgAvailableDirectoryFederationConfigurationProviderType.md)
+### [Invoke-MgBetaAvailableDirectoryFederationConfigurationProviderType](Invoke-MgBetaAvailableDirectoryFederationConfigurationProviderType.md)
 Invoke function availableProviderTypes
 
-### [Invoke-MgDismissDirectoryImpactedResource](Invoke-MgDismissDirectoryImpactedResource.md)
+### [Invoke-MgBetaDismissDirectoryImpactedResource](Invoke-MgBetaDismissDirectoryImpactedResource.md)
 Invoke action dismiss
 
-### [Invoke-MgDismissDirectoryRecommendation](Invoke-MgDismissDirectoryRecommendation.md)
+### [Invoke-MgBetaDismissDirectoryRecommendation](Invoke-MgBetaDismissDirectoryRecommendation.md)
 Invoke action dismiss
 
-### [Invoke-MgDismissDirectoryRecommendationImpactedResource](Invoke-MgDismissDirectoryRecommendationImpactedResource.md)
+### [Invoke-MgBetaDismissDirectoryRecommendationImpactedResource](Invoke-MgBetaDismissDirectoryRecommendationImpactedResource.md)
 Invoke action dismiss
 
-### [Invoke-MgForceDomainDelete](Invoke-MgForceDomainDelete.md)
+### [Invoke-MgBetaForceDomainDelete](Invoke-MgBetaForceDomainDelete.md)
 Deletes a domain using an asynchronous operation.
 Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service.
 The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a 404 HTTP response code.
 To verify deletion of a domain, you can perform a get domain.
 If the domain was successfully deleted, a 404 HTTP response code will be returned in the response.
 
-### [Invoke-MgPostponeDirectoryImpactedResource](Invoke-MgPostponeDirectoryImpactedResource.md)
+### [Invoke-MgBetaPostponeDirectoryImpactedResource](Invoke-MgBetaPostponeDirectoryImpactedResource.md)
 Invoke action postpone
 
-### [Invoke-MgPostponeDirectoryRecommendation](Invoke-MgPostponeDirectoryRecommendation.md)
+### [Invoke-MgBetaPostponeDirectoryRecommendation](Invoke-MgBetaPostponeDirectoryRecommendation.md)
 Invoke action postpone
 
-### [Invoke-MgPostponeDirectoryRecommendationImpactedResource](Invoke-MgPostponeDirectoryRecommendationImpactedResource.md)
+### [Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource](Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource.md)
 Invoke action postpone
 
-### [Invoke-MgPromoteDomain](Invoke-MgPromoteDomain.md)
+### [Invoke-MgBetaPromoteDomain](Invoke-MgBetaPromoteDomain.md)
 Promote a verified subdomain to the root domain.
 A verified domain has its **isVerified** property set to `true`.
 
-### [Invoke-MgReactivateDirectoryImpactedResource](Invoke-MgReactivateDirectoryImpactedResource.md)
+### [Invoke-MgBetaReactivateDirectoryImpactedResource](Invoke-MgBetaReactivateDirectoryImpactedResource.md)
 Invoke action reactivate
 
-### [Invoke-MgReactivateDirectoryRecommendation](Invoke-MgReactivateDirectoryRecommendation.md)
+### [Invoke-MgBetaReactivateDirectoryRecommendation](Invoke-MgBetaReactivateDirectoryRecommendation.md)
 Invoke action reactivate
 
-### [Invoke-MgReactivateDirectoryRecommendationImpactedResource](Invoke-MgReactivateDirectoryRecommendationImpactedResource.md)
+### [Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource](Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource.md)
 Invoke action reactivate
 
-### [New-MgAdministrativeUnit](New-MgAdministrativeUnit.md)
+### [New-MgBetaAdministrativeUnit](New-MgBetaAdministrativeUnit.md)
 Use this API to create a new administrativeUnit.
 
-### [New-MgAdministrativeUnitExtension](New-MgAdministrativeUnitExtension.md)
+### [New-MgBetaAdministrativeUnitExtension](New-MgBetaAdministrativeUnitExtension.md)
 Create new navigation property to extensions for administrativeUnits
 
-### [New-MgAdministrativeUnitMemberByRef](New-MgAdministrativeUnitMemberByRef.md)
+### [New-MgBetaAdministrativeUnitMemberByRef](New-MgBetaAdministrativeUnitMemberByRef.md)
 Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit.
 All group types can be created within an administrative unit.
 **Note:** Currently, it's only possible to add one member at a time to an administrative unit.`
 
-### [New-MgAdministrativeUnitScopedRoleMember](New-MgAdministrativeUnitScopedRoleMember.md)
+### [New-MgBetaAdministrativeUnitScopedRoleMember](New-MgBetaAdministrativeUnitScopedRoleMember.md)
 Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
 For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
 
-### [New-MgContact](New-MgContact.md)
+### [New-MgBetaContact](New-MgBetaContact.md)
 Add new entity to contacts
 
-### [New-MgContract](New-MgContract.md)
+### [New-MgBetaContract](New-MgBetaContract.md)
 Add new entity to contracts
 
-### [New-MgDevice](New-MgDevice.md)
+### [New-MgBetaDevice](New-MgBetaDevice.md)
 Create a new device.
 
-### [New-MgDeviceCommand](New-MgDeviceCommand.md)
+### [New-MgBetaDeviceCommand](New-MgBetaDeviceCommand.md)
 Create new navigation property to commands for devices
 
-### [New-MgDeviceExtension](New-MgDeviceExtension.md)
+### [New-MgBetaDeviceExtension](New-MgBetaDeviceExtension.md)
 Create new navigation property to extensions for devices
 
-### [New-MgDeviceRegisteredOwnerByRef](New-MgDeviceRegisteredOwnerByRef.md)
+### [New-MgBetaDeviceRegisteredOwnerByRef](New-MgBetaDeviceRegisteredOwnerByRef.md)
 Create new navigation property ref to registeredOwners for devices
 
-### [New-MgDeviceUsageRights](New-MgDeviceUsageRights.md)
+### [New-MgBetaDeviceUsageRights](New-MgBetaDeviceUsageRights.md)
 Create new navigation property to usageRights for devices
 
-### [New-MgDirectoryAdministrativeUnit](New-MgDirectoryAdministrativeUnit.md)
+### [New-MgBetaDirectoryAdministrativeUnit](New-MgBetaDirectoryAdministrativeUnit.md)
 Create new navigation property to administrativeUnits for directory
 
-### [New-MgDirectoryAdministrativeUnitExtension](New-MgDirectoryAdministrativeUnitExtension.md)
+### [New-MgBetaDirectoryAdministrativeUnitExtension](New-MgBetaDirectoryAdministrativeUnitExtension.md)
 Create new navigation property to extensions for directory
 
-### [New-MgDirectoryAdministrativeUnitMemberByRef](New-MgDirectoryAdministrativeUnitMemberByRef.md)
+### [New-MgBetaDirectoryAdministrativeUnitMemberByRef](New-MgBetaDirectoryAdministrativeUnitMemberByRef.md)
 Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit.
 All group types can be created within an administrative unit.
 **Note:** Currently, it's only possible to add one member at a time to an administrative unit.`
 
-### [New-MgDirectoryAdministrativeUnitScopedRoleMember](New-MgDirectoryAdministrativeUnitScopedRoleMember.md)
+### [New-MgBetaDirectoryAdministrativeUnitScopedRoleMember](New-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
 Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
 For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
 
-### [New-MgDirectoryAttributeSet](New-MgDirectoryAttributeSet.md)
+### [New-MgBetaDirectoryAttributeSet](New-MgBetaDirectoryAttributeSet.md)
 Create a new attributeSet object.
 
-### [New-MgDirectoryCustomSecurityAttributeDefinition](New-MgDirectoryCustomSecurityAttributeDefinition.md)
+### [New-MgBetaDirectoryCustomSecurityAttributeDefinition](New-MgBetaDirectoryCustomSecurityAttributeDefinition.md)
 Create a new customSecurityAttributeDefinition object.
 
-### [New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
+### [New-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](New-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Create a new allowedValue object.
 
-### [New-MgDirectoryDeletedItem](New-MgDirectoryDeletedItem.md)
+### [New-MgBetaDirectoryDeletedItem](New-MgBetaDirectoryDeletedItem.md)
 Create new navigation property to deletedItems for directory
 
-### [New-MgDirectoryFeatureRolloutPolicy](New-MgDirectoryFeatureRolloutPolicy.md)
+### [New-MgBetaDirectoryFeatureRolloutPolicy](New-MgBetaDirectoryFeatureRolloutPolicy.md)
 Create new navigation property to featureRolloutPolicies for directory
 
-### [New-MgDirectoryFeatureRolloutPolicyApplyTo](New-MgDirectoryFeatureRolloutPolicyApplyTo.md)
+### [New-MgBetaDirectoryFeatureRolloutPolicyApplyTo](New-MgBetaDirectoryFeatureRolloutPolicyApplyTo.md)
 Create new navigation property to appliesTo for directory
 
-### [New-MgDirectoryFeatureRolloutPolicyApplyToByRef](New-MgDirectoryFeatureRolloutPolicyApplyToByRef.md)
+### [New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef](New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef.md)
 Create new navigation property ref to appliesTo for directory
 
-### [New-MgDirectoryFederationConfiguration](New-MgDirectoryFederationConfiguration.md)
+### [New-MgBetaDirectoryFederationConfiguration](New-MgBetaDirectoryFederationConfiguration.md)
 Create new navigation property to federationConfigurations for directory
 
-### [New-MgDirectoryImpactedResource](New-MgDirectoryImpactedResource.md)
+### [New-MgBetaDirectoryImpactedResource](New-MgBetaDirectoryImpactedResource.md)
 Create new navigation property to impactedResources for directory
 
-### [New-MgDirectoryInboundSharedUserProfile](New-MgDirectoryInboundSharedUserProfile.md)
+### [New-MgBetaDirectoryInboundSharedUserProfile](New-MgBetaDirectoryInboundSharedUserProfile.md)
 Create new navigation property to inboundSharedUserProfiles for directory
 
-### [New-MgDirectoryOnPremisSynchronization](New-MgDirectoryOnPremisSynchronization.md)
+### [New-MgBetaDirectoryOnPremisSynchronization](New-MgBetaDirectoryOnPremisSynchronization.md)
 Create new navigation property to onPremisesSynchronization for directory
 
-### [New-MgDirectoryOutboundSharedUserProfile](New-MgDirectoryOutboundSharedUserProfile.md)
+### [New-MgBetaDirectoryOutboundSharedUserProfile](New-MgBetaDirectoryOutboundSharedUserProfile.md)
 Create new navigation property to outboundSharedUserProfiles for directory
 
-### [New-MgDirectoryOutboundSharedUserProfileTenant](New-MgDirectoryOutboundSharedUserProfileTenant.md)
+### [New-MgBetaDirectoryOutboundSharedUserProfileTenant](New-MgBetaDirectoryOutboundSharedUserProfileTenant.md)
 Create new navigation property to tenants for directory
 
-### [New-MgDirectoryRecommendation](New-MgDirectoryRecommendation.md)
+### [New-MgBetaDirectoryRecommendation](New-MgBetaDirectoryRecommendation.md)
 Create new navigation property to recommendations for directory
 
-### [New-MgDirectoryRecommendationImpactedResource](New-MgDirectoryRecommendationImpactedResource.md)
+### [New-MgBetaDirectoryRecommendationImpactedResource](New-MgBetaDirectoryRecommendationImpactedResource.md)
 Create new navigation property to impactedResources for directory
 
-### [New-MgDirectoryRole](New-MgDirectoryRole.md)
+### [New-MgBetaDirectoryRole](New-MgBetaDirectoryRole.md)
 Activate a directory role.
 To read a directory role or update its members, it must first be activated in the tenant.
 The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default.
 To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
 
-### [New-MgDirectoryRoleMemberByRef](New-MgDirectoryRoleMemberByRef.md)
+### [New-MgBetaDirectoryRoleMemberByRef](New-MgBetaDirectoryRoleMemberByRef.md)
 Create new navigation property ref to members for directoryRoles
 
-### [New-MgDirectoryRoleScopedMember](New-MgDirectoryRoleScopedMember.md)
+### [New-MgBetaDirectoryRoleScopedMember](New-MgBetaDirectoryRoleScopedMember.md)
 Create new navigation property to scopedMembers for directoryRoles
 
-### [New-MgDirectoryRoleTemplate](New-MgDirectoryRoleTemplate.md)
+### [New-MgBetaDirectoryRoleTemplate](New-MgBetaDirectoryRoleTemplate.md)
 Add new entity to directoryRoleTemplates
 
-### [New-MgDirectorySetting](New-MgDirectorySetting.md)
+### [New-MgBetaDirectorySetting](New-MgBetaDirectorySetting.md)
 Create a new setting based on the templates available in directorySettingTemplates.
 These settings can be at the tenant-level or at the group level.
 Group settings apply to only Microsoft 365 groups.
 The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.
 
-### [New-MgDirectorySettingTemplate](New-MgDirectorySettingTemplate.md)
+### [New-MgBetaDirectorySettingTemplate](New-MgBetaDirectorySettingTemplate.md)
 Add new entity to directorySettingTemplates
 
-### [New-MgDirectorySharedEmailDomain](New-MgDirectorySharedEmailDomain.md)
+### [New-MgBetaDirectorySharedEmailDomain](New-MgBetaDirectorySharedEmailDomain.md)
 Create new navigation property to sharedEmailDomains for directory
 
-### [New-MgDomain](New-MgDomain.md)
+### [New-MgBetaDomain](New-MgBetaDomain.md)
 Adds a domain to the tenant.
 **Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified.
 See List verificationDnsRecords for details.
@@ -805,277 +805,277 @@ For example, contoso.com requires verification.
 If a root domain is verified, subdomains of the root domain are automatically verified.
 For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
 
-### [New-MgDomainFederationConfiguration](New-MgDomainFederationConfiguration.md)
+### [New-MgBetaDomainFederationConfiguration](New-MgBetaDomainFederationConfiguration.md)
 Create a new internalDomainFederation object.
 
-### [New-MgDomainServiceConfigurationRecord](New-MgDomainServiceConfigurationRecord.md)
+### [New-MgBetaDomainServiceConfigurationRecord](New-MgBetaDomainServiceConfigurationRecord.md)
 Create new navigation property to serviceConfigurationRecords for domains
 
-### [New-MgDomainSharedEmailDomainInvitation](New-MgDomainSharedEmailDomainInvitation.md)
+### [New-MgBetaDomainSharedEmailDomainInvitation](New-MgBetaDomainSharedEmailDomainInvitation.md)
 Create new navigation property to sharedEmailDomainInvitations for domains
 
-### [New-MgDomainVerificationDnsRecord](New-MgDomainVerificationDnsRecord.md)
+### [New-MgBetaDomainVerificationDnsRecord](New-MgBetaDomainVerificationDnsRecord.md)
 Create new navigation property to verificationDnsRecords for domains
 
-### [New-MgOrganization](New-MgOrganization.md)
+### [New-MgBetaOrganization](New-MgBetaOrganization.md)
 Add new entity to organization
 
-### [New-MgOrganizationBrandingLocalization](New-MgOrganizationBrandingLocalization.md)
+### [New-MgBetaOrganizationBrandingLocalization](New-MgBetaOrganizationBrandingLocalization.md)
 Create a new organizationalBrandingLocalization object.
 This creates a localized branding and at the same time, the default branding if it doesn't exist.
 The default branding is created only once.
 It's loaded when a localized branding isn't configured for the user's browser language.
 To retrieve the default branding, see Get branding.
 
-### [New-MgOrganizationExtension](New-MgOrganizationExtension.md)
+### [New-MgBetaOrganizationExtension](New-MgBetaOrganizationExtension.md)
 Create new navigation property to extensions for organization
 
-### [New-MgOrganizationSettingProfileCardProperty](New-MgOrganizationSettingProfileCardProperty.md)
+### [New-MgBetaOrganizationSettingProfileCardProperty](New-MgBetaOrganizationSettingProfileCardProperty.md)
 Create a new profileCardProperty for an organization.
 The new property is identified by its **directoryPropertyName** property.
 For more information on adding properties to the profile card for an organization, see customize the profile card.
 
-### [New-MgSubscribedSku](New-MgSubscribedSku.md)
+### [New-MgBetaSubscribedSku](New-MgBetaSubscribedSku.md)
 Add new entity to subscribedSkus
 
-### [New-MgUserScopedRoleMemberOf](New-MgUserScopedRoleMemberOf.md)
+### [New-MgBetaUserScopedRoleMemberOf](New-MgBetaUserScopedRoleMemberOf.md)
 Create new navigation property to scopedRoleMemberOf for users
 
-### [Remove-MgAdministrativeUnit](Remove-MgAdministrativeUnit.md)
+### [Remove-MgBetaAdministrativeUnit](Remove-MgBetaAdministrativeUnit.md)
 Delete an administrativeUnit.
 
-### [Remove-MgAdministrativeUnitExtension](Remove-MgAdministrativeUnitExtension.md)
+### [Remove-MgBetaAdministrativeUnitExtension](Remove-MgBetaAdministrativeUnitExtension.md)
 Delete navigation property extensions for administrativeUnits
 
-### [Remove-MgAdministrativeUnitMemberByRef](Remove-MgAdministrativeUnitMemberByRef.md)
+### [Remove-MgBetaAdministrativeUnitMemberByRef](Remove-MgBetaAdministrativeUnitMemberByRef.md)
 Delete ref of navigation property members for administrativeUnits
 
-### [Remove-MgAdministrativeUnitScopedRoleMember](Remove-MgAdministrativeUnitScopedRoleMember.md)
+### [Remove-MgBetaAdministrativeUnitScopedRoleMember](Remove-MgBetaAdministrativeUnitScopedRoleMember.md)
 Delete navigation property scopedRoleMembers for administrativeUnits
 
-### [Remove-MgContact](Remove-MgContact.md)
+### [Remove-MgBetaContact](Remove-MgBetaContact.md)
 Delete entity from contacts
 
-### [Remove-MgContract](Remove-MgContract.md)
+### [Remove-MgBetaContract](Remove-MgBetaContract.md)
 Delete entity from contracts
 
-### [Remove-MgDevice](Remove-MgDevice.md)
+### [Remove-MgBetaDevice](Remove-MgBetaDevice.md)
 Delete a registered device.
 
-### [Remove-MgDeviceCommand](Remove-MgDeviceCommand.md)
+### [Remove-MgBetaDeviceCommand](Remove-MgBetaDeviceCommand.md)
 Delete navigation property commands for devices
 
-### [Remove-MgDeviceExtension](Remove-MgDeviceExtension.md)
+### [Remove-MgBetaDeviceExtension](Remove-MgBetaDeviceExtension.md)
 Delete navigation property extensions for devices
 
-### [Remove-MgDeviceRegisteredOwnerByRef](Remove-MgDeviceRegisteredOwnerByRef.md)
+### [Remove-MgBetaDeviceRegisteredOwnerByRef](Remove-MgBetaDeviceRegisteredOwnerByRef.md)
 Delete ref of navigation property registeredOwners for devices
 
-### [Remove-MgDeviceUsageRights](Remove-MgDeviceUsageRights.md)
+### [Remove-MgBetaDeviceUsageRights](Remove-MgBetaDeviceUsageRights.md)
 Delete navigation property usageRights for devices
 
-### [Remove-MgDirectoryAdministrativeUnit](Remove-MgDirectoryAdministrativeUnit.md)
+### [Remove-MgBetaDirectoryAdministrativeUnit](Remove-MgBetaDirectoryAdministrativeUnit.md)
 Delete navigation property administrativeUnits for directory
 
-### [Remove-MgDirectoryAdministrativeUnitExtension](Remove-MgDirectoryAdministrativeUnitExtension.md)
+### [Remove-MgBetaDirectoryAdministrativeUnitExtension](Remove-MgBetaDirectoryAdministrativeUnitExtension.md)
 Delete navigation property extensions for directory
 
-### [Remove-MgDirectoryAdministrativeUnitMemberByRef](Remove-MgDirectoryAdministrativeUnitMemberByRef.md)
+### [Remove-MgBetaDirectoryAdministrativeUnitMemberByRef](Remove-MgBetaDirectoryAdministrativeUnitMemberByRef.md)
 Delete ref of navigation property members for directory
 
-### [Remove-MgDirectoryAdministrativeUnitScopedRoleMember](Remove-MgDirectoryAdministrativeUnitScopedRoleMember.md)
+### [Remove-MgBetaDirectoryAdministrativeUnitScopedRoleMember](Remove-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
 Delete navigation property scopedRoleMembers for directory
 
-### [Remove-MgDirectoryAttributeSet](Remove-MgDirectoryAttributeSet.md)
+### [Remove-MgBetaDirectoryAttributeSet](Remove-MgBetaDirectoryAttributeSet.md)
 Delete navigation property attributeSets for directory
 
-### [Remove-MgDirectoryCustomSecurityAttributeDefinition](Remove-MgDirectoryCustomSecurityAttributeDefinition.md)
+### [Remove-MgBetaDirectoryCustomSecurityAttributeDefinition](Remove-MgBetaDirectoryCustomSecurityAttributeDefinition.md)
 Delete navigation property customSecurityAttributeDefinitions for directory
 
-### [Remove-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](Remove-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
+### [Remove-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Remove-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Delete navigation property allowedValues for directory
 
-### [Remove-MgDirectoryDeletedItem](Remove-MgDirectoryDeletedItem.md)
+### [Remove-MgBetaDirectoryDeletedItem](Remove-MgBetaDirectoryDeletedItem.md)
 Delete navigation property deletedItems for directory
 
-### [Remove-MgDirectoryFeatureRolloutPolicy](Remove-MgDirectoryFeatureRolloutPolicy.md)
+### [Remove-MgBetaDirectoryFeatureRolloutPolicy](Remove-MgBetaDirectoryFeatureRolloutPolicy.md)
 Delete navigation property featureRolloutPolicies for directory
 
-### [Remove-MgDirectoryFeatureRolloutPolicyApplyToByRef](Remove-MgDirectoryFeatureRolloutPolicyApplyToByRef.md)
+### [Remove-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef](Remove-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef.md)
 Delete ref of navigation property appliesTo for directory
 
-### [Remove-MgDirectoryFederationConfiguration](Remove-MgDirectoryFederationConfiguration.md)
+### [Remove-MgBetaDirectoryFederationConfiguration](Remove-MgBetaDirectoryFederationConfiguration.md)
 Delete navigation property federationConfigurations for directory
 
-### [Remove-MgDirectoryImpactedResource](Remove-MgDirectoryImpactedResource.md)
+### [Remove-MgBetaDirectoryImpactedResource](Remove-MgBetaDirectoryImpactedResource.md)
 Delete navigation property impactedResources for directory
 
-### [Remove-MgDirectoryInboundSharedUserProfile](Remove-MgDirectoryInboundSharedUserProfile.md)
+### [Remove-MgBetaDirectoryInboundSharedUserProfile](Remove-MgBetaDirectoryInboundSharedUserProfile.md)
 Delete navigation property inboundSharedUserProfiles for directory
 
-### [Remove-MgDirectoryInboundSharedUserProfilePersonalData](Remove-MgDirectoryInboundSharedUserProfilePersonalData.md)
+### [Remove-MgBetaDirectoryInboundSharedUserProfilePersonalData](Remove-MgBetaDirectoryInboundSharedUserProfilePersonalData.md)
 Invoke action removePersonalData
 
-### [Remove-MgDirectoryOnPremisSynchronization](Remove-MgDirectoryOnPremisSynchronization.md)
+### [Remove-MgBetaDirectoryOnPremisSynchronization](Remove-MgBetaDirectoryOnPremisSynchronization.md)
 Delete navigation property onPremisesSynchronization for directory
 
-### [Remove-MgDirectoryOutboundSharedUserProfile](Remove-MgDirectoryOutboundSharedUserProfile.md)
+### [Remove-MgBetaDirectoryOutboundSharedUserProfile](Remove-MgBetaDirectoryOutboundSharedUserProfile.md)
 Delete navigation property outboundSharedUserProfiles for directory
 
-### [Remove-MgDirectoryOutboundSharedUserProfileTenant](Remove-MgDirectoryOutboundSharedUserProfileTenant.md)
+### [Remove-MgBetaDirectoryOutboundSharedUserProfileTenant](Remove-MgBetaDirectoryOutboundSharedUserProfileTenant.md)
 Delete navigation property tenants for directory
 
-### [Remove-MgDirectoryOutboundSharedUserProfileTenantPersonalData](Remove-MgDirectoryOutboundSharedUserProfileTenantPersonalData.md)
+### [Remove-MgBetaDirectoryOutboundSharedUserProfileTenantPersonalData](Remove-MgBetaDirectoryOutboundSharedUserProfileTenantPersonalData.md)
 Invoke action removePersonalData
 
-### [Remove-MgDirectoryRecommendation](Remove-MgDirectoryRecommendation.md)
+### [Remove-MgBetaDirectoryRecommendation](Remove-MgBetaDirectoryRecommendation.md)
 Delete navigation property recommendations for directory
 
-### [Remove-MgDirectoryRecommendationImpactedResource](Remove-MgDirectoryRecommendationImpactedResource.md)
+### [Remove-MgBetaDirectoryRecommendationImpactedResource](Remove-MgBetaDirectoryRecommendationImpactedResource.md)
 Delete navigation property impactedResources for directory
 
-### [Remove-MgDirectoryRole](Remove-MgDirectoryRole.md)
+### [Remove-MgBetaDirectoryRole](Remove-MgBetaDirectoryRole.md)
 Delete entity from directoryRoles
 
-### [Remove-MgDirectoryRoleMemberByRef](Remove-MgDirectoryRoleMemberByRef.md)
+### [Remove-MgBetaDirectoryRoleMemberByRef](Remove-MgBetaDirectoryRoleMemberByRef.md)
 Delete ref of navigation property members for directoryRoles
 
-### [Remove-MgDirectoryRoleScopedMember](Remove-MgDirectoryRoleScopedMember.md)
+### [Remove-MgBetaDirectoryRoleScopedMember](Remove-MgBetaDirectoryRoleScopedMember.md)
 Delete navigation property scopedMembers for directoryRoles
 
-### [Remove-MgDirectoryRoleTemplate](Remove-MgDirectoryRoleTemplate.md)
+### [Remove-MgBetaDirectoryRoleTemplate](Remove-MgBetaDirectoryRoleTemplate.md)
 Delete entity from directoryRoleTemplates
 
-### [Remove-MgDirectorySetting](Remove-MgDirectorySetting.md)
+### [Remove-MgBetaDirectorySetting](Remove-MgBetaDirectorySetting.md)
 Delete a directory setting.
 
-### [Remove-MgDirectorySettingTemplate](Remove-MgDirectorySettingTemplate.md)
+### [Remove-MgBetaDirectorySettingTemplate](Remove-MgBetaDirectorySettingTemplate.md)
 Delete entity from directorySettingTemplates
 
-### [Remove-MgDirectorySharedEmailDomain](Remove-MgDirectorySharedEmailDomain.md)
+### [Remove-MgBetaDirectorySharedEmailDomain](Remove-MgBetaDirectorySharedEmailDomain.md)
 Delete navigation property sharedEmailDomains for directory
 
-### [Remove-MgDomain](Remove-MgDomain.md)
+### [Remove-MgBetaDomain](Remove-MgBetaDomain.md)
 Deletes a domain from a tenant.
 
-### [Remove-MgDomainFederationConfiguration](Remove-MgDomainFederationConfiguration.md)
+### [Remove-MgBetaDomainFederationConfiguration](Remove-MgBetaDomainFederationConfiguration.md)
 Delete navigation property federationConfiguration for domains
 
-### [Remove-MgDomainServiceConfigurationRecord](Remove-MgDomainServiceConfigurationRecord.md)
+### [Remove-MgBetaDomainServiceConfigurationRecord](Remove-MgBetaDomainServiceConfigurationRecord.md)
 Delete navigation property serviceConfigurationRecords for domains
 
-### [Remove-MgDomainSharedEmailDomainInvitation](Remove-MgDomainSharedEmailDomainInvitation.md)
+### [Remove-MgBetaDomainSharedEmailDomainInvitation](Remove-MgBetaDomainSharedEmailDomainInvitation.md)
 Delete navigation property sharedEmailDomainInvitations for domains
 
-### [Remove-MgDomainVerificationDnsRecord](Remove-MgDomainVerificationDnsRecord.md)
+### [Remove-MgBetaDomainVerificationDnsRecord](Remove-MgBetaDomainVerificationDnsRecord.md)
 Delete navigation property verificationDnsRecords for domains
 
-### [Remove-MgOrganization](Remove-MgOrganization.md)
+### [Remove-MgBetaOrganization](Remove-MgBetaOrganization.md)
 Delete entity from organization
 
-### [Remove-MgOrganizationBranding](Remove-MgOrganizationBranding.md)
+### [Remove-MgBetaOrganizationBranding](Remove-MgBetaOrganizationBranding.md)
 Delete the default organizational branding object.
 To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 
-### [Remove-MgOrganizationBrandingLocalization](Remove-MgOrganizationBrandingLocalization.md)
+### [Remove-MgBetaOrganizationBrandingLocalization](Remove-MgBetaOrganizationBrandingLocalization.md)
 Delete navigation property localizations for organization
 
-### [Remove-MgOrganizationExtension](Remove-MgOrganizationExtension.md)
+### [Remove-MgBetaOrganizationExtension](Remove-MgBetaOrganizationExtension.md)
 Delete navigation property extensions for organization
 
-### [Remove-MgOrganizationSetting](Remove-MgOrganizationSetting.md)
+### [Remove-MgBetaOrganizationSetting](Remove-MgBetaOrganizationSetting.md)
 Delete navigation property settings for organization
 
-### [Remove-MgOrganizationSettingContactInsight](Remove-MgOrganizationSettingContactInsight.md)
+### [Remove-MgBetaOrganizationSettingContactInsight](Remove-MgBetaOrganizationSettingContactInsight.md)
 Delete navigation property contactInsights for organization
 
-### [Remove-MgOrganizationSettingItemInsight](Remove-MgOrganizationSettingItemInsight.md)
+### [Remove-MgBetaOrganizationSettingItemInsight](Remove-MgBetaOrganizationSettingItemInsight.md)
 Delete navigation property itemInsights for organization
 
-### [Remove-MgOrganizationSettingMicrosoftApplicationDataAccess](Remove-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+### [Remove-MgBetaOrganizationSettingMicrosoftApplicationDataAccess](Remove-MgBetaOrganizationSettingMicrosoftApplicationDataAccess.md)
 Delete navigation property microsoftApplicationDataAccess for organization
 
-### [Remove-MgOrganizationSettingPersonInsight](Remove-MgOrganizationSettingPersonInsight.md)
+### [Remove-MgBetaOrganizationSettingPersonInsight](Remove-MgBetaOrganizationSettingPersonInsight.md)
 Delete navigation property peopleInsights for organization
 
-### [Remove-MgOrganizationSettingProfileCardProperty](Remove-MgOrganizationSettingProfileCardProperty.md)
+### [Remove-MgBetaOrganizationSettingProfileCardProperty](Remove-MgBetaOrganizationSettingProfileCardProperty.md)
 Delete navigation property profileCardProperties for organization
 
-### [Remove-MgSubscribedSku](Remove-MgSubscribedSku.md)
+### [Remove-MgBetaSubscribedSku](Remove-MgBetaSubscribedSku.md)
 Delete entity from subscribedSkus
 
-### [Remove-MgUserScopedRoleMemberOf](Remove-MgUserScopedRoleMemberOf.md)
+### [Remove-MgBetaUserScopedRoleMemberOf](Remove-MgBetaUserScopedRoleMemberOf.md)
 Delete navigation property scopedRoleMemberOf for users
 
-### [Restore-MgDirectoryDeletedItem](Restore-MgDirectoryDeletedItem.md)
+### [Restore-MgBetaDirectoryDeletedItem](Restore-MgBetaDirectoryDeletedItem.md)
 Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
 After 30 days, the item is permanently deleted.
 
-### [Set-MgOrganizationBrandingBackgroundImage](Set-MgOrganizationBrandingBackgroundImage.md)
+### [Set-MgBetaOrganizationBrandingBackgroundImage](Set-MgBetaOrganizationBrandingBackgroundImage.md)
 Image that appears as the background of the sign-in page.
 The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels.
 A smaller image will reduce bandwidth requirements and make the page load faster.
 
-### [Set-MgOrganizationBrandingBannerLogo](Set-MgOrganizationBrandingBannerLogo.md)
+### [Set-MgBetaOrganizationBrandingBannerLogo](Set-MgBetaOrganizationBrandingBannerLogo.md)
 A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
-### [Set-MgOrganizationBrandingCustomCss](Set-MgOrganizationBrandingCustomCss.md)
+### [Set-MgBetaOrganizationBrandingCustomCss](Set-MgBetaOrganizationBrandingCustomCss.md)
 Update customCSS for the navigation property branding in organization
 
-### [Set-MgOrganizationBrandingFavicon](Set-MgOrganizationBrandingFavicon.md)
+### [Set-MgBetaOrganizationBrandingFavicon](Set-MgBetaOrganizationBrandingFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
-### [Set-MgOrganizationBrandingHeaderLogo](Set-MgOrganizationBrandingHeaderLogo.md)
+### [Set-MgBetaOrganizationBrandingHeaderLogo](Set-MgBetaOrganizationBrandingHeaderLogo.md)
 Update headerLogo for the navigation property branding in organization
 
-### [Set-MgOrganizationBrandingLocalizationBackgroundImage](Set-MgOrganizationBrandingLocalizationBackgroundImage.md)
+### [Set-MgBetaOrganizationBrandingLocalizationBackgroundImage](Set-MgBetaOrganizationBrandingLocalizationBackgroundImage.md)
 Image that appears as the background of the sign-in page.
 The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels.
 A smaller image will reduce bandwidth requirements and make the page load faster.
 
-### [Set-MgOrganizationBrandingLocalizationBannerLogo](Set-MgOrganizationBrandingLocalizationBannerLogo.md)
+### [Set-MgBetaOrganizationBrandingLocalizationBannerLogo](Set-MgBetaOrganizationBrandingLocalizationBannerLogo.md)
 A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
-### [Set-MgOrganizationBrandingLocalizationCustomCss](Set-MgOrganizationBrandingLocalizationCustomCss.md)
+### [Set-MgBetaOrganizationBrandingLocalizationCustomCss](Set-MgBetaOrganizationBrandingLocalizationCustomCss.md)
 Update customCSS for the navigation property localizations in organization
 
-### [Set-MgOrganizationBrandingLocalizationFavicon](Set-MgOrganizationBrandingLocalizationFavicon.md)
+### [Set-MgBetaOrganizationBrandingLocalizationFavicon](Set-MgBetaOrganizationBrandingLocalizationFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
-### [Set-MgOrganizationBrandingLocalizationHeaderLogo](Set-MgOrganizationBrandingLocalizationHeaderLogo.md)
+### [Set-MgBetaOrganizationBrandingLocalizationHeaderLogo](Set-MgBetaOrganizationBrandingLocalizationHeaderLogo.md)
 Update headerLogo for the navigation property localizations in organization
 
-### [Set-MgOrganizationBrandingLocalizationSquareLogo](Set-MgOrganizationBrandingLocalizationSquareLogo.md)
+### [Set-MgBetaOrganizationBrandingLocalizationSquareLogo](Set-MgBetaOrganizationBrandingLocalizationSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
 Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size.
 We recommend using a transparent image with no padding around the logo.
 
-### [Set-MgOrganizationBrandingLocalizationSquareLogoDark](Set-MgOrganizationBrandingLocalizationSquareLogoDark.md)
+### [Set-MgBetaOrganizationBrandingLocalizationSquareLogoDark](Set-MgBetaOrganizationBrandingLocalizationSquareLogoDark.md)
 A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
 Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size.
 We recommend using a transparent image with no padding around the logo.
 
-### [Set-MgOrganizationBrandingSquareLogo](Set-MgOrganizationBrandingSquareLogo.md)
+### [Set-MgBetaOrganizationBrandingSquareLogo](Set-MgBetaOrganizationBrandingSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
 Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size.
 We recommend using a transparent image with no padding around the logo.
 
-### [Set-MgOrganizationBrandingSquareLogoDark](Set-MgOrganizationBrandingSquareLogoDark.md)
+### [Set-MgBetaOrganizationBrandingSquareLogoDark](Set-MgBetaOrganizationBrandingSquareLogoDark.md)
 A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
 Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size.
 We recommend using a transparent image with no padding around the logo.
 
-### [Set-MgOrganizationMobileDeviceManagementAuthority](Set-MgOrganizationMobileDeviceManagementAuthority.md)
+### [Set-MgBetaOrganizationMobileDeviceManagementAuthority](Set-MgBetaOrganizationMobileDeviceManagementAuthority.md)
 Set mobile device management authority
 
-### [Test-MgAdministrativeUnitProperty](Test-MgAdministrativeUnitProperty.md)
+### [Test-MgBetaAdministrativeUnitProperty](Test-MgBetaAdministrativeUnitProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1086,7 +1086,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgContactProperty](Test-MgContactProperty.md)
+### [Test-MgBetaContactProperty](Test-MgBetaContactProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1097,7 +1097,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgContractProperty](Test-MgContractProperty.md)
+### [Test-MgBetaContractProperty](Test-MgBetaContractProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1108,7 +1108,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgDeviceProperty](Test-MgDeviceProperty.md)
+### [Test-MgBetaDeviceProperty](Test-MgBetaDeviceProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1119,7 +1119,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgDirectoryAdministrativeUnitProperty](Test-MgDirectoryAdministrativeUnitProperty.md)
+### [Test-MgBetaDirectoryAdministrativeUnitProperty](Test-MgBetaDirectoryAdministrativeUnitProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1130,7 +1130,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgDirectoryDeletedItemProperty](Test-MgDirectoryDeletedItemProperty.md)
+### [Test-MgBetaDirectoryDeletedItemProperty](Test-MgBetaDirectoryDeletedItemProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1141,7 +1141,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgDirectoryFeatureRolloutPolicyApplyToProperty](Test-MgDirectoryFeatureRolloutPolicyApplyToProperty.md)
+### [Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty](Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1152,7 +1152,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgDirectoryRoleProperty](Test-MgDirectoryRoleProperty.md)
+### [Test-MgBetaDirectoryRoleProperty](Test-MgBetaDirectoryRoleProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1163,7 +1163,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgDirectoryRoleTemplateProperty](Test-MgDirectoryRoleTemplateProperty.md)
+### [Test-MgBetaDirectoryRoleTemplateProperty](Test-MgBetaDirectoryRoleTemplateProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1174,7 +1174,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgDirectorySettingTemplateProperty](Test-MgDirectorySettingTemplateProperty.md)
+### [Test-MgBetaDirectorySettingTemplateProperty](Test-MgBetaDirectorySettingTemplateProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1185,7 +1185,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgOrganizationProperty](Test-MgOrganizationProperty.md)
+### [Test-MgBetaOrganizationProperty](Test-MgBetaOrganizationProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1196,159 +1196,159 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Update-MgAdministrativeUnit](Update-MgAdministrativeUnit.md)
+### [Update-MgBetaAdministrativeUnit](Update-MgBetaAdministrativeUnit.md)
 Update the properties of an administrativeUnit object.
 
-### [Update-MgAdministrativeUnitExtension](Update-MgAdministrativeUnitExtension.md)
+### [Update-MgBetaAdministrativeUnitExtension](Update-MgBetaAdministrativeUnitExtension.md)
 Update the navigation property extensions in administrativeUnits
 
-### [Update-MgAdministrativeUnitScopedRoleMember](Update-MgAdministrativeUnitScopedRoleMember.md)
+### [Update-MgBetaAdministrativeUnitScopedRoleMember](Update-MgBetaAdministrativeUnitScopedRoleMember.md)
 Update the navigation property scopedRoleMembers in administrativeUnits
 
-### [Update-MgContact](Update-MgContact.md)
+### [Update-MgBetaContact](Update-MgBetaContact.md)
 Update entity in contacts
 
-### [Update-MgContract](Update-MgContract.md)
+### [Update-MgBetaContract](Update-MgBetaContract.md)
 Update entity in contracts
 
-### [Update-MgDevice](Update-MgDevice.md)
+### [Update-MgBetaDevice](Update-MgBetaDevice.md)
 Update the properties of a device.
 Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
 
-### [Update-MgDeviceCommand](Update-MgDeviceCommand.md)
+### [Update-MgBetaDeviceCommand](Update-MgBetaDeviceCommand.md)
 Update the navigation property commands in devices
 
-### [Update-MgDeviceExtension](Update-MgDeviceExtension.md)
+### [Update-MgBetaDeviceExtension](Update-MgBetaDeviceExtension.md)
 Update the navigation property extensions in devices
 
-### [Update-MgDeviceUsageRights](Update-MgDeviceUsageRights.md)
+### [Update-MgBetaDeviceUsageRights](Update-MgBetaDeviceUsageRights.md)
 Update the navigation property usageRights in devices
 
-### [Update-MgDirectory](Update-MgDirectory.md)
+### [Update-MgBetaDirectory](Update-MgBetaDirectory.md)
 Update directory
 
-### [Update-MgDirectoryAdministrativeUnit](Update-MgDirectoryAdministrativeUnit.md)
+### [Update-MgBetaDirectoryAdministrativeUnit](Update-MgBetaDirectoryAdministrativeUnit.md)
 Update the navigation property administrativeUnits in directory
 
-### [Update-MgDirectoryAdministrativeUnitExtension](Update-MgDirectoryAdministrativeUnitExtension.md)
+### [Update-MgBetaDirectoryAdministrativeUnitExtension](Update-MgBetaDirectoryAdministrativeUnitExtension.md)
 Update the navigation property extensions in directory
 
-### [Update-MgDirectoryAdministrativeUnitScopedRoleMember](Update-MgDirectoryAdministrativeUnitScopedRoleMember.md)
+### [Update-MgBetaDirectoryAdministrativeUnitScopedRoleMember](Update-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
 Update the navigation property scopedRoleMembers in directory
 
-### [Update-MgDirectoryAttributeSet](Update-MgDirectoryAttributeSet.md)
+### [Update-MgBetaDirectoryAttributeSet](Update-MgBetaDirectoryAttributeSet.md)
 Update the navigation property attributeSets in directory
 
-### [Update-MgDirectoryCustomSecurityAttributeDefinition](Update-MgDirectoryCustomSecurityAttributeDefinition.md)
+### [Update-MgBetaDirectoryCustomSecurityAttributeDefinition](Update-MgBetaDirectoryCustomSecurityAttributeDefinition.md)
 Update the navigation property customSecurityAttributeDefinitions in directory
 
-### [Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
+### [Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Update the navigation property allowedValues in directory
 
-### [Update-MgDirectoryDeletedItem](Update-MgDirectoryDeletedItem.md)
+### [Update-MgBetaDirectoryDeletedItem](Update-MgBetaDirectoryDeletedItem.md)
 Update the navigation property deletedItems in directory
 
-### [Update-MgDirectoryFeatureRolloutPolicy](Update-MgDirectoryFeatureRolloutPolicy.md)
+### [Update-MgBetaDirectoryFeatureRolloutPolicy](Update-MgBetaDirectoryFeatureRolloutPolicy.md)
 Update the navigation property featureRolloutPolicies in directory
 
-### [Update-MgDirectoryFederationConfiguration](Update-MgDirectoryFederationConfiguration.md)
+### [Update-MgBetaDirectoryFederationConfiguration](Update-MgBetaDirectoryFederationConfiguration.md)
 Update the navigation property federationConfigurations in directory
 
-### [Update-MgDirectoryImpactedResource](Update-MgDirectoryImpactedResource.md)
+### [Update-MgBetaDirectoryImpactedResource](Update-MgBetaDirectoryImpactedResource.md)
 Update the navigation property impactedResources in directory
 
-### [Update-MgDirectoryInboundSharedUserProfile](Update-MgDirectoryInboundSharedUserProfile.md)
+### [Update-MgBetaDirectoryInboundSharedUserProfile](Update-MgBetaDirectoryInboundSharedUserProfile.md)
 Update the navigation property inboundSharedUserProfiles in directory
 
-### [Update-MgDirectoryOnPremisSynchronization](Update-MgDirectoryOnPremisSynchronization.md)
+### [Update-MgBetaDirectoryOnPremisSynchronization](Update-MgBetaDirectoryOnPremisSynchronization.md)
 Update the navigation property onPremisesSynchronization in directory
 
-### [Update-MgDirectoryOutboundSharedUserProfile](Update-MgDirectoryOutboundSharedUserProfile.md)
+### [Update-MgBetaDirectoryOutboundSharedUserProfile](Update-MgBetaDirectoryOutboundSharedUserProfile.md)
 Update the navigation property outboundSharedUserProfiles in directory
 
-### [Update-MgDirectoryOutboundSharedUserProfileTenant](Update-MgDirectoryOutboundSharedUserProfileTenant.md)
+### [Update-MgBetaDirectoryOutboundSharedUserProfileTenant](Update-MgBetaDirectoryOutboundSharedUserProfileTenant.md)
 Update the navigation property tenants in directory
 
-### [Update-MgDirectoryRecommendation](Update-MgDirectoryRecommendation.md)
+### [Update-MgBetaDirectoryRecommendation](Update-MgBetaDirectoryRecommendation.md)
 Update the navigation property recommendations in directory
 
-### [Update-MgDirectoryRecommendationImpactedResource](Update-MgDirectoryRecommendationImpactedResource.md)
+### [Update-MgBetaDirectoryRecommendationImpactedResource](Update-MgBetaDirectoryRecommendationImpactedResource.md)
 Update the navigation property impactedResources in directory
 
-### [Update-MgDirectoryRole](Update-MgDirectoryRole.md)
+### [Update-MgBetaDirectoryRole](Update-MgBetaDirectoryRole.md)
 Update entity in directoryRoles
 
-### [Update-MgDirectoryRoleScopedMember](Update-MgDirectoryRoleScopedMember.md)
+### [Update-MgBetaDirectoryRoleScopedMember](Update-MgBetaDirectoryRoleScopedMember.md)
 Update the navigation property scopedMembers in directoryRoles
 
-### [Update-MgDirectoryRoleTemplate](Update-MgDirectoryRoleTemplate.md)
+### [Update-MgBetaDirectoryRoleTemplate](Update-MgBetaDirectoryRoleTemplate.md)
 Update entity in directoryRoleTemplates
 
-### [Update-MgDirectorySetting](Update-MgDirectorySetting.md)
+### [Update-MgBetaDirectorySetting](Update-MgBetaDirectorySetting.md)
 Update the properties of a specific directory setting object.
 
-### [Update-MgDirectorySettingTemplate](Update-MgDirectorySettingTemplate.md)
+### [Update-MgBetaDirectorySettingTemplate](Update-MgBetaDirectorySettingTemplate.md)
 Update entity in directorySettingTemplates
 
-### [Update-MgDirectorySharedEmailDomain](Update-MgDirectorySharedEmailDomain.md)
+### [Update-MgBetaDirectorySharedEmailDomain](Update-MgBetaDirectorySharedEmailDomain.md)
 Update the navigation property sharedEmailDomains in directory
 
-### [Update-MgDomain](Update-MgDomain.md)
+### [Update-MgBetaDomain](Update-MgBetaDomain.md)
 Update the properties of domain object.
 
-### [Update-MgDomainFederationConfiguration](Update-MgDomainFederationConfiguration.md)
+### [Update-MgBetaDomainFederationConfiguration](Update-MgBetaDomainFederationConfiguration.md)
 Update the navigation property federationConfiguration in domains
 
-### [Update-MgDomainServiceConfigurationRecord](Update-MgDomainServiceConfigurationRecord.md)
+### [Update-MgBetaDomainServiceConfigurationRecord](Update-MgBetaDomainServiceConfigurationRecord.md)
 Update the navigation property serviceConfigurationRecords in domains
 
-### [Update-MgDomainSharedEmailDomainInvitation](Update-MgDomainSharedEmailDomainInvitation.md)
+### [Update-MgBetaDomainSharedEmailDomainInvitation](Update-MgBetaDomainSharedEmailDomainInvitation.md)
 Update the navigation property sharedEmailDomainInvitations in domains
 
-### [Update-MgDomainVerificationDnsRecord](Update-MgDomainVerificationDnsRecord.md)
+### [Update-MgBetaDomainVerificationDnsRecord](Update-MgBetaDomainVerificationDnsRecord.md)
 Update the navigation property verificationDnsRecords in domains
 
-### [Update-MgOrganization](Update-MgOrganization.md)
+### [Update-MgBetaOrganization](Update-MgBetaOrganization.md)
 Update the properties of the currently authenticated organization.
 In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.
 The **ID** is also known as the **tenantId** of the organization.
 
-### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
+### [Update-MgBetaOrganizationBranding](Update-MgBetaOrganizationBranding.md)
 Update the properties of the default branding object specified by the organizationalBranding resource.
 
-### [Update-MgOrganizationBrandingLocalization](Update-MgOrganizationBrandingLocalization.md)
+### [Update-MgBetaOrganizationBrandingLocalization](Update-MgBetaOrganizationBrandingLocalization.md)
 Update the navigation property localizations in organization
 
-### [Update-MgOrganizationExtension](Update-MgOrganizationExtension.md)
+### [Update-MgBetaOrganizationExtension](Update-MgBetaOrganizationExtension.md)
 Update the navigation property extensions in organization
 
-### [Update-MgOrganizationSetting](Update-MgOrganizationSetting.md)
+### [Update-MgBetaOrganizationSetting](Update-MgBetaOrganizationSetting.md)
 Update the navigation property settings in organization
 
-### [Update-MgOrganizationSettingContactInsight](Update-MgOrganizationSettingContactInsight.md)
+### [Update-MgBetaOrganizationSettingContactInsight](Update-MgBetaOrganizationSettingContactInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
-### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
+### [Update-MgBetaOrganizationSettingItemInsight](Update-MgBetaOrganizationSettingItemInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
-### [Update-MgOrganizationSettingMicrosoftApplicationDataAccess](Update-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+### [Update-MgBetaOrganizationSettingMicrosoftApplicationDataAccess](Update-MgBetaOrganizationSettingMicrosoftApplicationDataAccess.md)
 Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
 
-### [Update-MgOrganizationSettingPersonInsight](Update-MgOrganizationSettingPersonInsight.md)
+### [Update-MgBetaOrganizationSettingPersonInsight](Update-MgBetaOrganizationSettingPersonInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
-### [Update-MgOrganizationSettingProfileCardProperty](Update-MgOrganizationSettingProfileCardProperty.md)
+### [Update-MgBetaOrganizationSettingProfileCardProperty](Update-MgBetaOrganizationSettingProfileCardProperty.md)
 Update the navigation property profileCardProperties in organization
 
-### [Update-MgSubscribedSku](Update-MgSubscribedSku.md)
+### [Update-MgBetaSubscribedSku](Update-MgBetaSubscribedSku.md)
 Update entity in subscribedSkus
 
-### [Update-MgUserScopedRoleMemberOf](Update-MgUserScopedRoleMemberOf.md)
+### [Update-MgBetaUserScopedRoleMemberOf](Update-MgBetaUserScopedRoleMemberOf.md)
 Update the navigation property scopedRoleMemberOf in users
 

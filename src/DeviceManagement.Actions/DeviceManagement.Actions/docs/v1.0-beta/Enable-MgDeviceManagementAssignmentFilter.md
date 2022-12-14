@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/enable-mgdevicemanagementassignmentfilter
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/enable-mgdevicemanagementassignmentfilter
 schema: 2.0.0
 ---
 
-# Enable-MgDeviceManagementAssignmentFilter
+# Enable-MgBetaDeviceManagementAssignmentFilter
 
 ## SYNOPSIS
 Invoke action enable
@@ -14,13 +14,13 @@ Invoke action enable
 
 ### EnableExpanded (Default)
 ```
-Enable-MgDeviceManagementAssignmentFilter [-AdditionalProperties <Hashtable>] [-Enable] [-PassThru] [-Confirm]
+Enable-MgBetaDeviceManagementAssignmentFilter [-AdditionalProperties <Hashtable>] [-Enable] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Enable
 ```
-Enable-MgDeviceManagementAssignmentFilter
+Enable-MgBetaDeviceManagementAssignmentFilter
  -BodyParameter <IPaths1Wi1TrqDevicemanagementAssignmentfiltersMicrosoftGraphEnablePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Wi1TrqDevicemanagementAssignmentfiltersMicrosoftGraphEnablePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Wi1TrqDevicemanagementAssignmentfiltersMicrosoftGraphEnablePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Enable
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Wi1TrqDevicemanagementAssignmentfiltersMicrosoftGraphEnablePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Wi1TrqDevicemanagementAssignmentfiltersMicrosoftGraphEnablePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

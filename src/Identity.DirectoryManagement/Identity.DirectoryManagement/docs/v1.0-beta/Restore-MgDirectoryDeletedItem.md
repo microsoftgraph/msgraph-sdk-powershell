@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/restore-mgdirectorydeleteditem
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/restore-mgdirectorydeleteditem
 schema: 2.0.0
 ---
 
-# Restore-MgDirectoryDeletedItem
+# Restore-MgBetaDirectoryDeletedItem
 
 ## SYNOPSIS
 Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
@@ -18,12 +18,12 @@ After 30 days, the item is permanently deleted.
 
 ### Restore (Default)
 ```
-Restore-MgDirectoryDeletedItem -DirectoryObjectId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf]
+Restore-MgBetaDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ After 30 days, the item is permanently deleted.
 
 ## EXAMPLES
 
-### Example 1: Using the Restore-MgDirectoryDeletedItem Cmdlet
+### Example 1: Using the Restore-MgBetaDirectoryDeletedItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Restore-MgDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Restore-MgDirectoryDeletedItem Cmdlet.
+This example shows how to use the Restore-MgBetaDirectoryDeletedItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

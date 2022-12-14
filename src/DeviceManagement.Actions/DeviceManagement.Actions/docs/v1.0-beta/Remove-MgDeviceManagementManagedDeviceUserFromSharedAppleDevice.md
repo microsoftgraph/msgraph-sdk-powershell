@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/remove-mgdevicemanagementmanageddeviceuserfromsharedappledevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/remove-mgdevicemanagementmanageddeviceuserfromsharedappledevice
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice
+# Remove-MgBetaDeviceManagementManagedDeviceUserFromSharedAppleDevice
 
 ## SYNOPSIS
 Delete user from shared Apple device
@@ -14,21 +14,21 @@ Delete user from shared Apple device
 
 ### DeleteExpanded (Default)
 ```
-Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice -ManagedDeviceId <String>
+Remove-MgBetaDeviceManagementManagedDeviceUserFromSharedAppleDevice -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice -ManagedDeviceId <String>
+Remove-MgBetaDeviceManagementManagedDeviceUserFromSharedAppleDevice -ManagedDeviceId <String>
  -BodyParameter <IPaths5C9DebDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice
+Remove-MgBetaDeviceManagementManagedDeviceUserFromSharedAppleDevice
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths5C9DebDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice
 
 ### DeleteViaIdentityExpanded
 ```
-Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice
+Remove-MgBetaDeviceManagementManagedDeviceUserFromSharedAppleDevice
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths5C9DebDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths5C9DebDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Delete, DeleteViaIdentity
 Aliases:
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: DeleteViaIdentity, DeleteViaIdentityExpanded
 Aliases:
 
@@ -176,9 +176,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths5C9DebDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths5C9DebDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 

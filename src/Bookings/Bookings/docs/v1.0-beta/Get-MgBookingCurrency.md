@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/get-mgbookingcurrency
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/get-mgbookingcurrency
 schema: 2.0.0
 ---
 
-# Get-MgBookingCurrency
+# Get-MgBetaBookingCurrency
 
 ## SYNOPSIS
 Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
@@ -15,20 +15,20 @@ Use the **id** property, which is the currency code, to specify the currency.
 
 ### List1 (Default)
 ```
-Get-MgBookingCurrency [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaBookingCurrency [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgBookingCurrency -BookingCurrencyId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaBookingCurrency -BookingCurrencyId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgBookingCurrency -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaBookingCurrency -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ Use the **id** property, which is the currency code, to specify the currency.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgBookingCurrency Cmdlet
+### Example 1: Using the Get-MgBetaBookingCurrency Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingCurrency
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingCurrency
 ```
 
-This example shows how to use the Get-MgBookingCurrency Cmdlet.
+This example shows how to use the Get-MgBetaBookingCurrency Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgBookingCurrency Cmdlet
+### Example 2: Using the Get-MgBetaBookingCurrency Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingCurrency -BookingCurrencyId $bookingCurrencyId
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingCurrency -BookingCurrencyId $bookingCurrencyId
 ```
 
-This example shows how to use the Get-MgBookingCurrency Cmdlet.
+This example shows how to use the Get-MgBetaBookingCurrency Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -245,11 +245,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCurrency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCurrency
 
 ## NOTES
 

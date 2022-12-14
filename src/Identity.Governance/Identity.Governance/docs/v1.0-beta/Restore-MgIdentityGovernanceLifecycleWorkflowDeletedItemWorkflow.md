@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/restore-mgidentitygovernancelifecycleworkflowdeleteditemworkflow
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/restore-mgidentitygovernancelifecycleworkflowdeleteditemworkflow
 schema: 2.0.0
 ---
 
-# Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow
+# Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow
 
 ## SYNOPSIS
 Restore a workflow that has been deleted.
@@ -15,13 +15,13 @@ You can only restore a workflow that was deleted within the last 30 days before 
 
 ### Restore (Default)
 ```
-Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId <String> [-Confirm] [-WhatIf]
+Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -InputObject <IIdentityGovernanceIdentity>
+Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -InputObject <IIdentityGovernanceIdentity>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ You can only restore a workflow that was deleted within the last 30 days before 
 
 ## EXAMPLES
 
-### Example 1: Using the Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow Cmdlet
+### Example 1: Using the Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId $workflowId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId $workflowId
 ```
 
-This example shows how to use the Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow Cmdlet.
+This example shows how to use the Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -47,7 +47,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -109,11 +109,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflow
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflow
 
 ## NOTES
 

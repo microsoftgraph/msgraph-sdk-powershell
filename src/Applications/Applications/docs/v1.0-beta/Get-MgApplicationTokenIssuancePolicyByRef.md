@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationtokenissuancepolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationtokenissuancepolicybyref
 schema: 2.0.0
 ---
 
-# Get-MgApplicationTokenIssuancePolicyByRef
+# Get-MgBetaApplicationTokenIssuancePolicyByRef
 
 ## SYNOPSIS
 List the tokenIssuancePolicy objects that are assigned to an application.
@@ -13,7 +13,7 @@ List the tokenIssuancePolicy objects that are assigned to an application.
 ## SYNTAX
 
 ```
-Get-MgApplicationTokenIssuancePolicyByRef -ApplicationId <String> [-Filter <String>] [-Search <String>]
+Get-MgBetaApplicationTokenIssuancePolicyByRef -ApplicationId <String> [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```

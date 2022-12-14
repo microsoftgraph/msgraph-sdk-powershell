@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/confirm-mgteamscheduletimecard
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/confirm-mgteamscheduletimecard
 schema: 2.0.0
 ---
 
-# Confirm-MgTeamScheduleTimeCard
+# Confirm-MgBetaTeamScheduleTimeCard
 
 ## SYNOPSIS
 Confirm a specific timeCard.
@@ -14,12 +14,12 @@ Confirm a specific timeCard.
 
 ### Confirm (Default)
 ```
-Confirm-MgTeamScheduleTimeCard -TeamId <String> -TimeCardId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Confirm-MgBetaTeamScheduleTimeCard -TeamId <String> -TimeCardId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ConfirmViaIdentity
 ```
-Confirm-MgTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Confirm-MgBetaTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,13 +27,13 @@ Confirm a specific timeCard.
 
 ## EXAMPLES
 
-### Example 1: Using the Confirm-MgTeamScheduleTimeCard Cmdlet
+### Example 1: Using the Confirm-MgBetaTeamScheduleTimeCard Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Confirm-MgTeamScheduleTimeCard -TeamId $teamId -TimeCardId $timeCardId
+Import-Module Microsoft.Graph.Beta.Teams
+Confirm-MgBetaTeamScheduleTimeCard -TeamId $teamId -TimeCardId $timeCardId
 ```
 
-This example shows how to use the Confirm-MgTeamScheduleTimeCard Cmdlet.
+This example shows how to use the Confirm-MgBetaTeamScheduleTimeCard Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -43,7 +43,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: ConfirmViaIdentity
 Aliases:
 
@@ -120,11 +120,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeCard
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeCard
 
 ## NOTES
 

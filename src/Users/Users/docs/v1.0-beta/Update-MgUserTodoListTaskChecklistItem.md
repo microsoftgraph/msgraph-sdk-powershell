@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusertodolisttaskchecklistitem
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mgusertodolisttaskchecklistitem
 schema: 2.0.0
 ---
 
-# Update-MgUserTodoListTaskChecklistItem
+# Update-MgBetaUserTodoListTaskChecklistItem
 
 ## SYNOPSIS
 Update the navigation property checklistItems in users
@@ -14,7 +14,7 @@ Update the navigation property checklistItems in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserTodoListTaskChecklistItem -ChecklistItemId <String> -TodoTaskId <String> -TodoTaskListId <String>
+Update-MgBetaUserTodoListTaskChecklistItem -ChecklistItemId <String> -TodoTaskId <String> -TodoTaskListId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-CheckedDateTime <DateTime>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-IsChecked] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgUserTodoListTaskChecklistItem -ChecklistItemId <String> -TodoTaskId <St
 
 ### Update
 ```
-Update-MgUserTodoListTaskChecklistItem -ChecklistItemId <String> -TodoTaskId <String> -TodoTaskListId <String>
+Update-MgBetaUserTodoListTaskChecklistItem -ChecklistItemId <String> -TodoTaskId <String> -TodoTaskListId <String>
  -UserId <String> -BodyParameter <IMicrosoftGraphChecklistItem> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity>
+Update-MgBetaUserTodoListTaskChecklistItem -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphChecklistItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-CheckedDateTime <DateTime>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-IsChecked] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,17 +45,17 @@ Update the navigation property checklistItems in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 1: Using the Update-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	DisplayName = "buy cake"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId -BodyParameter $params
+Update-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the Update-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ checklistItem
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChecklistItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChecklistItem
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -172,7 +172,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -294,9 +294,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChecklistItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChecklistItem
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

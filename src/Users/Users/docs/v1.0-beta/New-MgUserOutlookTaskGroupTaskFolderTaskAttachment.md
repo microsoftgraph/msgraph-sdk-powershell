@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguseroutlooktaskgrouptaskfoldertaskattachment
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/new-mguseroutlooktaskgrouptaskfoldertaskattachment
 schema: 2.0.0
 ---
 
-# New-MgUserOutlookTaskGroupTaskFolderTaskAttachment
+# New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment
 
 ## SYNOPSIS
 Use this API to add an attachment to an outlookTask.
@@ -15,7 +15,7 @@ The attachment can be a file (of fileAttachment type) or Outlook item (itemAttac
 
 ### CreateExpanded (Default)
 ```
-New-MgUserOutlookTaskGroupTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskGroupId <String>
+New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskGroupId <String>
  -OutlookTaskId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>]
  [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -23,20 +23,20 @@ New-MgUserOutlookTaskGroupTaskFolderTaskAttachment -OutlookTaskFolderId <String>
 
 ### Create
 ```
-New-MgUserOutlookTaskGroupTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskGroupId <String>
+New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment -OutlookTaskFolderId <String> -OutlookTaskGroupId <String>
  -OutlookTaskId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOutlookTaskGroupTaskFolderTaskAttachment -InputObject <IUsersIdentity>
+New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserOutlookTaskGroupTaskFolderTaskAttachment -InputObject <IUsersIdentity>
+New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment -InputObject <IUsersIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
  [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ attachment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -116,7 +116,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -284,13 +284,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

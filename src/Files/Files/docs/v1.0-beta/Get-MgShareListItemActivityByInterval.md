@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgsharelistitemactivitybyinterval
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgsharelistitemactivitybyinterval
 schema: 2.0.0
 ---
 
-# Get-MgShareListItemActivityByInterval
+# Get-MgBetaShareListItemActivityByInterval
 
 ## SYNOPSIS
 Invoke function getActivitiesByInterval
@@ -14,28 +14,28 @@ Invoke function getActivitiesByInterval
 
 ### Get5 (Default)
 ```
-Get-MgShareListItemActivityByInterval -EndDateTime <String> -Interval <String> -SharedDriveItemId <String>
+Get-MgBetaShareListItemActivityByInterval -EndDateTime <String> -Interval <String> -SharedDriveItemId <String>
  -StartDateTime <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get4
 ```
-Get-MgShareListItemActivityByInterval -EndDateTime <String> -Interval <String> -ListItemId <String>
+Get-MgBetaShareListItemActivityByInterval -EndDateTime <String> -Interval <String> -ListItemId <String>
  -SharedDriveItemId <String> -StartDateTime <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity4
 ```
-Get-MgShareListItemActivityByInterval -InputObject <IFilesIdentity> [-Count] [-Filter <String>]
+Get-MgBetaShareListItemActivityByInterval -InputObject <IFilesIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity5
 ```
-Get-MgShareListItemActivityByInterval -InputObject <IFilesIdentity> [-Count] [-Filter <String>]
+Get-MgBetaShareListItemActivityByInterval -InputObject <IFilesIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity4, GetViaIdentity5
 Aliases:
 
@@ -248,11 +248,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemActivityStat1
 
 ## NOTES
 

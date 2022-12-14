@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgrenewgroup
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgrenewgroup
 schema: 2.0.0
 ---
 
-# Invoke-MgRenewGroup
+# Invoke-MgBetaRenewGroup
 
 ## SYNOPSIS
 Renews a group's expiration.
@@ -15,12 +15,12 @@ When a group is renewed, the group expiration is extended by the number of days 
 
 ### Renew (Default)
 ```
-Invoke-MgRenewGroup -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaRenewGroup -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RenewViaIdentity
 ```
-Invoke-MgRenewGroup -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaRenewGroup -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,13 +29,13 @@ When a group is renewed, the group expiration is extended by the number of days 
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgRenewGroup Cmdlet
+### Example 1: Using the Invoke-MgBetaRenewGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Invoke-MgRenewGroup -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Invoke-MgBetaRenewGroup -GroupId $groupId
 ```
 
-This example shows how to use the Invoke-MgRenewGroup Cmdlet.
+This example shows how to use the Invoke-MgBetaRenewGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: RenewViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

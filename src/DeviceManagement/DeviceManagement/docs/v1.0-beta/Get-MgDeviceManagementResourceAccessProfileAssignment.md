@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementresourceaccessprofileassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementresourceaccessprofileassignment
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementResourceAccessProfileAssignment
+# Get-MgBetaDeviceManagementResourceAccessProfileAssignment
 
 ## SYNOPSIS
 The list of assignments for the device configuration profile.
@@ -14,14 +14,14 @@ The list of assignments for the device configuration profile.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementResourceAccessProfileAssignment -DeviceManagementResourceAccessProfileBaseId <String>
+Get-MgBetaDeviceManagementResourceAccessProfileAssignment -DeviceManagementResourceAccessProfileBaseId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementResourceAccessProfileAssignment
+Get-MgBetaDeviceManagementResourceAccessProfileAssignment
  -DeviceManagementResourceAccessProfileAssignmentId <String>
  -DeviceManagementResourceAccessProfileBaseId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -29,7 +29,7 @@ Get-MgDeviceManagementResourceAccessProfileAssignment
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementResourceAccessProfileAssignment -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementResourceAccessProfileAssignment -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment
 
 ## NOTES
 

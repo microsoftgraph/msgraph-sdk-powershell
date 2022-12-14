@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityb2xuserflow
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityb2xuserflow
 schema: 2.0.0
 ---
 
-# New-MgIdentityB2XUserFlow
+# New-MgBetaIdentityB2XUserFlow
 
 ## SYNOPSIS
 Create a new b2xIdentityUserFlow object.
@@ -14,7 +14,7 @@ Create a new b2xIdentityUserFlow object.
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityB2XUserFlow [-AdditionalProperties <Hashtable>]
+New-MgBetaIdentityB2XUserFlow [-AdditionalProperties <Hashtable>]
  [-ApiConnectorConfiguration <IMicrosoftGraphUserFlowApiConnectorConfiguration1>] [-Id <String>]
  [-IdentityProviders <IMicrosoftGraphIdentityProvider[]>]
  [-Languages <IMicrosoftGraphUserFlowLanguageConfiguration[]>]
@@ -25,7 +25,7 @@ New-MgIdentityB2XUserFlow [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgIdentityB2XUserFlow -BodyParameter <IMicrosoftGraphB2XIdentityUserFlow1> [-Confirm] [-WhatIf]
+New-MgBetaIdentityB2XUserFlow -BodyParameter <IMicrosoftGraphB2XIdentityUserFlow1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -34,9 +34,9 @@ Create a new b2xIdentityUserFlow object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgIdentityB2XUserFlow Cmdlet
+### Example 1: Using the New-MgBetaIdentityB2XUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "UserFlowWithAPIConnector"
 	UserFlowType = "signUpOrSignIn"
@@ -50,15 +50,15 @@ $params = @{
 		}
 	}
 }
-New-MgIdentityB2XUserFlow -BodyParameter $params
+New-MgBetaIdentityB2XUserFlow -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+This example shows how to use the New-MgBetaIdentityB2XUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgIdentityB2XUserFlow Cmdlet
+### Example 2: Using the New-MgBetaIdentityB2XUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "Partner"
 	UserFlowType = "signUpOrSignIn"
@@ -71,24 +71,24 @@ $params = @{
 		}
 	)
 }
-New-MgIdentityB2XUserFlow -BodyParameter $params
+New-MgBetaIdentityB2XUserFlow -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+This example shows how to use the New-MgBetaIdentityB2XUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgIdentityB2XUserFlow Cmdlet
+### Example 3: Using the New-MgBetaIdentityB2XUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "Partner"
 	UserFlowType = "signUpOrSignIn"
 	UserFlowTypeVersion = 1
 }
-New-MgIdentityB2XUserFlow -BodyParameter $params
+New-MgBetaIdentityB2XUserFlow -BodyParameter $params
 ```
 
-This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+This example shows how to use the New-MgBetaIdentityB2XUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ userFlowApiConnectorConfiguration
 To construct, please use Get-Help -Online and see NOTES section for APICONNECTORCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowApiConnectorConfiguration1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowApiConnectorConfiguration1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -129,7 +129,7 @@ b2xIdentityUserFlow
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
 Parameter Sets: Create
 Aliases:
 
@@ -161,7 +161,7 @@ The identity providers included in the user flow.
 To construct, please use Get-Help -Online and see NOTES section for IDENTITYPROVIDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProvider[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProvider[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ You cannot create custom languages in self-service sign up user flows.
 To construct, please use Get-Help -Online and see NOTES section for LANGUAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ The user attribute assignments included in the user flow.
 To construct, please use Get-Help -Online and see NOTES section for USERATTRIBUTEASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttributeAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttributeAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for USERFLOWIDENTITYPROVIDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -288,11 +288,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphB2XIdentityUserFlow1
 
 ## NOTES
 

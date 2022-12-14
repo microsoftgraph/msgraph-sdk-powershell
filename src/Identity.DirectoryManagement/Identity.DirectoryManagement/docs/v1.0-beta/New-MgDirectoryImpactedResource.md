@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryimpactedresource
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectoryimpactedresource
 schema: 2.0.0
 ---
 
-# New-MgDirectoryImpactedResource
+# New-MgBetaDirectoryImpactedResource
 
 ## SYNOPSIS
 Create new navigation property to impactedResources for directory
@@ -14,7 +14,7 @@ Create new navigation property to impactedResources for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryImpactedResource [-AddedDateTime <DateTime>] [-AdditionalDetails <IMicrosoftGraphKeyValue[]>]
+New-MgBetaDirectoryImpactedResource [-AddedDateTime <DateTime>] [-AdditionalDetails <IMicrosoftGraphKeyValue[]>]
  [-AdditionalProperties <Hashtable>] [-ApiUrl <String>] [-DisplayName <String>] [-Id <String>]
  [-Owner <String>] [-PortalUrl <String>] [-Rank <Int32>] [-RecommendationId <String>] [-ResourceType <String>]
  [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDirectoryImpactedResource [-AddedDateTime <DateTime>] [-AdditionalDetails 
 
 ### Create
 ```
-New-MgDirectoryImpactedResource -BodyParameter <IMicrosoftGraphRecommendationResource> [-Confirm] [-WhatIf]
+New-MgBetaDirectoryImpactedResource -BodyParameter <IMicrosoftGraphRecommendationResource> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ADDITIONALDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValue[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -99,7 +99,7 @@ recommendationResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 Parameter Sets: Create
 Aliases:
 
@@ -267,11 +267,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementexchangeonpremispolicy
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementexchangeonpremispolicy
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementExchangeOnPremisPolicy
+# Update-MgBetaDeviceManagementExchangeOnPremisPolicy
 
 ## SYNOPSIS
 Update the navigation property exchangeOnPremisesPolicies in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property exchangeOnPremisesPolicies in deviceManagement
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicy
+Update-MgBetaDeviceManagementExchangeOnPremisPolicy
  [-AccessRules <IMicrosoftGraphDeviceManagementExchangeAccessRule[]>] [-AdditionalProperties <Hashtable>]
  [-ConditionalAccessSettings <IMicrosoftGraphOnPremisesConditionalAccessSettings>]
  [-DefaultAccessLevel <DeviceManagementExchangeAccessLevel>] [-Id <String>]
@@ -24,21 +24,21 @@ Update-MgDeviceManagementExchangeOnPremisPolicy
 
 ### Update
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicy -DeviceManagementExchangeOnPremisesPolicyId <String>
+Update-MgBetaDeviceManagementExchangeOnPremisPolicy -DeviceManagementExchangeOnPremisesPolicyId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicy
+Update-MgBetaDeviceManagementExchangeOnPremisPolicy
  -BodyParameter <IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateExpanded
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicy -DeviceManagementExchangeOnPremisesPolicyId <String>
+Update-MgBetaDeviceManagementExchangeOnPremisPolicy -DeviceManagementExchangeOnPremisesPolicyId <String>
  [-AccessRules <IMicrosoftGraphDeviceManagementExchangeAccessRule[]>] [-AdditionalProperties <Hashtable>]
  [-ConditionalAccessSettings <IMicrosoftGraphOnPremisesConditionalAccessSettings>]
  [-DefaultAccessLevel <DeviceManagementExchangeAccessLevel>] [-Id <String>]
@@ -48,14 +48,14 @@ Update-MgDeviceManagementExchangeOnPremisPolicy -DeviceManagementExchangeOnPremi
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicy -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementExchangeOnPremisPolicy -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicy -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementExchangeOnPremisPolicy -InputObject <IDeviceManagementAdministrationIdentity>
  [-AccessRules <IMicrosoftGraphDeviceManagementExchangeAccessRule[]>] [-AdditionalProperties <Hashtable>]
  [-ConditionalAccessSettings <IMicrosoftGraphOnPremisesConditionalAccessSettings>]
  [-DefaultAccessLevel <DeviceManagementExchangeAccessLevel>] [-Id <String>]
@@ -76,7 +76,7 @@ The access rules apply globally to the entire Exchange organization
 To construct, please use Get-Help -Online and see NOTES section for ACCESSRULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeAccessRule[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeAccessRule[]
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded
 Aliases:
 
@@ -107,7 +107,7 @@ Singleton entity which represents the Exchange OnPremises policy configured for 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
 Parameter Sets: Update, Update1, UpdateViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ Singleton entity which represents the Exchange OnPremises Conditional Access Set
 To construct, please use Get-Help -Online and see NOTES section for CONDITIONALACCESSSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded
 Aliases:
 
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 Access Level in Exchange.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementExchangeAccessLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementExchangeAccessLevel
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded
 Aliases:
 
@@ -185,7 +185,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -201,7 +201,7 @@ The list of device classes known to Exchange
 To construct, please use Get-Help -Online and see NOTES section for KNOWNDEVICECLASSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeDeviceClass[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeDeviceClass[]
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded
 Aliases:
 
@@ -279,9 +279,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeOnPremisesPolicy
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointusersetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointusersetting
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointUserSetting
+# New-MgBetaDeviceManagementVirtualEndpointUserSetting
 
 ## SYNOPSIS
 Create a new cloudPcUserSetting object.
@@ -14,7 +14,7 @@ Create a new cloudPcUserSetting object.
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointUserSetting [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementVirtualEndpointUserSetting [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphCloudPcUserSettingAssignment[]>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-LocalAdminEnabled]
  [-RestorePointSetting <IMicrosoftGraphCloudPcRestorePointSetting>] [-SelfServiceEnabled] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgDeviceManagementVirtualEndpointUserSetting [-AdditionalProperties <Hashtab
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointUserSetting -BodyParameter <IMicrosoftGraphCloudPcUserSetting> [-Confirm]
+New-MgBetaDeviceManagementVirtualEndpointUserSetting -BodyParameter <IMicrosoftGraphCloudPcUserSetting> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -32,11 +32,11 @@ Create a new cloudPcUserSetting object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDeviceManagementVirtualEndpointUserSetting Cmdlet
+### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcUserSetting"
+	"@odata.type" = "#Microsoft.Graph.Beta.cloudPcUserSetting"
 	DisplayName = "Example"
 	SelfServiceEnabled = $false
 	LocalAdminEnabled = $true
@@ -45,10 +45,10 @@ $params = @{
 		UserRestoreEnabled = $true
 	}
 }
-New-MgDeviceManagementVirtualEndpointUserSetting -BodyParameter $params
+New-MgBetaDeviceManagementVirtualEndpointUserSetting -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDeviceManagementVirtualEndpointUserSetting Cmdlet.
+This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ For an example, see Get cloudPcUserSettingample.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcUserSettingAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcUserSettingAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -91,7 +91,7 @@ cloudPcUserSetting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
 Parameter Sets: Create
 Aliases:
 
@@ -190,7 +190,7 @@ cloudPcRestorePointSetting
 To construct, please use Get-Help -Online and see NOTES section for RESTOREPOINTSETTING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcRestorePointSetting
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcRestorePointSetting
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -254,11 +254,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcUserSetting
 
 ## NOTES
 

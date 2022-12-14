@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/set-mggrouplicense
 schema: 2.0.0
 ---
 
-# Set-MgGroupLicense
+# Set-MgBetaGroupLicense
 
 ## SYNOPSIS
 Add or remove licenses on the group.
@@ -17,28 +17,28 @@ To get the subscriptions available in the directory, perform a GET subscribedSku
 
 ### AssignExpanded (Default)
 ```
-Set-MgGroupLicense -GroupId <String> [-AdditionalProperties <Hashtable>]
+Set-MgBetaGroupLicense -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-AddLicenses <IMicrosoftGraphAssignedLicense[]>] [-RemoveLicenses <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgGroupLicense -GroupId <String>
+Set-MgBetaGroupLicense -GroupId <String>
  -BodyParameter <IPaths6Fg5LiGroupsGroupIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgGroupLicense -InputObject <IGroupsIdentity>
+Set-MgBetaGroupLicense -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths6Fg5LiGroupsGroupIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgGroupLicense -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaGroupLicense -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-AddLicenses <IMicrosoftGraphAssignedLicense[]>] [-RemoveLicenses <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -51,9 +51,9 @@ To get the subscriptions available in the directory, perform a GET subscribedSku
 
 ## EXAMPLES
 
-### Example 1: Using the Set-MgGroupLicense Cmdlet
+### Example 1: Using the Set-MgBetaGroupLicense Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	AddLicenses = @(
 		@{
@@ -73,15 +73,15 @@ $params = @{
 	RemoveLicenses = @(
 	)
 }
-Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
+Set-MgBetaGroupLicense -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the Set-MgGroupLicense Cmdlet.
+This example shows how to use the Set-MgBetaGroupLicense Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Set-MgGroupLicense Cmdlet
+### Example 2: Using the Set-MgBetaGroupLicense Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	AddLicenses = @(
 	)
@@ -90,10 +90,10 @@ $params = @{
 		"b05e124f-c7cc-45a0-a6aa-8cf78c946968"
 	)
 }
-Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
+Set-MgBetaGroupLicense -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the Set-MgGroupLicense Cmdlet.
+This example shows how to use the Set-MgBetaGroupLicense Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ADDLICENSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignedLicense[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignedLicense[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths6Fg5LiGroupsGroupIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths6Fg5LiGroupsGroupIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -165,7 +165,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -227,13 +227,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths6Fg5LiGroupsGroupIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths6Fg5LiGroupsGroupIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroup1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementtelecomexpensemanagementpartner
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementtelecomexpensemanagementpartner
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementTelecomExpenseManagementPartner
+# Update-MgBetaDeviceManagementTelecomExpenseManagementPartner
 
 ## SYNOPSIS
 Update the navigation property telecomExpenseManagementPartners in deviceManagement
@@ -14,21 +14,21 @@ Update the navigation property telecomExpenseManagementPartners in deviceManagem
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementTelecomExpenseManagementPartner -TelecomExpenseManagementPartnerId <String>
+Update-MgBetaDeviceManagementTelecomExpenseManagementPartner -TelecomExpenseManagementPartnerId <String>
  [-AdditionalProperties <Hashtable>] [-AppAuthorized] [-DisplayName <String>] [-Enabled] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-Url <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementTelecomExpenseManagementPartner -TelecomExpenseManagementPartnerId <String>
+Update-MgBetaDeviceManagementTelecomExpenseManagementPartner -TelecomExpenseManagementPartnerId <String>
  -BodyParameter <IMicrosoftGraphTelecomExpenseManagementPartner> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementTelecomExpenseManagementPartner
+Update-MgBetaDeviceManagementTelecomExpenseManagementPartner
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphTelecomExpenseManagementPartner> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ Update-MgDeviceManagementTelecomExpenseManagementPartner
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementTelecomExpenseManagementPartner
+Update-MgBetaDeviceManagementTelecomExpenseManagementPartner
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>] [-AppAuthorized]
  [-DisplayName <String>] [-Enabled] [-Id <String>] [-LastConnectionDateTime <DateTime>] [-Url <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -85,7 +85,7 @@ Once your organization has onboarded with a partner, the partner can be enabled 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTelecomExpenseManagementPartner
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTelecomExpenseManagementPartner
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -254,9 +254,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTelecomExpenseManagementPartner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTelecomExpenseManagementPartner
 
 ## OUTPUTS
 

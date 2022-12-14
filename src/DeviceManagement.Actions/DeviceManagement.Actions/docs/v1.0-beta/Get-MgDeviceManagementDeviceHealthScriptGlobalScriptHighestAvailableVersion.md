@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementdevicehealthscriptglobalscripthighestavailableversion
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementdevicehealthscriptglobalscripthighestavailableversion
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion
+# Get-MgBetaDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion
 
 ## SYNOPSIS
 Update the Proprietary Device Health Script
@@ -14,13 +14,13 @@ Update the Proprietary Device Health Script
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion -DeviceHealthScriptId <String>
+Get-MgBetaDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion -DeviceHealthScriptId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion
+Get-MgBetaDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion
  -InputObject <IDeviceManagementActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

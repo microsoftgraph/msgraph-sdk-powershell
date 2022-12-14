@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprintconnector
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/new-mgprintconnector
 schema: 2.0.0
 ---
 
-# New-MgPrintConnector
+# New-MgBetaPrintConnector
 
 ## SYNOPSIS
 Create new navigation property to connectors for print
@@ -14,7 +14,7 @@ Create new navigation property to connectors for print
 
 ### CreateExpanded (Default)
 ```
-New-MgPrintConnector [-AdditionalProperties <Hashtable>] [-AppVersion <String>]
+New-MgBetaPrintConnector [-AdditionalProperties <Hashtable>] [-AppVersion <String>]
  [-DeviceHealth <IMicrosoftGraphDeviceHealth>] [-DisplayName <String>] [-FullyQualifiedDomainName <String>]
  [-Id <String>] [-Location <IMicrosoftGraphPrinterLocation>] [-Name <String>] [-OperatingSystem <String>]
  [-RegisteredDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgPrintConnector [-AdditionalProperties <Hashtable>] [-AppVersion <String>]
 
 ### Create
 ```
-New-MgPrintConnector -BodyParameter <IMicrosoftGraphPrintConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPrintConnector -BodyParameter <IMicrosoftGraphPrintConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,7 +67,7 @@ printConnector
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
 Parameter Sets: Create
 Aliases:
 
@@ -83,7 +83,7 @@ deviceHealth
 To construct, please use Get-Help -Online and see NOTES section for DEVICEHEALTH properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealth
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealth
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ printerLocation
 To construct, please use Get-Help -Online and see NOTES section for LOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterLocation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrinterLocation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -237,11 +237,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
 
 ## NOTES
 

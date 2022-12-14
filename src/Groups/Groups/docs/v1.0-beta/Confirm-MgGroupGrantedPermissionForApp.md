@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/confirm-mggroupgrantedpermissionforapp
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/confirm-mggroupgrantedpermissionforapp
 schema: 2.0.0
 ---
 
-# Confirm-MgGroupGrantedPermissionForApp
+# Confirm-MgBetaGroupGrantedPermissionForApp
 
 ## SYNOPSIS
 Invoke action checkGrantedPermissionsForApp
@@ -14,12 +14,12 @@ Invoke action checkGrantedPermissionsForApp
 
 ### Check (Default)
 ```
-Confirm-MgGroupGrantedPermissionForApp -GroupId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Confirm-MgBetaGroupGrantedPermissionForApp -GroupId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity
 ```
-Confirm-MgGroupGrantedPermissionForApp -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf]
+Confirm-MgBetaGroupGrantedPermissionForApp -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -50,7 +50,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CheckViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mgplannertaskdetail
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mgplannertaskdetail
 schema: 2.0.0
 ---
 
-# Get-MgPlannerTaskDetail
+# Get-MgBetaPlannerTaskDetail
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a **plannerTaskDetails** object.
@@ -14,13 +14,13 @@ Retrieve the properties and relationships of a **plannerTaskDetails** object.
 
 ### Get1 (Default)
 ```
-Get-MgPlannerTaskDetail -PlannerTaskId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPlannerTaskDetail -PlannerTaskId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPlannerTaskDetail -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPlannerTaskDetail -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Retrieve the properties and relationships of a **plannerTaskDetails** object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPlannerTaskDetail Cmdlet
+### Example 1: Using the Get-MgBetaPlannerTaskDetail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgPlannerTaskDetail -PlannerTaskId $plannerTaskId
+Import-Module Microsoft.Graph.Beta.Planner
+Get-MgBetaPlannerTaskDetail -PlannerTaskId $plannerTaskId
 ```
 
-This example shows how to use the Get-MgPlannerTaskDetail Cmdlet.
+This example shows how to use the Get-MgBetaPlannerTaskDetail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails1
 
 ## NOTES
 

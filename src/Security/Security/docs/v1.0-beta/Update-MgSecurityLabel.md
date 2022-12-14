@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritylabel
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritylabel
 schema: 2.0.0
 ---
 
-# Update-MgSecurityLabel
+# Update-MgBetaSecurityLabel
 
 ## SYNOPSIS
 Update the navigation property labels in security
@@ -14,14 +14,14 @@ Update the navigation property labels in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityLabel [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaSecurityLabel [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-RetentionLabels <IMicrosoftGraphSecurityRetentionLabel[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecurityLabel -BodyParameter <IMicrosoftGraphSecurityLabelsRoot> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaSecurityLabel -BodyParameter <IMicrosoftGraphSecurityLabelsRoot> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ labelsRoot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityLabelsRoot
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityLabelsRoot
 Parameter Sets: Update
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for RETENTIONLABELS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionLabel[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityLabelsRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityLabelsRoot
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/add-mgteamprimarychannelmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/add-mgteamprimarychannelmember
 schema: 2.0.0
 ---
 
-# Add-MgTeamPrimaryChannelMember
+# Add-MgBetaTeamPrimaryChannelMember
 
 ## SYNOPSIS
 Add multiple members in a single request to a team.
@@ -15,27 +15,27 @@ The response provides details about which memberships could and couldn't be crea
 
 ### AddExpanded1 (Default)
 ```
-Add-MgTeamPrimaryChannelMember -TeamId <String> [-AdditionalProperties <Hashtable>]
+Add-MgBetaTeamPrimaryChannelMember -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-Values <IMicrosoftGraphConversationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add1
 ```
-Add-MgTeamPrimaryChannelMember -TeamId <String>
+Add-MgBetaTeamPrimaryChannelMember -TeamId <String>
  -BodyParameter <IPathsU53MjcTeamsTeamIdPrimarychannelMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity1
 ```
-Add-MgTeamPrimaryChannelMember -InputObject <ITeamsIdentity>
+Add-MgBetaTeamPrimaryChannelMember -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsU53MjcTeamsTeamIdPrimarychannelMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded1
 ```
-Add-MgTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Add-MgBetaTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Values <IMicrosoftGraphConversationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,18 +47,18 @@ The response provides details about which memberships could and couldn't be crea
 
 ### Example 1: Add members in bulk to a team
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	Values = @(
 		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('18a80140-b0fb-4489-b360-2f6efaf225a0')"
 		}
 		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
@@ -67,27 +67,27 @@ $params = @{
 	)
 }
 
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgTeamPrimaryChannelMember Cmdlet.
+This example shows how to use the Add-MgBetaTeamPrimaryChannelMember Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Add members in bulk and encounter partial failure
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	Values = @(
 		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('18a80140-b0fb-4489-b360-2f6efaf225a0')"
 		}
 		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
@@ -96,27 +96,27 @@ $params = @{
 	)
 }
 
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgTeamPrimaryChannelMember Cmdlet.
+This example shows how to use the Add-MgBetaTeamPrimaryChannelMember Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Add members in bulk to a team using user principal name
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	Values = @(
 		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 			)
 			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
 		}
 		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			"@odata.type" = "Microsoft.Graph.Beta.aadUserConversationMember"
 			Roles = @(
 				"owner"
 			)
@@ -125,10 +125,10 @@ $params = @{
 	)
 }
 
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgTeamPrimaryChannelMember Cmdlet.
+This example shows how to use the Add-MgBetaTeamPrimaryChannelMember Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsU53MjcTeamsTeamIdPrimarychannelMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsU53MjcTeamsTeamIdPrimarychannelMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add1, AddViaIdentity1
 Aliases:
 
@@ -170,7 +170,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
 Aliases:
 
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember[]
 Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
 Aliases:
 
@@ -248,13 +248,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsU53MjcTeamsTeamIdPrimarychannelMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsU53MjcTeamsTeamIdPrimarychannelMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActionResultPart
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActionResultPart
 
 ## NOTES
 

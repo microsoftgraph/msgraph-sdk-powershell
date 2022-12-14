@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmobileapprelationship
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmobileapprelationship
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtMobileAppRelationship
+# New-MgBetaDeviceAppMgtMobileAppRelationship
 
 ## SYNOPSIS
 Create new navigation property to relationships for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to relationships for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtMobileAppRelationship -MobileAppId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtMobileAppRelationship -MobileAppId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-TargetDisplayName <String>] [-TargetDisplayVersion <String>] [-TargetId <String>]
  [-TargetPublisher <String>] [-TargetType <MobileAppRelationshipType>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgDeviceAppMgtMobileAppRelationship -MobileAppId <String> [-AdditionalProper
 
 ### Create
 ```
-New-MgDeviceAppMgtMobileAppRelationship -MobileAppId <String>
+New-MgBetaDeviceAppMgtMobileAppRelationship -MobileAppId <String>
  -BodyParameter <IMicrosoftGraphMobileAppRelationship> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphMobileAppRelationship> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetDisplayName <String>]
  [-TargetDisplayVersion <String>] [-TargetId <String>] [-TargetPublisher <String>]
  [-TargetType <MobileAppRelationshipType>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ Describes a relationship between two mobile apps.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationship
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppRelationship
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 Indicates whether the target of a relationship is the parent or the child in the relationship.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MobileAppRelationshipType
+Type: Microsoft.Graph.Beta.PowerShell.Support.MobileAppRelationshipType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -236,19 +236,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationship
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppRelationship
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationship
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppRelationship
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementMobileAppRelationship
+### New-MgBetaDeviceAppManagementMobileAppRelationship
 
 COMPLEX PARAMETER PROPERTIES
 

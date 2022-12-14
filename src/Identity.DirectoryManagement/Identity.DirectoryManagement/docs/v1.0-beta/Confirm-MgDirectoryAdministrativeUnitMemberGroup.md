@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/confirm-mgdirectoryadministrativeunitmembergroup
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/confirm-mgdirectoryadministrativeunitmembergroup
 schema: 2.0.0
 ---
 
-# Confirm-MgDirectoryAdministrativeUnitMemberGroup
+# Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup
 
 ## SYNOPSIS
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -18,27 +18,27 @@ Because Microsoft 365 groups cannot contain other groups, membership in a Micros
 
 ### CheckExpanded (Default)
 ```
-Confirm-MgDirectoryAdministrativeUnitMemberGroup -AdministrativeUnitId <String>
+Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup -AdministrativeUnitId <String>
  [-AdditionalProperties <Hashtable>] [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check
 ```
-Confirm-MgDirectoryAdministrativeUnitMemberGroup -AdministrativeUnitId <String>
+Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup -AdministrativeUnitId <String>
  -BodyParameter <IPaths11Lf5XvDirectoryAdministrativeunitsAdministrativeunitIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity
 ```
-Confirm-MgDirectoryAdministrativeUnitMemberGroup -InputObject <IIdentityDirectoryManagementIdentity>
+Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPaths11Lf5XvDirectoryAdministrativeunitsAdministrativeunitIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentityExpanded
 ```
-Confirm-MgDirectoryAdministrativeUnitMemberGroup -InputObject <IIdentityDirectoryManagementIdentity>
+Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths11Lf5XvDirectoryAdministrativeunitsAdministrativeunitIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths11Lf5XvDirectoryAdministrativeunitsAdministrativeunitIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
 Aliases:
 
@@ -166,9 +166,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths11Lf5XvDirectoryAdministrativeunitsAdministrativeunitIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths11Lf5XvDirectoryAdministrativeunitsAdministrativeunitIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

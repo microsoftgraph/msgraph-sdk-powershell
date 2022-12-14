@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementtemplateinstance
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementtemplateinstance
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementTemplateInstance
+# New-MgBetaDeviceManagementTemplateInstance
 
 ## SYNOPSIS
 Invoke action createInstance
@@ -14,7 +14,7 @@ Invoke action createInstance
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementTemplateInstance -DeviceManagementTemplateId <String>
+New-MgBetaDeviceManagementTemplateInstance -DeviceManagementTemplateId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
  [-RoleScopeTagIds <String[]>] [-SettingsDelta <IMicrosoftGraphDeviceManagementSettingInstance[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ New-MgDeviceManagementTemplateInstance -DeviceManagementTemplateId <String>
 
 ### Create
 ```
-New-MgDeviceManagementTemplateInstance -DeviceManagementTemplateId <String>
+New-MgBetaDeviceManagementTemplateInstance -DeviceManagementTemplateId <String>
  -BodyParameter <IPaths1Acen0GDevicemanagementTemplatesDevicemanagementtemplateIdMicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementTemplateInstance -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementTemplateInstance -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1Acen0GDevicemanagementTemplatesDevicemanagementtemplateIdMicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementTemplateInstance -InputObject <IDeviceManagementActionsIdentity>
+New-MgBetaDeviceManagementTemplateInstance -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
  [-RoleScopeTagIds <String[]>] [-SettingsDelta <IMicrosoftGraphDeviceManagementSettingInstance[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Acen0GDevicemanagementTemplatesDevicemanagementtemplateIdMicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Acen0GDevicemanagementTemplatesDevicemanagementtemplateIdMicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SETTINGSDELTA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -208,13 +208,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Acen0GDevicemanagementTemplatesDevicemanagementtemplateIdMicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Acen0GDevicemanagementTemplatesDevicemanagementtemplateIdMicrosoftGraphCreateinstancePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementIntent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntent
 
 ## NOTES
 

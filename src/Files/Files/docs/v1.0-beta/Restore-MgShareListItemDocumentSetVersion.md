@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/restore-mgsharelistitemdocumentsetversion
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/restore-mgsharelistitemdocumentsetversion
 schema: 2.0.0
 ---
 
-# Restore-MgShareListItemDocumentSetVersion
+# Restore-MgBetaShareListItemDocumentSetVersion
 
 ## SYNOPSIS
 Restore a document set version.
@@ -14,25 +14,25 @@ Restore a document set version.
 
 ### Restore3 (Default)
 ```
-Restore-MgShareListItemDocumentSetVersion -DocumentSetVersionId <String> -SharedDriveItemId <String>
+Restore-MgBetaShareListItemDocumentSetVersion -DocumentSetVersionId <String> -SharedDriveItemId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Restore2
 ```
-Restore-MgShareListItemDocumentSetVersion -DocumentSetVersionId <String> -ListItemId <String>
+Restore-MgBetaShareListItemDocumentSetVersion -DocumentSetVersionId <String> -ListItemId <String>
  -SharedDriveItemId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity2
 ```
-Restore-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity3
 ```
-Restore-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Restore-MgBetaShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: RestoreViaIdentity2, RestoreViaIdentity3
 Aliases:
 
@@ -155,7 +155,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

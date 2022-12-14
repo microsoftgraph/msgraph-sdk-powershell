@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationsynchronizationprofile
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/update-mgeducationsynchronizationprofile
 schema: 2.0.0
 ---
 
-# Update-MgEducationSynchronizationProfile
+# Update-MgBetaEducationSynchronizationProfile
 
 ## SYNOPSIS
 Update the navigation property synchronizationProfiles in education
@@ -14,7 +14,7 @@ Update the navigation property synchronizationProfiles in education
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEducationSynchronizationProfile -EducationSynchronizationProfileId <String>
+Update-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId <String>
  [-AdditionalProperties <Hashtable>] [-DataProvider <Hashtable>] [-DisplayName <String>]
  [-Errors <IMicrosoftGraphEducationSynchronizationError[]>] [-ExpirationDate <DateTime>]
  [-HandleSpecialCharacterConstraint] [-Id <String>] [-IdentitySynchronizationConfiguration <Hashtable>]
@@ -25,21 +25,21 @@ Update-MgEducationSynchronizationProfile -EducationSynchronizationProfileId <Str
 
 ### Update
 ```
-Update-MgEducationSynchronizationProfile -EducationSynchronizationProfileId <String>
+Update-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId <String>
  -BodyParameter <IMicrosoftGraphEducationSynchronizationProfile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgEducationSynchronizationProfile -InputObject <IEducationIdentity>
+Update-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity>
  -BodyParameter <IMicrosoftGraphEducationSynchronizationProfile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-DataProvider <Hashtable>] [-DisplayName <String>]
  [-Errors <IMicrosoftGraphEducationSynchronizationError[]>] [-ExpirationDate <DateTime>]
  [-HandleSpecialCharacterConstraint] [-Id <String>] [-IdentitySynchronizationConfiguration <Hashtable>]
@@ -75,7 +75,7 @@ educationSynchronizationProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ All errors associated with this synchronization profile.
 To construct, please use Get-Help -Online and see NOTES section for ERRORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -216,7 +216,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ License setup configuration.
 To construct, please use Get-Help -Online and see NOTES section for LICENSESTOASSIGN properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationLicenseAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationLicenseAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -263,7 +263,7 @@ educationSynchronizationProfileStatus
 To construct, please use Get-Help -Online and see NOTES section for PROFILESTATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -325,9 +325,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
 
 ## OUTPUTS
 

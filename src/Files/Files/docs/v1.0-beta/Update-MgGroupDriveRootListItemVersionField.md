@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/update-mggroupdriverootlistitemversionfield
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/update-mggroupdriverootlistitemversionfield
 schema: 2.0.0
 ---
 
-# Update-MgGroupDriveRootListItemVersionField
+# Update-MgBetaGroupDriveRootListItemVersionField
 
 ## SYNOPSIS
 Update the navigation property fields in groups
@@ -14,25 +14,25 @@ Update the navigation property fields in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupDriveRootListItemVersionField -DriveId <String> -GroupId <String> -ListItemVersionId <String>
+Update-MgBetaGroupDriveRootListItemVersionField -DriveId <String> -GroupId <String> -ListItemVersionId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgGroupDriveRootListItemVersionField -DriveId <String> -GroupId <String> -ListItemVersionId <String>
+Update-MgBetaGroupDriveRootListItemVersionField -DriveId <String> -GroupId <String> -ListItemVersionId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupDriveRootListItemVersionField -InputObject <IFilesIdentity> -BodyParameter <Hashtable>
+Update-MgBetaGroupDriveRootListItemVersionField -InputObject <IFilesIdentity> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgGroupDriveRootListItemVersionField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupDriveRootListItemVersionField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -201,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### System.Collections.Hashtable
 

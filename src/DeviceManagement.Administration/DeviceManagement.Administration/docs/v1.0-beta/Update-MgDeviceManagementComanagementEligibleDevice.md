@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementcomanagementeligibledevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementcomanagementeligibledevice
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementComanagementEligibleDevice
+# Update-MgBetaDeviceManagementComanagementEligibleDevice
 
 ## SYNOPSIS
 Update the navigation property comanagementEligibleDevices in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property comanagementEligibleDevices in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementComanagementEligibleDevice -ComanagementEligibleDeviceId <String>
+Update-MgBetaDeviceManagementComanagementEligibleDevice -ComanagementEligibleDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-ClientRegistrationStatus <DeviceRegistrationState>]
  [-DeviceName <String>] [-DeviceType <DeviceType>] [-EntitySource <Int32>] [-Id <String>]
  [-ManagementAgents <ManagementAgentType>] [-ManagementState <ManagementState>] [-Manufacturer <String>]
@@ -26,21 +26,21 @@ Update-MgDeviceManagementComanagementEligibleDevice -ComanagementEligibleDeviceI
 
 ### Update
 ```
-Update-MgDeviceManagementComanagementEligibleDevice -ComanagementEligibleDeviceId <String>
+Update-MgBetaDeviceManagementComanagementEligibleDevice -ComanagementEligibleDeviceId <String>
  -BodyParameter <IMicrosoftGraphComanagementEligibleDevice> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementComanagementEligibleDevice -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementComanagementEligibleDevice -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphComanagementEligibleDevice> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementComanagementEligibleDevice -InputObject <IDeviceManagementAdministrationIdentity>
+Update-MgBetaDeviceManagementComanagementEligibleDevice -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientRegistrationStatus <DeviceRegistrationState>]
  [-DeviceName <String>] [-DeviceType <DeviceType>] [-EntitySource <Int32>] [-Id <String>]
  [-ManagementAgents <ManagementAgentType>] [-ManagementState <ManagementState>] [-Manufacturer <String>]
@@ -77,7 +77,7 @@ Device Co-Management eligibility state
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 Device registration status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceRegistrationState
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceRegistrationState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 Device type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -184,7 +184,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 Management agent type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagementAgentType
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagementAgentType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -214,7 +214,7 @@ Accept wildcard characters: False
 Management state of device in Microsoft Intune.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagementState
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagementState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -304,7 +304,7 @@ Accept wildcard characters: False
 Owner type of device.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.OwnerType
+Type: Microsoft.Graph.Beta.PowerShell.Support.OwnerType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -364,7 +364,7 @@ Accept wildcard characters: False
 comanagementEligibleType
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ComanagementEligibleType
+Type: Microsoft.Graph.Beta.PowerShell.Support.ComanagementEligibleType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -471,9 +471,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
 
 ## OUTPUTS
 

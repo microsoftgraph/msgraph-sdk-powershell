@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupconversationthreadpostinreplytoextension
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupconversationthreadpostinreplytoextension
 schema: 2.0.0
 ---
 
-# New-MgGroupConversationThreadPostInReplyToExtension
+# New-MgBetaGroupConversationThreadPostInReplyToExtension
 
 ## SYNOPSIS
 Create new navigation property to extensions for groups
@@ -14,26 +14,26 @@ Create new navigation property to extensions for groups
 
 ### CreateExpanded1 (Default)
 ```
-New-MgGroupConversationThreadPostInReplyToExtension -ConversationId <String> -ConversationThreadId <String>
+New-MgBetaGroupConversationThreadPostInReplyToExtension -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgGroupConversationThreadPostInReplyToExtension -ConversationId <String> -ConversationThreadId <String>
+New-MgBetaGroupConversationThreadPostInReplyToExtension -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgGroupConversationThreadPostInReplyToExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable>
+New-MgBetaGroupConversationThreadPostInReplyToExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgGroupConversationThreadPostInReplyToExtension -InputObject <IGroupsIdentity>
+New-MgBetaGroupConversationThreadPostInReplyToExtension -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -202,7 +202,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ### System.Collections.Hashtable
 

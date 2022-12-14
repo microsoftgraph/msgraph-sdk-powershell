@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryfeaturerolloutpolicyapplytobyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectoryfeaturerolloutpolicyapplytobyref
 schema: 2.0.0
 ---
 
-# New-MgDirectoryFeatureRolloutPolicyApplyToByRef
+# New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef
 
 ## SYNOPSIS
 Create new navigation property ref to appliesTo for directory
@@ -14,25 +14,25 @@ Create new navigation property ref to appliesTo for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
+New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
+New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDirectoryFeatureRolloutPolicyApplyToByRef -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDirectoryFeatureRolloutPolicyApplyToByRef -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -94,7 +94,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -171,9 +171,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupmemberof
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupmemberof
 schema: 2.0.0
 ---
 
-# Get-MgGroupMemberOf
+# Get-MgBetaGroupMemberOf
 
 ## SYNOPSIS
 Groups and administrative units that this group is a member of.
@@ -18,20 +18,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgGroupMemberOf -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaGroupMemberOf -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupMemberOf -DirectoryObjectId <String> -GroupId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupMemberOf -DirectoryObjectId <String> -GroupId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupMemberOf -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaGroupMemberOf -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -44,13 +44,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaGroupMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupMemberOf -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupMemberOf -GroupId $groupId
 ```
 
-This example shows how to use the Get-MgGroupMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaGroupMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

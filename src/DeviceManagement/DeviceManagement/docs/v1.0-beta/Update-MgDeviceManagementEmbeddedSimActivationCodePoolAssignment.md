@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementembeddedsimactivationcodepoolassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementembeddedsimactivationcodepoolassignment
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment
+# Update-MgBetaDeviceManagementEmbeddedSimActivationCodePoolAssignment
 
 ## SYNOPSIS
 Update the navigation property assignments in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property assignments in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment
+Update-MgBetaDeviceManagementEmbeddedSimActivationCodePoolAssignment
  -EmbeddedSimActivationCodePoolAssignmentId <String> -EmbeddedSimActivationCodePoolId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment
 
 ### Update
 ```
-Update-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment
+Update-MgBetaDeviceManagementEmbeddedSimActivationCodePoolAssignment
  -EmbeddedSimActivationCodePoolAssignmentId <String> -EmbeddedSimActivationCodePoolId <String>
  -BodyParameter <IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -31,14 +31,14 @@ Update-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementEmbeddedSimActivationCodePoolAssignment -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementEmbeddedSimActivationCodePoolAssignment -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -71,7 +71,7 @@ The embedded SIM activation code pool assignment entity assigns a specific embed
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -133,7 +133,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -164,7 +164,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -211,9 +211,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment
 
 ## OUTPUTS
 

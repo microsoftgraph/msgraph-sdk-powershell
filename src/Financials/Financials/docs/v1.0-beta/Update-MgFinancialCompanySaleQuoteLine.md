@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysalequoteline
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysalequoteline
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleQuoteLine
+# Update-MgBetaFinancialCompanySaleQuoteLine
 
 ## SYNOPSIS
 Update the navigation property salesQuoteLines in financials
@@ -14,7 +14,7 @@ Update the navigation property salesQuoteLines in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteLineId <String>
+Update-MgBetaFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteLineId <String>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -26,19 +26,19 @@ Update-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteLineId <St
 
 ### Update
 ```
-Update-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteLineId <String>
+Update-MgBetaFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteLineId <String>
  -BodyParameter <IMicrosoftGraphSalesQuoteLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> -SalesQuoteLineId <String>
+Update-MgBetaFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> -SalesQuoteLineId <String>
  -BodyParameter <IMicrosoftGraphSalesQuoteLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> -SalesQuoteLineId <String>
+Update-MgBetaFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> -SalesQuoteLineId <String>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
@@ -50,19 +50,19 @@ Update-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphSalesQuoteLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphSalesQuoteLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
+Update-MgBetaFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
  [-AccountId <String>] [-AdditionalProperties <Hashtable>] [-AmountExcludingTax <Decimal>]
  [-AmountIncludingTax <Decimal>] [-Description <String>] [-DiscountAmount <Decimal>]
  [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>] [-Id <String>]
@@ -74,7 +74,7 @@ Update-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-Acco
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
+Update-MgBetaFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
  [-AccountId <String>] [-AdditionalProperties <Hashtable>] [-AmountExcludingTax <Decimal>]
  [-AmountIncludingTax <Decimal>] [-Description <String>] [-DiscountAmount <Decimal>]
  [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>] [-Id <String>]
@@ -96,7 +96,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -172,7 +172,7 @@ salesQuoteLine
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesQuoteLine
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesQuoteLine
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -294,7 +294,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -310,7 +310,7 @@ item
 To construct, please use Get-Help -Online and see NOTES section for ITEM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -582,9 +582,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesQuoteLine
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesQuoteLine
 
 ## OUTPUTS
 

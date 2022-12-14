@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolisttaskattachment
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusertodolisttaskattachment
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoListTaskAttachment
+# Get-MgBetaUserTodoListTaskAttachment
 
 ## SYNOPSIS
 A collection of file attachments for the task.
@@ -14,20 +14,20 @@ A collection of file attachments for the task.
 
 ### List (Default)
 ```
-Get-MgUserTodoListTaskAttachment -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+Get-MgBetaUserTodoListTaskAttachment -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserTodoListTaskAttachment -AttachmentBaseId <String> -TodoTaskId <String> -TodoTaskListId <String>
+Get-MgBetaUserTodoListTaskAttachment -AttachmentBaseId <String> -TodoTaskId <String> -TodoTaskListId <String>
  -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,24 +35,24 @@ A collection of file attachments for the task.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTodoListTaskAttachment Cmdlet
+### Example 1: Using the Get-MgBetaUserTodoListTaskAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -AttachmentBaseId $attachmentBaseId
+Get-MgBetaUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -AttachmentBaseId $attachmentBaseId
 ```
 
-This example shows how to use the Get-MgUserTodoListTaskAttachment Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserTodoListTaskAttachment Cmdlet
+### Example 2: Using the Get-MgBetaUserTodoListTaskAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
+Get-MgBetaUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
 ```
 
-This example shows how to use the Get-MgUserTodoListTaskAttachment Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentBase
 
 ## NOTES
 

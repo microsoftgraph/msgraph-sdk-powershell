@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/publish-mgbookingbusiness
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/publish-mgbookingbusiness
 schema: 2.0.0
 ---
 
-# Publish-MgBookingBusiness
+# Publish-MgBetaBookingBusiness
 
 ## SYNOPSIS
 Make the scheduling page of this business available to external customers.
@@ -15,12 +15,12 @@ Set the **isPublished** property to true, and **publicUrl** property to the URL 
 
 ### Publish (Default)
 ```
-Publish-MgBookingBusiness -BookingBusinessId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgBetaBookingBusiness -BookingBusinessId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PublishViaIdentity
 ```
-Publish-MgBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Publish-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Set the **isPublished** property to true, and **publicUrl** property to the URL 
 
 ## EXAMPLES
 
-### Example 1: Using the Publish-MgBookingBusiness Cmdlet
+### Example 1: Using the Publish-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Publish-MgBookingBusiness -BookingBusinessId $bookingBusinessId
+Import-Module Microsoft.Graph.Beta.Bookings
+Publish-MgBetaBookingBusiness -BookingBusinessId $bookingBusinessId
 ```
 
-This example shows how to use the Publish-MgBookingBusiness Cmdlet.
+This example shows how to use the Publish-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: PublishViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 

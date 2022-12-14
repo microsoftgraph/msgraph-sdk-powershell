@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgappcatalogteamapp
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgappcatalogteamapp
 schema: 2.0.0
 ---
 
-# New-MgAppCatalogTeamApp
+# New-MgBetaAppCatalogTeamApp
 
 ## SYNOPSIS
 Publish an app to the Microsoft Teams app catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource will have a **distributionMethod** property value of `organization`.
@@ -16,7 +16,7 @@ Admins can approve or reject these apps via this API or the Microsoft Teams admi
 
 ### CreateExpanded (Default)
 ```
-New-MgAppCatalogTeamApp [-AdditionalProperties <Hashtable>]
+New-MgBetaAppCatalogTeamApp [-AdditionalProperties <Hashtable>]
  [-AppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>] [-DisplayName <String>]
  [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -24,7 +24,7 @@ New-MgAppCatalogTeamApp [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgAppCatalogTeamApp -BodyParameter <IMicrosoftGraphTeamsApp> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaAppCatalogTeamApp -BodyParameter <IMicrosoftGraphTeamsApp> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,13 +34,13 @@ Admins can approve or reject these apps via this API or the Microsoft Teams admi
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgAppCatalogTeamApp Cmdlet
+### Example 1: Using the New-MgBetaAppCatalogTeamApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-New-MgAppCatalogTeamApp -Requiresreview true 
+Import-Module Microsoft.Graph.Beta.Teams
+New-MgBetaAppCatalogTeamApp -Requiresreview true 
 ```
 
-This example shows how to use the New-MgAppCatalogTeamApp Cmdlet.
+This example shows how to use the New-MgBetaAppCatalogTeamApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -65,7 +65,7 @@ The details for each version of the app.
 To construct, please use Get-Help -Online and see NOTES section for APPDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -81,7 +81,7 @@ teamsApp
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsApp
 Parameter Sets: Create
 Aliases:
 
@@ -189,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsApp
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsApp
 
 ## NOTES
 

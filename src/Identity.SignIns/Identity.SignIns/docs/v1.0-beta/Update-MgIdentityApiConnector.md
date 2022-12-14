@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgidentityapiconnector
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgidentityapiconnector
 schema: 2.0.0
 ---
 
-# Update-MgIdentityApiConnector
+# Update-MgBetaIdentityApiConnector
 
 ## SYNOPSIS
 Update the navigation property apiConnectors in identity
@@ -14,26 +14,26 @@ Update the navigation property apiConnectors in identity
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgIdentityApiConnector -IdentityApiConnectorId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId <String> [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>] [-DisplayName <String>] [-Id <String>] [-TargetUrl <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgIdentityApiConnector -IdentityApiConnectorId <String>
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId <String>
  -BodyParameter <IMicrosoftGraphIdentityApiConnector> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgIdentityApiConnector -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaIdentityApiConnector -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphIdentityApiConnector> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>] [-DisplayName <String>] [-Id <String>] [-TargetUrl <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,54 +43,54 @@ Update the navigation property apiConnectors in identity
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgIdentityApiConnector Cmdlet
+### Example 1: Using the Update-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "New Test API"
 	TargetUrl = "https://otherapi.com/api/endpoint"
 	AuthenticationConfiguration = @{
-		"@odata.type" = "microsoft.graph.basicAuthentication"
+		"@odata.type" = "Microsoft.Graph.Beta.basicAuthentication"
 		Username = "<NEW_USERNAME>"
 		Password = "<NEW_PASSWORD>"
 	}
 }
-Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Update-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Update-MgIdentityApiConnector Cmdlet
+### Example 2: Using the Update-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	AuthenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
+		"@odata.type" = "#Microsoft.Graph.Beta.pkcs12Certificate"
 		Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
 		Password = "secret"
 	}
 }
-Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Update-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Update-MgIdentityApiConnector Cmdlet
+### Example 3: Using the Update-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	AuthenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
+		"@odata.type" = "#Microsoft.Graph.Beta.pkcs12Certificate"
 		Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
 		Password = "secret"
 	}
 }
-Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Update-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -130,7 +130,7 @@ identityApiConnector
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -192,7 +192,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -269,9 +269,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
 
 ## OUTPUTS
 

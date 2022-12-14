@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgriskyuserhistory
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgriskyuserhistory
 schema: 2.0.0
 ---
 
-# Update-MgRiskyUserHistory
+# Update-MgBetaRiskyUserHistory
 
 ## SYNOPSIS
 Update the navigation property history in identityProtection
@@ -14,7 +14,7 @@ Update the navigation property history in identityProtection
 
 ### UpdateExpanded (Default)
 ```
-Update-MgRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String>
+Update-MgBetaRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String>
  [-Activity <IMicrosoftGraphRiskUserActivity1>] [-AdditionalProperties <Hashtable>]
  [-History <IMicrosoftGraphRiskyUserHistoryItem1[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
  [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
@@ -24,19 +24,19 @@ Update-MgRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String>
 
 ### Update
 ```
-Update-MgRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String>
+Update-MgBetaRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String>
  -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
  [-Activity <IMicrosoftGraphRiskUserActivity1>] [-AdditionalProperties <Hashtable>]
  [-History <IMicrosoftGraphRiskyUserHistoryItem1[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
  [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
@@ -56,7 +56,7 @@ riskUserActivity
 To construct, please use Get-Help -Online and see NOTES section for ACTIVITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskUserActivity1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskUserActivity1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ riskyUserHistoryItem
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -380,9 +380,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1
 
 ## OUTPUTS
 

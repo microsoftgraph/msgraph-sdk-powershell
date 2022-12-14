@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/remove-mgcomplianceediscoverycasetag
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/remove-mgcomplianceediscoverycasetag
 schema: 2.0.0
 ---
 
-# Remove-MgComplianceEdiscoveryCaseTag
+# Remove-MgBetaComplianceEdiscoveryCaseTag
 
 ## SYNOPSIS
 Delete navigation property tags for compliance
@@ -14,13 +14,13 @@ Delete navigation property tags for compliance
 
 ### Delete (Default)
 ```
-Remove-MgComplianceEdiscoveryCaseTag -CaseId <String> -TagId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaComplianceEdiscoveryCaseTag -CaseId <String> -TagId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property tags for compliance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgComplianceEdiscoveryCaseTag Cmdlet
+### Example 1: Using the Remove-MgBetaComplianceEdiscoveryCaseTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Remove-MgComplianceEdiscoveryCaseTag -CaseId $caseId -TagId $tagId -Forcedelete true 
+Import-Module Microsoft.Graph.Beta.Compliance
+Remove-MgBetaComplianceEdiscoveryCaseTag -CaseId $caseId -TagId $tagId -Forcedelete true 
 ```
 
-This example shows how to use the Remove-MgComplianceEdiscoveryCaseTag Cmdlet.
+This example shows how to use the Remove-MgBetaComplianceEdiscoveryCaseTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

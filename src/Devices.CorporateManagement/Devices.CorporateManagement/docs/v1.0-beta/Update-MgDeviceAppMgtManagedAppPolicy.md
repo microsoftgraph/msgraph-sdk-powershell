@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedapppolicy
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedapppolicy
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtManagedAppPolicy
+# Update-MgBetaDeviceAppMgtManagedAppPolicy
 
 ## SYNOPSIS
 Update the navigation property managedAppPolicies in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property managedAppPolicies in deviceAppManagement
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceAppMgtManagedAppPolicy -ManagedAppPolicyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtManagedAppPolicy -ManagedAppPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>] [-Version <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgDeviceAppMgtManagedAppPolicy -ManagedAppPolicyId <String> [-AdditionalP
 
 ### Update1
 ```
-Update-MgDeviceAppMgtManagedAppPolicy -ManagedAppPolicyId <String>
+Update-MgBetaDeviceAppMgtManagedAppPolicy -ManagedAppPolicyId <String>
  -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgDeviceAppMgtManagedAppPolicy -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedAppPolicy -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgDeviceAppMgtManagedAppPolicy -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedAppPolicy -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>]
  [-Version <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ The ManagedAppPolicy resource represents a base type for platform specific polic
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -266,9 +266,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## OUTPUTS
 
@@ -278,7 +278,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementManagedAppPolicy
+### Update-MgBetaDeviceAppManagementManagedAppPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

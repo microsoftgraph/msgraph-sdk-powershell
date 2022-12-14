@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/undo-mgteamworkdeletedteamchannelmessagereplysoftdelete
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/undo-mgteamworkdeletedteamchannelmessagereplysoftdelete
 schema: 2.0.0
 ---
 
-# Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete
+# Undo-MgBetaTeamworkDeletedTeamChannelMessageReplySoftDelete
 
 ## SYNOPSIS
 Undo soft deletion of a single message or a message reply in a channel or a chat.
@@ -14,13 +14,13 @@ Undo soft deletion of a single message or a message reply in a channel or a chat
 
 ### Undo (Default)
 ```
-Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete -ChannelId <String> -ChatMessageId <String>
+Undo-MgBetaTeamworkDeletedTeamChannelMessageReplySoftDelete -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -DeletedTeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UndoViaIdentity
 ```
-Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete -InputObject <ITeamsIdentity> [-PassThru] [-Confirm]
+Undo-MgBetaTeamworkDeletedTeamChannelMessageReplySoftDelete -InputObject <ITeamsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UndoViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

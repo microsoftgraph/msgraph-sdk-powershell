@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintsharealloweduser
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprintsharealloweduser
 schema: 2.0.0
 ---
 
-# Get-MgPrintShareAllowedUser
+# Get-MgBetaPrintShareAllowedUser
 
 ## SYNOPSIS
 Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
@@ -13,7 +13,7 @@ Retrieve a list of users who have been granted access to submit print jobs to th
 ## SYNTAX
 
 ```
-Get-MgPrintShareAllowedUser -PrinterShareId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPrintShareAllowedUser -PrinterShareId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,13 +23,13 @@ Retrieve a list of users who have been granted access to submit print jobs to th
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintShareAllowedUser Cmdlet
+### Example 1: Using the Get-MgBetaPrintShareAllowedUser Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintShareAllowedUser -PrinterShareId $printerShareId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintShareAllowedUser -PrinterShareId $printerShareId
 ```
 
-This example shows how to use the Get-MgPrintShareAllowedUser Cmdlet.
+This example shows how to use the Get-MgBetaPrintShareAllowedUser Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -207,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser1
 
 ## NOTES
 

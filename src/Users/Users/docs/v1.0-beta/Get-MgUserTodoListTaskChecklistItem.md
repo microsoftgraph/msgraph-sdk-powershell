@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolisttaskchecklistitem
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusertodolisttaskchecklistitem
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoListTaskChecklistItem
+# Get-MgBetaUserTodoListTaskChecklistItem
 
 ## SYNOPSIS
 A collection of smaller subtasks linked to the more complex parent task.
@@ -14,20 +14,20 @@ A collection of smaller subtasks linked to the more complex parent task.
 
 ### List (Default)
 ```
-Get-MgUserTodoListTaskChecklistItem -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+Get-MgBetaUserTodoListTaskChecklistItem -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserTodoListTaskChecklistItem -ChecklistItemId <String> -TodoTaskId <String> -TodoTaskListId <String>
+Get-MgBetaUserTodoListTaskChecklistItem -ChecklistItemId <String> -TodoTaskId <String> -TodoTaskListId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,34 +36,34 @@ A collection of smaller subtasks linked to the more complex parent task.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 1: Using the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId
+Get-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId
 ```
 
-This example shows how to use the Get-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 2: Using the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
+Get-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
 ```
 
-This example shows how to use the Get-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 3: Using the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -OutFile $outFileId
+Get-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -300,11 +300,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChecklistItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChecklistItem
 
 ## NOTES
 

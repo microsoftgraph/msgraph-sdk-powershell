@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mghasdevicemanagementzebrafotaconnectoractivedeployment
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mghasdevicemanagementzebrafotaconnectoractivedeployment
 schema: 2.0.0
 ---
 
-# Invoke-MgHasDeviceManagementZebraFotaConnectorActiveDeployment
+# Invoke-MgBetaHasDeviceManagementZebraFotaConnectorActiveDeployment
 
 ## SYNOPSIS
 Invoke action hasActiveDeployments
@@ -13,7 +13,7 @@ Invoke action hasActiveDeployments
 ## SYNTAX
 
 ```
-Invoke-MgHasDeviceManagementZebraFotaConnectorActiveDeployment [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaHasDeviceManagementZebraFotaConnectorActiveDeployment [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgidentitygovernancetermofuseagreement
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgidentitygovernancetermofuseagreement
 schema: 2.0.0
 ---
 
-# Update-MgIdentityGovernanceTermOfUseAgreement
+# Update-MgBetaIdentityGovernanceTermOfUseAgreement
 
 ## SYNOPSIS
 Update the navigation property agreements in identityGovernance
@@ -14,7 +14,7 @@ Update the navigation property agreements in identityGovernance
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgIdentityGovernanceTermOfUseAgreement -AgreementId <String>
+Update-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId <String>
  [-Acceptances <IMicrosoftGraphAgreementAcceptance[]>] [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-File <IMicrosoftGraphAgreementFile>]
  [-Files <IMicrosoftGraphAgreementFileLocalization[]>] [-Id <String>] [-IsPerDeviceAcceptanceRequired]
@@ -24,19 +24,19 @@ Update-MgIdentityGovernanceTermOfUseAgreement -AgreementId <String>
 
 ### Update1
 ```
-Update-MgIdentityGovernanceTermOfUseAgreement -AgreementId <String> -BodyParameter <IMicrosoftGraphAgreement>
+Update-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId <String> -BodyParameter <IMicrosoftGraphAgreement>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAgreement> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
  [-Acceptances <IMicrosoftGraphAgreementAcceptance[]>] [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-File <IMicrosoftGraphAgreementFile>]
  [-Files <IMicrosoftGraphAgreementFileLocalization[]>] [-Id <String>] [-IsPerDeviceAcceptanceRequired]
@@ -49,17 +49,17 @@ Update the navigation property agreements in identityGovernance
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+### Example 1: Using the Update-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "All Contoso volunteers - Terms of use"
 	IsViewingBeforeAcceptanceRequired = $true
 }
-Update-MgIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId -BodyParameter $params
+Update-MgBetaIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+This example shows how to use the Update-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ Information about acceptances of this agreement.
 To construct, please use Get-Help -Online and see NOTES section for ACCEPTANCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -116,7 +116,7 @@ agreement
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -149,7 +149,7 @@ agreementFile
 To construct, please use Get-Help -Online and see NOTES section for FILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFile
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -168,7 +168,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for FILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -200,7 +200,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -264,7 +264,7 @@ termsExpiration
 To construct, please use Get-Help -Online and see NOTES section for TERMSEXPIRATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsExpiration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsExpiration
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -328,9 +328,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
 
 ## OUTPUTS
 

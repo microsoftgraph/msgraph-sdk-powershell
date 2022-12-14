@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgdownloadusermanageddeviceappdiagnostic
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgdownloadusermanageddeviceappdiagnostic
 schema: 2.0.0
 ---
 
-# Invoke-MgDownloadUserManagedDeviceAppDiagnostic
+# Invoke-MgBetaDownloadUserManagedDeviceAppDiagnostic
 
 ## SYNOPSIS
 Invoke action downloadAppDiagnostics
@@ -14,28 +14,28 @@ Invoke action downloadAppDiagnostics
 
 ### DownloadExpanded (Default)
 ```
-Invoke-MgDownloadUserManagedDeviceAppDiagnostic -UserId <String> -OutFile <String>
+Invoke-MgBetaDownloadUserManagedDeviceAppDiagnostic -UserId <String> -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Request <IMicrosoftGraphPowerliftDownloadRequest>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Download
 ```
-Invoke-MgDownloadUserManagedDeviceAppDiagnostic -UserId <String>
+Invoke-MgBetaDownloadUserManagedDeviceAppDiagnostic -UserId <String>
  -BodyParameter <IPathsIuhmg6UsersUserIdManageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DownloadViaIdentity
 ```
-Invoke-MgDownloadUserManagedDeviceAppDiagnostic -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaDownloadUserManagedDeviceAppDiagnostic -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsIuhmg6UsersUserIdManageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DownloadViaIdentityExpanded
 ```
-Invoke-MgDownloadUserManagedDeviceAppDiagnostic -InputObject <IUsersActionsIdentity> -OutFile <String>
+Invoke-MgBetaDownloadUserManagedDeviceAppDiagnostic -InputObject <IUsersActionsIdentity> -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Request <IMicrosoftGraphPowerliftDownloadRequest>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsIuhmg6UsersUserIdManageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsIuhmg6UsersUserIdManageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Download, DownloadViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: DownloadViaIdentity, DownloadViaIdentityExpanded
 Aliases:
 
@@ -129,7 +129,7 @@ Request used to download app diagnostic files.
 To construct, please use Get-Help -Online and see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPowerliftDownloadRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPowerliftDownloadRequest
 Parameter Sets: DownloadExpanded, DownloadViaIdentityExpanded
 Aliases:
 
@@ -191,9 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsIuhmg6UsersUserIdManageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsIuhmg6UsersUserIdManageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

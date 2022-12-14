@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgentitlementmanagementaccesspackagecatalogcustomaccesspackageworkflowextension
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgentitlementmanagementaccesspackagecatalogcustomaccesspackageworkflowextension
 schema: 2.0.0
 ---
 
-# Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+# Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
 
 ## SYNOPSIS
 Update the navigation property customAccessPackageWorkflowExtensions in identityGovernance
@@ -14,7 +14,7 @@ Update the navigation property customAccessPackageWorkflowExtensions in identity
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -AccessPackageCatalogId <String> -CustomAccessPackageWorkflowExtensionId <String>
  [-AdditionalProperties <Hashtable>] [-AuthenticationConfiguration <Hashtable>]
  [-ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>] [-CreatedDateTime <DateTime>]
@@ -24,7 +24,7 @@ Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExt
 
 ### Update
 ```
-Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -AccessPackageCatalogId <String> -CustomAccessPackageWorkflowExtensionId <String>
  -BodyParameter <IMicrosoftGraphCustomAccessPackageWorkflowExtension> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -32,7 +32,7 @@ Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExt
 
 ### UpdateViaIdentity
 ```
-Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphCustomAccessPackageWorkflowExtension> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -40,7 +40,7 @@ Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExt
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>]
  [-ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>] [-CreatedDateTime <DateTime>]
@@ -105,7 +105,7 @@ customAccessPackageWorkflowExtension
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -121,7 +121,7 @@ customExtensionClientConfiguration
 To construct, please use Get-Help -Online and see NOTES section for CLIENTCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomExtensionClientConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomExtensionClientConfiguration
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -230,7 +230,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -309,9 +309,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
 
 ## OUTPUTS
 

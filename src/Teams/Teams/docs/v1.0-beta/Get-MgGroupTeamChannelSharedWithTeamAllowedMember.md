@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mggroupteamchannelsharedwithteamallowedmember
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mggroupteamchannelsharedwithteamallowedmember
 schema: 2.0.0
 ---
 
-# Get-MgGroupTeamChannelSharedWithTeamAllowedMember
+# Get-MgBetaGroupTeamChannelSharedWithTeamAllowedMember
 
 ## SYNOPSIS
 A collection of team members who have access to the shared channel.
@@ -14,7 +14,7 @@ A collection of team members who have access to the shared channel.
 
 ### List (Default)
 ```
-Get-MgGroupTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -GroupId <String>
+Get-MgBetaGroupTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -GroupId <String>
  -SharedWithChannelTeamInfoId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgGroupTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -GroupId <
 
 ### Get
 ```
-Get-MgGroupTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -ConversationMemberId <String>
+Get-MgBetaGroupTeamChannelSharedWithTeamAllowedMember -ChannelId <String> -ConversationMemberId <String>
  -GroupId <String> -SharedWithChannelTeamInfoId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTeamChannelSharedWithTeamAllowedMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupTeamChannelSharedWithTeamAllowedMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -272,11 +272,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationMember
 
 ## NOTES
 

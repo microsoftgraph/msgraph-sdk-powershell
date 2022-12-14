@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/remove-mgbusinessscenarioplannerplanconfiguration
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/remove-mgbusinessscenarioplannerplanconfiguration
 schema: 2.0.0
 ---
 
-# Remove-MgBusinessScenarioPlannerPlanConfiguration
+# Remove-MgBetaBusinessScenarioPlannerPlanConfiguration
 
 ## SYNOPSIS
 Delete navigation property planConfiguration for solutions
@@ -14,13 +14,13 @@ Delete navigation property planConfiguration for solutions
 
 ### Delete (Default)
 ```
-Remove-MgBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaBusinessScenarioPlannerPlanConfiguration -BusinessScenarioId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity> [-IfMatch <String>]
+Remove-MgBetaBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 

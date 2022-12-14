@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanageddevicecompliance
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanageddevicecompliance
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantManagedDeviceCompliance
+# New-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance
 
 ## SYNOPSIS
 Create new navigation property to managedDeviceCompliances for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managedDeviceCompliances for tenantRelationshi
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantManagedDeviceCompliance [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance [-AdditionalProperties <Hashtable>]
  [-ComplianceStatus <String>] [-DeviceType <String>] [-Id <String>] [-InGracePeriodUntilDateTime <DateTime>]
  [-LastRefreshedDateTime <DateTime>] [-LastSyncDateTime <DateTime>] [-ManagedDeviceId <String>]
  [-ManagedDeviceName <String>] [-Manufacturer <String>] [-Model <String>] [-OSDescription <String>]
@@ -24,7 +24,7 @@ New-MgTenantRelationshipManagedTenantManagedDeviceCompliance [-AdditionalPropert
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantManagedDeviceCompliance
+New-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceCompliance> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -56,7 +56,7 @@ managedDeviceCompliance
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
 Parameter Sets: Create
 Aliases:
 
@@ -361,11 +361,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
 
 ## NOTES
 

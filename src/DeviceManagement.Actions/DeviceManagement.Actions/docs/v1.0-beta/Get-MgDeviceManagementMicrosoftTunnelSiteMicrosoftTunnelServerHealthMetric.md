@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelserverhealthmetric
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementmicrosofttunnelsitemicrosofttunnelserverhealthmetric
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric
+# Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric
 
 ## SYNOPSIS
 Invoke action getHealthMetrics
@@ -14,14 +14,14 @@ Invoke action getHealthMetrics
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric -MicrosoftTunnelServerId <String>
+Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric -MicrosoftTunnelServerId <String>
  -MicrosoftTunnelSiteId <String> [-AdditionalProperties <Hashtable>] [-MetricNames <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric -MicrosoftTunnelServerId <String>
+Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric -MicrosoftTunnelServerId <String>
  -MicrosoftTunnelSiteId <String>
  -BodyParameter <IPaths12U8BljDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric -Micr
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric
+Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths12U8BljDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric
 
 ### GetViaIdentityExpanded
 ```
-Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric
+Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>] [-MetricNames <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths12U8BljDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths12U8BljDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -177,13 +177,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths12U8BljDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths12U8BljDevicemanagementMicrosofttunnelsitesMicrosofttunnelsiteIdMicrosofttunnelserversMicrosofttunnelserverIdMicrosoftGraphGethealthmetricsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyLongValuePair
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyLongValuePair
 
 ## NOTES
 

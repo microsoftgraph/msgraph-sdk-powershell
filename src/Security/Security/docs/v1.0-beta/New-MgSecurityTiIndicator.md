@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritytiindicator
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritytiindicator
 schema: 2.0.0
 ---
 
-# New-MgSecurityTiIndicator
+# New-MgBetaSecurityTiIndicator
 
 ## SYNOPSIS
 Create a new tiIndicator object.
@@ -14,7 +14,7 @@ Create a new tiIndicator object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityTiIndicator [-Action <String>] [-ActivityGroupNames <String[]>]
+New-MgBetaSecurityTiIndicator [-Action <String>] [-ActivityGroupNames <String[]>]
  [-AdditionalInformation <String>] [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
  [-Confidence <Int32>] [-Description <String>] [-DiamondModel <String>] [-DomainName <String>]
  [-EmailEncoding <String>] [-EmailLanguage <String>] [-EmailRecipient <String>] [-EmailSenderAddress <String>]
@@ -35,7 +35,7 @@ New-MgSecurityTiIndicator [-Action <String>] [-ActivityGroupNames <String[]>]
 
 ### Create
 ```
-New-MgSecurityTiIndicator -BodyParameter <IMicrosoftGraphTiIndicator> [-Confirm] [-WhatIf]
+New-MgBetaSecurityTiIndicator -BodyParameter <IMicrosoftGraphTiIndicator> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -44,9 +44,9 @@ Create a new tiIndicator object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSecurityTiIndicator Cmdlet
+### Example 1: Using the New-MgBetaSecurityTiIndicator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Action = "alert"
 	ActivityGroupNames = @(
@@ -68,10 +68,10 @@ $params = @{
 	ThreatType = "WatchList"
 	TlpLevel = "green"
 }
-New-MgSecurityTiIndicator -BodyParameter $params
+New-MgBetaSecurityTiIndicator -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSecurityTiIndicator Cmdlet.
+This example shows how to use the New-MgBetaSecurityTiIndicator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -159,7 +159,7 @@ tiIndicator
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
 Parameter Sets: Create
 Aliases:
 
@@ -1057,11 +1057,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
 
 ## NOTES
 

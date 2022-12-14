@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdatasharingconsent
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdatasharingconsent
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDataSharingConsent
+# Update-MgBetaDeviceManagementDataSharingConsent
 
 ## SYNOPSIS
 Update the navigation property dataSharingConsents in deviceManagement
@@ -14,26 +14,26 @@ Update the navigation property dataSharingConsents in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDataSharingConsent -DataSharingConsentId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementDataSharingConsent -DataSharingConsentId <String> [-AdditionalProperties <Hashtable>]
  [-GrantDateTime <DateTime>] [-Granted] [-GrantedByUpn <String>] [-GrantedByUserId <String>] [-Id <String>]
  [-ServiceDisplayName <String>] [-TermsUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementDataSharingConsent -DataSharingConsentId <String>
+Update-MgBetaDeviceManagementDataSharingConsent -DataSharingConsentId <String>
  -BodyParameter <IMicrosoftGraphDataSharingConsent> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDataSharingConsent -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDataSharingConsent -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDataSharingConsent> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDataSharingConsent -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDataSharingConsent -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-GrantDateTime <DateTime>] [-Granted] [-GrantedByUpn <String>]
  [-GrantedByUserId <String>] [-Id <String>] [-ServiceDisplayName <String>] [-TermsUrl <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -66,7 +66,7 @@ Data sharing consent information.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataSharingConsent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataSharingConsent
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -173,7 +173,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -265,9 +265,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataSharingConsent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataSharingConsent
 
 ## OUTPUTS
 

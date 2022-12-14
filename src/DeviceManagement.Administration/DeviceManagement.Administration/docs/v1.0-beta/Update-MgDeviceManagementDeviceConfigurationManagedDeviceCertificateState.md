@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementdeviceconfigurationmanageddevicecertificatestate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementdeviceconfigurationmanageddevicecertificatestate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+# Update-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
 
 ## SYNOPSIS
 Update the navigation property deviceConfigurationsAllManagedDeviceCertificateStates in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceConfigurationsAllManagedDeviceCertificateSt
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+Update-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -ManagedAllDeviceCertificateStateId <String> [-AdditionalProperties <Hashtable>]
  [-CertificateExpirationDateTime <DateTime>] [-CertificateExtendedKeyUsages <String>]
  [-CertificateIssuanceDateTime <DateTime>] [-CertificateIssuerName <String>] [-CertificateKeyUsages <Int32>]
@@ -27,14 +27,14 @@ Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+Update-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -ManagedAllDeviceCertificateStateId <String> -BodyParameter <IMicrosoftGraphManagedAllDeviceCertificateState>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+Update-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphManagedAllDeviceCertificateState> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -42,7 +42,7 @@ Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+Update-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-CertificateExpirationDateTime <DateTime>] [-CertificateExtendedKeyUsages <String>]
  [-CertificateIssuanceDateTime <DateTime>] [-CertificateIssuerName <String>] [-CertificateKeyUsages <Int32>]
@@ -80,7 +80,7 @@ managedAllDeviceCertificateState
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 Certificate Revocation Status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.CertificateRevocationStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.CertificateRevocationStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -262,7 +262,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -369,9 +369,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
 
 ## OUTPUTS
 

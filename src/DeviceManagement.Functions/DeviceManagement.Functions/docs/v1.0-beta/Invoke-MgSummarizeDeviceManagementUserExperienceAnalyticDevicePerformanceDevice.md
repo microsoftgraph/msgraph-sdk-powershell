@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/invoke-mgsummarizedevicemanagementuserexperienceanalyticdeviceperformancedevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/invoke-mgsummarizedevicemanagementuserexperienceanalyticdeviceperformancedevice
 schema: 2.0.0
 ---
 
-# Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice
+# Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice
 
 ## SYNOPSIS
 Invoke function summarizeDevicePerformanceDevices
@@ -14,14 +14,14 @@ Invoke function summarizeDevicePerformanceDevices
 
 ### Summarize (Default)
 ```
-Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice -SummarizeBy <String> [-Count]
+Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice -SummarizeBy <String> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### SummarizeViaIdentity
 ```
-Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice
+Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice
  -InputObject <IDeviceManagementFunctionsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: SummarizeViaIdentity
 Aliases:
 
@@ -174,11 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDevicePerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDevicePerformance
 
 ## NOTES
 

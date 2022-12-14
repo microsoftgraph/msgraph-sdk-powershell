@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgserviceprincipalapproleassignedto
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgserviceprincipalapproleassignedto
 schema: 2.0.0
 ---
 
-# Remove-MgServicePrincipalAppRoleAssignedTo
+# Remove-MgBetaServicePrincipalAppRoleAssignedTo
 
 ## SYNOPSIS
 Delete navigation property appRoleAssignedTo for servicePrincipals
@@ -14,13 +14,13 @@ Delete navigation property appRoleAssignedTo for servicePrincipals
 
 ### Delete (Default)
 ```
-Remove-MgServicePrincipalAppRoleAssignedTo -AppRoleAssignmentId <String> -ServicePrincipalId <String>
+Remove-MgBetaServicePrincipalAppRoleAssignedTo -AppRoleAssignmentId <String> -ServicePrincipalId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServicePrincipalAppRoleAssignedTo -InputObject <IApplicationsIdentity> [-IfMatch <String>]
+Remove-MgBetaServicePrincipalAppRoleAssignedTo -InputObject <IApplicationsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property appRoleAssignedTo for servicePrincipals
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgServicePrincipalAppRoleAssignedTo Cmdlet
+### Example 1: Using the Remove-MgBetaServicePrincipalAppRoleAssignedTo Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -AppRoleAssignmentId $appRoleAssignmentId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -AppRoleAssignmentId $appRoleAssignmentId
 ```
 
-This example shows how to use the Remove-MgServicePrincipalAppRoleAssignedTo Cmdlet.
+This example shows how to use the Remove-MgBetaServicePrincipalAppRoleAssignedTo Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationextensionproperty
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationextensionproperty
 schema: 2.0.0
 ---
 
-# Get-MgApplicationExtensionProperty
+# Get-MgBetaApplicationExtensionProperty
 
 ## SYNOPSIS
 Read-only.
@@ -16,20 +16,20 @@ Supports $expand and $filter (/$count eq 0, /$count ne 0).
 
 ### List (Default)
 ```
-Get-MgApplicationExtensionProperty -ApplicationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaApplicationExtensionProperty -ApplicationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
+Get-MgBetaApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,22 +40,22 @@ Supports $expand and $filter (/$count eq 0, /$count ne 0).
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgApplicationExtensionProperty Cmdlet
+### Example 1: Using the Get-MgBetaApplicationExtensionProperty Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgApplicationExtensionProperty -ApplicationId $applicationId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaApplicationExtensionProperty -ApplicationId $applicationId
 ```
 
-This example shows how to use the Get-MgApplicationExtensionProperty Cmdlet.
+This example shows how to use the Get-MgBetaApplicationExtensionProperty Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgApplicationExtensionProperty Cmdlet
+### Example 2: Using the Get-MgBetaApplicationExtensionProperty Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
 ```
 
-This example shows how to use the Get-MgApplicationExtensionProperty Cmdlet.
+This example shows how to use the Get-MgBetaApplicationExtensionProperty Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -156,7 +156,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -262,11 +262,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtensionProperty
 
 ## NOTES
 

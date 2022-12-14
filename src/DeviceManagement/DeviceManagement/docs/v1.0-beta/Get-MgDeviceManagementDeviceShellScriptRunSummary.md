@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementdeviceshellscriptrunsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementdeviceshellscriptrunsummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceShellScriptRunSummary
+# Get-MgBetaDeviceManagementDeviceShellScriptRunSummary
 
 ## SYNOPSIS
 Run summary for device management script.
@@ -14,13 +14,13 @@ Run summary for device management script.
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementDeviceShellScriptRunSummary -DeviceShellScriptId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementDeviceShellScriptRunSummary -DeviceShellScriptId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceShellScriptRunSummary -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementDeviceShellScriptRunSummary -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptRunSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptRunSummary
 
 ## NOTES
 

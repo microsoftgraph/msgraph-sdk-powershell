@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementremoteassistancepartner
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementremoteassistancepartner
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementRemoteAssistancePartner
+# New-MgBetaDeviceManagementRemoteAssistancePartner
 
 ## SYNOPSIS
 Create new navigation property to remoteAssistancePartners for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to remoteAssistancePartners for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementRemoteAssistancePartner [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceManagementRemoteAssistancePartner [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-LastConnectionDateTime <DateTime>] [-OnboardingRequestExpiryDateTime <DateTime>]
  [-OnboardingStatus <RemoteAssistanceOnboardingStatus>] [-OnboardingUrl <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementRemoteAssistancePartner [-AdditionalProperties <Hashtable>
 
 ### Create
 ```
-New-MgDeviceManagementRemoteAssistancePartner -BodyParameter <IMicrosoftGraphRemoteAssistancePartner>
+New-MgBetaDeviceManagementRemoteAssistancePartner -BodyParameter <IMicrosoftGraphRemoteAssistancePartner>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ RemoteAssistPartner resources represent the metadata and status of a given Remot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
 Parameter Sets: Create
 Aliases:
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 The current TeamViewer connector status
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.RemoteAssistanceOnboardingStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.RemoteAssistanceOnboardingStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -191,11 +191,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/send-mgusermailfoldermessage
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/send-mgusermailfoldermessage
 schema: 2.0.0
 ---
 
-# Send-MgUserMailFolderMessage
+# Send-MgBetaUserMailFolderMessage
 
 ## SYNOPSIS
 Send an existing draft message.
@@ -17,13 +17,13 @@ Alternatively, send a new message in a single operation.
 
 ### Send (Default)
 ```
-Send-MgUserMailFolderMessage -MailFolderId <String> -MessageId <String> -UserId <String> [-PassThru]
+Send-MgBetaUserMailFolderMessage -MailFolderId <String> -MessageId <String> -UserId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
-Send-MgUserMailFolderMessage -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Send-MgBetaUserMailFolderMessage -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -37,13 +37,13 @@ Alternatively, send a new message in a single operation.
 
 ### Example 1: Send an existing draft message
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 # A UPN can also be used as -UserId.
-Send-MgUserMessage -UserId $userId -MessageId $messageId
+Send-MgBetaUserMessage -UserId $userId -MessageId $messageId
 ```
 
-This example shows how to use the Send-MgUserMailFolderMessage Cmdlet.
+This example shows how to use the Send-MgBetaUserMailFolderMessage Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -54,7 +54,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: SendViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

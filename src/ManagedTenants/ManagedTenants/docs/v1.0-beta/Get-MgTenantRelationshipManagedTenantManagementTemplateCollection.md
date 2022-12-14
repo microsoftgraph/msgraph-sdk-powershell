@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanagementtemplatecollection
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanagementtemplatecollection
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantManagementTemplateCollection
+# Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection
 
 ## SYNOPSIS
 Get managementTemplateCollections from tenantRelationships
@@ -14,38 +14,38 @@ Get managementTemplateCollections from tenantRelationships
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplateCollection [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplateCollection -ManagementTemplateCollectionId <String>
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection -ManagementTemplateCollectionId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplateCollection -ManagementTemplateCollectionId <String>
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection -ManagementTemplateCollectionId <String>
  -ManagementTemplateId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplateCollection -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplateCollection -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgTenantRelationshipManagedTenantManagementTemplateCollection -ManagementTemplateId <String>
+Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection -ManagementTemplateId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -123,7 +123,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
 
 ## NOTES
 

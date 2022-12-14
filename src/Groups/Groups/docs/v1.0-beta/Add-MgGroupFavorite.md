@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/add-mggroupfavorite
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/add-mggroupfavorite
 schema: 2.0.0
 ---
 
-# Add-MgGroupFavorite
+# Add-MgBetaGroupFavorite
 
 ## SYNOPSIS
 Add the group to the list of the current user's favorite groups.
@@ -15,12 +15,12 @@ Supported for Microsoft 365 groups only.
 
 ### Add (Default)
 ```
-Add-MgGroupFavorite -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-MgBetaGroupFavorite -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-MgGroupFavorite -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-MgBetaGroupFavorite -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,13 +29,13 @@ Supported for Microsoft 365 groups only.
 
 ## EXAMPLES
 
-### Example 1: Using the Add-MgGroupFavorite Cmdlet
+### Example 1: Using the Add-MgBetaGroupFavorite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Add-MgGroupFavorite -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Add-MgBetaGroupFavorite -GroupId $groupId
 ```
 
-This example shows how to use the Add-MgGroupFavorite Cmdlet.
+This example shows how to use the Add-MgBetaGroupFavorite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: AddViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

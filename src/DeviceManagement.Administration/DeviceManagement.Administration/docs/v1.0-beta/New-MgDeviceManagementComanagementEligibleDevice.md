@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementcomanagementeligibledevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementcomanagementeligibledevice
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementComanagementEligibleDevice
+# New-MgBetaDeviceManagementComanagementEligibleDevice
 
 ## SYNOPSIS
 Create new navigation property to comanagementEligibleDevices for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to comanagementEligibleDevices for deviceManageme
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementComanagementEligibleDevice [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementComanagementEligibleDevice [-AdditionalProperties <Hashtable>]
  [-ClientRegistrationStatus <DeviceRegistrationState>] [-DeviceName <String>] [-DeviceType <DeviceType>]
  [-EntitySource <Int32>] [-Id <String>] [-ManagementAgents <ManagementAgentType>]
  [-ManagementState <ManagementState>] [-Manufacturer <String>] [-MdmStatus <String>] [-Model <String>]
@@ -25,7 +25,7 @@ New-MgDeviceManagementComanagementEligibleDevice [-AdditionalProperties <Hashtab
 
 ### Create
 ```
-New-MgDeviceManagementComanagementEligibleDevice -BodyParameter <IMicrosoftGraphComanagementEligibleDevice>
+New-MgBetaDeviceManagementComanagementEligibleDevice -BodyParameter <IMicrosoftGraphComanagementEligibleDevice>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ Device Co-Management eligibility state
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
 Parameter Sets: Create
 Aliases:
 
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 Device registration status.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceRegistrationState
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceRegistrationState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 Device type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 Management agent type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagementAgentType
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagementAgentType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 Management state of device in Microsoft Intune.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagementState
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagementState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -252,7 +252,7 @@ Accept wildcard characters: False
 Owner type of device.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.OwnerType
+Type: Microsoft.Graph.Beta.PowerShell.Support.OwnerType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 comanagementEligibleType
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ComanagementEligibleType
+Type: Microsoft.Graph.Beta.PowerShell.Support.ComanagementEligibleType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -404,11 +404,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanyitem
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanyitem
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyItem
+# New-MgBetaFinancialCompanyItem
 
 ## SYNOPSIS
 Create new navigation property to items for financials
@@ -14,7 +14,7 @@ Create new navigation property to items for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyItem -CompanyId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyItem -CompanyId <String> [-AdditionalProperties <Hashtable>]
  [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>] [-Gtin <String>] [-Id <String>]
  [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>] [-ItemCategoryCode <String>]
  [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
@@ -24,19 +24,19 @@ New-MgFinancialCompanyItem -CompanyId <String> [-AdditionalProperties <Hashtable
 
 ### Create
 ```
-New-MgFinancialCompanyItem -CompanyId <String> -BodyParameter <IMicrosoftGraphItem> [-Confirm] [-WhatIf]
+New-MgBetaFinancialCompanyItem -CompanyId <String> -BodyParameter <IMicrosoftGraphItem> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyItem -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphItem> [-Confirm]
+New-MgBetaFinancialCompanyItem -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphItem> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyItem -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyItem -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>] [-Gtin <String>] [-Id <String>]
  [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>] [-ItemCategoryCode <String>]
  [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
@@ -101,7 +101,7 @@ item
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -178,7 +178,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -209,7 +209,7 @@ itemCategory
 To construct, please use Get-Help -Online and see NOTES section for ITEMCATEGORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PICTURE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -422,13 +422,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 
 ## NOTES
 

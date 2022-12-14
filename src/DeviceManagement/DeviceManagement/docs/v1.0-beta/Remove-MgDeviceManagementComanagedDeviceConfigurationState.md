@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementcomanageddeviceconfigurationstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementcomanageddeviceconfigurationstate
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementComanagedDeviceConfigurationState
+# Remove-MgBetaDeviceManagementComanagedDeviceConfigurationState
 
 ## SYNOPSIS
 Delete navigation property deviceConfigurationStates for deviceManagement
@@ -14,13 +14,13 @@ Delete navigation property deviceConfigurationStates for deviceManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementComanagedDeviceConfigurationState -DeviceConfigurationStateId <String>
+Remove-MgBetaDeviceManagementComanagedDeviceConfigurationState -DeviceConfigurationStateId <String>
  -ManagedDeviceId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementComanagedDeviceConfigurationState -InputObject <IDeviceManagementIdentity>
+Remove-MgBetaDeviceManagementComanagedDeviceConfigurationState -InputObject <IDeviceManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

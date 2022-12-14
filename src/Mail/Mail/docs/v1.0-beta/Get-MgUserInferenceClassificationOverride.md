@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mguserinferenceclassificationoverride
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mguserinferenceclassificationoverride
 schema: 2.0.0
 ---
 
-# Get-MgUserInferenceClassificationOverride
+# Get-MgBetaUserInferenceClassificationOverride
 
 ## SYNOPSIS
 A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserInferenceClassificationOverride -UserId <String> [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserInferenceClassificationOverride -UserId <String> [-Filter <String>] [-Property <String[]>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserInferenceClassificationOverride -InferenceClassificationOverrideId <String> -UserId <String>
+Get-MgBetaUserInferenceClassificationOverride -InferenceClassificationOverrideId <String> -UserId <String>
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-Property <String[]>]
+Get-MgBetaUserInferenceClassificationOverride -InputObject <IMailIdentity> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -40,14 +40,14 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserInferenceClassificationOverride Cmdlet
+### Example 1: Using the Get-MgBetaUserInferenceClassificationOverride Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserInferenceClassificationOverride -UserId $userId
+Get-MgBetaUserInferenceClassificationOverride -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserInferenceClassificationOverride Cmdlet.
+This example shows how to use the Get-MgBetaUserInferenceClassificationOverride Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -118,7 +118,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -224,11 +224,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
 
 ## NOTES
 

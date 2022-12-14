@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanageddevicecompliancetrend
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanageddevicecompliancetrend
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend
+# Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend
 
 ## SYNOPSIS
 Update the navigation property managedDeviceComplianceTrends in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managedDeviceComplianceTrends in tenantRelationsh
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDeviceComplianceTrendId <String>
+Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDeviceComplianceTrendId <String>
  [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>] [-ConfigManagerDeviceCount <Int32>]
  [-CountDateTime <String>] [-ErrorDeviceCount <Int32>] [-Id <String>] [-InGracePeriodDeviceCount <Int32>]
  [-NoncompliantDeviceCount <Int32>] [-TenantDisplayName <String>] [-TenantId <String>]
@@ -23,21 +23,21 @@ Update-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDev
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDeviceComplianceTrendId <String>
+Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDeviceComplianceTrendId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>] [-ConfigManagerDeviceCount <Int32>]
  [-CountDateTime <String>] [-ErrorDeviceCount <Int32>] [-Id <String>] [-InGracePeriodDeviceCount <Int32>]
  [-NoncompliantDeviceCount <Int32>] [-TenantDisplayName <String>] [-TenantId <String>]
@@ -71,7 +71,7 @@ managedDeviceComplianceTrend
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -188,7 +188,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -333,9 +333,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend
 
 ## OUTPUTS
 

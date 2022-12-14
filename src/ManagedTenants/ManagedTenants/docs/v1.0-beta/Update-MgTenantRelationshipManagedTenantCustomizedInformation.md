@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantcustomizedinformation
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantcustomizedinformation
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantCustomizedInformation
+# Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation
 
 ## SYNOPSIS
 Update the navigation property tenantsCustomizedInformation in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property tenantsCustomizedInformation in tenantRelationshi
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantCustomizedInformation -TenantCustomizedInformationId <String>
+Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation -TenantCustomizedInformationId <String>
  [-AdditionalProperties <Hashtable>] [-Contacts <IMicrosoftGraphManagedTenantsTenantContactInformation[]>]
  [-DisplayName <String>] [-Id <String>] [-TenantId <String>] [-Website <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgTenantRelationshipManagedTenantCustomizedInformation -TenantCustomizedI
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantCustomizedInformation -TenantCustomizedInformationId <String>
+Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation -TenantCustomizedInformationId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsTenantCustomizedInformation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantCustomizedInformation -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsTenantCustomizedInformation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantCustomizedInformation -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-Contacts <IMicrosoftGraphManagedTenantsTenantContactInformation[]>]
  [-DisplayName <String>] [-Id <String>] [-TenantId <String>] [-Website <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -47,15 +47,15 @@ Update the navigation property tenantsCustomizedInformation in tenantRelationshi
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgTenantRelationshipManagedTenantCustomizedInformation Cmdlet
+### Example 1: Using the Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
+Import-Module Microsoft.Graph.Beta.ManagedTenants
 $params = @{
-	"@odata.type" = "#microsoft.graph.managedTenants.tenantCustomizedInformation"
+	"@odata.type" = "#Microsoft.Graph.Beta.managedTenants.tenantCustomizedInformation"
 	TenantId = "String"
 	Contacts = @(
 		@{
-			"@odata.type" = "microsoft.graph.managedTenants.tenantContactInformation"
+			"@odata.type" = "Microsoft.Graph.Beta.managedTenants.tenantContactInformation"
 			Name = "String"
 			Title = "String"
 			Email = "String"
@@ -65,10 +65,10 @@ $params = @{
 	)
 	Website = "String"
 }
-Update-MgTenantRelationshipManagedTenantCustomizedInformation -TenantCustomizedInformationId $tenantCustomizedInformationId -BodyParameter $params
+Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation -TenantCustomizedInformationId $tenantCustomizedInformationId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgTenantRelationshipManagedTenantCustomizedInformation Cmdlet.
+This example shows how to use the Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -93,7 +93,7 @@ tenantCustomizedInformation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -110,7 +110,7 @@ Optional.
 To construct, please use Get-Help -Online and see NOTES section for CONTACTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantContactInformation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantContactInformation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -159,7 +159,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -269,9 +269,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantCustomizedInformation
 
 ## OUTPUTS
 

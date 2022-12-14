@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanyemployee
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanyemployee
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyEmployee
+# New-MgBetaFinancialCompanyEmployee
 
 ## SYNOPSIS
 Create new navigation property to employees for financials
@@ -14,7 +14,7 @@ Create new navigation property to employees for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyEmployee -CompanyId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyEmployee -CompanyId <String> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPostalAddressType>] [-BirthDate <DateTime>] [-DisplayName <String>]
  [-Email <String>] [-EmploymentDate <DateTime>] [-GivenName <String>] [-Id <String>] [-JobTitle <String>]
  [-LastModifiedDateTime <DateTime>] [-MiddleName <String>] [-MobilePhone <String>] [-Number <String>]
@@ -25,19 +25,19 @@ New-MgFinancialCompanyEmployee -CompanyId <String> [-AdditionalProperties <Hasht
 
 ### Create
 ```
-New-MgFinancialCompanyEmployee -CompanyId <String> -BodyParameter <IMicrosoftGraphEmployee> [-Confirm]
+New-MgBetaFinancialCompanyEmployee -CompanyId <String> -BodyParameter <IMicrosoftGraphEmployee> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyEmployee -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphEmployee>
+New-MgBetaFinancialCompanyEmployee -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphEmployee>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyEmployee -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyEmployee -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPostalAddressType>] [-BirthDate <DateTime>] [-DisplayName <String>]
  [-Email <String>] [-EmploymentDate <DateTime>] [-GivenName <String>] [-Id <String>] [-JobTitle <String>]
  [-LastModifiedDateTime <DateTime>] [-MiddleName <String>] [-MobilePhone <String>] [-Number <String>]
@@ -73,7 +73,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ employee
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmployee
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmployee
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -211,7 +211,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PICTURE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -439,13 +439,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmployee
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmployee
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmployee
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmployee
 
 ## NOTES
 

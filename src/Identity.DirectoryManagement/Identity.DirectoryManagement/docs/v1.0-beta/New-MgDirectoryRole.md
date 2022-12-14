@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryrole
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectoryrole
 schema: 2.0.0
 ---
 
-# New-MgDirectoryRole
+# New-MgBetaDirectoryRole
 
 ## SYNOPSIS
 Activate a directory role.
@@ -17,7 +17,7 @@ To access and assign members to other directory roles, you must first activate i
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryRole [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Description <String>]
+New-MgBetaDirectoryRole [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-Members <IMicrosoftGraphDirectoryObject[]>]
  [-RoleTemplateId <String>] [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -25,7 +25,7 @@ New-MgDirectoryRole [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateT
 
 ### Create
 ```
-New-MgDirectoryRole -BodyParameter <IMicrosoftGraphDirectoryRole> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDirectoryRole -BodyParameter <IMicrosoftGraphDirectoryRole> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,16 +36,16 @@ To access and assign members to other directory roles, you must first activate i
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDirectoryRole Cmdlet
+### Example 1: Using the New-MgBetaDirectoryRole Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	RoleTemplateId = "fe930be7-5e62-47db-91af-98c3a49a38b1"
 }
-New-MgDirectoryRole -BodyParameter $params
+New-MgBetaDirectoryRole -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDirectoryRole Cmdlet.
+This example shows how to use the New-MgBetaDirectoryRole Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ directoryRole
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryRole
 Parameter Sets: Create
 Aliases:
 
@@ -156,7 +156,7 @@ Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SCOPEDMEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -239,11 +239,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryRole
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryRole
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/get-mguseractivityhistoryitemactivity
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/get-mguseractivityhistoryitemactivity
 schema: 2.0.0
 ---
 
-# Get-MgUserActivityHistoryItemActivity
+# Get-MgBetaUserActivityHistoryItemActivity
 
 ## SYNOPSIS
 Get activity from users
@@ -14,13 +14,13 @@ Get activity from users
 
 ### Get (Default)
 ```
-Get-MgUserActivityHistoryItemActivity -ActivityHistoryItemId <String> -UserActivityId <String>
+Get-MgBetaUserActivityHistoryItemActivity -ActivityHistoryItemId <String> -UserActivityId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserActivityHistoryItemActivity -InputObject <ICrossDeviceExperiencesIdentity>
+Get-MgBetaUserActivityHistoryItemActivity -InputObject <ICrossDeviceExperiencesIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity1
 
 ## NOTES
 

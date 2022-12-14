@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationmethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationmethod
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationMethod
+# Get-MgBetaUserAuthenticationMethod
 
 ## SYNOPSIS
 Represents all authentication methods registered to a user.
@@ -14,20 +14,20 @@ Represents all authentication methods registered to a user.
 
 ### List (Default)
 ```
-Get-MgUserAuthenticationMethod -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserAuthenticationMethod -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserAuthenticationMethod -AuthenticationMethodId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserAuthenticationMethod -AuthenticationMethodId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationMethod -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserAuthenticationMethod -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Represents all authentication methods registered to a user.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserAuthenticationMethod Cmdlet
+### Example 1: Using the Get-MgBetaUserAuthenticationMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationMethod -UserId $userId -AuthenticationMethodId $authenticationMethodId
+Get-MgBetaUserAuthenticationMethod -UserId $userId -AuthenticationMethodId $authenticationMethodId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserAuthenticationMethod Cmdlet
+### Example 2: Using the Get-MgBetaUserAuthenticationMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationMethod -UserId $userId
+Get-MgBetaUserAuthenticationMethod -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethod
 
 ### System.String
 

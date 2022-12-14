@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgsearchentity
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/update-mgsearchentity
 schema: 2.0.0
 ---
 
-# Update-MgSearchEntity
+# Update-MgBetaSearchEntity
 
 ## SYNOPSIS
 Update search
@@ -14,14 +14,14 @@ Update search
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSearchEntity [-Acronyms <IMicrosoftGraphSearchAcronym[]>] [-AdditionalProperties <Hashtable>]
+Update-MgBetaSearchEntity [-Acronyms <IMicrosoftGraphSearchAcronym[]>] [-AdditionalProperties <Hashtable>]
  [-Bookmarks <IMicrosoftGraphSearchBookmark[]>] [-Id <String>] [-Qnas <IMicrosoftGraphSearchQna[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSearchEntity -BodyParameter <IMicrosoftGraphSearchEntity> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaSearchEntity -BodyParameter <IMicrosoftGraphSearchEntity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -37,7 +37,7 @@ Administrative answer in Microsoft Search results to define common acronyms in a
 To construct, please use Get-Help -Online and see NOTES section for ACRONYMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAcronym[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAcronym[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -68,7 +68,7 @@ searchEntity
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchEntity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchEntity
 Parameter Sets: Update
 Aliases:
 
@@ -84,7 +84,7 @@ Administrative answer in Microsoft Search results for common search queries in a
 To construct, please use Get-Help -Online and see NOTES section for BOOKMARKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchBookmark[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchBookmark[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -131,7 +131,7 @@ Administrative answer in Microsoft Search results which provide answers for spec
 To construct, please use Get-Help -Online and see NOTES section for QNAS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchQna[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchQna[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchEntity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchEntity
 
 ## OUTPUTS
 

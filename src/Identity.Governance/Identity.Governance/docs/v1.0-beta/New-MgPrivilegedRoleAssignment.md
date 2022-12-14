@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprivilegedroleassignment
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprivilegedroleassignment
 schema: 2.0.0
 ---
 
-# New-MgPrivilegedRoleAssignment
+# New-MgBetaPrivilegedRoleAssignment
 
 ## SYNOPSIS
 Use this API to create a new  privilegedRoleAssignment.
@@ -14,14 +14,14 @@ Use this API to create a new  privilegedRoleAssignment.
 
 ### CreateExpanded (Default)
 ```
-New-MgPrivilegedRoleAssignment [-AdditionalProperties <Hashtable>] [-ExpirationDateTime <DateTime>]
+New-MgBetaPrivilegedRoleAssignment [-AdditionalProperties <Hashtable>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-IsElevated] [-ResultMessage <String>] [-RoleId <String>]
  [-RoleInfo <IMicrosoftGraphPrivilegedRole>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPrivilegedRoleAssignment -BodyParameter <IMicrosoftGraphPrivilegedRoleAssignment> [-Confirm] [-WhatIf]
+New-MgBetaPrivilegedRoleAssignment -BodyParameter <IMicrosoftGraphPrivilegedRoleAssignment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,17 +30,17 @@ Use this API to create a new  privilegedRoleAssignment.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPrivilegedRoleAssignment Cmdlet
+### Example 1: Using the New-MgBetaPrivilegedRoleAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	UserId = "userId-value"
 	RoleId = "roleId-value"
 }
-New-MgPrivilegedRoleAssignment -BodyParameter $params
+New-MgBetaPrivilegedRoleAssignment -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPrivilegedRoleAssignment Cmdlet.
+This example shows how to use the New-MgBetaPrivilegedRoleAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -65,7 +65,7 @@ privilegedRoleAssignment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 Parameter Sets: Create
 Aliases:
 
@@ -160,7 +160,7 @@ privilegedRole
 To construct, please use Get-Help -Online and see NOTES section for ROLEINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -223,11 +223,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## NOTES
 

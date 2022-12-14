@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgofficeclientconfiguration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgofficeclientconfiguration
 schema: 2.0.0
 ---
 
-# Update-MgOfficeClientConfiguration
+# Update-MgBetaOfficeClientConfiguration
 
 ## SYNOPSIS
 Update the navigation property clientConfigurations in officeConfiguration
@@ -14,7 +14,7 @@ Update the navigation property clientConfigurations in officeConfiguration
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOfficeClientConfiguration -OfficeClientConfigurationId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaOfficeClientConfiguration -OfficeClientConfigurationId <String> [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]
  [-CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-PolicyPayloadInputFile <String>] [-Priority <Int32>]
@@ -24,21 +24,21 @@ Update-MgOfficeClientConfiguration -OfficeClientConfigurationId <String> [-Addit
 
 ### Update
 ```
-Update-MgOfficeClientConfiguration -OfficeClientConfigurationId <String>
+Update-MgBetaOfficeClientConfiguration -OfficeClientConfigurationId <String>
  -BodyParameter <IMicrosoftGraphOfficeClientConfiguration> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgOfficeClientConfiguration -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaOfficeClientConfiguration -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphOfficeClientConfiguration> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgOfficeClientConfiguration -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaOfficeClientConfiguration -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]
  [-CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-PolicyPayloadInputFile <String>] [-Priority <Int32>]
@@ -73,7 +73,7 @@ The list of group assignments for the policy.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -89,7 +89,7 @@ officeClientConfiguration
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -105,7 +105,7 @@ List of office Client check-in status.
 To construct, please use Get-Help -Online and see NOTES section for CHECKINSTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientCheckinStatus[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientCheckinStatus[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -243,7 +243,7 @@ officeUserCheckinSummary
 To construct, please use Get-Help -Online and see NOTES section for USERCHECKINSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeUserCheckinSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeUserCheckinSummary
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -305,9 +305,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
 
 ## OUTPUTS
 

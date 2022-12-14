@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/update-mgdevicemanagementwindowautopilotdeviceidentitydeviceproperty
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/update-mgdevicemanagementwindowautopilotdeviceidentitydeviceproperty
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
+# Update-MgBetaDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
 
 ## SYNOPSIS
 Updates properties on Autopilot devices.
@@ -14,7 +14,7 @@ Updates properties on Autopilot devices.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
+Update-MgBetaDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
  -WindowsAutopilotDeviceIdentityId <String> [-AdditionalProperties <Hashtable>]
  [-AddressableUserName <String>] [-DeviceAccountPassword <String>] [-DeviceAccountUpn <String>]
  [-DeviceFriendlyName <String>] [-DisplayName <String>] [-GroupTag <String>] [-UserPrincipalName <String>]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
 
 ### Update
 ```
-Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
+Update-MgBetaDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
  -WindowsAutopilotDeviceIdentityId <String>
  -BodyParameter <IPaths17Vu19LDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphUpdatedevicepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -31,7 +31,7 @@ Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
+Update-MgBetaDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths17Vu19LDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphUpdatedevicepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -39,7 +39,7 @@ Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
+Update-MgBetaDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-AddressableUserName <String>] [-DeviceAccountPassword <String>] [-DeviceAccountUpn <String>]
  [-DeviceFriendlyName <String>] [-DisplayName <String>] [-GroupTag <String>] [-UserPrincipalName <String>]
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths17Vu19LDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphUpdatedevicepropertiesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths17Vu19LDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphUpdatedevicepropertiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -179,7 +179,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -271,9 +271,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths17Vu19LDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphUpdatedevicepropertiesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths17Vu19LDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphUpdatedevicepropertiesPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

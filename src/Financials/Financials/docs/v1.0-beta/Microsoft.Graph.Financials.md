@@ -1,1273 +1,1273 @@
 ---
-Module Name: Microsoft.Graph.Financials
+Module Name: Microsoft.Graph.Beta.Financials
 Module Guid: f2dc9810-b008-4123-a4d4-f3dc60361771
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.financials
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Financials Module
+# Microsoft.Graph.Beta.Financials Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Financials Cmdlets
-### [Get-MgFinancial](Get-MgFinancial.md)
+## Microsoft.Graph.Beta.Financials Cmdlets
+### [Get-MgBetaFinancial](Get-MgBetaFinancial.md)
 Get financials
 
-### [Get-MgFinancialCompany](Get-MgFinancialCompany.md)
+### [Get-MgBetaFinancialCompany](Get-MgBetaFinancialCompany.md)
 Get companies from financials
 
-### [Get-MgFinancialCompanyAccount](Get-MgFinancialCompanyAccount.md)
+### [Get-MgBetaFinancialCompanyAccount](Get-MgBetaFinancialCompanyAccount.md)
 Get accounts from financials
 
-### [Get-MgFinancialCompanyAgedAccountPayable](Get-MgFinancialCompanyAgedAccountPayable.md)
+### [Get-MgBetaFinancialCompanyAgedAccountPayable](Get-MgBetaFinancialCompanyAgedAccountPayable.md)
 Get agedAccountsPayable from financials
 
-### [Get-MgFinancialCompanyAgedAccountReceivable](Get-MgFinancialCompanyAgedAccountReceivable.md)
+### [Get-MgBetaFinancialCompanyAgedAccountReceivable](Get-MgBetaFinancialCompanyAgedAccountReceivable.md)
 Get agedAccountsReceivable from financials
 
-### [Get-MgFinancialCompanyCountryRegion](Get-MgFinancialCompanyCountryRegion.md)
+### [Get-MgBetaFinancialCompanyCountryRegion](Get-MgBetaFinancialCompanyCountryRegion.md)
 Get countriesRegions from financials
 
-### [Get-MgFinancialCompanyCurrency](Get-MgFinancialCompanyCurrency.md)
+### [Get-MgBetaFinancialCompanyCurrency](Get-MgBetaFinancialCompanyCurrency.md)
 Get currencies from financials
 
-### [Get-MgFinancialCompanyCustomer](Get-MgFinancialCompanyCustomer.md)
+### [Get-MgBetaFinancialCompanyCustomer](Get-MgBetaFinancialCompanyCustomer.md)
 Get customers from financials
 
-### [Get-MgFinancialCompanyCustomerCurrency](Get-MgFinancialCompanyCustomerCurrency.md)
+### [Get-MgBetaFinancialCompanyCustomerCurrency](Get-MgBetaFinancialCompanyCustomerCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanyCustomerPayment](Get-MgFinancialCompanyCustomerPayment.md)
+### [Get-MgBetaFinancialCompanyCustomerPayment](Get-MgBetaFinancialCompanyCustomerPayment.md)
 Get customerPayments from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentCustomer](Get-MgFinancialCompanyCustomerPaymentCustomer.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentCustomer](Get-MgBetaFinancialCompanyCustomerPaymentCustomer.md)
 Get customer from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentCustomerCurrency](Get-MgFinancialCompanyCustomerPaymentCustomerCurrency.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentCustomerCurrency](Get-MgBetaFinancialCompanyCustomerPaymentCustomerCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentCustomerPicture](Get-MgFinancialCompanyCustomerPaymentCustomerPicture.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentCustomerPicture](Get-MgBetaFinancialCompanyCustomerPaymentCustomerPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentCustomerPictureContent](Get-MgFinancialCompanyCustomerPaymentCustomerPictureContent.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentCustomerPictureContent](Get-MgBetaFinancialCompanyCustomerPaymentCustomerPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod](Get-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentCustomerShipmentMethod](Get-MgBetaFinancialCompanyCustomerPaymentCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournal](Get-MgFinancialCompanyCustomerPaymentJournal.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournal](Get-MgBetaFinancialCompanyCustomerPaymentJournal.md)
 Get customerPaymentJournals from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalAccount](Get-MgFinancialCompanyCustomerPaymentJournalAccount.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalAccount](Get-MgBetaFinancialCompanyCustomerPaymentJournalAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPayment](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment](Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
 Get customerPayments from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer](Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer.md)
 Get customer from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency](Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent](Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod](Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod](Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod.md)
 Get paymentMethod from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm](Get-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentMethod](Get-MgFinancialCompanyCustomerPaymentMethod.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentMethod](Get-MgBetaFinancialCompanyCustomerPaymentMethod.md)
 Get paymentMethod from financials
 
-### [Get-MgFinancialCompanyCustomerPaymentTerm](Get-MgFinancialCompanyCustomerPaymentTerm.md)
+### [Get-MgBetaFinancialCompanyCustomerPaymentTerm](Get-MgBetaFinancialCompanyCustomerPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanyCustomerPicture](Get-MgFinancialCompanyCustomerPicture.md)
+### [Get-MgBetaFinancialCompanyCustomerPicture](Get-MgBetaFinancialCompanyCustomerPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyCustomerPictureContent](Get-MgFinancialCompanyCustomerPictureContent.md)
+### [Get-MgBetaFinancialCompanyCustomerPictureContent](Get-MgBetaFinancialCompanyCustomerPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanyCustomerShipmentMethod](Get-MgFinancialCompanyCustomerShipmentMethod.md)
+### [Get-MgBetaFinancialCompanyCustomerShipmentMethod](Get-MgBetaFinancialCompanyCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanyDimension](Get-MgFinancialCompanyDimension.md)
+### [Get-MgBetaFinancialCompanyDimension](Get-MgBetaFinancialCompanyDimension.md)
 Get dimensions from financials
 
-### [Get-MgFinancialCompanyDimensionValue](Get-MgFinancialCompanyDimensionValue.md)
+### [Get-MgBetaFinancialCompanyDimensionValue](Get-MgBetaFinancialCompanyDimensionValue.md)
 Get dimensionValues from financials
 
-### [Get-MgFinancialCompanyEmployee](Get-MgFinancialCompanyEmployee.md)
+### [Get-MgBetaFinancialCompanyEmployee](Get-MgBetaFinancialCompanyEmployee.md)
 Get employees from financials
 
-### [Get-MgFinancialCompanyEmployeePicture](Get-MgFinancialCompanyEmployeePicture.md)
+### [Get-MgBetaFinancialCompanyEmployeePicture](Get-MgBetaFinancialCompanyEmployeePicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyEmployeePictureContent](Get-MgFinancialCompanyEmployeePictureContent.md)
+### [Get-MgBetaFinancialCompanyEmployeePictureContent](Get-MgBetaFinancialCompanyEmployeePictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanyGeneralLedgerEntry](Get-MgFinancialCompanyGeneralLedgerEntry.md)
+### [Get-MgBetaFinancialCompanyGeneralLedgerEntry](Get-MgBetaFinancialCompanyGeneralLedgerEntry.md)
 Get generalLedgerEntries from financials
 
-### [Get-MgFinancialCompanyGeneralLedgerEntryAccount](Get-MgFinancialCompanyGeneralLedgerEntryAccount.md)
+### [Get-MgBetaFinancialCompanyGeneralLedgerEntryAccount](Get-MgBetaFinancialCompanyGeneralLedgerEntryAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanyInformation](Get-MgFinancialCompanyInformation.md)
+### [Get-MgBetaFinancialCompanyInformation](Get-MgBetaFinancialCompanyInformation.md)
 Get companyInformation from financials
 
-### [Get-MgFinancialCompanyInformationPicture](Get-MgFinancialCompanyInformationPicture.md)
+### [Get-MgBetaFinancialCompanyInformationPicture](Get-MgBetaFinancialCompanyInformationPicture.md)
 Get picture for the navigation property companyInformation from financials
 
-### [Get-MgFinancialCompanyItem](Get-MgFinancialCompanyItem.md)
+### [Get-MgBetaFinancialCompanyItem](Get-MgBetaFinancialCompanyItem.md)
 Get items from financials
 
-### [Get-MgFinancialCompanyItemCategory](Get-MgFinancialCompanyItemCategory.md)
+### [Get-MgBetaFinancialCompanyItemCategory](Get-MgBetaFinancialCompanyItemCategory.md)
 Get itemCategories from financials
 
-### [Get-MgFinancialCompanyItemPicture](Get-MgFinancialCompanyItemPicture.md)
+### [Get-MgBetaFinancialCompanyItemPicture](Get-MgBetaFinancialCompanyItemPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyItemPictureContent](Get-MgFinancialCompanyItemPictureContent.md)
+### [Get-MgBetaFinancialCompanyItemPictureContent](Get-MgBetaFinancialCompanyItemPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanyJournal](Get-MgFinancialCompanyJournal.md)
+### [Get-MgBetaFinancialCompanyJournal](Get-MgBetaFinancialCompanyJournal.md)
 Get journals from financials
 
-### [Get-MgFinancialCompanyJournalAccount](Get-MgFinancialCompanyJournalAccount.md)
+### [Get-MgBetaFinancialCompanyJournalAccount](Get-MgBetaFinancialCompanyJournalAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanyJournalLine](Get-MgFinancialCompanyJournalLine.md)
+### [Get-MgBetaFinancialCompanyJournalLine](Get-MgBetaFinancialCompanyJournalLine.md)
 Get journalLines from financials
 
-### [Get-MgFinancialCompanyJournalLineAccount](Get-MgFinancialCompanyJournalLineAccount.md)
+### [Get-MgBetaFinancialCompanyJournalLineAccount](Get-MgBetaFinancialCompanyJournalLineAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanyPaymentMethod](Get-MgFinancialCompanyPaymentMethod.md)
+### [Get-MgBetaFinancialCompanyPaymentMethod](Get-MgBetaFinancialCompanyPaymentMethod.md)
 Get paymentMethods from financials
 
-### [Get-MgFinancialCompanyPaymentTerm](Get-MgFinancialCompanyPaymentTerm.md)
+### [Get-MgBetaFinancialCompanyPaymentTerm](Get-MgBetaFinancialCompanyPaymentTerm.md)
 Get paymentTerms from financials
 
-### [Get-MgFinancialCompanyPicture](Get-MgFinancialCompanyPicture.md)
+### [Get-MgBetaFinancialCompanyPicture](Get-MgBetaFinancialCompanyPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyPictureContent](Get-MgFinancialCompanyPictureContent.md)
+### [Get-MgBetaFinancialCompanyPictureContent](Get-MgBetaFinancialCompanyPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoice](Get-MgFinancialCompanyPurchaseInvoice.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoice](Get-MgBetaFinancialCompanyPurchaseInvoice.md)
 Get purchaseInvoices from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceCurrency](Get-MgFinancialCompanyPurchaseInvoiceCurrency.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceCurrency](Get-MgBetaFinancialCompanyPurchaseInvoiceCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceLine](Get-MgFinancialCompanyPurchaseInvoiceLine.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceLine](Get-MgBetaFinancialCompanyPurchaseInvoiceLine.md)
 Get purchaseInvoiceLines from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceLineAccount](Get-MgFinancialCompanyPurchaseInvoiceLineAccount.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceLineAccount](Get-MgBetaFinancialCompanyPurchaseInvoiceLineAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceLineItem](Get-MgFinancialCompanyPurchaseInvoiceLineItem.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceLineItem](Get-MgBetaFinancialCompanyPurchaseInvoiceLineItem.md)
 Get item from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceLineItemCategory](Get-MgFinancialCompanyPurchaseInvoiceLineItemCategory.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceLineItemCategory](Get-MgBetaFinancialCompanyPurchaseInvoiceLineItemCategory.md)
 Get itemCategory from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceLineItemPicture](Get-MgFinancialCompanyPurchaseInvoiceLineItemPicture.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture](Get-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent](Get-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceLineItemPictureContent](Get-MgBetaFinancialCompanyPurchaseInvoiceLineItemPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceVendor](Get-MgFinancialCompanyPurchaseInvoiceVendor.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceVendor](Get-MgBetaFinancialCompanyPurchaseInvoiceVendor.md)
 Get vendor from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceVendorCurrency](Get-MgFinancialCompanyPurchaseInvoiceVendorCurrency.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceVendorCurrency](Get-MgBetaFinancialCompanyPurchaseInvoiceVendorCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceVendorPaymentMethod](Get-MgFinancialCompanyPurchaseInvoiceVendorPaymentMethod.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentMethod](Get-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentMethod.md)
 Get paymentMethod from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceVendorPaymentTerm](Get-MgFinancialCompanyPurchaseInvoiceVendorPaymentTerm.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentTerm](Get-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceVendorPicture](Get-MgFinancialCompanyPurchaseInvoiceVendorPicture.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceVendorPicture](Get-MgBetaFinancialCompanyPurchaseInvoiceVendorPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyPurchaseInvoiceVendorPictureContent](Get-MgFinancialCompanyPurchaseInvoiceVendorPictureContent.md)
+### [Get-MgBetaFinancialCompanyPurchaseInvoiceVendorPictureContent](Get-MgBetaFinancialCompanyPurchaseInvoiceVendorPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleCreditMemo](Get-MgFinancialCompanySaleCreditMemo.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemo](Get-MgBetaFinancialCompanySaleCreditMemo.md)
 Get salesCreditMemos from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoCurrency](Get-MgFinancialCompanySaleCreditMemoCurrency.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoCurrency](Get-MgBetaFinancialCompanySaleCreditMemoCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoCustomer](Get-MgFinancialCompanySaleCreditMemoCustomer.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoCustomer](Get-MgBetaFinancialCompanySaleCreditMemoCustomer.md)
 Get customer from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoCustomerCurrency](Get-MgFinancialCompanySaleCreditMemoCustomerCurrency.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoCustomerCurrency](Get-MgBetaFinancialCompanySaleCreditMemoCustomerCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoCustomerPaymentMethod](Get-MgFinancialCompanySaleCreditMemoCustomerPaymentMethod.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod](Get-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod.md)
 Get paymentMethod from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoCustomerPaymentTerm](Get-MgFinancialCompanySaleCreditMemoCustomerPaymentTerm.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentTerm](Get-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoCustomerPicture](Get-MgFinancialCompanySaleCreditMemoCustomerPicture.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoCustomerPicture](Get-MgBetaFinancialCompanySaleCreditMemoCustomerPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoCustomerPictureContent](Get-MgFinancialCompanySaleCreditMemoCustomerPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoCustomerPictureContent](Get-MgBetaFinancialCompanySaleCreditMemoCustomerPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod](Get-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoCustomerShipmentMethod](Get-MgBetaFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoLine](Get-MgFinancialCompanySaleCreditMemoLine.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoLine](Get-MgBetaFinancialCompanySaleCreditMemoLine.md)
 Get salesCreditMemoLines from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoLineAccount](Get-MgFinancialCompanySaleCreditMemoLineAccount.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoLineAccount](Get-MgBetaFinancialCompanySaleCreditMemoLineAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoLineItem](Get-MgFinancialCompanySaleCreditMemoLineItem.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoLineItem](Get-MgBetaFinancialCompanySaleCreditMemoLineItem.md)
 Get item from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoLineItemCategory](Get-MgFinancialCompanySaleCreditMemoLineItemCategory.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoLineItemCategory](Get-MgBetaFinancialCompanySaleCreditMemoLineItemCategory.md)
 Get itemCategory from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoLineItemPicture](Get-MgFinancialCompanySaleCreditMemoLineItemPicture.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoLineItemPicture](Get-MgBetaFinancialCompanySaleCreditMemoLineItemPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoLineItemPictureContent](Get-MgFinancialCompanySaleCreditMemoLineItemPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoLineItemPictureContent](Get-MgBetaFinancialCompanySaleCreditMemoLineItemPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoPaymentTerm](Get-MgFinancialCompanySaleCreditMemoPaymentTerm.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoPaymentTerm](Get-MgBetaFinancialCompanySaleCreditMemoPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine](Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine.md)
 Get salesCreditMemoLines from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineAccount](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineAccount.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineAccount](Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItem](Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItem.md)
 Get item from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory](Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory.md)
 Get itemCategory from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent](Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleInvoice](Get-MgFinancialCompanySaleInvoice.md)
+### [Get-MgBetaFinancialCompanySaleInvoice](Get-MgBetaFinancialCompanySaleInvoice.md)
 Get salesInvoices from financials
 
-### [Get-MgFinancialCompanySaleInvoiceCurrency](Get-MgFinancialCompanySaleInvoiceCurrency.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceCurrency](Get-MgBetaFinancialCompanySaleInvoiceCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanySaleInvoiceCustomer](Get-MgFinancialCompanySaleInvoiceCustomer.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceCustomer](Get-MgBetaFinancialCompanySaleInvoiceCustomer.md)
 Get customer from financials
 
-### [Get-MgFinancialCompanySaleInvoiceCustomerCurrency](Get-MgFinancialCompanySaleInvoiceCustomerCurrency.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceCustomerCurrency](Get-MgBetaFinancialCompanySaleInvoiceCustomerCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanySaleInvoiceCustomerPaymentMethod](Get-MgFinancialCompanySaleInvoiceCustomerPaymentMethod.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceCustomerPaymentMethod](Get-MgBetaFinancialCompanySaleInvoiceCustomerPaymentMethod.md)
 Get paymentMethod from financials
 
-### [Get-MgFinancialCompanySaleInvoiceCustomerPaymentTerm](Get-MgFinancialCompanySaleInvoiceCustomerPaymentTerm.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm](Get-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanySaleInvoiceCustomerPicture](Get-MgFinancialCompanySaleInvoiceCustomerPicture.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceCustomerPicture](Get-MgBetaFinancialCompanySaleInvoiceCustomerPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleInvoiceCustomerPictureContent](Get-MgFinancialCompanySaleInvoiceCustomerPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceCustomerPictureContent](Get-MgBetaFinancialCompanySaleInvoiceCustomerPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleInvoiceCustomerShipmentMethod](Get-MgFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceCustomerShipmentMethod](Get-MgBetaFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanySaleInvoiceLine](Get-MgFinancialCompanySaleInvoiceLine.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceLine](Get-MgBetaFinancialCompanySaleInvoiceLine.md)
 Get salesInvoiceLines from financials
 
-### [Get-MgFinancialCompanySaleInvoiceLineAccount](Get-MgFinancialCompanySaleInvoiceLineAccount.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceLineAccount](Get-MgBetaFinancialCompanySaleInvoiceLineAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanySaleInvoiceLineItem](Get-MgFinancialCompanySaleInvoiceLineItem.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceLineItem](Get-MgBetaFinancialCompanySaleInvoiceLineItem.md)
 Get item from financials
 
-### [Get-MgFinancialCompanySaleInvoiceLineItemCategory](Get-MgFinancialCompanySaleInvoiceLineItemCategory.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceLineItemCategory](Get-MgBetaFinancialCompanySaleInvoiceLineItemCategory.md)
 Get itemCategory from financials
 
-### [Get-MgFinancialCompanySaleInvoiceLineItemPicture](Get-MgFinancialCompanySaleInvoiceLineItemPicture.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture](Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleInvoiceLineItemPictureContent](Get-MgFinancialCompanySaleInvoiceLineItemPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent](Get-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleInvoicePaymentTerm](Get-MgFinancialCompanySaleInvoicePaymentTerm.md)
+### [Get-MgBetaFinancialCompanySaleInvoicePaymentTerm](Get-MgBetaFinancialCompanySaleInvoicePaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanySaleInvoiceShipmentMethod](Get-MgFinancialCompanySaleInvoiceShipmentMethod.md)
+### [Get-MgBetaFinancialCompanySaleInvoiceShipmentMethod](Get-MgBetaFinancialCompanySaleInvoiceShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanySaleOrder](Get-MgFinancialCompanySaleOrder.md)
+### [Get-MgBetaFinancialCompanySaleOrder](Get-MgBetaFinancialCompanySaleOrder.md)
 Get salesOrders from financials
 
-### [Get-MgFinancialCompanySaleOrderCurrency](Get-MgFinancialCompanySaleOrderCurrency.md)
+### [Get-MgBetaFinancialCompanySaleOrderCurrency](Get-MgBetaFinancialCompanySaleOrderCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanySaleOrderCustomer](Get-MgFinancialCompanySaleOrderCustomer.md)
+### [Get-MgBetaFinancialCompanySaleOrderCustomer](Get-MgBetaFinancialCompanySaleOrderCustomer.md)
 Get customer from financials
 
-### [Get-MgFinancialCompanySaleOrderCustomerCurrency](Get-MgFinancialCompanySaleOrderCustomerCurrency.md)
+### [Get-MgBetaFinancialCompanySaleOrderCustomerCurrency](Get-MgBetaFinancialCompanySaleOrderCustomerCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanySaleOrderCustomerPaymentMethod](Get-MgFinancialCompanySaleOrderCustomerPaymentMethod.md)
+### [Get-MgBetaFinancialCompanySaleOrderCustomerPaymentMethod](Get-MgBetaFinancialCompanySaleOrderCustomerPaymentMethod.md)
 Get paymentMethod from financials
 
-### [Get-MgFinancialCompanySaleOrderCustomerPaymentTerm](Get-MgFinancialCompanySaleOrderCustomerPaymentTerm.md)
+### [Get-MgBetaFinancialCompanySaleOrderCustomerPaymentTerm](Get-MgBetaFinancialCompanySaleOrderCustomerPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanySaleOrderCustomerPicture](Get-MgFinancialCompanySaleOrderCustomerPicture.md)
+### [Get-MgBetaFinancialCompanySaleOrderCustomerPicture](Get-MgBetaFinancialCompanySaleOrderCustomerPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleOrderCustomerPictureContent](Get-MgFinancialCompanySaleOrderCustomerPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleOrderCustomerPictureContent](Get-MgBetaFinancialCompanySaleOrderCustomerPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleOrderCustomerShipmentMethod](Get-MgFinancialCompanySaleOrderCustomerShipmentMethod.md)
+### [Get-MgBetaFinancialCompanySaleOrderCustomerShipmentMethod](Get-MgBetaFinancialCompanySaleOrderCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanySaleOrderLine](Get-MgFinancialCompanySaleOrderLine.md)
+### [Get-MgBetaFinancialCompanySaleOrderLine](Get-MgBetaFinancialCompanySaleOrderLine.md)
 Get salesOrderLines from financials
 
-### [Get-MgFinancialCompanySaleOrderLineAccount](Get-MgFinancialCompanySaleOrderLineAccount.md)
+### [Get-MgBetaFinancialCompanySaleOrderLineAccount](Get-MgBetaFinancialCompanySaleOrderLineAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanySaleOrderLineItem](Get-MgFinancialCompanySaleOrderLineItem.md)
+### [Get-MgBetaFinancialCompanySaleOrderLineItem](Get-MgBetaFinancialCompanySaleOrderLineItem.md)
 Get item from financials
 
-### [Get-MgFinancialCompanySaleOrderLineItemCategory](Get-MgFinancialCompanySaleOrderLineItemCategory.md)
+### [Get-MgBetaFinancialCompanySaleOrderLineItemCategory](Get-MgBetaFinancialCompanySaleOrderLineItemCategory.md)
 Get itemCategory from financials
 
-### [Get-MgFinancialCompanySaleOrderLineItemPicture](Get-MgFinancialCompanySaleOrderLineItemPicture.md)
+### [Get-MgBetaFinancialCompanySaleOrderLineItemPicture](Get-MgBetaFinancialCompanySaleOrderLineItemPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleOrderLineItemPictureContent](Get-MgFinancialCompanySaleOrderLineItemPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleOrderLineItemPictureContent](Get-MgBetaFinancialCompanySaleOrderLineItemPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleOrderPaymentTerm](Get-MgFinancialCompanySaleOrderPaymentTerm.md)
+### [Get-MgBetaFinancialCompanySaleOrderPaymentTerm](Get-MgBetaFinancialCompanySaleOrderPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanySaleQuote](Get-MgFinancialCompanySaleQuote.md)
+### [Get-MgBetaFinancialCompanySaleQuote](Get-MgBetaFinancialCompanySaleQuote.md)
 Get salesQuotes from financials
 
-### [Get-MgFinancialCompanySaleQuoteCurrency](Get-MgFinancialCompanySaleQuoteCurrency.md)
+### [Get-MgBetaFinancialCompanySaleQuoteCurrency](Get-MgBetaFinancialCompanySaleQuoteCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanySaleQuoteCustomer](Get-MgFinancialCompanySaleQuoteCustomer.md)
+### [Get-MgBetaFinancialCompanySaleQuoteCustomer](Get-MgBetaFinancialCompanySaleQuoteCustomer.md)
 Get customer from financials
 
-### [Get-MgFinancialCompanySaleQuoteCustomerCurrency](Get-MgFinancialCompanySaleQuoteCustomerCurrency.md)
+### [Get-MgBetaFinancialCompanySaleQuoteCustomerCurrency](Get-MgBetaFinancialCompanySaleQuoteCustomerCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanySaleQuoteCustomerPaymentMethod](Get-MgFinancialCompanySaleQuoteCustomerPaymentMethod.md)
+### [Get-MgBetaFinancialCompanySaleQuoteCustomerPaymentMethod](Get-MgBetaFinancialCompanySaleQuoteCustomerPaymentMethod.md)
 Get paymentMethod from financials
 
-### [Get-MgFinancialCompanySaleQuoteCustomerPaymentTerm](Get-MgFinancialCompanySaleQuoteCustomerPaymentTerm.md)
+### [Get-MgBetaFinancialCompanySaleQuoteCustomerPaymentTerm](Get-MgBetaFinancialCompanySaleQuoteCustomerPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanySaleQuoteCustomerPicture](Get-MgFinancialCompanySaleQuoteCustomerPicture.md)
+### [Get-MgBetaFinancialCompanySaleQuoteCustomerPicture](Get-MgBetaFinancialCompanySaleQuoteCustomerPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleQuoteCustomerPictureContent](Get-MgFinancialCompanySaleQuoteCustomerPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleQuoteCustomerPictureContent](Get-MgBetaFinancialCompanySaleQuoteCustomerPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleQuoteCustomerShipmentMethod](Get-MgFinancialCompanySaleQuoteCustomerShipmentMethod.md)
+### [Get-MgBetaFinancialCompanySaleQuoteCustomerShipmentMethod](Get-MgBetaFinancialCompanySaleQuoteCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanySaleQuoteLine](Get-MgFinancialCompanySaleQuoteLine.md)
+### [Get-MgBetaFinancialCompanySaleQuoteLine](Get-MgBetaFinancialCompanySaleQuoteLine.md)
 Get salesQuoteLines from financials
 
-### [Get-MgFinancialCompanySaleQuoteLineAccount](Get-MgFinancialCompanySaleQuoteLineAccount.md)
+### [Get-MgBetaFinancialCompanySaleQuoteLineAccount](Get-MgBetaFinancialCompanySaleQuoteLineAccount.md)
 Get account from financials
 
-### [Get-MgFinancialCompanySaleQuoteLineItem](Get-MgFinancialCompanySaleQuoteLineItem.md)
+### [Get-MgBetaFinancialCompanySaleQuoteLineItem](Get-MgBetaFinancialCompanySaleQuoteLineItem.md)
 Get item from financials
 
-### [Get-MgFinancialCompanySaleQuoteLineItemCategory](Get-MgFinancialCompanySaleQuoteLineItemCategory.md)
+### [Get-MgBetaFinancialCompanySaleQuoteLineItemCategory](Get-MgBetaFinancialCompanySaleQuoteLineItemCategory.md)
 Get itemCategory from financials
 
-### [Get-MgFinancialCompanySaleQuoteLineItemPicture](Get-MgFinancialCompanySaleQuoteLineItemPicture.md)
+### [Get-MgBetaFinancialCompanySaleQuoteLineItemPicture](Get-MgBetaFinancialCompanySaleQuoteLineItemPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanySaleQuoteLineItemPictureContent](Get-MgFinancialCompanySaleQuoteLineItemPictureContent.md)
+### [Get-MgBetaFinancialCompanySaleQuoteLineItemPictureContent](Get-MgBetaFinancialCompanySaleQuoteLineItemPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Get-MgFinancialCompanySaleQuotePaymentTerm](Get-MgFinancialCompanySaleQuotePaymentTerm.md)
+### [Get-MgBetaFinancialCompanySaleQuotePaymentTerm](Get-MgBetaFinancialCompanySaleQuotePaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanySaleQuoteShipmentMethod](Get-MgFinancialCompanySaleQuoteShipmentMethod.md)
+### [Get-MgBetaFinancialCompanySaleQuoteShipmentMethod](Get-MgBetaFinancialCompanySaleQuoteShipmentMethod.md)
 Get shipmentMethod from financials
 
-### [Get-MgFinancialCompanyShipmentMethod](Get-MgFinancialCompanyShipmentMethod.md)
+### [Get-MgBetaFinancialCompanyShipmentMethod](Get-MgBetaFinancialCompanyShipmentMethod.md)
 Get shipmentMethods from financials
 
-### [Get-MgFinancialCompanyTaxArea](Get-MgFinancialCompanyTaxArea.md)
+### [Get-MgBetaFinancialCompanyTaxArea](Get-MgBetaFinancialCompanyTaxArea.md)
 Get taxAreas from financials
 
-### [Get-MgFinancialCompanyTaxGroup](Get-MgFinancialCompanyTaxGroup.md)
+### [Get-MgBetaFinancialCompanyTaxGroup](Get-MgBetaFinancialCompanyTaxGroup.md)
 Get taxGroups from financials
 
-### [Get-MgFinancialCompanyUnitOfMeasure](Get-MgFinancialCompanyUnitOfMeasure.md)
+### [Get-MgBetaFinancialCompanyUnitOfMeasure](Get-MgBetaFinancialCompanyUnitOfMeasure.md)
 Get unitsOfMeasure from financials
 
-### [Get-MgFinancialCompanyVendor](Get-MgFinancialCompanyVendor.md)
+### [Get-MgBetaFinancialCompanyVendor](Get-MgBetaFinancialCompanyVendor.md)
 Get vendors from financials
 
-### [Get-MgFinancialCompanyVendorCurrency](Get-MgFinancialCompanyVendorCurrency.md)
+### [Get-MgBetaFinancialCompanyVendorCurrency](Get-MgBetaFinancialCompanyVendorCurrency.md)
 Get currency from financials
 
-### [Get-MgFinancialCompanyVendorPaymentMethod](Get-MgFinancialCompanyVendorPaymentMethod.md)
+### [Get-MgBetaFinancialCompanyVendorPaymentMethod](Get-MgBetaFinancialCompanyVendorPaymentMethod.md)
 Get paymentMethod from financials
 
-### [Get-MgFinancialCompanyVendorPaymentTerm](Get-MgFinancialCompanyVendorPaymentTerm.md)
+### [Get-MgBetaFinancialCompanyVendorPaymentTerm](Get-MgBetaFinancialCompanyVendorPaymentTerm.md)
 Get paymentTerm from financials
 
-### [Get-MgFinancialCompanyVendorPicture](Get-MgFinancialCompanyVendorPicture.md)
+### [Get-MgBetaFinancialCompanyVendorPicture](Get-MgBetaFinancialCompanyVendorPicture.md)
 Get picture from financials
 
-### [Get-MgFinancialCompanyVendorPictureContent](Get-MgFinancialCompanyVendorPictureContent.md)
+### [Get-MgBetaFinancialCompanyVendorPictureContent](Get-MgBetaFinancialCompanyVendorPictureContent.md)
 Get content for the navigation property picture from financials
 
-### [Invoke-MgFinancialCompanyJournal](Invoke-MgFinancialCompanyJournal.md)
+### [Invoke-MgBetaFinancialCompanyJournal](Invoke-MgBetaFinancialCompanyJournal.md)
 Invoke action post
 
-### [Invoke-MgFinancialCompanyPurchaseInvoice](Invoke-MgFinancialCompanyPurchaseInvoice.md)
+### [Invoke-MgBetaFinancialCompanyPurchaseInvoice](Invoke-MgBetaFinancialCompanyPurchaseInvoice.md)
 Invoke action post
 
-### [Invoke-MgFinancialCompanySaleInvoice](Invoke-MgFinancialCompanySaleInvoice.md)
+### [Invoke-MgBetaFinancialCompanySaleInvoice](Invoke-MgBetaFinancialCompanySaleInvoice.md)
 Invoke action post
 
-### [Invoke-MgFinancialCompanySaleInvoiceAndSend](Invoke-MgFinancialCompanySaleInvoiceAndSend.md)
+### [Invoke-MgBetaFinancialCompanySaleInvoiceAndSend](Invoke-MgBetaFinancialCompanySaleInvoiceAndSend.md)
 Invoke action postAndSend
 
-### [New-MgFinancialCompanyCountryRegion](New-MgFinancialCompanyCountryRegion.md)
+### [New-MgBetaFinancialCompanyCountryRegion](New-MgBetaFinancialCompanyCountryRegion.md)
 Create new navigation property to countriesRegions for financials
 
-### [New-MgFinancialCompanyCurrency](New-MgFinancialCompanyCurrency.md)
+### [New-MgBetaFinancialCompanyCurrency](New-MgBetaFinancialCompanyCurrency.md)
 Create new navigation property to currencies for financials
 
-### [New-MgFinancialCompanyCustomer](New-MgFinancialCompanyCustomer.md)
+### [New-MgBetaFinancialCompanyCustomer](New-MgBetaFinancialCompanyCustomer.md)
 Create new navigation property to customers for financials
 
-### [New-MgFinancialCompanyCustomerPayment](New-MgFinancialCompanyCustomerPayment.md)
+### [New-MgBetaFinancialCompanyCustomerPayment](New-MgBetaFinancialCompanyCustomerPayment.md)
 Create new navigation property to customerPayments for financials
 
-### [New-MgFinancialCompanyCustomerPaymentCustomerPicture](New-MgFinancialCompanyCustomerPaymentCustomerPicture.md)
+### [New-MgBetaFinancialCompanyCustomerPaymentCustomerPicture](New-MgBetaFinancialCompanyCustomerPaymentCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyCustomerPaymentJournal](New-MgFinancialCompanyCustomerPaymentJournal.md)
+### [New-MgBetaFinancialCompanyCustomerPaymentJournal](New-MgBetaFinancialCompanyCustomerPaymentJournal.md)
 Create new navigation property to customerPaymentJournals for financials
 
-### [New-MgFinancialCompanyCustomerPaymentJournalCustomerPayment](New-MgFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
+### [New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment](New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
 Create new navigation property to customerPayments for financials
 
-### [New-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](New-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
+### [New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyCustomerPicture](New-MgFinancialCompanyCustomerPicture.md)
+### [New-MgBetaFinancialCompanyCustomerPicture](New-MgBetaFinancialCompanyCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyEmployee](New-MgFinancialCompanyEmployee.md)
+### [New-MgBetaFinancialCompanyEmployee](New-MgBetaFinancialCompanyEmployee.md)
 Create new navigation property to employees for financials
 
-### [New-MgFinancialCompanyEmployeePicture](New-MgFinancialCompanyEmployeePicture.md)
+### [New-MgBetaFinancialCompanyEmployeePicture](New-MgBetaFinancialCompanyEmployeePicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyItem](New-MgFinancialCompanyItem.md)
+### [New-MgBetaFinancialCompanyItem](New-MgBetaFinancialCompanyItem.md)
 Create new navigation property to items for financials
 
-### [New-MgFinancialCompanyItemCategory](New-MgFinancialCompanyItemCategory.md)
+### [New-MgBetaFinancialCompanyItemCategory](New-MgBetaFinancialCompanyItemCategory.md)
 Create new navigation property to itemCategories for financials
 
-### [New-MgFinancialCompanyItemPicture](New-MgFinancialCompanyItemPicture.md)
+### [New-MgBetaFinancialCompanyItemPicture](New-MgBetaFinancialCompanyItemPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyJournal](New-MgFinancialCompanyJournal.md)
+### [New-MgBetaFinancialCompanyJournal](New-MgBetaFinancialCompanyJournal.md)
 Create new navigation property to journals for financials
 
-### [New-MgFinancialCompanyJournalLine](New-MgFinancialCompanyJournalLine.md)
+### [New-MgBetaFinancialCompanyJournalLine](New-MgBetaFinancialCompanyJournalLine.md)
 Create new navigation property to journalLines for financials
 
-### [New-MgFinancialCompanyPaymentMethod](New-MgFinancialCompanyPaymentMethod.md)
+### [New-MgBetaFinancialCompanyPaymentMethod](New-MgBetaFinancialCompanyPaymentMethod.md)
 Create new navigation property to paymentMethods for financials
 
-### [New-MgFinancialCompanyPaymentTerm](New-MgFinancialCompanyPaymentTerm.md)
+### [New-MgBetaFinancialCompanyPaymentTerm](New-MgBetaFinancialCompanyPaymentTerm.md)
 Create new navigation property to paymentTerms for financials
 
-### [New-MgFinancialCompanyPicture](New-MgFinancialCompanyPicture.md)
+### [New-MgBetaFinancialCompanyPicture](New-MgBetaFinancialCompanyPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyPurchaseInvoiceLineItemPicture](New-MgFinancialCompanyPurchaseInvoiceLineItemPicture.md)
+### [New-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture](New-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyPurchaseInvoiceVendorPicture](New-MgFinancialCompanyPurchaseInvoiceVendorPicture.md)
+### [New-MgBetaFinancialCompanyPurchaseInvoiceVendorPicture](New-MgBetaFinancialCompanyPurchaseInvoiceVendorPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleCreditMemoCustomerPicture](New-MgFinancialCompanySaleCreditMemoCustomerPicture.md)
+### [New-MgBetaFinancialCompanySaleCreditMemoCustomerPicture](New-MgBetaFinancialCompanySaleCreditMemoCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleCreditMemoLineItemPicture](New-MgFinancialCompanySaleCreditMemoLineItemPicture.md)
+### [New-MgBetaFinancialCompanySaleCreditMemoLineItemPicture](New-MgBetaFinancialCompanySaleCreditMemoLineItemPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](New-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
+### [New-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](New-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleInvoiceCustomerPicture](New-MgFinancialCompanySaleInvoiceCustomerPicture.md)
+### [New-MgBetaFinancialCompanySaleInvoiceCustomerPicture](New-MgBetaFinancialCompanySaleInvoiceCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleInvoiceLineItemPicture](New-MgFinancialCompanySaleInvoiceLineItemPicture.md)
+### [New-MgBetaFinancialCompanySaleInvoiceLineItemPicture](New-MgBetaFinancialCompanySaleInvoiceLineItemPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleOrderCustomerPicture](New-MgFinancialCompanySaleOrderCustomerPicture.md)
+### [New-MgBetaFinancialCompanySaleOrderCustomerPicture](New-MgBetaFinancialCompanySaleOrderCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleOrderLineItemPicture](New-MgFinancialCompanySaleOrderLineItemPicture.md)
+### [New-MgBetaFinancialCompanySaleOrderLineItemPicture](New-MgBetaFinancialCompanySaleOrderLineItemPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleQuoteCustomerPicture](New-MgFinancialCompanySaleQuoteCustomerPicture.md)
+### [New-MgBetaFinancialCompanySaleQuoteCustomerPicture](New-MgBetaFinancialCompanySaleQuoteCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleQuoteInvoice](New-MgFinancialCompanySaleQuoteInvoice.md)
+### [New-MgBetaFinancialCompanySaleQuoteInvoice](New-MgBetaFinancialCompanySaleQuoteInvoice.md)
 Invoke action makeInvoice
 
-### [New-MgFinancialCompanySaleQuoteLineItemPicture](New-MgFinancialCompanySaleQuoteLineItemPicture.md)
+### [New-MgBetaFinancialCompanySaleQuoteLineItemPicture](New-MgBetaFinancialCompanySaleQuoteLineItemPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyShipmentMethod](New-MgFinancialCompanyShipmentMethod.md)
+### [New-MgBetaFinancialCompanyShipmentMethod](New-MgBetaFinancialCompanyShipmentMethod.md)
 Create new navigation property to shipmentMethods for financials
 
-### [New-MgFinancialCompanyTaxArea](New-MgFinancialCompanyTaxArea.md)
+### [New-MgBetaFinancialCompanyTaxArea](New-MgBetaFinancialCompanyTaxArea.md)
 Create new navigation property to taxAreas for financials
 
-### [New-MgFinancialCompanyTaxGroup](New-MgFinancialCompanyTaxGroup.md)
+### [New-MgBetaFinancialCompanyTaxGroup](New-MgBetaFinancialCompanyTaxGroup.md)
 Create new navigation property to taxGroups for financials
 
-### [New-MgFinancialCompanyUnitOfMeasure](New-MgFinancialCompanyUnitOfMeasure.md)
+### [New-MgBetaFinancialCompanyUnitOfMeasure](New-MgBetaFinancialCompanyUnitOfMeasure.md)
 Create new navigation property to unitsOfMeasure for financials
 
-### [New-MgFinancialCompanyVendor](New-MgFinancialCompanyVendor.md)
+### [New-MgBetaFinancialCompanyVendor](New-MgBetaFinancialCompanyVendor.md)
 Create new navigation property to vendors for financials
 
-### [New-MgFinancialCompanyVendorPicture](New-MgFinancialCompanyVendorPicture.md)
+### [New-MgBetaFinancialCompanyVendorPicture](New-MgBetaFinancialCompanyVendorPicture.md)
 Create new navigation property to picture for financials
 
-### [Remove-MgFinancialCompanyCountryRegion](Remove-MgFinancialCompanyCountryRegion.md)
+### [Remove-MgBetaFinancialCompanyCountryRegion](Remove-MgBetaFinancialCompanyCountryRegion.md)
 Delete navigation property countriesRegions for financials
 
-### [Remove-MgFinancialCompanyCurrency](Remove-MgFinancialCompanyCurrency.md)
+### [Remove-MgBetaFinancialCompanyCurrency](Remove-MgBetaFinancialCompanyCurrency.md)
 Delete navigation property currencies for financials
 
-### [Remove-MgFinancialCompanyCustomer](Remove-MgFinancialCompanyCustomer.md)
+### [Remove-MgBetaFinancialCompanyCustomer](Remove-MgBetaFinancialCompanyCustomer.md)
 Delete navigation property customers for financials
 
-### [Remove-MgFinancialCompanyCustomerCurrency](Remove-MgFinancialCompanyCustomerCurrency.md)
+### [Remove-MgBetaFinancialCompanyCustomerCurrency](Remove-MgBetaFinancialCompanyCustomerCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanyCustomerPayment](Remove-MgFinancialCompanyCustomerPayment.md)
+### [Remove-MgBetaFinancialCompanyCustomerPayment](Remove-MgBetaFinancialCompanyCustomerPayment.md)
 Delete navigation property customerPayments for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentCustomer](Remove-MgFinancialCompanyCustomerPaymentCustomer.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentCustomer](Remove-MgBetaFinancialCompanyCustomerPaymentCustomer.md)
 Delete navigation property customer for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentCustomerCurrency](Remove-MgFinancialCompanyCustomerPaymentCustomerCurrency.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentCustomerCurrency](Remove-MgBetaFinancialCompanyCustomerPaymentCustomerCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentCustomerPicture](Remove-MgFinancialCompanyCustomerPaymentCustomerPicture.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentCustomerPicture](Remove-MgBetaFinancialCompanyCustomerPaymentCustomerPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod](Remove-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentCustomerShipmentMethod](Remove-MgBetaFinancialCompanyCustomerPaymentCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentJournal](Remove-MgFinancialCompanyCustomerPaymentJournal.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentJournal](Remove-MgBetaFinancialCompanyCustomerPaymentJournal.md)
 Delete navigation property customerPaymentJournals for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPayment](Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment](Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
 Delete navigation property customerPayments for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer](Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer](Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer.md)
 Delete navigation property customer for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency](Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency](Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod](Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod](Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod](Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod](Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod.md)
 Delete navigation property paymentMethod for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm](Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm](Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentMethod](Remove-MgFinancialCompanyCustomerPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentMethod](Remove-MgBetaFinancialCompanyCustomerPaymentMethod.md)
 Delete navigation property paymentMethod for financials
 
-### [Remove-MgFinancialCompanyCustomerPaymentTerm](Remove-MgFinancialCompanyCustomerPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanyCustomerPaymentTerm](Remove-MgBetaFinancialCompanyCustomerPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanyCustomerPicture](Remove-MgFinancialCompanyCustomerPicture.md)
+### [Remove-MgBetaFinancialCompanyCustomerPicture](Remove-MgBetaFinancialCompanyCustomerPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanyCustomerShipmentMethod](Remove-MgFinancialCompanyCustomerShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanyCustomerShipmentMethod](Remove-MgBetaFinancialCompanyCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanyEmployee](Remove-MgFinancialCompanyEmployee.md)
+### [Remove-MgBetaFinancialCompanyEmployee](Remove-MgBetaFinancialCompanyEmployee.md)
 Delete navigation property employees for financials
 
-### [Remove-MgFinancialCompanyEmployeePicture](Remove-MgFinancialCompanyEmployeePicture.md)
+### [Remove-MgBetaFinancialCompanyEmployeePicture](Remove-MgBetaFinancialCompanyEmployeePicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanyItem](Remove-MgFinancialCompanyItem.md)
+### [Remove-MgBetaFinancialCompanyItem](Remove-MgBetaFinancialCompanyItem.md)
 Delete navigation property items for financials
 
-### [Remove-MgFinancialCompanyItemCategory](Remove-MgFinancialCompanyItemCategory.md)
+### [Remove-MgBetaFinancialCompanyItemCategory](Remove-MgBetaFinancialCompanyItemCategory.md)
 Delete navigation property itemCategories for financials
 
-### [Remove-MgFinancialCompanyItemPicture](Remove-MgFinancialCompanyItemPicture.md)
+### [Remove-MgBetaFinancialCompanyItemPicture](Remove-MgBetaFinancialCompanyItemPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanyJournal](Remove-MgFinancialCompanyJournal.md)
+### [Remove-MgBetaFinancialCompanyJournal](Remove-MgBetaFinancialCompanyJournal.md)
 Delete navigation property journals for financials
 
-### [Remove-MgFinancialCompanyJournalLine](Remove-MgFinancialCompanyJournalLine.md)
+### [Remove-MgBetaFinancialCompanyJournalLine](Remove-MgBetaFinancialCompanyJournalLine.md)
 Delete navigation property journalLines for financials
 
-### [Remove-MgFinancialCompanyPaymentMethod](Remove-MgFinancialCompanyPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanyPaymentMethod](Remove-MgBetaFinancialCompanyPaymentMethod.md)
 Delete navigation property paymentMethods for financials
 
-### [Remove-MgFinancialCompanyPaymentTerm](Remove-MgFinancialCompanyPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanyPaymentTerm](Remove-MgBetaFinancialCompanyPaymentTerm.md)
 Delete navigation property paymentTerms for financials
 
-### [Remove-MgFinancialCompanyPicture](Remove-MgFinancialCompanyPicture.md)
+### [Remove-MgBetaFinancialCompanyPicture](Remove-MgBetaFinancialCompanyPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceCurrency](Remove-MgFinancialCompanyPurchaseInvoiceCurrency.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceCurrency](Remove-MgBetaFinancialCompanyPurchaseInvoiceCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceLineItem](Remove-MgFinancialCompanyPurchaseInvoiceLineItem.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceLineItem](Remove-MgBetaFinancialCompanyPurchaseInvoiceLineItem.md)
 Delete navigation property item for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceLineItemCategory](Remove-MgFinancialCompanyPurchaseInvoiceLineItemCategory.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceLineItemCategory](Remove-MgBetaFinancialCompanyPurchaseInvoiceLineItemCategory.md)
 Delete navigation property itemCategory for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceLineItemPicture](Remove-MgFinancialCompanyPurchaseInvoiceLineItemPicture.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture](Remove-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceVendor](Remove-MgFinancialCompanyPurchaseInvoiceVendor.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceVendor](Remove-MgBetaFinancialCompanyPurchaseInvoiceVendor.md)
 Delete navigation property vendor for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceVendorCurrency](Remove-MgFinancialCompanyPurchaseInvoiceVendorCurrency.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceVendorCurrency](Remove-MgBetaFinancialCompanyPurchaseInvoiceVendorCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceVendorPaymentMethod](Remove-MgFinancialCompanyPurchaseInvoiceVendorPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentMethod](Remove-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentMethod.md)
 Delete navigation property paymentMethod for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceVendorPaymentTerm](Remove-MgFinancialCompanyPurchaseInvoiceVendorPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentTerm](Remove-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoiceVendorPicture](Remove-MgFinancialCompanyPurchaseInvoiceVendorPicture.md)
+### [Remove-MgBetaFinancialCompanyPurchaseInvoiceVendorPicture](Remove-MgBetaFinancialCompanyPurchaseInvoiceVendorPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoCurrency](Remove-MgFinancialCompanySaleCreditMemoCurrency.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoCurrency](Remove-MgBetaFinancialCompanySaleCreditMemoCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoCustomer](Remove-MgFinancialCompanySaleCreditMemoCustomer.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoCustomer](Remove-MgBetaFinancialCompanySaleCreditMemoCustomer.md)
 Delete navigation property customer for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoCustomerCurrency](Remove-MgFinancialCompanySaleCreditMemoCustomerCurrency.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoCustomerCurrency](Remove-MgBetaFinancialCompanySaleCreditMemoCustomerCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoCustomerPaymentMethod](Remove-MgFinancialCompanySaleCreditMemoCustomerPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod](Remove-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod.md)
 Delete navigation property paymentMethod for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoCustomerPaymentTerm](Remove-MgFinancialCompanySaleCreditMemoCustomerPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentTerm](Remove-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoCustomerPicture](Remove-MgFinancialCompanySaleCreditMemoCustomerPicture.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoCustomerPicture](Remove-MgBetaFinancialCompanySaleCreditMemoCustomerPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod](Remove-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoCustomerShipmentMethod](Remove-MgBetaFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoLineItem](Remove-MgFinancialCompanySaleCreditMemoLineItem.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoLineItem](Remove-MgBetaFinancialCompanySaleCreditMemoLineItem.md)
 Delete navigation property item for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoLineItemCategory](Remove-MgFinancialCompanySaleCreditMemoLineItemCategory.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoLineItemCategory](Remove-MgBetaFinancialCompanySaleCreditMemoLineItemCategory.md)
 Delete navigation property itemCategory for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoLineItemPicture](Remove-MgFinancialCompanySaleCreditMemoLineItemPicture.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoLineItemPicture](Remove-MgBetaFinancialCompanySaleCreditMemoLineItemPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoPaymentTerm](Remove-MgFinancialCompanySaleCreditMemoPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoPaymentTerm](Remove-MgBetaFinancialCompanySaleCreditMemoPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem](Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItem](Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItem.md)
 Delete navigation property item for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory](Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory](Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory.md)
 Delete navigation property itemCategory for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
+### [Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](Remove-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceCurrency](Remove-MgFinancialCompanySaleInvoiceCurrency.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceCurrency](Remove-MgBetaFinancialCompanySaleInvoiceCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceCustomer](Remove-MgFinancialCompanySaleInvoiceCustomer.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceCustomer](Remove-MgBetaFinancialCompanySaleInvoiceCustomer.md)
 Delete navigation property customer for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceCustomerCurrency](Remove-MgFinancialCompanySaleInvoiceCustomerCurrency.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceCustomerCurrency](Remove-MgBetaFinancialCompanySaleInvoiceCustomerCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceCustomerPaymentMethod](Remove-MgFinancialCompanySaleInvoiceCustomerPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceCustomerPaymentMethod](Remove-MgBetaFinancialCompanySaleInvoiceCustomerPaymentMethod.md)
 Delete navigation property paymentMethod for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceCustomerPaymentTerm](Remove-MgFinancialCompanySaleInvoiceCustomerPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm](Remove-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceCustomerPicture](Remove-MgFinancialCompanySaleInvoiceCustomerPicture.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceCustomerPicture](Remove-MgBetaFinancialCompanySaleInvoiceCustomerPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceCustomerShipmentMethod](Remove-MgFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceCustomerShipmentMethod](Remove-MgBetaFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceLineItem](Remove-MgFinancialCompanySaleInvoiceLineItem.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceLineItem](Remove-MgBetaFinancialCompanySaleInvoiceLineItem.md)
 Delete navigation property item for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceLineItemCategory](Remove-MgFinancialCompanySaleInvoiceLineItemCategory.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceLineItemCategory](Remove-MgBetaFinancialCompanySaleInvoiceLineItemCategory.md)
 Delete navigation property itemCategory for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceLineItemPicture](Remove-MgFinancialCompanySaleInvoiceLineItemPicture.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceLineItemPicture](Remove-MgBetaFinancialCompanySaleInvoiceLineItemPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleInvoicePaymentTerm](Remove-MgFinancialCompanySaleInvoicePaymentTerm.md)
+### [Remove-MgBetaFinancialCompanySaleInvoicePaymentTerm](Remove-MgBetaFinancialCompanySaleInvoicePaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceShipmentMethod](Remove-MgFinancialCompanySaleInvoiceShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleInvoiceShipmentMethod](Remove-MgBetaFinancialCompanySaleInvoiceShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanySaleOrderCurrency](Remove-MgFinancialCompanySaleOrderCurrency.md)
+### [Remove-MgBetaFinancialCompanySaleOrderCurrency](Remove-MgBetaFinancialCompanySaleOrderCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanySaleOrderCustomer](Remove-MgFinancialCompanySaleOrderCustomer.md)
+### [Remove-MgBetaFinancialCompanySaleOrderCustomer](Remove-MgBetaFinancialCompanySaleOrderCustomer.md)
 Delete navigation property customer for financials
 
-### [Remove-MgFinancialCompanySaleOrderCustomerCurrency](Remove-MgFinancialCompanySaleOrderCustomerCurrency.md)
+### [Remove-MgBetaFinancialCompanySaleOrderCustomerCurrency](Remove-MgBetaFinancialCompanySaleOrderCustomerCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanySaleOrderCustomerPaymentMethod](Remove-MgFinancialCompanySaleOrderCustomerPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleOrderCustomerPaymentMethod](Remove-MgBetaFinancialCompanySaleOrderCustomerPaymentMethod.md)
 Delete navigation property paymentMethod for financials
 
-### [Remove-MgFinancialCompanySaleOrderCustomerPaymentTerm](Remove-MgFinancialCompanySaleOrderCustomerPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanySaleOrderCustomerPaymentTerm](Remove-MgBetaFinancialCompanySaleOrderCustomerPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleOrderCustomerPicture](Remove-MgFinancialCompanySaleOrderCustomerPicture.md)
+### [Remove-MgBetaFinancialCompanySaleOrderCustomerPicture](Remove-MgBetaFinancialCompanySaleOrderCustomerPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleOrderCustomerShipmentMethod](Remove-MgFinancialCompanySaleOrderCustomerShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleOrderCustomerShipmentMethod](Remove-MgBetaFinancialCompanySaleOrderCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanySaleOrderLineItem](Remove-MgFinancialCompanySaleOrderLineItem.md)
+### [Remove-MgBetaFinancialCompanySaleOrderLineItem](Remove-MgBetaFinancialCompanySaleOrderLineItem.md)
 Delete navigation property item for financials
 
-### [Remove-MgFinancialCompanySaleOrderLineItemCategory](Remove-MgFinancialCompanySaleOrderLineItemCategory.md)
+### [Remove-MgBetaFinancialCompanySaleOrderLineItemCategory](Remove-MgBetaFinancialCompanySaleOrderLineItemCategory.md)
 Delete navigation property itemCategory for financials
 
-### [Remove-MgFinancialCompanySaleOrderLineItemPicture](Remove-MgFinancialCompanySaleOrderLineItemPicture.md)
+### [Remove-MgBetaFinancialCompanySaleOrderLineItemPicture](Remove-MgBetaFinancialCompanySaleOrderLineItemPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleOrderPaymentTerm](Remove-MgFinancialCompanySaleOrderPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanySaleOrderPaymentTerm](Remove-MgBetaFinancialCompanySaleOrderPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleQuoteCurrency](Remove-MgFinancialCompanySaleQuoteCurrency.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteCurrency](Remove-MgBetaFinancialCompanySaleQuoteCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanySaleQuoteCustomer](Remove-MgFinancialCompanySaleQuoteCustomer.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteCustomer](Remove-MgBetaFinancialCompanySaleQuoteCustomer.md)
 Delete navigation property customer for financials
 
-### [Remove-MgFinancialCompanySaleQuoteCustomerCurrency](Remove-MgFinancialCompanySaleQuoteCustomerCurrency.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteCustomerCurrency](Remove-MgBetaFinancialCompanySaleQuoteCustomerCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanySaleQuoteCustomerPaymentMethod](Remove-MgFinancialCompanySaleQuoteCustomerPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteCustomerPaymentMethod](Remove-MgBetaFinancialCompanySaleQuoteCustomerPaymentMethod.md)
 Delete navigation property paymentMethod for financials
 
-### [Remove-MgFinancialCompanySaleQuoteCustomerPaymentTerm](Remove-MgFinancialCompanySaleQuoteCustomerPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteCustomerPaymentTerm](Remove-MgBetaFinancialCompanySaleQuoteCustomerPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleQuoteCustomerPicture](Remove-MgFinancialCompanySaleQuoteCustomerPicture.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteCustomerPicture](Remove-MgBetaFinancialCompanySaleQuoteCustomerPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleQuoteCustomerShipmentMethod](Remove-MgFinancialCompanySaleQuoteCustomerShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteCustomerShipmentMethod](Remove-MgBetaFinancialCompanySaleQuoteCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanySaleQuoteLineItem](Remove-MgFinancialCompanySaleQuoteLineItem.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteLineItem](Remove-MgBetaFinancialCompanySaleQuoteLineItem.md)
 Delete navigation property item for financials
 
-### [Remove-MgFinancialCompanySaleQuoteLineItemCategory](Remove-MgFinancialCompanySaleQuoteLineItemCategory.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteLineItemCategory](Remove-MgBetaFinancialCompanySaleQuoteLineItemCategory.md)
 Delete navigation property itemCategory for financials
 
-### [Remove-MgFinancialCompanySaleQuoteLineItemPicture](Remove-MgFinancialCompanySaleQuoteLineItemPicture.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteLineItemPicture](Remove-MgBetaFinancialCompanySaleQuoteLineItemPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleQuotePaymentTerm](Remove-MgFinancialCompanySaleQuotePaymentTerm.md)
+### [Remove-MgBetaFinancialCompanySaleQuotePaymentTerm](Remove-MgBetaFinancialCompanySaleQuotePaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleQuoteShipmentMethod](Remove-MgFinancialCompanySaleQuoteShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanySaleQuoteShipmentMethod](Remove-MgBetaFinancialCompanySaleQuoteShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanyShipmentMethod](Remove-MgFinancialCompanyShipmentMethod.md)
+### [Remove-MgBetaFinancialCompanyShipmentMethod](Remove-MgBetaFinancialCompanyShipmentMethod.md)
 Delete navigation property shipmentMethods for financials
 
-### [Remove-MgFinancialCompanyTaxArea](Remove-MgFinancialCompanyTaxArea.md)
+### [Remove-MgBetaFinancialCompanyTaxArea](Remove-MgBetaFinancialCompanyTaxArea.md)
 Delete navigation property taxAreas for financials
 
-### [Remove-MgFinancialCompanyTaxGroup](Remove-MgFinancialCompanyTaxGroup.md)
+### [Remove-MgBetaFinancialCompanyTaxGroup](Remove-MgBetaFinancialCompanyTaxGroup.md)
 Delete navigation property taxGroups for financials
 
-### [Remove-MgFinancialCompanyUnitOfMeasure](Remove-MgFinancialCompanyUnitOfMeasure.md)
+### [Remove-MgBetaFinancialCompanyUnitOfMeasure](Remove-MgBetaFinancialCompanyUnitOfMeasure.md)
 Delete navigation property unitsOfMeasure for financials
 
-### [Remove-MgFinancialCompanyVendor](Remove-MgFinancialCompanyVendor.md)
+### [Remove-MgBetaFinancialCompanyVendor](Remove-MgBetaFinancialCompanyVendor.md)
 Delete navigation property vendors for financials
 
-### [Remove-MgFinancialCompanyVendorCurrency](Remove-MgFinancialCompanyVendorCurrency.md)
+### [Remove-MgBetaFinancialCompanyVendorCurrency](Remove-MgBetaFinancialCompanyVendorCurrency.md)
 Delete navigation property currency for financials
 
-### [Remove-MgFinancialCompanyVendorPaymentMethod](Remove-MgFinancialCompanyVendorPaymentMethod.md)
+### [Remove-MgBetaFinancialCompanyVendorPaymentMethod](Remove-MgBetaFinancialCompanyVendorPaymentMethod.md)
 Delete navigation property paymentMethod for financials
 
-### [Remove-MgFinancialCompanyVendorPaymentTerm](Remove-MgFinancialCompanyVendorPaymentTerm.md)
+### [Remove-MgBetaFinancialCompanyVendorPaymentTerm](Remove-MgBetaFinancialCompanyVendorPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanyVendorPicture](Remove-MgFinancialCompanyVendorPicture.md)
+### [Remove-MgBetaFinancialCompanyVendorPicture](Remove-MgBetaFinancialCompanyVendorPicture.md)
 Delete navigation property picture for financials
 
-### [Send-MgFinancialCompanySaleInvoice](Send-MgFinancialCompanySaleInvoice.md)
+### [Send-MgBetaFinancialCompanySaleInvoice](Send-MgBetaFinancialCompanySaleInvoice.md)
 Invoke action send
 
-### [Send-MgFinancialCompanySaleQuote](Send-MgFinancialCompanySaleQuote.md)
+### [Send-MgBetaFinancialCompanySaleQuote](Send-MgBetaFinancialCompanySaleQuote.md)
 Invoke action send
 
-### [Set-MgFinancialCompanyCustomerPaymentCustomerPictureContent](Set-MgFinancialCompanyCustomerPaymentCustomerPictureContent.md)
+### [Set-MgBetaFinancialCompanyCustomerPaymentCustomerPictureContent](Set-MgBetaFinancialCompanyCustomerPaymentCustomerPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent](Set-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent.md)
+### [Set-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent](Set-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanyCustomerPictureContent](Set-MgFinancialCompanyCustomerPictureContent.md)
+### [Set-MgBetaFinancialCompanyCustomerPictureContent](Set-MgBetaFinancialCompanyCustomerPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanyEmployeePictureContent](Set-MgFinancialCompanyEmployeePictureContent.md)
+### [Set-MgBetaFinancialCompanyEmployeePictureContent](Set-MgBetaFinancialCompanyEmployeePictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanyInformationPicture](Set-MgFinancialCompanyInformationPicture.md)
+### [Set-MgBetaFinancialCompanyInformationPicture](Set-MgBetaFinancialCompanyInformationPicture.md)
 Update picture for the navigation property companyInformation in financials
 
-### [Set-MgFinancialCompanyItemPictureContent](Set-MgFinancialCompanyItemPictureContent.md)
+### [Set-MgBetaFinancialCompanyItemPictureContent](Set-MgBetaFinancialCompanyItemPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanyPictureContent](Set-MgFinancialCompanyPictureContent.md)
+### [Set-MgBetaFinancialCompanyPictureContent](Set-MgBetaFinancialCompanyPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent](Set-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent.md)
+### [Set-MgBetaFinancialCompanyPurchaseInvoiceLineItemPictureContent](Set-MgBetaFinancialCompanyPurchaseInvoiceLineItemPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanyPurchaseInvoiceVendorPictureContent](Set-MgFinancialCompanyPurchaseInvoiceVendorPictureContent.md)
+### [Set-MgBetaFinancialCompanyPurchaseInvoiceVendorPictureContent](Set-MgBetaFinancialCompanyPurchaseInvoiceVendorPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleCreditMemoCustomerPictureContent](Set-MgFinancialCompanySaleCreditMemoCustomerPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleCreditMemoCustomerPictureContent](Set-MgBetaFinancialCompanySaleCreditMemoCustomerPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleCreditMemoLineItemPictureContent](Set-MgFinancialCompanySaleCreditMemoLineItemPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleCreditMemoLineItemPictureContent](Set-MgBetaFinancialCompanySaleCreditMemoLineItemPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent](Set-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent](Set-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleInvoiceCustomerPictureContent](Set-MgFinancialCompanySaleInvoiceCustomerPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleInvoiceCustomerPictureContent](Set-MgBetaFinancialCompanySaleInvoiceCustomerPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleInvoiceLineItemPictureContent](Set-MgFinancialCompanySaleInvoiceLineItemPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent](Set-MgBetaFinancialCompanySaleInvoiceLineItemPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleOrderCustomerPictureContent](Set-MgFinancialCompanySaleOrderCustomerPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleOrderCustomerPictureContent](Set-MgBetaFinancialCompanySaleOrderCustomerPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleOrderLineItemPictureContent](Set-MgFinancialCompanySaleOrderLineItemPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleOrderLineItemPictureContent](Set-MgBetaFinancialCompanySaleOrderLineItemPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleQuoteCustomerPictureContent](Set-MgFinancialCompanySaleQuoteCustomerPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleQuoteCustomerPictureContent](Set-MgBetaFinancialCompanySaleQuoteCustomerPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanySaleQuoteLineItemPictureContent](Set-MgFinancialCompanySaleQuoteLineItemPictureContent.md)
+### [Set-MgBetaFinancialCompanySaleQuoteLineItemPictureContent](Set-MgBetaFinancialCompanySaleQuoteLineItemPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Set-MgFinancialCompanyVendorPictureContent](Set-MgFinancialCompanyVendorPictureContent.md)
+### [Set-MgBetaFinancialCompanyVendorPictureContent](Set-MgBetaFinancialCompanyVendorPictureContent.md)
 Update content for the navigation property picture in financials
 
-### [Stop-MgFinancialCompanySaleInvoice](Stop-MgFinancialCompanySaleInvoice.md)
+### [Stop-MgBetaFinancialCompanySaleInvoice](Stop-MgBetaFinancialCompanySaleInvoice.md)
 Invoke action cancel
 
-### [Stop-MgFinancialCompanySaleInvoiceAndSend](Stop-MgFinancialCompanySaleInvoiceAndSend.md)
+### [Stop-MgBetaFinancialCompanySaleInvoiceAndSend](Stop-MgBetaFinancialCompanySaleInvoiceAndSend.md)
 Invoke action cancelAndSend
 
-### [Update-MgFinancial](Update-MgFinancial.md)
+### [Update-MgBetaFinancial](Update-MgBetaFinancial.md)
 Update financials
 
-### [Update-MgFinancialCompanyCountryRegion](Update-MgFinancialCompanyCountryRegion.md)
+### [Update-MgBetaFinancialCompanyCountryRegion](Update-MgBetaFinancialCompanyCountryRegion.md)
 Update the navigation property countriesRegions in financials
 
-### [Update-MgFinancialCompanyCurrency](Update-MgFinancialCompanyCurrency.md)
+### [Update-MgBetaFinancialCompanyCurrency](Update-MgBetaFinancialCompanyCurrency.md)
 Update the navigation property currencies in financials
 
-### [Update-MgFinancialCompanyCustomer](Update-MgFinancialCompanyCustomer.md)
+### [Update-MgBetaFinancialCompanyCustomer](Update-MgBetaFinancialCompanyCustomer.md)
 Update the navigation property customers in financials
 
-### [Update-MgFinancialCompanyCustomerCurrency](Update-MgFinancialCompanyCustomerCurrency.md)
+### [Update-MgBetaFinancialCompanyCustomerCurrency](Update-MgBetaFinancialCompanyCustomerCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanyCustomerPayment](Update-MgFinancialCompanyCustomerPayment.md)
+### [Update-MgBetaFinancialCompanyCustomerPayment](Update-MgBetaFinancialCompanyCustomerPayment.md)
 Update the navigation property customerPayments in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentCustomer](Update-MgFinancialCompanyCustomerPaymentCustomer.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentCustomer](Update-MgBetaFinancialCompanyCustomerPaymentCustomer.md)
 Update the navigation property customer in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentCustomerCurrency](Update-MgFinancialCompanyCustomerPaymentCustomerCurrency.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentCustomerCurrency](Update-MgBetaFinancialCompanyCustomerPaymentCustomerCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentCustomerPicture](Update-MgFinancialCompanyCustomerPaymentCustomerPicture.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentCustomerPicture](Update-MgBetaFinancialCompanyCustomerPaymentCustomerPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod](Update-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentCustomerShipmentMethod](Update-MgBetaFinancialCompanyCustomerPaymentCustomerShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournal](Update-MgFinancialCompanyCustomerPaymentJournal.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentJournal](Update-MgBetaFinancialCompanyCustomerPaymentJournal.md)
 Update the navigation property customerPaymentJournals in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournalCustomerPayment](Update-MgFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment](Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
 Update the navigation property customerPayments in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer](Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer](Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer.md)
 Update the navigation property customer in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency](Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency](Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod](Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod](Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod](Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod](Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentMethod.md)
 Update the navigation property paymentMethod in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm](Update-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm](Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentMethod](Update-MgFinancialCompanyCustomerPaymentMethod.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentMethod](Update-MgBetaFinancialCompanyCustomerPaymentMethod.md)
 Update the navigation property paymentMethod in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentTerm](Update-MgFinancialCompanyCustomerPaymentTerm.md)
+### [Update-MgBetaFinancialCompanyCustomerPaymentTerm](Update-MgBetaFinancialCompanyCustomerPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanyCustomerPicture](Update-MgFinancialCompanyCustomerPicture.md)
+### [Update-MgBetaFinancialCompanyCustomerPicture](Update-MgBetaFinancialCompanyCustomerPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanyCustomerShipmentMethod](Update-MgFinancialCompanyCustomerShipmentMethod.md)
+### [Update-MgBetaFinancialCompanyCustomerShipmentMethod](Update-MgBetaFinancialCompanyCustomerShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanyEmployee](Update-MgFinancialCompanyEmployee.md)
+### [Update-MgBetaFinancialCompanyEmployee](Update-MgBetaFinancialCompanyEmployee.md)
 Update the navigation property employees in financials
 
-### [Update-MgFinancialCompanyEmployeePicture](Update-MgFinancialCompanyEmployeePicture.md)
+### [Update-MgBetaFinancialCompanyEmployeePicture](Update-MgBetaFinancialCompanyEmployeePicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanyInformation](Update-MgFinancialCompanyInformation.md)
+### [Update-MgBetaFinancialCompanyInformation](Update-MgBetaFinancialCompanyInformation.md)
 Update the navigation property companyInformation in financials
 
-### [Update-MgFinancialCompanyItem](Update-MgFinancialCompanyItem.md)
+### [Update-MgBetaFinancialCompanyItem](Update-MgBetaFinancialCompanyItem.md)
 Update the navigation property items in financials
 
-### [Update-MgFinancialCompanyItemCategory](Update-MgFinancialCompanyItemCategory.md)
+### [Update-MgBetaFinancialCompanyItemCategory](Update-MgBetaFinancialCompanyItemCategory.md)
 Update the navigation property itemCategories in financials
 
-### [Update-MgFinancialCompanyItemPicture](Update-MgFinancialCompanyItemPicture.md)
+### [Update-MgBetaFinancialCompanyItemPicture](Update-MgBetaFinancialCompanyItemPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanyJournal](Update-MgFinancialCompanyJournal.md)
+### [Update-MgBetaFinancialCompanyJournal](Update-MgBetaFinancialCompanyJournal.md)
 Update the navigation property journals in financials
 
-### [Update-MgFinancialCompanyJournalLine](Update-MgFinancialCompanyJournalLine.md)
+### [Update-MgBetaFinancialCompanyJournalLine](Update-MgBetaFinancialCompanyJournalLine.md)
 Update the navigation property journalLines in financials
 
-### [Update-MgFinancialCompanyPaymentMethod](Update-MgFinancialCompanyPaymentMethod.md)
+### [Update-MgBetaFinancialCompanyPaymentMethod](Update-MgBetaFinancialCompanyPaymentMethod.md)
 Update the navigation property paymentMethods in financials
 
-### [Update-MgFinancialCompanyPaymentTerm](Update-MgFinancialCompanyPaymentTerm.md)
+### [Update-MgBetaFinancialCompanyPaymentTerm](Update-MgBetaFinancialCompanyPaymentTerm.md)
 Update the navigation property paymentTerms in financials
 
-### [Update-MgFinancialCompanyPicture](Update-MgFinancialCompanyPicture.md)
+### [Update-MgBetaFinancialCompanyPicture](Update-MgBetaFinancialCompanyPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoice](Update-MgFinancialCompanyPurchaseInvoice.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoice](Update-MgBetaFinancialCompanyPurchaseInvoice.md)
 Update the navigation property purchaseInvoices in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceCurrency](Update-MgFinancialCompanyPurchaseInvoiceCurrency.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceCurrency](Update-MgBetaFinancialCompanyPurchaseInvoiceCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceLine](Update-MgFinancialCompanyPurchaseInvoiceLine.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceLine](Update-MgBetaFinancialCompanyPurchaseInvoiceLine.md)
 Update the navigation property purchaseInvoiceLines in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceLineItem](Update-MgFinancialCompanyPurchaseInvoiceLineItem.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceLineItem](Update-MgBetaFinancialCompanyPurchaseInvoiceLineItem.md)
 Update the navigation property item in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceLineItemCategory](Update-MgFinancialCompanyPurchaseInvoiceLineItemCategory.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemCategory](Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemCategory.md)
 Update the navigation property itemCategory in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture](Update-MgFinancialCompanyPurchaseInvoiceLineItemPicture.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture](Update-MgBetaFinancialCompanyPurchaseInvoiceLineItemPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceVendor](Update-MgFinancialCompanyPurchaseInvoiceVendor.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceVendor](Update-MgBetaFinancialCompanyPurchaseInvoiceVendor.md)
 Update the navigation property vendor in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceVendorCurrency](Update-MgFinancialCompanyPurchaseInvoiceVendorCurrency.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceVendorCurrency](Update-MgBetaFinancialCompanyPurchaseInvoiceVendorCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceVendorPaymentMethod](Update-MgFinancialCompanyPurchaseInvoiceVendorPaymentMethod.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentMethod](Update-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentMethod.md)
 Update the navigation property paymentMethod in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceVendorPaymentTerm](Update-MgFinancialCompanyPurchaseInvoiceVendorPaymentTerm.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentTerm](Update-MgBetaFinancialCompanyPurchaseInvoiceVendorPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanyPurchaseInvoiceVendorPicture](Update-MgFinancialCompanyPurchaseInvoiceVendorPicture.md)
+### [Update-MgBetaFinancialCompanyPurchaseInvoiceVendorPicture](Update-MgBetaFinancialCompanyPurchaseInvoiceVendorPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleCreditMemo](Update-MgFinancialCompanySaleCreditMemo.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemo](Update-MgBetaFinancialCompanySaleCreditMemo.md)
 Update the navigation property salesCreditMemos in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoCurrency](Update-MgFinancialCompanySaleCreditMemoCurrency.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoCurrency](Update-MgBetaFinancialCompanySaleCreditMemoCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoCustomer](Update-MgFinancialCompanySaleCreditMemoCustomer.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoCustomer](Update-MgBetaFinancialCompanySaleCreditMemoCustomer.md)
 Update the navigation property customer in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoCustomerCurrency](Update-MgFinancialCompanySaleCreditMemoCustomerCurrency.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoCustomerCurrency](Update-MgBetaFinancialCompanySaleCreditMemoCustomerCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoCustomerPaymentMethod](Update-MgFinancialCompanySaleCreditMemoCustomerPaymentMethod.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod](Update-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod.md)
 Update the navigation property paymentMethod in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoCustomerPaymentTerm](Update-MgFinancialCompanySaleCreditMemoCustomerPaymentTerm.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentTerm](Update-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoCustomerPicture](Update-MgFinancialCompanySaleCreditMemoCustomerPicture.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoCustomerPicture](Update-MgBetaFinancialCompanySaleCreditMemoCustomerPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod](Update-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoCustomerShipmentMethod](Update-MgBetaFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoLine](Update-MgFinancialCompanySaleCreditMemoLine.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoLine](Update-MgBetaFinancialCompanySaleCreditMemoLine.md)
 Update the navigation property salesCreditMemoLines in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoLineItem](Update-MgFinancialCompanySaleCreditMemoLineItem.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoLineItem](Update-MgBetaFinancialCompanySaleCreditMemoLineItem.md)
 Update the navigation property item in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoLineItemCategory](Update-MgFinancialCompanySaleCreditMemoLineItemCategory.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoLineItemCategory](Update-MgBetaFinancialCompanySaleCreditMemoLineItemCategory.md)
 Update the navigation property itemCategory in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoLineItemPicture](Update-MgFinancialCompanySaleCreditMemoLineItemPicture.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoLineItemPicture](Update-MgBetaFinancialCompanySaleCreditMemoLineItemPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoPaymentTerm](Update-MgFinancialCompanySaleCreditMemoPaymentTerm.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoPaymentTerm](Update-MgBetaFinancialCompanySaleCreditMemoPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine](Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine](Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLine.md)
 Update the navigation property salesCreditMemoLines in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem](Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItem](Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItem.md)
 Update the navigation property item in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory](Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory](Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemCategory.md)
 Update the navigation property itemCategory in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
+### [Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](Update-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleInvoice](Update-MgFinancialCompanySaleInvoice.md)
+### [Update-MgBetaFinancialCompanySaleInvoice](Update-MgBetaFinancialCompanySaleInvoice.md)
 Update the navigation property salesInvoices in financials
 
-### [Update-MgFinancialCompanySaleInvoiceCurrency](Update-MgFinancialCompanySaleInvoiceCurrency.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceCurrency](Update-MgBetaFinancialCompanySaleInvoiceCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanySaleInvoiceCustomer](Update-MgFinancialCompanySaleInvoiceCustomer.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceCustomer](Update-MgBetaFinancialCompanySaleInvoiceCustomer.md)
 Update the navigation property customer in financials
 
-### [Update-MgFinancialCompanySaleInvoiceCustomerCurrency](Update-MgFinancialCompanySaleInvoiceCustomerCurrency.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceCustomerCurrency](Update-MgBetaFinancialCompanySaleInvoiceCustomerCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanySaleInvoiceCustomerPaymentMethod](Update-MgFinancialCompanySaleInvoiceCustomerPaymentMethod.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentMethod](Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentMethod.md)
 Update the navigation property paymentMethod in financials
 
-### [Update-MgFinancialCompanySaleInvoiceCustomerPaymentTerm](Update-MgFinancialCompanySaleInvoiceCustomerPaymentTerm.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm](Update-MgBetaFinancialCompanySaleInvoiceCustomerPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanySaleInvoiceCustomerPicture](Update-MgFinancialCompanySaleInvoiceCustomerPicture.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceCustomerPicture](Update-MgBetaFinancialCompanySaleInvoiceCustomerPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleInvoiceCustomerShipmentMethod](Update-MgFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceCustomerShipmentMethod](Update-MgBetaFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanySaleInvoiceLine](Update-MgFinancialCompanySaleInvoiceLine.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceLine](Update-MgBetaFinancialCompanySaleInvoiceLine.md)
 Update the navigation property salesInvoiceLines in financials
 
-### [Update-MgFinancialCompanySaleInvoiceLineItem](Update-MgFinancialCompanySaleInvoiceLineItem.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceLineItem](Update-MgBetaFinancialCompanySaleInvoiceLineItem.md)
 Update the navigation property item in financials
 
-### [Update-MgFinancialCompanySaleInvoiceLineItemCategory](Update-MgFinancialCompanySaleInvoiceLineItemCategory.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory](Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory.md)
 Update the navigation property itemCategory in financials
 
-### [Update-MgFinancialCompanySaleInvoiceLineItemPicture](Update-MgFinancialCompanySaleInvoiceLineItemPicture.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceLineItemPicture](Update-MgBetaFinancialCompanySaleInvoiceLineItemPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleInvoicePaymentTerm](Update-MgFinancialCompanySaleInvoicePaymentTerm.md)
+### [Update-MgBetaFinancialCompanySaleInvoicePaymentTerm](Update-MgBetaFinancialCompanySaleInvoicePaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanySaleInvoiceShipmentMethod](Update-MgFinancialCompanySaleInvoiceShipmentMethod.md)
+### [Update-MgBetaFinancialCompanySaleInvoiceShipmentMethod](Update-MgBetaFinancialCompanySaleInvoiceShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanySaleOrder](Update-MgFinancialCompanySaleOrder.md)
+### [Update-MgBetaFinancialCompanySaleOrder](Update-MgBetaFinancialCompanySaleOrder.md)
 Update the navigation property salesOrders in financials
 
-### [Update-MgFinancialCompanySaleOrderCurrency](Update-MgFinancialCompanySaleOrderCurrency.md)
+### [Update-MgBetaFinancialCompanySaleOrderCurrency](Update-MgBetaFinancialCompanySaleOrderCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanySaleOrderCustomer](Update-MgFinancialCompanySaleOrderCustomer.md)
+### [Update-MgBetaFinancialCompanySaleOrderCustomer](Update-MgBetaFinancialCompanySaleOrderCustomer.md)
 Update the navigation property customer in financials
 
-### [Update-MgFinancialCompanySaleOrderCustomerCurrency](Update-MgFinancialCompanySaleOrderCustomerCurrency.md)
+### [Update-MgBetaFinancialCompanySaleOrderCustomerCurrency](Update-MgBetaFinancialCompanySaleOrderCustomerCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanySaleOrderCustomerPaymentMethod](Update-MgFinancialCompanySaleOrderCustomerPaymentMethod.md)
+### [Update-MgBetaFinancialCompanySaleOrderCustomerPaymentMethod](Update-MgBetaFinancialCompanySaleOrderCustomerPaymentMethod.md)
 Update the navigation property paymentMethod in financials
 
-### [Update-MgFinancialCompanySaleOrderCustomerPaymentTerm](Update-MgFinancialCompanySaleOrderCustomerPaymentTerm.md)
+### [Update-MgBetaFinancialCompanySaleOrderCustomerPaymentTerm](Update-MgBetaFinancialCompanySaleOrderCustomerPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanySaleOrderCustomerPicture](Update-MgFinancialCompanySaleOrderCustomerPicture.md)
+### [Update-MgBetaFinancialCompanySaleOrderCustomerPicture](Update-MgBetaFinancialCompanySaleOrderCustomerPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleOrderCustomerShipmentMethod](Update-MgFinancialCompanySaleOrderCustomerShipmentMethod.md)
+### [Update-MgBetaFinancialCompanySaleOrderCustomerShipmentMethod](Update-MgBetaFinancialCompanySaleOrderCustomerShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanySaleOrderLine](Update-MgFinancialCompanySaleOrderLine.md)
+### [Update-MgBetaFinancialCompanySaleOrderLine](Update-MgBetaFinancialCompanySaleOrderLine.md)
 Update the navigation property salesOrderLines in financials
 
-### [Update-MgFinancialCompanySaleOrderLineItem](Update-MgFinancialCompanySaleOrderLineItem.md)
+### [Update-MgBetaFinancialCompanySaleOrderLineItem](Update-MgBetaFinancialCompanySaleOrderLineItem.md)
 Update the navigation property item in financials
 
-### [Update-MgFinancialCompanySaleOrderLineItemCategory](Update-MgFinancialCompanySaleOrderLineItemCategory.md)
+### [Update-MgBetaFinancialCompanySaleOrderLineItemCategory](Update-MgBetaFinancialCompanySaleOrderLineItemCategory.md)
 Update the navigation property itemCategory in financials
 
-### [Update-MgFinancialCompanySaleOrderLineItemPicture](Update-MgFinancialCompanySaleOrderLineItemPicture.md)
+### [Update-MgBetaFinancialCompanySaleOrderLineItemPicture](Update-MgBetaFinancialCompanySaleOrderLineItemPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleOrderPaymentTerm](Update-MgFinancialCompanySaleOrderPaymentTerm.md)
+### [Update-MgBetaFinancialCompanySaleOrderPaymentTerm](Update-MgBetaFinancialCompanySaleOrderPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanySaleQuote](Update-MgFinancialCompanySaleQuote.md)
+### [Update-MgBetaFinancialCompanySaleQuote](Update-MgBetaFinancialCompanySaleQuote.md)
 Update the navigation property salesQuotes in financials
 
-### [Update-MgFinancialCompanySaleQuoteCurrency](Update-MgFinancialCompanySaleQuoteCurrency.md)
+### [Update-MgBetaFinancialCompanySaleQuoteCurrency](Update-MgBetaFinancialCompanySaleQuoteCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanySaleQuoteCustomer](Update-MgFinancialCompanySaleQuoteCustomer.md)
+### [Update-MgBetaFinancialCompanySaleQuoteCustomer](Update-MgBetaFinancialCompanySaleQuoteCustomer.md)
 Update the navigation property customer in financials
 
-### [Update-MgFinancialCompanySaleQuoteCustomerCurrency](Update-MgFinancialCompanySaleQuoteCustomerCurrency.md)
+### [Update-MgBetaFinancialCompanySaleQuoteCustomerCurrency](Update-MgBetaFinancialCompanySaleQuoteCustomerCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanySaleQuoteCustomerPaymentMethod](Update-MgFinancialCompanySaleQuoteCustomerPaymentMethod.md)
+### [Update-MgBetaFinancialCompanySaleQuoteCustomerPaymentMethod](Update-MgBetaFinancialCompanySaleQuoteCustomerPaymentMethod.md)
 Update the navigation property paymentMethod in financials
 
-### [Update-MgFinancialCompanySaleQuoteCustomerPaymentTerm](Update-MgFinancialCompanySaleQuoteCustomerPaymentTerm.md)
+### [Update-MgBetaFinancialCompanySaleQuoteCustomerPaymentTerm](Update-MgBetaFinancialCompanySaleQuoteCustomerPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanySaleQuoteCustomerPicture](Update-MgFinancialCompanySaleQuoteCustomerPicture.md)
+### [Update-MgBetaFinancialCompanySaleQuoteCustomerPicture](Update-MgBetaFinancialCompanySaleQuoteCustomerPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleQuoteCustomerShipmentMethod](Update-MgFinancialCompanySaleQuoteCustomerShipmentMethod.md)
+### [Update-MgBetaFinancialCompanySaleQuoteCustomerShipmentMethod](Update-MgBetaFinancialCompanySaleQuoteCustomerShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanySaleQuoteLine](Update-MgFinancialCompanySaleQuoteLine.md)
+### [Update-MgBetaFinancialCompanySaleQuoteLine](Update-MgBetaFinancialCompanySaleQuoteLine.md)
 Update the navigation property salesQuoteLines in financials
 
-### [Update-MgFinancialCompanySaleQuoteLineItem](Update-MgFinancialCompanySaleQuoteLineItem.md)
+### [Update-MgBetaFinancialCompanySaleQuoteLineItem](Update-MgBetaFinancialCompanySaleQuoteLineItem.md)
 Update the navigation property item in financials
 
-### [Update-MgFinancialCompanySaleQuoteLineItemCategory](Update-MgFinancialCompanySaleQuoteLineItemCategory.md)
+### [Update-MgBetaFinancialCompanySaleQuoteLineItemCategory](Update-MgBetaFinancialCompanySaleQuoteLineItemCategory.md)
 Update the navigation property itemCategory in financials
 
-### [Update-MgFinancialCompanySaleQuoteLineItemPicture](Update-MgFinancialCompanySaleQuoteLineItemPicture.md)
+### [Update-MgBetaFinancialCompanySaleQuoteLineItemPicture](Update-MgBetaFinancialCompanySaleQuoteLineItemPicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanySaleQuotePaymentTerm](Update-MgFinancialCompanySaleQuotePaymentTerm.md)
+### [Update-MgBetaFinancialCompanySaleQuotePaymentTerm](Update-MgBetaFinancialCompanySaleQuotePaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanySaleQuoteShipmentMethod](Update-MgFinancialCompanySaleQuoteShipmentMethod.md)
+### [Update-MgBetaFinancialCompanySaleQuoteShipmentMethod](Update-MgBetaFinancialCompanySaleQuoteShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanyShipmentMethod](Update-MgFinancialCompanyShipmentMethod.md)
+### [Update-MgBetaFinancialCompanyShipmentMethod](Update-MgBetaFinancialCompanyShipmentMethod.md)
 Update the navigation property shipmentMethods in financials
 
-### [Update-MgFinancialCompanyTaxArea](Update-MgFinancialCompanyTaxArea.md)
+### [Update-MgBetaFinancialCompanyTaxArea](Update-MgBetaFinancialCompanyTaxArea.md)
 Update the navigation property taxAreas in financials
 
-### [Update-MgFinancialCompanyTaxGroup](Update-MgFinancialCompanyTaxGroup.md)
+### [Update-MgBetaFinancialCompanyTaxGroup](Update-MgBetaFinancialCompanyTaxGroup.md)
 Update the navigation property taxGroups in financials
 
-### [Update-MgFinancialCompanyUnitOfMeasure](Update-MgFinancialCompanyUnitOfMeasure.md)
+### [Update-MgBetaFinancialCompanyUnitOfMeasure](Update-MgBetaFinancialCompanyUnitOfMeasure.md)
 Update the navigation property unitsOfMeasure in financials
 
-### [Update-MgFinancialCompanyVendor](Update-MgFinancialCompanyVendor.md)
+### [Update-MgBetaFinancialCompanyVendor](Update-MgBetaFinancialCompanyVendor.md)
 Update the navigation property vendors in financials
 
-### [Update-MgFinancialCompanyVendorCurrency](Update-MgFinancialCompanyVendorCurrency.md)
+### [Update-MgBetaFinancialCompanyVendorCurrency](Update-MgBetaFinancialCompanyVendorCurrency.md)
 Update the navigation property currency in financials
 
-### [Update-MgFinancialCompanyVendorPaymentMethod](Update-MgFinancialCompanyVendorPaymentMethod.md)
+### [Update-MgBetaFinancialCompanyVendorPaymentMethod](Update-MgBetaFinancialCompanyVendorPaymentMethod.md)
 Update the navigation property paymentMethod in financials
 
-### [Update-MgFinancialCompanyVendorPaymentTerm](Update-MgFinancialCompanyVendorPaymentTerm.md)
+### [Update-MgBetaFinancialCompanyVendorPaymentTerm](Update-MgBetaFinancialCompanyVendorPaymentTerm.md)
 Update the navigation property paymentTerm in financials
 
-### [Update-MgFinancialCompanyVendorPicture](Update-MgFinancialCompanyVendorPicture.md)
+### [Update-MgBetaFinancialCompanyVendorPicture](Update-MgBetaFinancialCompanyVendorPicture.md)
 Update the navigation property picture in financials
 

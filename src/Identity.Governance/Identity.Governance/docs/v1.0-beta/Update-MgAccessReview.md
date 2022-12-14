@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgaccessreview
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgaccessreview
 schema: 2.0.0
 ---
 
-# Update-MgAccessReview
+# Update-MgBetaAccessReview
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties.
@@ -18,7 +18,7 @@ To apply the decisions to the target group or app access rights, use the apply A
 
 ### UpdateExpanded (Default)
 ```
-Update-MgAccessReview -AccessReviewId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaAccessReview -AccessReviewId <String> [-AdditionalProperties <Hashtable>]
  [-BusinessFlowTemplateId <String>] [-CreatedBy <IMicrosoftGraphUserIdentity>]
  [-Decisions <IMicrosoftGraphAccessReviewDecision[]>] [-Description <String>] [-DisplayName <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Instances <IMicrosoftGraphAccessReview[]>]
@@ -30,19 +30,19 @@ Update-MgAccessReview -AccessReviewId <String> [-AdditionalProperties <Hashtable
 
 ### Update
 ```
-Update-MgAccessReview -AccessReviewId <String> -BodyParameter <IMicrosoftGraphAccessReview> [-PassThru]
+Update-MgBetaAccessReview -AccessReviewId <String> -BodyParameter <IMicrosoftGraphAccessReview> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgAccessReview -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphAccessReview>
+Update-MgBetaAccessReview -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphAccessReview>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgAccessReview -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaAccessReview -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-BusinessFlowTemplateId <String>] [-CreatedBy <IMicrosoftGraphUserIdentity>]
  [-Decisions <IMicrosoftGraphAccessReviewDecision[]>] [-Description <String>] [-DisplayName <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Instances <IMicrosoftGraphAccessReview[]>]
@@ -61,16 +61,16 @@ To apply the decisions to the target group or app access rights, use the apply A
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgAccessReview Cmdlet
+### Example 1: Using the Update-MgBetaAccessReview Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "TestReview new name"
 }
-Update-MgAccessReview -AccessReviewId $accessReviewId -BodyParameter $params
+Update-MgBetaAccessReview -AccessReviewId $accessReviewId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgAccessReview Cmdlet.
+This example shows how to use the Update-MgBetaAccessReview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -110,7 +110,7 @@ accessReview
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ userIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -159,7 +159,7 @@ The collection of decisions for this access review.
 To construct, please use Get-Help -Online and see NOTES section for DECISIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -239,7 +239,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -255,7 +255,7 @@ The collection of access reviews instances past, present and future, if this obj
 To construct, please use Get-Help -Online and see NOTES section for INSTANCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -271,7 +271,7 @@ The collection of decisions for the caller, if the caller is a reviewer.
 To construct, please use Get-Help -Online and see NOTES section for MYDECISIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -302,7 +302,7 @@ identity
 To construct, please use Get-Help -Online and see NOTES section for REVIEWEDENTITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -318,7 +318,7 @@ The collection of reviewers for an access review, if access review reviewerType 
 To construct, please use Get-Help -Online and see NOTES section for REVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -350,7 +350,7 @@ accessReviewSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -430,9 +430,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReview
 
 ## OUTPUTS
 

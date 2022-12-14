@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mggrouponenotepagecontent
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mggrouponenotepagecontent
 schema: 2.0.0
 ---
 
-# Get-MgGroupOnenotePageContent
+# Get-MgBetaGroupOnenotePageContent
 
 ## SYNOPSIS
 The page's HTML content.
@@ -14,13 +14,13 @@ The page's HTML content.
 
 ### Get1 (Default)
 ```
-Get-MgGroupOnenotePageContent -GroupId <String> -OnenotePageId <String> -OutFile <String> [-PassThru]
+Get-MgBetaGroupOnenotePageContent -GroupId <String> -OnenotePageId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupOnenotePageContent -InputObject <INotesIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaGroupOnenotePageContent -InputObject <INotesIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,7 +50,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -111,7 +111,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 

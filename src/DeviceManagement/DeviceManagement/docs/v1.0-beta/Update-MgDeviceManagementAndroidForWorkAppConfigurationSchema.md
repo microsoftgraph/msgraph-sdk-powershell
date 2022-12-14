@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementandroidforworkappconfigurationschema
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementandroidforworkappconfigurationschema
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementAndroidForWorkAppConfigurationSchema
+# Update-MgBetaDeviceManagementAndroidForWorkAppConfigurationSchema
 
 ## SYNOPSIS
 Update the navigation property androidForWorkAppConfigurationSchemas in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property androidForWorkAppConfigurationSchemas in deviceMa
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementAndroidForWorkAppConfigurationSchema -AndroidForWorkAppConfigurationSchemaId <String>
+Update-MgBetaDeviceManagementAndroidForWorkAppConfigurationSchema -AndroidForWorkAppConfigurationSchemaId <String>
  [-AdditionalProperties <Hashtable>] [-ExampleJsonInputFile <String>] [-Id <String>]
  [-SchemaItems <IMicrosoftGraphAndroidForWorkAppConfigurationSchemaItem[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgDeviceManagementAndroidForWorkAppConfigurationSchema -AndroidForWorkApp
 
 ### Update
 ```
-Update-MgDeviceManagementAndroidForWorkAppConfigurationSchema -AndroidForWorkAppConfigurationSchemaId <String>
+Update-MgBetaDeviceManagementAndroidForWorkAppConfigurationSchema -AndroidForWorkAppConfigurationSchemaId <String>
  -BodyParameter <IMicrosoftGraphAndroidForWorkAppConfigurationSchema> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementAndroidForWorkAppConfigurationSchema -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementAndroidForWorkAppConfigurationSchema -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphAndroidForWorkAppConfigurationSchema> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementAndroidForWorkAppConfigurationSchema -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementAndroidForWorkAppConfigurationSchema -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ExampleJsonInputFile <String>] [-Id <String>]
  [-SchemaItems <IMicrosoftGraphAndroidForWorkAppConfigurationSchemaItem[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -84,7 +84,7 @@ Schema describing an Android for Work application's custom configurations.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ Collection of items each representing a named configuration option in the schema
 To construct, please use Get-Help -Online and see NOTES section for SCHEMAITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchemaItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchemaItem[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -209,9 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkAppConfigurationSchema
 
 ## OUTPUTS
 

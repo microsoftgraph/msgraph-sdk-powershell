@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritycloudappsecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritycloudappsecurityprofile
 schema: 2.0.0
 ---
 
-# New-MgSecurityCloudAppSecurityProfile
+# New-MgBetaSecurityCloudAppSecurityProfile
 
 ## SYNOPSIS
 Create new navigation property to cloudAppSecurityProfiles for security
@@ -14,7 +14,7 @@ Create new navigation property to cloudAppSecurityProfiles for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityCloudAppSecurityProfile [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>]
+New-MgBetaSecurityCloudAppSecurityProfile [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>]
  [-AzureTenantId <String>] [-CreatedDateTime <DateTime>] [-DeploymentPackageUrl <String>]
  [-DestinationServiceName <String>] [-Id <String>] [-IsSigned] [-LastModifiedDateTime <DateTime>]
  [-Manifest <String>] [-Name <String>] [-PermissionsRequired <String>] [-Platform <String>]
@@ -24,7 +24,7 @@ New-MgSecurityCloudAppSecurityProfile [-AdditionalProperties <Hashtable>] [-Azur
 
 ### Create
 ```
-New-MgSecurityCloudAppSecurityProfile -BodyParameter <IMicrosoftGraphCloudAppSecurityProfile> [-Confirm]
+New-MgBetaSecurityCloudAppSecurityProfile -BodyParameter <IMicrosoftGraphCloudAppSecurityProfile> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -85,7 +85,7 @@ cloudAppSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
 Parameter Sets: Create
 Aliases:
 
@@ -327,7 +327,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -374,11 +374,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
 
 ## NOTES
 

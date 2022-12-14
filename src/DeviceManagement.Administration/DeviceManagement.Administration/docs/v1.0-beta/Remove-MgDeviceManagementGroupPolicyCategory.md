@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/remove-mgdevicemanagementgrouppolicycategory
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/remove-mgdevicemanagementgrouppolicycategory
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementGroupPolicyCategory
+# Remove-MgBetaDeviceManagementGroupPolicyCategory
 
 ## SYNOPSIS
 Delete navigation property groupPolicyCategories for deviceManagement
@@ -14,13 +14,13 @@ Delete navigation property groupPolicyCategories for deviceManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementGroupPolicyCategory -GroupPolicyCategoryId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaDeviceManagementGroupPolicyCategory -GroupPolicyCategoryId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementGroupPolicyCategory -InputObject <IDeviceManagementAdministrationIdentity>
+Remove-MgBetaDeviceManagementGroupPolicyCategory -InputObject <IDeviceManagementAdministrationIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 

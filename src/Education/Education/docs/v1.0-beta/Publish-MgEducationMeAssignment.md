@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/publish-mgeducationmeassignment
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/publish-mgeducationmeassignment
 schema: 2.0.0
 ---
 
-# Publish-MgEducationMeAssignment
+# Publish-MgBetaEducationMeAssignment
 
 ## SYNOPSIS
 Change the state of an educationAssignment from its original `draft` status to the `published` status.
@@ -21,12 +21,12 @@ To update the properties of a published assignment, see update an assignment.
 
 ### Publish1 (Default)
 ```
-Publish-MgEducationMeAssignment -EducationAssignmentId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgBetaEducationMeAssignment -EducationAssignmentId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PublishViaIdentity1
 ```
-Publish-MgEducationMeAssignment -InputObject <IEducationIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgBetaEducationMeAssignment -InputObject <IEducationIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,12 +43,12 @@ To update the properties of a published assignment, see update an assignment.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 
-Publish-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Publish-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
 
-This example shows how to use the Publish-MgEducationMeAssignment Cmdlet.
+This example shows how to use the Publish-MgBetaEducationMeAssignment Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -74,7 +74,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: PublishViaIdentity1
 Aliases:
 
@@ -121,11 +121,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

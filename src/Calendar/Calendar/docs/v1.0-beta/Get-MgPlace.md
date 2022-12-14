@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mgplace
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mgplace
 schema: 2.0.0
 ---
 
-# Get-MgPlace
+# Get-MgBetaPlace
 
 ## SYNOPSIS
 Get the properties and relationships of a place object specified by either its ID or email address.
@@ -15,19 +15,19 @@ The **place** object can be one of the following types: The **room**, **workspac
 
 ### List (Default)
 ```
-Get-MgPlace [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaPlace [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPlace -PlaceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaPlace -PlaceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPlace -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPlace -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -37,58 +37,58 @@ The **place** object can be one of the following types: The **room**, **workspac
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPlace Cmdlet
+### Example 1: Using the Get-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgPlace -PlaceId $placeId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaPlace -PlaceId $placeId
 ```
 
-This example shows how to use the Get-MgPlace Cmdlet.
+This example shows how to use the Get-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPlace Cmdlet
+### Example 2: Using the Get-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgPlace -PlaceId $placeId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaPlace -PlaceId $placeId
 ```
 
-This example shows how to use the Get-MgPlace Cmdlet.
+This example shows how to use the Get-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgPlace Cmdlet
+### Example 3: Using the Get-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgPlace -PlaceId $placeId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaPlace -PlaceId $placeId
 ```
 
-This example shows how to use the Get-MgPlace Cmdlet.
+This example shows how to use the Get-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgPlace Cmdlet
+### Example 4: Using the Get-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgPlace -PlaceId $placeId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaPlace -PlaceId $placeId
 ```
 
-This example shows how to use the Get-MgPlace Cmdlet.
+This example shows how to use the Get-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Get-MgPlace Cmdlet
+### Example 5: Using the Get-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgPlace -PlaceId $placeId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaPlace -PlaceId $placeId
 ```
 
-This example shows how to use the Get-MgPlace Cmdlet.
+This example shows how to use the Get-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the Get-MgPlace Cmdlet
+### Example 6: Using the Get-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgPlace -PlaceId $placeId
+Import-Module Microsoft.Graph.Beta.Calendar
+Get-MgBetaPlace -PlaceId $placeId
 ```
 
-This example shows how to use the Get-MgPlace Cmdlet.
+This example shows how to use the Get-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -159,7 +159,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -280,11 +280,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlace
 
 ## NOTES
 

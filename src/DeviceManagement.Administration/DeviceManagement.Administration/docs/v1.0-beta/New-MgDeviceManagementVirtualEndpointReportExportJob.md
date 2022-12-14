@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointreportexportjob
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointreportexportjob
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointReportExportJob
+# New-MgBetaDeviceManagementVirtualEndpointReportExportJob
 
 ## SYNOPSIS
 Create a new cloudPcExportJob object.
@@ -14,7 +14,7 @@ Create a new cloudPcExportJob object.
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointReportExportJob [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementVirtualEndpointReportExportJob [-AdditionalProperties <Hashtable>]
  [-ExpirationDateTime <DateTime>] [-ExportJobStatus <String>] [-ExportUrl <String>] [-Filter <String>]
  [-Format <String>] [-Id <String>] [-Property <String[]>] [-ReportName <String>] [-RequestDateTime <DateTime>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementVirtualEndpointReportExportJob [-AdditionalProperties <Has
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointReportExportJob -BodyParameter <IMicrosoftGraphCloudPcExportJob>
+New-MgBetaDeviceManagementVirtualEndpointReportExportJob -BodyParameter <IMicrosoftGraphCloudPcExportJob>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ cloudPcExportJob
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
 Parameter Sets: Create
 Aliases:
 
@@ -236,11 +236,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcExportJob
 
 ## NOTES
 

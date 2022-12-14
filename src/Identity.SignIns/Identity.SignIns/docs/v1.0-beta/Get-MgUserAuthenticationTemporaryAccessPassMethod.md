@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationtemporaryaccesspassmethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationtemporaryaccesspassmethod
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationTemporaryAccessPassMethod
+# Get-MgBetaUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
 Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
@@ -14,20 +14,20 @@ Represents a Temporary Access Pass registered to a user for authentication throu
 
 ### List (Default)
 ```
-Get-MgUserAuthenticationTemporaryAccessPassMethod -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserAuthenticationTemporaryAccessPassMethod -TemporaryAccessPassAuthenticationMethodId <String>
+Get-MgBetaUserAuthenticationTemporaryAccessPassMethod -TemporaryAccessPassAuthenticationMethodId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Represents a Temporary Access Pass registered to a user for authentication throu
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserAuthenticationTemporaryAccessPassMethod Cmdlet
+### Example 1: Using the Get-MgBetaUserAuthenticationTemporaryAccessPassMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgUserAuthenticationTemporaryAccessPassMethod -UserId $userId -TemporaryAccessPassAuthenticationMethodId $temporaryAccessPassAuthenticationMethodId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId $userId -TemporaryAccessPassAuthenticationMethodId $temporaryAccessPassAuthenticationMethodId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationTemporaryAccessPassMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationTemporaryAccessPassMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserAuthenticationTemporaryAccessPassMethod Cmdlet
+### Example 2: Using the Get-MgBetaUserAuthenticationTemporaryAccessPassMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgUserAuthenticationTemporaryAccessPassMethod -UserId $userId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationTemporaryAccessPassMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationTemporaryAccessPassMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
 
 ## NOTES
 

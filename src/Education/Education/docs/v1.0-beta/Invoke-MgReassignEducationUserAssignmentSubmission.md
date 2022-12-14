@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/invoke-mgreassigneducationuserassignmentsubmission
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/invoke-mgreassigneducationuserassignmentsubmission
 schema: 2.0.0
 ---
 
-# Invoke-MgReassignEducationUserAssignmentSubmission
+# Invoke-MgBetaReassignEducationUserAssignmentSubmission
 
 ## SYNOPSIS
 Reassign the submission to the student with feedback for review.
@@ -19,13 +19,13 @@ For details, see the examples section.
 
 ### Reassign (Default)
 ```
-Invoke-MgReassignEducationUserAssignmentSubmission -EducationAssignmentId <String>
+Invoke-MgBetaReassignEducationUserAssignmentSubmission -EducationAssignmentId <String>
  -EducationSubmissionId <String> -EducationUserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReassignViaIdentity
 ```
-Invoke-MgReassignEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Invoke-MgBetaReassignEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: ReassignViaIdentity
 Aliases:
 
@@ -138,11 +138,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanysalequotelineitempicture
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/remove-mgfinancialcompanysalequotelineitempicture
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanySaleQuoteLineItemPicture
+# Remove-MgBetaFinancialCompanySaleQuoteLineItemPicture
 
 ## SYNOPSIS
 Delete navigation property picture for financials
@@ -14,26 +14,26 @@ Delete navigation property picture for financials
 
 ### Delete (Default)
 ```
-Remove-MgFinancialCompanySaleQuoteLineItemPicture -CompanyId <String> -PictureId <String>
+Remove-MgBetaFinancialCompanySaleQuoteLineItemPicture -CompanyId <String> -PictureId <String>
  -SalesQuoteLineId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
-Remove-MgFinancialCompanySaleQuoteLineItemPicture -CompanyId <String> -PictureId <String>
+Remove-MgBetaFinancialCompanySaleQuoteLineItemPicture -CompanyId <String> -PictureId <String>
  -SalesQuoteId <String> -SalesQuoteLineId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgFinancialCompanySaleQuoteLineItemPicture -InputObject <IFinancialsIdentity> [-IfMatch <String>]
+Remove-MgBetaFinancialCompanySaleQuoteLineItemPicture -InputObject <IFinancialsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgFinancialCompanySaleQuoteLineItemPicture -InputObject <IFinancialsIdentity> [-IfMatch <String>]
+Remove-MgBetaFinancialCompanySaleQuoteLineItemPicture -InputObject <IFinancialsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -79,7 +79,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
@@ -186,7 +186,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

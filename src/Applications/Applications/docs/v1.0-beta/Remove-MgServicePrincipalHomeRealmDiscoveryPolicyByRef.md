@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgserviceprincipalhomerealmdiscoverypolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgserviceprincipalhomerealmdiscoverypolicybyref
 schema: 2.0.0
 ---
 
-# Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef
+# Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef
 
 ## SYNOPSIS
 Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
@@ -14,14 +14,14 @@ Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipa
 
 ### Delete (Default)
 ```
-Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef -HomeRealmDiscoveryPolicyId <String>
+Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef -HomeRealmDiscoveryPolicyId <String>
  -ServicePrincipalId <String> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef -InputObject <IApplicationsIdentity> [-Id <String>]
+Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef -InputObject <IApplicationsIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipa
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef Cmdlet
+### Example 1: Using the Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef -ServicePrincipalId $servicePrincipalId -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef -ServicePrincipalId $servicePrincipalId -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId
 ```
 
-This example shows how to use the Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef Cmdlet.
+This example shows how to use the Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -168,7 +168,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

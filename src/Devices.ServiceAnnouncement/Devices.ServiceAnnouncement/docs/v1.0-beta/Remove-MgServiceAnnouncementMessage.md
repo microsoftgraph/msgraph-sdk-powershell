@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/remove-mgserviceannouncementmessage
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/remove-mgserviceannouncementmessage
 schema: 2.0.0
 ---
 
-# Remove-MgServiceAnnouncementMessage
+# Remove-MgBetaServiceAnnouncementMessage
 
 ## SYNOPSIS
 Delete navigation property messages for admin
@@ -14,13 +14,13 @@ Delete navigation property messages for admin
 
 ### Delete (Default)
 ```
-Remove-MgServiceAnnouncementMessage -ServiceUpdateMessageId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaServiceAnnouncementMessage -ServiceUpdateMessageId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIdentity> [-IfMatch <String>]
+Remove-MgBetaServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ## OUTPUTS
 

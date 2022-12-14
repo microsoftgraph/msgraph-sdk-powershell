@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementgrouppolicyconfiguration
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementgrouppolicyconfiguration
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementGroupPolicyConfiguration
+# New-MgBetaDeviceManagementGroupPolicyConfiguration
 
 ## SYNOPSIS
 Create new navigation property to groupPolicyConfigurations for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to groupPolicyConfigurations for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementGroupPolicyConfiguration [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementGroupPolicyConfiguration [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphGroupPolicyConfigurationAssignment[]>] [-CreatedDateTime <DateTime>]
  [-DefinitionValues <IMicrosoftGraphGroupPolicyDefinitionValue[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementGroupPolicyConfiguration [-AdditionalProperties <Hashtable
 
 ### Create
 ```
-New-MgDeviceManagementGroupPolicyConfiguration -BodyParameter <IMicrosoftGraphGroupPolicyConfiguration>
+New-MgBetaDeviceManagementGroupPolicyConfiguration -BodyParameter <IMicrosoftGraphGroupPolicyConfiguration>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ The list of group assignments for the configuration.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfigurationAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -71,7 +71,7 @@ The group policy configuration entity contains the configured values for one or 
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfiguration
 Parameter Sets: Create
 Aliases:
 
@@ -102,7 +102,7 @@ The list of enabled or disabled group policy definition values for the configura
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONVALUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionValue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionValue[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 Group Policy Configuration Ingestion Type
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicyConfigurationIngestionType
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicyConfigurationIngestionType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfiguration
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyConfiguration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfiguration
 
 ## NOTES
 

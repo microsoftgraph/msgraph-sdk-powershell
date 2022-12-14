@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgapplicationfederatedidentitycredential
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgapplicationfederatedidentitycredential
 schema: 2.0.0
 ---
 
-# Remove-MgApplicationFederatedIdentityCredential
+# Remove-MgBetaApplicationFederatedIdentityCredential
 
 ## SYNOPSIS
 Delete navigation property federatedIdentityCredentials for applications
@@ -14,14 +14,14 @@ Delete navigation property federatedIdentityCredentials for applications
 
 ### Delete (Default)
 ```
-Remove-MgApplicationFederatedIdentityCredential -ApplicationId <String>
+Remove-MgBetaApplicationFederatedIdentityCredential -ApplicationId <String>
  -FederatedIdentityCredentialId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity> [-IfMatch <String>]
+Remove-MgBetaApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Delete navigation property federatedIdentityCredentials for applications
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgApplicationFederatedIdentityCredential Cmdlet
+### Example 1: Using the Remove-MgBetaApplicationFederatedIdentityCredential Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
 ```
 
-This example shows how to use the Remove-MgApplicationFederatedIdentityCredential Cmdlet.
+This example shows how to use the Remove-MgBetaApplicationFederatedIdentityCredential Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

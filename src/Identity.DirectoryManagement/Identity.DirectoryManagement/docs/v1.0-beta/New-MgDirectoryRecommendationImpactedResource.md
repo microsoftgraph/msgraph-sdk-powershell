@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryrecommendationimpactedresource
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectoryrecommendationimpactedresource
 schema: 2.0.0
 ---
 
-# New-MgDirectoryRecommendationImpactedResource
+# New-MgBetaDirectoryRecommendationImpactedResource
 
 ## SYNOPSIS
 Create new navigation property to impactedResources for directory
@@ -14,7 +14,7 @@ Create new navigation property to impactedResources for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryRecommendationImpactedResource -RecommendationId <String> [-AddedDateTime <DateTime>]
+New-MgBetaDirectoryRecommendationImpactedResource -RecommendationId <String> [-AddedDateTime <DateTime>]
  [-AdditionalDetails <IMicrosoftGraphKeyValue[]>] [-AdditionalProperties <Hashtable>] [-ApiUrl <String>]
  [-DisplayName <String>] [-Id <String>] [-Owner <String>] [-PortalUrl <String>] [-Rank <Int32>]
  [-RecommendationId1 <String>] [-ResourceType <String>] [-Status <String>] [-Confirm] [-WhatIf]
@@ -23,19 +23,19 @@ New-MgDirectoryRecommendationImpactedResource -RecommendationId <String> [-Added
 
 ### Create
 ```
-New-MgDirectoryRecommendationImpactedResource -RecommendationId <String>
+New-MgBetaDirectoryRecommendationImpactedResource -RecommendationId <String>
  -BodyParameter <IMicrosoftGraphRecommendationResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphRecommendationResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
  [-RecommendationId <String>] [-AddedDateTime <DateTime>] [-AdditionalDetails <IMicrosoftGraphKeyValue[]>]
  [-AdditionalProperties <Hashtable>] [-ApiUrl <String>] [-DisplayName <String>] [-Id <String>]
  [-Owner <String>] [-PortalUrl <String>] [-Rank <Int32>] [-ResourceType <String>] [-Status <String>]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ADDITIONALDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValue[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValue[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -115,7 +115,7 @@ recommendationResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -314,13 +314,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 
 ## NOTES
 

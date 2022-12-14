@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mguserplannertask
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mguserplannertask
 schema: 2.0.0
 ---
 
-# Get-MgUserPlannerTask
+# Get-MgBetaUserPlannerTask
 
 ## SYNOPSIS
 Retrieve a list of **plannertask** objects assigned to a User.
@@ -13,7 +13,7 @@ Retrieve a list of **plannertask** objects assigned to a User.
 ## SYNTAX
 
 ```
-Get-MgUserPlannerTask -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserPlannerTask -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,14 +23,14 @@ Retrieve a list of **plannertask** objects assigned to a User.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserPlannerTask Cmdlet
+### Example 1: Using the Get-MgBetaUserPlannerTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 # A UPN can also be used as -UserId.
-Get-MgUserPlannerTask -UserId $userId
+Get-MgBetaUserPlannerTask -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserPlannerTask Cmdlet.
+This example shows how to use the Get-MgBetaUserPlannerTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -208,7 +208,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1
 
 ## NOTES
 

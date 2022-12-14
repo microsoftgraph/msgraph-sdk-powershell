@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mgsiteonenoteresourcecontent
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mgsiteonenoteresourcecontent
 schema: 2.0.0
 ---
 
-# Get-MgSiteOnenoteResourceContent
+# Get-MgBetaSiteOnenoteResourceContent
 
 ## SYNOPSIS
 Get content for the navigation property resources from sites
@@ -14,13 +14,13 @@ Get content for the navigation property resources from sites
 
 ### Get1 (Default)
 ```
-Get-MgSiteOnenoteResourceContent -OnenoteResourceId <String> -SiteId <String> -OutFile <String> [-PassThru]
+Get-MgBetaSiteOnenoteResourceContent -OnenoteResourceId <String> -SiteId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSiteOnenoteResourceContent -InputObject <INotesIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaSiteOnenoteResourceContent -InputObject <INotesIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -112,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 

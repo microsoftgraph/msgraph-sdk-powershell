@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgtroubleshootdevicemanagementvirtualendpointcloudpc
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgtroubleshootdevicemanagementvirtualendpointcloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc
+# Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
 Troubleshoot a specific Cloud PC.
@@ -15,13 +15,13 @@ Use this API to check the health status of the Cloud PC and the session host.
 
 ### Troubleshoot (Default)
 ```
-Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc -CloudPcId <String> [-PassThru] [-Confirm]
+Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc -CloudPcId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### TroubleshootViaIdentity
 ```
-Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ Use this API to check the health status of the Cloud PC and the session host.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc Cmdlet
+### Example 1: Using the Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
-Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId
 ```
 
-This example shows how to use the Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc Cmdlet.
+This example shows how to use the Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: TroubleshootViaIdentity
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

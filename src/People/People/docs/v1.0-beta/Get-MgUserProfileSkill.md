@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguserprofileskill
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguserprofileskill
 schema: 2.0.0
 ---
 
-# Get-MgUserProfileSkill
+# Get-MgBetaUserProfileSkill
 
 ## SYNOPSIS
 Represents detailed information about skills associated with a user in various services.
@@ -14,20 +14,20 @@ Represents detailed information about skills associated with a user in various s
 
 ### List (Default)
 ```
-Get-MgUserProfileSkill -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaUserProfileSkill -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserProfileSkill -SkillProficiencyId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserProfileSkill -SkillProficiencyId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserProfileSkill -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserProfileSkill -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Represents detailed information about skills associated with a user in various s
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserProfileSkill Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileSkill Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileSkill -UserId $userId -SkillProficiencyId $skillProficiencyId
+Get-MgBetaUserProfileSkill -UserId $userId -SkillProficiencyId $skillProficiencyId
 ```
 
-This example shows how to use the Get-MgUserProfileSkill Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileSkill Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserProfileSkill Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileSkill Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileSkill -UserId $userId
+Get-MgBetaUserProfileSkill -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserProfileSkill Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileSkill Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSkillProficiency
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSkillProficiency
 
 ## NOTES
 

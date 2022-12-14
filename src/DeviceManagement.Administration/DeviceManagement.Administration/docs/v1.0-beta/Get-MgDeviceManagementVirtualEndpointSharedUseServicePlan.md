@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointshareduseserviceplan
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementvirtualendpointshareduseserviceplan
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan
+# Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlan
 
 ## SYNOPSIS
 Get sharedUseServicePlans from deviceManagement
@@ -14,20 +14,20 @@ Get sharedUseServicePlans from deviceManagement
 
 ### List (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlan [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan -CloudPcSharedUseServicePlanId <String>
+Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlan -CloudPcSharedUseServicePlanId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan
+Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlan
  -InputObject <IDeviceManagementAdministrationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -120,7 +120,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -226,11 +226,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSharedUseServicePlan
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSharedUseServicePlan
 
 ## NOTES
 

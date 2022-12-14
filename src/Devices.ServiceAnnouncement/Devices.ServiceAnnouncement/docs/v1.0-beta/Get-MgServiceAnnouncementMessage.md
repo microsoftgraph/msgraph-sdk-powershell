@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/get-mgserviceannouncementmessage
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/get-mgserviceannouncementmessage
 schema: 2.0.0
 ---
 
-# Get-MgServiceAnnouncementMessage
+# Get-MgBetaServiceAnnouncementMessage
 
 ## SYNOPSIS
 A collection of service messages for tenant.
@@ -15,20 +15,20 @@ This property is a contained navigation property, it is nullable and readonly.
 
 ### List (Default)
 ```
-Get-MgServiceAnnouncementMessage [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaServiceAnnouncementMessage [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServiceAnnouncementMessage -ServiceUpdateMessageId <String> [-ExpandProperty <String[]>]
+Get-MgBetaServiceAnnouncementMessage -ServiceUpdateMessageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIdentity>
+Get-MgBetaServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ This property is a contained navigation property, it is nullable and readonly.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgServiceAnnouncementMessage Cmdlet
+### Example 1: Using the Get-MgBetaServiceAnnouncementMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementMessage -ServiceUpdateMessageId $serviceUpdateMessageId
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementMessage -ServiceUpdateMessageId $serviceUpdateMessageId
 ```
 
-This example shows how to use the Get-MgServiceAnnouncementMessage Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgServiceAnnouncementMessage Cmdlet
+### Example 2: Using the Get-MgBetaServiceAnnouncementMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementMessage
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementMessage
 ```
 
-This example shows how to use the Get-MgServiceAnnouncementMessage Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -245,11 +245,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
 
 ## NOTES
 

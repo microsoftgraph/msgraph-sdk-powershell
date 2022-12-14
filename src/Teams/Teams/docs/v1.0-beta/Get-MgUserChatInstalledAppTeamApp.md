@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mguserchatinstalledappteamapp
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mguserchatinstalledappteamapp
 schema: 2.0.0
 ---
 
-# Get-MgUserChatInstalledAppTeamApp
+# Get-MgBetaUserChatInstalledAppTeamApp
 
 ## SYNOPSIS
 The app that is installed.
@@ -14,13 +14,13 @@ The app that is installed.
 
 ### Get1 (Default)
 ```
-Get-MgUserChatInstalledAppTeamApp -ChatId <String> -TeamsAppInstallationId <String> -UserId <String>
+Get-MgBetaUserChatInstalledAppTeamApp -ChatId <String> -TeamsAppInstallationId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserChatInstalledAppTeamApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserChatInstalledAppTeamApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsApp
 
 ## NOTES
 

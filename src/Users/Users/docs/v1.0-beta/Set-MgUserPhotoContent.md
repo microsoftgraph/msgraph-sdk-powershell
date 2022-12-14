@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/set-mguserphotocontent
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/set-mguserphotocontent
 schema: 2.0.0
 ---
 
-# Set-MgUserPhotoContent
+# Set-MgBetaUserPhotoContent
 
 ## SYNOPSIS
 Update media content for the navigation property photo in users
@@ -14,25 +14,25 @@ Update media content for the navigation property photo in users
 
 ### Set (Default)
 ```
-Set-MgUserPhotoContent -UserId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
+Set-MgBetaUserPhotoContent -UserId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set1
 ```
-Set-MgUserPhotoContent -ProfilePhotoId <String> -UserId <String> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaUserPhotoContent -ProfilePhotoId <String> -UserId <String> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgUserPhotoContent -InputObject <IUsersIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
+Set-MgBetaUserPhotoContent -InputObject <IUsersIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgUserPhotoContent -InputObject <IUsersIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
+Set-MgBetaUserPhotoContent -InputObject <IUsersIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -80,7 +80,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentity1
 Aliases:
 
@@ -172,7 +172,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ### System.IO.Stream
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgcleanusermanageddevicewindowdevice
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgcleanusermanageddevicewindowdevice
 schema: 2.0.0
 ---
 
-# Invoke-MgCleanUserManagedDeviceWindowDevice
+# Invoke-MgBetaCleanUserManagedDeviceWindowDevice
 
 ## SYNOPSIS
 Clean Windows device
@@ -14,27 +14,27 @@ Clean Windows device
 
 ### CleanExpanded (Default)
 ```
-Invoke-MgCleanUserManagedDeviceWindowDevice -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaCleanUserManagedDeviceWindowDevice -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-KeepUserData] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Clean
 ```
-Invoke-MgCleanUserManagedDeviceWindowDevice -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaCleanUserManagedDeviceWindowDevice -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths1Nos4SfUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CleanViaIdentity
 ```
-Invoke-MgCleanUserManagedDeviceWindowDevice -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaCleanUserManagedDeviceWindowDevice -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Nos4SfUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CleanViaIdentityExpanded
 ```
-Invoke-MgCleanUserManagedDeviceWindowDevice -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaCleanUserManagedDeviceWindowDevice -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-KeepUserData] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Nos4SfUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Nos4SfUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Clean, CleanViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CleanViaIdentity, CleanViaIdentityExpanded
 Aliases:
 
@@ -188,9 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Nos4SfUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Nos4SfUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphCleanwindowsdevicePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementtemplatemigratabletocategoryrecommendedsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementtemplatemigratabletocategoryrecommendedsetting
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementTemplateMigratableToCategoryRecommendedSetting
+# New-MgBetaDeviceManagementTemplateMigratableToCategoryRecommendedSetting
 
 ## SYNOPSIS
 Create new navigation property to recommendedSettings for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to recommendedSettings for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementTemplateMigratableToCategoryRecommendedSetting -DeviceManagementTemplateId <String>
+New-MgBetaDeviceManagementTemplateMigratableToCategoryRecommendedSetting -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateId1 <String> -DeviceManagementTemplateSettingCategoryId <String>
  [-AdditionalProperties <Hashtable>] [-DefinitionId <String>] [-Id <String>] [-ValueJson <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ New-MgDeviceManagementTemplateMigratableToCategoryRecommendedSetting -DeviceMana
 
 ### Create
 ```
-New-MgDeviceManagementTemplateMigratableToCategoryRecommendedSetting -DeviceManagementTemplateId <String>
+New-MgBetaDeviceManagementTemplateMigratableToCategoryRecommendedSetting -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateId1 <String> -DeviceManagementTemplateSettingCategoryId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementSettingInstance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementTemplateMigratableToCategoryRecommendedSetting -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementTemplateMigratableToCategoryRecommendedSetting -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementSettingInstance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementTemplateMigratableToCategoryRecommendedSetting -InputObject <IDeviceManagementIdentity>
+New-MgBetaDeviceManagementTemplateMigratableToCategoryRecommendedSetting -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DefinitionId <String>] [-Id <String>] [-ValueJson <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Base type for a setting instance
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -221,13 +221,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance
 
 ## NOTES
 

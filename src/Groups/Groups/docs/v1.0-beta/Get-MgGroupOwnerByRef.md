@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupownerbyref
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupownerbyref
 schema: 2.0.0
 ---
 
-# Get-MgGroupOwnerByRef
+# Get-MgBetaGroupOwnerByRef
 
 ## SYNOPSIS
 The owners of the group who can be users or service principals.
@@ -17,7 +17,7 @@ For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayNa
 ## SYNTAX
 
 ```
-Get-MgGroupOwnerByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Get-MgBetaGroupOwnerByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

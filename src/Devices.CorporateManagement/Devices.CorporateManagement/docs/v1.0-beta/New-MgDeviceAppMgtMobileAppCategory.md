@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmobileappcategory
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmobileappcategory
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtMobileAppCategory
+# New-MgBetaDeviceAppMgtMobileAppCategory
 
 ## SYNOPSIS
 Create new navigation property to mobileAppCategories for deviceAppManagement
@@ -14,13 +14,13 @@ Create new navigation property to mobileAppCategories for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtMobileAppCategory [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+New-MgBetaDeviceAppMgtMobileAppCategory [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtMobileAppCategory -BodyParameter <IMicrosoftGraphMobileAppCategory> [-Confirm] [-WhatIf]
+New-MgBetaDeviceAppMgtMobileAppCategory -BodyParameter <IMicrosoftGraphMobileAppCategory> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Contains properties for a single Intune app category.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppCategory
 Parameter Sets: Create
 Aliases:
 
@@ -144,17 +144,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppCategory
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppCategory
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementMobileAppCategory
+### New-MgBetaDeviceAppManagementMobileAppCategory
 
 COMPLEX PARAMETER PROPERTIES
 

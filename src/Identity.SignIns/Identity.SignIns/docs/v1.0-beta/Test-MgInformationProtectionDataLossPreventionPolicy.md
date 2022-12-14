@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/test-mginformationprotectiondatalosspreventionpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/test-mginformationprotectiondatalosspreventionpolicy
 schema: 2.0.0
 ---
 
-# Test-MgInformationProtectionDataLossPreventionPolicy
+# Test-MgBetaInformationProtectionDataLossPreventionPolicy
 
 ## SYNOPSIS
 Invoke action evaluate
@@ -14,14 +14,14 @@ Invoke action evaluate
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgInformationProtectionDataLossPreventionPolicy [-AdditionalProperties <Hashtable>]
+Test-MgBetaInformationProtectionDataLossPreventionPolicy [-AdditionalProperties <Hashtable>]
  [-EvaluationInput <IMicrosoftGraphDlpEvaluationInput>] [-NotificationInfo <IMicrosoftGraphDlpNotification>]
  [-Target <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Evaluate
 ```
-Test-MgInformationProtectionDataLossPreventionPolicy
+Test-MgBetaInformationProtectionDataLossPreventionPolicy
  -BodyParameter <IPaths1JhdydfInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1JhdydfInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1JhdydfInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate
 Aliases:
 
@@ -69,7 +69,7 @@ dlpEvaluationInput
 To construct, please use Get-Help -Online and see NOTES section for EVALUATIONINPUT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDlpEvaluationInput
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDlpEvaluationInput
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -85,7 +85,7 @@ dlpNotification
 To construct, please use Get-Help -Online and see NOTES section for NOTIFICATIONINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDlpNotification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDlpNotification
 Parameter Sets: EvaluateExpanded
 Aliases:
 
@@ -147,11 +147,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1JhdydfInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1JhdydfInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDlpEvaluatePoliciesJobResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDlpEvaluatePoliciesJobResponse
 
 ## NOTES
 

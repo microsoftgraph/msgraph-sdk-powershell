@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicypermissiongrantpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicypermissiongrantpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyPermissionGrantPolicy
+# Get-MgBetaPolicyPermissionGrantPolicy
 
 ## SYNOPSIS
 The policy that specifies the conditions under which consent can be granted.
@@ -14,20 +14,20 @@ The policy that specifies the conditions under which consent can be granted.
 
 ### List (Default)
 ```
-Get-MgPolicyPermissionGrantPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPolicyPermissionGrantPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,8 +38,8 @@ The policy that specifies the conditions under which consent can be granted.
 
 ### Example 1:  List all permission grant policies
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant"  
-Get-MgPolicyPermissionGrantPolicy | fl  
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant"  
+Get-MgBetaPolicyPermissionGrantPolicy | fl  
 
 DeletedDateTime      :
 Description          : Includes all application permissions (app roles), for all APIs, for any client application.
@@ -66,8 +66,8 @@ This command retrieves a list of all permission grant policies in Azure AD.
 
 ### Example 2: Get a permission grant policy by ID
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant"  
-Get-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId "microsoft-all-application-permissions" | fl  
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant"  
+Get-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId "microsoft-all-application-permissions" | fl  
 
 DeletedDateTime      :
 Description          : Includes all application permissions (app roles), for all APIs, for any client application.
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy1
 
 ## NOTES
 

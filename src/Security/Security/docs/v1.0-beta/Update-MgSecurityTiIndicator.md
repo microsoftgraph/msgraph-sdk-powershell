@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritytiindicator
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritytiindicator
 schema: 2.0.0
 ---
 
-# Update-MgSecurityTiIndicator
+# Update-MgBetaSecurityTiIndicator
 
 ## SYNOPSIS
 Update the navigation property tiIndicators in security
@@ -14,7 +14,7 @@ Update the navigation property tiIndicators in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityTiIndicator -TiIndicatorId <String> [-Action <String>] [-ActivityGroupNames <String[]>]
+Update-MgBetaSecurityTiIndicator -TiIndicatorId <String> [-Action <String>] [-ActivityGroupNames <String[]>]
  [-AdditionalInformation <String>] [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
  [-Confidence <Int32>] [-Description <String>] [-DiamondModel <String>] [-DomainName <String>]
  [-EmailEncoding <String>] [-EmailLanguage <String>] [-EmailRecipient <String>] [-EmailSenderAddress <String>]
@@ -35,19 +35,19 @@ Update-MgSecurityTiIndicator -TiIndicatorId <String> [-Action <String>] [-Activi
 
 ### Update
 ```
-Update-MgSecurityTiIndicator -TiIndicatorId <String> -BodyParameter <IMicrosoftGraphTiIndicator> [-PassThru]
+Update-MgBetaSecurityTiIndicator -TiIndicatorId <String> -BodyParameter <IMicrosoftGraphTiIndicator> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityTiIndicator -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphTiIndicator>
+Update-MgBetaSecurityTiIndicator -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphTiIndicator>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityTiIndicator -InputObject <ISecurityIdentity> [-Action <String>]
+Update-MgBetaSecurityTiIndicator -InputObject <ISecurityIdentity> [-Action <String>]
  [-ActivityGroupNames <String[]>] [-AdditionalInformation <String>] [-AdditionalProperties <Hashtable>]
  [-AzureTenantId <String>] [-Confidence <Int32>] [-Description <String>] [-DiamondModel <String>]
  [-DomainName <String>] [-EmailEncoding <String>] [-EmailLanguage <String>] [-EmailRecipient <String>]
@@ -72,30 +72,30 @@ Update the navigation property tiIndicators in security
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityTiIndicator Cmdlet
+### Example 1: Using the Update-MgBetaSecurityTiIndicator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Description = "description-updated"
 }
-Update-MgSecurityTiIndicator -TiIndicatorId $tiIndicatorId -BodyParameter $params
+Update-MgBetaSecurityTiIndicator -TiIndicatorId $tiIndicatorId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityTiIndicator Cmdlet.
+This example shows how to use the Update-MgBetaSecurityTiIndicator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Update-MgSecurityTiIndicator Cmdlet
+### Example 2: Using the Update-MgBetaSecurityTiIndicator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	AdditionalInformation = "additionalInformation-after-update"
 	Confidence = 42
 	Description = "description-after-update"
 }
-Update-MgSecurityTiIndicator -TiIndicatorId $tiIndicatorId -BodyParameter $params
+Update-MgBetaSecurityTiIndicator -TiIndicatorId $tiIndicatorId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityTiIndicator Cmdlet.
+This example shows how to use the Update-MgBetaSecurityTiIndicator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -183,7 +183,7 @@ tiIndicator
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -614,7 +614,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -1127,9 +1127,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

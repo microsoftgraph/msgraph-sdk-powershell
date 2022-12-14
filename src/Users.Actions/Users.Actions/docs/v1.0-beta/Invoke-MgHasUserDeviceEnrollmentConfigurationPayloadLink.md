@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mghasuserdeviceenrollmentconfigurationpayloadlink
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mghasuserdeviceenrollmentconfigurationpayloadlink
 schema: 2.0.0
 ---
 
-# Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink
+# Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink
 
 ## SYNOPSIS
 Invoke action hasPayloadLinks
@@ -14,27 +14,27 @@ Invoke action hasPayloadLinks
 
 ### HasExpanded (Default)
 ```
-Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink -UserId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink -UserId <String> [-AdditionalProperties <Hashtable>]
  [-PayloadIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Has
 ```
-Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink -UserId <String>
+Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink -UserId <String>
  -BodyParameter <IPaths1R7K6PzUsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### HasViaIdentity
 ```
-Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1R7K6PzUsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### HasViaIdentityExpanded
 ```
-Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-PayloadIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1R7K6PzUsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1R7K6PzUsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Has, HasViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: HasViaIdentity, HasViaIdentityExpanded
 Aliases:
 
@@ -158,13 +158,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1R7K6PzUsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1R7K6PzUsersUserIdDeviceenrollmentconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
 
 ## NOTES
 

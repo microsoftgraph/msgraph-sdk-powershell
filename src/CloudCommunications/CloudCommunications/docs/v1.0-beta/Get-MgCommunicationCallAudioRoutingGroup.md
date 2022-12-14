@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationcallaudioroutinggroup
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationcallaudioroutinggroup
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationCallAudioRoutingGroup
+# Get-MgBetaCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
 Get audioRoutingGroups from communications
@@ -14,20 +14,20 @@ Get audioRoutingGroups from communications
 
 ### List1 (Default)
 ```
-Get-MgCommunicationCallAudioRoutingGroup -CallId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaCommunicationCallAudioRoutingGroup -CallId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgCommunicationCallAudioRoutingGroup -AudioRoutingGroupId <String> -CallId <String>
+Get-MgBetaCommunicationCallAudioRoutingGroup -AudioRoutingGroupId <String> -CallId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity>
+Get-MgBetaCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get audioRoutingGroups from communications
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgCommunicationCallAudioRoutingGroup Cmdlet
+### Example 1: Using the Get-MgBetaCommunicationCallAudioRoutingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallAudioRoutingGroup -CallId $callId -AudioRoutingGroupId $audioRoutingGroupId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallAudioRoutingGroup -CallId $callId -AudioRoutingGroupId $audioRoutingGroupId
 ```
 
-This example shows how to use the Get-MgCommunicationCallAudioRoutingGroup Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallAudioRoutingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgCommunicationCallAudioRoutingGroup Cmdlet
+### Example 2: Using the Get-MgBetaCommunicationCallAudioRoutingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallAudioRoutingGroup -CallId $callId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallAudioRoutingGroup -CallId $callId
 ```
 
-This example shows how to use the Get-MgCommunicationCallAudioRoutingGroup Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallAudioRoutingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup1
 
 ## NOTES
 

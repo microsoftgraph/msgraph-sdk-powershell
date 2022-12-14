@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2cuserflowlanguageoverridepage
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2cuserflowlanguageoverridepage
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2CUserFlowLanguageOverridePage
+# Get-MgBetaIdentityB2CUserFlowLanguageOverridePage
 
 ## SYNOPSIS
 Collection of pages with the overrides messages to display in a user flow for a specified language.
@@ -15,7 +15,7 @@ This collection only allows to modify the content of the page, any other modific
 
 ### List (Default)
 ```
-Get-MgIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
+Get-MgBetaIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -23,14 +23,14 @@ Get-MgIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
 
 ### Get
 ```
-Get-MgIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
+Get-MgBetaIdentityB2CUserFlowLanguageOverridePage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityB2CUserFlowLanguageOverridePage -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaIdentityB2CUserFlowLanguageOverridePage -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,13 +40,13 @@ This collection only allows to modify the content of the page, any other modific
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityB2CUserFlowLanguageOverridePage Cmdlet
+### Example 1: Using the Get-MgBetaIdentityB2CUserFlowLanguageOverridePage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlowLanguageOverridePage -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlowLanguageOverridePage -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlowLanguageOverridePage Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlowLanguageOverridePage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -268,11 +268,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserFlowLanguagePage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguagePage
 
 ### System.String
 

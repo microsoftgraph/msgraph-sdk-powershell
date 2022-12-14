@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationonlinemeetingvirtualappointment
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationonlinemeetingvirtualappointment
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationOnlineMeetingVirtualAppointment
+# Get-MgBetaCommunicationOnlineMeetingVirtualAppointment
 
 ## SYNOPSIS
 Get virtualAppointment from communications
@@ -14,13 +14,13 @@ Get virtualAppointment from communications
 
 ### Get (Default)
 ```
-Get-MgCommunicationOnlineMeetingVirtualAppointment -OnlineMeetingId <String> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationOnlineMeetingVirtualAppointment -OnlineMeetingId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgCommunicationOnlineMeetingVirtualAppointment -InputObject <ICloudCommunicationsIdentity>
+Get-MgBetaCommunicationOnlineMeetingVirtualAppointment -InputObject <ICloudCommunicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualAppointment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualAppointment
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanycountryregion
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanycountryregion
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyCountryRegion
+# New-MgBetaFinancialCompanyCountryRegion
 
 ## SYNOPSIS
 Create new navigation property to countriesRegions for financials
@@ -14,26 +14,26 @@ Create new navigation property to countriesRegions for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyCountryRegion -CompanyId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyCountryRegion -CompanyId <String> [-AdditionalProperties <Hashtable>]
  [-AddressFormat <String>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgFinancialCompanyCountryRegion -CompanyId <String> -BodyParameter <IMicrosoftGraphCountryRegion>
+New-MgBetaFinancialCompanyCountryRegion -CompanyId <String> -BodyParameter <IMicrosoftGraphCountryRegion>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphCountryRegion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyCountryRegion -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-AddressFormat <String>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -80,7 +80,7 @@ countryRegion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCountryRegion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCountryRegion
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -157,7 +157,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -219,13 +219,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCountryRegion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCountryRegion
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCountryRegion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCountryRegion
 
 ## NOTES
 

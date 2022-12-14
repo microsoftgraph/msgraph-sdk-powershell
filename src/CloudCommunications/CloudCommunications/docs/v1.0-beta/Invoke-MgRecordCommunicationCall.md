@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgrecordcommunicationcall
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mgrecordcommunicationcall
 schema: 2.0.0
 ---
 
-# Invoke-MgRecordCommunicationCall
+# Invoke-MgBetaRecordCommunicationCall
 
 ## SYNOPSIS
 Invoke action record
@@ -14,7 +14,7 @@ Invoke action record
 
 ### RecordExpanded (Default)
 ```
-Invoke-MgRecordCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>] [-BargeInAllowed]
+Invoke-MgBetaRecordCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>] [-BargeInAllowed]
  [-ClientContext <String>] [-InitialSilenceTimeoutInSeconds <Int32>] [-MaxRecordDurationInSeconds <Int32>]
  [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep] [-Prompts <IMicrosoftGraphPrompt[]>]
  [-StopTones <String[]>] [-StreamWhileRecording] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Invoke-MgRecordCommunicationCall -CallId <String> [-AdditionalProperties <Hashta
 
 ### Record
 ```
-Invoke-MgRecordCommunicationCall -CallId <String>
+Invoke-MgBetaRecordCommunicationCall -CallId <String>
  -BodyParameter <IPaths1Mdqe66CommunicationsCallsCallIdMicrosoftGraphRecordPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecordViaIdentity
 ```
-Invoke-MgRecordCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaRecordCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1Mdqe66CommunicationsCallsCallIdMicrosoftGraphRecordPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecordViaIdentityExpanded
 ```
-Invoke-MgRecordCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaRecordCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-BargeInAllowed] [-ClientContext <String>]
  [-InitialSilenceTimeoutInSeconds <Int32>] [-MaxRecordDurationInSeconds <Int32>]
  [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep] [-Prompts <IMicrosoftGraphPrompt[]>]
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Mdqe66CommunicationsCallsCallIdMicrosoftGraphRecordPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Mdqe66CommunicationsCallsCallIdMicrosoftGraphRecordPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Record, RecordViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: RecordViaIdentity, RecordViaIdentityExpanded
 Aliases:
 
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrompt[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrompt[]
 Parameter Sets: RecordExpanded, RecordViaIdentityExpanded
 Aliases:
 
@@ -283,13 +283,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Mdqe66CommunicationsCallsCallIdMicrosoftGraphRecordPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Mdqe66CommunicationsCallsCallIdMicrosoftGraphRecordPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecordOperation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecordOperation1
 
 ## NOTES
 

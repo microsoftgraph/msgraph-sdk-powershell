@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementandroidforworksetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementandroidforworksetting
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementAndroidForWorkSetting
+# Get-MgBetaDeviceManagementAndroidForWorkSetting
 
 ## SYNOPSIS
 The singleton Android for Work settings entity.
@@ -13,7 +13,7 @@ The singleton Android for Work settings entity.
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementAndroidForWorkSetting [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceManagementAndroidForWorkSetting [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkSettings
 
 ## NOTES
 

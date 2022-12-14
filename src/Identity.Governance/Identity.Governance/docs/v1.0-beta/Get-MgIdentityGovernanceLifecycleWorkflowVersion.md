@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowversion
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowversion
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowVersion
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion
 
 ## SYNOPSIS
 The workflow versions that are available.
@@ -14,20 +14,20 @@ The workflow versions that are available.
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowVersion -WorkflowId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowVersion -WorkflowId <String> -WorkflowVersionNumber <Int32>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId <String> -WorkflowVersionNumber <Int32>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowVersion -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The workflow versions that are available.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityGovernanceLifecycleWorkflowVersion Cmdlet
+### Example 1: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowVersion -WorkflowId $workflowId -WorkflowVersionVersionNumber $workflowVersionVersionNumber
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId $workflowId -WorkflowVersionVersionNumber $workflowVersionVersionNumber
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowVersion Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityGovernanceLifecycleWorkflowVersion Cmdlet
+### Example 2: Using the Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgIdentityGovernanceLifecycleWorkflowVersion -WorkflowId $workflowId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId $workflowId
 ```
 
-This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowVersion Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflowVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflowVersion
 
 ## NOTES
 

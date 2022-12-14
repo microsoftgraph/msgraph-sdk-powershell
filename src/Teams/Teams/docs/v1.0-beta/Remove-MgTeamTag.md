@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamtag
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgteamtag
 schema: 2.0.0
 ---
 
-# Remove-MgTeamTag
+# Remove-MgBetaTeamTag
 
 ## SYNOPSIS
 Delete navigation property tags for teams
@@ -14,13 +14,13 @@ Delete navigation property tags for teams
 
 ### Delete1 (Default)
 ```
-Remove-MgTeamTag -TeamId <String> -TeamworkTagId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaTeamTag -TeamId <String> -TeamworkTagId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgTeamTag -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaTeamTag -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property tags for teams
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgTeamTag Cmdlet
+### Example 1: Using the Remove-MgBetaTeamTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
 ```
 
-This example shows how to use the Remove-MgTeamTag Cmdlet.
+This example shows how to use the Remove-MgBetaTeamTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

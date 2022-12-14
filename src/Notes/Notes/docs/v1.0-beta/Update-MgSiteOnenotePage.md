@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/update-mgsiteonenotepage
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/update-mgsiteonenotepage
 schema: 2.0.0
 ---
 
-# Update-MgSiteOnenotePage
+# Update-MgBetaSiteOnenotePage
 
 ## SYNOPSIS
 Update the navigation property pages in sites
@@ -14,7 +14,7 @@ Update the navigation property pages in sites
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgSiteOnenotePage -OnenotePageId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSiteOnenotePage -OnenotePageId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-ContentUrl <String>] [-CreatedByAppId <String>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Level <Int32>] [-Links <IMicrosoftGraphPageLinks>]
  [-Order <Int32>] [-ParentNotebook <IMicrosoftGraphNotebook1>]
@@ -24,19 +24,19 @@ Update-MgSiteOnenotePage -OnenotePageId <String> -SiteId <String> [-AdditionalPr
 
 ### Update1
 ```
-Update-MgSiteOnenotePage -OnenotePageId <String> -SiteId <String> -BodyParameter <IMicrosoftGraphOnenotePage>
+Update-MgBetaSiteOnenotePage -OnenotePageId <String> -SiteId <String> -BodyParameter <IMicrosoftGraphOnenotePage>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgSiteOnenotePage -InputObject <INotesIdentity> -BodyParameter <IMicrosoftGraphOnenotePage> [-PassThru]
+Update-MgBetaSiteOnenotePage -InputObject <INotesIdentity> -BodyParameter <IMicrosoftGraphOnenotePage> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgSiteOnenotePage -InputObject <INotesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaSiteOnenotePage -InputObject <INotesIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-ContentUrl <String>] [-CreatedByAppId <String>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Level <Int32>] [-Links <IMicrosoftGraphPageLinks>]
  [-Order <Int32>] [-ParentNotebook <IMicrosoftGraphNotebook1>]
@@ -71,7 +71,7 @@ onenotePage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenotePage
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -217,7 +217,7 @@ pageLinks
 To construct, please use Get-Help -Online and see NOTES section for LINKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPageLinks
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPageLinks
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -264,7 +264,7 @@ notebook
 To construct, please use Get-Help -Online and see NOTES section for PARENTNOTEBOOK properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotebook1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotebook1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -280,7 +280,7 @@ onenoteSection
 To construct, please use Get-Help -Online and see NOTES section for PARENTSECTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteSection1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteSection1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -403,9 +403,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenotePage
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 

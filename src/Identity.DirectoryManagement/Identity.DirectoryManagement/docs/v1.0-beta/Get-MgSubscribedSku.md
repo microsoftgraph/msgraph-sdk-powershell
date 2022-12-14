@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgsubscribedsku
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgsubscribedsku
 schema: 2.0.0
 ---
 
-# Get-MgSubscribedSku
+# Get-MgBetaSubscribedSku
 
 ## SYNOPSIS
 Get a specific commercial subscription that an organization has acquired.
@@ -14,18 +14,18 @@ Get a specific commercial subscription that an organization has acquired.
 
 ### List (Default)
 ```
-Get-MgSubscribedSku [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-All]
+Get-MgBetaSubscribedSku [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSubscribedSku -SubscribedSkuId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSubscribedSku -SubscribedSkuId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-Property <String[]>]
+Get-MgBetaSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get a specific commercial subscription that an organization has acquired.
 
 ### Example 1: Get subscribed SKUs
 ```powershell
-Get-MgSubscribedSKU | Format-List
+Get-MgBetaSubscribedSKU | Format-List
 
 AppliesTo            : User
 CapabilityStatus     : Enabled
 ConsumedUnits        : 23
 Id                   : fb625e04-52aa-42da-b10d-14f1195d665f_cbdc14ab-d96c-4c30-b9f4-6ada7cdc1d46
-PrepaidUnits         : Microsoft.Graph.PowerShell.Models.MicrosoftGraphLicenseUnitsDetail
+PrepaidUnits         : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphLicenseUnitsDetail
 ServicePlans         : {M365_LIGHTHOUSE_PARTNER_PLAN1, WINDOWSUPDATEFORBUSINESS_DEPLOYMENTSERVICE, UNIVERSAL_PRINT_01,
                        M365_LIGHTHOUSE_CUSTOMER_PLAN1...}
 SkuId                : cbdc14ab-d96c-4c30-b9f4-6ada7cdc1d46
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -182,11 +182,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscribedSku
 
 ## NOTES
 

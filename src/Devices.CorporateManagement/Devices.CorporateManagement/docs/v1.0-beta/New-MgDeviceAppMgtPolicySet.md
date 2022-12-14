@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtpolicyset
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtpolicyset
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtPolicySet
+# New-MgBetaDeviceAppMgtPolicySet
 
 ## SYNOPSIS
 Create new navigation property to policySets for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to policySets for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtPolicySet [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtPolicySet [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphPolicySetAssignment[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-ErrorCode <ErrorCode>] [-GuidedDeploymentTags <String[]>] [-Id <String>]
  [-Items <IMicrosoftGraphPolicySetItem[]>] [-LastModifiedDateTime <DateTime>] [-RoleScopeTags <String[]>]
@@ -23,7 +23,7 @@ New-MgDeviceAppMgtPolicySet [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceAppMgtPolicySet -BodyParameter <IMicrosoftGraphPolicySet> [-Confirm] [-WhatIf]
+New-MgBetaDeviceAppMgtPolicySet -BodyParameter <IMicrosoftGraphPolicySet> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ Assignments of the PolicySet.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -70,7 +70,7 @@ A class containing the properties used for PolicySet.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySet
 Parameter Sets: Create
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 errorCode
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ErrorCode
+Type: Microsoft.Graph.Beta.PowerShell.Support.ErrorCode
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ Items of the PolicySet with maximum count 100.
 To construct, please use Get-Help -Online and see NOTES section for ITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetItem[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 The enum to specify the status of PolicySet.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicySetStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicySetStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -269,17 +269,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySet
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySet
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementPolicySet
+### New-MgBetaDeviceAppManagementPolicySet
 
 COMPLEX PARAMETER PROPERTIES
 

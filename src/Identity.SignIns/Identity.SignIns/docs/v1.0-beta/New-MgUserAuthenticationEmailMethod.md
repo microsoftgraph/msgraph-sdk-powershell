@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationemailmethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mguserauthenticationemailmethod
 schema: 2.0.0
 ---
 
-# New-MgUserAuthenticationEmailMethod
+# New-MgBetaUserAuthenticationEmailMethod
 
 ## SYNOPSIS
 Set a user's emailAuthenticationMethod object.
@@ -16,25 +16,25 @@ A user may only have one email authentication method.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserAuthenticationEmailMethod -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserAuthenticationEmailMethod -UserId <String> [-AdditionalProperties <Hashtable>]
  [-EmailAddress <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserAuthenticationEmailMethod -UserId <String> -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod>
+New-MgBetaUserAuthenticationEmailMethod -UserId <String> -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-EmailAddress <String>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -46,16 +46,16 @@ A user may only have one email authentication method.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserAuthenticationEmailMethod Cmdlet
+### Example 1: Using the New-MgBetaUserAuthenticationEmailMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	EmailAddress = "kim@contoso.com"
 }
-New-MgUserAuthenticationEmailMethod -UserId $userId -BodyParameter $params
+New-MgBetaUserAuthenticationEmailMethod -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserAuthenticationEmailMethod Cmdlet.
+This example shows how to use the New-MgBetaUserAuthenticationEmailMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ emailAuthenticationMethod
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -189,13 +189,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mguserteamworkinstalledapp
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mguserteamworkinstalledapp
 schema: 2.0.0
 ---
 
-# Remove-MgUserTeamworkInstalledApp
+# Remove-MgBetaUserTeamworkInstalledApp
 
 ## SYNOPSIS
 Delete navigation property installedApps for users
@@ -14,13 +14,13 @@ Delete navigation property installedApps for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserTeamworkInstalledApp -UserId <String> -UserScopeTeamsAppInstallationId <String>
+Remove-MgBetaUserTeamworkInstalledApp -UserId <String> -UserScopeTeamsAppInstallationId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserTeamworkInstalledApp -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserTeamworkInstalledApp -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property installedApps for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserTeamworkInstalledApp Cmdlet
+### Example 1: Using the Remove-MgBetaUserTeamworkInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgUserTeamworkInstalledApp -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaUserTeamworkInstalledApp -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
 ```
 
-This example shows how to use the Remove-MgUserTeamworkInstalledApp Cmdlet.
+This example shows how to use the Remove-MgBetaUserTeamworkInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgauditlogsignin
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgauditlogsignin
 schema: 2.0.0
 ---
 
-# Get-MgAuditLogSignIn
+# Get-MgBetaAuditLogSignIn
 
 ## SYNOPSIS
 Get signIns from auditLogs
@@ -14,20 +14,20 @@ Get signIns from auditLogs
 
 ### List1 (Default)
 ```
-Get-MgAuditLogSignIn [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaAuditLogSignIn [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgAuditLogSignIn -SignInId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaAuditLogSignIn -SignInId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgAuditLogSignIn -InputObject <IReportsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaAuditLogSignIn -InputObject <IReportsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,40 +36,40 @@ Get signIns from auditLogs
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAuditLogSignIn Cmdlet
+### Example 1: Using the Get-MgBetaAuditLogSignIn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogSignIn -SignInId $signInId
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogSignIn -SignInId $signInId
 ```
 
-This example shows how to use the Get-MgAuditLogSignIn Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogSignIn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgAuditLogSignIn Cmdlet
+### Example 2: Using the Get-MgBetaAuditLogSignIn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogSignIn
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogSignIn
 ```
 
-This example shows how to use the Get-MgAuditLogSignIn Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogSignIn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgAuditLogSignIn Cmdlet
+### Example 3: Using the Get-MgBetaAuditLogSignIn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogSignIn -Filter "startsWith(appDisplayName,'Azure')" -Top 10 
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogSignIn -Filter "startsWith(appDisplayName,'Azure')" -Top 10 
 ```
 
-This example shows how to use the Get-MgAuditLogSignIn Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogSignIn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgAuditLogSignIn Cmdlet
+### Example 4: Using the Get-MgBetaAuditLogSignIn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogSignIn -Filter "(signInEventTypes/any(t: t ne 'interactiveUser'))" -Sort "createdDateTime DESC" -Top 10 
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogSignIn -Filter "(signInEventTypes/any(t: t ne 'interactiveUser'))" -Sort "createdDateTime DESC" -Top 10 
 ```
 
-This example shows how to use the Get-MgAuditLogSignIn Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogSignIn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -261,11 +261,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSignIn1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSignIn1
 
 ## NOTES
 

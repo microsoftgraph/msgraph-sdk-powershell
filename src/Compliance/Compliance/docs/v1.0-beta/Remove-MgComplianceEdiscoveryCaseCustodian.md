@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/remove-mgcomplianceediscoverycasecustodian
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/remove-mgcomplianceediscoverycasecustodian
 schema: 2.0.0
 ---
 
-# Remove-MgComplianceEdiscoveryCaseCustodian
+# Remove-MgBetaComplianceEdiscoveryCaseCustodian
 
 ## SYNOPSIS
 Delete navigation property custodians for compliance
@@ -14,13 +14,13 @@ Delete navigation property custodians for compliance
 
 ### Delete (Default)
 ```
-Remove-MgComplianceEdiscoveryCaseCustodian -CaseId <String> -CustodianId <String> [-IfMatch <String>]
+Remove-MgBetaComplianceEdiscoveryCaseCustodian -CaseId <String> -CustodianId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgComplianceEdiscoveryCaseCustodian -InputObject <IComplianceIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaComplianceEdiscoveryCaseCustodian -InputObject <IComplianceIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

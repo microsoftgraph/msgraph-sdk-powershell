@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgreorderdevicemanagementconfigurationpolicy
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgreorderdevicemanagementconfigurationpolicy
 schema: 2.0.0
 ---
 
-# Invoke-MgReorderDeviceManagementConfigurationPolicy
+# Invoke-MgBetaReorderDeviceManagementConfigurationPolicy
 
 ## SYNOPSIS
 Invoke action reorder
@@ -14,27 +14,27 @@ Invoke action reorder
 
 ### ReorderExpanded (Default)
 ```
-Invoke-MgReorderDeviceManagementConfigurationPolicy -DeviceManagementConfigurationPolicyId <String>
+Invoke-MgBetaReorderDeviceManagementConfigurationPolicy -DeviceManagementConfigurationPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Priority <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Reorder
 ```
-Invoke-MgReorderDeviceManagementConfigurationPolicy -DeviceManagementConfigurationPolicyId <String>
+Invoke-MgBetaReorderDeviceManagementConfigurationPolicy -DeviceManagementConfigurationPolicyId <String>
  -BodyParameter <IPaths14OmrrbDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphReorderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReorderViaIdentity
 ```
-Invoke-MgReorderDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaReorderDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths14OmrrbDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphReorderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReorderViaIdentityExpanded
 ```
-Invoke-MgReorderDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaReorderDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Priority <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths14OmrrbDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphReorderPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths14OmrrbDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphReorderPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Reorder, ReorderViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: ReorderViaIdentity, ReorderViaIdentityExpanded
 Aliases:
 
@@ -173,9 +173,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths14OmrrbDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphReorderPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths14OmrrbDevicemanagementConfigurationpoliciesDevicemanagementconfigurationpolicyIdMicrosoftGraphReorderPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

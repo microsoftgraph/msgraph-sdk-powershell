@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenanttag
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenanttag
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantTag
+# New-MgBetaTenantRelationshipManagedTenantTag
 
 ## SYNOPSIS
 Create a new tenantTag object.
@@ -14,7 +14,7 @@ Create a new tenantTag object.
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantTag [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>]
+New-MgBetaTenantRelationshipManagedTenantTag [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
  [-Tenants <IMicrosoftGraphManagedTenantsTenantInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgTenantRelationshipManagedTenantTag [-AdditionalProperties <Hashtable>] [-C
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantTag -BodyParameter <IMicrosoftGraphManagedTenantsTenantTag> [-Confirm]
+New-MgBetaTenantRelationshipManagedTenantTag -BodyParameter <IMicrosoftGraphManagedTenantsTenantTag> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,17 +31,17 @@ Create a new tenantTag object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgTenantRelationshipManagedTenantTag Cmdlet
+### Example 1: Using the New-MgBetaTenantRelationshipManagedTenantTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
+Import-Module Microsoft.Graph.Beta.ManagedTenants
 $params = @{
 	DisplayName = "Support"
 	Description = "Tenants that have purchased extended support"
 }
-New-MgTenantRelationshipManagedTenantTag -BodyParameter $params
+New-MgBetaTenantRelationshipManagedTenantTag -BodyParameter $params
 ```
 
-This example shows how to use the New-MgTenantRelationshipManagedTenantTag Cmdlet.
+This example shows how to use the New-MgBetaTenantRelationshipManagedTenantTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -66,7 +66,7 @@ tenantTag
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
 Parameter Sets: Create
 Aliases:
 
@@ -218,7 +218,7 @@ Optional.
 To construct, please use Get-Help -Online and see NOTES section for TENANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantInfo[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -265,11 +265,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantTag
 
 ## NOTES
 

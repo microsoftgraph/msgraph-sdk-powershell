@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointonpremisesconnection
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointonpremisesconnection
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementVirtualEndpointOnPremisesConnection
+# New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
 Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
@@ -14,7 +14,7 @@ Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementVirtualEndpointOnPremisesConnection [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection [-AdditionalProperties <Hashtable>]
  [-AdDomainName <String>] [-AdDomainPassword <String>] [-AdDomainUsername <String>]
  [-AlternateResourceUrl <String>] [-DisplayName <String>] [-HealthCheckStatus <String>]
  [-HealthCheckStatusDetails <IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails>] [-Id <String>] [-InUse]
@@ -25,7 +25,7 @@ New-MgDeviceManagementVirtualEndpointOnPremisesConnection [-AdditionalProperties
 
 ### Create
 ```
-New-MgDeviceManagementVirtualEndpointOnPremisesConnection
+New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection
  -BodyParameter <IMicrosoftGraphCloudPcOnPremisesConnection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -34,11 +34,11 @@ Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcOnPremisesConnection"
+	"@odata.type" = "#Microsoft.Graph.Beta.cloudPcOnPremisesConnection"
 	DisplayName = "test-canary-02"
 	Type = "hybridAzureADJoin"
 	SubscriptionId = "0ac520ee-14c0-480f-b6c9-0a90c585ffff"
@@ -50,10 +50,10 @@ $params = @{
 	VirtualNetworkId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c585ad47/resourceGroups/CustomerRG/providers/Microsoft.Network/virtualNetworks/canary01-MyVNET"
 	SubnetId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c585ad47/resourceGroups/CustomerRG/providers/Microsoft.Network/virtualNetworks/canary01-MyVNET/subnets/canary01-Subnet"
 }
-New-MgDeviceManagementVirtualEndpointOnPremisesConnection -BodyParameter $params
+New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -142,7 +142,7 @@ cloudPcOnPremisesConnection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
 Parameter Sets: Create
 Aliases:
 
@@ -188,7 +188,7 @@ cloudPcOnPremisesConnectionStatusDetails
 To construct, please use Get-Help -Online and see NOTES section for HEALTHCHECKSTATUSDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -397,11 +397,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcOnPremisesConnection
 
 ## NOTES
 

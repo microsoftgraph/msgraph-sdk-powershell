@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/new-mgdevicemanagementmicrosofttunnelserverlogcollectionresponsedownloadurl
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/new-mgdevicemanagementmicrosofttunnelserverlogcollectionresponsedownloadurl
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
+# New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
 
 ## SYNOPSIS
 Invoke action createDownloadUrl
@@ -14,25 +14,25 @@ Invoke action createDownloadUrl
 
 ### Create (Default)
 ```
-New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
+New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
  -MicrosoftTunnelServerLogCollectionResponseId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
+New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
  -InputObject <IDeviceManagementActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Generate
 ```
-New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
+New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
  -MicrosoftTunnelServerLogCollectionResponseId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GenerateViaIdentity
 ```
-New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
+New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
  -InputObject <IDeviceManagementActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -48,7 +48,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CreateViaIdentity, GenerateViaIdentity
 Aliases:
 
@@ -110,7 +110,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

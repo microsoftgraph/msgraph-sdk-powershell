@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgserviceprincipalriskdetection
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgserviceprincipalriskdetection
 schema: 2.0.0
 ---
 
-# New-MgServicePrincipalRiskDetection
+# New-MgBetaServicePrincipalRiskDetection
 
 ## SYNOPSIS
 Create new navigation property to servicePrincipalRiskDetections for identityProtection
@@ -14,7 +14,7 @@ Create new navigation property to servicePrincipalRiskDetections for identityPro
 
 ### CreateExpanded (Default)
 ```
-New-MgServicePrincipalRiskDetection [-Activity <String>] [-ActivityDateTime <DateTime>]
+New-MgBetaServicePrincipalRiskDetection [-Activity <String>] [-ActivityDateTime <DateTime>]
  [-AdditionalInfo <String>] [-AdditionalProperties <Hashtable>] [-AppId <String>] [-CorrelationId <String>]
  [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>] [-Id <String>] [-IPAddress <String>]
  [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>] [-Location <IMicrosoftGraphSignInLocation>]
@@ -25,7 +25,7 @@ New-MgServicePrincipalRiskDetection [-Activity <String>] [-ActivityDateTime <Dat
 
 ### Create
 ```
-New-MgServicePrincipalRiskDetection -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Confirm]
+New-MgBetaServicePrincipalRiskDetection -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ servicePrincipalRiskDetection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
 Parameter Sets: Create
 Aliases:
 
@@ -244,7 +244,7 @@ signInLocation
 To construct, please use Get-Help -Online and see NOTES section for LOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSignInLocation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSignInLocation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -432,11 +432,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
 
 ## NOTES
 

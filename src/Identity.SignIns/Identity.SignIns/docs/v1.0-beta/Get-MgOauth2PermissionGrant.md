@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgoauth2permissiongrant
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgoauth2permissiongrant
 schema: 2.0.0
 ---
 
-# Get-MgOauth2PermissionGrant
+# Get-MgBetaOauth2PermissionGrant
 
 ## SYNOPSIS
 Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object.
@@ -15,20 +15,20 @@ An **oAuth2PermissionGrant** represents delegated permissions which have been gr
 
 ### List (Default)
 ```
-Get-MgOauth2PermissionGrant [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaOauth2PermissionGrant [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgOauth2PermissionGrant -OAuth2PermissionGrantId <String> [-ExpandProperty <String[]>]
+Get-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ An **oAuth2PermissionGrant** represents delegated permissions which have been gr
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOauth2PermissionGrant Cmdlet
+### Example 1: Using the Get-MgBetaOauth2PermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
 ```
 
-This example shows how to use the Get-MgOauth2PermissionGrant Cmdlet.
+This example shows how to use the Get-MgBetaOauth2PermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgOauth2PermissionGrant Cmdlet
+### Example 2: Using the Get-MgBetaOauth2PermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgOauth2PermissionGrant
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaOauth2PermissionGrant
 ```
 
-This example shows how to use the Get-MgOauth2PermissionGrant Cmdlet.
+This example shows how to use the Get-MgBetaOauth2PermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -245,11 +245,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mgteamworkdevice
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mgteamworkdevice
 schema: 2.0.0
 ---
 
-# New-MgTeamworkDevice
+# New-MgBetaTeamworkDevice
 
 ## SYNOPSIS
 Create new navigation property to devices for teamwork
@@ -14,7 +14,7 @@ Create new navigation property to devices for teamwork
 
 ### CreateExpanded (Default)
 ```
-New-MgTeamworkDevice [-Activity <IMicrosoftGraphTeamworkDeviceActivity>] [-ActivityState <String>]
+New-MgBetaTeamworkDevice [-Activity <IMicrosoftGraphTeamworkDeviceActivity>] [-ActivityState <String>]
  [-AdditionalProperties <Hashtable>] [-CompanyAssetTag <String>]
  [-Configuration <IMicrosoftGraphTeamworkDeviceConfiguration>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-CurrentUser <IMicrosoftGraphTeamworkUserIdentity1>] [-DeviceType <String>]
@@ -26,7 +26,7 @@ New-MgTeamworkDevice [-Activity <IMicrosoftGraphTeamworkDeviceActivity>] [-Activ
 
 ### Create
 ```
-New-MgTeamworkDevice -BodyParameter <IMicrosoftGraphTeamworkDevice> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaTeamworkDevice -BodyParameter <IMicrosoftGraphTeamworkDevice> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,7 +41,7 @@ teamworkDeviceActivity
 To construct, please use Get-Help -Online and see NOTES section for ACTIVITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDeviceActivity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDeviceActivity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ teamworkDevice
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDevice
 Parameter Sets: Create
 Aliases:
 
@@ -118,7 +118,7 @@ teamworkDeviceConfiguration
 To construct, please use Get-Help -Online and see NOTES section for CONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDeviceConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDeviceConfiguration
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -134,7 +134,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ teamworkUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for CURRENTUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -196,7 +196,7 @@ teamworkHardwareDetail
 To construct, please use Get-Help -Online and see NOTES section for HARDWAREDETAIL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkHardwareDetail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkHardwareDetail
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ teamworkDeviceHealth
 To construct, please use Get-Help -Online and see NOTES section for HEALTH properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDeviceHealth
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDeviceHealth
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -305,7 +305,7 @@ The async operations on the device.
 To construct, please use Get-Help -Online and see NOTES section for OPERATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDeviceOperation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDeviceOperation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -352,11 +352,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDevice
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDevice
 
 ## NOTES
 

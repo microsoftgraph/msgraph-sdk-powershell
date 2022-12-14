@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mgusercalendarsinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mgusercalendarsinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Remove-MgUserCalendarSingleValueExtendedProperty
+# Remove-MgBetaUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
 Delete navigation property singleValueExtendedProperties for users
@@ -14,26 +14,26 @@ Delete navigation property singleValueExtendedProperties for users
 
 ### Delete (Default)
 ```
-Remove-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String>
+Remove-MgBetaUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String>
  -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
-Remove-MgUserCalendarSingleValueExtendedProperty -CalendarId <String>
+Remove-MgBetaUserCalendarSingleValueExtendedProperty -CalendarId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-IfMatch <String>]
+Remove-MgBetaUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-IfMatch <String>]
+Remove-MgBetaUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -79,7 +79,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
@@ -171,7 +171,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

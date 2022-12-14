@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/remove-mguseronlinemeeting
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/remove-mguseronlinemeeting
 schema: 2.0.0
 ---
 
-# Remove-MgUserOnlineMeeting
+# Remove-MgBetaUserOnlineMeeting
 
 ## SYNOPSIS
 Delete navigation property onlineMeetings for users
@@ -14,13 +14,13 @@ Delete navigation property onlineMeetings for users
 
 ### Delete (Default)
 ```
-Remove-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property onlineMeetings for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserOnlineMeeting Cmdlet
+### Example 1: Using the Remove-MgBetaUserOnlineMeeting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 # A UPN can also be used as -UserId.
-Remove-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId
+Remove-MgBetaUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId
 ```
 
-This example shows how to use the Remove-MgUserOnlineMeeting Cmdlet.
+This example shows how to use the Remove-MgBetaUserOnlineMeeting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantalertlog
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantalertlog
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantAlertLog
+# Update-MgBetaTenantRelationshipManagedTenantAlertLog
 
 ## SYNOPSIS
 Update the navigation property managedTenantAlertLogs in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managedTenantAlertLogs in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantAlertLog -ManagedTenantAlertLogId <String>
+Update-MgBetaTenantRelationshipManagedTenantAlertLog -ManagedTenantAlertLogId <String>
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-Content <IMicrosoftGraphManagedTenantsAlertLogContent>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
@@ -23,21 +23,21 @@ Update-MgTenantRelationshipManagedTenantAlertLog -ManagedTenantAlertLogId <Strin
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantAlertLog -ManagedTenantAlertLogId <String>
+Update-MgBetaTenantRelationshipManagedTenantAlertLog -ManagedTenantAlertLogId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertLog> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantAlertLog -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantAlertLog -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertLog> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantAlertLog -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantAlertLog -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-Content <IMicrosoftGraphManagedTenantsAlertLogContent>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
@@ -71,7 +71,7 @@ managedTenantAlert
 To construct, please use Get-Help -Online and see NOTES section for ALERT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ managedTenantAlertLog
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ alertLogContent
 To construct, please use Get-Help -Online and see NOTES section for CONTENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAlertLogContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAlertLogContent
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -272,9 +272,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
 
 ## OUTPUTS
 

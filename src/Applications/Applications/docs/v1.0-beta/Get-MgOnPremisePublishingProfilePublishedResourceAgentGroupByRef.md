@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgonpremisepublishingprofilepublishedresourceagentgroupbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgonpremisepublishingprofilepublishedresourceagentgroupbyref
 schema: 2.0.0
 ---
 
-# Get-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef
+# Get-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef
 
 ## SYNOPSIS
 List of onPremisesAgentGroups that a publishedResource is assigned to.
@@ -15,7 +15,7 @@ Nullable.
 ## SYNTAX
 
 ```
-Get-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId <String>
+Get-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId <String>
  -PublishedResourceId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```

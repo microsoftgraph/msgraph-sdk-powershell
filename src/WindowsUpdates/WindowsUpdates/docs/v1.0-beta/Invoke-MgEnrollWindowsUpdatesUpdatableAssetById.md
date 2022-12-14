@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/invoke-mgenrollwindowsupdatesupdatableassetbyid
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/invoke-mgenrollwindowsupdatesupdatableassetbyid
 schema: 2.0.0
 ---
 
-# Invoke-MgEnrollWindowsUpdatesUpdatableAssetById
+# Invoke-MgBetaEnrollWindowsUpdatesUpdatableAssetById
 
 ## SYNOPSIS
 Invoke action enrollAssetsById
@@ -14,13 +14,13 @@ Invoke action enrollAssetsById
 
 ### EnrollExpanded (Default)
 ```
-Invoke-MgEnrollWindowsUpdatesUpdatableAssetById [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
+Invoke-MgBetaEnrollWindowsUpdatesUpdatableAssetById [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-MemberEntityType <String>] [-UpdateCategory <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Enroll
 ```
-Invoke-MgEnrollWindowsUpdatesUpdatableAssetById
+Invoke-MgBetaEnrollWindowsUpdatesUpdatableAssetById
  -BodyParameter <IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,22 +30,22 @@ Invoke action enrollAssetsById
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgEnrollWindowsUpdatesUpdatableAssetById Cmdlet
+### Example 1: Using the Invoke-MgBetaEnrollWindowsUpdatesUpdatableAssetById Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	UpdateCategory = "feature"
-	MemberEntityType = "#microsoft.graph.windowsUpdates.azureADDevice"
+	MemberEntityType = "#Microsoft.Graph.Beta.windowsUpdates.azureADDevice"
 	Ids = @(
 		"String"
 		"String"
 		"String"
 	)
 }
-Invoke-MgEnrollWindowsUpdatesUpdatableAssetById -BodyParameter $params
+Invoke-MgBetaEnrollWindowsUpdatesUpdatableAssetById -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgEnrollWindowsUpdatesUpdatableAssetById Cmdlet.
+This example shows how to use the Invoke-MgBetaEnrollWindowsUpdatesUpdatableAssetById Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Enroll
 Aliases:
 
@@ -177,7 +177,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -187,7 +187,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgEnrollWuUpdatableAssetGraphBPreId
+### Invoke-MgBetaEnrollWuUpdatableAssetGraphBPreId
 
 COMPLEX PARAMETER PROPERTIES
 

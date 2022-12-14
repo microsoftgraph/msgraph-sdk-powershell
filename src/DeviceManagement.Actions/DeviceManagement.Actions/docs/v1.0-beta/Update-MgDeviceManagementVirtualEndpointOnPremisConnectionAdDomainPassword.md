@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/update-mgdevicemanagementvirtualendpointonpremisconnectionaddomainpassword
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/update-mgdevicemanagementvirtualendpointonpremisconnectionaddomainpassword
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
+# Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
 
 ## SYNOPSIS
 Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
@@ -15,14 +15,14 @@ This API is supported when the type of the **cloudPcOnPremisesConnection** objec
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
  -CloudPcOnPremisesConnectionId <String> [-AdditionalProperties <Hashtable>] [-AdDomainPassword <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
  -CloudPcOnPremisesConnectionId <String>
  -BodyParameter <IPaths32P85ZDevicemanagementVirtualendpointOnpremisesconnectionsCloudpconpremisesconnectionIdMicrosoftGraphUpdateaddomainpasswordPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths32P85ZDevicemanagementVirtualendpointOnpremisesconnectionsCloudpconpremisesconnectionIdMicrosoftGraphUpdateaddomainpasswordPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-AdDomainPassword <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -49,16 +49,16 @@ This API is supported when the type of the **cloudPcOnPremisesConnection** objec
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword Cmdlet
+### Example 1: Using the Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
 $params = @{
 	AdDomainPassword = "AdDomainPassword value"
 }
-Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId -BodyParameter $params
+Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword Cmdlet.
+This example shows how to use the Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths32P85ZDevicemanagementVirtualendpointOnpremisesconnectionsCloudpconpremisesconnectionIdMicrosoftGraphUpdateaddomainpasswordPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths32P85ZDevicemanagementVirtualendpointOnpremisesconnectionsCloudpconpremisesconnectionIdMicrosoftGraphUpdateaddomainpasswordPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -191,9 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths32P85ZDevicemanagementVirtualendpointOnpremisesconnectionsCloudpconpremisesconnectionIdMicrosoftGraphUpdateaddomainpasswordPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths32P85ZDevicemanagementVirtualendpointOnpremisesconnectionsCloudpconpremisesconnectionIdMicrosoftGraphUpdateaddomainpasswordPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

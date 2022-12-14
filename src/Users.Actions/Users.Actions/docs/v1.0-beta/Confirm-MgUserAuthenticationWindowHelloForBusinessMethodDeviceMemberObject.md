@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/confirm-mguserauthenticationwindowhelloforbusinessmethoddevicememberobject
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/confirm-mguserauthenticationwindowhelloforbusinessmethoddevicememberobject
 schema: 2.0.0
 ---
 
-# Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject
+# Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject
 
 ## SYNOPSIS
 Invoke action checkMemberObjects
@@ -14,14 +14,14 @@ Invoke action checkMemberObjects
 
 ### CheckExpanded (Default)
 ```
-Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject -UserId <String>
+Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check
 ```
-Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject -UserId <String>
+Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String>
  -BodyParameter <IPaths18TgfjqUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject -User
 
 ### CheckViaIdentity
 ```
-Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject
+Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject
  -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths18TgfjqUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject
 
 ### CheckViaIdentityExpanded
 ```
-Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject
+Confirm-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject
  -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths18TgfjqUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths18TgfjqUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
 Aliases:
 
@@ -177,9 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths18TgfjqUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths18TgfjqUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

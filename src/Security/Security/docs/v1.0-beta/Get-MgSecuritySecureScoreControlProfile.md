@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritysecurescorecontrolprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritysecurescorecontrolprofile
 schema: 2.0.0
 ---
 
-# Get-MgSecuritySecureScoreControlProfile
+# Get-MgBetaSecuritySecureScoreControlProfile
 
 ## SYNOPSIS
 Get secureScoreControlProfiles from security
@@ -14,20 +14,20 @@ Get secureScoreControlProfiles from security
 
 ### List (Default)
 ```
-Get-MgSecuritySecureScoreControlProfile [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSecuritySecureScoreControlProfile [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get secureScoreControlProfiles from security
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecuritySecureScoreControlProfile Cmdlet
+### Example 1: Using the Get-MgBetaSecuritySecureScoreControlProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecuritySecureScoreControlProfile
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecuritySecureScoreControlProfile
 ```
 
-This example shows how to use the Get-MgSecuritySecureScoreControlProfile Cmdlet.
+This example shows how to use the Get-MgBetaSecuritySecureScoreControlProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
 
 ## NOTES
 

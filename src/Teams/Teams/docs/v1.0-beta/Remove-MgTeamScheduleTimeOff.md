@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamscheduletimeoff
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgteamscheduletimeoff
 schema: 2.0.0
 ---
 
-# Remove-MgTeamScheduleTimeOff
+# Remove-MgBetaTeamScheduleTimeOff
 
 ## SYNOPSIS
 Delete navigation property timesOff for teams
@@ -14,13 +14,13 @@ Delete navigation property timesOff for teams
 
 ### Delete1 (Default)
 ```
-Remove-MgTeamScheduleTimeOff -TeamId <String> -TimeOffId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaTeamScheduleTimeOff -TeamId <String> -TimeOffId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property timesOff for teams
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgTeamScheduleTimeOff Cmdlet
+### Example 1: Using the Remove-MgBetaTeamScheduleTimeOff Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamScheduleTimeOff -TeamId $teamId -TimeOffId $timeOffId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamScheduleTimeOff -TeamId $teamId -TimeOffId $timeOffId
 ```
 
-This example shows how to use the Remove-MgTeamScheduleTimeOff Cmdlet.
+This example shows how to use the Remove-MgBetaTeamScheduleTimeOff Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

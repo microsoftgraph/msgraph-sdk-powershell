@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementtemplatesteptenantsummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementtemplatesteptenantsummary
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
+# Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
 
 ## SYNOPSIS
 Update the navigation property managementTemplateStepTenantSummaries in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managementTemplateStepTenantSummaries in tenantRe
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
  -ManagementTemplateStepTenantSummaryId <String> [-AdditionalProperties <Hashtable>]
  [-AssignedTenantsCount <Int32>] [-CompliantTenantsCount <Int32>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-DismissedTenantsCount <Int32>] [-Id <String>]
@@ -27,7 +27,7 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
  -ManagementTemplateStepTenantSummaryId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -35,7 +35,7 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
  -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -43,7 +43,7 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepTenantSummary
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>] [-AssignedTenantsCount <Int32>]
  [-CompliantTenantsCount <Int32>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DismissedTenantsCount <Int32>] [-Id <String>] [-IneligibleTenantsCount <Int32>]
@@ -96,7 +96,7 @@ managementTemplateStepTenantSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -203,7 +203,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -415,9 +415,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepTenantSummary
 
 ## OUTPUTS
 

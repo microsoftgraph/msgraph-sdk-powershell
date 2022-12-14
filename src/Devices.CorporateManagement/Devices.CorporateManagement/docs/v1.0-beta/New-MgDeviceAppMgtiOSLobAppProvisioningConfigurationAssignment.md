@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtioslobappprovisioningconfigurationassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtioslobappprovisioningconfigurationassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment
+# New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment
 
 ## SYNOPSIS
 Create new navigation property to assignments for deviceAppManagement
@@ -14,21 +14,21 @@ Create new navigation property to assignments for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment -IosLobAppProvisioningConfigurationId <String>
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment -IosLobAppProvisioningConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment -IosLobAppProvisioningConfigurationId <String>
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment -IosLobAppProvisioningConfigurationId <String>
  -BodyParameter <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment
+New-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ A class containing the properties used for Group Assignment of an iOS LOB App Pr
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -131,7 +131,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -178,19 +178,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementiOSLobAppProvisioningConfigurationAssignment
+### New-MgBetaDeviceAppManagementiOSLobAppProvisioningConfigurationAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

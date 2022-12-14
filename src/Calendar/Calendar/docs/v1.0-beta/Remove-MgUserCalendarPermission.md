@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mgusercalendarpermission
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mgusercalendarpermission
 schema: 2.0.0
 ---
 
-# Remove-MgUserCalendarPermission
+# Remove-MgBetaUserCalendarPermission
 
 ## SYNOPSIS
 Delete navigation property calendarPermissions for users
@@ -14,25 +14,25 @@ Delete navigation property calendarPermissions for users
 
 ### Delete (Default)
 ```
-Remove-MgUserCalendarPermission -CalendarPermissionId <String> -UserId <String> [-IfMatch <String>]
+Remove-MgBetaUserCalendarPermission -CalendarPermissionId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
-Remove-MgUserCalendarPermission -CalendarId <String> -CalendarPermissionId <String> -UserId <String>
+Remove-MgBetaUserCalendarPermission -CalendarId <String> -CalendarPermissionId <String> -UserId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,13 +41,13 @@ Delete navigation property calendarPermissions for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserCalendarPermission Cmdlet
+### Example 1: Using the Remove-MgBetaUserCalendarPermission Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-Remove-MgUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
+Import-Module Microsoft.Graph.Beta.Calendar
+Remove-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
 ```
 
-This example shows how to use the Remove-MgUserCalendarPermission Cmdlet.
+This example shows how to use the Remove-MgBetaUserCalendarPermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -102,7 +102,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
@@ -179,7 +179,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternalconnectionschema
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/get-mgexternalconnectionschema
 schema: 2.0.0
 ---
 
-# Get-MgExternalConnectionSchema
+# Get-MgBetaExternalConnectionSchema
 
 ## SYNOPSIS
 Retrieve the properties of a schema for an externalConnection.
@@ -14,13 +14,13 @@ Retrieve the properties of a schema for an externalConnection.
 
 ### Get (Default)
 ```
-Get-MgExternalConnectionSchema -ExternalConnectionId <String> [-ExpandProperty <String[]>]
+Get-MgBetaExternalConnectionSchema -ExternalConnectionId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgExternalConnectionSchema -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaExternalConnectionSchema -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Retrieve the properties of a schema for an externalConnection.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgExternalConnectionSchema Cmdlet
+### Example 1: Using the Get-MgBetaExternalConnectionSchema Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgExternalConnectionSchema -ExternalConnectionId $externalConnectionId
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaExternalConnectionSchema -ExternalConnectionId $externalConnectionId
 ```
 
-This example shows how to use the Get-MgExternalConnectionSchema Cmdlet.
+This example shows how to use the Get-MgBetaExternalConnectionSchema Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsSchema
 
 ## NOTES
 

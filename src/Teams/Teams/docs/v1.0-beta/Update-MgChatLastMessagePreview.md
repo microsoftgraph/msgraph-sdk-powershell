@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgchatlastmessagepreview
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgchatlastmessagepreview
 schema: 2.0.0
 ---
 
-# Update-MgChatLastMessagePreview
+# Update-MgBetaChatLastMessagePreview
 
 ## SYNOPSIS
 Update the navigation property lastMessagePreview in chats
@@ -14,7 +14,7 @@ Update the navigation property lastMessagePreview in chats
 
 ### UpdateExpanded (Default)
 ```
-Update-MgChatLastMessagePreview -ChatId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaChatLastMessagePreview -ChatId <String> [-AdditionalProperties <Hashtable>]
  [-Body <IMicrosoftGraphItemBody>] [-CreatedDateTime <DateTime>] [-EventDetail <Hashtable>]
  [-From <Hashtable>] [-Id <String>] [-IsDeleted] [-MessageType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgChatLastMessagePreview -ChatId <String> [-AdditionalProperties <Hashtab
 
 ### Update
 ```
-Update-MgChatLastMessagePreview -ChatId <String> -BodyParameter <IMicrosoftGraphChatMessageInfo> [-PassThru]
+Update-MgBetaChatLastMessagePreview -ChatId <String> -BodyParameter <IMicrosoftGraphChatMessageInfo> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgChatLastMessagePreview -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphChatMessageInfo>
+Update-MgBetaChatLastMessagePreview -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphChatMessageInfo>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgChatLastMessagePreview -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaChatLastMessagePreview -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Body <IMicrosoftGraphItemBody>] [-CreatedDateTime <DateTime>] [-EventDetail <Hashtable>]
  [-From <Hashtable>] [-Id <String>] [-IsDeleted] [-MessageType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -67,7 +67,7 @@ itemBody
 To construct, please use Get-Help -Online and see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -83,7 +83,7 @@ chatMessageInfo
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageInfo
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -175,7 +175,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -267,9 +267,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageInfo
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChatMessageInfo
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

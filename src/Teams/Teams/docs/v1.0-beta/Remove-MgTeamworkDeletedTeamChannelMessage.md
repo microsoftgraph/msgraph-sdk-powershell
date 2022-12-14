@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamworkdeletedteamchannelmessage
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgteamworkdeletedteamchannelmessage
 schema: 2.0.0
 ---
 
-# Remove-MgTeamworkDeletedTeamChannelMessage
+# Remove-MgBetaTeamworkDeletedTeamChannelMessage
 
 ## SYNOPSIS
 Delete navigation property messages for teamwork
@@ -14,13 +14,13 @@ Delete navigation property messages for teamwork
 
 ### Delete (Default)
 ```
-Remove-MgTeamworkDeletedTeamChannelMessage -ChannelId <String> -ChatMessageId <String> -DeletedTeamId <String>
+Remove-MgBetaTeamworkDeletedTeamChannelMessage -ChannelId <String> -ChatMessageId <String> -DeletedTeamId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

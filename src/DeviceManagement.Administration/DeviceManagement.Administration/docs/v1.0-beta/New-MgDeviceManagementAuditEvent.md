@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementauditevent
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementauditevent
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementAuditEvent
+# New-MgBetaDeviceManagementAuditEvent
 
 ## SYNOPSIS
 Create new navigation property to auditEvents for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to auditEvents for deviceManagement
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceManagementAuditEvent [-Activity <String>] [-ActivityDateTime <DateTime>]
+New-MgBetaDeviceManagementAuditEvent [-Activity <String>] [-ActivityDateTime <DateTime>]
  [-ActivityOperationType <String>] [-ActivityResult <String>] [-ActivityType <String>]
  [-Actor <IMicrosoftGraphAuditActor1>] [-AdditionalProperties <Hashtable>] [-Category <String>]
  [-ComponentName <String>] [-CorrelationId <String>] [-DisplayName <String>] [-Id <String>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementAuditEvent [-Activity <String>] [-ActivityDateTime <DateTi
 
 ### Create1
 ```
-New-MgDeviceManagementAuditEvent -BodyParameter <IMicrosoftGraphAuditEvent> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementAuditEvent -BodyParameter <IMicrosoftGraphAuditEvent> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -114,7 +114,7 @@ A class containing the properties for Audit Actor.
 To construct, please use Get-Help -Online and see NOTES section for ACTOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditActor1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditActor1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -145,7 +145,7 @@ A class containing the properties for Audit Event.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditEvent
 Parameter Sets: Create1
 Aliases:
 
@@ -237,7 +237,7 @@ Resources being modified.
 To construct, please use Get-Help -Online and see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditResource1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditResource1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -284,11 +284,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditEvent
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuditEvent
 
 ## NOTES
 

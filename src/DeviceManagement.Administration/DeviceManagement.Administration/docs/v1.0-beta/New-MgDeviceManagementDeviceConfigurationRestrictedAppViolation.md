@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementdeviceconfigurationrestrictedappviolation
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementdeviceconfigurationrestrictedappviolation
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDeviceConfigurationRestrictedAppViolation
+# New-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation
 
 ## SYNOPSIS
 Create new navigation property to deviceConfigurationRestrictedAppsViolations for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to deviceConfigurationRestrictedAppsViolations fo
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDeviceConfigurationRestrictedAppViolation [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation [-AdditionalProperties <Hashtable>]
  [-DeviceConfigurationId <String>] [-DeviceConfigurationName <String>] [-DeviceName <String>] [-Id <String>]
  [-ManagedDeviceId <String>] [-PlatformType <PolicyPlatformType>]
  [-RestrictedApps <IMicrosoftGraphManagedDeviceReportedApp[]>] [-RestrictedAppsState <RestrictedAppsState>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementDeviceConfigurationRestrictedAppViolation [-AdditionalProp
 
 ### Create
 ```
-New-MgDeviceManagementDeviceConfigurationRestrictedAppViolation
+New-MgBetaDeviceManagementDeviceConfigurationRestrictedAppViolation
  -BodyParameter <IMicrosoftGraphRestrictedAppsViolation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ Violation of restricted apps configuration profile per device per user
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRestrictedAppsViolation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRestrictedAppsViolation
 Parameter Sets: Create
 Aliases:
 
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicyPlatformType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ List of violated restricted apps
 To construct, please use Get-Help -Online and see NOTES section for RESTRICTEDAPPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceReportedApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceReportedApp[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 Restricted apps state
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.RestrictedAppsState
+Type: Microsoft.Graph.Beta.PowerShell.Support.RestrictedAppsState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -253,11 +253,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRestrictedAppsViolation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRestrictedAppsViolation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRestrictedAppsViolation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRestrictedAppsViolation
 
 ## NOTES
 

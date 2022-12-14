@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyactivitybasedtimeoutpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyactivitybasedtimeoutpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyActivityBasedTimeoutPolicy
+# Get-MgBetaPolicyActivityBasedTimeoutPolicy
 
 ## SYNOPSIS
 The policy that controls the idle time out for web sessions for applications.
@@ -14,20 +14,20 @@ The policy that controls the idle time out for web sessions for applications.
 
 ### List (Default)
 ```
-Get-MgPolicyActivityBasedTimeoutPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPolicyActivityBasedTimeoutPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyActivityBasedTimeoutPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyActivityBasedTimeoutPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The policy that controls the idle time out for web sessions for applications.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyActivityBasedTimeoutPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyActivityBasedTimeoutPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyActivityBasedTimeoutPolicy
 ```
 
-This example shows how to use the Get-MgPolicyActivityBasedTimeoutPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPolicyActivityBasedTimeoutPolicy Cmdlet
+### Example 2: Using the Get-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId
 ```
 
-This example shows how to use the Get-MgPolicyActivityBasedTimeoutPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityBasedTimeoutPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityBasedTimeoutPolicy1
 
 ## NOTES
 

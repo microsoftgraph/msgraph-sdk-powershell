@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgdevicemanagementreportexportjob
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgdevicemanagementreportexportjob
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementReportExportJob
+# Get-MgBetaDeviceManagementReportExportJob
 
 ## SYNOPSIS
 Entity representing a job to export a report
@@ -14,20 +14,20 @@ Entity representing a job to export a report
 
 ### List (Default)
 ```
-Get-MgDeviceManagementReportExportJob [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaDeviceManagementReportExportJob [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementReportExportJob -DeviceManagementExportJobId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementReportExportJob -DeviceManagementExportJobId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementReportExportJob -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementReportExportJob -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExportJob
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementExportJob
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/invoke-mgexperiencedevicemanagement
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/invoke-mgexperiencedevicemanagement
 schema: 2.0.0
 ---
 
-# Invoke-MgExperienceDeviceManagement
+# Invoke-MgBetaExperienceDeviceManagement
 
 ## SYNOPSIS
 Invoke function userExperienceAnalyticsSummarizedDeviceScopes
@@ -14,12 +14,12 @@ Invoke function userExperienceAnalyticsSummarizedDeviceScopes
 
 ### Experience (Default)
 ```
-Invoke-MgExperienceDeviceManagement [<CommonParameters>]
+Invoke-MgBetaExperienceDeviceManagement [<CommonParameters>]
 ```
 
 ### Experience1
 ```
-Invoke-MgExperienceDeviceManagement [<CommonParameters>]
+Invoke-MgBetaExperienceDeviceManagement [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,9 +36,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScopeSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScopeSummary
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevicesSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevicesSummary
 
 ## NOTES
 

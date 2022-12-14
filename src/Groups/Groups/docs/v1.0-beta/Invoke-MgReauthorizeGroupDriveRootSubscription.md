@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgreauthorizegroupdriverootsubscription
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgreauthorizegroupdriverootsubscription
 schema: 2.0.0
 ---
 
-# Invoke-MgReauthorizeGroupDriveRootSubscription
+# Invoke-MgBetaReauthorizeGroupDriveRootSubscription
 
 ## SYNOPSIS
 Invoke action reauthorize
@@ -14,13 +14,13 @@ Invoke action reauthorize
 
 ### Reauthorize (Default)
 ```
-Invoke-MgReauthorizeGroupDriveRootSubscription -DriveId <String> -GroupId <String> -SubscriptionId <String>
+Invoke-MgBetaReauthorizeGroupDriveRootSubscription -DriveId <String> -GroupId <String> -SubscriptionId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReauthorizeViaIdentity
 ```
-Invoke-MgReauthorizeGroupDriveRootSubscription -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaReauthorizeGroupDriveRootSubscription -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: ReauthorizeViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

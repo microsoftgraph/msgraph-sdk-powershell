@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplication
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplication
 schema: 2.0.0
 ---
 
-# Get-MgApplication
+# Get-MgBetaApplication
 
 ## SYNOPSIS
 Get the properties and relationships of an application object.
@@ -14,20 +14,20 @@ Get the properties and relationships of an application object.
 
 ### List (Default)
 ```
-Get-MgApplication [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaApplication [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgApplication -ApplicationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaApplication -ApplicationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplication -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaApplication -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -38,8 +38,8 @@ Get the properties and relationships of an application object.
 
 ### Example 1: Get a list of applications
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgApplication | 
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaApplication | 
   Format-List Id, DisplayName, AppId, SignInAudience, PublisherDomain
 
 Id              : 8ea936e0-cb74-46c0-8408-d4614a596267
@@ -53,13 +53,13 @@ This examples gets a list of all the applications.
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 2: Get an application by Id
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgApplication -Filter "AppId eq '39b09640-ec3e-44c9-b3de-f52db4e1cf66'" | 
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaApplication -Filter "AppId eq '39b09640-ec3e-44c9-b3de-f52db4e1cf66'" | 
   Format-List Id, DisplayName, AppId, SignInAudience, PublisherDomain
 
 DisplayName     : Test App
@@ -72,13 +72,13 @@ This examples gets the application by the specified Id.
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 3: Get a count of all applications
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgApplication -ConsistencyLevel eventual -Count appCount
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaApplication -ConsistencyLevel eventual -Count appCount
 
 Id                                   DisplayName        AppId                                SignInAudience                     PublisherDomain
 --                                   -----------        -----                                --------------                     ---------------
@@ -96,13 +96,13 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 4: Use -Search to get all the applications whose display name contains 'Test' including a count of the returned users
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgApplication -ConsistencyLevel eventual -Count appCount -Search '"DisplayName:Test"'
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaApplication -ConsistencyLevel eventual -Count appCount -Search '"DisplayName:Test"'
 
 Id                                   DisplayName        AppId                                SignInAudience                     PublisherDomain
 --                                   -----------        -----                                --------------                     ---------------
@@ -117,13 +117,13 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 5: Use -Filter to get all the applications with a display name that starts with 'New' including a count of the returned users, with the results ordered by display name
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgApplication -ConsistencyLevel eventual -Count appCount -Filter "startsWith(DisplayName, 'New')" -OrderBy DisplayName
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaApplication -ConsistencyLevel eventual -Count appCount -Filter "startsWith(DisplayName, 'New')" -OrderBy DisplayName
 
 Id                                   DisplayName AppId                                SignInAudience                     PublisherDomain
 --                                   ----------- -----                                --------------                     ---------------
@@ -138,8 +138,8 @@ For more information about *ConsistencyLevel* and *Count*, see [Advanced query c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
-For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`.
+For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ## PARAMETERS
 
@@ -240,7 +240,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -346,11 +346,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplication
 
 ## NOTES
 

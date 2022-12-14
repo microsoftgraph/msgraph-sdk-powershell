@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyfeaturerolloutpolicyapplytobyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyfeaturerolloutpolicyapplytobyref
 schema: 2.0.0
 ---
 
-# Get-MgPolicyFeatureRolloutPolicyApplyToByRef
+# Get-MgBetaPolicyFeatureRolloutPolicyApplyToByRef
 
 ## SYNOPSIS
 Nullable.
@@ -14,7 +14,7 @@ Specifies a list of directoryObjects that feature is enabled for.
 ## SYNTAX
 
 ```
-Get-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String> [-Filter <String>]
+Get-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String> [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```

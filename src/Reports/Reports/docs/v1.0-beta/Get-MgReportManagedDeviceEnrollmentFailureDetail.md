@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportmanageddeviceenrollmentfailuredetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportmanageddeviceenrollmentfailuredetail
 schema: 2.0.0
 ---
 
-# Get-MgReportManagedDeviceEnrollmentFailureDetail
+# Get-MgBetaReportManagedDeviceEnrollmentFailureDetail
 
 ## SYNOPSIS
 Invoke function managedDeviceEnrollmentFailureDetails
@@ -14,18 +14,18 @@ Invoke function managedDeviceEnrollmentFailureDetails
 
 ### Managed (Default)
 ```
-Get-MgReportManagedDeviceEnrollmentFailureDetail -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgBetaReportManagedDeviceEnrollmentFailureDetail -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### Managed1
 ```
-Get-MgReportManagedDeviceEnrollmentFailureDetail -Filter <String> -Skip <Int32> -SkipToken <String>
+Get-MgBetaReportManagedDeviceEnrollmentFailureDetail -Filter <String> -Skip <Int32> -SkipToken <String>
  -Top <Int32> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### ManagedViaIdentity
 ```
-Get-MgReportManagedDeviceEnrollmentFailureDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportManagedDeviceEnrollmentFailureDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: ManagedViaIdentity
 Aliases:
 
@@ -147,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantcloudpcdevice
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantcloudpcdevice
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantCloudPcDevice
+# Update-MgBetaTenantRelationshipManagedTenantCloudPcDevice
 
 ## SYNOPSIS
 Update the navigation property cloudPcDevices in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property cloudPcDevices in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId <String>
+Update-MgBetaTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-CloudPcStatus <String>] [-DeviceSpecification <String>]
  [-DisplayName <String>] [-Id <String>] [-LastRefreshedDateTime <DateTime>] [-ManagedDeviceId <String>]
  [-ManagedDeviceName <String>] [-ProvisioningPolicyId <String>] [-ServicePlanName <String>]
@@ -24,21 +24,21 @@ Update-MgTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId <String>
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId <String>
+Update-MgBetaTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcDevice> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantCloudPcDevice -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantCloudPcDevice -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcDevice> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantCloudPcDevice -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantCloudPcDevice -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-CloudPcStatus <String>] [-DeviceSpecification <String>]
  [-DisplayName <String>] [-Id <String>] [-LastRefreshedDateTime <DateTime>] [-ManagedDeviceId <String>]
  [-ManagedDeviceName <String>] [-ProvisioningPolicyId <String>] [-ServicePlanName <String>]
@@ -73,7 +73,7 @@ cloudPcDevice
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -172,7 +172,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -387,9 +387,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
 
 ## OUTPUTS
 

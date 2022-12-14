@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserinformationprotectionsensitivitypolicysetting
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserinformationprotectionsensitivitypolicysetting
 schema: 2.0.0
 ---
 
-# Get-MgUserInformationProtectionSensitivityPolicySetting
+# Get-MgBetaUserInformationProtectionSensitivityPolicySetting
 
 ## SYNOPSIS
 Get sensitivityPolicySettings from users
@@ -14,13 +14,13 @@ Get sensitivityPolicySettings from users
 
 ### Get (Default)
 ```
-Get-MgUserInformationProtectionSensitivityPolicySetting -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserInformationProtectionSensitivityPolicySetting -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserInformationProtectionSensitivityPolicySetting -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserInformationProtectionSensitivityPolicySetting -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
 
 ## NOTES
 

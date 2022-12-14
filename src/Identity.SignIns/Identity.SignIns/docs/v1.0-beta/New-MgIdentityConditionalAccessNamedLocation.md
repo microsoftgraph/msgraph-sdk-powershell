@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityconditionalaccessnamedlocation
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityconditionalaccessnamedlocation
 schema: 2.0.0
 ---
 
-# New-MgIdentityConditionalAccessNamedLocation
+# New-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
 Create a new namedLocation object.
@@ -15,14 +15,14 @@ Named locations can be either ipNamedLocation or countryNamedLocation objects.
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityConditionalAccessNamedLocation [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
+New-MgBetaIdentityConditionalAccessNamedLocation [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-ModifiedDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityConditionalAccessNamedLocation -BodyParameter <IMicrosoftGraphNamedLocation> [-Confirm]
+New-MgBetaIdentityConditionalAccessNamedLocation -BodyParameter <IMicrosoftGraphNamedLocation> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -34,10 +34,10 @@ Named locations can be either ipNamedLocation or countryNamedLocation objects.
 
 ### Example 1: Create a country named location
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 $params = @{
-"@odata.type" = "#microsoft.graph.countryNamedLocation"
+"@odata.type" = "#Microsoft.Graph.Beta.countryNamedLocation"
 DisplayName = "Named location with unknown countries and regions"
 CountriesAndRegions = @(
     "US"
@@ -46,7 +46,7 @@ CountriesAndRegions = @(
 IncludeUnknownCountriesAndRegions = $true
 }
 
-New-MgIdentityConditionalAccessNamedLocation -BodyParameter $params
+New-MgBetaIdentityConditionalAccessNamedLocation -BodyParameter $params
 
 Id                                   CreatedDateTime      DisplayName                                       ModifiedDateTime
 --                                   ---------------      -----------                                       ----------------
@@ -57,25 +57,25 @@ This example creates a country named location.
 
 ### Example 2: Create an ip named location
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 $params = @{
-"@odata.type" = "#microsoft.graph.ipNamedLocation"
+"@odata.type" = "#Microsoft.Graph.Beta.ipNamedLocation"
 DisplayName = "Untrusted IP named location"
 IsTrusted = $false
 IpRanges = @(
     @{
-        "@odata.type" = "#microsoft.graph.iPv4CidrRange"
+        "@odata.type" = "#Microsoft.Graph.Beta.iPv4CidrRange"
         CidrAddress = "12.34.221.11/22"
     }
     @{
-        "@odata.type" = "#microsoft.graph.iPv6CidrRange"
+        "@odata.type" = "#Microsoft.Graph.Beta.iPv6CidrRange"
         CidrAddress = "2001:0:9d38:90d6:0:0:0:0/63"
     }
 )
 }
 
-New-MgIdentityConditionalAccessNamedLocation -BodyParameter $params
+New-MgBetaIdentityConditionalAccessNamedLocation -BodyParameter $params
 
 Id                                   CreatedDateTime      DisplayName                 ModifiedDateTime
 --                                   ---------------      -----------                 ----------------
@@ -106,7 +106,7 @@ namedLocation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNamedLocation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNamedLocation
 Parameter Sets: Create
 Aliases:
 
@@ -218,11 +218,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNamedLocation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNamedLocation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNamedLocation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNamedLocation
 
 ## NOTES
 

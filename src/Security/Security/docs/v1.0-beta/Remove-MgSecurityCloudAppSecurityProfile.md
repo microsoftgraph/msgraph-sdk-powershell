@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecuritycloudappsecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/remove-mgsecuritycloudappsecurityprofile
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityCloudAppSecurityProfile
+# Remove-MgBetaSecurityCloudAppSecurityProfile
 
 ## SYNOPSIS
 Delete navigation property cloudAppSecurityProfiles for security
@@ -14,13 +14,13 @@ Delete navigation property cloudAppSecurityProfiles for security
 
 ### Delete (Default)
 ```
-Remove-MgSecurityCloudAppSecurityProfile -CloudAppSecurityProfileId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaSecurityCloudAppSecurityProfile -CloudAppSecurityProfileId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSecurityCloudAppSecurityProfile -InputObject <ISecurityIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaSecurityCloudAppSecurityProfile -InputObject <ISecurityIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

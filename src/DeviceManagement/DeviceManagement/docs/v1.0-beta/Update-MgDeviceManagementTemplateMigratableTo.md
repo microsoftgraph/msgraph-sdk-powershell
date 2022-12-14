@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementtemplatemigratableto
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementtemplatemigratableto
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementTemplateMigratableTo
+# Update-MgBetaDeviceManagementTemplateMigratableTo
 
 ## SYNOPSIS
 Update the navigation property migratableTo in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property migratableTo in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementTemplateMigratableTo -DeviceManagementTemplateId <String>
+Update-MgBetaDeviceManagementTemplateMigratableTo -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateId1 <String> [-AdditionalProperties <Hashtable>]
  [-Categories <IMicrosoftGraphDeviceManagementTemplateSettingCategory[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IntentCount <Int32>] [-IsDeprecated]
@@ -26,21 +26,21 @@ Update-MgDeviceManagementTemplateMigratableTo -DeviceManagementTemplateId <Strin
 
 ### Update
 ```
-Update-MgDeviceManagementTemplateMigratableTo -DeviceManagementTemplateId <String>
+Update-MgBetaDeviceManagementTemplateMigratableTo -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateId1 <String> -BodyParameter <IMicrosoftGraphDeviceManagementTemplate> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementTemplateMigratableTo -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementTemplateMigratableTo -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementTemplate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementTemplateMigratableTo -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementTemplateMigratableTo -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Categories <IMicrosoftGraphDeviceManagementTemplateSettingCategory[]>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IntentCount <Int32>] [-IsDeprecated]
  [-MigratableTo <IMicrosoftGraphDeviceManagementTemplate[]>] [-PlatformType <PolicyPlatformType>]
@@ -76,7 +76,7 @@ Entity that represents a defined collection of device settings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -92,7 +92,7 @@ Collection of setting categories within the template
 To construct, please use Get-Help -Online and see NOTES section for CATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplateSettingCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplateSettingCategory[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -184,7 +184,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -231,7 +231,7 @@ Collection of templates this template can migrate to
 To construct, please use Get-Help -Online and see NOTES section for MIGRATABLETO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicyPlatformType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -292,7 +292,7 @@ Collection of all settings this template has
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 Template subtype
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementTemplateSubtype
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementTemplateSubtype
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -322,7 +322,7 @@ Accept wildcard characters: False
 Template type
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementTemplateType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementTemplateType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -384,9 +384,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
 
 ## OUTPUTS
 

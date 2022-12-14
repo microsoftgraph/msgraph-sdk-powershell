@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementconnectedorganizationexternalsponsoruserownedobject
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementconnectedorganizationexternalsponsoruserownedobject
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
+# Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
 
 ## SYNOPSIS
 Invoke action getUserOwnedObjects
@@ -14,14 +14,14 @@ Invoke action getUserOwnedObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
+Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
  -ConnectedOrganizationId <String> [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
+Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
  -ConnectedOrganizationId <String>
  -BodyParameter <IPaths68Ai20IdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
+Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths68Ai20IdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
 
 ### GetViaIdentityExpanded
 ```
-Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
+Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-Type <String>]
  [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths68Ai20IdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths68Ai20IdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get, GetViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
@@ -177,13 +177,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths68Ai20IdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths68Ai20IdentitygovernanceEntitlementmanagementConnectedorganizationsConnectedorganizationIdExternalsponsorsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

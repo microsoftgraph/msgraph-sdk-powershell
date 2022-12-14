@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgoverridedevicemanagementmanageddevicecompliancestate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgoverridedevicemanagementmanageddevicecompliancestate
 schema: 2.0.0
 ---
 
-# Invoke-MgOverrideDeviceManagementManagedDeviceComplianceState
+# Invoke-MgBetaOverrideDeviceManagementManagedDeviceComplianceState
 
 ## SYNOPSIS
 Invoke action overrideComplianceState
@@ -14,28 +14,28 @@ Invoke action overrideComplianceState
 
 ### OverrideExpanded (Default)
 ```
-Invoke-MgOverrideDeviceManagementManagedDeviceComplianceState -ManagedDeviceId <String>
+Invoke-MgBetaOverrideDeviceManagementManagedDeviceComplianceState -ManagedDeviceId <String>
  [-AdditionalProperties <Hashtable>] [-ComplianceState <AdministratorConfiguredDeviceComplianceState>]
  [-RemediationUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Override
 ```
-Invoke-MgOverrideDeviceManagementManagedDeviceComplianceState -ManagedDeviceId <String>
+Invoke-MgBetaOverrideDeviceManagementManagedDeviceComplianceState -ManagedDeviceId <String>
  -BodyParameter <IPaths1209QsrDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### OverrideViaIdentity
 ```
-Invoke-MgOverrideDeviceManagementManagedDeviceComplianceState -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaOverrideDeviceManagementManagedDeviceComplianceState -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1209QsrDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### OverrideViaIdentityExpanded
 ```
-Invoke-MgOverrideDeviceManagementManagedDeviceComplianceState -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaOverrideDeviceManagementManagedDeviceComplianceState -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ComplianceState <AdministratorConfiguredDeviceComplianceState>]
  [-RemediationUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1209QsrDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1209QsrDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Override, OverrideViaIdentity
 Aliases:
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 Administrator configured device compliance state Enum
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AdministratorConfiguredDeviceComplianceState
+Type: Microsoft.Graph.Beta.PowerShell.Support.AdministratorConfiguredDeviceComplianceState
 Parameter Sets: OverrideExpanded, OverrideViaIdentityExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: OverrideViaIdentity, OverrideViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1209QsrDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1209QsrDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

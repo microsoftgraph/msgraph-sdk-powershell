@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgidentityconditionalaccesspolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgidentityconditionalaccesspolicy
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityConditionalAccessPolicy
+# Remove-MgBetaIdentityConditionalAccessPolicy
 
 ## SYNOPSIS
 Delete navigation property policies for identity
@@ -14,13 +14,13 @@ Delete navigation property policies for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityConditionalAccessPolicy -ConditionalAccessPolicyId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaIdentityConditionalAccessPolicy -ConditionalAccessPolicyId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityConditionalAccessPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
+Remove-MgBetaIdentityConditionalAccessPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,9 +31,9 @@ Delete navigation property policies for identity
 
 ### Example 1: Remove a conditional access policy
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
-Remove-MgIdentityConditionalAccessPolicy -ConditionalAccessPolicyId $conditionalAccessPolicyId
+Remove-MgBetaIdentityConditionalAccessPolicy -ConditionalAccessPolicyId $conditionalAccessPolicyId
 ```
 
 This example deletes the conditional access policy specified by `$conditionalAccessPolicyId`.
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantemailnotification
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantemailnotification
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantEmailNotification
+# New-MgBetaTenantRelationshipManagedTenantEmailNotification
 
 ## SYNOPSIS
 Create new navigation property to managedTenantEmailNotifications for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managedTenantEmailNotifications for tenantRela
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantEmailNotification [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantEmailNotification [-AdditionalProperties <Hashtable>]
  [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-EmailAddresses <IMicrosoftGraphManagedTenantsEmail[]>] [-EmailBody <String>]
  [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Subject <String>] [-Confirm]
@@ -23,7 +23,7 @@ New-MgTenantRelationshipManagedTenantEmailNotification [-AdditionalProperties <H
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantEmailNotification
+New-MgBetaTenantRelationshipManagedTenantEmailNotification
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -55,7 +55,7 @@ managedTenantAlert
 To construct, please use Get-Help -Online and see NOTES section for ALERT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -71,7 +71,7 @@ managedTenantEmailNotification
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
 Parameter Sets: Create
 Aliases:
 
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EMAILADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsEmail[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsEmail[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
 
 ## NOTES
 

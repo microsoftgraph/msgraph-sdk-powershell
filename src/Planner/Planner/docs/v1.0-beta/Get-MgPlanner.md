@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mgplanner
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mgplanner
 schema: 2.0.0
 ---
 
-# Get-MgPlanner
+# Get-MgBetaPlanner
 
 ## SYNOPSIS
 Get planner
@@ -13,7 +13,7 @@ Get planner
 ## SYNTAX
 
 ```
-Get-MgPlanner [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaPlanner [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlanner
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlanner
 
 ## NOTES
 

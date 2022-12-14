@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritythreatsubmissionemailthreat
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritythreatsubmissionemailthreat
 schema: 2.0.0
 ---
 
-# New-MgSecurityThreatSubmissionEmailThreat
+# New-MgBetaSecurityThreatSubmissionEmailThreat
 
 ## SYNOPSIS
 Create a new emailThreatSubmission object.
@@ -14,7 +14,7 @@ Create a new emailThreatSubmission object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityThreatSubmissionEmailThreat [-AdditionalProperties <Hashtable>]
+New-MgBetaSecurityThreatSubmissionEmailThreat [-AdditionalProperties <Hashtable>]
  [-AdminReview <IMicrosoftGraphSecuritySubmissionAdminReview>]
  [-AttackSimulationInfo <IMicrosoftGraphSecurityAttackSimulationInfo>] [-Category <String>]
  [-ClientSource <String>] [-ContentType <String>] [-CreatedBy <IMicrosoftGraphSecuritySubmissionUserIdentity>]
@@ -28,7 +28,7 @@ New-MgSecurityThreatSubmissionEmailThreat [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgSecurityThreatSubmissionEmailThreat -BodyParameter <IMicrosoftGraphSecurityEmailThreatSubmission>
+New-MgBetaSecurityThreatSubmissionEmailThreat -BodyParameter <IMicrosoftGraphSecurityEmailThreatSubmission>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -37,19 +37,19 @@ Create a new emailThreatSubmission object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSecurityThreatSubmissionEmailThreat Cmdlet
+### Example 1: Using the New-MgBetaSecurityThreatSubmissionEmailThreat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
-	"@odata.type" = "#microsoft.graph.emailUrlThreatSubmission"
+	"@odata.type" = "#Microsoft.Graph.Beta.emailUrlThreatSubmission"
 	Category = "spam"
 	RecipientEmailAddress = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
 	MessageUrl = "https://graph.microsoft.com/beta/users/c52ce8db-3e4b-4181-93c4-7d6b6bffaf60/messages/AAMkADU3MWUxOTU0LWNlOTEt="
 }
-New-MgSecurityThreatSubmissionEmailThreat -BodyParameter $params
+New-MgBetaSecurityThreatSubmissionEmailThreat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSecurityThreatSubmissionEmailThreat Cmdlet.
+This example shows how to use the New-MgBetaSecurityThreatSubmissionEmailThreat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -74,7 +74,7 @@ submissionAdminReview
 To construct, please use Get-Help -Online and see NOTES section for ADMINREVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionAdminReview
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionAdminReview
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -90,7 +90,7 @@ attackSimulationInfo
 To construct, please use Get-Help -Online and see NOTES section for ATTACKSIMULATIONINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAttackSimulationInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAttackSimulationInfo
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -106,7 +106,7 @@ emailThreatSubmission
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
 Parameter Sets: Create
 Aliases:
 
@@ -167,7 +167,7 @@ submissionUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionUserIdentity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -276,7 +276,7 @@ submissionResult
 To construct, please use Get-Help -Online and see NOTES section for RESULT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionResult
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionResult
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -367,7 +367,7 @@ tenantAllowOrBlockListAction
 To construct, please use Get-Help -Online and see NOTES section for TENANTALLOWORBLOCKLISTACTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityTenantAllowOrBlockListAction
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityTenantAllowOrBlockListAction
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -431,11 +431,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEmailThreatSubmission
 
 ## NOTES
 

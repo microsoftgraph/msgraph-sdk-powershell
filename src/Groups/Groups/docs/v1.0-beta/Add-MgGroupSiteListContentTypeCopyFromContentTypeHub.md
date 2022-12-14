@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/add-mggroupsitelistcontenttypecopyfromcontenttypehub
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/add-mggroupsitelistcontenttypecopyfromcontenttypehub
 schema: 2.0.0
 ---
 
-# Add-MgGroupSiteListContentTypeCopyFromContentTypeHub
+# Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub
 
 ## SYNOPSIS
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -17,27 +17,27 @@ For more information, see getCompatibleHubContentTypes and the blog post Syntex 
 
 ### AddExpanded (Default)
 ```
-Add-MgGroupSiteListContentTypeCopyFromContentTypeHub -GroupId <String> -ListId <String> -SiteId <String>
+Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub -GroupId <String> -ListId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-ContentTypeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
-Add-MgGroupSiteListContentTypeCopyFromContentTypeHub -GroupId <String> -ListId <String> -SiteId <String>
+Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub -GroupId <String> -ListId <String> -SiteId <String>
  -BodyParameter <IPathsHo8D96GroupsGroupIdSitesSiteIdListsListIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-MgGroupSiteListContentTypeCopyFromContentTypeHub -InputObject <IGroupsIdentity>
+Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub -InputObject <IGroupsIdentity>
  -BodyParameter <IPathsHo8D96GroupsGroupIdSitesSiteIdListsListIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
-Add-MgGroupSiteListContentTypeCopyFromContentTypeHub -InputObject <IGroupsIdentity>
+Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentTypeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,31 +51,31 @@ For more information, see getCompatibleHubContentTypes and the blog post Syntex 
 
 ### Example 1: Synchronous pull
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	ContentTypeId = "0x0101"
 }
 
-Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgGroupSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+This example shows how to use the Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Asynchronous pull
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	ContentTypeId = "0x0101"
 }
 
-Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgGroupSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+This example shows how to use the Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsHo8D96GroupsGroupIdSitesSiteIdListsListIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsHo8D96GroupsGroupIdSitesSiteIdListsListIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add, AddViaIdentity
 Aliases:
 
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
 Aliases:
 
@@ -224,13 +224,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsHo8D96GroupsGroupIdSitesSiteIdListsListIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsHo8D96GroupsGroupIdSitesSiteIdListsListIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType
 
 ## NOTES
 

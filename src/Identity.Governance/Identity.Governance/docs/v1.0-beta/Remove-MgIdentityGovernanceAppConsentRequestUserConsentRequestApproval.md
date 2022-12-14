@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgidentitygovernanceappconsentrequestuserconsentrequestapproval
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgidentitygovernanceappconsentrequestuserconsentrequestapproval
 schema: 2.0.0
 ---
 
-# Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval
+# Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval
 
 ## SYNOPSIS
 Delete navigation property approval for identityGovernance
@@ -14,13 +14,13 @@ Delete navigation property approval for identityGovernance
 
 ### Delete (Default)
 ```
-Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval -AppConsentRequestId <String>
+Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval -AppConsentRequestId <String>
  -UserConsentRequestId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval
+Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval
  -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

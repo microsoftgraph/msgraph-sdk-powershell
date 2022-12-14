@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mggrouponenotesectionpage
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mggrouponenotesectionpage
 schema: 2.0.0
 ---
 
-# Get-MgGroupOnenoteSectionPage
+# Get-MgBetaGroupOnenoteSectionPage
 
 ## SYNOPSIS
 The collection of pages in the section.
@@ -15,7 +15,7 @@ Nullable.
 ## SYNTAX
 
 ```
-Get-MgGroupOnenoteSectionPage -GroupId <String> -OnenoteSectionId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupOnenoteSectionPage -GroupId <String> -OnenoteSectionId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -217,7 +217,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenotePage
 
 ## NOTES
 

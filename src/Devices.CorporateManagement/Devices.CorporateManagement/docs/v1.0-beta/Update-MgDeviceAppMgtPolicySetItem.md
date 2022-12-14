@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtpolicysetitem
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtpolicysetitem
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtPolicySetItem
+# Update-MgBetaDeviceAppMgtPolicySetItem
 
 ## SYNOPSIS
 Update the navigation property items in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property items in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtPolicySetItem -PolicySetId <String> -PolicySetItemId <String>
+Update-MgBetaDeviceAppMgtPolicySetItem -PolicySetId <String> -PolicySetItemId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-ErrorCode <ErrorCode>] [-GuidedDeploymentTags <String[]>] [-Id <String>] [-ItemType <String>]
  [-LastModifiedDateTime <DateTime>] [-PayloadId <String>] [-Status <PolicySetStatus>] [-PassThru] [-Confirm]
@@ -23,19 +23,19 @@ Update-MgDeviceAppMgtPolicySetItem -PolicySetId <String> -PolicySetItemId <Strin
 
 ### Update
 ```
-Update-MgDeviceAppMgtPolicySetItem -PolicySetId <String> -PolicySetItemId <String>
+Update-MgBetaDeviceAppMgtPolicySetItem -PolicySetId <String> -PolicySetItemId <String>
  -BodyParameter <IMicrosoftGraphPolicySetItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphPolicySetItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-ErrorCode <ErrorCode>] [-GuidedDeploymentTags <String[]>] [-Id <String>] [-ItemType <String>]
  [-LastModifiedDateTime <DateTime>] [-PayloadId <String>] [-Status <PolicySetStatus>] [-PassThru] [-Confirm]
@@ -69,7 +69,7 @@ A class containing the properties used for PolicySet Item.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetItem
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 errorCode
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ErrorCode
+Type: Microsoft.Graph.Beta.PowerShell.Support.ErrorCode
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 The enum to specify the status of PolicySet.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicySetStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicySetStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -313,9 +313,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetItem
 
 ## OUTPUTS
 
@@ -325,7 +325,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementPolicySetItem
+### Update-MgBetaDeviceAppManagementPolicySetItem
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementcomanageddevicemanageddevicemobileappconfigurationstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementcomanageddevicemanageddevicemobileappconfigurationstate
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState
+# Remove-MgBetaDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState
 
 ## SYNOPSIS
 Delete navigation property managedDeviceMobileAppConfigurationStates for deviceManagement
@@ -14,14 +14,14 @@ Delete navigation property managedDeviceMobileAppConfigurationStates for deviceM
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
+Remove-MgBetaDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState -ManagedDeviceId <String>
  -ManagedDeviceMobileAppConfigurationStateId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState
+Remove-MgBetaDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState
  -InputObject <IDeviceManagementIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

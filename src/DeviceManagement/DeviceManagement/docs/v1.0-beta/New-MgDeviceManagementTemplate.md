@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementtemplate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementtemplate
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementTemplate
+# New-MgBetaDeviceManagementTemplate
 
 ## SYNOPSIS
 Create new navigation property to templates for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to templates for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementTemplate [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementTemplate [-AdditionalProperties <Hashtable>]
  [-Categories <IMicrosoftGraphDeviceManagementTemplateSettingCategory[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IntentCount <Int32>] [-IsDeprecated]
  [-MigratableTo <IMicrosoftGraphDeviceManagementTemplate[]>] [-PlatformType <PolicyPlatformType>]
@@ -25,7 +25,7 @@ New-MgDeviceManagementTemplate [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementTemplate -BodyParameter <IMicrosoftGraphDeviceManagementTemplate> [-Confirm] [-WhatIf]
+New-MgBetaDeviceManagementTemplate -BodyParameter <IMicrosoftGraphDeviceManagementTemplate> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ Entity that represents a defined collection of device settings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
 Parameter Sets: Create
 Aliases:
 
@@ -72,7 +72,7 @@ Collection of setting categories within the template
 To construct, please use Get-Help -Online and see NOTES section for CATEGORIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplateSettingCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplateSettingCategory[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ Collection of templates this template can migrate to
 To construct, please use Get-Help -Online and see NOTES section for MIGRATABLETO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicyPlatformType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -211,7 +211,7 @@ Collection of all settings this template has
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 Template subtype
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementTemplateSubtype
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementTemplateSubtype
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -241,7 +241,7 @@ Accept wildcard characters: False
 Template type
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementTemplateType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementTemplateType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -303,11 +303,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/remove-mguserprofilecertification
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/remove-mguserprofilecertification
 schema: 2.0.0
 ---
 
-# Remove-MgUserProfileCertification
+# Remove-MgBetaUserProfileCertification
 
 ## SYNOPSIS
 Delete navigation property certifications for users
@@ -14,13 +14,13 @@ Delete navigation property certifications for users
 
 ### Delete (Default)
 ```
-Remove-MgUserProfileCertification -PersonCertificationId <String> -UserId <String> [-IfMatch <String>]
+Remove-MgBetaUserProfileCertification -PersonCertificationId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserProfileCertification -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserProfileCertification -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property certifications for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserProfileCertification Cmdlet
+### Example 1: Using the Remove-MgBetaUserProfileCertification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
-Remove-MgUserProfileCertification -UserId $userId -PersonCertificationId $personCertificationId
+Import-Module Microsoft.Graph.Beta.People
+Remove-MgBetaUserProfileCertification -UserId $userId -PersonCertificationId $personCertificationId
 ```
 
-This example shows how to use the Remove-MgUserProfileCertification Cmdlet.
+This example shows how to use the Remove-MgBetaUserProfileCertification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 

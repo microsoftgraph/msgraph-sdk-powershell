@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgonpremisepublishingprofileagentgroupbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgonpremisepublishingprofileagentgroupbyref
 schema: 2.0.0
 ---
 
-# Remove-MgOnPremisePublishingProfileAgentGroupByRef
+# Remove-MgBetaOnPremisePublishingProfileAgentGroupByRef
 
 ## SYNOPSIS
 Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
@@ -14,27 +14,27 @@ Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 
 ### Delete1 (Default)
 ```
-Remove-MgOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String>
+Remove-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String>
  -OnPremisesAgentId <String> -OnPremisesPublishingProfileId <String> [-Id <String>] [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-MgOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String>
+Remove-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String>
  -OnPremisesAgentGroupId1 <String> -OnPremisesAgentId <String> -OnPremisesPublishingProfileId <String>
  [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity> [-Id <String>]
+Remove-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity> [-Id <String>]
+Remove-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -80,7 +80,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
@@ -202,7 +202,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

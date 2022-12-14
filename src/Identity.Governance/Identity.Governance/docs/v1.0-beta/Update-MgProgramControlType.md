@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprogramcontroltype
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgprogramcontroltype
 schema: 2.0.0
 ---
 
-# Update-MgProgramControlType
+# Update-MgBetaProgramControlType
 
 ## SYNOPSIS
 Update entity in programControlTypes
@@ -14,26 +14,26 @@ Update entity in programControlTypes
 
 ### UpdateExpanded (Default)
 ```
-Update-MgProgramControlType -ProgramControlTypeId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaProgramControlType -ProgramControlTypeId <String> [-AdditionalProperties <Hashtable>]
  [-ControlTypeGroupId <String>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgProgramControlType -ProgramControlTypeId <String> -BodyParameter <IMicrosoftGraphProgramControlType>
+Update-MgBetaProgramControlType -ProgramControlTypeId <String> -BodyParameter <IMicrosoftGraphProgramControlType>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgProgramControlType -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaProgramControlType -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphProgramControlType> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgProgramControlType -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaProgramControlType -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-ControlTypeGroupId <String>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ programControlType
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControlType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControlType
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -204,9 +204,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControlType
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControlType
 
 ## OUTPUTS
 

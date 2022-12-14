@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgsummaryidentitygovernancelifecycleworkflowtaskreport
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgsummaryidentitygovernancelifecycleworkflowtaskreport
 schema: 2.0.0
 ---
 
-# Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowTaskReport
+# Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowTaskReport
 
 ## SYNOPSIS
 Invoke function summary
@@ -14,13 +14,13 @@ Invoke function summary
 
 ### Summary (Default)
 ```
-Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowTaskReport -EndDateTime <DateTime>
+Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowTaskReport -EndDateTime <DateTime>
  -StartDateTime <DateTime> -WorkflowId <String> [<CommonParameters>]
 ```
 
 ### SummaryViaIdentity
 ```
-Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowTaskReport -InputObject <IIdentityGovernanceIdentity>
+Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowTaskReport -InputObject <IIdentityGovernanceIdentity>
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SummaryViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskReportSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskReportSummary
 
 ## NOTES
 

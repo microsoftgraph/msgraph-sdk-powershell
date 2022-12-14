@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgttargetedmanagedappconfiguration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgttargetedmanagedappconfiguration
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtTargetedManagedAppConfiguration
+# New-MgBetaDeviceAppMgtTargetedManagedAppConfiguration
 
 ## SYNOPSIS
 Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to targetedManagedAppConfigurations for deviceApp
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtTargetedManagedAppConfiguration [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtTargetedManagedAppConfiguration [-AdditionalProperties <Hashtable>]
  [-AppGroupType <TargetedManagedAppGroupType>] [-Apps <IMicrosoftGraphManagedMobileApp[]>]
  [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>] [-CreatedDateTime <DateTime>]
  [-CustomSettings <IMicrosoftGraphKeyValuePair[]>] [-DeployedAppCount <Int32>]
@@ -26,7 +26,7 @@ New-MgDeviceAppMgtTargetedManagedAppConfiguration [-AdditionalProperties <Hashta
 
 ### Create
 ```
-New-MgDeviceAppMgtTargetedManagedAppConfiguration
+New-MgBetaDeviceAppMgtTargetedManagedAppConfiguration
  -BodyParameter <IMicrosoftGraphTargetedManagedAppConfiguration1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.TargetedManagedAppGroupType
+Type: Microsoft.Graph.Beta.PowerShell.Support.TargetedManagedAppGroupType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ List of apps to which the policy is deployed.
 To construct, please use Get-Help -Online and see NOTES section for APPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -88,7 +88,7 @@ Navigation property to list of inclusion and exclusion groups to which the polic
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ Configuration used to deliver a set of custom settings as-is to all users in the
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration1
 Parameter Sets: Create
 Aliases:
 
@@ -135,7 +135,7 @@ A set of string key and string value pairs to be sent to apps for users to whom 
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -166,7 +166,7 @@ The ManagedAppEntity is the base entity type for all other entity types under ap
 To construct, please use Get-Help -Online and see NOTES section for DEPLOYMENTSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 Management levels for apps
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AppManagementLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.AppManagementLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -334,17 +334,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementTargetedManagedAppConfiguration
+### New-MgBetaDeviceAppManagementTargetedManagedAppConfiguration
 
 COMPLEX PARAMETER PROPERTIES
 

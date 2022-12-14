@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mgdismissriskyuser
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/invoke-mgdismissriskyuser
 schema: 2.0.0
 ---
 
-# Invoke-MgDismissRiskyUser
+# Invoke-MgBetaDismissRiskyUser
 
 ## SYNOPSIS
 Dismiss the risk of one or more riskyUser objects.
@@ -16,13 +16,13 @@ The maximum count of users to dismiss in one call is 60.
 
 ### DismissExpanded (Default)
 ```
-Invoke-MgDismissRiskyUser [-AdditionalProperties <Hashtable>] [-UserIds <String[]>] [-PassThru] [-Confirm]
+Invoke-MgBetaDismissRiskyUser [-AdditionalProperties <Hashtable>] [-UserIds <String[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Dismiss
 ```
-Invoke-MgDismissRiskyUser
+Invoke-MgBetaDismissRiskyUser
  -BodyParameter <IPathsZip9X6IdentityprotectionRiskyusersMicrosoftGraphDismissPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -34,19 +34,19 @@ The maximum count of users to dismiss in one call is 60.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgDismissRiskyUser Cmdlet
+### Example 1: Using the Invoke-MgBetaDismissRiskyUser Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	UserIds = @(
 		"04487ee0-f4f6-4e7f-8999-facc5a30e232"
 		"13387ee0-f4f6-4e7f-8999-facc5120e345"
 	)
 }
-Invoke-MgDismissRiskyUser -BodyParameter $params
+Invoke-MgBetaDismissRiskyUser -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgDismissRiskyUser Cmdlet.
+This example shows how to use the Invoke-MgBetaDismissRiskyUser Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZip9X6IdentityprotectionRiskyusersMicrosoftGraphDismissPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsZip9X6IdentityprotectionRiskyusersMicrosoftGraphDismissPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Dismiss
 Aliases:
 
@@ -148,7 +148,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsZip9X6IdentityprotectionRiskyusersMicrosoftGraphDismissPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsZip9X6IdentityprotectionRiskyusersMicrosoftGraphDismissPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

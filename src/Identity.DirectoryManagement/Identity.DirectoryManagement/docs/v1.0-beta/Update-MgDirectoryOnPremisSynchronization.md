@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremissynchronization
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectoryonpremissynchronization
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryOnPremisSynchronization
+# Update-MgBetaDirectoryOnPremisSynchronization
 
 ## SYNOPSIS
 Update the navigation property onPremisesSynchronization in directory
@@ -14,7 +14,7 @@ Update the navigation property onPremisesSynchronization in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryOnPremisSynchronization -OnPremisesDirectorySynchronizationId <String>
+Update-MgBetaDirectoryOnPremisSynchronization -OnPremisesDirectorySynchronizationId <String>
  [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]
  [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>] [-PassThru] [-Confirm]
@@ -23,21 +23,21 @@ Update-MgDirectoryOnPremisSynchronization -OnPremisesDirectorySynchronizationId 
 
 ### Update
 ```
-Update-MgDirectoryOnPremisSynchronization -OnPremisesDirectorySynchronizationId <String>
+Update-MgBetaDirectoryOnPremisSynchronization -OnPremisesDirectorySynchronizationId <String>
  -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryOnPremisSynchronization -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryOnPremisSynchronization -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryOnPremisSynchronization -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryOnPremisSynchronization -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]
  [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>] [-PassThru] [-Confirm]
@@ -71,7 +71,7 @@ onPremisesDirectorySynchronization
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -87,7 +87,7 @@ onPremisesDirectorySynchronizationConfiguration
 To construct, please use Get-Help -Online and see NOTES section for CONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -103,7 +103,7 @@ onPremisesDirectorySynchronizationFeature
 To construct, please use Get-Help -Online and see NOTES section for FEATURES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationFeature
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationFeature
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -135,7 +135,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -212,9 +212,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
 
 ## OUTPUTS
 

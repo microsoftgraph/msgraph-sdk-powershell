@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryfederationconfiguration
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectoryfederationconfiguration
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryFederationConfiguration
+# Update-MgBetaDirectoryFederationConfiguration
 
 ## SYNOPSIS
 Update the navigation property federationConfigurations in directory
@@ -14,25 +14,25 @@ Update the navigation property federationConfigurations in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryFederationConfiguration -IdentityProviderBaseId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDirectoryFederationConfiguration -IdentityProviderBaseId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryFederationConfiguration -IdentityProviderBaseId <String>
+Update-MgBetaDirectoryFederationConfiguration -IdentityProviderBaseId <String>
  -BodyParameter <IMicrosoftGraphIdentityProviderBase> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IMicrosoftGraphIdentityProviderBase> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
+Update-MgBetaDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -64,7 +64,7 @@ identityProviderBase
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -126,7 +126,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -188,9 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 
 ## OUTPUTS
 

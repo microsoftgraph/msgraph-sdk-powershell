@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mguseroutlooktaskfoldertasksinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mguseroutlooktaskfoldertasksinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty
+# Update-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty
 
 ## SYNOPSIS
 Update the navigation property singleValueExtendedProperties in users
@@ -14,7 +14,7 @@ Update the navigation property singleValueExtendedProperties in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty -OutlookTaskFolderId <String>
+Update-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty -OutlookTaskFolderId <String>
  -OutlookTaskId <String> -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty -OutlookTaskFolder
 
 ### Update
 ```
-Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty -OutlookTaskFolderId <String>
+Update-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty -OutlookTaskFolderId <String>
  -OutlookTaskId <String> -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,14 +30,14 @@ Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty -OutlookTaskFolder
 
 ### UpdateViaIdentity
 ```
-Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty -InputObject <IUsersIdentity>
+Update-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty -InputObject <IUsersIdentity>
+Update-MgBetaUserOutlookTaskFolderTaskSingleValueExtendedProperty -InputObject <IUsersIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ singleValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -238,9 +238,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

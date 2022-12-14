@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgdownloaddevicemanagementcomanageddeviceappdiagnostic
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgdownloaddevicemanagementcomanageddeviceappdiagnostic
 schema: 2.0.0
 ---
 
-# Invoke-MgDownloadDeviceManagementComanagedDeviceAppDiagnostic
+# Invoke-MgBetaDownloadDeviceManagementComanagedDeviceAppDiagnostic
 
 ## SYNOPSIS
 Invoke action downloadAppDiagnostics
@@ -14,14 +14,14 @@ Invoke action downloadAppDiagnostics
 
 ### DownloadExpanded (Default)
 ```
-Invoke-MgDownloadDeviceManagementComanagedDeviceAppDiagnostic -OutFile <String>
+Invoke-MgBetaDownloadDeviceManagementComanagedDeviceAppDiagnostic -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Request <IMicrosoftGraphPowerliftDownloadRequest>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Download
 ```
-Invoke-MgDownloadDeviceManagementComanagedDeviceAppDiagnostic
+Invoke-MgBetaDownloadDeviceManagementComanagedDeviceAppDiagnostic
  -BodyParameter <IPaths1K3Iuv6DevicemanagementComanageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1K3Iuv6DevicemanagementComanageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1K3Iuv6DevicemanagementComanageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Download
 Aliases:
 
@@ -99,7 +99,7 @@ Request used to download app diagnostic files.
 To construct, please use Get-Help -Online and see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPowerliftDownloadRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPowerliftDownloadRequest
 Parameter Sets: DownloadExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1K3Iuv6DevicemanagementComanageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1K3Iuv6DevicemanagementComanageddevicesMicrosoftGraphDownloadappdiagnosticsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

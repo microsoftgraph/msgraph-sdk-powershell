@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/set-mguseronlinemeetingrecording
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/set-mguseronlinemeetingrecording
 schema: 2.0.0
 ---
 
-# Set-MgUserOnlineMeetingRecording
+# Set-MgBetaUserOnlineMeetingRecording
 
 ## SYNOPSIS
 The content stream of the recording of a Teams live event.
@@ -15,13 +15,13 @@ Read-only.
 
 ### Set (Default)
 ```
-Set-MgUserOnlineMeetingRecording -OnlineMeetingId <String> -UserId <String> -InFile <String>
+Set-MgBetaUserOnlineMeetingRecording -OnlineMeetingId <String> -UserId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity> -InFile <String>
+Set-MgBetaUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -70,7 +70,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -162,7 +162,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ### System.IO.Stream
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/connect-mgdevicemanagementchromeosonboardingsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/connect-mgdevicemanagementchromeosonboardingsetting
 schema: 2.0.0
 ---
 
-# Connect-MgDeviceManagementChromeOSOnboardingSetting
+# Connect-MgBetaDeviceManagementChromeOSOnboardingSetting
 
 ## SYNOPSIS
 Invoke action connect
@@ -14,13 +14,13 @@ Invoke action connect
 
 ### ConnectExpanded (Default)
 ```
-Connect-MgDeviceManagementChromeOSOnboardingSetting [-AdditionalProperties <Hashtable>]
+Connect-MgBetaDeviceManagementChromeOSOnboardingSetting [-AdditionalProperties <Hashtable>]
  [-OwnerAccessToken <String>] [-OwnerUserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Connect
 ```
-Connect-MgDeviceManagementChromeOSOnboardingSetting
+Connect-MgBetaDeviceManagementChromeOSOnboardingSetting
  -BodyParameter <IPaths5LbknhDevicemanagementChromeosonboardingsettingsMicrosoftGraphConnectPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths5LbknhDevicemanagementChromeosonboardingsettingsMicrosoftGraphConnectPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths5LbknhDevicemanagementChromeosonboardingsettingsMicrosoftGraphConnectPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Connect
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths5LbknhDevicemanagementChromeosonboardingsettingsMicrosoftGraphConnectPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths5LbknhDevicemanagementChromeosonboardingsettingsMicrosoftGraphConnectPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Support.ChromeOSOnboardingStatus
+### Microsoft.Graph.Beta.PowerShell.Support.ChromeOSOnboardingStatus
 
 ## NOTES
 

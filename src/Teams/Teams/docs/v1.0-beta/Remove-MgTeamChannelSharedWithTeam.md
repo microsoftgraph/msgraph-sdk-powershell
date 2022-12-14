@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamchannelsharedwithteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgteamchannelsharedwithteam
 schema: 2.0.0
 ---
 
-# Remove-MgTeamChannelSharedWithTeam
+# Remove-MgBetaTeamChannelSharedWithTeam
 
 ## SYNOPSIS
 Delete navigation property sharedWithTeams for teams
@@ -14,13 +14,13 @@ Delete navigation property sharedWithTeams for teams
 
 ### Delete1 (Default)
 ```
-Remove-MgTeamChannelSharedWithTeam -ChannelId <String> -SharedWithChannelTeamInfoId <String> -TeamId <String>
+Remove-MgBetaTeamChannelSharedWithTeam -ChannelId <String> -SharedWithChannelTeamInfoId <String> -TeamId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgTeamChannelSharedWithTeam -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaTeamChannelSharedWithTeam -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,22 +29,22 @@ Delete navigation property sharedWithTeams for teams
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgTeamChannelSharedWithTeam Cmdlet
+### Example 1: Using the Remove-MgBetaTeamChannelSharedWithTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
 ```
 
-This example shows how to use the Remove-MgTeamChannelSharedWithTeam Cmdlet.
+This example shows how to use the Remove-MgBetaTeamChannelSharedWithTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Remove-MgTeamChannelSharedWithTeam Cmdlet
+### Example 2: Using the Remove-MgBetaTeamChannelSharedWithTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
 ```
 
-This example shows how to use the Remove-MgTeamChannelSharedWithTeam Cmdlet.
+This example shows how to use the Remove-MgBetaTeamChannelSharedWithTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -176,7 +176,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

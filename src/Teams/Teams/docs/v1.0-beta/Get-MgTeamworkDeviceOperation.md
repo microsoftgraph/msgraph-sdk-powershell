@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamworkdeviceoperation
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamworkdeviceoperation
 schema: 2.0.0
 ---
 
-# Get-MgTeamworkDeviceOperation
+# Get-MgBetaTeamworkDeviceOperation
 
 ## SYNOPSIS
 The async operations on the device.
@@ -14,20 +14,20 @@ The async operations on the device.
 
 ### List (Default)
 ```
-Get-MgTeamworkDeviceOperation -TeamworkDeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTeamworkDeviceOperation -TeamworkDeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTeamworkDeviceOperation -TeamworkDeviceId <String> -TeamworkDeviceOperationId <String>
+Get-MgBetaTeamworkDeviceOperation -TeamworkDeviceId <String> -TeamworkDeviceOperationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamworkDeviceOperation -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaTeamworkDeviceOperation -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The async operations on the device.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamworkDeviceOperation Cmdlet
+### Example 1: Using the Get-MgBetaTeamworkDeviceOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDeviceOperation -TeamworkDeviceId $teamworkDeviceId -TeamworkDeviceOperationId $teamworkDeviceOperationId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDeviceOperation -TeamworkDeviceId $teamworkDeviceId -TeamworkDeviceOperationId $teamworkDeviceOperationId
 ```
 
-This example shows how to use the Get-MgTeamworkDeviceOperation Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDeviceOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamworkDeviceOperation Cmdlet
+### Example 2: Using the Get-MgBetaTeamworkDeviceOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDeviceOperation -TeamworkDeviceId $teamworkDeviceId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDeviceOperation -TeamworkDeviceId $teamworkDeviceId
 ```
 
-This example shows how to use the Get-MgTeamworkDeviceOperation Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDeviceOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDeviceOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDeviceOperation
 
 ## NOTES
 

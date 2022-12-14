@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationsynchronizationprofileerror
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationsynchronizationprofileerror
 schema: 2.0.0
 ---
 
-# Get-MgEducationSynchronizationProfileError
+# Get-MgBetaEducationSynchronizationProfileError
 
 ## SYNOPSIS
 All errors associated with this synchronization profile.
@@ -14,21 +14,21 @@ All errors associated with this synchronization profile.
 
 ### List (Default)
 ```
-Get-MgEducationSynchronizationProfileError -EducationSynchronizationProfileId <String>
+Get-MgBetaEducationSynchronizationProfileError -EducationSynchronizationProfileId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEducationSynchronizationProfileError -EducationSynchronizationErrorId <String>
+Get-MgBetaEducationSynchronizationProfileError -EducationSynchronizationErrorId <String>
  -EducationSynchronizationProfileId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationSynchronizationProfileError -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationSynchronizationProfileError -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -37,13 +37,13 @@ All errors associated with this synchronization profile.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationSynchronizationProfileError Cmdlet
+### Example 1: Using the Get-MgBetaEducationSynchronizationProfileError Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationSynchronizationProfileError -EducationSynchronizationProfileId $educationSynchronizationProfileId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationSynchronizationProfileError -EducationSynchronizationProfileId $educationSynchronizationProfileId
 ```
 
-This example shows how to use the Get-MgEducationSynchronizationProfileError Cmdlet.
+This example shows how to use the Get-MgBetaEducationSynchronizationProfileError Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError
 
 ## NOTES
 

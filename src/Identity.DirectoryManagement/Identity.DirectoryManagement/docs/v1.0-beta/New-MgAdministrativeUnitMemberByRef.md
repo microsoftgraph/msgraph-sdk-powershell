@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgadministrativeunitmemberbyref
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgadministrativeunitmemberbyref
 schema: 2.0.0
 ---
 
-# New-MgAdministrativeUnitMemberByRef
+# New-MgBetaAdministrativeUnitMemberByRef
 
 ## SYNOPSIS
 Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit.
@@ -16,25 +16,25 @@ All group types can be created within an administrative unit.
 
 ### CreateExpanded (Default)
 ```
-New-MgAdministrativeUnitMemberByRef -AdministrativeUnitId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaAdministrativeUnitMemberByRef -AdministrativeUnitId <String> [-AdditionalProperties <Hashtable>]
  [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgAdministrativeUnitMemberByRef -AdministrativeUnitId <String> -BodyParameter <IReferenceCreate>
+New-MgBetaAdministrativeUnitMemberByRef -AdministrativeUnitId <String> -BodyParameter <IReferenceCreate>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgAdministrativeUnitMemberByRef -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaAdministrativeUnitMemberByRef -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgAdministrativeUnitMemberByRef -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaAdministrativeUnitMemberByRef -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,16 +45,16 @@ All group types can be created within an administrative unit.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgAdministrativeUnitMemberByRef Cmdlet
+### Example 1: Using the New-MgBetaAdministrativeUnitMemberByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/groups/{id}"
 }
-New-MgAdministrativeUnitMemberByRef -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
+New-MgBetaAdministrativeUnitMemberByRef -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgAdministrativeUnitMemberByRef Cmdlet.
+This example shows how to use the New-MgBetaAdministrativeUnitMemberByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -187,9 +187,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyaccessreviewpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyaccessreviewpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyAccessReviewPolicy
+# Update-MgBetaPolicyAccessReviewPolicy
 
 ## SYNOPSIS
 Update the properties of an accessReviewPolicy object.
@@ -14,14 +14,14 @@ Update the properties of an accessReviewPolicy object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyAccessReviewPolicy [-AdditionalProperties <Hashtable>] [-Description <String>]
+Update-MgBetaPolicyAccessReviewPolicy [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsGroupOwnerManagementEnabled] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPolicyAccessReviewPolicy -BodyParameter <IMicrosoftGraphAccessReviewPolicy> [-PassThru] [-Confirm]
+Update-MgBetaPolicyAccessReviewPolicy -BodyParameter <IMicrosoftGraphAccessReviewPolicy> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,16 +30,16 @@ Update the properties of an accessReviewPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyAccessReviewPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyAccessReviewPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	IsGroupOwnerManagementEnabled = $true
 }
-Update-MgPolicyAccessReviewPolicy -BodyParameter $params
+Update-MgBetaPolicyAccessReviewPolicy -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyAccessReviewPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyAccessReviewPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -64,7 +64,7 @@ accessReviewPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewPolicy
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/set-mgdeviceappmgtwdacsupplementalpolicy
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/set-mgdeviceappmgtwdacsupplementalpolicy
 schema: 2.0.0
 ---
 
-# Set-MgDeviceAppMgtWdacSupplementalPolicy
+# Set-MgBetaDeviceAppMgtWdacSupplementalPolicy
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,7 +14,7 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceAppMgtWdacSupplementalPolicy -WindowsDefenderApplicationControlSupplementalPolicyId <String>
+Set-MgBetaDeviceAppMgtWdacSupplementalPolicy -WindowsDefenderApplicationControlSupplementalPolicyId <String>
  [-AdditionalProperties <Hashtable>]
  [-WdacPolicyAssignments <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Set-MgDeviceAppMgtWdacSupplementalPolicy -WindowsDefenderApplicationControlSuppl
 
 ### Assign
 ```
-Set-MgDeviceAppMgtWdacSupplementalPolicy -WindowsDefenderApplicationControlSupplementalPolicyId <String>
+Set-MgBetaDeviceAppMgtWdacSupplementalPolicy -WindowsDefenderApplicationControlSupplementalPolicyId <String>
  -BodyParameter <IPaths1Pgdjs1DeviceappmanagementWdacsupplementalpoliciesWindowsdefenderapplicationcontrolsupplementalpolicyIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceAppMgtWdacSupplementalPolicy -InputObject <IDevicesCorporateManagementIdentity>
+Set-MgBetaDeviceAppMgtWdacSupplementalPolicy -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPaths1Pgdjs1DeviceappmanagementWdacsupplementalpoliciesWindowsdefenderapplicationcontrolsupplementalpolicyIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceAppMgtWdacSupplementalPolicy -InputObject <IDevicesCorporateManagementIdentity>
+Set-MgBetaDeviceAppMgtWdacSupplementalPolicy -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-WdacPolicyAssignments <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Pgdjs1DeviceappmanagementWdacsupplementalpoliciesWindowsdefenderapplicationcontrolsupplementalpolicyIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pgdjs1DeviceappmanagementWdacsupplementalpoliciesWindowsdefenderapplicationcontrolsupplementalpolicyIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for WDACPOLICYASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -178,9 +178,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Pgdjs1DeviceappmanagementWdacsupplementalpoliciesWindowsdefenderapplicationcontrolsupplementalpolicyIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pgdjs1DeviceappmanagementWdacsupplementalpoliciesWindowsdefenderapplicationcontrolsupplementalpolicyIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -190,7 +190,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Set-MgDeviceAppManagementWdacSupplementalPolicy
+### Set-MgBetaDeviceAppManagementWdacSupplementalPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

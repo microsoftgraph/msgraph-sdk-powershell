@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/invoke-mgextractdriverootsensitivitylabel
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/invoke-mgextractdriverootsensitivitylabel
 schema: 2.0.0
 ---
 
-# Invoke-MgExtractDriveRootSensitivityLabel
+# Invoke-MgBetaExtractDriveRootSensitivityLabel
 
 ## SYNOPSIS
 Invoke action extractSensitivityLabels
@@ -14,12 +14,12 @@ Invoke action extractSensitivityLabels
 
 ### Extract (Default)
 ```
-Invoke-MgExtractDriveRootSensitivityLabel -DriveId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaExtractDriveRootSensitivityLabel -DriveId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExtractViaIdentity
 ```
-Invoke-MgExtractDriveRootSensitivityLabel -InputObject <IFilesIdentity> [-Confirm] [-WhatIf]
+Invoke-MgBetaExtractDriveRootSensitivityLabel -InputObject <IFilesIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -50,7 +50,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: ExtractViaIdentity
 Aliases:
 
@@ -97,11 +97,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityLabelAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityLabelAssignment
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementwindowautopilotdeviceidentityresourceaccounttodevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementwindowautopilotdeviceidentityresourceaccounttodevice
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
+# Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
 
 ## SYNOPSIS
 Assigns resource account to Autopilot devices.
@@ -14,7 +14,7 @@ Assigns resource account to Autopilot devices.
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
+Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
  -WindowsAutopilotDeviceIdentityId <String> [-AdditionalProperties <Hashtable>]
  [-AddressableUserName <String>] [-ResourceAccountName <String>] [-UserPrincipalName <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
 
 ### Assign
 ```
-Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
+Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
  -WindowsAutopilotDeviceIdentityId <String>
  -BodyParameter <IPaths1G076VfDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignresourceaccounttodevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
+Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1G076VfDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignresourceaccounttodevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
+Set-MgBetaDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-AddressableUserName <String>] [-ResourceAccountName <String>] [-UserPrincipalName <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1G076VfDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignresourceaccounttodevicePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1G076VfDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignresourceaccounttodevicePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -102,7 +102,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -209,9 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1G076VfDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignresourceaccounttodevicePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1G076VfDevicemanagementWindowsautopilotdeviceidentitiesWindowsautopilotdeviceidentityIdMicrosoftGraphAssignresourceaccounttodevicePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

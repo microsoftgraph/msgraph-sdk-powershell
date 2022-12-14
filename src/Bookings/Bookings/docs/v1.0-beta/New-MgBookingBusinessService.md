@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbookingbusinessservice
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/new-mgbookingbusinessservice
 schema: 2.0.0
 ---
 
-# New-MgBookingBusinessService
+# New-MgBetaBookingBusinessService
 
 ## SYNOPSIS
 Create a new bookingService for the specified bookingBusiness.
@@ -14,7 +14,7 @@ Create a new bookingService for the specified bookingBusiness.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgBookingBusinessService -BookingBusinessId <String> [-AdditionalInformation <String>]
+New-MgBetaBookingBusinessService -BookingBusinessId <String> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]
  [-DefaultDuration <TimeSpan>] [-DefaultLocation <IMicrosoftGraphLocation1>] [-DefaultPrice <Double>]
  [-DefaultPriceType <BookingPriceType>] [-DefaultReminders <IMicrosoftGraphBookingReminder1[]>]
@@ -27,19 +27,19 @@ New-MgBookingBusinessService -BookingBusinessId <String> [-AdditionalInformation
 
 ### Create1
 ```
-New-MgBookingBusinessService -BookingBusinessId <String> -BodyParameter <IMicrosoftGraphBookingService1>
+New-MgBetaBookingBusinessService -BookingBusinessId <String> -BodyParameter <IMicrosoftGraphBookingService1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgBookingBusinessService -InputObject <IBookingsIdentity> -BodyParameter <IMicrosoftGraphBookingService1>
+New-MgBetaBookingBusinessService -InputObject <IBookingsIdentity> -BodyParameter <IMicrosoftGraphBookingService1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgBookingBusinessService -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
+New-MgBetaBookingBusinessService -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]
  [-DefaultDuration <TimeSpan>] [-DefaultLocation <IMicrosoftGraphLocation1>] [-DefaultPrice <Double>]
  [-DefaultPriceType <BookingPriceType>] [-DefaultReminders <IMicrosoftGraphBookingReminder1[]>]
@@ -55,45 +55,45 @@ Create a new bookingService for the specified bookingBusiness.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgBookingBusinessService Cmdlet
+### Example 1: Using the New-MgBetaBookingBusinessService Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
-	"@odata.type" = "#microsoft.graph.bookingService"
+	"@odata.type" = "#Microsoft.Graph.Beta.bookingService"
 	DefaultDuration = "PT1H30M"
 	DefaultLocation = @{
-		"@odata.type" = "#microsoft.graph.location"
+		"@odata.type" = "#Microsoft.Graph.Beta.location"
 		Address = @{
-			"@odata.type" = "#microsoft.graph.physicalAddress"
+			"@odata.type" = "#Microsoft.Graph.Beta.physicalAddress"
 			City = "Buffalo"
 			CountryOrRegion = "USA"
 			PostalCode = "98052"
 			PostOfficeBox = $null
 			State = "NY"
 			Street = "4567 First Street"
-			"Type@odata.type" = "#microsoft.graph.physicalAddressType"
+			"Type@odata.type" = "#Microsoft.Graph.Beta.physicalAddressType"
 			Type = $null
 		}
 		Coordinates = $null
 		DisplayName = "Contoso Lunch Delivery"
 		LocationEmailAddress = $null
-		"LocationType@odata.type" = "#microsoft.graph.locationType"
+		"LocationType@odata.type" = "#Microsoft.Graph.Beta.locationType"
 		LocationType = $null
 		LocationUri = $null
 		UniqueId = $null
-		"UniqueIdType@odata.type" = "#microsoft.graph.locationUniqueIdType"
+		"UniqueIdType@odata.type" = "#Microsoft.Graph.Beta.locationUniqueIdType"
 		UniqueIdType = $null
 	}
 	DefaultPrice = 10
-	"DefaultPriceType@odata.type" = "#microsoft.graph.bookingPriceType"
+	"DefaultPriceType@odata.type" = "#Microsoft.Graph.Beta.bookingPriceType"
 	DefaultPriceType = "fixedPrice"
-	"DefaultReminders@odata.type" = "#Collection(microsoft.graph.bookingReminder)"
+	"DefaultReminders@odata.type" = "#Collection(Microsoft.Graph.Beta.bookingReminder)"
 	DefaultReminders = @(
 		@{
-			"@odata.type" = "#microsoft.graph.bookingReminder"
+			"@odata.type" = "#Microsoft.Graph.Beta.bookingReminder"
 			Message = "Please be reminded that this service is tomorrow."
 			Offset = "P1D"
-			"Recipients@odata.type" = "#microsoft.graph.bookingReminderRecipients"
+			"Recipients@odata.type" = "#Microsoft.Graph.Beta.bookingReminderRecipients"
 			Recipients = "allAttendees"
 		}
 	)
@@ -107,7 +107,7 @@ $params = @{
 	PostBuffer = "PT10M"
 	PreBuffer = "PT5M"
 	SchedulingPolicy = @{
-		"@odata.type" = "#microsoft.graph.bookingSchedulingPolicy"
+		"@odata.type" = "#Microsoft.Graph.Beta.bookingSchedulingPolicy"
 		AllowStaffSelection = $true
 		MaximumAdvance = "P10D"
 		MinimumLeadTime = "PT10H"
@@ -121,10 +121,10 @@ $params = @{
 	)
 	IsAnonymousJoinEnabled = $false
 }
-New-MgBookingBusinessService -BookingBusinessId $bookingBusinessId -BodyParameter $params
+New-MgBetaBookingBusinessService -BookingBusinessId $bookingBusinessId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgBookingBusinessService Cmdlet.
+This example shows how to use the New-MgBetaBookingBusinessService Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -164,7 +164,7 @@ Represents a particular service offered by a booking business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingService1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -195,7 +195,7 @@ Contains the set of custom questions associated with a particular service.
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMQUESTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingQuestionAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingQuestionAssignment[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -227,7 +227,7 @@ location
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTLOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation1
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 Represents the type of pricing of a booking service.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.BookingPriceType
+Type: Microsoft.Graph.Beta.PowerShell.Support.BookingPriceType
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -274,7 +274,7 @@ The value of this property is available only when reading this bookingService by
 To construct, please use Get-Help -Online and see NOTES section for DEFAULTREMINDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingReminder1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingReminder1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -336,7 +336,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -475,7 +475,7 @@ This type represents the set of policies that dictate how bookings can be create
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULINGPOLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -553,13 +553,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingService1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingService1
 
 ## NOTES
 

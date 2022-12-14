@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantgroup
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantgroup
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantGroup
+# Get-MgBetaTenantRelationshipManagedTenantGroup
 
 ## SYNOPSIS
 The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
@@ -14,20 +14,20 @@ The collection of a logical grouping of managed tenants used by the multi-tenant
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantGroup [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTenantRelationshipManagedTenantGroup [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantGroup -TenantGroupId <String> [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantGroup -TenantGroupId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantGroup -InputObject <IManagedTenantsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantGroup -InputObject <IManagedTenantsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The collection of a logical grouping of managed tenants used by the multi-tenant
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantGroup Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantGroup -TenantGroupId $tenantGroupId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantGroup -TenantGroupId $tenantGroupId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantGroup Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantGroup Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantGroup
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantGroup
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantGroup Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantGroup
 
 ## NOTES
 

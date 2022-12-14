@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/update-mguserinferenceclassificationoverride
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/update-mguserinferenceclassificationoverride
 schema: 2.0.0
 ---
 
-# Update-MgUserInferenceClassificationOverride
+# Update-MgBetaUserInferenceClassificationOverride
 
 ## SYNOPSIS
 Update the navigation property overrides in users
@@ -14,28 +14,28 @@ Update the navigation property overrides in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserInferenceClassificationOverride -InferenceClassificationOverrideId <String> -UserId <String>
+Update-MgBetaUserInferenceClassificationOverride -InferenceClassificationOverrideId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ClassifyAs <String>] [-Id <String>]
  [-SenderEmailAddress <IMicrosoftGraphEmailAddress>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserInferenceClassificationOverride -InferenceClassificationOverrideId <String> -UserId <String>
+Update-MgBetaUserInferenceClassificationOverride -InferenceClassificationOverrideId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphInferenceClassificationOverride> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserInferenceClassificationOverride -InputObject <IMailIdentity>
+Update-MgBetaUserInferenceClassificationOverride -InputObject <IMailIdentity>
  -BodyParameter <IMicrosoftGraphInferenceClassificationOverride> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserInferenceClassificationOverride -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-ClassifyAs <String>] [-Id <String>] [-SenderEmailAddress <IMicrosoftGraphEmailAddress>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,17 +45,17 @@ Update the navigation property overrides in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserInferenceClassificationOverride Cmdlet
+### Example 1: Using the Update-MgBetaUserInferenceClassificationOverride Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	ClassifyAs = "focused"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
+Update-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserInferenceClassificationOverride Cmdlet.
+This example shows how to use the Update-MgBetaUserInferenceClassificationOverride Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ inferenceClassificationOverride
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -173,7 +173,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for SENDEREMAILADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -235,9 +235,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
 
 ## OUTPUTS
 

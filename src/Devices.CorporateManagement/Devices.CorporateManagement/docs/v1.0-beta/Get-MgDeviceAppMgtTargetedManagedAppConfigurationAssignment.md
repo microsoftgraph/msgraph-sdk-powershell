@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgttargetedmanagedappconfigurationassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgttargetedmanagedappconfigurationassignment
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment
+# Get-MgBetaDeviceAppMgtTargetedManagedAppConfigurationAssignment
 
 ## SYNOPSIS
 Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
@@ -14,21 +14,21 @@ Navigation property to list of inclusion and exclusion groups to which the polic
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -TargetedManagedAppConfigurationId <String>
+Get-MgBetaDeviceAppMgtTargetedManagedAppConfigurationAssignment -TargetedManagedAppConfigurationId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -TargetedManagedAppConfigurationId <String>
+Get-MgBetaDeviceAppMgtTargetedManagedAppConfigurationAssignment -TargetedManagedAppConfigurationId <String>
  -TargetedManagedAppPolicyAssignmentId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtTargetedManagedAppConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -241,17 +241,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementTargetedManagedAppConfigurationAssignment
+### Get-MgBetaDeviceAppManagementTargetedManagedAppConfigurationAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

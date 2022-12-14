@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/unpublish-mgsitelistcontenttype
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/unpublish-mgsitelistcontenttype
 schema: 2.0.0
 ---
 
-# Unpublish-MgSiteListContentType
+# Unpublish-MgBetaSiteListContentType
 
 ## SYNOPSIS
 Unpublish a [contentType][] from a content type hub site.
@@ -14,13 +14,13 @@ Unpublish a [contentType][] from a content type hub site.
 
 ### Unpublish (Default)
 ```
-Unpublish-MgSiteListContentType -ContentTypeId <String> -ListId <String> -SiteId <String> [-PassThru]
+Unpublish-MgBetaSiteListContentType -ContentTypeId <String> -ListId <String> -SiteId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnpublishViaIdentity
 ```
-Unpublish-MgSiteListContentType -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Unpublish-MgBetaSiteListContentType -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,12 +31,12 @@ Unpublish a [contentType][] from a content type hub site.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 
-Unpublish-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+Unpublish-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
 ```
 
-This example shows how to use the Unpublish-MgSiteListContentType Cmdlet.
+This example shows how to use the Unpublish-MgBetaSiteListContentType Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: UnpublishViaIdentity
 Aliases:
 
@@ -154,7 +154,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

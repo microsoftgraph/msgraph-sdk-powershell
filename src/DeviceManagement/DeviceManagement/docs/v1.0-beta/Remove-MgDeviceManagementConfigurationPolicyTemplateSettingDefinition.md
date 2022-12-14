@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementconfigurationpolicytemplatesettingdefinition
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementconfigurationpolicytemplatesettingdefinition
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementConfigurationPolicyTemplateSettingDefinition
+# Remove-MgBetaDeviceManagementConfigurationPolicyTemplateSettingDefinition
 
 ## SYNOPSIS
 Delete navigation property settingDefinitions for deviceManagement
@@ -14,7 +14,7 @@ Delete navigation property settingDefinitions for deviceManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementConfigurationPolicyTemplateSettingDefinition
+Remove-MgBetaDeviceManagementConfigurationPolicyTemplateSettingDefinition
  -DeviceManagementConfigurationPolicyTemplateId <String>
  -DeviceManagementConfigurationSettingDefinitionId <String>
  -DeviceManagementConfigurationSettingTemplateId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Remove-MgDeviceManagementConfigurationPolicyTemplateSettingDefinition
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementConfigurationPolicyTemplateSettingDefinition -InputObject <IDeviceManagementIdentity>
+Remove-MgBetaDeviceManagementConfigurationPolicyTemplateSettingDefinition -InputObject <IDeviceManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mguploaddevicemanagementdeponboardingsettingdeptoken
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mguploaddevicemanagementdeponboardingsettingdeptoken
 schema: 2.0.0
 ---
 
-# Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken
+# Invoke-MgBetaUploadDeviceManagementDepOnboardingSettingDepToken
 
 ## SYNOPSIS
 Uploads a new Device Enrollment Program token
@@ -14,28 +14,28 @@ Uploads a new Device Enrollment Program token
 
 ### UploadExpanded (Default)
 ```
-Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken -DepOnboardingSettingId <String>
+Invoke-MgBetaUploadDeviceManagementDepOnboardingSettingDepToken -DepOnboardingSettingId <String>
  [-AdditionalProperties <Hashtable>] [-AppleId <String>] [-DepToken <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Upload
 ```
-Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken -DepOnboardingSettingId <String>
+Invoke-MgBetaUploadDeviceManagementDepOnboardingSettingDepToken -DepOnboardingSettingId <String>
  -BodyParameter <IPaths7Ytj24DevicemanagementDeponboardingsettingsDeponboardingsettingIdMicrosoftGraphUploaddeptokenPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
 ```
-Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaUploadDeviceManagementDepOnboardingSettingDepToken -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths7Ytj24DevicemanagementDeponboardingsettingsDeponboardingsettingIdMicrosoftGraphUploaddeptokenPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentityExpanded
 ```
-Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken -InputObject <IDeviceManagementActionsIdentity>
+Invoke-MgBetaUploadDeviceManagementDepOnboardingSettingDepToken -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-AppleId <String>] [-DepToken <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths7Ytj24DevicemanagementDeponboardingsettingsDeponboardingsettingIdMicrosoftGraphUploaddeptokenPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths7Ytj24DevicemanagementDeponboardingsettingsDeponboardingsettingIdMicrosoftGraphUploaddeptokenPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Upload, UploadViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: UploadViaIdentity, UploadViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths7Ytj24DevicemanagementDeponboardingsettingsDeponboardingsettingIdMicrosoftGraphUploaddeptokenPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths7Ytj24DevicemanagementDeponboardingsettingsDeponboardingsettingIdMicrosoftGraphUploaddeptokenPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupconversationthreadpostinreplytomention
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupconversationthreadpostinreplytomention
 schema: 2.0.0
 ---
 
-# New-MgGroupConversationThreadPostInReplyToMention
+# New-MgBetaGroupConversationThreadPostInReplyToMention
 
 ## SYNOPSIS
 Create new navigation property to mentions for groups
@@ -14,7 +14,7 @@ Create new navigation property to mentions for groups
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupConversationThreadPostInReplyToMention -ConversationId <String> -ConversationThreadId <String>
+New-MgBetaGroupConversationThreadPostInReplyToMention -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-Application <String>]
  [-ClientReference <String>] [-CreatedBy <IMicrosoftGraphEmailAddress>] [-CreatedDateTime <DateTime>]
  [-DeepLink <String>] [-Id <String>] [-Mentioned <IMicrosoftGraphEmailAddress>] [-MentionText <String>]
@@ -23,20 +23,20 @@ New-MgGroupConversationThreadPostInReplyToMention -ConversationId <String> -Conv
 
 ### Create
 ```
-New-MgGroupConversationThreadPostInReplyToMention -ConversationId <String> -ConversationThreadId <String>
+New-MgBetaGroupConversationThreadPostInReplyToMention -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> -BodyParameter <IMicrosoftGraphMention> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupConversationThreadPostInReplyToMention -InputObject <IGroupsIdentity>
+New-MgBetaGroupConversationThreadPostInReplyToMention -InputObject <IGroupsIdentity>
  -BodyParameter <IMicrosoftGraphMention> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupConversationThreadPostInReplyToMention -InputObject <IGroupsIdentity>
+New-MgBetaGroupConversationThreadPostInReplyToMention -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-Application <String>] [-ClientReference <String>]
  [-CreatedBy <IMicrosoftGraphEmailAddress>] [-CreatedDateTime <DateTime>] [-DeepLink <String>] [-Id <String>]
  [-Mentioned <IMicrosoftGraphEmailAddress>] [-MentionText <String>] [-ServerCreatedDateTime <DateTime>]
@@ -87,7 +87,7 @@ mention
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMention
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -150,7 +150,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -229,7 +229,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -245,7 +245,7 @@ emailAddress
 To construct, please use Get-Help -Online and see NOTES section for MENTIONED properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -341,13 +341,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMention
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMention
 
 ## NOTES
 

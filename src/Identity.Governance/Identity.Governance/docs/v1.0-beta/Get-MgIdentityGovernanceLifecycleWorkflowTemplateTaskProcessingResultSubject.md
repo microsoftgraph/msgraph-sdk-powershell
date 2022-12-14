@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtemplatetaskprocessingresultsubject
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowtemplatetaskprocessingresultsubject
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject
 
 ## SYNOPSIS
 The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
@@ -14,14 +14,14 @@ The unique identifier of the Azure AD user targeted for the task execution.Suppo
 
 ### Get (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject -TaskId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject -TaskId <String>
  -TaskProcessingResultId <String> -WorkflowTemplateId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -129,11 +129,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser
 
 ## NOTES
 

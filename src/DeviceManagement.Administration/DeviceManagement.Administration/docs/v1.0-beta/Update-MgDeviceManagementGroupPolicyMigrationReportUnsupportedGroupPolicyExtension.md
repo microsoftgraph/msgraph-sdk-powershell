@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicymigrationreportunsupportedgrouppolicyextension
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementgrouppolicymigrationreportunsupportedgrouppolicyextension
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
+# Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
 
 ## SYNOPSIS
 Update the navigation property unsupportedGroupPolicyExtensions in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property unsupportedGroupPolicyExtensions in deviceManagem
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
+Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -GroupPolicyMigrationReportId <String> -UnsupportedGroupPolicyExtensionId <String>
  [-AdditionalProperties <Hashtable>] [-ExtensionType <String>] [-Id <String>] [-NamespaceUrl <String>]
  [-NodeName <String>] [-SettingScope <GroupPolicySettingScope>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtensi
 
 ### Update
 ```
-Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
+Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -GroupPolicyMigrationReportId <String> -UnsupportedGroupPolicyExtensionId <String>
  -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -31,7 +31,7 @@ Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtensi
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
+Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -39,7 +39,7 @@ Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtensi
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
+Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-ExtensionType <String>] [-Id <String>] [-NamespaceUrl <String>] [-NodeName <String>]
  [-SettingScope <GroupPolicySettingScope>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -72,7 +72,7 @@ Unsupported Group Policy Extension.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnsupportedGroupPolicyExtension
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnsupportedGroupPolicyExtension
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 Scope of the group policy setting.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.GroupPolicySettingScope
+Type: Microsoft.Graph.Beta.PowerShell.Support.GroupPolicySettingScope
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -256,9 +256,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnsupportedGroupPolicyExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnsupportedGroupPolicyExtension
 
 ## OUTPUTS
 

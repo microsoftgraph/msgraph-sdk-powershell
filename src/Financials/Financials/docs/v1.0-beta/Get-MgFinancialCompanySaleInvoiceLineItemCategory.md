@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysaleinvoicelineitemcategory
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanysaleinvoicelineitemcategory
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanySaleInvoiceLineItemCategory
+# Get-MgBetaFinancialCompanySaleInvoiceLineItemCategory
 
 ## SYNOPSIS
 Get itemCategory from financials
@@ -14,25 +14,25 @@ Get itemCategory from financials
 
 ### Get (Default)
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemCategory -CompanyId <String> -SalesInvoiceLineId <String>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemCategory -CompanyId <String> -SalesInvoiceLineId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemCategory -CompanyId <String> -SalesInvoiceId <String>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemCategory -CompanyId <String> -SalesInvoiceId <String>
  -SalesInvoiceLineId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemCategory -InputObject <IFinancialsIdentity>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemCategory -InputObject <IFinancialsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemCategory -InputObject <IFinancialsIdentity>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemCategory -InputObject <IFinancialsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -78,7 +78,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -139,11 +139,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 
 ## NOTES
 

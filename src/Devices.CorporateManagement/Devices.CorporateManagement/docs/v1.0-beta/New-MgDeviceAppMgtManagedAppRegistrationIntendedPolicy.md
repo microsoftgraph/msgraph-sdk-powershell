@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedappregistrationintendedpolicy
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmanagedappregistrationintendedpolicy
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy
+# New-MgBetaDeviceAppMgtManagedAppRegistrationIntendedPolicy
 
 ## SYNOPSIS
 Create new navigation property to intendedPolicies for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to intendedPolicies for deviceAppManagement
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy -ManagedAppRegistrationId <String>
+New-MgBetaDeviceAppMgtManagedAppRegistrationIntendedPolicy -ManagedAppRegistrationId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>]
  [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy -ManagedAppRegistrationId
 
 ### Create1
 ```
-New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy -ManagedAppRegistrationId <String>
+New-MgBetaDeviceAppMgtManagedAppRegistrationIntendedPolicy -ManagedAppRegistrationId <String>
  -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtManagedAppRegistrationIntendedPolicy -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtManagedAppRegistrationIntendedPolicy -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>]
  [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ The ManagedAppPolicy resource represents a base type for platform specific polic
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -251,19 +251,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementManagedAppRegistrationIntendedPolicy
+### New-MgBetaDeviceAppManagementManagedAppRegistrationIntendedPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

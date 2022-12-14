@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2cuserflow
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2cuserflow
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2CUserFlow
+# Get-MgBetaIdentityB2CUserFlow
 
 ## SYNOPSIS
 Represents entry point for B2C identity userflows.
@@ -14,20 +14,20 @@ Represents entry point for B2C identity userflows.
 
 ### List (Default)
 ```
-Get-MgIdentityB2CUserFlow [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaIdentityB2CUserFlow [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityB2CUserFlow -B2CIdentityUserFlowId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaIdentityB2CUserFlow -B2CIdentityUserFlowId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityB2CUserFlow -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityB2CUserFlow -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,31 +36,31 @@ Represents entry point for B2C identity userflows.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityB2CUserFlow Cmdlet
+### Example 1: Using the Get-MgBetaIdentityB2CUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlow -B2cIdentityUserFlowId $b2cIdentityUserFlowId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlow -B2cIdentityUserFlowId $b2cIdentityUserFlowId
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlow Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityB2CUserFlow Cmdlet
+### Example 2: Using the Get-MgBetaIdentityB2CUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlow -ExpandProperty "identityProviders" 
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlow -ExpandProperty "identityProviders" 
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlow Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgIdentityB2CUserFlow Cmdlet
+### Example 3: Using the Get-MgBetaIdentityB2CUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlow
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlow
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlow Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphB2CIdentityUserFlow
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphB2CIdentityUserFlow
 
 ## NOTES
 

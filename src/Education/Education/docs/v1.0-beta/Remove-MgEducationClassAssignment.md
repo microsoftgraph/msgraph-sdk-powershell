@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationclassassignment
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/remove-mgeducationclassassignment
 schema: 2.0.0
 ---
 
-# Remove-MgEducationClassAssignment
+# Remove-MgBetaEducationClassAssignment
 
 ## SYNOPSIS
 Delete navigation property assignments for education
@@ -14,13 +14,13 @@ Delete navigation property assignments for education
 
 ### Delete (Default)
 ```
-Remove-MgEducationClassAssignment -EducationAssignmentId <String> -EducationClassId <String>
+Remove-MgBetaEducationClassAssignment -EducationAssignmentId <String> -EducationClassId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationClassAssignment -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaEducationClassAssignment -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property assignments for education
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEducationClassAssignment Cmdlet
+### Example 1: Using the Remove-MgBetaEducationClassAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Import-Module Microsoft.Graph.Beta.Education
+Remove-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
 
-This example shows how to use the Remove-MgEducationClassAssignment Cmdlet.
+This example shows how to use the Remove-MgBetaEducationClassAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggroupphotocontent
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/set-mggroupphotocontent
 schema: 2.0.0
 ---
 
-# Set-MgGroupPhotoContent
+# Set-MgBetaGroupPhotoContent
 
 ## SYNOPSIS
 Update media content for the navigation property photo in groups
@@ -14,25 +14,25 @@ Update media content for the navigation property photo in groups
 
 ### Set (Default)
 ```
-Set-MgGroupPhotoContent -GroupId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
+Set-MgBetaGroupPhotoContent -GroupId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set1
 ```
-Set-MgGroupPhotoContent -GroupId <String> -ProfilePhotoId <String> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaGroupPhotoContent -GroupId <String> -ProfilePhotoId <String> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgGroupPhotoContent -InputObject <IGroupsIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
+Set-MgBetaGroupPhotoContent -InputObject <IGroupsIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgGroupPhotoContent -InputObject <IGroupsIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
+Set-MgBetaGroupPhotoContent -InputObject <IGroupsIdentity> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -95,7 +95,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentity1
 Aliases:
 
@@ -172,7 +172,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ### System.IO.Stream
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/register-mgprivilegedaccessresource
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/register-mgprivilegedaccessresource
 schema: 2.0.0
 ---
 
-# Register-MgPrivilegedAccessResource
+# Register-MgBetaPrivilegedAccessResource
 
 ## SYNOPSIS
 Invoke action register
@@ -14,27 +14,27 @@ Invoke action register
 
 ### RegisterExpanded (Default)
 ```
-Register-MgPrivilegedAccessResource -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
+Register-MgBetaPrivilegedAccessResource -PrivilegedAccessId <String> [-AdditionalProperties <Hashtable>]
  [-ExternalId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Register
 ```
-Register-MgPrivilegedAccessResource -PrivilegedAccessId <String>
+Register-MgBetaPrivilegedAccessResource -PrivilegedAccessId <String>
  -BodyParameter <IPaths1RoyfaoPrivilegedaccessIdResourcesMicrosoftGraphRegisterPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RegisterViaIdentity
 ```
-Register-MgPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity>
+Register-MgBetaPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1RoyfaoPrivilegedaccessIdResourcesMicrosoftGraphRegisterPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RegisterViaIdentityExpanded
 ```
-Register-MgPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity>
+Register-MgBetaPrivilegedAccessResource -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-ExternalId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1RoyfaoPrivilegedaccessIdResourcesMicrosoftGraphRegisterPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1RoyfaoPrivilegedaccessIdResourcesMicrosoftGraphRegisterPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Register, RegisterViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: RegisterViaIdentity, RegisterViaIdentityExpanded
 Aliases:
 
@@ -174,9 +174,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1RoyfaoPrivilegedaccessIdResourcesMicrosoftGraphRegisterPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1RoyfaoPrivilegedaccessIdResourcesMicrosoftGraphRegisterPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

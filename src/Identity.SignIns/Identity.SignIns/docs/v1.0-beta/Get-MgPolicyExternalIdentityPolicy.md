@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyexternalidentitypolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyexternalidentitypolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyExternalIdentityPolicy
+# Get-MgBetaPolicyExternalIdentityPolicy
 
 ## SYNOPSIS
 Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
@@ -13,7 +13,7 @@ Read the properties and relationships of the tenant-wide externalIdentitiesPolic
 ## SYNTAX
 
 ```
-Get-MgPolicyExternalIdentityPolicy [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaPolicyExternalIdentityPolicy [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,13 +21,13 @@ Read the properties and relationships of the tenant-wide externalIdentitiesPolic
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyExternalIdentityPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyExternalIdentityPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyExternalIdentityPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyExternalIdentityPolicy
 ```
 
-This example shows how to use the Get-MgPolicyExternalIdentityPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyExternalIdentityPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalIdentitiesPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalIdentitiesPolicy
 
 ## NOTES
 

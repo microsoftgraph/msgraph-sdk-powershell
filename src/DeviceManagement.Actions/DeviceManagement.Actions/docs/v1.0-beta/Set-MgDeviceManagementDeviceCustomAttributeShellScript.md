@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementdevicecustomattributeshellscript
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementdevicecustomattributeshellscript
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementDeviceCustomAttributeShellScript
+# Set-MgBetaDeviceManagementDeviceCustomAttributeShellScript
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,7 +14,7 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementDeviceCustomAttributeShellScript -DeviceCustomAttributeShellScriptId <String>
+Set-MgBetaDeviceManagementDeviceCustomAttributeShellScript -DeviceCustomAttributeShellScriptId <String>
  [-AdditionalProperties <Hashtable>]
  [-DeviceManagementScriptAssignments <IMicrosoftGraphDeviceManagementScriptAssignment[]>]
  [-DeviceManagementScriptGroupAssignments <IMicrosoftGraphDeviceManagementScriptGroupAssignment[]>]
@@ -23,21 +23,21 @@ Set-MgDeviceManagementDeviceCustomAttributeShellScript -DeviceCustomAttributeShe
 
 ### Assign
 ```
-Set-MgDeviceManagementDeviceCustomAttributeShellScript -DeviceCustomAttributeShellScriptId <String>
+Set-MgBetaDeviceManagementDeviceCustomAttributeShellScript -DeviceCustomAttributeShellScriptId <String>
  -BodyParameter <IPathsS7QkhtDevicemanagementDevicecustomattributeshellscriptsDevicecustomattributeshellscriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementDeviceCustomAttributeShellScript -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementDeviceCustomAttributeShellScript -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsS7QkhtDevicemanagementDevicecustomattributeshellscriptsDevicecustomattributeshellscriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementDeviceCustomAttributeShellScript -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementDeviceCustomAttributeShellScript -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>]
  [-DeviceManagementScriptAssignments <IMicrosoftGraphDeviceManagementScriptAssignment[]>]
  [-DeviceManagementScriptGroupAssignments <IMicrosoftGraphDeviceManagementScriptGroupAssignment[]>]
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsS7QkhtDevicemanagementDevicecustomattributeshellscriptsDevicecustomattributeshellscriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsS7QkhtDevicemanagementDevicecustomattributeshellscriptsDevicecustomattributeshellscriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DEVICEMANAGEMENTSCRIPTASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DEVICEMANAGEMENTSCRIPTGROUPASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -196,9 +196,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsS7QkhtDevicemanagementDevicecustomattributeshellscriptsDevicecustomattributeshellscriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsS7QkhtDevicemanagementDevicecustomattributeshellscriptsDevicecustomattributeshellscriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationfido2method
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationfido2method
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationFido2Method
+# Get-MgBetaUserAuthenticationFido2Method
 
 ## SYNOPSIS
 Represents the FIDO2 security keys registered to a user for authentication.
@@ -14,20 +14,20 @@ Represents the FIDO2 security keys registered to a user for authentication.
 
 ### List (Default)
 ```
-Get-MgUserAuthenticationFido2Method -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserAuthenticationFido2Method -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserAuthenticationFido2Method -Fido2AuthenticationMethodId <String> -UserId <String>
+Get-MgBetaUserAuthenticationFido2Method -Fido2AuthenticationMethodId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationFido2Method -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserAuthenticationFido2Method -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Represents the FIDO2 security keys registered to a user for authentication.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserAuthenticationFido2Method Cmdlet
+### Example 1: Using the Get-MgBetaUserAuthenticationFido2Method Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationFido2Method -UserId $userId -Fido2AuthenticationMethodId $fido2AuthenticationMethodId
+Get-MgBetaUserAuthenticationFido2Method -UserId $userId -Fido2AuthenticationMethodId $fido2AuthenticationMethodId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationFido2Method Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationFido2Method Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserAuthenticationFido2Method Cmdlet
+### Example 2: Using the Get-MgBetaUserAuthenticationFido2Method Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationFido2Method -UserId $userId
+Get-MgBetaUserAuthenticationFido2Method -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationFido2Method Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationFido2Method Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFido2AuthenticationMethod1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFido2AuthenticationMethod1
 
 ## NOTES
 

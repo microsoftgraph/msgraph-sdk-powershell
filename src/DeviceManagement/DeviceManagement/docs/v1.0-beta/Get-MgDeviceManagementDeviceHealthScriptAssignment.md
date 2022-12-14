@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementdevicehealthscriptassignment
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementdevicehealthscriptassignment
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceHealthScriptAssignment
+# Get-MgBetaDeviceManagementDeviceHealthScriptAssignment
 
 ## SYNOPSIS
 The list of group assignments for the device health script
@@ -14,20 +14,20 @@ The list of group assignments for the device health script
 
 ### List (Default)
 ```
-Get-MgDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptAssignmentId <String>
+Get-MgBetaDeviceManagementDeviceHealthScriptAssignment -DeviceHealthScriptAssignmentId <String>
  -DeviceHealthScriptId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceHealthScriptAssignment -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementDeviceHealthScriptAssignment -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptAssignment
 
 ## NOTES
 

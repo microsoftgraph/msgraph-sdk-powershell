@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdevicehealthscriptrunsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdevicehealthscriptrunsummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceHealthScriptRunSummary
+# Update-MgBetaDeviceManagementDeviceHealthScriptRunSummary
 
 ## SYNOPSIS
 Update the navigation property runSummary in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property runSummary in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceHealthScriptRunSummary -DeviceHealthScriptId <String>
+Update-MgBetaDeviceManagementDeviceHealthScriptRunSummary -DeviceHealthScriptId <String>
  [-AdditionalProperties <Hashtable>] [-DetectionScriptErrorDeviceCount <Int32>]
  [-DetectionScriptNotApplicableDeviceCount <Int32>] [-DetectionScriptPendingDeviceCount <Int32>]
  [-Id <String>] [-IssueDetectedDeviceCount <Int32>] [-IssueRemediatedCumulativeDeviceCount <Int32>]
@@ -26,21 +26,21 @@ Update-MgDeviceManagementDeviceHealthScriptRunSummary -DeviceHealthScriptId <Str
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceHealthScriptRunSummary -DeviceHealthScriptId <String>
+Update-MgBetaDeviceManagementDeviceHealthScriptRunSummary -DeviceHealthScriptId <String>
  -BodyParameter <IMicrosoftGraphDeviceHealthScriptRunSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementDeviceHealthScriptRunSummary -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceHealthScriptRunSummary -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphDeviceHealthScriptRunSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementDeviceHealthScriptRunSummary -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementDeviceHealthScriptRunSummary -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DetectionScriptErrorDeviceCount <Int32>]
  [-DetectionScriptNotApplicableDeviceCount <Int32>] [-DetectionScriptPendingDeviceCount <Int32>]
  [-Id <String>] [-IssueDetectedDeviceCount <Int32>] [-IssueRemediatedCumulativeDeviceCount <Int32>]
@@ -77,7 +77,7 @@ Contains properties for the run summary of a device management script.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptRunSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptRunSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -169,7 +169,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -351,9 +351,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptRunSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptRunSummary
 
 ## OUTPUTS
 

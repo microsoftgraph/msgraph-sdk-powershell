@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgriskyserviceprincipal
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgriskyserviceprincipal
 schema: 2.0.0
 ---
 
-# Update-MgRiskyServicePrincipal
+# Update-MgBetaRiskyServicePrincipal
 
 ## SYNOPSIS
 Update the navigation property riskyServicePrincipals in identityProtection
@@ -14,7 +14,7 @@ Update the navigation property riskyServicePrincipals in identityProtection
 
 ### UpdateExpanded (Default)
 ```
-Update-MgRiskyServicePrincipal -RiskyServicePrincipalId <String> [-AccountEnabled]
+Update-MgBetaRiskyServicePrincipal -RiskyServicePrincipalId <String> [-AccountEnabled]
  [-AdditionalProperties <Hashtable>] [-AppId <String>] [-DisplayName <String>]
  [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>] [-Id <String>] [-IsProcessing]
  [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
@@ -23,19 +23,19 @@ Update-MgRiskyServicePrincipal -RiskyServicePrincipalId <String> [-AccountEnable
 
 ### Update
 ```
-Update-MgRiskyServicePrincipal -RiskyServicePrincipalId <String>
+Update-MgBetaRiskyServicePrincipal -RiskyServicePrincipalId <String>
  -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgRiskyServicePrincipal -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaRiskyServicePrincipal -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgRiskyServicePrincipal -InputObject <IIdentitySignInsIdentity> [-AccountEnabled]
+Update-MgBetaRiskyServicePrincipal -InputObject <IIdentitySignInsIdentity> [-AccountEnabled]
  [-AdditionalProperties <Hashtable>] [-AppId <String>] [-DisplayName <String>]
  [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>] [-Id <String>] [-IsProcessing]
  [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
@@ -99,7 +99,7 @@ riskyServicePrincipal
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Represents the risk history of Azure AD service principals.
 To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -333,9 +333,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
 
 ## OUTPUTS
 

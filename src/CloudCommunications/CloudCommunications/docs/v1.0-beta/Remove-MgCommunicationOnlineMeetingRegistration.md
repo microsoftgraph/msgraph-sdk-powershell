@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/remove-mgcommunicationonlinemeetingregistration
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/remove-mgcommunicationonlinemeetingregistration
 schema: 2.0.0
 ---
 
-# Remove-MgCommunicationOnlineMeetingRegistration
+# Remove-MgBetaCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
 Disable and delete the externalMeetingRegistration of an onlineMeeting.
@@ -14,13 +14,13 @@ Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### Delete (Default)
 ```
-Remove-MgCommunicationOnlineMeetingRegistration -OnlineMeetingId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaCommunicationOnlineMeetingRegistration -OnlineMeetingId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity>
+Remove-MgBetaCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 

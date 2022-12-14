@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mguseronenotesectiongroup
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mguseronenotesectiongroup
 schema: 2.0.0
 ---
 
-# Get-MgUserOnenoteSectionGroup
+# Get-MgBetaUserOnenoteSectionGroup
 
 ## SYNOPSIS
 The section groups in all OneNote notebooks that are owned by the user or group.
@@ -16,26 +16,26 @@ Nullable.
 
 ### List2 (Default)
 ```
-Get-MgUserOnenoteSectionGroup -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserOnenoteSectionGroup -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserOnenoteSectionGroup -InputObject <INotesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserOnenoteSectionGroup -InputObject <INotesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List3
 ```
-Get-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -47,24 +47,24 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOnenoteSectionGroup Cmdlet
+### Example 1: Using the Get-MgBetaUserOnenoteSectionGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteSectionGroup -UserId $userId -SectionGroupId $sectionGroupId
+Get-MgBetaUserOnenoteSectionGroup -UserId $userId -SectionGroupId $sectionGroupId
 ```
 
-This example shows how to use the Get-MgUserOnenoteSectionGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteSectionGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserOnenoteSectionGroup Cmdlet
+### Example 2: Using the Get-MgBetaUserOnenoteSectionGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteSectionGroup -UserId $userId
+Get-MgBetaUserOnenoteSectionGroup -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserOnenoteSectionGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteSectionGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -135,7 +135,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -271,11 +271,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSectionGroup1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserchatmessagereplyreaction
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/set-mguserchatmessagereplyreaction
 schema: 2.0.0
 ---
 
-# Set-MgUserChatMessageReplyReaction
+# Set-MgBetaUserChatMessageReplyReaction
 
 ## SYNOPSIS
 Invoke action setReaction
@@ -14,14 +14,14 @@ Invoke action setReaction
 
 ### SetExpanded (Default)
 ```
-Set-MgUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
+Set-MgBetaUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
+Set-MgBetaUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -UserId <String>
  -BodyParameter <IPaths9284O7UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,14 +29,14 @@ Set-MgUserChatMessageReplyReaction -ChatId <String> -ChatMessageId <String> -Cha
 
 ### SetViaIdentity
 ```
-Set-MgUserChatMessageReplyReaction -InputObject <IUsersActionsIdentity>
+Set-MgBetaUserChatMessageReplyReaction -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths9284O7UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-MgUserChatMessageReplyReaction -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Set-MgBetaUserChatMessageReplyReaction -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths9284O7UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths9284O7UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
@@ -220,9 +220,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths9284O7UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths9284O7UsersUserIdChatsChatIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

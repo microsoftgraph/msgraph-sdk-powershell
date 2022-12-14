@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityauthenticationeventlistener
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgidentityauthenticationeventlistener
 schema: 2.0.0
 ---
 
-# New-MgIdentityAuthenticationEventListener
+# New-MgBetaIdentityAuthenticationEventListener
 
 ## SYNOPSIS
 Create new navigation property to authenticationEventListeners for identity
@@ -14,14 +14,14 @@ Create new navigation property to authenticationEventListeners for identity
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityAuthenticationEventListener [-AdditionalProperties <Hashtable>]
+New-MgBetaIdentityAuthenticationEventListener [-AdditionalProperties <Hashtable>]
  [-AuthenticationEventsFlowId <String>] [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>]
  [-Priority <Int32>] [-Tags <IMicrosoftGraphKeyValuePair[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityAuthenticationEventListener -BodyParameter <IMicrosoftGraphAuthenticationEventListener>
+New-MgBetaIdentityAuthenticationEventListener -BodyParameter <IMicrosoftGraphAuthenticationEventListener>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +67,7 @@ authenticationEventListener
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
 Parameter Sets: Create
 Aliases:
 
@@ -83,7 +83,7 @@ authenticationConditions
 To construct, please use Get-Help -Online and see NOTES section for CONDITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationConditions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationConditions
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for TAGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -177,11 +177,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementandroidforworksetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementandroidforworksetting
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementAndroidForWorkSetting
+# Remove-MgBetaDeviceManagementAndroidForWorkSetting
 
 ## SYNOPSIS
 Delete navigation property androidForWorkSettings for deviceManagement
@@ -13,7 +13,7 @@ Delete navigation property androidForWorkSettings for deviceManagement
 ## SYNTAX
 
 ```
-Remove-MgDeviceManagementAndroidForWorkSetting [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaDeviceManagementAndroidForWorkSetting [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

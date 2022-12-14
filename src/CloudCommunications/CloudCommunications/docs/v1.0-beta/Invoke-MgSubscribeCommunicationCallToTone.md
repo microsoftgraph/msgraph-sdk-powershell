@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgsubscribecommunicationcalltotone
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mgsubscribecommunicationcalltotone
 schema: 2.0.0
 ---
 
-# Invoke-MgSubscribeCommunicationCallToTone
+# Invoke-MgBetaSubscribeCommunicationCallToTone
 
 ## SYNOPSIS
 Subscribe to DTMF (dual-tone multi-frequency signaling).
@@ -15,27 +15,27 @@ This allows you to be notified when the user presses keys on a 'Dialpad'.
 
 ### SubscribeExpanded1 (Default)
 ```
-Invoke-MgSubscribeCommunicationCallToTone -CallId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaSubscribeCommunicationCallToTone -CallId <String> [-AdditionalProperties <Hashtable>]
  [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Subscribe1
 ```
-Invoke-MgSubscribeCommunicationCallToTone -CallId <String>
+Invoke-MgBetaSubscribeCommunicationCallToTone -CallId <String>
  -BodyParameter <IPathsXyl6WiCommunicationsCallsCallIdMicrosoftGraphSubscribetotonePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SubscribeViaIdentity1
 ```
-Invoke-MgSubscribeCommunicationCallToTone -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaSubscribeCommunicationCallToTone -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPathsXyl6WiCommunicationsCallsCallIdMicrosoftGraphSubscribetotonePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SubscribeViaIdentityExpanded1
 ```
-Invoke-MgSubscribeCommunicationCallToTone -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaSubscribeCommunicationCallToTone -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,16 +45,16 @@ This allows you to be notified when the user presses keys on a 'Dialpad'.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgSubscribeCommunicationCallToTone Cmdlet
+### Example 1: Using the Invoke-MgBetaSubscribeCommunicationCallToTone Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	ClientContext = "fd1c7836-4d84-4e24-b6aa-23188688cc54"
 }
-Invoke-MgSubscribeCommunicationCallToTone -CallId $callId -BodyParameter $params
+Invoke-MgBetaSubscribeCommunicationCallToTone -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgSubscribeCommunicationCallToTone Cmdlet.
+This example shows how to use the Invoke-MgBetaSubscribeCommunicationCallToTone Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsXyl6WiCommunicationsCallsCallIdMicrosoftGraphSubscribetotonePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsXyl6WiCommunicationsCallsCallIdMicrosoftGraphSubscribetotonePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Subscribe1, SubscribeViaIdentity1
 Aliases:
 
@@ -125,7 +125,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: SubscribeViaIdentity1, SubscribeViaIdentityExpanded1
 Aliases:
 
@@ -172,13 +172,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsXyl6WiCommunicationsCallsCallIdMicrosoftGraphSubscribetotonePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsXyl6WiCommunicationsCallsCallIdMicrosoftGraphSubscribetotonePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribeToToneOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscribeToToneOperation
 
 ## NOTES
 

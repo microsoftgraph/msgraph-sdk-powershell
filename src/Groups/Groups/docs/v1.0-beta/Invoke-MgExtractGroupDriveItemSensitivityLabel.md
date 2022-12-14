@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgextractgroupdriveitemsensitivitylabel
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgextractgroupdriveitemsensitivitylabel
 schema: 2.0.0
 ---
 
-# Invoke-MgExtractGroupDriveItemSensitivityLabel
+# Invoke-MgBetaExtractGroupDriveItemSensitivityLabel
 
 ## SYNOPSIS
 Invoke action extractSensitivityLabels
@@ -14,13 +14,13 @@ Invoke action extractSensitivityLabels
 
 ### Extract (Default)
 ```
-Invoke-MgExtractGroupDriveItemSensitivityLabel -DriveId <String> -DriveItemId <String> -GroupId <String>
+Invoke-MgBetaExtractGroupDriveItemSensitivityLabel -DriveId <String> -DriveItemId <String> -GroupId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExtractViaIdentity
 ```
-Invoke-MgExtractGroupDriveItemSensitivityLabel -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf]
+Invoke-MgBetaExtractGroupDriveItemSensitivityLabel -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: ExtractViaIdentity
 Aliases:
 
@@ -128,11 +128,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityLabelAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityLabelAssignment
 
 ## NOTES
 

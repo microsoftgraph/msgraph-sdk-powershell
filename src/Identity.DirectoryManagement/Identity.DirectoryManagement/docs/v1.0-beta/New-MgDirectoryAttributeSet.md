@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryattributeset
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgdirectoryattributeset
 schema: 2.0.0
 ---
 
-# New-MgDirectoryAttributeSet
+# New-MgBetaDirectoryAttributeSet
 
 ## SYNOPSIS
 Create a new attributeSet object.
@@ -14,13 +14,13 @@ Create a new attributeSet object.
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryAttributeSet [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
+New-MgBetaDirectoryAttributeSet [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
  [-MaxAttributesPerSet <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryAttributeSet -BodyParameter <IMicrosoftGraphAttributeSet> [-Confirm] [-WhatIf]
+New-MgBetaDirectoryAttributeSet -BodyParameter <IMicrosoftGraphAttributeSet> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,18 +29,18 @@ Create a new attributeSet object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgDirectoryAttributeSet Cmdlet
+### Example 1: Using the New-MgBetaDirectoryAttributeSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	Id = "Engineering"
 	Description = "Attributes for engineering team"
 	MaxAttributesPerSet = 25
 }
-New-MgDirectoryAttributeSet -BodyParameter $params
+New-MgBetaDirectoryAttributeSet -BodyParameter $params
 ```
 
-This example shows how to use the New-MgDirectoryAttributeSet Cmdlet.
+This example shows how to use the New-MgBetaDirectoryAttributeSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -65,7 +65,7 @@ attributeSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeSet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
 Parameter Sets: Create
 Aliases:
 
@@ -163,11 +163,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeSet
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanypaymentterm
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanypaymentterm
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyPaymentTerm
+# New-MgBetaFinancialCompanyPaymentTerm
 
 ## SYNOPSIS
 Create new navigation property to paymentTerms for financials
@@ -14,7 +14,7 @@ Create new navigation property to paymentTerms for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyPaymentTerm -CompanyId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyPaymentTerm -CompanyId <String> [-AdditionalProperties <Hashtable>]
  [-CalculateDiscountOnCreditMemos] [-Code <String>] [-DiscountDateCalculation <String>]
  [-DiscountPercent <Decimal>] [-DisplayName <String>] [-DueDateCalculation <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgFinancialCompanyPaymentTerm -CompanyId <String> [-AdditionalProperties <Ha
 
 ### Create
 ```
-New-MgFinancialCompanyPaymentTerm -CompanyId <String> -BodyParameter <IMicrosoftGraphPaymentTerm> [-Confirm]
+New-MgBetaFinancialCompanyPaymentTerm -CompanyId <String> -BodyParameter <IMicrosoftGraphPaymentTerm> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyPaymentTerm -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyPaymentTerm -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyPaymentTerm -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaFinancialCompanyPaymentTerm -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-CalculateDiscountOnCreditMemos] [-Code <String>] [-DiscountDateCalculation <String>]
  [-DiscountPercent <Decimal>] [-DisplayName <String>] [-DueDateCalculation <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ paymentTerm
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -204,7 +204,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -266,13 +266,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 
 ## NOTES
 

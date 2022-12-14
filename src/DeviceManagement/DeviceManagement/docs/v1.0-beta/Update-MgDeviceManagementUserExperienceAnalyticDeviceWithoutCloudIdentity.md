@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticdevicewithoutcloudidentity
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticdevicewithoutcloudidentity
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
+# Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsDevicesWithoutCloudIdentit
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
  -UserExperienceAnalyticsDeviceWithoutCloudIdentityId <String> [-AdditionalProperties <Hashtable>]
  [-AzureAdDeviceId <String>] [-DeviceName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
  -UserExperienceAnalyticsDeviceWithoutCloudIdentityId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceWithoutCloudIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceWithoutCloudIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
+Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-AzureAdDeviceId <String>]
  [-DeviceName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -85,7 +85,7 @@ The user experience analytics Device without Cloud Identity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceWithoutCloudIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceWithoutCloudIdentity
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -209,9 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceWithoutCloudIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceWithoutCloudIdentity
 
 ## OUTPUTS
 

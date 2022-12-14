@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/add-mgcommunicationcalllargegalleryview
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/add-mgcommunicationcalllargegalleryview
 schema: 2.0.0
 ---
 
-# Add-MgCommunicationCallLargeGalleryView
+# Add-MgBetaCommunicationCallLargeGalleryView
 
 ## SYNOPSIS
 Add the large gallery view to a call.
@@ -15,27 +15,27 @@ For details about how to identify a large gallery view participant in a roster s
 
 ### AddExpanded1 (Default)
 ```
-Add-MgCommunicationCallLargeGalleryView -CallId <String> [-AdditionalProperties <Hashtable>]
+Add-MgBetaCommunicationCallLargeGalleryView -CallId <String> [-AdditionalProperties <Hashtable>]
  [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add1
 ```
-Add-MgCommunicationCallLargeGalleryView -CallId <String>
+Add-MgBetaCommunicationCallLargeGalleryView -CallId <String>
  -BodyParameter <IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity1
 ```
-Add-MgCommunicationCallLargeGalleryView -InputObject <ICloudCommunicationsIdentity>
+Add-MgBetaCommunicationCallLargeGalleryView -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded1
 ```
-Add-MgCommunicationCallLargeGalleryView -InputObject <ICloudCommunicationsIdentity>
+Add-MgBetaCommunicationCallLargeGalleryView -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,16 +45,16 @@ For details about how to identify a large gallery view participant in a roster s
 
 ## EXAMPLES
 
-### Example 1: Using the Add-MgCommunicationCallLargeGalleryView Cmdlet
+### Example 1: Using the Add-MgBetaCommunicationCallLargeGalleryView Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	ClientContext = "785f4929-92ca-497b-863f-c778c77c9758"
 }
-Add-MgCommunicationCallLargeGalleryView -CallId $callId -BodyParameter $params
+Add-MgBetaCommunicationCallLargeGalleryView -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgCommunicationCallLargeGalleryView Cmdlet.
+This example shows how to use the Add-MgBetaCommunicationCallLargeGalleryView Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add1, AddViaIdentity1
 Aliases:
 
@@ -125,7 +125,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
 Aliases:
 
@@ -172,13 +172,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAddLargeGalleryViewOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAddLargeGalleryViewOperation
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mgplannerrosterplan
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mgplannerrosterplan
 schema: 2.0.0
 ---
 
-# Get-MgPlannerRosterPlan
+# Get-MgBetaPlannerRosterPlan
 
 ## SYNOPSIS
 Retrieves the plans contained by the plannerRoster.
@@ -14,20 +14,20 @@ Retrieves the plans contained by the plannerRoster.
 
 ### List (Default)
 ```
-Get-MgPlannerRosterPlan -PlannerRosterId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPlannerRosterPlan -PlannerRosterId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPlannerRosterPlan -PlannerPlanId <String> -PlannerRosterId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPlannerRosterPlan -PlannerPlanId <String> -PlannerRosterId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPlannerRosterPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPlannerRosterPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Retrieves the plans contained by the plannerRoster.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPlannerRosterPlan Cmdlet
+### Example 1: Using the Get-MgBetaPlannerRosterPlan Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgPlannerRosterPlan -PlannerRosterId $plannerRosterId
+Import-Module Microsoft.Graph.Beta.Planner
+Get-MgBetaPlannerRosterPlan -PlannerRosterId $plannerRosterId
 ```
 
-This example shows how to use the Get-MgPlannerRosterPlan Cmdlet.
+This example shows how to use the Get-MgBetaPlannerRosterPlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 
 ## NOTES
 

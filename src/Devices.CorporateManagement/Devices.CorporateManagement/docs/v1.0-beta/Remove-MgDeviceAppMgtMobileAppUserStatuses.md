@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgdeviceappmgtmobileappuserstatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/remove-mgdeviceappmgtmobileappuserstatuses
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceAppMgtMobileAppUserStatuses
+# Remove-MgBetaDeviceAppMgtMobileAppUserStatuses
 
 ## SYNOPSIS
 Delete navigation property userStatuses for deviceAppManagement
@@ -14,13 +14,13 @@ Delete navigation property userStatuses for deviceAppManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceAppMgtMobileAppUserStatuses -MobileAppId <String> -UserAppInstallStatusId <String>
+Remove-MgBetaDeviceAppMgtMobileAppUserStatuses -MobileAppId <String> -UserAppInstallStatusId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceAppMgtMobileAppUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
+Remove-MgBetaDeviceAppMgtMobileAppUserStatuses -InputObject <IDevicesCorporateManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgDeviceAppManagementMobileAppUserStatuses
+### Remove-MgBetaDeviceAppManagementMobileAppUserStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

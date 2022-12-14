@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementassignmentfilterplatformsupportedproperty
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementassignmentfilterplatformsupportedproperty
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementAssignmentFilterPlatformSupportedProperty
+# Get-MgBetaDeviceManagementAssignmentFilterPlatformSupportedProperty
 
 ## SYNOPSIS
 Invoke function getPlatformSupportedProperties
@@ -14,13 +14,13 @@ Invoke function getPlatformSupportedProperties
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementAssignmentFilterPlatformSupportedProperty -Platform <DevicePlatformType> [-Count]
+Get-MgBetaDeviceManagementAssignmentFilterPlatformSupportedProperty -Platform <DevicePlatformType> [-Count]
  [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementAssignmentFilterPlatformSupportedProperty
+Get-MgBetaDeviceManagementAssignmentFilterPlatformSupportedProperty
  -InputObject <IDeviceManagementFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 Usage: platform='{platform}'
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DevicePlatformType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DevicePlatformType
 Parameter Sets: Get
 Aliases:
 
@@ -143,11 +143,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignmentFilterSupportedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterSupportedProperty
 
 ## NOTES
 

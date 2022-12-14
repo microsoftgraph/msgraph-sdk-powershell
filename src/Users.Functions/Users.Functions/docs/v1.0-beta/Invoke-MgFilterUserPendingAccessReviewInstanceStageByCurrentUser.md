@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgfilteruserpendingaccessreviewinstancestagebycurrentuser
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/invoke-mgfilteruserpendingaccessreviewinstancestagebycurrentuser
 schema: 2.0.0
 ---
 
-# Invoke-MgFilterUserPendingAccessReviewInstanceStageByCurrentUser
+# Invoke-MgBetaFilterUserPendingAccessReviewInstanceStageByCurrentUser
 
 ## SYNOPSIS
 Invoke function filterByCurrentUser
@@ -14,14 +14,14 @@ Invoke function filterByCurrentUser
 
 ### Filter (Default)
 ```
-Invoke-MgFilterUserPendingAccessReviewInstanceStageByCurrentUser -AccessReviewInstanceId <String> -On <String>
+Invoke-MgBetaFilterUserPendingAccessReviewInstanceStageByCurrentUser -AccessReviewInstanceId <String> -On <String>
  -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FilterViaIdentity
 ```
-Invoke-MgFilterUserPendingAccessReviewInstanceStageByCurrentUser -InputObject <IUsersFunctionsIdentity>
+Invoke-MgBetaFilterUserPendingAccessReviewInstanceStageByCurrentUser -InputObject <IUsersFunctionsIdentity>
  [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: FilterViaIdentity
 Aliases:
 
@@ -204,11 +204,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewStage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewStage
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/remove-mguseractivity
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/remove-mguseractivity
 schema: 2.0.0
 ---
 
-# Remove-MgUserActivity
+# Remove-MgBetaUserActivity
 
 ## SYNOPSIS
 Delete navigation property activities for users
@@ -14,13 +14,13 @@ Delete navigation property activities for users
 
 ### Delete (Default)
 ```
-Remove-MgUserActivity -UserActivityId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaUserActivity -UserActivityId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Delete navigation property activities for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserActivity Cmdlet
+### Example 1: Using the Remove-MgBetaUserActivity Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CrossDeviceExperiences
+Import-Module Microsoft.Graph.Beta.CrossDeviceExperiences
 # A UPN can also be used as -UserId.
-Remove-MgUserActivity -UserId $userId -UserActivityId $userActivityId
+Remove-MgBetaUserActivity -UserId $userId -UserActivityId $userActivityId
 ```
 
-This example shows how to use the Remove-MgUserActivity Cmdlet.
+This example shows how to use the Remove-MgBetaUserActivity Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ## OUTPUTS
 

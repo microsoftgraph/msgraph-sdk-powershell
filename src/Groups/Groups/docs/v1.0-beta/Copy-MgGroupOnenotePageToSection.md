@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/copy-mggrouponenotepagetosection
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/copy-mggrouponenotepagetosection
 schema: 2.0.0
 ---
 
-# Copy-MgGroupOnenotePageToSection
+# Copy-MgBetaGroupOnenotePageToSection
 
 ## SYNOPSIS
 Copy a page to a specific section.
@@ -15,28 +15,28 @@ For copy operations, you follow an asynchronous calling pattern:  First call the
 
 ### CopyExpanded (Default)
 ```
-Copy-MgGroupOnenotePageToSection -GroupId <String> -OnenotePageId <String> [-AdditionalProperties <Hashtable>]
+Copy-MgBetaGroupOnenotePageToSection -GroupId <String> -OnenotePageId <String> [-AdditionalProperties <Hashtable>]
  [-GroupId1 <String>] [-Id <String>] [-SiteCollectionId <String>] [-SiteId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Copy
 ```
-Copy-MgGroupOnenotePageToSection -GroupId <String> -OnenotePageId <String>
+Copy-MgBetaGroupOnenotePageToSection -GroupId <String> -OnenotePageId <String>
  -BodyParameter <IPaths112UvcyGroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphCopytosectionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
-Copy-MgGroupOnenotePageToSection -InputObject <IGroupsIdentity>
+Copy-MgBetaGroupOnenotePageToSection -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths112UvcyGroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphCopytosectionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
-Copy-MgGroupOnenotePageToSection -InputObject <IGroupsIdentity> [-GroupId <String>]
+Copy-MgBetaGroupOnenotePageToSection -InputObject <IGroupsIdentity> [-GroupId <String>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-SiteCollectionId <String>] [-SiteId <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -49,7 +49,7 @@ For copy operations, you follow an asynchronous calling pattern:  First call the
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Id = "id-value"
@@ -57,10 +57,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Copy-MgUserOnenotePageToSection -UserId $userId -OnenotePageId $onenotePageId -BodyParameter $params
+Copy-MgBetaUserOnenotePageToSection -UserId $userId -OnenotePageId $onenotePageId -BodyParameter $params
 ```
 
-This example shows how to use the Copy-MgGroupOnenotePageToSection Cmdlet.
+This example shows how to use the Copy-MgBetaGroupOnenotePageToSection Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths112UvcyGroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphCopytosectionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths112UvcyGroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphCopytosectionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Copy, CopyViaIdentity
 Aliases:
 
@@ -147,7 +147,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
 Aliases:
 
@@ -239,13 +239,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths112UvcyGroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphCopytosectionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths112UvcyGroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphCopytosectionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenoteOperation
 
 ## NOTES
 

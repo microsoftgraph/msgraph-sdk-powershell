@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggroupthreadpostinreplytomultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/update-mggroupthreadpostinreplytomultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Update-MgGroupThreadPostInReplyToMultiValueExtendedProperty
+# Update-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty
 
 ## SYNOPSIS
 Update the navigation property multiValueExtendedProperties in groups
@@ -14,14 +14,14 @@ Update the navigation property multiValueExtendedProperties in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
+Update-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
  -MultiValueLegacyExtendedPropertyId <String> -PostId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Value <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
+Update-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadId <String> -GroupId <String>
  -MultiValueLegacyExtendedPropertyId <String> -PostId <String>
  -BodyParameter <IMicrosoftGraphMultiValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -29,14 +29,14 @@ Update-MgGroupThreadPostInReplyToMultiValueExtendedProperty -ConversationThreadI
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupThreadPostInReplyToMultiValueExtendedProperty -InputObject <IGroupsIdentity>
+Update-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty -InputObject <IGroupsIdentity>
  -BodyParameter <IMicrosoftGraphMultiValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupThreadPostInReplyToMultiValueExtendedProperty -InputObject <IGroupsIdentity>
+Update-MgBetaGroupThreadPostInReplyToMultiValueExtendedProperty -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ multiValueLegacyExtendedProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -237,9 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 
 ## OUTPUTS
 

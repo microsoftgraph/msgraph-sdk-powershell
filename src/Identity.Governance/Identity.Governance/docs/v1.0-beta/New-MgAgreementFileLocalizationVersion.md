@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgagreementfilelocalizationversion
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgagreementfilelocalizationversion
 schema: 2.0.0
 ---
 
-# New-MgAgreementFileLocalizationVersion
+# New-MgBetaAgreementFileLocalizationVersion
 
 ## SYNOPSIS
 Create new navigation property to versions for agreements
@@ -14,7 +14,7 @@ Create new navigation property to versions for agreements
 
 ### CreateExpanded (Default)
 ```
-New-MgAgreementFileLocalizationVersion -AgreementFileLocalizationId <String> -AgreementId <String>
+New-MgBetaAgreementFileLocalizationVersion -AgreementFileLocalizationId <String> -AgreementId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-FileData <IMicrosoftGraphAgreementFileData>] [-FileName <String>] [-Id <String>] [-IsDefault]
  [-IsMajorVersion] [-Language <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgAgreementFileLocalizationVersion -AgreementFileLocalizationId <String> -Ag
 
 ### Create
 ```
-New-MgAgreementFileLocalizationVersion -AgreementFileLocalizationId <String> -AgreementId <String>
+New-MgBetaAgreementFileLocalizationVersion -AgreementFileLocalizationId <String> -AgreementId <String>
  -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity> -BodyParameter <Hashtable>
+New-MgBetaAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity> -BodyParameter <Hashtable>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity>
+New-MgBetaAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-FileData <IMicrosoftGraphAgreementFileData>] [-FileName <String>] [-Id <String>] [-IsDefault]
  [-IsMajorVersion] [-Language <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -144,7 +144,7 @@ agreementFileData
 To construct, please use Get-Help -Online and see NOTES section for FILEDATA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -291,13 +291,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### System.Collections.Hashtable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileVersion
 
 ## NOTES
 

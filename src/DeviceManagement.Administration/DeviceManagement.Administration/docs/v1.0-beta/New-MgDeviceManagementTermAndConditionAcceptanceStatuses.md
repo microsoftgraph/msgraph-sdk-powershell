@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementtermandconditionacceptancestatuses
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementtermandconditionacceptancestatuses
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementTermAndConditionAcceptanceStatuses
+# New-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses
 
 ## SYNOPSIS
 Create new navigation property to acceptanceStatuses for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to acceptanceStatuses for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementTermAndConditionAcceptanceStatuses -TermsAndConditionsId <String>
+New-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses -TermsAndConditionsId <String>
  [-AcceptedDateTime <DateTime>] [-AcceptedVersion <Int32>] [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>] [-UserDisplayName <String>]
  [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ New-MgDeviceManagementTermAndConditionAcceptanceStatuses -TermsAndConditionsId <
 
 ### Create
 ```
-New-MgDeviceManagementTermAndConditionAcceptanceStatuses -TermsAndConditionsId <String>
+New-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses -TermsAndConditionsId <String>
  -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceManagementTermAndConditionAcceptanceStatuses
+New-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceManagementTermAndConditionAcceptanceStatuses
+New-MgBetaDeviceManagementTermAndConditionAcceptanceStatuses
  -InputObject <IDeviceManagementAdministrationIdentity> [-AcceptedDateTime <DateTime>]
  [-AcceptedVersion <Int32>] [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>] [-UserDisplayName <String>]
@@ -100,7 +100,7 @@ Users must accept the most up-to-date version of the terms in order to retain ac
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ They enable administrators to communicate the provisions to which a user must ag
 To construct, please use Get-Help -Online and see NOTES section for TERMSANDCONDITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditions
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -242,13 +242,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
 
 ## NOTES
 

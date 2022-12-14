@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicydefaultappmanagementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicydefaultappmanagementpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyDefaultAppManagementPolicy
+# Get-MgBetaPolicyDefaultAppManagementPolicy
 
 ## SYNOPSIS
 Read the properties of a tenantAppManagementPolicy object.
@@ -13,7 +13,7 @@ Read the properties of a tenantAppManagementPolicy object.
 ## SYNTAX
 
 ```
-Get-MgPolicyDefaultAppManagementPolicy [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaPolicyDefaultAppManagementPolicy [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Read the properties of a tenantAppManagementPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyDefaultAppManagementPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyDefaultAppManagementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyDefaultAppManagementPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyDefaultAppManagementPolicy
 ```
 
-This example shows how to use the Get-MgPolicyDefaultAppManagementPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyDefaultAppManagementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
 
 ## NOTES
 

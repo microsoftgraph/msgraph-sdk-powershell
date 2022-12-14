@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupsitebypath
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupsitebypath
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteByPath
+# Get-MgBetaGroupSiteByPath
 
 ## SYNOPSIS
 Invoke function getByPath
@@ -14,12 +14,12 @@ Invoke function getByPath
 
 ### Get (Default)
 ```
-Get-MgGroupSiteByPath -GroupId <String> -Path <String> -SiteId <String> [<CommonParameters>]
+Get-MgBetaGroupSiteByPath -GroupId <String> -Path <String> -SiteId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupSiteByPath -InputObject <IGroupsIdentity> [<CommonParameters>]
+Get-MgBetaGroupSiteByPath -InputObject <IGroupsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -95,11 +95,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSite
 
 ## NOTES
 

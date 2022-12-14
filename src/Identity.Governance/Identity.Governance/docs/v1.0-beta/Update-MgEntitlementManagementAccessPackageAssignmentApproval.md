@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgentitlementmanagementaccesspackageassignmentapproval
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgentitlementmanagementaccesspackageassignmentapproval
 schema: 2.0.0
 ---
 
-# Update-MgEntitlementManagementAccessPackageAssignmentApproval
+# Update-MgBetaEntitlementManagementAccessPackageAssignmentApproval
 
 ## SYNOPSIS
 Update the navigation property accessPackageAssignmentApprovals in identityGovernance
@@ -14,26 +14,26 @@ Update the navigation property accessPackageAssignmentApprovals in identityGover
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEntitlementManagementAccessPackageAssignmentApproval -ApprovalId <String>
+Update-MgBetaEntitlementManagementAccessPackageAssignmentApproval -ApprovalId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Steps <IMicrosoftGraphApprovalStep[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgEntitlementManagementAccessPackageAssignmentApproval -ApprovalId <String>
+Update-MgBetaEntitlementManagementAccessPackageAssignmentApproval -ApprovalId <String>
  -BodyParameter <IMicrosoftGraphApproval1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgEntitlementManagementAccessPackageAssignmentApproval -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaEntitlementManagementAccessPackageAssignmentApproval -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphApproval1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEntitlementManagementAccessPackageAssignmentApproval -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaEntitlementManagementAccessPackageAssignmentApproval -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Steps <IMicrosoftGraphApprovalStep[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -80,7 +80,7 @@ approval
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApproval1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApproval1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for STEPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStep[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApprovalStep[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApproval1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApproval1
 
 ## OUTPUTS
 

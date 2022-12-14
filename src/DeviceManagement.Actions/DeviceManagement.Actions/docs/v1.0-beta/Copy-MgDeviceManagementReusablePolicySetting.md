@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/copy-mgdevicemanagementreusablepolicysetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/copy-mgdevicemanagementreusablepolicysetting
 schema: 2.0.0
 ---
 
-# Copy-MgDeviceManagementReusablePolicySetting
+# Copy-MgBetaDeviceManagementReusablePolicySetting
 
 ## SYNOPSIS
 Invoke action clone
@@ -14,13 +14,13 @@ Invoke action clone
 
 ### Clone (Default)
 ```
-Copy-MgDeviceManagementReusablePolicySetting -DeviceManagementReusablePolicySettingId <String> [-Confirm]
+Copy-MgBetaDeviceManagementReusablePolicySetting -DeviceManagementReusablePolicySettingId <String> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CloneViaIdentity
 ```
-Copy-MgDeviceManagementReusablePolicySetting -InputObject <IDeviceManagementActionsIdentity> [-Confirm]
+Copy-MgBetaDeviceManagementReusablePolicySetting -InputObject <IDeviceManagementActionsIdentity> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: CloneViaIdentity
 Aliases:
 
@@ -98,11 +98,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementReusablePolicySetting
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementReusablePolicySetting
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/invoke-mgreactivatedirectoryrecommendationimpactedresource
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/invoke-mgreactivatedirectoryrecommendationimpactedresource
 schema: 2.0.0
 ---
 
-# Invoke-MgReactivateDirectoryRecommendationImpactedResource
+# Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource
 
 ## SYNOPSIS
 Invoke action reactivate
@@ -14,13 +14,13 @@ Invoke action reactivate
 
 ### Reactivate (Default)
 ```
-Invoke-MgReactivateDirectoryRecommendationImpactedResource -RecommendationId <String>
+Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource -RecommendationId <String>
  -RecommendationResourceId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReactivateViaIdentity
 ```
-Invoke-MgReactivateDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
+Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: ReactivateViaIdentity
 Aliases:
 
@@ -113,11 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendationResource
 
 ## NOTES
 

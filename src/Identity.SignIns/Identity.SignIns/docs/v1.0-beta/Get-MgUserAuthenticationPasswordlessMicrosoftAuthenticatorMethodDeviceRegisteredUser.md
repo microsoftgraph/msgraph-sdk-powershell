@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceregistereduser
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationpasswordlessmicrosoftauthenticatormethoddeviceregistereduser
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser
+# Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser
 
 ## SYNOPSIS
 Collection of registered users of the device.
@@ -18,7 +18,7 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser
+Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
@@ -27,7 +27,7 @@ Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegistered
 
 ### Get
 ```
-Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser
+Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser
  -DirectoryObjectId <String> -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>]
  [<CommonParameters>]
@@ -35,7 +35,7 @@ Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegistered
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser
+Get-MgBetaUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser
  -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -284,11 +284,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/add-mgcomplianceediscoverycasereviewsettoreviewset
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/add-mgcomplianceediscoverycasereviewsettoreviewset
 schema: 2.0.0
 ---
 
-# Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet
+# Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet
 
 ## SYNOPSIS
 Start the process of adding a collection from Microsoft 365 services to a review set.
@@ -16,7 +16,7 @@ The location provides a URL that will return a caseExportOperation.
 
 ### AddExpanded (Default)
 ```
-Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId <String> -ReviewSetId <String>
+Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId <String> -ReviewSetId <String>
  [-AdditionalDataOptions <String>] [-AdditionalProperties <Hashtable>]
  [-SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -24,21 +24,21 @@ Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId <String> -ReviewSetId
 
 ### Add
 ```
-Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId <String> -ReviewSetId <String>
+Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId <String> -ReviewSetId <String>
  -BodyParameter <IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryAddtoreviewsetPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -InputObject <IComplianceIdentity>
+Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet -InputObject <IComplianceIdentity>
  -BodyParameter <IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryAddtoreviewsetPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
-Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -InputObject <IComplianceIdentity>
+Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet -InputObject <IComplianceIdentity>
  [-AdditionalDataOptions <String>] [-AdditionalProperties <Hashtable>]
  [-SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -51,19 +51,19 @@ The location provides a URL that will return a caseExportOperation.
 
 ## EXAMPLES
 
-### Example 1: Using the Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet Cmdlet
+### Example 1: Using the Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	SourceCollection = @{
 		Id = "1a9b4145d8f84e39bc45a7f68c5c5119"
 	}
 	AdditionalData = "linkedFiles"
 }
-Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId $caseId -ReviewSetId $reviewSetId -BodyParameter $params
+Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId $caseId -ReviewSetId $reviewSetId -BodyParameter $params
 ```
 
-This example shows how to use the Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet Cmdlet.
+This example shows how to use the Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryAddtoreviewsetPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryAddtoreviewsetPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Add, AddViaIdentity
 Aliases:
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ sourceCollection
 To construct, please use Get-Help -Online and see NOTES section for SOURCECOLLECTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoverySourceCollection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoverySourceCollection
 Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
@@ -227,9 +227,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryAddtoreviewsetPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryAddtoreviewsetPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

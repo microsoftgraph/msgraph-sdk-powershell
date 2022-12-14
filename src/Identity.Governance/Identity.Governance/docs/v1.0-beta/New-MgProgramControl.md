@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgprogramcontrol
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgprogramcontrol
 schema: 2.0.0
 ---
 
-# New-MgProgramControl
+# New-MgBetaProgramControl
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, create a new programControl object.
@@ -16,7 +16,7 @@ Prior to making this request, the caller must have previously
 
 ### CreateExpanded (Default)
 ```
-New-MgProgramControl [-ProgramId <String>] [-AdditionalProperties <Hashtable>] [-ControlId <String>]
+New-MgBetaProgramControl [-ProgramId <String>] [-AdditionalProperties <Hashtable>] [-ControlId <String>]
  [-ControlTypeId <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-Owner <IMicrosoftGraphUserIdentity>] [-Program <IMicrosoftGraphProgram>]
  [-Resource <IMicrosoftGraphProgramResource>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -24,24 +24,24 @@ New-MgProgramControl [-ProgramId <String>] [-AdditionalProperties <Hashtable>] [
 
 ### Create
 ```
-New-MgProgramControl -BodyParameter <IMicrosoftGraphProgramControl> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaProgramControl -BodyParameter <IMicrosoftGraphProgramControl> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgProgramControl -ProgramControlId <String> -BodyParameter <IMicrosoftGraphProgramControl> [-Confirm]
+New-MgBetaProgramControl -ProgramControlId <String> -BodyParameter <IMicrosoftGraphProgramControl> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create2
 ```
-New-MgProgramControl -ProgramId <String> -BodyParameter <IMicrosoftGraphProgramControl> [-Confirm] [-WhatIf]
+New-MgBetaProgramControl -ProgramId <String> -BodyParameter <IMicrosoftGraphProgramControl> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateExpanded1
 ```
-New-MgProgramControl -ProgramControlId <String> [-ProgramId <String>] [-AdditionalProperties <Hashtable>]
+New-MgBetaProgramControl -ProgramControlId <String> [-ProgramId <String>] [-AdditionalProperties <Hashtable>]
  [-ControlId <String>] [-ControlTypeId <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-Owner <IMicrosoftGraphUserIdentity>] [-Program <IMicrosoftGraphProgram>]
  [-Resource <IMicrosoftGraphProgramResource>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -49,7 +49,7 @@ New-MgProgramControl -ProgramControlId <String> [-ProgramId <String>] [-Addition
 
 ### CreateExpanded2
 ```
-New-MgProgramControl -ProgramId <String> [-AdditionalProperties <Hashtable>] [-ControlId <String>]
+New-MgBetaProgramControl -ProgramId <String> [-AdditionalProperties <Hashtable>] [-ControlId <String>]
  [-ControlTypeId <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-Owner <IMicrosoftGraphUserIdentity>] [-Program <IMicrosoftGraphProgram>] [-ProgramId1 <String>]
  [-Resource <IMicrosoftGraphProgramResource>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -57,19 +57,19 @@ New-MgProgramControl -ProgramId <String> [-AdditionalProperties <Hashtable>] [-C
 
 ### CreateViaIdentity
 ```
-New-MgProgramControl -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphProgramControl>
+New-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphProgramControl>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgProgramControl -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphProgramControl>
+New-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphProgramControl>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ProgramId <String>]
+New-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> [-ProgramId <String>]
  [-AdditionalProperties <Hashtable>] [-ControlId <String>] [-ControlTypeId <String>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-Owner <IMicrosoftGraphUserIdentity>]
  [-Program <IMicrosoftGraphProgram>] [-Resource <IMicrosoftGraphProgramResource>] [-Status <String>]
@@ -78,7 +78,7 @@ New-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ProgramId <Str
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ProgramId <String>]
+New-MgBetaProgramControl -InputObject <IIdentityGovernanceIdentity> [-ProgramId <String>]
  [-AdditionalProperties <Hashtable>] [-ControlId <String>] [-ControlTypeId <String>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-Owner <IMicrosoftGraphUserIdentity>]
  [-Program <IMicrosoftGraphProgram>] [-Resource <IMicrosoftGraphProgramResource>] [-Status <String>]
@@ -92,18 +92,18 @@ Prior to making this request, the caller must have previously
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgProgramControl Cmdlet
+### Example 1: Using the New-MgBetaProgramControl Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	ControlId = "7e59d237-2fb0-4e5d-b7bb-d4f9f9129213"
 	ControlTypeId = "6e4f3d20-c5c3-407f-9695-8460952bcc68"
 	ProgramId = "7e59d237-2fb0-4e5d-b7bb-d4f9f9129213"
 }
-New-MgProgramControl -BodyParameter $params
+New-MgBetaProgramControl -BodyParameter $params
 ```
 
-This example shows how to use the New-MgProgramControl Cmdlet.
+This example shows how to use the New-MgBetaProgramControl Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ programControl
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControl
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControl
 Parameter Sets: Create, Create1, Create2, CreateViaIdentity, CreateViaIdentity1
 Aliases:
 
@@ -222,7 +222,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentity1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
@@ -238,7 +238,7 @@ userIdentity
 To construct, please use Get-Help -Online and see NOTES section for OWNER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserIdentity
 Parameter Sets: CreateExpanded, CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
@@ -254,7 +254,7 @@ program
 To construct, please use Get-Help -Online and see NOTES section for PROGRAM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgram
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgram
 Parameter Sets: CreateExpanded, CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
@@ -316,7 +316,7 @@ programResource
 To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramResource
 Parameter Sets: CreateExpanded, CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
@@ -378,13 +378,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControl
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControl
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControl
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProgramControl
 
 ## NOTES
 

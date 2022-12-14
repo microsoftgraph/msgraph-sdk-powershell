@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementconfigurationsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementconfigurationsetting
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementConfigurationSetting
+# Remove-MgBetaDeviceManagementConfigurationSetting
 
 ## SYNOPSIS
 Delete navigation property configurationSettings for deviceManagement
@@ -14,13 +14,13 @@ Delete navigation property configurationSettings for deviceManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceManagementConfigurationSetting -DeviceManagementConfigurationSettingDefinitionId <String>
+Remove-MgBetaDeviceManagementConfigurationSetting -DeviceManagementConfigurationSettingDefinitionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceManagementConfigurationSetting -InputObject <IDeviceManagementIdentity> [-IfMatch <String>]
+Remove-MgBetaDeviceManagementConfigurationSetting -InputObject <IDeviceManagementIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 

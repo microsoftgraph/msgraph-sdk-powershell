@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/test-mguserinformationprotectionsensitivitylabelsublabel
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/test-mguserinformationprotectionsensitivitylabelsublabel
 schema: 2.0.0
 ---
 
-# Test-MgUserInformationProtectionSensitivityLabelSublabel
+# Test-MgBetaUserInformationProtectionSensitivityLabelSublabel
 
 ## SYNOPSIS
 Invoke action evaluate
@@ -14,7 +14,7 @@ Invoke action evaluate
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgUserInformationProtectionSensitivityLabelSublabel -SensitivityLabelId <String> -UserId <String>
+Test-MgBetaUserInformationProtectionSensitivityLabelSublabel -SensitivityLabelId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-CurrentLabel <IMicrosoftGraphCurrentLabel>]
  [-DiscoveredSensitiveTypes <IMicrosoftGraphDiscoveredSensitiveType[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,21 +22,21 @@ Test-MgUserInformationProtectionSensitivityLabelSublabel -SensitivityLabelId <St
 
 ### Evaluate
 ```
-Test-MgUserInformationProtectionSensitivityLabelSublabel -SensitivityLabelId <String> -UserId <String>
+Test-MgBetaUserInformationProtectionSensitivityLabelSublabel -SensitivityLabelId <String> -UserId <String>
  -BodyParameter <IPathsCjmw4JUsersUserIdInformationprotectionSensitivitylabelsSensitivitylabelIdSublabelsMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentity
 ```
-Test-MgUserInformationProtectionSensitivityLabelSublabel -InputObject <IUsersActionsIdentity>
+Test-MgBetaUserInformationProtectionSensitivityLabelSublabel -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsCjmw4JUsersUserIdInformationprotectionSensitivitylabelsSensitivitylabelIdSublabelsMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentityExpanded
 ```
-Test-MgUserInformationProtectionSensitivityLabelSublabel -InputObject <IUsersActionsIdentity>
+Test-MgBetaUserInformationProtectionSensitivityLabelSublabel -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-CurrentLabel <IMicrosoftGraphCurrentLabel>]
  [-DiscoveredSensitiveTypes <IMicrosoftGraphDiscoveredSensitiveType[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsCjmw4JUsersUserIdInformationprotectionSensitivitylabelsSensitivitylabelIdSublabelsMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsCjmw4JUsersUserIdInformationprotectionSensitivitylabelsSensitivitylabelIdSublabelsMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate, EvaluateViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ currentLabel
 To construct, please use Get-Help -Online and see NOTES section for CURRENTLABEL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrentLabel
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCurrentLabel
 Parameter Sets: EvaluateExpanded, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DISCOVEREDSENSITIVETYPES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDiscoveredSensitiveType[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDiscoveredSensitiveType[]
 Parameter Sets: EvaluateExpanded, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: EvaluateViaIdentity, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -194,13 +194,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsCjmw4JUsersUserIdInformationprotectionSensitivitylabelsSensitivitylabelIdSublabelsMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsCjmw4JUsersUserIdInformationprotectionSensitivitylabelsSensitivitylabelIdSublabelsMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvaluateLabelJobResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvaluateLabelJobResponse
 
 ## NOTES
 

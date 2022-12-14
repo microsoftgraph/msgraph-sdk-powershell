@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantalertruledefinition
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantalertruledefinition
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantAlertRuleDefinition
+# New-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition
 
 ## SYNOPSIS
 Create new navigation property to managedTenantAlertRuleDefinitions for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managedTenantAlertRuleDefinitions for tenantRe
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantAlertRuleDefinition [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition [-AdditionalProperties <Hashtable>]
  [-AlertRules <IMicrosoftGraphManagedTenantsManagedTenantAlertRule[]>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>]
  [-DefinitionTemplate <IMicrosoftGraphManagedTenantsAlertRuleDefinitionTemplate>] [-DisplayName <String>]
@@ -24,7 +24,7 @@ New-MgTenantRelationshipManagedTenantAlertRuleDefinition [-AdditionalProperties 
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantAlertRuleDefinition
+New-MgBetaTenantRelationshipManagedTenantAlertRuleDefinition
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ALERTRULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ managedTenantAlertRuleDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
 Parameter Sets: Create
 Aliases:
 
@@ -118,7 +118,7 @@ alertRuleDefinitionTemplate
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONTEMPLATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAlertRuleDefinitionTemplate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAlertRuleDefinitionTemplate
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -226,11 +226,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mgplace
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mgplace
 schema: 2.0.0
 ---
 
-# New-MgPlace
+# New-MgBetaPlace
 
 ## SYNOPSIS
 Add new entity to places
@@ -14,14 +14,14 @@ Add new entity to places
 
 ### CreateExpanded (Default)
 ```
-New-MgPlace [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress1>]
+New-MgBetaPlace [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress1>]
  [-DisplayName <String>] [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>]
  [-Phone <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPlace -BodyParameter <IMicrosoftGraphPlace> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPlace -BodyParameter <IMicrosoftGraphPlace> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -67,7 +67,7 @@ place
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlace
 Parameter Sets: Create
 Aliases:
 
@@ -98,7 +98,7 @@ outlookGeoCoordinates
 To construct, please use Get-Help -Online and see NOTES section for GEOCOORDINATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookGeoCoordinates
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookGeoCoordinates
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -176,11 +176,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlace
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlace
 
 ## NOTES
 

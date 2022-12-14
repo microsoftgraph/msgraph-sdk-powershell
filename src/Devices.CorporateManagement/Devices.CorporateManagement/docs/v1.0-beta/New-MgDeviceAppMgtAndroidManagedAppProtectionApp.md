@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtandroidmanagedappprotectionapp
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtandroidmanagedappprotectionapp
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtAndroidManagedAppProtectionApp
+# New-MgBetaDeviceAppMgtAndroidManagedAppProtectionApp
 
 ## SYNOPSIS
 Create new navigation property to apps for deviceAppManagement
@@ -14,26 +14,26 @@ Create new navigation property to apps for deviceAppManagement
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtectionApp -AndroidManagedAppProtectionId <String>
+New-MgBetaDeviceAppMgtAndroidManagedAppProtectionApp -AndroidManagedAppProtectionId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-MobileAppIdentifier <Hashtable>] [-Version <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtectionApp -AndroidManagedAppProtectionId <String>
+New-MgBetaDeviceAppMgtAndroidManagedAppProtectionApp -AndroidManagedAppProtectionId <String>
  -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtectionApp -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtAndroidManagedAppProtectionApp -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtectionApp -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtAndroidManagedAppProtectionApp -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-MobileAppIdentifier <Hashtable>] [-Version <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -80,7 +80,7 @@ The identifier for the deployment an app.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -189,19 +189,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementAndroidManagedAppProtectionApp
+### New-MgBetaDeviceAppManagementAndroidManagedAppProtectionApp
 
 COMPLEX PARAMETER PROPERTIES
 

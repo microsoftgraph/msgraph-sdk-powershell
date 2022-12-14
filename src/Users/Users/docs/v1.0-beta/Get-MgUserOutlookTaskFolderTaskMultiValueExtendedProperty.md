@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguseroutlooktaskfoldertaskmultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguseroutlooktaskfoldertaskmultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty
+# Get-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty
 
 ## SYNOPSIS
 The collection of multi-value extended properties defined for the task.
@@ -16,7 +16,7 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty -OutlookTaskFolderId <String>
+Get-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty -OutlookTaskFolderId <String>
  -OutlookTaskId <String> -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -24,14 +24,14 @@ Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty -OutlookTaskFolderId <
 
 ### Get
 ```
-Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty -MultiValueLegacyExtendedPropertyId <String>
+Get-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty -MultiValueLegacyExtendedPropertyId <String>
  -OutlookTaskFolderId <String> -OutlookTaskId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty -InputObject <IUsersIdentity>
+Get-MgBetaUserOutlookTaskFolderTaskMultiValueExtendedProperty -InputObject <IUsersIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -276,11 +276,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
 
 ## NOTES
 

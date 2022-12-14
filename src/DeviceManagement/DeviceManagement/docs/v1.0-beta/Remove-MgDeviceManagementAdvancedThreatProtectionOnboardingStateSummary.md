@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementadvancedthreatprotectiononboardingstatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementadvancedthreatprotectiononboardingstatesummary
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
+# Remove-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
 
 ## SYNOPSIS
 Delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
@@ -13,7 +13,7 @@ Delete navigation property advancedThreatProtectionOnboardingStateSummary for de
 ## SYNTAX
 
 ```
-Remove-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary [-IfMatch <String>] [-PassThru]
+Remove-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 

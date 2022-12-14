@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/new-mggroupteamscheduleshift
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/new-mggroupteamscheduleshift
 schema: 2.0.0
 ---
 
-# New-MgGroupTeamScheduleShift
+# New-MgBetaGroupTeamScheduleShift
 
 ## SYNOPSIS
 Create a new shift instance in a schedule.
@@ -14,7 +14,7 @@ Create a new shift instance in a schedule.
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupTeamScheduleShift -GroupId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupTeamScheduleShift -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DraftShift <IMicrosoftGraphShiftItem>] [-Id <String>]
  [-IsStagedForDeletion] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SchedulingGroupId <String>]
  [-SharedShift <IMicrosoftGraphShiftItem>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgGroupTeamScheduleShift -GroupId <String> [-AdditionalProperties <Hashtable
 
 ### Create
 ```
-New-MgGroupTeamScheduleShift -GroupId <String> -BodyParameter <IMicrosoftGraphShift1> [-Confirm] [-WhatIf]
+New-MgBetaGroupTeamScheduleShift -GroupId <String> -BodyParameter <IMicrosoftGraphShift1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupTeamScheduleShift -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphShift1> [-Confirm]
+New-MgBetaGroupTeamScheduleShift -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphShift1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DraftShift <IMicrosoftGraphShiftItem>] [-Id <String>]
  [-IsStagedForDeletion] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SchedulingGroupId <String>]
  [-SharedShift <IMicrosoftGraphShiftItem>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ shift
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShift1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -99,7 +99,7 @@ shiftItem
 To construct, please use Get-Help -Online and see NOTES section for DRAFTSHIFT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShiftItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShiftItem
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -209,7 +209,7 @@ shiftItem
 To construct, please use Get-Help -Online and see NOTES section for SHAREDSHIFT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShiftItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShiftItem
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -272,13 +272,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShift1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShift1
 
 ## NOTES
 
@@ -310,7 +310,7 @@ BODYPARAMETER <IMicrosoftGraphShift1>: shift
       - `[Code <String>]`: Customer defined code for the shiftActivity. Required.
       - `[DisplayName <String>]`: The name of the shiftActivity. Required.
       - `[EndDateTime <DateTime?>]`: The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
-      - `[IsPaid <Boolean?>]`: Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
+      - `[IsPaid <Boolean?>]`: Indicates whether the Microsoft.Graph.Beta.user should be paid for the activity during their shift. Required.
       - `[StartDateTime <DateTime?>]`: The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
       - `[Theme <String>]`: scheduleEntityTheme
     - `[DisplayName <String>]`: The shift label of the shiftItem.
@@ -338,7 +338,7 @@ DRAFTSHIFT <IMicrosoftGraphShiftItem>: shiftItem
     - `[Code <String>]`: Customer defined code for the shiftActivity. Required.
     - `[DisplayName <String>]`: The name of the shiftActivity. Required.
     - `[EndDateTime <DateTime?>]`: The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
-    - `[IsPaid <Boolean?>]`: Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
+    - `[IsPaid <Boolean?>]`: Indicates whether the Microsoft.Graph.Beta.user should be paid for the activity during their shift. Required.
     - `[StartDateTime <DateTime?>]`: The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
     - `[Theme <String>]`: scheduleEntityTheme
   - `[DisplayName <String>]`: The shift label of the shiftItem.
@@ -401,7 +401,7 @@ SHAREDSHIFT <IMicrosoftGraphShiftItem>: shiftItem
     - `[Code <String>]`: Customer defined code for the shiftActivity. Required.
     - `[DisplayName <String>]`: The name of the shiftActivity. Required.
     - `[EndDateTime <DateTime?>]`: The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
-    - `[IsPaid <Boolean?>]`: Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
+    - `[IsPaid <Boolean?>]`: Indicates whether the Microsoft.Graph.Beta.user should be paid for the activity during their shift. Required.
     - `[StartDateTime <DateTime?>]`: The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
     - `[Theme <String>]`: scheduleEntityTheme
   - `[DisplayName <String>]`: The shift label of the shiftItem.

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2cuserflowidentityprovider
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2cuserflowidentityprovider
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2CUserFlowIdentityProvider
+# Get-MgBetaIdentityB2CUserFlowIdentityProvider
 
 ## SYNOPSIS
 Get userFlowIdentityProviders from identity
@@ -14,26 +14,26 @@ Get userFlowIdentityProviders from identity
 
 ### List (Default)
 ```
-Get-MgIdentityB2CUserFlowIdentityProvider -B2CIdentityUserFlowId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityB2CUserFlowIdentityProvider -B2CIdentityUserFlowId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityB2CUserFlowIdentityProvider -B2CIdentityUserFlowId <String> -IdentityProviderBaseId <String>
+Get-MgBetaIdentityB2CUserFlowIdentityProvider -B2CIdentityUserFlowId <String> -IdentityProviderBaseId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityB2CUserFlowIdentityProvider -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityB2CUserFlowIdentityProvider -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgIdentityB2CUserFlowIdentityProvider -B2CIdentityUserFlowId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityB2CUserFlowIdentityProvider -B2CIdentityUserFlowId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -43,13 +43,13 @@ Get userFlowIdentityProviders from identity
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityB2CUserFlowIdentityProvider Cmdlet
+### Example 1: Using the Get-MgBetaIdentityB2CUserFlowIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityB2CUserFlowIdentityProvider -B2cIdentityUserFlowId $b2cIdentityUserFlowId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityB2CUserFlowIdentityProvider -B2cIdentityUserFlowId $b2cIdentityUserFlowId
 ```
 
-This example shows how to use the Get-MgIdentityB2CUserFlowIdentityProvider Cmdlet.
+This example shows how to use the Get-MgBetaIdentityB2CUserFlowIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -150,7 +150,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -256,13 +256,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProvider
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProvider
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityProviderBase
 
 ## NOTES
 

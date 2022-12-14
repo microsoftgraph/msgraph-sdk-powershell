@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantcloudpcdevice
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantcloudpcdevice
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantCloudPcDevice
+# New-MgBetaTenantRelationshipManagedTenantCloudPcDevice
 
 ## SYNOPSIS
 Create new navigation property to cloudPcDevices for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to cloudPcDevices for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantCloudPcDevice [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantCloudPcDevice [-AdditionalProperties <Hashtable>]
  [-CloudPcStatus <String>] [-DeviceSpecification <String>] [-DisplayName <String>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-ManagedDeviceId <String>] [-ManagedDeviceName <String>]
  [-ProvisioningPolicyId <String>] [-ServicePlanName <String>] [-ServicePlanType <String>]
@@ -24,7 +24,7 @@ New-MgTenantRelationshipManagedTenantCloudPcDevice [-AdditionalProperties <Hasht
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantCloudPcDevice -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcDevice>
+New-MgBetaTenantRelationshipManagedTenantCloudPcDevice -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcDevice>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ cloudPcDevice
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
 Parameter Sets: Create
 Aliases:
 
@@ -323,11 +323,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
 
 ## NOTES
 

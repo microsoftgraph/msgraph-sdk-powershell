@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/stop-mgaccessreviewinstance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/stop-mgaccessreviewinstance
 schema: 2.0.0
 ---
 
-# Stop-MgAccessReviewInstance
+# Stop-MgBetaAccessReviewInstance
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, stop a currently active accessReview.
@@ -17,13 +17,13 @@ After the access review stops, reviewers can no longer give input, and the acces
 
 ### Stop (Default)
 ```
-Stop-MgAccessReviewInstance -AccessReviewId <String> -AccessReviewId1 <String> [-PassThru] [-Confirm]
+Stop-MgBetaAccessReviewInstance -AccessReviewId <String> -AccessReviewId1 <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### StopViaIdentity
 ```
-Stop-MgAccessReviewInstance -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Stop-MgBetaAccessReviewInstance -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -72,7 +72,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: StopViaIdentity
 Aliases:
 
@@ -134,7 +134,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

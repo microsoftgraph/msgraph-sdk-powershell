@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/update-mgwindowsupdatesdeployment
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/update-mgwindowsupdatesdeployment
 schema: 2.0.0
 ---
 
-# Update-MgWindowsUpdatesDeployment
+# Update-MgBetaWindowsUpdatesDeployment
 
 ## SYNOPSIS
 Update the navigation property deployments in admin
@@ -14,7 +14,7 @@ Update the navigation property deployments in admin
 
 ### UpdateExpanded (Default)
 ```
-Update-MgWindowsUpdatesDeployment -DeploymentId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaWindowsUpdatesDeployment -DeploymentId <String> [-AdditionalProperties <Hashtable>]
  [-Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>] [-Content <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Settings <IMicrosoftGraphWindowsUpdatesDeploymentSettings>]
@@ -23,21 +23,21 @@ Update-MgWindowsUpdatesDeployment -DeploymentId <String> [-AdditionalProperties 
 
 ### Update
 ```
-Update-MgWindowsUpdatesDeployment -DeploymentId <String>
+Update-MgBetaWindowsUpdatesDeployment -DeploymentId <String>
  -BodyParameter <IMicrosoftGraphWindowsUpdatesDeployment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity>
+Update-MgBetaWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IMicrosoftGraphWindowsUpdatesDeployment> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-AdditionalProperties <Hashtable>]
  [-Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>] [-Content <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Settings <IMicrosoftGraphWindowsUpdatesDeploymentSettings>]
@@ -49,29 +49,29 @@ Update the navigation property deployments in admin
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgWindowsUpdatesDeployment Cmdlet
+### Example 1: Using the Update-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
-	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
+	"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.deployment"
 	State = @{
-		"@odata.type" = "microsoft.graph.windowsUpdates.deploymentState"
+		"@odata.type" = "Microsoft.Graph.Beta.windowsUpdates.deploymentState"
 		RequestedValue = "paused"
 	}
 }
-Update-MgWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
+Update-MgBetaWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the Update-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Update-MgWindowsUpdatesDeployment Cmdlet
+### Example 2: Using the Update-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
-	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
+	"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.deployment"
 	Settings = @{
-		"@odata.type" = "microsoft.graph.windowsUpdates.windowsDeploymentSettings"
+		"@odata.type" = "Microsoft.Graph.Beta.windowsUpdates.windowsDeploymentSettings"
 		Monitoring = @{
 			MonitoringRules = @(
 				@{
@@ -83,10 +83,10 @@ $params = @{
 		}
 	}
 }
-Update-MgWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
+Update-MgBetaWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the Update-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -111,7 +111,7 @@ deploymentAudience
 To construct, please use Get-Help -Online and see NOTES section for AUDIENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentAudience
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentAudience
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -127,7 +127,7 @@ deployment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -206,7 +206,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -254,7 +254,7 @@ deploymentSettings
 To construct, please use Get-Help -Online and see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -270,7 +270,7 @@ deploymentState
 To construct, please use Get-Help -Online and see NOTES section for STATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -317,9 +317,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -329,7 +329,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgWuDeployment
+### Update-MgBetaWuDeployment
 
 COMPLEX PARAMETER PROPERTIES
 

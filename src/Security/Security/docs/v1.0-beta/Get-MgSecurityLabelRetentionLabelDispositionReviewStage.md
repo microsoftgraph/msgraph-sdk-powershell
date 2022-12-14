@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritylabelretentionlabeldispositionreviewstage
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritylabelretentionlabeldispositionreviewstage
 schema: 2.0.0
 ---
 
-# Get-MgSecurityLabelRetentionLabelDispositionReviewStage
+# Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStage
 
 ## SYNOPSIS
 Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
@@ -14,20 +14,20 @@ Review stages during which reviewers are notified to determine whether a documen
 
 ### List (Default)
 ```
-Get-MgSecurityLabelRetentionLabelDispositionReviewStage -RetentionLabelId <String>
+Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStage -RetentionLabelId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityLabelRetentionLabelDispositionReviewStage -DispositionReviewStageId <String>
+Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStage -DispositionReviewStageId <String>
  -RetentionLabelId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityLabelRetentionLabelDispositionReviewStage -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStage -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -119,7 +119,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityDispositionReviewStage
 
 ## NOTES
 

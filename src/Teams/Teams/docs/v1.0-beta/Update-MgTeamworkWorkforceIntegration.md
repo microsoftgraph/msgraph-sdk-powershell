@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgteamworkworkforceintegration
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgteamworkworkforceintegration
 schema: 2.0.0
 ---
 
-# Update-MgTeamworkWorkforceIntegration
+# Update-MgBetaTeamworkWorkforceIntegration
 
 ## SYNOPSIS
 Update the navigation property workforceIntegrations in teamwork
@@ -14,7 +14,7 @@ Update the navigation property workforceIntegrations in teamwork
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-AdditionalProperties <Hashtable>]
  [-ApiVersion <Int32>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>]
  [-EligibilityFilteringEnabledEntities <String>] [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]
  [-Id <String>] [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SupportedEntities <String>]
@@ -23,19 +23,19 @@ Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-Additio
 
 ### Update1
 ```
-Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId <String>
+Update-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId <String>
  -BodyParameter <IMicrosoftGraphWorkforceIntegration1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity>
+Update-MgBetaTeamworkWorkforceIntegration -InputObject <ITeamsIdentity>
  -BodyParameter <IMicrosoftGraphWorkforceIntegration1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ApiVersion <Int32>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>]
  [-EligibilityFilteringEnabledEntities <String>] [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]
  [-Id <String>] [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SupportedEntities <String>]
@@ -47,9 +47,9 @@ Update the navigation property workforceIntegrations in teamwork
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgTeamworkWorkforceIntegration Cmdlet
+### Example 1: Using the Update-MgBetaTeamworkWorkforceIntegration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "displayName-value"
 	ApiVersion = 99
@@ -61,10 +61,10 @@ $params = @{
 	Url = "url-value"
 	Supports = "supports-value"
 }
-Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
+Update-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgTeamworkWorkforceIntegration Cmdlet.
+This example shows how to use the Update-MgBetaTeamworkWorkforceIntegration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ workforceIntegration
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -121,7 +121,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -167,7 +167,7 @@ workforceIntegrationEncryption
 To construct, please use Get-Help -Online and see NOTES section for ENCRYPTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegrationEncryption
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkforceIntegrationEncryption
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -199,7 +199,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -230,7 +230,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -352,9 +352,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkforceIntegration1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

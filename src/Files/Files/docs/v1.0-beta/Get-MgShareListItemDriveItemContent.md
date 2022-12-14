@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgsharelistitemdriveitemcontent
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgsharelistitemdriveitemcontent
 schema: 2.0.0
 ---
 
-# Get-MgShareListItemDriveItemContent
+# Get-MgBetaShareListItemDriveItemContent
 
 ## SYNOPSIS
 The content stream, if the item represents a file.
@@ -14,25 +14,25 @@ The content stream, if the item represents a file.
 
 ### Get3 (Default)
 ```
-Get-MgShareListItemDriveItemContent -SharedDriveItemId <String> -OutFile <String> [-PassThru]
+Get-MgBetaShareListItemDriveItemContent -SharedDriveItemId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### Get2
 ```
-Get-MgShareListItemDriveItemContent -ListItemId <String> -SharedDriveItemId <String> -OutFile <String>
+Get-MgBetaShareListItemDriveItemContent -ListItemId <String> -SharedDriveItemId <String> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgShareListItemDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaShareListItemDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgShareListItemDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaShareListItemDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -48,7 +48,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 

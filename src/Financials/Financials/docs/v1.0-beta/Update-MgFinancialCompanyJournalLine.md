@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyjournalline
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanyjournalline
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyJournalLine
+# Update-MgBetaFinancialCompanyJournalLine
 
 ## SYNOPSIS
 Update the navigation property journalLines in financials
@@ -14,7 +14,7 @@ Update the navigation property journalLines in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <String>
+Update-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <String>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
  [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
@@ -24,19 +24,19 @@ Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <String>
 
 ### Update
 ```
-Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <String>
+Update-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <String>
  -BodyParameter <IMicrosoftGraphJournalLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalId <String> -JournalLineId <String>
+Update-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalId <String> -JournalLineId <String>
  -BodyParameter <IMicrosoftGraphJournalLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalId <String> -JournalLineId <String>
+Update-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalId <String> -JournalLineId <String>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
  [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
@@ -46,19 +46,19 @@ Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalId <String> -Jo
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphJournalLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphJournalLine> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
+Update-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
  [-AccountId <String>] [-AccountNumber <String>] [-AdditionalProperties <Hashtable>] [-Amount <Decimal>]
  [-Comment <String>] [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>]
  [-Id <String>] [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
@@ -67,7 +67,7 @@ Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Accoun
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
+Update-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
  [-AccountId <String>] [-AccountNumber <String>] [-AdditionalProperties <Hashtable>] [-Amount <Decimal>]
  [-Comment <String>] [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>]
  [-Id <String>] [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
@@ -86,7 +86,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -162,7 +162,7 @@ journalLine
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJournalLine
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournalLine
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -269,7 +269,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -421,9 +421,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJournalLine
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournalLine
 
 ## OUTPUTS
 

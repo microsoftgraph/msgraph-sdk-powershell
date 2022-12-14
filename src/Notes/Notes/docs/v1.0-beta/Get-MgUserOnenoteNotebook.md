@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mguseronenotenotebook
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mguseronenotenotebook
 schema: 2.0.0
 ---
 
-# Get-MgUserOnenoteNotebook
+# Get-MgBetaUserOnenoteNotebook
 
 ## SYNOPSIS
 The collection of OneNote notebooks that are owned by the user or group.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserOnenoteNotebook -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserOnenoteNotebook -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserOnenoteNotebook -NotebookId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserOnenoteNotebook -NotebookId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserOnenoteNotebook -InputObject <INotesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserOnenoteNotebook -InputObject <INotesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -40,34 +40,34 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOnenoteNotebook Cmdlet
+### Example 1: Using the Get-MgBetaUserOnenoteNotebook Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
+Get-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
 ```
 
-This example shows how to use the Get-MgUserOnenoteNotebook Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteNotebook Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserOnenoteNotebook Cmdlet
+### Example 2: Using the Get-MgBetaUserOnenoteNotebook Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebook -UserId $userId
+Get-MgBetaUserOnenoteNotebook -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserOnenoteNotebook Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteNotebook Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgUserOnenoteNotebook Cmdlet
+### Example 3: Using the Get-MgBetaUserOnenoteNotebook Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
+Get-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
 ```
 
-This example shows how to use the Get-MgUserOnenoteNotebook Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteNotebook Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -138,7 +138,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -274,11 +274,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotebook1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotebook1
 
 ## NOTES
 

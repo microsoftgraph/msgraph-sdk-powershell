@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgdeviceappmgtioslobappprovisioningconfigurationdevicestatuses
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/remove-mgdeviceappmgtioslobappprovisioningconfigurationdevicestatuses
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses
+# Remove-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses
 
 ## SYNOPSIS
 Delete navigation property deviceStatuses for deviceAppManagement
@@ -14,14 +14,14 @@ Delete navigation property deviceStatuses for deviceAppManagement
 
 ### Delete (Default)
 ```
-Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses
+Remove-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses
  -IosLobAppProvisioningConfigurationId <String> -ManagedDeviceMobileAppConfigurationDeviceStatusId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses
+Remove-MgBetaDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses
  -InputObject <IDevicesCorporateManagementIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
@@ -155,7 +155,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgDeviceAppManagementiOSLobAppProvisioningConfigurationDeviceStatuses
+### Remove-MgBetaDeviceAppManagementiOSLobAppProvisioningConfigurationDeviceStatuses
 
 COMPLEX PARAMETER PROPERTIES
 

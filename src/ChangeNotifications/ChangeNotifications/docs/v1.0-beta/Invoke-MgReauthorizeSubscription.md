@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ChangeNotifications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.changenotifications/invoke-mgreauthorizesubscription
+Module Name: Microsoft.Graph.Beta.ChangeNotifications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.changenotifications/invoke-mgreauthorizesubscription
 schema: 2.0.0
 ---
 
-# Invoke-MgReauthorizeSubscription
+# Invoke-MgBetaReauthorizeSubscription
 
 ## SYNOPSIS
 Invoke action reauthorize
@@ -14,13 +14,13 @@ Invoke action reauthorize
 
 ### Reauthorize1 (Default)
 ```
-Invoke-MgReauthorizeSubscription -SubscriptionId <String> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaReauthorizeSubscription -SubscriptionId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### ReauthorizeViaIdentity1
 ```
-Invoke-MgReauthorizeSubscription -InputObject <IChangeNotificationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaReauthorizeSubscription -InputObject <IChangeNotificationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IChangeNotificationsIdentity
 Parameter Sets: ReauthorizeViaIdentity1
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IChangeNotificationsIdentity
 
 ## OUTPUTS
 

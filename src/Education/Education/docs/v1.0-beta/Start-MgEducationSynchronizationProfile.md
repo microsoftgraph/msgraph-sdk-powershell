@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/start-mgeducationsynchronizationprofile
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/start-mgeducationsynchronizationprofile
 schema: 2.0.0
 ---
 
-# Start-MgEducationSynchronizationProfile
+# Start-MgBetaEducationSynchronizationProfile
 
 ## SYNOPSIS
 Verify the files uploaded to a specific school data synchronization profile in the tenant.
@@ -18,13 +18,13 @@ If the response contains only warnings, synchronization will start.
 
 ### Start (Default)
 ```
-Start-MgEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-Confirm] [-WhatIf]
+Start-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### StartViaIdentity
 ```
-Start-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Start-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -37,13 +37,13 @@ If the response contains only warnings, synchronization will start.
 
 ## EXAMPLES
 
-### Example 1: Using the Start-MgEducationSynchronizationProfile Cmdlet
+### Example 1: Using the Start-MgBetaEducationSynchronizationProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Start-MgEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
+Import-Module Microsoft.Graph.Beta.Education
+Start-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
 ```
 
-This example shows how to use the Start-MgEducationSynchronizationProfile Cmdlet.
+This example shows how to use the Start-MgBetaEducationSynchronizationProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: StartViaIdentity
 Aliases:
 
@@ -115,11 +115,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationFileSynchronizationVerificationMessage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationFileSynchronizationVerificationMessage
 
 ## NOTES
 

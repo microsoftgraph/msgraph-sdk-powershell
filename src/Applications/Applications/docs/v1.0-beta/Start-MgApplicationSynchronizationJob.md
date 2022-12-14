@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/start-mgapplicationsynchronizationjob
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/start-mgapplicationsynchronizationjob
 schema: 2.0.0
 ---
 
-# Start-MgApplicationSynchronizationJob
+# Start-MgBetaApplicationSynchronizationJob
 
 ## SYNOPSIS
 Start an existing synchronization job.
@@ -18,13 +18,13 @@ Use the start job only when the job is currently paused or in quarantine.
 
 ### Start (Default)
 ```
-Start-MgApplicationSynchronizationJob -ApplicationId <String> -SynchronizationJobId <String> [-PassThru]
+Start-MgBetaApplicationSynchronizationJob -ApplicationId <String> -SynchronizationJobId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StartViaIdentity
 ```
-Start-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Start-MgBetaApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -59,7 +59,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: StartViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

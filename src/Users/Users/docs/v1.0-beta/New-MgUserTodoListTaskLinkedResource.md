@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mgusertodolisttasklinkedresource
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/new-mgusertodolisttasklinkedresource
 schema: 2.0.0
 ---
 
-# New-MgUserTodoListTaskLinkedResource
+# New-MgBetaUserTodoListTaskLinkedResource
 
 ## SYNOPSIS
 Create a linkedResource object to associate a specified task with an item in a partner application.
@@ -16,26 +16,26 @@ You can also create a **linkedResource** object while creating a todoTask.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserTodoListTaskLinkedResource -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+New-MgBetaUserTodoListTaskLinkedResource -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ApplicationName <String>] [-DisplayName <String>]
  [-ExternalId <String>] [-Id <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserTodoListTaskLinkedResource -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+New-MgBetaUserTodoListTaskLinkedResource -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphLinkedResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity>
+New-MgBetaUserTodoListTaskLinkedResource -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphLinkedResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ApplicationName <String>] [-DisplayName <String>] [-ExternalId <String>] [-Id <String>] [-WebUrl <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,9 +47,9 @@ You can also create a **linkedResource** object while creating a todoTask.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserTodoListTaskLinkedResource Cmdlet
+### Example 1: Using the New-MgBetaUserTodoListTaskLinkedResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	WebUrl = "https://microsoft.com"
 	ApplicationName = "Microsoft"
@@ -57,10 +57,10 @@ $params = @{
 	ExternalId = "dk9cddce2-dce2-f9dd-e2dc-cdf9e2dccdf9"
 }
 # A UPN can also be used as -UserId.
-New-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+New-MgBetaUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserTodoListTaskLinkedResource Cmdlet.
+This example shows how to use the New-MgBetaUserTodoListTaskLinkedResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -100,7 +100,7 @@ linkedResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLinkedResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLinkedResource
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -269,13 +269,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLinkedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLinkedResource
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLinkedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLinkedResource
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamworkdevice
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamworkdevice
 schema: 2.0.0
 ---
 
-# Get-MgTeamworkDevice
+# Get-MgBetaTeamworkDevice
 
 ## SYNOPSIS
 The Teams devices provisioned for the tenant.
@@ -14,20 +14,20 @@ The Teams devices provisioned for the tenant.
 
 ### List (Default)
 ```
-Get-MgTeamworkDevice [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaTeamworkDevice [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTeamworkDevice -TeamworkDeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamworkDevice -TeamworkDeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamworkDevice -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamworkDevice -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The Teams devices provisioned for the tenant.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamworkDevice Cmdlet
+### Example 1: Using the Get-MgBetaTeamworkDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDevice -TeamworkDeviceId $teamworkDeviceId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDevice -TeamworkDeviceId $teamworkDeviceId
 ```
 
-This example shows how to use the Get-MgTeamworkDevice Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamworkDevice Cmdlet
+### Example 2: Using the Get-MgBetaTeamworkDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDevice
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDevice
 ```
 
-This example shows how to use the Get-MgTeamworkDevice Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDevice
 
 ## NOTES
 

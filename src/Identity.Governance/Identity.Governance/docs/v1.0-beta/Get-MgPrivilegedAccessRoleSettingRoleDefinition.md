@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedaccessrolesettingroledefinition
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedaccessrolesettingroledefinition
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedAccessRoleSettingRoleDefinition
+# Get-MgBetaPrivilegedAccessRoleSettingRoleDefinition
 
 ## SYNOPSIS
 Read-only.
@@ -15,13 +15,13 @@ The role definition that is enforced with this role setting.
 
 ### Get (Default)
 ```
-Get-MgPrivilegedAccessRoleSettingRoleDefinition -GovernanceRoleSettingId <String> -PrivilegedAccessId <String>
+Get-MgBetaPrivilegedAccessRoleSettingRoleDefinition -GovernanceRoleSettingId <String> -PrivilegedAccessId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedAccessRoleSettingRoleDefinition -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaPrivilegedAccessRoleSettingRoleDefinition -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
 
 ## NOTES
 

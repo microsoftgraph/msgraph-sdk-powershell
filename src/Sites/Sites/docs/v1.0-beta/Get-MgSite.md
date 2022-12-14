@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsite
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsite
 schema: 2.0.0
 ---
 
-# Get-MgSite
+# Get-MgBetaSite
 
 ## SYNOPSIS
 Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
@@ -14,19 +14,19 @@ Retrieve properties and relationships for a [site][] resource.\nA **site** resou
 
 ### List (Default)
 ```
-Get-MgSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSite -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSite -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -35,58 +35,58 @@ Retrieve properties and relationships for a [site][] resource.\nA **site** resou
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSite Cmdlet
+### Example 1: Using the Get-MgBetaSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSite
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSite
 ```
 
-This example shows how to use the Get-MgSite Cmdlet.
+This example shows how to use the Get-MgBetaSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSite Cmdlet
+### Example 2: Using the Get-MgBetaSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSite -SiteId $siteId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSite -SiteId $siteId
 ```
 
-This example shows how to use the Get-MgSite Cmdlet.
+This example shows how to use the Get-MgBetaSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgSite Cmdlet
+### Example 3: Using the Get-MgBetaSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSite -Search "{query}"  -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSite -Search "{query}"  -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgSite Cmdlet.
+This example shows how to use the Get-MgBetaSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgSite Cmdlet
+### Example 4: Using the Get-MgBetaSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSite -Search "{query}" 
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSite -Search "{query}" 
 ```
 
-This example shows how to use the Get-MgSite Cmdlet.
+This example shows how to use the Get-MgBetaSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Get-MgSite Cmdlet
+### Example 5: Using the Get-MgBetaSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSite -Property "siteCollection,webUrl" -Filter "siteCollection/root ne null" 
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSite -Property "siteCollection,webUrl" -Filter "siteCollection/root ne null" 
 ```
 
-This example shows how to use the Get-MgSite Cmdlet.
+This example shows how to use the Get-MgBetaSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the Get-MgSite Cmdlet
+### Example 6: Using the Get-MgBetaSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSite -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSite -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgSite Cmdlet.
+This example shows how to use the Get-MgBetaSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -157,7 +157,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -278,11 +278,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSite1
 
 ## NOTES
 

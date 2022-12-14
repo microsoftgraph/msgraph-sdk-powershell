@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantcloudpcdevice
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantcloudpcdevice
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantCloudPcDevice
+# Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice
 
 ## SYNOPSIS
 The collection of cloud PC devices across managed tenants.
@@ -14,20 +14,20 @@ The collection of cloud PC devices across managed tenants.
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantCloudPcDevice [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId <String> [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantCloudPcDevice -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The collection of cloud PC devices across managed tenants.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantCloudPcDevice Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId $cloudPcDeviceId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice -CloudPcDeviceId $cloudPcDeviceId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCloudPcDevice Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantCloudPcDevice Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCloudPcDevice
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCloudPcDevice Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcDevice
 
 ## NOTES
 

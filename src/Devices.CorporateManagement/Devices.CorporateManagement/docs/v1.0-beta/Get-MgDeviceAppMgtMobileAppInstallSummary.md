@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/get-mgdeviceappmgtmobileappinstallsummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/get-mgdeviceappmgtmobileappinstallsummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceAppMgtMobileAppInstallSummary
+# Get-MgBetaDeviceAppMgtMobileAppInstallSummary
 
 ## SYNOPSIS
 Mobile App Install Summary.
@@ -14,13 +14,13 @@ Mobile App Install Summary.
 
 ### Get (Default)
 ```
-Get-MgDeviceAppMgtMobileAppInstallSummary -MobileAppId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDeviceAppMgtMobileAppInstallSummary -MobileAppId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceAppMgtMobileAppInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
+Get-MgBetaDeviceAppMgtMobileAppInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,17 +97,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppInstallSummary
 
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceAppManagementMobileAppInstallSummary
+### Get-MgBetaDeviceAppManagementMobileAppInstallSummary
 
 COMPLEX PARAMETER PROPERTIES
 

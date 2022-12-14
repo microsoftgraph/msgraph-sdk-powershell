@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicyfeaturerolloutpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mgpolicyfeaturerolloutpolicy
 schema: 2.0.0
 ---
 
-# New-MgPolicyFeatureRolloutPolicy
+# New-MgBetaPolicyFeatureRolloutPolicy
 
 ## SYNOPSIS
 Create a new featureRolloutPolicy object.
@@ -14,7 +14,7 @@ Create a new featureRolloutPolicy object.
 
 ### CreateExpanded (Default)
 ```
-New-MgPolicyFeatureRolloutPolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaPolicyFeatureRolloutPolicy [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Description <String>] [-DisplayName <String>]
  [-Feature <String>] [-Id <String>] [-IsAppliedToOrganization] [-IsEnabled] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgPolicyFeatureRolloutPolicy [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy1> [-Confirm] [-WhatIf]
+New-MgBetaPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,9 +31,9 @@ Create a new featureRolloutPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPolicyFeatureRolloutPolicy Cmdlet
+### Example 1: Using the New-MgBetaPolicyFeatureRolloutPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "PassthroughAuthentication rollout policy"
 	Description = "PassthroughAuthentication rollout policy"
@@ -41,10 +41,10 @@ $params = @{
 	IsEnabled = $true
 	IsAppliedToOrganization = $false
 }
-New-MgPolicyFeatureRolloutPolicy -BodyParameter $params
+New-MgBetaPolicyFeatureRolloutPolicy -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPolicyFeatureRolloutPolicy Cmdlet.
+This example shows how to use the New-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -70,7 +70,7 @@ Specifies a list of directoryObjects that feature is enabled for.
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ featureRolloutPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
 Parameter Sets: Create
 Aliases:
 
@@ -224,11 +224,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
 
 ## NOTES
 

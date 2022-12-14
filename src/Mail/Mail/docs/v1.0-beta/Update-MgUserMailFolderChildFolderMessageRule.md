@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/update-mgusermailfolderchildfoldermessagerule
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/update-mgusermailfolderchildfoldermessagerule
 schema: 2.0.0
 ---
 
-# Update-MgUserMailFolderChildFolderMessageRule
+# Update-MgBetaUserMailFolderChildFolderMessageRule
 
 ## SYNOPSIS
 Update the navigation property messageRules in users
@@ -14,7 +14,7 @@ Update the navigation property messageRules in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserMailFolderChildFolderMessageRule -MailFolderId <String> -MailFolderId1 <String>
+Update-MgBetaUserMailFolderChildFolderMessageRule -MailFolderId <String> -MailFolderId1 <String>
  -MessageRuleId <String> -UserId <String> [-Actions <IMicrosoftGraphMessageRuleActions>]
  [-AdditionalProperties <Hashtable>] [-Conditions <IMicrosoftGraphMessageRulePredicates>]
  [-DisplayName <String>] [-Exceptions <IMicrosoftGraphMessageRulePredicates>] [-HasError] [-Id <String>]
@@ -23,20 +23,20 @@ Update-MgUserMailFolderChildFolderMessageRule -MailFolderId <String> -MailFolder
 
 ### Update1
 ```
-Update-MgUserMailFolderChildFolderMessageRule -MailFolderId <String> -MailFolderId1 <String>
+Update-MgBetaUserMailFolderChildFolderMessageRule -MailFolderId <String> -MailFolderId1 <String>
  -MessageRuleId <String> -UserId <String> -BodyParameter <IMicrosoftGraphMessageRule> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserMailFolderChildFolderMessageRule -InputObject <IMailIdentity>
+Update-MgBetaUserMailFolderChildFolderMessageRule -InputObject <IMailIdentity>
  -BodyParameter <IMicrosoftGraphMessageRule> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserMailFolderChildFolderMessageRule -InputObject <IMailIdentity>
+Update-MgBetaUserMailFolderChildFolderMessageRule -InputObject <IMailIdentity>
  [-Actions <IMicrosoftGraphMessageRuleActions>] [-AdditionalProperties <Hashtable>]
  [-Conditions <IMicrosoftGraphMessageRulePredicates>] [-DisplayName <String>]
  [-Exceptions <IMicrosoftGraphMessageRulePredicates>] [-HasError] [-Id <String>] [-IsEnabled] [-IsReadOnly]
@@ -55,7 +55,7 @@ messageRuleActions
 To construct, please use Get-Help -Online and see NOTES section for ACTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRuleActions
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessageRuleActions
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -86,7 +86,7 @@ messageRule
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRule
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessageRule
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -102,7 +102,7 @@ messageRulePredicates
 To construct, please use Get-Help -Online and see NOTES section for CONDITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRulePredicates
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessageRulePredicates
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -133,7 +133,7 @@ messageRulePredicates
 To construct, please use Get-Help -Online and see NOTES section for EXCEPTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRulePredicates
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessageRulePredicates
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -348,9 +348,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRule
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessageRule
 
 ## OUTPUTS
 

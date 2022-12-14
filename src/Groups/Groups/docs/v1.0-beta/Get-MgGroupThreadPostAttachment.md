@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupthreadpostattachment
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupthreadpostattachment
 schema: 2.0.0
 ---
 
-# Get-MgGroupThreadPostAttachment
+# Get-MgBetaGroupThreadPostAttachment
 
 ## SYNOPSIS
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
@@ -17,20 +17,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgGroupThreadPostAttachment -ConversationThreadId <String> -GroupId <String> -PostId <String>
+Get-MgBetaGroupThreadPostAttachment -ConversationThreadId <String> -GroupId <String> -PostId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupThreadPostAttachment -AttachmentId <String> -ConversationThreadId <String> -GroupId <String>
+Get-MgBetaGroupThreadPostAttachment -AttachmentId <String> -ConversationThreadId <String> -GroupId <String>
  -PostId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupThreadPostAttachment -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupThreadPostAttachment -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -42,13 +42,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgGroupThreadPostAttachment Cmdlet
+### Example 1: Using the Get-MgBetaGroupThreadPostAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupThreadPostAttachment -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupThreadPostAttachment -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId
 ```
 
-This example shows how to use the Get-MgGroupThreadPostAttachment Cmdlet.
+This example shows how to use the Get-MgBetaGroupThreadPostAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -164,7 +164,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
 
 ## NOTES
 

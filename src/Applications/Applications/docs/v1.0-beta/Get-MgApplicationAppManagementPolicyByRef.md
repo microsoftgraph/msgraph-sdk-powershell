@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationappmanagementpolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationappmanagementpolicybyref
 schema: 2.0.0
 ---
 
-# Get-MgApplicationAppManagementPolicyByRef
+# Get-MgBetaApplicationAppManagementPolicyByRef
 
 ## SYNOPSIS
 The appManagementPolicy applied to this application.
@@ -13,7 +13,7 @@ The appManagementPolicy applied to this application.
 ## SYNTAX
 
 ```
-Get-MgApplicationAppManagementPolicyByRef -ApplicationId <String> [-Filter <String>] [-Search <String>]
+Get-MgBetaApplicationAppManagementPolicyByRef -ApplicationId <String> [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```

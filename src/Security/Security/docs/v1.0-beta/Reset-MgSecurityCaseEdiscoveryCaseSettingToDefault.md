@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/reset-mgsecuritycaseediscoverycasesettingtodefault
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/reset-mgsecuritycaseediscoverycasesettingtodefault
 schema: 2.0.0
 ---
 
-# Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault
+# Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault
 
 ## SYNOPSIS
 Reset a caseSettings object to the default values.
@@ -14,13 +14,13 @@ Reset a caseSettings object to the default values.
 
 ### Reset (Default)
 ```
-Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault -EdiscoveryCaseId <String> [-PassThru] [-Confirm] [-WhatIf]
+Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault -EdiscoveryCaseId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
+Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,22 +29,22 @@ Reset a caseSettings object to the default values.
 
 ## EXAMPLES
 
-### Example 1: Using the Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault Cmdlet
+### Example 1: Using the Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault -EdiscoveryCaseId $ediscoveryCaseId
+Import-Module Microsoft.Graph.Beta.Security
+Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
-This example shows how to use the Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault Cmdlet.
+This example shows how to use the Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault Cmdlet
+### Example 2: Using the Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault -EdiscoveryCaseId $ediscoveryCaseId
+Import-Module Microsoft.Graph.Beta.Security
+Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
-This example shows how to use the Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault Cmdlet.
+This example shows how to use the Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -131,7 +131,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

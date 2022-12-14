@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedaccessresourcerolesettingresource
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedaccessresourcerolesettingresource
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedAccessResourceRoleSettingResource
+# Get-MgBetaPrivilegedAccessResourceRoleSettingResource
 
 ## SYNOPSIS
 Read-only.
@@ -15,14 +15,14 @@ The associated resource for this role setting.
 
 ### Get (Default)
 ```
-Get-MgPrivilegedAccessResourceRoleSettingResource -GovernanceResourceId <String>
+Get-MgBetaPrivilegedAccessResourceRoleSettingResource -GovernanceResourceId <String>
  -GovernanceRoleSettingId <String> -PrivilegedAccessId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedAccessResourceRoleSettingResource -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaPrivilegedAccessResourceRoleSettingResource -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -130,11 +130,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceResource
 
 ## NOTES
 

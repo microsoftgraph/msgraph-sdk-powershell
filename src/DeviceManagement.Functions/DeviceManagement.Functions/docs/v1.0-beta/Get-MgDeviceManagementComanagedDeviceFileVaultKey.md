@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementcomanageddevicefilevaultkey
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementcomanageddevicefilevaultkey
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementComanagedDeviceFileVaultKey
+# Get-MgBetaDeviceManagementComanagedDeviceFileVaultKey
 
 ## SYNOPSIS
 Invoke function getFileVaultKey
@@ -14,12 +14,12 @@ Invoke function getFileVaultKey
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementComanagedDeviceFileVaultKey -ManagedDeviceId <String> [<CommonParameters>]
+Get-MgBetaDeviceManagementComanagedDeviceFileVaultKey -ManagedDeviceId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementComanagedDeviceFileVaultKey -InputObject <IDeviceManagementFunctionsIdentity>
+Get-MgBetaDeviceManagementComanagedDeviceFileVaultKey -InputObject <IDeviceManagementFunctionsIdentity>
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -66,7 +66,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 

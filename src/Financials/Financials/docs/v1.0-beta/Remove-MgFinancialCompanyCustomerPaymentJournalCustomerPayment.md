@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanycustomerpaymentjournalcustomerpayment
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/remove-mgfinancialcompanycustomerpaymentjournalcustomerpayment
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPayment
+# Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment
 
 ## SYNOPSIS
 Delete navigation property customerPayments for financials
@@ -14,13 +14,13 @@ Delete navigation property customerPayments for financials
 
 ### Delete (Default)
 ```
-Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <String> -CustomerPaymentId <String>
+Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <String> -CustomerPaymentId <String>
  -CustomerPaymentJournalId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPayment -InputObject <IFinancialsIdentity>
+Remove-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -InputObject <IFinancialsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

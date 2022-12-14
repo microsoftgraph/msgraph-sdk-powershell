@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtwindowinformationprotectiondeviceregistration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtwindowinformationprotectiondeviceregistration
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+# New-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
 
 ## SYNOPSIS
 Create new navigation property to windowsInformationProtectionDeviceRegistrations for deviceAppManagement
@@ -14,14 +14,14 @@ Create new navigation property to windowsInformationProtectionDeviceRegistration
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration [-AdditionalProperties <Hashtable>]
  [-DeviceMacAddress <String>] [-DeviceName <String>] [-DeviceRegistrationId <String>] [-DeviceType <String>]
  [-Id <String>] [-LastCheckInDateTime <DateTime>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+New-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Represents device registration records for Bring-Your-Own-Device(BYOD) Windows d
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
 Parameter Sets: Create
 Aliases:
 
@@ -206,17 +206,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementWindowInformationProtectionDeviceRegistration
+### New-MgBetaDeviceAppManagementWindowInformationProtectionDeviceRegistration
 
 COMPLEX PARAMETER PROPERTIES
 

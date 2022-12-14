@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanageddevicecompliancetrend
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantmanageddevicecompliancetrend
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend
+# Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend
 
 ## SYNOPSIS
 Trend insights for device compliance across managed tenants.
@@ -14,20 +14,20 @@ Trend insights for device compliance across managed tenants.
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDeviceComplianceTrendId <String>
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDeviceComplianceTrendId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend -InputObject <IManagedTenantsIdentity>
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend -InputObject <IManagedTenantsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Trend insights for device compliance across managed tenants.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDeviceComplianceTrendId $managedDeviceComplianceTrendId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend -ManagedDeviceComplianceTrendId $managedDeviceComplianceTrendId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagedDeviceComplianceTrend Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend
 
 ## NOTES
 

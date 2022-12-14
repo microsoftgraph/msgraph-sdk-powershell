@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement/invoke-mgreportserviceannouncementhealthoverviewissueincident
+Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.serviceannouncement/invoke-mgreportserviceannouncementhealthoverviewissueincident
 schema: 2.0.0
 ---
 
-# Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident
+# Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident
 
 ## SYNOPSIS
 Invoke function incidentReport
@@ -14,13 +14,13 @@ Invoke function incidentReport
 
 ### Report (Default)
 ```
-Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident -ServiceHealthId <String>
+Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident -ServiceHealthId <String>
  -ServiceHealthIssueId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### ReportViaIdentity
 ```
-Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident
+Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident
  -InputObject <IDevicesServiceAnnouncementIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 Parameter Sets: ReportViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ## OUTPUTS
 

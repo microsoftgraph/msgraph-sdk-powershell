@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusertodolist
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mgusertodolist
 schema: 2.0.0
 ---
 
-# Update-MgUserTodoList
+# Update-MgBetaUserTodoList
 
 ## SYNOPSIS
 Update the navigation property lists in users
@@ -14,7 +14,7 @@ Update the navigation property lists in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserTodoList -TodoTaskListId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserTodoList -TodoTaskListId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsOwner] [-IsShared]
  [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgUserTodoList -TodoTaskListId <String> -UserId <String> [-AdditionalProp
 
 ### Update
 ```
-Update-MgUserTodoList -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphTodoTaskList>
+Update-MgBetaUserTodoList -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphTodoTaskList>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserTodoList -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTaskList> [-PassThru]
+Update-MgBetaUserTodoList -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTaskList> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserTodoList -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserTodoList -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsOwner] [-IsShared]
  [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -45,17 +45,17 @@ Update the navigation property lists in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserTodoList Cmdlet
+### Example 1: Using the Update-MgBetaUserTodoList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	DisplayName = "Vacation Plan"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
+Update-MgBetaUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserTodoList Cmdlet.
+This example shows how to use the Update-MgBetaUserTodoList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ todoTaskList
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTaskList
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTodoTaskList
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtension[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -207,7 +207,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTodoTask[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -299,9 +299,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTaskList
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTodoTaskList
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

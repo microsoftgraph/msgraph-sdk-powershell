@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticnotautopilotreadydevice
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticnotautopilotreadydevice
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
+# Get-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
 
 ## SYNOPSIS
 User experience analytics devices not Windows Autopilot ready.
@@ -14,21 +14,21 @@ User experience analytics devices not Windows Autopilot ready.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
+Get-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
  -UserExperienceAnalyticsNotAutopilotReadyDeviceId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice -InputObject <IDeviceManagementIdentity>
+Get-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -226,11 +226,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice
 
 ## NOTES
 

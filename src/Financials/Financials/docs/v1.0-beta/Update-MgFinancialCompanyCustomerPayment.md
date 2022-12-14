@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanycustomerpayment
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanycustomerpayment
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyCustomerPayment
+# Update-MgBetaFinancialCompanyCustomerPayment
 
 ## SYNOPSIS
 Update the navigation property customerPayments in financials
@@ -14,7 +14,7 @@ Update the navigation property customerPayments in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyCustomerPayment -CompanyId <String> -CustomerPaymentId <String>
+Update-MgBetaFinancialCompanyCustomerPayment -CompanyId <String> -CustomerPaymentId <String>
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-AppliesToInvoiceId <String>]
  [-AppliesToInvoiceNumber <String>] [-Comment <String>] [-ContactId <String>]
  [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>] [-CustomerNumber <String>]
@@ -25,19 +25,19 @@ Update-MgFinancialCompanyCustomerPayment -CompanyId <String> -CustomerPaymentId 
 
 ### Update
 ```
-Update-MgFinancialCompanyCustomerPayment -CompanyId <String> -CustomerPaymentId <String>
+Update-MgBetaFinancialCompanyCustomerPayment -CompanyId <String> -CustomerPaymentId <String>
  -BodyParameter <IMicrosoftGraphCustomerPayment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyCustomerPayment -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPayment -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphCustomerPayment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyCustomerPayment -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPayment -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-AppliesToInvoiceId <String>]
  [-AppliesToInvoiceNumber <String>] [-Comment <String>] [-ContactId <String>]
  [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>] [-CustomerNumber <String>]
@@ -118,7 +118,7 @@ customerPayment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPayment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPayment
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -179,7 +179,7 @@ customer
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -301,7 +301,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -423,9 +423,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPayment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPayment
 
 ## OUTPUTS
 

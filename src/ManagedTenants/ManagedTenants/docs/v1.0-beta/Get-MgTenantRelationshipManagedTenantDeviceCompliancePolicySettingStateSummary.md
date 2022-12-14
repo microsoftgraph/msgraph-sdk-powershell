@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/get-mgtenantrelationshipmanagedtenantdevicecompliancepolicysettingstatesummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/get-mgtenantrelationshipmanagedtenantdevicecompliancepolicysettingstatesummary
 schema: 2.0.0
 ---
 
-# Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+# Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
 
 ## SYNOPSIS
 Summary information for device compliance policy setting states across managed tenants.
@@ -14,21 +14,21 @@ Summary information for device compliance policy setting states across managed t
 
 ### List (Default)
 ```
-Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary [-ExpandProperty <String[]>]
+Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
  -DeviceCompliancePolicySettingStateSummaryId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
  -InputObject <IManagedTenantsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -38,22 +38,22 @@ Summary information for device compliance policy setting states across managed t
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary -DeviceCompliancePolicySettingStateSummaryId $deviceCompliancePolicySettingStateSummaryId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary -DeviceCompliancePolicySettingStateSummaryId $deviceCompliancePolicySettingStateSummaryId
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary
 ```
 
-This example shows how to use the Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -139,7 +139,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -245,11 +245,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceCompliancePolicySettingStateSummary
 
 ## NOTES
 

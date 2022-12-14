@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mganswercommunicationcall
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/invoke-mganswercommunicationcall
 schema: 2.0.0
 ---
 
-# Invoke-MgAnswerCommunicationCall
+# Invoke-MgBetaAnswerCommunicationCall
 
 ## SYNOPSIS
 Enable a bot to answer an incoming call.
@@ -19,7 +19,7 @@ The current timeout value is 15 seconds for regular scenarios, and 5 seconds for
 
 ### AnswerExpanded1 (Default)
 ```
-Invoke-MgAnswerCommunicationCall -CallId <String> [-AcceptedModalities <String[]>]
+Invoke-MgBetaAnswerCommunicationCall -CallId <String> [-AcceptedModalities <String[]>]
  [-AdditionalProperties <Hashtable>] [-CallbackUri <String>] [-CallOptions <Hashtable>]
  [-MediaConfig <IMicrosoftGraphMediaConfig1>] [-ParticipantCapacity <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -27,21 +27,21 @@ Invoke-MgAnswerCommunicationCall -CallId <String> [-AcceptedModalities <String[]
 
 ### Answer1
 ```
-Invoke-MgAnswerCommunicationCall -CallId <String>
+Invoke-MgBetaAnswerCommunicationCall -CallId <String>
  -BodyParameter <IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AnswerViaIdentity1
 ```
-Invoke-MgAnswerCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+Invoke-MgBetaAnswerCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AnswerViaIdentityExpanded1
 ```
-Invoke-MgAnswerCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-AcceptedModalities <String[]>]
+Invoke-MgBetaAnswerCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-AcceptedModalities <String[]>]
  [-AdditionalProperties <Hashtable>] [-CallbackUri <String>] [-CallOptions <Hashtable>]
  [-MediaConfig <IMicrosoftGraphMediaConfig1>] [-ParticipantCapacity <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -57,47 +57,47 @@ The current timeout value is 15 seconds for regular scenarios, and 5 seconds for
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgAnswerCommunicationCall Cmdlet
+### Example 1: Using the Invoke-MgBetaAnswerCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	CallbackUri = "https://bot.contoso.com/api/calls"
 	AcceptedModalities = @(
 		"audio"
 	)
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.appHostedMediaConfig"
 		Blob = "<Media Session Configuration Blob>"
 	}
 }
-Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaAnswerCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Invoke-MgAnswerCommunicationCall Cmdlet
+### Example 2: Using the Invoke-MgBetaAnswerCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	CallbackUri = "callbackUri-value"
 	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		"@odata.type" = "#Microsoft.Graph.Beta.appHostedMediaConfig"
 		Blob = "<Media Session Configuration Blob>"
 	}
 	AcceptedModalities = @(
 		"audio"
 	)
 	CallOptions = @{
-		"@odata.type" = "#microsoft.graph.incomingCallOptions"
+		"@odata.type" = "#Microsoft.Graph.Beta.incomingCallOptions"
 		IsContentSharingNotificationEnabled = $true
 	}
 	ParticipantCapacity = 200
 }
-Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaAnswerCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Answer1, AnswerViaIdentity1
 Aliases:
 
@@ -198,7 +198,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: AnswerViaIdentity1, AnswerViaIdentityExpanded1
 Aliases:
 
@@ -214,7 +214,7 @@ mediaConfig
 To construct, please use Get-Help -Online and see NOTES section for MEDIACONFIG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMediaConfig1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMediaConfig1
 Parameter Sets: AnswerExpanded1, AnswerViaIdentityExpanded1
 Aliases:
 
@@ -291,9 +291,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 

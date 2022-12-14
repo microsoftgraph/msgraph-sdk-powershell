@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamscheduletimeoff
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamscheduletimeoff
 schema: 2.0.0
 ---
 
-# Get-MgTeamScheduleTimeOff
+# Get-MgBetaTeamScheduleTimeOff
 
 ## SYNOPSIS
 The instances of times off in the schedule.
@@ -14,19 +14,19 @@ The instances of times off in the schedule.
 
 ### List1 (Default)
 ```
-Get-MgTeamScheduleTimeOff -TeamId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaTeamScheduleTimeOff -TeamId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgTeamScheduleTimeOff -TeamId <String> -TimeOffId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaTeamScheduleTimeOff -TeamId <String> -TimeOffId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,22 +34,22 @@ The instances of times off in the schedule.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamScheduleTimeOff Cmdlet
+### Example 1: Using the Get-MgBetaTeamScheduleTimeOff Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleTimeOff -TeamId $teamId -Filter "sharedTimeOff/startDateTime ge 2019-03-11T00:00:00.000Z and sharedTimeOff/endDateTime le 2019-03-18T00:00:00.000Z and draftTimeOff/startDateTime ge 2019-03-11T00:00:00.000Z and draftTimeOff/endDateTime le 2019-03-18T00:00:00.000Z" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamScheduleTimeOff -TeamId $teamId -Filter "sharedTimeOff/startDateTime ge 2019-03-11T00:00:00.000Z and sharedTimeOff/endDateTime le 2019-03-18T00:00:00.000Z and draftTimeOff/startDateTime ge 2019-03-11T00:00:00.000Z and draftTimeOff/endDateTime le 2019-03-18T00:00:00.000Z" 
 ```
 
-This example shows how to use the Get-MgTeamScheduleTimeOff Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleTimeOff Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgTeamScheduleTimeOff Cmdlet
+### Example 2: Using the Get-MgBetaTeamScheduleTimeOff Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleTimeOff -TeamId $teamId -TimeOffId $timeOffId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamScheduleTimeOff -TeamId $teamId -TimeOffId $timeOffId
 ```
 
-This example shows how to use the Get-MgTeamScheduleTimeOff Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleTimeOff Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -241,11 +241,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOff1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOff1
 
 ## NOTES
 

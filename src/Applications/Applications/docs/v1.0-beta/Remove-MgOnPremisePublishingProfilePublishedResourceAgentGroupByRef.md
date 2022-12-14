@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgonpremisepublishingprofilepublishedresourceagentgroupbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgonpremisepublishingprofilepublishedresourceagentgroupbyref
 schema: 2.0.0
 ---
 
-# Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef
+# Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef
 
 ## SYNOPSIS
 Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
@@ -14,14 +14,14 @@ Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 
 ### Delete (Default)
 ```
-Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesAgentGroupId <String>
+Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> -PublishedResourceId <String> [-Id <String>] [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -InputObject <IApplicationsIdentity>
+Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef -InputObject <IApplicationsIdentity>
  [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,22 +30,22 @@ Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
+### Example 1: Using the Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
 ```
 
-This example shows how to use the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
+### Example 2: Using the Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
 ```
 
-This example shows how to use the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -85,7 +85,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -192,7 +192,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

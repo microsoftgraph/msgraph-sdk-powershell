@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportoffice365activeusercount
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportoffice365activeusercount
 schema: 2.0.0
 ---
 
-# Get-MgReportOffice365ActiveUserCount
+# Get-MgBetaReportOffice365ActiveUserCount
 
 ## SYNOPSIS
 Invoke function getOffice365ActiveUserCounts
@@ -14,13 +14,13 @@ Invoke function getOffice365ActiveUserCounts
 
 ### Get1 (Default)
 ```
-Get-MgReportOffice365ActiveUserCount -Period <String> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaReportOffice365ActiveUserCount -Period <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgReportOffice365ActiveUserCount -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaReportOffice365ActiveUserCount -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -173,11 +173,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOffice365ActiveUserCounts
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOffice365ActiveUserCounts
 
 ## NOTES
 

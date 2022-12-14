@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgchattab
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgchattab
 schema: 2.0.0
 ---
 
-# Remove-MgChatTab
+# Remove-MgBetaChatTab
 
 ## SYNOPSIS
 Delete navigation property tabs for chats
@@ -14,13 +14,13 @@ Delete navigation property tabs for chats
 
 ### Delete (Default)
 ```
-Remove-MgChatTab -ChatId <String> -TeamsTabId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaChatTab -ChatId <String> -TeamsTabId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgChatTab -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaChatTab -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property tabs for chats
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgChatTab Cmdlet
+### Example 1: Using the Remove-MgBetaChatTab Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaChatTab -ChatId $chatId -TeamsTabId $teamsTabId
 ```
 
-This example shows how to use the Remove-MgChatTab Cmdlet.
+This example shows how to use the Remove-MgBetaChatTab Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

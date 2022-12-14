@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementmicrosofttunnelhealththreshold
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementmicrosofttunnelhealththreshold
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementMicrosoftTunnelHealthThreshold
+# New-MgBetaDeviceManagementMicrosoftTunnelHealthThreshold
 
 ## SYNOPSIS
 Create new navigation property to microsoftTunnelHealthThresholds for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to microsoftTunnelHealthThresholds for deviceMana
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementMicrosoftTunnelHealthThreshold [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementMicrosoftTunnelHealthThreshold [-AdditionalProperties <Hashtable>]
  [-DefaultHealthyThreshold <Int64>] [-DefaultUnhealthyThreshold <Int64>] [-HealthyThreshold <Int64>]
  [-Id <String>] [-UnhealthyThreshold <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementMicrosoftTunnelHealthThreshold
+New-MgBetaDeviceManagementMicrosoftTunnelHealthThreshold
  -BodyParameter <IMicrosoftGraphMicrosoftTunnelHealthThreshold> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Entity that represents the health thresholds of a health metric
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelHealthThreshold
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelHealthThreshold
 Parameter Sets: Create
 Aliases:
 
@@ -177,11 +177,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelHealthThreshold
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelHealthThreshold
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelHealthThreshold
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelHealthThreshold
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysalequotelineitemcategory
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysalequotelineitemcategory
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleQuoteLineItemCategory
+# Update-MgBetaFinancialCompanySaleQuoteLineItemCategory
 
 ## SYNOPSIS
 Update the navigation property itemCategory in financials
@@ -14,53 +14,53 @@ Update the navigation property itemCategory in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteLineId <String>
+Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteLineId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteLineId <String>
+Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteLineId <String>
  -BodyParameter <IMicrosoftGraphItemCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteId <String>
+Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteId <String>
  -SalesQuoteLineId <String> -BodyParameter <IMicrosoftGraphItemCategory> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteId <String>
+Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteId <String>
  -SalesQuoteLineId <String> [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphItemCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphItemCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -92,7 +92,7 @@ itemCategory
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -169,7 +169,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -276,9 +276,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 
 ## OUTPUTS
 

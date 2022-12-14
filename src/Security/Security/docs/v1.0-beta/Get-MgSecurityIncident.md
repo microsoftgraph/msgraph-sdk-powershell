@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityincident
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecurityincident
 schema: 2.0.0
 ---
 
-# Get-MgSecurityIncident
+# Get-MgBetaSecurityIncident
 
 ## SYNOPSIS
 A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
@@ -14,20 +14,20 @@ A collection of incidents in Microsoft 365 Defender, each of which is a set of c
 
 ### List (Default)
 ```
-Get-MgSecurityIncident [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSecurityIncident [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityIncident -IncidentId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecurityIncident -IncidentId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityIncident -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSecurityIncident -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,31 +36,31 @@ A collection of incidents in Microsoft 365 Defender, each of which is a set of c
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityIncident Cmdlet
+### Example 1: Using the Get-MgBetaSecurityIncident Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityIncident -IncidentId $incidentId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityIncident -IncidentId $incidentId
 ```
 
-This example shows how to use the Get-MgSecurityIncident Cmdlet.
+This example shows how to use the Get-MgBetaSecurityIncident Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityIncident Cmdlet
+### Example 2: Using the Get-MgBetaSecurityIncident Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityIncident
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityIncident
 ```
 
-This example shows how to use the Get-MgSecurityIncident Cmdlet.
+This example shows how to use the Get-MgBetaSecurityIncident Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgSecurityIncident Cmdlet
+### Example 3: Using the Get-MgBetaSecurityIncident Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityIncident -ExpandProperty "alerts" 
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityIncident -ExpandProperty "alerts" 
 ```
 
-This example shows how to use the Get-MgSecurityIncident Cmdlet.
+This example shows how to use the Get-MgBetaSecurityIncident Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -252,11 +252,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityIncident
 
 ## NOTES
 

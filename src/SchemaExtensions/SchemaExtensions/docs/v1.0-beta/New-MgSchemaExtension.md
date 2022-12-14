@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.SchemaExtensions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.schemaextensions/new-mgschemaextension
+Module Name: Microsoft.Graph.Beta.SchemaExtensions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.schemaextensions/new-mgschemaextension
 schema: 2.0.0
 ---
 
-# New-MgSchemaExtension
+# New-MgBetaSchemaExtension
 
 ## SYNOPSIS
 Create a new schemaExtension definition and its associated schema extension property to extend a supporting resource type.
@@ -18,14 +18,14 @@ See examples of how to define a schema extension that describes a training cours
 
 ### CreateExpanded (Default)
 ```
-New-MgSchemaExtension [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
+New-MgBetaSchemaExtension [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
  [-Owner <String>] [-Properties <IMicrosoftGraphExtensionSchemaProperty[]>] [-Status <String>]
  [-TargetTypes <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSchemaExtension -BodyParameter <IMicrosoftGraphSchemaExtension> [-Confirm] [-WhatIf]
+New-MgBetaSchemaExtension -BodyParameter <IMicrosoftGraphSchemaExtension> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -38,9 +38,9 @@ See examples of how to define a schema extension that describes a training cours
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSchemaExtension Cmdlet
+### Example 1: Using the New-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 $params = @{
 	Id = "graphlearn_courses"
 	Description = "Graph Learn training courses extensions"
@@ -62,15 +62,15 @@ $params = @{
 		}
 	)
 }
-New-MgSchemaExtension -BodyParameter $params
+New-MgBetaSchemaExtension -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgSchemaExtension Cmdlet
+### Example 2: Using the New-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 $params = @{
 	Id = "courses"
 	Description = "Graph Learn training courses extensions"
@@ -92,15 +92,15 @@ $params = @{
 		}
 	)
 }
-New-MgSchemaExtension -BodyParameter $params
+New-MgBetaSchemaExtension -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the New-MgSchemaExtension Cmdlet
+### Example 3: Using the New-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 $params = @{
 	Id = "courses"
 	Description = "Graph Learn training courses extensions"
@@ -123,10 +123,10 @@ $params = @{
 		}
 	)
 }
-New-MgSchemaExtension -BodyParameter $params
+New-MgBetaSchemaExtension -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -151,7 +151,7 @@ schemaExtension
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchemaExtension
 Parameter Sets: Create
 Aliases:
 
@@ -220,7 +220,7 @@ The collection of property names and types that make up the schema extension def
 To construct, please use Get-Help -Online and see NOTES section for PROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionSchemaProperty[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtensionSchemaProperty[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetTypes
-Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to.
+Set of Microsoft.Graph.Beta types (that can support extensions) that the schema extension can be applied to.
 Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
 
 ```yaml
@@ -302,11 +302,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchemaExtension
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchemaExtension
 
 ## NOTES
 
@@ -326,7 +326,7 @@ BODYPARAMETER <IMicrosoftGraphSchemaExtension>: schemaExtension
     - `[Name <String>]`: The name of the strongly-typed property defined as part of a schema extension.
     - `[Type <String>]`: The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
   - `[Status <String>]`: The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).
-  - `[TargetTypes <String[]>]`: Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
+  - `[TargetTypes <String[]>]`: Set of Microsoft.Graph.Beta types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
 
 PROPERTIES <IMicrosoftGraphExtensionSchemaProperty[]>: The collection of property names and types that make up the schema extension definition.
   - `[Name <String>]`: The name of the strongly-typed property defined as part of a schema extension.

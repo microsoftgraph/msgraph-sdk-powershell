@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbookingbusiness
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/new-mgbookingbusiness
 schema: 2.0.0
 ---
 
-# New-MgBookingBusiness
+# New-MgBetaBookingBusiness
 
 ## SYNOPSIS
 Create a new Microsoft Bookings business in a tenant.
@@ -16,7 +16,7 @@ You can include other information such as business address, web site address, an
 
 ### CreateExpanded (Default)
 ```
-New-MgBookingBusiness [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress1>]
+New-MgBetaBookingBusiness [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress1>]
  [-Appointments <IMicrosoftGraphBookingAppointment1[]>] [-BusinessHours <IMicrosoftGraphBookingWorkHours1[]>]
  [-BusinessType <String>] [-CalendarView <IMicrosoftGraphBookingAppointment1[]>]
  [-Customers <IMicrosoftGraphBookingCustomer[]>] [-CustomQuestions <IMicrosoftGraphBookingCustomQuestion[]>]
@@ -28,7 +28,7 @@ New-MgBookingBusiness [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftG
 
 ### Create
 ```
-New-MgBookingBusiness -BodyParameter <IMicrosoftGraphBookingBusiness> [-Confirm] [-WhatIf]
+New-MgBetaBookingBusiness -BodyParameter <IMicrosoftGraphBookingBusiness> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -39,9 +39,9 @@ You can include other information such as business address, web site address, an
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgBookingBusiness Cmdlet
+### Example 1: Using the New-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	DisplayName = "Fourth Coffee"
 	Address = @{
@@ -57,10 +57,10 @@ $params = @{
 	WebSiteUrl = "https://www.fourthcoffee.com"
 	DefaultCurrencyIso = "USD"
 }
-New-MgBookingBusiness -BodyParameter $params
+New-MgBetaBookingBusiness -BodyParameter $params
 ```
 
-This example shows how to use the New-MgBookingBusiness Cmdlet.
+This example shows how to use the New-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -85,7 +85,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -103,7 +103,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for APPOINTMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -119,7 +119,7 @@ Represents a Microsot Bookings Business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingBusiness
 Parameter Sets: Create
 Aliases:
 
@@ -135,7 +135,7 @@ The hours of operation for the business.
 To construct, please use Get-Help -Online and see NOTES section for BUSINESSHOURS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingWorkHours1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingWorkHours1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -168,7 +168,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CALENDARVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomer[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -204,7 +204,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMQUESTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomQuestion[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomQuestion[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -312,7 +312,7 @@ This type represents the set of policies that dictate how bookings can be create
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULINGPOLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -330,7 +330,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for SERVICES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingService1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -348,7 +348,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for STAFFMEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingStaffMember[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingStaffMember[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -411,11 +411,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingBusiness
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingBusiness
 
 ## NOTES
 

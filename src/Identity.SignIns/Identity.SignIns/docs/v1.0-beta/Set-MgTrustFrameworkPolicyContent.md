@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/set-mgtrustframeworkpolicycontent
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/set-mgtrustframeworkpolicycontent
 schema: 2.0.0
 ---
 
-# Set-MgTrustFrameworkPolicyContent
+# Set-MgBetaTrustFrameworkPolicyContent
 
 ## SYNOPSIS
 Update media content for the navigation property policies in trustFramework
@@ -14,13 +14,13 @@ Update media content for the navigation property policies in trustFramework
 
 ### Set (Default)
 ```
-Set-MgTrustFrameworkPolicyContent -TrustFrameworkPolicyId <String> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaTrustFrameworkPolicyContent -TrustFrameworkPolicyId <String> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgTrustFrameworkPolicyContent -InputObject <IIdentitySignInsIdentity> -InFile <String>
+Set-MgBetaTrustFrameworkPolicyContent -InputObject <IIdentitySignInsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.IO.Stream
 

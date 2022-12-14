@@ -1,1015 +1,1015 @@
 ---
-Module Name: Microsoft.Graph.Sites
+Module Name: Microsoft.Graph.Beta.Sites
 Module Guid: 9687ec4e-62c0-459e-bbbe-51b49ea10c05
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Sites Module
+# Microsoft.Graph.Beta.Sites Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Sites Cmdlets
-### [Add-MgSiteContentTypeCopy](Add-MgSiteContentTypeCopy.md)
+## Microsoft.Graph.Beta.Sites Cmdlets
+### [Add-MgBetaSiteContentTypeCopy](Add-MgBetaSiteContentTypeCopy.md)
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
-### [Add-MgSiteContentTypeCopyFromContentTypeHub](Add-MgSiteContentTypeCopyFromContentTypeHub.md)
+### [Add-MgBetaSiteContentTypeCopyFromContentTypeHub](Add-MgBetaSiteContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
-### [Add-MgSiteListContentTypeCopy](Add-MgSiteListContentTypeCopy.md)
+### [Add-MgBetaSiteListContentTypeCopy](Add-MgBetaSiteListContentTypeCopy.md)
 Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
-### [Add-MgSiteListContentTypeCopyFromContentTypeHub](Add-MgSiteListContentTypeCopyFromContentTypeHub.md)
+### [Add-MgBetaSiteListContentTypeCopyFromContentTypeHub](Add-MgBetaSiteListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
-### [Copy-MgSiteContentTypeToDefaultContentLocation](Copy-MgSiteContentTypeToDefaultContentLocation.md)
+### [Copy-MgBetaSiteContentTypeToDefaultContentLocation](Copy-MgBetaSiteContentTypeToDefaultContentLocation.md)
 Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
 
-### [Copy-MgSiteListContentTypeToDefaultContentLocation](Copy-MgSiteListContentTypeToDefaultContentLocation.md)
+### [Copy-MgBetaSiteListContentTypeToDefaultContentLocation](Copy-MgBetaSiteListContentTypeToDefaultContentLocation.md)
 Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
 
-### [Copy-MgSiteOnenoteNotebook](Copy-MgSiteOnenoteNotebook.md)
+### [Copy-MgBetaSiteOnenoteNotebook](Copy-MgBetaSiteOnenoteNotebook.md)
 Copies a notebook to the Notebooks folder in the destination Documents library.
 The folder is created if it doesn't exist.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
-### [Copy-MgSiteOnenotePageToSection](Copy-MgSiteOnenotePageToSection.md)
+### [Copy-MgBetaSiteOnenotePageToSection](Copy-MgBetaSiteOnenotePageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
-### [Copy-MgSiteOnenoteSectionToNotebook](Copy-MgSiteOnenoteSectionToNotebook.md)
+### [Copy-MgBetaSiteOnenoteSectionToNotebook](Copy-MgBetaSiteOnenoteSectionToNotebook.md)
 Copies a section to a specific notebook.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
-### [Copy-MgSiteOnenoteSectionToSectionGroup](Copy-MgSiteOnenoteSectionToSectionGroup.md)
+### [Copy-MgBetaSiteOnenoteSectionToSectionGroup](Copy-MgBetaSiteOnenoteSectionToSectionGroup.md)
 Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
-### [Get-MgGroupSite](Get-MgGroupSite.md)
+### [Get-MgBetaGroupSite](Get-MgBetaGroupSite.md)
 The collection of the sub-sites under this site.
 
-### [Get-MgGroupSiteAnalytic](Get-MgGroupSiteAnalytic.md)
+### [Get-MgBetaGroupSiteAnalytic](Get-MgBetaGroupSiteAnalytic.md)
 Analytics about the view activities that took place in this site.
 
-### [Get-MgGroupSiteColumn](Get-MgGroupSiteColumn.md)
+### [Get-MgBetaGroupSiteColumn](Get-MgBetaGroupSiteColumn.md)
 The collection of column definitions reusable across lists under this site.
 
-### [Get-MgGroupSiteContentType](Get-MgGroupSiteContentType.md)
+### [Get-MgBetaGroupSiteContentType](Get-MgBetaGroupSiteContentType.md)
 The collection of content types defined for this site.
 
-### [Get-MgGroupSiteContentTypeColumn](Get-MgGroupSiteContentTypeColumn.md)
+### [Get-MgBetaGroupSiteContentTypeColumn](Get-MgBetaGroupSiteContentTypeColumn.md)
 The collection of column definitions for this contentType.
 
-### [Get-MgGroupSiteContentTypeColumnLink](Get-MgGroupSiteContentTypeColumnLink.md)
+### [Get-MgBetaGroupSiteContentTypeColumnLink](Get-MgBetaGroupSiteContentTypeColumnLink.md)
 The collection of columns that are required by this content type
 
-### [Get-MgGroupSiteDrive](Get-MgGroupSiteDrive.md)
+### [Get-MgBetaGroupSiteDrive](Get-MgBetaGroupSiteDrive.md)
 Retrieve the properties and relationships of a Drive resource.
 A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
-### [Get-MgGroupSiteExternalColumn](Get-MgGroupSiteExternalColumn.md)
+### [Get-MgBetaGroupSiteExternalColumn](Get-MgBetaGroupSiteExternalColumn.md)
 The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 
-### [Get-MgGroupSiteItem](Get-MgGroupSiteItem.md)
+### [Get-MgBetaGroupSiteItem](Get-MgBetaGroupSiteItem.md)
 Used to address any item contained in this site.
 This collection cannot be enumerated.
 
-### [Get-MgGroupSiteList](Get-MgGroupSiteList.md)
+### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
 The collection of lists under this site.
 
-### [Get-MgGroupSiteListActivity](Get-MgGroupSiteListActivity.md)
+### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
 
-### [Get-MgGroupSiteListColumn](Get-MgGroupSiteListColumn.md)
+### [Get-MgBetaGroupSiteListColumn](Get-MgBetaGroupSiteListColumn.md)
 Get columns from groups
 
-### [Get-MgGroupSiteListContentType](Get-MgGroupSiteListContentType.md)
+### [Get-MgBetaGroupSiteListContentType](Get-MgBetaGroupSiteListContentType.md)
 Get contentTypes from groups
 
-### [Get-MgGroupSiteListContentTypeBase](Get-MgGroupSiteListContentTypeBase.md)
+### [Get-MgBetaGroupSiteListContentTypeBase](Get-MgBetaGroupSiteListContentTypeBase.md)
 Parent contentType from which this content type is derived.
 
-### [Get-MgGroupSiteListContentTypeBaseType](Get-MgGroupSiteListContentTypeBaseType.md)
+### [Get-MgBetaGroupSiteListContentTypeBaseType](Get-MgBetaGroupSiteListContentTypeBaseType.md)
 The collection of content types that are ancestors of this content type.
 
-### [Get-MgGroupSiteListContentTypeColumn](Get-MgGroupSiteListContentTypeColumn.md)
+### [Get-MgBetaGroupSiteListContentTypeColumn](Get-MgBetaGroupSiteListContentTypeColumn.md)
 The collection of column definitions for this contentType.
 
-### [Get-MgGroupSiteListContentTypeColumnLink](Get-MgGroupSiteListContentTypeColumnLink.md)
+### [Get-MgBetaGroupSiteListContentTypeColumnLink](Get-MgBetaGroupSiteListContentTypeColumnLink.md)
 The collection of columns that are required by this content type
 
-### [Get-MgGroupSiteListContentTypeColumnPosition](Get-MgGroupSiteListContentTypeColumnPosition.md)
+### [Get-MgBetaGroupSiteListContentTypeColumnPosition](Get-MgBetaGroupSiteListContentTypeColumnPosition.md)
 Column order information in a content type.
 
-### [Get-MgGroupSiteListDrive](Get-MgGroupSiteListDrive.md)
+### [Get-MgBetaGroupSiteListDrive](Get-MgBetaGroupSiteListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
-### [Get-MgGroupSiteListItem](Get-MgGroupSiteListItem.md)
+### [Get-MgBetaGroupSiteListItem](Get-MgBetaGroupSiteListItem.md)
 All items contained in the list.
 
-### [Get-MgGroupSiteListItemActivity](Get-MgGroupSiteListItemActivity.md)
+### [Get-MgBetaGroupSiteListItemActivity](Get-MgBetaGroupSiteListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgGroupSiteListItemAnalytic](Get-MgGroupSiteListItemAnalytic.md)
+### [Get-MgBetaGroupSiteListItemAnalytic](Get-MgBetaGroupSiteListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgGroupSiteListItemDocumentSetVersion](Get-MgGroupSiteListItemDocumentSetVersion.md)
+### [Get-MgBetaGroupSiteListItemDocumentSetVersion](Get-MgBetaGroupSiteListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgGroupSiteListItemDriveItem](Get-MgGroupSiteListItemDriveItem.md)
+### [Get-MgBetaGroupSiteListItemDriveItem](Get-MgBetaGroupSiteListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgGroupSiteListItemDriveItemContent](Get-MgGroupSiteListItemDriveItemContent.md)
+### [Get-MgBetaGroupSiteListItemDriveItemContent](Get-MgBetaGroupSiteListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgGroupSiteListItemField](Get-MgGroupSiteListItemField.md)
+### [Get-MgBetaGroupSiteListItemField](Get-MgBetaGroupSiteListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgGroupSiteListItemVersion](Get-MgGroupSiteListItemVersion.md)
+### [Get-MgBetaGroupSiteListItemVersion](Get-MgBetaGroupSiteListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgGroupSiteListItemVersionField](Get-MgGroupSiteListItemVersionField.md)
+### [Get-MgBetaGroupSiteListItemVersionField](Get-MgBetaGroupSiteListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgGroupSiteListOperation](Get-MgGroupSiteListOperation.md)
+### [Get-MgBetaGroupSiteListOperation](Get-MgBetaGroupSiteListOperation.md)
 The collection of long running operations for the list.
 
-### [Get-MgGroupSiteListSubscription](Get-MgGroupSiteListSubscription.md)
+### [Get-MgBetaGroupSiteListSubscription](Get-MgBetaGroupSiteListSubscription.md)
 The set of subscriptions on the list.
 
-### [Get-MgGroupSiteOperation](Get-MgGroupSiteOperation.md)
+### [Get-MgBetaGroupSiteOperation](Get-MgBetaGroupSiteOperation.md)
 The collection of long running operations for the site.
 
-### [Get-MgGroupSitePage](Get-MgGroupSitePage.md)
+### [Get-MgBetaGroupSitePage](Get-MgBetaGroupSitePage.md)
 The collection of pages in the SitePages list in this site.
 
-### [Get-MgGroupSitePermission](Get-MgGroupSitePermission.md)
+### [Get-MgBetaGroupSitePermission](Get-MgBetaGroupSitePermission.md)
 The permissions associated with the site.
 Nullable.
 
-### [Get-MgGroupSiteTermStore](Get-MgGroupSiteTermStore.md)
+### [Get-MgBetaGroupSiteTermStore](Get-MgBetaGroupSiteTermStore.md)
 Read the properties and relationships of a store object.
 
-### [Get-MgGroupSiteTermStoreGroup](Get-MgGroupSiteTermStoreGroup.md)
+### [Get-MgBetaGroupSiteTermStoreGroup](Get-MgBetaGroupSiteTermStoreGroup.md)
 Collection of all groups available in the term store.
 
-### [Get-MgGroupSiteTermStoreGroupSet](Get-MgGroupSiteTermStoreGroupSet.md)
+### [Get-MgBetaGroupSiteTermStoreGroupSet](Get-MgBetaGroupSiteTermStoreGroupSet.md)
 All sets under the group in a term [store].
 
-### [Get-MgGroupSiteTermStoreGroupSetChild](Get-MgGroupSiteTermStoreGroupSetChild.md)
+### [Get-MgBetaGroupSiteTermStoreGroupSetChild](Get-MgBetaGroupSiteTermStoreGroupSetChild.md)
 Children terms of set in term [store].
 
-### [Get-MgGroupSiteTermStoreGroupSetRelation](Get-MgGroupSiteTermStoreGroupSetRelation.md)
+### [Get-MgBetaGroupSiteTermStoreGroupSetRelation](Get-MgBetaGroupSiteTermStoreGroupSetRelation.md)
 Indicates which terms have been pinned or reused directly under the set.
 
-### [Get-MgGroupSiteTermStoreGroupSetTerm](Get-MgGroupSiteTermStoreGroupSetTerm.md)
+### [Get-MgBetaGroupSiteTermStoreGroupSetTerm](Get-MgBetaGroupSiteTermStoreGroupSetTerm.md)
 All the terms under the set.
 
-### [Get-MgGroupSiteTermStoreGroupSetTermChild](Get-MgGroupSiteTermStoreGroupSetTermChild.md)
+### [Get-MgBetaGroupSiteTermStoreGroupSetTermChild](Get-MgBetaGroupSiteTermStoreGroupSetTermChild.md)
 Children of current term.
 
-### [Get-MgGroupSiteTermStoreGroupSetTermRelation](Get-MgGroupSiteTermStoreGroupSetTermRelation.md)
+### [Get-MgBetaGroupSiteTermStoreGroupSetTermRelation](Get-MgBetaGroupSiteTermStoreGroupSetTermRelation.md)
 To indicate which terms are related to the current term as either pinned or reused.
 
-### [Get-MgGroupSiteTermStoreSet](Get-MgGroupSiteTermStoreSet.md)
+### [Get-MgBetaGroupSiteTermStoreSet](Get-MgBetaGroupSiteTermStoreSet.md)
 Collection of all sets available in the term store.
 
-### [Get-MgGroupSiteTermStoreSetChild](Get-MgGroupSiteTermStoreSetChild.md)
+### [Get-MgBetaGroupSiteTermStoreSetChild](Get-MgBetaGroupSiteTermStoreSetChild.md)
 Children terms of set in term [store].
 
-### [Get-MgGroupSiteTermStoreSetRelation](Get-MgGroupSiteTermStoreSetRelation.md)
+### [Get-MgBetaGroupSiteTermStoreSetRelation](Get-MgBetaGroupSiteTermStoreSetRelation.md)
 Indicates which terms have been pinned or reused directly under the set.
 
-### [Get-MgGroupSiteTermStoreSetTerm](Get-MgGroupSiteTermStoreSetTerm.md)
+### [Get-MgBetaGroupSiteTermStoreSetTerm](Get-MgBetaGroupSiteTermStoreSetTerm.md)
 All the terms under the set.
 
-### [Get-MgGroupSiteTermStoreSetTermChild](Get-MgGroupSiteTermStoreSetTermChild.md)
+### [Get-MgBetaGroupSiteTermStoreSetTermChild](Get-MgBetaGroupSiteTermStoreSetTermChild.md)
 Children of current term.
 
-### [Get-MgGroupSiteTermStoreSetTermRelation](Get-MgGroupSiteTermStoreSetTermRelation.md)
+### [Get-MgBetaGroupSiteTermStoreSetTermRelation](Get-MgBetaGroupSiteTermStoreSetTermRelation.md)
 To indicate which terms are related to the current term as either pinned or reused.
 
-### [Get-MgGroupSubSite](Get-MgGroupSubSite.md)
+### [Get-MgBetaGroupSubSite](Get-MgBetaGroupSubSite.md)
 The list of SharePoint sites in this group.
 Access the default site with /sites/root.
 
-### [Get-MgSite](Get-MgSite.md)
+### [Get-MgBetaSite](Get-MgBetaSite.md)
 Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
 
-### [Get-MgSiteActivityByInterval](Get-MgSiteActivityByInterval.md)
+### [Get-MgBetaSiteActivityByInterval](Get-MgBetaSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgSiteAnalytic](Get-MgSiteAnalytic.md)
+### [Get-MgBetaSiteAnalytic](Get-MgBetaSiteAnalytic.md)
 Analytics about the view activities that took place in this site.
 
-### [Get-MgSiteApplicableContentTypeForList](Get-MgSiteApplicableContentTypeForList.md)
+### [Get-MgBetaSiteApplicableContentTypeForList](Get-MgBetaSiteApplicableContentTypeForList.md)
 Invoke function getApplicableContentTypesForList
 
-### [Get-MgSiteByPath](Get-MgSiteByPath.md)
+### [Get-MgBetaSiteByPath](Get-MgBetaSiteByPath.md)
 Invoke function getByPath
 
-### [Get-MgSiteColumn](Get-MgSiteColumn.md)
+### [Get-MgBetaSiteColumn](Get-MgBetaSiteColumn.md)
 The collection of column definitions reusable across lists under this site.
 
-### [Get-MgSiteContentType](Get-MgSiteContentType.md)
+### [Get-MgBetaSiteContentType](Get-MgBetaSiteContentType.md)
 The collection of content types defined for this site.
 
-### [Get-MgSiteContentTypeColumn](Get-MgSiteContentTypeColumn.md)
+### [Get-MgBetaSiteContentTypeColumn](Get-MgBetaSiteContentTypeColumn.md)
 The collection of column definitions for this contentType.
 
-### [Get-MgSiteContentTypeColumnLink](Get-MgSiteContentTypeColumnLink.md)
+### [Get-MgBetaSiteContentTypeColumnLink](Get-MgBetaSiteContentTypeColumnLink.md)
 The collection of columns that are required by this content type
 
-### [Get-MgSiteContentTypeCompatibleHubContentType](Get-MgSiteContentTypeCompatibleHubContentType.md)
+### [Get-MgBetaSiteContentTypeCompatibleHubContentType](Get-MgBetaSiteContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgSiteDefaultDrive](Get-MgSiteDefaultDrive.md)
+### [Get-MgBetaSiteDefaultDrive](Get-MgBetaSiteDefaultDrive.md)
 Retrieve the properties and relationships of a Drive resource.
 A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
-### [Get-MgSiteDelta](Get-MgSiteDelta.md)
+### [Get-MgBetaSiteDelta](Get-MgBetaSiteDelta.md)
 Invoke function delta
 
-### [Get-MgSiteDrive](Get-MgSiteDrive.md)
+### [Get-MgBetaSiteDrive](Get-MgBetaSiteDrive.md)
 The collection of drives (document libraries) under this site.
 
-### [Get-MgSiteExternalColumn](Get-MgSiteExternalColumn.md)
+### [Get-MgBetaSiteExternalColumn](Get-MgBetaSiteExternalColumn.md)
 The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 
-### [Get-MgSiteList](Get-MgSiteList.md)
+### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
 The collection of lists under this site.
 
-### [Get-MgSiteListActivity](Get-MgSiteListActivity.md)
+### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.
 
-### [Get-MgSiteListColumn](Get-MgSiteListColumn.md)
+### [Get-MgBetaSiteListColumn](Get-MgBetaSiteListColumn.md)
 Get columns from sites
 
-### [Get-MgSiteListContentType](Get-MgSiteListContentType.md)
+### [Get-MgBetaSiteListContentType](Get-MgBetaSiteListContentType.md)
 Get contentTypes from sites
 
-### [Get-MgSiteListContentTypeBase](Get-MgSiteListContentTypeBase.md)
+### [Get-MgBetaSiteListContentTypeBase](Get-MgBetaSiteListContentTypeBase.md)
 Parent contentType from which this content type is derived.
 
-### [Get-MgSiteListContentTypeBaseType](Get-MgSiteListContentTypeBaseType.md)
+### [Get-MgBetaSiteListContentTypeBaseType](Get-MgBetaSiteListContentTypeBaseType.md)
 The collection of content types that are ancestors of this content type.
 
-### [Get-MgSiteListContentTypeColumn](Get-MgSiteListContentTypeColumn.md)
+### [Get-MgBetaSiteListContentTypeColumn](Get-MgBetaSiteListContentTypeColumn.md)
 The collection of column definitions for this contentType.
 
-### [Get-MgSiteListContentTypeColumnLink](Get-MgSiteListContentTypeColumnLink.md)
+### [Get-MgBetaSiteListContentTypeColumnLink](Get-MgBetaSiteListContentTypeColumnLink.md)
 The collection of columns that are required by this content type
 
-### [Get-MgSiteListContentTypeColumnPosition](Get-MgSiteListContentTypeColumnPosition.md)
+### [Get-MgBetaSiteListContentTypeColumnPosition](Get-MgBetaSiteListContentTypeColumnPosition.md)
 Column order information in a content type.
 
-### [Get-MgSiteListContentTypeCompatibleHubContentType](Get-MgSiteListContentTypeCompatibleHubContentType.md)
+### [Get-MgBetaSiteListContentTypeCompatibleHubContentType](Get-MgBetaSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgSiteListDrive](Get-MgSiteListDrive.md)
+### [Get-MgBetaSiteListDrive](Get-MgBetaSiteListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
-### [Get-MgSiteListItem](Get-MgSiteListItem.md)
+### [Get-MgBetaSiteListItem](Get-MgBetaSiteListItem.md)
 All items contained in the list.
 
-### [Get-MgSiteListItemActivity](Get-MgSiteListItemActivity.md)
+### [Get-MgBetaSiteListItemActivity](Get-MgBetaSiteListItemActivity.md)
 The list of recent activities that took place on this item.
 
-### [Get-MgSiteListItemActivityByInterval](Get-MgSiteListItemActivityByInterval.md)
+### [Get-MgBetaSiteListItemActivityByInterval](Get-MgBetaSiteListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
-### [Get-MgSiteListItemAnalytic](Get-MgSiteListItemAnalytic.md)
+### [Get-MgBetaSiteListItemAnalytic](Get-MgBetaSiteListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgSiteListItemDelta](Get-MgSiteListItemDelta.md)
+### [Get-MgBetaSiteListItemDelta](Get-MgBetaSiteListItemDelta.md)
 Invoke function delta
 
-### [Get-MgSiteListItemDocumentSetVersion](Get-MgSiteListItemDocumentSetVersion.md)
+### [Get-MgBetaSiteListItemDocumentSetVersion](Get-MgBetaSiteListItemDocumentSetVersion.md)
 Version information for a document set version created by a user.
 
-### [Get-MgSiteListItemDriveItem](Get-MgSiteListItemDriveItem.md)
+### [Get-MgBetaSiteListItemDriveItem](Get-MgBetaSiteListItemDriveItem.md)
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
-### [Get-MgSiteListItemDriveItemContent](Get-MgSiteListItemDriveItemContent.md)
+### [Get-MgBetaSiteListItemDriveItemContent](Get-MgBetaSiteListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Get-MgSiteListItemField](Get-MgSiteListItemField.md)
+### [Get-MgBetaSiteListItemField](Get-MgBetaSiteListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgSiteListItemVersion](Get-MgSiteListItemVersion.md)
+### [Get-MgBetaSiteListItemVersion](Get-MgBetaSiteListItemVersion.md)
 The list of previous versions of the list item.
 
-### [Get-MgSiteListItemVersionField](Get-MgSiteListItemVersionField.md)
+### [Get-MgBetaSiteListItemVersionField](Get-MgBetaSiteListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
 
-### [Get-MgSiteListOperation](Get-MgSiteListOperation.md)
+### [Get-MgBetaSiteListOperation](Get-MgBetaSiteListOperation.md)
 The collection of long running operations for the list.
 
-### [Get-MgSiteListSubscription](Get-MgSiteListSubscription.md)
+### [Get-MgBetaSiteListSubscription](Get-MgBetaSiteListSubscription.md)
 The set of subscriptions on the list.
 
-### [Get-MgSiteOnenoteNotebookFromWebUrl](Get-MgSiteOnenoteNotebookFromWebUrl.md)
+### [Get-MgBetaSiteOnenoteNotebookFromWebUrl](Get-MgBetaSiteOnenoteNotebookFromWebUrl.md)
 Retrieve the properties and relationships of a notebook object by using its URL path.
 The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 
-### [Get-MgSitePage](Get-MgSitePage.md)
+### [Get-MgBetaSitePage](Get-MgBetaSitePage.md)
 The collection of pages in the SitePages list in this site.
 
-### [Get-MgSitePermission](Get-MgSitePermission.md)
+### [Get-MgBetaSitePermission](Get-MgBetaSitePermission.md)
 The permissions associated with the site.
 Nullable.
 
-### [Get-MgSiteRecentNotebook](Get-MgSiteRecentNotebook.md)
+### [Get-MgBetaSiteRecentNotebook](Get-MgBetaSiteRecentNotebook.md)
 Invoke function getRecentNotebooks
 
-### [Get-MgSiteTermStore](Get-MgSiteTermStore.md)
+### [Get-MgBetaSiteTermStore](Get-MgBetaSiteTermStore.md)
 Read the properties and relationships of a store object.
 
-### [Get-MgSiteTermStoreGroup](Get-MgSiteTermStoreGroup.md)
+### [Get-MgBetaSiteTermStoreGroup](Get-MgBetaSiteTermStoreGroup.md)
 Collection of all groups available in the term store.
 
-### [Get-MgSiteTermStoreGroupSet](Get-MgSiteTermStoreGroupSet.md)
+### [Get-MgBetaSiteTermStoreGroupSet](Get-MgBetaSiteTermStoreGroupSet.md)
 All sets under the group in a term [store].
 
-### [Get-MgSiteTermStoreGroupSetChild](Get-MgSiteTermStoreGroupSetChild.md)
+### [Get-MgBetaSiteTermStoreGroupSetChild](Get-MgBetaSiteTermStoreGroupSetChild.md)
 Children terms of set in term [store].
 
-### [Get-MgSiteTermStoreGroupSetRelation](Get-MgSiteTermStoreGroupSetRelation.md)
+### [Get-MgBetaSiteTermStoreGroupSetRelation](Get-MgBetaSiteTermStoreGroupSetRelation.md)
 Indicates which terms have been pinned or reused directly under the set.
 
-### [Get-MgSiteTermStoreGroupSetTerm](Get-MgSiteTermStoreGroupSetTerm.md)
+### [Get-MgBetaSiteTermStoreGroupSetTerm](Get-MgBetaSiteTermStoreGroupSetTerm.md)
 All the terms under the set.
 
-### [Get-MgSiteTermStoreGroupSetTermChild](Get-MgSiteTermStoreGroupSetTermChild.md)
+### [Get-MgBetaSiteTermStoreGroupSetTermChild](Get-MgBetaSiteTermStoreGroupSetTermChild.md)
 Children of current term.
 
-### [Get-MgSiteTermStoreGroupSetTermRelation](Get-MgSiteTermStoreGroupSetTermRelation.md)
+### [Get-MgBetaSiteTermStoreGroupSetTermRelation](Get-MgBetaSiteTermStoreGroupSetTermRelation.md)
 To indicate which terms are related to the current term as either pinned or reused.
 
-### [Get-MgSiteTermStoreSet](Get-MgSiteTermStoreSet.md)
+### [Get-MgBetaSiteTermStoreSet](Get-MgBetaSiteTermStoreSet.md)
 Collection of all sets available in the term store.
 
-### [Get-MgSiteTermStoreSetChild](Get-MgSiteTermStoreSetChild.md)
+### [Get-MgBetaSiteTermStoreSetChild](Get-MgBetaSiteTermStoreSetChild.md)
 Children terms of set in term [store].
 
-### [Get-MgSiteTermStoreSetRelation](Get-MgSiteTermStoreSetRelation.md)
+### [Get-MgBetaSiteTermStoreSetRelation](Get-MgBetaSiteTermStoreSetRelation.md)
 Indicates which terms have been pinned or reused directly under the set.
 
-### [Get-MgSiteTermStoreSetTerm](Get-MgSiteTermStoreSetTerm.md)
+### [Get-MgBetaSiteTermStoreSetTerm](Get-MgBetaSiteTermStoreSetTerm.md)
 All the terms under the set.
 
-### [Get-MgSiteTermStoreSetTermChild](Get-MgSiteTermStoreSetTermChild.md)
+### [Get-MgBetaSiteTermStoreSetTermChild](Get-MgBetaSiteTermStoreSetTermChild.md)
 Children of current term.
 
-### [Get-MgSiteTermStoreSetTermRelation](Get-MgSiteTermStoreSetTermRelation.md)
+### [Get-MgBetaSiteTermStoreSetTermRelation](Get-MgBetaSiteTermStoreSetTermRelation.md)
 To indicate which terms are related to the current term as either pinned or reused.
 
-### [Get-MgSubSite](Get-MgSubSite.md)
+### [Get-MgBetaSubSite](Get-MgBetaSubSite.md)
 The collection of the sub-sites under this site.
 
-### [Get-MgUserFollowedSite](Get-MgUserFollowedSite.md)
+### [Get-MgBetaUserFollowedSite](Get-MgBetaUserFollowedSite.md)
 Get followedSites from users
 
-### [Grant-MgSitePermission](Grant-MgSitePermission.md)
+### [Grant-MgBetaSitePermission](Grant-MgBetaSitePermission.md)
 Grant users access to a link represented by a [permission][].
 
-### [Invoke-MgPreviewSiteOnenotePage](Invoke-MgPreviewSiteOnenotePage.md)
+### [Invoke-MgBetaPreviewSiteOnenotePage](Invoke-MgBetaPreviewSiteOnenotePage.md)
 Invoke function preview
 
-### [Invoke-MgReauthorizeSiteListSubscription](Invoke-MgReauthorizeSiteListSubscription.md)
+### [Invoke-MgBetaReauthorizeSiteListSubscription](Invoke-MgBetaReauthorizeSiteListSubscription.md)
 Invoke action reauthorize
 
-### [Join-MgSiteContentTypeWithHubSite](Join-MgSiteContentTypeWithHubSite.md)
+### [Join-MgBetaSiteContentTypeWithHubSite](Join-MgBetaSiteContentTypeWithHubSite.md)
 Associate a [content type][contentType] with a list of hub sites.
 
-### [Join-MgSiteListContentTypeWithHubSite](Join-MgSiteListContentTypeWithHubSite.md)
+### [Join-MgBetaSiteListContentTypeWithHubSite](Join-MgBetaSiteListContentTypeWithHubSite.md)
 Associate a [content type][contentType] with a list of hub sites.
 
-### [New-MgGroupSiteColumn](New-MgGroupSiteColumn.md)
+### [New-MgBetaGroupSiteColumn](New-MgBetaGroupSiteColumn.md)
 Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgGroupSiteContentType](New-MgGroupSiteContentType.md)
+### [New-MgBetaGroupSiteContentType](New-MgBetaGroupSiteContentType.md)
 Create a new [contentType][] for a [site][].
 
-### [New-MgGroupSiteContentTypeColumn](New-MgGroupSiteContentTypeColumn.md)
+### [New-MgBetaGroupSiteContentTypeColumn](New-MgBetaGroupSiteContentTypeColumn.md)
 Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgGroupSiteContentTypeColumnLink](New-MgGroupSiteContentTypeColumnLink.md)
+### [New-MgBetaGroupSiteContentTypeColumnLink](New-MgBetaGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
-### [New-MgGroupSiteList](New-MgGroupSiteList.md)
+### [New-MgBetaGroupSiteList](New-MgBetaGroupSiteList.md)
 Create a new [list][] in a [site][].
 
-### [New-MgGroupSiteListColumn](New-MgGroupSiteListColumn.md)
+### [New-MgBetaGroupSiteListColumn](New-MgBetaGroupSiteListColumn.md)
 Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
-### [New-MgGroupSiteListContentType](New-MgGroupSiteListContentType.md)
+### [New-MgBetaGroupSiteListContentType](New-MgBetaGroupSiteListContentType.md)
 Create new navigation property to contentTypes for groups
 
-### [New-MgGroupSiteListContentTypeColumn](New-MgGroupSiteListContentTypeColumn.md)
+### [New-MgBetaGroupSiteListContentTypeColumn](New-MgBetaGroupSiteListContentTypeColumn.md)
 Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgGroupSiteListContentTypeColumnLink](New-MgGroupSiteListContentTypeColumnLink.md)
+### [New-MgBetaGroupSiteListContentTypeColumnLink](New-MgBetaGroupSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
-### [New-MgGroupSiteListItem](New-MgGroupSiteListItem.md)
+### [New-MgBetaGroupSiteListItem](New-MgBetaGroupSiteListItem.md)
 Create a new [listItem][] in a [list][].
 
-### [New-MgGroupSiteListItemDocumentSetVersion](New-MgGroupSiteListItemDocumentSetVersion.md)
+### [New-MgBetaGroupSiteListItemDocumentSetVersion](New-MgBetaGroupSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgGroupSiteListItemVersion](New-MgGroupSiteListItemVersion.md)
+### [New-MgBetaGroupSiteListItemVersion](New-MgBetaGroupSiteListItemVersion.md)
 Create new navigation property to versions for groups
 
-### [New-MgGroupSiteListOperation](New-MgGroupSiteListOperation.md)
+### [New-MgBetaGroupSiteListOperation](New-MgBetaGroupSiteListOperation.md)
 Create new navigation property to operations for groups
 
-### [New-MgGroupSiteListSubscription](New-MgGroupSiteListSubscription.md)
+### [New-MgBetaGroupSiteListSubscription](New-MgBetaGroupSiteListSubscription.md)
 Create new navigation property to subscriptions for groups
 
-### [New-MgGroupSiteOperation](New-MgGroupSiteOperation.md)
+### [New-MgBetaGroupSiteOperation](New-MgBetaGroupSiteOperation.md)
 Create new navigation property to operations for groups
 
-### [New-MgGroupSitePage](New-MgGroupSitePage.md)
+### [New-MgBetaGroupSitePage](New-MgBetaGroupSitePage.md)
 Create a new [sitePage][] in the site pages [list][] in a [site][].
 
-### [New-MgGroupSitePermission](New-MgGroupSitePermission.md)
+### [New-MgBetaGroupSitePermission](New-MgBetaGroupSitePermission.md)
 Create a new permission object on a site.
 
-### [New-MgGroupSiteTermStoreGroup](New-MgGroupSiteTermStoreGroup.md)
+### [New-MgBetaGroupSiteTermStoreGroup](New-MgBetaGroupSiteTermStoreGroup.md)
 Create a new group object.
 
-### [New-MgGroupSiteTermStoreGroupSet](New-MgGroupSiteTermStoreGroupSet.md)
+### [New-MgBetaGroupSiteTermStoreGroupSet](New-MgBetaGroupSiteTermStoreGroupSet.md)
 Create new navigation property to sets for groups
 
-### [New-MgGroupSiteTermStoreGroupSetChild](New-MgGroupSiteTermStoreGroupSetChild.md)
+### [New-MgBetaGroupSiteTermStoreGroupSetChild](New-MgBetaGroupSiteTermStoreGroupSetChild.md)
 Create a new term object.
 
-### [New-MgGroupSiteTermStoreGroupSetRelation](New-MgGroupSiteTermStoreGroupSetRelation.md)
+### [New-MgBetaGroupSiteTermStoreGroupSetRelation](New-MgBetaGroupSiteTermStoreGroupSetRelation.md)
 Create new navigation property to relations for groups
 
-### [New-MgGroupSiteTermStoreGroupSetTerm](New-MgGroupSiteTermStoreGroupSetTerm.md)
+### [New-MgBetaGroupSiteTermStoreGroupSetTerm](New-MgBetaGroupSiteTermStoreGroupSetTerm.md)
 Create new navigation property to terms for groups
 
-### [New-MgGroupSiteTermStoreGroupSetTermChild](New-MgGroupSiteTermStoreGroupSetTermChild.md)
+### [New-MgBetaGroupSiteTermStoreGroupSetTermChild](New-MgBetaGroupSiteTermStoreGroupSetTermChild.md)
 Create new navigation property to children for groups
 
-### [New-MgGroupSiteTermStoreGroupSetTermRelation](New-MgGroupSiteTermStoreGroupSetTermRelation.md)
+### [New-MgBetaGroupSiteTermStoreGroupSetTermRelation](New-MgBetaGroupSiteTermStoreGroupSetTermRelation.md)
 Create new navigation property to relations for groups
 
-### [New-MgGroupSiteTermStoreSet](New-MgGroupSiteTermStoreSet.md)
+### [New-MgBetaGroupSiteTermStoreSet](New-MgBetaGroupSiteTermStoreSet.md)
 Create new navigation property to sets for groups
 
-### [New-MgGroupSiteTermStoreSetChild](New-MgGroupSiteTermStoreSetChild.md)
+### [New-MgBetaGroupSiteTermStoreSetChild](New-MgBetaGroupSiteTermStoreSetChild.md)
 Create a new term object.
 
-### [New-MgGroupSiteTermStoreSetRelation](New-MgGroupSiteTermStoreSetRelation.md)
+### [New-MgBetaGroupSiteTermStoreSetRelation](New-MgBetaGroupSiteTermStoreSetRelation.md)
 Create new navigation property to relations for groups
 
-### [New-MgGroupSiteTermStoreSetTerm](New-MgGroupSiteTermStoreSetTerm.md)
+### [New-MgBetaGroupSiteTermStoreSetTerm](New-MgBetaGroupSiteTermStoreSetTerm.md)
 Create new navigation property to terms for groups
 
-### [New-MgGroupSiteTermStoreSetTermChild](New-MgGroupSiteTermStoreSetTermChild.md)
+### [New-MgBetaGroupSiteTermStoreSetTermChild](New-MgBetaGroupSiteTermStoreSetTermChild.md)
 Create new navigation property to children for groups
 
-### [New-MgGroupSiteTermStoreSetTermRelation](New-MgGroupSiteTermStoreSetTermRelation.md)
+### [New-MgBetaGroupSiteTermStoreSetTermRelation](New-MgBetaGroupSiteTermStoreSetTermRelation.md)
 Create new navigation property to relations for groups
 
-### [New-MgSiteColumn](New-MgSiteColumn.md)
+### [New-MgBetaSiteColumn](New-MgBetaSiteColumn.md)
 Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgSiteContentType](New-MgSiteContentType.md)
+### [New-MgBetaSiteContentType](New-MgBetaSiteContentType.md)
 Create a new [contentType][] for a [site][].
 
-### [New-MgSiteContentTypeColumn](New-MgSiteContentTypeColumn.md)
+### [New-MgBetaSiteContentTypeColumn](New-MgBetaSiteContentTypeColumn.md)
 Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgSiteContentTypeColumnLink](New-MgSiteContentTypeColumnLink.md)
+### [New-MgBetaSiteContentTypeColumnLink](New-MgBetaSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
-### [New-MgSiteList](New-MgSiteList.md)
+### [New-MgBetaSiteList](New-MgBetaSiteList.md)
 Create a new [list][] in a [site][].
 
-### [New-MgSiteListColumn](New-MgSiteListColumn.md)
+### [New-MgBetaSiteListColumn](New-MgBetaSiteListColumn.md)
 Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
-### [New-MgSiteListContentType](New-MgSiteListContentType.md)
+### [New-MgBetaSiteListContentType](New-MgBetaSiteListContentType.md)
 Create new navigation property to contentTypes for sites
 
-### [New-MgSiteListContentTypeColumn](New-MgSiteListContentTypeColumn.md)
+### [New-MgBetaSiteListContentTypeColumn](New-MgBetaSiteListContentTypeColumn.md)
 Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
-### [New-MgSiteListContentTypeColumnLink](New-MgSiteListContentTypeColumnLink.md)
+### [New-MgBetaSiteListContentTypeColumnLink](New-MgBetaSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
-### [New-MgSiteListItem](New-MgSiteListItem.md)
+### [New-MgBetaSiteListItem](New-MgBetaSiteListItem.md)
 Create a new [listItem][] in a [list][].
 
-### [New-MgSiteListItemDocumentSetVersion](New-MgSiteListItemDocumentSetVersion.md)
+### [New-MgBetaSiteListItemDocumentSetVersion](New-MgBetaSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgSiteListItemLink](New-MgSiteListItemLink.md)
+### [New-MgBetaSiteListItemLink](New-MgBetaSiteListItemLink.md)
 Create a sharing link for a listItem.
 The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 **listItem** resources inherit sharing permissions from the list the item resides in.
 
-### [New-MgSiteListItemVersion](New-MgSiteListItemVersion.md)
+### [New-MgBetaSiteListItemVersion](New-MgBetaSiteListItemVersion.md)
 Create new navigation property to versions for sites
 
-### [New-MgSiteListOperation](New-MgSiteListOperation.md)
+### [New-MgBetaSiteListOperation](New-MgBetaSiteListOperation.md)
 Create new navigation property to operations for sites
 
-### [New-MgSiteListSubscription](New-MgSiteListSubscription.md)
+### [New-MgBetaSiteListSubscription](New-MgBetaSiteListSubscription.md)
 Create new navigation property to subscriptions for sites
 
-### [New-MgSitePage](New-MgSitePage.md)
+### [New-MgBetaSitePage](New-MgBetaSitePage.md)
 Create a new [sitePage][] in the site pages [list][] in a [site][].
 
-### [New-MgSitePermission](New-MgSitePermission.md)
+### [New-MgBetaSitePermission](New-MgBetaSitePermission.md)
 Create a new permission object on a site.
 
-### [New-MgSiteTermStoreGroup](New-MgSiteTermStoreGroup.md)
+### [New-MgBetaSiteTermStoreGroup](New-MgBetaSiteTermStoreGroup.md)
 Create a new group object.
 
-### [New-MgSiteTermStoreGroupSet](New-MgSiteTermStoreGroupSet.md)
+### [New-MgBetaSiteTermStoreGroupSet](New-MgBetaSiteTermStoreGroupSet.md)
 Create new navigation property to sets for sites
 
-### [New-MgSiteTermStoreGroupSetChild](New-MgSiteTermStoreGroupSetChild.md)
+### [New-MgBetaSiteTermStoreGroupSetChild](New-MgBetaSiteTermStoreGroupSetChild.md)
 Create a new term object.
 
-### [New-MgSiteTermStoreGroupSetRelation](New-MgSiteTermStoreGroupSetRelation.md)
+### [New-MgBetaSiteTermStoreGroupSetRelation](New-MgBetaSiteTermStoreGroupSetRelation.md)
 Create new navigation property to relations for sites
 
-### [New-MgSiteTermStoreGroupSetTerm](New-MgSiteTermStoreGroupSetTerm.md)
+### [New-MgBetaSiteTermStoreGroupSetTerm](New-MgBetaSiteTermStoreGroupSetTerm.md)
 Create new navigation property to terms for sites
 
-### [New-MgSiteTermStoreGroupSetTermChild](New-MgSiteTermStoreGroupSetTermChild.md)
+### [New-MgBetaSiteTermStoreGroupSetTermChild](New-MgBetaSiteTermStoreGroupSetTermChild.md)
 Create new navigation property to children for sites
 
-### [New-MgSiteTermStoreGroupSetTermRelation](New-MgSiteTermStoreGroupSetTermRelation.md)
+### [New-MgBetaSiteTermStoreGroupSetTermRelation](New-MgBetaSiteTermStoreGroupSetTermRelation.md)
 Create new navigation property to relations for sites
 
-### [New-MgSiteTermStoreSet](New-MgSiteTermStoreSet.md)
+### [New-MgBetaSiteTermStoreSet](New-MgBetaSiteTermStoreSet.md)
 Create new navigation property to sets for sites
 
-### [New-MgSiteTermStoreSetChild](New-MgSiteTermStoreSetChild.md)
+### [New-MgBetaSiteTermStoreSetChild](New-MgBetaSiteTermStoreSetChild.md)
 Create a new term object.
 
-### [New-MgSiteTermStoreSetRelation](New-MgSiteTermStoreSetRelation.md)
+### [New-MgBetaSiteTermStoreSetRelation](New-MgBetaSiteTermStoreSetRelation.md)
 Create new navigation property to relations for sites
 
-### [New-MgSiteTermStoreSetTerm](New-MgSiteTermStoreSetTerm.md)
+### [New-MgBetaSiteTermStoreSetTerm](New-MgBetaSiteTermStoreSetTerm.md)
 Create new navigation property to terms for sites
 
-### [New-MgSiteTermStoreSetTermChild](New-MgSiteTermStoreSetTermChild.md)
+### [New-MgBetaSiteTermStoreSetTermChild](New-MgBetaSiteTermStoreSetTermChild.md)
 Create new navigation property to children for sites
 
-### [New-MgSiteTermStoreSetTermRelation](New-MgSiteTermStoreSetTermRelation.md)
+### [New-MgBetaSiteTermStoreSetTermRelation](New-MgBetaSiteTermStoreSetTermRelation.md)
 Create new navigation property to relations for sites
 
-### [Publish-MgSiteContentType](Publish-MgSiteContentType.md)
+### [Publish-MgBetaSiteContentType](Publish-MgBetaSiteContentType.md)
 Publishes a [contentType][] present in a content type hub site.
 
-### [Publish-MgSiteListContentType](Publish-MgSiteListContentType.md)
+### [Publish-MgBetaSiteListContentType](Publish-MgBetaSiteListContentType.md)
 Publishes a [contentType][] present in a content type hub site.
 
-### [Publish-MgSitePage](Publish-MgSitePage.md)
+### [Publish-MgBetaSitePage](Publish-MgBetaSitePage.md)
 Invoke action publish
 
-### [Remove-MgGroupSiteColumn](Remove-MgGroupSiteColumn.md)
+### [Remove-MgBetaGroupSiteColumn](Remove-MgBetaGroupSiteColumn.md)
 Delete navigation property columns for groups
 
-### [Remove-MgGroupSiteContentType](Remove-MgGroupSiteContentType.md)
+### [Remove-MgBetaGroupSiteContentType](Remove-MgBetaGroupSiteContentType.md)
 Delete navigation property contentTypes for groups
 
-### [Remove-MgGroupSiteContentTypeColumn](Remove-MgGroupSiteContentTypeColumn.md)
+### [Remove-MgBetaGroupSiteContentTypeColumn](Remove-MgBetaGroupSiteContentTypeColumn.md)
 Delete navigation property columns for groups
 
-### [Remove-MgGroupSiteContentTypeColumnLink](Remove-MgGroupSiteContentTypeColumnLink.md)
+### [Remove-MgBetaGroupSiteContentTypeColumnLink](Remove-MgBetaGroupSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
 
-### [Remove-MgGroupSiteList](Remove-MgGroupSiteList.md)
+### [Remove-MgBetaGroupSiteList](Remove-MgBetaGroupSiteList.md)
 Delete navigation property lists for groups
 
-### [Remove-MgGroupSiteListColumn](Remove-MgGroupSiteListColumn.md)
+### [Remove-MgBetaGroupSiteListColumn](Remove-MgBetaGroupSiteListColumn.md)
 Delete navigation property columns for groups
 
-### [Remove-MgGroupSiteListContentType](Remove-MgGroupSiteListContentType.md)
+### [Remove-MgBetaGroupSiteListContentType](Remove-MgBetaGroupSiteListContentType.md)
 Delete navigation property contentTypes for groups
 
-### [Remove-MgGroupSiteListContentTypeColumn](Remove-MgGroupSiteListContentTypeColumn.md)
+### [Remove-MgBetaGroupSiteListContentTypeColumn](Remove-MgBetaGroupSiteListContentTypeColumn.md)
 Delete navigation property columns for groups
 
-### [Remove-MgGroupSiteListContentTypeColumnLink](Remove-MgGroupSiteListContentTypeColumnLink.md)
+### [Remove-MgBetaGroupSiteListContentTypeColumnLink](Remove-MgBetaGroupSiteListContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
 
-### [Remove-MgGroupSiteListItem](Remove-MgGroupSiteListItem.md)
+### [Remove-MgBetaGroupSiteListItem](Remove-MgBetaGroupSiteListItem.md)
 Delete navigation property items for groups
 
-### [Remove-MgGroupSiteListItemDocumentSetVersion](Remove-MgGroupSiteListItemDocumentSetVersion.md)
+### [Remove-MgBetaGroupSiteListItemDocumentSetVersion](Remove-MgBetaGroupSiteListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for groups
 
-### [Remove-MgGroupSiteListItemField](Remove-MgGroupSiteListItemField.md)
+### [Remove-MgBetaGroupSiteListItemField](Remove-MgBetaGroupSiteListItemField.md)
 Delete navigation property fields for groups
 
-### [Remove-MgGroupSiteListItemVersion](Remove-MgGroupSiteListItemVersion.md)
+### [Remove-MgBetaGroupSiteListItemVersion](Remove-MgBetaGroupSiteListItemVersion.md)
 Delete navigation property versions for groups
 
-### [Remove-MgGroupSiteListItemVersionField](Remove-MgGroupSiteListItemVersionField.md)
+### [Remove-MgBetaGroupSiteListItemVersionField](Remove-MgBetaGroupSiteListItemVersionField.md)
 Delete navigation property fields for groups
 
-### [Remove-MgGroupSiteListOperation](Remove-MgGroupSiteListOperation.md)
+### [Remove-MgBetaGroupSiteListOperation](Remove-MgBetaGroupSiteListOperation.md)
 Delete navigation property operations for groups
 
-### [Remove-MgGroupSiteListSubscription](Remove-MgGroupSiteListSubscription.md)
+### [Remove-MgBetaGroupSiteListSubscription](Remove-MgBetaGroupSiteListSubscription.md)
 Delete navigation property subscriptions for groups
 
-### [Remove-MgGroupSiteOperation](Remove-MgGroupSiteOperation.md)
+### [Remove-MgBetaGroupSiteOperation](Remove-MgBetaGroupSiteOperation.md)
 Delete navigation property operations for groups
 
-### [Remove-MgGroupSitePage](Remove-MgGroupSitePage.md)
+### [Remove-MgBetaGroupSitePage](Remove-MgBetaGroupSitePage.md)
 Delete navigation property pages for groups
 
-### [Remove-MgGroupSitePermission](Remove-MgGroupSitePermission.md)
+### [Remove-MgBetaGroupSitePermission](Remove-MgBetaGroupSitePermission.md)
 Delete navigation property permissions for groups
 
-### [Remove-MgGroupSiteTermStore](Remove-MgGroupSiteTermStore.md)
+### [Remove-MgBetaGroupSiteTermStore](Remove-MgBetaGroupSiteTermStore.md)
 Delete navigation property termStore for groups
 
-### [Remove-MgGroupSiteTermStoreGroup](Remove-MgGroupSiteTermStoreGroup.md)
+### [Remove-MgBetaGroupSiteTermStoreGroup](Remove-MgBetaGroupSiteTermStoreGroup.md)
 Delete navigation property groups for groups
 
-### [Remove-MgGroupSiteTermStoreGroupSet](Remove-MgGroupSiteTermStoreGroupSet.md)
+### [Remove-MgBetaGroupSiteTermStoreGroupSet](Remove-MgBetaGroupSiteTermStoreGroupSet.md)
 Delete navigation property sets for groups
 
-### [Remove-MgGroupSiteTermStoreGroupSetChild](Remove-MgGroupSiteTermStoreGroupSetChild.md)
+### [Remove-MgBetaGroupSiteTermStoreGroupSetChild](Remove-MgBetaGroupSiteTermStoreGroupSetChild.md)
 Delete navigation property children for groups
 
-### [Remove-MgGroupSiteTermStoreGroupSetRelation](Remove-MgGroupSiteTermStoreGroupSetRelation.md)
+### [Remove-MgBetaGroupSiteTermStoreGroupSetRelation](Remove-MgBetaGroupSiteTermStoreGroupSetRelation.md)
 Delete navigation property relations for groups
 
-### [Remove-MgGroupSiteTermStoreGroupSetTerm](Remove-MgGroupSiteTermStoreGroupSetTerm.md)
+### [Remove-MgBetaGroupSiteTermStoreGroupSetTerm](Remove-MgBetaGroupSiteTermStoreGroupSetTerm.md)
 Delete navigation property terms for groups
 
-### [Remove-MgGroupSiteTermStoreGroupSetTermChild](Remove-MgGroupSiteTermStoreGroupSetTermChild.md)
+### [Remove-MgBetaGroupSiteTermStoreGroupSetTermChild](Remove-MgBetaGroupSiteTermStoreGroupSetTermChild.md)
 Delete navigation property children for groups
 
-### [Remove-MgGroupSiteTermStoreGroupSetTermRelation](Remove-MgGroupSiteTermStoreGroupSetTermRelation.md)
+### [Remove-MgBetaGroupSiteTermStoreGroupSetTermRelation](Remove-MgBetaGroupSiteTermStoreGroupSetTermRelation.md)
 Delete navigation property relations for groups
 
-### [Remove-MgGroupSiteTermStoreSet](Remove-MgGroupSiteTermStoreSet.md)
+### [Remove-MgBetaGroupSiteTermStoreSet](Remove-MgBetaGroupSiteTermStoreSet.md)
 Delete navigation property sets for groups
 
-### [Remove-MgGroupSiteTermStoreSetChild](Remove-MgGroupSiteTermStoreSetChild.md)
+### [Remove-MgBetaGroupSiteTermStoreSetChild](Remove-MgBetaGroupSiteTermStoreSetChild.md)
 Delete navigation property children for groups
 
-### [Remove-MgGroupSiteTermStoreSetRelation](Remove-MgGroupSiteTermStoreSetRelation.md)
+### [Remove-MgBetaGroupSiteTermStoreSetRelation](Remove-MgBetaGroupSiteTermStoreSetRelation.md)
 Delete navigation property relations for groups
 
-### [Remove-MgGroupSiteTermStoreSetTerm](Remove-MgGroupSiteTermStoreSetTerm.md)
+### [Remove-MgBetaGroupSiteTermStoreSetTerm](Remove-MgBetaGroupSiteTermStoreSetTerm.md)
 Delete navigation property terms for groups
 
-### [Remove-MgGroupSiteTermStoreSetTermChild](Remove-MgGroupSiteTermStoreSetTermChild.md)
+### [Remove-MgBetaGroupSiteTermStoreSetTermChild](Remove-MgBetaGroupSiteTermStoreSetTermChild.md)
 Delete navigation property children for groups
 
-### [Remove-MgGroupSiteTermStoreSetTermRelation](Remove-MgGroupSiteTermStoreSetTermRelation.md)
+### [Remove-MgBetaGroupSiteTermStoreSetTermRelation](Remove-MgBetaGroupSiteTermStoreSetTermRelation.md)
 Delete navigation property relations for groups
 
-### [Remove-MgSiteColumn](Remove-MgSiteColumn.md)
+### [Remove-MgBetaSiteColumn](Remove-MgBetaSiteColumn.md)
 Delete navigation property columns for sites
 
-### [Remove-MgSiteContentType](Remove-MgSiteContentType.md)
+### [Remove-MgBetaSiteContentType](Remove-MgBetaSiteContentType.md)
 Delete navigation property contentTypes for sites
 
-### [Remove-MgSiteContentTypeColumn](Remove-MgSiteContentTypeColumn.md)
+### [Remove-MgBetaSiteContentTypeColumn](Remove-MgBetaSiteContentTypeColumn.md)
 Delete navigation property columns for sites
 
-### [Remove-MgSiteContentTypeColumnLink](Remove-MgSiteContentTypeColumnLink.md)
+### [Remove-MgBetaSiteContentTypeColumnLink](Remove-MgBetaSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
 
-### [Remove-MgSiteList](Remove-MgSiteList.md)
+### [Remove-MgBetaSiteList](Remove-MgBetaSiteList.md)
 Delete navigation property lists for sites
 
-### [Remove-MgSiteListColumn](Remove-MgSiteListColumn.md)
+### [Remove-MgBetaSiteListColumn](Remove-MgBetaSiteListColumn.md)
 Delete navigation property columns for sites
 
-### [Remove-MgSiteListContentType](Remove-MgSiteListContentType.md)
+### [Remove-MgBetaSiteListContentType](Remove-MgBetaSiteListContentType.md)
 Delete navigation property contentTypes for sites
 
-### [Remove-MgSiteListContentTypeColumn](Remove-MgSiteListContentTypeColumn.md)
+### [Remove-MgBetaSiteListContentTypeColumn](Remove-MgBetaSiteListContentTypeColumn.md)
 Delete navigation property columns for sites
 
-### [Remove-MgSiteListContentTypeColumnLink](Remove-MgSiteListContentTypeColumnLink.md)
+### [Remove-MgBetaSiteListContentTypeColumnLink](Remove-MgBetaSiteListContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
 
-### [Remove-MgSiteListItem](Remove-MgSiteListItem.md)
+### [Remove-MgBetaSiteListItem](Remove-MgBetaSiteListItem.md)
 Delete navigation property items for sites
 
-### [Remove-MgSiteListItemDocumentSetVersion](Remove-MgSiteListItemDocumentSetVersion.md)
+### [Remove-MgBetaSiteListItemDocumentSetVersion](Remove-MgBetaSiteListItemDocumentSetVersion.md)
 Delete navigation property documentSetVersions for sites
 
-### [Remove-MgSiteListItemField](Remove-MgSiteListItemField.md)
+### [Remove-MgBetaSiteListItemField](Remove-MgBetaSiteListItemField.md)
 Delete navigation property fields for sites
 
-### [Remove-MgSiteListItemVersion](Remove-MgSiteListItemVersion.md)
+### [Remove-MgBetaSiteListItemVersion](Remove-MgBetaSiteListItemVersion.md)
 Delete navigation property versions for sites
 
-### [Remove-MgSiteListItemVersionField](Remove-MgSiteListItemVersionField.md)
+### [Remove-MgBetaSiteListItemVersionField](Remove-MgBetaSiteListItemVersionField.md)
 Delete navigation property fields for sites
 
-### [Remove-MgSiteListOperation](Remove-MgSiteListOperation.md)
+### [Remove-MgBetaSiteListOperation](Remove-MgBetaSiteListOperation.md)
 Delete navigation property operations for sites
 
-### [Remove-MgSiteListSubscription](Remove-MgSiteListSubscription.md)
+### [Remove-MgBetaSiteListSubscription](Remove-MgBetaSiteListSubscription.md)
 Delete navigation property subscriptions for sites
 
-### [Remove-MgSitePage](Remove-MgSitePage.md)
+### [Remove-MgBetaSitePage](Remove-MgBetaSitePage.md)
 Delete navigation property pages for sites
 
-### [Remove-MgSitePermission](Remove-MgSitePermission.md)
+### [Remove-MgBetaSitePermission](Remove-MgBetaSitePermission.md)
 Delete navigation property permissions for sites
 
-### [Remove-MgSiteTermStore](Remove-MgSiteTermStore.md)
+### [Remove-MgBetaSiteTermStore](Remove-MgBetaSiteTermStore.md)
 Delete navigation property termStore for sites
 
-### [Remove-MgSiteTermStoreGroup](Remove-MgSiteTermStoreGroup.md)
+### [Remove-MgBetaSiteTermStoreGroup](Remove-MgBetaSiteTermStoreGroup.md)
 Delete navigation property groups for sites
 
-### [Remove-MgSiteTermStoreGroupSet](Remove-MgSiteTermStoreGroupSet.md)
+### [Remove-MgBetaSiteTermStoreGroupSet](Remove-MgBetaSiteTermStoreGroupSet.md)
 Delete navigation property sets for sites
 
-### [Remove-MgSiteTermStoreGroupSetChild](Remove-MgSiteTermStoreGroupSetChild.md)
+### [Remove-MgBetaSiteTermStoreGroupSetChild](Remove-MgBetaSiteTermStoreGroupSetChild.md)
 Delete navigation property children for sites
 
-### [Remove-MgSiteTermStoreGroupSetRelation](Remove-MgSiteTermStoreGroupSetRelation.md)
+### [Remove-MgBetaSiteTermStoreGroupSetRelation](Remove-MgBetaSiteTermStoreGroupSetRelation.md)
 Delete navigation property relations for sites
 
-### [Remove-MgSiteTermStoreGroupSetTerm](Remove-MgSiteTermStoreGroupSetTerm.md)
+### [Remove-MgBetaSiteTermStoreGroupSetTerm](Remove-MgBetaSiteTermStoreGroupSetTerm.md)
 Delete navigation property terms for sites
 
-### [Remove-MgSiteTermStoreGroupSetTermChild](Remove-MgSiteTermStoreGroupSetTermChild.md)
+### [Remove-MgBetaSiteTermStoreGroupSetTermChild](Remove-MgBetaSiteTermStoreGroupSetTermChild.md)
 Delete navigation property children for sites
 
-### [Remove-MgSiteTermStoreGroupSetTermRelation](Remove-MgSiteTermStoreGroupSetTermRelation.md)
+### [Remove-MgBetaSiteTermStoreGroupSetTermRelation](Remove-MgBetaSiteTermStoreGroupSetTermRelation.md)
 Delete navigation property relations for sites
 
-### [Remove-MgSiteTermStoreSet](Remove-MgSiteTermStoreSet.md)
+### [Remove-MgBetaSiteTermStoreSet](Remove-MgBetaSiteTermStoreSet.md)
 Delete navigation property sets for sites
 
-### [Remove-MgSiteTermStoreSetChild](Remove-MgSiteTermStoreSetChild.md)
+### [Remove-MgBetaSiteTermStoreSetChild](Remove-MgBetaSiteTermStoreSetChild.md)
 Delete navigation property children for sites
 
-### [Remove-MgSiteTermStoreSetRelation](Remove-MgSiteTermStoreSetRelation.md)
+### [Remove-MgBetaSiteTermStoreSetRelation](Remove-MgBetaSiteTermStoreSetRelation.md)
 Delete navigation property relations for sites
 
-### [Remove-MgSiteTermStoreSetTerm](Remove-MgSiteTermStoreSetTerm.md)
+### [Remove-MgBetaSiteTermStoreSetTerm](Remove-MgBetaSiteTermStoreSetTerm.md)
 Delete navigation property terms for sites
 
-### [Remove-MgSiteTermStoreSetTermChild](Remove-MgSiteTermStoreSetTermChild.md)
+### [Remove-MgBetaSiteTermStoreSetTermChild](Remove-MgBetaSiteTermStoreSetTermChild.md)
 Delete navigation property children for sites
 
-### [Remove-MgSiteTermStoreSetTermRelation](Remove-MgSiteTermStoreSetTermRelation.md)
+### [Remove-MgBetaSiteTermStoreSetTermRelation](Remove-MgBetaSiteTermStoreSetTermRelation.md)
 Delete navigation property relations for sites
 
-### [Restore-MgSiteListItemDocumentSetVersion](Restore-MgSiteListItemDocumentSetVersion.md)
+### [Restore-MgBetaSiteListItemDocumentSetVersion](Restore-MgBetaSiteListItemDocumentSetVersion.md)
 Restore a document set version.
 
-### [Restore-MgSiteListItemVersion](Restore-MgSiteListItemVersion.md)
+### [Restore-MgBetaSiteListItemVersion](Restore-MgBetaSiteListItemVersion.md)
 Invoke action restoreVersion
 
-### [Revoke-MgSitePermissionGrant](Revoke-MgSitePermissionGrant.md)
+### [Revoke-MgBetaSitePermissionGrant](Revoke-MgBetaSitePermissionGrant.md)
 Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
-### [Set-MgGroupSiteListItemDriveItemContent](Set-MgGroupSiteListItemDriveItemContent.md)
+### [Set-MgBetaGroupSiteListItemDriveItemContent](Set-MgBetaGroupSiteListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Set-MgSiteListItemDriveItemContent](Set-MgSiteListItemDriveItemContent.md)
+### [Set-MgBetaSiteListItemDriveItemContent](Set-MgBetaSiteListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
-### [Test-MgSiteContentTypePublished](Test-MgSiteContentTypePublished.md)
+### [Test-MgBetaSiteContentTypePublished](Test-MgBetaSiteContentTypePublished.md)
 Invoke function isPublished
 
-### [Test-MgSiteListContentTypePublished](Test-MgSiteListContentTypePublished.md)
+### [Test-MgBetaSiteListContentTypePublished](Test-MgBetaSiteListContentTypePublished.md)
 Invoke function isPublished
 
-### [Unpublish-MgSiteContentType](Unpublish-MgSiteContentType.md)
+### [Unpublish-MgBetaSiteContentType](Unpublish-MgBetaSiteContentType.md)
 Unpublish a [contentType][] from a content type hub site.
 
-### [Unpublish-MgSiteListContentType](Unpublish-MgSiteListContentType.md)
+### [Unpublish-MgBetaSiteListContentType](Unpublish-MgBetaSiteListContentType.md)
 Unpublish a [contentType][] from a content type hub site.
 
-### [Update-MgGroupSite](Update-MgGroupSite.md)
+### [Update-MgBetaGroupSite](Update-MgBetaGroupSite.md)
 Update the navigation property sites in groups
 
-### [Update-MgGroupSiteColumn](Update-MgGroupSiteColumn.md)
+### [Update-MgBetaGroupSiteColumn](Update-MgBetaGroupSiteColumn.md)
 Update the navigation property columns in groups
 
-### [Update-MgGroupSiteContentType](Update-MgGroupSiteContentType.md)
+### [Update-MgBetaGroupSiteContentType](Update-MgBetaGroupSiteContentType.md)
 Update the navigation property contentTypes in groups
 
-### [Update-MgGroupSiteContentTypeColumn](Update-MgGroupSiteContentTypeColumn.md)
+### [Update-MgBetaGroupSiteContentTypeColumn](Update-MgBetaGroupSiteContentTypeColumn.md)
 Update the navigation property columns in groups
 
-### [Update-MgGroupSiteContentTypeColumnLink](Update-MgGroupSiteContentTypeColumnLink.md)
+### [Update-MgBetaGroupSiteContentTypeColumnLink](Update-MgBetaGroupSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
 
-### [Update-MgGroupSiteList](Update-MgGroupSiteList.md)
+### [Update-MgBetaGroupSiteList](Update-MgBetaGroupSiteList.md)
 Update the navigation property lists in groups
 
-### [Update-MgGroupSiteListColumn](Update-MgGroupSiteListColumn.md)
+### [Update-MgBetaGroupSiteListColumn](Update-MgBetaGroupSiteListColumn.md)
 Update the navigation property columns in groups
 
-### [Update-MgGroupSiteListContentType](Update-MgGroupSiteListContentType.md)
+### [Update-MgBetaGroupSiteListContentType](Update-MgBetaGroupSiteListContentType.md)
 Update the navigation property contentTypes in groups
 
-### [Update-MgGroupSiteListContentTypeColumn](Update-MgGroupSiteListContentTypeColumn.md)
+### [Update-MgBetaGroupSiteListContentTypeColumn](Update-MgBetaGroupSiteListContentTypeColumn.md)
 Update the navigation property columns in groups
 
-### [Update-MgGroupSiteListContentTypeColumnLink](Update-MgGroupSiteListContentTypeColumnLink.md)
+### [Update-MgBetaGroupSiteListContentTypeColumnLink](Update-MgBetaGroupSiteListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
 
-### [Update-MgGroupSiteListItem](Update-MgGroupSiteListItem.md)
+### [Update-MgBetaGroupSiteListItem](Update-MgBetaGroupSiteListItem.md)
 Update the navigation property items in groups
 
-### [Update-MgGroupSiteListItemDocumentSetVersion](Update-MgGroupSiteListItemDocumentSetVersion.md)
+### [Update-MgBetaGroupSiteListItemDocumentSetVersion](Update-MgBetaGroupSiteListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in groups
 
-### [Update-MgGroupSiteListItemField](Update-MgGroupSiteListItemField.md)
+### [Update-MgBetaGroupSiteListItemField](Update-MgBetaGroupSiteListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgGroupSiteListItemVersion](Update-MgGroupSiteListItemVersion.md)
+### [Update-MgBetaGroupSiteListItemVersion](Update-MgBetaGroupSiteListItemVersion.md)
 Update the navigation property versions in groups
 
-### [Update-MgGroupSiteListItemVersionField](Update-MgGroupSiteListItemVersionField.md)
+### [Update-MgBetaGroupSiteListItemVersionField](Update-MgBetaGroupSiteListItemVersionField.md)
 Update the navigation property fields in groups
 
-### [Update-MgGroupSiteListOperation](Update-MgGroupSiteListOperation.md)
+### [Update-MgBetaGroupSiteListOperation](Update-MgBetaGroupSiteListOperation.md)
 Update the navigation property operations in groups
 
-### [Update-MgGroupSiteListSubscription](Update-MgGroupSiteListSubscription.md)
+### [Update-MgBetaGroupSiteListSubscription](Update-MgBetaGroupSiteListSubscription.md)
 Update the navigation property subscriptions in groups
 
-### [Update-MgGroupSiteOperation](Update-MgGroupSiteOperation.md)
+### [Update-MgBetaGroupSiteOperation](Update-MgBetaGroupSiteOperation.md)
 Update the navigation property operations in groups
 
-### [Update-MgGroupSitePage](Update-MgGroupSitePage.md)
+### [Update-MgBetaGroupSitePage](Update-MgBetaGroupSitePage.md)
 Update the navigation property pages in groups
 
-### [Update-MgGroupSitePermission](Update-MgGroupSitePermission.md)
+### [Update-MgBetaGroupSitePermission](Update-MgBetaGroupSitePermission.md)
 Update the navigation property permissions in groups
 
-### [Update-MgGroupSiteTermStore](Update-MgGroupSiteTermStore.md)
+### [Update-MgBetaGroupSiteTermStore](Update-MgBetaGroupSiteTermStore.md)
 Update the navigation property termStore in groups
 
-### [Update-MgGroupSiteTermStoreGroup](Update-MgGroupSiteTermStoreGroup.md)
+### [Update-MgBetaGroupSiteTermStoreGroup](Update-MgBetaGroupSiteTermStoreGroup.md)
 Update the navigation property groups in groups
 
-### [Update-MgGroupSiteTermStoreGroupSet](Update-MgGroupSiteTermStoreGroupSet.md)
+### [Update-MgBetaGroupSiteTermStoreGroupSet](Update-MgBetaGroupSiteTermStoreGroupSet.md)
 Update the navigation property sets in groups
 
-### [Update-MgGroupSiteTermStoreGroupSetChild](Update-MgGroupSiteTermStoreGroupSetChild.md)
+### [Update-MgBetaGroupSiteTermStoreGroupSetChild](Update-MgBetaGroupSiteTermStoreGroupSetChild.md)
 Update the navigation property children in groups
 
-### [Update-MgGroupSiteTermStoreGroupSetRelation](Update-MgGroupSiteTermStoreGroupSetRelation.md)
+### [Update-MgBetaGroupSiteTermStoreGroupSetRelation](Update-MgBetaGroupSiteTermStoreGroupSetRelation.md)
 Update the navigation property relations in groups
 
-### [Update-MgGroupSiteTermStoreGroupSetTerm](Update-MgGroupSiteTermStoreGroupSetTerm.md)
+### [Update-MgBetaGroupSiteTermStoreGroupSetTerm](Update-MgBetaGroupSiteTermStoreGroupSetTerm.md)
 Update the navigation property terms in groups
 
-### [Update-MgGroupSiteTermStoreGroupSetTermChild](Update-MgGroupSiteTermStoreGroupSetTermChild.md)
+### [Update-MgBetaGroupSiteTermStoreGroupSetTermChild](Update-MgBetaGroupSiteTermStoreGroupSetTermChild.md)
 Update the navigation property children in groups
 
-### [Update-MgGroupSiteTermStoreGroupSetTermRelation](Update-MgGroupSiteTermStoreGroupSetTermRelation.md)
+### [Update-MgBetaGroupSiteTermStoreGroupSetTermRelation](Update-MgBetaGroupSiteTermStoreGroupSetTermRelation.md)
 Update the navigation property relations in groups
 
-### [Update-MgGroupSiteTermStoreSet](Update-MgGroupSiteTermStoreSet.md)
+### [Update-MgBetaGroupSiteTermStoreSet](Update-MgBetaGroupSiteTermStoreSet.md)
 Update the navigation property sets in groups
 
-### [Update-MgGroupSiteTermStoreSetChild](Update-MgGroupSiteTermStoreSetChild.md)
+### [Update-MgBetaGroupSiteTermStoreSetChild](Update-MgBetaGroupSiteTermStoreSetChild.md)
 Update the navigation property children in groups
 
-### [Update-MgGroupSiteTermStoreSetRelation](Update-MgGroupSiteTermStoreSetRelation.md)
+### [Update-MgBetaGroupSiteTermStoreSetRelation](Update-MgBetaGroupSiteTermStoreSetRelation.md)
 Update the navigation property relations in groups
 
-### [Update-MgGroupSiteTermStoreSetTerm](Update-MgGroupSiteTermStoreSetTerm.md)
+### [Update-MgBetaGroupSiteTermStoreSetTerm](Update-MgBetaGroupSiteTermStoreSetTerm.md)
 Update the navigation property terms in groups
 
-### [Update-MgGroupSiteTermStoreSetTermChild](Update-MgGroupSiteTermStoreSetTermChild.md)
+### [Update-MgBetaGroupSiteTermStoreSetTermChild](Update-MgBetaGroupSiteTermStoreSetTermChild.md)
 Update the navigation property children in groups
 
-### [Update-MgGroupSiteTermStoreSetTermRelation](Update-MgGroupSiteTermStoreSetTermRelation.md)
+### [Update-MgBetaGroupSiteTermStoreSetTermRelation](Update-MgBetaGroupSiteTermStoreSetTermRelation.md)
 Update the navigation property relations in groups
 
-### [Update-MgSite](Update-MgSite.md)
+### [Update-MgBetaSite](Update-MgBetaSite.md)
 Update entity in sites
 
-### [Update-MgSiteColumn](Update-MgSiteColumn.md)
+### [Update-MgBetaSiteColumn](Update-MgBetaSiteColumn.md)
 Update the navigation property columns in sites
 
-### [Update-MgSiteContentType](Update-MgSiteContentType.md)
+### [Update-MgBetaSiteContentType](Update-MgBetaSiteContentType.md)
 Update the navigation property contentTypes in sites
 
-### [Update-MgSiteContentTypeColumn](Update-MgSiteContentTypeColumn.md)
+### [Update-MgBetaSiteContentTypeColumn](Update-MgBetaSiteContentTypeColumn.md)
 Update the navigation property columns in sites
 
-### [Update-MgSiteContentTypeColumnLink](Update-MgSiteContentTypeColumnLink.md)
+### [Update-MgBetaSiteContentTypeColumnLink](Update-MgBetaSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
 
-### [Update-MgSiteList](Update-MgSiteList.md)
+### [Update-MgBetaSiteList](Update-MgBetaSiteList.md)
 Update the navigation property lists in sites
 
-### [Update-MgSiteListColumn](Update-MgSiteListColumn.md)
+### [Update-MgBetaSiteListColumn](Update-MgBetaSiteListColumn.md)
 Update the navigation property columns in sites
 
-### [Update-MgSiteListContentType](Update-MgSiteListContentType.md)
+### [Update-MgBetaSiteListContentType](Update-MgBetaSiteListContentType.md)
 Update the navigation property contentTypes in sites
 
-### [Update-MgSiteListContentTypeColumn](Update-MgSiteListContentTypeColumn.md)
+### [Update-MgBetaSiteListContentTypeColumn](Update-MgBetaSiteListContentTypeColumn.md)
 Update the navigation property columns in sites
 
-### [Update-MgSiteListContentTypeColumnLink](Update-MgSiteListContentTypeColumnLink.md)
+### [Update-MgBetaSiteListContentTypeColumnLink](Update-MgBetaSiteListContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
 
-### [Update-MgSiteListItem](Update-MgSiteListItem.md)
+### [Update-MgBetaSiteListItem](Update-MgBetaSiteListItem.md)
 Update the navigation property items in sites
 
-### [Update-MgSiteListItemDocumentSetVersion](Update-MgSiteListItemDocumentSetVersion.md)
+### [Update-MgBetaSiteListItemDocumentSetVersion](Update-MgBetaSiteListItemDocumentSetVersion.md)
 Update the navigation property documentSetVersions in sites
 
-### [Update-MgSiteListItemField](Update-MgSiteListItemField.md)
+### [Update-MgBetaSiteListItemField](Update-MgBetaSiteListItemField.md)
 Update the properties on a **[listItem][]**.
 
-### [Update-MgSiteListItemVersion](Update-MgSiteListItemVersion.md)
+### [Update-MgBetaSiteListItemVersion](Update-MgBetaSiteListItemVersion.md)
 Update the navigation property versions in sites
 
-### [Update-MgSiteListItemVersionField](Update-MgSiteListItemVersionField.md)
+### [Update-MgBetaSiteListItemVersionField](Update-MgBetaSiteListItemVersionField.md)
 Update the navigation property fields in sites
 
-### [Update-MgSiteListOperation](Update-MgSiteListOperation.md)
+### [Update-MgBetaSiteListOperation](Update-MgBetaSiteListOperation.md)
 Update the navigation property operations in sites
 
-### [Update-MgSiteListSubscription](Update-MgSiteListSubscription.md)
+### [Update-MgBetaSiteListSubscription](Update-MgBetaSiteListSubscription.md)
 Update the navigation property subscriptions in sites
 
-### [Update-MgSiteOnenotePageContent](Update-MgSiteOnenotePageContent.md)
+### [Update-MgBetaSiteOnenotePageContent](Update-MgBetaSiteOnenotePageContent.md)
 Invoke action onenotePatchContent
 
-### [Update-MgSitePage](Update-MgSitePage.md)
+### [Update-MgBetaSitePage](Update-MgBetaSitePage.md)
 Update the navigation property pages in sites
 
-### [Update-MgSitePermission](Update-MgSitePermission.md)
+### [Update-MgBetaSitePermission](Update-MgBetaSitePermission.md)
 Update the navigation property permissions in sites
 
-### [Update-MgSiteTermStore](Update-MgSiteTermStore.md)
+### [Update-MgBetaSiteTermStore](Update-MgBetaSiteTermStore.md)
 Update the navigation property termStore in sites
 
-### [Update-MgSiteTermStoreGroup](Update-MgSiteTermStoreGroup.md)
+### [Update-MgBetaSiteTermStoreGroup](Update-MgBetaSiteTermStoreGroup.md)
 Update the navigation property groups in sites
 
-### [Update-MgSiteTermStoreGroupSet](Update-MgSiteTermStoreGroupSet.md)
+### [Update-MgBetaSiteTermStoreGroupSet](Update-MgBetaSiteTermStoreGroupSet.md)
 Update the navigation property sets in sites
 
-### [Update-MgSiteTermStoreGroupSetChild](Update-MgSiteTermStoreGroupSetChild.md)
+### [Update-MgBetaSiteTermStoreGroupSetChild](Update-MgBetaSiteTermStoreGroupSetChild.md)
 Update the navigation property children in sites
 
-### [Update-MgSiteTermStoreGroupSetRelation](Update-MgSiteTermStoreGroupSetRelation.md)
+### [Update-MgBetaSiteTermStoreGroupSetRelation](Update-MgBetaSiteTermStoreGroupSetRelation.md)
 Update the navigation property relations in sites
 
-### [Update-MgSiteTermStoreGroupSetTerm](Update-MgSiteTermStoreGroupSetTerm.md)
+### [Update-MgBetaSiteTermStoreGroupSetTerm](Update-MgBetaSiteTermStoreGroupSetTerm.md)
 Update the navigation property terms in sites
 
-### [Update-MgSiteTermStoreGroupSetTermChild](Update-MgSiteTermStoreGroupSetTermChild.md)
+### [Update-MgBetaSiteTermStoreGroupSetTermChild](Update-MgBetaSiteTermStoreGroupSetTermChild.md)
 Update the navigation property children in sites
 
-### [Update-MgSiteTermStoreGroupSetTermRelation](Update-MgSiteTermStoreGroupSetTermRelation.md)
+### [Update-MgBetaSiteTermStoreGroupSetTermRelation](Update-MgBetaSiteTermStoreGroupSetTermRelation.md)
 Update the navigation property relations in sites
 
-### [Update-MgSiteTermStoreSet](Update-MgSiteTermStoreSet.md)
+### [Update-MgBetaSiteTermStoreSet](Update-MgBetaSiteTermStoreSet.md)
 Update the navigation property sets in sites
 
-### [Update-MgSiteTermStoreSetChild](Update-MgSiteTermStoreSetChild.md)
+### [Update-MgBetaSiteTermStoreSetChild](Update-MgBetaSiteTermStoreSetChild.md)
 Update the navigation property children in sites
 
-### [Update-MgSiteTermStoreSetRelation](Update-MgSiteTermStoreSetRelation.md)
+### [Update-MgBetaSiteTermStoreSetRelation](Update-MgBetaSiteTermStoreSetRelation.md)
 Update the navigation property relations in sites
 
-### [Update-MgSiteTermStoreSetTerm](Update-MgSiteTermStoreSetTerm.md)
+### [Update-MgBetaSiteTermStoreSetTerm](Update-MgBetaSiteTermStoreSetTerm.md)
 Update the navigation property terms in sites
 
-### [Update-MgSiteTermStoreSetTermChild](Update-MgSiteTermStoreSetTermChild.md)
+### [Update-MgBetaSiteTermStoreSetTermChild](Update-MgBetaSiteTermStoreSetTermChild.md)
 Update the navigation property children in sites
 
-### [Update-MgSiteTermStoreSetTermRelation](Update-MgSiteTermStoreSetTermRelation.md)
+### [Update-MgBetaSiteTermStoreSetTermRelation](Update-MgBetaSiteTermStoreSetTermRelation.md)
 Update the navigation property relations in sites
 

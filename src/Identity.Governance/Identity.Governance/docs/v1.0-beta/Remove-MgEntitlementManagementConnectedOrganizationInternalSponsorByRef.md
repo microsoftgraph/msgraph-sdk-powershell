@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgentitlementmanagementconnectedorganizationinternalsponsorbyref
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgentitlementmanagementconnectedorganizationinternalsponsorbyref
 schema: 2.0.0
 ---
 
-# Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef
+# Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef
 
 ## SYNOPSIS
 Delete ref of navigation property internalSponsors for identityGovernance
@@ -14,14 +14,14 @@ Delete ref of navigation property internalSponsors for identityGovernance
 
 ### Delete1 (Default)
 ```
-Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef -ConnectedOrganizationId <String>
+Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef -ConnectedOrganizationId <String>
  -DirectoryObjectId <String> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef
+Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef
  -InputObject <IIdentityGovernanceIdentity> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -31,13 +31,13 @@ Delete ref of navigation property internalSponsors for identityGovernance
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef Cmdlet
+### Example 1: Using the Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef -ConnectedOrganizationId $connectedOrganizationId -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef -ConnectedOrganizationId $connectedOrganizationId -DirectoryObjectId $directoryObjectId
 ```
 
-This example shows how to use the Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef Cmdlet.
+This example shows how to use the Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -169,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

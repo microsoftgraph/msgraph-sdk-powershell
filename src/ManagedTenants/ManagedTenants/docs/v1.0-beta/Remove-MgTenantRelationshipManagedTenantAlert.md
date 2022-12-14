@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/remove-mgtenantrelationshipmanagedtenantalert
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/remove-mgtenantrelationshipmanagedtenantalert
 schema: 2.0.0
 ---
 
-# Remove-MgTenantRelationshipManagedTenantAlert
+# Remove-MgBetaTenantRelationshipManagedTenantAlert
 
 ## SYNOPSIS
 Delete navigation property managedTenantAlerts for tenantRelationships
@@ -14,13 +14,13 @@ Delete navigation property managedTenantAlerts for tenantRelationships
 
 ### Delete (Default)
 ```
-Remove-MgTenantRelationshipManagedTenantAlert -ManagedTenantAlertId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaTenantRelationshipManagedTenantAlert -ManagedTenantAlertId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgTenantRelationshipManagedTenantAlert -InputObject <IManagedTenantsIdentity> [-IfMatch <String>]
+Remove-MgBetaTenantRelationshipManagedTenantAlert -InputObject <IManagedTenantsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ## OUTPUTS
 

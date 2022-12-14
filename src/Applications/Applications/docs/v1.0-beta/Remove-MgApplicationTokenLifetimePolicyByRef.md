@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgapplicationtokenlifetimepolicybyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgapplicationtokenlifetimepolicybyref
 schema: 2.0.0
 ---
 
-# Remove-MgApplicationTokenLifetimePolicyByRef
+# Remove-MgBetaApplicationTokenLifetimePolicyByRef
 
 ## SYNOPSIS
 Delete ref of navigation property tokenLifetimePolicies for applications
@@ -14,13 +14,13 @@ Delete ref of navigation property tokenLifetimePolicies for applications
 
 ### Delete1 (Default)
 ```
-Remove-MgApplicationTokenLifetimePolicyByRef -ApplicationId <String> -TokenLifetimePolicyId <String>
+Remove-MgBetaApplicationTokenLifetimePolicyByRef -ApplicationId <String> -TokenLifetimePolicyId <String>
  [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgApplicationTokenLifetimePolicyByRef -InputObject <IApplicationsIdentity> [-Id <String>]
+Remove-MgBetaApplicationTokenLifetimePolicyByRef -InputObject <IApplicationsIdentity> [-Id <String>]
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete ref of navigation property tokenLifetimePolicies for applications
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgApplicationTokenLifetimePolicyByRef Cmdlet
+### Example 1: Using the Remove-MgBetaApplicationTokenLifetimePolicyByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgApplicationTokenLifetimePolicyByRef -ApplicationId $applicationId -TokenLifetimePolicyId $tokenLifetimePolicyId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaApplicationTokenLifetimePolicyByRef -ApplicationId $applicationId -TokenLifetimePolicyId $tokenLifetimePolicyId
 ```
 
-This example shows how to use the Remove-MgApplicationTokenLifetimePolicyByRef Cmdlet.
+This example shows how to use the Remove-MgBetaApplicationTokenLifetimePolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

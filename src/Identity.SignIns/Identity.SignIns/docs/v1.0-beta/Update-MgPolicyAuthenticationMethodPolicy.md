@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthenticationmethodpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mgpolicyauthenticationmethodpolicy
 schema: 2.0.0
 ---
 
-# Update-MgPolicyAuthenticationMethodPolicy
+# Update-MgBetaPolicyAuthenticationMethodPolicy
 
 ## SYNOPSIS
 Update the properties of an authenticationMethodsPolicy object.
@@ -14,7 +14,7 @@ Update the properties of an authenticationMethodsPolicy object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPolicyAuthenticationMethodPolicy [-AdditionalProperties <Hashtable>]
+Update-MgBetaPolicyAuthenticationMethodPolicy [-AdditionalProperties <Hashtable>]
  [-AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration[]>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-PolicyVersion <String>] [-ReconfirmationInDays <Int32>]
@@ -24,7 +24,7 @@ Update-MgPolicyAuthenticationMethodPolicy [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgPolicyAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphAuthenticationMethodsPolicy>
+Update-MgBetaPolicyAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphAuthenticationMethodsPolicy>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -33,9 +33,9 @@ Update the properties of an authenticationMethodsPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPolicyAuthenticationMethodPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyAuthenticationMethodPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	RegistrationEnforcement = @{
 		AuthenticationMethodsRegistrationCampaign = @{
@@ -53,10 +53,10 @@ $params = @{
 		}
 	}
 }
-Update-MgPolicyAuthenticationMethodPolicy -BodyParameter $params
+Update-MgBetaPolicyAuthenticationMethodPolicy -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPolicyAuthenticationMethodPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyAuthenticationMethodPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -82,7 +82,7 @@ Automatically expanded on GET /policies/authenticationMethodsPolicy.
 To construct, please use Get-Help -Online and see NOTES section for AUTHENTICATIONMETHODCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ authenticationMethodsPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -224,7 +224,7 @@ registrationEnforcement
 To construct, please use Get-Help -Online and see NOTES section for REGISTRATIONENFORCEMENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegistrationEnforcement
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegistrationEnforcement
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -271,7 +271,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy
 
 ## OUTPUTS
 

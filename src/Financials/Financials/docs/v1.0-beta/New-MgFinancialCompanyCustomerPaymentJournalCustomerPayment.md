@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanycustomerpaymentjournalcustomerpayment
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanycustomerpaymentjournalcustomerpayment
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyCustomerPaymentJournalCustomerPayment
+# New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment
 
 ## SYNOPSIS
 Create new navigation property to customerPayments for financials
@@ -14,7 +14,7 @@ Create new navigation property to customerPayments for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <String>
+New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <String>
  -CustomerPaymentJournalId <String> [-AdditionalProperties <Hashtable>] [-Amount <Decimal>]
  [-AppliesToInvoiceId <String>] [-AppliesToInvoiceNumber <String>] [-Comment <String>] [-ContactId <String>]
  [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>] [-CustomerNumber <String>]
@@ -25,20 +25,20 @@ New-MgFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <String>
 
 ### Create
 ```
-New-MgFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <String>
+New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <String>
  -CustomerPaymentJournalId <String> -BodyParameter <IMicrosoftGraphCustomerPayment> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyCustomerPaymentJournalCustomerPayment -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphCustomerPayment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyCustomerPaymentJournalCustomerPayment -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-AppliesToInvoiceId <String>]
  [-AppliesToInvoiceNumber <String>] [-Comment <String>] [-ContactId <String>]
  [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>] [-CustomerNumber <String>]
@@ -119,7 +119,7 @@ customerPayment
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPayment
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPayment
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -180,7 +180,7 @@ customer
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -302,7 +302,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -409,13 +409,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPayment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPayment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPayment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPayment
 
 ## NOTES
 

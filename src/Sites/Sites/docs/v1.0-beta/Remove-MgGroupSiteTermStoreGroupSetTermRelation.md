@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mggroupsitetermstoregroupsettermrelation
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/remove-mggroupsitetermstoregroupsettermrelation
 schema: 2.0.0
 ---
 
-# Remove-MgGroupSiteTermStoreGroupSetTermRelation
+# Remove-MgBetaGroupSiteTermStoreGroupSetTermRelation
 
 ## SYNOPSIS
 Delete navigation property relations for groups
@@ -14,14 +14,14 @@ Delete navigation property relations for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupSiteTermStoreGroupSetTermRelation -GroupId <String> -GroupId1 <String> -RelationId <String>
+Remove-MgBetaGroupSiteTermStoreGroupSetTermRelation -GroupId <String> -GroupId1 <String> -RelationId <String>
  -SetId <String> -SiteId <String> -TermId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupSiteTermStoreGroupSetTermRelation -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaGroupSiteTermStoreGroupSetTermRelation -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -204,7 +204,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 

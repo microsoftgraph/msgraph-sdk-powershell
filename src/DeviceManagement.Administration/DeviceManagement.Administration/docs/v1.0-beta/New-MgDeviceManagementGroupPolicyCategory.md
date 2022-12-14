@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicycategory
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicycategory
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementGroupPolicyCategory
+# New-MgBetaDeviceManagementGroupPolicyCategory
 
 ## SYNOPSIS
 Create new navigation property to groupPolicyCategories for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to groupPolicyCategories for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementGroupPolicyCategory [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementGroupPolicyCategory [-AdditionalProperties <Hashtable>]
  [-Children <IMicrosoftGraphGroupPolicyCategory[]>]
  [-DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-DisplayName <String>] [-Id <String>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementGroupPolicyCategory [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementGroupPolicyCategory -BodyParameter <IMicrosoftGraphGroupPolicyCategory> [-Confirm]
+New-MgBetaDeviceManagementGroupPolicyCategory -BodyParameter <IMicrosoftGraphGroupPolicyCategory> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ The category entity stores the category of a group policy definition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 Parameter Sets: Create
 Aliases:
 
@@ -71,7 +71,7 @@ The children categories
 To construct, please use Get-Help -Online and see NOTES section for CHILDREN properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -89,7 +89,7 @@ The group policy definition file also contains the languages supported as determ
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -105,7 +105,7 @@ The immediate GroupPolicyDefinition children of the category
 To construct, please use Get-Help -Online and see NOTES section for DEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 Category Ingestion source
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.IngestionSource
+Type: Microsoft.Graph.Beta.PowerShell.Support.IngestionSource
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ The category entity stores the category of a group policy definition
 To construct, please use Get-Help -Online and see NOTES section for PARENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -244,11 +244,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyCategory
 
 ## NOTES
 

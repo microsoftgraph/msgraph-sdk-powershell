@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/complete-mgteamworkdeletedteamchannelmigration
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/complete-mgteamworkdeletedteamchannelmigration
 schema: 2.0.0
 ---
 
-# Complete-MgTeamworkDeletedTeamChannelMigration
+# Complete-MgBetaTeamworkDeletedTeamChannelMigration
 
 ## SYNOPSIS
 Complete the message migration process by removing `migration mode` from a channel in a team.
@@ -17,13 +17,13 @@ You can add members to the team after the request returns a successful response.
 
 ### Complete (Default)
 ```
-Complete-MgTeamworkDeletedTeamChannelMigration -ChannelId <String> -DeletedTeamId <String> [-PassThru]
+Complete-MgBetaTeamworkDeletedTeamChannelMigration -ChannelId <String> -DeletedTeamId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CompleteViaIdentity
 ```
-Complete-MgTeamworkDeletedTeamChannelMigration -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Complete-MgBetaTeamworkDeletedTeamChannelMigration -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -72,7 +72,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CompleteViaIdentity
 Aliases:
 
@@ -134,7 +134,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

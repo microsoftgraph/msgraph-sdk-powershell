@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgsharelistcontenttypecolumnsourcecolumn
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgsharelistcontenttypecolumnsourcecolumn
 schema: 2.0.0
 ---
 
-# Get-MgShareListContentTypeColumnSourceColumn
+# Get-MgBetaShareListContentTypeColumnSourceColumn
 
 ## SYNOPSIS
 The source column for content type column.
@@ -14,13 +14,13 @@ The source column for content type column.
 
 ### Get1 (Default)
 ```
-Get-MgShareListContentTypeColumnSourceColumn -ColumnDefinitionId <String> -ContentTypeId <String>
+Get-MgBetaShareListContentTypeColumnSourceColumn -ColumnDefinitionId <String> -ContentTypeId <String>
  -SharedDriveItemId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgShareListContentTypeColumnSourceColumn -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaShareListContentTypeColumnSourceColumn -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -127,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 
 ## NOTES
 

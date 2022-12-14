@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementcomanageddeviceremotehelpsession
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementcomanageddeviceremotehelpsession
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementComanagedDeviceRemoteHelpSession
+# Get-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession
 
 ## SYNOPSIS
 Invoke function retrieveRemoteHelpSession
@@ -14,13 +14,13 @@ Invoke function retrieveRemoteHelpSession
 
 ### Retrieve (Default)
 ```
-Get-MgDeviceManagementComanagedDeviceRemoteHelpSession -ManagedDeviceId <String> -SessionKey <String>
+Get-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession -ManagedDeviceId <String> -SessionKey <String>
  [<CommonParameters>]
 ```
 
 ### RetrieveViaIdentity
 ```
-Get-MgDeviceManagementComanagedDeviceRemoteHelpSession -InputObject <IDeviceManagementFunctionsIdentity>
+Get-MgBetaDeviceManagementComanagedDeviceRemoteHelpSession -InputObject <IDeviceManagementFunctionsIdentity>
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: RetrieveViaIdentity
 Aliases:
 
@@ -82,11 +82,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRetrieveRemoteHelpSessionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRetrieveRemoteHelpSessionResponse
 
 ## NOTES
 

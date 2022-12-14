@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebookuserstatesummary
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebookuserstatesummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtManagedEBookUserStateSummary
+# Update-MgBetaDeviceAppMgtManagedEBookUserStateSummary
 
 ## SYNOPSIS
 Update the navigation property userStateSummary in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property userStateSummary in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtManagedEBookUserStateSummary -ManagedEBookId <String> -UserInstallStateSummaryId <String>
+Update-MgBetaDeviceAppMgtManagedEBookUserStateSummary -ManagedEBookId <String> -UserInstallStateSummaryId <String>
  [-AdditionalProperties <Hashtable>] [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>]
  [-FailedDeviceCount <Int32>] [-Id <String>] [-InstalledDeviceCount <Int32>]
  [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgDeviceAppMgtManagedEBookUserStateSummary -ManagedEBookId <String> -User
 
 ### Update
 ```
-Update-MgDeviceAppMgtManagedEBookUserStateSummary -ManagedEBookId <String> -UserInstallStateSummaryId <String>
+Update-MgBetaDeviceAppMgtManagedEBookUserStateSummary -ManagedEBookId <String> -UserInstallStateSummaryId <String>
  -BodyParameter <IMicrosoftGraphUserInstallStateSummary> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtManagedEBookUserStateSummary -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedEBookUserStateSummary -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserInstallStateSummary> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtManagedEBookUserStateSummary -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtManagedEBookUserStateSummary -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>]
  [-FailedDeviceCount <Int32>] [-Id <String>] [-InstalledDeviceCount <Int32>]
  [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ Contains properties for the installation state summary for a user.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ The install state of the eBook.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -267,9 +267,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary
 
 ## OUTPUTS
 
@@ -279,7 +279,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementManagedEBookUserStateSummary
+### Update-MgBetaDeviceAppManagementManagedEBookUserStateSummary
 
 COMPLEX PARAMETER PROPERTIES
 

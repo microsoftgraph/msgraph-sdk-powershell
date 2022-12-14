@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/test-mguserdrivelistcontenttypepublished
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/test-mguserdrivelistcontenttypepublished
 schema: 2.0.0
 ---
 
-# Test-MgUserDriveListContentTypePublished
+# Test-MgBetaUserDriveListContentTypePublished
 
 ## SYNOPSIS
 Invoke function isPublished
@@ -14,13 +14,13 @@ Invoke function isPublished
 
 ### Is1 (Default)
 ```
-Test-MgUserDriveListContentTypePublished -ContentTypeId <String> -DriveId <String> -UserId <String>
+Test-MgBetaUserDriveListContentTypePublished -ContentTypeId <String> -DriveId <String> -UserId <String>
  [<CommonParameters>]
 ```
 
 ### IsViaIdentity1
 ```
-Test-MgUserDriveListContentTypePublished -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Test-MgBetaUserDriveListContentTypePublished -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +65,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: IsViaIdentity1
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusersettingregionalandlanguagesetting
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mgusersettingregionalandlanguagesetting
 schema: 2.0.0
 ---
 
-# Get-MgUserSettingRegionalAndLanguageSetting
+# Get-MgBetaUserSettingRegionalAndLanguageSetting
 
 ## SYNOPSIS
 Get the properties of a regionalAndLanguageSettings object.
@@ -14,13 +14,13 @@ Get the properties of a regionalAndLanguageSettings object.
 
 ### Get (Default)
 ```
-Get-MgUserSettingRegionalAndLanguageSetting -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserSettingRegionalAndLanguageSetting -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Get the properties of a regionalAndLanguageSettings object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserSettingRegionalAndLanguageSetting Cmdlet
+### Example 1: Using the Get-MgBetaUserSettingRegionalAndLanguageSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserSettingRegionalAndLanguageSetting -UserId $userId
+Get-MgBetaUserSettingRegionalAndLanguageSetting -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserSettingRegionalAndLanguageSetting Cmdlet.
+This example shows how to use the Get-MgBetaUserSettingRegionalAndLanguageSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -107,11 +107,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
 
 ## NOTES
 

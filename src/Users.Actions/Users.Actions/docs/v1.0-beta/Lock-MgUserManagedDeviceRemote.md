@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/lock-mgusermanageddeviceremote
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/lock-mgusermanageddeviceremote
 schema: 2.0.0
 ---
 
-# Lock-MgUserManagedDeviceRemote
+# Lock-MgBetaUserManagedDeviceRemote
 
 ## SYNOPSIS
 Remote lock
@@ -14,13 +14,13 @@ Remote lock
 
 ### Lock (Default)
 ```
-Lock-MgUserManagedDeviceRemote -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
+Lock-MgBetaUserManagedDeviceRemote -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### LockViaIdentity
 ```
-Lock-MgUserManagedDeviceRemote -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Lock-MgBetaUserManagedDeviceRemote -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: LockViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

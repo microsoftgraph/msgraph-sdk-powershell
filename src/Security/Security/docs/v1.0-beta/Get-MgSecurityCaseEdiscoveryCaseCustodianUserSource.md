@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasecustodianusersource
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasecustodianusersource
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource
+# Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource
 
 ## SYNOPSIS
 Data source entity for a custodian.
@@ -15,20 +15,20 @@ This is the container for a custodian's mailbox and OneDrive for Business site.
 
 ### List1 (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  -UserSourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,22 +38,22 @@ This is the container for a custodian's mailbox and OneDrive for Business site.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource Cmdlet
+### Example 1: Using the Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
 ```
 
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource Cmdlet
+### Example 2: Using the Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -154,7 +154,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -275,11 +275,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUserSource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUserSource
 
 ## NOTES
 

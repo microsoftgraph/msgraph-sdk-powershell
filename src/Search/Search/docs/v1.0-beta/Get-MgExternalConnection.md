@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternalconnection
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/get-mgexternalconnection
 schema: 2.0.0
 ---
 
-# Get-MgExternalConnection
+# Get-MgBetaExternalConnection
 
 ## SYNOPSIS
 Get connections from external
@@ -14,20 +14,20 @@ Get connections from external
 
 ### List (Default)
 ```
-Get-MgExternalConnection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaExternalConnection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgExternalConnection -ExternalConnectionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaExternalConnection -ExternalConnectionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgExternalConnection -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaExternalConnection -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get connections from external
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgExternalConnection Cmdlet
+### Example 1: Using the Get-MgBetaExternalConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgExternalConnection -ExternalConnectionId $externalConnectionId
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId
 ```
 
-This example shows how to use the Get-MgExternalConnection Cmdlet.
+This example shows how to use the Get-MgBetaExternalConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgExternalConnection Cmdlet
+### Example 2: Using the Get-MgBetaExternalConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgExternalConnection
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaExternalConnection
 ```
 
-This example shows how to use the Get-MgExternalConnection Cmdlet.
+This example shows how to use the Get-MgBetaExternalConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection
 
 ## NOTES
 

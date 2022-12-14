@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationsoftwareoathmethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationsoftwareoathmethod
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationSoftwareOathMethod
+# Get-MgBetaUserAuthenticationSoftwareOathMethod
 
 ## SYNOPSIS
 Get softwareOathMethods from users
@@ -14,20 +14,20 @@ Get softwareOathMethods from users
 
 ### List (Default)
 ```
-Get-MgUserAuthenticationSoftwareOathMethod -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserAuthenticationSoftwareOathMethod -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserAuthenticationSoftwareOathMethod -SoftwareOathAuthenticationMethodId <String> -UserId <String>
+Get-MgBetaUserAuthenticationSoftwareOathMethod -SoftwareOathAuthenticationMethodId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationSoftwareOathMethod -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserAuthenticationSoftwareOathMethod -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Get softwareOathMethods from users
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserAuthenticationSoftwareOathMethod Cmdlet
+### Example 1: Using the Get-MgBetaUserAuthenticationSoftwareOathMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
+Get-MgBetaUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationSoftwareOathMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationSoftwareOathMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserAuthenticationSoftwareOathMethod Cmdlet
+### Example 2: Using the Get-MgBetaUserAuthenticationSoftwareOathMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationSoftwareOathMethod -UserId $userId
+Get-MgBetaUserAuthenticationSoftwareOathMethod -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserAuthenticationSoftwareOathMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationSoftwareOathMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSoftwareOathAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSoftwareOathAuthenticationMethod
 
 ## NOTES
 

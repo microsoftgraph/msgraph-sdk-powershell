@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgrenewgrouplifecyclepolicy
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgrenewgrouplifecyclepolicy
 schema: 2.0.0
 ---
 
-# Invoke-MgRenewGroupLifecyclePolicy
+# Invoke-MgBetaRenewGroupLifecyclePolicy
 
 ## SYNOPSIS
 Renew a group's expiration.
@@ -15,13 +15,13 @@ When a group is renewed, the group expiration is extended by the number of days 
 
 ### RenewExpanded (Default)
 ```
-Invoke-MgRenewGroupLifecyclePolicy [-AdditionalProperties <Hashtable>] [-GroupId <String>] [-Confirm]
+Invoke-MgBetaRenewGroupLifecyclePolicy [-AdditionalProperties <Hashtable>] [-GroupId <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Renew
 ```
-Invoke-MgRenewGroupLifecyclePolicy
+Invoke-MgBetaRenewGroupLifecyclePolicy
  -BodyParameter <IPaths8F8L4QGrouplifecyclepoliciesMicrosoftGraphRenewgroupPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -32,16 +32,16 @@ When a group is renewed, the group expiration is extended by the number of days 
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgRenewGroupLifecyclePolicy Cmdlet
+### Example 1: Using the Invoke-MgBetaRenewGroupLifecyclePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	GroupId = "ffffffff-ffff-ffff-ffff-ffffffffffff"
 }
-Invoke-MgRenewGroupLifecyclePolicy -BodyParameter $params
+Invoke-MgBetaRenewGroupLifecyclePolicy -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgRenewGroupLifecyclePolicy Cmdlet.
+This example shows how to use the Invoke-MgBetaRenewGroupLifecyclePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths8F8L4QGrouplifecyclepoliciesMicrosoftGraphRenewgroupPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths8F8L4QGrouplifecyclepoliciesMicrosoftGraphRenewgroupPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Renew
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths8F8L4QGrouplifecyclepoliciesMicrosoftGraphRenewgroupPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths8F8L4QGrouplifecyclepoliciesMicrosoftGraphRenewgroupPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

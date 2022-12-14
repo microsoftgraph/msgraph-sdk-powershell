@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecuritycaseediscoverycasesearchaddtoreviewsetoperation
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecuritycaseediscoverycasesearchaddtoreviewsetoperation
 schema: 2.0.0
 ---
 
-# Get-MgSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation
+# Get-MgBetaSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation
 
 ## SYNOPSIS
 Adds the results of the eDiscovery search to the specified reviewSet.
@@ -14,13 +14,13 @@ Adds the results of the eDiscovery search to the specified reviewSet.
 
 ### Get (Default)
 ```
-Get-MgSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation -EdiscoveryCaseId <String>
+Get-MgBetaSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation -EdiscoveryCaseId <String>
  -EdiscoverySearchId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation -InputObject <ISecurityIdentity>
+Get-MgBetaSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation -InputObject <ISecurityIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,11 +112,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation
 
 ## NOTES
 

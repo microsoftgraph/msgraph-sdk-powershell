@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mgplannerbucket
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/update-mgplannerbucket
 schema: 2.0.0
 ---
 
-# Update-MgPlannerBucket
+# Update-MgBetaPlannerBucket
 
 ## SYNOPSIS
 Update the navigation property buckets in planner
@@ -14,7 +14,7 @@ Update the navigation property buckets in planner
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPlannerBucket -PlannerBucketId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlannerBucket -PlannerBucketId <String> [-AdditionalProperties <Hashtable>]
  [-CreationSource <IMicrosoftGraphPlannerBucketCreation>] [-Id <String>] [-Name <String>]
  [-OrderHint <String>] [-PlanId <String>] [-Tasks <IMicrosoftGraphPlannerTask1[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgPlannerBucket -PlannerBucketId <String> [-AdditionalProperties <Hashtab
 
 ### Update1
 ```
-Update-MgPlannerBucket -PlannerBucketId <String> -BodyParameter <IMicrosoftGraphPlannerBucket1> [-PassThru]
+Update-MgBetaPlannerBucket -PlannerBucketId <String> -BodyParameter <IMicrosoftGraphPlannerBucket1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgPlannerBucket -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerBucket1>
+Update-MgBetaPlannerBucket -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerBucket1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgPlannerBucket -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlannerBucket -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
  [-CreationSource <IMicrosoftGraphPlannerBucketCreation>] [-Id <String>] [-Name <String>]
  [-OrderHint <String>] [-PlanId <String>] [-Tasks <IMicrosoftGraphPlannerTask1[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -45,16 +45,16 @@ Update the navigation property buckets in planner
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPlannerBucket Cmdlet
+### Example 1: Using the Update-MgBetaPlannerBucket Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	Name = "Development"
 }
-Update-MgPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params
+Update-MgBetaPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPlannerBucket Cmdlet.
+This example shows how to use the Update-MgBetaPlannerBucket Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ plannerBucket
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -95,7 +95,7 @@ plannerBucketCreation
 To construct, please use Get-Help -Online and see NOTES section for CREATIONSOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucketCreation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucketCreation
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -127,7 +127,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -221,7 +221,7 @@ The collection of tasks in the bucket.
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -268,9 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBucket1
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mguseronenotenotebooksectiongroup
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mguseronenotenotebooksectiongroup
 schema: 2.0.0
 ---
 
-# Get-MgUserOnenoteNotebookSectionGroup
+# Get-MgBetaUserOnenoteNotebookSectionGroup
 
 ## SYNOPSIS
 Retrieve a list of section groups from the specified notebook.
@@ -13,7 +13,7 @@ Retrieve a list of section groups from the specified notebook.
 ## SYNTAX
 
 ```
-Get-MgUserOnenoteNotebookSectionGroup -NotebookId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserOnenoteNotebookSectionGroup -NotebookId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -23,14 +23,14 @@ Retrieve a list of section groups from the specified notebook.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserOnenoteNotebookSectionGroup Cmdlet
+### Example 1: Using the Get-MgBetaUserOnenoteNotebookSectionGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Notes
+Import-Module Microsoft.Graph.Beta.Notes
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebookSectionGroup -UserId $userId -NotebookId $notebookId
+Get-MgBetaUserOnenoteNotebookSectionGroup -UserId $userId -NotebookId $notebookId
 ```
 
-This example shows how to use the Get-MgUserOnenoteNotebookSectionGroup Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteNotebookSectionGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -223,7 +223,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSectionGroup1
 
 ## NOTES
 

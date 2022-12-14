@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementmanageddeviceencryptionstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementmanageddeviceencryptionstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementManagedDeviceEncryptionState
+# Update-MgBetaDeviceManagementManagedDeviceEncryptionState
 
 ## SYNOPSIS
 Update the navigation property managedDeviceEncryptionStates in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property managedDeviceEncryptionStates in deviceManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementManagedDeviceEncryptionState -ManagedDeviceEncryptionStateId <String>
+Update-MgBetaDeviceManagementManagedDeviceEncryptionState -ManagedDeviceEncryptionStateId <String>
  [-AdditionalProperties <Hashtable>] [-AdvancedBitLockerStates <AdvancedBitLockerState>]
  [-DeviceName <String>] [-DeviceType <DeviceTypes>] [-EncryptionPolicySettingState <String>]
  [-EncryptionReadinessState <EncryptionReadinessState>] [-EncryptionState <EncryptionState>]
@@ -25,21 +25,21 @@ Update-MgDeviceManagementManagedDeviceEncryptionState -ManagedDeviceEncryptionSt
 
 ### Update
 ```
-Update-MgDeviceManagementManagedDeviceEncryptionState -ManagedDeviceEncryptionStateId <String>
+Update-MgBetaDeviceManagementManagedDeviceEncryptionState -ManagedDeviceEncryptionStateId <String>
  -BodyParameter <IMicrosoftGraphManagedDeviceEncryptionState> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementManagedDeviceEncryptionState -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementManagedDeviceEncryptionState -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphManagedDeviceEncryptionState> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementManagedDeviceEncryptionState -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementManagedDeviceEncryptionState -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AdvancedBitLockerStates <AdvancedBitLockerState>]
  [-DeviceName <String>] [-DeviceType <DeviceTypes>] [-EncryptionPolicySettingState <String>]
  [-EncryptionReadinessState <EncryptionReadinessState>] [-EncryptionState <EncryptionState>]
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 Advanced BitLocker State
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.AdvancedBitLockerState
+Type: Microsoft.Graph.Beta.PowerShell.Support.AdvancedBitLockerState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -90,7 +90,7 @@ Encryption report per device
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 Device type.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceTypes
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceTypes
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 Encryption readiness state
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.EncryptionReadinessState
+Type: Microsoft.Graph.Beta.PowerShell.Support.EncryptionReadinessState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 Encryption state
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.EncryptionState
+Type: Microsoft.Graph.Beta.PowerShell.Support.EncryptionState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 FileVault State
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.FileVaultState
+Type: Microsoft.Graph.Beta.PowerShell.Support.FileVaultState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -273,7 +273,7 @@ Policy Details
 To construct, please use Get-Help -Online and see NOTES section for POLICYDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEncryptionReportPolicyDetails[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEncryptionReportPolicyDetails[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -350,9 +350,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
 
 ## OUTPUTS
 

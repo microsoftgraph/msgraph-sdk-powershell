@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritycaseediscoverycasecustodianusersource
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritycaseediscoverycasecustodianusersource
 schema: 2.0.0
 ---
 
-# New-MgSecurityCaseEdiscoveryCaseCustodianUserSource
+# New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource
 
 ## SYNOPSIS
 Create a new userSource object associated with an eDiscovery custodian.
@@ -14,7 +14,7 @@ Create a new userSource object associated with an eDiscovery custodian.
 
 ### CreateExpanded1 (Default)
 ```
-New-MgSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
+New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Email <String>] [-HoldStatus <String>] [-Id <String>] [-IncludedSources <String>]
  [-SiteWebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -
 
 ### Create1
 ```
-New-MgSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
+New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  -BodyParameter <IMicrosoftGraphSecurityUserSource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgSecurityCaseEdiscoveryCaseCustodianUserSource -InputObject <ISecurityIdentity>
+New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityUserSource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgSecurityCaseEdiscoveryCaseCustodianUserSource -InputObject <ISecurityIdentity>
+New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Email <String>] [-HoldStatus <String>] [-Id <String>] [-IncludedSources <String>]
  [-SiteWebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ userSource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUserSource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUserSource
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -83,7 +83,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -221,7 +221,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -284,13 +284,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUserSource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUserSource
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUserSource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUserSource
 
 ## NOTES
 

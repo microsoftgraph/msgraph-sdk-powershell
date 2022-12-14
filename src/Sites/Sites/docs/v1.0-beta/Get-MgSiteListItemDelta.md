@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemdelta
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelistitemdelta
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemDelta
+# Get-MgBetaSiteListItemDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -14,26 +14,26 @@ Invoke function delta
 
 ### Delta (Default)
 ```
-Get-MgSiteListItemDelta -ListId <String> -SiteId <String> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSiteListItemDelta -ListId <String> -SiteId <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Delta1
 ```
-Get-MgSiteListItemDelta -ListId <String> -SiteId <String> -Token <String> [-Count] [-Filter <String>]
+Get-MgBetaSiteListItemDelta -ListId <String> -SiteId <String> -Token <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgSiteListItemDelta -InputObject <ISitesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSiteListItemDelta -InputObject <ISitesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity1
 ```
-Get-MgSiteListItemDelta -InputObject <ISitesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSiteListItemDelta -InputObject <ISitesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -42,40 +42,40 @@ Invoke function delta
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteListItemDelta Cmdlet
+### Example 1: Using the Get-MgBetaSiteListItemDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListItemDelta -SiteId $siteId -ListId $listId -Token "latest" 
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListItemDelta -SiteId $siteId -ListId $listId -Token "latest" 
 ```
 
-This example shows how to use the Get-MgSiteListItemDelta Cmdlet.
+This example shows how to use the Get-MgBetaSiteListItemDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSiteListItemDelta Cmdlet
+### Example 2: Using the Get-MgBetaSiteListItemDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListItemDelta -SiteId $siteId -ListId $listId -Token "latest"  -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListItemDelta -SiteId $siteId -ListId $listId -Token "latest"  -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgSiteListItemDelta Cmdlet.
+This example shows how to use the Get-MgBetaSiteListItemDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgSiteListItemDelta Cmdlet
+### Example 3: Using the Get-MgBetaSiteListItemDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListItemDelta -SiteId $siteId -ListId $listId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListItemDelta -SiteId $siteId -ListId $listId
 ```
 
-This example shows how to use the Get-MgSiteListItemDelta Cmdlet.
+This example shows how to use the Get-MgBetaSiteListItemDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgSiteListItemDelta Cmdlet
+### Example 4: Using the Get-MgBetaSiteListItemDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListItemDelta -SiteId $siteId -ListId $listId -Token "1230919asd190410jlka" 
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListItemDelta -SiteId $siteId -ListId $listId -Token "1230919asd190410jlka" 
 ```
 
-This example shows how to use the Get-MgSiteListItemDelta Cmdlet.
+This example shows how to use the Get-MgBetaSiteListItemDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -115,7 +115,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: DeltaViaIdentity, DeltaViaIdentity1
 Aliases:
 
@@ -251,11 +251,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItem
 
 ## NOTES
 

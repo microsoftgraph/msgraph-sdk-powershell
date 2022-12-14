@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgauditlogprovisioning
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgauditlogprovisioning
 schema: 2.0.0
 ---
 
-# Get-MgAuditLogProvisioning
+# Get-MgBetaAuditLogProvisioning
 
 ## SYNOPSIS
 Get provisioning from auditLogs
@@ -14,20 +14,20 @@ Get provisioning from auditLogs
 
 ### List1 (Default)
 ```
-Get-MgAuditLogProvisioning [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaAuditLogProvisioning [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgAuditLogProvisioning -ProvisioningObjectSummaryId <String> [-ExpandProperty <String[]>]
+Get-MgBetaAuditLogProvisioning -ProvisioningObjectSummaryId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgAuditLogProvisioning -InputObject <IReportsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaAuditLogProvisioning -InputObject <IReportsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get provisioning from auditLogs
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAuditLogProvisioning Cmdlet
+### Example 1: Using the Get-MgBetaAuditLogProvisioning Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogProvisioning
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogProvisioning
 ```
 
-This example shows how to use the Get-MgAuditLogProvisioning Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogProvisioning Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgAuditLogProvisioning Cmdlet
+### Example 2: Using the Get-MgBetaAuditLogProvisioning Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogProvisioning
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogProvisioning
 ```
 
-This example shows how to use the Get-MgAuditLogProvisioning Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogProvisioning Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProvisioningObjectSummary1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProvisioningObjectSummary1
 
 ## NOTES
 

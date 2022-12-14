@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitecontenttype
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitecontenttype
 schema: 2.0.0
 ---
 
-# Get-MgSiteContentType
+# Get-MgBetaSiteContentType
 
 ## SYNOPSIS
 The collection of content types defined for this site.
@@ -14,20 +14,20 @@ The collection of content types defined for this site.
 
 ### List (Default)
 ```
-Get-MgSiteContentType [-SiteId <String>] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaSiteContentType [-SiteId <String>] [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSiteContentType -ContentTypeId <String> [-SiteId <String>] [-ExpandProperty <String[]>]
+Get-MgBetaSiteContentType -ContentTypeId <String> [-SiteId <String>] [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteContentType -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteContentType -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,31 +36,31 @@ The collection of content types defined for this site.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteContentType Cmdlet
+### Example 1: Using the Get-MgBetaSiteContentType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteContentType -SiteId $siteId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteContentType -SiteId $siteId -OutFile $outFileId
 ```
 
-This example shows how to use the Get-MgSiteContentType Cmdlet.
+This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSiteContentType Cmdlet
+### Example 2: Using the Get-MgBetaSiteContentType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
 ```
 
-This example shows how to use the Get-MgSiteContentType Cmdlet.
+This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgSiteContentType Cmdlet
+### Example 3: Using the Get-MgBetaSiteContentType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteContentType -SiteId $siteId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteContentType -SiteId $siteId
 ```
 
-This example shows how to use the Get-MgSiteContentType Cmdlet.
+This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -267,11 +267,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType1
 
 ## NOTES
 

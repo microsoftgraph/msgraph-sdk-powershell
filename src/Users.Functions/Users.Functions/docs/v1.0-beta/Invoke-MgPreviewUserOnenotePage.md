@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgpreviewuseronenotepage
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/invoke-mgpreviewuseronenotepage
 schema: 2.0.0
 ---
 
-# Invoke-MgPreviewUserOnenotePage
+# Invoke-MgBetaPreviewUserOnenotePage
 
 ## SYNOPSIS
 Invoke function preview
@@ -14,12 +14,12 @@ Invoke function preview
 
 ### Preview1 (Default)
 ```
-Invoke-MgPreviewUserOnenotePage -OnenotePageId <String> -UserId <String> [<CommonParameters>]
+Invoke-MgBetaPreviewUserOnenotePage -OnenotePageId <String> -UserId <String> [<CommonParameters>]
 ```
 
 ### PreviewViaIdentity1
 ```
-Invoke-MgPreviewUserOnenotePage -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Invoke-MgBetaPreviewUserOnenotePage -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: PreviewViaIdentity1
 Aliases:
 
@@ -80,11 +80,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePagePreview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnenotePagePreview
 
 ## NOTES
 

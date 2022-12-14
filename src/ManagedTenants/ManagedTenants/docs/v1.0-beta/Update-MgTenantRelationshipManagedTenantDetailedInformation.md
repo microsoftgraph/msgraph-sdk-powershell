@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantdetailedinformation
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantdetailedinformation
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantDetailedInformation
+# Update-MgBetaTenantRelationshipManagedTenantDetailedInformation
 
 ## SYNOPSIS
 Update the navigation property tenantsDetailedInformation in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property tenantsDetailedInformation in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantDetailedInformation -TenantDetailedInformationId <String>
+Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -TenantDetailedInformationId <String>
  [-AdditionalProperties <Hashtable>] [-City <String>] [-CountryCode <String>] [-CountryName <String>]
  [-DefaultDomainName <String>] [-DisplayName <String>] [-Id <String>] [-IndustryName <String>]
  [-Region <String>] [-SegmentName <String>] [-TenantId <String>] [-VerticalName <String>] [-PassThru]
@@ -23,21 +23,21 @@ Update-MgTenantRelationshipManagedTenantDetailedInformation -TenantDetailedInfor
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantDetailedInformation -TenantDetailedInformationId <String>
+Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -TenantDetailedInformationId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantDetailedInformation -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantDetailedInformation -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-City <String>] [-CountryCode <String>] [-CountryName <String>]
  [-DefaultDomainName <String>] [-DisplayName <String>] [-Id <String>] [-IndustryName <String>]
  [-Region <String>] [-SegmentName <String>] [-TenantId <String>] [-VerticalName <String>] [-PassThru]
@@ -71,7 +71,7 @@ tenantDetailedInformation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -203,7 +203,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -346,9 +346,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
 
 ## OUTPUTS
 

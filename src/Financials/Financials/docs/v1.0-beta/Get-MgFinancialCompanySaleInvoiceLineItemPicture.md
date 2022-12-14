@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysaleinvoicelineitempicture
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/get-mgfinancialcompanysaleinvoicelineitempicture
 schema: 2.0.0
 ---
 
-# Get-MgFinancialCompanySaleInvoiceLineItemPicture
+# Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture
 
 ## SYNOPSIS
 Get picture from financials
@@ -14,39 +14,39 @@ Get picture from financials
 
 ### List (Default)
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -SalesInvoiceLineId <String>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -SalesInvoiceLineId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
  -SalesInvoiceLineId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -PictureId <String>
  -SalesInvoiceId <String> -SalesInvoiceLineId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture -InputObject <IFinancialsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -SalesInvoiceId <String>
+Get-MgBetaFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -SalesInvoiceId <String>
  -SalesInvoiceLineId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -291,11 +291,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 
 ## NOTES
 

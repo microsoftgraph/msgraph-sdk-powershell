@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryfeaturerolloutpolicy
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/remove-mgdirectoryfeaturerolloutpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgDirectoryFeatureRolloutPolicy
+# Remove-MgBetaDirectoryFeatureRolloutPolicy
 
 ## SYNOPSIS
 Delete navigation property featureRolloutPolicies for directory
@@ -14,13 +14,13 @@ Delete navigation property featureRolloutPolicies for directory
 
 ### Delete (Default)
 ```
-Remove-MgDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaDirectoryFeatureRolloutPolicy -FeatureRolloutPolicyId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>]
+Remove-MgBetaDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

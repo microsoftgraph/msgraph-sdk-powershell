@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/confirm-mgdevicemanagementwindowenrollmentautodiscovery
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/confirm-mgdevicemanagementwindowenrollmentautodiscovery
 schema: 2.0.0
 ---
 
-# Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery
+# Confirm-MgBetaDeviceManagementWindowEnrollmentAutoDiscovery
 
 ## SYNOPSIS
 Invoke function verifyWindowsEnrollmentAutoDiscovery
@@ -14,12 +14,12 @@ Invoke function verifyWindowsEnrollmentAutoDiscovery
 
 ### Verify (Default)
 ```
-Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery -DomainName <String> [<CommonParameters>]
+Confirm-MgBetaDeviceManagementWindowEnrollmentAutoDiscovery -DomainName <String> [<CommonParameters>]
 ```
 
 ### VerifyViaIdentity
 ```
-Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery -InputObject <IDeviceManagementFunctionsIdentity>
+Confirm-MgBetaDeviceManagementWindowEnrollmentAutoDiscovery -InputObject <IDeviceManagementFunctionsIdentity>
  [<CommonParameters>]
 ```
 
@@ -50,7 +50,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: VerifyViaIdentity
 Aliases:
 
@@ -66,7 +66,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 

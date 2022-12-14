@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/remove-mgbookingbusinessservice
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/remove-mgbookingbusinessservice
 schema: 2.0.0
 ---
 
-# Remove-MgBookingBusinessService
+# Remove-MgBetaBookingBusinessService
 
 ## SYNOPSIS
 Delete navigation property services for bookingBusinesses
@@ -14,13 +14,13 @@ Delete navigation property services for bookingBusinesses
 
 ### Delete1 (Default)
 ```
-Remove-MgBookingBusinessService -BookingBusinessId <String> -BookingServiceId <String> [-IfMatch <String>]
+Remove-MgBetaBookingBusinessService -BookingBusinessId <String> -BookingServiceId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgBookingBusinessService -InputObject <IBookingsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaBookingBusinessService -InputObject <IBookingsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property services for bookingBusinesses
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgBookingBusinessService Cmdlet
+### Example 1: Using the Remove-MgBetaBookingBusinessService Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Remove-MgBookingBusinessService -BookingBusinessId $bookingBusinessId -BookingServiceId $bookingServiceId
+Import-Module Microsoft.Graph.Beta.Bookings
+Remove-MgBetaBookingBusinessService -BookingBusinessId $bookingBusinessId -BookingServiceId $bookingServiceId
 ```
 
-This example shows how to use the Remove-MgBookingBusinessService Cmdlet.
+This example shows how to use the Remove-MgBetaBookingBusinessService Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 

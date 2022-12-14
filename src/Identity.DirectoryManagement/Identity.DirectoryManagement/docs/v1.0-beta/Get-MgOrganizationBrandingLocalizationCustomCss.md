@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganizationbrandinglocalizationcustomcss
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgorganizationbrandinglocalizationcustomcss
 schema: 2.0.0
 ---
 
-# Get-MgOrganizationBrandingLocalizationCustomCss
+# Get-MgBetaOrganizationBrandingLocalizationCustomCss
 
 ## SYNOPSIS
 Get customCSS for the navigation property localizations from organization
@@ -14,13 +14,13 @@ Get customCSS for the navigation property localizations from organization
 
 ### Get (Default)
 ```
-Get-MgOrganizationBrandingLocalizationCustomCss -OrganizationalBrandingLocalizationId <String>
+Get-MgBetaOrganizationBrandingLocalizationCustomCss -OrganizationalBrandingLocalizationId <String>
  -OrganizationId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOrganizationBrandingLocalizationCustomCss -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaOrganizationBrandingLocalizationCustomCss -InputObject <IIdentityDirectoryManagementIdentity>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -112,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

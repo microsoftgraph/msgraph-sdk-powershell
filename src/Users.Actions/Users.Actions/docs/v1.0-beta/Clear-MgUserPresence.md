@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/clear-mguserpresence
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/clear-mguserpresence
 schema: 2.0.0
 ---
 
-# Clear-MgUserPresence
+# Clear-MgBetaUserPresence
 
 ## SYNOPSIS
 Clear a presence session of an application for a user.
@@ -16,27 +16,27 @@ Read more about presence sessions and their time-out and expiration.
 
 ### ClearExpanded (Default)
 ```
-Clear-MgUserPresence -UserId <String> [-AdditionalProperties <Hashtable>] [-SessionId <String>] [-PassThru]
+Clear-MgBetaUserPresence -UserId <String> [-AdditionalProperties <Hashtable>] [-SessionId <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Clear
 ```
-Clear-MgUserPresence -UserId <String>
+Clear-MgBetaUserPresence -UserId <String>
  -BodyParameter <IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ClearViaIdentity
 ```
-Clear-MgUserPresence -InputObject <IUsersActionsIdentity>
+Clear-MgBetaUserPresence -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ClearViaIdentityExpanded
 ```
-Clear-MgUserPresence -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Clear-MgBetaUserPresence -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-SessionId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,16 +47,16 @@ Read more about presence sessions and their time-out and expiration.
 
 ## EXAMPLES
 
-### Example 1: Using the Clear-MgUserPresence Cmdlet
+### Example 1: Using the Clear-MgBetaUserPresence Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	SessionId = "22553876-f5ab-4529-bffb-cfe50aa89f87"
 }
-Clear-MgUserPresence -UserId $userId -BodyParameter $params
+Clear-MgBetaUserPresence -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Clear-MgUserPresence Cmdlet.
+This example shows how to use the Clear-MgBetaUserPresence Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Clear, ClearViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ClearViaIdentity, ClearViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

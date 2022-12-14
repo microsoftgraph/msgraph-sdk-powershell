@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementwindowinformationprotectionapplearningsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementwindowinformationprotectionapplearningsummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary
+# Update-MgBetaDeviceManagementWindowInformationProtectionAppLearningSummary
 
 ## SYNOPSIS
 Update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property windowsInformationProtectionAppLearningSummaries 
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary
+Update-MgBetaDeviceManagementWindowInformationProtectionAppLearningSummary
  -WindowsInformationProtectionAppLearningSummaryId <String> [-AdditionalProperties <Hashtable>]
  [-ApplicationName <String>] [-ApplicationType <ApplicationType>] [-DeviceCount <Int32>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary
 
 ### Update1
 ```
-Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary
+Update-MgBetaDeviceManagementWindowInformationProtectionAppLearningSummary
  -WindowsInformationProtectionAppLearningSummaryId <String>
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionAppLearningSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary
 
 ### UpdateViaIdentity1
 ```
-Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary
+Update-MgBetaDeviceManagementWindowInformationProtectionAppLearningSummary
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionAppLearningSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -38,7 +38,7 @@ Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary
+Update-MgBetaDeviceManagementWindowInformationProtectionAppLearningSummary
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-ApplicationName <String>]
  [-ApplicationType <ApplicationType>] [-DeviceCount <Int32>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 Possible types of Application
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ApplicationType
+Type: Microsoft.Graph.Beta.PowerShell.Support.ApplicationType
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -101,7 +101,7 @@ Windows Information Protection AppLearning Summary entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -148,7 +148,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -225,9 +225,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLearningSummary
 
 ## OUTPUTS
 

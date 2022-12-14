@@ -1,420 +1,420 @@
 ---
-Module Name: Microsoft.Graph.Reports
+Module Name: Microsoft.Graph.Beta.Reports
 Module Guid: 2057764a-cc69-4320-b165-bb8e79614fb8
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.reports
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Reports Module
+# Microsoft.Graph.Beta.Reports Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Reports Cmdlets
-### [Confirm-MgAuditLogSignInCompromised](Confirm-MgAuditLogSignInCompromised.md)
+## Microsoft.Graph.Beta.Reports Cmdlets
+### [Confirm-MgBetaAuditLogSignInCompromised](Confirm-MgBetaAuditLogSignInCompromised.md)
 Allow admins to mark an event in the Azure AD sign in logs as risky.
 Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states.
 Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky.
 For details about investigating Identity Protection risks, see How to investigate risk.
 
-### [Confirm-MgAuditLogSignInSafe](Confirm-MgAuditLogSignInSafe.md)
+### [Confirm-MgBetaAuditLogSignInSafe](Confirm-MgBetaAuditLogSignInSafe.md)
 Allow admins to mark an event in Azure AD sign in logs as safe.
 Admins can either mark the events flagged as risky by Azure AD Identity Protection as safe, or they can mark unflagged events as safe.
 For details about investigating Identity Protection risks, see How to investigate risk.
 
-### [Get-MgAuditLogDirectoryAudit](Get-MgAuditLogDirectoryAudit.md)
+### [Get-MgBetaAuditLogDirectoryAudit](Get-MgBetaAuditLogDirectoryAudit.md)
 Get directoryAudits from auditLogs
 
-### [Get-MgAuditLogDirectoryProvisioning](Get-MgAuditLogDirectoryProvisioning.md)
+### [Get-MgBetaAuditLogDirectoryProvisioning](Get-MgBetaAuditLogDirectoryProvisioning.md)
 Get directoryProvisioning from auditLogs
 
-### [Get-MgAuditLogProvisioning](Get-MgAuditLogProvisioning.md)
+### [Get-MgBetaAuditLogProvisioning](Get-MgBetaAuditLogProvisioning.md)
 Get provisioning from auditLogs
 
-### [Get-MgAuditLogSignIn](Get-MgAuditLogSignIn.md)
+### [Get-MgBetaAuditLogSignIn](Get-MgBetaAuditLogSignIn.md)
 Get signIns from auditLogs
 
-### [Get-MgDeviceManagementReport](Get-MgDeviceManagementReport.md)
+### [Get-MgBetaDeviceManagementReport](Get-MgBetaDeviceManagementReport.md)
 Reports singleton
 
-### [Get-MgDeviceManagementReportCachedReportConfiguration](Get-MgDeviceManagementReportCachedReportConfiguration.md)
+### [Get-MgBetaDeviceManagementReportCachedReportConfiguration](Get-MgBetaDeviceManagementReportCachedReportConfiguration.md)
 Entity representing the configuration of a cached report
 
-### [Get-MgDeviceManagementReportExportJob](Get-MgDeviceManagementReportExportJob.md)
+### [Get-MgBetaDeviceManagementReportExportJob](Get-MgBetaDeviceManagementReportExportJob.md)
 Entity representing a job to export a report
 
-### [Get-MgReportApplicationSignInDetailedSummary](Get-MgReportApplicationSignInDetailedSummary.md)
+### [Get-MgBetaReportApplicationSignInDetailedSummary](Get-MgBetaReportApplicationSignInDetailedSummary.md)
 Represents a detailed summary of an application sign-in.
 
-### [Get-MgReportAttackSimulationRepeatOffender](Get-MgReportAttackSimulationRepeatOffender.md)
+### [Get-MgBetaReportAttackSimulationRepeatOffender](Get-MgBetaReportAttackSimulationRepeatOffender.md)
 Invoke function getAttackSimulationRepeatOffenders
 
-### [Get-MgReportAttackSimulationTrainingUserCoverage](Get-MgReportAttackSimulationTrainingUserCoverage.md)
+### [Get-MgBetaReportAttackSimulationTrainingUserCoverage](Get-MgBetaReportAttackSimulationTrainingUserCoverage.md)
 Invoke function getAttackSimulationTrainingUserCoverage
 
-### [Get-MgReportAttackSimulationUserCoverage](Get-MgReportAttackSimulationUserCoverage.md)
+### [Get-MgBetaReportAttackSimulationUserCoverage](Get-MgBetaReportAttackSimulationUserCoverage.md)
 Invoke function getAttackSimulationSimulationUserCoverage
 
-### [Get-MgReportAuthenticationMethod](Get-MgReportAuthenticationMethod.md)
+### [Get-MgBetaReportAuthenticationMethod](Get-MgBetaReportAuthenticationMethod.md)
 Container for navigation properties for Azure AD authentication methods resources.
 
-### [Get-MgReportAuthenticationMethodUserRegistrationDetail](Get-MgReportAuthenticationMethodUserRegistrationDetail.md)
+### [Get-MgBetaReportAuthenticationMethodUserRegistrationDetail](Get-MgBetaReportAuthenticationMethodUserRegistrationDetail.md)
 Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 
-### [Get-MgReportAzureAdApplicationSignInSummary](Get-MgReportAzureAdApplicationSignInSummary.md)
+### [Get-MgBetaReportAzureAdApplicationSignInSummary](Get-MgBetaReportAzureAdApplicationSignInSummary.md)
 Invoke function getAzureADApplicationSignInSummary
 
-### [Get-MgReportBrowserDistributionUserCount](Get-MgReportBrowserDistributionUserCount.md)
+### [Get-MgBetaReportBrowserDistributionUserCount](Get-MgBetaReportBrowserDistributionUserCount.md)
 Invoke function getBrowserDistributionUserCounts
 
-### [Get-MgReportBrowserUserCount](Get-MgReportBrowserUserCount.md)
+### [Get-MgBetaReportBrowserUserCount](Get-MgBetaReportBrowserUserCount.md)
 Invoke function getBrowserUserCounts
 
-### [Get-MgReportBrowserUserDetail](Get-MgReportBrowserUserDetail.md)
+### [Get-MgBetaReportBrowserUserDetail](Get-MgBetaReportBrowserUserDetail.md)
 Invoke function getBrowserUserDetail
 
-### [Get-MgReportCredentialUsageSummary](Get-MgReportCredentialUsageSummary.md)
+### [Get-MgBetaReportCredentialUsageSummary](Get-MgBetaReportCredentialUsageSummary.md)
 Invoke function getCredentialUsageSummary
 
-### [Get-MgReportCredentialUserRegistrationCount](Get-MgReportCredentialUserRegistrationCount.md)
+### [Get-MgBetaReportCredentialUserRegistrationCount](Get-MgBetaReportCredentialUserRegistrationCount.md)
 Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
 
-### [Get-MgReportCredentialUserRegistrationDetail](Get-MgReportCredentialUserRegistrationDetail.md)
+### [Get-MgBetaReportCredentialUserRegistrationDetail](Get-MgBetaReportCredentialUserRegistrationDetail.md)
 Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 
-### [Get-MgReportDailyPrintUsage](Get-MgReportDailyPrintUsage.md)
+### [Get-MgBetaReportDailyPrintUsage](Get-MgBetaReportDailyPrintUsage.md)
 Get dailyPrintUsage from reports
 
-### [Get-MgReportDailyPrintUsageByPrinter](Get-MgReportDailyPrintUsageByPrinter.md)
+### [Get-MgBetaReportDailyPrintUsageByPrinter](Get-MgBetaReportDailyPrintUsageByPrinter.md)
 Get dailyPrintUsageByPrinter from reports
 
-### [Get-MgReportDailyPrintUsageByUser](Get-MgReportDailyPrintUsageByUser.md)
+### [Get-MgBetaReportDailyPrintUsageByUser](Get-MgBetaReportDailyPrintUsageByUser.md)
 Get dailyPrintUsageByUser from reports
 
-### [Get-MgReportDailyPrintUsageSummaryByPrinter](Get-MgReportDailyPrintUsageSummaryByPrinter.md)
+### [Get-MgBetaReportDailyPrintUsageSummaryByPrinter](Get-MgBetaReportDailyPrintUsageSummaryByPrinter.md)
 Get dailyPrintUsageSummariesByPrinter from reports
 
-### [Get-MgReportDailyPrintUsageSummaryByUser](Get-MgReportDailyPrintUsageSummaryByUser.md)
+### [Get-MgBetaReportDailyPrintUsageSummaryByUser](Get-MgBetaReportDailyPrintUsageSummaryByUser.md)
 Get dailyPrintUsageSummariesByUser from reports
 
-### [Get-MgReportDeviceConfigurationDeviceActivity](Get-MgReportDeviceConfigurationDeviceActivity.md)
+### [Get-MgBetaReportDeviceConfigurationDeviceActivity](Get-MgBetaReportDeviceConfigurationDeviceActivity.md)
 Metadata for the device configuration device activity report
 
-### [Get-MgReportDeviceConfigurationUserActivity](Get-MgReportDeviceConfigurationUserActivity.md)
+### [Get-MgBetaReportDeviceConfigurationUserActivity](Get-MgBetaReportDeviceConfigurationUserActivity.md)
 Metadata for the device configuration user activity report
 
-### [Get-MgReportEmailActivityCount](Get-MgReportEmailActivityCount.md)
+### [Get-MgBetaReportEmailActivityCount](Get-MgBetaReportEmailActivityCount.md)
 Invoke function getEmailActivityCounts
 
-### [Get-MgReportEmailActivityUserCount](Get-MgReportEmailActivityUserCount.md)
+### [Get-MgBetaReportEmailActivityUserCount](Get-MgBetaReportEmailActivityUserCount.md)
 Invoke function getEmailActivityUserCounts
 
-### [Get-MgReportEmailActivityUserDetail](Get-MgReportEmailActivityUserDetail.md)
+### [Get-MgBetaReportEmailActivityUserDetail](Get-MgBetaReportEmailActivityUserDetail.md)
 Invoke function getEmailActivityUserDetail
 
-### [Get-MgReportEmailAppUsageAppUserCount](Get-MgReportEmailAppUsageAppUserCount.md)
+### [Get-MgBetaReportEmailAppUsageAppUserCount](Get-MgBetaReportEmailAppUsageAppUserCount.md)
 Invoke function getEmailAppUsageAppsUserCounts
 
-### [Get-MgReportEmailAppUsageUserCount](Get-MgReportEmailAppUsageUserCount.md)
+### [Get-MgBetaReportEmailAppUsageUserCount](Get-MgBetaReportEmailAppUsageUserCount.md)
 Invoke function getEmailAppUsageUserCounts
 
-### [Get-MgReportEmailAppUsageUserDetail](Get-MgReportEmailAppUsageUserDetail.md)
+### [Get-MgBetaReportEmailAppUsageUserDetail](Get-MgBetaReportEmailAppUsageUserDetail.md)
 Invoke function getEmailAppUsageUserDetail
 
-### [Get-MgReportEmailAppUsageVersionUserCount](Get-MgReportEmailAppUsageVersionUserCount.md)
+### [Get-MgBetaReportEmailAppUsageVersionUserCount](Get-MgBetaReportEmailAppUsageVersionUserCount.md)
 Invoke function getEmailAppUsageVersionsUserCounts
 
-### [Get-MgReportGroupArchivedPrintJob](Get-MgReportGroupArchivedPrintJob.md)
+### [Get-MgBetaReportGroupArchivedPrintJob](Get-MgBetaReportGroupArchivedPrintJob.md)
 Invoke function getGroupArchivedPrintJobs
 
-### [Get-MgReportM365AppPlatformUserCount](Get-MgReportM365AppPlatformUserCount.md)
+### [Get-MgBetaReportM365AppPlatformUserCount](Get-MgBetaReportM365AppPlatformUserCount.md)
 Invoke function getM365AppPlatformUserCounts
 
-### [Get-MgReportM365AppUserCount](Get-MgReportM365AppUserCount.md)
+### [Get-MgBetaReportM365AppUserCount](Get-MgBetaReportM365AppUserCount.md)
 Invoke function getM365AppUserCounts
 
-### [Get-MgReportM365AppUserDetail](Get-MgReportM365AppUserDetail.md)
+### [Get-MgBetaReportM365AppUserDetail](Get-MgBetaReportM365AppUserDetail.md)
 Invoke function getM365AppUserDetail
 
-### [Get-MgReportMailboxUsageDetail](Get-MgReportMailboxUsageDetail.md)
+### [Get-MgBetaReportMailboxUsageDetail](Get-MgBetaReportMailboxUsageDetail.md)
 Invoke function getMailboxUsageDetail
 
-### [Get-MgReportMailboxUsageMailboxCount](Get-MgReportMailboxUsageMailboxCount.md)
+### [Get-MgBetaReportMailboxUsageMailboxCount](Get-MgBetaReportMailboxUsageMailboxCount.md)
 Invoke function getMailboxUsageMailboxCounts
 
-### [Get-MgReportMailboxUsageQuotaStatusMailboxCount](Get-MgReportMailboxUsageQuotaStatusMailboxCount.md)
+### [Get-MgBetaReportMailboxUsageQuotaStatusMailboxCount](Get-MgBetaReportMailboxUsageQuotaStatusMailboxCount.md)
 Invoke function getMailboxUsageQuotaStatusMailboxCounts
 
-### [Get-MgReportMailboxUsageStorage](Get-MgReportMailboxUsageStorage.md)
+### [Get-MgBetaReportMailboxUsageStorage](Get-MgBetaReportMailboxUsageStorage.md)
 Invoke function getMailboxUsageStorage
 
-### [Get-MgReportManagedDeviceEnrollmentAbandonmentDetail](Get-MgReportManagedDeviceEnrollmentAbandonmentDetail.md)
+### [Get-MgBetaReportManagedDeviceEnrollmentAbandonmentDetail](Get-MgBetaReportManagedDeviceEnrollmentAbandonmentDetail.md)
 Metadata for Enrollment abandonment details report
 
-### [Get-MgReportManagedDeviceEnrollmentAbandonmentSummary](Get-MgReportManagedDeviceEnrollmentAbandonmentSummary.md)
+### [Get-MgBetaReportManagedDeviceEnrollmentAbandonmentSummary](Get-MgBetaReportManagedDeviceEnrollmentAbandonmentSummary.md)
 Metadata for Enrollment abandonment summary report
 
-### [Get-MgReportManagedDeviceEnrollmentFailureDetail](Get-MgReportManagedDeviceEnrollmentFailureDetail.md)
+### [Get-MgBetaReportManagedDeviceEnrollmentFailureDetail](Get-MgBetaReportManagedDeviceEnrollmentFailureDetail.md)
 Invoke function managedDeviceEnrollmentFailureDetails
 
-### [Get-MgReportManagedDeviceEnrollmentFailureTrend](Get-MgReportManagedDeviceEnrollmentFailureTrend.md)
+### [Get-MgBetaReportManagedDeviceEnrollmentFailureTrend](Get-MgBetaReportManagedDeviceEnrollmentFailureTrend.md)
 Metadata for the enrollment failure trends report
 
-### [Get-MgReportManagedDeviceEnrollmentTopFailures](Get-MgReportManagedDeviceEnrollmentTopFailures.md)
+### [Get-MgBetaReportManagedDeviceEnrollmentTopFailures](Get-MgBetaReportManagedDeviceEnrollmentTopFailures.md)
 Invoke function managedDeviceEnrollmentTopFailures
 
-### [Get-MgReportMonthlyPrintUsageByPrinter](Get-MgReportMonthlyPrintUsageByPrinter.md)
+### [Get-MgBetaReportMonthlyPrintUsageByPrinter](Get-MgBetaReportMonthlyPrintUsageByPrinter.md)
 Get monthlyPrintUsageByPrinter from reports
 
-### [Get-MgReportMonthlyPrintUsageByUser](Get-MgReportMonthlyPrintUsageByUser.md)
+### [Get-MgBetaReportMonthlyPrintUsageByUser](Get-MgBetaReportMonthlyPrintUsageByUser.md)
 Get monthlyPrintUsageByUser from reports
 
-### [Get-MgReportMonthlyPrintUsageSummaryByPrinter](Get-MgReportMonthlyPrintUsageSummaryByPrinter.md)
+### [Get-MgBetaReportMonthlyPrintUsageSummaryByPrinter](Get-MgBetaReportMonthlyPrintUsageSummaryByPrinter.md)
 Get monthlyPrintUsageSummariesByPrinter from reports
 
-### [Get-MgReportMonthlyPrintUsageSummaryByUser](Get-MgReportMonthlyPrintUsageSummaryByUser.md)
+### [Get-MgBetaReportMonthlyPrintUsageSummaryByUser](Get-MgBetaReportMonthlyPrintUsageSummaryByUser.md)
 Get monthlyPrintUsageSummariesByUser from reports
 
-### [Get-MgReportOffice365ActivationCount](Get-MgReportOffice365ActivationCount.md)
+### [Get-MgBetaReportOffice365ActivationCount](Get-MgBetaReportOffice365ActivationCount.md)
 Invoke function getOffice365ActivationCounts
 
-### [Get-MgReportOffice365ActivationUserCount](Get-MgReportOffice365ActivationUserCount.md)
+### [Get-MgBetaReportOffice365ActivationUserCount](Get-MgBetaReportOffice365ActivationUserCount.md)
 Invoke function getOffice365ActivationsUserCounts
 
-### [Get-MgReportOffice365ActivationUserDetail](Get-MgReportOffice365ActivationUserDetail.md)
+### [Get-MgBetaReportOffice365ActivationUserDetail](Get-MgBetaReportOffice365ActivationUserDetail.md)
 Invoke function getOffice365ActivationsUserDetail
 
-### [Get-MgReportOffice365ActiveUserCount](Get-MgReportOffice365ActiveUserCount.md)
+### [Get-MgBetaReportOffice365ActiveUserCount](Get-MgBetaReportOffice365ActiveUserCount.md)
 Invoke function getOffice365ActiveUserCounts
 
-### [Get-MgReportOffice365ActiveUserDetail](Get-MgReportOffice365ActiveUserDetail.md)
+### [Get-MgBetaReportOffice365ActiveUserDetail](Get-MgBetaReportOffice365ActiveUserDetail.md)
 Invoke function getOffice365ActiveUserDetail
 
-### [Get-MgReportOffice365GroupActivityCount](Get-MgReportOffice365GroupActivityCount.md)
+### [Get-MgBetaReportOffice365GroupActivityCount](Get-MgBetaReportOffice365GroupActivityCount.md)
 Invoke function getOffice365GroupsActivityCounts
 
-### [Get-MgReportOffice365GroupActivityDetail](Get-MgReportOffice365GroupActivityDetail.md)
+### [Get-MgBetaReportOffice365GroupActivityDetail](Get-MgBetaReportOffice365GroupActivityDetail.md)
 Invoke function getOffice365GroupsActivityDetail
 
-### [Get-MgReportOffice365GroupActivityFileCount](Get-MgReportOffice365GroupActivityFileCount.md)
+### [Get-MgBetaReportOffice365GroupActivityFileCount](Get-MgBetaReportOffice365GroupActivityFileCount.md)
 Invoke function getOffice365GroupsActivityFileCounts
 
-### [Get-MgReportOffice365GroupActivityGroupCount](Get-MgReportOffice365GroupActivityGroupCount.md)
+### [Get-MgBetaReportOffice365GroupActivityGroupCount](Get-MgBetaReportOffice365GroupActivityGroupCount.md)
 Invoke function getOffice365GroupsActivityGroupCounts
 
-### [Get-MgReportOffice365GroupActivityStorage](Get-MgReportOffice365GroupActivityStorage.md)
+### [Get-MgBetaReportOffice365GroupActivityStorage](Get-MgBetaReportOffice365GroupActivityStorage.md)
 Invoke function getOffice365GroupsActivityStorage
 
-### [Get-MgReportOffice365ServiceUserCount](Get-MgReportOffice365ServiceUserCount.md)
+### [Get-MgBetaReportOffice365ServiceUserCount](Get-MgBetaReportOffice365ServiceUserCount.md)
 Invoke function getOffice365ServicesUserCounts
 
-### [Get-MgReportOneDriveActivityFileCount](Get-MgReportOneDriveActivityFileCount.md)
+### [Get-MgBetaReportOneDriveActivityFileCount](Get-MgBetaReportOneDriveActivityFileCount.md)
 Invoke function getOneDriveActivityFileCounts
 
-### [Get-MgReportOneDriveActivityUserCount](Get-MgReportOneDriveActivityUserCount.md)
+### [Get-MgBetaReportOneDriveActivityUserCount](Get-MgBetaReportOneDriveActivityUserCount.md)
 Invoke function getOneDriveActivityUserCounts
 
-### [Get-MgReportOneDriveActivityUserDetail](Get-MgReportOneDriveActivityUserDetail.md)
+### [Get-MgBetaReportOneDriveActivityUserDetail](Get-MgBetaReportOneDriveActivityUserDetail.md)
 Invoke function getOneDriveActivityUserDetail
 
-### [Get-MgReportOneDriveUsageAccountCount](Get-MgReportOneDriveUsageAccountCount.md)
+### [Get-MgBetaReportOneDriveUsageAccountCount](Get-MgBetaReportOneDriveUsageAccountCount.md)
 Invoke function getOneDriveUsageAccountCounts
 
-### [Get-MgReportOneDriveUsageAccountDetail](Get-MgReportOneDriveUsageAccountDetail.md)
+### [Get-MgBetaReportOneDriveUsageAccountDetail](Get-MgBetaReportOneDriveUsageAccountDetail.md)
 Invoke function getOneDriveUsageAccountDetail
 
-### [Get-MgReportOneDriveUsageFileCount](Get-MgReportOneDriveUsageFileCount.md)
+### [Get-MgBetaReportOneDriveUsageFileCount](Get-MgBetaReportOneDriveUsageFileCount.md)
 Invoke function getOneDriveUsageFileCounts
 
-### [Get-MgReportOneDriveUsageStorage](Get-MgReportOneDriveUsageStorage.md)
+### [Get-MgBetaReportOneDriveUsageStorage](Get-MgBetaReportOneDriveUsageStorage.md)
 Invoke function getOneDriveUsageStorage
 
-### [Get-MgReportPrinterArchivedPrintJob](Get-MgReportPrinterArchivedPrintJob.md)
+### [Get-MgBetaReportPrinterArchivedPrintJob](Get-MgBetaReportPrinterArchivedPrintJob.md)
 Invoke function getPrinterArchivedPrintJobs
 
-### [Get-MgReportRelyingPartyDetailedSummary](Get-MgReportRelyingPartyDetailedSummary.md)
+### [Get-MgBetaReportRelyingPartyDetailedSummary](Get-MgBetaReportRelyingPartyDetailedSummary.md)
 Invoke function getRelyingPartyDetailedSummary
 
-### [Get-MgReportSecurity](Get-MgReportSecurity.md)
+### [Get-MgBetaReportSecurity](Get-MgBetaReportSecurity.md)
 Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 
-### [Get-MgReportSecurityAttackSimulationRepeatOffender](Get-MgReportSecurityAttackSimulationRepeatOffender.md)
+### [Get-MgBetaReportSecurityAttackSimulationRepeatOffender](Get-MgBetaReportSecurityAttackSimulationRepeatOffender.md)
 Invoke function getAttackSimulationRepeatOffenders
 
-### [Get-MgReportSecurityAttackSimulationTrainingUserCoverage](Get-MgReportSecurityAttackSimulationTrainingUserCoverage.md)
+### [Get-MgBetaReportSecurityAttackSimulationTrainingUserCoverage](Get-MgBetaReportSecurityAttackSimulationTrainingUserCoverage.md)
 Invoke function getAttackSimulationTrainingUserCoverage
 
-### [Get-MgReportSecurityAttackSimulationUserCoverage](Get-MgReportSecurityAttackSimulationUserCoverage.md)
+### [Get-MgBetaReportSecurityAttackSimulationUserCoverage](Get-MgBetaReportSecurityAttackSimulationUserCoverage.md)
 Invoke function getAttackSimulationSimulationUserCoverage
 
-### [Get-MgReportSharePointActivityFileCount](Get-MgReportSharePointActivityFileCount.md)
+### [Get-MgBetaReportSharePointActivityFileCount](Get-MgBetaReportSharePointActivityFileCount.md)
 Invoke function getSharePointActivityFileCounts
 
-### [Get-MgReportSharePointActivityPage](Get-MgReportSharePointActivityPage.md)
+### [Get-MgBetaReportSharePointActivityPage](Get-MgBetaReportSharePointActivityPage.md)
 Invoke function getSharePointActivityPages
 
-### [Get-MgReportSharePointActivityUserCount](Get-MgReportSharePointActivityUserCount.md)
+### [Get-MgBetaReportSharePointActivityUserCount](Get-MgBetaReportSharePointActivityUserCount.md)
 Invoke function getSharePointActivityUserCounts
 
-### [Get-MgReportSharePointActivityUserDetail](Get-MgReportSharePointActivityUserDetail.md)
+### [Get-MgBetaReportSharePointActivityUserDetail](Get-MgBetaReportSharePointActivityUserDetail.md)
 Invoke function getSharePointActivityUserDetail
 
-### [Get-MgReportSharePointSiteUsageDetail](Get-MgReportSharePointSiteUsageDetail.md)
+### [Get-MgBetaReportSharePointSiteUsageDetail](Get-MgBetaReportSharePointSiteUsageDetail.md)
 Invoke function getSharePointSiteUsageDetail
 
-### [Get-MgReportSharePointSiteUsageFileCount](Get-MgReportSharePointSiteUsageFileCount.md)
+### [Get-MgBetaReportSharePointSiteUsageFileCount](Get-MgBetaReportSharePointSiteUsageFileCount.md)
 Invoke function getSharePointSiteUsageFileCounts
 
-### [Get-MgReportSharePointSiteUsagePage](Get-MgReportSharePointSiteUsagePage.md)
+### [Get-MgBetaReportSharePointSiteUsagePage](Get-MgBetaReportSharePointSiteUsagePage.md)
 Invoke function getSharePointSiteUsagePages
 
-### [Get-MgReportSharePointSiteUsageSiteCount](Get-MgReportSharePointSiteUsageSiteCount.md)
+### [Get-MgBetaReportSharePointSiteUsageSiteCount](Get-MgBetaReportSharePointSiteUsageSiteCount.md)
 Invoke function getSharePointSiteUsageSiteCounts
 
-### [Get-MgReportSharePointSiteUsageStorage](Get-MgReportSharePointSiteUsageStorage.md)
+### [Get-MgBetaReportSharePointSiteUsageStorage](Get-MgBetaReportSharePointSiteUsageStorage.md)
 Invoke function getSharePointSiteUsageStorage
 
-### [Get-MgReportSkypeForBusinessActivityCount](Get-MgReportSkypeForBusinessActivityCount.md)
+### [Get-MgBetaReportSkypeForBusinessActivityCount](Get-MgBetaReportSkypeForBusinessActivityCount.md)
 Invoke function getSkypeForBusinessActivityCounts
 
-### [Get-MgReportSkypeForBusinessActivityUserCount](Get-MgReportSkypeForBusinessActivityUserCount.md)
+### [Get-MgBetaReportSkypeForBusinessActivityUserCount](Get-MgBetaReportSkypeForBusinessActivityUserCount.md)
 Invoke function getSkypeForBusinessActivityUserCounts
 
-### [Get-MgReportSkypeForBusinessActivityUserDetail](Get-MgReportSkypeForBusinessActivityUserDetail.md)
+### [Get-MgBetaReportSkypeForBusinessActivityUserDetail](Get-MgBetaReportSkypeForBusinessActivityUserDetail.md)
 Invoke function getSkypeForBusinessActivityUserDetail
 
-### [Get-MgReportSkypeForBusinessDeviceUsageDistributionUserCount](Get-MgReportSkypeForBusinessDeviceUsageDistributionUserCount.md)
+### [Get-MgBetaReportSkypeForBusinessDeviceUsageDistributionUserCount](Get-MgBetaReportSkypeForBusinessDeviceUsageDistributionUserCount.md)
 Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
 
-### [Get-MgReportSkypeForBusinessDeviceUsageUserCount](Get-MgReportSkypeForBusinessDeviceUsageUserCount.md)
+### [Get-MgBetaReportSkypeForBusinessDeviceUsageUserCount](Get-MgBetaReportSkypeForBusinessDeviceUsageUserCount.md)
 Invoke function getSkypeForBusinessDeviceUsageUserCounts
 
-### [Get-MgReportSkypeForBusinessDeviceUsageUserDetail](Get-MgReportSkypeForBusinessDeviceUsageUserDetail.md)
+### [Get-MgBetaReportSkypeForBusinessDeviceUsageUserDetail](Get-MgBetaReportSkypeForBusinessDeviceUsageUserDetail.md)
 Invoke function getSkypeForBusinessDeviceUsageUserDetail
 
-### [Get-MgReportSkypeForBusinessOrganizerActivityCount](Get-MgReportSkypeForBusinessOrganizerActivityCount.md)
+### [Get-MgBetaReportSkypeForBusinessOrganizerActivityCount](Get-MgBetaReportSkypeForBusinessOrganizerActivityCount.md)
 Invoke function getSkypeForBusinessOrganizerActivityCounts
 
-### [Get-MgReportSkypeForBusinessOrganizerActivityMinuteCount](Get-MgReportSkypeForBusinessOrganizerActivityMinuteCount.md)
+### [Get-MgBetaReportSkypeForBusinessOrganizerActivityMinuteCount](Get-MgBetaReportSkypeForBusinessOrganizerActivityMinuteCount.md)
 Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
 
-### [Get-MgReportSkypeForBusinessOrganizerActivityUserCount](Get-MgReportSkypeForBusinessOrganizerActivityUserCount.md)
+### [Get-MgBetaReportSkypeForBusinessOrganizerActivityUserCount](Get-MgBetaReportSkypeForBusinessOrganizerActivityUserCount.md)
 Invoke function getSkypeForBusinessOrganizerActivityUserCounts
 
-### [Get-MgReportSkypeForBusinessParticipantActivityCount](Get-MgReportSkypeForBusinessParticipantActivityCount.md)
+### [Get-MgBetaReportSkypeForBusinessParticipantActivityCount](Get-MgBetaReportSkypeForBusinessParticipantActivityCount.md)
 Invoke function getSkypeForBusinessParticipantActivityCounts
 
-### [Get-MgReportSkypeForBusinessParticipantActivityMinuteCount](Get-MgReportSkypeForBusinessParticipantActivityMinuteCount.md)
+### [Get-MgBetaReportSkypeForBusinessParticipantActivityMinuteCount](Get-MgBetaReportSkypeForBusinessParticipantActivityMinuteCount.md)
 Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
 
-### [Get-MgReportSkypeForBusinessParticipantActivityUserCount](Get-MgReportSkypeForBusinessParticipantActivityUserCount.md)
+### [Get-MgBetaReportSkypeForBusinessParticipantActivityUserCount](Get-MgBetaReportSkypeForBusinessParticipantActivityUserCount.md)
 Invoke function getSkypeForBusinessParticipantActivityUserCounts
 
-### [Get-MgReportSkypeForBusinessPeerToPeerActivityCount](Get-MgReportSkypeForBusinessPeerToPeerActivityCount.md)
+### [Get-MgBetaReportSkypeForBusinessPeerToPeerActivityCount](Get-MgBetaReportSkypeForBusinessPeerToPeerActivityCount.md)
 Invoke function getSkypeForBusinessPeerToPeerActivityCounts
 
-### [Get-MgReportSkypeForBusinessPeerToPeerActivityMinuteCount](Get-MgReportSkypeForBusinessPeerToPeerActivityMinuteCount.md)
+### [Get-MgBetaReportSkypeForBusinessPeerToPeerActivityMinuteCount](Get-MgBetaReportSkypeForBusinessPeerToPeerActivityMinuteCount.md)
 Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
 
-### [Get-MgReportSkypeForBusinessPeerToPeerActivityUserCount](Get-MgReportSkypeForBusinessPeerToPeerActivityUserCount.md)
+### [Get-MgBetaReportSkypeForBusinessPeerToPeerActivityUserCount](Get-MgBetaReportSkypeForBusinessPeerToPeerActivityUserCount.md)
 Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
 
-### [Get-MgReportTeamActivityCount](Get-MgReportTeamActivityCount.md)
+### [Get-MgBetaReportTeamActivityCount](Get-MgBetaReportTeamActivityCount.md)
 Invoke function getTeamsTeamActivityCounts
 
-### [Get-MgReportTeamActivityDetail](Get-MgReportTeamActivityDetail.md)
+### [Get-MgBetaReportTeamActivityDetail](Get-MgBetaReportTeamActivityDetail.md)
 Invoke function getTeamsTeamActivityDetail
 
-### [Get-MgReportTeamActivityDistributionCount](Get-MgReportTeamActivityDistributionCount.md)
+### [Get-MgBetaReportTeamActivityDistributionCount](Get-MgBetaReportTeamActivityDistributionCount.md)
 Invoke function getTeamsTeamActivityDistributionCounts
 
-### [Get-MgReportTeamDeviceUsageDistributionTotalUserCount](Get-MgReportTeamDeviceUsageDistributionTotalUserCount.md)
+### [Get-MgBetaReportTeamDeviceUsageDistributionTotalUserCount](Get-MgBetaReportTeamDeviceUsageDistributionTotalUserCount.md)
 Invoke function getTeamsDeviceUsageDistributionTotalUserCounts
 
-### [Get-MgReportTeamDeviceUsageDistributionUserCount](Get-MgReportTeamDeviceUsageDistributionUserCount.md)
+### [Get-MgBetaReportTeamDeviceUsageDistributionUserCount](Get-MgBetaReportTeamDeviceUsageDistributionUserCount.md)
 Invoke function getTeamsDeviceUsageDistributionUserCounts
 
-### [Get-MgReportTeamDeviceUsageTotalUserCount](Get-MgReportTeamDeviceUsageTotalUserCount.md)
+### [Get-MgBetaReportTeamDeviceUsageTotalUserCount](Get-MgBetaReportTeamDeviceUsageTotalUserCount.md)
 Invoke function getTeamsDeviceUsageTotalUserCounts
 
-### [Get-MgReportTeamDeviceUsageUserCount](Get-MgReportTeamDeviceUsageUserCount.md)
+### [Get-MgBetaReportTeamDeviceUsageUserCount](Get-MgBetaReportTeamDeviceUsageUserCount.md)
 Invoke function getTeamsDeviceUsageUserCounts
 
-### [Get-MgReportTeamDeviceUsageUserDetail](Get-MgReportTeamDeviceUsageUserDetail.md)
+### [Get-MgBetaReportTeamDeviceUsageUserDetail](Get-MgBetaReportTeamDeviceUsageUserDetail.md)
 Invoke function getTeamsDeviceUsageUserDetail
 
-### [Get-MgReportTeamUserActivityCount](Get-MgReportTeamUserActivityCount.md)
+### [Get-MgBetaReportTeamUserActivityCount](Get-MgBetaReportTeamUserActivityCount.md)
 Invoke function getTeamsUserActivityCounts
 
-### [Get-MgReportTeamUserActivityDistributionTotalUserCount](Get-MgReportTeamUserActivityDistributionTotalUserCount.md)
+### [Get-MgBetaReportTeamUserActivityDistributionTotalUserCount](Get-MgBetaReportTeamUserActivityDistributionTotalUserCount.md)
 Invoke function getTeamsUserActivityDistributionTotalUserCounts
 
-### [Get-MgReportTeamUserActivityDistributionUserCount](Get-MgReportTeamUserActivityDistributionUserCount.md)
+### [Get-MgBetaReportTeamUserActivityDistributionUserCount](Get-MgBetaReportTeamUserActivityDistributionUserCount.md)
 Invoke function getTeamsUserActivityDistributionUserCounts
 
-### [Get-MgReportTeamUserActivityTotalCount](Get-MgReportTeamUserActivityTotalCount.md)
+### [Get-MgBetaReportTeamUserActivityTotalCount](Get-MgBetaReportTeamUserActivityTotalCount.md)
 Invoke function getTeamsUserActivityTotalCounts
 
-### [Get-MgReportTeamUserActivityTotalDistributionCount](Get-MgReportTeamUserActivityTotalDistributionCount.md)
+### [Get-MgBetaReportTeamUserActivityTotalDistributionCount](Get-MgBetaReportTeamUserActivityTotalDistributionCount.md)
 Invoke function getTeamsUserActivityTotalDistributionCounts
 
-### [Get-MgReportTeamUserActivityTotalUserCount](Get-MgReportTeamUserActivityTotalUserCount.md)
+### [Get-MgBetaReportTeamUserActivityTotalUserCount](Get-MgBetaReportTeamUserActivityTotalUserCount.md)
 Invoke function getTeamsUserActivityTotalUserCounts
 
-### [Get-MgReportTeamUserActivityUserCount](Get-MgReportTeamUserActivityUserCount.md)
+### [Get-MgBetaReportTeamUserActivityUserCount](Get-MgBetaReportTeamUserActivityUserCount.md)
 Invoke function getTeamsUserActivityUserCounts
 
-### [Get-MgReportTeamUserActivityUserDetail](Get-MgReportTeamUserActivityUserDetail.md)
+### [Get-MgBetaReportTeamUserActivityUserDetail](Get-MgBetaReportTeamUserActivityUserDetail.md)
 Invoke function getTeamsUserActivityUserDetail
 
-### [Get-MgReportUserArchivedPrintJob](Get-MgReportUserArchivedPrintJob.md)
+### [Get-MgBetaReportUserArchivedPrintJob](Get-MgBetaReportUserArchivedPrintJob.md)
 Invoke function getUserArchivedPrintJobs
 
-### [Get-MgReportUserCredentialUsageDetail](Get-MgReportUserCredentialUsageDetail.md)
+### [Get-MgBetaReportUserCredentialUsageDetail](Get-MgBetaReportUserCredentialUsageDetail.md)
 Represents the self-service password reset (SSPR) usage for a given tenant.
 
-### [Get-MgReportYammerActivityCount](Get-MgReportYammerActivityCount.md)
+### [Get-MgBetaReportYammerActivityCount](Get-MgBetaReportYammerActivityCount.md)
 Invoke function getYammerActivityCounts
 
-### [Get-MgReportYammerActivityUserCount](Get-MgReportYammerActivityUserCount.md)
+### [Get-MgBetaReportYammerActivityUserCount](Get-MgBetaReportYammerActivityUserCount.md)
 Invoke function getYammerActivityUserCounts
 
-### [Get-MgReportYammerActivityUserDetail](Get-MgReportYammerActivityUserDetail.md)
+### [Get-MgBetaReportYammerActivityUserDetail](Get-MgBetaReportYammerActivityUserDetail.md)
 Invoke function getYammerActivityUserDetail
 
-### [Get-MgReportYammerDeviceUsageDistributionUserCount](Get-MgReportYammerDeviceUsageDistributionUserCount.md)
+### [Get-MgBetaReportYammerDeviceUsageDistributionUserCount](Get-MgBetaReportYammerDeviceUsageDistributionUserCount.md)
 Invoke function getYammerDeviceUsageDistributionUserCounts
 
-### [Get-MgReportYammerDeviceUsageUserCount](Get-MgReportYammerDeviceUsageUserCount.md)
+### [Get-MgBetaReportYammerDeviceUsageUserCount](Get-MgBetaReportYammerDeviceUsageUserCount.md)
 Invoke function getYammerDeviceUsageUserCounts
 
-### [Get-MgReportYammerDeviceUsageUserDetail](Get-MgReportYammerDeviceUsageUserDetail.md)
+### [Get-MgBetaReportYammerDeviceUsageUserDetail](Get-MgBetaReportYammerDeviceUsageUserDetail.md)
 Invoke function getYammerDeviceUsageUserDetail
 
-### [Get-MgReportYammerGroupActivityCount](Get-MgReportYammerGroupActivityCount.md)
+### [Get-MgBetaReportYammerGroupActivityCount](Get-MgBetaReportYammerGroupActivityCount.md)
 Invoke function getYammerGroupsActivityCounts
 
-### [Get-MgReportYammerGroupActivityDetail](Get-MgReportYammerGroupActivityDetail.md)
+### [Get-MgBetaReportYammerGroupActivityDetail](Get-MgBetaReportYammerGroupActivityDetail.md)
 Invoke function getYammerGroupsActivityDetail
 
-### [Get-MgReportYammerGroupActivityGroupCount](Get-MgReportYammerGroupActivityGroupCount.md)
+### [Get-MgBetaReportYammerGroupActivityGroupCount](Get-MgBetaReportYammerGroupActivityGroupCount.md)
 Invoke function getYammerGroupsActivityGroupCounts
 
-### [Invoke-MgGraphReportAuthenticationMethod](Invoke-MgGraphReportAuthenticationMethod.md)
+### [Invoke-MgBetaGraphReportAuthenticationMethod](Invoke-MgBetaGraphReportAuthenticationMethod.md)
 Invoke function usersRegisteredByFeature
 
-### [New-MgReportAuthenticationMethodUserRegistrationDetail](New-MgReportAuthenticationMethodUserRegistrationDetail.md)
+### [New-MgBetaReportAuthenticationMethodUserRegistrationDetail](New-MgBetaReportAuthenticationMethodUserRegistrationDetail.md)
 Create new navigation property to userRegistrationDetails for reports
 
-### [Remove-MgDeviceManagementReport](Remove-MgDeviceManagementReport.md)
+### [Remove-MgBetaDeviceManagementReport](Remove-MgBetaDeviceManagementReport.md)
 Delete navigation property reports for deviceManagement
 
-### [Remove-MgReportAuthenticationMethodUserRegistrationDetail](Remove-MgReportAuthenticationMethodUserRegistrationDetail.md)
+### [Remove-MgBetaReportAuthenticationMethodUserRegistrationDetail](Remove-MgBetaReportAuthenticationMethodUserRegistrationDetail.md)
 Delete navigation property userRegistrationDetails for reports
 
-### [Update-MgDeviceManagementReport](Update-MgDeviceManagementReport.md)
+### [Update-MgBetaDeviceManagementReport](Update-MgBetaDeviceManagementReport.md)
 Update the navigation property reports in deviceManagement
 
-### [Update-MgReportAuthenticationMethodUserRegistrationDetail](Update-MgReportAuthenticationMethodUserRegistrationDetail.md)
+### [Update-MgBetaReportAuthenticationMethodUserRegistrationDetail](Update-MgBetaReportAuthenticationMethodUserRegistrationDetail.md)
 Update the navigation property userRegistrationDetails in reports
 

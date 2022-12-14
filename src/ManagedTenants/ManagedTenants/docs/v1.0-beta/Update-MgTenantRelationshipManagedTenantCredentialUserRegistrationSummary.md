@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantcredentialuserregistrationsummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantcredentialuserregistrationsummary
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+# Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
 
 ## SYNOPSIS
 Update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property credentialUserRegistrationsSummaries in tenantRel
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -CredentialUserRegistrationsSummaryId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-MfaAndSsprCapableUserCount <Int32>]
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
@@ -25,7 +25,7 @@ Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -CredentialUserRegistrationsSummaryId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -33,7 +33,7 @@ Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -41,7 +41,7 @@ Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-MfaAndSsprCapableUserCount <Int32>]
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
@@ -77,7 +77,7 @@ credentialUserRegistrationsSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -373,9 +373,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
 
 ## OUTPUTS
 

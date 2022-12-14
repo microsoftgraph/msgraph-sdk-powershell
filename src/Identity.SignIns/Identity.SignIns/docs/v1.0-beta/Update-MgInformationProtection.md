@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mginformationprotection
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mginformationprotection
 schema: 2.0.0
 ---
 
-# Update-MgInformationProtection
+# Update-MgBetaInformationProtection
 
 ## SYNOPSIS
 Update informationProtection
@@ -14,7 +14,7 @@ Update informationProtection
 
 ### UpdateExpanded (Default)
 ```
-Update-MgInformationProtection [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
+Update-MgBetaInformationProtection [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
  [-DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>] [-Id <String>]
  [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
  [-SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]
@@ -25,7 +25,7 @@ Update-MgInformationProtection [-AdditionalProperties <Hashtable>] [-Bitlocker <
 
 ### Update
 ```
-Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection> [-PassThru] [-Confirm]
+Update-MgBetaInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ bitlocker
 To construct, please use Get-Help -Online and see NOTES section for BITLOCKER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlocker
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlocker
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ informationProtection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtection
 Parameter Sets: Update
 Aliases:
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DATALOSSPREVENTIONPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -135,7 +135,7 @@ informationProtectionPolicy
 To construct, please use Get-Help -Online and see NOTES section for POLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionPolicy
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionPolicy
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for SENSITIVITYLABELS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityLabel[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityLabel[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -167,7 +167,7 @@ sensitivityPolicySettings
 To construct, please use Get-Help -Online and see NOTES section for SENSITIVITYPOLICYSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for THREATASSESSMENTREQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -230,7 +230,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtection
 
 ## OUTPUTS
 

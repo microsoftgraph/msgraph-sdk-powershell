@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/stop-mgcommunicationcallmediaprocessing
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/stop-mgcommunicationcallmediaprocessing
 schema: 2.0.0
 ---
 
-# Stop-MgCommunicationCallMediaProcessing
+# Stop-MgBetaCommunicationCallMediaProcessing
 
 ## SYNOPSIS
 Cancels processing for any in-progress media operations.
@@ -18,27 +18,27 @@ However, it will not cancel a **ubscribeToTone** operation because it operates i
 
 ### CancelExpanded1 (Default)
 ```
-Stop-MgCommunicationCallMediaProcessing -CallId <String> [-AdditionalProperties <Hashtable>]
+Stop-MgBetaCommunicationCallMediaProcessing -CallId <String> [-AdditionalProperties <Hashtable>]
  [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Cancel1
 ```
-Stop-MgCommunicationCallMediaProcessing -CallId <String>
+Stop-MgBetaCommunicationCallMediaProcessing -CallId <String>
  -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity1
 ```
-Stop-MgCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
+Stop-MgBetaCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentityExpanded1
 ```
-Stop-MgCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
+Stop-MgBetaCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,16 +51,16 @@ However, it will not cancel a **ubscribeToTone** operation because it operates i
 
 ## EXAMPLES
 
-### Example 1: Using the Stop-MgCommunicationCallMediaProcessing Cmdlet
+### Example 1: Using the Stop-MgBetaCommunicationCallMediaProcessing Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	ClientContext = "clientContext-value"
 }
-Stop-MgCommunicationCallMediaProcessing -CallId $callId -BodyParameter $params
+Stop-MgBetaCommunicationCallMediaProcessing -CallId $callId -BodyParameter $params
 ```
 
-This example shows how to use the Stop-MgCommunicationCallMediaProcessing Cmdlet.
+This example shows how to use the Stop-MgBetaCommunicationCallMediaProcessing Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Cancel1, CancelViaIdentity1
 Aliases:
 
@@ -131,7 +131,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CancelViaIdentity1, CancelViaIdentityExpanded1
 Aliases:
 
@@ -178,13 +178,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCancelMediaProcessingOperation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCancelMediaProcessingOperation
 
 ## NOTES
 

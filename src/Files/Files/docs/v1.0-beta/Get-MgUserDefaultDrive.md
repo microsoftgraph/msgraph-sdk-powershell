@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mguserdefaultdrive
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mguserdefaultdrive
 schema: 2.0.0
 ---
 
-# Get-MgUserDefaultDrive
+# Get-MgBetaUserDefaultDrive
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a Drive resource.
@@ -15,13 +15,13 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 
 ### Get2 (Default)
 ```
-Get-MgUserDefaultDrive -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserDefaultDrive -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgUserDefaultDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserDefaultDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -31,23 +31,23 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserDefaultDrive Cmdlet
+### Example 1: Using the Get-MgBetaUserDefaultDrive Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Get-MgUserDefaultDrive -UserId $userId
+Import-Module Microsoft.Graph.Beta.Files
+Get-MgBetaUserDefaultDrive -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserDefaultDrive Cmdlet.
+This example shows how to use the Get-MgBetaUserDefaultDrive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserDefaultDrive Cmdlet
+### Example 2: Using the Get-MgBetaUserDefaultDrive Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
+Import-Module Microsoft.Graph.Beta.Files
 # A UPN can also be used as -UserId.
-Get-MgUserDefaultDrive -UserId $userId
+Get-MgBetaUserDefaultDrive -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserDefaultDrive Cmdlet.
+This example shows how to use the Get-MgBetaUserDefaultDrive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -72,7 +72,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity2
 Aliases:
 
@@ -118,11 +118,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDrive1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDrive1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/undo-mguserchatmessagereplysoftdelete
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/undo-mguserchatmessagereplysoftdelete
 schema: 2.0.0
 ---
 
-# Undo-MgUserChatMessageReplySoftDelete
+# Undo-MgBetaUserChatMessageReplySoftDelete
 
 ## SYNOPSIS
 Undo soft deletion of a single message or a message reply in a channel or a chat.
@@ -14,13 +14,13 @@ Undo soft deletion of a single message or a message reply in a channel or a chat
 
 ### Undo (Default)
 ```
-Undo-MgUserChatMessageReplySoftDelete -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
+Undo-MgBetaUserChatMessageReplySoftDelete -ChatId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -UserId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UndoViaIdentity
 ```
-Undo-MgUserChatMessageReplySoftDelete -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Undo-MgBetaUserChatMessageReplySoftDelete -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: UndoViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

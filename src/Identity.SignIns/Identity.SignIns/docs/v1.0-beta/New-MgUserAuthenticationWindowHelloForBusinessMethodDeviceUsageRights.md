@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationwindowhelloforbusinessmethoddeviceusagerights
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mguserauthenticationwindowhelloforbusinessmethoddeviceusagerights
 schema: 2.0.0
 ---
 
-# New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights
+# New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights
 
 ## SYNOPSIS
 Create new navigation property to usageRights for users
@@ -14,7 +14,7 @@ Create new navigation property to usageRights for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -UserId <String>
+New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> [-AdditionalProperties <Hashtable>]
  [-CatalogId <String>] [-Id <String>] [-ServiceIdentifier <String>] [-State <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,20 +22,20 @@ New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -UserId <S
 
 ### Create
 ```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -UserId <String>
+New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> -BodyParameter <IMicrosoftGraphUsageRight> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphUsageRight> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-Id <String>] [-ServiceIdentifier <String>]
  [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ usageRight
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -221,13 +221,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUsageRight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
 
 ## NOTES
 

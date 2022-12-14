@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicyclaimmappingpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicyclaimmappingpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyClaimMappingPolicy
+# Remove-MgBetaPolicyClaimMappingPolicy
 
 ## SYNOPSIS
 Delete navigation property claimsMappingPolicies for policies
@@ -14,13 +14,13 @@ Delete navigation property claimsMappingPolicies for policies
 
 ### Delete (Default)
 ```
-Remove-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaPolicyClaimMappingPolicy -ClaimsMappingPolicyId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPolicyClaimMappingPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaPolicyClaimMappingPolicy -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property claimsMappingPolicies for policies
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPolicyClaimMappingPolicy Cmdlet
+### Example 1: Using the Remove-MgBetaPolicyClaimMappingPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
 ```
 
-This example shows how to use the Remove-MgPolicyClaimMappingPolicy Cmdlet.
+This example shows how to use the Remove-MgBetaPolicyClaimMappingPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

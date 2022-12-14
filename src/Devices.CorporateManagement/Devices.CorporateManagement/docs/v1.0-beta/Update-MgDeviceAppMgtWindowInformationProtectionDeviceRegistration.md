@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtwindowinformationprotectiondeviceregistration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtwindowinformationprotectiondeviceregistration
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+# Update-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
 
 ## SYNOPSIS
 Update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property windowsInformationProtectionDeviceRegistrations i
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+Update-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
  -WindowsInformationProtectionDeviceRegistrationId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceMacAddress <String>] [-DeviceName <String>] [-DeviceRegistrationId <String>] [-DeviceType <String>]
  [-Id <String>] [-LastCheckInDateTime <DateTime>] [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
 
 ### Update
 ```
-Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+Update-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
  -WindowsInformationProtectionDeviceRegistrationId <String>
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -31,7 +31,7 @@ Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+Update-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -39,7 +39,7 @@ Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
+Update-MgBetaDeviceAppMgtWindowInformationProtectionDeviceRegistration
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-DeviceMacAddress <String>] [-DeviceName <String>] [-DeviceRegistrationId <String>] [-DeviceType <String>]
  [-Id <String>] [-LastCheckInDateTime <DateTime>] [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -73,7 +73,7 @@ Represents device registration records for Bring-Your-Own-Device(BYOD) Windows d
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -165,7 +165,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -272,9 +272,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDeviceRegistration
 
 ## OUTPUTS
 
@@ -284,7 +284,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementWindowInformationProtectionDeviceRegistration
+### Update-MgBetaDeviceAppManagementWindowInformationProtectionDeviceRegistration
 
 COMPLEX PARAMETER PROPERTIES
 

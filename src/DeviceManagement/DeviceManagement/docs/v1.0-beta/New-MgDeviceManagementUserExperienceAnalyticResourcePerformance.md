@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticresourceperformance
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticresourceperformance
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticResourcePerformance
+# New-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
 
 ## SYNOPSIS
 Create new navigation property to userExperienceAnalyticsResourcePerformance for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userExperienceAnalyticsResourcePerformance for
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticResourcePerformance [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance [-AdditionalProperties <Hashtable>]
  [-AverageSpikeTimeScore <Int32>] [-CpuSpikeTimePercentage <Double>]
  [-CpuSpikeTimePercentageThreshold <Double>] [-CpuSpikeTimeScore <Int32>] [-DeviceCount <Int64>]
  [-DeviceId <String>] [-DeviceName <String>] [-DeviceResourcePerformanceScore <Int32>] [-Id <String>]
@@ -25,7 +25,7 @@ New-MgDeviceManagementUserExperienceAnalyticResourcePerformance [-AdditionalProp
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticResourcePerformance
+New-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -73,7 +73,7 @@ The user experience analytics resource performance entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
 Parameter Sets: Create
 Aliases:
 
@@ -323,11 +323,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
 
 ## NOTES
 

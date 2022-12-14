@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportsecurityattacksimulationusercoverage
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportsecurityattacksimulationusercoverage
 schema: 2.0.0
 ---
 
-# Get-MgReportSecurityAttackSimulationUserCoverage
+# Get-MgBetaReportSecurityAttackSimulationUserCoverage
 
 ## SYNOPSIS
 Invoke function getAttackSimulationSimulationUserCoverage
@@ -13,7 +13,7 @@ Invoke function getAttackSimulationSimulationUserCoverage
 ## SYNTAX
 
 ```
-Get-MgReportSecurityAttackSimulationUserCoverage [-Count] [-Filter <String>] [-Search <String>]
+Get-MgBetaReportSecurityAttackSimulationUserCoverage [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function getAttackSimulationSimulationUserCoverage
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgReportSecurityAttackSimulationUserCoverage Cmdlet
+### Example 1: Using the Get-MgBetaReportSecurityAttackSimulationUserCoverage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportSecurityAttackSimulationUserCoverage
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportSecurityAttackSimulationUserCoverage
 ```
 
-This example shows how to use the Get-MgReportSecurityAttackSimulationUserCoverage Cmdlet.
+This example shows how to use the Get-MgBetaReportSecurityAttackSimulationUserCoverage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -115,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttackSimulationUserCoverage
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttackSimulationUserCoverage
 
 ## NOTES
 

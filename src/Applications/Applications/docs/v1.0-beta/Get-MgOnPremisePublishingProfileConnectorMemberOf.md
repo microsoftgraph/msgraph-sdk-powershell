@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgonpremisepublishingprofileconnectormemberof
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgonpremisepublishingprofileconnectormemberof
 schema: 2.0.0
 ---
 
-# Get-MgOnPremisePublishingProfileConnectorMemberOf
+# Get-MgBetaOnPremisePublishingProfileConnectorMemberOf
 
 ## SYNOPSIS
 The connectorGroup that the connector is a member of.
@@ -14,7 +14,7 @@ Read-only.
 ## SYNTAX
 
 ```
-Get-MgOnPremisePublishingProfileConnectorMemberOf -ConnectorId <String>
+Get-MgBetaOnPremisePublishingProfileConnectorMemberOf -ConnectorId <String>
  -OnPremisesPublishingProfileId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -26,13 +26,13 @@ Read-only.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOnPremisePublishingProfileConnectorMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaOnPremisePublishingProfileConnectorMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgOnPremisePublishingProfileConnectorMemberOf -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorId $connectorId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaOnPremisePublishingProfileConnectorMemberOf -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorId $connectorId
 ```
 
-This example shows how to use the Get-MgOnPremisePublishingProfileConnectorMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaOnPremisePublishingProfileConnectorMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -225,7 +225,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectorGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnectorGroup
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/add-mgaccessreviewinstancedecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/add-mgaccessreviewinstancedecision
 schema: 2.0.0
 ---
 
-# Add-MgAccessReviewInstanceDecision
+# Add-MgBetaAccessReviewInstanceDecision
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
@@ -23,13 +23,13 @@ If you want to change a group that originates on-premises, download the results 
 
 ### Apply (Default)
 ```
-Add-MgAccessReviewInstanceDecision -AccessReviewId <String> -AccessReviewId1 <String> [-PassThru] [-Confirm]
+Add-MgBetaAccessReviewInstanceDecision -AccessReviewId <String> -AccessReviewId1 <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentity
 ```
-Add-MgAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Add-MgBetaAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: ApplyViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectorycustomsecurityattributedefinitionallowedvalue
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/update-mgdirectorycustomsecurityattributedefinitionallowedvalue
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
+# Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue
 
 ## SYNOPSIS
 Update the navigation property allowedValues in directory
@@ -14,28 +14,28 @@ Update the navigation property allowedValues in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue -AllowedValueId <String>
+Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue -AllowedValueId <String>
  -CustomSecurityAttributeDefinitionId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsActive]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue -AllowedValueId <String>
+Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue -AllowedValueId <String>
  -CustomSecurityAttributeDefinitionId <String> -BodyParameter <IMicrosoftGraphAllowedValue> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
+Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue
  -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <IMicrosoftGraphAllowedValue> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
+Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue
  -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-IsActive] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,16 +45,16 @@ Update the navigation property allowedValues in directory
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue Cmdlet
+### Example 1: Using the Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	IsActive = "false"
 }
-Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId -AllowedValueId $allowedValueId -BodyParameter $params
+Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId -AllowedValueId $allowedValueId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue Cmdlet.
+This example shows how to use the Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -94,7 +94,7 @@ allowedValue
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAllowedValue
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAllowedValue
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -141,7 +141,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -219,9 +219,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAllowedValue
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAllowedValue
 
 ## OUTPUTS
 

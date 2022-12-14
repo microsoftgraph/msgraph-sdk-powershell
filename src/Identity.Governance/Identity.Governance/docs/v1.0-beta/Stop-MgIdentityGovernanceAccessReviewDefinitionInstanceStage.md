@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/stop-mgidentitygovernanceaccessreviewdefinitioninstancestage
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/stop-mgidentitygovernanceaccessreviewdefinitioninstancestage
 schema: 2.0.0
 ---
 
-# Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage
+# Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage
 
 ## SYNOPSIS
 Stop an access review stage that is `inProgress`.
@@ -17,14 +17,14 @@ The accessReviewInstanceDecisionItem objects will always reflect the last decisi
 
 ### Stop (Default)
 ```
-Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewInstanceId <String>
+Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> -AccessReviewStageId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### StopViaIdentity
 ```
-Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -InputObject <IIdentityGovernanceIdentity>
+Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage -InputObject <IIdentityGovernanceIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ The accessReviewInstanceDecisionItem objects will always reflect the last decisi
 
 ## EXAMPLES
 
-### Example 1: Using the Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet
+### Example 1: Using the Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId
 ```
 
-This example shows how to use the Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet.
+This example shows how to use the Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: StopViaIdentity
 Aliases:
 
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

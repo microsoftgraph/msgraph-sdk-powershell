@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/send-mgaccessreviewreminder
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/send-mgaccessreviewreminder
 schema: 2.0.0
 ---
 
-# Send-MgAccessReviewReminder
+# Send-MgBetaAccessReviewReminder
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
@@ -15,12 +15,12 @@ The target object can be either a one-time access review, or an instance of a re
 
 ### Send (Default)
 ```
-Send-MgAccessReviewReminder -AccessReviewId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Send-MgBetaAccessReviewReminder -AccessReviewId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
-Send-MgAccessReviewReminder -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Send-MgBetaAccessReviewReminder -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ The target object can be either a one-time access review, or an instance of a re
 
 ## EXAMPLES
 
-### Example 1: Using the Send-MgAccessReviewReminder Cmdlet
+### Example 1: Using the Send-MgBetaAccessReviewReminder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Send-MgAccessReviewReminder -AccessReviewId $accessReviewId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Send-MgBetaAccessReviewReminder -AccessReviewId $accessReviewId
 ```
 
-This example shows how to use the Send-MgAccessReviewReminder Cmdlet.
+This example shows how to use the Send-MgBetaAccessReviewReminder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SendViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

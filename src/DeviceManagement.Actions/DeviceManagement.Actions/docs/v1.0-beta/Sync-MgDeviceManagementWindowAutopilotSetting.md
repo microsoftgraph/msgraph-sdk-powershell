@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/sync-mgdevicemanagementwindowautopilotsetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/sync-mgdevicemanagementwindowautopilotsetting
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceManagementWindowAutopilotSetting
+# Sync-MgBetaDeviceManagementWindowAutopilotSetting
 
 ## SYNOPSIS
 Initiates a sync of all AutoPilot registered devices from Store for Business and other portals.
@@ -16,7 +16,7 @@ If this sync action is called within 10 minutes of the previous sync, the action
 ## SYNTAX
 
 ```
-Sync-MgDeviceManagementWindowAutopilotSetting [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Sync-MgBetaDeviceManagementWindowAutopilotSetting [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

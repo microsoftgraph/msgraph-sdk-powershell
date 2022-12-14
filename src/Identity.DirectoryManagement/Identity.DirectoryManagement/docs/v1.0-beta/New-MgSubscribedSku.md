@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgsubscribedsku
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgsubscribedsku
 schema: 2.0.0
 ---
 
-# New-MgSubscribedSku
+# New-MgBetaSubscribedSku
 
 ## SYNOPSIS
 Add new entity to subscribedSkus
@@ -14,7 +14,7 @@ Add new entity to subscribedSkus
 
 ### CreateExpanded (Default)
 ```
-New-MgSubscribedSku [-AdditionalProperties <Hashtable>] [-AppliesTo <String>] [-CapabilityStatus <String>]
+New-MgBetaSubscribedSku [-AdditionalProperties <Hashtable>] [-AppliesTo <String>] [-CapabilityStatus <String>]
  [-ConsumedUnits <Int32>] [-Id <String>] [-PrepaidUnits <IMicrosoftGraphLicenseUnitsDetail>]
  [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>] [-SkuId <String>] [-SkuPartNumber <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgSubscribedSku [-AdditionalProperties <Hashtable>] [-AppliesTo <String>] [-
 
 ### Create
 ```
-New-MgSubscribedSku -BodyParameter <IMicrosoftGraphSubscribedSku> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSubscribedSku -BodyParameter <IMicrosoftGraphSubscribedSku> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,7 +67,7 @@ subscribedSku
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscribedSku
 Parameter Sets: Create
 Aliases:
 
@@ -130,7 +130,7 @@ licenseUnitsDetail
 To construct, please use Get-Help -Online and see NOTES section for PREPAIDUNITS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLicenseUnitsDetail
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLicenseUnitsDetail
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -147,7 +147,7 @@ Not nullable
 To construct, please use Get-Help -Online and see NOTES section for SERVICEPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePlanInfo[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePlanInfo[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -225,11 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscribedSku
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscribedSku
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticremoteconnection
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticremoteconnection
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticRemoteConnection
+# New-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection
 
 ## SYNOPSIS
 Create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userExperienceAnalyticsRemoteConnection for de
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticRemoteConnection [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection [-AdditionalProperties <Hashtable>]
  [-CloudPcFailurePercentage <Double>] [-CloudPcRoundTripTime <Double>] [-CloudPcSignInTime <Double>]
  [-CoreBootTime <Double>] [-CoreSignInTime <Double>] [-DeviceCount <Int32>] [-DeviceId <String>]
  [-DeviceName <String>] [-Id <String>] [-Manufacturer <String>] [-Model <String>] [-RemoteSignInTime <Double>]
@@ -23,7 +23,7 @@ New-MgDeviceManagementUserExperienceAnalyticRemoteConnection [-AdditionalPropert
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticRemoteConnection
+New-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsRemoteConnection> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -55,7 +55,7 @@ The user experience analyte remote connection entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
 Parameter Sets: Create
 Aliases:
 
@@ -320,11 +320,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearchacronym
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/get-mgsearchacronym
 schema: 2.0.0
 ---
 
-# Get-MgSearchAcronym
+# Get-MgBetaSearchAcronym
 
 ## SYNOPSIS
 Administrative answer in Microsoft Search results to define common acronyms in a organization.
@@ -14,20 +14,20 @@ Administrative answer in Microsoft Search results to define common acronyms in a
 
 ### List (Default)
 ```
-Get-MgSearchAcronym [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaSearchAcronym [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSearchAcronym -AcronymId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSearchAcronym -AcronymId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSearchAcronym -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSearchAcronym -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Administrative answer in Microsoft Search results to define common acronyms in a
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSearchAcronym Cmdlet
+### Example 1: Using the Get-MgBetaSearchAcronym Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgSearchAcronym -AcronymId $acronymId
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaSearchAcronym -AcronymId $acronymId
 ```
 
-This example shows how to use the Get-MgSearchAcronym Cmdlet.
+This example shows how to use the Get-MgBetaSearchAcronym Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSearchAcronym Cmdlet
+### Example 2: Using the Get-MgBetaSearchAcronym Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgSearchAcronym
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaSearchAcronym
 ```
 
-This example shows how to use the Get-MgSearchAcronym Cmdlet.
+This example shows how to use the Get-MgBetaSearchAcronym Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchAcronym
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAcronym
 
 ## NOTES
 

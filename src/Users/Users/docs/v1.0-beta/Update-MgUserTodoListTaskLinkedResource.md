@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusertodolisttasklinkedresource
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mgusertodolisttasklinkedresource
 schema: 2.0.0
 ---
 
-# Update-MgUserTodoListTaskLinkedResource
+# Update-MgBetaUserTodoListTaskLinkedResource
 
 ## SYNOPSIS
 Update the navigation property linkedResources in users
@@ -14,7 +14,7 @@ Update the navigation property linkedResources in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String>
+Update-MgBetaUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String>
  -TodoTaskListId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-ApplicationName <String>]
  [-DisplayName <String>] [-ExternalId <String>] [-Id <String>] [-WebUrl <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <
 
 ### Update
 ```
-Update-MgUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String>
+Update-MgBetaUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String>
  -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphLinkedResource> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity>
+Update-MgBetaUserTodoListTaskLinkedResource -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphLinkedResource> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ApplicationName <String>] [-DisplayName <String>] [-ExternalId <String>] [-Id <String>] [-WebUrl <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,20 +45,20 @@ Update the navigation property linkedResources in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserTodoListTaskLinkedResource Cmdlet
+### Example 1: Using the Update-MgBetaUserTodoListTaskLinkedResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
-	"@odata.type" = "#microsoft.graph.linkedResource"
+	"@odata.type" = "#Microsoft.Graph.Beta.linkedResource"
 	WebUrl = "http://microsoft.com"
 	ApplicationName = "Microsoft"
 	DisplayName = "Microsoft"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId -BodyParameter $params
+Update-MgBetaUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserTodoListTaskLinkedResource Cmdlet.
+This example shows how to use the Update-MgBetaUserTodoListTaskLinkedResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -98,7 +98,7 @@ linkedResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLinkedResource
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLinkedResource
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -160,7 +160,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -297,9 +297,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLinkedResource
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLinkedResource
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

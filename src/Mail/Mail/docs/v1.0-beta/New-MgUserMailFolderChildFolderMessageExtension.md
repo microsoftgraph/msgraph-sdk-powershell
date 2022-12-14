@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/new-mgusermailfolderchildfoldermessageextension
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/new-mgusermailfolderchildfoldermessageextension
 schema: 2.0.0
 ---
 
-# New-MgUserMailFolderChildFolderMessageExtension
+# New-MgBetaUserMailFolderChildFolderMessageExtension
 
 ## SYNOPSIS
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -17,26 +17,26 @@ The table in the Permissions section lists the resources that support open exten
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserMailFolderChildFolderMessageExtension -MailFolderId <String> -MailFolderId1 <String>
+New-MgBetaUserMailFolderChildFolderMessageExtension -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserMailFolderChildFolderMessageExtension -MailFolderId <String> -MailFolderId1 <String>
+New-MgBetaUserMailFolderChildFolderMessageExtension -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserMailFolderChildFolderMessageExtension -InputObject <IMailIdentity> -BodyParameter <Hashtable>
+New-MgBetaUserMailFolderChildFolderMessageExtension -InputObject <IMailIdentity> -BodyParameter <Hashtable>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserMailFolderChildFolderMessageExtension -InputObject <IMailIdentity>
+New-MgBetaUserMailFolderChildFolderMessageExtension -InputObject <IMailIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -101,7 +101,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -208,7 +208,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ### System.Collections.Hashtable
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/sync-mgdevicemanagementdeponboardingsettingwithappledeviceenrollmentprogram
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/sync-mgdevicemanagementdeponboardingsettingwithappledeviceenrollmentprogram
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram
+# Sync-MgBetaDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram
 
 ## SYNOPSIS
 Synchronizes between Apple Device Enrollment Program and Intune
@@ -14,13 +14,13 @@ Synchronizes between Apple Device Enrollment Program and Intune
 
 ### Sync (Default)
 ```
-Sync-MgDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram -DepOnboardingSettingId <String>
+Sync-MgBetaDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram -DepOnboardingSettingId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SyncViaIdentity
 ```
-Sync-MgDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram
+Sync-MgBetaDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram
  -InputObject <IDeviceManagementActionsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: SyncViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

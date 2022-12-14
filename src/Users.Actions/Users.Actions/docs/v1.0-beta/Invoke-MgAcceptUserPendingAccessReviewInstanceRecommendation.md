@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgacceptuserpendingaccessreviewinstancerecommendation
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgacceptuserpendingaccessreviewinstancerecommendation
 schema: 2.0.0
 ---
 
-# Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation
+# Invoke-MgBetaAcceptUserPendingAccessReviewInstanceRecommendation
 
 ## SYNOPSIS
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
@@ -16,13 +16,13 @@ If there is not a recommendation on an accessReviewInstanceDecisionItem object n
 
 ### Accept (Default)
 ```
-Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation -AccessReviewInstanceId <String> -UserId <String>
+Invoke-MgBetaAcceptUserPendingAccessReviewInstanceRecommendation -AccessReviewInstanceId <String> -UserId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentity
 ```
-Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation -InputObject <IUsersActionsIdentity> [-PassThru]
+Invoke-MgBetaAcceptUserPendingAccessReviewInstanceRecommendation -InputObject <IUsersActionsIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -33,14 +33,14 @@ If there is not a recommendation on an accessReviewInstanceDecisionItem object n
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation Cmdlet
+### Example 1: Using the Invoke-MgBetaAcceptUserPendingAccessReviewInstanceRecommendation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 # A UPN can also be used as -UserId.
-Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation -UserId $userId -AccessReviewInstanceId $accessReviewInstanceId
+Invoke-MgBetaAcceptUserPendingAccessReviewInstanceRecommendation -UserId $userId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation Cmdlet.
+This example shows how to use the Invoke-MgBetaAcceptUserPendingAccessReviewInstanceRecommendation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -65,7 +65,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: AcceptViaIdentity
 Aliases:
 
@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

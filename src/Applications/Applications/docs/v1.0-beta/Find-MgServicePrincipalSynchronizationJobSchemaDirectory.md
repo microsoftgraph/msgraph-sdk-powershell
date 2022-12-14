@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/find-mgserviceprincipalsynchronizationjobschemadirectory
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/find-mgserviceprincipalsynchronizationjobschemadirectory
 schema: 2.0.0
 ---
 
-# Find-MgServicePrincipalSynchronizationJobSchemaDirectory
+# Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory
 
 ## SYNOPSIS
 Discover the latest schema definition for provisioning to an application.
@@ -14,13 +14,13 @@ Discover the latest schema definition for provisioning to an application.
 
 ### Discover (Default)
 ```
-Find-MgServicePrincipalSynchronizationJobSchemaDirectory -DirectoryDefinitionId <String>
+Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory -DirectoryDefinitionId <String>
  -ServicePrincipalId <String> -SynchronizationJobId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DiscoverViaIdentity
 ```
-Find-MgServicePrincipalSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity> [-Confirm]
+Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Discover the latest schema definition for provisioning to an application.
 
 ## EXAMPLES
 
-### Example 1: Using the Find-MgServicePrincipalSynchronizationJobSchemaDirectory Cmdlet
+### Example 1: Using the Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Find-MgServicePrincipalSynchronizationJobSchemaDirectory -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId -DirectoryDefinitionId $directoryDefinitionId
+Import-Module Microsoft.Graph.Beta.Applications
+Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId -DirectoryDefinitionId $directoryDefinitionId
 ```
 
-This example shows how to use the Find-MgServicePrincipalSynchronizationJobSchemaDirectory Cmdlet.
+This example shows how to use the Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DiscoverViaIdentity
 Aliases:
 
@@ -137,11 +137,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
 
 ## NOTES
 

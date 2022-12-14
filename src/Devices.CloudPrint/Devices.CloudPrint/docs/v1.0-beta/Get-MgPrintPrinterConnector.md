@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintprinterconnector
+Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.cloudprint/get-mgprintprinterconnector
 schema: 2.0.0
 ---
 
-# Get-MgPrintPrinterConnector
+# Get-MgBetaPrintPrinterConnector
 
 ## SYNOPSIS
 The connectors that are associated with the printer.
@@ -14,20 +14,20 @@ The connectors that are associated with the printer.
 
 ### List (Default)
 ```
-Get-MgPrintPrinterConnector -PrinterId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaPrintPrinterConnector -PrinterId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgPrintPrinterConnector -PrintConnectorId <String> -PrinterId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPrintPrinterConnector -PrintConnectorId <String> -PrinterId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgPrintPrinterConnector -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPrintPrinterConnector -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ The connectors that are associated with the printer.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPrintPrinterConnector Cmdlet
+### Example 1: Using the Get-MgBetaPrintPrinterConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintPrinterConnector -PrinterId $printerId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintPrinterConnector -PrinterId $printerId
 ```
 
-This example shows how to use the Get-MgPrintPrinterConnector Cmdlet.
+This example shows how to use the Get-MgBetaPrintPrinterConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgsharelistcontenttypecolumn
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgsharelistcontenttypecolumn
 schema: 2.0.0
 ---
 
-# Get-MgShareListContentTypeColumn
+# Get-MgBetaShareListContentTypeColumn
 
 ## SYNOPSIS
 The collection of column definitions for this contentType.
@@ -14,20 +14,20 @@ The collection of column definitions for this contentType.
 
 ### List1 (Default)
 ```
-Get-MgShareListContentTypeColumn -ContentTypeId <String> -SharedDriveItemId <String>
+Get-MgBetaShareListContentTypeColumn -ContentTypeId <String> -SharedDriveItemId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgShareListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String>
+Get-MgBetaShareListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String>
  -SharedDriveItemId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgShareListContentTypeColumn -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaShareListContentTypeColumn -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 
 ## NOTES
 

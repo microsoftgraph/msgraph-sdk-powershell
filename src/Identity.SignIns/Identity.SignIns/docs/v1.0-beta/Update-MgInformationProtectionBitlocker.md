@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mginformationprotectionbitlocker
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mginformationprotectionbitlocker
 schema: 2.0.0
 ---
 
-# Update-MgInformationProtectionBitlocker
+# Update-MgBetaInformationProtectionBitlocker
 
 ## SYNOPSIS
 Update the navigation property bitlocker in informationProtection
@@ -14,13 +14,13 @@ Update the navigation property bitlocker in informationProtection
 
 ### UpdateExpanded (Default)
 ```
-Update-MgInformationProtectionBitlocker [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaInformationProtectionBitlocker [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgInformationProtectionBitlocker -BodyParameter <IMicrosoftGraphBitlocker> [-PassThru] [-Confirm]
+Update-MgBetaInformationProtectionBitlocker -BodyParameter <IMicrosoftGraphBitlocker> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ bitlocker
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlocker
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlocker
 Parameter Sets: Update
 Aliases:
 
@@ -98,7 +98,7 @@ The recovery keys associated with the bitlocker entity.
 To construct, please use Get-Help -Online and see NOTES section for RECOVERYKEYS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlocker
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlocker
 
 ## OUTPUTS
 

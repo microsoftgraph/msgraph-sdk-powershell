@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedaccessresourceroleassignmentlinkedeligibleroleassignment
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedaccessresourceroleassignmentlinkedeligibleroleassignment
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment
+# Get-MgBetaPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment
 
 ## SYNOPSIS
 Read-only.
@@ -15,14 +15,14 @@ If this is an active assignment and created due to activation on an eligible ass
 
 ### Get (Default)
 ```
-Get-MgPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment -GovernanceResourceId <String>
+Get-MgBetaPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment -GovernanceResourceId <String>
  -GovernanceRoleAssignmentId <String> -PrivilegedAccessId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment
+Get-MgBetaPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -85,7 +85,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -131,11 +131,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment
 
 ## NOTES
 

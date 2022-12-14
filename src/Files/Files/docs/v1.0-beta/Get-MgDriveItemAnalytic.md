@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgdriveitemanalytic
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgdriveitemanalytic
 schema: 2.0.0
 ---
 
-# Get-MgDriveItemAnalytic
+# Get-MgBetaDriveItemAnalytic
 
 ## SYNOPSIS
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
@@ -14,13 +14,13 @@ Get [itemAnalytics][] about the views that took place under this resource.\nThe 
 
 ### Get (Default)
 ```
-Get-MgDriveItemAnalytic -DriveId <String> -DriveItemId <String> [-ExpandProperty <String[]>]
+Get-MgBetaDriveItemAnalytic -DriveId <String> -DriveItemId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDriveItemAnalytic -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDriveItemAnalytic -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Get [itemAnalytics][] about the views that took place under this resource.\nThe 
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDriveItemAnalytic Cmdlet
+### Example 1: Using the Get-MgBetaDriveItemAnalytic Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Get-MgDriveItemAnalytic -DriveId $driveId -DriveItemId $driveItemId
+Import-Module Microsoft.Graph.Beta.Files
+Get-MgBetaDriveItemAnalytic -DriveId $driveId -DriveItemId $driveItemId
 ```
 
-This example shows how to use the Get-MgDriveItemAnalytic Cmdlet.
+This example shows how to use the Get-MgBetaDriveItemAnalytic Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -90,7 +90,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -121,11 +121,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemAnalytics1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemAnalytics1
 
 ## NOTES
 

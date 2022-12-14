@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementdeviceconfigurationmanageddevicecertificatestate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementdeviceconfigurationmanageddevicecertificatestate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+# Get-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
 
 ## SYNOPSIS
 Summary of all certificates for all devices.
@@ -14,21 +14,21 @@ Summary of all certificates for all devices.
 
 ### List (Default)
 ```
-Get-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+Get-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -ManagedAllDeviceCertificateStateId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
+Get-MgBetaDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -InputObject <IDeviceManagementAdministrationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -106,7 +106,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -227,11 +227,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAllDeviceCertificateState
 
 ## NOTES
 

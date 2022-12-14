@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/search-mgdevicemanagementimporteddeviceidentityexistingidentity
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/search-mgdevicemanagementimporteddeviceidentityexistingidentity
 schema: 2.0.0
 ---
 
-# Search-MgDeviceManagementImportedDeviceIdentityExistingIdentity
+# Search-MgBetaDeviceManagementImportedDeviceIdentityExistingIdentity
 
 ## SYNOPSIS
 Invoke action searchExistingIdentities
@@ -14,14 +14,14 @@ Invoke action searchExistingIdentities
 
 ### SearchExpanded (Default)
 ```
-Search-MgDeviceManagementImportedDeviceIdentityExistingIdentity [-AdditionalProperties <Hashtable>]
+Search-MgBetaDeviceManagementImportedDeviceIdentityExistingIdentity [-AdditionalProperties <Hashtable>]
  [-ImportedDeviceIdentities <IMicrosoftGraphImportedDeviceIdentity[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Search
 ```
-Search-MgDeviceManagementImportedDeviceIdentityExistingIdentity
+Search-MgBetaDeviceManagementImportedDeviceIdentityExistingIdentity
  -BodyParameter <IPathsHi19O6DevicemanagementImporteddeviceidentitiesMicrosoftGraphSearchexistingidentitiesPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsHi19O6DevicemanagementImporteddeviceidentitiesMicrosoftGraphSearchexistingidentitiesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsHi19O6DevicemanagementImporteddeviceidentitiesMicrosoftGraphSearchexistingidentitiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Search
 Aliases:
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IMPORTEDDEVICEIDENTITIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentity[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentity[]
 Parameter Sets: SearchExpanded
 Aliases:
 
@@ -116,11 +116,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsHi19O6DevicemanagementImporteddeviceidentitiesMicrosoftGraphSearchexistingidentitiesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsHi19O6DevicemanagementImporteddeviceidentitiesMicrosoftGraphSearchexistingidentitiesPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentity
 
 ## NOTES
 

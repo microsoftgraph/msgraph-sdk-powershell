@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantemailnotification
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantemailnotification
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantEmailNotification
+# Update-MgBetaTenantRelationshipManagedTenantEmailNotification
 
 ## SYNOPSIS
 Update the navigation property managedTenantEmailNotifications in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managedTenantEmailNotifications in tenantRelation
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantEmailNotification -ManagedTenantEmailNotificationId <String>
+Update-MgBetaTenantRelationshipManagedTenantEmailNotification -ManagedTenantEmailNotificationId <String>
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-EmailAddresses <IMicrosoftGraphManagedTenantsEmail[]>] [-EmailBody <String>] [-Id <String>]
@@ -24,21 +24,21 @@ Update-MgTenantRelationshipManagedTenantEmailNotification -ManagedTenantEmailNot
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantEmailNotification -ManagedTenantEmailNotificationId <String>
+Update-MgBetaTenantRelationshipManagedTenantEmailNotification -ManagedTenantEmailNotificationId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantEmailNotification -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantEmailNotification -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantEmailNotification -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantEmailNotification -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-EmailAddresses <IMicrosoftGraphManagedTenantsEmail[]>] [-EmailBody <String>] [-Id <String>]
@@ -73,7 +73,7 @@ managedTenantAlert
 To construct, please use Get-Help -Online and see NOTES section for ALERT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -89,7 +89,7 @@ managedTenantEmailNotification
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EMAILADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsEmail[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsEmail[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -182,7 +182,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -304,9 +304,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
 
 ## OUTPUTS
 

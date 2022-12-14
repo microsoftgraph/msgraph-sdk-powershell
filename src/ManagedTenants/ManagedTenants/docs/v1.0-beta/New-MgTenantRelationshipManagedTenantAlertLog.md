@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantalertlog
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantalertlog
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantAlertLog
+# New-MgBetaTenantRelationshipManagedTenantAlertLog
 
 ## SYNOPSIS
 Create new navigation property to managedTenantAlertLogs for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managedTenantAlertLogs for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantAlertLog [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantAlertLog [-AdditionalProperties <Hashtable>]
  [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-Content <IMicrosoftGraphManagedTenantsAlertLogContent>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
@@ -23,7 +23,7 @@ New-MgTenantRelationshipManagedTenantAlertLog [-AdditionalProperties <Hashtable>
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantAlertLog
+New-MgBetaTenantRelationshipManagedTenantAlertLog
  -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertLog> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ managedTenantAlert
 To construct, please use Get-Help -Online and see NOTES section for ALERT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -70,7 +70,7 @@ managedTenantAlertLog
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
 Parameter Sets: Create
 Aliases:
 
@@ -86,7 +86,7 @@ alertLogContent
 To construct, please use Get-Help -Online and see NOTES section for CONTENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAlertLogContent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAlertLogContent
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -209,11 +209,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertLog
 
 ## NOTES
 

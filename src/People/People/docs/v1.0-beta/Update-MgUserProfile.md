@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/update-mguserprofile
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/update-mguserprofile
 schema: 2.0.0
 ---
 
-# Update-MgUserProfile
+# Update-MgBetaUserProfile
 
 ## SYNOPSIS
 Update the navigation property profile in users
@@ -14,7 +14,7 @@ Update the navigation property profile in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserProfile -UserId <String> [-Account <IMicrosoftGraphUserAccountInformation[]>]
+Update-MgBetaUserProfile -UserId <String> [-Account <IMicrosoftGraphUserAccountInformation[]>]
  [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphItemAddress[]>]
  [-Anniversaries <IMicrosoftGraphPersonAnnualEvent[]>] [-Awards <IMicrosoftGraphPersonAward[]>]
  [-Certifications <IMicrosoftGraphPersonCertification[]>]
@@ -30,19 +30,19 @@ Update-MgUserProfile -UserId <String> [-Account <IMicrosoftGraphUserAccountInfor
 
 ### Update
 ```
-Update-MgUserProfile -UserId <String> -BodyParameter <IMicrosoftGraphProfile> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaUserProfile -UserId <String> -BodyParameter <IMicrosoftGraphProfile> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserProfile -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphProfile> [-PassThru]
+Update-MgBetaUserProfile -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphProfile> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserProfile -InputObject <IPeopleIdentity> [-Account <IMicrosoftGraphUserAccountInformation[]>]
+Update-MgBetaUserProfile -InputObject <IPeopleIdentity> [-Account <IMicrosoftGraphUserAccountInformation[]>]
  [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphItemAddress[]>]
  [-Anniversaries <IMicrosoftGraphPersonAnnualEvent[]>] [-Awards <IMicrosoftGraphPersonAward[]>]
  [-Certifications <IMicrosoftGraphPersonCertification[]>]
@@ -68,7 +68,7 @@ Update the navigation property profile in users
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserAccountInformation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserAccountInformation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -99,7 +99,7 @@ Represents details of addresses associated with the user.
 To construct, please use Get-Help -Online and see NOTES section for ADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemAddress[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemAddress[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -115,7 +115,7 @@ Represents the details of meaningful dates associated with a person.
 To construct, please use Get-Help -Online and see NOTES section for ANNIVERSARIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonAnnualEvent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonAnnualEvent[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -131,7 +131,7 @@ Represents the details of awards or honors associated with a person.
 To construct, please use Get-Help -Online and see NOTES section for AWARDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonAward[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonAward[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -147,7 +147,7 @@ profile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -163,7 +163,7 @@ Represents the details of certifications associated with a person.
 To construct, please use Get-Help -Online and see NOTES section for CERTIFICATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonCertification[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonCertification[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ Represents data that a user has supplied related to undergraduate, graduate, pos
 To construct, please use Get-Help -Online and see NOTES section for EDUCATIONALACTIVITIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivity[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationalActivity[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ Represents detailed information about email addresses associated with the user.
 To construct, please use Get-Help -Online and see NOTES section for EMAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemEmail[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemEmail[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -227,7 +227,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -243,7 +243,7 @@ Provides detailed information about interests the user has associated with thems
 To construct, please use Get-Help -Online and see NOTES section for INTERESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonInterest[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonInterest[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ Represents detailed information about languages that a user has added to their p
 To construct, please use Get-Help -Online and see NOTES section for LANGUAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLanguageProficiency[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLanguageProficiency[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -275,7 +275,7 @@ Represents the names a user has added to their profile.
 To construct, please use Get-Help -Online and see NOTES section for NAMES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonName[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonName[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -291,7 +291,7 @@ Represents notes that a user has added to their profile.
 To construct, please use Get-Help -Online and see NOTES section for NOTES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonAnnotation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonAnnotation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -322,7 +322,7 @@ Represents patents that a user has added to their profile.
 To construct, please use Get-Help -Online and see NOTES section for PATENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPatent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPatent[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -338,7 +338,7 @@ Represents detailed information about phone numbers associated with a user in va
 To construct, please use Get-Help -Online and see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPhone[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPhone[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -354,7 +354,7 @@ Represents detailed information about work positions associated with a user's pr
 To construct, please use Get-Help -Online and see NOTES section for POSITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkPosition[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkPosition[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -370,7 +370,7 @@ Represents detailed information about projects associated with a user.
 To construct, please use Get-Help -Online and see NOTES section for PROJECTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProjectParticipation[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProjectParticipation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -386,7 +386,7 @@ Represents details of any publications a user has added to their profile.
 To construct, please use Get-Help -Online and see NOTES section for PUBLICATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPublication[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPublication[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -402,7 +402,7 @@ Represents detailed information about skills associated with a user in various s
 To construct, please use Get-Help -Online and see NOTES section for SKILLS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSkillProficiency[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSkillProficiency[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -433,7 +433,7 @@ Represents web accounts the user has indicated they use or has added to their us
 To construct, please use Get-Help -Online and see NOTES section for WEBACCOUNTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWebAccount[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWebAccount[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -449,7 +449,7 @@ Represents detailed information about websites associated with a user in various
 To construct, please use Get-Help -Online and see NOTES section for WEBSITES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonWebsite[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonWebsite[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -496,9 +496,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfile
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mgusertodolisttaskchecklistitem
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/new-mgusertodolisttaskchecklistitem
 schema: 2.0.0
 ---
 
-# New-MgUserTodoListTaskChecklistItem
+# New-MgBetaUserTodoListTaskChecklistItem
 
 ## SYNOPSIS
 Create new navigation property to checklistItems for users
@@ -14,26 +14,26 @@ Create new navigation property to checklistItems for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserTodoListTaskChecklistItem -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+New-MgBetaUserTodoListTaskChecklistItem -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-CheckedDateTime <DateTime>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-IsChecked] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserTodoListTaskChecklistItem -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+New-MgBetaUserTodoListTaskChecklistItem -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphChecklistItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity>
+New-MgBetaUserTodoListTaskChecklistItem -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphChecklistItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-CheckedDateTime <DateTime>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
  [-IsChecked] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -43,30 +43,30 @@ Create new navigation property to checklistItems for users
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 1: Using the New-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	DisplayName = "Final sign-off from the team"
 }
 # A UPN can also be used as -UserId.
-New-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+New-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the New-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 2: Using the New-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	DisplayName = "Final sign-off from the team"
 }
 # A UPN can also be used as -UserId.
-New-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+New-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the New-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -91,7 +91,7 @@ checklistItem
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChecklistItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChecklistItem
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -168,7 +168,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -275,13 +275,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChecklistItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChecklistItem
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChecklistItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphChecklistItem
 
 ## NOTES
 

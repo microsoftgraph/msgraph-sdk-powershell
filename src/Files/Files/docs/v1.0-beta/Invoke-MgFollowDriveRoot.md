@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/invoke-mgfollowdriveroot
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/invoke-mgfollowdriveroot
 schema: 2.0.0
 ---
 
-# Invoke-MgFollowDriveRoot
+# Invoke-MgBetaFollowDriveRoot
 
 ## SYNOPSIS
 Follow a driveItem.
@@ -14,12 +14,12 @@ Follow a driveItem.
 
 ### Follow1 (Default)
 ```
-Invoke-MgFollowDriveRoot -DriveId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaFollowDriveRoot -DriveId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### FollowViaIdentity1
 ```
-Invoke-MgFollowDriveRoot -InputObject <IFilesIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaFollowDriveRoot -InputObject <IFilesIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: FollowViaIdentity1
 Aliases:
 
@@ -96,11 +96,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

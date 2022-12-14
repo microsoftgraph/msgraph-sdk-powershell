@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/initialize-mgorganizationservice
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/initialize-mgorganizationservice
 schema: 2.0.0
 ---
 
-# Initialize-MgOrganizationService
+# Initialize-MgBetaOrganizationService
 
 ## SYNOPSIS
 Activate a service for an organization.
@@ -14,28 +14,28 @@ Activate a service for an organization.
 
 ### ActivateExpanded (Default)
 ```
-Initialize-MgOrganizationService -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+Initialize-MgBetaOrganizationService -OrganizationId <String> [-AdditionalProperties <Hashtable>]
  [-Service <String>] [-ServicePlanId <String>] [-SkuId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Activate
 ```
-Initialize-MgOrganizationService -OrganizationId <String>
+Initialize-MgBetaOrganizationService -OrganizationId <String>
  -BodyParameter <IPaths1M0ZkruOrganizationIdMicrosoftGraphActivateservicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ActivateViaIdentity
 ```
-Initialize-MgOrganizationService -InputObject <IIdentityDirectoryManagementIdentity>
+Initialize-MgBetaOrganizationService -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPaths1M0ZkruOrganizationIdMicrosoftGraphActivateservicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ActivateViaIdentityExpanded
 ```
-Initialize-MgOrganizationService -InputObject <IIdentityDirectoryManagementIdentity>
+Initialize-MgBetaOrganizationService -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Service <String>] [-ServicePlanId <String>] [-SkuId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,17 +45,17 @@ Activate a service for an organization.
 
 ## EXAMPLES
 
-### Example 1: Using the Initialize-MgOrganizationService Cmdlet
+### Example 1: Using the Initialize-MgBetaOrganizationService Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	SkuId = "6fd2c87f-b296-42f0-b197-1e91e994b900"
 	ServicePlanId = "a23b959c-7ce8-4e57-9140-b90eb88a9e97"
 }
-Initialize-MgOrganizationService -OrganizationId $organizationId -BodyParameter $params
+Initialize-MgBetaOrganizationService -OrganizationId $organizationId -BodyParameter $params
 ```
 
-This example shows how to use the Initialize-MgOrganizationService Cmdlet.
+This example shows how to use the Initialize-MgBetaOrganizationService Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1M0ZkruOrganizationIdMicrosoftGraphActivateservicePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1M0ZkruOrganizationIdMicrosoftGraphActivateservicePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Activate, ActivateViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: ActivateViaIdentity, ActivateViaIdentityExpanded
 Aliases:
 
@@ -218,9 +218,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1M0ZkruOrganizationIdMicrosoftGraphActivateservicePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1M0ZkruOrganizationIdMicrosoftGraphActivateservicePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

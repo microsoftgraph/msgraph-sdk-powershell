@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/move-mgdevicemanagementintenttotemplate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/move-mgdevicemanagementintenttotemplate
 schema: 2.0.0
 ---
 
-# Move-MgDeviceManagementIntentToTemplate
+# Move-MgBetaDeviceManagementIntentToTemplate
 
 ## SYNOPSIS
 Invoke action migrateToTemplate
@@ -14,27 +14,27 @@ Invoke action migrateToTemplate
 
 ### MigrateExpanded (Default)
 ```
-Move-MgDeviceManagementIntentToTemplate -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
+Move-MgBetaDeviceManagementIntentToTemplate -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
  [-NewTemplateId <String>] [-PreserveCustomValues] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Migrate
 ```
-Move-MgDeviceManagementIntentToTemplate -DeviceManagementIntentId <String>
+Move-MgBetaDeviceManagementIntentToTemplate -DeviceManagementIntentId <String>
  -BodyParameter <IPaths1S6He5TDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphMigratetotemplatePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MigrateViaIdentity
 ```
-Move-MgDeviceManagementIntentToTemplate -InputObject <IDeviceManagementActionsIdentity>
+Move-MgBetaDeviceManagementIntentToTemplate -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1S6He5TDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphMigratetotemplatePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MigrateViaIdentityExpanded
 ```
-Move-MgDeviceManagementIntentToTemplate -InputObject <IDeviceManagementActionsIdentity>
+Move-MgBetaDeviceManagementIntentToTemplate -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-NewTemplateId <String>] [-PreserveCustomValues] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1S6He5TDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphMigratetotemplatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1S6He5TDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphMigratetotemplatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Migrate, MigrateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: MigrateViaIdentity, MigrateViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1S6He5TDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphMigratetotemplatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1S6He5TDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphMigratetotemplatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

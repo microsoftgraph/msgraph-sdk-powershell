@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementtemplatestepversion
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantmanagementtemplatestepversion
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion
+# Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion
 
 ## SYNOPSIS
 Update the navigation property managementTemplateStepVersions in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property managementTemplateStepVersions in tenantRelations
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion
  -ManagementTemplateStepVersionId <String>
  [-AcceptedFor <IMicrosoftGraphManagedTenantsManagementTemplateStep>] [-AdditionalProperties <Hashtable>]
  [-ContentMarkdown <String>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
@@ -26,7 +26,7 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion
  -ManagementTemplateStepVersionId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -34,14 +34,14 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion -InputObject <IManagedTenantsIdentity>
  [-AcceptedFor <IMicrosoftGraphManagedTenantsManagementTemplateStep>] [-AdditionalProperties <Hashtable>]
  [-ContentMarkdown <String>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-Deployments <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>] [-Id <String>]
@@ -62,7 +62,7 @@ managementTemplateStep
 To construct, please use Get-Help -Online and see NOTES section for ACCEPTEDFOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -93,7 +93,7 @@ managementTemplateStepVersion
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for DEPLOYMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -277,7 +277,7 @@ managementTemplateStep
 To construct, please use Get-Help -Online and see NOTES section for TEMPLATESTEP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStep
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -354,9 +354,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion
 
 ## OUTPUTS
 

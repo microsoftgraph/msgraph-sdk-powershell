@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/stop-mgprivilegedroleassignmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/stop-mgprivilegedroleassignmentrequest
 schema: 2.0.0
 ---
 
-# Stop-MgPrivilegedRoleAssignmentRequest
+# Stop-MgBetaPrivilegedRoleAssignmentRequest
 
 ## SYNOPSIS
 Cancel a privilegedRoleAssignmentRequest.
@@ -14,13 +14,13 @@ Cancel a privilegedRoleAssignmentRequest.
 
 ### Cancel (Default)
 ```
-Stop-MgPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String> [-Confirm] [-WhatIf]
+Stop-MgBetaPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf]
+Stop-MgBetaPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Cancel a privilegedRoleAssignmentRequest.
 
 ## EXAMPLES
 
-### Example 1: Using the Stop-MgPrivilegedRoleAssignmentRequest Cmdlet
+### Example 1: Using the Stop-MgBetaPrivilegedRoleAssignmentRequest Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Stop-MgPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId $privilegedRoleAssignmentRequestId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Stop-MgBetaPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId $privilegedRoleAssignmentRequestId
 ```
 
-This example shows how to use the Stop-MgPrivilegedRoleAssignmentRequest Cmdlet.
+This example shows how to use the Stop-MgBetaPrivilegedRoleAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -45,7 +45,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CancelViaIdentity
 Aliases:
 
@@ -107,11 +107,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mguserchatoperation
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mguserchatoperation
 schema: 2.0.0
 ---
 
-# Update-MgUserChatOperation
+# Update-MgBetaUserChatOperation
 
 ## SYNOPSIS
 Update the navigation property operations in users
@@ -14,7 +14,7 @@ Update the navigation property operations in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserChatOperation -ChatId <String> -TeamsAsyncOperationId <String> -UserId <String>
+Update-MgBetaUserChatOperation -ChatId <String> -TeamsAsyncOperationId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-AttemptsCount <Int32>] [-CreatedDateTime <DateTime>]
  [-Error <IMicrosoftGraphOperationError>] [-Id <String>] [-LastActionDateTime <DateTime>]
  [-OperationType <String>] [-Status <String>] [-TargetResourceId <String>] [-TargetResourceLocation <String>]
@@ -23,19 +23,19 @@ Update-MgUserChatOperation -ChatId <String> -TeamsAsyncOperationId <String> -Use
 
 ### Update
 ```
-Update-MgUserChatOperation -ChatId <String> -TeamsAsyncOperationId <String> -UserId <String>
+Update-MgBetaUserChatOperation -ChatId <String> -TeamsAsyncOperationId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphTeamsAsyncOperation1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserChatOperation -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsAsyncOperation1>
+Update-MgBetaUserChatOperation -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsAsyncOperation1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserChatOperation -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserChatOperation -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AttemptsCount <Int32>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphOperationError>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-OperationType <String>] [-Status <String>]
  [-TargetResourceId <String>] [-TargetResourceLocation <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -84,7 +84,7 @@ teamsAsyncOperation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ operationError
 To construct, please use Get-Help -Online and see NOTES section for ERROR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOperationError
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOperationError
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -330,9 +330,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

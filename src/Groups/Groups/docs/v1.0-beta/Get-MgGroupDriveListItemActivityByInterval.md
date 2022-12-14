@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupdrivelistitemactivitybyinterval
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupdrivelistitemactivitybyinterval
 schema: 2.0.0
 ---
 
-# Get-MgGroupDriveListItemActivityByInterval
+# Get-MgBetaGroupDriveListItemActivityByInterval
 
 ## SYNOPSIS
 Invoke function getActivitiesByInterval
@@ -14,7 +14,7 @@ Invoke function getActivitiesByInterval
 
 ### Get (Default)
 ```
-Get-MgGroupDriveListItemActivityByInterval -DriveId <String> -EndDateTime <String> -GroupId <String>
+Get-MgBetaGroupDriveListItemActivityByInterval -DriveId <String> -EndDateTime <String> -GroupId <String>
  -Interval <String> -ListItemId <String> -StartDateTime <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgGroupDriveListItemActivityByInterval -DriveId <String> -EndDateTime <Strin
 
 ### GetViaIdentity
 ```
-Get-MgGroupDriveListItemActivityByInterval -InputObject <IGroupsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaGroupDriveListItemActivityByInterval -InputObject <IGroupsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -114,7 +114,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemActivityStat
 
 ## NOTES
 

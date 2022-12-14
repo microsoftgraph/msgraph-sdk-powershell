@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/set-mgorganizationbrandinglocalizationheaderlogo
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/set-mgorganizationbrandinglocalizationheaderlogo
 schema: 2.0.0
 ---
 
-# Set-MgOrganizationBrandingLocalizationHeaderLogo
+# Set-MgBetaOrganizationBrandingLocalizationHeaderLogo
 
 ## SYNOPSIS
 Update headerLogo for the navigation property localizations in organization
@@ -14,14 +14,14 @@ Update headerLogo for the navigation property localizations in organization
 
 ### Set (Default)
 ```
-Set-MgOrganizationBrandingLocalizationHeaderLogo -OrganizationalBrandingLocalizationId <String>
+Set-MgBetaOrganizationBrandingLocalizationHeaderLogo -OrganizationalBrandingLocalizationId <String>
  -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgOrganizationBrandingLocalizationHeaderLogo -InputObject <IIdentityDirectoryManagementIdentity>
+Set-MgBetaOrganizationBrandingLocalizationHeaderLogo -InputObject <IIdentityDirectoryManagementIdentity>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -161,7 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### System.IO.Stream
 

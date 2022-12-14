@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/update-mgwindowsupdatesdeploymentaudience
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/update-mgwindowsupdatesdeploymentaudience
 schema: 2.0.0
 ---
 
-# Update-MgWindowsUpdatesDeploymentAudience
+# Update-MgBetaWindowsUpdatesDeploymentAudience
 
 ## SYNOPSIS
 Update the members and exclusions collections of a deploymentAudience.
@@ -17,7 +17,7 @@ If all **updatableAsset** objects are the same type, you can also use the method
 
 ### UpdateExpanded (Default)
 ```
-Update-MgWindowsUpdatesDeploymentAudience -DeploymentId <String>
+Update-MgBetaWindowsUpdatesDeploymentAudience -DeploymentId <String>
  [-AddExclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-AdditionalProperties <Hashtable>]
  [-AddMembers <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]
  [-RemoveExclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]
@@ -27,21 +27,21 @@ Update-MgWindowsUpdatesDeploymentAudience -DeploymentId <String>
 
 ### Update
 ```
-Update-MgWindowsUpdatesDeploymentAudience -DeploymentId <String>
+Update-MgBetaWindowsUpdatesDeploymentAudience -DeploymentId <String>
  -BodyParameter <IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgWindowsUpdatesDeploymentAudience -InputObject <IWindowsUpdatesIdentity>
+Update-MgBetaWindowsUpdatesDeploymentAudience -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgWindowsUpdatesDeploymentAudience -InputObject <IWindowsUpdatesIdentity>
+Update-MgBetaWindowsUpdatesDeploymentAudience -InputObject <IWindowsUpdatesIdentity>
  [-AddExclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-AdditionalProperties <Hashtable>]
  [-AddMembers <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]
  [-RemoveExclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]
@@ -57,39 +57,39 @@ If all **updatableAsset** objects are the same type, you can also use the method
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgWindowsUpdatesDeploymentAudience Cmdlet
+### Example 1: Using the Update-MgBetaWindowsUpdatesDeploymentAudience Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	AddMembers = @(
 		@{
-			"@odata.type" = "#microsoft.graph.windowsUpdates.azureADDevice"
+			"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.azureADDevice"
 			Id = "String (identifier)"
 		}
 	)
 	RemoveMembers = @(
 		@{
-			"@odata.type" = "#microsoft.graph.windowsUpdates.azureADDevice"
+			"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.azureADDevice"
 			Id = "String (identifier)"
 		}
 	)
 	AddExclusions = @(
 		@{
-			"@odata.type" = "#microsoft.graph.windowsUpdates.azureADDevice"
+			"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.azureADDevice"
 			Id = "String (identifier)"
 		}
 	)
 	RemoveExclusions = @(
 		@{
-			"@odata.type" = "#microsoft.graph.windowsUpdates.azureADDevice"
+			"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.azureADDevice"
 			Id = "String (identifier)"
 		}
 	)
 }
-Update-MgWindowsUpdatesDeploymentAudience -DeploymentId $deploymentId -BodyParameter $params
+Update-MgBetaWindowsUpdatesDeploymentAudience -DeploymentId $deploymentId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgWindowsUpdatesDeploymentAudience Cmdlet.
+This example shows how to use the Update-MgBetaWindowsUpdatesDeploymentAudience Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -99,7 +99,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 To construct, please use Get-Help -Online and see NOTES section for ADDEXCLUSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ADDMEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -177,7 +177,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for REMOVEEXCLUSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for REMOVEMEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -271,9 +271,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -283,7 +283,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgWuDeploymentAudience
+### Update-MgBetaWuDeploymentAudience
 
 COMPLEX PARAMETER PROPERTIES
 

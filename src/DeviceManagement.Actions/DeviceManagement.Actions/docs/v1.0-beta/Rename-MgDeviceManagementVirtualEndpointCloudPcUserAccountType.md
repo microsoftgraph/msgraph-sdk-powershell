@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/rename-mgdevicemanagementvirtualendpointcloudpcuseraccounttype
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/rename-mgdevicemanagementvirtualendpointcloudpcuseraccounttype
 schema: 2.0.0
 ---
 
-# Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType
+# Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType
 
 ## SYNOPSIS
 Change the account type of the user on a specific Cloud PC.
@@ -14,28 +14,28 @@ Change the account type of the user on a specific Cloud PC.
 
 ### ChangeExpanded (Default)
 ```
-Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPcId <String>
+Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPcId <String>
  [-AdditionalProperties <Hashtable>] [-UserAccountType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Change
 ```
-Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPcId <String>
+Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPcId <String>
  -BodyParameter <IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentity
 ```
-Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType -InputObject <IDeviceManagementActionsIdentity>
+Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentityExpanded
 ```
-Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType -InputObject <IDeviceManagementActionsIdentity>
+Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-UserAccountType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -45,16 +45,16 @@ Change the account type of the user on a specific Cloud PC.
 
 ## EXAMPLES
 
-### Example 1: Using the Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType Cmdlet
+### Example 1: Using the Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
 $params = @{
 	UserAccountType = "administrator"
 }
-Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPCId $cloudPCId -BodyParameter $params
+Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPCId $cloudPCId -BodyParameter $params
 ```
 
-This example shows how to use the Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType Cmdlet.
+This example shows how to use the Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Change, ChangeViaIdentity
 Aliases:
 
@@ -110,7 +110,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: ChangeViaIdentity, ChangeViaIdentityExpanded
 Aliases:
 
@@ -187,9 +187,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

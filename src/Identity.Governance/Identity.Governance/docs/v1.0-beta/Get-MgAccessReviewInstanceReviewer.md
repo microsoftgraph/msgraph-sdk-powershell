@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgaccessreviewinstancereviewer
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgaccessreviewinstancereviewer
 schema: 2.0.0
 ---
 
-# Get-MgAccessReviewInstanceReviewer
+# Get-MgBetaAccessReviewInstanceReviewer
 
 ## SYNOPSIS
 The collection of reviewers for an access review, if access review reviewerType is of type delegated.
@@ -14,20 +14,20 @@ The collection of reviewers for an access review, if access review reviewerType 
 
 ### List (Default)
 ```
-Get-MgAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 <String>
+Get-MgBetaAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 <String>
+Get-MgBetaAccessReviewInstanceReviewer -AccessReviewId <String> -AccessReviewId1 <String>
  -AccessReviewReviewerId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAccessReviewInstanceReviewer -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaAccessReviewInstanceReviewer -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -149,7 +149,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
 
 ## NOTES
 

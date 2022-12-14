@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mguserinformationprotectionbitlocker
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mguserinformationprotectionbitlocker
 schema: 2.0.0
 ---
 
-# Update-MgUserInformationProtectionBitlocker
+# Update-MgBetaUserInformationProtectionBitlocker
 
 ## SYNOPSIS
 Update the navigation property bitlocker in users
@@ -14,26 +14,26 @@ Update the navigation property bitlocker in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserInformationProtectionBitlocker -UserId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserInformationProtectionBitlocker -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserInformationProtectionBitlocker -UserId <String> -BodyParameter <IMicrosoftGraphBitlocker>
+Update-MgBetaUserInformationProtectionBitlocker -UserId <String> -BodyParameter <IMicrosoftGraphBitlocker>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserInformationProtectionBitlocker -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserInformationProtectionBitlocker -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphBitlocker> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserInformationProtectionBitlocker -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserInformationProtectionBitlocker -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ bitlocker
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlocker
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlocker
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -128,7 +128,7 @@ The recovery keys associated with the bitlocker entity.
 To construct, please use Get-Help -Online and see NOTES section for RECOVERYKEYS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlocker
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBitlocker
 
 ## OUTPUTS
 

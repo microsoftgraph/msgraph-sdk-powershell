@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationappmanagementpolicy
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationappmanagementpolicy
 schema: 2.0.0
 ---
 
-# Get-MgApplicationAppManagementPolicy
+# Get-MgBetaApplicationAppManagementPolicy
 
 ## SYNOPSIS
 The appManagementPolicy applied to this application.
@@ -13,7 +13,7 @@ The appManagementPolicy applied to this application.
 ## SYNTAX
 
 ```
-Get-MgApplicationAppManagementPolicy -ApplicationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaApplicationAppManagementPolicy -ApplicationId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -198,7 +198,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
 
 ## NOTES
 

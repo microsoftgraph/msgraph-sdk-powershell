@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgreauthorizeuserdriverootsubscription
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgreauthorizeuserdriverootsubscription
 schema: 2.0.0
 ---
 
-# Invoke-MgReauthorizeUserDriveRootSubscription
+# Invoke-MgBetaReauthorizeUserDriveRootSubscription
 
 ## SYNOPSIS
 Invoke action reauthorize
@@ -14,13 +14,13 @@ Invoke action reauthorize
 
 ### Reauthorize (Default)
 ```
-Invoke-MgReauthorizeUserDriveRootSubscription -DriveId <String> -SubscriptionId <String> -UserId <String>
+Invoke-MgBetaReauthorizeUserDriveRootSubscription -DriveId <String> -SubscriptionId <String> -UserId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReauthorizeViaIdentity
 ```
-Invoke-MgReauthorizeUserDriveRootSubscription -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm]
+Invoke-MgBetaReauthorizeUserDriveRootSubscription -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: ReauthorizeViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

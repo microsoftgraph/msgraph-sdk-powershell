@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupacceptedsenderbyref
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupacceptedsenderbyref
 schema: 2.0.0
 ---
 
-# Get-MgGroupAcceptedSenderByRef
+# Get-MgBetaGroupAcceptedSenderByRef
 
 ## SYNOPSIS
 Get a list of users or groups that are in the accepted-senders list for this group.
@@ -15,7 +15,7 @@ Make sure you do not specify the same user or group in the accepted senders and 
 ## SYNTAX
 
 ```
-Get-MgGroupAcceptedSenderByRef -GroupId <String> [-Filter <String>] [-Skip <Int32>] [-Sort <String[]>]
+Get-MgBetaGroupAcceptedSenderByRef -GroupId <String> [-Filter <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 

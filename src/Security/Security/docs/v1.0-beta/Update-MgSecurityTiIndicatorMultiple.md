@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritytiindicatormultiple
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritytiindicatormultiple
 schema: 2.0.0
 ---
 
-# Update-MgSecurityTiIndicatorMultiple
+# Update-MgBetaSecurityTiIndicatorMultiple
 
 ## SYNOPSIS
 Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
@@ -14,13 +14,13 @@ Update multiple threat intelligence (TI) indicators in one request instead of mu
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgSecurityTiIndicatorMultiple [-AdditionalProperties <Hashtable>]
+Update-MgBetaSecurityTiIndicatorMultiple [-AdditionalProperties <Hashtable>]
  [-Value <IMicrosoftGraphTiIndicator[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgSecurityTiIndicatorMultiple
+Update-MgBetaSecurityTiIndicatorMultiple
  -BodyParameter <IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -30,9 +30,9 @@ Update multiple threat intelligence (TI) indicators in one request instead of mu
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgSecurityTiIndicatorMultiple Cmdlet
+### Example 1: Using the Update-MgBetaSecurityTiIndicatorMultiple Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Value = @(
 		@{
@@ -45,10 +45,10 @@ $params = @{
 		}
 	)
 }
-Update-MgSecurityTiIndicatorMultiple -BodyParameter $params
+Update-MgBetaSecurityTiIndicatorMultiple -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgSecurityTiIndicatorMultiple Cmdlet.
+This example shows how to use the Update-MgBetaSecurityTiIndicatorMultiple Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update1
 Aliases:
 
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for VALUE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -136,11 +136,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
 
 ## NOTES
 

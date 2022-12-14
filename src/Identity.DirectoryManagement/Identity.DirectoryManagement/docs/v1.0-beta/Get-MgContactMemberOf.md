@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactmemberof
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgcontactmemberof
 schema: 2.0.0
 ---
 
-# Get-MgContactMemberOf
+# Get-MgBetaContactMemberOf
 
 ## SYNOPSIS
 Groups that this contact is a member of.
@@ -17,20 +17,20 @@ Supports $expand.
 
 ### List (Default)
 ```
-Get-MgContactMemberOf -OrgContactId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaContactMemberOf -OrgContactId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgContactMemberOf -DirectoryObjectId <String> -OrgContactId <String> [-ExpandProperty <String[]>]
+Get-MgBetaContactMemberOf -DirectoryObjectId <String> -OrgContactId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgContactMemberOf -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaContactMemberOf -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
@@ -42,13 +42,13 @@ Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgContactMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaContactMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgContactMemberOf -OrgContactId $orgContactId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaContactMemberOf -OrgContactId $orgContactId
 ```
 
-This example shows how to use the Get-MgContactMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaContactMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -150,7 +150,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -271,11 +271,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

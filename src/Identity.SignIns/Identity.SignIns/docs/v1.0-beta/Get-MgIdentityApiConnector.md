@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityapiconnector
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityapiconnector
 schema: 2.0.0
 ---
 
-# Get-MgIdentityApiConnector
+# Get-MgBetaIdentityApiConnector
 
 ## SYNOPSIS
 Represents entry point for API connectors.
@@ -14,20 +14,20 @@ Represents entry point for API connectors.
 
 ### List (Default)
 ```
-Get-MgIdentityApiConnector [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaIdentityApiConnector [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgIdentityApiConnector -IdentityApiConnectorId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityApiConnector -IdentityApiConnectorId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Represents entry point for API connectors.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgIdentityApiConnector Cmdlet
+### Example 1: Using the Get-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId
 ```
 
-This example shows how to use the Get-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Get-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgIdentityApiConnector Cmdlet
+### Example 2: Using the Get-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityApiConnector
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaIdentityApiConnector
 ```
 
-This example shows how to use the Get-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Get-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
 
 ## NOTES
 

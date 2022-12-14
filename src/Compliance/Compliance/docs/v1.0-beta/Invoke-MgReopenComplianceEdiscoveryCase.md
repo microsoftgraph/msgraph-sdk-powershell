@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/invoke-mgreopencomplianceediscoverycase
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/invoke-mgreopencomplianceediscoverycase
 schema: 2.0.0
 ---
 
-# Invoke-MgReopenComplianceEdiscoveryCase
+# Invoke-MgBetaReopenComplianceEdiscoveryCase
 
 ## SYNOPSIS
 Reopen an eDiscovery case that was closed.
@@ -15,12 +15,12 @@ For details, see Reopen a closed case.
 
 ### Reopen (Default)
 ```
-Invoke-MgReopenComplianceEdiscoveryCase -CaseId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaReopenComplianceEdiscoveryCase -CaseId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReopenViaIdentity
 ```
-Invoke-MgReopenComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaReopenComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ For details, see Reopen a closed case.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgReopenComplianceEdiscoveryCase Cmdlet
+### Example 1: Using the Invoke-MgBetaReopenComplianceEdiscoveryCase Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Invoke-MgReopenComplianceEdiscoveryCase -CaseId $caseId
+Import-Module Microsoft.Graph.Beta.Compliance
+Invoke-MgBetaReopenComplianceEdiscoveryCase -CaseId $caseId
 ```
 
-This example shows how to use the Invoke-MgReopenComplianceEdiscoveryCase Cmdlet.
+This example shows how to use the Invoke-MgBetaReopenComplianceEdiscoveryCase Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: ReopenViaIdentity
 Aliases:
 
@@ -123,7 +123,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

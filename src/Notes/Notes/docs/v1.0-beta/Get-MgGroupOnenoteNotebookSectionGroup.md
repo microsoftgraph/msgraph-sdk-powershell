@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mggrouponenotenotebooksectiongroup
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/get-mggrouponenotenotebooksectiongroup
 schema: 2.0.0
 ---
 
-# Get-MgGroupOnenoteNotebookSectionGroup
+# Get-MgBetaGroupOnenoteNotebookSectionGroup
 
 ## SYNOPSIS
 Retrieve a list of section groups from the specified notebook.
@@ -13,7 +13,7 @@ Retrieve a list of section groups from the specified notebook.
 ## SYNTAX
 
 ```
-Get-MgGroupOnenoteNotebookSectionGroup -GroupId <String> -NotebookId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupOnenoteNotebookSectionGroup -GroupId <String> -NotebookId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -213,7 +213,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSectionGroup1
 
 ## NOTES
 

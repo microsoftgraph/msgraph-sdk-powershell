@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecurityfilesecurityprofile
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecurityfilesecurityprofile
 schema: 2.0.0
 ---
 
-# Update-MgSecurityFileSecurityProfile
+# Update-MgBetaSecurityFileSecurityProfile
 
 ## SYNOPSIS
 Update the navigation property fileSecurityProfiles in security
@@ -14,7 +14,7 @@ Update the navigation property fileSecurityProfiles in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityFileSecurityProfile -FileSecurityProfileId <String> [-ActivityGroupNames <String[]>]
+Update-MgBetaSecurityFileSecurityProfile -FileSecurityProfileId <String> [-ActivityGroupNames <String[]>]
  [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
  [-CertificateThumbprint <String>] [-Extensions <String[]>] [-FileType <String>]
  [-FirstSeenDateTime <DateTime>] [-Hashes <IMicrosoftGraphFileHash[]>] [-Id <String>]
@@ -27,19 +27,19 @@ Update-MgSecurityFileSecurityProfile -FileSecurityProfileId <String> [-ActivityG
 
 ### Update
 ```
-Update-MgSecurityFileSecurityProfile -FileSecurityProfileId <String>
+Update-MgBetaSecurityFileSecurityProfile -FileSecurityProfileId <String>
  -BodyParameter <IMicrosoftGraphFileSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityFileSecurityProfile -InputObject <ISecurityIdentity>
+Update-MgBetaSecurityFileSecurityProfile -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphFileSecurityProfile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityFileSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGroupNames <String[]>]
+Update-MgBetaSecurityFileSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGroupNames <String[]>]
  [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
  [-CertificateThumbprint <String>] [-Extensions <String[]>] [-FileType <String>]
  [-FirstSeenDateTime <DateTime>] [-Hashes <IMicrosoftGraphFileHash[]>] [-Id <String>]
@@ -122,7 +122,7 @@ fileSecurityProfile
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -213,7 +213,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for HASHES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileHash[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFileHash[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -245,7 +245,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MALWARESTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMalwareState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMalwareState[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -367,7 +367,7 @@ securityVendorInformation
 To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -383,7 +383,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for VULNERABILITYSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVulnerabilityState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVulnerabilityState[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -430,9 +430,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFileSecurityProfile
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

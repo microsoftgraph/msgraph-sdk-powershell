@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgonpremisepublishingprofileconnectorgroupmember
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgonpremisepublishingprofileconnectorgroupmember
 schema: 2.0.0
 ---
 
-# Get-MgOnPremisePublishingProfileConnectorGroupMember
+# Get-MgBetaOnPremisePublishingProfileConnectorGroupMember
 
 ## SYNOPSIS
 Get members from onPremisesPublishingProfiles
@@ -13,7 +13,7 @@ Get members from onPremisesPublishingProfiles
 ## SYNTAX
 
 ```
-Get-MgOnPremisePublishingProfileConnectorGroupMember -ConnectorGroupId <String>
+Get-MgBetaOnPremisePublishingProfileConnectorGroupMember -ConnectorGroupId <String>
  -OnPremisesPublishingProfileId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -24,13 +24,13 @@ Get members from onPremisesPublishingProfiles
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOnPremisePublishingProfileConnectorGroupMember Cmdlet
+### Example 1: Using the Get-MgBetaOnPremisePublishingProfileConnectorGroupMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgOnPremisePublishingProfileConnectorGroupMember -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorGroupId $connectorGroupId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaOnPremisePublishingProfileConnectorGroupMember -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorGroupId $connectorGroupId
 ```
 
-This example shows how to use the Get-MgOnPremisePublishingProfileConnectorGroupMember Cmdlet.
+This example shows how to use the Get-MgBetaOnPremisePublishingProfileConnectorGroupMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -223,7 +223,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConnector
 
 ## NOTES
 

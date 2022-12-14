@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/new-mgusercontactextension
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/new-mgusercontactextension
 schema: 2.0.0
 ---
 
-# New-MgUserContactExtension
+# New-MgBetaUserContactExtension
 
 ## SYNOPSIS
 Create new navigation property to extensions for users
@@ -14,25 +14,25 @@ Create new navigation property to extensions for users
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserContactExtension -ContactId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserContactExtension -ContactId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserContactExtension -ContactId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm]
+New-MgBetaUserContactExtension -ContactId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserContactExtension -InputObject <IPersonalContactsIdentity> -BodyParameter <Hashtable> [-Confirm]
+New-MgBetaUserContactExtension -InputObject <IPersonalContactsIdentity> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserContactExtension -InputObject <IPersonalContactsIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserContactExtension -InputObject <IPersonalContactsIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -170,7 +170,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ### System.Collections.Hashtable
 

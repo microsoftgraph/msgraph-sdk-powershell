@@ -1,506 +1,506 @@
 ---
-Module Name: Microsoft.Graph.Calendar
+Module Name: Microsoft.Graph.Beta.Calendar
 Module Guid: ff68b40e-2298-4ca0-ac1e-88f6d1d6a358
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.calendar
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Calendar Module
+# Microsoft.Graph.Beta.Calendar Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Calendar Cmdlets
-### [Get-MgGroupCalendar](Get-MgGroupCalendar.md)
+## Microsoft.Graph.Beta.Calendar Cmdlets
+### [Get-MgBetaGroupCalendar](Get-MgBetaGroupCalendar.md)
 The group's calendar.
 Read-only.
 
-### [Get-MgGroupCalendarMultiValueExtendedProperty](Get-MgGroupCalendarMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupCalendarMultiValueExtendedProperty](Get-MgBetaGroupCalendarMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the calendar.
 Read-only.
 Nullable.
 
-### [Get-MgGroupCalendarPermission](Get-MgGroupCalendarPermission.md)
+### [Get-MgBetaGroupCalendarPermission](Get-MgBetaGroupCalendarPermission.md)
 The permissions of the users with whom the calendar is shared.
 
-### [Get-MgGroupCalendarSingleValueExtendedProperty](Get-MgGroupCalendarSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupCalendarSingleValueExtendedProperty](Get-MgBetaGroupCalendarSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the calendar.
 Read-only.
 Nullable.
 
-### [Get-MgGroupCalendarView](Get-MgGroupCalendarView.md)
+### [Get-MgBetaGroupCalendarView](Get-MgBetaGroupCalendarView.md)
 The calendar view for the calendar.
 Navigation property.
 Read-only.
 
-### [Get-MgGroupEvent](Get-MgGroupEvent.md)
+### [Get-MgBetaGroupEvent](Get-MgBetaGroupEvent.md)
 The group's events.
 
-### [Get-MgGroupEventAttachment](Get-MgGroupEventAttachment.md)
+### [Get-MgBetaGroupEventAttachment](Get-MgBetaGroupEventAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventCalendar](Get-MgGroupEventCalendar.md)
+### [Get-MgBetaGroupEventCalendar](Get-MgBetaGroupEventCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgGroupEventExceptionOccurrence](Get-MgGroupEventExceptionOccurrence.md)
+### [Get-MgBetaGroupEventExceptionOccurrence](Get-MgBetaGroupEventExceptionOccurrence.md)
 Get exceptionOccurrences from groups
 
-### [Get-MgGroupEventExceptionOccurrenceAttachment](Get-MgGroupEventExceptionOccurrenceAttachment.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceAttachment](Get-MgBetaGroupEventExceptionOccurrenceAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventExceptionOccurrenceCalendar](Get-MgGroupEventExceptionOccurrenceCalendar.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceCalendar](Get-MgBetaGroupEventExceptionOccurrenceCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgGroupEventExceptionOccurrenceExtension](Get-MgGroupEventExceptionOccurrenceExtension.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceExtension](Get-MgBetaGroupEventExceptionOccurrenceExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgGroupEventExceptionOccurrenceInstance](Get-MgGroupEventExceptionOccurrenceInstance.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceInstance](Get-MgBetaGroupEventExceptionOccurrenceInstance.md)
 The occurrences of a recurring series, if the event is a series master.
 This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventExceptionOccurrenceInstanceAttachment](Get-MgGroupEventExceptionOccurrenceInstanceAttachment.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceInstanceAttachment](Get-MgBetaGroupEventExceptionOccurrenceInstanceAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventExceptionOccurrenceInstanceCalendar](Get-MgGroupEventExceptionOccurrenceInstanceCalendar.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceInstanceCalendar](Get-MgBetaGroupEventExceptionOccurrenceInstanceCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgGroupEventExceptionOccurrenceInstanceExtension](Get-MgGroupEventExceptionOccurrenceInstanceExtension.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceInstanceExtension](Get-MgBetaGroupEventExceptionOccurrenceInstanceExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Get-MgGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Get-MgBetaGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Get-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Get-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventExceptionOccurrenceMultiValueExtendedProperty](Get-MgGroupEventExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceMultiValueExtendedProperty](Get-MgBetaGroupEventExceptionOccurrenceMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty](Get-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty](Get-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventExtension](Get-MgGroupEventExtension.md)
+### [Get-MgBetaGroupEventExtension](Get-MgBetaGroupEventExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgGroupEventInstance](Get-MgGroupEventInstance.md)
+### [Get-MgBetaGroupEventInstance](Get-MgBetaGroupEventInstance.md)
 The occurrences of a recurring series, if the event is a series master.
 This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventInstanceAttachment](Get-MgGroupEventInstanceAttachment.md)
+### [Get-MgBetaGroupEventInstanceAttachment](Get-MgBetaGroupEventInstanceAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventInstanceCalendar](Get-MgGroupEventInstanceCalendar.md)
+### [Get-MgBetaGroupEventInstanceCalendar](Get-MgBetaGroupEventInstanceCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgGroupEventInstanceExceptionOccurrence](Get-MgGroupEventInstanceExceptionOccurrence.md)
+### [Get-MgBetaGroupEventInstanceExceptionOccurrence](Get-MgBetaGroupEventInstanceExceptionOccurrence.md)
 Get exceptionOccurrences from groups
 
-### [Get-MgGroupEventInstanceExceptionOccurrenceAttachment](Get-MgGroupEventInstanceExceptionOccurrenceAttachment.md)
+### [Get-MgBetaGroupEventInstanceExceptionOccurrenceAttachment](Get-MgBetaGroupEventInstanceExceptionOccurrenceAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventInstanceExceptionOccurrenceCalendar](Get-MgGroupEventInstanceExceptionOccurrenceCalendar.md)
+### [Get-MgBetaGroupEventInstanceExceptionOccurrenceCalendar](Get-MgBetaGroupEventInstanceExceptionOccurrenceCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgGroupEventInstanceExceptionOccurrenceExtension](Get-MgGroupEventInstanceExceptionOccurrenceExtension.md)
+### [Get-MgBetaGroupEventInstanceExceptionOccurrenceExtension](Get-MgBetaGroupEventInstanceExceptionOccurrenceExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Get-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Get-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Get-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Get-MgBetaGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventInstanceExtension](Get-MgGroupEventInstanceExtension.md)
+### [Get-MgBetaGroupEventInstanceExtension](Get-MgBetaGroupEventInstanceExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgGroupEventInstanceMultiValueExtendedProperty](Get-MgGroupEventInstanceMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupEventInstanceMultiValueExtendedProperty](Get-MgBetaGroupEventInstanceMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventInstanceSingleValueExtendedProperty](Get-MgGroupEventInstanceSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupEventInstanceSingleValueExtendedProperty](Get-MgBetaGroupEventInstanceSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventMultiValueExtendedProperty](Get-MgGroupEventMultiValueExtendedProperty.md)
+### [Get-MgBetaGroupEventMultiValueExtendedProperty](Get-MgBetaGroupEventMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgGroupEventSingleValueExtendedProperty](Get-MgGroupEventSingleValueExtendedProperty.md)
+### [Get-MgBetaGroupEventSingleValueExtendedProperty](Get-MgBetaGroupEventSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgPlace](Get-MgPlace.md)
+### [Get-MgBetaPlace](Get-MgBetaPlace.md)
 Get the properties and relationships of a place object specified by either its ID or email address.
 The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
 
-### [Get-MgUserCalendar](Get-MgUserCalendar.md)
+### [Get-MgBetaUserCalendar](Get-MgBetaUserCalendar.md)
 The user's calendars.
 Read-only.
 Nullable.
 
-### [Get-MgUserCalendarEvent](Get-MgUserCalendarEvent.md)
+### [Get-MgBetaUserCalendarEvent](Get-MgBetaUserCalendarEvent.md)
 Retrieve a list of events in a calendar.
 The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 The list of events contains single instance meetings and series masters.
 To get expanded event instances, you can get the calendar view, or\nget the instances of an event.
 
-### [Get-MgUserCalendarGroup](Get-MgUserCalendarGroup.md)
+### [Get-MgBetaUserCalendarGroup](Get-MgBetaUserCalendarGroup.md)
 The user's calendar groups.
 Read-only.
 Nullable.
 
-### [Get-MgUserCalendarGroupCalendar](Get-MgUserCalendarGroupCalendar.md)
+### [Get-MgBetaUserCalendarGroupCalendar](Get-MgBetaUserCalendarGroupCalendar.md)
 Retrieve a list of calendars belonging to a calendar group.
 
-### [Get-MgUserCalendarMultiValueExtendedProperty](Get-MgUserCalendarMultiValueExtendedProperty.md)
+### [Get-MgBetaUserCalendarMultiValueExtendedProperty](Get-MgBetaUserCalendarMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the calendar.
 Read-only.
 Nullable.
 
-### [Get-MgUserCalendarPermission](Get-MgUserCalendarPermission.md)
+### [Get-MgBetaUserCalendarPermission](Get-MgBetaUserCalendarPermission.md)
 The permissions of the users with whom the calendar is shared.
 
-### [Get-MgUserCalendarSingleValueExtendedProperty](Get-MgUserCalendarSingleValueExtendedProperty.md)
+### [Get-MgBetaUserCalendarSingleValueExtendedProperty](Get-MgBetaUserCalendarSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the calendar.
 Read-only.
 Nullable.
 
-### [Get-MgUserCalendarView](Get-MgUserCalendarView.md)
+### [Get-MgBetaUserCalendarView](Get-MgBetaUserCalendarView.md)
 The calendar view for the calendar.
 Navigation property.
 Read-only.
 
-### [Get-MgUserDefaultCalendar](Get-MgUserDefaultCalendar.md)
+### [Get-MgBetaUserDefaultCalendar](Get-MgBetaUserDefaultCalendar.md)
 Get the properties and relationships of a calendar object.
 The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group.
 There are two scenarios where an app can get another user's calendar:
 
-### [Get-MgUserEvent](Get-MgUserEvent.md)
+### [Get-MgBetaUserEvent](Get-MgBetaUserEvent.md)
 The user's events.
 Default is to show events under the Default Calendar.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventAttachment](Get-MgUserEventAttachment.md)
+### [Get-MgBetaUserEventAttachment](Get-MgBetaUserEventAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventCalendar](Get-MgUserEventCalendar.md)
+### [Get-MgBetaUserEventCalendar](Get-MgBetaUserEventCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgUserEventExceptionOccurrence](Get-MgUserEventExceptionOccurrence.md)
+### [Get-MgBetaUserEventExceptionOccurrence](Get-MgBetaUserEventExceptionOccurrence.md)
 Get exceptionOccurrences from users
 
-### [Get-MgUserEventExceptionOccurrenceAttachment](Get-MgUserEventExceptionOccurrenceAttachment.md)
+### [Get-MgBetaUserEventExceptionOccurrenceAttachment](Get-MgBetaUserEventExceptionOccurrenceAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventExceptionOccurrenceCalendar](Get-MgUserEventExceptionOccurrenceCalendar.md)
+### [Get-MgBetaUserEventExceptionOccurrenceCalendar](Get-MgBetaUserEventExceptionOccurrenceCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgUserEventExceptionOccurrenceExtension](Get-MgUserEventExceptionOccurrenceExtension.md)
+### [Get-MgBetaUserEventExceptionOccurrenceExtension](Get-MgBetaUserEventExceptionOccurrenceExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgUserEventExceptionOccurrenceInstance](Get-MgUserEventExceptionOccurrenceInstance.md)
+### [Get-MgBetaUserEventExceptionOccurrenceInstance](Get-MgBetaUserEventExceptionOccurrenceInstance.md)
 The occurrences of a recurring series, if the event is a series master.
 This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventExceptionOccurrenceInstanceAttachment](Get-MgUserEventExceptionOccurrenceInstanceAttachment.md)
+### [Get-MgBetaUserEventExceptionOccurrenceInstanceAttachment](Get-MgBetaUserEventExceptionOccurrenceInstanceAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventExceptionOccurrenceInstanceCalendar](Get-MgUserEventExceptionOccurrenceInstanceCalendar.md)
+### [Get-MgBetaUserEventExceptionOccurrenceInstanceCalendar](Get-MgBetaUserEventExceptionOccurrenceInstanceCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgUserEventExceptionOccurrenceInstanceExtension](Get-MgUserEventExceptionOccurrenceInstanceExtension.md)
+### [Get-MgBetaUserEventExceptionOccurrenceInstanceExtension](Get-MgBetaUserEventExceptionOccurrenceInstanceExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Get-MgUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
+### [Get-MgBetaUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Get-MgBetaUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Get-MgUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
+### [Get-MgBetaUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Get-MgBetaUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventExceptionOccurrenceMultiValueExtendedProperty](Get-MgUserEventExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Get-MgBetaUserEventExceptionOccurrenceMultiValueExtendedProperty](Get-MgBetaUserEventExceptionOccurrenceMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventExceptionOccurrenceSingleValueExtendedProperty](Get-MgUserEventExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Get-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty](Get-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventExtension](Get-MgUserEventExtension.md)
+### [Get-MgBetaUserEventExtension](Get-MgBetaUserEventExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgUserEventInstance](Get-MgUserEventInstance.md)
+### [Get-MgBetaUserEventInstance](Get-MgBetaUserEventInstance.md)
 The occurrences of a recurring series, if the event is a series master.
 This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventInstanceAttachment](Get-MgUserEventInstanceAttachment.md)
+### [Get-MgBetaUserEventInstanceAttachment](Get-MgBetaUserEventInstanceAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventInstanceCalendar](Get-MgUserEventInstanceCalendar.md)
+### [Get-MgBetaUserEventInstanceCalendar](Get-MgBetaUserEventInstanceCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgUserEventInstanceExceptionOccurrence](Get-MgUserEventInstanceExceptionOccurrence.md)
+### [Get-MgBetaUserEventInstanceExceptionOccurrence](Get-MgBetaUserEventInstanceExceptionOccurrence.md)
 Get exceptionOccurrences from users
 
-### [Get-MgUserEventInstanceExceptionOccurrenceAttachment](Get-MgUserEventInstanceExceptionOccurrenceAttachment.md)
+### [Get-MgBetaUserEventInstanceExceptionOccurrenceAttachment](Get-MgBetaUserEventInstanceExceptionOccurrenceAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
 Navigation property.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventInstanceExceptionOccurrenceCalendar](Get-MgUserEventInstanceExceptionOccurrenceCalendar.md)
+### [Get-MgBetaUserEventInstanceExceptionOccurrenceCalendar](Get-MgBetaUserEventInstanceExceptionOccurrenceCalendar.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
 
-### [Get-MgUserEventInstanceExceptionOccurrenceExtension](Get-MgUserEventInstanceExceptionOccurrenceExtension.md)
+### [Get-MgBetaUserEventInstanceExceptionOccurrenceExtension](Get-MgBetaUserEventInstanceExceptionOccurrenceExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Get-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Get-MgBetaUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Get-MgBetaUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Get-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Get-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Get-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventInstanceExtension](Get-MgUserEventInstanceExtension.md)
+### [Get-MgBetaUserEventInstanceExtension](Get-MgBetaUserEventInstanceExtension.md)
 The collection of open extensions defined for the event.
 Nullable.
 
-### [Get-MgUserEventInstanceMultiValueExtendedProperty](Get-MgUserEventInstanceMultiValueExtendedProperty.md)
+### [Get-MgBetaUserEventInstanceMultiValueExtendedProperty](Get-MgBetaUserEventInstanceMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventInstanceSingleValueExtendedProperty](Get-MgUserEventInstanceSingleValueExtendedProperty.md)
+### [Get-MgBetaUserEventInstanceSingleValueExtendedProperty](Get-MgBetaUserEventInstanceSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventMultiValueExtendedProperty](Get-MgUserEventMultiValueExtendedProperty.md)
+### [Get-MgBetaUserEventMultiValueExtendedProperty](Get-MgBetaUserEventMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [Get-MgUserEventSingleValueExtendedProperty](Get-MgUserEventSingleValueExtendedProperty.md)
+### [Get-MgBetaUserEventSingleValueExtendedProperty](Get-MgBetaUserEventSingleValueExtendedProperty.md)
 The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
-### [New-MgGroupCalendarMultiValueExtendedProperty](New-MgGroupCalendarMultiValueExtendedProperty.md)
+### [New-MgBetaGroupCalendarMultiValueExtendedProperty](New-MgBetaGroupCalendarMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupCalendarPermission](New-MgGroupCalendarPermission.md)
+### [New-MgBetaGroupCalendarPermission](New-MgBetaGroupCalendarPermission.md)
 Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
 
-### [New-MgGroupCalendarSingleValueExtendedProperty](New-MgGroupCalendarSingleValueExtendedProperty.md)
+### [New-MgBetaGroupCalendarSingleValueExtendedProperty](New-MgBetaGroupCalendarSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgGroupEvent](New-MgGroupEvent.md)
+### [New-MgBetaGroupEvent](New-MgBetaGroupEvent.md)
 Use this API to create a new event.
 
-### [New-MgGroupEventAttachment](New-MgGroupEventAttachment.md)
+### [New-MgBetaGroupEventAttachment](New-MgBetaGroupEventAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgGroupEventExceptionOccurrenceAttachment](New-MgGroupEventExceptionOccurrenceAttachment.md)
+### [New-MgBetaGroupEventExceptionOccurrenceAttachment](New-MgBetaGroupEventExceptionOccurrenceAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgGroupEventExceptionOccurrenceExtension](New-MgGroupEventExceptionOccurrenceExtension.md)
+### [New-MgBetaGroupEventExceptionOccurrenceExtension](New-MgBetaGroupEventExceptionOccurrenceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgGroupEventExceptionOccurrenceInstanceAttachment](New-MgGroupEventExceptionOccurrenceInstanceAttachment.md)
+### [New-MgBetaGroupEventExceptionOccurrenceInstanceAttachment](New-MgBetaGroupEventExceptionOccurrenceInstanceAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgGroupEventExceptionOccurrenceInstanceExtension](New-MgGroupEventExceptionOccurrenceInstanceExtension.md)
+### [New-MgBetaGroupEventExceptionOccurrenceInstanceExtension](New-MgBetaGroupEventExceptionOccurrenceInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty](New-MgGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
+### [New-MgBetaGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty](New-MgBetaGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty](New-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
+### [New-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty](New-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgGroupEventExceptionOccurrenceMultiValueExtendedProperty](New-MgGroupEventExceptionOccurrenceMultiValueExtendedProperty.md)
+### [New-MgBetaGroupEventExceptionOccurrenceMultiValueExtendedProperty](New-MgBetaGroupEventExceptionOccurrenceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty](New-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty.md)
+### [New-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty](New-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgGroupEventExtension](New-MgGroupEventExtension.md)
+### [New-MgBetaGroupEventExtension](New-MgBetaGroupEventExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgGroupEventInstanceAttachment](New-MgGroupEventInstanceAttachment.md)
+### [New-MgBetaGroupEventInstanceAttachment](New-MgBetaGroupEventInstanceAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgGroupEventInstanceExceptionOccurrenceAttachment](New-MgGroupEventInstanceExceptionOccurrenceAttachment.md)
+### [New-MgBetaGroupEventInstanceExceptionOccurrenceAttachment](New-MgBetaGroupEventInstanceExceptionOccurrenceAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgGroupEventInstanceExceptionOccurrenceExtension](New-MgGroupEventInstanceExceptionOccurrenceExtension.md)
+### [New-MgBetaGroupEventInstanceExceptionOccurrenceExtension](New-MgBetaGroupEventInstanceExceptionOccurrenceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty](New-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
+### [New-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty](New-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty](New-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
+### [New-MgBetaGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty](New-MgBetaGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgGroupEventInstanceExtension](New-MgGroupEventInstanceExtension.md)
+### [New-MgBetaGroupEventInstanceExtension](New-MgBetaGroupEventInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgGroupEventInstanceMultiValueExtendedProperty](New-MgGroupEventInstanceMultiValueExtendedProperty.md)
+### [New-MgBetaGroupEventInstanceMultiValueExtendedProperty](New-MgBetaGroupEventInstanceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupEventInstanceSingleValueExtendedProperty](New-MgGroupEventInstanceSingleValueExtendedProperty.md)
+### [New-MgBetaGroupEventInstanceSingleValueExtendedProperty](New-MgBetaGroupEventInstanceSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgGroupEventMultiValueExtendedProperty](New-MgGroupEventMultiValueExtendedProperty.md)
+### [New-MgBetaGroupEventMultiValueExtendedProperty](New-MgBetaGroupEventMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
-### [New-MgGroupEventSingleValueExtendedProperty](New-MgGroupEventSingleValueExtendedProperty.md)
+### [New-MgBetaGroupEventSingleValueExtendedProperty](New-MgBetaGroupEventSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
-### [New-MgPlace](New-MgPlace.md)
+### [New-MgBetaPlace](New-MgBetaPlace.md)
 Add new entity to places
 
-### [New-MgUserCalendar](New-MgUserCalendar.md)
+### [New-MgBetaUserCalendar](New-MgBetaUserCalendar.md)
 Create a new calendar for a user.
 
-### [New-MgUserCalendarEvent](New-MgUserCalendarEvent.md)
+### [New-MgBetaUserCalendarEvent](New-MgBetaUserCalendarEvent.md)
 Use this API to create a new event in a calendar.
 The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 
-### [New-MgUserCalendarGroup](New-MgUserCalendarGroup.md)
+### [New-MgBetaUserCalendarGroup](New-MgBetaUserCalendarGroup.md)
 Use this API to create a new CalendarGroup.
 
-### [New-MgUserCalendarGroupCalendar](New-MgUserCalendarGroupCalendar.md)
+### [New-MgBetaUserCalendarGroupCalendar](New-MgBetaUserCalendarGroupCalendar.md)
 Use this API to create a new calendar in a calendar group for a user.
 
-### [New-MgUserCalendarMultiValueExtendedProperty](New-MgUserCalendarMultiValueExtendedProperty.md)
+### [New-MgBetaUserCalendarMultiValueExtendedProperty](New-MgBetaUserCalendarMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserCalendarPermission](New-MgUserCalendarPermission.md)
+### [New-MgBetaUserCalendarPermission](New-MgBetaUserCalendarPermission.md)
 Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
 
-### [New-MgUserCalendarSingleValueExtendedProperty](New-MgUserCalendarSingleValueExtendedProperty.md)
+### [New-MgBetaUserCalendarSingleValueExtendedProperty](New-MgBetaUserCalendarSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserEvent](New-MgUserEvent.md)
+### [New-MgBetaUserEvent](New-MgBetaUserEvent.md)
 Create an event in the user's default calendar or specified calendar.
 By default, the **allowNewTimeProposals** property is set to true when an event is created, which means invitees can propose a different date/time for the event.
 See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal.
@@ -514,365 +514,365 @@ If the meeting is rescheduled,\nthe server automatically updates the event in th
 Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room.
 If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
 
-### [New-MgUserEventAttachment](New-MgUserEventAttachment.md)
+### [New-MgBetaUserEventAttachment](New-MgBetaUserEventAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgUserEventExceptionOccurrenceAttachment](New-MgUserEventExceptionOccurrenceAttachment.md)
+### [New-MgBetaUserEventExceptionOccurrenceAttachment](New-MgBetaUserEventExceptionOccurrenceAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgUserEventExceptionOccurrenceExtension](New-MgUserEventExceptionOccurrenceExtension.md)
+### [New-MgBetaUserEventExceptionOccurrenceExtension](New-MgBetaUserEventExceptionOccurrenceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserEventExceptionOccurrenceInstanceAttachment](New-MgUserEventExceptionOccurrenceInstanceAttachment.md)
+### [New-MgBetaUserEventExceptionOccurrenceInstanceAttachment](New-MgBetaUserEventExceptionOccurrenceInstanceAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgUserEventExceptionOccurrenceInstanceExtension](New-MgUserEventExceptionOccurrenceInstanceExtension.md)
+### [New-MgBetaUserEventExceptionOccurrenceInstanceExtension](New-MgBetaUserEventExceptionOccurrenceInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty](New-MgUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
+### [New-MgBetaUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty](New-MgBetaUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty](New-MgUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
+### [New-MgBetaUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty](New-MgBetaUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserEventExceptionOccurrenceMultiValueExtendedProperty](New-MgUserEventExceptionOccurrenceMultiValueExtendedProperty.md)
+### [New-MgBetaUserEventExceptionOccurrenceMultiValueExtendedProperty](New-MgBetaUserEventExceptionOccurrenceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserEventExceptionOccurrenceSingleValueExtendedProperty](New-MgUserEventExceptionOccurrenceSingleValueExtendedProperty.md)
+### [New-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty](New-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserEventExtension](New-MgUserEventExtension.md)
+### [New-MgBetaUserEventExtension](New-MgBetaUserEventExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserEventInstanceAttachment](New-MgUserEventInstanceAttachment.md)
+### [New-MgBetaUserEventInstanceAttachment](New-MgBetaUserEventInstanceAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgUserEventInstanceExceptionOccurrenceAttachment](New-MgUserEventInstanceExceptionOccurrenceAttachment.md)
+### [New-MgBetaUserEventInstanceExceptionOccurrenceAttachment](New-MgBetaUserEventInstanceExceptionOccurrenceAttachment.md)
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
-### [New-MgUserEventInstanceExceptionOccurrenceExtension](New-MgUserEventInstanceExceptionOccurrenceExtension.md)
+### [New-MgBetaUserEventInstanceExceptionOccurrenceExtension](New-MgBetaUserEventInstanceExceptionOccurrenceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty](New-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
+### [New-MgBetaUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty](New-MgBetaUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty](New-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
+### [New-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty](New-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserEventInstanceExtension](New-MgUserEventInstanceExtension.md)
+### [New-MgBetaUserEventInstanceExtension](New-MgBetaUserEventInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
-### [New-MgUserEventInstanceMultiValueExtendedProperty](New-MgUserEventInstanceMultiValueExtendedProperty.md)
+### [New-MgBetaUserEventInstanceMultiValueExtendedProperty](New-MgBetaUserEventInstanceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserEventInstanceSingleValueExtendedProperty](New-MgUserEventInstanceSingleValueExtendedProperty.md)
+### [New-MgBetaUserEventInstanceSingleValueExtendedProperty](New-MgBetaUserEventInstanceSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [New-MgUserEventMultiValueExtendedProperty](New-MgUserEventMultiValueExtendedProperty.md)
+### [New-MgBetaUserEventMultiValueExtendedProperty](New-MgBetaUserEventMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
-### [New-MgUserEventSingleValueExtendedProperty](New-MgUserEventSingleValueExtendedProperty.md)
+### [New-MgBetaUserEventSingleValueExtendedProperty](New-MgBetaUserEventSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
-### [Remove-MgGroupCalendarMultiValueExtendedProperty](Remove-MgGroupCalendarMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupCalendarMultiValueExtendedProperty](Remove-MgBetaGroupCalendarMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupCalendarPermission](Remove-MgGroupCalendarPermission.md)
+### [Remove-MgBetaGroupCalendarPermission](Remove-MgBetaGroupCalendarPermission.md)
 Delete navigation property calendarPermissions for groups
 
-### [Remove-MgGroupCalendarSingleValueExtendedProperty](Remove-MgGroupCalendarSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupCalendarSingleValueExtendedProperty](Remove-MgBetaGroupCalendarSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgGroupEvent](Remove-MgGroupEvent.md)
+### [Remove-MgBetaGroupEvent](Remove-MgBetaGroupEvent.md)
 Delete navigation property events for groups
 
-### [Remove-MgGroupEventAttachment](Remove-MgGroupEventAttachment.md)
+### [Remove-MgBetaGroupEventAttachment](Remove-MgBetaGroupEventAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupEventExceptionOccurrenceAttachment](Remove-MgGroupEventExceptionOccurrenceAttachment.md)
+### [Remove-MgBetaGroupEventExceptionOccurrenceAttachment](Remove-MgBetaGroupEventExceptionOccurrenceAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupEventExceptionOccurrenceExtension](Remove-MgGroupEventExceptionOccurrenceExtension.md)
+### [Remove-MgBetaGroupEventExceptionOccurrenceExtension](Remove-MgBetaGroupEventExceptionOccurrenceExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupEventExceptionOccurrenceInstanceAttachment](Remove-MgGroupEventExceptionOccurrenceInstanceAttachment.md)
+### [Remove-MgBetaGroupEventExceptionOccurrenceInstanceAttachment](Remove-MgBetaGroupEventExceptionOccurrenceInstanceAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupEventExceptionOccurrenceInstanceExtension](Remove-MgGroupEventExceptionOccurrenceInstanceExtension.md)
+### [Remove-MgBetaGroupEventExceptionOccurrenceInstanceExtension](Remove-MgBetaGroupEventExceptionOccurrenceInstanceExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Remove-MgGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Remove-MgBetaGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Remove-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Remove-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgGroupEventExceptionOccurrenceMultiValueExtendedProperty](Remove-MgGroupEventExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventExceptionOccurrenceMultiValueExtendedProperty](Remove-MgBetaGroupEventExceptionOccurrenceMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty](Remove-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty](Remove-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgGroupEventExtension](Remove-MgGroupEventExtension.md)
+### [Remove-MgBetaGroupEventExtension](Remove-MgBetaGroupEventExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupEventInstanceAttachment](Remove-MgGroupEventInstanceAttachment.md)
+### [Remove-MgBetaGroupEventInstanceAttachment](Remove-MgBetaGroupEventInstanceAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupEventInstanceExceptionOccurrenceAttachment](Remove-MgGroupEventInstanceExceptionOccurrenceAttachment.md)
+### [Remove-MgBetaGroupEventInstanceExceptionOccurrenceAttachment](Remove-MgBetaGroupEventInstanceExceptionOccurrenceAttachment.md)
 Delete navigation property attachments for groups
 
-### [Remove-MgGroupEventInstanceExceptionOccurrenceExtension](Remove-MgGroupEventInstanceExceptionOccurrenceExtension.md)
+### [Remove-MgBetaGroupEventInstanceExceptionOccurrenceExtension](Remove-MgBetaGroupEventInstanceExceptionOccurrenceExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Remove-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Remove-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Remove-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Remove-MgBetaGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgGroupEventInstanceExtension](Remove-MgGroupEventInstanceExtension.md)
+### [Remove-MgBetaGroupEventInstanceExtension](Remove-MgBetaGroupEventInstanceExtension.md)
 Delete navigation property extensions for groups
 
-### [Remove-MgGroupEventInstanceMultiValueExtendedProperty](Remove-MgGroupEventInstanceMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventInstanceMultiValueExtendedProperty](Remove-MgBetaGroupEventInstanceMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupEventInstanceSingleValueExtendedProperty](Remove-MgGroupEventInstanceSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventInstanceSingleValueExtendedProperty](Remove-MgBetaGroupEventInstanceSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgGroupEventMultiValueExtendedProperty](Remove-MgGroupEventMultiValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventMultiValueExtendedProperty](Remove-MgBetaGroupEventMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for groups
 
-### [Remove-MgGroupEventSingleValueExtendedProperty](Remove-MgGroupEventSingleValueExtendedProperty.md)
+### [Remove-MgBetaGroupEventSingleValueExtendedProperty](Remove-MgBetaGroupEventSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for groups
 
-### [Remove-MgPlace](Remove-MgPlace.md)
+### [Remove-MgBetaPlace](Remove-MgBetaPlace.md)
 Delete entity from places
 
-### [Remove-MgUserCalendar](Remove-MgUserCalendar.md)
+### [Remove-MgBetaUserCalendar](Remove-MgBetaUserCalendar.md)
 Delete navigation property calendars for users
 
-### [Remove-MgUserCalendarGroup](Remove-MgUserCalendarGroup.md)
+### [Remove-MgBetaUserCalendarGroup](Remove-MgBetaUserCalendarGroup.md)
 Delete navigation property calendarGroups for users
 
-### [Remove-MgUserCalendarMultiValueExtendedProperty](Remove-MgUserCalendarMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserCalendarMultiValueExtendedProperty](Remove-MgBetaUserCalendarMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserCalendarPermission](Remove-MgUserCalendarPermission.md)
+### [Remove-MgBetaUserCalendarPermission](Remove-MgBetaUserCalendarPermission.md)
 Delete navigation property calendarPermissions for users
 
-### [Remove-MgUserCalendarSingleValueExtendedProperty](Remove-MgUserCalendarSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserCalendarSingleValueExtendedProperty](Remove-MgBetaUserCalendarSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserEvent](Remove-MgUserEvent.md)
+### [Remove-MgBetaUserEvent](Remove-MgBetaUserEvent.md)
 Delete navigation property events for users
 
-### [Remove-MgUserEventAttachment](Remove-MgUserEventAttachment.md)
+### [Remove-MgBetaUserEventAttachment](Remove-MgBetaUserEventAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserEventExceptionOccurrenceAttachment](Remove-MgUserEventExceptionOccurrenceAttachment.md)
+### [Remove-MgBetaUserEventExceptionOccurrenceAttachment](Remove-MgBetaUserEventExceptionOccurrenceAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserEventExceptionOccurrenceExtension](Remove-MgUserEventExceptionOccurrenceExtension.md)
+### [Remove-MgBetaUserEventExceptionOccurrenceExtension](Remove-MgBetaUserEventExceptionOccurrenceExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserEventExceptionOccurrenceInstanceAttachment](Remove-MgUserEventExceptionOccurrenceInstanceAttachment.md)
+### [Remove-MgBetaUserEventExceptionOccurrenceInstanceAttachment](Remove-MgBetaUserEventExceptionOccurrenceInstanceAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserEventExceptionOccurrenceInstanceExtension](Remove-MgUserEventExceptionOccurrenceInstanceExtension.md)
+### [Remove-MgBetaUserEventExceptionOccurrenceInstanceExtension](Remove-MgBetaUserEventExceptionOccurrenceInstanceExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Remove-MgUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Remove-MgBetaUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Remove-MgUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Remove-MgBetaUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserEventExceptionOccurrenceMultiValueExtendedProperty](Remove-MgUserEventExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserEventExceptionOccurrenceMultiValueExtendedProperty](Remove-MgBetaUserEventExceptionOccurrenceMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserEventExceptionOccurrenceSingleValueExtendedProperty](Remove-MgUserEventExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty](Remove-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserEventExtension](Remove-MgUserEventExtension.md)
+### [Remove-MgBetaUserEventExtension](Remove-MgBetaUserEventExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserEventInstanceAttachment](Remove-MgUserEventInstanceAttachment.md)
+### [Remove-MgBetaUserEventInstanceAttachment](Remove-MgBetaUserEventInstanceAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserEventInstanceExceptionOccurrenceAttachment](Remove-MgUserEventInstanceExceptionOccurrenceAttachment.md)
+### [Remove-MgBetaUserEventInstanceExceptionOccurrenceAttachment](Remove-MgBetaUserEventInstanceExceptionOccurrenceAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgUserEventInstanceExceptionOccurrenceExtension](Remove-MgUserEventInstanceExceptionOccurrenceExtension.md)
+### [Remove-MgBetaUserEventInstanceExceptionOccurrenceExtension](Remove-MgBetaUserEventInstanceExceptionOccurrenceExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Remove-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Remove-MgBetaUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Remove-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Remove-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserEventInstanceExtension](Remove-MgUserEventInstanceExtension.md)
+### [Remove-MgBetaUserEventInstanceExtension](Remove-MgBetaUserEventInstanceExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserEventInstanceMultiValueExtendedProperty](Remove-MgUserEventInstanceMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserEventInstanceMultiValueExtendedProperty](Remove-MgBetaUserEventInstanceMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserEventInstanceSingleValueExtendedProperty](Remove-MgUserEventInstanceSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserEventInstanceSingleValueExtendedProperty](Remove-MgBetaUserEventInstanceSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Remove-MgUserEventMultiValueExtendedProperty](Remove-MgUserEventMultiValueExtendedProperty.md)
+### [Remove-MgBetaUserEventMultiValueExtendedProperty](Remove-MgBetaUserEventMultiValueExtendedProperty.md)
 Delete navigation property multiValueExtendedProperties for users
 
-### [Remove-MgUserEventSingleValueExtendedProperty](Remove-MgUserEventSingleValueExtendedProperty.md)
+### [Remove-MgBetaUserEventSingleValueExtendedProperty](Remove-MgBetaUserEventSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
 
-### [Update-MgGroupCalendarMultiValueExtendedProperty](Update-MgGroupCalendarMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupCalendarMultiValueExtendedProperty](Update-MgBetaGroupCalendarMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupCalendarPermission](Update-MgGroupCalendarPermission.md)
+### [Update-MgBetaGroupCalendarPermission](Update-MgBetaGroupCalendarPermission.md)
 Update the navigation property calendarPermissions in groups
 
-### [Update-MgGroupCalendarSingleValueExtendedProperty](Update-MgGroupCalendarSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupCalendarSingleValueExtendedProperty](Update-MgBetaGroupCalendarSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgGroupEvent](Update-MgGroupEvent.md)
+### [Update-MgBetaGroupEvent](Update-MgBetaGroupEvent.md)
 Update the navigation property events in groups
 
-### [Update-MgGroupEventExceptionOccurrenceExtension](Update-MgGroupEventExceptionOccurrenceExtension.md)
+### [Update-MgBetaGroupEventExceptionOccurrenceExtension](Update-MgBetaGroupEventExceptionOccurrenceExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupEventExceptionOccurrenceInstanceExtension](Update-MgGroupEventExceptionOccurrenceInstanceExtension.md)
+### [Update-MgBetaGroupEventExceptionOccurrenceInstanceExtension](Update-MgBetaGroupEventExceptionOccurrenceInstanceExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Update-MgGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Update-MgBetaGroupEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Update-MgGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Update-MgBetaGroupEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgGroupEventExceptionOccurrenceMultiValueExtendedProperty](Update-MgGroupEventExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupEventExceptionOccurrenceMultiValueExtendedProperty](Update-MgBetaGroupEventExceptionOccurrenceMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty](Update-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty](Update-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgGroupEventExtension](Update-MgGroupEventExtension.md)
+### [Update-MgBetaGroupEventExtension](Update-MgBetaGroupEventExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupEventInstanceExceptionOccurrenceExtension](Update-MgGroupEventInstanceExceptionOccurrenceExtension.md)
+### [Update-MgBetaGroupEventInstanceExceptionOccurrenceExtension](Update-MgBetaGroupEventInstanceExceptionOccurrenceExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Update-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Update-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Update-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Update-MgBetaGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgGroupEventInstanceExtension](Update-MgGroupEventInstanceExtension.md)
+### [Update-MgBetaGroupEventInstanceExtension](Update-MgBetaGroupEventInstanceExtension.md)
 Update the navigation property extensions in groups
 
-### [Update-MgGroupEventInstanceMultiValueExtendedProperty](Update-MgGroupEventInstanceMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupEventInstanceMultiValueExtendedProperty](Update-MgBetaGroupEventInstanceMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupEventInstanceSingleValueExtendedProperty](Update-MgGroupEventInstanceSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupEventInstanceSingleValueExtendedProperty](Update-MgBetaGroupEventInstanceSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgGroupEventMultiValueExtendedProperty](Update-MgGroupEventMultiValueExtendedProperty.md)
+### [Update-MgBetaGroupEventMultiValueExtendedProperty](Update-MgBetaGroupEventMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in groups
 
-### [Update-MgGroupEventSingleValueExtendedProperty](Update-MgGroupEventSingleValueExtendedProperty.md)
+### [Update-MgBetaGroupEventSingleValueExtendedProperty](Update-MgBetaGroupEventSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in groups
 
-### [Update-MgPlace](Update-MgPlace.md)
+### [Update-MgBetaPlace](Update-MgBetaPlace.md)
 Update the properties of place object, which can be a room, workspace, or roomList.
 You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
 
-### [Update-MgUserCalendar](Update-MgUserCalendar.md)
+### [Update-MgBetaUserCalendar](Update-MgBetaUserCalendar.md)
 Update the navigation property calendars in users
 
-### [Update-MgUserCalendarGroup](Update-MgUserCalendarGroup.md)
+### [Update-MgBetaUserCalendarGroup](Update-MgBetaUserCalendarGroup.md)
 Update the navigation property calendarGroups in users
 
-### [Update-MgUserCalendarMultiValueExtendedProperty](Update-MgUserCalendarMultiValueExtendedProperty.md)
+### [Update-MgBetaUserCalendarMultiValueExtendedProperty](Update-MgBetaUserCalendarMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserCalendarPermission](Update-MgUserCalendarPermission.md)
+### [Update-MgBetaUserCalendarPermission](Update-MgBetaUserCalendarPermission.md)
 Update the navigation property calendarPermissions in users
 
-### [Update-MgUserCalendarSingleValueExtendedProperty](Update-MgUserCalendarSingleValueExtendedProperty.md)
+### [Update-MgBetaUserCalendarSingleValueExtendedProperty](Update-MgBetaUserCalendarSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserEvent](Update-MgUserEvent.md)
+### [Update-MgBetaUserEvent](Update-MgBetaUserEvent.md)
 Update the navigation property events in users
 
-### [Update-MgUserEventExceptionOccurrenceExtension](Update-MgUserEventExceptionOccurrenceExtension.md)
+### [Update-MgBetaUserEventExceptionOccurrenceExtension](Update-MgBetaUserEventExceptionOccurrenceExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserEventExceptionOccurrenceInstanceExtension](Update-MgUserEventExceptionOccurrenceInstanceExtension.md)
+### [Update-MgBetaUserEventExceptionOccurrenceInstanceExtension](Update-MgBetaUserEventExceptionOccurrenceInstanceExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Update-MgUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
+### [Update-MgBetaUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty](Update-MgBetaUserEventExceptionOccurrenceInstanceMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Update-MgUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
+### [Update-MgBetaUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty](Update-MgBetaUserEventExceptionOccurrenceInstanceSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserEventExceptionOccurrenceMultiValueExtendedProperty](Update-MgUserEventExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Update-MgBetaUserEventExceptionOccurrenceMultiValueExtendedProperty](Update-MgBetaUserEventExceptionOccurrenceMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserEventExceptionOccurrenceSingleValueExtendedProperty](Update-MgUserEventExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Update-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty](Update-MgBetaUserEventExceptionOccurrenceSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserEventExtension](Update-MgUserEventExtension.md)
+### [Update-MgBetaUserEventExtension](Update-MgBetaUserEventExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserEventInstanceExceptionOccurrenceExtension](Update-MgUserEventInstanceExceptionOccurrenceExtension.md)
+### [Update-MgBetaUserEventInstanceExceptionOccurrenceExtension](Update-MgBetaUserEventInstanceExceptionOccurrenceExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Update-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
+### [Update-MgBetaUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty](Update-MgBetaUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Update-MgUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
+### [Update-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty](Update-MgBetaUserEventInstanceExceptionOccurrenceSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserEventInstanceExtension](Update-MgUserEventInstanceExtension.md)
+### [Update-MgBetaUserEventInstanceExtension](Update-MgBetaUserEventInstanceExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserEventInstanceMultiValueExtendedProperty](Update-MgUserEventInstanceMultiValueExtendedProperty.md)
+### [Update-MgBetaUserEventInstanceMultiValueExtendedProperty](Update-MgBetaUserEventInstanceMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserEventInstanceSingleValueExtendedProperty](Update-MgUserEventInstanceSingleValueExtendedProperty.md)
+### [Update-MgBetaUserEventInstanceSingleValueExtendedProperty](Update-MgBetaUserEventInstanceSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 
-### [Update-MgUserEventMultiValueExtendedProperty](Update-MgUserEventMultiValueExtendedProperty.md)
+### [Update-MgBetaUserEventMultiValueExtendedProperty](Update-MgBetaUserEventMultiValueExtendedProperty.md)
 Update the navigation property multiValueExtendedProperties in users
 
-### [Update-MgUserEventSingleValueExtendedProperty](Update-MgUserEventSingleValueExtendedProperty.md)
+### [Update-MgBetaUserEventSingleValueExtendedProperty](Update-MgBetaUserEventSingleValueExtendedProperty.md)
 Update the navigation property singleValueExtendedProperties in users
 

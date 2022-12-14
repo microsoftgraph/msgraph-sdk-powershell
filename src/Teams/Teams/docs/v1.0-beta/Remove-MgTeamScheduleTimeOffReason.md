@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamscheduletimeoffreason
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgteamscheduletimeoffreason
 schema: 2.0.0
 ---
 
-# Remove-MgTeamScheduleTimeOffReason
+# Remove-MgBetaTeamScheduleTimeOffReason
 
 ## SYNOPSIS
 Delete navigation property timeOffReasons for teams
@@ -14,13 +14,13 @@ Delete navigation property timeOffReasons for teams
 
 ### Delete1 (Default)
 ```
-Remove-MgTeamScheduleTimeOffReason -TeamId <String> -TimeOffReasonId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaTeamScheduleTimeOffReason -TeamId <String> -TimeOffReasonId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property timeOffReasons for teams
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgTeamScheduleTimeOffReason Cmdlet
+### Example 1: Using the Remove-MgBetaTeamScheduleTimeOffReason Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamScheduleTimeOffReason -TeamId $teamId -TimeOffReasonId $timeOffReasonId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamScheduleTimeOffReason -TeamId $teamId -TimeOffReasonId $timeOffReasonId
 ```
 
-This example shows how to use the Remove-MgTeamScheduleTimeOffReason Cmdlet.
+This example shows how to use the Remove-MgBetaTeamScheduleTimeOffReason Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

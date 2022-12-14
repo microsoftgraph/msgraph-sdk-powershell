@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/remove-mgusercontactfolderchildfoldercontactextension
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/remove-mgusercontactfolderchildfoldercontactextension
 schema: 2.0.0
 ---
 
-# Remove-MgUserContactFolderChildFolderContactExtension
+# Remove-MgBetaUserContactFolderChildFolderContactExtension
 
 ## SYNOPSIS
 Delete navigation property extensions for users
@@ -14,14 +14,14 @@ Delete navigation property extensions for users
 
 ### Delete1 (Default)
 ```
-Remove-MgUserContactFolderChildFolderContactExtension -ContactFolderId <String> -ContactFolderId1 <String>
+Remove-MgBetaUserContactFolderChildFolderContactExtension -ContactFolderId <String> -ContactFolderId1 <String>
  -ContactId <String> -ExtensionId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUserContactFolderChildFolderContactExtension -InputObject <IPersonalContactsIdentity>
+Remove-MgBetaUserContactFolderChildFolderContactExtension -InputObject <IPersonalContactsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 

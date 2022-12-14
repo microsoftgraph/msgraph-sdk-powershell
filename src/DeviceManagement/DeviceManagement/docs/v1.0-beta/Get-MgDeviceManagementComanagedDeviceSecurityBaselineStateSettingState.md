@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementcomanageddevicesecuritybaselinestatesettingstate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementcomanageddevicesecuritybaselinestatesettingstate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementComanagedDeviceSecurityBaselineStateSettingState
+# Get-MgBetaDeviceManagementComanagedDeviceSecurityBaselineStateSettingState
 
 ## SYNOPSIS
 The security baseline state for different settings for a device
@@ -14,7 +14,7 @@ The security baseline state for different settings for a device
 
 ### List (Default)
 ```
-Get-MgDeviceManagementComanagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
+Get-MgBetaDeviceManagementComanagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
  -SecurityBaselineStateId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgDeviceManagementComanagedDeviceSecurityBaselineStateSettingState -ManagedD
 
 ### Get
 ```
-Get-MgDeviceManagementComanagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
+Get-MgBetaDeviceManagementComanagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
  -SecurityBaselineSettingStateId <String> -SecurityBaselineStateId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementComanagedDeviceSecurityBaselineStateSettingState
+Get-MgBetaDeviceManagementComanagedDeviceSecurityBaselineStateSettingState
  -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -107,7 +107,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -258,11 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
 
 ## NOTES
 

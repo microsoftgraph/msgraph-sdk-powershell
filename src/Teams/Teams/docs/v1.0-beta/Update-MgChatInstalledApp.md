@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgchatinstalledapp
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/update-mgchatinstalledapp
 schema: 2.0.0
 ---
 
-# Update-MgChatInstalledApp
+# Update-MgBetaChatInstalledApp
 
 ## SYNOPSIS
 Upgrade an app installation within a chat.
@@ -14,13 +14,13 @@ Upgrade an app installation within a chat.
 
 ### Upgrade (Default)
 ```
-Update-MgChatInstalledApp -ChatId <String> -TeamsAppInstallationId <String> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaChatInstalledApp -ChatId <String> -TeamsAppInstallationId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpgradeViaIdentity
 ```
-Update-MgChatInstalledApp -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaChatInstalledApp -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,13 +28,13 @@ Upgrade an app installation within a chat.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgChatInstalledApp Cmdlet
+### Example 1: Using the Update-MgBetaChatInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Update-MgChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
+Import-Module Microsoft.Graph.Beta.Teams
+Update-MgBetaChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 ```
 
-This example shows how to use the Update-MgChatInstalledApp Cmdlet.
+This example shows how to use the Update-MgBetaChatInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -59,7 +59,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: UpgradeViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

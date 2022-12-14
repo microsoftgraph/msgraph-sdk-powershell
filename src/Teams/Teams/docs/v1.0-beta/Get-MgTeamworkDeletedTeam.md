@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamworkdeletedteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgteamworkdeletedteam
 schema: 2.0.0
 ---
 
-# Get-MgTeamworkDeletedTeam
+# Get-MgBetaTeamworkDeletedTeam
 
 ## SYNOPSIS
 A collection of deleted teams.
@@ -14,20 +14,20 @@ A collection of deleted teams.
 
 ### List (Default)
 ```
-Get-MgTeamworkDeletedTeam [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaTeamworkDeletedTeam [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgTeamworkDeletedTeam -DeletedTeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamworkDeletedTeam -DeletedTeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgTeamworkDeletedTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaTeamworkDeletedTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ A collection of deleted teams.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgTeamworkDeletedTeam Cmdlet
+### Example 1: Using the Get-MgBetaTeamworkDeletedTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDeletedTeam
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDeletedTeam
 ```
 
-This example shows how to use the Get-MgTeamworkDeletedTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDeletedTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeletedTeam
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeletedTeam
 
 ## NOTES
 

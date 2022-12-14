@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/remove-mgdevicemanagementgrouppolicyuploadeddefinitionfile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/remove-mgdevicemanagementgrouppolicyuploadeddefinitionfile
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementGroupPolicyUploadedDefinitionFile
+# Remove-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile
 
 ## SYNOPSIS
 Invoke action remove
@@ -14,13 +14,13 @@ Invoke action remove
 
 ### Remove (Default)
 ```
-Remove-MgDeviceManagementGroupPolicyUploadedDefinitionFile -GroupPolicyUploadedDefinitionFileId <String>
+Remove-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile -GroupPolicyUploadedDefinitionFileId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity
 ```
-Remove-MgDeviceManagementGroupPolicyUploadedDefinitionFile -InputObject <IDeviceManagementActionsIdentity>
+Remove-MgBetaDeviceManagementGroupPolicyUploadedDefinitionFile -InputObject <IDeviceManagementActionsIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: RemoveViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ## OUTPUTS
 

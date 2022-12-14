@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtsideloadingkey
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtsideloadingkey
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtSideLoadingKey
+# Update-MgBetaDeviceAppMgtSideLoadingKey
 
 ## SYNOPSIS
 Update the navigation property sideLoadingKeys in deviceAppManagement
@@ -14,26 +14,26 @@ Update the navigation property sideLoadingKeys in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtSideLoadingKey -SideLoadingKeyId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceAppMgtSideLoadingKey -SideLoadingKeyId <String> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastUpdatedDateTime <String>]
  [-TotalActivation <Int32>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceAppMgtSideLoadingKey -SideLoadingKeyId <String> -BodyParameter <IMicrosoftGraphSideLoadingKey>
+Update-MgBetaDeviceAppMgtSideLoadingKey -SideLoadingKeyId <String> -BodyParameter <IMicrosoftGraphSideLoadingKey>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtSideLoadingKey -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtSideLoadingKey -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphSideLoadingKey> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtSideLoadingKey -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtSideLoadingKey -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastUpdatedDateTime <String>] [-TotalActivation <Int32>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -66,7 +66,7 @@ SideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line O
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSideLoadingKey
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSideLoadingKey
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -250,9 +250,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSideLoadingKey
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSideLoadingKey
 
 ## OUTPUTS
 
@@ -262,7 +262,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementSideLoadingKey
+### Update-MgBetaDeviceAppManagementSideLoadingKey
 
 COMPLEX PARAMETER PROPERTIES
 

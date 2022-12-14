@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgsnoozegroupeventreminder
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgsnoozegroupeventreminder
 schema: 2.0.0
 ---
 
-# Invoke-MgSnoozeGroupEventReminder
+# Invoke-MgBetaSnoozeGroupEventReminder
 
 ## SYNOPSIS
 Postpone a reminder for an event in a user calendar until a new time.
@@ -14,27 +14,27 @@ Postpone a reminder for an event in a user calendar until a new time.
 
 ### SnoozeExpanded (Default)
 ```
-Invoke-MgSnoozeGroupEventReminder -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaSnoozeGroupEventReminder -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Snooze
 ```
-Invoke-MgSnoozeGroupEventReminder -EventId <String> -GroupId <String>
+Invoke-MgBetaSnoozeGroupEventReminder -EventId <String> -GroupId <String>
  -BodyParameter <IPaths608Nu3GroupsGroupIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SnoozeViaIdentity
 ```
-Invoke-MgSnoozeGroupEventReminder -InputObject <IGroupsIdentity>
+Invoke-MgBetaSnoozeGroupEventReminder -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths608Nu3GroupsGroupIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SnoozeViaIdentityExpanded
 ```
-Invoke-MgSnoozeGroupEventReminder -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaSnoozeGroupEventReminder -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,7 +45,7 @@ Postpone a reminder for an event in a user calendar until a new time.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	NewReminderTime = @{
@@ -55,10 +55,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgSnoozeUserEventReminder -UserId $userId -EventId $eventId -BodyParameter $params
+Invoke-MgBetaSnoozeUserEventReminder -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgSnoozeGroupEventReminder Cmdlet.
+This example shows how to use the Invoke-MgBetaSnoozeGroupEventReminder Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths608Nu3GroupsGroupIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths608Nu3GroupsGroupIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Snooze, SnoozeViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: SnoozeViaIdentity, SnoozeViaIdentityExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ dateTimeTimeZone
 To construct, please use Get-Help -Online and see NOTES section for NEWREMINDERTIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: SnoozeExpanded, SnoozeViaIdentityExpanded
 Aliases:
 
@@ -208,9 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths608Nu3GroupsGroupIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths608Nu3GroupsGroupIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

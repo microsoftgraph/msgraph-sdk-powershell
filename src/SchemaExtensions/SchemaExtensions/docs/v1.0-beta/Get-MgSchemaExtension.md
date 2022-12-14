@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.SchemaExtensions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.schemaextensions/get-mgschemaextension
+Module Name: Microsoft.Graph.Beta.SchemaExtensions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.schemaextensions/get-mgschemaextension
 schema: 2.0.0
 ---
 
-# Get-MgSchemaExtension
+# Get-MgBetaSchemaExtension
 
 ## SYNOPSIS
 Get the properties of the specified schemaExtension definition.
@@ -14,20 +14,20 @@ Get the properties of the specified schemaExtension definition.
 
 ### List (Default)
 ```
-Get-MgSchemaExtension [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaSchemaExtension [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSchemaExtension -SchemaExtensionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSchemaExtension -SchemaExtensionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Get the properties of the specified schemaExtension definition.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSchemaExtension Cmdlet
+### Example 1: Using the Get-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
-Get-MgSchemaExtension -SchemaExtensionId $schemaExtensionId
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
+Get-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId
 ```
 
-This example shows how to use the Get-MgSchemaExtension Cmdlet.
+This example shows how to use the Get-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSchemaExtension Cmdlet
+### Example 2: Using the Get-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
-Get-MgSchemaExtension -Filter "id eq 'graphlearn_test'" 
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
+Get-MgBetaSchemaExtension -Filter "id eq 'graphlearn_test'" 
 ```
 
-This example shows how to use the Get-MgSchemaExtension Cmdlet.
+This example shows how to use the Get-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISchemaExtensionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISchemaExtensionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISchemaExtensionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISchemaExtensionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSchemaExtension
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportskypeforbusinessdeviceusageusercount
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportskypeforbusinessdeviceusageusercount
 schema: 2.0.0
 ---
 
-# Get-MgReportSkypeForBusinessDeviceUsageUserCount
+# Get-MgBetaReportSkypeForBusinessDeviceUsageUserCount
 
 ## SYNOPSIS
 Invoke function getSkypeForBusinessDeviceUsageUserCounts
@@ -14,13 +14,13 @@ Invoke function getSkypeForBusinessDeviceUsageUserCounts
 
 ### Get (Default)
 ```
-Get-MgReportSkypeForBusinessDeviceUsageUserCount -Period <String> -OutFile <String> [-PassThru]
+Get-MgBetaReportSkypeForBusinessDeviceUsageUserCount -Period <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportSkypeForBusinessDeviceUsageUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportSkypeForBusinessDeviceUsageUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

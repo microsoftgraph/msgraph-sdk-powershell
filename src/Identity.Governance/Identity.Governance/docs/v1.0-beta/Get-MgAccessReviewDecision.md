@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgaccessreviewdecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgaccessreviewdecision
 schema: 2.0.0
 ---
 
-# Get-MgAccessReviewDecision
+# Get-MgBetaAccessReviewDecision
 
 ## SYNOPSIS
 The collection of decisions for this access review.
@@ -14,20 +14,20 @@ The collection of decisions for this access review.
 
 ### List (Default)
 ```
-Get-MgAccessReviewDecision -AccessReviewId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaAccessReviewDecision -AccessReviewId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgAccessReviewDecision -AccessReviewDecisionId <String> -AccessReviewId <String>
+Get-MgBetaAccessReviewDecision -AccessReviewDecisionId <String> -AccessReviewId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAccessReviewDecision -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaAccessReviewDecision -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ The collection of decisions for this access review.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAccessReviewDecision Cmdlet
+### Example 1: Using the Get-MgBetaAccessReviewDecision Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgAccessReviewDecision -AccessReviewId $accessReviewId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaAccessReviewDecision -AccessReviewId $accessReviewId
 ```
 
-This example shows how to use the Get-MgAccessReviewDecision Cmdlet.
+This example shows how to use the Get-MgBetaAccessReviewDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -143,7 +143,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision
 
 ## NOTES
 

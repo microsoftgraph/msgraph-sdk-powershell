@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantcredentialuserregistrationsummary
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantcredentialuserregistrationsummary
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+# New-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
 
 ## SYNOPSIS
 Create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to credentialUserRegistrationsSummaries for tenan
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-LastRefreshedDateTime <DateTime>] [-MfaAndSsprCapableUserCount <Int32>]
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
  [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>] [-SsprRegisteredUserCount <Int32>]
@@ -24,7 +24,7 @@ New-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary [-Additio
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+New-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -56,7 +56,7 @@ credentialUserRegistrationsSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
 Parameter Sets: Create
 Aliases:
 
@@ -306,11 +306,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
 
 ## NOTES
 

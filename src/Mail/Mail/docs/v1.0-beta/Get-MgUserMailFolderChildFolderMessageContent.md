@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermailfolderchildfoldermessagecontent
+Module Name: Microsoft.Graph.Beta.Mail
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.mail/get-mgusermailfolderchildfoldermessagecontent
 schema: 2.0.0
 ---
 
-# Get-MgUserMailFolderChildFolderMessageContent
+# Get-MgBetaUserMailFolderChildFolderMessageContent
 
 ## SYNOPSIS
 Get media content for the navigation property messages from users
@@ -14,13 +14,13 @@ Get media content for the navigation property messages from users
 
 ### Get1 (Default)
 ```
-Get-MgUserMailFolderChildFolderMessageContent -MailFolderId <String> -MailFolderId1 <String>
+Get-MgBetaUserMailFolderChildFolderMessageContent -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserMailFolderChildFolderMessageContent -InputObject <IMailIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaUserMailFolderChildFolderMessageContent -InputObject <IMailIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMailIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ## OUTPUTS
 

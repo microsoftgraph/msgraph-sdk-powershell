@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementsettingdefinition
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementsettingdefinition
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementSettingDefinition
+# New-MgBetaDeviceManagementSettingDefinition
 
 ## SYNOPSIS
 Create new navigation property to settingDefinitions for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to settingDefinitions for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementSettingDefinition [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementSettingDefinition [-AdditionalProperties <Hashtable>]
  [-Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]
  [-Dependencies <IMicrosoftGraphDeviceManagementSettingDependency[]>] [-Description <String>]
  [-DisplayName <String>] [-DocumentationUrl <String>] [-HeaderSubtitle <String>] [-HeaderTitle <String>]
@@ -24,7 +24,7 @@ New-MgDeviceManagementSettingDefinition [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementSettingDefinition -BodyParameter <IMicrosoftGraphDeviceManagementSettingDefinition>
+New-MgBetaDeviceManagementSettingDefinition -BodyParameter <IMicrosoftGraphDeviceManagementSettingDefinition>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ Entity representing the defintion for a given setting
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
 Parameter Sets: Create
 Aliases:
 
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 Collection of constraints for the setting value
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementConstraint[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConstraint[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ Collection of dependencies on other settings
 To construct, please use Get-Help -Online and see NOTES section for DEPENDENCIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDependency[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDependency[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -237,7 +237,7 @@ Accept wildcard characters: False
 deviceManangementIntentValueType
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManangementIntentValueType
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManangementIntentValueType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -284,11 +284,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingDefinition
 
 ## NOTES
 

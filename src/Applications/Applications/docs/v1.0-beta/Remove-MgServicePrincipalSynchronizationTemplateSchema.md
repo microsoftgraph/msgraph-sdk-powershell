@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgserviceprincipalsynchronizationtemplateschema
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/remove-mgserviceprincipalsynchronizationtemplateschema
 schema: 2.0.0
 ---
 
-# Remove-MgServicePrincipalSynchronizationTemplateSchema
+# Remove-MgBetaServicePrincipalSynchronizationTemplateSchema
 
 ## SYNOPSIS
 Delete navigation property schema for servicePrincipals
@@ -14,13 +14,13 @@ Delete navigation property schema for servicePrincipals
 
 ### Delete (Default)
 ```
-Remove-MgServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
+Remove-MgBetaServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
  -SynchronizationTemplateId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsIdentity>
+Remove-MgBetaServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 

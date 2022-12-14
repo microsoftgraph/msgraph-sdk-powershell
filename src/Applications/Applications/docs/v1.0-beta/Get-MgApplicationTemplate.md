@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationtemplate
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgapplicationtemplate
 schema: 2.0.0
 ---
 
-# Get-MgApplicationTemplate
+# Get-MgBetaApplicationTemplate
 
 ## SYNOPSIS
 Retrieve the properties of an applicationTemplate object.
@@ -14,20 +14,20 @@ Retrieve the properties of an applicationTemplate object.
 
 ### List (Default)
 ```
-Get-MgApplicationTemplate [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaApplicationTemplate [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgApplicationTemplate -ApplicationTemplateId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaApplicationTemplate -ApplicationTemplateId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationTemplate -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaApplicationTemplate -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ Retrieve the properties of an applicationTemplate object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgApplicationTemplate Cmdlet
+### Example 1: Using the Get-MgBetaApplicationTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgApplicationTemplate -ApplicationTemplateId $applicationTemplateId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaApplicationTemplate -ApplicationTemplateId $applicationTemplateId
 ```
 
-This example shows how to use the Get-MgApplicationTemplate Cmdlet.
+This example shows how to use the Get-MgBetaApplicationTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgApplicationTemplate Cmdlet
+### Example 2: Using the Get-MgBetaApplicationTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgApplicationTemplate
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaApplicationTemplate
 ```
 
-This example shows how to use the Get-MgApplicationTemplate Cmdlet.
+This example shows how to use the Get-MgBetaApplicationTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplicationTemplate
 
 ## NOTES
 

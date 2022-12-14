@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgacceptidentitygovernanceaccessreviewdefinitioninstancerecommendation
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgacceptidentitygovernanceaccessreviewdefinitioninstancerecommendation
 schema: 2.0.0
 ---
 
-# Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation
+# Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation
 
 ## SYNOPSIS
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
@@ -16,13 +16,13 @@ If there is not a recommendation on an accessReviewInstanceDecisionItem object n
 
 ### Accept (Default)
 ```
-Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation -AccessReviewInstanceId <String>
+Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentity
 ```
-Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation
+Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation
  -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -35,12 +35,12 @@ If there is not a recommendation on an accessReviewInstanceDecisionItem object n
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
+Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation Cmdlet.
+This example shows how to use the Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: AcceptViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyadminconsentrequestpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicyadminconsentrequestpolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyAdminConsentRequestPolicy
+# Get-MgBetaPolicyAdminConsentRequestPolicy
 
 ## SYNOPSIS
 Read the properties and relationships of an adminConsentRequestPolicy object.
@@ -13,7 +13,7 @@ Read the properties and relationships of an adminConsentRequestPolicy object.
 ## SYNTAX
 
 ```
-Get-MgPolicyAdminConsentRequestPolicy [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaPolicyAdminConsentRequestPolicy [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,13 +21,13 @@ Read the properties and relationships of an adminConsentRequestPolicy object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyAdminConsentRequestPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyAdminConsentRequestPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyAdminConsentRequestPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyAdminConsentRequestPolicy
 ```
 
-This example shows how to use the Get-MgPolicyAdminConsentRequestPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyAdminConsentRequestPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
 
 ## NOTES
 

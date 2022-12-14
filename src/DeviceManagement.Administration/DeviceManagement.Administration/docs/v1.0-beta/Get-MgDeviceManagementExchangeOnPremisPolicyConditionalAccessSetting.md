@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementexchangeonpremispolicyconditionalaccesssetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementexchangeonpremispolicyconditionalaccesssetting
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+# Get-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
 
 ## SYNOPSIS
 The Exchange on premises conditional access settings.
@@ -15,20 +15,20 @@ On premises conditional access will require devices to be both enrolled and comp
 
 ### Get1 (Default)
 ```
-Get-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting [-ExpandProperty <String[]>]
+Get-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+Get-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
  -DeviceManagementExchangeOnPremisesPolicyId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+Get-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
  -InputObject <IDeviceManagementAdministrationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -76,7 +76,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -107,11 +107,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
 
 ## NOTES
 

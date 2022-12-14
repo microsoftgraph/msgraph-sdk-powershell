@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/suspend-mgeducationsynchronizationprofile
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/suspend-mgeducationsynchronizationprofile
 schema: 2.0.0
 ---
 
-# Suspend-MgEducationSynchronizationProfile
+# Suspend-MgBetaEducationSynchronizationProfile
 
 ## SYNOPSIS
 Pause the sync of a specific school data synchronization profile in the tenant.
@@ -14,13 +14,13 @@ Pause the sync of a specific school data synchronization profile in the tenant.
 
 ### Pause (Default)
 ```
-Suspend-MgEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-PassThru] [-Confirm]
+Suspend-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### PauseViaIdentity
 ```
-Suspend-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Suspend-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Pause the sync of a specific school data synchronization profile in the tenant.
 
 ## EXAMPLES
 
-### Example 1: Using the Suspend-MgEducationSynchronizationProfile Cmdlet
+### Example 1: Using the Suspend-MgBetaEducationSynchronizationProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Suspend-MgEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
+Import-Module Microsoft.Graph.Beta.Education
+Suspend-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
 ```
 
-This example shows how to use the Suspend-MgEducationSynchronizationProfile Cmdlet.
+This example shows how to use the Suspend-MgBetaEducationSynchronizationProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: PauseViaIdentity
 Aliases:
 
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 

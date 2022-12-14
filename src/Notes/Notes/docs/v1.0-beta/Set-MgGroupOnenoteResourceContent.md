@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Notes
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/set-mggrouponenoteresourcecontent
+Module Name: Microsoft.Graph.Beta.Notes
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.notes/set-mggrouponenoteresourcecontent
 schema: 2.0.0
 ---
 
-# Set-MgGroupOnenoteResourceContent
+# Set-MgBetaGroupOnenoteResourceContent
 
 ## SYNOPSIS
 Update content for the navigation property resources in groups
@@ -14,13 +14,13 @@ Update content for the navigation property resources in groups
 
 ### Set1 (Default)
 ```
-Set-MgGroupOnenoteResourceContent -GroupId <String> -OnenoteResourceId <String> -InFile <String>
+Set-MgBetaGroupOnenoteResourceContent -GroupId <String> -OnenoteResourceId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgGroupOnenoteResourceContent -InputObject <INotesIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgBetaGroupOnenoteResourceContent -InputObject <INotesIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -83,7 +83,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 Parameter Sets: SetViaIdentity1
 Aliases:
 
@@ -160,7 +160,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.INotesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
 ### System.IO.Stream
 

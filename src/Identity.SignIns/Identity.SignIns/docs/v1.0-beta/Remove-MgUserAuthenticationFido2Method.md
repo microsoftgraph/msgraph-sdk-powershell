@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationfido2method
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mguserauthenticationfido2method
 schema: 2.0.0
 ---
 
-# Remove-MgUserAuthenticationFido2Method
+# Remove-MgBetaUserAuthenticationFido2Method
 
 ## SYNOPSIS
 Delete navigation property fido2Methods for users
@@ -14,13 +14,13 @@ Delete navigation property fido2Methods for users
 
 ### Delete (Default)
 ```
-Remove-MgUserAuthenticationFido2Method -Fido2AuthenticationMethodId <String> -UserId <String>
+Remove-MgBetaUserAuthenticationFido2Method -Fido2AuthenticationMethodId <String> -UserId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserAuthenticationFido2Method -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaUserAuthenticationFido2Method -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property fido2Methods for users
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgUserAuthenticationFido2Method Cmdlet
+### Example 1: Using the Remove-MgBetaUserAuthenticationFido2Method Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgUserAuthenticationFido2Method -UserId $userId -Fido2AuthenticationMethodId $fido2AuthenticationMethodId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaUserAuthenticationFido2Method -UserId $userId -Fido2AuthenticationMethodId $fido2AuthenticationMethodId
 ```
 
-This example shows how to use the Remove-MgUserAuthenticationFido2Method Cmdlet.
+This example shows how to use the Remove-MgBetaUserAuthenticationFido2Method Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

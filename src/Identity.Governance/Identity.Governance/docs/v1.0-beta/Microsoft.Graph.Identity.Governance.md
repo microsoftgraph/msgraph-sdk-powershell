@@ -1,17 +1,17 @@
 ---
-Module Name: Microsoft.Graph.Identity.Governance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
 Module Guid: 0156255c-5096-45c3-a3fb-87c6adb21ca3
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Identity.Governance Module
+# Microsoft.Graph.Beta.Identity.Governance Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Identity.Governance Cmdlets
-### [Add-MgAccessReviewDecision](Add-MgAccessReviewDecision.md)
+## Microsoft.Graph.Beta.Identity.Governance Cmdlets
+### [Add-MgBetaAccessReviewDecision](Add-MgBetaAccessReviewDecision.md)
 In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
  After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
@@ -23,7 +23,7 @@ You should expect to see denied users, if any, being removed from the resource g
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
 If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
 
-### [Add-MgAccessReviewInstanceDecision](Add-MgAccessReviewInstanceDecision.md)
+### [Add-MgBetaAccessReviewInstanceDecision](Add-MgBetaAccessReviewInstanceDecision.md)
 In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
  After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
@@ -35,21 +35,21 @@ You should expect to see denied users, if any, being removed from the resource g
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
 If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
 
-### [Add-MgIdentityGovernanceAccessReviewDecisionInstanceDecision](Add-MgIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
+### [Add-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Add-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
 The status of the accessReviewInstance must be `Completed` to call this method.
 
-### [Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+### [Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
 The status of the accessReviewInstance must be `Completed` to call this method.
 
-### [Export-MgPrivilegedAccessResourceRoleAssignment](Export-MgPrivilegedAccessResourceRoleAssignment.md)
+### [Export-MgBetaPrivilegedAccessResourceRoleAssignment](Export-MgBetaPrivilegedAccessResourceRoleAssignment.md)
 Invoke function export
 
-### [Export-MgPrivilegedAccessRoleAssignment](Export-MgPrivilegedAccessRoleAssignment.md)
+### [Export-MgBetaPrivilegedAccessRoleAssignment](Export-MgBetaPrivilegedAccessRoleAssignment.md)
 Invoke function export
 
-### [Get-MgAccessReview](Get-MgAccessReview.md)
+### [Get-MgBetaAccessReview](Get-MgBetaAccessReview.md)
 In the Azure AD access reviews feature, retrieve an accessReview object.
  To retrieve the reviewers of the access review, use the list accessReview reviewers API.
 To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API.
@@ -57,1545 +57,1545 @@ If this is a recurring access review, no decisions will be associated with the r
 Instead, use the `instances` relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review.
 Each past and current instance will have decisions.
 
-### [Get-MgAccessReviewDecision](Get-MgAccessReviewDecision.md)
+### [Get-MgBetaAccessReviewDecision](Get-MgBetaAccessReviewDecision.md)
 The collection of decisions for this access review.
 
-### [Get-MgAccessReviewInstance](Get-MgAccessReviewInstance.md)
+### [Get-MgBetaAccessReviewInstance](Get-MgBetaAccessReviewInstance.md)
 The collection of access reviews instances past, present and future, if this object is a recurring access review.
 
-### [Get-MgAccessReviewInstanceDecision](Get-MgAccessReviewInstanceDecision.md)
+### [Get-MgBetaAccessReviewInstanceDecision](Get-MgBetaAccessReviewInstanceDecision.md)
 The collection of decisions for this access review.
 
-### [Get-MgAccessReviewInstanceMyDecision](Get-MgAccessReviewInstanceMyDecision.md)
+### [Get-MgBetaAccessReviewInstanceMyDecision](Get-MgBetaAccessReviewInstanceMyDecision.md)
 The collection of decisions for the caller, if the caller is a reviewer.
 
-### [Get-MgAccessReviewInstanceReviewer](Get-MgAccessReviewInstanceReviewer.md)
+### [Get-MgBetaAccessReviewInstanceReviewer](Get-MgBetaAccessReviewInstanceReviewer.md)
 The collection of reviewers for an access review, if access review reviewerType is of type delegated.
 
-### [Get-MgAccessReviewMyDecision](Get-MgAccessReviewMyDecision.md)
+### [Get-MgBetaAccessReviewMyDecision](Get-MgBetaAccessReviewMyDecision.md)
 The collection of decisions for the caller, if the caller is a reviewer.
 
-### [Get-MgAccessReviewReviewer](Get-MgAccessReviewReviewer.md)
+### [Get-MgBetaAccessReviewReviewer](Get-MgBetaAccessReviewReviewer.md)
 The collection of reviewers for an access review, if access review reviewerType is of type delegated.
 
-### [Get-MgAgreement](Get-MgAgreement.md)
+### [Get-MgBetaAgreement](Get-MgBetaAgreement.md)
 Get entity from agreements by key
 
-### [Get-MgAgreementAcceptance](Get-MgAgreementAcceptance.md)
+### [Get-MgBetaAgreementAcceptance](Get-MgBetaAgreementAcceptance.md)
 Read-only.
 Information about acceptances of this agreement.
 
-### [Get-MgAgreementFile](Get-MgAgreementFile.md)
+### [Get-MgBetaAgreementFile](Get-MgBetaAgreementFile.md)
 Retrieve the details of the default file for an agreement, including the language and version information.
 The file information is specified through the agreementFile object.
 
-### [Get-MgAgreementFileLocalization](Get-MgAgreementFileLocalization.md)
+### [Get-MgBetaAgreementFileLocalization](Get-MgBetaAgreementFileLocalization.md)
 The localized version of the terms of use agreement files attached to the agreement.
 
-### [Get-MgAgreementFileLocalizationVersion](Get-MgAgreementFileLocalizationVersion.md)
+### [Get-MgBetaAgreementFileLocalizationVersion](Get-MgBetaAgreementFileLocalizationVersion.md)
 Read-only.
 Customized versions of the terms of use agreement in the Azure AD tenant.
 
-### [Get-MgBusinessFlowTemplate](Get-MgBusinessFlowTemplate.md)
+### [Get-MgBetaBusinessFlowTemplate](Get-MgBetaBusinessFlowTemplate.md)
 Get entity from businessFlowTemplates by key
 
-### [Get-MgEntitlementManagementAccessPackage](Get-MgEntitlementManagementAccessPackage.md)
+### [Get-MgBetaEntitlementManagementAccessPackage](Get-MgBetaEntitlementManagementAccessPackage.md)
 Represents access package objects.
 
-### [Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
+### [Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
 Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 
-### [Get-MgEntitlementManagementAccessPackageAssignment](Get-MgEntitlementManagementAccessPackageAssignment.md)
+### [Get-MgBetaEntitlementManagementAccessPackageAssignment](Get-MgBetaEntitlementManagementAccessPackageAssignment.md)
 The assignment of an access package to a subject for a period of time.
 
-### [Get-MgEntitlementManagementAccessPackageAssignmentAdditional](Get-MgEntitlementManagementAccessPackageAssignmentAdditional.md)
+### [Get-MgBetaEntitlementManagementAccessPackageAssignmentAdditional](Get-MgBetaEntitlementManagementAccessPackageAssignmentAdditional.md)
 Invoke function additionalAccess
 
-### [Get-MgEntitlementManagementAccessPackageAssignmentPolicy](Get-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+### [Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 
-### [Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
+### [Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 The collection of stages when to execute one or more custom access package workflow extensions.
 Supports $expand.
 
-### [Get-MgEntitlementManagementAccessPackageAssignmentRequest](Get-MgEntitlementManagementAccessPackageAssignmentRequest.md)
+### [Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 Represents access package assignment requests created by or on behalf of a user.
 
-### [Get-MgEntitlementManagementAccessPackageAssignmentResourceRole](Get-MgEntitlementManagementAccessPackageAssignmentResourceRole.md)
+### [Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole](Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole.md)
 Represents the resource-specific role which a subject has been assigned through an access package assignment.
 
-### [Get-MgEntitlementManagementAccessPackageCatalog](Get-MgEntitlementManagementAccessPackageCatalog.md)
+### [Get-MgBetaEntitlementManagementAccessPackageCatalog](Get-MgBetaEntitlementManagementAccessPackageCatalog.md)
 A container of access packages.
 
-### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
+### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
 To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
 
-### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceRole](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceRole.md)
+### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole.md)
 Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog.
 The resource should have been added to the catalog by creating an accessPackageResourceRequest.
 This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
 
-### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceScope](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceScope.md)
+### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceScope](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceScope.md)
 Get accessPackageResourceScopes from identityGovernance
 
-### [Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Get-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
+### [Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Get customAccessPackageWorkflowExtensions from identityGovernance
 
-### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage.md)
+### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage](Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage.md)
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
 
-### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
+### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
 
-### [Get-MgEntitlementManagementAccessPackageIncompatibleGroup](Get-MgEntitlementManagementAccessPackageIncompatibleGroup.md)
+### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleGroup](Get-MgBetaEntitlementManagementAccessPackageIncompatibleGroup.md)
 Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
 
-### [Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
+### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef](Get-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
 
-### [Get-MgEntitlementManagementAccessPackageIncompatibleWith](Get-MgEntitlementManagementAccessPackageIncompatibleWith.md)
+### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith](Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith.md)
 The access packages that are incompatible with this package.
 Read-only.
 
-### [Get-MgEntitlementManagementAccessPackageResource](Get-MgEntitlementManagementAccessPackageResource.md)
+### [Get-MgBetaEntitlementManagementAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageResource.md)
 A reference to a resource associated with an access package catalog.
 
-### [Get-MgEntitlementManagementAccessPackageResourceEnvironment](Get-MgEntitlementManagementAccessPackageResourceEnvironment.md)
+### [Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment](Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment.md)
 A reference to the geolocation environment in which a resource is located.
 
-### [Get-MgEntitlementManagementAccessPackageResourceRequest](Get-MgEntitlementManagementAccessPackageResourceRequest.md)
+### [Get-MgBetaEntitlementManagementAccessPackageResourceRequest](Get-MgBetaEntitlementManagementAccessPackageResourceRequest.md)
 Represents a request to add or remove a resource to or from a catalog respectively.
 
-### [Get-MgEntitlementManagementConnectedOrganization](Get-MgEntitlementManagementConnectedOrganization.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganization](Get-MgBetaEntitlementManagementConnectedOrganization.md)
 Represents references to a directory or domain of another organization whose users can request access.
 
-### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsor](Get-MgEntitlementManagementConnectedOrganizationExternalSponsor.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor](Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor.md)
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
-### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorById](Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef](Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
-### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject](Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsor](Get-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsor](Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsor.md)
 Retrieve a list of a connectedOrganization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
-### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorById](Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
-### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef](Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Retrieve a list of a connectedOrganization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
-### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorUserOwnedObject](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorUserOwnedObject.md)
+### [Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorUserOwnedObject](Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
+### [Get-MgBetaEntitlementManagementSetting](Get-MgBetaEntitlementManagementSetting.md)
 Retrieve the properties of an entitlementManagementSettings object.
 
-### [Get-MgEntitlementManagementSubject](Get-MgEntitlementManagementSubject.md)
+### [Get-MgBetaEntitlementManagementSubject](Get-MgBetaEntitlementManagementSubject.md)
 Get subjects from identityGovernance
 
-### [Get-MgEntitlementManagementSubjectConnectedOrganization](Get-MgEntitlementManagementSubjectConnectedOrganization.md)
+### [Get-MgBetaEntitlementManagementSubjectConnectedOrganization](Get-MgBetaEntitlementManagementSubjectConnectedOrganization.md)
 The connected organization of the subject.
 Read-only.
 Nullable.
 
-### [Get-MgIdentityGovernanceAccessReviewDecision](Get-MgIdentityGovernanceAccessReviewDecision.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecision](Get-MgBetaIdentityGovernanceAccessReviewDecision.md)
 Represents an Azure AD access review decision on an instance of a review.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInsight](Get-MgIdentityGovernanceAccessReviewDecisionInsight.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInsight](Get-MgBetaIdentityGovernanceAccessReviewDecisionInsight.md)
 Insights are recommendations to reviewers on whether to approve or deny a decision.
 There can be multiple insights associated with an accessReviewInstanceDecisionItem.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInstance](Get-MgIdentityGovernanceAccessReviewDecisionInstance.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
 There is exactly one accessReviewInstance associated with each decision.
 The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer](Get-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer.md)
 Returns the collection of reviewers who were contacted to complete this review.
 While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities.
 Supports $select.
 Read-only.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInstanceDecision](Get-MgIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight](Get-MgIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight.md)
 Insights are recommendations to reviewers on whether to approve or deny a decision.
 There can be multiple insights associated with an accessReviewInstanceDecisionItem.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInstanceDefinition](Get-MgIdentityGovernanceAccessReviewDecisionInstanceDefinition.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDefinition](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDefinition.md)
 There is exactly one accessReviewScheduleDefinition associated with each instance.
 It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInstanceStage](Get-MgIdentityGovernanceAccessReviewDecisionInstanceStage.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
 If the instance has multiple stages, this returns the collection of stages.
 A new stage will only be created when the previous stage ends.
 The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 
-### [Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Get-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
 Insights are recommendations to reviewers on whether to approve or deny a decision.
 There can be multiple insights associated with an accessReviewInstanceDecisionItem.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinition](Get-MgIdentityGovernanceAccessReviewDefinition.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinition](Get-MgBetaIdentityGovernanceAccessReviewDefinition.md)
 Represents the template and scheduling for an access review.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinitionInstance](Get-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Set of access reviews instances for this access review series.
 Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
 Returns the collection of reviewers who were contacted to complete this review.
 While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities.
 Supports $select.
 Read-only.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight.md)
 Insights are recommendations to reviewers on whether to approve or deny a decision.
 There can be multiple insights associated with an accessReviewInstanceDecisionItem.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance.md)
 There is exactly one accessReviewInstance associated with each decision.
 The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDefinition](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDefinition.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDefinition](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDefinition.md)
 There is exactly one accessReviewScheduleDefinition associated with each instance.
 It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 If the instance has multiple stages, this returns the collection of stages.
 A new stage will only be created when the previous stage ends.
 The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
 
-### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 
-### [Get-MgIdentityGovernanceAccessReviewHistoryDefinition](Get-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition](Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition.md)
 Represents a collection of access review history data and the scopes used to collect that data.
 
-### [Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance](Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence.
 A definition that does not recur will have exactly one instance.
 
-### [Get-MgIdentityGovernanceAccessReviewPolicy](Get-MgIdentityGovernanceAccessReviewPolicy.md)
+### [Get-MgBetaIdentityGovernanceAccessReviewPolicy](Get-MgBetaIdentityGovernanceAccessReviewPolicy.md)
 Read the properties and relationships of an accessReviewPolicy object.
 
-### [Get-MgIdentityGovernanceAppConsentRequest](Get-MgIdentityGovernanceAppConsentRequest.md)
+### [Get-MgBetaIdentityGovernanceAppConsentRequest](Get-MgBetaIdentityGovernanceAppConsentRequest.md)
 A collection of userConsentRequest objects for a specific application.
 
-### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequest](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
+### [Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest](Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest.md)
 A list of pending user consent requests.
 Supports $filter (eq).
 
-### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
+### [Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
 Approval decisions associated with a request.
 
-### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
+### [Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
 Get steps from identityGovernance
 
-### [Get-MgIdentityGovernanceLifecycleWorkflow](Get-MgIdentityGovernanceLifecycleWorkflow.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflow](Get-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 The workflows in the lifecycle workflows instance.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 The customTaskExtension instance.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy.md)
 The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy.md)
 The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItem](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItem.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem.md)
 Deleted workflows in your lifecycle workflows instance.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Deleted workflows that end up in the deletedItemsContainer.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope.md)
 The unique identifier of the Azure AD identity that last modified the workflow object.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
 Get runs from identityGovernance
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
 Represents the aggregation of task execution data for tasks within a workflow object.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
 Get userProcessingResults from identityGovernance
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
 The workflow versions that are available.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope](Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScope](Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScope.md)
 The unique identifier of the Azure AD identity that last modified the workflow object.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowRun.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRun](Get-MgBetaIdentityGovernanceLifecycleWorkflowRun.md)
 Get runs from identityGovernance
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 The related taskProcessingResults.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject.md)
 The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultTask.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultTask](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultTask.md)
 The related workflow task
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
 The associated individual user execution.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubject.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubject.md)
 The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
 The associated individual task execution.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowSetting](Get-MgIdentityGovernanceLifecycleWorkflowSetting.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowSetting.md)
 Read the properties and relationships of a lifecycleManagementSettings object.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
 The definition of tasks within the lifecycle workflows instance.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReport](Get-MgIdentityGovernanceLifecycleWorkflowTaskReport.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport.md)
 Represents the aggregation of task execution data for tasks within a workflow object.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTask](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTask.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTask](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTask.md)
 The related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition.md)
 The taskDefinition associated with the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 The related lifecycle workflow taskProcessingResults.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject.md)
 The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultTask.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultTask](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultTask.md)
 The related workflow task
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTemplate](Get-MgIdentityGovernanceLifecycleWorkflowTemplate.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate.md)
 The workflow templates in the lifecycle workflow instance.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTask](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTask.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTask](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTask.md)
 Represents the configured tasks to execute and their execution sequence within a workflow.
 This relationship is expanded by default.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 The result of processing the task.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject.md)
 The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultTask.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultTask](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultTask.md)
 The related workflow task
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
 Get userProcessingResults from identityGovernance
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject.md)
 The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
 The associated individual task execution.
 
-### [Get-MgIdentityGovernanceLifecycleWorkflowVersion](Get-MgIdentityGovernanceLifecycleWorkflowVersion.md)
+### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion.md)
 The workflow versions that are available.
 
-### [Get-MgIdentityGovernanceTermOfUseAgreement](Get-MgIdentityGovernanceTermOfUseAgreement.md)
+### [Get-MgBetaIdentityGovernanceTermOfUseAgreement](Get-MgBetaIdentityGovernanceTermOfUseAgreement.md)
 Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 
-### [Get-MgIdentityGovernanceTermOfUseAgreementAcceptance](Get-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
+### [Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance](Get-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
 
-### [Get-MgIdentityGovernanceTermOfUseAgreementFile](Get-MgIdentityGovernanceTermOfUseAgreementFile.md)
+### [Get-MgBetaIdentityGovernanceTermOfUseAgreementFile](Get-MgBetaIdentityGovernanceTermOfUseAgreementFile.md)
 Retrieve the details of the default file for an agreement, including the language and version information.
 The file information is specified through the agreementFile object.
 
-### [Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization](Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
+### [Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization](Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization.md)
 The localized version of the terms of use agreement files attached to the agreement.
 
-### [Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
+### [Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
 Read-only.
 Customized versions of the terms of use agreement in the Azure AD tenant.
 
-### [Get-MgPrivilegedAccess](Get-MgPrivilegedAccess.md)
+### [Get-MgBetaPrivilegedAccess](Get-MgBetaPrivilegedAccess.md)
 Get entity from privilegedAccess by key
 
-### [Get-MgPrivilegedAccessResource](Get-MgPrivilegedAccessResource.md)
+### [Get-MgBetaPrivilegedAccessResource](Get-MgBetaPrivilegedAccessResource.md)
 A collection of resources for the provider.
 
-### [Get-MgPrivilegedAccessResourceParent](Get-MgPrivilegedAccessResourceParent.md)
+### [Get-MgBetaPrivilegedAccessResourceParent](Get-MgBetaPrivilegedAccessResourceParent.md)
 Read-only.
 The parent resource.
 for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignment](Get-MgPrivilegedAccessResourceRoleAssignment.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignment](Get-MgBetaPrivilegedAccessResourceRoleAssignment.md)
 The collection of role assignments for the resource.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment](Get-MgPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment](Get-MgBetaPrivilegedAccessResourceRoleAssignmentLinkedEligibleRoleAssignment.md)
 Read-only.
 If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRequest](Get-MgPrivilegedAccessResourceRoleAssignmentRequest.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequest](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequest.md)
 The collection of role assignment requests for the resource.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRequestResource](Get-MgPrivilegedAccessResourceRoleAssignmentRequestResource.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestResource](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestResource.md)
 Read-only.
 The resource that the request aims to.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition](Get-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition.md)
 Read-only.
 The role definition that the request aims to.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinitionResource](Get-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinitionResource.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinitionResource](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinitionResource.md)
 Read-only.
 The associated resource for the role definition.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinitionRoleSetting](Get-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinitionRoleSetting.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinitionRoleSetting](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinitionRoleSetting.md)
 The associated role setting for the role definition.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRequestSubject](Get-MgPrivilegedAccessResourceRoleAssignmentRequestSubject.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestSubject](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRequestSubject.md)
 Read-only.
 The user/group principal.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentResource](Get-MgPrivilegedAccessResourceRoleAssignmentResource.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentResource](Get-MgBetaPrivilegedAccessResourceRoleAssignmentResource.md)
 Read-only.
 The resource associated with the role assignment.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRoleDefinition](Get-MgPrivilegedAccessResourceRoleAssignmentRoleDefinition.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinition](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinition.md)
 Read-only.
 The role definition associated with the role assignment.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRoleDefinitionResource](Get-MgPrivilegedAccessResourceRoleAssignmentRoleDefinitionResource.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinitionResource](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinitionResource.md)
 Read-only.
 The associated resource for the role definition.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentRoleDefinitionRoleSetting](Get-MgPrivilegedAccessResourceRoleAssignmentRoleDefinitionRoleSetting.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinitionRoleSetting](Get-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinitionRoleSetting.md)
 The associated role setting for the role definition.
 
-### [Get-MgPrivilegedAccessResourceRoleAssignmentSubject](Get-MgPrivilegedAccessResourceRoleAssignmentSubject.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleAssignmentSubject](Get-MgBetaPrivilegedAccessResourceRoleAssignmentSubject.md)
 Read-only.
 The subject associated with the role assignment.
 
-### [Get-MgPrivilegedAccessResourceRoleDefinition](Get-MgPrivilegedAccessResourceRoleDefinition.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleDefinition](Get-MgBetaPrivilegedAccessResourceRoleDefinition.md)
 The collection of role defintions for the resource.
 
-### [Get-MgPrivilegedAccessResourceRoleDefinitionResource](Get-MgPrivilegedAccessResourceRoleDefinitionResource.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleDefinitionResource](Get-MgBetaPrivilegedAccessResourceRoleDefinitionResource.md)
 Read-only.
 The associated resource for the role definition.
 
-### [Get-MgPrivilegedAccessResourceRoleDefinitionRoleSetting](Get-MgPrivilegedAccessResourceRoleDefinitionRoleSetting.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleDefinitionRoleSetting](Get-MgBetaPrivilegedAccessResourceRoleDefinitionRoleSetting.md)
 The associated role setting for the role definition.
 
-### [Get-MgPrivilegedAccessResourceRoleSetting](Get-MgPrivilegedAccessResourceRoleSetting.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleSetting](Get-MgBetaPrivilegedAccessResourceRoleSetting.md)
 The collection of role settings for the resource.
 
-### [Get-MgPrivilegedAccessResourceRoleSettingResource](Get-MgPrivilegedAccessResourceRoleSettingResource.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleSettingResource](Get-MgBetaPrivilegedAccessResourceRoleSettingResource.md)
 Read-only.
 The associated resource for this role setting.
 
-### [Get-MgPrivilegedAccessResourceRoleSettingRoleDefinition](Get-MgPrivilegedAccessResourceRoleSettingRoleDefinition.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition](Get-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition.md)
 Read-only.
 The role definition that is enforced with this role setting.
 
-### [Get-MgPrivilegedAccessResourceRoleSettingRoleDefinitionResource](Get-MgPrivilegedAccessResourceRoleSettingRoleDefinitionResource.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinitionResource](Get-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinitionResource.md)
 Read-only.
 The associated resource for the role definition.
 
-### [Get-MgPrivilegedAccessResourceRoleSettingRoleDefinitionRoleSetting](Get-MgPrivilegedAccessResourceRoleSettingRoleDefinitionRoleSetting.md)
+### [Get-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinitionRoleSetting](Get-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinitionRoleSetting.md)
 The associated role setting for the role definition.
 
-### [Get-MgPrivilegedAccessRoleAssignment](Get-MgPrivilegedAccessRoleAssignment.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignment](Get-MgBetaPrivilegedAccessRoleAssignment.md)
 A collection of role assignments for the provider.
 
-### [Get-MgPrivilegedAccessRoleAssignmentLinkedEligibleRoleAssignment](Get-MgPrivilegedAccessRoleAssignmentLinkedEligibleRoleAssignment.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignmentLinkedEligibleRoleAssignment](Get-MgBetaPrivilegedAccessRoleAssignmentLinkedEligibleRoleAssignment.md)
 Read-only.
 If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 
-### [Get-MgPrivilegedAccessRoleAssignmentRequest](Get-MgPrivilegedAccessRoleAssignmentRequest.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignmentRequest](Get-MgBetaPrivilegedAccessRoleAssignmentRequest.md)
 A collection of role assignment requests for the provider.
 
-### [Get-MgPrivilegedAccessRoleAssignmentRequestResource](Get-MgPrivilegedAccessRoleAssignmentRequestResource.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignmentRequestResource](Get-MgBetaPrivilegedAccessRoleAssignmentRequestResource.md)
 Read-only.
 The resource that the request aims to.
 
-### [Get-MgPrivilegedAccessRoleAssignmentRequestRoleDefinition](Get-MgPrivilegedAccessRoleAssignmentRequestRoleDefinition.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignmentRequestRoleDefinition](Get-MgBetaPrivilegedAccessRoleAssignmentRequestRoleDefinition.md)
 Read-only.
 The role definition that the request aims to.
 
-### [Get-MgPrivilegedAccessRoleAssignmentRequestSubject](Get-MgPrivilegedAccessRoleAssignmentRequestSubject.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignmentRequestSubject](Get-MgBetaPrivilegedAccessRoleAssignmentRequestSubject.md)
 Read-only.
 The user/group principal.
 
-### [Get-MgPrivilegedAccessRoleAssignmentResource](Get-MgPrivilegedAccessRoleAssignmentResource.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignmentResource](Get-MgBetaPrivilegedAccessRoleAssignmentResource.md)
 Read-only.
 The resource associated with the role assignment.
 
-### [Get-MgPrivilegedAccessRoleAssignmentRoleDefinition](Get-MgPrivilegedAccessRoleAssignmentRoleDefinition.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignmentRoleDefinition](Get-MgBetaPrivilegedAccessRoleAssignmentRoleDefinition.md)
 Read-only.
 The role definition associated with the role assignment.
 
-### [Get-MgPrivilegedAccessRoleAssignmentSubject](Get-MgPrivilegedAccessRoleAssignmentSubject.md)
+### [Get-MgBetaPrivilegedAccessRoleAssignmentSubject](Get-MgBetaPrivilegedAccessRoleAssignmentSubject.md)
 Read-only.
 The subject associated with the role assignment.
 
-### [Get-MgPrivilegedAccessRoleDefinition](Get-MgPrivilegedAccessRoleDefinition.md)
+### [Get-MgBetaPrivilegedAccessRoleDefinition](Get-MgBetaPrivilegedAccessRoleDefinition.md)
 A collection of role defintions for the provider.
 
-### [Get-MgPrivilegedAccessRoleDefinitionResource](Get-MgPrivilegedAccessRoleDefinitionResource.md)
+### [Get-MgBetaPrivilegedAccessRoleDefinitionResource](Get-MgBetaPrivilegedAccessRoleDefinitionResource.md)
 Read-only.
 The associated resource for the role definition.
 
-### [Get-MgPrivilegedAccessRoleDefinitionRoleSetting](Get-MgPrivilegedAccessRoleDefinitionRoleSetting.md)
+### [Get-MgBetaPrivilegedAccessRoleDefinitionRoleSetting](Get-MgBetaPrivilegedAccessRoleDefinitionRoleSetting.md)
 The associated role setting for the role definition.
 
-### [Get-MgPrivilegedAccessRoleSetting](Get-MgPrivilegedAccessRoleSetting.md)
+### [Get-MgBetaPrivilegedAccessRoleSetting](Get-MgBetaPrivilegedAccessRoleSetting.md)
 A collection of role settings for the provider.
 
-### [Get-MgPrivilegedAccessRoleSettingResource](Get-MgPrivilegedAccessRoleSettingResource.md)
+### [Get-MgBetaPrivilegedAccessRoleSettingResource](Get-MgBetaPrivilegedAccessRoleSettingResource.md)
 Read-only.
 The associated resource for this role setting.
 
-### [Get-MgPrivilegedAccessRoleSettingRoleDefinition](Get-MgPrivilegedAccessRoleSettingRoleDefinition.md)
+### [Get-MgBetaPrivilegedAccessRoleSettingRoleDefinition](Get-MgBetaPrivilegedAccessRoleSettingRoleDefinition.md)
 Read-only.
 The role definition that is enforced with this role setting.
 
-### [Get-MgPrivilegedApproval](Get-MgPrivilegedApproval.md)
+### [Get-MgBetaPrivilegedApproval](Get-MgBetaPrivilegedApproval.md)
 Retrieve the properties and relationships of privilegedapproval object.
 
-### [Get-MgPrivilegedApprovalRequest](Get-MgPrivilegedApprovalRequest.md)
+### [Get-MgBetaPrivilegedApprovalRequest](Get-MgBetaPrivilegedApprovalRequest.md)
 Read-only.
 The role assignment request for this approval object
 
-### [Get-MgPrivilegedApprovalRoleInfo](Get-MgPrivilegedApprovalRoleInfo.md)
+### [Get-MgBetaPrivilegedApprovalRoleInfo](Get-MgBetaPrivilegedApprovalRoleInfo.md)
 Get roleInfo from privilegedApproval
 
-### [Get-MgPrivilegedApprovalRoleInfoAssignment](Get-MgPrivilegedApprovalRoleInfoAssignment.md)
+### [Get-MgBetaPrivilegedApprovalRoleInfoAssignment](Get-MgBetaPrivilegedApprovalRoleInfoAssignment.md)
 The assignments for this role.
 Read-only.
 Nullable.
 
-### [Get-MgPrivilegedApprovalRoleInfoSetting](Get-MgPrivilegedApprovalRoleInfoSetting.md)
+### [Get-MgBetaPrivilegedApprovalRoleInfoSetting](Get-MgBetaPrivilegedApprovalRoleInfoSetting.md)
 Retrieve the role settings for the given role.
 A privilegedRoleSettings object will be returned.
 
-### [Get-MgPrivilegedApprovalRoleInfoSummary](Get-MgPrivilegedApprovalRoleInfoSummary.md)
+### [Get-MgBetaPrivilegedApprovalRoleInfoSummary](Get-MgBetaPrivilegedApprovalRoleInfoSummary.md)
 Retrieve the properties and relationships of privilegedRoleSummary object.
 
-### [Get-MgPrivilegedOperationEvent](Get-MgPrivilegedOperationEvent.md)
+### [Get-MgBetaPrivilegedOperationEvent](Get-MgBetaPrivilegedOperationEvent.md)
 Get entity from privilegedOperationEvents by key
 
-### [Get-MgPrivilegedRole](Get-MgPrivilegedRole.md)
+### [Get-MgBetaPrivilegedRole](Get-MgBetaPrivilegedRole.md)
 Retrieve the properties and relationships of privilegedRole object.
 
-### [Get-MgPrivilegedRoleAssignmentRequest](Get-MgPrivilegedRoleAssignmentRequest.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRequest](Get-MgBetaPrivilegedRoleAssignmentRequest.md)
 Get entity from privilegedRoleAssignmentRequests by key
 
-### [Get-MgPrivilegedRoleAssignmentRequestRoleInfo](Get-MgPrivilegedRoleAssignmentRequestRoleInfo.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfo](Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfo.md)
 The roleInfo object of the role assignment request.
 
-### [Get-MgPrivilegedRoleAssignmentRequestRoleInfoAssignment](Get-MgPrivilegedRoleAssignmentRequestRoleInfoAssignment.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoAssignment](Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoAssignment.md)
 The assignments for this role.
 Read-only.
 Nullable.
 
-### [Get-MgPrivilegedRoleAssignmentRequestRoleInfoSetting](Get-MgPrivilegedRoleAssignmentRequestRoleInfoSetting.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting](Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting.md)
 Retrieve the role settings for the given role.
 A privilegedRoleSettings object will be returned.
 
-### [Get-MgPrivilegedRoleAssignmentRequestRoleInfoSummary](Get-MgPrivilegedRoleAssignmentRequestRoleInfoSummary.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSummary](Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSummary.md)
 Retrieve the properties and relationships of privilegedRoleSummary object.
 
-### [Get-MgPrivilegedRoleAssignmentRoleInfo](Get-MgPrivilegedRoleAssignmentRoleInfo.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRoleInfo](Get-MgBetaPrivilegedRoleAssignmentRoleInfo.md)
 Read-only.
 Nullable.
 The associated role information.
 
-### [Get-MgPrivilegedRoleAssignmentRoleInfoAssignment](Get-MgPrivilegedRoleAssignmentRoleInfoAssignment.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRoleInfoAssignment](Get-MgBetaPrivilegedRoleAssignmentRoleInfoAssignment.md)
 The assignments for this role.
 Read-only.
 Nullable.
 
-### [Get-MgPrivilegedRoleAssignmentRoleInfoSetting](Get-MgPrivilegedRoleAssignmentRoleInfoSetting.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRoleInfoSetting](Get-MgBetaPrivilegedRoleAssignmentRoleInfoSetting.md)
 Retrieve the role settings for the given role.
 A privilegedRoleSettings object will be returned.
 
-### [Get-MgPrivilegedRoleAssignmentRoleInfoSummary](Get-MgPrivilegedRoleAssignmentRoleInfoSummary.md)
+### [Get-MgBetaPrivilegedRoleAssignmentRoleInfoSummary](Get-MgBetaPrivilegedRoleAssignmentRoleInfoSummary.md)
 Retrieve the properties and relationships of privilegedRoleSummary object.
 
-### [Get-MgPrivilegedRoleRoleAssignment](Get-MgPrivilegedRoleRoleAssignment.md)
+### [Get-MgBetaPrivilegedRoleRoleAssignment](Get-MgBetaPrivilegedRoleRoleAssignment.md)
 Retrieve the properties and relationships of privilegedRoleAssignment object.
 
-### [Get-MgPrivilegedRoleSetting](Get-MgPrivilegedRoleSetting.md)
+### [Get-MgBetaPrivilegedRoleSetting](Get-MgBetaPrivilegedRoleSetting.md)
 Retrieve the role settings for the given role.
 A privilegedRoleSettings object will be returned.
 
-### [Get-MgPrivilegedRoleSummary](Get-MgPrivilegedRoleSummary.md)
+### [Get-MgBetaPrivilegedRoleSummary](Get-MgBetaPrivilegedRoleSummary.md)
 Retrieve the properties and relationships of privilegedRoleSummary object.
 
-### [Get-MgProgram](Get-MgProgram.md)
+### [Get-MgBetaProgram](Get-MgBetaProgram.md)
 Get entity from programs by key
 
-### [Get-MgProgramControl](Get-MgProgramControl.md)
+### [Get-MgBetaProgramControl](Get-MgBetaProgramControl.md)
 Get entity from programControls by key
 
-### [Get-MgProgramControlProgram](Get-MgProgramControlProgram.md)
+### [Get-MgBetaProgramControlProgram](Get-MgBetaProgramControlProgram.md)
 The program this control is part of.
 
-### [Get-MgProgramControlType](Get-MgProgramControlType.md)
+### [Get-MgBetaProgramControlType](Get-MgBetaProgramControlType.md)
 Get entity from programControlTypes by key
 
-### [Get-MgUserAgreementAcceptance](Get-MgUserAgreementAcceptance.md)
+### [Get-MgBetaUserAgreementAcceptance](Get-MgBetaUserAgreementAcceptance.md)
 The user's terms of use acceptance statuses.
 Read-only.
 Nullable.
 
-### [Initialize-MgIdentityGovernanceLifecycleWorkflow](Initialize-MgIdentityGovernanceLifecycleWorkflow.md)
+### [Initialize-MgBetaIdentityGovernanceLifecycleWorkflow](Initialize-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Run a workflow object on-demand.
 You can run any workflow on-demand, including scheduled workflows.
 Workflows created from the 'Real-time employee termination' template are run on-demand only.
 When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
 
-### [Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
+### [Initialize-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Initialize-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Run a workflow object on-demand.
 You can run any workflow on-demand, including scheduled workflows.
 Workflows created from the 'Real-time employee termination' template are run on-demand only.
 When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
 
-### [Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation](Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation.md)
+### [Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation](Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
 If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
 
-### [Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation](Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation.md)
+### [Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation](Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
 If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
 
-### [Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision](Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision.md)
+### [Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision](Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision.md)
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
 
-### [Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
+### [Invoke-MgBetaBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBetaBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
 
-### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
+### [Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentByCurrentUser.md)
+### [Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentRequestByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentRequestByCurrentUser.md)
+### [Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentRequestByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterEntitlementManagementAccessPackageByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageByCurrentUser.md)
+### [Invoke-MgBetaFilterEntitlementManagementAccessPackageByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAccessPackageByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAccessReviewDecisionByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDecisionByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAccessReviewDecisionInstanceDecisionByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDecisionInstanceDecisionByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionInstanceDecisionByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionInstanceDecisionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAccessReviewDecisionInstanceStageByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDecisionInstanceStageByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionInstanceStageByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionInstanceStageByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAccessReviewDecisionInstanceStageDecisionByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDecisionInstanceStageDecisionByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionInstanceStageDecisionByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionInstanceStageDecisionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDefinitionByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDefinitionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDefinitionInstanceByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDefinitionInstanceByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceStageByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceStageByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDefinitionInstanceStageByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDefinitionInstanceStageByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAppConsentRequestByCurrentUser](Invoke-MgFilterIdentityGovernanceAppConsentRequestByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser](Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser.md)
+### [Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgMyPrivilegedApprovalRequest](Invoke-MgMyPrivilegedApprovalRequest.md)
+### [Invoke-MgBetaMyPrivilegedApprovalRequest](Invoke-MgBetaMyPrivilegedApprovalRequest.md)
 Invoke function myRequests
 
-### [Invoke-MgMyPrivilegedRoleAssignment](Invoke-MgMyPrivilegedRoleAssignment.md)
+### [Invoke-MgBetaMyPrivilegedRoleAssignment](Invoke-MgBetaMyPrivilegedRoleAssignment.md)
 Invoke function my
 
-### [Invoke-MgMyPrivilegedRoleAssignmentRequest](Invoke-MgMyPrivilegedRoleAssignmentRequest.md)
+### [Invoke-MgBetaMyPrivilegedRoleAssignmentRequest](Invoke-MgBetaMyPrivilegedRoleAssignmentRequest.md)
 Invoke function my
 
-### [Invoke-MgRecordIdentityGovernanceAccessReviewDecision](Invoke-MgRecordIdentityGovernanceAccessReviewDecision.md)
+### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
 
-### [Invoke-MgRecordIdentityGovernanceAccessReviewDecisionInstanceDecision](Invoke-MgRecordIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
+### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
 
-### [Invoke-MgRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Invoke-MgRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
+### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
 
-### [Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision](Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
 
-### [Invoke-MgSelfPrivilegedApprovalRoleInfoActivate](Invoke-MgSelfPrivilegedApprovalRoleInfoActivate.md)
+### [Invoke-MgBetaSelfPrivilegedApprovalRoleInfoActivate](Invoke-MgBetaSelfPrivilegedApprovalRoleInfoActivate.md)
 Activate the role that is assigned to the requester.
 
-### [Invoke-MgSelfPrivilegedApprovalRoleInfoDeactivate](Invoke-MgSelfPrivilegedApprovalRoleInfoDeactivate.md)
+### [Invoke-MgBetaSelfPrivilegedApprovalRoleInfoDeactivate](Invoke-MgBetaSelfPrivilegedApprovalRoleInfoDeactivate.md)
 Deactivate the role that is assigned to the requestor.
 
-### [Invoke-MgSelfPrivilegedRoleActivate](Invoke-MgSelfPrivilegedRoleActivate.md)
+### [Invoke-MgBetaSelfPrivilegedRoleActivate](Invoke-MgBetaSelfPrivilegedRoleActivate.md)
 Activate the role that is assigned to the requester.
 
-### [Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate](Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate.md)
+### [Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoActivate](Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoActivate.md)
 Activate the role that is assigned to the requester.
 
-### [Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate](Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate.md)
+### [Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate](Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate.md)
 Deactivate the role that is assigned to the requestor.
 
-### [Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoActivate](Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoActivate.md)
+### [Invoke-MgBetaSelfPrivilegedRoleAssignmentRoleInfoActivate](Invoke-MgBetaSelfPrivilegedRoleAssignmentRoleInfoActivate.md)
 Activate the role that is assigned to the requester.
 
-### [Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoDeactivate](Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoDeactivate.md)
+### [Invoke-MgBetaSelfPrivilegedRoleAssignmentRoleInfoDeactivate](Invoke-MgBetaSelfPrivilegedRoleAssignmentRoleInfoDeactivate.md)
 Deactivate the role that is assigned to the requestor.
 
-### [Invoke-MgSelfPrivilegedRoleDeactivate](Invoke-MgSelfPrivilegedRoleDeactivate.md)
+### [Invoke-MgBetaSelfPrivilegedRoleDeactivate](Invoke-MgBetaSelfPrivilegedRoleDeactivate.md)
 Deactivate the role that is assigned to the requestor.
 
-### [Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowRun](Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowRun.md)
+### [Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowRun](Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowRun.md)
 Invoke function summary
 
-### [Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
+### [Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
 Invoke function summary
 
-### [Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowTaskReport](Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowTaskReport.md)
+### [Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowTaskReport](Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowTaskReport.md)
 Invoke function summary
 
-### [Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowUserProcessingResult](Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
+### [Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowUserProcessingResult](Invoke-MgBetaSummaryIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
 Invoke function summary
 
-### [Move-MgEntitlementManagementAccessPackageToCatalog](Move-MgEntitlementManagementAccessPackageToCatalog.md)
+### [Move-MgBetaEntitlementManagementAccessPackageToCatalog](Move-MgBetaEntitlementManagementAccessPackageToCatalog.md)
 In Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
 The resources in the access package must be present in the target catalog.
 
-### [New-MgAccessReview](New-MgAccessReview.md)
+### [New-MgBetaAccessReview](New-MgBetaAccessReview.md)
 In the Azure AD access reviews feature, create a new accessReview object.
 Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of **businessFlowTemplateId** to include in the request.
 After making this request, the caller should create a programControl, to link the access review to a program.
 
-### [New-MgAccessReviewDecision](New-MgAccessReviewDecision.md)
+### [New-MgBetaAccessReviewDecision](New-MgBetaAccessReviewDecision.md)
 Create new navigation property to decisions for accessReviews
 
-### [New-MgAccessReviewInstance](New-MgAccessReviewInstance.md)
+### [New-MgBetaAccessReviewInstance](New-MgBetaAccessReviewInstance.md)
 Create new navigation property to instances for accessReviews
 
-### [New-MgAccessReviewInstanceDecision](New-MgAccessReviewInstanceDecision.md)
+### [New-MgBetaAccessReviewInstanceDecision](New-MgBetaAccessReviewInstanceDecision.md)
 Create new navigation property to decisions for accessReviews
 
-### [New-MgAccessReviewInstanceMyDecision](New-MgAccessReviewInstanceMyDecision.md)
+### [New-MgBetaAccessReviewInstanceMyDecision](New-MgBetaAccessReviewInstanceMyDecision.md)
 Create new navigation property to myDecisions for accessReviews
 
-### [New-MgAccessReviewInstanceReviewer](New-MgAccessReviewInstanceReviewer.md)
+### [New-MgBetaAccessReviewInstanceReviewer](New-MgBetaAccessReviewInstanceReviewer.md)
 In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.
 This operation is only permitted for an access review that is not yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation is not permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
 
-### [New-MgAccessReviewMyDecision](New-MgAccessReviewMyDecision.md)
+### [New-MgBetaAccessReviewMyDecision](New-MgBetaAccessReviewMyDecision.md)
 Create new navigation property to myDecisions for accessReviews
 
-### [New-MgAccessReviewReviewer](New-MgAccessReviewReviewer.md)
+### [New-MgBetaAccessReviewReviewer](New-MgBetaAccessReviewReviewer.md)
 In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.
 This operation is only permitted for an access review that is not yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation is not permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
 
-### [New-MgAgreement](New-MgAgreement.md)
+### [New-MgBetaAgreement](New-MgBetaAgreement.md)
 Add new entity to agreements
 
-### [New-MgAgreementAcceptance](New-MgAgreementAcceptance.md)
+### [New-MgBetaAgreementAcceptance](New-MgBetaAgreementAcceptance.md)
 Create new navigation property to acceptances for agreements
 
-### [New-MgAgreementFileLocalization](New-MgAgreementFileLocalization.md)
+### [New-MgBetaAgreementFileLocalization](New-MgBetaAgreementFileLocalization.md)
 Create new navigation property to localizations for agreements
 
-### [New-MgAgreementFileLocalizationVersion](New-MgAgreementFileLocalizationVersion.md)
+### [New-MgBetaAgreementFileLocalizationVersion](New-MgBetaAgreementFileLocalizationVersion.md)
 Create new navigation property to versions for agreements
 
-### [New-MgBusinessFlowTemplate](New-MgBusinessFlowTemplate.md)
+### [New-MgBetaBusinessFlowTemplate](New-MgBetaBusinessFlowTemplate.md)
 Add new entity to businessFlowTemplates
 
-### [New-MgEntitlementManagementAccessPackage](New-MgEntitlementManagementAccessPackage.md)
+### [New-MgBetaEntitlementManagementAccessPackage](New-MgBetaEntitlementManagementAccessPackage.md)
 Create a new accessPackage object.
 The access package will be added to an existing accessPackageCatalog.
 After the access package is created, you can then create accessPackageAssignmentPolicies which specify how users are assigned to the access package.
 
-### [New-MgEntitlementManagementAccessPackageAssignment](New-MgEntitlementManagementAccessPackageAssignment.md)
+### [New-MgBetaEntitlementManagementAccessPackageAssignment](New-MgBetaEntitlementManagementAccessPackageAssignment.md)
 Create a new entitlement management accessPackageAssignment
 
-### [New-MgEntitlementManagementAccessPackageAssignmentPolicy](New-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+### [New-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](New-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 In Azure AD entitlement management, create a new accessPackageAssignmentPolicy object.
 
-### [New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
+### [New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Create new navigation property to customExtensionHandlers for identityGovernance
 
-### [New-MgEntitlementManagementAccessPackageAssignmentRequest](New-MgEntitlementManagementAccessPackageAssignmentRequest.md)
+### [New-MgBetaEntitlementManagementAccessPackageAssignmentRequest](New-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.
 This operation is used to assign a user to an access package, or to remove an access package assignment.
 
-### [New-MgEntitlementManagementAccessPackageCatalog](New-MgEntitlementManagementAccessPackageCatalog.md)
+### [New-MgBetaEntitlementManagementAccessPackageCatalog](New-MgBetaEntitlementManagementAccessPackageCatalog.md)
 Create a new accessPackageCatalog object.
 
-### [New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
+### [New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
 
-### [New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
+### [New-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](New-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Create new navigation property ref to incompatibleAccessPackages for identityGovernance
 
-### [New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
+### [New-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef](New-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Create new navigation property ref to incompatibleGroups for identityGovernance
 
-### [New-MgEntitlementManagementAccessPackageResourceRequest](New-MgEntitlementManagementAccessPackageResourceRequest.md)
+### [New-MgBetaEntitlementManagementAccessPackageResourceRequest](New-MgBetaEntitlementManagementAccessPackageResourceRequest.md)
 Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
 A resource must be included in an access package catalog before a role of that resource can be added to an access package.
 
-### [New-MgEntitlementManagementAccessPackageResourceRoleScope](New-MgEntitlementManagementAccessPackageResourceRoleScope.md)
+### [New-MgBetaEntitlementManagementAccessPackageResourceRoleScope](New-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
 The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the **originId** for the resource role retrieved from the list of the resource roles.
 Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
 
-### [New-MgEntitlementManagementConnectedOrganization](New-MgEntitlementManagementConnectedOrganization.md)
+### [New-MgBetaEntitlementManagementConnectedOrganization](New-MgBetaEntitlementManagementConnectedOrganization.md)
 Create a new connectedOrganization object.
 
-### [New-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
+### [New-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef](New-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Create new navigation property ref to externalSponsors for identityGovernance
 
-### [New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
+### [New-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef](New-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Create new navigation property ref to internalSponsors for identityGovernance
 
-### [New-MgEntitlementManagementSubject](New-MgEntitlementManagementSubject.md)
+### [New-MgBetaEntitlementManagementSubject](New-MgBetaEntitlementManagementSubject.md)
 Create new navigation property to subjects for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDecision](New-MgIdentityGovernanceAccessReviewDecision.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDecision](New-MgBetaIdentityGovernanceAccessReviewDecision.md)
 Create new navigation property to decisions for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDecisionInsight](New-MgIdentityGovernanceAccessReviewDecisionInsight.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDecisionInsight](New-MgBetaIdentityGovernanceAccessReviewDecisionInsight.md)
 Create new navigation property to insights for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer](New-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer](New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer.md)
 Create new navigation property to contactedReviewers for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDecisionInstanceDecision](New-MgIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Create new navigation property to decisions for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight](New-MgIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight](New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight.md)
 Create new navigation property to insights for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDecisionInstanceStage](New-MgIdentityGovernanceAccessReviewDecisionInstanceStage.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
 Create new navigation property to stages for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecision](New-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision](New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 Create new navigation property to decisions for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](New-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](New-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
 Create new navigation property to insights for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDefinition](New-MgIdentityGovernanceAccessReviewDefinition.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDefinition](New-MgBetaIdentityGovernanceAccessReviewDefinition.md)
 Create a new accessReviewScheduleDefinition object.
 
-### [New-MgIdentityGovernanceAccessReviewDefinitionInstance](New-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](New-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](New-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
 Create new navigation property to contactedReviewers for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Create new navigation property to decisions for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight](New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight](New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight.md)
 Create new navigation property to insights for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](New-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Create new navigation property to stages for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](New-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
+### [New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Create new navigation property to decisions for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewHistoryDefinition](New-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
+### [New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition](New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition.md)
 Create a new accessReviewHistoryDefinition object.
 
-### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
+### [New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance](New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
 
-### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri.md)
+### [New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri](New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri.md)
 Generates a URI for an accessReviewHistoryInstance object the **status** for which is `done`.
 Each URI can be used to retrieve the instance's review history data.
 Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUri** property from the accessReviewHistoryInstance object.
 
-### [New-MgIdentityGovernanceAppConsentRequest](New-MgIdentityGovernanceAppConsentRequest.md)
+### [New-MgBetaIdentityGovernanceAppConsentRequest](New-MgBetaIdentityGovernanceAppConsentRequest.md)
 Create new navigation property to appConsentRequests for identityGovernance
 
-### [New-MgIdentityGovernanceAppConsentRequestUserConsentRequest](New-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
+### [New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest](New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest.md)
 Create new navigation property to userConsentRequests for identityGovernance
 
-### [New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
+### [New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
 Create new navigation property to steps for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflow](New-MgIdentityGovernanceLifecycleWorkflow.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflow](New-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Create a new workflow object.
 You can create up to 50 workflows in a tenant.
 
-### [New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](New-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Create a new customTaskExtension object.
 
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Create new navigation property to workflows for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion](New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion.md)
 Create a new version of the workflow object.
 
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
 Create new navigation property to runs for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
 Create new navigation property to taskReports for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
 Create new navigation property to userProcessingResults for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
 Create new navigation property to versions for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](New-MgIdentityGovernanceLifecycleWorkflowNewVersion.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowNewVersion](New-MgBetaIdentityGovernanceLifecycleWorkflowNewVersion.md)
 Create a new version of the workflow object.
 
-### [New-MgIdentityGovernanceLifecycleWorkflowRun](New-MgIdentityGovernanceLifecycleWorkflowRun.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowRun](New-MgBetaIdentityGovernanceLifecycleWorkflowRun.md)
 Create new navigation property to runs for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](New-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Create new navigation property to taskProcessingResults for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](New-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
 Create new navigation property to userProcessingResults for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](New-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
 Create new navigation property to taskProcessingResults for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](New-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition](New-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
 Create new navigation property to taskDefinitions for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowTaskReport](New-MgIdentityGovernanceLifecycleWorkflowTaskReport.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport](New-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport.md)
 Create new navigation property to taskReports for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](New-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 Create new navigation property to taskProcessingResults for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowTemplate](New-MgIdentityGovernanceLifecycleWorkflowTemplate.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowTemplate](New-MgBetaIdentityGovernanceLifecycleWorkflowTemplate.md)
 Create new navigation property to workflowTemplates for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowTemplateTask](New-MgIdentityGovernanceLifecycleWorkflowTemplateTask.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTask](New-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTask.md)
 Create new navigation property to tasks for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](New-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 Create new navigation property to taskProcessingResults for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResult](New-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
 Create new navigation property to userProcessingResults for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](New-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
 Create new navigation property to taskProcessingResults for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowVersion](New-MgIdentityGovernanceLifecycleWorkflowVersion.md)
+### [New-MgBetaIdentityGovernanceLifecycleWorkflowVersion](New-MgBetaIdentityGovernanceLifecycleWorkflowVersion.md)
 Create new navigation property to versions for identityGovernance
 
-### [New-MgIdentityGovernanceTermOfUseAgreement](New-MgIdentityGovernanceTermOfUseAgreement.md)
+### [New-MgBetaIdentityGovernanceTermOfUseAgreement](New-MgBetaIdentityGovernanceTermOfUseAgreement.md)
 Create a new agreement object.
 
-### [New-MgIdentityGovernanceTermOfUseAgreementAcceptance](New-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
+### [New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance](New-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance.md)
 Create new navigation property to agreementAcceptances for identityGovernance
 
-### [New-MgIdentityGovernanceTermOfUseAgreementFileLocalization](New-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
+### [New-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization](New-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization.md)
 Create new navigation property to localizations for identityGovernance
 
-### [New-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](New-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
+### [New-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](New-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
 Create new navigation property to versions for identityGovernance
 
-### [New-MgPrivilegedAccess](New-MgPrivilegedAccess.md)
+### [New-MgBetaPrivilegedAccess](New-MgBetaPrivilegedAccess.md)
 Add new entity to privilegedAccess
 
-### [New-MgPrivilegedAccessResource](New-MgPrivilegedAccessResource.md)
+### [New-MgBetaPrivilegedAccessResource](New-MgBetaPrivilegedAccessResource.md)
 Create new navigation property to resources for privilegedAccess
 
-### [New-MgPrivilegedAccessResourceRoleAssignment](New-MgPrivilegedAccessResourceRoleAssignment.md)
+### [New-MgBetaPrivilegedAccessResourceRoleAssignment](New-MgBetaPrivilegedAccessResourceRoleAssignment.md)
 Create new navigation property to roleAssignments for privilegedAccess
 
-### [New-MgPrivilegedAccessResourceRoleAssignmentRequest](New-MgPrivilegedAccessResourceRoleAssignmentRequest.md)
+### [New-MgBetaPrivilegedAccessResourceRoleAssignmentRequest](New-MgBetaPrivilegedAccessResourceRoleAssignmentRequest.md)
 Create new navigation property to roleAssignmentRequests for privilegedAccess
 
-### [New-MgPrivilegedAccessResourceRoleDefinition](New-MgPrivilegedAccessResourceRoleDefinition.md)
+### [New-MgBetaPrivilegedAccessResourceRoleDefinition](New-MgBetaPrivilegedAccessResourceRoleDefinition.md)
 Create new navigation property to roleDefinitions for privilegedAccess
 
-### [New-MgPrivilegedAccessResourceRoleSetting](New-MgPrivilegedAccessResourceRoleSetting.md)
+### [New-MgBetaPrivilegedAccessResourceRoleSetting](New-MgBetaPrivilegedAccessResourceRoleSetting.md)
 Create new navigation property to roleSettings for privilegedAccess
 
-### [New-MgPrivilegedAccessRoleAssignment](New-MgPrivilegedAccessRoleAssignment.md)
+### [New-MgBetaPrivilegedAccessRoleAssignment](New-MgBetaPrivilegedAccessRoleAssignment.md)
 Create new navigation property to roleAssignments for privilegedAccess
 
-### [New-MgPrivilegedAccessRoleAssignmentRequest](New-MgPrivilegedAccessRoleAssignmentRequest.md)
+### [New-MgBetaPrivilegedAccessRoleAssignmentRequest](New-MgBetaPrivilegedAccessRoleAssignmentRequest.md)
 Create a role assignment request to represent the operation you want on a role assignment.
 The following table lists the operations.
 
-### [New-MgPrivilegedAccessRoleDefinition](New-MgPrivilegedAccessRoleDefinition.md)
+### [New-MgBetaPrivilegedAccessRoleDefinition](New-MgBetaPrivilegedAccessRoleDefinition.md)
 Create new navigation property to roleDefinitions for privilegedAccess
 
-### [New-MgPrivilegedAccessRoleSetting](New-MgPrivilegedAccessRoleSetting.md)
+### [New-MgBetaPrivilegedAccessRoleSetting](New-MgBetaPrivilegedAccessRoleSetting.md)
 Create new navigation property to roleSettings for privilegedAccess
 
-### [New-MgPrivilegedApproval](New-MgPrivilegedApproval.md)
+### [New-MgBetaPrivilegedApproval](New-MgBetaPrivilegedApproval.md)
 Use this API to create a new privilegedApproval.
 
-### [New-MgPrivilegedOperationEvent](New-MgPrivilegedOperationEvent.md)
+### [New-MgBetaPrivilegedOperationEvent](New-MgBetaPrivilegedOperationEvent.md)
 Add new entity to privilegedOperationEvents
 
-### [New-MgPrivilegedRole](New-MgPrivilegedRole.md)
+### [New-MgBetaPrivilegedRole](New-MgBetaPrivilegedRole.md)
 Add new entity to privilegedRoles
 
-### [New-MgPrivilegedRoleAssignment](New-MgPrivilegedRoleAssignment.md)
+### [New-MgBetaPrivilegedRoleAssignment](New-MgBetaPrivilegedRoleAssignment.md)
 Use this API to create a new  privilegedRoleAssignment.
 
-### [New-MgPrivilegedRoleAssignmentEligible](New-MgPrivilegedRoleAssignmentEligible.md)
+### [New-MgBetaPrivilegedRoleAssignmentEligible](New-MgBetaPrivilegedRoleAssignmentEligible.md)
 Make the role assignment eligible.
 If the role assignment is already eligible before the call, it does nothing.
 If the role assignment is permanent and the requestor is different from the target user, the role assignment will become eligible and the role will be deactivated for the target user.
 If the requestor is the target user and the role is Security Administrator or Privileged Role Administrator, the role will be activated with the default expiration.
 
-### [New-MgPrivilegedRoleAssignmentPermanent](New-MgPrivilegedRoleAssignmentPermanent.md)
+### [New-MgBetaPrivilegedRoleAssignmentPermanent](New-MgBetaPrivilegedRoleAssignmentPermanent.md)
 Make the role assignment permanent.
 
-### [New-MgPrivilegedRoleAssignmentRequest](New-MgPrivilegedRoleAssignmentRequest.md)
+### [New-MgBetaPrivilegedRoleAssignmentRequest](New-MgBetaPrivilegedRoleAssignmentRequest.md)
 Create a privilegedroleassignmentrequest object.
 
-### [New-MgProgram](New-MgProgram.md)
+### [New-MgBetaProgram](New-MgBetaProgram.md)
 In the Azure AD access reviews feature, create a new program object.
 
-### [New-MgProgramControl](New-MgProgramControl.md)
+### [New-MgBetaProgramControl](New-MgBetaProgramControl.md)
 In the Azure AD access reviews feature, create a new programControl object.
 This links an access review to a program.
 Prior to making this request, the caller must have previously
 
-### [New-MgProgramControlType](New-MgProgramControlType.md)
+### [New-MgBetaProgramControlType](New-MgBetaProgramControlType.md)
 Add new entity to programControlTypes
 
-### [Register-MgPrivilegedAccessResource](Register-MgPrivilegedAccessResource.md)
+### [Register-MgBetaPrivilegedAccessResource](Register-MgBetaPrivilegedAccessResource.md)
 Invoke action register
 
-### [Remove-MgAccessReview](Remove-MgAccessReview.md)
+### [Remove-MgBetaAccessReview](Remove-MgBetaAccessReview.md)
 In the Azure AD access reviews feature, delete an accessReview object.
 
-### [Remove-MgAccessReviewDecision](Remove-MgAccessReviewDecision.md)
+### [Remove-MgBetaAccessReviewDecision](Remove-MgBetaAccessReviewDecision.md)
 Delete navigation property decisions for accessReviews
 
-### [Remove-MgAccessReviewInstance](Remove-MgAccessReviewInstance.md)
+### [Remove-MgBetaAccessReviewInstance](Remove-MgBetaAccessReviewInstance.md)
 Delete navigation property instances for accessReviews
 
-### [Remove-MgAccessReviewInstanceDecision](Remove-MgAccessReviewInstanceDecision.md)
+### [Remove-MgBetaAccessReviewInstanceDecision](Remove-MgBetaAccessReviewInstanceDecision.md)
 Delete navigation property decisions for accessReviews
 
-### [Remove-MgAccessReviewInstanceMyDecision](Remove-MgAccessReviewInstanceMyDecision.md)
+### [Remove-MgBetaAccessReviewInstanceMyDecision](Remove-MgBetaAccessReviewInstanceMyDecision.md)
 Delete navigation property myDecisions for accessReviews
 
-### [Remove-MgAccessReviewInstanceReviewer](Remove-MgAccessReviewInstanceReviewer.md)
+### [Remove-MgBetaAccessReviewInstanceReviewer](Remove-MgBetaAccessReviewInstanceReviewer.md)
 Delete navigation property reviewers for accessReviews
 
-### [Remove-MgAccessReviewMyDecision](Remove-MgAccessReviewMyDecision.md)
+### [Remove-MgBetaAccessReviewMyDecision](Remove-MgBetaAccessReviewMyDecision.md)
 Delete navigation property myDecisions for accessReviews
 
-### [Remove-MgAccessReviewReviewer](Remove-MgAccessReviewReviewer.md)
+### [Remove-MgBetaAccessReviewReviewer](Remove-MgBetaAccessReviewReviewer.md)
 Delete navigation property reviewers for accessReviews
 
-### [Remove-MgAgreement](Remove-MgAgreement.md)
+### [Remove-MgBetaAgreement](Remove-MgBetaAgreement.md)
 Delete entity from agreements
 
-### [Remove-MgAgreementAcceptance](Remove-MgAgreementAcceptance.md)
+### [Remove-MgBetaAgreementAcceptance](Remove-MgBetaAgreementAcceptance.md)
 Delete navigation property acceptances for agreements
 
-### [Remove-MgAgreementFile](Remove-MgAgreementFile.md)
+### [Remove-MgBetaAgreementFile](Remove-MgBetaAgreementFile.md)
 Delete navigation property file for agreements
 
-### [Remove-MgAgreementFileLocalization](Remove-MgAgreementFileLocalization.md)
+### [Remove-MgBetaAgreementFileLocalization](Remove-MgBetaAgreementFileLocalization.md)
 Delete navigation property localizations for agreements
 
-### [Remove-MgAgreementFileLocalizationVersion](Remove-MgAgreementFileLocalizationVersion.md)
+### [Remove-MgBetaAgreementFileLocalizationVersion](Remove-MgBetaAgreementFileLocalizationVersion.md)
 Delete navigation property versions for agreements
 
-### [Remove-MgBusinessFlowTemplate](Remove-MgBusinessFlowTemplate.md)
+### [Remove-MgBetaBusinessFlowTemplate](Remove-MgBetaBusinessFlowTemplate.md)
 Delete entity from businessFlowTemplates
 
-### [Remove-MgEntitlementManagementAccessPackage](Remove-MgEntitlementManagementAccessPackage.md)
+### [Remove-MgBetaEntitlementManagementAccessPackage](Remove-MgBetaEntitlementManagementAccessPackage.md)
 Delete navigation property accessPackages for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageAssignment](Remove-MgEntitlementManagementAccessPackageAssignment.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageAssignment](Remove-MgBetaEntitlementManagementAccessPackageAssignment.md)
 Delete navigation property accessPackageAssignments for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageAssignmentApproval](Remove-MgEntitlementManagementAccessPackageAssignmentApproval.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentApproval](Remove-MgBetaEntitlementManagementAccessPackageAssignmentApproval.md)
 Delete navigation property accessPackageAssignmentApprovals for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStep](Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStep.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentApprovalStep](Remove-MgBetaEntitlementManagementAccessPackageAssignmentApprovalStep.md)
 Delete navigation property steps for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageAssignmentPolicy](Remove-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Delete navigation property accessPackageAssignmentPolicies for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Remove-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Delete navigation property customExtensionHandlers for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageAssignmentRequest](Remove-MgEntitlementManagementAccessPackageAssignmentRequest.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 Delete navigation property accessPackageAssignmentRequests for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageCatalog](Remove-MgEntitlementManagementAccessPackageCatalog.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageCatalog](Remove-MgBetaEntitlementManagementAccessPackageCatalog.md)
 Delete navigation property accessPackageCatalogs for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Delete navigation property customAccessPackageWorkflowExtensions for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Delete ref of navigation property incompatibleAccessPackages for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef](Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Delete ref of navigation property incompatibleGroups for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageResourceRequest](Remove-MgEntitlementManagementAccessPackageResourceRequest.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageResourceRequest](Remove-MgBetaEntitlementManagementAccessPackageResourceRequest.md)
 Delete navigation property accessPackageResourceRequests for identityGovernance
 
-### [Remove-MgEntitlementManagementAccessPackageResourceRoleScope](Remove-MgEntitlementManagementAccessPackageResourceRoleScope.md)
+### [Remove-MgBetaEntitlementManagementAccessPackageResourceRoleScope](Remove-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Delete navigation property accessPackageResourceRoleScopes for identityGovernance
 
-### [Remove-MgEntitlementManagementConnectedOrganization](Remove-MgEntitlementManagementConnectedOrganization.md)
+### [Remove-MgBetaEntitlementManagementConnectedOrganization](Remove-MgBetaEntitlementManagementConnectedOrganization.md)
 Delete navigation property connectedOrganizations for identityGovernance
 
-### [Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
+### [Remove-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef](Remove-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Delete ref of navigation property externalSponsors for identityGovernance
 
-### [Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
+### [Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef](Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Delete ref of navigation property internalSponsors for identityGovernance
 
-### [Remove-MgEntitlementManagementSubject](Remove-MgEntitlementManagementSubject.md)
+### [Remove-MgBetaEntitlementManagementSubject](Remove-MgBetaEntitlementManagementSubject.md)
 Delete navigation property subjects for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecision](Remove-MgIdentityGovernanceAccessReviewDecision.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecision](Remove-MgBetaIdentityGovernanceAccessReviewDecision.md)
 Delete navigation property decisions for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecisionInsight](Remove-MgIdentityGovernanceAccessReviewDecisionInsight.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecisionInsight](Remove-MgBetaIdentityGovernanceAccessReviewDecisionInsight.md)
 Delete navigation property insights for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecisionInstance](Remove-MgIdentityGovernanceAccessReviewDecisionInstance.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
 Delete navigation property instance for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer](Remove-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer](Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer.md)
 Delete navigation property contactedReviewers for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecisionInstanceDecision](Remove-MgIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Delete navigation property decisions for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight](Remove-MgIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight](Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight.md)
 Delete navigation property insights for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStage](Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStage.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
 Delete navigation property stages for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 Delete navigation property decisions for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Remove-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Remove-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
 Delete navigation property insights for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDefinition](Remove-MgIdentityGovernanceAccessReviewDefinition.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDefinition](Remove-MgBetaIdentityGovernanceAccessReviewDefinition.md)
 Delete navigation property definitions for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstance](Remove-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Delete navigation property instances for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
 Delete navigation property contactedReviewers for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Delete navigation property decisions for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight](Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight.md)
 Delete navigation property insights for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance](Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance.md)
 Delete navigation property instance for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Delete navigation property stages for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Delete navigation property decisions for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewHistoryDefinition](Remove-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewHistoryDefinition](Remove-MgBetaIdentityGovernanceAccessReviewHistoryDefinition.md)
 Delete navigation property historyDefinitions for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](Remove-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance](Remove-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 Delete navigation property instances for identityGovernance
 
-### [Remove-MgIdentityGovernanceAccessReviewPolicy](Remove-MgIdentityGovernanceAccessReviewPolicy.md)
+### [Remove-MgBetaIdentityGovernanceAccessReviewPolicy](Remove-MgBetaIdentityGovernanceAccessReviewPolicy.md)
 Delete navigation property policy for identityGovernance
 
-### [Remove-MgIdentityGovernanceAppConsentRequest](Remove-MgIdentityGovernanceAppConsentRequest.md)
+### [Remove-MgBetaIdentityGovernanceAppConsentRequest](Remove-MgBetaIdentityGovernanceAppConsentRequest.md)
 Delete navigation property appConsentRequests for identityGovernance
 
-### [Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequest](Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
+### [Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest](Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest.md)
 Delete navigation property userConsentRequests for identityGovernance
 
-### [Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
+### [Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
 Delete navigation property approval for identityGovernance
 
-### [Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
+### [Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](Remove-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
 Delete navigation property steps for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflow](Remove-MgIdentityGovernanceLifecycleWorkflow.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflow](Remove-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Delete navigation property workflows for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Remove-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Remove-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Delete navigation property customTaskExtensions for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItem](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItem.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem.md)
 Delete navigation property deletedItems for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Delete navigation property workflows for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
 Delete navigation property runs for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
 Delete navigation property taskReports for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
 Delete navigation property userProcessingResults for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
 Delete navigation property versions for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowRun](Remove-MgIdentityGovernanceLifecycleWorkflowRun.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowRun](Remove-MgBetaIdentityGovernanceLifecycleWorkflowRun.md)
 Delete navigation property runs for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Remove-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Delete navigation property taskProcessingResults for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Remove-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
 Delete navigation property userProcessingResults for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Remove-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
 Delete navigation property taskProcessingResults for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowSetting](Remove-MgIdentityGovernanceLifecycleWorkflowSetting.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowSetting](Remove-MgBetaIdentityGovernanceLifecycleWorkflowSetting.md)
 Delete navigation property settings for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](Remove-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition](Remove-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
 Delete navigation property taskDefinitions for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTaskReport](Remove-MgIdentityGovernanceLifecycleWorkflowTaskReport.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport](Remove-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport.md)
 Delete navigation property taskReports for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Remove-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 Delete navigation property taskProcessingResults for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTemplate](Remove-MgIdentityGovernanceLifecycleWorkflowTemplate.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowTemplate](Remove-MgBetaIdentityGovernanceLifecycleWorkflowTemplate.md)
 Delete navigation property workflowTemplates for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTemplateTask](Remove-MgIdentityGovernanceLifecycleWorkflowTemplateTask.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTask](Remove-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTask.md)
 Delete navigation property tasks for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Remove-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 Delete navigation property taskProcessingResults for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResult](Remove-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
 Delete navigation property userProcessingResults for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Remove-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
 Delete navigation property taskProcessingResults for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowVersion](Remove-MgIdentityGovernanceLifecycleWorkflowVersion.md)
+### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowVersion](Remove-MgBetaIdentityGovernanceLifecycleWorkflowVersion.md)
 Delete navigation property versions for identityGovernance
 
-### [Remove-MgIdentityGovernanceTermOfUseAgreement](Remove-MgIdentityGovernanceTermOfUseAgreement.md)
+### [Remove-MgBetaIdentityGovernanceTermOfUseAgreement](Remove-MgBetaIdentityGovernanceTermOfUseAgreement.md)
 Delete navigation property agreements for identityGovernance
 
-### [Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance](Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
+### [Remove-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance](Remove-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance.md)
 Delete navigation property agreementAcceptances for identityGovernance
 
-### [Remove-MgIdentityGovernanceTermOfUseAgreementFile](Remove-MgIdentityGovernanceTermOfUseAgreementFile.md)
+### [Remove-MgBetaIdentityGovernanceTermOfUseAgreementFile](Remove-MgBetaIdentityGovernanceTermOfUseAgreementFile.md)
 Delete navigation property file for identityGovernance
 
-### [Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalization](Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
+### [Remove-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization](Remove-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization.md)
 Delete navigation property localizations for identityGovernance
 
-### [Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
+### [Remove-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Remove-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
 Delete navigation property versions for identityGovernance
 
-### [Remove-MgPrivilegedAccess](Remove-MgPrivilegedAccess.md)
+### [Remove-MgBetaPrivilegedAccess](Remove-MgBetaPrivilegedAccess.md)
 Delete entity from privilegedAccess
 
-### [Remove-MgPrivilegedAccessResource](Remove-MgPrivilegedAccessResource.md)
+### [Remove-MgBetaPrivilegedAccessResource](Remove-MgBetaPrivilegedAccessResource.md)
 Delete navigation property resources for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleAssignment](Remove-MgPrivilegedAccessResourceRoleAssignment.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleAssignment](Remove-MgBetaPrivilegedAccessResourceRoleAssignment.md)
 Delete navigation property roleAssignments for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleAssignmentRequest](Remove-MgPrivilegedAccessResourceRoleAssignmentRequest.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleAssignmentRequest](Remove-MgBetaPrivilegedAccessResourceRoleAssignmentRequest.md)
 Delete navigation property roleAssignmentRequests for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition](Remove-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition](Remove-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition.md)
 Delete navigation property roleDefinition for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleAssignmentRequestSubject](Remove-MgPrivilegedAccessResourceRoleAssignmentRequestSubject.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleAssignmentRequestSubject](Remove-MgBetaPrivilegedAccessResourceRoleAssignmentRequestSubject.md)
 Delete navigation property subject for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleAssignmentRoleDefinition](Remove-MgPrivilegedAccessResourceRoleAssignmentRoleDefinition.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinition](Remove-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinition.md)
 Delete navigation property roleDefinition for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleAssignmentSubject](Remove-MgPrivilegedAccessResourceRoleAssignmentSubject.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleAssignmentSubject](Remove-MgBetaPrivilegedAccessResourceRoleAssignmentSubject.md)
 Delete navigation property subject for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleDefinition](Remove-MgPrivilegedAccessResourceRoleDefinition.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleDefinition](Remove-MgBetaPrivilegedAccessResourceRoleDefinition.md)
 Delete navigation property roleDefinitions for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleSetting](Remove-MgPrivilegedAccessResourceRoleSetting.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleSetting](Remove-MgBetaPrivilegedAccessResourceRoleSetting.md)
 Delete navigation property roleSettings for privilegedAccess
 
-### [Remove-MgPrivilegedAccessResourceRoleSettingRoleDefinition](Remove-MgPrivilegedAccessResourceRoleSettingRoleDefinition.md)
+### [Remove-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition](Remove-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition.md)
 Delete navigation property roleDefinition for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleAssignment](Remove-MgPrivilegedAccessRoleAssignment.md)
+### [Remove-MgBetaPrivilegedAccessRoleAssignment](Remove-MgBetaPrivilegedAccessRoleAssignment.md)
 Delete navigation property roleAssignments for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleAssignmentRequest](Remove-MgPrivilegedAccessRoleAssignmentRequest.md)
+### [Remove-MgBetaPrivilegedAccessRoleAssignmentRequest](Remove-MgBetaPrivilegedAccessRoleAssignmentRequest.md)
 Delete navigation property roleAssignmentRequests for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleAssignmentRequestRoleDefinition](Remove-MgPrivilegedAccessRoleAssignmentRequestRoleDefinition.md)
+### [Remove-MgBetaPrivilegedAccessRoleAssignmentRequestRoleDefinition](Remove-MgBetaPrivilegedAccessRoleAssignmentRequestRoleDefinition.md)
 Delete navigation property roleDefinition for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleAssignmentRequestSubject](Remove-MgPrivilegedAccessRoleAssignmentRequestSubject.md)
+### [Remove-MgBetaPrivilegedAccessRoleAssignmentRequestSubject](Remove-MgBetaPrivilegedAccessRoleAssignmentRequestSubject.md)
 Delete navigation property subject for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleAssignmentRoleDefinition](Remove-MgPrivilegedAccessRoleAssignmentRoleDefinition.md)
+### [Remove-MgBetaPrivilegedAccessRoleAssignmentRoleDefinition](Remove-MgBetaPrivilegedAccessRoleAssignmentRoleDefinition.md)
 Delete navigation property roleDefinition for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleAssignmentSubject](Remove-MgPrivilegedAccessRoleAssignmentSubject.md)
+### [Remove-MgBetaPrivilegedAccessRoleAssignmentSubject](Remove-MgBetaPrivilegedAccessRoleAssignmentSubject.md)
 Delete navigation property subject for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleDefinition](Remove-MgPrivilegedAccessRoleDefinition.md)
+### [Remove-MgBetaPrivilegedAccessRoleDefinition](Remove-MgBetaPrivilegedAccessRoleDefinition.md)
 Delete navigation property roleDefinitions for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleSetting](Remove-MgPrivilegedAccessRoleSetting.md)
+### [Remove-MgBetaPrivilegedAccessRoleSetting](Remove-MgBetaPrivilegedAccessRoleSetting.md)
 Delete navigation property roleSettings for privilegedAccess
 
-### [Remove-MgPrivilegedAccessRoleSettingRoleDefinition](Remove-MgPrivilegedAccessRoleSettingRoleDefinition.md)
+### [Remove-MgBetaPrivilegedAccessRoleSettingRoleDefinition](Remove-MgBetaPrivilegedAccessRoleSettingRoleDefinition.md)
 Delete navigation property roleDefinition for privilegedAccess
 
-### [Remove-MgPrivilegedApproval](Remove-MgPrivilegedApproval.md)
+### [Remove-MgBetaPrivilegedApproval](Remove-MgBetaPrivilegedApproval.md)
 Delete entity from privilegedApproval
 
-### [Remove-MgPrivilegedApprovalRoleInfo](Remove-MgPrivilegedApprovalRoleInfo.md)
+### [Remove-MgBetaPrivilegedApprovalRoleInfo](Remove-MgBetaPrivilegedApprovalRoleInfo.md)
 Delete navigation property roleInfo for privilegedApproval
 
-### [Remove-MgPrivilegedApprovalRoleInfoSetting](Remove-MgPrivilegedApprovalRoleInfoSetting.md)
+### [Remove-MgBetaPrivilegedApprovalRoleInfoSetting](Remove-MgBetaPrivilegedApprovalRoleInfoSetting.md)
 Delete navigation property settings for privilegedApproval
 
-### [Remove-MgPrivilegedApprovalRoleInfoSummary](Remove-MgPrivilegedApprovalRoleInfoSummary.md)
+### [Remove-MgBetaPrivilegedApprovalRoleInfoSummary](Remove-MgBetaPrivilegedApprovalRoleInfoSummary.md)
 Delete navigation property summary for privilegedApproval
 
-### [Remove-MgPrivilegedOperationEvent](Remove-MgPrivilegedOperationEvent.md)
+### [Remove-MgBetaPrivilegedOperationEvent](Remove-MgBetaPrivilegedOperationEvent.md)
 Delete entity from privilegedOperationEvents
 
-### [Remove-MgPrivilegedRole](Remove-MgPrivilegedRole.md)
+### [Remove-MgBetaPrivilegedRole](Remove-MgBetaPrivilegedRole.md)
 Delete entity from privilegedRoles
 
-### [Remove-MgPrivilegedRoleAssignment](Remove-MgPrivilegedRoleAssignment.md)
+### [Remove-MgBetaPrivilegedRoleAssignment](Remove-MgBetaPrivilegedRoleAssignment.md)
 Delete privilegedRoleAssignment.
 
-### [Remove-MgPrivilegedRoleAssignmentRequest](Remove-MgPrivilegedRoleAssignmentRequest.md)
+### [Remove-MgBetaPrivilegedRoleAssignmentRequest](Remove-MgBetaPrivilegedRoleAssignmentRequest.md)
 Delete entity from privilegedRoleAssignmentRequests
 
-### [Remove-MgPrivilegedRoleAssignmentRequestRoleInfo](Remove-MgPrivilegedRoleAssignmentRequestRoleInfo.md)
+### [Remove-MgBetaPrivilegedRoleAssignmentRequestRoleInfo](Remove-MgBetaPrivilegedRoleAssignmentRequestRoleInfo.md)
 Delete navigation property roleInfo for privilegedRoleAssignmentRequests
 
-### [Remove-MgPrivilegedRoleAssignmentRequestRoleInfoSetting](Remove-MgPrivilegedRoleAssignmentRequestRoleInfoSetting.md)
+### [Remove-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting](Remove-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting.md)
 Delete navigation property settings for privilegedRoleAssignmentRequests
 
-### [Remove-MgPrivilegedRoleAssignmentRequestRoleInfoSummary](Remove-MgPrivilegedRoleAssignmentRequestRoleInfoSummary.md)
+### [Remove-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSummary](Remove-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSummary.md)
 Delete navigation property summary for privilegedRoleAssignmentRequests
 
-### [Remove-MgPrivilegedRoleAssignmentRoleInfo](Remove-MgPrivilegedRoleAssignmentRoleInfo.md)
+### [Remove-MgBetaPrivilegedRoleAssignmentRoleInfo](Remove-MgBetaPrivilegedRoleAssignmentRoleInfo.md)
 Delete navigation property roleInfo for privilegedRoleAssignments
 
-### [Remove-MgPrivilegedRoleAssignmentRoleInfoSetting](Remove-MgPrivilegedRoleAssignmentRoleInfoSetting.md)
+### [Remove-MgBetaPrivilegedRoleAssignmentRoleInfoSetting](Remove-MgBetaPrivilegedRoleAssignmentRoleInfoSetting.md)
 Delete navigation property settings for privilegedRoleAssignments
 
-### [Remove-MgPrivilegedRoleAssignmentRoleInfoSummary](Remove-MgPrivilegedRoleAssignmentRoleInfoSummary.md)
+### [Remove-MgBetaPrivilegedRoleAssignmentRoleInfoSummary](Remove-MgBetaPrivilegedRoleAssignmentRoleInfoSummary.md)
 Delete navigation property summary for privilegedRoleAssignments
 
-### [Remove-MgPrivilegedRoleSetting](Remove-MgPrivilegedRoleSetting.md)
+### [Remove-MgBetaPrivilegedRoleSetting](Remove-MgBetaPrivilegedRoleSetting.md)
 Delete navigation property settings for privilegedRoles
 
-### [Remove-MgPrivilegedRoleSummary](Remove-MgPrivilegedRoleSummary.md)
+### [Remove-MgBetaPrivilegedRoleSummary](Remove-MgBetaPrivilegedRoleSummary.md)
 Delete navigation property summary for privilegedRoles
 
-### [Remove-MgProgram](Remove-MgProgram.md)
+### [Remove-MgBetaProgram](Remove-MgBetaProgram.md)
 In the Azure AD access reviews feature, delete a program object.
 Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
 Also, please note that the built-in default program cannot be deleted.
 
-### [Remove-MgProgramControl](Remove-MgProgramControl.md)
+### [Remove-MgBetaProgramControl](Remove-MgBetaProgramControl.md)
 In the Azure AD access reviews feature, delete a programControl object.
 This unlinks an access review from a program.
 
-### [Remove-MgProgramControlProgram](Remove-MgProgramControlProgram.md)
+### [Remove-MgBetaProgramControlProgram](Remove-MgBetaProgramControlProgram.md)
 Delete navigation property program for programControls
 
-### [Remove-MgProgramControlType](Remove-MgProgramControlType.md)
+### [Remove-MgBetaProgramControlType](Remove-MgBetaProgramControlType.md)
 Delete entity from programControlTypes
 
-### [Reset-MgAccessReviewDecision](Reset-MgAccessReviewDecision.md)
+### [Reset-MgBetaAccessReviewDecision](Reset-MgBetaAccessReviewDecision.md)
 In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
 
-### [Reset-MgAccessReviewInstanceDecision](Reset-MgAccessReviewInstanceDecision.md)
+### [Reset-MgBetaAccessReviewInstanceDecision](Reset-MgBetaAccessReviewInstanceDecision.md)
 In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
 
-### [Reset-MgIdentityGovernanceAccessReviewDecisionInstanceDecision](Reset-MgIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
+### [Reset-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Reset-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
 
-### [Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+### [Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
 
-### [Restore-MgIdentityGovernanceLifecycleWorkflow](Restore-MgIdentityGovernanceLifecycleWorkflow.md)
+### [Restore-MgBetaIdentityGovernanceLifecycleWorkflow](Restore-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Restore a workflow that has been deleted.
 You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
 
-### [Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
+### [Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Restore a workflow that has been deleted.
 You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
 
-### [Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
+### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
 An Azure Logic Apps system-assigned managed identity calls this API.
 
-### [Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
+### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
 An Azure Logic Apps system-assigned managed identity calls this API.
 
-### [Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
+### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
 An Azure Logic Apps system-assigned managed identity calls this API.
 
-### [Select-MgEntitlementManagementAccessPackage](Select-MgEntitlementManagementAccessPackage.md)
+### [Select-MgBetaEntitlementManagementAccessPackage](Select-MgBetaEntitlementManagementAccessPackage.md)
 Select matching entitlement management accessPackage
 
-### [Select-MgEntitlementManagementAccessPackageAssignmentPolicy](Select-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+### [Select-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Select-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Select matching entitlement management accessPackageAssignmentPolicy
 
-### [Send-MgAccessReviewInstanceReminder](Send-MgAccessReviewInstanceReminder.md)
+### [Send-MgBetaAccessReviewInstanceReminder](Send-MgBetaAccessReviewInstanceReminder.md)
 In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 
-### [Send-MgAccessReviewReminder](Send-MgAccessReviewReminder.md)
+### [Send-MgBetaAccessReviewReminder](Send-MgBetaAccessReviewReminder.md)
 In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 
-### [Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder](Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder.md)
+### [Send-MgBetaIdentityGovernanceAccessReviewDecisionInstanceReminder](Send-MgBetaIdentityGovernanceAccessReviewDecisionInstanceReminder.md)
 Send a reminder to the reviewers of a currently active accessReviewInstance.
 
-### [Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder](Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder.md)
+### [Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder](Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder.md)
 Send a reminder to the reviewers of a currently active accessReviewInstance.
 
-### [Set-MgEntitlementManagementAccessPackageAssignmentPolicy](Set-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+### [Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property accessPackageAssignmentPolicies in identityGovernance
 
-### [Split-MgEntitlementManagementConnectedOrganization](Split-MgEntitlementManagementConnectedOrganization.md)
-Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgEntitlementManagementConnectedOrganization, to simplify reporting.
+### [Split-MgBetaEntitlementManagementConnectedOrganization](Split-MgBetaEntitlementManagementConnectedOrganization.md)
+Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgBetaEntitlementManagementConnectedOrganization, to simplify reporting.
 
-### [Stop-MgAccessReview](Stop-MgAccessReview.md)
+### [Stop-MgBetaAccessReview](Stop-MgBetaAccessReview.md)
 In the Azure AD access reviews feature, stop a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 (To prevent a recurring access review from starting future instances, update it to change its scheduled end date).
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
 
-### [Stop-MgAccessReviewInstance](Stop-MgAccessReviewInstance.md)
+### [Stop-MgBetaAccessReviewInstance](Stop-MgBetaAccessReviewInstance.md)
 In the Azure AD access reviews feature, stop a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 (To prevent a recurring access review from starting future instances, update it to change its scheduled end date).
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
 
-### [Stop-MgEntitlementManagementAccessPackageAssignmentRequest](Stop-MgEntitlementManagementAccessPackageAssignmentRequest.md)
+### [Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: `accepted`, `pendingApproval`, `pendingNotBefore`, `pendingApprovalEscalated`.
 
-### [Stop-MgIdentityGovernanceAccessReviewDecisionInstance](Stop-MgIdentityGovernanceAccessReviewDecisionInstance.md)
+### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
 Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
 
-### [Stop-MgIdentityGovernanceAccessReviewDecisionInstanceStage](Stop-MgIdentityGovernanceAccessReviewDecisionInstanceStage.md)
+### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
 Stop an access review stage that is `inProgress`.
 After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 
-### [Stop-MgIdentityGovernanceAccessReviewDefinition](Stop-MgIdentityGovernanceAccessReviewDefinition.md)
+### [Stop-MgBetaIdentityGovernanceAccessReviewDefinition](Stop-MgBetaIdentityGovernanceAccessReviewDefinition.md)
 Invoke action stop
 
-### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstance](Stop-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+### [Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
 
-### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+### [Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Stop an access review stage that is `inProgress`.
 After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 
-### [Stop-MgPrivilegedAccessResourceRoleAssignmentRequest](Stop-MgPrivilegedAccessResourceRoleAssignmentRequest.md)
+### [Stop-MgBetaPrivilegedAccessResourceRoleAssignmentRequest](Stop-MgBetaPrivilegedAccessResourceRoleAssignmentRequest.md)
 Invoke action cancel
 
-### [Stop-MgPrivilegedAccessRoleAssignmentRequest](Stop-MgPrivilegedAccessRoleAssignmentRequest.md)
+### [Stop-MgBetaPrivilegedAccessRoleAssignmentRequest](Stop-MgBetaPrivilegedAccessRoleAssignmentRequest.md)
 Invoke action cancel
 
-### [Stop-MgPrivilegedRoleAssignmentRequest](Stop-MgPrivilegedRoleAssignmentRequest.md)
+### [Stop-MgBetaPrivilegedRoleAssignmentRequest](Stop-MgBetaPrivilegedRoleAssignmentRequest.md)
 Cancel a privilegedRoleAssignmentRequest.
 
-### [Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty.md)
+### [Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty](Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1606,7 +1606,7 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Test-MgEntitlementManagementConnectedOrganizationInternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationInternalSponsorProperty.md)
+### [Test-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorProperty](Test-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
@@ -1617,368 +1617,368 @@ Validate the mail nickname is unique This API returns with the first failure enc
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
-### [Update-MgAccessReview](Update-MgAccessReview.md)
+### [Update-MgBetaAccessReview](Update-MgBetaAccessReview.md)
 In the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties.
 This API is not intended to change the reviewers or decisions of a review.
 To change the reviewers, use the addReviewer or removeReviewer APIs.
 To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API.
 To apply the decisions to the target group or app access rights, use the apply API.
 
-### [Update-MgAccessReviewDecision](Update-MgAccessReviewDecision.md)
+### [Update-MgBetaAccessReviewDecision](Update-MgBetaAccessReviewDecision.md)
 Update the navigation property decisions in accessReviews
 
-### [Update-MgAccessReviewInstance](Update-MgAccessReviewInstance.md)
+### [Update-MgBetaAccessReviewInstance](Update-MgBetaAccessReviewInstance.md)
 Update the navigation property instances in accessReviews
 
-### [Update-MgAccessReviewInstanceDecision](Update-MgAccessReviewInstanceDecision.md)
+### [Update-MgBetaAccessReviewInstanceDecision](Update-MgBetaAccessReviewInstanceDecision.md)
 Update the navigation property decisions in accessReviews
 
-### [Update-MgAccessReviewInstanceMyDecision](Update-MgAccessReviewInstanceMyDecision.md)
+### [Update-MgBetaAccessReviewInstanceMyDecision](Update-MgBetaAccessReviewInstanceMyDecision.md)
 Update the navigation property myDecisions in accessReviews
 
-### [Update-MgAccessReviewInstanceReviewer](Update-MgAccessReviewInstanceReviewer.md)
+### [Update-MgBetaAccessReviewInstanceReviewer](Update-MgBetaAccessReviewInstanceReviewer.md)
 Update the navigation property reviewers in accessReviews
 
-### [Update-MgAccessReviewMyDecision](Update-MgAccessReviewMyDecision.md)
+### [Update-MgBetaAccessReviewMyDecision](Update-MgBetaAccessReviewMyDecision.md)
 Update the navigation property myDecisions in accessReviews
 
-### [Update-MgAccessReviewReviewer](Update-MgAccessReviewReviewer.md)
+### [Update-MgBetaAccessReviewReviewer](Update-MgBetaAccessReviewReviewer.md)
 Update the navigation property reviewers in accessReviews
 
-### [Update-MgAgreement](Update-MgAgreement.md)
+### [Update-MgBetaAgreement](Update-MgBetaAgreement.md)
 Update entity in agreements
 
-### [Update-MgAgreementAcceptance](Update-MgAgreementAcceptance.md)
+### [Update-MgBetaAgreementAcceptance](Update-MgBetaAgreementAcceptance.md)
 Update the navigation property acceptances in agreements
 
-### [Update-MgAgreementFile](Update-MgAgreementFile.md)
+### [Update-MgBetaAgreementFile](Update-MgBetaAgreementFile.md)
 Update the navigation property file in agreements
 
-### [Update-MgAgreementFileLocalization](Update-MgAgreementFileLocalization.md)
+### [Update-MgBetaAgreementFileLocalization](Update-MgBetaAgreementFileLocalization.md)
 Update the navigation property localizations in agreements
 
-### [Update-MgAgreementFileLocalizationVersion](Update-MgAgreementFileLocalizationVersion.md)
+### [Update-MgBetaAgreementFileLocalizationVersion](Update-MgBetaAgreementFileLocalizationVersion.md)
 Update the navigation property versions in agreements
 
-### [Update-MgBusinessFlowTemplate](Update-MgBusinessFlowTemplate.md)
+### [Update-MgBetaBusinessFlowTemplate](Update-MgBetaBusinessFlowTemplate.md)
 Update entity in businessFlowTemplates
 
-### [Update-MgEntitlementManagementAccessPackage](Update-MgEntitlementManagementAccessPackage.md)
+### [Update-MgBetaEntitlementManagementAccessPackage](Update-MgBetaEntitlementManagementAccessPackage.md)
 Update the navigation property accessPackages in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageAssignment](Update-MgEntitlementManagementAccessPackageAssignment.md)
+### [Update-MgBetaEntitlementManagementAccessPackageAssignment](Update-MgBetaEntitlementManagementAccessPackageAssignment.md)
 Invoke action reprocess
 
-### [Update-MgEntitlementManagementAccessPackageAssignmentApproval](Update-MgEntitlementManagementAccessPackageAssignmentApproval.md)
+### [Update-MgBetaEntitlementManagementAccessPackageAssignmentApproval](Update-MgBetaEntitlementManagementAccessPackageAssignmentApproval.md)
 Update the navigation property accessPackageAssignmentApprovals in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageAssignmentApprovalStep](Update-MgEntitlementManagementAccessPackageAssignmentApprovalStep.md)
+### [Update-MgBetaEntitlementManagementAccessPackageAssignmentApprovalStep](Update-MgBetaEntitlementManagementAccessPackageAssignmentApprovalStep.md)
 Update the navigation property steps in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageAssignmentPolicy](Update-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+### [Update-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Update-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property accessPackageAssignmentPolicies in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Update-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
+### [Update-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Update-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Update the navigation property customExtensionHandlers in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageAssignmentRequest](Update-MgEntitlementManagementAccessPackageAssignmentRequest.md)
+### [Update-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Update-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 Invoke action reprocess
 
-### [Update-MgEntitlementManagementAccessPackageCatalog](Update-MgEntitlementManagementAccessPackageCatalog.md)
+### [Update-MgBetaEntitlementManagementAccessPackageCatalog](Update-MgBetaEntitlementManagementAccessPackageCatalog.md)
 Update the navigation property accessPackageCatalogs in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
+### [Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Update the navigation property customAccessPackageWorkflowExtensions in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageResourceRequest](Update-MgEntitlementManagementAccessPackageResourceRequest.md)
+### [Update-MgBetaEntitlementManagementAccessPackageResourceRequest](Update-MgBetaEntitlementManagementAccessPackageResourceRequest.md)
 Update the navigation property accessPackageResourceRequests in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageResourceRoleScope](Update-MgEntitlementManagementAccessPackageResourceRoleScope.md)
+### [Update-MgBetaEntitlementManagementAccessPackageResourceRoleScope](Update-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Update the navigation property accessPackageResourceRoleScopes in identityGovernance
 
-### [Update-MgEntitlementManagementConnectedOrganization](Update-MgEntitlementManagementConnectedOrganization.md)
+### [Update-MgBetaEntitlementManagementConnectedOrganization](Update-MgBetaEntitlementManagementConnectedOrganization.md)
 Update the navigation property connectedOrganizations in identityGovernance
 
-### [Update-MgEntitlementManagementSetting](Update-MgEntitlementManagementSetting.md)
+### [Update-MgBetaEntitlementManagementSetting](Update-MgBetaEntitlementManagementSetting.md)
 Update an existing entitlementManagementSettings object to change one or more of its properties.
 
-### [Update-MgEntitlementManagementSubject](Update-MgEntitlementManagementSubject.md)
+### [Update-MgBetaEntitlementManagementSubject](Update-MgBetaEntitlementManagementSubject.md)
 Update the navigation property subjects in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecision](Update-MgIdentityGovernanceAccessReviewDecision.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecision](Update-MgBetaIdentityGovernanceAccessReviewDecision.md)
 Update the navigation property decisions in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecisionInsight](Update-MgIdentityGovernanceAccessReviewDecisionInsight.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDecisionInsight.md)
 Update the navigation property insights in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecisionInstance](Update-MgIdentityGovernanceAccessReviewDecisionInstance.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
 Update the navigation property instance in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer](Update-MgIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer.md)
 Update the navigation property contactedReviewers in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecisionInstanceDecision](Update-MgIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Update the navigation property decisions in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight](Update-MgIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionInsight.md)
 Update the navigation property insights in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecisionInstanceStage](Update-MgIdentityGovernanceAccessReviewDecisionInstanceStage.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
 Update the navigation property stages in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Update-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 Update the navigation property decisions in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Update-MgIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
 Update the navigation property insights in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDefinition](Update-MgIdentityGovernanceAccessReviewDefinition.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinition](Update-MgBetaIdentityGovernanceAccessReviewDefinition.md)
 Update the navigation property definitions in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDefinitionInstance](Update-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Update the navigation property instances in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
 Update the navigation property contactedReviewers in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Update the navigation property decisions in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight.md)
 Update the navigation property insights in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInstance.md)
 Update the navigation property instance in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Update the navigation property stages in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Update the navigation property decisions in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewHistoryDefinition](Update-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewHistoryDefinition](Update-MgBetaIdentityGovernanceAccessReviewHistoryDefinition.md)
 Update the navigation property historyDefinitions in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](Update-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance](Update-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 Update the navigation property instances in identityGovernance
 
-### [Update-MgIdentityGovernanceAccessReviewPolicy](Update-MgIdentityGovernanceAccessReviewPolicy.md)
+### [Update-MgBetaIdentityGovernanceAccessReviewPolicy](Update-MgBetaIdentityGovernanceAccessReviewPolicy.md)
 Update the properties of an accessReviewPolicy object.
 
-### [Update-MgIdentityGovernanceAppConsentRequest](Update-MgIdentityGovernanceAppConsentRequest.md)
+### [Update-MgBetaIdentityGovernanceAppConsentRequest](Update-MgBetaIdentityGovernanceAppConsentRequest.md)
 Update the navigation property appConsentRequests in identityGovernance
 
-### [Update-MgIdentityGovernanceAppConsentRequestUserConsentRequest](Update-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
+### [Update-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest](Update-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest.md)
 Update the navigation property userConsentRequests in identityGovernance
 
-### [Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
+### [Update-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Update-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
 Update the navigation property approval in identityGovernance
 
-### [Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
+### [Update-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](Update-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
 Update the navigation property steps in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflow](Update-MgIdentityGovernanceLifecycleWorkflow.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflow](Update-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Update the navigation property workflows in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Update the navigation property customTaskExtensions in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItem](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItem.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem](Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem.md)
 Update the navigation property deletedItems in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Update the navigation property workflows in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
 Update the navigation property runs in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
 Update the navigation property taskReports in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
 Update the navigation property userProcessingResults in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
 Update the navigation property versions in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowRun](Update-MgIdentityGovernanceLifecycleWorkflowRun.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowRun](Update-MgBetaIdentityGovernanceLifecycleWorkflowRun.md)
 Update the navigation property runs in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Update-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Update the navigation property taskProcessingResults in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Update-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
 Update the navigation property userProcessingResults in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Update-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
 Update the navigation property taskProcessingResults in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowSetting](Update-MgIdentityGovernanceLifecycleWorkflowSetting.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting](Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting.md)
 Update the properties of a lifecycleManagementSettings object.
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](Update-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition](Update-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
 Update the navigation property taskDefinitions in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTaskReport](Update-MgIdentityGovernanceLifecycleWorkflowTaskReport.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport](Update-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport.md)
 Update the navigation property taskReports in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Update-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 Update the navigation property taskProcessingResults in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTemplate](Update-MgIdentityGovernanceLifecycleWorkflowTemplate.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowTemplate](Update-MgBetaIdentityGovernanceLifecycleWorkflowTemplate.md)
 Update the navigation property workflowTemplates in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTemplateTask](Update-MgIdentityGovernanceLifecycleWorkflowTemplateTask.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTask](Update-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTask.md)
 Update the navigation property tasks in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Update-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 Update the navigation property taskProcessingResults in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResult](Update-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
 Update the navigation property userProcessingResults in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Update-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
 Update the navigation property taskProcessingResults in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowVersion](Update-MgIdentityGovernanceLifecycleWorkflowVersion.md)
+### [Update-MgBetaIdentityGovernanceLifecycleWorkflowVersion](Update-MgBetaIdentityGovernanceLifecycleWorkflowVersion.md)
 Update the navigation property versions in identityGovernance
 
-### [Update-MgIdentityGovernanceTermOfUseAgreement](Update-MgIdentityGovernanceTermOfUseAgreement.md)
+### [Update-MgBetaIdentityGovernanceTermOfUseAgreement](Update-MgBetaIdentityGovernanceTermOfUseAgreement.md)
 Update the navigation property agreements in identityGovernance
 
-### [Update-MgIdentityGovernanceTermOfUseAgreementAcceptance](Update-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
+### [Update-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance](Update-MgBetaIdentityGovernanceTermOfUseAgreementAcceptance.md)
 Update the navigation property agreementAcceptances in identityGovernance
 
-### [Update-MgIdentityGovernanceTermOfUseAgreementFile](Update-MgIdentityGovernanceTermOfUseAgreementFile.md)
+### [Update-MgBetaIdentityGovernanceTermOfUseAgreementFile](Update-MgBetaIdentityGovernanceTermOfUseAgreementFile.md)
 Update the navigation property file in identityGovernance
 
-### [Update-MgIdentityGovernanceTermOfUseAgreementFileLocalization](Update-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
+### [Update-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization](Update-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalization.md)
 Update the navigation property localizations in identityGovernance
 
-### [Update-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Update-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
+### [Update-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Update-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
 Update the navigation property versions in identityGovernance
 
-### [Update-MgPrivilegedAccess](Update-MgPrivilegedAccess.md)
+### [Update-MgBetaPrivilegedAccess](Update-MgBetaPrivilegedAccess.md)
 Update entity in privilegedAccess
 
-### [Update-MgPrivilegedAccessResource](Update-MgPrivilegedAccessResource.md)
+### [Update-MgBetaPrivilegedAccessResource](Update-MgBetaPrivilegedAccessResource.md)
 Update the navigation property resources in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleAssignment](Update-MgPrivilegedAccessResourceRoleAssignment.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleAssignment](Update-MgBetaPrivilegedAccessResourceRoleAssignment.md)
 Update the navigation property roleAssignments in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleAssignmentRequest](Update-MgPrivilegedAccessResourceRoleAssignmentRequest.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleAssignmentRequest](Update-MgBetaPrivilegedAccessResourceRoleAssignmentRequest.md)
 Update the navigation property roleAssignmentRequests in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition](Update-MgPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition](Update-MgBetaPrivilegedAccessResourceRoleAssignmentRequestRoleDefinition.md)
 Update the navigation property roleDefinition in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleAssignmentRequestSubject](Update-MgPrivilegedAccessResourceRoleAssignmentRequestSubject.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleAssignmentRequestSubject](Update-MgBetaPrivilegedAccessResourceRoleAssignmentRequestSubject.md)
 Update the navigation property subject in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleAssignmentRoleDefinition](Update-MgPrivilegedAccessResourceRoleAssignmentRoleDefinition.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinition](Update-MgBetaPrivilegedAccessResourceRoleAssignmentRoleDefinition.md)
 Update the navigation property roleDefinition in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleAssignmentSubject](Update-MgPrivilegedAccessResourceRoleAssignmentSubject.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleAssignmentSubject](Update-MgBetaPrivilegedAccessResourceRoleAssignmentSubject.md)
 Update the navigation property subject in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleDefinition](Update-MgPrivilegedAccessResourceRoleDefinition.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleDefinition](Update-MgBetaPrivilegedAccessResourceRoleDefinition.md)
 Update the navigation property roleDefinitions in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleSetting](Update-MgPrivilegedAccessResourceRoleSetting.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleSetting](Update-MgBetaPrivilegedAccessResourceRoleSetting.md)
 Update the navigation property roleSettings in privilegedAccess
 
-### [Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition](Update-MgPrivilegedAccessResourceRoleSettingRoleDefinition.md)
+### [Update-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition](Update-MgBetaPrivilegedAccessResourceRoleSettingRoleDefinition.md)
 Update the navigation property roleDefinition in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleAssignment](Update-MgPrivilegedAccessRoleAssignment.md)
+### [Update-MgBetaPrivilegedAccessRoleAssignment](Update-MgBetaPrivilegedAccessRoleAssignment.md)
 Update the navigation property roleAssignments in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleAssignmentRequest](Update-MgPrivilegedAccessRoleAssignmentRequest.md)
+### [Update-MgBetaPrivilegedAccessRoleAssignmentRequest](Update-MgBetaPrivilegedAccessRoleAssignmentRequest.md)
 Update the navigation property roleAssignmentRequests in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleAssignmentRequestRoleDefinition](Update-MgPrivilegedAccessRoleAssignmentRequestRoleDefinition.md)
+### [Update-MgBetaPrivilegedAccessRoleAssignmentRequestRoleDefinition](Update-MgBetaPrivilegedAccessRoleAssignmentRequestRoleDefinition.md)
 Update the navigation property roleDefinition in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleAssignmentRequestSubject](Update-MgPrivilegedAccessRoleAssignmentRequestSubject.md)
+### [Update-MgBetaPrivilegedAccessRoleAssignmentRequestSubject](Update-MgBetaPrivilegedAccessRoleAssignmentRequestSubject.md)
 Update the navigation property subject in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleAssignmentRoleDefinition](Update-MgPrivilegedAccessRoleAssignmentRoleDefinition.md)
+### [Update-MgBetaPrivilegedAccessRoleAssignmentRoleDefinition](Update-MgBetaPrivilegedAccessRoleAssignmentRoleDefinition.md)
 Update the navigation property roleDefinition in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleAssignmentSubject](Update-MgPrivilegedAccessRoleAssignmentSubject.md)
+### [Update-MgBetaPrivilegedAccessRoleAssignmentSubject](Update-MgBetaPrivilegedAccessRoleAssignmentSubject.md)
 Update the navigation property subject in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleDefinition](Update-MgPrivilegedAccessRoleDefinition.md)
+### [Update-MgBetaPrivilegedAccessRoleDefinition](Update-MgBetaPrivilegedAccessRoleDefinition.md)
 Update the navigation property roleDefinitions in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleSetting](Update-MgPrivilegedAccessRoleSetting.md)
+### [Update-MgBetaPrivilegedAccessRoleSetting](Update-MgBetaPrivilegedAccessRoleSetting.md)
 Update the navigation property roleSettings in privilegedAccess
 
-### [Update-MgPrivilegedAccessRoleSettingRoleDefinition](Update-MgPrivilegedAccessRoleSettingRoleDefinition.md)
+### [Update-MgBetaPrivilegedAccessRoleSettingRoleDefinition](Update-MgBetaPrivilegedAccessRoleSettingRoleDefinition.md)
 Update the navigation property roleDefinition in privilegedAccess
 
-### [Update-MgPrivilegedApproval](Update-MgPrivilegedApproval.md)
+### [Update-MgBetaPrivilegedApproval](Update-MgBetaPrivilegedApproval.md)
 Update the properties of privilegedapproval object.
 
-### [Update-MgPrivilegedApprovalRoleInfo](Update-MgPrivilegedApprovalRoleInfo.md)
+### [Update-MgBetaPrivilegedApprovalRoleInfo](Update-MgBetaPrivilegedApprovalRoleInfo.md)
 Update the navigation property roleInfo in privilegedApproval
 
-### [Update-MgPrivilegedApprovalRoleInfoSetting](Update-MgPrivilegedApprovalRoleInfoSetting.md)
+### [Update-MgBetaPrivilegedApprovalRoleInfoSetting](Update-MgBetaPrivilegedApprovalRoleInfoSetting.md)
 Update the role settings for the given role setting.
 A privilegedRoleSettings object will be returned.
 
-### [Update-MgPrivilegedApprovalRoleInfoSummary](Update-MgPrivilegedApprovalRoleInfoSummary.md)
+### [Update-MgBetaPrivilegedApprovalRoleInfoSummary](Update-MgBetaPrivilegedApprovalRoleInfoSummary.md)
 Update the navigation property summary in privilegedApproval
 
-### [Update-MgPrivilegedOperationEvent](Update-MgPrivilegedOperationEvent.md)
+### [Update-MgBetaPrivilegedOperationEvent](Update-MgBetaPrivilegedOperationEvent.md)
 Update entity in privilegedOperationEvents
 
-### [Update-MgPrivilegedRole](Update-MgPrivilegedRole.md)
+### [Update-MgBetaPrivilegedRole](Update-MgBetaPrivilegedRole.md)
 Update entity in privilegedRoles
 
-### [Update-MgPrivilegedRoleAssignment](Update-MgPrivilegedRoleAssignment.md)
+### [Update-MgBetaPrivilegedRoleAssignment](Update-MgBetaPrivilegedRoleAssignment.md)
 Update entity in privilegedRoleAssignments
 
-### [Update-MgPrivilegedRoleAssignmentRequest](Update-MgPrivilegedRoleAssignmentRequest.md)
+### [Update-MgBetaPrivilegedRoleAssignmentRequest](Update-MgBetaPrivilegedRoleAssignmentRequest.md)
 Update entity in privilegedRoleAssignmentRequests
 
-### [Update-MgPrivilegedRoleAssignmentRequestRoleInfo](Update-MgPrivilegedRoleAssignmentRequestRoleInfo.md)
+### [Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfo](Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfo.md)
 Update the navigation property roleInfo in privilegedRoleAssignmentRequests
 
-### [Update-MgPrivilegedRoleAssignmentRequestRoleInfoSetting](Update-MgPrivilegedRoleAssignmentRequestRoleInfoSetting.md)
+### [Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting](Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting.md)
 Update the role settings for the given role setting.
 A privilegedRoleSettings object will be returned.
 
-### [Update-MgPrivilegedRoleAssignmentRequestRoleInfoSummary](Update-MgPrivilegedRoleAssignmentRequestRoleInfoSummary.md)
+### [Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSummary](Update-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSummary.md)
 Update the navigation property summary in privilegedRoleAssignmentRequests
 
-### [Update-MgPrivilegedRoleAssignmentRoleInfo](Update-MgPrivilegedRoleAssignmentRoleInfo.md)
+### [Update-MgBetaPrivilegedRoleAssignmentRoleInfo](Update-MgBetaPrivilegedRoleAssignmentRoleInfo.md)
 Update the navigation property roleInfo in privilegedRoleAssignments
 
-### [Update-MgPrivilegedRoleAssignmentRoleInfoSetting](Update-MgPrivilegedRoleAssignmentRoleInfoSetting.md)
+### [Update-MgBetaPrivilegedRoleAssignmentRoleInfoSetting](Update-MgBetaPrivilegedRoleAssignmentRoleInfoSetting.md)
 Update the role settings for the given role setting.
 A privilegedRoleSettings object will be returned.
 
-### [Update-MgPrivilegedRoleAssignmentRoleInfoSummary](Update-MgPrivilegedRoleAssignmentRoleInfoSummary.md)
+### [Update-MgBetaPrivilegedRoleAssignmentRoleInfoSummary](Update-MgBetaPrivilegedRoleAssignmentRoleInfoSummary.md)
 Update the navigation property summary in privilegedRoleAssignments
 
-### [Update-MgPrivilegedRoleSetting](Update-MgPrivilegedRoleSetting.md)
+### [Update-MgBetaPrivilegedRoleSetting](Update-MgBetaPrivilegedRoleSetting.md)
 Update the role settings for the given role setting.
 A privilegedRoleSettings object will be returned.
 
-### [Update-MgPrivilegedRoleSummary](Update-MgPrivilegedRoleSummary.md)
+### [Update-MgBetaPrivilegedRoleSummary](Update-MgBetaPrivilegedRoleSummary.md)
 Update the navigation property summary in privilegedRoles
 
-### [Update-MgProgram](Update-MgProgram.md)
+### [Update-MgBetaProgram](Update-MgBetaProgram.md)
 In the Azure AD access reviews feature, update an existing program object.
 
-### [Update-MgProgramControl](Update-MgProgramControl.md)
+### [Update-MgBetaProgramControl](Update-MgBetaProgramControl.md)
 Update entity in programControls
 
-### [Update-MgProgramControlProgram](Update-MgProgramControlProgram.md)
+### [Update-MgBetaProgramControlProgram](Update-MgBetaProgramControlProgram.md)
 Update the navigation property program in programControls
 
-### [Update-MgProgramControlType](Update-MgProgramControlType.md)
+### [Update-MgBetaProgramControlType](Update-MgBetaProgramControlType.md)
 Update entity in programControlTypes
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgonpremisepublishingprofileagentgrouppublishedresourceagentgroup
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/get-mgonpremisepublishingprofileagentgrouppublishedresourceagentgroup
 schema: 2.0.0
 ---
 
-# Get-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup
+# Get-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup
 
 ## SYNOPSIS
 List of onPremisesAgentGroups that a publishedResource is assigned to.
@@ -15,7 +15,7 @@ Nullable.
 ## SYNTAX
 
 ```
-Get-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup -OnPremisesAgentGroupId <String>
+Get-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> -PublishedResourceId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -233,7 +233,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup
 
 ## NOTES
 

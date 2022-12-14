@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticanomaly
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementuserexperienceanalyticanomaly
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementUserExperienceAnalyticAnomaly
+# New-MgBetaDeviceManagementUserExperienceAnalyticAnomaly
 
 ## SYNOPSIS
 Create new navigation property to userExperienceAnalyticsAnomaly for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to userExperienceAnalyticsAnomaly for deviceManag
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementUserExperienceAnalyticAnomaly [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementUserExperienceAnalyticAnomaly [-AdditionalProperties <Hashtable>]
  [-AnomalyFirstOccurrenceDateTime <DateTime>] [-AnomalyId <String>]
  [-AnomalyLatestOccurrenceDateTime <DateTime>] [-AnomalyName <String>]
  [-AnomalyType <UserExperienceAnalyticsAnomalyType>] [-AssetName <String>] [-AssetPublisher <String>]
@@ -25,7 +25,7 @@ New-MgDeviceManagementUserExperienceAnalyticAnomaly [-AdditionalProperties <Hash
 
 ### Create
 ```
-New-MgDeviceManagementUserExperienceAnalyticAnomaly
+New-MgBetaDeviceManagementUserExperienceAnalyticAnomaly
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAnomaly> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -116,7 +116,7 @@ Indicates the category of the anomaly.
 Eg: anomaly type can be device, application, stop error, driver or other.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsAnomalyType
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsAnomalyType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ The user experience analytics anomaly entity contains anomaly details.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomaly
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomaly
 Parameter Sets: Create
 Aliases:
 
@@ -255,7 +255,7 @@ Indicates the severity of the anomaly.
 Eg: anomaly severity can be high, medium, low, informational or other.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsAnomalySeverity
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsAnomalySeverity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -271,7 +271,7 @@ Indicates the state of the anomaly.
 Eg: anomaly severity can be new, active, disabled, removed or other.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsAnomalyState
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsAnomalyState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -318,11 +318,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomaly
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomaly
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomaly
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAnomaly
 
 ## NOTES
 

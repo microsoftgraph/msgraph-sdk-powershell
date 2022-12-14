@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/get-mgbookingbusinesscalendarview
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/get-mgbookingbusinesscalendarview
 schema: 2.0.0
 ---
 
-# Get-MgBookingBusinessCalendarView
+# Get-MgBetaBookingBusinessCalendarView
 
 ## SYNOPSIS
 The set of appointments of this business in a specified date range.
@@ -16,20 +16,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgBookingBusinessCalendarView -BookingBusinessId <String> -End <String> -Start <String>
+Get-MgBetaBookingBusinessCalendarView -BookingBusinessId <String> -End <String> -Start <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBookingBusinessCalendarView -BookingAppointmentId <String> -BookingBusinessId <String> -End <String>
+Get-MgBetaBookingBusinessCalendarView -BookingAppointmentId <String> -BookingBusinessId <String> -End <String>
  -Start <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> -End <String> -Start <String>
+Get-MgBetaBookingBusinessCalendarView -InputObject <IBookingsIdentity> -End <String> -Start <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -40,13 +40,13 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgBookingBusinessCalendarView Cmdlet
+### Example 1: Using the Get-MgBetaBookingBusinessCalendarView Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusinessCalendarView -BookingBusinessId $bookingBusinessId -Start "2018-04-30T00:00:00Z" -End "2018-05-10T00:00:00Z" 
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusinessCalendarView -BookingBusinessId $bookingBusinessId -Start "2018-04-30T00:00:00Z" -End "2018-05-10T00:00:00Z" 
 ```
 
-This example shows how to use the Get-MgBookingBusinessCalendarView Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusinessCalendarView Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -163,7 +163,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -285,11 +285,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 
 ## NOTES
 

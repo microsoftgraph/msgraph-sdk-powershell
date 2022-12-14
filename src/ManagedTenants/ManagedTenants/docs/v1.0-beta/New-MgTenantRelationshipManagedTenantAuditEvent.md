@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantauditevent
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantauditevent
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantAuditEvent
+# New-MgBetaTenantRelationshipManagedTenantAuditEvent
 
 ## SYNOPSIS
 Create new navigation property to auditEvents for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to auditEvents for tenantRelationships
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantAuditEvent [-Activity <String>] [-ActivityDateTime <DateTime>]
+New-MgBetaTenantRelationshipManagedTenantAuditEvent [-Activity <String>] [-ActivityDateTime <DateTime>]
  [-ActivityId <String>] [-AdditionalProperties <Hashtable>] [-Category <String>] [-HttpVerb <String>]
  [-Id <String>] [-InitiatedByAppId <String>] [-InitiatedByUpn <String>] [-InitiatedByUserId <String>]
  [-IPAddress <String>] [-RequestBody <String>] [-RequestUrl <String>] [-TenantIds <String>]
@@ -23,7 +23,7 @@ New-MgTenantRelationshipManagedTenantAuditEvent [-Activity <String>] [-ActivityD
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantAuditEvent -BodyParameter <IMicrosoftGraphManagedTenantsAuditEvent>
+New-MgBetaTenantRelationshipManagedTenantAuditEvent -BodyParameter <IMicrosoftGraphManagedTenantsAuditEvent>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -105,7 +105,7 @@ auditEvent
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
 Parameter Sets: Create
 Aliases:
 
@@ -340,11 +340,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
 
 ## NOTES
 

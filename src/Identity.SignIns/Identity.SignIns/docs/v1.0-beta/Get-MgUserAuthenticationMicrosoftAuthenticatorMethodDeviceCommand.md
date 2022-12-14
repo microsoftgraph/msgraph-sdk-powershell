@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationmicrosoftauthenticatormethoddevicecommand
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mguserauthenticationmicrosoftauthenticatormethoddevicecommand
 schema: 2.0.0
 ---
 
-# Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand
+# Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand
 
 ## SYNOPSIS
 Set of commands sent to this device.
@@ -14,7 +14,7 @@ Set of commands sent to this device.
 
 ### List (Default)
 ```
-Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand
+Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand
 
 ### Get
 ```
-Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand -CommandId <String>
+Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand -CommandId <String>
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -257,11 +257,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommand
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 
 ## NOTES
 

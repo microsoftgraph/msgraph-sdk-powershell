@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgriskdetection
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgriskdetection
 schema: 2.0.0
 ---
 
-# Get-MgRiskDetection
+# Get-MgBetaRiskDetection
 
 ## SYNOPSIS
 Risk detection in Azure AD Identity Protection and the associated information about the detection.
@@ -14,20 +14,20 @@ Risk detection in Azure AD Identity Protection and the associated information ab
 
 ### List (Default)
 ```
-Get-MgRiskDetection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaRiskDetection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgRiskDetection -RiskDetectionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaRiskDetection -RiskDetectionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgRiskDetection -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaRiskDetection -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -38,8 +38,8 @@ Risk detection in Azure AD Identity Protection and the associated information ab
 
 ### Example 1: Get all riskDetections
 ```powershell
-Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-MgRiskDetection -All | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
+Connect-MgBetaGraph -Scopes "IdentityRiskEvent.Read.All"
+Get-MgBetaRiskDetection -All | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 UserDisplayName RiskType                      RiskLevel DetectedDateTime
 --------------- --------                      --------- ----------------
@@ -57,8 +57,8 @@ This command returns a list of all users.
 
 ### Example 2: Get riskDetections by user displayname
 ```powershell
-Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-MgRiskDetection -Filter "UserDisplayname eq 'Jason Mayer'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
+Connect-MgBetaGraph -Scopes "IdentityRiskEvent.Read.All"
+Get-MgBetaRiskDetection -Filter "UserDisplayname eq 'Jason Mayer'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 UserDisplayName RiskType                      RiskLevel DetectedDateTime
 --------------- --------                      --------- ----------------
@@ -74,8 +74,8 @@ This command returns all risk detections for the specified user
 
 ### Example 3: Get riskDetections by risk type
 ```powershell
-Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-MgRiskDetection -Filter "RiskType eq 'anonymizedIPAddress'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
+Connect-MgBetaGraph -Scopes "IdentityRiskEvent.Read.All"
+Get-MgBetaRiskDetection -Filter "RiskType eq 'anonymizedIPAddress'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 UserDisplayName RiskType            RiskLevel DetectedDateTime
 --------------- --------            --------- ----------------
@@ -88,8 +88,8 @@ This command returns all risk detections for the anonymizedIPAddress risk detect
 
 ### Example 4: Get all riskDetections for a particular user with high risk
 ```powershell
-Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-MgRiskDetection -Filter "UserDisplayName eq 'Jason Mayer' and Risklevel eq 'high'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
+Connect-MgBetaGraph -Scopes "IdentityRiskEvent.Read.All"
+Get-MgBetaRiskDetection -Filter "UserDisplayName eq 'Jason Mayer' and Risklevel eq 'high'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 UserDisplayName RiskType                      RiskLevel DetectedDateTime
 --------------- --------                      --------- ----------------
@@ -167,7 +167,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -288,11 +288,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskDetection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskDetection
 
 ## NOTES
 

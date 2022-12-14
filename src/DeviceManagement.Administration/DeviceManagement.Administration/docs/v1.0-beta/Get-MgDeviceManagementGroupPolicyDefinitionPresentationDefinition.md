@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementgrouppolicydefinitionpresentationdefinition
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementgrouppolicydefinitionpresentationdefinition
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementGroupPolicyDefinitionPresentationDefinition
+# Get-MgBetaDeviceManagementGroupPolicyDefinitionPresentationDefinition
 
 ## SYNOPSIS
 The group policy definition associated with the presentation.
@@ -14,13 +14,13 @@ The group policy definition associated with the presentation.
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementGroupPolicyDefinitionPresentationDefinition -GroupPolicyDefinitionId <String>
+Get-MgBetaDeviceManagementGroupPolicyDefinitionPresentationDefinition -GroupPolicyDefinitionId <String>
  -GroupPolicyPresentationId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementGroupPolicyDefinitionPresentationDefinition
+Get-MgBetaDeviceManagementGroupPolicyDefinitionPresentationDefinition
  -InputObject <IDeviceManagementAdministrationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -113,11 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 
 ## NOTES
 

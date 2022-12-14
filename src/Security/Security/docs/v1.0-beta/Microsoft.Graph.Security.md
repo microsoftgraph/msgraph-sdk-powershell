@@ -1,793 +1,793 @@
 ---
-Module Name: Microsoft.Graph.Security
+Module Name: Microsoft.Graph.Beta.Security
 Module Guid: 30ed7ded-e69d-4e0f-b8ec-31514f2de688
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.security
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.Security Module
+# Microsoft.Graph.Beta.Security Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.Security Cmdlets
-### [Add-MgSecurityCaseEdiscoveryCaseCustodianHold](Add-MgSecurityCaseEdiscoveryCaseCustodianHold.md)
+## Microsoft.Graph.Beta.Security Cmdlets
+### [Add-MgBetaSecurityCaseEdiscoveryCaseCustodianHold](Add-MgBetaSecurityCaseEdiscoveryCaseCustodianHold.md)
 Start the process of applying hold on eDiscovery custodians.
 After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
-### [Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
+### [Add-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Add-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of applying hold on eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
-### [Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag](Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag.md)
+### [Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag](Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag.md)
 Apply tags to files in an eDiscovery review set.
 For details, see Tag documents in a review set in eDiscovery.
 
-### [Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet](Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet.md)
+### [Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetToReviewSet](Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetToReviewSet.md)
 Start the process of adding a collection from Microsoft 365 services to a review set.
 After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers.
 The location provides a URL that will return a Add to review set operation.
 
-### [Clear-MgSecurityCaseEdiscoveryCaseSearchData](Clear-MgSecurityCaseEdiscoveryCaseSearchData.md)
+### [Clear-MgBetaSecurityCaseEdiscoveryCaseSearchData](Clear-MgBetaSecurityCaseEdiscoveryCaseSearchData.md)
 Permanently delete Microsoft Teams messages contained in a eDiscovery search.
 You can collect and purge the following categories of Teams content:\n- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people.
 Teams 1:1 chats are also called *conversations*.\n- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
 Also called *1:N* chats or *group conversations*.\n- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.\n- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel.
 For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams
 
-### [Close-MgSecurityCaseEdiscoveryCase](Close-MgSecurityCaseEdiscoveryCase.md)
+### [Close-MgBetaSecurityCaseEdiscoveryCase](Close-MgBetaSecurityCaseEdiscoveryCase.md)
 Close an eDiscovery case.
 For details, see Close a case.
 
-### [Export-MgSecurityCaseEdiscoveryCaseReviewSet](Export-MgSecurityCaseEdiscoveryCaseReviewSet.md)
+### [Export-MgBetaSecurityCaseEdiscoveryCaseReviewSet](Export-MgBetaSecurityCaseEdiscoveryCaseReviewSet.md)
 Initiate an export from a **reviewSet**.
 For details, see Export documents from a review set in eDiscovery (Premium).
 
-### [Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
+### [Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Initiate an export from a **reviewSet** query.
 For details, see Export documents from a review set in eDiscovery (Premium).
 
-### [Get-MgSecurityAction](Get-MgSecurityAction.md)
+### [Get-MgBetaSecurityAction](Get-MgBetaSecurityAction.md)
 Get securityActions from security
 
-### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
+### [Get-MgBetaSecurityAlert](Get-MgBetaSecurityAlert.md)
 Notifications for suspicious or potential security issues in a customer’s tenant.
 
-### [Get-MgSecurityAttackSimulation](Get-MgSecurityAttackSimulation.md)
+### [Get-MgBetaSecurityAttackSimulation](Get-MgBetaSecurityAttackSimulation.md)
 Represents an attack simulation training campaign in a tenant.
 
-### [Get-MgSecurityAttackSimulationAutomation](Get-MgSecurityAttackSimulationAutomation.md)
+### [Get-MgBetaSecurityAttackSimulationAutomation](Get-MgBetaSecurityAttackSimulationAutomation.md)
 Represents simulation automation created to run on a tenant.
 
-### [Get-MgSecurityAttackSimulationAutomationRun](Get-MgSecurityAttackSimulationAutomationRun.md)
+### [Get-MgBetaSecurityAttackSimulationAutomationRun](Get-MgBetaSecurityAttackSimulationAutomationRun.md)
 A collection of simulation automation runs.
 
-### [Get-MgSecurityCase](Get-MgSecurityCase.md)
+### [Get-MgBetaSecurityCase](Get-MgBetaSecurityCase.md)
 Get cases from security
 
-### [Get-MgSecurityCaseEdiscoveryCase](Get-MgSecurityCaseEdiscoveryCase.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCase](Get-MgBetaSecurityCaseEdiscoveryCase.md)
 Get ediscoveryCases from security
 
-### [Get-MgSecurityCaseEdiscoveryCaseCustodian](Get-MgSecurityCaseEdiscoveryCaseCustodian.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodian](Get-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Returns a list of case ediscoveryCustodian objects for this case.
 
-### [Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation](Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianLastIndexOperation](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianLastIndexOperation.md)
 Get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
 
-### [Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Data source entity for SharePoint sites associated with the custodian.
 
-### [Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSourceSite](Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSourceSite.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSourceSite](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSourceSite.md)
 The SharePoint site associated with the siteSource.
 
-### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
 Data source entity for groups associated with the custodian.
 
-### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroup](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroup.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroup](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroup.md)
 Represents a group.
 
-### [Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource](Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource.md)
 Data source entity for a custodian.
 This is the container for a custodian's mailbox and OneDrive for Business site.
 
-### [Get-MgSecurityCaseEdiscoveryCaseLegalHold](Get-MgSecurityCaseEdiscoveryCaseLegalHold.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold](Get-MgBetaSecurityCaseEdiscoveryCaseLegalHold.md)
 Returns a list of case eDiscoveryHoldPolicy objects for this case.
 
-### [Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource](Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource](Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
 Data sources that represent SharePoint sites.
 
-### [Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSourceSite](Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSourceSite.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSourceSite](Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSourceSite.md)
 The SharePoint site associated with the siteSource.
 
-### [Get-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource](Get-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource](Get-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
 Data sources that represent Exchange mailboxes.
 
-### [Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource](Get-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 
-### [Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation](Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation](Get-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation.md)
 Operation entity that represents the latest indexing for the non-custodial data source.
 
-### [Get-MgSecurityCaseEdiscoveryCaseOperation](Get-MgSecurityCaseEdiscoveryCaseOperation.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseOperation](Get-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Returns a list of case caseOperation objects for this case.
 
-### [Get-MgSecurityCaseEdiscoveryCaseReviewSet](Get-MgSecurityCaseEdiscoveryCaseReviewSet.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet.md)
 Returns a list of eDiscoveryReviewSet objects in the case.
 
-### [Get-MgSecurityCaseEdiscoveryCaseReviewSetFile](Get-MgSecurityCaseEdiscoveryCaseReviewSetFile.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile.md)
 Represents files within the review set.
 
-### [Get-MgSecurityCaseEdiscoveryCaseReviewSetFileContent](Get-MgSecurityCaseEdiscoveryCaseReviewSetFileContent.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent.md)
 Get content for the navigation property files from security
 
-### [Get-MgSecurityCaseEdiscoveryCaseReviewSetFileCustodian](Get-MgSecurityCaseEdiscoveryCaseReviewSetFileCustodian.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileCustodian](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileCustodian.md)
 Custodians associated with the file.
 
-### [Get-MgSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent](Get-MgSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent.md)
 Get extractedTextContent for the navigation property files from security
 
-### [Get-MgSecurityCaseEdiscoveryCaseReviewSetFileTag](Get-MgSecurityCaseEdiscoveryCaseReviewSetFileTag.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileTag](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileTag.md)
 Tags associated with the file.
 
-### [Get-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Get-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Represents queries within the review set.
 
-### [Get-MgSecurityCaseEdiscoveryCaseSearch](Get-MgSecurityCaseEdiscoveryCaseSearch.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseSearch](Get-MgBetaSecurityCaseEdiscoveryCaseSearch.md)
 Returns a list of eDiscoverySearch objects associated with this case.
 
-### [Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Adds an additional source to the eDiscovery search.
 
-### [Get-MgSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation](Get-MgSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation](Get-MgBetaSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation.md)
 Adds the results of the eDiscovery search to the specified reviewSet.
 
-### [Get-MgSecurityCaseEdiscoveryCaseSearchCustodianSource](Get-MgSecurityCaseEdiscoveryCaseSearchCustodianSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource](Get-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource.md)
 Custodian sources that are included in the eDiscovery search.
 
-### [Get-MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation](Get-MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation](Get-MgBetaSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation.md)
 Get the last ediscoveryEstimateOperation objects and their properties.
 
-### [Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Get-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
 noncustodialDataSource sources that are included in the eDiscovery search
 
-### [Get-MgSecurityCaseEdiscoveryCaseSetting](Get-MgSecurityCaseEdiscoveryCaseSetting.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseSetting](Get-MgBetaSecurityCaseEdiscoveryCaseSetting.md)
 Read the properties and relationships of an ediscoveryCaseSettings object.
 
-### [Get-MgSecurityCaseEdiscoveryCaseTag](Get-MgSecurityCaseEdiscoveryCaseTag.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseTag](Get-MgBetaSecurityCaseEdiscoveryCaseTag.md)
 Returns a list of ediscoveryReviewTag objects associated to this case.
 
-### [Get-MgSecurityCaseEdiscoveryCaseTagChildTag](Get-MgSecurityCaseEdiscoveryCaseTagChildTag.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseTagChildTag](Get-MgBetaSecurityCaseEdiscoveryCaseTagChildTag.md)
 Returns the tags that are a child of a tag.
 
-### [Get-MgSecurityCaseEdiscoveryCaseTagParent](Get-MgSecurityCaseEdiscoveryCaseTagParent.md)
+### [Get-MgBetaSecurityCaseEdiscoveryCaseTagParent](Get-MgBetaSecurityCaseEdiscoveryCaseTagParent.md)
 Returns the parent tag of the specified tag.
 
-### [Get-MgSecurityCloudAppSecurityProfile](Get-MgSecurityCloudAppSecurityProfile.md)
+### [Get-MgBetaSecurityCloudAppSecurityProfile](Get-MgBetaSecurityCloudAppSecurityProfile.md)
 Get cloudAppSecurityProfiles from security
 
-### [Get-MgSecurityDomainSecurityProfile](Get-MgSecurityDomainSecurityProfile.md)
+### [Get-MgBetaSecurityDomainSecurityProfile](Get-MgBetaSecurityDomainSecurityProfile.md)
 Get domainSecurityProfiles from security
 
-### [Get-MgSecurityFileSecurityProfile](Get-MgSecurityFileSecurityProfile.md)
+### [Get-MgBetaSecurityFileSecurityProfile](Get-MgBetaSecurityFileSecurityProfile.md)
 Get fileSecurityProfiles from security
 
-### [Get-MgSecurityHostSecurityProfile](Get-MgSecurityHostSecurityProfile.md)
+### [Get-MgBetaSecurityHostSecurityProfile](Get-MgBetaSecurityHostSecurityProfile.md)
 Get hostSecurityProfiles from security
 
-### [Get-MgSecurityIncident](Get-MgSecurityIncident.md)
+### [Get-MgBetaSecurityIncident](Get-MgBetaSecurityIncident.md)
 A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
 
-### [Get-MgSecurityIncidentAlert](Get-MgSecurityIncidentAlert.md)
+### [Get-MgBetaSecurityIncidentAlert](Get-MgBetaSecurityIncidentAlert.md)
 The list of related alerts.
 Supports $expand.
 
-### [Get-MgSecurityInformationProtection](Get-MgSecurityInformationProtection.md)
+### [Get-MgBetaSecurityInformationProtection](Get-MgBetaSecurityInformationProtection.md)
 Get informationProtection from security
 
-### [Get-MgSecurityInformationProtectionLabelPolicySetting](Get-MgSecurityInformationProtectionLabelPolicySetting.md)
+### [Get-MgBetaSecurityInformationProtectionLabelPolicySetting](Get-MgBetaSecurityInformationProtectionLabelPolicySetting.md)
 Read the properties and relationships of an informationProtectionPolicySetting object.
 The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
 
-### [Get-MgSecurityInformationProtectionSensitivityLabel](Get-MgSecurityInformationProtectionSensitivityLabel.md)
+### [Get-MgBetaSecurityInformationProtectionSensitivityLabel](Get-MgBetaSecurityInformationProtectionSensitivityLabel.md)
 Read the Microsoft Purview Information Protection labels for the user or organization.
 
-### [Get-MgSecurityInformationProtectionSensitivityLabelParent](Get-MgSecurityInformationProtectionSensitivityLabelParent.md)
+### [Get-MgBetaSecurityInformationProtectionSensitivityLabelParent](Get-MgBetaSecurityInformationProtectionSensitivityLabelParent.md)
 The parent label associated with a child label.
 Null if the label has no parent.
 
-### [Get-MgSecurityIPSecurityProfile](Get-MgSecurityIPSecurityProfile.md)
+### [Get-MgBetaSecurityIPSecurityProfile](Get-MgBetaSecurityIPSecurityProfile.md)
 Get ipSecurityProfiles from security
 
-### [Get-MgSecurityLabel](Get-MgSecurityLabel.md)
+### [Get-MgBetaSecurityLabel](Get-MgBetaSecurityLabel.md)
 Get labels from security
 
-### [Get-MgSecurityLabelRetentionEventType](Get-MgSecurityLabelRetentionEventType.md)
+### [Get-MgBetaSecurityLabelRetentionEventType](Get-MgBetaSecurityLabelRetentionEventType.md)
 Get retentionEventType from security
 
-### [Get-MgSecurityLabelRetentionLabel](Get-MgSecurityLabelRetentionLabel.md)
+### [Get-MgBetaSecurityLabelRetentionLabel](Get-MgBetaSecurityLabelRetentionLabel.md)
 Get retentionLabels from security
 
-### [Get-MgSecurityLabelRetentionLabelDispositionReviewStage](Get-MgSecurityLabelRetentionLabelDispositionReviewStage.md)
+### [Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStage](Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStage.md)
 Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
 
-### [Get-MgSecurityProviderTenantSetting](Get-MgSecurityProviderTenantSetting.md)
+### [Get-MgBetaSecurityProviderTenantSetting](Get-MgBetaSecurityProviderTenantSetting.md)
 Get providerTenantSettings from security
 
-### [Get-MgSecuritySecureScore](Get-MgSecuritySecureScore.md)
+### [Get-MgBetaSecuritySecureScore](Get-MgBetaSecuritySecureScore.md)
 Measurements of tenants’ security posture to help protect them from threats.
 
-### [Get-MgSecuritySecureScoreControlProfile](Get-MgSecuritySecureScoreControlProfile.md)
+### [Get-MgBetaSecuritySecureScoreControlProfile](Get-MgBetaSecuritySecureScoreControlProfile.md)
 Get secureScoreControlProfiles from security
 
-### [Get-MgSecuritySubjectRightsRequest](Get-MgSecuritySubjectRightsRequest.md)
+### [Get-MgBetaSecuritySubjectRightsRequest](Get-MgBetaSecuritySubjectRightsRequest.md)
 Get subjectRightsRequests from security
 
-### [Get-MgSecuritySubjectRightsRequestFinalAttachment](Get-MgSecuritySubjectRightsRequestFinalAttachment.md)
+### [Get-MgBetaSecuritySubjectRightsRequestFinalAttachment](Get-MgBetaSecuritySubjectRightsRequestFinalAttachment.md)
 Invoke function getFinalAttachment
 
-### [Get-MgSecuritySubjectRightsRequestFinalReport](Get-MgSecuritySubjectRightsRequestFinalReport.md)
+### [Get-MgBetaSecuritySubjectRightsRequestFinalReport](Get-MgBetaSecuritySubjectRightsRequestFinalReport.md)
 Invoke function getFinalReport
 
-### [Get-MgSecuritySubjectRightsRequestNote](Get-MgSecuritySubjectRightsRequestNote.md)
+### [Get-MgBetaSecuritySubjectRightsRequestNote](Get-MgBetaSecuritySubjectRightsRequestNote.md)
 List of notes associated with the request.
 
-### [Get-MgSecuritySubjectRightsRequestTeam](Get-MgSecuritySubjectRightsRequestTeam.md)
+### [Get-MgBetaSecuritySubjectRightsRequestTeam](Get-MgBetaSecuritySubjectRightsRequestTeam.md)
 Information about the Microsoft Teams team that was created for the request.
 
-### [Get-MgSecurityThreatSubmission](Get-MgSecurityThreatSubmission.md)
+### [Get-MgBetaSecurityThreatSubmission](Get-MgBetaSecurityThreatSubmission.md)
 A threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 
-### [Get-MgSecurityThreatSubmissionEmailThreat](Get-MgSecurityThreatSubmissionEmailThreat.md)
+### [Get-MgBetaSecurityThreatSubmissionEmailThreat](Get-MgBetaSecurityThreatSubmissionEmailThreat.md)
 Get emailThreats from security
 
-### [Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy](Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
+### [Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy](Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
 Get emailThreatSubmissionPolicies from security
 
-### [Get-MgSecurityThreatSubmissionFileThreat](Get-MgSecurityThreatSubmissionFileThreat.md)
+### [Get-MgBetaSecurityThreatSubmissionFileThreat](Get-MgBetaSecurityThreatSubmissionFileThreat.md)
 Get fileThreats from security
 
-### [Get-MgSecurityThreatSubmissionUrlThreat](Get-MgSecurityThreatSubmissionUrlThreat.md)
+### [Get-MgBetaSecurityThreatSubmissionUrlThreat](Get-MgBetaSecurityThreatSubmissionUrlThreat.md)
 Get urlThreats from security
 
-### [Get-MgSecurityTiIndicator](Get-MgSecurityTiIndicator.md)
+### [Get-MgBetaSecurityTiIndicator](Get-MgBetaSecurityTiIndicator.md)
 Get tiIndicators from security
 
-### [Get-MgSecurityTrigger](Get-MgSecurityTrigger.md)
+### [Get-MgBetaSecurityTrigger](Get-MgBetaSecurityTrigger.md)
 Get triggers from security
 
-### [Get-MgSecurityTriggerRetentionEvent](Get-MgSecurityTriggerRetentionEvent.md)
+### [Get-MgBetaSecurityTriggerRetentionEvent](Get-MgBetaSecurityTriggerRetentionEvent.md)
 Get retentionEvents from security
 
-### [Get-MgSecurityTriggerRetentionEventType](Get-MgSecurityTriggerRetentionEventType.md)
+### [Get-MgBetaSecurityTriggerRetentionEventType](Get-MgBetaSecurityTriggerRetentionEventType.md)
 Specifies the event that will start the retention period for labels that use this event type when an event is created.
 
-### [Get-MgSecurityTriggerType](Get-MgSecurityTriggerType.md)
+### [Get-MgBetaSecurityTriggerType](Get-MgBetaSecurityTriggerType.md)
 Get triggerTypes from security
 
-### [Get-MgSecurityTriggerTypeRetentionEventType](Get-MgSecurityTriggerTypeRetentionEventType.md)
+### [Get-MgBetaSecurityTriggerTypeRetentionEventType](Get-MgBetaSecurityTriggerTypeRetentionEventType.md)
 Get retentionEventTypes from security
 
-### [Get-MgSecurityUserSecurityProfile](Get-MgSecurityUserSecurityProfile.md)
+### [Get-MgBetaSecurityUserSecurityProfile](Get-MgBetaSecurityUserSecurityProfile.md)
 Get userSecurityProfiles from security
 
-### [Initialize-MgSecurityCaseEdiscoveryCaseCustodian](Initialize-MgSecurityCaseEdiscoveryCaseCustodian.md)
+### [Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian](Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Activate a custodian that has been released from a case to make them part of the case again.
 For details, see Manage custodians in an eDiscovery (Premium) case.
 
-### [Invoke-MgAsSecurityCaseEdiscoveryCaseTagHierarchy](Invoke-MgAsSecurityCaseEdiscoveryCaseTagHierarchy.md)
+### [Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy](Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy.md)
 Invoke function asHierarchy
 
-### [Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics](Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics.md)
+### [Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics](Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics.md)
 Run an estimate of the number of emails and documents in the eDiscovery search.
 To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
 
-### [Invoke-MgExtractSecurityInformationProtectionSensitivityLabelContentLabel](Invoke-MgExtractSecurityInformationProtectionSensitivityLabelContentLabel.md)
+### [Invoke-MgBetaExtractSecurityInformationProtectionSensitivityLabelContentLabel](Invoke-MgBetaExtractSecurityInformationProtectionSensitivityLabelContentLabel.md)
 Invoke action extractContentLabel
 
-### [Invoke-MgReopenSecurityCaseEdiscoveryCase](Invoke-MgReopenSecurityCaseEdiscoveryCase.md)
+### [Invoke-MgBetaReopenSecurityCaseEdiscoveryCase](Invoke-MgBetaReopenSecurityCaseEdiscoveryCase.md)
 Reopen an eDiscovery case that was closed.
 For details, see Reopen a closed case.
 
-### [New-MgSecurityAction](New-MgSecurityAction.md)
+### [New-MgBetaSecurityAction](New-MgBetaSecurityAction.md)
 Create a new securityAction object.
 
-### [New-MgSecurityAlert](New-MgSecurityAlert.md)
+### [New-MgBetaSecurityAlert](New-MgBetaSecurityAlert.md)
 Create new navigation property to alerts for security
 
-### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
+### [New-MgBetaSecurityAttackSimulation](New-MgBetaSecurityAttackSimulation.md)
 Create new navigation property to simulations for security
 
-### [New-MgSecurityAttackSimulationAutomation](New-MgSecurityAttackSimulationAutomation.md)
+### [New-MgBetaSecurityAttackSimulationAutomation](New-MgBetaSecurityAttackSimulationAutomation.md)
 Create new navigation property to simulationAutomations for security
 
-### [New-MgSecurityAttackSimulationAutomationRun](New-MgSecurityAttackSimulationAutomationRun.md)
+### [New-MgBetaSecurityAttackSimulationAutomationRun](New-MgBetaSecurityAttackSimulationAutomationRun.md)
 Create new navigation property to runs for security
 
-### [New-MgSecurityCaseEdiscoveryCase](New-MgSecurityCaseEdiscoveryCase.md)
+### [New-MgBetaSecurityCaseEdiscoveryCase](New-MgBetaSecurityCaseEdiscoveryCase.md)
 Create a new ediscoveryCase object.
 
-### [New-MgSecurityCaseEdiscoveryCaseCustodian](New-MgSecurityCaseEdiscoveryCaseCustodian.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseCustodian](New-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
 
-### [New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](New-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Create a new siteSource object associated with an eDiscovery custodian.
 
-### [New-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](New-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](New-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
 Create a new unifiedGroupSource object associated with an eDiscovery custodian.
 
-### [New-MgSecurityCaseEdiscoveryCaseCustodianUserSource](New-MgSecurityCaseEdiscoveryCaseCustodianUserSource.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource](New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource.md)
 Create a new userSource object associated with an eDiscovery custodian.
 
-### [New-MgSecurityCaseEdiscoveryCaseLegalHold](New-MgSecurityCaseEdiscoveryCaseLegalHold.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseLegalHold](New-MgBetaSecurityCaseEdiscoveryCaseLegalHold.md)
 Create a new ediscoveryHoldPolicy object.
 
-### [New-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource](New-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource](New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
 Create a new siteSource object.
 
-### [New-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource](New-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource](New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
 Create a new userSource object.
 
-### [New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource](New-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Create a new ediscoveryNoncustodialDataSource object.
 
-### [New-MgSecurityCaseEdiscoveryCaseOperation](New-MgSecurityCaseEdiscoveryCaseOperation.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseOperation](New-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Create new navigation property to operations for security
 
-### [New-MgSecurityCaseEdiscoveryCaseReviewSet](New-MgSecurityCaseEdiscoveryCaseReviewSet.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseReviewSet](New-MgBetaSecurityCaseEdiscoveryCaseReviewSet.md)
 Create a new ediscoveryReviewSet object.
 
-### [New-MgSecurityCaseEdiscoveryCaseReviewSetFile](New-MgSecurityCaseEdiscoveryCaseReviewSetFile.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile](New-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile.md)
 Create new navigation property to files for security
 
-### [New-MgSecurityCaseEdiscoveryCaseReviewSetQuery](New-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](New-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Create a new ediscoveryReviewSetQuery object.
 
-### [New-MgSecurityCaseEdiscoveryCaseSearch](New-MgSecurityCaseEdiscoveryCaseSearch.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseSearch](New-MgBetaSecurityCaseEdiscoveryCaseSearch.md)
 Create a new ediscoverySearch object.
 
-### [New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](New-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Create a new additional source associated with an eDiscovery search.
 
-### [New-MgSecurityCaseEdiscoveryCaseTag](New-MgSecurityCaseEdiscoveryCaseTag.md)
+### [New-MgBetaSecurityCaseEdiscoveryCaseTag](New-MgBetaSecurityCaseEdiscoveryCaseTag.md)
 Create a new ediscoveryReviewTag object.
 
-### [New-MgSecurityCloudAppSecurityProfile](New-MgSecurityCloudAppSecurityProfile.md)
+### [New-MgBetaSecurityCloudAppSecurityProfile](New-MgBetaSecurityCloudAppSecurityProfile.md)
 Create new navigation property to cloudAppSecurityProfiles for security
 
-### [New-MgSecurityDomainSecurityProfile](New-MgSecurityDomainSecurityProfile.md)
+### [New-MgBetaSecurityDomainSecurityProfile](New-MgBetaSecurityDomainSecurityProfile.md)
 Create new navigation property to domainSecurityProfiles for security
 
-### [New-MgSecurityFileSecurityProfile](New-MgSecurityFileSecurityProfile.md)
+### [New-MgBetaSecurityFileSecurityProfile](New-MgBetaSecurityFileSecurityProfile.md)
 Create new navigation property to fileSecurityProfiles for security
 
-### [New-MgSecurityHostSecurityProfile](New-MgSecurityHostSecurityProfile.md)
+### [New-MgBetaSecurityHostSecurityProfile](New-MgBetaSecurityHostSecurityProfile.md)
 Create new navigation property to hostSecurityProfiles for security
 
-### [New-MgSecurityIncident](New-MgSecurityIncident.md)
+### [New-MgBetaSecurityIncident](New-MgBetaSecurityIncident.md)
 Create new navigation property to incidents for security
 
-### [New-MgSecurityInformationProtectionSensitivityLabel](New-MgSecurityInformationProtectionSensitivityLabel.md)
+### [New-MgBetaSecurityInformationProtectionSensitivityLabel](New-MgBetaSecurityInformationProtectionSensitivityLabel.md)
 Create new navigation property to sensitivityLabels for security
 
-### [New-MgSecurityIPSecurityProfile](New-MgSecurityIPSecurityProfile.md)
+### [New-MgBetaSecurityIPSecurityProfile](New-MgBetaSecurityIPSecurityProfile.md)
 Create new navigation property to ipSecurityProfiles for security
 
-### [New-MgSecurityLabelRetentionLabel](New-MgSecurityLabelRetentionLabel.md)
+### [New-MgBetaSecurityLabelRetentionLabel](New-MgBetaSecurityLabelRetentionLabel.md)
 Create a new retentionLabel object.
 To create a disposition review stage, include the **actionAfterRetentionPeriod** property in the request body with one of the possible values specified.
 
-### [New-MgSecurityLabelRetentionLabelDispositionReviewStage](New-MgSecurityLabelRetentionLabelDispositionReviewStage.md)
+### [New-MgBetaSecurityLabelRetentionLabelDispositionReviewStage](New-MgBetaSecurityLabelRetentionLabelDispositionReviewStage.md)
 Create new navigation property to dispositionReviewStages for security
 
-### [New-MgSecurityProviderTenantSetting](New-MgSecurityProviderTenantSetting.md)
+### [New-MgBetaSecurityProviderTenantSetting](New-MgBetaSecurityProviderTenantSetting.md)
 Create new navigation property to providerTenantSettings for security
 
-### [New-MgSecuritySecureScore](New-MgSecuritySecureScore.md)
+### [New-MgBetaSecuritySecureScore](New-MgBetaSecuritySecureScore.md)
 Create new navigation property to secureScores for security
 
-### [New-MgSecuritySecureScoreControlProfile](New-MgSecuritySecureScoreControlProfile.md)
+### [New-MgBetaSecuritySecureScoreControlProfile](New-MgBetaSecuritySecureScoreControlProfile.md)
 Create new navigation property to secureScoreControlProfiles for security
 
-### [New-MgSecuritySubjectRightsRequest](New-MgSecuritySubjectRightsRequest.md)
+### [New-MgBetaSecuritySubjectRightsRequest](New-MgBetaSecuritySubjectRightsRequest.md)
 Create new navigation property to subjectRightsRequests for security
 
-### [New-MgSecuritySubjectRightsRequestNote](New-MgSecuritySubjectRightsRequestNote.md)
+### [New-MgBetaSecuritySubjectRightsRequestNote](New-MgBetaSecuritySubjectRightsRequestNote.md)
 Create a new authoredNote object.
 
-### [New-MgSecurityThreatSubmissionEmailThreat](New-MgSecurityThreatSubmissionEmailThreat.md)
+### [New-MgBetaSecurityThreatSubmissionEmailThreat](New-MgBetaSecurityThreatSubmissionEmailThreat.md)
 Create a new emailThreatSubmission object.
 
-### [New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy](New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
+### [New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy](New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
 Create new navigation property to emailThreatSubmissionPolicies for security
 
-### [New-MgSecurityThreatSubmissionFileThreat](New-MgSecurityThreatSubmissionFileThreat.md)
+### [New-MgBetaSecurityThreatSubmissionFileThreat](New-MgBetaSecurityThreatSubmissionFileThreat.md)
 Create new navigation property to fileThreats for security
 
-### [New-MgSecurityThreatSubmissionUrlThreat](New-MgSecurityThreatSubmissionUrlThreat.md)
+### [New-MgBetaSecurityThreatSubmissionUrlThreat](New-MgBetaSecurityThreatSubmissionUrlThreat.md)
 Create a new urlThreatSubmission object.
 
-### [New-MgSecurityTiIndicator](New-MgSecurityTiIndicator.md)
+### [New-MgBetaSecurityTiIndicator](New-MgBetaSecurityTiIndicator.md)
 Create a new tiIndicator object.
 
-### [New-MgSecurityTriggerRetentionEvent](New-MgSecurityTriggerRetentionEvent.md)
+### [New-MgBetaSecurityTriggerRetentionEvent](New-MgBetaSecurityTriggerRetentionEvent.md)
 Create a new retentionEvent object.
 
-### [New-MgSecurityTriggerTypeRetentionEventType](New-MgSecurityTriggerTypeRetentionEventType.md)
+### [New-MgBetaSecurityTriggerTypeRetentionEventType](New-MgBetaSecurityTriggerTypeRetentionEventType.md)
 Create a new retentionEventType object.
 
-### [New-MgSecurityUserSecurityProfile](New-MgSecurityUserSecurityProfile.md)
+### [New-MgBetaSecurityUserSecurityProfile](New-MgBetaSecurityUserSecurityProfile.md)
 Create new navigation property to userSecurityProfiles for security
 
-### [Publish-MgSecurityCaseEdiscoveryCaseCustodian](Publish-MgSecurityCaseEdiscoveryCaseCustodian.md)
+### [Publish-MgBetaSecurityCaseEdiscoveryCaseCustodian](Publish-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Release a custodian from a case.
 For details, see Release a custodian from a case.
 
-### [Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
+### [Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource](Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Release the non-custodial data source from the case.
 
-### [Remove-MgSecurityAction](Remove-MgSecurityAction.md)
+### [Remove-MgBetaSecurityAction](Remove-MgBetaSecurityAction.md)
 Delete navigation property securityActions for security
 
-### [Remove-MgSecurityAttackSimulation](Remove-MgSecurityAttackSimulation.md)
+### [Remove-MgBetaSecurityAttackSimulation](Remove-MgBetaSecurityAttackSimulation.md)
 Delete navigation property simulations for security
 
-### [Remove-MgSecurityAttackSimulationAutomation](Remove-MgSecurityAttackSimulationAutomation.md)
+### [Remove-MgBetaSecurityAttackSimulationAutomation](Remove-MgBetaSecurityAttackSimulationAutomation.md)
 Delete navigation property simulationAutomations for security
 
-### [Remove-MgSecurityAttackSimulationAutomationRun](Remove-MgSecurityAttackSimulationAutomationRun.md)
+### [Remove-MgBetaSecurityAttackSimulationAutomationRun](Remove-MgBetaSecurityAttackSimulationAutomationRun.md)
 Delete navigation property runs for security
 
-### [Remove-MgSecurityCase](Remove-MgSecurityCase.md)
+### [Remove-MgBetaSecurityCase](Remove-MgBetaSecurityCase.md)
 Delete navigation property cases for security
 
-### [Remove-MgSecurityCaseEdiscoveryCase](Remove-MgSecurityCaseEdiscoveryCase.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCase](Remove-MgBetaSecurityCaseEdiscoveryCase.md)
 Delete navigation property ediscoveryCases for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseCustodian](Remove-MgSecurityCaseEdiscoveryCaseCustodian.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodian](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Delete navigation property custodians for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseCustodianHold](Remove-MgSecurityCaseEdiscoveryCaseCustodianHold.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianHold](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianHold.md)
 Start the process of removing hold from eDiscovery custodians.
 After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
-### [Remove-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Remove-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Delete navigation property siteSources for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](Remove-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
 Delete navigation property unifiedGroupSources for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseCustodianUserSource](Remove-MgSecurityCaseEdiscoveryCaseCustodianUserSource.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource.md)
 Delete navigation property userSources for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseLegalHold](Remove-MgSecurityCaseEdiscoveryCaseLegalHold.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHold](Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHold.md)
 Delete navigation property legalHolds for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource](Remove-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource](Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
 Delete navigation property siteSources for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource](Remove-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource](Remove-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
 Delete navigation property userSources for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource](Remove-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Delete navigation property noncustodialDataSources for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Remove-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of removing hold from eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
-### [Remove-MgSecurityCaseEdiscoveryCaseOperation](Remove-MgSecurityCaseEdiscoveryCaseOperation.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseOperation](Remove-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Delete navigation property operations for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseReviewSet](Remove-MgSecurityCaseEdiscoveryCaseReviewSet.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSet](Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSet.md)
 Delete navigation property reviewSets for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseReviewSetFile](Remove-MgSecurityCaseEdiscoveryCaseReviewSetFile.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile](Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile.md)
 Delete navigation property files for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Remove-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Delete navigation property queries for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseSearch](Remove-MgSecurityCaseEdiscoveryCaseSearch.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearch](Remove-MgBetaSecurityCaseEdiscoveryCaseSearch.md)
 Delete navigation property searches for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](Remove-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Delete navigation property additionalSources for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseSetting](Remove-MgSecurityCaseEdiscoveryCaseSetting.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSetting](Remove-MgBetaSecurityCaseEdiscoveryCaseSetting.md)
 Delete navigation property settings for security
 
-### [Remove-MgSecurityCaseEdiscoveryCaseTag](Remove-MgSecurityCaseEdiscoveryCaseTag.md)
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseTag](Remove-MgBetaSecurityCaseEdiscoveryCaseTag.md)
 Delete navigation property tags for security
 
-### [Remove-MgSecurityCloudAppSecurityProfile](Remove-MgSecurityCloudAppSecurityProfile.md)
+### [Remove-MgBetaSecurityCloudAppSecurityProfile](Remove-MgBetaSecurityCloudAppSecurityProfile.md)
 Delete navigation property cloudAppSecurityProfiles for security
 
-### [Remove-MgSecurityDomainSecurityProfile](Remove-MgSecurityDomainSecurityProfile.md)
+### [Remove-MgBetaSecurityDomainSecurityProfile](Remove-MgBetaSecurityDomainSecurityProfile.md)
 Delete navigation property domainSecurityProfiles for security
 
-### [Remove-MgSecurityFileSecurityProfile](Remove-MgSecurityFileSecurityProfile.md)
+### [Remove-MgBetaSecurityFileSecurityProfile](Remove-MgBetaSecurityFileSecurityProfile.md)
 Delete navigation property fileSecurityProfiles for security
 
-### [Remove-MgSecurityHostSecurityProfile](Remove-MgSecurityHostSecurityProfile.md)
+### [Remove-MgBetaSecurityHostSecurityProfile](Remove-MgBetaSecurityHostSecurityProfile.md)
 Delete navigation property hostSecurityProfiles for security
 
-### [Remove-MgSecurityIncident](Remove-MgSecurityIncident.md)
+### [Remove-MgBetaSecurityIncident](Remove-MgBetaSecurityIncident.md)
 Delete navigation property incidents for security
 
-### [Remove-MgSecurityInformationProtection](Remove-MgSecurityInformationProtection.md)
+### [Remove-MgBetaSecurityInformationProtection](Remove-MgBetaSecurityInformationProtection.md)
 Delete navigation property informationProtection for security
 
-### [Remove-MgSecurityInformationProtectionLabelPolicySetting](Remove-MgSecurityInformationProtectionLabelPolicySetting.md)
+### [Remove-MgBetaSecurityInformationProtectionLabelPolicySetting](Remove-MgBetaSecurityInformationProtectionLabelPolicySetting.md)
 Delete navigation property labelPolicySettings for security
 
-### [Remove-MgSecurityInformationProtectionSensitivityLabel](Remove-MgSecurityInformationProtectionSensitivityLabel.md)
+### [Remove-MgBetaSecurityInformationProtectionSensitivityLabel](Remove-MgBetaSecurityInformationProtectionSensitivityLabel.md)
 Delete navigation property sensitivityLabels for security
 
-### [Remove-MgSecurityInformationProtectionSensitivityLabelParent](Remove-MgSecurityInformationProtectionSensitivityLabelParent.md)
+### [Remove-MgBetaSecurityInformationProtectionSensitivityLabelParent](Remove-MgBetaSecurityInformationProtectionSensitivityLabelParent.md)
 Delete navigation property parent for security
 
-### [Remove-MgSecurityIPSecurityProfile](Remove-MgSecurityIPSecurityProfile.md)
+### [Remove-MgBetaSecurityIPSecurityProfile](Remove-MgBetaSecurityIPSecurityProfile.md)
 Delete navigation property ipSecurityProfiles for security
 
-### [Remove-MgSecurityLabel](Remove-MgSecurityLabel.md)
+### [Remove-MgBetaSecurityLabel](Remove-MgBetaSecurityLabel.md)
 Delete navigation property labels for security
 
-### [Remove-MgSecurityLabelRetentionLabel](Remove-MgSecurityLabelRetentionLabel.md)
+### [Remove-MgBetaSecurityLabelRetentionLabel](Remove-MgBetaSecurityLabelRetentionLabel.md)
 Delete navigation property retentionLabels for security
 
-### [Remove-MgSecurityLabelRetentionLabelDispositionReviewStage](Remove-MgSecurityLabelRetentionLabelDispositionReviewStage.md)
+### [Remove-MgBetaSecurityLabelRetentionLabelDispositionReviewStage](Remove-MgBetaSecurityLabelRetentionLabelDispositionReviewStage.md)
 Delete navigation property dispositionReviewStages for security
 
-### [Remove-MgSecurityProviderTenantSetting](Remove-MgSecurityProviderTenantSetting.md)
+### [Remove-MgBetaSecurityProviderTenantSetting](Remove-MgBetaSecurityProviderTenantSetting.md)
 Delete navigation property providerTenantSettings for security
 
-### [Remove-MgSecuritySecureScore](Remove-MgSecuritySecureScore.md)
+### [Remove-MgBetaSecuritySecureScore](Remove-MgBetaSecuritySecureScore.md)
 Delete navigation property secureScores for security
 
-### [Remove-MgSecuritySecureScoreControlProfile](Remove-MgSecuritySecureScoreControlProfile.md)
+### [Remove-MgBetaSecuritySecureScoreControlProfile](Remove-MgBetaSecuritySecureScoreControlProfile.md)
 Delete navigation property secureScoreControlProfiles for security
 
-### [Remove-MgSecuritySubjectRightsRequest](Remove-MgSecuritySubjectRightsRequest.md)
+### [Remove-MgBetaSecuritySubjectRightsRequest](Remove-MgBetaSecuritySubjectRightsRequest.md)
 Delete navigation property subjectRightsRequests for security
 
-### [Remove-MgSecuritySubjectRightsRequestNote](Remove-MgSecuritySubjectRightsRequestNote.md)
+### [Remove-MgBetaSecuritySubjectRightsRequestNote](Remove-MgBetaSecuritySubjectRightsRequestNote.md)
 Delete navigation property notes for security
 
-### [Remove-MgSecurityThreatSubmission](Remove-MgSecurityThreatSubmission.md)
+### [Remove-MgBetaSecurityThreatSubmission](Remove-MgBetaSecurityThreatSubmission.md)
 Delete navigation property threatSubmission for security
 
-### [Remove-MgSecurityThreatSubmissionEmailThreat](Remove-MgSecurityThreatSubmissionEmailThreat.md)
+### [Remove-MgBetaSecurityThreatSubmissionEmailThreat](Remove-MgBetaSecurityThreatSubmissionEmailThreat.md)
 Delete navigation property emailThreats for security
 
-### [Remove-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy](Remove-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
+### [Remove-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy](Remove-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
 Delete navigation property emailThreatSubmissionPolicies for security
 
-### [Remove-MgSecurityThreatSubmissionFileThreat](Remove-MgSecurityThreatSubmissionFileThreat.md)
+### [Remove-MgBetaSecurityThreatSubmissionFileThreat](Remove-MgBetaSecurityThreatSubmissionFileThreat.md)
 Delete navigation property fileThreats for security
 
-### [Remove-MgSecurityThreatSubmissionUrlThreat](Remove-MgSecurityThreatSubmissionUrlThreat.md)
+### [Remove-MgBetaSecurityThreatSubmissionUrlThreat](Remove-MgBetaSecurityThreatSubmissionUrlThreat.md)
 Delete navigation property urlThreats for security
 
-### [Remove-MgSecurityTiIndicator](Remove-MgSecurityTiIndicator.md)
+### [Remove-MgBetaSecurityTiIndicator](Remove-MgBetaSecurityTiIndicator.md)
 Delete navigation property tiIndicators for security
 
-### [Remove-MgSecurityTiIndicatorByExternalId](Remove-MgSecurityTiIndicatorByExternalId.md)
+### [Remove-MgBetaSecurityTiIndicatorByExternalId](Remove-MgBetaSecurityTiIndicatorByExternalId.md)
 Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
 
-### [Remove-MgSecurityTiIndicatorMultiple](Remove-MgSecurityTiIndicatorMultiple.md)
+### [Remove-MgBetaSecurityTiIndicatorMultiple](Remove-MgBetaSecurityTiIndicatorMultiple.md)
 Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 
-### [Remove-MgSecurityTrigger](Remove-MgSecurityTrigger.md)
+### [Remove-MgBetaSecurityTrigger](Remove-MgBetaSecurityTrigger.md)
 Delete navigation property triggers for security
 
-### [Remove-MgSecurityTriggerRetentionEvent](Remove-MgSecurityTriggerRetentionEvent.md)
+### [Remove-MgBetaSecurityTriggerRetentionEvent](Remove-MgBetaSecurityTriggerRetentionEvent.md)
 Delete navigation property retentionEvents for security
 
-### [Remove-MgSecurityTriggerType](Remove-MgSecurityTriggerType.md)
+### [Remove-MgBetaSecurityTriggerType](Remove-MgBetaSecurityTriggerType.md)
 Delete navigation property triggerTypes for security
 
-### [Remove-MgSecurityTriggerTypeRetentionEventType](Remove-MgSecurityTriggerTypeRetentionEventType.md)
+### [Remove-MgBetaSecurityTriggerTypeRetentionEventType](Remove-MgBetaSecurityTriggerTypeRetentionEventType.md)
 Delete navigation property retentionEventTypes for security
 
-### [Remove-MgSecurityUserSecurityProfile](Remove-MgSecurityUserSecurityProfile.md)
+### [Remove-MgBetaSecurityUserSecurityProfile](Remove-MgBetaSecurityUserSecurityProfile.md)
 Delete navigation property userSecurityProfiles for security
 
-### [Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault.md)
+### [Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault.md)
 Reset a caseSettings object to the default values.
 
-### [Set-MgSecurityCaseEdiscoveryCaseReviewSetFileContent](Set-MgSecurityCaseEdiscoveryCaseReviewSetFileContent.md)
+### [Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent](Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent.md)
 Update content for the navigation property files in security
 
-### [Set-MgSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent](Set-MgSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent.md)
+### [Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent](Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent.md)
 Update extractedTextContent for the navigation property files in security
 
-### [Start-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Start-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
+### [Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Invoke function run
 
-### [Start-MgSecurityHuntingQuery](Start-MgSecurityHuntingQuery.md)
+### [Start-MgBetaSecurityHuntingQuery](Start-MgBetaSecurityHuntingQuery.md)
 Invoke action runHuntingQuery
 
-### [Stop-MgSecurityAction](Stop-MgSecurityAction.md)
+### [Stop-MgBetaSecurityAction](Stop-MgBetaSecurityAction.md)
 Cancel a security operation.
 
-### [Submit-MgSecurityTiIndicator](Submit-MgSecurityTiIndicator.md)
+### [Submit-MgBetaSecurityTiIndicator](Submit-MgBetaSecurityTiIndicator.md)
 Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 
-### [Test-MgSecurityInformationProtectionSensitivityLabelApplication](Test-MgSecurityInformationProtectionSensitivityLabelApplication.md)
+### [Test-MgBetaSecurityInformationProtectionSensitivityLabelApplication](Test-MgBetaSecurityInformationProtectionSensitivityLabelApplication.md)
 Invoke action evaluateApplication
 
-### [Test-MgSecurityInformationProtectionSensitivityLabelClassificationResult](Test-MgSecurityInformationProtectionSensitivityLabelClassificationResult.md)
+### [Test-MgBetaSecurityInformationProtectionSensitivityLabelClassificationResult](Test-MgBetaSecurityInformationProtectionSensitivityLabelClassificationResult.md)
 Invoke action evaluateClassificationResults
 
-### [Test-MgSecurityInformationProtectionSensitivityLabelRemoval](Test-MgSecurityInformationProtectionSensitivityLabelRemoval.md)
+### [Test-MgBetaSecurityInformationProtectionSensitivityLabelRemoval](Test-MgBetaSecurityInformationProtectionSensitivityLabelRemoval.md)
 Invoke action evaluateRemoval
 
-### [Update-MgSecurityAction](Update-MgSecurityAction.md)
+### [Update-MgBetaSecurityAction](Update-MgBetaSecurityAction.md)
 Update the navigation property securityActions in security
 
-### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
+### [Update-MgBetaSecurityAlert](Update-MgBetaSecurityAlert.md)
 Update the navigation property alerts in security
 
-### [Update-MgSecurityAlertMultiple](Update-MgSecurityAlertMultiple.md)
+### [Update-MgBetaSecurityAlertMultiple](Update-MgBetaSecurityAlertMultiple.md)
 Update multiple alerts in one request instead of multiple requests.
 
-### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
+### [Update-MgBetaSecurityAttackSimulationAutomation](Update-MgBetaSecurityAttackSimulationAutomation.md)
 Update the navigation property simulationAutomations in security
 
-### [Update-MgSecurityAttackSimulationAutomationRun](Update-MgSecurityAttackSimulationAutomationRun.md)
+### [Update-MgBetaSecurityAttackSimulationAutomationRun](Update-MgBetaSecurityAttackSimulationAutomationRun.md)
 Update the navigation property runs in security
 
-### [Update-MgSecurityCase](Update-MgSecurityCase.md)
+### [Update-MgBetaSecurityCase](Update-MgBetaSecurityCase.md)
 Update the navigation property cases in security
 
-### [Update-MgSecurityCaseEdiscoveryCase](Update-MgSecurityCaseEdiscoveryCase.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCase](Update-MgBetaSecurityCaseEdiscoveryCase.md)
 Update the navigation property ediscoveryCases in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseCustodian](Update-MgSecurityCaseEdiscoveryCaseCustodian.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseCustodian](Update-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Update the navigation property custodians in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseCustodianIndex](Update-MgSecurityCaseEdiscoveryCaseCustodianIndex.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex](Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex.md)
 Trigger an indexOperation
 
-### [Update-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Update-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](Update-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Update the navigation property siteSources in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](Update-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](Update-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
 Update the navigation property unifiedGroupSources in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseCustodianUserSource](Update-MgSecurityCaseEdiscoveryCaseCustodianUserSource.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource](Update-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource.md)
 Update the navigation property userSources in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseLegalHold](Update-MgSecurityCaseEdiscoveryCaseLegalHold.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseLegalHold](Update-MgBetaSecurityCaseEdiscoveryCaseLegalHold.md)
 Update the navigation property legalHolds in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource](Update-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource](Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
 Update the navigation property siteSources in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource](Update-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource](Update-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
 Update the navigation property userSources in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource](Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Update the navigation property noncustodialDataSources in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex](Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex](Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex.md)
 Trigger an indexOperation
 
-### [Update-MgSecurityCaseEdiscoveryCaseOperation](Update-MgSecurityCaseEdiscoveryCaseOperation.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseOperation](Update-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Update the navigation property operations in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseReviewSet](Update-MgSecurityCaseEdiscoveryCaseReviewSet.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseReviewSet](Update-MgBetaSecurityCaseEdiscoveryCaseReviewSet.md)
 Update the navigation property reviewSets in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseReviewSetFile](Update-MgSecurityCaseEdiscoveryCaseReviewSetFile.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile](Update-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile.md)
 Update the navigation property files in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Update-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Update-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Update the navigation property queries in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseSearch](Update-MgSecurityCaseEdiscoveryCaseSearch.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseSearch](Update-MgBetaSecurityCaseEdiscoveryCaseSearch.md)
 Update the navigation property searches in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](Update-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Update-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Update the navigation property additionalSources in security
 
-### [Update-MgSecurityCaseEdiscoveryCaseSetting](Update-MgSecurityCaseEdiscoveryCaseSetting.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseSetting](Update-MgBetaSecurityCaseEdiscoveryCaseSetting.md)
 Update the properties of an ediscoveryCaseSettings object.
 
-### [Update-MgSecurityCaseEdiscoveryCaseTag](Update-MgSecurityCaseEdiscoveryCaseTag.md)
+### [Update-MgBetaSecurityCaseEdiscoveryCaseTag](Update-MgBetaSecurityCaseEdiscoveryCaseTag.md)
 Update the navigation property tags in security
 
-### [Update-MgSecurityCloudAppSecurityProfile](Update-MgSecurityCloudAppSecurityProfile.md)
+### [Update-MgBetaSecurityCloudAppSecurityProfile](Update-MgBetaSecurityCloudAppSecurityProfile.md)
 Update the navigation property cloudAppSecurityProfiles in security
 
-### [Update-MgSecurityDomainSecurityProfile](Update-MgSecurityDomainSecurityProfile.md)
+### [Update-MgBetaSecurityDomainSecurityProfile](Update-MgBetaSecurityDomainSecurityProfile.md)
 Update the navigation property domainSecurityProfiles in security
 
-### [Update-MgSecurityFileSecurityProfile](Update-MgSecurityFileSecurityProfile.md)
+### [Update-MgBetaSecurityFileSecurityProfile](Update-MgBetaSecurityFileSecurityProfile.md)
 Update the navigation property fileSecurityProfiles in security
 
-### [Update-MgSecurityHostSecurityProfile](Update-MgSecurityHostSecurityProfile.md)
+### [Update-MgBetaSecurityHostSecurityProfile](Update-MgBetaSecurityHostSecurityProfile.md)
 Update the navigation property hostSecurityProfiles in security
 
-### [Update-MgSecurityIncident](Update-MgSecurityIncident.md)
+### [Update-MgBetaSecurityIncident](Update-MgBetaSecurityIncident.md)
 Update the navigation property incidents in security
 
-### [Update-MgSecurityInformationProtection](Update-MgSecurityInformationProtection.md)
+### [Update-MgBetaSecurityInformationProtection](Update-MgBetaSecurityInformationProtection.md)
 Update the navigation property informationProtection in security
 
-### [Update-MgSecurityInformationProtectionLabelPolicySetting](Update-MgSecurityInformationProtectionLabelPolicySetting.md)
+### [Update-MgBetaSecurityInformationProtectionLabelPolicySetting](Update-MgBetaSecurityInformationProtectionLabelPolicySetting.md)
 Update the navigation property labelPolicySettings in security
 
-### [Update-MgSecurityInformationProtectionSensitivityLabel](Update-MgSecurityInformationProtectionSensitivityLabel.md)
+### [Update-MgBetaSecurityInformationProtectionSensitivityLabel](Update-MgBetaSecurityInformationProtectionSensitivityLabel.md)
 Update the navigation property sensitivityLabels in security
 
-### [Update-MgSecurityInformationProtectionSensitivityLabelParent](Update-MgSecurityInformationProtectionSensitivityLabelParent.md)
+### [Update-MgBetaSecurityInformationProtectionSensitivityLabelParent](Update-MgBetaSecurityInformationProtectionSensitivityLabelParent.md)
 Update the navigation property parent in security
 
-### [Update-MgSecurityIPSecurityProfile](Update-MgSecurityIPSecurityProfile.md)
+### [Update-MgBetaSecurityIPSecurityProfile](Update-MgBetaSecurityIPSecurityProfile.md)
 Update the navigation property ipSecurityProfiles in security
 
-### [Update-MgSecurityLabel](Update-MgSecurityLabel.md)
+### [Update-MgBetaSecurityLabel](Update-MgBetaSecurityLabel.md)
 Update the navigation property labels in security
 
-### [Update-MgSecurityLabelRetentionLabel](Update-MgSecurityLabelRetentionLabel.md)
+### [Update-MgBetaSecurityLabelRetentionLabel](Update-MgBetaSecurityLabelRetentionLabel.md)
 Update the navigation property retentionLabels in security
 
-### [Update-MgSecurityLabelRetentionLabelDispositionReviewStage](Update-MgSecurityLabelRetentionLabelDispositionReviewStage.md)
+### [Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage](Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage.md)
 Update the navigation property dispositionReviewStages in security
 
-### [Update-MgSecurityProviderTenantSetting](Update-MgSecurityProviderTenantSetting.md)
+### [Update-MgBetaSecurityProviderTenantSetting](Update-MgBetaSecurityProviderTenantSetting.md)
 Update the navigation property providerTenantSettings in security
 
-### [Update-MgSecuritySecureScore](Update-MgSecuritySecureScore.md)
+### [Update-MgBetaSecuritySecureScore](Update-MgBetaSecuritySecureScore.md)
 Update the navigation property secureScores in security
 
-### [Update-MgSecuritySecureScoreControlProfile](Update-MgSecuritySecureScoreControlProfile.md)
+### [Update-MgBetaSecuritySecureScoreControlProfile](Update-MgBetaSecuritySecureScoreControlProfile.md)
 Update the navigation property secureScoreControlProfiles in security
 
-### [Update-MgSecuritySubjectRightsRequest](Update-MgSecuritySubjectRightsRequest.md)
+### [Update-MgBetaSecuritySubjectRightsRequest](Update-MgBetaSecuritySubjectRightsRequest.md)
 Update the navigation property subjectRightsRequests in security
 
-### [Update-MgSecuritySubjectRightsRequestNote](Update-MgSecuritySubjectRightsRequestNote.md)
+### [Update-MgBetaSecuritySubjectRightsRequestNote](Update-MgBetaSecuritySubjectRightsRequestNote.md)
 Update the navigation property notes in security
 
-### [Update-MgSecurityThreatSubmission](Update-MgSecurityThreatSubmission.md)
+### [Update-MgBetaSecurityThreatSubmission](Update-MgBetaSecurityThreatSubmission.md)
 Update the navigation property threatSubmission in security
 
-### [Update-MgSecurityThreatSubmissionEmailThreat](Update-MgSecurityThreatSubmissionEmailThreat.md)
+### [Update-MgBetaSecurityThreatSubmissionEmailThreat](Update-MgBetaSecurityThreatSubmissionEmailThreat.md)
 Update the navigation property emailThreats in security
 
-### [Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy](Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
+### [Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy](Update-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
 Update the navigation property emailThreatSubmissionPolicies in security
 
-### [Update-MgSecurityThreatSubmissionFileThreat](Update-MgSecurityThreatSubmissionFileThreat.md)
+### [Update-MgBetaSecurityThreatSubmissionFileThreat](Update-MgBetaSecurityThreatSubmissionFileThreat.md)
 Update the navigation property fileThreats in security
 
-### [Update-MgSecurityThreatSubmissionUrlThreat](Update-MgSecurityThreatSubmissionUrlThreat.md)
+### [Update-MgBetaSecurityThreatSubmissionUrlThreat](Update-MgBetaSecurityThreatSubmissionUrlThreat.md)
 Update the navigation property urlThreats in security
 
-### [Update-MgSecurityTiIndicator](Update-MgSecurityTiIndicator.md)
+### [Update-MgBetaSecurityTiIndicator](Update-MgBetaSecurityTiIndicator.md)
 Update the navigation property tiIndicators in security
 
-### [Update-MgSecurityTiIndicatorMultiple](Update-MgSecurityTiIndicatorMultiple.md)
+### [Update-MgBetaSecurityTiIndicatorMultiple](Update-MgBetaSecurityTiIndicatorMultiple.md)
 Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 
-### [Update-MgSecurityTrigger](Update-MgSecurityTrigger.md)
+### [Update-MgBetaSecurityTrigger](Update-MgBetaSecurityTrigger.md)
 Update the navigation property triggers in security
 
-### [Update-MgSecurityTriggerRetentionEvent](Update-MgSecurityTriggerRetentionEvent.md)
+### [Update-MgBetaSecurityTriggerRetentionEvent](Update-MgBetaSecurityTriggerRetentionEvent.md)
 Update the navigation property retentionEvents in security
 
-### [Update-MgSecurityTriggerType](Update-MgSecurityTriggerType.md)
+### [Update-MgBetaSecurityTriggerType](Update-MgBetaSecurityTriggerType.md)
 Update the navigation property triggerTypes in security
 
-### [Update-MgSecurityTriggerTypeRetentionEventType](Update-MgSecurityTriggerTypeRetentionEventType.md)
+### [Update-MgBetaSecurityTriggerTypeRetentionEventType](Update-MgBetaSecurityTriggerTypeRetentionEventType.md)
 Update the navigation property retentionEventTypes in security
 
-### [Update-MgSecurityUserSecurityProfile](Update-MgSecurityUserSecurityProfile.md)
+### [Update-MgBetaSecurityUserSecurityProfile](Update-MgBetaSecurityUserSecurityProfile.md)
 Update the navigation property userSecurityProfiles in security
 

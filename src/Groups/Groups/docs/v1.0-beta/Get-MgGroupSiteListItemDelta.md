@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupsitelistitemdelta
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/get-mggroupsitelistitemdelta
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteListItemDelta
+# Get-MgBetaGroupSiteListItemDelta
 
 ## SYNOPSIS
 Invoke function delta
@@ -14,27 +14,27 @@ Invoke function delta
 
 ### Delta (Default)
 ```
-Get-MgGroupSiteListItemDelta -GroupId <String> -ListId <String> -SiteId <String> [-Count] [-Filter <String>]
+Get-MgBetaGroupSiteListItemDelta -GroupId <String> -ListId <String> -SiteId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### Delta1
 ```
-Get-MgGroupSiteListItemDelta -GroupId <String> -ListId <String> -SiteId <String> -Token <String> [-Count]
+Get-MgBetaGroupSiteListItemDelta -GroupId <String> -ListId <String> -SiteId <String> -Token <String> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgGroupSiteListItemDelta -InputObject <IGroupsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaGroupSiteListItemDelta -InputObject <IGroupsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity1
 ```
-Get-MgGroupSiteListItemDelta -InputObject <IGroupsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaGroupSiteListItemDelta -InputObject <IGroupsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -95,7 +95,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: DeltaViaIdentity, DeltaViaIdentity1
 Aliases:
 
@@ -231,11 +231,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphListItem1
 
 ## NOTES
 

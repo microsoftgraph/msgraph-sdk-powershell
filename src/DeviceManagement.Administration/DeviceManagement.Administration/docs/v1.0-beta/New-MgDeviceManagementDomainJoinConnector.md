@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementdomainjoinconnector
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementdomainjoinconnector
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDomainJoinConnector
+# New-MgBetaDeviceManagementDomainJoinConnector
 
 ## SYNOPSIS
 Create new navigation property to domainJoinConnectors for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to domainJoinConnectors for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDomainJoinConnector [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+New-MgBetaDeviceManagementDomainJoinConnector [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Id <String>] [-LastConnectionDateTime <DateTime>] [-State <DeviceManagementDomainJoinConnectorState>]
  [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementDomainJoinConnector -BodyParameter <IMicrosoftGraphDeviceManagementDomainJoinConnector>
+New-MgBetaDeviceManagementDomainJoinConnector -BodyParameter <IMicrosoftGraphDeviceManagementDomainJoinConnector>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ A Domain Join Connector is a connector that is responsible to allocate (and dele
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
 Parameter Sets: Create
 Aliases:
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 The ODJ request states.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceManagementDomainJoinConnectorState
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementDomainJoinConnectorState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -175,11 +175,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityattacksimulationautomation
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/get-mgsecurityattacksimulationautomation
 schema: 2.0.0
 ---
 
-# Get-MgSecurityAttackSimulationAutomation
+# Get-MgBetaSecurityAttackSimulationAutomation
 
 ## SYNOPSIS
 Represents simulation automation created to run on a tenant.
@@ -14,20 +14,20 @@ Represents simulation automation created to run on a tenant.
 
 ### List (Default)
 ```
-Get-MgSecurityAttackSimulationAutomation [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaSecurityAttackSimulationAutomation [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSecurityAttackSimulationAutomation -SimulationAutomationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityAttackSimulationAutomation -SimulationAutomationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Represents simulation automation created to run on a tenant.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSecurityAttackSimulationAutomation Cmdlet
+### Example 1: Using the Get-MgBetaSecurityAttackSimulationAutomation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAttackSimulationAutomation
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAttackSimulationAutomation
 ```
 
-This example shows how to use the Get-MgSecurityAttackSimulationAutomation Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAttackSimulationAutomation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulationAutomation
 
 ## NOTES
 

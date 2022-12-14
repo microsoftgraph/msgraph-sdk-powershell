@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mggroupeventinstanceexceptionoccurrencemultivalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/remove-mggroupeventinstanceexceptionoccurrencemultivalueextendedproperty
 schema: 2.0.0
 ---
 
-# Remove-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty
+# Remove-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty
 
 ## SYNOPSIS
 Delete navigation property multiValueExtendedProperties for groups
@@ -14,14 +14,14 @@ Delete navigation property multiValueExtendedProperties for groups
 
 ### Delete (Default)
 ```
-Remove-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty -EventId <String> -EventId1 <String>
+Remove-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty -EventId <String> -EventId1 <String>
  -EventId2 <String> -GroupId <String> -MultiValueLegacyExtendedPropertyId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty -InputObject <ICalendarIdentity>
+Remove-MgBetaGroupEventInstanceExceptionOccurrenceMultiValueExtendedProperty -InputObject <ICalendarIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -112,7 +112,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 

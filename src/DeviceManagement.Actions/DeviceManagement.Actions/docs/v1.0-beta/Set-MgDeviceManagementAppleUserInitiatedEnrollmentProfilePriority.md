@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementappleuserinitiatedenrollmentprofilepriority
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementappleuserinitiatedenrollmentprofilepriority
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
+# Set-MgBetaDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
 
 ## SYNOPSIS
 Invoke action setPriority
@@ -14,14 +14,14 @@ Invoke action setPriority
 
 ### SetExpanded (Default)
 ```
-Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
+Set-MgBetaDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
  -AppleUserInitiatedEnrollmentProfileId <String> [-AdditionalProperties <Hashtable>] [-Priority <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
+Set-MgBetaDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
  -AppleUserInitiatedEnrollmentProfileId <String>
  -BodyParameter <IPathsW7QdckDevicemanagementAppleuserinitiatedenrollmentprofilesAppleuserinitiatedenrollmentprofileIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
 
 ### SetViaIdentity
 ```
-Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
+Set-MgBetaDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsW7QdckDevicemanagementAppleuserinitiatedenrollmentprofilesAppleuserinitiatedenrollmentprofileIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
 
 ### SetViaIdentityExpanded
 ```
-Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
+Set-MgBetaDeviceManagementAppleUserInitiatedEnrollmentProfilePriority
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>] [-Priority <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsW7QdckDevicemanagementAppleuserinitiatedenrollmentprofilesAppleuserinitiatedenrollmentprofileIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsW7QdckDevicemanagementAppleuserinitiatedenrollmentprofilesAppleuserinitiatedenrollmentprofileIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
@@ -177,9 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsW7QdckDevicemanagementAppleuserinitiatedenrollmentprofilesAppleuserinitiatedenrollmentprofileIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsW7QdckDevicemanagementAppleuserinitiatedenrollmentprofilesAppleuserinitiatedenrollmentprofileIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

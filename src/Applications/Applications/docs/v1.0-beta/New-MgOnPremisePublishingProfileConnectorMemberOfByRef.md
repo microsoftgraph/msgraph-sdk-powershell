@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgonpremisepublishingprofileconnectormemberofbyref
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/new-mgonpremisepublishingprofileconnectormemberofbyref
 schema: 2.0.0
 ---
 
-# New-MgOnPremisePublishingProfileConnectorMemberOfByRef
+# New-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef
 
 ## SYNOPSIS
 Create new navigation property ref to memberOf for onPremisesPublishingProfiles
@@ -14,27 +14,27 @@ Create new navigation property ref to memberOf for onPremisesPublishingProfiles
 
 ### CreateExpanded (Default)
 ```
-New-MgOnPremisePublishingProfileConnectorMemberOfByRef -ConnectorId <String>
+New-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef -ConnectorId <String>
  -OnPremisesPublishingProfileId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOnPremisePublishingProfileConnectorMemberOfByRef -ConnectorId <String>
+New-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef -ConnectorId <String>
  -OnPremisesPublishingProfileId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOnPremisePublishingProfileConnectorMemberOfByRef -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef -InputObject <IApplicationsIdentity>
  -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOnPremisePublishingProfileConnectorMemberOfByRef -InputObject <IApplicationsIdentity>
+New-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,16 +43,16 @@ Create new navigation property ref to memberOf for onPremisesPublishingProfiles
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgOnPremisePublishingProfileConnectorMemberOfByRef Cmdlet
+### Example 1: Using the New-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/beta/onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}"
 }
-New-MgOnPremisePublishingProfileConnectorMemberOfByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorId $connectorId -BodyParameter $params
+New-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorId $connectorId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgOnPremisePublishingProfileConnectorMemberOfByRef Cmdlet.
+This example shows how to use the New-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -200,9 +200,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
 ## OUTPUTS
 

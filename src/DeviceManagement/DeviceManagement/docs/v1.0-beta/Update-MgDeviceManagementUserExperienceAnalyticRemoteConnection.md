@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticremoteconnection
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticremoteconnection
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection
+# Update-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection
 
 ## SYNOPSIS
 Update the navigation property userExperienceAnalyticsRemoteConnection in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property userExperienceAnalyticsRemoteConnection in device
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection
+Update-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection
  -UserExperienceAnalyticsRemoteConnectionId <String> [-AdditionalProperties <Hashtable>]
  [-CloudPcFailurePercentage <Double>] [-CloudPcRoundTripTime <Double>] [-CloudPcSignInTime <Double>]
  [-CoreBootTime <Double>] [-CoreSignInTime <Double>] [-DeviceCount <Int32>] [-DeviceId <String>]
@@ -25,7 +25,7 @@ Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection
 
 ### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection
+Update-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection
  -UserExperienceAnalyticsRemoteConnectionId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsRemoteConnection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -33,14 +33,14 @@ Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsRemoteConnection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CloudPcFailurePercentage <Double>] [-CloudPcRoundTripTime <Double>]
  [-CloudPcSignInTime <Double>] [-CoreBootTime <Double>] [-CoreSignInTime <Double>] [-DeviceCount <Int32>]
  [-DeviceId <String>] [-DeviceName <String>] [-Id <String>] [-Manufacturer <String>] [-Model <String>]
@@ -75,7 +75,7 @@ The user experience analyte remote connection entity.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -233,7 +233,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -386,9 +386,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
 
 ## OUTPUTS
 

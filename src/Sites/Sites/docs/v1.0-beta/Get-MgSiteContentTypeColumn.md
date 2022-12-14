@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitecontenttypecolumn
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitecontenttypecolumn
 schema: 2.0.0
 ---
 
-# Get-MgSiteContentTypeColumn
+# Get-MgBetaSiteContentTypeColumn
 
 ## SYNOPSIS
 The collection of column definitions for this contentType.
@@ -14,20 +14,20 @@ The collection of column definitions for this contentType.
 
 ### List (Default)
 ```
-Get-MgSiteContentTypeColumn -ContentTypeId <String> [-SiteId <String>] [-ExpandProperty <String[]>]
+Get-MgBetaSiteContentTypeColumn -ContentTypeId <String> [-SiteId <String>] [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSiteContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String> [-SiteId <String>]
+Get-MgBetaSiteContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String> [-SiteId <String>]
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteContentTypeColumn -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteContentTypeColumn -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The collection of column definitions for this contentType.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteContentTypeColumn Cmdlet
+### Example 1: Using the Get-MgBetaSiteContentTypeColumn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
 ```
 
-This example shows how to use the Get-MgSiteContentTypeColumn Cmdlet.
+This example shows how to use the Get-MgBetaSiteContentTypeColumn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSiteContentTypeColumn Cmdlet
+### Example 2: Using the Get-MgBetaSiteContentTypeColumn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId
 ```
 
-This example shows how to use the Get-MgSiteContentTypeColumn Cmdlet.
+This example shows how to use the Get-MgBetaSiteContentTypeColumn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -152,7 +152,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -273,11 +273,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition
 
 ## NOTES
 

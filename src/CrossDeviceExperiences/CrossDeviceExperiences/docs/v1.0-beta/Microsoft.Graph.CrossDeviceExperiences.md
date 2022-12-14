@@ -1,46 +1,46 @@
 ---
-Module Name: Microsoft.Graph.CrossDeviceExperiences
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
 Module Guid: 0dcb4e9c-3d96-44be-b61d-45c4d1986768
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.Beta.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# Microsoft.Graph.CrossDeviceExperiences Module
+# Microsoft.Graph.Beta.CrossDeviceExperiences Module
 ## Description
-Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta PowerShell Cmdlets
 
-## Microsoft.Graph.CrossDeviceExperiences Cmdlets
-### [Get-MgUserActivity](Get-MgUserActivity.md)
+## Microsoft.Graph.Beta.CrossDeviceExperiences Cmdlets
+### [Get-MgBetaUserActivity](Get-MgBetaUserActivity.md)
 Get activities from users
 
-### [Get-MgUserActivityHistoryItem](Get-MgUserActivityHistoryItem.md)
+### [Get-MgBetaUserActivityHistoryItem](Get-MgBetaUserActivityHistoryItem.md)
 Get historyItems from users
 
-### [Get-MgUserActivityHistoryItemActivity](Get-MgUserActivityHistoryItemActivity.md)
+### [Get-MgBetaUserActivityHistoryItemActivity](Get-MgBetaUserActivityHistoryItemActivity.md)
 Get activity from users
 
-### [Get-MgUserDevice](Get-MgUserDevice.md)
+### [Get-MgBetaUserDevice](Get-MgBetaUserDevice.md)
 Get devices from users
 
-### [Get-MgUserDeviceCommand](Get-MgUserDeviceCommand.md)
+### [Get-MgBetaUserDeviceCommand](Get-MgBetaUserDeviceCommand.md)
 Set of commands sent to this device.
 
-### [Get-MgUserDeviceCommandResponsepayload](Get-MgUserDeviceCommandResponsepayload.md)
+### [Get-MgBetaUserDeviceCommandResponsepayload](Get-MgBetaUserDeviceCommandResponsepayload.md)
 Get responsepayload from users
 
-### [Get-MgUserDeviceExtension](Get-MgUserDeviceExtension.md)
+### [Get-MgBetaUserDeviceExtension](Get-MgBetaUserDeviceExtension.md)
 The collection of open extensions defined for the device.
 Read-only.
 Nullable.
 
-### [Get-MgUserDeviceMemberOf](Get-MgUserDeviceMemberOf.md)
+### [Get-MgBetaUserDeviceMemberOf](Get-MgBetaUserDeviceMemberOf.md)
 Groups and administrative units that this device is a member of.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgUserDeviceRegisteredOwner](Get-MgUserDeviceRegisteredOwner.md)
+### [Get-MgBetaUserDeviceRegisteredOwner](Get-MgBetaUserDeviceRegisteredOwner.md)
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
 Currently, there can be only one owner.
@@ -48,7 +48,7 @@ Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgUserDeviceRegisteredOwnerByRef](Get-MgUserDeviceRegisteredOwnerByRef.md)
+### [Get-MgBetaUserDeviceRegisteredOwnerByRef](Get-MgBetaUserDeviceRegisteredOwnerByRef.md)
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
 Currently, there can be only one owner.
@@ -56,78 +56,78 @@ Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgUserDeviceRegisteredUser](Get-MgUserDeviceRegisteredUser.md)
+### [Get-MgBetaUserDeviceRegisteredUser](Get-MgBetaUserDeviceRegisteredUser.md)
 Collection of registered users of the device.
 For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
 Read-only.
 Nullable.
 Supports $expand.
 
-### [Get-MgUserDeviceTransitiveMemberOf](Get-MgUserDeviceTransitiveMemberOf.md)
+### [Get-MgBetaUserDeviceTransitiveMemberOf](Get-MgBetaUserDeviceTransitiveMemberOf.md)
 Groups and administrative units that this device is a member of.
 This operation is transitive.
 Supports $expand.
 
-### [Get-MgUserDeviceUsageRights](Get-MgUserDeviceUsageRights.md)
+### [Get-MgBetaUserDeviceUsageRights](Get-MgBetaUserDeviceUsageRights.md)
 Represents the usage rights a device has been granted.
 
-### [New-MgUserActivity](New-MgUserActivity.md)
+### [New-MgBetaUserActivity](New-MgBetaUserActivity.md)
 Create new navigation property to activities for users
 
-### [New-MgUserActivityHistoryItem](New-MgUserActivityHistoryItem.md)
+### [New-MgBetaUserActivityHistoryItem](New-MgBetaUserActivityHistoryItem.md)
 Create new navigation property to historyItems for users
 
-### [New-MgUserDevice](New-MgUserDevice.md)
+### [New-MgBetaUserDevice](New-MgBetaUserDevice.md)
 Create new navigation property to devices for users
 
-### [New-MgUserDeviceCommand](New-MgUserDeviceCommand.md)
+### [New-MgBetaUserDeviceCommand](New-MgBetaUserDeviceCommand.md)
 Create new navigation property to commands for users
 
-### [New-MgUserDeviceExtension](New-MgUserDeviceExtension.md)
+### [New-MgBetaUserDeviceExtension](New-MgBetaUserDeviceExtension.md)
 Create new navigation property to extensions for users
 
-### [New-MgUserDeviceRegisteredOwnerByRef](New-MgUserDeviceRegisteredOwnerByRef.md)
+### [New-MgBetaUserDeviceRegisteredOwnerByRef](New-MgBetaUserDeviceRegisteredOwnerByRef.md)
 Create new navigation property ref to registeredOwners for users
 
-### [New-MgUserDeviceUsageRights](New-MgUserDeviceUsageRights.md)
+### [New-MgBetaUserDeviceUsageRights](New-MgBetaUserDeviceUsageRights.md)
 Create new navigation property to usageRights for users
 
-### [Remove-MgUserActivity](Remove-MgUserActivity.md)
+### [Remove-MgBetaUserActivity](Remove-MgBetaUserActivity.md)
 Delete navigation property activities for users
 
-### [Remove-MgUserActivityHistoryItem](Remove-MgUserActivityHistoryItem.md)
+### [Remove-MgBetaUserActivityHistoryItem](Remove-MgBetaUserActivityHistoryItem.md)
 Delete navigation property historyItems for users
 
-### [Remove-MgUserDevice](Remove-MgUserDevice.md)
+### [Remove-MgBetaUserDevice](Remove-MgBetaUserDevice.md)
 Delete navigation property devices for users
 
-### [Remove-MgUserDeviceCommand](Remove-MgUserDeviceCommand.md)
+### [Remove-MgBetaUserDeviceCommand](Remove-MgBetaUserDeviceCommand.md)
 Delete navigation property commands for users
 
-### [Remove-MgUserDeviceExtension](Remove-MgUserDeviceExtension.md)
+### [Remove-MgBetaUserDeviceExtension](Remove-MgBetaUserDeviceExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserDeviceRegisteredOwnerByRef](Remove-MgUserDeviceRegisteredOwnerByRef.md)
+### [Remove-MgBetaUserDeviceRegisteredOwnerByRef](Remove-MgBetaUserDeviceRegisteredOwnerByRef.md)
 Delete ref of navigation property registeredOwners for users
 
-### [Remove-MgUserDeviceUsageRights](Remove-MgUserDeviceUsageRights.md)
+### [Remove-MgBetaUserDeviceUsageRights](Remove-MgBetaUserDeviceUsageRights.md)
 Delete navigation property usageRights for users
 
-### [Update-MgUserActivity](Update-MgUserActivity.md)
+### [Update-MgBetaUserActivity](Update-MgBetaUserActivity.md)
 Update the navigation property activities in users
 
-### [Update-MgUserActivityHistoryItem](Update-MgUserActivityHistoryItem.md)
+### [Update-MgBetaUserActivityHistoryItem](Update-MgBetaUserActivityHistoryItem.md)
 Update the navigation property historyItems in users
 
-### [Update-MgUserDevice](Update-MgUserDevice.md)
+### [Update-MgBetaUserDevice](Update-MgBetaUserDevice.md)
 Update the navigation property devices in users
 
-### [Update-MgUserDeviceCommand](Update-MgUserDeviceCommand.md)
+### [Update-MgBetaUserDeviceCommand](Update-MgBetaUserDeviceCommand.md)
 Update the navigation property commands in users
 
-### [Update-MgUserDeviceExtension](Update-MgUserDeviceExtension.md)
+### [Update-MgBetaUserDeviceExtension](Update-MgBetaUserDeviceExtension.md)
 Update the navigation property extensions in users
 
-### [Update-MgUserDeviceUsageRights](Update-MgUserDeviceUsageRights.md)
+### [Update-MgBetaUserDeviceUsageRights](Update-MgBetaUserDeviceUsageRights.md)
 Update the navigation property usageRights in users
 

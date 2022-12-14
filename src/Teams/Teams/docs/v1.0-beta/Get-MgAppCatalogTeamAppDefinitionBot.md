@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgappcatalogteamappdefinitionbot
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgappcatalogteamappdefinitionbot
 schema: 2.0.0
 ---
 
-# Get-MgAppCatalogTeamAppDefinitionBot
+# Get-MgBetaAppCatalogTeamAppDefinitionBot
 
 ## SYNOPSIS
 Get the bot associated with a specific definition of the  TeamsApp.
@@ -14,13 +14,13 @@ Get the bot associated with a specific definition of the  TeamsApp.
 
 ### Get (Default)
 ```
-Get-MgAppCatalogTeamAppDefinitionBot -TeamsAppDefinitionId <String> -TeamsAppId <String>
+Get-MgBetaAppCatalogTeamAppDefinitionBot -TeamsAppDefinitionId <String> -TeamsAppId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Get the bot associated with a specific definition of the  TeamsApp.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgAppCatalogTeamAppDefinitionBot Cmdlet
+### Example 1: Using the Get-MgBetaAppCatalogTeamAppDefinitionBot Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgAppCatalogTeamAppDefinitionBot -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaAppCatalogTeamAppDefinitionBot -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId
 ```
 
-This example shows how to use the Get-MgAppCatalogTeamAppDefinitionBot Cmdlet.
+This example shows how to use the Get-MgBetaAppCatalogTeamAppDefinitionBot Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -121,7 +121,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

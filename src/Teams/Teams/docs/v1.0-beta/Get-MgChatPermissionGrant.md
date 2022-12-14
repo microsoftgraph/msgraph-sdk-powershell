@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgchatpermissiongrant
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mgchatpermissiongrant
 schema: 2.0.0
 ---
 
-# Get-MgChatPermissionGrant
+# Get-MgBetaChatPermissionGrant
 
 ## SYNOPSIS
 A collection of permissions granted to apps for the chat.
@@ -14,20 +14,20 @@ A collection of permissions granted to apps for the chat.
 
 ### List (Default)
 ```
-Get-MgChatPermissionGrant -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaChatPermissionGrant -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgChatPermissionGrant -ChatId <String> -ResourceSpecificPermissionGrantId <String>
+Get-MgBetaChatPermissionGrant -ChatId <String> -ResourceSpecificPermissionGrantId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgChatPermissionGrant -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaChatPermissionGrant -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ A collection of permissions granted to apps for the chat.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgChatPermissionGrant Cmdlet
+### Example 1: Using the Get-MgBetaChatPermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatPermissionGrant -ChatId $chatId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatPermissionGrant -ChatId $chatId
 ```
 
-This example shows how to use the Get-MgChatPermissionGrant Cmdlet.
+This example shows how to use the Get-MgBetaChatPermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
 
 ## NOTES
 

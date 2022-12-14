@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mgplannerrostermember
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/update-mgplannerrostermember
 schema: 2.0.0
 ---
 
-# Update-MgPlannerRosterMember
+# Update-MgBetaPlannerRosterMember
 
 ## SYNOPSIS
 Update the navigation property members in planner
@@ -14,26 +14,26 @@ Update the navigation property members in planner
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPlannerRosterMember -PlannerRosterId <String> -PlannerRosterMemberId <String>
+Update-MgBetaPlannerRosterMember -PlannerRosterId <String> -PlannerRosterMemberId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Roles <String[]>] [-TenantId <String>]
  [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPlannerRosterMember -PlannerRosterId <String> -PlannerRosterMemberId <String>
+Update-MgBetaPlannerRosterMember -PlannerRosterId <String> -PlannerRosterMemberId <String>
  -BodyParameter <IMicrosoftGraphPlannerRosterMember> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPlannerRosterMember -InputObject <IPlannerIdentity>
+Update-MgBetaPlannerRosterMember -InputObject <IPlannerIdentity>
  -BodyParameter <IMicrosoftGraphPlannerRosterMember> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPlannerRosterMember -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPlannerRosterMember -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Roles <String[]>] [-TenantId <String>] [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ plannerRosterMember
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -236,9 +236,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

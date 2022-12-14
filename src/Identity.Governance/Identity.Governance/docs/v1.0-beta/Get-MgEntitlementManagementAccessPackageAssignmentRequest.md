@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentrequest
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageAssignmentRequest
+# Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest
 
 ## SYNOPSIS
 Represents access package assignment requests created by or on behalf of a user.
@@ -14,32 +14,32 @@ Represents access package assignment requests created by or on behalf of a user.
 
 ### ListAll (Default)
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentRequest [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest [-ExpandProperty <String[]>] [-Property <String[]>]
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId <String>
+Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentRequest [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### ListByAccessPackageId
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageId <String>
+Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest -AccessPackageId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [<CommonParameters>]
 ```
@@ -51,10 +51,10 @@ Represents access package assignment requests created by or on behalf of a user.
 
 ### Example 1: Get all access package assignment requests
 ```powershell
-Get-MgEntitlementManagementAccessPackageAssignmentRequest | Format-List
+Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest | Format-List
 
-AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage
-AccessPackageAssignment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignment
+AccessPackage           : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackage
+AccessPackageAssignment : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageAssignment
 Answers                 : {}
 CompletedDate           : 11/8/2021 10:21:35 AM
 CreatedDateTime         : 11/8/2021 7:21:09 AM
@@ -65,8 +65,8 @@ Justification           :
 RequestState            : Delivered
 RequestStatus           : FulfilledNotificationTriggered
 RequestType             : UserAdd
-Requestor               : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageSubject
-Schedule                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
+Requestor               : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageSubject
+Schedule                : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphRequestSchedule
 AdditionalProperties    : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackageAssignmentRequests/$entity]}
 ```
 
@@ -74,11 +74,11 @@ This example retrieves all access package assignment requests.
 
 ### Example 2: Get  access package assignment request using the request id
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId 'c82bc0cd-4fbc-4492-8c75-54c41dc74803'| Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId 'c82bc0cd-4fbc-4492-8c75-54c41dc74803'| Format-List
 
-AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage
-AccessPackageAssignment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignment
+AccessPackage           : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackage
+AccessPackageAssignment : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageAssignment
 Answers                 : {}
 CompletedDate           : 11/8/2021 10:21:35 AM
 CreatedDateTime         : 11/8/2021 7:21:09 AM
@@ -89,8 +89,8 @@ Justification           :
 RequestState            : Delivered
 RequestStatus           : FulfilledNotificationTriggered
 RequestType             : UserAdd
-Requestor               : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageSubject
-Schedule                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
+Requestor               : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphAccessPackageSubject
+Schedule                : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphRequestSchedule
 AdditionalProperties    : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackageAssignmentRequests/$entity]}
 ```
 
@@ -194,7 +194,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -300,13 +300,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest1
 
 ## NOTES
 

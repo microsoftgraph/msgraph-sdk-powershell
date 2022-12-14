@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgdismissusereventreminder
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgdismissusereventreminder
 schema: 2.0.0
 ---
 
-# Invoke-MgDismissUserEventReminder
+# Invoke-MgBetaDismissUserEventReminder
 
 ## SYNOPSIS
 Dismiss a reminder that has been triggered for an event in a user calendar.
@@ -14,13 +14,13 @@ Dismiss a reminder that has been triggered for an event in a user calendar.
 
 ### Dismiss (Default)
 ```
-Invoke-MgDismissUserEventReminder -EventId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaDismissUserEventReminder -EventId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DismissViaIdentity
 ```
-Invoke-MgDismissUserEventReminder -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaDismissUserEventReminder -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,14 +29,14 @@ Dismiss a reminder that has been triggered for an event in a user calendar.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgDismissUserEventReminder Cmdlet
+### Example 1: Using the Invoke-MgBetaDismissUserEventReminder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 # A UPN can also be used as -UserId.
-Invoke-MgDismissUserEventReminder -UserId $userId -EventId $eventId
+Invoke-MgBetaDismissUserEventReminder -UserId $userId -EventId $eventId
 ```
 
-This example shows how to use the Invoke-MgDismissUserEventReminder Cmdlet.
+This example shows how to use the Invoke-MgBetaDismissUserEventReminder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -61,7 +61,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: DismissViaIdentity
 Aliases:
 
@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

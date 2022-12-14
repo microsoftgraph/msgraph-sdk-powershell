@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicyadminconsentrequestpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicyadminconsentrequestpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyAdminConsentRequestPolicy
+# Remove-MgBetaPolicyAdminConsentRequestPolicy
 
 ## SYNOPSIS
 Delete navigation property adminConsentRequestPolicy for policies
@@ -13,7 +13,7 @@ Delete navigation property adminConsentRequestPolicy for policies
 ## SYNTAX
 
 ```
-Remove-MgPolicyAdminConsentRequestPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPolicyAdminConsentRequestPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 

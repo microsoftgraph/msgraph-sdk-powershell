@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationphonemethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mguserauthenticationphonemethod
 schema: 2.0.0
 ---
 
-# New-MgUserAuthenticationPhoneMethod
+# New-MgBetaUserAuthenticationPhoneMethod
 
 ## SYNOPSIS
 Add a new phone authentication method.
@@ -19,26 +19,26 @@ Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` n
 
 ### CreateExpanded (Default)
 ```
-New-MgUserAuthenticationPhoneMethod -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaUserAuthenticationPhoneMethod -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PhoneNumber <String>] [-PhoneType <String>] [-SmsSignInState <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserAuthenticationPhoneMethod -UserId <String> -BodyParameter <IMicrosoftGraphPhoneAuthenticationMethod>
+New-MgBetaUserAuthenticationPhoneMethod -UserId <String> -BodyParameter <IMicrosoftGraphPhoneAuthenticationMethod>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphPhoneAuthenticationMethod> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PhoneNumber <String>] [-PhoneType <String>]
  [-SmsSignInState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,18 +53,18 @@ Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` n
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserAuthenticationPhoneMethod Cmdlet
+### Example 1: Using the New-MgBetaUserAuthenticationPhoneMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	PhoneNumber = "+1 2065555555"
 	PhoneType = "mobile"
 }
 # A UPN can also be used as -UserId.
-New-MgUserAuthenticationPhoneMethod -UserId $userId -BodyParameter $params
+New-MgBetaUserAuthenticationPhoneMethod -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserAuthenticationPhoneMethod Cmdlet.
+This example shows how to use the New-MgBetaUserAuthenticationPhoneMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -89,7 +89,7 @@ phoneAuthenticationMethod
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -231,13 +231,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
 
 ## NOTES
 

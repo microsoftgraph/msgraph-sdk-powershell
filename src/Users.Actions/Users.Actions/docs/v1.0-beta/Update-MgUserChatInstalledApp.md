@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/update-mguserchatinstalledapp
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/update-mguserchatinstalledapp
 schema: 2.0.0
 ---
 
-# Update-MgUserChatInstalledApp
+# Update-MgBetaUserChatInstalledApp
 
 ## SYNOPSIS
 Upgrade an app installation within a chat.
@@ -14,13 +14,13 @@ Upgrade an app installation within a chat.
 
 ### Upgrade (Default)
 ```
-Update-MgUserChatInstalledApp -ChatId <String> -TeamsAppInstallationId <String> -UserId <String> [-PassThru]
+Update-MgBetaUserChatInstalledApp -ChatId <String> -TeamsAppInstallationId <String> -UserId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpgradeViaIdentity
 ```
-Update-MgUserChatInstalledApp -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaUserChatInstalledApp -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -31,12 +31,12 @@ Upgrade an app installation within a chat.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 
-Update-MgChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
+Update-MgBetaChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 ```
 
-This example shows how to use the Update-MgUserChatInstalledApp Cmdlet.
+This example shows how to use the Update-MgBetaUserChatInstalledApp Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: UpgradeViaIdentity
 Aliases:
 
@@ -154,7 +154,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

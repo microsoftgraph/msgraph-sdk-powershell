@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementmicrosofttunnelserverlogcollectionresponse
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementmicrosofttunnelserverlogcollectionresponse
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
+# New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
 
 ## SYNOPSIS
 Create new navigation property to microsoftTunnelServerLogCollectionResponses for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to microsoftTunnelServerLogCollectionResponses fo
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse [-AdditionalProperties <Hashtable>]
  [-EndDateTime <DateTime>] [-ExpiryDateTime <DateTime>] [-Id <String>] [-RequestDateTime <DateTime>]
  [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
  [-Status <MicrosoftTunnelLogCollectionStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse [-AdditionalPro
 
 ### Create
 ```
-New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
+New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
  -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Entity that stores the server log collection status.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
 Parameter Sets: Create
 Aliases:
 
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 Enum type that represent the status of log collection
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.MicrosoftTunnelLogCollectionStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.MicrosoftTunnelLogCollectionStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -222,11 +222,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
 
 ## NOTES
 

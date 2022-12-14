@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/remove-mgagreementacceptance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/remove-mgagreementacceptance
 schema: 2.0.0
 ---
 
-# Remove-MgAgreementAcceptance
+# Remove-MgBetaAgreementAcceptance
 
 ## SYNOPSIS
 Delete navigation property acceptances for agreements
@@ -14,13 +14,13 @@ Delete navigation property acceptances for agreements
 
 ### Delete (Default)
 ```
-Remove-MgAgreementAcceptance -AgreementAcceptanceId <String> -AgreementId <String> [-IfMatch <String>]
+Remove-MgBetaAgreementAcceptance -AgreementAcceptanceId <String> -AgreementId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgAgreementAcceptance -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru]
+Remove-MgBetaAgreementAcceptance -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgorganizationextension
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/new-mgorganizationextension
 schema: 2.0.0
 ---
 
-# New-MgOrganizationExtension
+# New-MgBetaOrganizationExtension
 
 ## SYNOPSIS
 Create new navigation property to extensions for organization
@@ -14,25 +14,25 @@ Create new navigation property to extensions for organization
 
 ### CreateExpanded (Default)
 ```
-New-MgOrganizationExtension -OrganizationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaOrganizationExtension -OrganizationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOrganizationExtension -OrganizationId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaOrganizationExtension -OrganizationId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgOrganizationExtension -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <Hashtable>
+New-MgBetaOrganizationExtension -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <Hashtable>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgOrganizationExtension -InputObject <IIdentityDirectoryManagementIdentity>
+New-MgBetaOrganizationExtension -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -94,7 +94,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -156,7 +156,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### System.Collections.Hashtable
 

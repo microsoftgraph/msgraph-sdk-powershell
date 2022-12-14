@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mgarchiveteam
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mgarchiveteam
 schema: 2.0.0
 ---
 
-# Invoke-MgArchiveTeam
+# Invoke-MgBetaArchiveTeam
 
 ## SYNOPSIS
 Archive the specified team.
@@ -19,27 +19,27 @@ To restore a team from its archived state, use the API to unarchive.
 
 ### ArchiveExpanded1 (Default)
 ```
-Invoke-MgArchiveTeam -TeamId <String> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaArchiveTeam -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-ShouldSetSpoSiteReadOnlyForMembers] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Archive1
 ```
-Invoke-MgArchiveTeam -TeamId <String>
+Invoke-MgBetaArchiveTeam -TeamId <String>
  -BodyParameter <IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentity1
 ```
-Invoke-MgArchiveTeam -InputObject <ITeamsIdentity>
+Invoke-MgBetaArchiveTeam -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentityExpanded1
 ```
-Invoke-MgArchiveTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaArchiveTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ShouldSetSpoSiteReadOnlyForMembers] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,13 +53,13 @@ To restore a team from its archived state, use the API to unarchive.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgArchiveTeam Cmdlet
+### Example 1: Using the Invoke-MgBetaArchiveTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Invoke-MgArchiveTeam -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Invoke-MgBetaArchiveTeam -TeamId $teamId
 ```
 
-This example shows how to use the Invoke-MgArchiveTeam Cmdlet.
+This example shows how to use the Invoke-MgBetaArchiveTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Archive1, ArchiveViaIdentity1
 Aliases:
 
@@ -100,7 +100,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: ArchiveViaIdentity1, ArchiveViaIdentityExpanded1
 Aliases:
 
@@ -192,9 +192,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

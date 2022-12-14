@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationtemporaryaccesspassmethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mguserauthenticationtemporaryaccesspassmethod
 schema: 2.0.0
 ---
 
-# New-MgUserAuthenticationTemporaryAccessPassMethod
+# New-MgBetaUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
 Create a new temporaryAccessPassAuthenticationMethod object on a user.
@@ -16,7 +16,7 @@ If the user requires a new Temporary Access Pass while the current Temporary Acc
 
 ### CreateExpanded (Default)
 ```
-New-MgUserAuthenticationTemporaryAccessPassMethod -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-IsUsable] [-IsUsableOnce] [-LifetimeInMinutes <Int32>]
  [-MethodUsabilityReason <String>] [-StartDateTime <DateTime>] [-TemporaryAccessPass <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -24,21 +24,21 @@ New-MgUserAuthenticationTemporaryAccessPassMethod -UserId <String> [-AdditionalP
 
 ### Create
 ```
-New-MgUserAuthenticationTemporaryAccessPassMethod -UserId <String>
+New-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId <String>
  -BodyParameter <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsUsable] [-IsUsableOnce]
  [-LifetimeInMinutes <Int32>] [-MethodUsabilityReason <String>] [-StartDateTime <DateTime>]
  [-TemporaryAccessPass <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -51,18 +51,18 @@ If the user requires a new Temporary Access Pass while the current Temporary Acc
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserAuthenticationTemporaryAccessPassMethod Cmdlet
+### Example 1: Using the New-MgBetaUserAuthenticationTemporaryAccessPassMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	StartDateTime = [System.DateTime]::Parse("2022-06-05T00:00:00.000Z")
 	LifetimeInMinutes = 60
 	IsUsableOnce = $false
 }
-New-MgUserAuthenticationTemporaryAccessPassMethod -UserId $userId -BodyParameter $params
+New-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserAuthenticationTemporaryAccessPassMethod Cmdlet.
+This example shows how to use the New-MgBetaUserAuthenticationTemporaryAccessPassMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -87,7 +87,7 @@ temporaryAccessPassAuthenticationMethod
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -290,13 +290,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/update-mgdevicemanagementexchangeonpremispolicyconditionalaccesssetting
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/update-mgdevicemanagementexchangeonpremispolicyconditionalaccesssetting
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+# Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
 
 ## SYNOPSIS
 Update the navigation property conditionalAccessSettings in deviceManagement
@@ -14,14 +14,14 @@ Update the navigation property conditionalAccessSettings in deviceManagement
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting [-AdditionalProperties <Hashtable>]
  [-Enabled] [-ExcludedGroups <String[]>] [-Id <String>] [-IncludedGroups <String[]>] [-OverrideDefaultRule]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
  -DeviceManagementExchangeOnPremisesPolicyId <String>
  -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -29,14 +29,14 @@ Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
 
 ### Update1
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
  -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateExpanded
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
  -DeviceManagementExchangeOnPremisesPolicyId <String> [-AdditionalProperties <Hashtable>] [-Enabled]
  [-ExcludedGroups <String[]>] [-Id <String>] [-IncludedGroups <String[]>] [-OverrideDefaultRule] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -44,7 +44,7 @@ Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
  -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -52,7 +52,7 @@ Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
+Update-MgBetaDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>] [-Enabled]
  [-ExcludedGroups <String[]>] [-Id <String>] [-IncludedGroups <String[]>] [-OverrideDefaultRule] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -85,7 +85,7 @@ Singleton entity which represents the Exchange OnPremises Conditional Access Set
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
 Parameter Sets: Update, Update1, UpdateViaIdentity
 Aliases:
 
@@ -179,7 +179,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -256,9 +256,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
 
 ## OUTPUTS
 

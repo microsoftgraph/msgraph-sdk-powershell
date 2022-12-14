@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgaccessreviewinstancedecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgaccessreviewinstancedecision
 schema: 2.0.0
 ---
 
-# Update-MgAccessReviewInstanceDecision
+# Update-MgBetaAccessReviewInstanceDecision
 
 ## SYNOPSIS
 Update the navigation property decisions in accessReviews
@@ -14,7 +14,7 @@ Update the navigation property decisions in accessReviews
 
 ### UpdateExpanded (Default)
 ```
-Update-MgAccessReviewInstanceDecision -AccessReviewDecisionId <String> -AccessReviewId <String>
+Update-MgBetaAccessReviewInstanceDecision -AccessReviewDecisionId <String> -AccessReviewId <String>
  -AccessReviewId1 <String> [-AccessRecommendation <String>] [-AccessReviewId2 <String>]
  [-AdditionalProperties <Hashtable>] [-AppliedBy <IMicrosoftGraphUserIdentity>] [-AppliedDateTime <DateTime>]
  [-ApplyResult <String>] [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphUserIdentity>]
@@ -23,20 +23,20 @@ Update-MgAccessReviewInstanceDecision -AccessReviewDecisionId <String> -AccessRe
 
 ### Update
 ```
-Update-MgAccessReviewInstanceDecision -AccessReviewDecisionId <String> -AccessReviewId <String>
+Update-MgBetaAccessReviewInstanceDecision -AccessReviewDecisionId <String> -AccessReviewId <String>
  -AccessReviewId1 <String> -BodyParameter <IMicrosoftGraphAccessReviewDecision> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAccessReviewDecision> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity> [-AccessReviewId <String>]
+Update-MgBetaAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity> [-AccessReviewId <String>]
  [-AccessRecommendation <String>] [-AdditionalProperties <Hashtable>]
  [-AppliedBy <IMicrosoftGraphUserIdentity>] [-AppliedDateTime <DateTime>] [-ApplyResult <String>]
  [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphUserIdentity>]
@@ -145,7 +145,7 @@ userIdentity
 To construct, please use Get-Help -Online and see NOTES section for APPLIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -191,7 +191,7 @@ accessReviewDecision
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -223,7 +223,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -269,7 +269,7 @@ userIdentity
 To construct, please use Get-Help -Online and see NOTES section for REVIEWEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -346,9 +346,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewDecision
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision
 
 ## OUTPUTS
 

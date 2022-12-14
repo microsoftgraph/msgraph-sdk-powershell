@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicymobiledevicemanagementpolicyincludedgroupbyref
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicymobiledevicemanagementpolicyincludedgroupbyref
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyMobileDeviceManagementPolicyIncludedGroupByRef
+# Remove-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupByRef
 
 ## SYNOPSIS
 Delete ref of navigation property includedGroups for policies
@@ -14,14 +14,14 @@ Delete ref of navigation property includedGroups for policies
 
 ### Delete (Default)
 ```
-Remove-MgPolicyMobileDeviceManagementPolicyIncludedGroupByRef -GroupId <String>
+Remove-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupByRef -GroupId <String>
  -MobilityManagementPolicyId <String> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgPolicyMobileDeviceManagementPolicyIncludedGroupByRef -InputObject <IIdentitySignInsIdentity>
+Remove-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupByRef -InputObject <IIdentitySignInsIdentity>
  [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,13 +30,13 @@ Delete ref of navigation property includedGroups for policies
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgPolicyMobileDeviceManagementPolicyIncludedGroupByRef Cmdlet
+### Example 1: Using the Remove-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyMobileDeviceManagementPolicyIncludedGroupByRef -MobilityManagementPolicyId $mobilityManagementPolicyId -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupByRef -MobilityManagementPolicyId $mobilityManagementPolicyId -GroupId $groupId
 ```
 
-This example shows how to use the Remove-MgPolicyMobileDeviceManagementPolicyIncludedGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -91,7 +91,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -168,7 +168,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

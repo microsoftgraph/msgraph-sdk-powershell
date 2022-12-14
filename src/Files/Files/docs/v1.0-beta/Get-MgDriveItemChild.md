@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgdriveitemchild
+Module Name: Microsoft.Graph.Beta.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.files/get-mgdriveitemchild
 schema: 2.0.0
 ---
 
-# Get-MgDriveItemChild
+# Get-MgBetaDriveItemChild
 
 ## SYNOPSIS
 Collection containing Item objects for the immediate children of Item.
@@ -17,20 +17,20 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgDriveItemChild -DriveId <String> -DriveItemId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDriveItemChild -DriveId <String> -DriveItemId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDriveItemChild -DriveId <String> -DriveItemId <String> -DriveItemId1 <String>
+Get-MgBetaDriveItemChild -DriveId <String> -DriveItemId <String> -DriveItemId1 <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDriveItemChild -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDriveItemChild -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -42,13 +42,13 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDriveItemChild Cmdlet
+### Example 1: Using the Get-MgBetaDriveItemChild Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Get-MgDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
+Import-Module Microsoft.Graph.Beta.Files
+Get-MgBetaDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
 ```
 
-This example shows how to use the Get-MgDriveItemChild Cmdlet.
+This example shows how to use the Get-MgBetaDriveItemChild Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -164,7 +164,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -270,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

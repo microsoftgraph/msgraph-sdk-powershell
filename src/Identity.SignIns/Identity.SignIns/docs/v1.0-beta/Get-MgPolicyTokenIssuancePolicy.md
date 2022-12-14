@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicytokenissuancepolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgpolicytokenissuancepolicy
 schema: 2.0.0
 ---
 
-# Get-MgPolicyTokenIssuancePolicy
+# Get-MgBetaPolicyTokenIssuancePolicy
 
 ## SYNOPSIS
 The policy that specifies the characteristics of SAML tokens issued by Azure AD.
@@ -14,20 +14,20 @@ The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 
 ### List (Default)
 ```
-Get-MgPolicyTokenIssuancePolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaPolicyTokenIssuancePolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId <String> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyTokenIssuancePolicy -TokenIssuancePolicyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgPolicyTokenIssuancePolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId
 ```
 
-This example shows how to use the Get-MgPolicyTokenIssuancePolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgPolicyTokenIssuancePolicy Cmdlet
+### Example 2: Using the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyTokenIssuancePolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyTokenIssuancePolicy
 ```
 
-This example shows how to use the Get-MgPolicyTokenIssuancePolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -122,7 +122,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
 
 ## NOTES
 

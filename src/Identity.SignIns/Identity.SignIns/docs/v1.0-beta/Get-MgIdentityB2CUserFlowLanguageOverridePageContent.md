@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityb2cuserflowlanguageoverridepagecontent
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityb2cuserflowlanguageoverridepagecontent
 schema: 2.0.0
 ---
 
-# Get-MgIdentityB2CUserFlowLanguageOverridePageContent
+# Get-MgBetaIdentityB2CUserFlowLanguageOverridePageContent
 
 ## SYNOPSIS
 Get media content for the navigation property overridesPages from identity
@@ -14,14 +14,14 @@ Get media content for the navigation property overridesPages from identity
 
 ### Get (Default)
 ```
-Get-MgIdentityB2CUserFlowLanguageOverridePageContent -B2CIdentityUserFlowId <String>
+Get-MgBetaIdentityB2CUserFlowLanguageOverridePageContent -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityB2CUserFlowLanguageOverridePageContent -InputObject <IIdentitySignInsIdentity> -OutFile <String>
+Get-MgBetaIdentityB2CUserFlowLanguageOverridePageContent -InputObject <IIdentitySignInsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 

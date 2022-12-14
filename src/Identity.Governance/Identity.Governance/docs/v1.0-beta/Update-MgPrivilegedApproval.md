@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprivilegedapproval
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/update-mgprivilegedapproval
 schema: 2.0.0
 ---
 
-# Update-MgPrivilegedApproval
+# Update-MgBetaPrivilegedApproval
 
 ## SYNOPSIS
 Update the properties of privilegedapproval object.
@@ -14,7 +14,7 @@ Update the properties of privilegedapproval object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPrivilegedApproval -PrivilegedApprovalId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPrivilegedApproval -PrivilegedApprovalId <String> [-AdditionalProperties <Hashtable>]
  [-ApprovalDuration <TimeSpan>] [-ApprovalState <String>] [-ApprovalType <String>] [-ApproverReason <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Request <IMicrosoftGraphPrivilegedRoleAssignmentRequest>]
  [-RequestorReason <String>] [-RoleId <String>] [-RoleInfo <IMicrosoftGraphPrivilegedRole>]
@@ -23,19 +23,19 @@ Update-MgPrivilegedApproval -PrivilegedApprovalId <String> [-AdditionalPropertie
 
 ### Update
 ```
-Update-MgPrivilegedApproval -PrivilegedApprovalId <String> -BodyParameter <IMicrosoftGraphPrivilegedApproval>
+Update-MgBetaPrivilegedApproval -PrivilegedApprovalId <String> -BodyParameter <IMicrosoftGraphPrivilegedApproval>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPrivilegedApproval -InputObject <IIdentityGovernanceIdentity>
+Update-MgBetaPrivilegedApproval -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphPrivilegedApproval> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPrivilegedApproval -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaPrivilegedApproval -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-ApprovalDuration <TimeSpan>] [-ApprovalState <String>] [-ApprovalType <String>] [-ApproverReason <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Request <IMicrosoftGraphPrivilegedRoleAssignmentRequest>]
  [-RequestorReason <String>] [-RoleId <String>] [-RoleInfo <IMicrosoftGraphPrivilegedRole>]
@@ -47,17 +47,17 @@ Update the properties of privilegedapproval object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgPrivilegedApproval Cmdlet
+### Example 1: Using the Update-MgBetaPrivilegedApproval Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	ApprovalState = "approvalState-value"
 	ApproverReason = "approverReason-value"
 }
-Update-MgPrivilegedApproval -PrivilegedApprovalId $privilegedApprovalId -BodyParameter $params
+Update-MgBetaPrivilegedApproval -PrivilegedApprovalId $privilegedApprovalId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgPrivilegedApproval Cmdlet.
+This example shows how to use the Update-MgBetaPrivilegedApproval Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -142,7 +142,7 @@ privilegedApproval
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -190,7 +190,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -236,7 +236,7 @@ privilegedRoleAssignmentRequest
 To construct, please use Get-Help -Online and see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -282,7 +282,7 @@ privilegedRole
 To construct, please use Get-Help -Online and see NOTES section for ROLEINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRole
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRole
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -360,9 +360,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
 
 ## OUTPUTS
 

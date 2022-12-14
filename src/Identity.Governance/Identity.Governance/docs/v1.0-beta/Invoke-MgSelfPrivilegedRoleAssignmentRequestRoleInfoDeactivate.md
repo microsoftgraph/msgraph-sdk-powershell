@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgselfprivilegedroleassignmentrequestroleinfodeactivate
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgselfprivilegedroleassignmentrequestroleinfodeactivate
 schema: 2.0.0
 ---
 
-# Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate
+# Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate
 
 ## SYNOPSIS
 Deactivate the role that is assigned to the requestor.
@@ -14,13 +14,13 @@ Deactivate the role that is assigned to the requestor.
 
 ### Self (Default)
 ```
-Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate -PrivilegedRoleAssignmentRequestId <String>
+Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate -PrivilegedRoleAssignmentRequestId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SelfViaIdentity
 ```
-Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate -InputObject <IIdentityGovernanceIdentity>
+Invoke-MgBetaSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate -InputObject <IIdentityGovernanceIdentity>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SelfViaIdentity
 Aliases:
 
@@ -98,11 +98,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmobileappassignment
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtmobileappassignment
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtMobileAppAssignment
+# New-MgBetaDeviceAppMgtMobileAppAssignment
 
 ## SYNOPSIS
 Create new navigation property to assignments for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to assignments for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtMobileAppAssignment -MobileAppId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaDeviceAppMgtMobileAppAssignment -MobileAppId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Intent <InstallIntent>] [-Settings <Hashtable>] [-Source <DeviceAndAppManagementAssignmentSource>]
  [-SourceId <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgDeviceAppMgtMobileAppAssignment -MobileAppId <String> [-AdditionalProperti
 
 ### Create
 ```
-New-MgDeviceAppMgtMobileAppAssignment -MobileAppId <String>
+New-MgBetaDeviceAppMgtMobileAppAssignment -MobileAppId <String>
  -BodyParameter <IMicrosoftGraphMobileAppAssignment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphMobileAppAssignment1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <InstallIntent>] [-Settings <Hashtable>]
  [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -67,7 +67,7 @@ A class containing the properties used for Group Assignment of a Mobile App.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -99,7 +99,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 Possible values for the install intent chosen by the admin.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.InstallIntent
+Type: Microsoft.Graph.Beta.PowerShell.Support.InstallIntent
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 Represents source of assignment.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.DeviceAndAppManagementAssignmentSource
+Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAndAppManagementAssignmentSource
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -237,19 +237,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementMobileAppAssignment
+### New-MgBetaDeviceAppManagementMobileAppAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

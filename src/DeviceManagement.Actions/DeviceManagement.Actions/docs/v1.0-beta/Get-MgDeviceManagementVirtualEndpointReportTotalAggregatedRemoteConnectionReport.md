@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementvirtualendpointreporttotalaggregatedremoteconnectionreport
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementvirtualendpointreporttotalaggregatedremoteconnectionreport
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport
+# Get-MgBetaDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport
 
 ## SYNOPSIS
 Get the total aggregated remote connection usage of a Cloud PC during a given time span.
@@ -14,7 +14,7 @@ Get the total aggregated remote connection usage of a Cloud PC during a given ti
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport -OutFile <String>
+Get-MgBetaDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport
 
 ### Get
 ```
-Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport
+Get-MgBetaDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport
  -BodyParameter <IPaths6MqafvDevicemanagementVirtualendpointReportsMicrosoftGraphGettotalaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema>
  -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths6MqafvDevicemanagementVirtualendpointReportsMicrosoftGraphGettotalaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths6MqafvDevicemanagementVirtualendpointReportsMicrosoftGraphGettotalaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -236,7 +236,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths6MqafvDevicemanagementVirtualendpointReportsMicrosoftGraphGettotalaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths6MqafvDevicemanagementVirtualendpointReportsMicrosoftGraphGettotalaggregatedremoteconnectionreportsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgreplygroupconversationthreadpost
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/invoke-mgreplygroupconversationthreadpost
 schema: 2.0.0
 ---
 
-# Invoke-MgReplyGroupConversationThreadPost
+# Invoke-MgBetaReplyGroupConversationThreadPost
 
 ## SYNOPSIS
 Reply to a post and add a new post to the specified thread in a group conversation.
@@ -15,14 +15,14 @@ You can specify both the parent conversation and thread in the request, or, you 
 
 ### ReplyExpanded1 (Default)
 ```
-Invoke-MgReplyGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
+Invoke-MgBetaReplyGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-Post <IMicrosoftGraphPost1>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Reply1
 ```
-Invoke-MgReplyGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
+Invoke-MgBetaReplyGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String>
  -BodyParameter <IPaths23Qv37GroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,14 +30,14 @@ Invoke-MgReplyGroupConversationThreadPost -ConversationId <String> -Conversation
 
 ### ReplyViaIdentity1
 ```
-Invoke-MgReplyGroupConversationThreadPost -InputObject <IGroupsIdentity>
+Invoke-MgBetaReplyGroupConversationThreadPost -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths23Qv37GroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ReplyViaIdentityExpanded1
 ```
-Invoke-MgReplyGroupConversationThreadPost -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaReplyGroupConversationThreadPost -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Post <IMicrosoftGraphPost1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -49,7 +49,7 @@ You can specify both the parent conversation and thread in the request, or, you 
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 
 $params = @{
 	Post = @{
@@ -92,7 +92,7 @@ $params = @{
 		}
 		Attachments = @(
 			@{
-				"@odata.type" = "#microsoft.graph.fileAttachment"
+				"@odata.type" = "#Microsoft.Graph.Beta.fileAttachment"
 				LastModifiedDateTime = [System.DateTime]::Parse("datetime-value")
 				Name = "name-value"
 				ContentType = "contentType-value"
@@ -104,10 +104,10 @@ $params = @{
 	}
 }
 
-Invoke-MgReplyGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
+Invoke-MgBetaReplyGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgReplyGroupConversationThreadPost Cmdlet.
+This example shows how to use the Invoke-MgBetaReplyGroupConversationThreadPost Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths23Qv37GroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths23Qv37GroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Reply1, ReplyViaIdentity1
 Aliases:
 
@@ -194,7 +194,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: ReplyViaIdentity1, ReplyViaIdentityExpanded1
 Aliases:
 
@@ -225,7 +225,7 @@ post
 To construct, please use Get-Help -Online and see NOTES section for POST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPost1
 Parameter Sets: ReplyExpanded1, ReplyViaIdentityExpanded1
 Aliases:
 
@@ -287,9 +287,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths23Qv37GroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths23Qv37GroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

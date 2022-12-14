@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgidentitygovernanceaccessreviewdefinitioninstancedecisioninsight
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgidentitygovernanceaccessreviewdefinitioninstancedecisioninsight
 schema: 2.0.0
 ---
 
-# New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
+# New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
 
 ## SYNOPSIS
 Create new navigation property to insights for identityGovernance
@@ -14,7 +14,7 @@ Create new navigation property to insights for identityGovernance
 
 ### CreateExpanded (Default)
 ```
-New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
+New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-InsightCreatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
 
 ### Create
 ```
-New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
+New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> -BodyParameter <IMicrosoftGraphGovernanceInsight> [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -30,14 +30,14 @@ New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
 
 ### CreateViaIdentity
 ```
-New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
+New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
  -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphGovernanceInsight> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
+New-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-InsightCreatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -114,7 +114,7 @@ governanceInsight
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceInsight
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceInsight
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -208,13 +208,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceInsight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceInsight
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceInsight
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceInsight
 
 ## NOTES
 

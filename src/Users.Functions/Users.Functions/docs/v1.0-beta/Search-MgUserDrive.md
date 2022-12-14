@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/search-mguserdrive
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/search-mguserdrive
 schema: 2.0.0
 ---
 
-# Search-MgUserDrive
+# Search-MgBetaUserDrive
 
 ## SYNOPSIS
 Invoke function search
@@ -14,14 +14,14 @@ Invoke function search
 
 ### Search1 (Default)
 ```
-Search-MgUserDrive -DriveId <String> -Q <String> -UserId <String> [-Count] [-Filter <String>]
+Search-MgBetaUserDrive -DriveId <String> -Q <String> -UserId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### SearchViaIdentity1
 ```
-Search-MgUserDrive -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Search-MgBetaUserDrive -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: SearchViaIdentity1
 Aliases:
 
@@ -203,11 +203,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

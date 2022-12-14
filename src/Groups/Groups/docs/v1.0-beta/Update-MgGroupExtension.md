@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggroupextension
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/update-mggroupextension
 schema: 2.0.0
 ---
 
-# Update-MgGroupExtension
+# Update-MgBetaGroupExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in groups
@@ -14,25 +14,25 @@ Update the navigation property extensions in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupExtension -ExtensionId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupExtension -ExtensionId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupExtension -ExtensionId <String> -GroupId <String> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaGroupExtension -ExtensionId <String> -GroupId <String> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Update-MgBetaGroupExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaGroupExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +186,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ### System.Collections.Hashtable
 

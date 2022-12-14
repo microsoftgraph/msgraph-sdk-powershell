@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mguserprofilewebaccount
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/get-mguserprofilewebaccount
 schema: 2.0.0
 ---
 
-# Get-MgUserProfileWebAccount
+# Get-MgBetaUserProfileWebAccount
 
 ## SYNOPSIS
 Represents web accounts the user has indicated they use or has added to their user profile.
@@ -14,20 +14,20 @@ Represents web accounts the user has indicated they use or has added to their us
 
 ### List (Default)
 ```
-Get-MgUserProfileWebAccount -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaUserProfileWebAccount -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserProfileWebAccount -UserId <String> -WebAccountId <String> [-ExpandProperty <String[]>]
+Get-MgBetaUserProfileWebAccount -UserId <String> -WebAccountId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserProfileWebAccount -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaUserProfileWebAccount -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -36,24 +36,24 @@ Represents web accounts the user has indicated they use or has added to their us
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserProfileWebAccount Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileWebAccount Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileWebAccount -UserId $userId -WebAccountId $webAccountId
+Get-MgBetaUserProfileWebAccount -UserId $userId -WebAccountId $webAccountId
 ```
 
-This example shows how to use the Get-MgUserProfileWebAccount Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileWebAccount Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgUserProfileWebAccount Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileWebAccount Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileWebAccount -UserId $userId
+Get-MgBetaUserProfileWebAccount -UserId $userId
 ```
 
-This example shows how to use the Get-MgUserProfileWebAccount Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileWebAccount Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -124,7 +124,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -260,11 +260,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWebAccount
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWebAccount
 
 ## NOTES
 

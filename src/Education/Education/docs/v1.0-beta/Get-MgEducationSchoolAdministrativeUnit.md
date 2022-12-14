@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationschooladministrativeunit
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationschooladministrativeunit
 schema: 2.0.0
 ---
 
-# Get-MgEducationSchoolAdministrativeUnit
+# Get-MgBetaEducationSchoolAdministrativeUnit
 
 ## SYNOPSIS
 Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
@@ -14,13 +14,13 @@ Retrieve the simple directory **administrativeUnit** that corresponds to this **
 
 ### Get (Default)
 ```
-Get-MgEducationSchoolAdministrativeUnit -EducationSchoolId <String> [-ExpandProperty <String[]>]
+Get-MgBetaEducationSchoolAdministrativeUnit -EducationSchoolId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEducationSchoolAdministrativeUnit -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationSchoolAdministrativeUnit -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Retrieve the simple directory **administrativeUnit** that corresponds to this **
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationSchoolAdministrativeUnit Cmdlet
+### Example 1: Using the Get-MgBetaEducationSchoolAdministrativeUnit Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationSchoolAdministrativeUnit -EducationSchoolId $educationSchoolId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationSchoolAdministrativeUnit -EducationSchoolId $educationSchoolId
 ```
 
-This example shows how to use the Get-MgEducationSchoolAdministrativeUnit Cmdlet.
+This example shows how to use the Get-MgBetaEducationSchoolAdministrativeUnit Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -75,7 +75,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdministrativeUnit
 
 ## NOTES
 

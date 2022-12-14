@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mglicenseuser
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mglicenseuser
 schema: 2.0.0
 ---
 
-# Invoke-MgLicenseUser
+# Invoke-MgBetaLicenseUser
 
 ## SYNOPSIS
 Reprocess all group-based license assignments for the user.
@@ -16,12 +16,12 @@ Also see Identify and resolve license assignment problems for a group in Azure A
 
 ### License (Default)
 ```
-Invoke-MgLicenseUser -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaLicenseUser -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### LicenseViaIdentity
 ```
-Invoke-MgLicenseUser -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaLicenseUser -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,13 +31,13 @@ Also see Identify and resolve license assignment problems for a group in Azure A
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgLicenseUser Cmdlet
+### Example 1: Using the Invoke-MgBetaLicenseUser Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
-Invoke-MgLicenseUser -UserId $userId
+Import-Module Microsoft.Graph.Beta.Users.Actions
+Invoke-MgBetaLicenseUser -UserId $userId
 ```
 
-This example shows how to use the Invoke-MgLicenseUser Cmdlet.
+This example shows how to use the Invoke-MgBetaLicenseUser Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -47,7 +47,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: LicenseViaIdentity
 Aliases:
 
@@ -109,11 +109,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser
 
 ## NOTES
 

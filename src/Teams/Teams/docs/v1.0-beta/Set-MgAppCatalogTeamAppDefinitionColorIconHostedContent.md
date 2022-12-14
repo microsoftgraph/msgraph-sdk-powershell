@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgappcatalogteamappdefinitioncoloriconhostedcontent
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/set-mgappcatalogteamappdefinitioncoloriconhostedcontent
 schema: 2.0.0
 ---
 
-# Set-MgAppCatalogTeamAppDefinitionColorIconHostedContent
+# Set-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent
 
 ## SYNOPSIS
 Update media content for the navigation property hostedContent in appCatalogs
@@ -14,13 +14,13 @@ Update media content for the navigation property hostedContent in appCatalogs
 
 ### Set (Default)
 ```
-Set-MgAppCatalogTeamAppDefinitionColorIconHostedContent -TeamsAppDefinitionId <String> -TeamsAppId <String>
+Set-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent -TeamsAppDefinitionId <String> -TeamsAppId <String>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgAppCatalogTeamAppDefinitionColorIconHostedContent -InputObject <ITeamsIdentity> -InFile <String>
+Set-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent -InputObject <ITeamsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -160,7 +160,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ### System.IO.Stream
 

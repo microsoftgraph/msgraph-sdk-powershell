@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycasetagchildtag
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/get-mgcomplianceediscoverycasetagchildtag
 schema: 2.0.0
 ---
 
-# Get-MgComplianceEdiscoveryCaseTagChildTag
+# Get-MgBetaComplianceEdiscoveryCaseTagChildTag
 
 ## SYNOPSIS
 Returns the tags that are a child of a tag.
@@ -14,20 +14,20 @@ Returns the tags that are a child of a tag.
 
 ### List (Default)
 ```
-Get-MgComplianceEdiscoveryCaseTagChildTag -CaseId <String> -TagId <String> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseTagChildTag -CaseId <String> -TagId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgComplianceEdiscoveryCaseTagChildTag -CaseId <String> -TagId <String> -TagId1 <String>
+Get-MgBetaComplianceEdiscoveryCaseTagChildTag -CaseId <String> -TagId <String> -TagId1 <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgComplianceEdiscoveryCaseTagChildTag -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaComplianceEdiscoveryCaseTagChildTag -InputObject <IComplianceIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Returns the tags that are a child of a tag.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseTagChildTag Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseTagChildTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseTagChildTag -CaseId $caseId -TagId $tagId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseTagChildTag -CaseId $caseId -TagId $tagId
 ```
 
-This example shows how to use the Get-MgComplianceEdiscoveryCaseTagChildTag Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseTagChildTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -264,11 +264,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
 
 ## NOTES
 

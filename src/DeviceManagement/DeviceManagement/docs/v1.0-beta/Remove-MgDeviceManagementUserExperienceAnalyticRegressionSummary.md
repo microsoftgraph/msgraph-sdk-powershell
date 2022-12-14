@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/remove-mgdevicemanagementuserexperienceanalyticregressionsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/remove-mgdevicemanagementuserexperienceanalyticregressionsummary
 schema: 2.0.0
 ---
 
-# Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummary
+# Remove-MgBetaDeviceManagementUserExperienceAnalyticRegressionSummary
 
 ## SYNOPSIS
 Delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
@@ -13,7 +13,7 @@ Delete navigation property userExperienceAnalyticsRegressionSummary for deviceMa
 ## SYNTAX
 
 ```
-Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummary [-IfMatch <String>] [-PassThru] [-Confirm]
+Remove-MgBetaDeviceManagementUserExperienceAnalyticRegressionSummary [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 

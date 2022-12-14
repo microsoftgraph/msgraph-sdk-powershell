@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/get-mgdevicemanagementapplepushnotificationcertificate
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/get-mgdevicemanagementapplepushnotificationcertificate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementApplePushNotificationCertificate
+# Get-MgBetaDeviceManagementApplePushNotificationCertificate
 
 ## SYNOPSIS
 Apple push notification certificate.
@@ -13,7 +13,7 @@ Apple push notification certificate.
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementApplePushNotificationCertificate [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceManagementApplePushNotificationCertificate [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
 
 ## NOTES
 

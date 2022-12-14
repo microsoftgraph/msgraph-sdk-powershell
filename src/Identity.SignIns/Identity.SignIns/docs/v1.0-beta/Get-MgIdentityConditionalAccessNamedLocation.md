@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgidentityconditionalaccessnamedlocation
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/get-mgidentityconditionalaccessnamedlocation
 schema: 2.0.0
 ---
 
-# Get-MgIdentityConditionalAccessNamedLocation
+# Get-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
 Read-only.
@@ -16,20 +16,20 @@ Returns a collection of the specified named locations.
 
 ### List (Default)
 ```
-Get-MgIdentityConditionalAccessNamedLocation [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaIdentityConditionalAccessNamedLocation [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
+Get-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -42,8 +42,8 @@ Returns a collection of the specified named locations.
 
 ### Example 1: Get a list of all named locations
 ```powershell
-Connect-MgGraph -Scopes 'Policy.Read.All'
-Get-MgIdentityConditionalAccessNamedLocation
+Connect-MgBetaGraph -Scopes 'Policy.Read.All'
+Get-MgBetaIdentityConditionalAccessNamedLocation
 
 Id                                   CreatedDateTime       DisplayName                 ModifiedDateTime
 --                                   ---------------       -----------                 ----------------
@@ -56,8 +56,8 @@ This example lists all existing named location rules.
 
 ### Example 2: Get a named location by Id
 ```powershell
-Connect-MgGraph -Scopes 'Policy.Read.All'
-Get-MgIdentityConditionalAccessNamedLocation -NamedLocationId '1f0fd623-bf8f-4003-9627-32a68c3cdcc1'
+Connect-MgBetaGraph -Scopes 'Policy.Read.All'
+Get-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId '1f0fd623-bf8f-4003-9627-32a68c3cdcc1'
 
 Id                                   CreatedDateTime      DisplayName            ModifiedDateTime
 --                                   ---------------      -----------            ----------------
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -255,11 +255,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNamedLocation
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNamedLocation
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritytrigger
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/update-mgsecuritytrigger
 schema: 2.0.0
 ---
 
-# Update-MgSecurityTrigger
+# Update-MgBetaSecurityTrigger
 
 ## SYNOPSIS
 Update the navigation property triggers in security
@@ -14,14 +14,14 @@ Update the navigation property triggers in security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityTrigger [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgBetaSecurityTrigger [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-RetentionEvents <IMicrosoftGraphSecurityRetentionEvent[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecurityTrigger -BodyParameter <IMicrosoftGraphSecurityTriggersRoot> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgBetaSecurityTrigger -BodyParameter <IMicrosoftGraphSecurityTriggersRoot> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ triggersRoot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityTriggersRoot
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityTriggersRoot
 Parameter Sets: Update
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for RETENTIONEVENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityTriggersRoot
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityTriggersRoot
 
 ## OUTPUTS
 

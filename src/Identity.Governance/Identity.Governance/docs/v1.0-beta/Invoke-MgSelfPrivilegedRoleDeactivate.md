@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgselfprivilegedroledeactivate
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgselfprivilegedroledeactivate
 schema: 2.0.0
 ---
 
-# Invoke-MgSelfPrivilegedRoleDeactivate
+# Invoke-MgBetaSelfPrivilegedRoleDeactivate
 
 ## SYNOPSIS
 Deactivate the role that is assigned to the requestor.
@@ -14,12 +14,12 @@ Deactivate the role that is assigned to the requestor.
 
 ### Self (Default)
 ```
-Invoke-MgSelfPrivilegedRoleDeactivate -PrivilegedRoleId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaSelfPrivilegedRoleDeactivate -PrivilegedRoleId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SelfViaIdentity
 ```
-Invoke-MgSelfPrivilegedRoleDeactivate -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf]
+Invoke-MgBetaSelfPrivilegedRoleDeactivate -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -28,13 +28,13 @@ Deactivate the role that is assigned to the requestor.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgSelfPrivilegedRoleDeactivate Cmdlet
+### Example 1: Using the Invoke-MgBetaSelfPrivilegedRoleDeactivate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Invoke-MgSelfPrivilegedRoleDeactivate -PrivilegedRoleId $privilegedRoleId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Invoke-MgBetaSelfPrivilegedRoleDeactivate -PrivilegedRoleId $privilegedRoleId
 ```
 
-This example shows how to use the Invoke-MgSelfPrivilegedRoleDeactivate Cmdlet.
+This example shows how to use the Invoke-MgBetaSelfPrivilegedRoleDeactivate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -44,7 +44,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SelfViaIdentity
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
 
 ## NOTES
 

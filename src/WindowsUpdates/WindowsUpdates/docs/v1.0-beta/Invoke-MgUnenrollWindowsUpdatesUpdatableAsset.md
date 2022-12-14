@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/invoke-mgunenrollwindowsupdatesupdatableasset
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/invoke-mgunenrollwindowsupdatesupdatableasset
 schema: 2.0.0
 ---
 
-# Invoke-MgUnenrollWindowsUpdatesUpdatableAsset
+# Invoke-MgBetaUnenrollWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
 Invoke action unenrollAssets
@@ -14,14 +14,14 @@ Invoke action unenrollAssets
 
 ### UnenrollExpanded (Default)
 ```
-Invoke-MgUnenrollWindowsUpdatesUpdatableAsset [-AdditionalProperties <Hashtable>]
+Invoke-MgBetaUnenrollWindowsUpdatesUpdatableAsset [-AdditionalProperties <Hashtable>]
  [-Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-UpdateCategory <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Unenroll
 ```
-Invoke-MgUnenrollWindowsUpdatesUpdatableAsset
+Invoke-MgBetaUnenrollWindowsUpdatesUpdatableAsset
  -BodyParameter <IPathsP6Z74XAdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -31,22 +31,22 @@ Invoke action unenrollAssets
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgUnenrollWindowsUpdatesUpdatableAsset Cmdlet
+### Example 1: Using the Invoke-MgBetaUnenrollWindowsUpdatesUpdatableAsset Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	UpdateCategory = "String"
 	Assets = @(
 		@{
-			"@odata.type" = "#microsoft.graph.windowsUpdates.azureADDevice"
+			"@odata.type" = "#Microsoft.Graph.Beta.windowsUpdates.azureADDevice"
 			Id = "String (identifier)"
 		}
 	)
 }
-Invoke-MgUnenrollWindowsUpdatesUpdatableAsset -BodyParameter $params
+Invoke-MgBetaUnenrollWindowsUpdatesUpdatableAsset -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgUnenrollWindowsUpdatesUpdatableAsset Cmdlet.
+This example shows how to use the Invoke-MgBetaUnenrollWindowsUpdatesUpdatableAsset Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ASSETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
 Parameter Sets: UnenrollExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsP6Z74XAdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsP6Z74XAdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Unenroll
 Aliases:
 
@@ -164,7 +164,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsP6Z74XAdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsP6Z74XAdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -174,7 +174,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgUnenrollWuUpdatableAsset
+### Invoke-MgBetaUnenrollWuUpdatableAsset
 
 COMPLEX PARAMETER PROPERTIES
 

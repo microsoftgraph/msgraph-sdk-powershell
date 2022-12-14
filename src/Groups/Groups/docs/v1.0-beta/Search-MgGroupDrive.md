@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/search-mggroupdrive
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/search-mggroupdrive
 schema: 2.0.0
 ---
 
-# Search-MgGroupDrive
+# Search-MgBetaGroupDrive
 
 ## SYNOPSIS
 Invoke function search
@@ -14,14 +14,14 @@ Invoke function search
 
 ### Search (Default)
 ```
-Search-MgGroupDrive -DriveId <String> -GroupId <String> -Q <String> [-Count] [-Filter <String>]
+Search-MgBetaGroupDrive -DriveId <String> -GroupId <String> -Q <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### SearchViaIdentity
 ```
-Search-MgGroupDrive -InputObject <IGroupsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
+Search-MgBetaGroupDrive -InputObject <IGroupsIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: SearchViaIdentity
 Aliases:
 
@@ -203,11 +203,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem
 
 ## NOTES
 

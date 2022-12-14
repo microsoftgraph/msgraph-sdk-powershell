@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearchqna
+Module Name: Microsoft.Graph.Beta.Search
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.search/get-mgsearchqna
 schema: 2.0.0
 ---
 
-# Get-MgSearchQna
+# Get-MgBetaSearchQna
 
 ## SYNOPSIS
 Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
@@ -14,19 +14,19 @@ Administrative answer in Microsoft Search results which provide answers for spec
 
 ### List (Default)
 ```
-Get-MgSearchQna [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaSearchQna [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSearchQna -QnaId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaSearchQna -QnaId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSearchQna -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSearchQna -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -35,22 +35,22 @@ Administrative answer in Microsoft Search results which provide answers for spec
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSearchQna Cmdlet
+### Example 1: Using the Get-MgBetaSearchQna Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgSearchQna -QnaId $qnaId
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaSearchQna -QnaId $qnaId
 ```
 
-This example shows how to use the Get-MgSearchQna Cmdlet.
+This example shows how to use the Get-MgBetaSearchQna Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgSearchQna Cmdlet
+### Example 2: Using the Get-MgBetaSearchQna Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgSearchQna
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaSearchQna
 ```
 
-This example shows how to use the Get-MgSearchQna Cmdlet.
+This example shows how to use the Get-MgBetaSearchQna Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -121,7 +121,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchQna
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchQna
 
 ## NOTES
 

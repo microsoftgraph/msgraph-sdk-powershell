@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mguseronlinemeetingtranscript
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/new-mguseronlinemeetingtranscript
 schema: 2.0.0
 ---
 
-# New-MgUserOnlineMeetingTranscript
+# New-MgBetaUserOnlineMeetingTranscript
 
 ## SYNOPSIS
 Create new navigation property to transcripts for users
@@ -14,26 +14,26 @@ Create new navigation property to transcripts for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserOnlineMeetingTranscript -OnlineMeetingId <String> -UserId <String>
+New-MgBetaUserOnlineMeetingTranscript -OnlineMeetingId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserOnlineMeetingTranscript -OnlineMeetingId <String> -UserId <String>
+New-MgBetaUserOnlineMeetingTranscript -OnlineMeetingId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphCallTranscript> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaUserOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphCallTranscript> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity>
+New-MgBetaUserOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -65,7 +65,7 @@ callTranscript
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallTranscript
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallTranscript
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -129,7 +129,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -206,13 +206,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallTranscript
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallTranscript
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallTranscript
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallTranscript
 
 ## NOTES
 

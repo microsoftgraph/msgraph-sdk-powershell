@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/set-mgdeviceappmgtioslobappprovisioningconfiguration
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/set-mgdeviceappmgtioslobappprovisioningconfiguration
 schema: 2.0.0
 ---
 
-# Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration
+# Set-MgBetaDeviceAppMgtiOSLobAppProvisioningConfiguration
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,7 +14,7 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -IosLobAppProvisioningConfigurationId <String>
+Set-MgBetaDeviceAppMgtiOSLobAppProvisioningConfiguration -IosLobAppProvisioningConfigurationId <String>
  [-AdditionalProperties <Hashtable>]
  [-AppProvisioningConfigurationGroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>]
  [-IOSLobAppProvisioningConfigAssignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]
@@ -23,21 +23,21 @@ Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -IosLobAppProvisioningConfi
 
 ### Assign
 ```
-Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -IosLobAppProvisioningConfigurationId <String>
+Set-MgBetaDeviceAppMgtiOSLobAppProvisioningConfiguration -IosLobAppProvisioningConfigurationId <String>
  -BodyParameter <IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -InputObject <IDevicesCorporateManagementIdentity>
+Set-MgBetaDeviceAppMgtiOSLobAppProvisioningConfiguration -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -InputObject <IDevicesCorporateManagementIdentity>
+Set-MgBetaDeviceAppMgtiOSLobAppProvisioningConfiguration -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-AppProvisioningConfigurationGroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>]
  [-IOSLobAppProvisioningConfigAssignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for APPPROVISIONINGCONFIGURATIONGROUPASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IOSLOBAPPPROVISIONINGCONFIGASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -196,9 +196,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -208,7 +208,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Set-MgDeviceAppManagementiOSLobAppProvisioningConfiguration
+### Set-MgBetaDeviceAppManagementiOSLobAppProvisioningConfiguration
 
 COMPLEX PARAMETER PROPERTIES
 

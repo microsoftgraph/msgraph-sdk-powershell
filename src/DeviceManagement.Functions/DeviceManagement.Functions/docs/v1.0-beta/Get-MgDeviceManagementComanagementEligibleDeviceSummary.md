@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementcomanagementeligibledevicesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/get-mgdevicemanagementcomanagementeligibledevicesummary
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementComanagementEligibleDeviceSummary
+# Get-MgBetaDeviceManagementComanagementEligibleDeviceSummary
 
 ## SYNOPSIS
 Invoke function getComanagementEligibleDevicesSummary
@@ -13,7 +13,7 @@ Invoke function getComanagementEligibleDevicesSummary
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementComanagementEligibleDeviceSummary [<CommonParameters>]
+Get-MgBetaDeviceManagementComanagementEligibleDeviceSummary [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,7 +30,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevicesSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevicesSummary
 
 ## NOTES
 

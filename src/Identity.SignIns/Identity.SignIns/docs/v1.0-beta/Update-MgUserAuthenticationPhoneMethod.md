@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mguserauthenticationphonemethod
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mguserauthenticationphonemethod
 schema: 2.0.0
 ---
 
-# Update-MgUserAuthenticationPhoneMethod
+# Update-MgBetaUserAuthenticationPhoneMethod
 
 ## SYNOPSIS
 Update the navigation property phoneMethods in users
@@ -14,28 +14,28 @@ Update the navigation property phoneMethods in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserAuthenticationPhoneMethod -PhoneAuthenticationMethodId <String> -UserId <String>
+Update-MgBetaUserAuthenticationPhoneMethod -PhoneAuthenticationMethodId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PhoneNumber <String>] [-PhoneType <String>]
  [-SmsSignInState <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserAuthenticationPhoneMethod -PhoneAuthenticationMethodId <String> -UserId <String>
+Update-MgBetaUserAuthenticationPhoneMethod -PhoneAuthenticationMethodId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphPhoneAuthenticationMethod> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphPhoneAuthenticationMethod> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PhoneNumber <String>] [-PhoneType <String>]
  [-SmsSignInState <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -45,18 +45,18 @@ Update the navigation property phoneMethods in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserAuthenticationPhoneMethod Cmdlet
+### Example 1: Using the Update-MgBetaUserAuthenticationPhoneMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	PhoneNumber = "+1 2065555554"
 	PhoneType = "mobile"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId -BodyParameter $params
+Update-MgBetaUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserAuthenticationPhoneMethod Cmdlet.
+This example shows how to use the Update-MgBetaUserAuthenticationPhoneMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ phoneAuthenticationMethod
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -253,9 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
 
 ## OUTPUTS
 

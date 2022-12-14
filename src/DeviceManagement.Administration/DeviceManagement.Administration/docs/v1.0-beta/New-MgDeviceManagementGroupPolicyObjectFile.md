@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Administration
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicyobjectfile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.administration/new-mgdevicemanagementgrouppolicyobjectfile
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementGroupPolicyObjectFile
+# New-MgBetaDeviceManagementGroupPolicyObjectFile
 
 ## SYNOPSIS
 Create new navigation property to groupPolicyObjectFiles for deviceManagement
@@ -14,7 +14,7 @@ Create new navigation property to groupPolicyObjectFiles for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementGroupPolicyObjectFile [-AdditionalProperties <Hashtable>] [-Content <String>]
+New-MgBetaDeviceManagementGroupPolicyObjectFile [-AdditionalProperties <Hashtable>] [-Content <String>]
  [-CreatedDateTime <DateTime>] [-GroupPolicyObjectId <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-OuDistinguishedName <String>] [-RoleScopeTagIds <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-MgDeviceManagementGroupPolicyObjectFile [-AdditionalProperties <Hashtable>] 
 
 ### Create
 ```
-New-MgDeviceManagementGroupPolicyObjectFile -BodyParameter <IMicrosoftGraphGroupPolicyObjectFile> [-Confirm]
+New-MgBetaDeviceManagementGroupPolicyObjectFile -BodyParameter <IMicrosoftGraphGroupPolicyObjectFile> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ The Group Policy Object file uploaded by admin.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
 Parameter Sets: Create
 Aliases:
 
@@ -206,11 +206,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
 
 ## NOTES
 

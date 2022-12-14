@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtwindowinformationprotectionpolicy
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtwindowinformationprotectionpolicy
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtWindowInformationProtectionPolicy
+# New-MgBetaDeviceAppMgtWindowInformationProtectionPolicy
 
 ## SYNOPSIS
 Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to windowsInformationProtectionPolicies for devic
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtWindowInformationProtectionPolicy [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtWindowInformationProtectionPolicy [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>] [-AzureRightsManagementServicesAllowed]
  [-CreatedDateTime <DateTime>]
  [-DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]
@@ -47,7 +47,7 @@ New-MgDeviceAppMgtWindowInformationProtectionPolicy [-AdditionalProperties <Hash
 
 ### Create
 ```
-New-MgDeviceAppMgtWindowInformationProtectionPolicy
+New-MgBetaDeviceAppMgtWindowInformationProtectionPolicy
  -BodyParameter <IMicrosoftGraphWindowsInformationProtectionPolicy1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -78,7 +78,7 @@ Navigation property to list of security groups targeted for policy.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -109,7 +109,7 @@ Policy for Windows information protection without MDM
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
 Parameter Sets: Create
 Aliases:
 
@@ -140,7 +140,7 @@ Windows Information Protection DataRecoveryCertificate
 To construct, please use Get-Help -Online and see NOTES section for DATARECOVERYCERTIFICATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 Possible values for WIP Protection enforcement levels
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionEnforcementLevel
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsInformationProtectionEnforcementLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -235,7 +235,7 @@ The proxies are only leveraged in configuring the EnterpriseProxiedDomains polic
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEINTERNALPROXYSERVERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -253,7 +253,7 @@ These locations will be considered a safe destination for enterprise data to be 
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEIPRANGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -286,7 +286,7 @@ Data from one of these domains that is sent to a device will be considered enter
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISENETWORKDOMAINNAMES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -302,7 +302,7 @@ List of enterprise domains to be protected
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROTECTEDDOMAINNAMES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -321,7 +321,7 @@ A proxy server used for this purpose must also be configured using the Enterpris
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROXIEDDOMAINS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionProxiedDomainCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionProxiedDomainCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -338,7 +338,7 @@ Any server not on this list is considered non-enterprise
 To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROXYSERVERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -370,7 +370,7 @@ Another way to input exempt apps through xml files
 To construct, please use Get-Help -Online and see NOTES section for EXEMPTAPPLOCKERFILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -387,7 +387,7 @@ This is because some critical enterprise applications may have compatibility pro
 To construct, please use Get-Help -Online and see NOTES section for EXEMPTAPPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -511,7 +511,7 @@ List of domain names that can used for work or personal resource
 To construct, please use Get-Help -Online and see NOTES section for NEUTRALDOMAINRESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -583,7 +583,7 @@ Accept wildcard characters: False
 Pin Character Requirements
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -616,7 +616,7 @@ Accept wildcard characters: False
 Pin Character Requirements
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -631,7 +631,7 @@ Accept wildcard characters: False
 Pin Character Requirements
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -647,7 +647,7 @@ Another way to input protected apps through xml files
 To construct, please use Get-Help -Online and see NOTES section for PROTECTEDAPPLOCKERFILES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -663,7 +663,7 @@ Protected applications can access enterprise data and the data handled by those 
 To construct, please use Get-Help -Online and see NOTES section for PROTECTEDAPPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -757,7 +757,7 @@ Specifies a list of file extensions, so that files with these extensions are enc
 To construct, please use Get-Help -Online and see NOTES section for SMBAUTOENCRYPTEDFILEEXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -834,17 +834,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementWindowInformationProtectionPolicy
+### New-MgBetaDeviceAppManagementWindowInformationProtectionPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

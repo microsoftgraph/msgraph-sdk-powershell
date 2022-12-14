@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/invoke-mgfinancialcompanysaleinvoiceandsend
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/invoke-mgfinancialcompanysaleinvoiceandsend
 schema: 2.0.0
 ---
 
-# Invoke-MgFinancialCompanySaleInvoiceAndSend
+# Invoke-MgBetaFinancialCompanySaleInvoiceAndSend
 
 ## SYNOPSIS
 Invoke action postAndSend
@@ -14,13 +14,13 @@ Invoke action postAndSend
 
 ### Post (Default)
 ```
-Invoke-MgFinancialCompanySaleInvoiceAndSend -CompanyId <String> -SalesInvoiceId <String> [-PassThru]
+Invoke-MgBetaFinancialCompanySaleInvoiceAndSend -CompanyId <String> -SalesInvoiceId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PostViaIdentity
 ```
-Invoke-MgFinancialCompanySaleInvoiceAndSend -InputObject <IFinancialsIdentity> [-PassThru] [-Confirm]
+Invoke-MgBetaFinancialCompanySaleInvoiceAndSend -InputObject <IFinancialsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: PostViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/update-mgdevicemanagementdevicecompliancepolicydevicecompliancereportsummarization
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/update-mgdevicemanagementdevicecompliancepolicydevicecompliancereportsummarization
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceCompliancePolicyDeviceComplianceReportSummarization
+# Update-MgBetaDeviceManagementDeviceCompliancePolicyDeviceComplianceReportSummarization
 
 ## SYNOPSIS
 Invoke action refreshDeviceComplianceReportSummarization
@@ -13,7 +13,7 @@ Invoke action refreshDeviceComplianceReportSummarization
 ## SYNTAX
 
 ```
-Update-MgDeviceManagementDeviceCompliancePolicyDeviceComplianceReportSummarization [-PassThru] [-Confirm]
+Update-MgBetaDeviceManagementDeviceCompliancePolicyDeviceComplianceReportSummarization [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 

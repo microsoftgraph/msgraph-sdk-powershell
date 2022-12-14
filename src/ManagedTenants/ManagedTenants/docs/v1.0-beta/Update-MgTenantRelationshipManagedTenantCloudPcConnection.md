@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/update-mgtenantrelationshipmanagedtenantcloudpcconnection
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/update-mgtenantrelationshipmanagedtenantcloudpcconnection
 schema: 2.0.0
 ---
 
-# Update-MgTenantRelationshipManagedTenantCloudPcConnection
+# Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection
 
 ## SYNOPSIS
 Update the navigation property cloudPcConnections in tenantRelationships
@@ -14,7 +14,7 @@ Update the navigation property cloudPcConnections in tenantRelationships
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId <String>
+Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HealthCheckStatus <String>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,21 +22,21 @@ Update-MgTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId <
 
 ### Update
 ```
-Update-MgTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId <String>
+Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId <String>
  -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTenantRelationshipManagedTenantCloudPcConnection -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection -InputObject <IManagedTenantsIdentity>
  -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgTenantRelationshipManagedTenantCloudPcConnection -InputObject <IManagedTenantsIdentity>
+Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HealthCheckStatus <String>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -69,7 +69,7 @@ cloudPcConnection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -264,9 +264,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IManagedTenantsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
 
 ## OUTPUTS
 

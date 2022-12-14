@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanysalecreditmemolineaccount
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanysalecreditmemolineaccount
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanySaleCreditMemoLineAccount
+# Update-MgBetaFinancialCompanySaleCreditMemoLineAccount
 
 ## SYNOPSIS
 Update the navigation property account in financials
@@ -14,7 +14,7 @@ Update the navigation property account in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanySaleCreditMemoLineAccount -CompanyId <String> -SalesCreditMemoLineId <String>
+Update-MgBetaFinancialCompanySaleCreditMemoLineAccount -CompanyId <String> -SalesCreditMemoLineId <String>
  [-AdditionalProperties <Hashtable>] [-Blocked] [-Category <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-SubCategory <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgFinancialCompanySaleCreditMemoLineAccount -CompanyId <String> -SalesCre
 
 ### Update
 ```
-Update-MgFinancialCompanySaleCreditMemoLineAccount -CompanyId <String> -SalesCreditMemoLineId <String>
+Update-MgBetaFinancialCompanySaleCreditMemoLineAccount -CompanyId <String> -SalesCreditMemoLineId <String>
  -BodyParameter <IMicrosoftGraphAccount> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanySaleCreditMemoLineAccount -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleCreditMemoLineAccount -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphAccount> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanySaleCreditMemoLineAccount -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanySaleCreditMemoLineAccount -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Blocked] [-Category <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-SubCategory <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -82,7 +82,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -280,9 +280,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgexecutedevicemanagementmanageddeviceaction
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/invoke-mgexecutedevicemanagementmanageddeviceaction
 schema: 2.0.0
 ---
 
-# Invoke-MgExecuteDeviceManagementManagedDeviceAction
+# Invoke-MgBetaExecuteDeviceManagementManagedDeviceAction
 
 ## SYNOPSIS
 Invoke action executeAction
@@ -14,7 +14,7 @@ Invoke action executeAction
 
 ### ExecuteExpanded (Default)
 ```
-Invoke-MgExecuteDeviceManagementManagedDeviceAction [-ActionName <ManagedDeviceRemoteAction>]
+Invoke-MgBetaExecuteDeviceManagementManagedDeviceAction [-ActionName <ManagedDeviceRemoteAction>]
  [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>] [-DeprovisionReason <String>]
  [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData] [-KeepUserData]
  [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
@@ -23,7 +23,7 @@ Invoke-MgExecuteDeviceManagementManagedDeviceAction [-ActionName <ManagedDeviceR
 
 ### Execute
 ```
-Invoke-MgExecuteDeviceManagementManagedDeviceAction
+Invoke-MgBetaExecuteDeviceManagementManagedDeviceAction
  -BodyParameter <IPaths1R3Ij5LDevicemanagementManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -39,7 +39,7 @@ Invoke action executeAction
 managedDeviceRemoteAction
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ManagedDeviceRemoteAction
+Type: Microsoft.Graph.Beta.PowerShell.Support.ManagedDeviceRemoteAction
 Parameter Sets: ExecuteExpanded
 Aliases:
 
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1R3Ij5LDevicemanagementManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1R3Ij5LDevicemanagementManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Execute
 Aliases:
 
@@ -267,11 +267,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1R3Ij5LDevicemanagementManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1R3Ij5LDevicemanagementManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBulkManagedDeviceActionResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBulkManagedDeviceActionResult
 
 ## NOTES
 

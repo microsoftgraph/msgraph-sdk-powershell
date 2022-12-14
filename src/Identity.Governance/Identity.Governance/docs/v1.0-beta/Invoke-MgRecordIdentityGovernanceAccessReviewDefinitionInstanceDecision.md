@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/invoke-mgrecordidentitygovernanceaccessreviewdefinitioninstancedecision
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/invoke-mgrecordidentitygovernanceaccessreviewdefinitioninstancedecision
 schema: 2.0.0
 ---
 
-# Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision
+# Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision
 
 ## SYNOPSIS
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
@@ -15,7 +15,7 @@ If no IDs are specified, the decisions will apply to every **accessReviewInstanc
 
 ### RecordExpanded (Default)
 ```
-Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
+Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-AdditionalProperties <Hashtable>] [-Decision <String>]
  [-Justification <String>] [-PrincipalId <String>] [-ResourceId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -23,7 +23,7 @@ Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessR
 
 ### Record
 ```
-Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
+Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String>
  -BodyParameter <IPaths1ZlpdlIdentitygovernanceAccessreviewsDefinitionsAccessreviewscheduledefinitionIdInstancesAccessreviewinstanceIdDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -31,7 +31,7 @@ Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessR
 
 ### RecordViaIdentity
 ```
-Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision
+Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1ZlpdlIdentitygovernanceAccessreviewsDefinitionsAccessreviewscheduledefinitionIdInstancesAccessreviewinstanceIdDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -39,7 +39,7 @@ Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision
 
 ### RecordViaIdentityExpanded
 ```
-Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision
+Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-Decision <String>]
  [-Justification <String>] [-PrincipalId <String>] [-ResourceId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1ZlpdlIdentitygovernanceAccessreviewsDefinitionsAccessreviewscheduledefinitionIdInstancesAccessreviewinstanceIdDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1ZlpdlIdentitygovernanceAccessreviewsDefinitionsAccessreviewscheduledefinitionIdInstancesAccessreviewinstanceIdDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Record, RecordViaIdentity
 Aliases:
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: RecordViaIdentity, RecordViaIdentityExpanded
 Aliases:
 
@@ -241,9 +241,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1ZlpdlIdentitygovernanceAccessreviewsDefinitionsAccessreviewscheduledefinitionIdInstancesAccessreviewinstanceIdDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1ZlpdlIdentitygovernanceAccessreviewsDefinitionsAccessreviewscheduledefinitionIdInstancesAccessreviewinstanceIdDecisionsMicrosoftGraphRecordalldecisionsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

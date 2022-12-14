@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanycustomerpaymentjournal
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/new-mgfinancialcompanycustomerpaymentjournal
 schema: 2.0.0
 ---
 
-# New-MgFinancialCompanyCustomerPaymentJournal
+# New-MgBetaFinancialCompanyCustomerPaymentJournal
 
 ## SYNOPSIS
 Create new navigation property to customerPaymentJournals for financials
@@ -14,7 +14,7 @@ Create new navigation property to customerPaymentJournals for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanyCustomerPaymentJournal -CompanyId <String> [-Account <IMicrosoftGraphAccount>]
+New-MgBetaFinancialCompanyCustomerPaymentJournal -CompanyId <String> [-Account <IMicrosoftGraphAccount>]
  [-AdditionalProperties <Hashtable>] [-BalancingAccountId <String>] [-BalancingAccountNumber <String>]
  [-Code <String>] [-CustomerPayments <IMicrosoftGraphCustomerPayment[]>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgFinancialCompanyCustomerPaymentJournal -CompanyId <String> [-Account <IMic
 
 ### Create
 ```
-New-MgFinancialCompanyCustomerPaymentJournal -CompanyId <String>
+New-MgBetaFinancialCompanyCustomerPaymentJournal -CompanyId <String>
  -BodyParameter <IMicrosoftGraphCustomerPaymentJournal> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgFinancialCompanyCustomerPaymentJournal -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyCustomerPaymentJournal -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphCustomerPaymentJournal> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanyCustomerPaymentJournal -InputObject <IFinancialsIdentity>
+New-MgBetaFinancialCompanyCustomerPaymentJournal -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AdditionalProperties <Hashtable>] [-BalancingAccountId <String>]
  [-BalancingAccountNumber <String>] [-Code <String>] [-CustomerPayments <IMicrosoftGraphCustomerPayment[]>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf]
@@ -53,7 +53,7 @@ account
 To construct, please use Get-Help -Online and see NOTES section for ACCOUNT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccount
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -114,7 +114,7 @@ customerPaymentJournal
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMERPAYMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPayment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPayment[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -207,7 +207,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -269,13 +269,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal
 
 ## NOTES
 

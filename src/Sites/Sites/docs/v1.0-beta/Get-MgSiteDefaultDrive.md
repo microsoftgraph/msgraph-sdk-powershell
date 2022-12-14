@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitedefaultdrive
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitedefaultdrive
 schema: 2.0.0
 ---
 
-# Get-MgSiteDefaultDrive
+# Get-MgBetaSiteDefaultDrive
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a Drive resource.
@@ -15,13 +15,13 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 
 ### Get (Default)
 ```
-Get-MgSiteDefaultDrive -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteDefaultDrive -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteDefaultDrive -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaSiteDefaultDrive -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgSiteDefaultDrive Cmdlet
+### Example 1: Using the Get-MgBetaSiteDefaultDrive Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteDefaultDrive -SiteId $siteId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteDefaultDrive -SiteId $siteId
 ```
 
-This example shows how to use the Get-MgSiteDefaultDrive Cmdlet.
+This example shows how to use the Get-MgBetaSiteDefaultDrive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -62,7 +62,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -108,11 +108,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDrive1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDrive1
 
 ## NOTES
 

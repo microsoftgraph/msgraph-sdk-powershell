@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevice
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdevice
 schema: 2.0.0
 ---
 
-# Get-MgDevice
+# Get-MgBetaDevice
 
 ## SYNOPSIS
 Get the properties and relationships of a device object.
@@ -15,19 +15,19 @@ Since the **device** resource supports extensions, you can also use the `GET` op
 
 ### List1 (Default)
 ```
-Get-MgDevice [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaDevice [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgDevice -DeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaDevice -DeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDevice -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -37,58 +37,58 @@ Since the **device** resource supports extensions, you can also use the `GET` op
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgDevice Cmdlet
+### Example 1: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -DeviceId $deviceId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -DeviceId $deviceId
 ```
 
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgDevice Cmdlet
+### Example 2: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -DeviceId $deviceId -Property "id,extensionAttributes" 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -DeviceId $deviceId -Property "id,extensionAttributes" 
 ```
 
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Using the Get-MgDevice Cmdlet
+### Example 3: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -Filter "extensionAttributes/extensionAttribute1 eq 'BYOD-Device'" -CountVariable CountVar -ConsistencyLevel eventual 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -Filter "extensionAttributes/extensionAttribute1 eq 'BYOD-Device'" -CountVariable CountVar -ConsistencyLevel eventual 
 ```
 
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Using the Get-MgDevice Cmdlet
+### Example 4: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice
 ```
 
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Using the Get-MgDevice Cmdlet
+### Example 5: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -Property "id,extensionAttributes" 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -Property "id,extensionAttributes" 
 ```
 
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Using the Get-MgDevice Cmdlet
+### Example 6: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -Filter "startswith(displayName, 'a')" -CountVariable CountVar -Top 1 -Sort "displayName" -ConsistencyLevel eventual 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -Filter "startswith(displayName, 'a')" -CountVariable CountVar -Top 1 -Sort "displayName" -ConsistencyLevel eventual 
 ```
 
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -190,7 +190,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -296,11 +296,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice1
 
 ## NOTES
 

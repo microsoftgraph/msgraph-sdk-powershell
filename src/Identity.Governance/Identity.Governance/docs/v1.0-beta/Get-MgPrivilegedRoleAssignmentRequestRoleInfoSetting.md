@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedroleassignmentrequestroleinfosetting
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedroleassignmentrequestroleinfosetting
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedRoleAssignmentRequestRoleInfoSetting
+# Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting
 
 ## SYNOPSIS
 Retrieve the role settings for the given role.
@@ -15,13 +15,13 @@ A privilegedRoleSettings object will be returned.
 
 ### Get (Default)
 ```
-Get-MgPrivilegedRoleAssignmentRequestRoleInfoSetting -PrivilegedRoleAssignmentRequestId <String>
+Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting -PrivilegedRoleAssignmentRequestId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedRoleAssignmentRequestRoleInfoSetting -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaPrivilegedRoleAssignmentRequestRoleInfoSetting -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -99,11 +99,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSettings
 
 ## NOTES
 

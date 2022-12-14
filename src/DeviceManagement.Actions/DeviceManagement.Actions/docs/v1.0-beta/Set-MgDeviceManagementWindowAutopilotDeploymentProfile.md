@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/set-mgdevicemanagementwindowautopilotdeploymentprofile
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/set-mgdevicemanagementwindowautopilotdeploymentprofile
 schema: 2.0.0
 ---
 
-# Set-MgDeviceManagementWindowAutopilotDeploymentProfile
+# Set-MgBetaDeviceManagementWindowAutopilotDeploymentProfile
 
 ## SYNOPSIS
 Invoke action assign
@@ -14,28 +14,28 @@ Invoke action assign
 
 ### AssignExpanded (Default)
 ```
-Set-MgDeviceManagementWindowAutopilotDeploymentProfile -WindowsAutopilotDeploymentProfileId <String>
+Set-MgBetaDeviceManagementWindowAutopilotDeploymentProfile -WindowsAutopilotDeploymentProfileId <String>
  [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Assign
 ```
-Set-MgDeviceManagementWindowAutopilotDeploymentProfile -WindowsAutopilotDeploymentProfileId <String>
+Set-MgBetaDeviceManagementWindowAutopilotDeploymentProfile -WindowsAutopilotDeploymentProfileId <String>
  -BodyParameter <IPaths1Bmmkw4DevicemanagementWindowsautopilotdeploymentprofilesWindowsautopilotdeploymentprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
-Set-MgDeviceManagementWindowAutopilotDeploymentProfile -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementWindowAutopilotDeploymentProfile -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1Bmmkw4DevicemanagementWindowsautopilotdeploymentprofilesWindowsautopilotdeploymentprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
-Set-MgDeviceManagementWindowAutopilotDeploymentProfile -InputObject <IDeviceManagementActionsIdentity>
+Set-MgBetaDeviceManagementWindowAutopilotDeploymentProfile -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Bmmkw4DevicemanagementWindowsautopilotdeploymentprofilesWindowsautopilotdeploymentprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Bmmkw4DevicemanagementWindowsautopilotdeploymentprofilesWindowsautopilotdeploymentprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
@@ -175,9 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Bmmkw4DevicemanagementWindowsautopilotdeploymentprofilesWindowsautopilotdeploymentprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Bmmkw4DevicemanagementWindowsautopilotdeploymentprofilesWindowsautopilotdeploymentprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/get-mguserdevicecommandresponsepayload
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/get-mguserdevicecommandresponsepayload
 schema: 2.0.0
 ---
 
-# Get-MgUserDeviceCommandResponsepayload
+# Get-MgBetaUserDeviceCommandResponsepayload
 
 ## SYNOPSIS
 Get responsepayload from users
@@ -14,13 +14,13 @@ Get responsepayload from users
 
 ### Get (Default)
 ```
-Get-MgUserDeviceCommandResponsepayload -CommandId <String> -DeviceId <String> -UserId <String>
+Get-MgBetaUserDeviceCommandResponsepayload -CommandId <String> -DeviceId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserDeviceCommandResponsepayload -InputObject <ICrossDeviceExperiencesIdentity>
+Get-MgBetaUserDeviceCommandResponsepayload -InputObject <ICrossDeviceExperiencesIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -127,7 +127,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ## OUTPUTS
 

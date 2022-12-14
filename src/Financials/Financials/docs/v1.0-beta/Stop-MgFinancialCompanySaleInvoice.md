@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/stop-mgfinancialcompanysaleinvoice
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/stop-mgfinancialcompanysaleinvoice
 schema: 2.0.0
 ---
 
-# Stop-MgFinancialCompanySaleInvoice
+# Stop-MgBetaFinancialCompanySaleInvoice
 
 ## SYNOPSIS
 Invoke action cancel
@@ -14,13 +14,13 @@ Invoke action cancel
 
 ### Cancel (Default)
 ```
-Stop-MgFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String> [-PassThru] [-Confirm]
+Stop-MgBetaFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Stop-MgBetaFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: CancelViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

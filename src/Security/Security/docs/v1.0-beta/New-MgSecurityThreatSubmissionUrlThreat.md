@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecuritythreatsubmissionurlthreat
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/new-mgsecuritythreatsubmissionurlthreat
 schema: 2.0.0
 ---
 
-# New-MgSecurityThreatSubmissionUrlThreat
+# New-MgBetaSecurityThreatSubmissionUrlThreat
 
 ## SYNOPSIS
 Create a new urlThreatSubmission object.
@@ -14,7 +14,7 @@ Create a new urlThreatSubmission object.
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityThreatSubmissionUrlThreat [-AdditionalProperties <Hashtable>]
+New-MgBetaSecurityThreatSubmissionUrlThreat [-AdditionalProperties <Hashtable>]
  [-AdminReview <IMicrosoftGraphSecuritySubmissionAdminReview>] [-Category <String>] [-ClientSource <String>]
  [-ContentType <String>] [-CreatedBy <IMicrosoftGraphSecuritySubmissionUserIdentity>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-Result <IMicrosoftGraphSecuritySubmissionResult>]
@@ -24,7 +24,7 @@ New-MgSecurityThreatSubmissionUrlThreat [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgSecurityThreatSubmissionUrlThreat -BodyParameter <IMicrosoftGraphSecurityUrlThreatSubmission> [-Confirm]
+New-MgBetaSecurityThreatSubmissionUrlThreat -BodyParameter <IMicrosoftGraphSecurityUrlThreatSubmission> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -33,18 +33,18 @@ Create a new urlThreatSubmission object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgSecurityThreatSubmissionUrlThreat Cmdlet
+### Example 1: Using the New-MgBetaSecurityThreatSubmissionUrlThreat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
-	"@odata.type" = "#microsoft.graph.urlThreatSubmission"
+	"@odata.type" = "#Microsoft.Graph.Beta.urlThreatSubmission"
 	Category = "phishing"
 	WebUrl = "http://phishing.contoso.com"
 }
-New-MgSecurityThreatSubmissionUrlThreat -BodyParameter $params
+New-MgBetaSecurityThreatSubmissionUrlThreat -BodyParameter $params
 ```
 
-This example shows how to use the New-MgSecurityThreatSubmissionUrlThreat Cmdlet.
+This example shows how to use the New-MgBetaSecurityThreatSubmissionUrlThreat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ submissionAdminReview
 To construct, please use Get-Help -Online and see NOTES section for ADMINREVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionAdminReview
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionAdminReview
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -85,7 +85,7 @@ urlThreatSubmission
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
 Parameter Sets: Create
 Aliases:
 
@@ -146,7 +146,7 @@ submissionUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionUserIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionUserIdentity
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ submissionResult
 To construct, please use Get-Help -Online and see NOTES section for RESULT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubmissionResult
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySubmissionResult
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -303,11 +303,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
 
 ## NOTES
 

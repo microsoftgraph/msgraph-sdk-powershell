@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mguseroutlookmastercategory
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/update-mguseroutlookmastercategory
 schema: 2.0.0
 ---
 
-# Update-MgUserOutlookMasterCategory
+# Update-MgBetaUserOutlookMasterCategory
 
 ## SYNOPSIS
 Update the navigation property masterCategories in users
@@ -14,26 +14,26 @@ Update the navigation property masterCategories in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String>
+Update-MgBetaUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Color <String>] [-DisplayName <String>] [-Id <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String>
+Update-MgBetaUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphOutlookCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserOutlookMasterCategory -InputObject <IUsersIdentity>
+Update-MgBetaUserOutlookMasterCategory -InputObject <IUsersIdentity>
  -BodyParameter <IMicrosoftGraphOutlookCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-Color <String>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -43,17 +43,17 @@ Update the navigation property masterCategories in users
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserOutlookMasterCategory Cmdlet
+### Example 1: Using the Update-MgBetaUserOutlookMasterCategory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	Color = "preset15"
 }
 # A UPN can also be used as -UserId.
-Update-MgUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId -BodyParameter $params
+Update-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserOutlookMasterCategory Cmdlet.
+This example shows how to use the Update-MgBetaUserOutlookMasterCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -78,7 +78,7 @@ outlookCategory
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookCategory
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -142,7 +142,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -234,9 +234,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookCategory
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 

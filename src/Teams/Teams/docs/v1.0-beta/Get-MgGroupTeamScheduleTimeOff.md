@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mggroupteamscheduletimeoff
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mggroupteamscheduletimeoff
 schema: 2.0.0
 ---
 
-# Get-MgGroupTeamScheduleTimeOff
+# Get-MgBetaGroupTeamScheduleTimeOff
 
 ## SYNOPSIS
 The instances of times off in the schedule.
@@ -14,20 +14,20 @@ The instances of times off in the schedule.
 
 ### List (Default)
 ```
-Get-MgGroupTeamScheduleTimeOff -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaGroupTeamScheduleTimeOff -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupTeamScheduleTimeOff -GroupId <String> -TimeOffId <String> [-Property <String[]>]
+Get-MgBetaGroupTeamScheduleTimeOff -GroupId <String> -TimeOffId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,7 +103,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -224,11 +224,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOff1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTimeOff1
 
 ## NOTES
 

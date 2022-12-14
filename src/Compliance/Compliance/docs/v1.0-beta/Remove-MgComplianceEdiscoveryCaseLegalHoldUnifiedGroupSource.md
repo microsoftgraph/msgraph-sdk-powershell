@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Compliance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/remove-mgcomplianceediscoverycaselegalholdunifiedgroupsource
+Module Name: Microsoft.Graph.Beta.Compliance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.compliance/remove-mgcomplianceediscoverycaselegalholdunifiedgroupsource
 schema: 2.0.0
 ---
 
-# Remove-MgComplianceEdiscoveryCaseLegalHoldUnifiedGroupSource
+# Remove-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSource
 
 ## SYNOPSIS
 Delete navigation property unifiedGroupSources for compliance
@@ -14,13 +14,13 @@ Delete navigation property unifiedGroupSources for compliance
 
 ### Delete (Default)
 ```
-Remove-MgComplianceEdiscoveryCaseLegalHoldUnifiedGroupSource -CaseId <String> -LegalHoldId <String>
+Remove-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSource -CaseId <String> -LegalHoldId <String>
  -UnifiedGroupSourceId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgComplianceEdiscoveryCaseLegalHoldUnifiedGroupSource -InputObject <IComplianceIdentity>
+Remove-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSource -InputObject <IComplianceIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -158,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/get-mggroupeventexceptionoccurrencesinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/get-mggroupeventexceptionoccurrencesinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty
+# Get-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty
 
 ## SYNOPSIS
 The collection of single-value extended properties defined for the event.
@@ -16,7 +16,7 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
+Get-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
  -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -24,14 +24,14 @@ Get-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty -EventId <String>
 
 ### Get
 ```
-Get-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
+Get-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty -EventId <String> -EventId1 <String>
  -GroupId <String> -SingleValueLegacyExtendedPropertyId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupEventExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+Get-MgBetaGroupEventExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -155,7 +155,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -276,11 +276,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

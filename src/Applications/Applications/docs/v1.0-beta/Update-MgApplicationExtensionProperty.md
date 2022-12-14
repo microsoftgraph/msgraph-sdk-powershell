@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgapplicationextensionproperty
+Module Name: Microsoft.Graph.Beta.Applications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.applications/update-mgapplicationextensionproperty
 schema: 2.0.0
 ---
 
-# Update-MgApplicationExtensionProperty
+# Update-MgBetaApplicationExtensionProperty
 
 ## SYNOPSIS
 Update the navigation property extensionProperties in applications
@@ -14,7 +14,7 @@ Update the navigation property extensionProperties in applications
 
 ### UpdateExpanded (Default)
 ```
-Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
+Update-MgBetaApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
  [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>] [-DataType <String>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-IsSyncedFromOnPremises] [-Name <String>]
  [-TargetObjects <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionProperty
 
 ### Update
 ```
-Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
+Update-MgBetaApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
  -BodyParameter <IMicrosoftGraphExtensionProperty> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity>
+Update-MgBetaApplicationExtensionProperty -InputObject <IApplicationsIdentity>
  -BodyParameter <IMicrosoftGraphExtensionProperty> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
  [-IsSyncedFromOnPremises] [-Name <String>] [-TargetObjects <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -98,7 +98,7 @@ extensionProperty
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtensionProperty
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -180,7 +180,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -292,9 +292,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExtensionProperty
 
 ## OUTPUTS
 

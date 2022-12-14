@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementdeviceconfigurationconflictsummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/new-mgdevicemanagementdeviceconfigurationconflictsummary
 schema: 2.0.0
 ---
 
-# New-MgDeviceManagementDeviceConfigurationConflictSummary
+# New-MgBetaDeviceManagementDeviceConfigurationConflictSummary
 
 ## SYNOPSIS
 Create new navigation property to deviceConfigurationConflictSummary for deviceManagement
@@ -14,14 +14,14 @@ Create new navigation property to deviceConfigurationConflictSummary for deviceM
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementDeviceConfigurationConflictSummary [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceManagementDeviceConfigurationConflictSummary [-AdditionalProperties <Hashtable>]
  [-ConflictingDeviceConfigurations <IMicrosoftGraphSettingSource[]>] [-ContributingSettings <String[]>]
  [-DeviceCheckinsImpacted <Int32>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementDeviceConfigurationConflictSummary
+New-MgBetaDeviceManagementDeviceConfigurationConflictSummary
  -BodyParameter <IMicrosoftGraphDeviceConfigurationConflictSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Conflict summary for a set of device configuration policies.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
 Parameter Sets: Create
 Aliases:
 
@@ -68,7 +68,7 @@ The set of policies in conflict with the given setting
 To construct, please use Get-Help -Online and see NOTES section for CONFLICTINGDEVICECONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingSource[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSettingSource[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -161,11 +161,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
 
 ## NOTES
 

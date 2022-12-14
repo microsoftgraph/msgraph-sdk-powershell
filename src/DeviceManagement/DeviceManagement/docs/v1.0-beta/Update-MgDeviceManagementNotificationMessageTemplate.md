@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementnotificationmessagetemplate
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementnotificationmessagetemplate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementNotificationMessageTemplate
+# Update-MgBetaDeviceManagementNotificationMessageTemplate
 
 ## SYNOPSIS
 Update the navigation property notificationMessageTemplates in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property notificationMessageTemplates in deviceManagement
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgDeviceManagementNotificationMessageTemplate -NotificationMessageTemplateId <String>
+Update-MgBetaDeviceManagementNotificationMessageTemplate -NotificationMessageTemplateId <String>
  [-AdditionalProperties <Hashtable>] [-BrandingOptions <NotificationTemplateBrandingOptions>]
  [-DefaultLocale <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>]
@@ -23,21 +23,21 @@ Update-MgDeviceManagementNotificationMessageTemplate -NotificationMessageTemplat
 
 ### Update1
 ```
-Update-MgDeviceManagementNotificationMessageTemplate -NotificationMessageTemplateId <String>
+Update-MgBetaDeviceManagementNotificationMessageTemplate -NotificationMessageTemplateId <String>
  -BodyParameter <IMicrosoftGraphNotificationMessageTemplate1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgDeviceManagementNotificationMessageTemplate -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementNotificationMessageTemplate -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphNotificationMessageTemplate1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgDeviceManagementNotificationMessageTemplate -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementNotificationMessageTemplate -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-BrandingOptions <NotificationTemplateBrandingOptions>]
  [-DefaultLocale <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>]
@@ -73,7 +73,7 @@ Use the notificationMessageTemplate object to create your own custom notificatio
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -89,7 +89,7 @@ Branding Options for the Message Template.
 Branding is defined in the Intune Admin Console.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.NotificationTemplateBrandingOptions
+Type: Microsoft.Graph.Beta.PowerShell.Support.NotificationTemplateBrandingOptions
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -151,7 +151,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -182,7 +182,7 @@ The list of localized messages for this Notification Message Template.
 To construct, please use Get-Help -Online and see NOTES section for LOCALIZEDNOTIFICATIONMESSAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -274,9 +274,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate1
 
 ## OUTPUTS
 

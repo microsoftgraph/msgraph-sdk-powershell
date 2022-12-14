@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.ManagedTenants
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementtemplatecollection
+Module Name: Microsoft.Graph.Beta.ManagedTenants
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.managedtenants/new-mgtenantrelationshipmanagedtenantmanagementtemplatecollection
 schema: 2.0.0
 ---
 
-# New-MgTenantRelationshipManagedTenantManagementTemplateCollection
+# New-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection
 
 ## SYNOPSIS
 Create new navigation property to managementTemplateCollections for tenantRelationships
@@ -14,7 +14,7 @@ Create new navigation property to managementTemplateCollections for tenantRelati
 
 ### CreateExpanded (Default)
 ```
-New-MgTenantRelationshipManagedTenantManagementTemplateCollection [-AdditionalProperties <Hashtable>]
+New-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection [-AdditionalProperties <Hashtable>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
  [-ManagementTemplates <IMicrosoftGraphManagedTenantsManagementTemplate[]>] [-Confirm] [-WhatIf]
@@ -23,7 +23,7 @@ New-MgTenantRelationshipManagedTenantManagementTemplateCollection [-AdditionalPr
 
 ### Create
 ```
-New-MgTenantRelationshipManagedTenantManagementTemplateCollection
+New-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection
  -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollection> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -55,7 +55,7 @@ managementTemplateCollection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
 Parameter Sets: Create
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MANAGEMENTTEMPLATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplate[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -224,11 +224,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
 
 ## NOTES
 

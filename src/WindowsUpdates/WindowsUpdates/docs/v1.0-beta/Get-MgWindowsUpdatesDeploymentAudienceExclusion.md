@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/get-mgwindowsupdatesdeploymentaudienceexclusion
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/get-mgwindowsupdatesdeploymentaudienceexclusion
 schema: 2.0.0
 ---
 
-# Get-MgWindowsUpdatesDeploymentAudienceExclusion
+# Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion
 
 ## SYNOPSIS
 Specifies the assets to exclude from the audience.
@@ -14,20 +14,20 @@ Specifies the assets to exclude from the audience.
 
 ### List (Default)
 ```
-Get-MgWindowsUpdatesDeploymentAudienceExclusion -DeploymentId <String> [-ExpandProperty <String[]>]
+Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion -DeploymentId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgWindowsUpdatesDeploymentAudienceExclusion -DeploymentId <String> -UpdatableAssetId <String>
+Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion -DeploymentId <String> -UpdatableAssetId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgWindowsUpdatesDeploymentAudienceExclusion -InputObject <IWindowsUpdatesIdentity>
+Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion -InputObject <IWindowsUpdatesIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Specifies the assets to exclude from the audience.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgWindowsUpdatesDeploymentAudienceExclusion Cmdlet
+### Example 1: Using the Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Get-MgWindowsUpdatesDeploymentAudienceExclusion -DeploymentId $deploymentId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion -DeploymentId $deploymentId
 ```
 
-This example shows how to use the Get-MgWindowsUpdatesDeploymentAudienceExclusion Cmdlet.
+This example shows how to use the Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -128,7 +128,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -249,11 +249,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset
 
 ### System.String
 
@@ -261,7 +261,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Get-MgWuDeploymentAudienceExclusion
+### Get-MgBetaWuDeploymentAudienceExclusion
 
 COMPLEX PARAMETER PROPERTIES
 

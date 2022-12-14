@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/test-mgdirectoryfeaturerolloutpolicyapplytoproperty
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/test-mgdirectoryfeaturerolloutpolicyapplytoproperty
 schema: 2.0.0
 ---
 
-# Test-MgDirectoryFeatureRolloutPolicyApplyToProperty
+# Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty
 
 ## SYNOPSIS
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -22,28 +22,28 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ### ValidateExpanded (Default)
 ```
-Test-MgDirectoryFeatureRolloutPolicyApplyToProperty -FeatureRolloutPolicyId <String>
+Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty -FeatureRolloutPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EntityType <String>] [-MailNickname <String>]
  [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate
 ```
-Test-MgDirectoryFeatureRolloutPolicyApplyToProperty -FeatureRolloutPolicyId <String>
+Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty -FeatureRolloutPolicyId <String>
  -BodyParameter <IPaths2Oqku8DirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity
 ```
-Test-MgDirectoryFeatureRolloutPolicyApplyToProperty -InputObject <IIdentityDirectoryManagementIdentity>
+Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPaths2Oqku8DirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentityExpanded
 ```
-Test-MgDirectoryFeatureRolloutPolicyApplyToProperty -InputObject <IIdentityDirectoryManagementIdentity>
+Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EntityType <String>] [-MailNickname <String>]
  [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths2Oqku8DirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths2Oqku8DirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate, ValidateViaIdentity
 Aliases:
 
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: ValidateViaIdentity, ValidateViaIdentityExpanded
 Aliases:
 
@@ -236,9 +236,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths2Oqku8DirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths2Oqku8DirectoryFeaturerolloutpoliciesFeaturerolloutpolicyIdAppliestoMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

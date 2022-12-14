@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtvpptoken
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/update-mgdeviceappmgtvpptoken
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtVppToken
+# Update-MgBetaDeviceAppMgtVppToken
 
 ## SYNOPSIS
 Update the navigation property vppTokens in deviceAppManagement
@@ -14,7 +14,7 @@ Update the navigation property vppTokens in deviceAppManagement
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceAppMgtVppToken -VppTokenId <String> [-AdditionalProperties <Hashtable>] [-AppleId <String>]
+Update-MgBetaDeviceAppMgtVppToken -VppTokenId <String> [-AdditionalProperties <Hashtable>] [-AppleId <String>]
  [-AutomaticallyUpdateApps] [-ClaimTokenManagementFromExternalMdm] [-CountryOrRegion <String>]
  [-DataSharingConsentGranted] [-DisplayName <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-LastSyncDateTime <DateTime>] [-LastSyncStatus <VppTokenSyncStatus>]
@@ -25,19 +25,19 @@ Update-MgDeviceAppMgtVppToken -VppTokenId <String> [-AdditionalProperties <Hasht
 
 ### Update
 ```
-Update-MgDeviceAppMgtVppToken -VppTokenId <String> -BodyParameter <IMicrosoftGraphVppToken2> [-PassThru]
+Update-MgBetaDeviceAppMgtVppToken -VppTokenId <String> -BodyParameter <IMicrosoftGraphVppToken2> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceAppMgtVppToken -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtVppToken -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphVppToken2> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceAppMgtVppToken -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgBetaDeviceAppMgtVppToken -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AppleId <String>] [-AutomaticallyUpdateApps]
  [-ClaimTokenManagementFromExternalMdm] [-CountryOrRegion <String>] [-DataSharingConsentGranted]
  [-DisplayName <String>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
@@ -107,7 +107,7 @@ You can upload multiple Apple VPP Business or Education tokens.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken2
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVppToken2
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -214,7 +214,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ Accept wildcard characters: False
 Possible sync statuses associated with an Apple Volume Purchase Program token.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.VppTokenSyncStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.VppTokenSyncStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 Possible states associated with an Apple Volume Purchase Program token.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.VppTokenState
+Type: Microsoft.Graph.Beta.PowerShell.Support.VppTokenState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -365,7 +365,7 @@ The collection of statuses of the actions performed on the Apple Volume Purchase
 To construct, please use Get-Help -Online and see NOTES section for TOKENACTIONRESULTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppTokenActionResult[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVppTokenActionResult[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -380,7 +380,7 @@ Accept wildcard characters: False
 Possible types of an Apple Volume Purchase Program token.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.VppTokenAccountType
+Type: Microsoft.Graph.Beta.PowerShell.Support.VppTokenAccountType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -442,9 +442,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken2
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVppToken2
 
 ## OUTPUTS
 
@@ -454,7 +454,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementVppToken
+### Update-MgBetaDeviceAppManagementVppToken
 
 COMPLEX PARAMETER PROPERTIES
 

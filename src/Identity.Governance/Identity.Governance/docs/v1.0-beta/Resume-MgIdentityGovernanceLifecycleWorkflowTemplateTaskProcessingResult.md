@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/resume-mgidentitygovernancelifecycleworkflowtemplatetaskprocessingresult
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/resume-mgidentitygovernancelifecycleworkflowtemplatetaskprocessingresult
 schema: 2.0.0
 ---
 
-# Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
+# Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
 
 ## SYNOPSIS
 Resume a task processing result that's `inProgress`.
@@ -15,7 +15,7 @@ An Azure Logic Apps system-assigned managed identity calls this API.
 
 ### ResumeExpanded (Default)
 ```
-Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <String>
+Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <String>
  -TaskProcessingResultId <String> -WorkflowTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
  [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,7 +23,7 @@ Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId
 
 ### Resume
 ```
-Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <String>
+Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId <String>
  -TaskProcessingResultId <String> -WorkflowTemplateId <String>
  -BodyParameter <IPathsZ177NiIdentitygovernanceLifecycleworkflowsWorkflowtemplatesWorkflowtemplateIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -31,7 +31,7 @@ Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult -TaskId
 
 ### ResumeViaIdentity
 ```
-Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
+Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPathsZ177NiIdentitygovernanceLifecycleworkflowsWorkflowtemplatesWorkflowtemplateIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -39,7 +39,7 @@ Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
 
 ### ResumeViaIdentityExpanded
 ```
-Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
+Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
  [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZ177NiIdentitygovernanceLifecycleworkflowsWorkflowtemplatesWorkflowtemplateIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsZ177NiIdentitygovernanceLifecycleworkflowsWorkflowtemplatesWorkflowtemplateIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Resume, ResumeViaIdentity
 Aliases:
 
@@ -89,7 +89,7 @@ customTaskExtensionCallbackData
 To construct, please use Get-Help -Online and see NOTES section for DATA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData
 Parameter Sets: ResumeExpanded, ResumeViaIdentityExpanded
 Aliases:
 
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: ResumeViaIdentity, ResumeViaIdentityExpanded
 Aliases:
 
@@ -242,9 +242,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsZ177NiIdentitygovernanceLifecycleworkflowsWorkflowtemplatesWorkflowtemplateIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsZ177NiIdentitygovernanceLifecycleworkflowsWorkflowtemplatesWorkflowtemplateIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/get-mgbusinessscenarioplannertask
+Module Name: Microsoft.Graph.Beta.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.bookings/get-mgbusinessscenarioplannertask
 schema: 2.0.0
 ---
 
-# Get-MgBusinessScenarioPlannerTask
+# Get-MgBetaBusinessScenarioPlannerTask
 
 ## SYNOPSIS
 Get tasks from solutions
@@ -14,20 +14,20 @@ Get tasks from solutions
 
 ### List (Default)
 ```
-Get-MgBusinessScenarioPlannerTask -BusinessScenarioId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaBusinessScenarioPlannerTask -BusinessScenarioId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBusinessScenarioPlannerTask -BusinessScenarioId <String> -BusinessScenarioTaskId <String>
+Get-MgBetaBusinessScenarioPlannerTask -BusinessScenarioId <String> -BusinessScenarioTaskId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBusinessScenarioPlannerTask -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaBusinessScenarioPlannerTask -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -134,7 +134,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -240,11 +240,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessScenarioTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBusinessScenarioTask
 
 ## NOTES
 

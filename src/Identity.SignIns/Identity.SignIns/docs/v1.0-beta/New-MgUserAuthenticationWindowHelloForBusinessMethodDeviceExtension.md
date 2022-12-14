@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationwindowhelloforbusinessmethoddeviceextension
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/new-mguserauthenticationwindowhelloforbusinessmethoddeviceextension
 schema: 2.0.0
 ---
 
-# New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension
+# New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension
 
 ## SYNOPSIS
 Create new navigation property to extensions for users
@@ -14,27 +14,27 @@ Create new navigation property to extensions for users
 
 ### CreateExpanded (Default)
 ```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -UserId <String>
+New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -UserId <String>
+New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -UserId <String>
  -WindowsHelloForBusinessAuthenticationMethodId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -InputObject <IIdentitySignInsIdentity>
+New-MgBetaUserAuthenticationWindowHelloForBusinessMethodDeviceExtension -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -96,7 +96,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -173,7 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.Collections.Hashtable
 

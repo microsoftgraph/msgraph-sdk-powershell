@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mggroupeventextension
+Module Name: Microsoft.Graph.Beta.Calendar
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.calendar/new-mggroupeventextension
 schema: 2.0.0
 ---
 
-# New-MgGroupEventExtension
+# New-MgBetaGroupEventExtension
 
 ## SYNOPSIS
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -17,25 +17,25 @@ The table in the Permissions section lists the resources that support open exten
 
 ### CreateExpanded1 (Default)
 ```
-New-MgGroupEventExtension -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaGroupEventExtension -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgGroupEventExtension -EventId <String> -GroupId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaGroupEventExtension -EventId <String> -GroupId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgGroupEventExtension -InputObject <ICalendarIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgBetaGroupEventExtension -InputObject <ICalendarIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgGroupEventExtension -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaGroupEventExtension -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -47,20 +47,20 @@ The table in the Permissions section lists the resources that support open exten
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgGroupEventExtension Cmdlet
+### Example 1: Using the New-MgBetaGroupEventExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
-	"@odata.type" = "microsoft.graph.openTypeExtension"
+	"@odata.type" = "Microsoft.Graph.Beta.openTypeExtension"
 	ExtensionName = "Com.Contoso.Deal"
 	CompanyName = "Alpine Skis"
 	DealValue = 
 	ExpirationDate = "2015-07-03T13:04:00.000Z"
 }
-New-MgGroupEventExtension -GroupId $groupId -EventId $eventId -BodyParameter $params
+New-MgBetaGroupEventExtension -GroupId $groupId -EventId $eventId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupEventExtension Cmdlet.
+This example shows how to use the New-MgBetaGroupEventExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -146,7 +146,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -193,7 +193,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ### System.Collections.Hashtable
 

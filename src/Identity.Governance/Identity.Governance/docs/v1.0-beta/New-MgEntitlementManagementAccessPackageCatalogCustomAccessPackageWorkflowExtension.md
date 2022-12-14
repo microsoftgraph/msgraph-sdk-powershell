@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementaccesspackagecatalogcustomaccesspackageworkflowextension
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/new-mgentitlementmanagementaccesspackagecatalogcustomaccesspackageworkflowextension
 schema: 2.0.0
 ---
 
-# New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+# New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
 
 ## SYNOPSIS
 Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
@@ -14,7 +14,7 @@ Create a new customAccessPackageWorkflowExtension object and add it to an existi
 
 ### CreateExpanded (Default)
 ```
-New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -AccessPackageCatalogId <String> [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>]
  [-ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>] [-CreatedDateTime <DateTime>]
@@ -24,14 +24,14 @@ New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtens
 
 ### Create
 ```
-New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -AccessPackageCatalogId <String> -BodyParameter <IMicrosoftGraphCustomAccessPackageWorkflowExtension>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphCustomAccessPackageWorkflowExtension> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -39,7 +39,7 @@ New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtens
 
 ### CreateViaIdentityExpanded
 ```
-New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
+New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>]
  [-ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>] [-CreatedDateTime <DateTime>]
@@ -52,27 +52,27 @@ Create a new customAccessPackageWorkflowExtension object and add it to an existi
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
+### Example 1: Using the New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "test_action_0124"
 	Description = "this is for graph testing only"
 	EndpointConfiguration = @{
-		"@odata.type" = "#microsoft.graph.logicAppTriggerEndpointConfiguration"
+		"@odata.type" = "#Microsoft.Graph.Beta.logicAppTriggerEndpointConfiguration"
 		SubscriptionId = "38ab2ccc-3747-4567-b36b-9478f5602f0d"
 		ResourceGroupName = "EMLogicApp"
 		LogicAppWorkflowName = "customextension_test"
 	}
 	AuthenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.azureAdTokenAuthentication"
+		"@odata.type" = "#Microsoft.Graph.Beta.azureAdTokenAuthentication"
 		ResourceId = "f604bd15-f785-4309-ad7c-6fad18ddb6cb"
 	}
 }
-New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
+New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
+This example shows how to use the New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -127,7 +127,7 @@ customAccessPackageWorkflowExtension
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ customExtensionClientConfiguration
 To construct, please use Get-Help -Online and see NOTES section for CLIENTCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomExtensionClientConfiguration
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomExtensionClientConfiguration
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -237,7 +237,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -301,13 +301,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAccessPackageWorkflowExtension
 
 ## NOTES
 

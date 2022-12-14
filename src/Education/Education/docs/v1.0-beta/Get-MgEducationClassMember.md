@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassmember
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationclassmember
 schema: 2.0.0
 ---
 
-# Get-MgEducationClassMember
+# Get-MgBetaEducationClassMember
 
 ## SYNOPSIS
 Retrieves the teachers and students for a class.
@@ -14,7 +14,7 @@ Note that if the delegated token is used, members can only be seen by other memb
 ## SYNTAX
 
 ```
-Get-MgEducationClassMember -EducationClassId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEducationClassMember -EducationClassId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -25,13 +25,13 @@ Note that if the delegated token is used, members can only be seen by other memb
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationClassMember Cmdlet
+### Example 1: Using the Get-MgBetaEducationClassMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClassMember -EducationClassId $educationClassId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationClassMember -EducationClassId $educationClassId
 ```
 
-This example shows how to use the Get-MgEducationClassMember Cmdlet.
+This example shows how to use the Get-MgBetaEducationClassMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -209,7 +209,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationUser
 
 ## NOTES
 

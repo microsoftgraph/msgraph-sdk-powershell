@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontactfoldercontactsinglevalueextendedproperty
+Module Name: Microsoft.Graph.Beta.PersonalContacts
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.personalcontacts/get-mgusercontactfoldercontactsinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Get-MgUserContactFolderContactSingleValueExtendedProperty
+# Get-MgBetaUserContactFolderContactSingleValueExtendedProperty
 
 ## SYNOPSIS
 The collection of single-value extended properties defined for the contact.
@@ -16,7 +16,7 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserContactFolderContactSingleValueExtendedProperty -ContactFolderId <String> -ContactId <String>
+Get-MgBetaUserContactFolderContactSingleValueExtendedProperty -ContactFolderId <String> -ContactId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
@@ -24,14 +24,14 @@ Get-MgUserContactFolderContactSingleValueExtendedProperty -ContactFolderId <Stri
 
 ### Get1
 ```
-Get-MgUserContactFolderContactSingleValueExtendedProperty -ContactFolderId <String> -ContactId <String>
+Get-MgBetaUserContactFolderContactSingleValueExtendedProperty -ContactFolderId <String> -ContactId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserContactFolderContactSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
+Get-MgBetaUserContactFolderContactSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -276,11 +276,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 

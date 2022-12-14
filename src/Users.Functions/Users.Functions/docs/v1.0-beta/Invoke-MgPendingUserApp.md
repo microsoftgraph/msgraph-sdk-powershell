@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgpendinguserapp
+Module Name: Microsoft.Graph.Beta.Users.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.functions/invoke-mgpendinguserapp
 schema: 2.0.0
 ---
 
-# Invoke-MgPendingUserApp
+# Invoke-MgBetaPendingUserApp
 
 ## SYNOPSIS
 Retrieves the list of devices with failed or pending apps
@@ -14,13 +14,13 @@ Retrieves the list of devices with failed or pending apps
 
 ### Pending (Default)
 ```
-Invoke-MgPendingUserApp -UserId <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Invoke-MgBetaPendingUserApp -UserId <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### PendingViaIdentity
 ```
-Invoke-MgPendingUserApp -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
+Invoke-MgBetaPendingUserApp -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: PendingViaIdentity
 Aliases:
 
@@ -142,11 +142,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceSummarizedAppState
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceSummarizedAppState
 
 ## NOTES
 

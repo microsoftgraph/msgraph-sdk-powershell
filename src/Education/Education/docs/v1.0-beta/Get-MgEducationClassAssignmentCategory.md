@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassassignmentcategory
+Module Name: Microsoft.Graph.Beta.Education
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.education/get-mgeducationclassassignmentcategory
 schema: 2.0.0
 ---
 
-# Get-MgEducationClassAssignmentCategory
+# Get-MgBetaEducationClassAssignmentCategory
 
 ## SYNOPSIS
 All categories associated with this class.
@@ -15,26 +15,26 @@ Nullable.
 
 ### List3 (Default)
 ```
-Get-MgEducationClassAssignmentCategory -EducationClassId <String> [-ExpandProperty <String[]>]
+Get-MgBetaEducationClassAssignmentCategory -EducationClassId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
+Get-MgBetaEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationClassId <String>
+Get-MgBetaEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationClassId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -45,22 +45,22 @@ Nullable.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEducationClassAssignmentCategory Cmdlet
+### Example 1: Using the Get-MgBetaEducationClassAssignmentCategory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
 
-This example shows how to use the Get-MgEducationClassAssignmentCategory Cmdlet.
+This example shows how to use the Get-MgBetaEducationClassAssignmentCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEducationClassAssignmentCategory Cmdlet
+### Example 2: Using the Get-MgBetaEducationClassAssignmentCategory Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
 ```
 
-This example shows how to use the Get-MgEducationClassAssignmentCategory Cmdlet.
+This example shows how to use the Get-MgBetaEducationClassAssignmentCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -176,7 +176,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -282,11 +282,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationCategory
 
 ## NOTES
 

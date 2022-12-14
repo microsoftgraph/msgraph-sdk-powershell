@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mggroupsitetermstoregroupsettermchild
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mggroupsitetermstoregroupsettermchild
 schema: 2.0.0
 ---
 
-# Get-MgGroupSiteTermStoreGroupSetTermChild
+# Get-MgBetaGroupSiteTermStoreGroupSetTermChild
 
 ## SYNOPSIS
 Children of current term.
@@ -14,7 +14,7 @@ Children of current term.
 
 ### List (Default)
 ```
-Get-MgGroupSiteTermStoreGroupSetTermChild -GroupId <String> -GroupId1 <String> -SetId <String>
+Get-MgBetaGroupSiteTermStoreGroupSetTermChild -GroupId <String> -GroupId1 <String> -SetId <String>
  -SiteId <String> -TermId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -22,14 +22,14 @@ Get-MgGroupSiteTermStoreGroupSetTermChild -GroupId <String> -GroupId1 <String> -
 
 ### Get
 ```
-Get-MgGroupSiteTermStoreGroupSetTermChild -GroupId <String> -GroupId1 <String> -SetId <String>
+Get-MgBetaGroupSiteTermStoreGroupSetTermChild -GroupId <String> -GroupId1 <String> -SetId <String>
  -SiteId <String> -TermId <String> -TermId1 <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupSiteTermStoreGroupSetTermChild -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupSiteTermStoreGroupSetTermChild -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -302,11 +302,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreTerm1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermStoreTerm1
 
 ## NOTES
 

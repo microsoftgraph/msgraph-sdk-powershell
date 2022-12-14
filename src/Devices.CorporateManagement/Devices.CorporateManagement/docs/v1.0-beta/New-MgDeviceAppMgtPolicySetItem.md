@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtpolicysetitem
+Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devices.corporatemanagement/new-mgdeviceappmgtpolicysetitem
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtPolicySetItem
+# New-MgBetaDeviceAppMgtPolicySetItem
 
 ## SYNOPSIS
 Create new navigation property to items for deviceAppManagement
@@ -14,7 +14,7 @@ Create new navigation property to items for deviceAppManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtPolicySetItem -PolicySetId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaDeviceAppMgtPolicySetItem -PolicySetId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-ErrorCode <ErrorCode>]
  [-GuidedDeploymentTags <String[]>] [-Id <String>] [-ItemType <String>] [-LastModifiedDateTime <DateTime>]
  [-PayloadId <String>] [-Status <PolicySetStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,19 +22,19 @@ New-MgDeviceAppMgtPolicySetItem -PolicySetId <String> [-AdditionalProperties <Ha
 
 ### Create
 ```
-New-MgDeviceAppMgtPolicySetItem -PolicySetId <String> -BodyParameter <IMicrosoftGraphPolicySetItem> [-Confirm]
+New-MgBetaDeviceAppMgtPolicySetItem -PolicySetId <String> -BodyParameter <IMicrosoftGraphPolicySetItem> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphPolicySetItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
+New-MgBetaDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-ErrorCode <ErrorCode>] [-GuidedDeploymentTags <String[]>] [-Id <String>] [-ItemType <String>]
  [-LastModifiedDateTime <DateTime>] [-PayloadId <String>] [-Status <PolicySetStatus>] [-Confirm] [-WhatIf]
@@ -68,7 +68,7 @@ A class containing the properties used for PolicySet Item.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetItem
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 errorCode
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.ErrorCode
+Type: Microsoft.Graph.Beta.PowerShell.Support.ErrorCode
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 The enum to specify the status of PolicySet.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Support.PolicySetStatus
+Type: Microsoft.Graph.Beta.PowerShell.Support.PolicySetStatus
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -282,19 +282,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetItem
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySetItem
 
 ## NOTES
 
 ALIASES
 
-### New-MgDeviceAppManagementPolicySetItem
+### New-MgBetaDeviceAppManagementPolicySetItem
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancetermofuseagreementfilelocalizationversion
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancetermofuseagreementfilelocalizationversion
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion
+# Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion
 
 ## SYNOPSIS
 Read-only.
@@ -15,7 +15,7 @@ Customized versions of the terms of use agreement in the Azure AD tenant.
 
 ### List1 (Default)
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
  -AgreementId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
@@ -23,14 +23,14 @@ Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion -AgreementFile
 
 ### Get1
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
  -AgreementFileVersionId <String> -AgreementId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaIdentityGovernanceTermOfUseAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -153,7 +153,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileVersion
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementFileVersion
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemactivitybyinterval
+Module Name: Microsoft.Graph.Beta.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.sites/get-mgsitelistitemactivitybyinterval
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemActivityByInterval
+# Get-MgBetaSiteListItemActivityByInterval
 
 ## SYNOPSIS
 Invoke function getActivitiesByInterval
@@ -14,7 +14,7 @@ Invoke function getActivitiesByInterval
 
 ### Get (Default)
 ```
-Get-MgSiteListItemActivityByInterval -EndDateTime <String> -Interval <String> -ListId <String>
+Get-MgBetaSiteListItemActivityByInterval -EndDateTime <String> -Interval <String> -ListId <String>
  -ListItemId <String> -SiteId <String> -StartDateTime <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
@@ -22,7 +22,7 @@ Get-MgSiteListItemActivityByInterval -EndDateTime <String> -Interval <String> -L
 
 ### GetViaIdentity
 ```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [-Count] [-Filter <String>]
+Get-MgBetaSiteListItemActivityByInterval -InputObject <ISitesIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -84,7 +84,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemActivityStat1
 
 ## NOTES
 

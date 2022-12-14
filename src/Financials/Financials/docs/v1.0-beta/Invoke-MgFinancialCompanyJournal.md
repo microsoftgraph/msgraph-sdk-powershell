@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/invoke-mgfinancialcompanyjournal
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/invoke-mgfinancialcompanyjournal
 schema: 2.0.0
 ---
 
-# Invoke-MgFinancialCompanyJournal
+# Invoke-MgBetaFinancialCompanyJournal
 
 ## SYNOPSIS
 Invoke action post
@@ -14,13 +14,13 @@ Invoke action post
 
 ### Post (Default)
 ```
-Invoke-MgFinancialCompanyJournal -CompanyId <String> -JournalId <String> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaFinancialCompanyJournal -CompanyId <String> -JournalId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### PostViaIdentity
 ```
-Invoke-MgFinancialCompanyJournal -InputObject <IFinancialsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBetaFinancialCompanyJournal -InputObject <IFinancialsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: PostViaIdentity
 Aliases:
 
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ## OUTPUTS
 

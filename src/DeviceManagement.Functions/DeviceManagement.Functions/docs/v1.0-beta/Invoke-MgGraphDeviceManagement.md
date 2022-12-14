@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/invoke-mggraphdevicemanagement
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.functions/invoke-mggraphdevicemanagement
 schema: 2.0.0
 ---
 
-# Invoke-MgGraphDeviceManagement
+# Invoke-MgBetaGraphDeviceManagement
 
 ## SYNOPSIS
 Invoke function scopedForResource
@@ -14,12 +14,12 @@ Invoke function scopedForResource
 
 ### Graph (Default)
 ```
-Invoke-MgGraphDeviceManagement -Resource <String> [<CommonParameters>]
+Invoke-MgBetaGraphDeviceManagement -Resource <String> [<CommonParameters>]
 ```
 
 ### GraphViaIdentity
 ```
-Invoke-MgGraphDeviceManagement -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
+Invoke-MgBetaGraphDeviceManagement -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 Parameter Sets: GraphViaIdentity
 Aliases:
 
@@ -65,7 +65,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticoverview
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/get-mgdevicemanagementuserexperienceanalyticoverview
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementUserExperienceAnalyticOverview
+# Get-MgBetaDeviceManagementUserExperienceAnalyticOverview
 
 ## SYNOPSIS
 User experience analytics overview
@@ -13,7 +13,7 @@ User experience analytics overview
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementUserExperienceAnalyticOverview [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaDeviceManagementUserExperienceAnalyticOverview [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsOverview
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsOverview
 
 ## NOTES
 

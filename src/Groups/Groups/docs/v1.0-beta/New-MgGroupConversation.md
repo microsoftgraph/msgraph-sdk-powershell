@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupconversation
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupconversation
 schema: 2.0.0
 ---
 
-# New-MgGroupConversation
+# New-MgBetaGroupConversation
 
 ## SYNOPSIS
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -17,26 +17,26 @@ The table in the Permissions section lists the resources that support open exten
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupConversation -GroupId <String> [-AdditionalProperties <Hashtable>] [-HasAttachments] [-Id <String>]
+New-MgBetaGroupConversation -GroupId <String> [-AdditionalProperties <Hashtable>] [-HasAttachments] [-Id <String>]
  [-LastDeliveredDateTime <DateTime>] [-Preview <String>] [-Threads <IMicrosoftGraphConversationThread1[]>]
  [-Topic <String>] [-UniqueSenders <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupConversation -GroupId <String> -BodyParameter <IMicrosoftGraphConversation1> [-Confirm] [-WhatIf]
+New-MgBetaGroupConversation -GroupId <String> -BodyParameter <IMicrosoftGraphConversation1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupConversation -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversation1>
+New-MgBetaGroupConversation -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversation1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgGroupConversation -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-HasAttachments]
+New-MgBetaGroupConversation -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-HasAttachments]
  [-Id <String>] [-LastDeliveredDateTime <DateTime>] [-Preview <String>]
  [-Threads <IMicrosoftGraphConversationThread1[]>] [-Topic <String>] [-UniqueSenders <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -50,9 +50,9 @@ The table in the Permissions section lists the resources that support open exten
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgGroupConversation Cmdlet
+### Example 1: Using the New-MgBetaGroupConversation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Topic = "New head count"
 	Threads = @(
@@ -76,15 +76,15 @@ $params = @{
 		}
 	)
 }
-New-MgGroupConversation -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupConversation Cmdlet.
+This example shows how to use the New-MgBetaGroupConversation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the New-MgGroupConversation Cmdlet
+### Example 2: Using the New-MgBetaGroupConversation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Topic = "Does anyone have a second?"
 	Threads = @(
@@ -97,7 +97,7 @@ $params = @{
 					}
 					Extensions = @(
 						@{
-							"@odata.type" = "microsoft.graph.openTypeExtension"
+							"@odata.type" = "Microsoft.Graph.Beta.openTypeExtension"
 							ExtensionName = "Com.Contoso.Benefits"
 							CompanyName = "Contoso"
 							ExpirationDate = "2016-08-03T11:00:00.000Z"
@@ -113,10 +113,10 @@ $params = @{
 		}
 	)
 }
-New-MgGroupConversation -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupConversation Cmdlet.
+This example shows how to use the New-MgBetaGroupConversation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -141,7 +141,7 @@ conversation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversation1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -204,7 +204,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -255,7 +255,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for THREADS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationThread1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -333,13 +333,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversation1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversation1
 
 ## NOTES
 

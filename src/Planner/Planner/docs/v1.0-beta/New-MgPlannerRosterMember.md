@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/new-mgplannerrostermember
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/new-mgplannerrostermember
 schema: 2.0.0
 ---
 
-# New-MgPlannerRosterMember
+# New-MgBetaPlannerRosterMember
 
 ## SYNOPSIS
 Add a member to the plannerRoster object.
@@ -14,25 +14,25 @@ Add a member to the plannerRoster object.
 
 ### CreateExpanded (Default)
 ```
-New-MgPlannerRosterMember -PlannerRosterId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaPlannerRosterMember -PlannerRosterId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Roles <String[]>] [-TenantId <String>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPlannerRosterMember -PlannerRosterId <String> -BodyParameter <IMicrosoftGraphPlannerRosterMember>
+New-MgBetaPlannerRosterMember -PlannerRosterId <String> -BodyParameter <IMicrosoftGraphPlannerRosterMember>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPlannerRosterMember -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerRosterMember>
+New-MgBetaPlannerRosterMember -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerRosterMember>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgPlannerRosterMember -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+New-MgBetaPlannerRosterMember -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Roles <String[]>] [-TenantId <String>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,17 +41,17 @@ Add a member to the plannerRoster object.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgPlannerRosterMember Cmdlet
+### Example 1: Using the New-MgBetaPlannerRosterMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
-	"@odata.type" = "#microsoft.graph.plannerRosterMember"
+	"@odata.type" = "#Microsoft.Graph.Beta.plannerRosterMember"
 	UserId = "String"
 }
-New-MgPlannerRosterMember -PlannerRosterId $plannerRosterId -BodyParameter $params
+New-MgBetaPlannerRosterMember -PlannerRosterId $plannerRosterId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgPlannerRosterMember Cmdlet.
+This example shows how to use the New-MgBetaPlannerRosterMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -76,7 +76,7 @@ plannerRosterMember
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -108,7 +108,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -217,13 +217,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerRosterMember
 
 ## NOTES
 

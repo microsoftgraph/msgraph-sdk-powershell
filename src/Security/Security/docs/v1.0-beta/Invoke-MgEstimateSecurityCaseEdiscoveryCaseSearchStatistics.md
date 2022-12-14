@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/invoke-mgestimatesecuritycaseediscoverycasesearchstatistics
+Module Name: Microsoft.Graph.Beta.Security
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.security/invoke-mgestimatesecuritycaseediscoverycasesearchstatistics
 schema: 2.0.0
 ---
 
-# Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics
+# Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics
 
 ## SYNOPSIS
 Run an estimate of the number of emails and documents in the eDiscovery search.
@@ -15,13 +15,13 @@ To learn more about searches in eDiscovery, see Collect data for a case in eDisc
 
 ### Estimate (Default)
 ```
-Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics -EdiscoveryCaseId <String>
+Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics -EdiscoveryCaseId <String>
  -EdiscoverySearchId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EstimateViaIdentity
 ```
-Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics -InputObject <ISecurityIdentity> [-PassThru]
+Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics -InputObject <ISecurityIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,13 +31,13 @@ To learn more about searches in eDiscovery, see Collect data for a case in eDisc
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics Cmdlet
+### Example 1: Using the Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
+Import-Module Microsoft.Graph.Beta.Security
+Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
 ```
 
-This example shows how to use the Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics Cmdlet.
+This example shows how to use the Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -77,7 +77,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 Parameter Sets: EstimateViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
 

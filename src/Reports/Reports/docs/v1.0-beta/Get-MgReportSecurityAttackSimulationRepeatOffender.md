@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportsecurityattacksimulationrepeatoffender
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportsecurityattacksimulationrepeatoffender
 schema: 2.0.0
 ---
 
-# Get-MgReportSecurityAttackSimulationRepeatOffender
+# Get-MgBetaReportSecurityAttackSimulationRepeatOffender
 
 ## SYNOPSIS
 Invoke function getAttackSimulationRepeatOffenders
@@ -13,7 +13,7 @@ Invoke function getAttackSimulationRepeatOffenders
 ## SYNTAX
 
 ```
-Get-MgReportSecurityAttackSimulationRepeatOffender [-Count] [-Filter <String>] [-Search <String>]
+Get-MgBetaReportSecurityAttackSimulationRepeatOffender [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -22,13 +22,13 @@ Invoke function getAttackSimulationRepeatOffenders
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgReportSecurityAttackSimulationRepeatOffender Cmdlet
+### Example 1: Using the Get-MgBetaReportSecurityAttackSimulationRepeatOffender Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportSecurityAttackSimulationRepeatOffender
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportSecurityAttackSimulationRepeatOffender
 ```
 
-This example shows how to use the Get-MgReportSecurityAttackSimulationRepeatOffender Cmdlet.
+This example shows how to use the Get-MgBetaReportSecurityAttackSimulationRepeatOffender Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -115,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttackSimulationRepeatOffender
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttackSimulationRepeatOffender
 
 ## NOTES
 

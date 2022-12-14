@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementembeddedsimactivationcodepool
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementembeddedsimactivationcodepool
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementEmbeddedSimActivationCodePool
+# Update-MgBetaDeviceManagementEmbeddedSimActivationCodePool
 
 ## SYNOPSIS
 Update the navigation property embeddedSIMActivationCodePools in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property embeddedSIMActivationCodePools in deviceManagemen
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementEmbeddedSimActivationCodePool -EmbeddedSimActivationCodePoolId <String>
+Update-MgBetaDeviceManagementEmbeddedSimActivationCodePool -EmbeddedSimActivationCodePoolId <String>
  [-ActivationCodeCount <Int32>] [-ActivationCodes <IMicrosoftGraphEmbeddedSimActivationCode[]>]
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment[]>]
  [-CreatedDateTime <DateTime>] [-DeviceStates <IMicrosoftGraphEmbeddedSimDeviceState[]>]
@@ -24,21 +24,21 @@ Update-MgDeviceManagementEmbeddedSimActivationCodePool -EmbeddedSimActivationCod
 
 ### Update
 ```
-Update-MgDeviceManagementEmbeddedSimActivationCodePool -EmbeddedSimActivationCodePoolId <String>
+Update-MgBetaDeviceManagementEmbeddedSimActivationCodePool -EmbeddedSimActivationCodePoolId <String>
  -BodyParameter <IMicrosoftGraphEmbeddedSimActivationCodePool> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDeviceManagementEmbeddedSimActivationCodePool -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementEmbeddedSimActivationCodePool -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphEmbeddedSimActivationCodePool> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementEmbeddedSimActivationCodePool -InputObject <IDeviceManagementIdentity>
+Update-MgBetaDeviceManagementEmbeddedSimActivationCodePool -InputObject <IDeviceManagementIdentity>
  [-ActivationCodeCount <Int32>] [-ActivationCodes <IMicrosoftGraphEmbeddedSimActivationCode[]>]
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment[]>]
  [-CreatedDateTime <DateTime>] [-DeviceStates <IMicrosoftGraphEmbeddedSimDeviceState[]>]
@@ -74,7 +74,7 @@ This navigation property is used to post activation codes to Intune but cannot b
 To construct, please use Get-Help -Online and see NOTES section for ACTIVATIONCODES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCode[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCode[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -105,7 +105,7 @@ Navigational property to a list of targets to which this pool is assigned.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePoolAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -121,7 +121,7 @@ A pool represents a group of embedded SIM activation codes.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -153,7 +153,7 @@ Navigational property to a list of device states for this pool.
 To construct, please use Get-Help -Online and see NOTES section for DEVICESTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimDeviceState[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimDeviceState[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -215,7 +215,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -293,9 +293,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmbeddedSimActivationCodePool
 
 ## OUTPUTS
 

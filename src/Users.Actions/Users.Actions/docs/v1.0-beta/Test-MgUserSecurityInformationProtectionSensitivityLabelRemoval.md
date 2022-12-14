@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/test-mgusersecurityinformationprotectionsensitivitylabelremoval
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/test-mgusersecurityinformationprotectionsensitivitylabelremoval
 schema: 2.0.0
 ---
 
-# Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval
+# Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval
 
 ## SYNOPSIS
 Invoke action evaluateRemoval
@@ -14,7 +14,7 @@ Invoke action evaluateRemoval
 
 ### EvaluateExpanded (Default)
 ```
-Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -UserId <String>
+Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInfo <IMicrosoftGraphSecurityContentInfo>]
  [-DowngradeJustification <IMicrosoftGraphSecurityDowngradeJustification>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,21 +22,21 @@ Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -UserId <String>
 
 ### Evaluate
 ```
-Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -UserId <String>
+Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval -UserId <String>
  -BodyParameter <IPathsZhdpmhUsersUserIdSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentity
 ```
-Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -InputObject <IUsersActionsIdentity>
+Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsZhdpmhUsersUserIdSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentityExpanded
 ```
-Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -InputObject <IUsersActionsIdentity>
+Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInfo <IMicrosoftGraphSecurityContentInfo>]
  [-DowngradeJustification <IMicrosoftGraphSecurityDowngradeJustification>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -47,12 +47,12 @@ Invoke action evaluateRemoval
 
 ## EXAMPLES
 
-### Example 1: Using the Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet
+### Example 1: Using the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	ContentInfo = @{
-		"@odata.type" = "#microsoft.graph.security.contentInfo"
+		"@odata.type" = "#Microsoft.Graph.Beta.security.contentInfo"
 		Identifier = $null
 		State = "rest"
 		Metadata = @(
@@ -69,22 +69,22 @@ $params = @{
 				Value = "1/1/0001 12:00:00 AM"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.security.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.security.keyValuePair"
 				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_SiteId"
 				Value = "cfa4cf1d-a337-4481-aa99-19d8f3d63f7c"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.security.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.security.keyValuePair"
 				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_Name"
 				Value = "LabelScopedToBob_Tests"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.security.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.security.keyValuePair"
 				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_ContentBits"
 				Value = "0"
 			}
 			@{
-				"@odata.type" = "#microsoft.graph.security.keyValuePair"
+				"@odata.type" = "#Microsoft.Graph.Beta.security.keyValuePair"
 				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_ActionId"
 				Value = "00000000-0000-0000-0000-000000000000"
 			}
@@ -95,10 +95,10 @@ $params = @{
 		IsDowngradeJustified = $true
 	}
 }
-Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -UserId $userId -BodyParameter $params
+Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet.
+This example shows how to use the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZhdpmhUsersUserIdSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsZhdpmhUsersUserIdSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Evaluate, EvaluateViaIdentity
 Aliases:
 
@@ -139,7 +139,7 @@ contentInfo
 To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityContentInfo
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityContentInfo
 Parameter Sets: EvaluateExpanded, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -155,7 +155,7 @@ downgradeJustification
 To construct, please use Get-Help -Online and see NOTES section for DOWNGRADEJUSTIFICATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDowngradeJustification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityDowngradeJustification
 Parameter Sets: EvaluateExpanded, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -171,7 +171,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: EvaluateViaIdentity, EvaluateViaIdentityExpanded
 Aliases:
 
@@ -233,13 +233,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsZhdpmhUsersUserIdSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsZhdpmhUsersUserIdSecurityInformationprotectionSensitivitylabelsMicrosoftGraphSecurityEvaluateremovalPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionAction
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionAction
 
 ## NOTES
 

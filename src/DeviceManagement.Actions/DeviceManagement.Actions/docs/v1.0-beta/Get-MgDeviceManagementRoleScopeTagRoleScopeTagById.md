@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/get-mgdevicemanagementrolescopetagrolescopetagbyid
+Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement.actions/get-mgdevicemanagementrolescopetagrolescopetagbyid
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementRoleScopeTagRoleScopeTagById
+# Get-MgBetaDeviceManagementRoleScopeTagRoleScopeTagById
 
 ## SYNOPSIS
 Invoke action getRoleScopeTagsById
@@ -14,13 +14,13 @@ Invoke action getRoleScopeTagsById
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceManagementRoleScopeTagRoleScopeTagById [-AdditionalProperties <Hashtable>]
+Get-MgBetaDeviceManagementRoleScopeTagRoleScopeTagById [-AdditionalProperties <Hashtable>]
  [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDeviceManagementRoleScopeTagRoleScopeTagById
+Get-MgBetaDeviceManagementRoleScopeTagRoleScopeTagById
  -BodyParameter <IPathsE9X7RlDevicemanagementRolescopetagsMicrosoftGraphGetrolescopetagsbyidPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsE9X7RlDevicemanagementRolescopetagsMicrosoftGraphGetrolescopetagsbyidPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsE9X7RlDevicemanagementRolescopetagsMicrosoftGraphGetrolescopetagsbyidPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsE9X7RlDevicemanagementRolescopetagsMicrosoftGraphGetrolescopetagsbyidPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsE9X7RlDevicemanagementRolescopetagsMicrosoftGraphGetrolescopetagsbyidPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleScopeTag
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleScopeTag
 
 ## NOTES
 

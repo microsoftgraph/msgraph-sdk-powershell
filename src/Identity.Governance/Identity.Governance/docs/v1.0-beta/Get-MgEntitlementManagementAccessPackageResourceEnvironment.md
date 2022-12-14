@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageresourceenvironment
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgentitlementmanagementaccesspackageresourceenvironment
 schema: 2.0.0
 ---
 
-# Get-MgEntitlementManagementAccessPackageResourceEnvironment
+# Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment
 
 ## SYNOPSIS
 A reference to the geolocation environment in which a resource is located.
@@ -14,20 +14,20 @@ A reference to the geolocation environment in which a resource is located.
 
 ### List (Default)
 ```
-Get-MgEntitlementManagementAccessPackageResourceEnvironment [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgEntitlementManagementAccessPackageResourceEnvironment -AccessPackageResourceEnvironmentId <String>
+Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment -AccessPackageResourceEnvironmentId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgEntitlementManagementAccessPackageResourceEnvironment -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,22 +36,22 @@ A reference to the geolocation environment in which a resource is located.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgEntitlementManagementAccessPackageResourceEnvironment Cmdlet
+### Example 1: Using the Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageResourceEnvironment -AccessPackageResourceEnvironmentId $accessPackageResourceEnvironmentId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment -AccessPackageResourceEnvironmentId $accessPackageResourceEnvironmentId
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageResourceEnvironment Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgEntitlementManagementAccessPackageResourceEnvironment Cmdlet
+### Example 2: Using the Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackageResourceEnvironment -Filter "originSystem eq 'SharePointOnline'" 
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment -Filter "originSystem eq 'SharePointOnline'" 
 ```
 
-This example shows how to use the Get-MgEntitlementManagementAccessPackageResourceEnvironment Cmdlet.
+This example shows how to use the Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -137,7 +137,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -243,11 +243,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceEnvironment
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResourceEnvironment
 
 ## NOTES
 

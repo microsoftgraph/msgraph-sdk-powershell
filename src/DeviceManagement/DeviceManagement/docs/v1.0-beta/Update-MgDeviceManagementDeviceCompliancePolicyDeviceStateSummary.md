@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.DeviceManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementdevicecompliancepolicydevicestatesummary
+Module Name: Microsoft.Graph.Beta.DeviceManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.devicemanagement/update-mgdevicemanagementdevicecompliancepolicydevicestatesummary
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary
+# Update-MgBetaDeviceManagementDeviceCompliancePolicyDeviceStateSummary
 
 ## SYNOPSIS
 Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
@@ -14,7 +14,7 @@ Update the navigation property deviceCompliancePolicyDeviceStateSummary in devic
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary [-AdditionalProperties <Hashtable>]
+Update-MgBetaDeviceManagementDeviceCompliancePolicyDeviceStateSummary [-AdditionalProperties <Hashtable>]
  [-CompliantDeviceCount <Int32>] [-ConfigManagerCount <Int32>] [-ConflictDeviceCount <Int32>]
  [-ErrorDeviceCount <Int32>] [-Id <String>] [-InGracePeriodCount <Int32>] [-NonCompliantDeviceCount <Int32>]
  [-NotApplicableDeviceCount <Int32>] [-RemediatedDeviceCount <Int32>] [-UnknownDeviceCount <Int32>]
@@ -23,7 +23,7 @@ Update-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary [-AdditionalPr
 
 ### Update
 ```
-Update-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary
+Update-MgBetaDeviceManagementDeviceCompliancePolicyDeviceStateSummary
  -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyDeviceStateSummary> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -55,7 +55,7 @@ deviceCompliancePolicyDeviceStateSummary
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyDeviceStateSummary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyDeviceStateSummary
 Parameter Sets: Update
 Aliases:
 
@@ -268,7 +268,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyDeviceStateSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyDeviceStateSummary
 
 ## OUTPUTS
 

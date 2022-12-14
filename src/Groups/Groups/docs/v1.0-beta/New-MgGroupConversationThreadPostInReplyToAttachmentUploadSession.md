@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupconversationthreadpostinreplytoattachmentuploadsession
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/new-mggroupconversationthreadpostinreplytoattachmentuploadsession
 schema: 2.0.0
 ---
 
-# New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession
+# New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession
 
 ## SYNOPSIS
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
@@ -21,14 +21,14 @@ The following are the steps to attach a file to an Outlook item using an upload 
 
 ### CreateExpanded1 (Default)
 ```
-New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession -ConversationId <String>
+New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession -ConversationId <String>
  -ConversationThreadId <String> -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>]
  [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession -ConversationId <String>
+New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession -ConversationId <String>
  -ConversationThreadId <String> -GroupId <String> -PostId <String>
  -BodyParameter <IPaths64Ja8VGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdInreplytoAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,14 +36,14 @@ New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession -ConversationI
 
 ### CreateViaIdentity1
 ```
-New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession -InputObject <IGroupsIdentity>
+New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths64Ja8VGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdInreplytoAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession -InputObject <IGroupsIdentity>
+New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession -InputObject <IGroupsIdentity>
  [-AdditionalProperties <Hashtable>] [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -62,7 +62,7 @@ The following are the steps to attach a file to an Outlook item using an upload 
 
 ### Example 1: Create an upload session to add a large attachment to a draft message
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	AttachmentItem = @{
@@ -73,16 +73,16 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession Cmdlet.
+This example shows how to use the New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create an upload session to add a large in-line attachment to a draft message
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	AttachmentItem = @{
@@ -95,10 +95,10 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession Cmdlet.
+This example shows how to use the New-MgBetaGroupConversationThreadPostInReplyToAttachmentUploadSession Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -124,7 +124,7 @@ attachmentItem
 To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTITEM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentItem
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths64Ja8VGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdInreplytoAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths64Ja8VGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdInreplytoAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -201,7 +201,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -263,13 +263,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths64Ja8VGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdInreplytoAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths64Ja8VGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdInreplytoAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUploadSession
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUploadSession
 
 ## NOTES
 

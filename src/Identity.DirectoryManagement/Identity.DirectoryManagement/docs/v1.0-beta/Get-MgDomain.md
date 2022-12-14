@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdomain
 schema: 2.0.0
 ---
 
-# Get-MgDomain
+# Get-MgBetaDomain
 
 ## SYNOPSIS
 Retrieve the properties and relationships of domain object.
@@ -14,19 +14,19 @@ Retrieve the properties and relationships of domain object.
 
 ### List (Default)
 ```
-Get-MgDomain [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaDomain [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDomain -DomainId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaDomain -DomainId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDomain -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaDomain -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -37,7 +37,7 @@ Retrieve the properties and relationships of domain object.
 
 ### Example 1: Get a list of domaim objects
 ```powershell
-Get-MgDomain | Format-List
+Get-MgBetaDomain | Format-List
 
 AuthenticationType               : Managed
 AvailabilityStatus               :
@@ -53,7 +53,7 @@ Model                            :
 PasswordNotificationWindowInDays : 14
 PasswordValidityPeriodInDays     : 2147483647
 ServiceConfigurationRecords      :
-State                            : Microsoft.Graph.PowerShell.Models.MicrosoftGraphDomainState
+State                            : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphDomainState
 SupportedServices                : {Email, OfficeCommunicationsOnline}
 VerificationDnsRecords           :
 AdditionalProperties             : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#domains/$entity]}
@@ -144,7 +144,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -250,11 +250,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomain
 
 ## NOTES
 

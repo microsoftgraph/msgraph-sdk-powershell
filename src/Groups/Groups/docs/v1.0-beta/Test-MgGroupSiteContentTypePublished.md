@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/test-mggroupsitecontenttypepublished
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/test-mggroupsitecontenttypepublished
 schema: 2.0.0
 ---
 
-# Test-MgGroupSiteContentTypePublished
+# Test-MgBetaGroupSiteContentTypePublished
 
 ## SYNOPSIS
 Invoke function isPublished
@@ -14,13 +14,13 @@ Invoke function isPublished
 
 ### Is (Default)
 ```
-Test-MgGroupSiteContentTypePublished -ContentTypeId <String> -GroupId <String> -SiteId <String>
+Test-MgBetaGroupSiteContentTypePublished -ContentTypeId <String> -GroupId <String> -SiteId <String>
  [<CommonParameters>]
 ```
 
 ### IsViaIdentity
 ```
-Test-MgGroupSiteContentTypePublished -InputObject <IGroupsIdentity> [<CommonParameters>]
+Test-MgBetaGroupSiteContentTypePublished -InputObject <IGroupsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +65,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: IsViaIdentity
 Aliases:
 
@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgorganizationbrandinglocalization
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/remove-mgorganizationbrandinglocalization
 schema: 2.0.0
 ---
 
-# Remove-MgOrganizationBrandingLocalization
+# Remove-MgBetaOrganizationBrandingLocalization
 
 ## SYNOPSIS
 Delete navigation property localizations for organization
@@ -14,13 +14,13 @@ Delete navigation property localizations for organization
 
 ### Delete (Default)
 ```
-Remove-MgOrganizationBrandingLocalization -OrganizationalBrandingLocalizationId <String>
+Remove-MgBetaOrganizationBrandingLocalization -OrganizationalBrandingLocalizationId <String>
  -OrganizationId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagementIdentity>
+Remove-MgBetaOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property localizations for organization
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgOrganizationBrandingLocalization Cmdlet
+### Example 1: Using the Remove-MgBetaOrganizationBrandingLocalization Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Remove-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 ```
 
-This example shows how to use the Remove-MgOrganizationBrandingLocalization Cmdlet.
+This example shows how to use the Remove-MgBetaOrganizationBrandingLocalization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -152,7 +152,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 

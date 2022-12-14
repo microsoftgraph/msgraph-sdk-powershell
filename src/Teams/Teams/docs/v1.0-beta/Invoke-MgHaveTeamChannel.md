@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/invoke-mghaveteamchannel
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/invoke-mghaveteamchannel
 schema: 2.0.0
 ---
 
-# Invoke-MgHaveTeamChannel
+# Invoke-MgBetaHaveTeamChannel
 
 ## SYNOPSIS
 Invoke function doesUserHaveAccess
@@ -14,13 +14,13 @@ Invoke function doesUserHaveAccess
 
 ### Have1 (Default)
 ```
-Invoke-MgHaveTeamChannel -ChannelId <String> -TeamId <String> [-TenantId <String>] [-UserId <String>]
+Invoke-MgBetaHaveTeamChannel -ChannelId <String> -TeamId <String> [-TenantId <String>] [-UserId <String>]
  [-UserPrincipalName <String>] [<CommonParameters>]
 ```
 
 ### HaveViaIdentity1
 ```
-Invoke-MgHaveTeamChannel -InputObject <ITeamsIdentity> [-TenantId <String>] [-UserId <String>]
+Invoke-MgBetaHaveTeamChannel -InputObject <ITeamsIdentity> [-TenantId <String>] [-UserId <String>]
  [-UserPrincipalName <String>] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: HaveViaIdentity1
 Aliases:
 
@@ -127,7 +127,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

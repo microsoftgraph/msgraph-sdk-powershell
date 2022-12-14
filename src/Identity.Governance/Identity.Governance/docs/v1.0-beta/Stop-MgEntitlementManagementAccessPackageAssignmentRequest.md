@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/stop-mgentitlementmanagementaccesspackageassignmentrequest
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/stop-mgentitlementmanagementaccesspackageassignmentrequest
 schema: 2.0.0
 ---
 
-# Stop-MgEntitlementManagementAccessPackageAssignmentRequest
+# Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest
 
 ## SYNOPSIS
 In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: `accepted`, `pendingApproval`, `pendingNotBefore`, `pendingApprovalEscalated`.
@@ -14,13 +14,13 @@ In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest object
 
 ### Cancel (Default)
 ```
-Stop-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId <String>
+Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgEntitlementManagementAccessPackageAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
+Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: CancelViaIdentity
 Aliases:
 
@@ -113,7 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

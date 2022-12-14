@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mguserplanner
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/update-mguserplanner
 schema: 2.0.0
 ---
 
-# Update-MgUserPlanner
+# Update-MgBetaUserPlanner
 
 ## SYNOPSIS
 Update the properties of a plannerUser object.
@@ -15,7 +15,7 @@ You can use this operation to add or remove plans from a user's favorite plans l
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserPlanner -UserId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserPlanner -UserId <String> [-AdditionalProperties <Hashtable>]
  [-All <IMicrosoftGraphPlannerDelta[]>] [-FavoritePlanReferences <Hashtable>]
  [-FavoritePlans <IMicrosoftGraphPlannerPlan1[]>] [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan1[]>]
  [-RecentPlanReferences <Hashtable>] [-RecentPlans <IMicrosoftGraphPlannerPlan1[]>]
@@ -25,19 +25,19 @@ Update-MgUserPlanner -UserId <String> [-AdditionalProperties <Hashtable>]
 
 ### Update1
 ```
-Update-MgUserPlanner -UserId <String> -BodyParameter <IMicrosoftGraphPlannerUser> [-PassThru] [-Confirm]
+Update-MgBetaUserPlanner -UserId <String> -BodyParameter <IMicrosoftGraphPlannerUser> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserPlanner -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerUser> [-PassThru]
+Update-MgBetaUserPlanner -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerUser> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserPlanner -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaUserPlanner -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
  [-All <IMicrosoftGraphPlannerDelta[]>] [-FavoritePlanReferences <Hashtable>]
  [-FavoritePlans <IMicrosoftGraphPlannerPlan1[]>] [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan1[]>]
  [-RecentPlanReferences <Hashtable>] [-RecentPlans <IMicrosoftGraphPlannerPlan1[]>]
@@ -51,13 +51,13 @@ You can use this operation to add or remove plans from a user's favorite plans l
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgUserPlanner Cmdlet
+### Example 1: Using the Update-MgBetaUserPlanner Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	FavoritePlanReferences = @{
 		Jd8S5gOaFk2S8aWCIAJz42QAAxtD = @{
-			"@odata.type" = "#microsoft.graph.plannerFavoritePlanReference"
+			"@odata.type" = "#Microsoft.Graph.Beta.plannerFavoritePlanReference"
 			OrderHint = " !"
 			PlanTitle = "Next Release Discussion"
 		}
@@ -65,17 +65,17 @@ $params = @{
 	}
 	RecentPlanReferences = @{
 		Jd8S5gOaFk2S8aWCIAJz42QAAxtD = @{
-			"@odata.type" = "#microsoft.graph.plannerRecentPlanReference"
+			"@odata.type" = "#Microsoft.Graph.Beta.plannerRecentPlanReference"
 			LastAccessedDateTime = "2018-01-02T22:49:46.155Z"
 			PlanTitle = "Next Release Discussion"
 		}
 	}
 }
 # A UPN can also be used as -UserId.
-Update-MgUserPlanner -UserId $userId -BodyParameter $params
+Update-MgBetaUserPlanner -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgUserPlanner Cmdlet.
+This example shows how to use the Update-MgBetaUserPlanner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ALL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerDelta[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerDelta[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -116,7 +116,7 @@ plannerUser
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerUser
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerUser
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -149,7 +149,7 @@ Returns the plannerPlans that the user marked as favorites.
 To construct, please use Get-Help -Online and see NOTES section for FAVORITEPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -245,7 +245,7 @@ Returns the plannerPlans that have been recently viewed by the user in apps that
 To construct, please use Get-Help -Online and see NOTES section for RECENTPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -263,7 +263,7 @@ Returns the plannerPlans contained by the plannerRosters the user is a member.
 To construct, please use Get-Help -Online and see NOTES section for ROSTERPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -281,7 +281,7 @@ Returns the plannerTasks assigned to the user.
 To construct, please use Get-Help -Online and see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTask1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -343,9 +343,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerUser
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 

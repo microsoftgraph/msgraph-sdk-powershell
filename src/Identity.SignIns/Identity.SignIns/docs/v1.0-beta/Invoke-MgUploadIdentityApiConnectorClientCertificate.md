@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mguploadidentityapiconnectorclientcertificate
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/invoke-mguploadidentityapiconnectorclientcertificate
 schema: 2.0.0
 ---
 
-# Invoke-MgUploadIdentityApiConnectorClientCertificate
+# Invoke-MgBetaUploadIdentityApiConnectorClientCertificate
 
 ## SYNOPSIS
 Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
@@ -16,28 +16,28 @@ This method returns an apiConnector.
 
 ### UploadExpanded (Default)
 ```
-Invoke-MgUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId <String>
+Invoke-MgBetaUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId <String>
  [-AdditionalProperties <Hashtable>] [-Password <String>] [-Pkcs12Value <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Upload
 ```
-Invoke-MgUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId <String>
+Invoke-MgBetaUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId <String>
  -BodyParameter <IPaths1Yvv9YeIdentityApiconnectorsIdentityapiconnectorIdMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
 ```
-Invoke-MgUploadIdentityApiConnectorClientCertificate -InputObject <IIdentitySignInsIdentity>
+Invoke-MgBetaUploadIdentityApiConnectorClientCertificate -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths1Yvv9YeIdentityApiconnectorsIdentityapiconnectorIdMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentityExpanded
 ```
-Invoke-MgUploadIdentityApiConnectorClientCertificate -InputObject <IIdentitySignInsIdentity>
+Invoke-MgBetaUploadIdentityApiConnectorClientCertificate -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Password <String>] [-Pkcs12Value <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -49,17 +49,17 @@ This method returns an apiConnector.
 
 ## EXAMPLES
 
-### Example 1: Using the Invoke-MgUploadIdentityApiConnectorClientCertificate Cmdlet
+### Example 1: Using the Invoke-MgBetaUploadIdentityApiConnectorClientCertificate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
 	Password = "<password>"
 }
-Invoke-MgUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Invoke-MgBetaUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
 
-This example shows how to use the Invoke-MgUploadIdentityApiConnectorClientCertificate Cmdlet.
+This example shows how to use the Invoke-MgBetaUploadIdentityApiConnectorClientCertificate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Yvv9YeIdentityApiconnectorsIdentityapiconnectorIdMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Yvv9YeIdentityApiconnectorsIdentityapiconnectorIdMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Upload, UploadViaIdentity
 Aliases:
 
@@ -115,7 +115,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UploadViaIdentity, UploadViaIdentityExpanded
 Aliases:
 
@@ -192,13 +192,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Yvv9YeIdentityApiconnectorsIdentityapiconnectorIdMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Yvv9YeIdentityApiconnectorsIdentityapiconnectorIdMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
 
 ## NOTES
 

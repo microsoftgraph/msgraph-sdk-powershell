@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/update-mgwindowsupdatesupdatableasset
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/update-mgwindowsupdatesupdatableasset
 schema: 2.0.0
 ---
 
-# Update-MgWindowsUpdatesUpdatableAsset
+# Update-MgBetaWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
 Update the navigation property updatableAssets in admin
@@ -14,25 +14,25 @@ Update the navigation property updatableAssets in admin
 
 ### UpdateExpanded (Default)
 ```
-Update-MgWindowsUpdatesUpdatableAsset -UpdatableAssetId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaWindowsUpdatesUpdatableAsset -UpdatableAssetId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgWindowsUpdatesUpdatableAsset -UpdatableAssetId <String> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaWindowsUpdatesUpdatableAsset -UpdatableAssetId <String> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity> -BodyParameter <Hashtable>
+Update-MgBetaWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity>
+Update-MgBetaWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -94,7 +94,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -171,7 +171,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ### System.Collections.Hashtable
 
@@ -183,7 +183,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgWuUpdatableAsset
+### Update-MgBetaWuUpdatableAsset
 
 COMPLEX PARAMETER PROPERTIES
 

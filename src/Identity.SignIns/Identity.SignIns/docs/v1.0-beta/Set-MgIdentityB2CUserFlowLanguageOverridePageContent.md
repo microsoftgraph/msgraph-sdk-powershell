@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/set-mgidentityb2cuserflowlanguageoverridepagecontent
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/set-mgidentityb2cuserflowlanguageoverridepagecontent
 schema: 2.0.0
 ---
 
-# Set-MgIdentityB2CUserFlowLanguageOverridePageContent
+# Set-MgBetaIdentityB2CUserFlowLanguageOverridePageContent
 
 ## SYNOPSIS
 Update media content for the navigation property overridesPages in identity
@@ -14,14 +14,14 @@ Update media content for the navigation property overridesPages in identity
 
 ### Set (Default)
 ```
-Set-MgIdentityB2CUserFlowLanguageOverridePageContent -B2CIdentityUserFlowId <String>
+Set-MgBetaIdentityB2CUserFlowLanguageOverridePageContent -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgIdentityB2CUserFlowLanguageOverridePageContent -InputObject <IIdentitySignInsIdentity> -InFile <String>
+Set-MgBetaIdentityB2CUserFlowLanguageOverridePageContent -InputObject <IIdentitySignInsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -30,17 +30,17 @@ Update media content for the navigation property overridesPages in identity
 
 ## EXAMPLES
 
-### Example 1: Using the Set-MgIdentityB2CUserFlowLanguageOverridePageContent Cmdlet
+### Example 1: Using the Set-MgBetaIdentityB2CUserFlowLanguageOverridePageContent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	LocalizedStrings = @(
 	)
 }
-Set-MgIdentityB2CUserFlowLanguageOverridePageContent -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId -UserFlowLanguagePageId $userFlowLanguagePageId -BodyParameter $params
+Set-MgBetaIdentityB2CUserFlowLanguageOverridePageContent -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId -UserFlowLanguagePageId $userFlowLanguagePageId -BodyParameter $params
 ```
 
-This example shows how to use the Set-MgIdentityB2CUserFlowLanguageOverridePageContent Cmdlet.
+This example shows how to use the Set-MgBetaIdentityB2CUserFlowLanguageOverridePageContent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: SetViaIdentity
 Aliases:
 
@@ -189,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### System.IO.Stream
 

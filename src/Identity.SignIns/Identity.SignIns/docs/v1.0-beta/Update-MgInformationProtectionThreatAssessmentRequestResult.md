@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mginformationprotectionthreatassessmentrequestresult
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/update-mginformationprotectionthreatassessmentrequestresult
 schema: 2.0.0
 ---
 
-# Update-MgInformationProtectionThreatAssessmentRequestResult
+# Update-MgBetaInformationProtectionThreatAssessmentRequestResult
 
 ## SYNOPSIS
 Update the navigation property results in informationProtection
@@ -14,7 +14,7 @@ Update the navigation property results in informationProtection
 
 ### UpdateExpanded (Default)
 ```
-Update-MgInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRequestId <String>
+Update-MgBetaInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRequestId <String>
  -ThreatAssessmentResultId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-Message <String>] [-ResultType <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -22,20 +22,20 @@ Update-MgInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentReq
 
 ### Update
 ```
-Update-MgInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRequestId <String>
+Update-MgBetaInformationProtectionThreatAssessmentRequestResult -ThreatAssessmentRequestId <String>
  -ThreatAssessmentResultId <String> -BodyParameter <IMicrosoftGraphThreatAssessmentResult> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgInformationProtectionThreatAssessmentRequestResult -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaInformationProtectionThreatAssessmentRequestResult -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphThreatAssessmentResult> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgInformationProtectionThreatAssessmentRequestResult -InputObject <IIdentitySignInsIdentity>
+Update-MgBetaInformationProtectionThreatAssessmentRequestResult -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>] [-Message <String>]
  [-ResultType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ threatAssessmentResult
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentResult
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentResult
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -115,7 +115,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -237,9 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentResult
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentResult
 
 ## OUTPUTS
 

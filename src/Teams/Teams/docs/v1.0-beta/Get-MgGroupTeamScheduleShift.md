@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mggroupteamscheduleshift
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/get-mggroupteamscheduleshift
 schema: 2.0.0
 ---
 
-# Get-MgGroupTeamScheduleShift
+# Get-MgBetaGroupTeamScheduleShift
 
 ## SYNOPSIS
 The shifts in the schedule.
@@ -14,19 +14,19 @@ The shifts in the schedule.
 
 ### List (Default)
 ```
-Get-MgGroupTeamScheduleShift -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaGroupTeamScheduleShift -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupTeamScheduleShift -GroupId <String> -ShiftId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaGroupTeamScheduleShift -GroupId <String> -ShiftId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTeamScheduleShift -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaGroupTeamScheduleShift -InputObject <ITeamsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,7 +102,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -223,11 +223,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShift1
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/complete-mgteamprimarychannelmigration
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/complete-mgteamprimarychannelmigration
 schema: 2.0.0
 ---
 
-# Complete-MgTeamPrimaryChannelMigration
+# Complete-MgBetaTeamPrimaryChannelMigration
 
 ## SYNOPSIS
 Complete the message migration process by removing `migration mode` from a channel in a team.
@@ -17,12 +17,12 @@ You can add members to the team after the request returns a successful response.
 
 ### Complete1 (Default)
 ```
-Complete-MgTeamPrimaryChannelMigration -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Complete-MgBetaTeamPrimaryChannelMigration -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CompleteViaIdentity1
 ```
-Complete-MgTeamPrimaryChannelMigration -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Complete-MgBetaTeamPrimaryChannelMigration -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,12 +36,12 @@ You can add members to the team after the request returns a successful response.
 
 ### Example 1: Code snippet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 
-Complete-MgTeamChannelMigration -TeamId $teamId -ChannelId $channelId
+Complete-MgBetaTeamChannelMigration -TeamId $teamId -ChannelId $channelId
 ```
 
-This example shows how to use the Complete-MgTeamPrimaryChannelMigration Cmdlet.
+This example shows how to use the Complete-MgBetaTeamPrimaryChannelMigration Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
@@ -52,7 +52,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: CompleteViaIdentity1
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

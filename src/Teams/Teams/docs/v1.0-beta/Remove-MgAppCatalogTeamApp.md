@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgappcatalogteamapp
+Module Name: Microsoft.Graph.Beta.Teams
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.teams/remove-mgappcatalogteamapp
 schema: 2.0.0
 ---
 
-# Remove-MgAppCatalogTeamApp
+# Remove-MgBetaAppCatalogTeamApp
 
 ## SYNOPSIS
 Delete navigation property teamsApps for appCatalogs
@@ -14,13 +14,13 @@ Delete navigation property teamsApps for appCatalogs
 
 ### Delete (Default)
 ```
-Remove-MgAppCatalogTeamApp -TeamsAppId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaAppCatalogTeamApp -TeamsAppId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgAppCatalogTeamApp -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaAppCatalogTeamApp -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Delete navigation property teamsApps for appCatalogs
 
 ## EXAMPLES
 
-### Example 1: Using the Remove-MgAppCatalogTeamApp Cmdlet
+### Example 1: Using the Remove-MgBetaAppCatalogTeamApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgAppCatalogTeamApp -TeamsAppId $teamsAppId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaAppCatalogTeamApp -TeamsAppId $teamsAppId
 ```
 
-This example shows how to use the Remove-MgAppCatalogTeamApp Cmdlet.
+This example shows how to use the Remove-MgBetaAppCatalogTeamApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -137,7 +137,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguserphoto
+Module Name: Microsoft.Graph.Beta.Users
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users/get-mguserphoto
 schema: 2.0.0
 ---
 
-# Get-MgUserPhoto
+# Get-MgBetaUserPhoto
 
 ## SYNOPSIS
 The user's profile photo.
@@ -15,27 +15,27 @@ Read-only.
 
 ### Get (Default)
 ```
-Get-MgUserPhoto -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserPhoto -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserPhoto -ProfilePhotoId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserPhoto -ProfilePhotoId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgUserPhoto -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
+Get-MgBetaUserPhoto -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
@@ -47,7 +47,7 @@ Read-only.
 
 ### Example 1: Get a user's photo properties
 ```powershell
-Get-MgUserPhoto -UserId '3bb40cd7-03fe-40b7-8a1c-a14fdf0ab5fe'
+Get-MgBetaUserPhoto -UserId '3bb40cd7-03fe-40b7-8a1c-a14fdf0ab5fe'
 
 Id      Height Width
 --      ------ -----
@@ -109,7 +109,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -230,11 +230,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfilePhoto
 
 ## NOTES
 

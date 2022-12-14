@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportskypeforbusinessactivityuserdetail
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportskypeforbusinessactivityuserdetail
 schema: 2.0.0
 ---
 
-# Get-MgReportSkypeForBusinessActivityUserDetail
+# Get-MgBetaReportSkypeForBusinessActivityUserDetail
 
 ## SYNOPSIS
 Invoke function getSkypeForBusinessActivityUserDetail
@@ -14,25 +14,25 @@ Invoke function getSkypeForBusinessActivityUserDetail
 
 ### Get (Default)
 ```
-Get-MgReportSkypeForBusinessActivityUserDetail -Date <DateTime> -OutFile <String> [-PassThru]
+Get-MgBetaReportSkypeForBusinessActivityUserDetail -Date <DateTime> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgReportSkypeForBusinessActivityUserDetail -Period <String> -OutFile <String> [-PassThru]
+Get-MgBetaReportSkypeForBusinessActivityUserDetail -Period <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportSkypeForBusinessActivityUserDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportSkypeForBusinessActivityUserDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgReportSkypeForBusinessActivityUserDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgBetaReportSkypeForBusinessActivityUserDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 

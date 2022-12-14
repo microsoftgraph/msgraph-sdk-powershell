@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Planner
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/get-mggroupplannerplandetail
+Module Name: Microsoft.Graph.Beta.Planner
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.planner/get-mggroupplannerplandetail
 schema: 2.0.0
 ---
 
-# Get-MgGroupPlannerPlanDetail
+# Get-MgBetaGroupPlannerPlanDetail
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a **plannerPlanDetails** object.
@@ -14,13 +14,13 @@ Retrieve the properties and relationships of a **plannerPlanDetails** object.
 
 ### Get1 (Default)
 ```
-Get-MgGroupPlannerPlanDetail -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
+Get-MgBetaGroupPlannerPlanDetail -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -112,11 +112,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
 
 ## NOTES
 

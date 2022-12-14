@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/update-mguseractivityhistoryitem
+Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.crossdeviceexperiences/update-mguseractivityhistoryitem
 schema: 2.0.0
 ---
 
-# Update-MgUserActivityHistoryItem
+# Update-MgBetaUserActivityHistoryItem
 
 ## SYNOPSIS
 Update the navigation property historyItems in users
@@ -14,7 +14,7 @@ Update the navigation property historyItems in users
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
+Update-MgBetaUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
  [-ActiveDurationSeconds <Int32>] [-Activity <IMicrosoftGraphUserActivity1>]
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-LastActiveDateTime <DateTime>] [-LastModifiedDateTime <DateTime>]
@@ -24,19 +24,19 @@ Update-MgUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId
 
 ### Update1
 ```
-Update-MgUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
+Update-MgBetaUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
+Update-MgBetaUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
  -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
+Update-MgBetaUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
  [-ActiveDurationSeconds <Int32>] [-Activity <IMicrosoftGraphUserActivity1>]
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-LastActiveDateTime <DateTime>] [-LastModifiedDateTime <DateTime>]
@@ -71,7 +71,7 @@ userActivity
 To construct, please use Get-Help -Online and see NOTES section for ACTIVITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity1
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -117,7 +117,7 @@ activityHistoryItem
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -182,7 +182,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -355,9 +355,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 
 ## OUTPUTS
 

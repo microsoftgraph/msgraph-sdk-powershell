@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportazureadapplicationsigninsummary
+Module Name: Microsoft.Graph.Beta.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.reports/get-mgreportazureadapplicationsigninsummary
 schema: 2.0.0
 ---
 
-# Get-MgReportAzureAdApplicationSignInSummary
+# Get-MgBetaReportAzureAdApplicationSignInSummary
 
 ## SYNOPSIS
 Invoke function getAzureADApplicationSignInSummary
@@ -14,14 +14,14 @@ Invoke function getAzureADApplicationSignInSummary
 
 ### Get (Default)
 ```
-Get-MgReportAzureAdApplicationSignInSummary -Period <String> [-Count] [-Filter <String>]
+Get-MgBetaReportAzureAdApplicationSignInSummary -Period <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportAzureAdApplicationSignInSummary -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+Get-MgBetaReportAzureAdApplicationSignInSummary -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -174,17 +174,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationSignInSummary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplicationSignInSummary
 
 ## NOTES
 
 ALIASES
 
-### Get-MgReportAzureAdApplicationSign
+### Get-MgBetaReportAzureAdApplicationSign
 
 COMPLEX PARAMETER PROPERTIES
 

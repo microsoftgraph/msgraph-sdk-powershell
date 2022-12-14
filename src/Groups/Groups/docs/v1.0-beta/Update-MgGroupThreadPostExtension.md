@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggroupthreadpostextension
+Module Name: Microsoft.Graph.Beta.Groups
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.groups/update-mggroupthreadpostextension
 schema: 2.0.0
 ---
 
-# Update-MgGroupThreadPostExtension
+# Update-MgBetaGroupThreadPostExtension
 
 ## SYNOPSIS
 Update the navigation property extensions in groups
@@ -14,26 +14,26 @@ Update the navigation property extensions in groups
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupThreadPostExtension -ConversationThreadId <String> -ExtensionId <String> -GroupId <String>
+Update-MgBetaGroupThreadPostExtension -ConversationThreadId <String> -ExtensionId <String> -GroupId <String>
  -PostId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupThreadPostExtension -ConversationThreadId <String> -ExtensionId <String> -GroupId <String>
+Update-MgBetaGroupThreadPostExtension -ConversationThreadId <String> -ExtensionId <String> -GroupId <String>
  -PostId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupThreadPostExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable> [-PassThru]
+Update-MgBetaGroupThreadPostExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupThreadPostExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaGroupThreadPostExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -42,9 +42,9 @@ Update the navigation property extensions in groups
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgGroupThreadPostExtension Cmdlet
+### Example 1: Using the Update-MgBetaGroupThreadPostExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	"@odata.type" = "#microsoft.outlookServices.openTypeExtension"
 	ExtensionName = "Com.Contoso.Estimate"
@@ -57,10 +57,10 @@ $params = @{
 		"Add family"
 	)
 }
-Update-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
+Update-MgBetaGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
 ```
 
-This example shows how to use the Update-MgGroupThreadPostExtension Cmdlet.
+This example shows how to use the Update-MgBetaGroupThreadPostExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -238,7 +238,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
 ### System.Collections.Hashtable
 

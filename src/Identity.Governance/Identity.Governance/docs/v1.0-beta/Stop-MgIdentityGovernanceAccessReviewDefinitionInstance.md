@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/stop-mgidentitygovernanceaccessreviewdefinitioninstance
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/stop-mgidentitygovernanceaccessreviewdefinitioninstance
 schema: 2.0.0
 ---
 
-# Stop-MgIdentityGovernanceAccessReviewDefinitionInstance
+# Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance
 
 ## SYNOPSIS
 Stop a currently active accessReviewInstance.
@@ -17,13 +17,13 @@ To prevent a recurring access review from starting future instances, update the 
 
 ### Stop (Default)
 ```
-Stop-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewInstanceId <String>
+Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StopViaIdentity
 ```
-Stop-MgIdentityGovernanceAccessReviewDefinitionInstance -InputObject <IIdentityGovernanceIdentity> [-PassThru]
+Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -InputObject <IIdentityGovernanceIdentity> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -35,13 +35,13 @@ To prevent a recurring access review from starting future instances, update the 
 
 ## EXAMPLES
 
-### Example 1: Using the Stop-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
+### Example 1: Using the Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Stop-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
 ```
 
-This example shows how to use the Stop-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
+This example shows how to use the Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: StopViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

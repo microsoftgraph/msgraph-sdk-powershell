@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/move-mgusertasklisttask
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/move-mgusertasklisttask
 schema: 2.0.0
 ---
 
-# Move-MgUserTaskListTask
+# Move-MgBetaUserTaskListTask
 
 ## SYNOPSIS
 Move a baseTask object from one baseTaskList to another.
@@ -14,28 +14,28 @@ Move a baseTask object from one baseTaskList to another.
 
 ### MoveExpanded (Default)
 ```
-Move-MgUserTaskListTask -BaseTaskId <String> -BaseTaskListId <String> -UserId <String>
+Move-MgBetaUserTaskListTask -BaseTaskId <String> -BaseTaskListId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DestinationTaskListId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Move
 ```
-Move-MgUserTaskListTask -BaseTaskId <String> -BaseTaskListId <String> -UserId <String>
+Move-MgBetaUserTaskListTask -BaseTaskId <String> -BaseTaskListId <String> -UserId <String>
  -BodyParameter <IPaths163TqudUsersUserIdTasksListsBasetasklistIdTasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentity
 ```
-Move-MgUserTaskListTask -InputObject <IUsersActionsIdentity>
+Move-MgBetaUserTaskListTask -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths163TqudUsersUserIdTasksListsBasetasklistIdTasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentityExpanded
 ```
-Move-MgUserTaskListTask -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Move-MgBetaUserTaskListTask -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DestinationTaskListId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -44,17 +44,17 @@ Move a baseTask object from one baseTaskList to another.
 
 ## EXAMPLES
 
-### Example 1: Using the Move-MgUserTaskListTask Cmdlet
+### Example 1: Using the Move-MgBetaUserTaskListTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	DestinationTaskListId = "AAMkAGVjMzJmMWZjLTgyYjgtNGIyNi1hOGQ0LWRjMjNmMGRmOWNiYQAuAAAAAAAboFsPFj7gQqFxG"
 }
 # A UPN can also be used as -UserId.
-Move-MgUserTaskListTask -UserId $userId -BaseTaskListId $baseTaskListId -BaseTaskId $baseTaskId -BodyParameter $params
+Move-MgBetaUserTaskListTask -UserId $userId -BaseTaskListId $baseTaskListId -BaseTaskId $baseTaskId -BodyParameter $params
 ```
 
-This example shows how to use the Move-MgUserTaskListTask Cmdlet.
+This example shows how to use the Move-MgBetaUserTaskListTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths163TqudUsersUserIdTasksListsBasetasklistIdTasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths163TqudUsersUserIdTasksListsBasetasklistIdTasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Move, MoveViaIdentity
 Aliases:
 
@@ -140,7 +140,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: MoveViaIdentity, MoveViaIdentityExpanded
 Aliases:
 
@@ -202,13 +202,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths163TqudUsersUserIdTasksListsBasetasklistIdTasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths163TqudUsersUserIdTasksListsBasetasklistIdTasksBasetaskIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBaseTask
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBaseTask
 
 ## NOTES
 

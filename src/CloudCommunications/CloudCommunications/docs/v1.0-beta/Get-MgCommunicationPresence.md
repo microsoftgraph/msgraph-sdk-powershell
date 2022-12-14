@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/get-mgcommunicationpresence
+Module Name: Microsoft.Graph.Beta.CloudCommunications
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.cloudcommunications/get-mgcommunicationpresence
 schema: 2.0.0
 ---
 
-# Get-MgCommunicationPresence
+# Get-MgBetaCommunicationPresence
 
 ## SYNOPSIS
 Get presences from communications
@@ -14,20 +14,20 @@ Get presences from communications
 
 ### List1 (Default)
 ```
-Get-MgCommunicationPresence [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgBetaCommunicationPresence [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgCommunicationPresence -PresenceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgBetaCommunicationPresence -PresenceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaCommunicationPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -36,13 +36,13 @@ Get presences from communications
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgCommunicationPresence Cmdlet
+### Example 1: Using the Get-MgBetaCommunicationPresence Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationPresence -PresenceId $presenceId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationPresence -PresenceId $presenceId
 ```
 
-This example shows how to use the Get-MgCommunicationPresence Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationPresence Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -113,7 +113,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -234,11 +234,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPresence1
 
 ## NOTES
 

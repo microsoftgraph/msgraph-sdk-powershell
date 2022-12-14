@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernancelifecycleworkflowdeleteditemworkflowtaskreport
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgidentitygovernancelifecycleworkflowdeleteditemworkflowtaskreport
 schema: 2.0.0
 ---
 
-# Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport
+# Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport
 
 ## SYNOPSIS
 Represents the aggregation of task execution data for tasks within a workflow object.
@@ -14,20 +14,20 @@ Represents the aggregation of task execution data for tasks within a workflow ob
 
 ### List (Default)
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport -WorkflowId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport -WorkflowId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport -TaskReportId <String>
+Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport -TaskReportId <String>
  -WorkflowId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport
+Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
@@ -105,7 +105,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -241,11 +241,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskReport
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceTaskReport
 
 ## NOTES
 

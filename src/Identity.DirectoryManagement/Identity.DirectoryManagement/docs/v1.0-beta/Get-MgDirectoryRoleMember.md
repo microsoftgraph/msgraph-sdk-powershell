@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrolemember
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgdirectoryrolemember
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryRoleMember
+# Get-MgBetaDirectoryRoleMember
 
 ## SYNOPSIS
 Users that are members of this directory role.
@@ -17,7 +17,7 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgDirectoryRoleMember -DirectoryRoleId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgBetaDirectoryRoleMember -DirectoryRoleId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
@@ -33,7 +33,7 @@ Supports $expand.
 
 ### Example 1: Get member from directory roles
 ```powershell
-Get-MgDirectoryRoleMember -DirectoryRoleId 'c6bb44c1-73cc-48a1-a73c-b6a977084948'
+Get-MgBetaDirectoryRoleMember -DirectoryRoleId 'c6bb44c1-73cc-48a1-a73c-b6a977084948'
 
 Id                                   DeletedDateTime
 --                                   ---------------
@@ -237,7 +237,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 

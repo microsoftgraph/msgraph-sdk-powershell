@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgplayusermanageddevicelostmodesound
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/invoke-mgplayusermanageddevicelostmodesound
 schema: 2.0.0
 ---
 
-# Invoke-MgPlayUserManagedDeviceLostModeSound
+# Invoke-MgBetaPlayUserManagedDeviceLostModeSound
 
 ## SYNOPSIS
 Play lost mode sound
@@ -14,28 +14,28 @@ Play lost mode sound
 
 ### PlayExpanded (Default)
 ```
-Invoke-MgPlayUserManagedDeviceLostModeSound -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaPlayUserManagedDeviceLostModeSound -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DurationInMinutes <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Play
 ```
-Invoke-MgPlayUserManagedDeviceLostModeSound -ManagedDeviceId <String> -UserId <String>
+Invoke-MgBetaPlayUserManagedDeviceLostModeSound -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths1Cgto95UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PlayViaIdentity
 ```
-Invoke-MgPlayUserManagedDeviceLostModeSound -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaPlayUserManagedDeviceLostModeSound -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Cgto95UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PlayViaIdentityExpanded
 ```
-Invoke-MgPlayUserManagedDeviceLostModeSound -InputObject <IUsersActionsIdentity>
+Invoke-MgBetaPlayUserManagedDeviceLostModeSound -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-DurationInMinutes <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Cgto95UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Cgto95UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Play, PlayViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: PlayViaIdentity, PlayViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Cgto95UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Cgto95UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphPlaylostmodesoundPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.People
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofilecertification
+Module Name: Microsoft.Graph.Beta.People
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.people/new-mguserprofilecertification
 schema: 2.0.0
 ---
 
-# New-MgUserProfileCertification
+# New-MgBetaUserProfileCertification
 
 ## SYNOPSIS
 Create a new personCertification object in a user's profile.
@@ -14,7 +14,7 @@ Create a new personCertification object in a user's profile.
 
 ### CreateExpanded (Default)
 ```
-New-MgUserProfileCertification -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfileCertification -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CertificationId <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-EndDate <DateTime>]
  [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-IssuedDate <DateTime>]
@@ -25,19 +25,19 @@ New-MgUserProfileCertification -UserId <String> [-AdditionalProperties <Hashtabl
 
 ### Create
 ```
-New-MgUserProfileCertification -UserId <String> -BodyParameter <IMicrosoftGraphPersonCertification> [-Confirm]
+New-MgBetaUserProfileCertification -UserId <String> -BodyParameter <IMicrosoftGraphPersonCertification> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfileCertification -InputObject <IPeopleIdentity>
+New-MgBetaUserProfileCertification -InputObject <IPeopleIdentity>
  -BodyParameter <IMicrosoftGraphPersonCertification> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgUserProfileCertification -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
+New-MgBetaUserProfileCertification -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CertificationId <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-EndDate <DateTime>]
  [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-IssuedDate <DateTime>]
@@ -51,9 +51,9 @@ Create a new personCertification object in a user's profile.
 
 ## EXAMPLES
 
-### Example 1: Using the New-MgUserProfileCertification Cmdlet
+### Example 1: Using the New-MgBetaUserProfileCertification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	CertificationId = "KB-1235466333663322"
 	Description = "Blackbelt in Marketing - Brand Management"
@@ -62,10 +62,10 @@ $params = @{
 	WebUrl = "https://www.iame.io/blackbelt"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileCertification -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileCertification -UserId $userId -BodyParameter $params
 ```
 
-This example shows how to use the New-MgUserProfileCertification Cmdlet.
+This example shows how to use the New-MgBetaUserProfileCertification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -105,7 +105,7 @@ personCertification
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonCertification
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonCertification
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -136,7 +136,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -228,7 +228,7 @@ inferenceData
 To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -244,7 +244,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -320,7 +320,7 @@ identitySet
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -351,7 +351,7 @@ personDataSources
 To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -458,13 +458,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonCertification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonCertification
 
-### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonCertification
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonCertification
 
 ## NOTES
 

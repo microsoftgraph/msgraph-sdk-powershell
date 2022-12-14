@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/send-mgaccessreviewinstancereminder
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/send-mgaccessreviewinstancereminder
 schema: 2.0.0
 ---
 
-# Send-MgAccessReviewInstanceReminder
+# Send-MgBetaAccessReviewInstanceReminder
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
@@ -15,13 +15,13 @@ The target object can be either a one-time access review, or an instance of a re
 
 ### Send (Default)
 ```
-Send-MgAccessReviewInstanceReminder -AccessReviewId <String> -AccessReviewId1 <String> [-PassThru] [-Confirm]
+Send-MgBetaAccessReviewInstanceReminder -AccessReviewId <String> -AccessReviewId1 <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
-Send-MgAccessReviewInstanceReminder -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm]
+Send-MgBetaAccessReviewInstanceReminder -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: SendViaIdentity
 Aliases:
 
@@ -130,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyemployee
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanyemployee
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyEmployee
+# Update-MgBetaFinancialCompanyEmployee
 
 ## SYNOPSIS
 Update the navigation property employees in financials
@@ -14,7 +14,7 @@ Update the navigation property employees in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyEmployee -CompanyId <String> -EmployeeId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyEmployee -CompanyId <String> -EmployeeId <String> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPostalAddressType>] [-BirthDate <DateTime>] [-DisplayName <String>]
  [-Email <String>] [-EmploymentDate <DateTime>] [-GivenName <String>] [-Id <String>] [-JobTitle <String>]
  [-LastModifiedDateTime <DateTime>] [-MiddleName <String>] [-MobilePhone <String>] [-Number <String>]
@@ -25,19 +25,19 @@ Update-MgFinancialCompanyEmployee -CompanyId <String> -EmployeeId <String> [-Add
 
 ### Update
 ```
-Update-MgFinancialCompanyEmployee -CompanyId <String> -EmployeeId <String>
+Update-MgBetaFinancialCompanyEmployee -CompanyId <String> -EmployeeId <String>
  -BodyParameter <IMicrosoftGraphEmployee> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyEmployee -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphEmployee>
+Update-MgBetaFinancialCompanyEmployee -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphEmployee>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyEmployee -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBetaFinancialCompanyEmployee -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPostalAddressType>] [-BirthDate <DateTime>] [-DisplayName <String>]
  [-Email <String>] [-EmploymentDate <DateTime>] [-GivenName <String>] [-Id <String>] [-JobTitle <String>]
  [-LastModifiedDateTime <DateTime>] [-MiddleName <String>] [-MobilePhone <String>] [-Number <String>]
@@ -73,7 +73,7 @@ postalAddressType
 To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ employee
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmployee
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmployee
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -226,7 +226,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for PICTURE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -469,9 +469,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmployee
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmployee
 
 ## OUTPUTS
 

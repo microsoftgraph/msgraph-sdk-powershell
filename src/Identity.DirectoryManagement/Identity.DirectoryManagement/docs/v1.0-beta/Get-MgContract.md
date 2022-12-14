@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontract
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgcontract
 schema: 2.0.0
 ---
 
-# Get-MgContract
+# Get-MgBetaContract
 
 ## SYNOPSIS
 Retrieve the properties and relationships of contract object.
@@ -14,19 +14,19 @@ Retrieve the properties and relationships of contract object.
 
 ### List1 (Default)
 ```
-Get-MgContract [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+Get-MgBetaContract [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgContract -ContractId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaContract -ContractId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgContract -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+Get-MgBetaContract -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -35,22 +35,22 @@ Retrieve the properties and relationships of contract object.
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgContract Cmdlet
+### Example 1: Using the Get-MgBetaContract Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgContract -ContractId $contractId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaContract -ContractId $contractId
 ```
 
-This example shows how to use the Get-MgContract Cmdlet.
+This example shows how to use the Get-MgBetaContract Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Using the Get-MgContract Cmdlet
+### Example 2: Using the Get-MgBetaContract Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgContract
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaContract
 ```
 
-This example shows how to use the Get-MgContract Cmdlet.
+This example shows how to use the Get-MgBetaContract Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -136,7 +136,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContract
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContract
 
 ## NOTES
 

@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/move-mgusermanageddevicetoou
+Module Name: Microsoft.Graph.Beta.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.users.actions/move-mgusermanageddevicetoou
 schema: 2.0.0
 ---
 
-# Move-MgUserManagedDeviceToOu
+# Move-MgBetaUserManagedDeviceToOu
 
 ## SYNOPSIS
 Invoke action moveDevicesToOU
@@ -14,27 +14,27 @@ Invoke action moveDevicesToOU
 
 ### MoveExpanded (Default)
 ```
-Move-MgUserManagedDeviceToOu -UserId <String> [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>]
+Move-MgBetaUserManagedDeviceToOu -UserId <String> [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>]
  [-OrganizationalUnitPath <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Move
 ```
-Move-MgUserManagedDeviceToOu -UserId <String>
+Move-MgBetaUserManagedDeviceToOu -UserId <String>
  -BodyParameter <IPathsBb5QezUsersUserIdManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentity
 ```
-Move-MgUserManagedDeviceToOu -InputObject <IUsersActionsIdentity>
+Move-MgBetaUserManagedDeviceToOu -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsBb5QezUsersUserIdManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentityExpanded
 ```
-Move-MgUserManagedDeviceToOu -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+Move-MgBetaUserManagedDeviceToOu -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DeviceIds <String[]>] [-OrganizationalUnitPath <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBb5QezUsersUserIdManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsBb5QezUsersUserIdManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Move, MoveViaIdentity
 Aliases:
 
@@ -97,7 +97,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 Parameter Sets: MoveViaIdentity, MoveViaIdentityExpanded
 Aliases:
 
@@ -189,9 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsBb5QezUsersUserIdManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.Beta.PowerShell.Models.IPathsBb5QezUsersUserIdManageddevicesMicrosoftGraphMovedevicestoouPostRequestbodyContentApplicationJsonSchema
 
-### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 

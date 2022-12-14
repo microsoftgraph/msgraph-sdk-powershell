@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.Governance
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgprivilegedaccessroleassignmentrequestsubject
+Module Name: Microsoft.Graph.Beta.Identity.Governance
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.governance/get-mgprivilegedaccessroleassignmentrequestsubject
 schema: 2.0.0
 ---
 
-# Get-MgPrivilegedAccessRoleAssignmentRequestSubject
+# Get-MgBetaPrivilegedAccessRoleAssignmentRequestSubject
 
 ## SYNOPSIS
 Read-only.
@@ -15,13 +15,13 @@ The user/group principal.
 
 ### Get (Default)
 ```
-Get-MgPrivilegedAccessRoleAssignmentRequestSubject -GovernanceRoleAssignmentRequestId <String>
+Get-MgBetaPrivilegedAccessRoleAssignmentRequestSubject -GovernanceRoleAssignmentRequestId <String>
  -PrivilegedAccessId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgPrivilegedAccessRoleAssignmentRequestSubject -InputObject <IIdentityGovernanceIdentity>
+Get-MgBetaPrivilegedAccessRoleAssignmentRequestSubject -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceSubject
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceSubject
 
 ## NOTES
 

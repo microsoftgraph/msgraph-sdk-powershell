@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganizationsettingmicrosoftapplicationdataaccess
+Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.directorymanagement/get-mgorganizationsettingmicrosoftapplicationdataaccess
 schema: 2.0.0
 ---
 
-# Get-MgOrganizationSettingMicrosoftApplicationDataAccess
+# Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess
 
 ## SYNOPSIS
 Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
@@ -14,13 +14,13 @@ Get the _settings_ in a microsoftApplicationDataAccessSettings object that speci
 
 ### Get (Default)
 ```
-Get-MgOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId <String> [-ExpandProperty <String[]>]
+Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdentityDirectoryManagementIdentity>
+Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdentityDirectoryManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -29,13 +29,13 @@ Get the _settings_ in a microsoftApplicationDataAccessSettings object that speci
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgOrganizationSettingMicrosoftApplicationDataAccess Cmdlet
+### Example 1: Using the Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId $organizationId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId $organizationId
 ```
 
-This example shows how to use the Get-MgOrganizationSettingMicrosoftApplicationDataAccess Cmdlet.
+This example shows how to use the Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
@@ -60,7 +60,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -106,11 +106,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftApplicationDataAccessSettings
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftApplicationDataAccessSettings
 
 ## NOTES
 

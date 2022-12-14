@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanycustomerpaymentterm
+Module Name: Microsoft.Graph.Beta.Financials
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.financials/update-mgfinancialcompanycustomerpaymentterm
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyCustomerPaymentTerm
+# Update-MgBetaFinancialCompanyCustomerPaymentTerm
 
 ## SYNOPSIS
 Update the navigation property paymentTerm in financials
@@ -14,7 +14,7 @@ Update the navigation property paymentTerm in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymentId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymentId <String>
  [-AdditionalProperties <Hashtable>] [-CalculateDiscountOnCreditMemos] [-Code <String>]
  [-DiscountDateCalculation <String>] [-DiscountPercent <Decimal>] [-DisplayName <String>]
  [-DueDateCalculation <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -23,19 +23,19 @@ Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymen
 
 ### Update
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymentId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymentId <String>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <String>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <String>
+Update-MgBetaFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <String>
  [-AdditionalProperties <Hashtable>] [-CalculateDiscountOnCreditMemos] [-Code <String>]
  [-DiscountDateCalculation <String>] [-DiscountPercent <Decimal>] [-DisplayName <String>]
  [-DueDateCalculation <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -44,19 +44,19 @@ Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <St
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-CalculateDiscountOnCreditMemos] [-Code <String>]
  [-DiscountDateCalculation <String>] [-DiscountPercent <Decimal>] [-DisplayName <String>]
  [-DueDateCalculation <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -65,7 +65,7 @@ Update-MgFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
+Update-MgBetaFinancialCompanyCustomerPaymentTerm -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-CalculateDiscountOnCreditMemos] [-Code <String>]
  [-DiscountDateCalculation <String>] [-DiscountPercent <Decimal>] [-DisplayName <String>]
  [-DueDateCalculation <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -99,7 +99,7 @@ paymentTerm
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
@@ -266,7 +266,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -343,9 +343,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
 
 ## OUTPUTS
 

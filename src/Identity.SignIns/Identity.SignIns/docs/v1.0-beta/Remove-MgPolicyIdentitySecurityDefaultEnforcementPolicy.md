@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mgpolicyidentitysecuritydefaultenforcementpolicy
+Module Name: Microsoft.Graph.Beta.Identity.SignIns
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.identity.signins/remove-mgpolicyidentitysecuritydefaultenforcementpolicy
 schema: 2.0.0
 ---
 
-# Remove-MgPolicyIdentitySecurityDefaultEnforcementPolicy
+# Remove-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
 Delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
@@ -13,7 +13,7 @@ Delete navigation property identitySecurityDefaultsEnforcementPolicy for policie
 ## SYNTAX
 
 ```
-Remove-MgPolicyIdentitySecurityDefaultEnforcementPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
