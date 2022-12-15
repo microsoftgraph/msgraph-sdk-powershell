@@ -67,26 +67,20 @@ function Get-Files {
                 #Extract URI path
                 $Uripaths = Find-MgGraphCommand -Command $Command
                 $UriPath = $null
-                if ($UriPaths.APIVersion.Contains($GraphProfile)) {
-                    $UriPath = $UriPaths.URI[0].ToString()
-                
+                if ($Uripaths.APIVersion.Contains($GraphProfile)) {
+                    if($Uripaths.Length -gt 1){
+                        $UriPath = $UriPaths.URI[0].ToString() 
+                    }else{
+                        $UriPath = $UriPaths.URI.ToString() 
+                    } 
                 }
+               
                 if ($UriPath) {
-                    if (-not $UriPath.Contains("microsoft.graph")) {
-                        $val = $UriPath.split('/')
-                        $len = $val.Length
-                        $buildString = ""
-                        for ($i = 0; $i -lt $len - 1; $i++) {
-                            $buildString += $val[$i] + "/"
-                        }
-                        $UriPath = $buildString + "microsoft.graph." + $val[$len - 1]
-                  
-                    }
-
+                   
                     Get-ExternalDocs-Url -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath
                 }
              }
-                #Start-Sleep -Seconds 10
+
             }
         }
     }
