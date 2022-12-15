@@ -15,28 +15,28 @@ The Microsoft Graph PowerShell module consists of a collection of PowerShell mod
 
 <p align="center">
   <a href="#modules">Modules</a> |
-  <a href="#installation">Installation</a> |
-  <a href="#usage">Usage</a> |
+  <a href="#getting-started">Getting Started</a> |
+  <a href="#api-version">API Version</a> |
   <a href="#notes">Notes</a> |
-  <a href="#troubleshooting-permission-related-errors">Troubleshooting</a> |
+  <a href="#troubleshooting">Troubleshooting</a> |
   <a href="#known-issues">Known Issues</a> |
-  <a href="#feedback">Feedback</a>
+  <a href="#feedback">Feedback</a> |
   <a href="#license">License</a>
 </p>
 
 ## Modules
 
-The table below contains a link to our latest Microsoft Graph meta module. This module installs all the service modules as their dependencies.
-| Module                                  | Latest | Next
+The table below contains links to our latest and preview versions of the Microsoft Graph module. The meta modules will install all the service modules as their dependencies.
+| Module                                  | Latest             | Preview                        |
 | --------------------------------------- | ------------------ | ------------------------------ |
 | [`Microsoft.Graph`][mggallery]          | [![mg]][mggallery] | [![mgnext]][mggallery]         |
 | [`Microsoft.Graph.Beta`][mggallerybeta] | -                  | [![mgbetaNext]][mggallerybeta] |
 
-See [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) for a list of all modules found in this repository.
+See [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) for a list of all modules supported by this repository.
 
-## Installation
+## Getting Started
 
-### PowerShell Gallery
+### 1. Installation
 
 Microsoft Graph PowerShell module is published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
 
@@ -50,13 +50,11 @@ Install-Module Microsoft.Graph -AllowPrerelease
 > Install-Module Microsoft.Graph -AllowPrerelease -AllowClobber -Force
 > ```
 
-See [Authentication](./docs/authentication.md) for detailed installation instructions.
+See [Install the Microsoft Graph PowerShell Module](https://learn.microsoft.com/powershell/microsoftgraph/installation) guide for detailed installation instructions.
 
-## Usage
+### 2. Authentication
 
-### 1. Authentication
-
-The module supports two types of authentication models:
+The module supports two main types of authentication:
 
 #### Delegated access
 
@@ -76,21 +74,21 @@ Get access to Microsoft Graph resources using the identity on an app and not on 
 Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
 ```
 
-See [Authentication module cmdlets in Microsoft Graph PowerShell](https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands) for more information.
+See [Authentication](./docs/authentication.md) for more information on usage of `Connect-MgGraph`.
 
-### 2. List users in your tenant
+### 3. List users in your tenant
 
 ```powershell
 Get-MgUser -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
 ```
 
-### 3. Filter a user in your tenant
+### 4. Filter a user in your tenant
 
 ```powershell
 $User = Get-MgUser -Filter "displayName eq 'Megan Bowen'"
 ```
 
-### 4. Create a new app registration
+### 5. Create a new app registration
 
 ```powershell
 New-MgApplication -DisplayName "ScriptedGraphPSApp" `
@@ -98,7 +96,7 @@ New-MgApplication -DisplayName "ScriptedGraphPSApp" `
                   -Web @{ RedirectUris = "https://localhost"}
 ```
 
-### 5. Sign out of the current logged-in context i.e. app only or delegated access
+### 6. Sign out of the current logged-in context i.e. app only or delegated access
 
 ```powershell
 Disconnect-MgGraph
@@ -106,10 +104,12 @@ Disconnect-MgGraph
 
 ## API Version
 
-Install `Microsoft.Graph.Beta` module to use Microsoft Graph Beta API commands.
+Install `Microsoft.Graph.Beta` module to commands that call Microsoft Graph Beta API endpoint.
 
 ```powershell
-Import-Module Microsoft.Graph.Beta.Users
+Install-Module Microsoft.Graph.Beta -AllowPrerelease
+# Consume Microsoft Graph beta resources.
+Connect-MgGraph
 $Users = Get-MgBetaUser
 ```
 
@@ -127,11 +127,17 @@ The following breaking changes have been introduced between `v1.x` and `v2.x`:
 
 See [v2 upgrade guide](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/features/2.0/docs/upgrade-to-v2.md) for more details.
 
-## Troubleshooting Permission Related Errors
+## Troubleshooting
+
+### Permission Related Errors
 
 When working with various operations in the Graph, you may encounter an error such as "Insufficient privileges to complete the operation." For example, this particular error can occur when using the `New-MgApplication` command if the appropriate permissions are not granted.
 
 If permission-related errors occur and the signed in user/app has been granted the appropriate permissions to perform the operation, you can explicitly fetch a new access token by running `Disconnect-MgGraph`, then `Connect-MgGraph`. This will trigger a refresh of the access token in your cache. Microsoft Authentication Library (MSAL) will only refresh access tokens in your cache if they have expired (usually an hour).
+
+### Common Errors
+
+See our [troubleshooting guide](https://learn.microsoft.com/powershell/microsoftgraph/troubleshooting) for detailed view on how to troubleshoot common errors when using Microsoft Graph.
 
 ## Known Issues
 
