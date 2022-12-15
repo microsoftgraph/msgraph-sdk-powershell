@@ -1,16 +1,36 @@
-# Microsoft Graph PowerShell Module
+<h1 align="center">
+    <img alt="Microsoft Graph PowerShell" src="./docs/images/graph_color256.png" height="78" />
+  <br>Microsoft Graph PowerShell<br>
+</h1>
 
-Consume [Microsoft Graph](https://developer.microsoft.com/graph) resources directly from your PowerShell scripts!
+<h4 align="center">
+  Consume <a href="https://graph.microsoft.com">Microsoft Graph</a> resources directly from your PowerShell scripts
+</h4>
 
-The Microsoft Graph PowerShell Module consists of a collection of PowerShell modules that contain commands for calling Microsoft Graph API. The module acts as an API wrapper for the Microsoft Graph APIs, exposing the entire API set for use in PowerShell.
+<h3 align="center"><a href="https://learn.microsoft.com/powershell/microsoftgraph/overview">Documentation</a></h3>
+
+<p align="center">
+The Microsoft Graph PowerShell module consists of a collection of PowerShell modules that contain commands for calling Microsoft Graph API. The module acts as an API wrapper for the Microsoft Graph APIs, exposing the entire API set for use in PowerShell.
+</p>
+
+<p align="center">
+  <a href="#modules">Modules</a> |
+  <a href="#installation">Installation</a> |
+  <a href="#usage">Usage</a> |
+  <a href="#notes">Notes</a> |
+  <a href="#troubleshooting-permission-related-errors">Troubleshooting</a> |
+  <a href="#known-issues">Known Issues</a> |
+  <a href="#feedback">Feedback</a>
+  <a href="#license">License</a>
+</p>
 
 ## Modules
 
 The table below contains a link to our latest Microsoft Graph meta module. This module installs all the service modules as their dependencies.
-Module Name       | PowerShell Gallery Link
------------------ | ------------------------
-`Microsoft.Graph` | [![Mg]][MgGallery]
-`Microsoft.Graph.Beta` | [![MgBeta]][MgGalleryBeta]
+| Module                                  | Latest | Next
+| --------------------------------------- | ------------------ | ------------------------------ |
+| [`Microsoft.Graph`][mggallery]          | [![mg]][mggallery] | [![mgnext]][mggallery]         |
+| [`Microsoft.Graph.Beta`][mggallerybeta] | -                  | [![mgbetaNext]][mggallerybeta] |
 
 See [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) for a list of all modules found in this repository.
 
@@ -20,15 +40,15 @@ See [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgra
 
 Microsoft Graph PowerShell module is published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
 
-``` powershell
+```powershell
 Install-Module Microsoft.Graph -AllowPrerelease
 ```
 
-> Run `Install-Module` with AllowClobber and Force parameters if you run into command name conflicts when upgrading to our preview:
+> Run `Install-Module` with AllowClobber and Force parameters if you run into command name conflicts when upgrading to older versions of the module:
 >
->``` powershell
+> ```powershell
 > Install-Module Microsoft.Graph -AllowPrerelease -AllowClobber -Force
->```
+> ```
 
 See [Authentication](./docs/authentication.md) for detailed installation instructions.
 
@@ -42,7 +62,7 @@ The module supports two types of authentication models:
 
 Get access to Microsoft Graph resources on behalf of a user.
 
-``` powershell
+```powershell
 # Using interactive authentication.
 Connect-MgGraph -Scopes "User.ReadBasic.All", "Application.ReadWrite.All"
 ```
@@ -51,7 +71,7 @@ Connect-MgGraph -Scopes "User.ReadBasic.All", "Application.ReadWrite.All"
 
 Get access to Microsoft Graph resources using the identity on an app and not on behalf of a user.
 
-``` powershell
+```powershell
 # Using -CertificateThumbprint
 Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
 ```
@@ -60,19 +80,19 @@ See [Authentication module cmdlets in Microsoft Graph PowerShell](https://learn.
 
 ### 2. List users in your tenant
 
-``` powershell
+```powershell
 Get-MgUser -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
 ```
 
 ### 3. Filter a user in your tenant
 
-``` powershell
+```powershell
 $User = Get-MgUser -Filter "displayName eq 'Megan Bowen'"
 ```
 
 ### 4. Create a new app registration
 
-``` powershell
+```powershell
 New-MgApplication -DisplayName "ScriptedGraphPSApp" `
                   -SignInAudience "AzureADMyOrg" `
                   -Web @{ RedirectUris = "https://localhost"}
@@ -80,7 +100,7 @@ New-MgApplication -DisplayName "ScriptedGraphPSApp" `
 
 ### 5. Sign out of the current logged-in context i.e. app only or delegated access
 
-``` powershell
+```powershell
 Disconnect-MgGraph
 ```
 
@@ -88,7 +108,7 @@ Disconnect-MgGraph
 
 Install `Microsoft.Graph.Beta` module to use Microsoft Graph Beta API commands.
 
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Beta.Users
 $Users = Get-MgBetaUser
 ```
@@ -122,7 +142,7 @@ If permission-related errors occur and the signed in user/app has been granted t
   - Run `Remove-Item "$env:USERPROFILE\.graph" -Recurse -Force` to delete your token cache.
   - Run `Connect-MgGraph` to reconstruct a clean token cache.
 
-## Issues
+## Feedback
 
 If you find any bugs when using the Microsoft Graph PowerShell modules, please file an issue on our GitHub issues page.
 
@@ -135,9 +155,12 @@ Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT
 <!-- References -->
 
 <!-- Shields -->
-[Mg]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?style=flat-square&label=Microsoft.Graph
-[MgBeta]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.Beta.svg?style=flat-square&label=Microsoft.Graph.Beta
+
+[mg]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?style=flat-square&label=Microsoft.Graph
+[mgnext]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?include_prereleases&style=flat-square&label=Microsoft.Graph
+[mgbetanext]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.Beta.svg?include_prereleases&style=flat-square&label=Microsoft.Graph.Beta
 
 <!-- PS Gallery -->
-[MgGallery]: https://www.powershellgallery.com/packages/Microsoft.Graph/
-[MgGalleryBeta]: https://www.powershellgallery.com/packages/Microsoft.Graph.Beta/
+
+[mggallery]: https://www.powershellgallery.com/packages/Microsoft.Graph/
+[mggallerybeta]: https://www.powershellgallery.com/packages/Microsoft.Graph.Beta/
