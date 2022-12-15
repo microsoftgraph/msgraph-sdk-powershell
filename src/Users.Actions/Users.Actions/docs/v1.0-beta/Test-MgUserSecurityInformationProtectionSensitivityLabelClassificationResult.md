@@ -8,7 +8,10 @@ schema: 2.0.0
 # Test-MgUserSecurityInformationProtectionSensitivityLabelClassificationResult
 
 ## SYNOPSIS
-Invoke action evaluateClassificationResults
+Use the classification results to compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information.
+This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.
+To evaluate based on classification results, provide the contentInfo, which includes existing content metadata key-value pairs, and classification results.
+The API returns an informationProtectionAction that contains one of more of the following:
 
 ## SYNTAX
 
@@ -43,7 +46,10 @@ Test-MgUserSecurityInformationProtectionSensitivityLabelClassificationResult
 ```
 
 ## DESCRIPTION
-Invoke action evaluateClassificationResults
+Use the classification results to compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information.
+This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.
+To evaluate based on classification results, provide the contentInfo, which includes existing content metadata key-value pairs, and classification results.
+The API returns an informationProtectionAction that contains one of more of the following:
 
 ## EXAMPLES
 
@@ -230,8 +236,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

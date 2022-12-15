@@ -14,9 +14,8 @@ Retrieve the properties of a specific directory setting object.
 
 ### List (Default)
 ```
-Get-MgDirectorySetting [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgDirectorySetting [-ExpandProperty <String[]>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -109,21 +108,6 @@ Expand related entities
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
 
 Required: False
 Position: Named

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: f35ec8f5-414a-4b7f-863f-632ec69c9a32
+Module Guid: 7602d12c-8ae9-4cf8-a91c-6f2fa95e4d28
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1674,9 +1674,6 @@ Update the navigation property accessPackageAssignmentApprovals in identityGover
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApprovalStep](Update-MgEntitlementManagementAccessPackageAssignmentApprovalStep.md)
 Update the navigation property steps in identityGovernance
-
-### [Update-MgEntitlementManagementAccessPackageAssignmentPolicy](Update-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
-Update the navigation property accessPackageAssignmentPolicies in identityGovernance
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Update-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Update the navigation property customExtensionHandlers in identityGovernance

@@ -45,9 +45,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.compliance'
-          links:
-            ediscovery:
-              operationId: compliance.GetEdiscovery
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -109,11 +106,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.ediscoveryroot'
-          links:
-            cases:
-              operationId: compliance.Ediscovery.ListCases
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -132,6 +132,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -150,6 +156,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   /compliance/ediscovery/cases:
     get:
@@ -252,6 +264,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.caseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -281,6 +299,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.case'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}':
     get:
@@ -353,45 +377,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.case'
-          links:
-            custodians:
-              operationId: compliance.ediscovery.Cases.ListCustodians
-              parameters:
-                case-id: $request.path.case-id
-            legalHolds:
-              operationId: compliance.ediscovery.Cases.ListLegalHolds
-              parameters:
-                case-id: $request.path.case-id
-            noncustodialDataSources:
-              operationId: compliance.ediscovery.Cases.ListNoncustodialDataSources
-              parameters:
-                case-id: $request.path.case-id
-            operations:
-              operationId: compliance.ediscovery.Cases.ListOperations
-              parameters:
-                case-id: $request.path.case-id
-            reviewSets:
-              operationId: compliance.ediscovery.Cases.ListReviewSets
-              parameters:
-                case-id: $request.path.case-id
-            settings:
-              operationId: compliance.ediscovery.Cases.GetSettings
-              parameters:
-                case-id: $request.path.case-id
-            sourceCollections:
-              operationId: compliance.ediscovery.Cases.ListSourceCollections
-              parameters:
-                case-id: $request.path.case-id
-            tags:
-              operationId: compliance.ediscovery.Cases.ListTags
-              parameters:
-                case-id: $request.path.case-id
-            close:
-              operationId: compliance.ediscovery.cases.case.close
-            reopen:
-              operationId: compliance.ediscovery.cases.case.reopen
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -419,6 +412,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -445,6 +444,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians':
     get:
@@ -547,6 +552,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.custodianCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -585,6 +596,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}':
     get:
@@ -658,39 +675,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
-          links:
-            lastIndexOperation:
-              operationId: compliance.ediscovery.cases.Custodians.GetLastIndexOperation
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-            siteSources:
-              operationId: compliance.ediscovery.cases.Custodians.ListSiteSources
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-            unifiedGroupSources:
-              operationId: compliance.ediscovery.cases.Custodians.ListUnifiedGroupSources
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-            userSources:
-              operationId: compliance.ediscovery.cases.Custodians.ListUserSources
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-            activate:
-              operationId: compliance.ediscovery.cases.case.custodians.custodian.activate
-            applyHold:
-              operationId: compliance.ediscovery.cases.case.custodians.custodian.applyHold
-            release:
-              operationId: compliance.ediscovery.cases.case.custodians.custodian.release
-            removeHold:
-              operationId: compliance.ediscovery.cases.case.custodians.custodian.removeHold
-            updateIndex:
-              operationId: compliance.ediscovery.cases.case.custodians.custodian.updateIndex
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -726,6 +718,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -760,6 +758,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/microsoft.graph.ediscovery.activate':
     post:
@@ -793,6 +797,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/microsoft.graph.ediscovery.applyHold':
     post:
@@ -822,6 +832,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/microsoft.graph.ediscovery.release':
     post:
@@ -855,6 +871,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/microsoft.graph.ediscovery.removeHold':
     post:
@@ -884,6 +906,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/microsoft.graph.ediscovery.updateIndex':
     post:
@@ -913,6 +941,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/siteSources':
     get:
@@ -1002,6 +1036,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1048,6 +1088,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/siteSources/{siteSource-id}':
     get:
@@ -1118,15 +1164,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
-          links:
-            site:
-              operationId: compliance.ediscovery.cases.custodians.SiteSources.GetSite
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1170,6 +1215,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1212,6 +1263,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/siteSources/{siteSource-id}/site':
     get:
@@ -1323,105 +1380,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
-          links:
-            createdByUser:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetCreatedGraphBPreUser
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            lastModifiedByUser:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetLastModifiedGraphBPreUser
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            analytics:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetAnalytics
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            columns:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListColumns
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            contentTypes:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListContentTypes
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            drive:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetDrive
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            drives:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListDrives
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            externalColumns:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListExternalColumns
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            items:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListItems
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            lists:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListLists
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            operations:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListOperations
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            pages:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListPages
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            permissions:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListPermissions
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            sites:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.ListSites
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            termStore:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetTermStore
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
-            onenote:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetOnenote
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/unifiedGroupSources':
     get:
@@ -1514,6 +1480,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1560,6 +1532,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/unifiedGroupSources/{unifiedGroupSource-id}':
     get:
@@ -1631,15 +1609,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
-          links:
-            group:
-              operationId: compliance.ediscovery.cases.custodians.UnifiedGroupSources.GetGroup
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1683,6 +1660,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1725,6 +1708,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/unifiedGroupSources/{unifiedGroupSource-id}/group':
     get:
@@ -1896,177 +1885,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
-          links:
-            appRoleAssignments:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListAppRoleAssignments
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            createdOnBehalfOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            endpoints:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListEndpoints
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            memberOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMemberGraphOPre
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            members:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMembers
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            membersWithLicenseErrors:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            owners:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListOwners
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            permissionGrants:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListPermissionGrants
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            settings:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListSettings
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            transitiveMemberOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            transitiveMembers:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListTransitiveMembers
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            acceptedSenders:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListAcceptedSenders
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            calendar:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetCalendar
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            calendarView:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListCalendarView
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            conversations:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListConversations
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            events:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListEvents
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            rejectedSenders:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListRejectedSenders
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            threads:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListThreads
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            drive:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetDrive
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            drives:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListDrives
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            sites:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListSites
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            extensions:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListExtensions
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            groupLifecyclePolicies:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListGroupLifecyclePolicies
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            planner:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetPlanner
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            onenote:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetOnenote
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            photo:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetPhoto
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            photos:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListPhotos
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            team:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetTeam
-              parameters:
-                case-id: $request.path.case-id
-                custodian-id: $request.path.custodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/userSources':
     get:
@@ -2163,6 +1989,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2209,6 +2041,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/userSources/{userSource-id}':
     get:
@@ -2282,6 +2120,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2325,6 +2169,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2367,6 +2217,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/custodians/microsoft.graph.ediscovery.applyHold':
     post:
@@ -2403,6 +2259,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/custodians/microsoft.graph.ediscovery.removeHold':
     post:
@@ -2439,6 +2301,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/legalHolds':
     get:
@@ -2539,6 +2407,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.legalHoldCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2573,6 +2447,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}':
     get:
@@ -2645,24 +2525,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
-          links:
-            siteSources:
-              operationId: compliance.ediscovery.cases.LegalHolds.ListSiteSources
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-            unifiedGroupSources:
-              operationId: compliance.ediscovery.cases.LegalHolds.ListUnifiedGroupSources
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-            userSources:
-              operationId: compliance.ediscovery.cases.LegalHolds.ListUserSources
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2698,6 +2568,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2732,6 +2608,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/siteSources':
     get:
@@ -2821,6 +2703,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2867,6 +2755,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/siteSources/{siteSource-id}':
     get:
@@ -2937,15 +2831,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
-          links:
-            site:
-              operationId: compliance.ediscovery.cases.legalHolds.SiteSources.GetSite
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2989,6 +2882,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3031,6 +2930,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/siteSources/{siteSource-id}/site':
     get:
@@ -3142,105 +3047,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
-          links:
-            createdByUser:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetCreatedGraphBPreUser
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            lastModifiedByUser:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetLastModifiedGraphBPreUser
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            analytics:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetAnalytics
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            columns:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListColumns
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            contentTypes:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListContentTypes
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            drive:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetDrive
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            drives:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListDrives
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            externalColumns:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListExternalColumns
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            items:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListItems
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            lists:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListLists
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            operations:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListOperations
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            pages:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListPages
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            permissions:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListPermissions
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            sites:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.ListSites
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            termStore:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetTermStore
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
-            onenote:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetOnenote
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/unifiedGroupSources':
     get:
@@ -3329,6 +3143,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3371,6 +3191,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/unifiedGroupSources/{unifiedGroupSource-id}':
     get:
@@ -3441,15 +3267,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
-          links:
-            group:
-              operationId: compliance.ediscovery.cases.legalHolds.UnifiedGroupSources.GetGroup
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3493,6 +3318,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3535,6 +3366,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/unifiedGroupSources/{unifiedGroupSource-id}/group':
     get:
@@ -3706,177 +3543,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
-          links:
-            appRoleAssignments:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListAppRoleAssignments
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            createdOnBehalfOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            endpoints:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListEndpoints
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            memberOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMemberGraphOPre
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            members:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMembers
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            membersWithLicenseErrors:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            owners:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListOwners
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            permissionGrants:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListPermissionGrants
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            settings:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListSettings
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            transitiveMemberOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            transitiveMembers:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListTransitiveMembers
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            acceptedSenders:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListAcceptedSenders
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            calendar:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetCalendar
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            calendarView:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListCalendarView
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            conversations:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListConversations
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            events:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListEvents
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            rejectedSenders:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListRejectedSenders
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            threads:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListThreads
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            drive:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetDrive
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            drives:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListDrives
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            sites:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListSites
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            extensions:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListExtensions
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            groupLifecyclePolicies:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListGroupLifecyclePolicies
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            planner:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetPlanner
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            onenote:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetOnenote
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            photo:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetPhoto
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            photos:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListPhotos
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            team:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetTeam
-              parameters:
-                case-id: $request.path.case-id
-                legalHold-id: $request.path.legalHold-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/userSources':
     get:
@@ -3973,6 +3647,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4019,6 +3699,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/userSources/{userSource-id}':
     get:
@@ -4092,6 +3778,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4135,6 +3827,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4177,6 +3875,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/microsoft.graph.ediscovery.close':
     post:
@@ -4202,6 +3906,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/microsoft.graph.ediscovery.reopen':
     post:
@@ -4227,6 +3937,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources':
     get:
@@ -4319,6 +4035,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.noncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4357,6 +4079,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}':
     get:
@@ -4424,27 +4152,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
-          links:
-            lastIndexOperation:
-              operationId: compliance.ediscovery.cases.NoncustodialDataSources.GetLastIndexOperation
-              parameters:
-                case-id: $request.path.case-id
-                noncustodialDataSource-id: $request.path.noncustodialDataSource-id
-            dataSource:
-              operationId: compliance.ediscovery.cases.NoncustodialDataSources.GetDataSource
-              parameters:
-                case-id: $request.path.case-id
-                noncustodialDataSource-id: $request.path.noncustodialDataSource-id
-            applyHold:
-              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.applyHold
-            release:
-              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.release
-            removeHold:
-              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.removeHold
-            updateIndex:
-              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.updateIndex
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4480,6 +4195,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4514,6 +4235,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource':
     get:
@@ -4576,6 +4303,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4611,6 +4344,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4645,6 +4384,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.applyHold':
     post:
@@ -4674,6 +4419,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.release':
     post:
@@ -4707,6 +4458,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.removeHold':
     post:
@@ -4736,6 +4493,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.updateIndex':
     post:
@@ -4765,6 +4528,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/microsoft.graph.ediscovery.applyHold':
     post:
@@ -4801,6 +4570,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/microsoft.graph.ediscovery.removeHold':
     post:
@@ -4837,6 +4612,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/operations':
     get:
@@ -4922,6 +4703,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.caseOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4956,6 +4743,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/operations/{caseOperation-id}':
     get:
@@ -5021,6 +4814,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5056,6 +4855,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5090,6 +4895,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/reviewSets':
     get:
@@ -5165,6 +4976,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.reviewSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5203,6 +5020,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/reviewSets/{reviewSet-id}':
     get:
@@ -5264,18 +5087,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
-          links:
-            queries:
-              operationId: compliance.ediscovery.cases.ReviewSets.ListQueries
-              parameters:
-                case-id: $request.path.case-id
-                reviewSet-id: $request.path.reviewSet-id
-            addToReviewSet:
-              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.addToReviewSet
-            export:
-              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.export
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5311,6 +5130,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5345,6 +5170,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/reviewSets/{reviewSet-id}/microsoft.graph.ediscovery.addToReviewSet':
     post:
@@ -5392,6 +5223,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/reviewSets/{reviewSet-id}/microsoft.graph.ediscovery.export':
     post:
@@ -5451,6 +5288,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/reviewSets/{reviewSet-id}/queries':
     get:
@@ -5544,6 +5387,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.reviewSetQueryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5590,6 +5439,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/reviewSets/{reviewSet-id}/queries/{reviewSetQuery-id}':
     get:
@@ -5659,11 +5514,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
-          links:
-            applyTags:
-              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.queries.reviewSetQuery.applyTags
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5707,6 +5565,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5749,6 +5613,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/reviewSets/{reviewSet-id}/queries/{reviewSetQuery-id}/microsoft.graph.ediscovery.applyTags':
     post:
@@ -5808,6 +5678,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/settings':
     get:
@@ -5862,11 +5738,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.caseSettings'
-          links:
-            resetToDefault:
-              operationId: compliance.ediscovery.cases.case.settings.resetToDefault
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5898,6 +5777,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5924,6 +5809,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/settings/microsoft.graph.ediscovery.resetToDefault':
     post:
@@ -5949,6 +5840,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/sourceCollections':
     get:
@@ -6050,6 +5947,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.sourceCollectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6088,6 +5991,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.sourceCollection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}':
     get:
@@ -6162,38 +6071,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.sourceCollection'
-          links:
-            additionalSources:
-              operationId: compliance.ediscovery.cases.SourceCollections.ListAdditionalSources
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
-            addToReviewSetOperation:
-              operationId: compliance.ediscovery.cases.SourceCollections.GetAddToReviewSetOperation
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
-            custodianSources:
-              operationId: compliance.ediscovery.cases.SourceCollections.ListCustodianSources
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
-            lastEstimateStatisticsOperation:
-              operationId: compliance.ediscovery.cases.SourceCollections.GetLastEstimateStatisticsOperation
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
-            noncustodialSources:
-              operationId: compliance.ediscovery.cases.SourceCollections.ListNoncustodialSources
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
-            estimateStatistics:
-              operationId: compliance.ediscovery.cases.case.sourceCollections.sourceCollection.estimateStatistics
-            purgeData:
-              operationId: compliance.ediscovery.cases.case.sourceCollections.sourceCollection.purgeData
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6229,6 +6114,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6263,6 +6154,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/additionalSources':
     get:
@@ -6350,6 +6247,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6392,6 +6295,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/additionalSources/{dataSource-id}':
     get:
@@ -6462,6 +6371,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6505,6 +6420,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6547,6 +6468,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/addToReviewSetOperation':
     get:
@@ -6617,19 +6544,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.addToReviewSetOperation'
-          links:
-            reviewSet:
-              operationId: compliance.ediscovery.cases.sourceCollections.AddToReviewSetOperation.GetReviewSet
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
-            sourceCollection:
-              operationId: compliance.ediscovery.cases.sourceCollections.AddToReviewSetOperation.GetSourceCollection
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/custodianSources':
     get:
@@ -6717,6 +6639,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6790,6 +6718,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/lastEstimateStatisticsOperation':
     get:
@@ -6864,14 +6798,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.estimateStatisticsOperation'
-          links:
-            sourceCollection:
-              operationId: compliance.ediscovery.cases.sourceCollections.LastEstimateStatisticsOperation.GetSourceCollection
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/microsoft.graph.ediscovery.estimateStatistics':
     post:
@@ -6905,6 +6839,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/microsoft.graph.ediscovery.purgeData':
     post:
@@ -6938,6 +6878,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/noncustodialSources':
     get:
@@ -7038,6 +6984,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.noncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7116,21 +7068,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
-          links:
-            lastIndexOperation:
-              operationId: compliance.ediscovery.cases.sourceCollections.NoncustodialSources.GetLastIndexOperation
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
-                noncustodialDataSource-id: $request.path.noncustodialDataSource-id
-            dataSource:
-              operationId: compliance.ediscovery.cases.sourceCollections.NoncustodialSources.GetDataSource
-              parameters:
-                case-id: $request.path.case-id
-                sourceCollection-id: $request.path.sourceCollection-id
-                noncustodialDataSource-id: $request.path.noncustodialDataSource-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/tags':
     get:
@@ -7217,6 +7162,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.tagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7255,6 +7206,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/tags/{tag-id}':
     get:
@@ -7320,19 +7277,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
-          links:
-            childTags:
-              operationId: compliance.ediscovery.cases.Tags.ListChildTags
-              parameters:
-                case-id: $request.path.case-id
-                tag-id: $request.path.tag-id
-            parent:
-              operationId: compliance.ediscovery.cases.Tags.GetParent
-              parameters:
-                case-id: $request.path.case-id
-                tag-id: $request.path.tag-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7368,6 +7320,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7402,6 +7360,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/tags/{tag-id}/childTags':
     get:
@@ -7496,6 +7460,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.ediscovery.tagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7572,21 +7542,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
-          links:
-            childTags:
-              operationId: compliance.ediscovery.cases.tags.ChildTags.ListChildTags
-              parameters:
-                case-id: $request.path.case-id
-                tag-id: $request.path.tag-id
-                tag-id1: $request.path.tag-id1
-            parent:
-              operationId: compliance.ediscovery.cases.tags.ChildTags.GetParent
-              parameters:
-                case-id: $request.path.case-id
-                tag-id: $request.path.tag-id
-                tag-id1: $request.path.tag-id1
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/tags/{tag-id}/parent':
     get:
@@ -7652,19 +7615,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
-          links:
-            childTags:
-              operationId: compliance.ediscovery.cases.tags.Parent.ListChildTags
-              parameters:
-                case-id: $request.path.case-id
-                tag-id: $request.path.tag-id
-            parent:
-              operationId: compliance.ediscovery.cases.tags.Parent.GetParent
-              parameters:
-                case-id: $request.path.case-id
-                tag-id: $request.path.tag-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
   '/compliance/ediscovery/cases/{case-id}/tags/microsoft.graph.ediscovery.asHierarchy()':
     get:
@@ -7748,6 +7706,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -8147,7 +8111,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
+              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -8270,7 +8234,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -9304,18 +9268,40 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            pageLayoutType:
-              type: string
-              nullable: true
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            promotionKind:
+              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            reactions:
+              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
+            showComments:
+              type: boolean
+              description: Determines whether or not to show comments at the bottom of the page.
+              nullable: true
+            showRecommendedPages:
+              type: boolean
+              description: Determines whether or not to show recommended pages at the bottom of the page.
+              nullable: true
+            thumbnailWebUrl:
+              type: string
+              description: Url of the sitePage's thumbnail image
+              nullable: true
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
+            titleArea:
+              $ref: '#/components/schemas/microsoft.graph.titleArea'
+            canvasLayout:
+              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
             webParts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: Collection of webparts on the SharePoint page
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -9585,7 +9571,7 @@ components:
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.'
+              description: 'The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.'
               format: uuid
               nullable: true
             principalType:
@@ -10629,7 +10615,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -10823,7 +10809,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -10851,7 +10837,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11024,7 +11010,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -11241,8 +11227,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
-            tasks:
-              $ref: '#/components/schemas/microsoft.graph.tasks'
             chats:
               type: array
               items:
@@ -11900,7 +11884,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -12005,6 +11989,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
+    microsoft.graph.pagePromotionType:
+      title: pagePromotionType
+      enum:
+        - microsoftReserved
+        - page
+        - newsPost
+        - unknownFutureValue
+      type: string
     microsoft.graph.publicationFacet:
       title: publicationFacet
       type: object
@@ -12019,18 +12019,96 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.webPart:
-      title: webPart
+    microsoft.graph.reactionsFacet:
+      title: reactionsFacet
       type: object
       properties:
-        data:
-          $ref: '#/components/schemas/microsoft.graph.sitePageData'
-        type:
-          type: string
-          description: A unique identifier specifying the webPart type. Read-only.
+        commentCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of comments.
+          format: int32
+          nullable: true
+        likeCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of likes.
+          format: int32
+          nullable: true
+        shareCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of shares.
+          format: int32
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.titleArea:
+      title: titleArea
+      type: object
+      properties:
+        alternativeText:
+          type: string
+          description: Alternative text on the title area.
+          nullable: true
+        enableGradientEffect:
+          type: boolean
+          description: Indicates whether the title area has a gradient effect enabled.
+          nullable: true
+        imageWebUrl:
+          type: string
+          description: URL of the image in the title area.
+          nullable: true
+        layout:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
+        serverProcessedContent:
+          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
+        showAuthor:
+          type: boolean
+          description: Indicates whether the author should be shown in title area.
+          nullable: true
+        showPublishedDate:
+          type: boolean
+          description: Indicates whether the published date should be shown in title area.
+          nullable: true
+        showTextBlockAboveTitle:
+          type: boolean
+          description: Indicates whether the text block above title should be shown in title area.
+          nullable: true
+        textAboveTitle:
+          type: string
+          description: The text above title line.
+          nullable: true
+        textAlignment:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
+      additionalProperties:
+        type: object
+    microsoft.graph.canvasLayout:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: canvasLayout
+          type: object
+          properties:
+            horizontalSections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+              description: Collection of horizontal sections on the SharePoint page.
+              x-ms-navigationProperty: true
+            verticalSection:
+              $ref: '#/components/schemas/microsoft.graph.verticalSection'
+          additionalProperties:
+            type: object
+    microsoft.graph.webPart:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webPart
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -12801,6 +12879,8 @@ components:
               description: 'Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
             owner:
               type: string
               nullable: true
@@ -12988,7 +13068,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: Channel name as it will appear to the user in Microsoft Teams.
+              description: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
             email:
               type: string
               description: The email address for sending messages to the channel. Read-only.
@@ -13001,6 +13081,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             moderationSettings:
               $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
               type: string
               description: The ID of the Azure Active Directory tenant.
@@ -13694,6 +13776,11 @@ components:
               nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+            partnerAgentInstallResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -13702,6 +13789,8 @@ components:
               type: string
               description: The provisioning policy that is applied during the provisioning of Cloud PCs.
               nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
             servicePlanId:
               type: string
               description: The service plan ID of the Cloud PC.
@@ -14006,13 +14095,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -15846,7 +15935,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -15932,7 +16021,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -15947,7 +16036,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
+              description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
@@ -16162,6 +16251,8 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -16233,26 +16324,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
               description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.tasks:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: tasks
-          type: object
-          properties:
-            alltasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTask'
-              description: All tasks in the users mailbox.
-              x-ms-navigationProperty: true
-            lists:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTaskList'
-              description: The task lists in the users mailbox.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -17194,11 +17265,92 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.sitePageData:
-      title: sitePageData
+    microsoft.graph.titleAreaLayoutType:
+      title: titleAreaLayoutType
+      enum:
+        - imageAndTitle
+        - plain
+        - colorBlock
+        - overlap
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serverProcessedContent:
+      title: serverProcessedContent
       type: object
+      properties:
+        componentDependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+        customMetadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
+          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
+        htmlStrings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
+        imageSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+        searchablePlainTexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
       additionalProperties:
         type: object
+    microsoft.graph.titleAreaTextAlignmentType:
+      title: titleAreaTextAlignmentType
+      enum:
+        - left
+        - center
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            layout:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
+            columns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+              description: The set of vertical columns in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.verticalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: verticalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The set of web parts in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -17238,11 +17390,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -17645,16 +17797,26 @@ components:
         containerId:
           type: string
           description: The identifier of the resource that contains the plan.
+          nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
           description: The full canonical URL of the container.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerPlanContextCollection:
       title: plannerPlanContextCollection
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanCreation:
+      title: plannerPlanCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
       additionalProperties:
         type: object
     microsoft.graph.plannerBucket:
@@ -17663,6 +17825,8 @@ components:
         - title: plannerBucket
           type: object
           properties:
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
             name:
               type: string
               description: Name of the bucket.
@@ -17843,6 +18007,33 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
       additionalProperties:
         type: object
+    microsoft.graph.channelSummary:
+      title: channelSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        hasMembersFromOtherTenants:
+          type: boolean
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17908,6 +18099,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -18568,7 +18760,7 @@ components:
       title: cloudPcDiskEncryptionState
       enum:
         - notAvailable
-        - notEncryped
+        - notEncrypted
         - encryptedUsingPlatformManagedKey
         - encryptedUsingCustomerManagedKey
         - unknownFutureValue
@@ -18624,6 +18816,31 @@ components:
       enum:
         - windows10
         - windows11
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallResult:
+      title: cloudPcPartnerAgentInstallResult
+      type: object
+      properties:
+        installStatus:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
+        isThirdPartyPartner:
+          type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
+          nullable: true
+        partnerAgentName:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
+        retriable:
+          type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcServicePlanType:
@@ -22760,6 +22977,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -22985,99 +23217,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
             device:
               $ref: '#/components/schemas/microsoft.graph.device'
-          additionalProperties:
-            type: object
-    microsoft.graph.baseTask:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: baseTask
-          type: object
-          properties:
-            bodyLastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            completedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date when the task was finished.
-              format: date-time
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            displayName:
-              type: string
-              description: The name of the task.
-              nullable: true
-            dueDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            importance:
-              $ref: '#/components/schemas/microsoft.graph.importance'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            recurrence:
-              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
-            startDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
-            textBody:
-              type: string
-              description: The task body in text format that typically contains information about the task.
-              nullable: true
-            viewpoint:
-              $ref: '#/components/schemas/microsoft.graph.taskViewpoint'
-            checklistItems:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of smaller subtasks linked to the more complex parent task.
-              x-ms-navigationProperty: true
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the task .
-              x-ms-navigationProperty: true
-            linkedResources:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.linkedResource_v2'
-              description: A collection of resources linked to the task.
-              x-ms-navigationProperty: true
-            parentList:
-              $ref: '#/components/schemas/microsoft.graph.baseTaskList'
-          additionalProperties:
-            type: object
-    microsoft.graph.baseTaskList:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: baseTaskList
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The name of the task list.
-              nullable: true
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the task list. Nullable.
-              x-ms-navigationProperty: true
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTask'
-              description: The tasks in this task list. Read-only. Nullable.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.chatType:
@@ -23687,6 +23826,74 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.metaDataKeyStringPair:
+      title: metaDataKeyStringPair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the meta data.
+          nullable: true
+        value:
+          type: string
+          description: Value of the meta data.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.metaDataKeyValuePair:
+      title: metaDataKeyValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the metadata.
+          nullable: true
+        value:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionEmphasisType:
+      title: sectionEmphasisType
+      enum:
+        - none
+        - netural
+        - soft
+        - strong
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionLayoutType:
+      title: horizontalSectionLayoutType
+      enum:
+        - none
+        - oneColumn
+        - twoColumns
+        - threeColumns
+        - oneThirdLeftColumn
+        - oneThirdRightColumn
+        - fullWidth
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionColumn:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSectionColumn
+          type: object
+          properties:
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
+              format: int32
+              nullable: true
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The collection of WebParts in this column.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:
@@ -23699,7 +23906,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object
@@ -23777,6 +23984,22 @@ components:
         - roster
         - project
       type: string
+    microsoft.graph.plannerCreationSourceKind:
+      title: plannerCreationSourceKind
+      enum:
+        - none
+        - external
+        - publication
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerBucketCreation:
+      title: plannerBucketCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
+      additionalProperties:
+        type: object
     microsoft.graph.plannerCategoryDescriptions:
       title: plannerCategoryDescriptions
       type: object
@@ -23907,6 +24130,8 @@ components:
       title: plannerTaskCreation
       type: object
       properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
         teamsPublicationInfo:
           $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
       additionalProperties:
@@ -23942,7 +24167,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -23974,7 +24199,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
+              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -24088,6 +24313,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
@@ -24598,6 +24824,23 @@ components:
         - done
         - failed
         - notSupported
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallStatus:
+      title: cloudPcPartnerAgentInstallStatus
+      enum:
+        - installed
+        - installFailed
+        - installing
+        - uninstalling
+        - uninstallFailed
+        - licensed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentName:
+      title: cloudPcPartnerAgentName
+      enum:
+        - citrix
+        - unknownFutureValue
       type: string
     microsoft.graph.bitlockerRecoveryKey:
       allOf:
@@ -27013,79 +27256,6 @@ components:
         - weak
         - unknown
       type: string
-    microsoft.graph.taskStatus_v2:
-      title: taskStatus_v2
-      enum:
-        - notStarted
-        - inProgress
-        - completed
-        - unknownFutureValue
-      type: string
-    microsoft.graph.taskViewpoint:
-      title: taskViewpoint
-      type: object
-      properties:
-        categories:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
-        reminderDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
-    microsoft.graph.checklistItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: checklistItem
-          type: object
-          properties:
-            checkedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the checklistItem was finished.
-              format: date-time
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the checklistItem was created.
-              format: date-time
-            displayName:
-              type: string
-              description: Field indicating the title of checklistItem.
-              nullable: true
-            isChecked:
-              type: boolean
-              description: State indicating whether the item is checked off or not.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.linkedResource_v2:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: linkedResource_v2
-          type: object
-          properties:
-            applicationName:
-              type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
-              nullable: true
-            displayName:
-              type: string
-              description: Field indicating the title of the linkedResource.
-              nullable: true
-            externalId:
-              type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
-              nullable: true
-            webUrl:
-              type: string
-              description: Deep link to the linkedResource.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.teamworkUserIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -27367,33 +27537,35 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.plannerTeamsPublicationInfo:
-      title: plannerTeamsPublicationInfo
-      type: object
-      properties:
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date and time when this task was last modified by the publication process. Read-only.
-          format: date-time
-          nullable: true
-        publicationId:
-          type: string
-          description: The identifier of the publication. Read-only.
-          nullable: true
-        publishedToPlanId:
-          type: string
-          description: The identifier of the plannerPlan this task was originally placed in. Read-only.
-          nullable: true
-        publishingTeamId:
-          type: string
-          description: The identifier of the team that initiated the publication process. Read-only.
-          nullable: true
-        publishingTeamName:
-          type: string
-          description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
-          nullable: true
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+        - title: plannerTeamsPublicationInfo
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when this task was last modified by the publication process. Read-only.
+              format: date-time
+              nullable: true
+            publicationId:
+              type: string
+              description: The identifier of the publication. Read-only.
+              nullable: true
+            publishedToPlanId:
+              type: string
+              description: The identifier of the plannerPlan this task was originally placed in. Read-only.
+              nullable: true
+            publishingTeamId:
+              type: string
+              description: The identifier of the team that initiated the publication process. Read-only.
+              nullable: true
+            publishingTeamName:
+              type: string
+              description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerOrderHintsByAssignee:
       title: plannerOrderHintsByAssignee
       type: object
@@ -27987,6 +28159,16 @@ components:
         - title: printJob
           type: object
           properties:
+            acknowledgedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             configuration:
               $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
             createdBy:
@@ -27998,6 +28180,12 @@ components:
               format: date-time
             displayName:
               type: string
+              nullable: true
+            errorCode:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
               nullable: true
             isFetchable:
               type: boolean
@@ -29124,6 +29312,33 @@ components:
                 type: string
                 nullable: true
               description: 'Indicates a single value {start} that represents the location in the file where the next upload should begin.'
+          additionalProperties:
+            type: object
+    microsoft.graph.checklistItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: checklistItem
+          type: object
+          properties:
+            checkedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was created.
+              format: date-time
+            displayName:
+              type: string
+              description: Field indicating the title of checklistItem.
+              nullable: true
+            isChecked:
+              type: boolean
+              description: State indicating whether the item is checked off or not.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:
@@ -30544,10 +30759,20 @@ components:
               type: string
               description: The document's name. Read-only.
               nullable: true
+            downloadedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             size:
               type: integer
               description: The document's size in bytes. Read-only.
               format: int64
+            uploadedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.printTask:

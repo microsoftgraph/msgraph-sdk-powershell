@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 00fce1df-8c97-4569-99cf-7f23d3b34eed
+Module Guid: 73f78801-bd1c-4ef7-aab2-7b8ee8b082aa
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,6 +11,10 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Identity.SignIns Cmdlets
+### [Confirm-MgRiskyServicePrincipalCompromised](Confirm-MgRiskyServicePrincipalCompromised.md)
+Confirm one or more riskyServicePrincipal objects as compromised.
+This action sets the targeted service principal account's risk level to `high`.
+
 ### [Confirm-MgRiskyUserCompromised](Confirm-MgRiskyUserCompromised.md)
 Confirm one or more riskyUser objects as compromised.
 This action sets the targeted user's risk level to high.
@@ -208,11 +212,20 @@ The policy that controls the lifetime of a JWT access token, an ID token, or a S
 ### [Get-MgRiskDetection](Get-MgRiskDetection.md)
 Risk detection in Azure AD Identity Protection and the associated information about the detection.
 
+### [Get-MgRiskyServicePrincipal](Get-MgRiskyServicePrincipal.md)
+Azure AD service principals that are at risk.
+
+### [Get-MgRiskyServicePrincipalHistory](Get-MgRiskyServicePrincipalHistory.md)
+Represents the risk history of Azure AD service principals.
+
 ### [Get-MgRiskyUser](Get-MgRiskyUser.md)
 Users that are flagged as at-risk by Azure AD Identity Protection.
 
 ### [Get-MgRiskyUserHistory](Get-MgRiskyUserHistory.md)
 The activity related to user risk level change
+
+### [Get-MgServicePrincipalRiskDetection](Get-MgServicePrincipalRiskDetection.md)
+Represents information about detected at-risk service principals in an Azure AD tenant.
 
 ### [Get-MgUserAuthenticationEmailMethod](Get-MgUserAuthenticationEmailMethod.md)
 The email address registered to a user for authentication.
@@ -335,6 +348,11 @@ Supports $expand.
 
 ### [Invoke-MgAvailableIdentityProviderType](Invoke-MgAvailableIdentityProviderType.md)
 Invoke function availableProviderTypes
+
+### [Invoke-MgDismissRiskyServicePrincipal](Invoke-MgDismissRiskyServicePrincipal.md)
+Dismiss the risk of one or more riskyServicePrincipal objects.
+This action sets the targeted service principal account's risk level to `none`.
+You can dismiss up to 60 service principal accounts in one request.
 
 ### [Invoke-MgDismissRiskyUser](Invoke-MgDismissRiskyUser.md)
 Dismiss the risk of one or more riskyUser objects.
@@ -461,22 +479,25 @@ Create a new tokenLifetimePolicy object.
 ### [New-MgRiskDetection](New-MgRiskDetection.md)
 Create new navigation property to riskDetections for identityProtection
 
+### [New-MgRiskyServicePrincipal](New-MgRiskyServicePrincipal.md)
+Create new navigation property to riskyServicePrincipals for identityProtection
+
+### [New-MgRiskyServicePrincipalHistory](New-MgRiskyServicePrincipalHistory.md)
+Create new navigation property to history for identityProtection
+
 ### [New-MgRiskyUser](New-MgRiskyUser.md)
 Create new navigation property to riskyUsers for identityProtection
 
 ### [New-MgRiskyUserHistory](New-MgRiskyUserHistory.md)
 Create new navigation property to history for identityProtection
 
+### [New-MgServicePrincipalRiskDetection](New-MgServicePrincipalRiskDetection.md)
+Create new navigation property to servicePrincipalRiskDetections for identityProtection
+
 ### [New-MgUserAuthenticationEmailMethod](New-MgUserAuthenticationEmailMethod.md)
 Set a user's emailAuthenticationMethod object.
 Email authentication is a self-service password reset method.
 A user may only have one email authentication method.
-
-### [New-MgUserAuthenticationFido2Method](New-MgUserAuthenticationFido2Method.md)
-Create new navigation property to fido2Methods for users
-
-### [New-MgUserAuthenticationMicrosoftAuthenticatorMethod](New-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
-Create new navigation property to microsoftAuthenticatorMethods for users
 
 ### [New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension](New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension.md)
 Create new navigation property to extensions for users
@@ -495,16 +516,10 @@ Additionally, a user must always have a `mobile` phone before adding an `alterna
 Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
 Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` number is added, the system will attempt to register the number for use in that system.
 
-### [New-MgUserAuthenticationSoftwareOathMethod](New-MgUserAuthenticationSoftwareOathMethod.md)
-Create new navigation property to softwareOathMethods for users
-
 ### [New-MgUserAuthenticationTemporaryAccessPassMethod](New-MgUserAuthenticationTemporaryAccessPassMethod.md)
 Create a new temporaryAccessPassAuthenticationMethod object on a user.
 A user can only have one Temporary Access Pass that's usable within its specified lifetime.
 If the user requires a new Temporary Access Pass while the current Temporary Access Pass is valid, the admin can create a new Temporary Access Pass for the user, the previous Temporary Access Pass will be deleted, and a new Temporary Access Pass will be created.
-
-### [New-MgUserAuthenticationWindowHelloForBusinessMethod](New-MgUserAuthenticationWindowHelloForBusinessMethod.md)
-Create new navigation property to windowsHelloForBusinessMethods for users
 
 ### [New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension](New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension.md)
 Create new navigation property to extensions for users
@@ -634,11 +649,20 @@ Delete navigation property tokenLifetimePolicies for policies
 ### [Remove-MgRiskDetection](Remove-MgRiskDetection.md)
 Delete navigation property riskDetections for identityProtection
 
+### [Remove-MgRiskyServicePrincipal](Remove-MgRiskyServicePrincipal.md)
+Delete navigation property riskyServicePrincipals for identityProtection
+
+### [Remove-MgRiskyServicePrincipalHistory](Remove-MgRiskyServicePrincipalHistory.md)
+Delete navigation property history for identityProtection
+
 ### [Remove-MgRiskyUser](Remove-MgRiskyUser.md)
 Delete navigation property riskyUsers for identityProtection
 
 ### [Remove-MgRiskyUserHistory](Remove-MgRiskyUserHistory.md)
 Delete navigation property history for identityProtection
+
+### [Remove-MgServicePrincipalRiskDetection](Remove-MgServicePrincipalRiskDetection.md)
+Delete navigation property servicePrincipalRiskDetections for identityProtection
 
 ### [Remove-MgUserAuthenticationEmailMethod](Remove-MgUserAuthenticationEmailMethod.md)
 Delete navigation property emailMethods for users
@@ -660,9 +684,6 @@ Delete ref of navigation property registeredOwners for users
 
 ### [Remove-MgUserAuthenticationOperation](Remove-MgUserAuthenticationOperation.md)
 Delete navigation property operations for users
-
-### [Remove-MgUserAuthenticationPasswordMethod](Remove-MgUserAuthenticationPasswordMethod.md)
-Delete navigation property passwordMethods for users
 
 ### [Remove-MgUserAuthenticationPhoneMethod](Remove-MgUserAuthenticationPhoneMethod.md)
 Delete navigation property phoneMethods for users
@@ -828,20 +849,23 @@ Update the navigation property tokenLifetimePolicies in policies
 ### [Update-MgRiskDetection](Update-MgRiskDetection.md)
 Update the navigation property riskDetections in identityProtection
 
+### [Update-MgRiskyServicePrincipal](Update-MgRiskyServicePrincipal.md)
+Update the navigation property riskyServicePrincipals in identityProtection
+
+### [Update-MgRiskyServicePrincipalHistory](Update-MgRiskyServicePrincipalHistory.md)
+Update the navigation property history in identityProtection
+
 ### [Update-MgRiskyUser](Update-MgRiskyUser.md)
 Update the navigation property riskyUsers in identityProtection
 
 ### [Update-MgRiskyUserHistory](Update-MgRiskyUserHistory.md)
 Update the navigation property history in identityProtection
 
+### [Update-MgServicePrincipalRiskDetection](Update-MgServicePrincipalRiskDetection.md)
+Update the navigation property servicePrincipalRiskDetections in identityProtection
+
 ### [Update-MgUserAuthenticationEmailMethod](Update-MgUserAuthenticationEmailMethod.md)
 Update the navigation property emailMethods in users
-
-### [Update-MgUserAuthenticationFido2Method](Update-MgUserAuthenticationFido2Method.md)
-Update the navigation property fido2Methods in users
-
-### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethod](Update-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
-Update the navigation property microsoftAuthenticatorMethods in users
 
 ### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice](Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice.md)
 Update the navigation property device in users
@@ -854,12 +878,6 @@ Update the navigation property operations in users
 
 ### [Update-MgUserAuthenticationPhoneMethod](Update-MgUserAuthenticationPhoneMethod.md)
 Update the navigation property phoneMethods in users
-
-### [Update-MgUserAuthenticationSoftwareOathMethod](Update-MgUserAuthenticationSoftwareOathMethod.md)
-Update the navigation property softwareOathMethods in users
-
-### [Update-MgUserAuthenticationWindowHelloForBusinessMethod](Update-MgUserAuthenticationWindowHelloForBusinessMethod.md)
-Update the navigation property windowsHelloForBusinessMethods in users
 
 ### [Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 Update the navigation property device in users

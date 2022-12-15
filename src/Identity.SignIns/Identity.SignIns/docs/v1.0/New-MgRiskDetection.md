@@ -36,7 +36,7 @@ Create new navigation property to riskDetections for identityProtection
 ## PARAMETERS
 
 ### -Activity
-.
+activityType
 
 ```yaml
 Type: System.String
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -RiskDetail
-.
+riskDetail
 
 ```yaml
 Type: System.String
@@ -437,7 +437,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphRiskDetection1>: riskDetection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Activity <String>]`: 
+  - `[Activity <String>]`: activityType
   - `[ActivityDateTime <DateTime?>]`: Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
   - `[AdditionalInfo <String>]`: Additional information associated with the risk detection in JSON format. For example, '[{/'Key/':/'userAgent/',/'Value/':/'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36/'}]'. Possible keys in the additionalInfo JSON string are: userAgent, alertUrl, relatedEventTimeInUtc, relatedUserAgent, deviceInformation, relatedLocation, requestId, correlationId, lastActivityTimeInUtc, malwareName, clientLocation, clientIp, riskReasons. For more information about riskReasons and possible values, see riskReasons values.
   - `[CorrelationId <String>]`: Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
@@ -456,7 +456,7 @@ BODYPARAMETER <IMicrosoftGraphRiskDetection1>: riskDetection
       - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
     - `[State <String>]`: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
   - `[RequestId <String>]`: Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
-  - `[RiskDetail <String>]`: 
+  - `[RiskDetail <String>]`: riskDetail
   - `[RiskEventType <String>]`: The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, passwordSpray, impossibleTravel, newCountry, anomalousToken, tokenIssuerAnomaly,suspiciousBrowser, riskyIPAddress, mcasSuspiciousInboxManipulationRules, suspiciousInboxForwarding, and anomalousUserActivity. If the risk detection is a premium detection, will show generic. For more information about each value, see riskEventType values.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState

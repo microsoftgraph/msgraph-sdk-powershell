@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgDirectoryDeletedItem
 
 ## SYNOPSIS
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
@@ -28,7 +28,7 @@ Restore-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentit
 ```
 
 ## DESCRIPTION
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.

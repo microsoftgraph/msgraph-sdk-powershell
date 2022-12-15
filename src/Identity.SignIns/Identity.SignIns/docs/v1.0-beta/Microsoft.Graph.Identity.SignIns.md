@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 00fce1df-8c97-4569-99cf-7f23d3b34eed
+Module Guid: 73f78801-bd1c-4ef7-aab2-7b8ee8b082aa
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,7 +17,6 @@ Invoke action verifySignature
 ### [Confirm-MgRiskyServicePrincipalCompromised](Confirm-MgRiskyServicePrincipalCompromised.md)
 Confirm one or more riskyServicePrincipal objects as compromised.
 This action sets the targeted service principal account's risk level to `high`.
-When the risk level of the service principal is confirmed as compromised, the service principal object is disabled and its **disabledByMicrosoftStatus** property is updated.
 
 ### [Confirm-MgRiskyUserCompromised](Confirm-MgRiskyUserCompromised.md)
 Confirm one or more riskyUser objects as compromised.

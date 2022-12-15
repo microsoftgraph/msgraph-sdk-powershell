@@ -46,8 +46,10 @@ paths:
                 - managementActionTenantDeploymentStatuses
                 - managementIntents
                 - managementTemplateCollections
+                - managementTemplateCollectionTenantSummaries
                 - managementTemplates
                 - managementTemplateSteps
+                - managementTemplateStepTenantSummaries
                 - managementTemplateStepVersions
                 - myRoles
                 - tenantGroups
@@ -90,8 +92,10 @@ paths:
                 - managementActionTenantDeploymentStatuses
                 - managementIntents
                 - managementTemplateCollections
+                - managementTemplateCollectionTenantSummaries
                 - managementTemplates
                 - managementTemplateSteps
+                - managementTemplateStepTenantSummaries
                 - managementTemplateStepVersions
                 - myRoles
                 - tenantGroups
@@ -109,71 +113,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenant'
-          links:
-            aggregatedPolicyCompliances:
-              operationId: tenantRelationships.ManagedTenants.ListAggregatedPolicyCompliances
-            auditEvents:
-              operationId: tenantRelationships.ManagedTenants.ListAuditEvents
-            cloudPcConnections:
-              operationId: tenantRelationships.ManagedTenants.ListCloudPcConnections
-            cloudPcDevices:
-              operationId: tenantRelationships.ManagedTenants.ListCloudPcDevices
-            cloudPcsOverview:
-              operationId: tenantRelationships.ManagedTenants.ListCloudPcsOverview
-            conditionalAccessPolicyCoverages:
-              operationId: tenantRelationships.ManagedTenants.ListConditionalAccessPolicyCoverages
-            credentialUserRegistrationsSummaries:
-              operationId: tenantRelationships.ManagedTenants.ListCredentialUserRegistrationsSummaries
-            deviceCompliancePolicySettingStateSummaries:
-              operationId: tenantRelationships.ManagedTenants.ListDeviceCompliancePolicySettingStateSummaries
-            managedDeviceCompliances:
-              operationId: tenantRelationships.ManagedTenants.ListManagedDeviceCompliances
-            managedDeviceComplianceTrends:
-              operationId: tenantRelationships.ManagedTenants.ListManagedDeviceComplianceTrends
-            managedTenantAlertLogs:
-              operationId: tenantRelationships.ManagedTenants.ListManagedTenantAlertLogs
-            managedTenantAlertRuleDefinitions:
-              operationId: tenantRelationships.ManagedTenants.ListManagedTenantAlertRuleDefinitions
-            managedTenantAlertRules:
-              operationId: tenantRelationships.ManagedTenants.ListManagedTenantAlertRules
-            managedTenantAlerts:
-              operationId: tenantRelationships.ManagedTenants.ListManagedTenantAlerts
-            managedTenantApiNotifications:
-              operationId: tenantRelationships.ManagedTenants.ListManagedTenantApiNotifications
-            managedTenantEmailNotifications:
-              operationId: tenantRelationships.ManagedTenants.ListManagedTenantEmailNotifications
-            managedTenantTicketingEndpoints:
-              operationId: tenantRelationships.ManagedTenants.ListManagedTenantTicketingEndpoints
-            managementActions:
-              operationId: tenantRelationships.ManagedTenants.ListManagementActions
-            managementActionTenantDeploymentStatuses:
-              operationId: tenantRelationships.ManagedTenants.ListManagementActionTenantDeploymentStatuses
-            managementIntents:
-              operationId: tenantRelationships.ManagedTenants.ListManagementIntents
-            managementTemplateCollections:
-              operationId: tenantRelationships.ManagedTenants.ListManagementTemplateCollections
-            managementTemplates:
-              operationId: tenantRelationships.ManagedTenants.ListManagementTemplates
-            managementTemplateSteps:
-              operationId: tenantRelationships.ManagedTenants.ListManagementTemplateSteps
-            managementTemplateStepVersions:
-              operationId: tenantRelationships.ManagedTenants.ListManagementTemplateStepVersions
-            myRoles:
-              operationId: tenantRelationships.ManagedTenants.ListMyRoles
-            tenantGroups:
-              operationId: tenantRelationships.ManagedTenants.ListTenantGroups
-            tenants:
-              operationId: tenantRelationships.ManagedTenants.ListTenants
-            tenantsCustomizedInformation:
-              operationId: tenantRelationships.ManagedTenants.ListTenantsCustomizedInformation
-            tenantsDetailedInformation:
-              operationId: tenantRelationships.ManagedTenants.ListTenantsDetailedInformation
-            tenantTags:
-              operationId: tenantRelationships.ManagedTenants.ListTenantTags
-            windowsDeviceMalwareStates:
-              operationId: tenantRelationships.ManagedTenants.ListWindowsDeviceMalwareStates
-            windowsProtectionStates:
-              operationId: tenantRelationships.ManagedTenants.ListWindowsProtectionStates
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2678,11 +2617,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
-          links:
-            alert:
-              operationId: tenantRelationships.managedTenants.ManagedTenantAlertLogs.GetAlert
-              parameters:
-                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2808,23 +2742,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
-          links:
-            alertLogs:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertLogs.Alert.ListAlertLogs
-              parameters:
-                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
-            alertRule:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertLogs.Alert.GetAlertRule
-              parameters:
-                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
-            apiNotifications:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertLogs.Alert.ListApiNotifications
-              parameters:
-                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
-            emailNotifications:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertLogs.Alert.ListEmailNotifications
-              parameters:
-                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2982,11 +2899,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
-          links:
-            alertRules:
-              operationId: tenantRelationships.managedTenants.ManagedTenantAlertRuleDefinitions.ListAlertRules
-              parameters:
-                managedTenantAlertRuleDefinition-id: $request.path.managedTenantAlertRuleDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3223,17 +3135,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
-          links:
-            alerts:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertRuleDefinitions.AlertRules.ListAlerts
-              parameters:
-                managedTenantAlertRuleDefinition-id: $request.path.managedTenantAlertRuleDefinition-id
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
-            ruleDefinition:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertRuleDefinitions.AlertRules.GetRuleDefinition
-              parameters:
-                managedTenantAlertRuleDefinition-id: $request.path.managedTenantAlertRuleDefinition-id
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3423,15 +3324,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
-          links:
-            alerts:
-              operationId: tenantRelationships.managedTenants.ManagedTenantAlertRules.ListAlerts
-              parameters:
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
-            ruleDefinition:
-              operationId: tenantRelationships.managedTenants.ManagedTenantAlertRules.GetRuleDefinition
-              parameters:
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3684,27 +3576,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
-          links:
-            alertLogs:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.Alerts.ListAlertLogs
-              parameters:
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-            alertRule:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.Alerts.GetAlertRule
-              parameters:
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-            apiNotifications:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.Alerts.ListApiNotifications
-              parameters:
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-            emailNotifications:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.Alerts.ListEmailNotifications
-              parameters:
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3762,11 +3633,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
-          links:
-            alertRules:
-              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.RuleDefinition.ListAlertRules
-              parameters:
-                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3972,25 +3838,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
-          links:
-            alertLogs:
-              operationId: tenantRelationships.managedTenants.ManagedTenantAlerts.ListAlertLogs
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-            alertRule:
-              operationId: tenantRelationships.managedTenants.ManagedTenantAlerts.GetAlertRule
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-            apiNotifications:
-              operationId: tenantRelationships.managedTenants.ManagedTenantAlerts.ListApiNotifications
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-            emailNotifications:
-              operationId: tenantRelationships.managedTenants.ManagedTenantAlerts.ListEmailNotifications
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-            addUserInputLog:
-              operationId: tenantRelationships.managedTenants.managedTenantAlerts.managedTenantAlert.addUserInputLog
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4191,12 +4038,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
-          links:
-            alert:
-              operationId: tenantRelationships.managedTenants.managedTenantAlerts.AlertLogs.GetAlert
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4263,15 +4104,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
-          links:
-            alerts:
-              operationId: tenantRelationships.managedTenants.managedTenantAlerts.AlertRule.ListAlerts
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-            ruleDefinition:
-              operationId: tenantRelationships.managedTenants.managedTenantAlerts.AlertRule.GetRuleDefinition
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4431,12 +4263,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
-          links:
-            alert:
-              operationId: tenantRelationships.managedTenants.managedTenantAlerts.ApiNotifications.GetAlert
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4592,12 +4418,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
-          links:
-            alert:
-              operationId: tenantRelationships.managedTenants.managedTenantAlerts.EmailNotifications.GetAlert
-              parameters:
-                managedTenantAlert-id: $request.path.managedTenantAlert-id
-                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4763,11 +4583,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
-          links:
-            alert:
-              operationId: tenantRelationships.managedTenants.ManagedTenantApiNotifications.GetAlert
-              parameters:
-                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4893,23 +4708,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
-          links:
-            alertLogs:
-              operationId: tenantRelationships.managedTenants.managedTenantApiNotifications.Alert.ListAlertLogs
-              parameters:
-                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
-            alertRule:
-              operationId: tenantRelationships.managedTenants.managedTenantApiNotifications.Alert.GetAlertRule
-              parameters:
-                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
-            apiNotifications:
-              operationId: tenantRelationships.managedTenants.managedTenantApiNotifications.Alert.ListApiNotifications
-              parameters:
-                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
-            emailNotifications:
-              operationId: tenantRelationships.managedTenants.managedTenantApiNotifications.Alert.ListEmailNotifications
-              parameters:
-                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5071,11 +4869,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
-          links:
-            alert:
-              operationId: tenantRelationships.managedTenants.ManagedTenantEmailNotifications.GetAlert
-              parameters:
-                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5201,23 +4994,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
-          links:
-            alertLogs:
-              operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications.Alert.ListAlertLogs
-              parameters:
-                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
-            alertRule:
-              operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications.Alert.GetAlertRule
-              parameters:
-                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
-            apiNotifications:
-              operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications.Alert.ListApiNotifications
-              parameters:
-                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
-            emailNotifications:
-              operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications.Alert.ListEmailNotifications
-              parameters:
-                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5586,9 +5362,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
-          links:
-            apply:
-              operationId: tenantRelationships.managedTenants.managementActions.managementAction.apply
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6197,11 +5970,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
-          links:
-            managementTemplates:
-              operationId: tenantRelationships.managedTenants.ManagementTemplateCollections.ListManagementTemplates
-              parameters:
-                managementTemplateCollection-id: $request.path.managementTemplateCollection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6442,17 +6210,252 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
-          links:
-            managementTemplateCollections:
-              operationId: tenantRelationships.managedTenants.managementTemplateCollections.ManagementTemplates.ListManagementTemplateCollections
-              parameters:
-                managementTemplateCollection-id: $request.path.managementTemplateCollection-id
-                managementTemplate-id: $request.path.managementTemplate-id
-            managementTemplateSteps:
-              operationId: tenantRelationships.managedTenants.managementTemplateCollections.ManagementTemplates.ListManagementTemplateSteps
-              parameters:
-                managementTemplateCollection-id: $request.path.managementTemplateCollection-id
-                managementTemplate-id: $request.path.managementTemplate-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managementTemplateCollectionTenantSummaries from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagementTemplateCollectionTenantSummaries
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completeStepsCount
+                - completeStepsCount desc
+                - completeUsersCount
+                - completeUsersCount desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - dismissedStepsCount
+                - dismissedStepsCount desc
+                - excludedUsersCount
+                - excludedUsersCount desc
+                - excludedUsersDistinctCount
+                - excludedUsersDistinctCount desc
+                - incompleteStepsCount
+                - incompleteStepsCount desc
+                - incompleteUsersCount
+                - incompleteUsersCount desc
+                - ineligibleStepsCount
+                - ineligibleStepsCount desc
+                - isComplete
+                - isComplete desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - managementTemplateCollectionDisplayName
+                - managementTemplateCollectionDisplayName desc
+                - managementTemplateCollectionId
+                - managementTemplateCollectionId desc
+                - tenantId
+                - tenantId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completeStepsCount
+                - completeUsersCount
+                - createdByUserId
+                - createdDateTime
+                - dismissedStepsCount
+                - excludedUsersCount
+                - excludedUsersDistinctCount
+                - incompleteStepsCount
+                - incompleteUsersCount
+                - ineligibleStepsCount
+                - isComplete
+                - lastActionByUserId
+                - lastActionDateTime
+                - managementTemplateCollectionDisplayName
+                - managementTemplateCollectionId
+                - tenantId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummaryCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managementTemplateCollectionTenantSummaries for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagementTemplateCollectionTenantSummaries
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries/{managementTemplateCollectionTenantSummary-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managementTemplateCollectionTenantSummaries from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagementTemplateCollectionTenantSummaries
+      parameters:
+        - name: managementTemplateCollectionTenantSummary-id
+          in: path
+          description: 'key: id of managementTemplateCollectionTenantSummary'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateCollectionTenantSummary
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completeStepsCount
+                - completeUsersCount
+                - createdByUserId
+                - createdDateTime
+                - dismissedStepsCount
+                - excludedUsersCount
+                - excludedUsersDistinctCount
+                - incompleteStepsCount
+                - incompleteUsersCount
+                - ineligibleStepsCount
+                - isComplete
+                - lastActionByUserId
+                - lastActionDateTime
+                - managementTemplateCollectionDisplayName
+                - managementTemplateCollectionId
+                - tenantId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managementTemplateCollectionTenantSummaries in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagementTemplateCollectionTenantSummaries
+      parameters:
+        - name: managementTemplateCollectionTenantSummary-id
+          in: path
+          description: 'key: id of managementTemplateCollectionTenantSummary'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateCollectionTenantSummary
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managementTemplateCollectionTenantSummaries for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagementTemplateCollectionTenantSummaries
+      parameters:
+        - name: managementTemplateCollectionTenantSummary-id
+          in: path
+          description: 'key: id of managementTemplateCollectionTenantSummary'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateCollectionTenantSummary
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6651,15 +6654,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
-          links:
-            managementTemplateCollections:
-              operationId: tenantRelationships.managedTenants.ManagementTemplates.ListManagementTemplateCollections
-              parameters:
-                managementTemplate-id: $request.path.managementTemplate-id
-            managementTemplateSteps:
-              operationId: tenantRelationships.managedTenants.ManagementTemplates.ListManagementTemplateSteps
-              parameters:
-                managementTemplate-id: $request.path.managementTemplate-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6864,12 +6858,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
-          links:
-            managementTemplates:
-              operationId: tenantRelationships.managedTenants.managementTemplates.ManagementTemplateCollections.ListManagementTemplates
-              parameters:
-                managementTemplate-id: $request.path.managementTemplate-id
-                managementTemplateCollection-id: $request.path.managementTemplateCollection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7041,22 +7029,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
-          links:
-            acceptedVersion:
-              operationId: tenantRelationships.managedTenants.managementTemplates.ManagementTemplateSteps.GetAcceptedVersion
-              parameters:
-                managementTemplate-id: $request.path.managementTemplate-id
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-            managementTemplate:
-              operationId: tenantRelationships.managedTenants.managementTemplates.ManagementTemplateSteps.GetManagementTemplate
-              parameters:
-                managementTemplate-id: $request.path.managementTemplate-id
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-            versions:
-              operationId: tenantRelationships.managedTenants.managementTemplates.ManagementTemplateSteps.ListVersions
-              parameters:
-                managementTemplate-id: $request.path.managementTemplate-id
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7234,19 +7206,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
-          links:
-            acceptedVersion:
-              operationId: tenantRelationships.managedTenants.ManagementTemplateSteps.GetAcceptedVersion
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-            managementTemplate:
-              operationId: tenantRelationships.managedTenants.ManagementTemplateSteps.GetManagementTemplate
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-            versions:
-              operationId: tenantRelationships.managedTenants.ManagementTemplateSteps.ListVersions
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7363,19 +7322,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
-          links:
-            acceptedFor:
-              operationId: tenantRelationships.managedTenants.managementTemplateSteps.AcceptedVersion.GetAcceptedGraphFPre
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-            deployments:
-              operationId: tenantRelationships.managedTenants.managementTemplateSteps.AcceptedVersion.ListDeployments
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-            templateStep:
-              operationId: tenantRelationships.managedTenants.managementTemplateSteps.AcceptedVersion.GetTemplateStep
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7443,15 +7389,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
-          links:
-            managementTemplateCollections:
-              operationId: tenantRelationships.managedTenants.managementTemplateSteps.ManagementTemplate.ListManagementTemplateCollections
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-            managementTemplateSteps:
-              operationId: tenantRelationships.managedTenants.managementTemplateSteps.ManagementTemplate.ListManagementTemplateSteps
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7619,22 +7556,248 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
-          links:
-            acceptedFor:
-              operationId: tenantRelationships.managedTenants.managementTemplateSteps.Versions.GetAcceptedGraphFPre
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-            deployments:
-              operationId: tenantRelationships.managedTenants.managementTemplateSteps.Versions.ListDeployments
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-            templateStep:
-              operationId: tenantRelationships.managedTenants.managementTemplateSteps.Versions.GetTemplateStep
-              parameters:
-                managementTemplateStep-id: $request.path.managementTemplateStep-id
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managementTemplateStepTenantSummaries:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managementTemplateStepTenantSummaries from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagementTemplateStepTenantSummaries
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - assignedTenantsCount
+                - assignedTenantsCount desc
+                - compliantTenantsCount
+                - compliantTenantsCount desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - dismissedTenantsCount
+                - dismissedTenantsCount desc
+                - ineligibleTenantsCount
+                - ineligibleTenantsCount desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - managementTemplateCollectionDisplayName
+                - managementTemplateCollectionDisplayName desc
+                - managementTemplateCollectionId
+                - managementTemplateCollectionId desc
+                - managementTemplateDisplayName
+                - managementTemplateDisplayName desc
+                - managementTemplateId
+                - managementTemplateId desc
+                - managementTemplateStepDisplayName
+                - managementTemplateStepDisplayName desc
+                - managementTemplateStepId
+                - managementTemplateStepId desc
+                - notCompliantTenantsCount
+                - notCompliantTenantsCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedTenantsCount
+                - compliantTenantsCount
+                - createdByUserId
+                - createdDateTime
+                - dismissedTenantsCount
+                - ineligibleTenantsCount
+                - lastActionByUserId
+                - lastActionDateTime
+                - managementTemplateCollectionDisplayName
+                - managementTemplateCollectionId
+                - managementTemplateDisplayName
+                - managementTemplateId
+                - managementTemplateStepDisplayName
+                - managementTemplateStepId
+                - notCompliantTenantsCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateStepTenantSummaryCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managementTemplateStepTenantSummaries for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagementTemplateStepTenantSummaries
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummary'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementTemplateStepTenantSummaries/{managementTemplateStepTenantSummary-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managementTemplateStepTenantSummaries from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagementTemplateStepTenantSummaries
+      parameters:
+        - name: managementTemplateStepTenantSummary-id
+          in: path
+          description: 'key: id of managementTemplateStepTenantSummary'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStepTenantSummary
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedTenantsCount
+                - compliantTenantsCount
+                - createdByUserId
+                - createdDateTime
+                - dismissedTenantsCount
+                - ineligibleTenantsCount
+                - lastActionByUserId
+                - lastActionDateTime
+                - managementTemplateCollectionDisplayName
+                - managementTemplateCollectionId
+                - managementTemplateDisplayName
+                - managementTemplateId
+                - managementTemplateStepDisplayName
+                - managementTemplateStepId
+                - notCompliantTenantsCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managementTemplateStepTenantSummaries in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagementTemplateStepTenantSummaries
+      parameters:
+        - name: managementTemplateStepTenantSummary-id
+          in: path
+          description: 'key: id of managementTemplateStepTenantSummary'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStepTenantSummary
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummary'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managementTemplateStepTenantSummaries for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagementTemplateStepTenantSummaries
+      parameters:
+        - name: managementTemplateStepTenantSummary-id
+          in: path
+          description: 'key: id of managementTemplateStepTenantSummary'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStepTenantSummary
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7808,19 +7971,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
-          links:
-            acceptedFor:
-              operationId: tenantRelationships.managedTenants.ManagementTemplateStepVersions.GetAcceptedGraphFPre
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-            deployments:
-              operationId: tenantRelationships.managedTenants.ManagementTemplateStepVersions.ListDeployments
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-            templateStep:
-              operationId: tenantRelationships.managedTenants.ManagementTemplateStepVersions.GetTemplateStep
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7938,19 +8088,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
-          links:
-            acceptedVersion:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.AcceptedFor.GetAcceptedVersion
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-            managementTemplate:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.AcceptedFor.GetManagementTemplate
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-            versions:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.AcceptedFor.ListVersions
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8137,14 +8274,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
-          links:
-            templateStepVersion:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.Deployments.GetTemplateStepVersion
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-                managementTemplateStepDeployment-id: $request.path.managementTemplateStepDeployment-id
-            changeDeploymentStatus:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.managementTemplateStepVersion.deployments.managementTemplateStepDeployment.changeDeploymentStatus
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8285,22 +8414,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
-          links:
-            acceptedFor:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.deployments.TemplateStepVersion.GetAcceptedGraphFPre
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-                managementTemplateStepDeployment-id: $request.path.managementTemplateStepDeployment-id
-            deployments:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.deployments.TemplateStepVersion.ListDeployments
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-                managementTemplateStepDeployment-id: $request.path.managementTemplateStepDeployment-id
-            templateStep:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.deployments.TemplateStepVersion.GetTemplateStep
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-                managementTemplateStepDeployment-id: $request.path.managementTemplateStepDeployment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8365,19 +8478,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
-          links:
-            acceptedVersion:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.TemplateStep.GetAcceptedVersion
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-            managementTemplate:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.TemplateStep.GetManagementTemplate
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
-            versions:
-              operationId: tenantRelationships.managedTenants.managementTemplateStepVersions.TemplateStep.ListVersions
-              parameters:
-                managementTemplateStepVersion-id: $request.path.managementTemplateStepVersion-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8934,11 +9034,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
-          links:
-            offboardTenant:
-              operationId: tenantRelationships.managedTenants.tenants.tenant.offboardTenant
-            resetTenantOnboardingStatus:
-              operationId: tenantRelationships.managedTenants.tenants.tenant.resetTenantOnboardingStatus
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9592,11 +9687,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
-          links:
-            assignTag:
-              operationId: tenantRelationships.managedTenants.tenantTags.tenantTag.assignTag
-            unassignTag:
-              operationId: tenantRelationships.managedTenants.tenantTags.tenantTag.unassignTag
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10317,6 +10407,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
               x-ms-navigationProperty: true
+            managementTemplateCollectionTenantSummaries:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary'
+              x-ms-navigationProperty: true
             managementTemplates:
               type: array
               items:
@@ -10327,6 +10422,11 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
+              x-ms-navigationProperty: true
+            managementTemplateStepTenantSummaries:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummary'
               x-ms-navigationProperty: true
             managementTemplateStepVersions:
               type: array
@@ -11529,6 +11629,90 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementTemplateCollectionTenantSummary
+          type: object
+          properties:
+            completeStepsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            completeUsersCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            dismissedStepsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            excludedUsersCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            excludedUsersDistinctCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            incompleteStepsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            incompleteUsersCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            ineligibleStepsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            isComplete:
+              type: boolean
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            managementTemplateCollectionDisplayName:
+              type: string
+              nullable: true
+            managementTemplateCollectionId:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.managedTenants.managementTemplateStep:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11624,6 +11808,78 @@ components:
               x-ms-navigationProperty: true
             templateStep:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managementTemplateStepTenantSummary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementTemplateStepTenantSummary
+          type: object
+          properties:
+            assignedTenantsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            compliantTenantsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            dismissedTenantsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            ineligibleTenantsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            managementTemplateCollectionDisplayName:
+              type: string
+              nullable: true
+            managementTemplateCollectionId:
+              type: string
+              nullable: true
+            managementTemplateDisplayName:
+              type: string
+              nullable: true
+            managementTemplateId:
+              type: string
+              nullable: true
+            managementTemplateStepDisplayName:
+              type: string
+              nullable: true
+            managementTemplateStepId:
+              type: string
+              nullable: true
+            notCompliantTenantsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managementTemplateStepDeployment:
@@ -12740,6 +12996,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.managedTenants.managementTemplateCollectionTenantSummaryCollectionResponse:
+      title: Collection of managementTemplateCollectionTenantSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.managedTenants.managementTemplateStepCollectionResponse:
       title: Collection of managementTemplateStep
       type: object
@@ -12761,6 +13030,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managementTemplateStepTenantSummaryCollectionResponse:
+      title: Collection of managementTemplateStepTenantSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummary'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -13252,6 +13534,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionResponse'
+    microsoft.graph.managedTenants.managementTemplateCollectionTenantSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummaryCollectionResponse'
     microsoft.graph.managedTenants.managementTemplateStepCollectionResponse:
       description: Retrieved collection
       content:
@@ -13264,6 +13552,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersionCollectionResponse'
+    microsoft.graph.managedTenants.managementTemplateStepTenantSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummaryCollectionResponse'
     microsoft.graph.managedTenants.managementTemplateStepDeploymentCollectionResponse:
       description: Retrieved collection
       content:

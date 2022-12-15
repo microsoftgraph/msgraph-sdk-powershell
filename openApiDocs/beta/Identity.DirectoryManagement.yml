@@ -186,29 +186,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
-          links:
-            members:
-              operationId: administrativeUnits.ListMembers
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-            scopedRoleMembers:
-              operationId: administrativeUnits.ListScopedRoleMembers
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-            extensions:
-              operationId: administrativeUnits.ListExtensions
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-            checkMemberGroups:
-              operationId: administrativeUnits.administrativeUnit.checkMemberGroups
-            checkMemberObjects:
-              operationId: administrativeUnits.administrativeUnit.checkMemberObjects
-            getMemberGroups:
-              operationId: administrativeUnits.administrativeUnit.getMemberGroups
-            getMemberObjects:
-              operationId: administrativeUnits.administrativeUnit.getMemberObjects
-            restore:
-              operationId: administrativeUnits.administrativeUnit.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -922,7 +899,7 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -1621,37 +1598,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.orgContact'
-          links:
-            directReports:
-              operationId: contacts.ListDirectReports
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            manager:
-              operationId: contacts.GetManager
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            memberOf:
-              operationId: contacts.ListMemberGraphOPre
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            transitiveMemberOf:
-              operationId: contacts.ListTransitiveMemberGraphOPre
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            transitiveReports:
-              operationId: contacts.ListTransitiveReports
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            checkMemberGroups:
-              operationId: contacts.orgContact.checkMemberGroups
-            checkMemberObjects:
-              operationId: contacts.orgContact.checkMemberObjects
-            getMemberGroups:
-              operationId: contacts.orgContact.getMemberGroups
-            getMemberObjects:
-              operationId: contacts.orgContact.getMemberObjects
-            restore:
-              operationId: contacts.orgContact.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2287,7 +2233,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -2980,17 +2926,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contract'
-          links:
-            checkMemberGroups:
-              operationId: contracts.contract.checkMemberGroups
-            checkMemberObjects:
-              operationId: contracts.contract.checkMemberObjects
-            getMemberGroups:
-              operationId: contracts.contract.getMemberGroups
-            getMemberObjects:
-              operationId: contracts.contract.getMemberObjects
-            restore:
-              operationId: contracts.contract.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3268,7 +3203,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -3741,45 +3676,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
-          links:
-            usageRights:
-              operationId: devices.ListUsageRights
-              parameters:
-                device-id: $request.path.device-id
-            memberOf:
-              operationId: devices.ListMemberGraphOPre
-              parameters:
-                device-id: $request.path.device-id
-            registeredOwners:
-              operationId: devices.ListRegisteredOwners
-              parameters:
-                device-id: $request.path.device-id
-            registeredUsers:
-              operationId: devices.ListRegisteredUsers
-              parameters:
-                device-id: $request.path.device-id
-            transitiveMemberOf:
-              operationId: devices.ListTransitiveMemberGraphOPre
-              parameters:
-                device-id: $request.path.device-id
-            extensions:
-              operationId: devices.ListExtensions
-              parameters:
-                device-id: $request.path.device-id
-            commands:
-              operationId: devices.ListCommands
-              parameters:
-                device-id: $request.path.device-id
-            checkMemberGroups:
-              operationId: devices.device.checkMemberGroups
-            checkMemberObjects:
-              operationId: devices.device.checkMemberObjects
-            getMemberGroups:
-              operationId: devices.device.getMemberGroups
-            getMemberObjects:
-              operationId: devices.device.getMemberObjects
-            restore:
-              operationId: devices.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4033,12 +3929,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.command'
-          links:
-            responsepayload:
-              operationId: devices.Commands.GetResponsepayload
-              parameters:
-                device-id: $request.path.device-id
-                command-id: $request.path.command-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4766,7 +4656,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -5908,31 +5798,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directory'
-          links:
-            impactedResources:
-              operationId: directory.ListImpactedResources
-            recommendations:
-              operationId: directory.ListRecommendations
-            administrativeUnits:
-              operationId: directory.ListAdministrativeUnits
-            attributeSets:
-              operationId: directory.ListAttributeSets
-            customSecurityAttributeDefinitions:
-              operationId: directory.ListCustomSecurityAttributeDefinitions
-            deletedItems:
-              operationId: directory.ListDeletedItems
-            federationConfigurations:
-              operationId: directory.ListFederationConfigurations
-            inboundSharedUserProfiles:
-              operationId: directory.ListInboundSharedUserProfiles
-            onPremisesSynchronization:
-              operationId: directory.ListOnPremisesSynchronization
-            outboundSharedUserProfiles:
-              operationId: directory.ListOutboundSharedUserProfiles
-            sharedEmailDomains:
-              operationId: directory.ListSharedEmailDomains
-            featureRolloutPolicies:
-              operationId: directory.ListFeatureRolloutPolicies
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6114,29 +5979,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
-          links:
-            members:
-              operationId: directory.AdministrativeUnits.ListMembers
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-            scopedRoleMembers:
-              operationId: directory.AdministrativeUnits.ListScopedRoleMembers
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-            extensions:
-              operationId: directory.AdministrativeUnits.ListExtensions
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-            checkMemberGroups:
-              operationId: directory.administrativeUnits.administrativeUnit.checkMemberGroups
-            checkMemberObjects:
-              operationId: directory.administrativeUnits.administrativeUnit.checkMemberObjects
-            getMemberGroups:
-              operationId: directory.administrativeUnits.administrativeUnit.getMemberGroups
-            getMemberObjects:
-              operationId: directory.administrativeUnits.administrativeUnit.getMemberObjects
-            restore:
-              operationId: directory.administrativeUnits.administrativeUnit.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6842,7 +6684,7 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -7687,11 +7529,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
-          links:
-            allowedValues:
-              operationId: directory.CustomSecurityAttributeDefinitions.ListAllowedValues
-              parameters:
-                customSecurityAttributeDefinition-id: $request.path.customSecurityAttributeDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8114,17 +7951,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-          links:
-            checkMemberGroups:
-              operationId: directory.deletedItems.directoryObject.checkMemberGroups
-            checkMemberObjects:
-              operationId: directory.deletedItems.directoryObject.checkMemberObjects
-            getMemberGroups:
-              operationId: directory.deletedItems.directoryObject.getMemberGroups
-            getMemberObjects:
-              operationId: directory.deletedItems.directoryObject.getMemberObjects
-            restore:
-              operationId: directory.deletedItems.directoryObject.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8402,7 +8228,7 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -8713,11 +8539,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-          links:
-            appliesTo:
-              operationId: directory.FeatureRolloutPolicies.ListAppliesTo
-              parameters:
-                featureRolloutPolicy-id: $request.path.featureRolloutPolicy-id
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -9592,15 +9413,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-          links:
-            complete:
-              operationId: directory.impactedResources.recommendationResource.complete
-            dismiss:
-              operationId: directory.impactedResources.recommendationResource.dismiss
-            postpone:
-              operationId: directory.impactedResources.recommendationResource.postpone
-            reactivate:
-              operationId: directory.impactedResources.recommendationResource.reactivate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9922,11 +9734,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
-          links:
-            exportPersonalData:
-              operationId: directory.inboundSharedUserProfiles.inboundSharedUserProfile.exportPersonalData
-            removePersonalData:
-              operationId: directory.inboundSharedUserProfiles.inboundSharedUserProfile.removePersonalData
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10043,6 +9850,7 @@ paths:
       tags:
         - directory.onPremisesDirectorySynchronization
       summary: Get onPremisesSynchronization from directory
+      description: A container for on-premises directory synchronization functionalities that are available for the organization.
       operationId: directory_ListOnPremisesSynchronization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10129,6 +9937,7 @@ paths:
       tags:
         - directory.onPremisesDirectorySynchronization
       summary: Get onPremisesSynchronization from directory
+      description: A container for on-premises directory synchronization functionalities that are available for the organization.
       operationId: directory_GetOnPremisesSynchronization
       parameters:
         - name: onPremisesDirectorySynchronization-id
@@ -10358,11 +10167,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outboundSharedUserProfile'
-          links:
-            tenants:
-              operationId: directory.OutboundSharedUserProfiles.ListTenants
-              parameters:
-                outboundSharedUserProfile-userId: $request.path.outboundSharedUserProfile-userId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10570,9 +10374,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tenantReference'
-          links:
-            removePersonalData:
-              operationId: directory.outboundSharedUserProfiles.outboundSharedUserProfile.tenants.tenantReference.removePersonalData
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10860,19 +10661,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.recommendation'
-          links:
-            impactedResources:
-              operationId: directory.Recommendations.ListImpactedResources
-              parameters:
-                recommendation-id: $request.path.recommendation-id
-            complete:
-              operationId: directory.recommendations.recommendation.complete
-            dismiss:
-              operationId: directory.recommendations.recommendation.dismiss
-            postpone:
-              operationId: directory.recommendations.recommendation.postpone
-            reactivate:
-              operationId: directory.recommendations.recommendation.reactivate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11120,15 +10908,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-          links:
-            complete:
-              operationId: directory.recommendations.recommendation.impactedResources.recommendationResource.complete
-            dismiss:
-              operationId: directory.recommendations.recommendation.impactedResources.recommendationResource.dismiss
-            postpone:
-              operationId: directory.recommendations.recommendation.impactedResources.recommendationResource.postpone
-            reactivate:
-              operationId: directory.recommendations.recommendation.impactedResources.recommendationResource.reactivate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11834,25 +11613,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryRole'
-          links:
-            members:
-              operationId: directoryRoles.ListMembers
-              parameters:
-                directoryRole-id: $request.path.directoryRole-id
-            scopedMembers:
-              operationId: directoryRoles.ListScopedMembers
-              parameters:
-                directoryRole-id: $request.path.directoryRole-id
-            checkMemberGroups:
-              operationId: directoryRoles.directoryRole.checkMemberGroups
-            checkMemberObjects:
-              operationId: directoryRoles.directoryRole.checkMemberObjects
-            getMemberGroups:
-              operationId: directoryRoles.directoryRole.getMemberGroups
-            getMemberObjects:
-              operationId: directoryRoles.directoryRole.getMemberObjects
-            restore:
-              operationId: directoryRoles.directoryRole.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12335,7 +12095,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -12947,17 +12707,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryRoleTemplate'
-          links:
-            checkMemberGroups:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.checkMemberGroups
-            checkMemberObjects:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.checkMemberObjects
-            getMemberGroups:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.getMemberGroups
-            getMemberObjects:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.getMemberObjects
-            restore:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13235,7 +12984,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -13534,17 +13283,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directorySettingTemplate'
-          links:
-            checkMemberGroups:
-              operationId: directorySettingTemplates.directorySettingTemplate.checkMemberGroups
-            checkMemberObjects:
-              operationId: directorySettingTemplates.directorySettingTemplate.checkMemberObjects
-            getMemberGroups:
-              operationId: directorySettingTemplates.directorySettingTemplate.getMemberGroups
-            getMemberObjects:
-              operationId: directorySettingTemplates.directorySettingTemplate.getMemberObjects
-            restore:
-              operationId: directorySettingTemplates.directorySettingTemplate.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13822,7 +13560,7 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -14173,33 +13911,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.domain'
-          links:
-            domainNameReferences:
-              operationId: domains.ListDomainNameReferences
-              parameters:
-                domain-id: $request.path.domain-id
-            federationConfiguration:
-              operationId: domains.ListFederationConfiguration
-              parameters:
-                domain-id: $request.path.domain-id
-            serviceConfigurationRecords:
-              operationId: domains.ListServiceConfigurationRecords
-              parameters:
-                domain-id: $request.path.domain-id
-            sharedEmailDomainInvitations:
-              operationId: domains.ListSharedEmailDomainInvitations
-              parameters:
-                domain-id: $request.path.domain-id
-            verificationDnsRecords:
-              operationId: domains.ListVerificationDnsRecords
-              parameters:
-                domain-id: $request.path.domain-id
-            forceDelete:
-              operationId: domains.domain.forceDelete
-            promote:
-              operationId: domains.domain.promote
-            verify:
-              operationId: domains.domain.verify
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15766,37 +15477,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organization'
-          links:
-            branding:
-              operationId: organization.GetBranding
-              parameters:
-                organization-id: $request.path.organization-id
-            certificateBasedAuthConfiguration:
-              operationId: organization.ListCertificateBasedAuthConfiguration
-              parameters:
-                organization-id: $request.path.organization-id
-            extensions:
-              operationId: organization.ListExtensions
-              parameters:
-                organization-id: $request.path.organization-id
-            settings:
-              operationId: organization.GetSettings
-              parameters:
-                organization-id: $request.path.organization-id
-            activateService:
-              operationId: organization.organization.activateService
-            checkMemberGroups:
-              operationId: organization.organization.checkMemberGroups
-            checkMemberObjects:
-              operationId: organization.organization.checkMemberObjects
-            getMemberGroups:
-              operationId: organization.organization.getMemberGroups
-            getMemberObjects:
-              operationId: organization.organization.getMemberObjects
-            restore:
-              operationId: organization.organization.restore
-            setMobileDeviceManagementAuthority:
-              operationId: organization.organization.setMobileDeviceManagementAuthority
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15896,6 +15576,8 @@ paths:
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
                 - customForgotMyPasswordText
                 - customPrivacyAndCookiesText
                 - customPrivacyAndCookiesUrl
@@ -15905,6 +15587,9 @@ paths:
                 - favicon
                 - faviconRelativeUrl
                 - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
@@ -15934,11 +15619,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organizationalBranding'
-          links:
-            localizations:
-              operationId: organization.Branding.ListLocalizations
-              parameters:
-                organization-id: $request.path.organization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16121,6 +15801,65 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/customCSS':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get customCSS for the navigation property branding from organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update customCSS for the navigation property branding in organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+      operationId: organization_SetBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/favicon':
     get:
       tags:
@@ -16157,6 +15896,65 @@ paths:
       summary: Update favicon for the navigation property branding in organization
       description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       operationId: organization_SetBrandingFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/headerLogo':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get headerLogo for the navigation property branding from organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update headerLogo for the navigation property branding in organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_SetBrandingHeaderLogo
       parameters:
         - name: organization-id
           in: path
@@ -16234,6 +16032,10 @@ paths:
                 - customCannotAccessYourAccountText desc
                 - customCannotAccessYourAccountUrl
                 - customCannotAccessYourAccountUrl desc
+                - customCSS
+                - customCSS desc
+                - customCSSRelativeUrl
+                - customCSSRelativeUrl desc
                 - customForgotMyPasswordText
                 - customForgotMyPasswordText desc
                 - customPrivacyAndCookiesText
@@ -16252,6 +16054,12 @@ paths:
                 - faviconRelativeUrl desc
                 - headerBackgroundColor
                 - headerBackgroundColor desc
+                - headerLogo
+                - headerLogo desc
+                - headerLogoRelativeUrl
+                - headerLogoRelativeUrl desc
+                - loginPageLayoutConfiguration
+                - loginPageLayoutConfiguration desc
                 - loginPageTextVisibilitySettings
                 - loginPageTextVisibilitySettings desc
                 - signInPageText
@@ -16287,6 +16095,8 @@ paths:
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
                 - customForgotMyPasswordText
                 - customPrivacyAndCookiesText
                 - customPrivacyAndCookiesUrl
@@ -16296,6 +16106,9 @@ paths:
                 - favicon
                 - faviconRelativeUrl
                 - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
@@ -16404,6 +16217,8 @@ paths:
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
                 - customForgotMyPasswordText
                 - customPrivacyAndCookiesText
                 - customPrivacyAndCookiesUrl
@@ -16413,6 +16228,9 @@ paths:
                 - favicon
                 - faviconRelativeUrl
                 - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
@@ -16662,6 +16480,81 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/customCSS':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get customCSS for the navigation property localizations from organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update customCSS for the navigation property localizations in organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+      operationId: organization.branding_SetLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/favicon':
     get:
       tags:
@@ -16706,6 +16599,81 @@ paths:
       summary: Update favicon for the navigation property localizations in organization
       description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       operationId: organization.branding_SetLocalizationsFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/headerLogo':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get headerLogo for the navigation property localizations from organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update headerLogo for the navigation property localizations in organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_SetLocalizationsHeaderLogo
       parameters:
         - name: organization-id
           in: path
@@ -17505,7 +17473,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -17623,27 +17591,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organizationSettings'
-          links:
-            microsoftApplicationDataAccess:
-              operationId: organization.Settings.GetMicrosoftApplicationDataAccess
-              parameters:
-                organization-id: $request.path.organization-id
-            contactInsights:
-              operationId: organization.Settings.GetContactInsights
-              parameters:
-                organization-id: $request.path.organization-id
-            itemInsights:
-              operationId: organization.Settings.GetItemInsights
-              parameters:
-                organization-id: $request.path.organization-id
-            peopleInsights:
-              operationId: organization.Settings.GetPeopleInsights
-              parameters:
-                organization-id: $request.path.organization-id
-            profileCardProperties:
-              operationId: organization.Settings.ListProfileCardProperties
-              parameters:
-                organization-id: $request.path.organization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18527,7 +18474,6 @@ paths:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
@@ -19286,7 +19232,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not for category and propertyCausingError) and eq to count empty collections.'
+              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not for category and propertyCausingError), /$count eq 0, /$count ne 0.'
             onPremisesSyncEnabled:
               type: boolean
               description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq for null values).'
@@ -19300,7 +19246,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and eq to count empty collections).'
+              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).'
             surname:
               type: string
               description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)'
@@ -19387,7 +19333,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -19473,7 +19419,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -19488,7 +19434,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
+              description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
@@ -19671,6 +19617,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+              description: A container for on-premises directory synchronization functionalities that are available for the organization.
               x-ms-navigationProperty: true
             outboundSharedUserProfiles:
               type: array
@@ -20671,11 +20618,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -20698,11 +20645,13 @@ components:
         customerRequestedSynchronizationInterval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: Interval of time that the customer requested the sync client waits between sync cycles.
           format: duration
           nullable: true
         synchronizationInterval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: Interval of time the sync client should honor between sync cycles
           format: duration
           nullable: true
       additionalProperties:
@@ -20713,60 +20662,79 @@ components:
       properties:
         blockCloudObjectTakeoverThroughHardMatchEnabled:
           type: boolean
+          description: Used to block cloud object takeover via source anchor hard match if enabled.
           nullable: true
         blockSoftMatchEnabled:
           type: boolean
+          description: Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
           nullable: true
         bypassDirSyncOverridesEnabled:
           type: boolean
+          description: 'When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.'
           nullable: true
         cloudPasswordPolicyForPasswordSyncedUsersEnabled:
           type: boolean
+          description: Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
           nullable: true
         concurrentCredentialUpdateEnabled:
           type: boolean
+          description: Used to enable concurrent user credentials update in OrgId.
           nullable: true
         concurrentOrgIdProvisioningEnabled:
           type: boolean
+          description: Used to enable concurrent user creation in OrgId.
           nullable: true
         deviceWritebackEnabled:
           type: boolean
+          description: Used to indicate that device write-back is enabled.
           nullable: true
         directoryExtensionsEnabled:
           type: boolean
+          description: Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
           nullable: true
         fopeConflictResolutionEnabled:
           type: boolean
+          description: 'Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.'
           nullable: true
         groupWriteBackEnabled:
           type: boolean
+          description: Used to enable object-level group writeback feature for additional group types.
           nullable: true
         passwordSyncEnabled:
           type: boolean
+          description: Used to indicate on-premise password synchronization is enabled.
           nullable: true
         passwordWritebackEnabled:
           type: boolean
+          description: Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
           nullable: true
         quarantineUponProxyAddressesConflictEnabled:
           type: boolean
+          description: Used to indicate that we should quarantine objects with conflicting proxy address.
           nullable: true
         quarantineUponUpnConflictEnabled:
           type: boolean
+          description: Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
           nullable: true
         softMatchOnUpnEnabled:
           type: boolean
+          description: Used to indicate that we should soft match objects based on userPrincipalName.
           nullable: true
         synchronizeUpnForManagedUsersEnabled:
           type: boolean
+          description: Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
           nullable: true
         unifiedGroupWritebackEnabled:
           type: boolean
+          description: Used to indicate that Microsoft 365 Group write-back is enabled.
           nullable: true
         userForcePasswordChangeOnLogonEnabled:
           type: boolean
+          description: Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
           nullable: true
         userWritebackEnabled:
           type: boolean
+          description: Used to indicate that user writeback is enabled.
           nullable: true
       additionalProperties:
         type: object
@@ -20789,10 +20757,10 @@ components:
       enum:
         - usageAndCompliance
         - security
+        - unknownFutureValue
         - productivity
         - health
         - configuration
-        - unknownFutureValue
       type: string
     microsoft.graph.recommendationPriority:
       title: recommendationPriority
@@ -21124,6 +21092,15 @@ components:
               type: string
               description: 'A custom URL to replace the default URL of the self-service password reset (SSPR) ''Can''t access your account?'' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.'
               nullable: true
+            customCSS:
+              type: string
+              description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+              format: base64url
+              nullable: true
+            customCSSRelativeUrl:
+              type: string
+              description: A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+              nullable: true
             customForgotMyPasswordText:
               type: string
               description: A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
@@ -21161,6 +21138,17 @@ components:
               type: string
               description: The RGB color to apply to customize the color of the header.
               nullable: true
+            headerLogo:
+              type: string
+              description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+              format: base64url
+              nullable: true
+            headerLogoRelativeUrl:
+              type: string
+              description: A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
+              nullable: true
+            loginPageLayoutConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.loginPageLayoutConfiguration'
             loginPageTextVisibilitySettings:
               $ref: '#/components/schemas/microsoft.graph.loginPageTextVisibilitySettings'
             signInPageText:
@@ -21751,6 +21739,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
           format: int32
           nullable: true
         synchronizationPreventionType:
@@ -21800,6 +21789,22 @@ components:
         issuerSki:
           type: string
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
+      additionalProperties:
+        type: object
+    microsoft.graph.loginPageLayoutConfiguration:
+      title: loginPageLayoutConfiguration
+      type: object
+      properties:
+        isFooterShown:
+          type: boolean
+          description: Option to show the footer on the sign-in page.
+          nullable: true
+        isHeaderShown:
+          type: boolean
+          description: Option to show the header on the sign-in page.
+          nullable: true
+        layoutTemplateType:
+          $ref: '#/components/schemas/microsoft.graph.layoutTemplateType'
       additionalProperties:
         type: object
     microsoft.graph.loginPageTextVisibilitySettings:
@@ -21873,6 +21878,13 @@ components:
         - disabled
         - enabledForCount
         - enabledForPercentage
+        - unknownFutureValue
+      type: string
+    microsoft.graph.layoutTemplateType:
+      title: layoutTemplateType
+      enum:
+        - default
+        - verticalSplit
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:

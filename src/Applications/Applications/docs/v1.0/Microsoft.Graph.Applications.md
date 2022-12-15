@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: cc599579-9a66-4e2d-bfd0-cce7edd1adf7
+Module Guid: 0b516d7a-7854-437c-993c-2936f4281e05
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -73,7 +73,7 @@ Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
 ### [Get-MgApplicationCreatedOnBehalfOf](Get-MgApplicationCreatedOnBehalfOf.md)
-Supports $filter (eq when counting empty collections).
+Supports $filter (/$count eq 0, /$count ne 0).
 Read-only.
 
 ### [Get-MgApplicationDelta](Get-MgApplicationDelta.md)
@@ -82,11 +82,11 @@ Invoke function delta
 ### [Get-MgApplicationExtensionProperty](Get-MgApplicationExtensionProperty.md)
 Read-only.
 Nullable.
-Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+Supports $expand and $filter (/$count eq 0, /$count ne 0).
 
 ### [Get-MgApplicationFederatedIdentityCredential](Get-MgApplicationFederatedIdentityCredential.md)
 Federated identities for applications.
-Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 
 ### [Get-MgApplicationHomeRealmDiscoveryPolicy](Get-MgApplicationHomeRealmDiscoveryPolicy.md)
 Get homeRealmDiscoveryPolicies from applications
@@ -108,13 +108,13 @@ This function is transitive.
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (eq when counting empty collections).
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgApplicationOwnerByRef](Get-MgApplicationOwnerByRef.md)
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (eq when counting empty collections).
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgApplicationTemplate](Get-MgApplicationTemplate.md)
 Retrieve the properties of an applicationTemplate object.
@@ -200,21 +200,21 @@ Nullable.
 Directory objects that are owned by this service principal.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgServicePrincipalOwner](Get-MgServicePrincipalOwner.md)
 Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgServicePrincipalOwnerByRef](Get-MgServicePrincipalOwnerByRef.md)
 Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgServicePrincipalTokenIssuancePolicy](Get-MgServicePrincipalTokenIssuancePolicy.md)
 The tokenIssuancePolicies assigned to this service principal.
@@ -258,8 +258,9 @@ Create new navigation property ref to tokenIssuancePolicies for applications
 Create new navigation property ref to tokenLifetimePolicies for applications
 
 ### [New-MgGroupAppRoleAssignment](New-MgGroupAppRoleAssignment.md)
-Use this API to assign an app role to a group.
+Use this API to assign an app role to a security group.
 All direct members of the group will be considered assigned.
+Security groups with dynamic memberships are supported.
 To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
 
 ### [New-MgServicePrincipal](New-MgServicePrincipal.md)

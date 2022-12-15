@@ -12,7 +12,7 @@ Update the navigation property contentTypes in groups
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgGroupSiteListContentType -ContentTypeId <String> -GroupId <String> -ListId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-AssociatedHubsUrls <String[]>] [-Base <IMicrosoftGraphContentType1>]
@@ -25,19 +25,19 @@ Update-MgGroupSiteListContentType -ContentTypeId <String> -GroupId <String> -Lis
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
 Update-MgGroupSiteListContentType -ContentTypeId <String> -GroupId <String> -ListId <String> -SiteId <String>
  -BodyParameter <IMicrosoftGraphContentType1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
 Update-MgGroupSiteListContentType -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphContentType1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgGroupSiteListContentType -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-AssociatedHubsUrls <String[]>] [-Base <IMicrosoftGraphContentType1>]
@@ -62,7 +62,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -79,7 +79,7 @@ Enforcing a content type means that the content type will be applied to the list
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -95,7 +95,7 @@ To construct, please use Get-Help -Online and see NOTES section for BASE propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -111,7 +111,7 @@ To construct, please use Get-Help -Online and see NOTES section for BASETYPES pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -127,7 +127,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ To construct, please use Get-Help -Online and see NOTES section for COLUMNLINKS 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -159,7 +159,7 @@ To construct, please use Get-Help -Online and see NOTES section for COLUMNPOSITI
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -175,7 +175,7 @@ To construct, please use Get-Help -Online and see NOTES section for COLUMNS prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -190,7 +190,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -205,7 +205,7 @@ The descriptive text for the item.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -221,7 +221,7 @@ To construct, please use Get-Help -Online and see NOTES section for DOCUMENTSET 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSet
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -237,7 +237,7 @@ To construct, please use Get-Help -Online and see NOTES section for DOCUMENTTEMP
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetContent
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -253,7 +253,7 @@ Helps organize related content types.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -268,7 +268,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -283,7 +283,7 @@ Indicates whether the content type is hidden in the list's 'New' menu.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -299,7 +299,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -315,7 +315,7 @@ To construct, please use Get-Help -Online and see NOTES section for INHERITEDFRO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -331,7 +331,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -346,7 +346,7 @@ Specifies if a content type is a built-in content type.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -361,7 +361,7 @@ key: id of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -376,7 +376,7 @@ The name of the content type.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -392,7 +392,7 @@ To construct, please use Get-Help -Online and see NOTES section for ORDER proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentTypeOrder
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -407,7 +407,7 @@ The unique identifier of the content type.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -437,7 +437,7 @@ If true, any changes made to the content type will be pushed to inherited conten
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -452,7 +452,7 @@ If true, the content type cannot be modified unless this value is first set to f
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -468,7 +468,7 @@ Only site collection administrators can seal or unseal content types.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -483,7 +483,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -642,7 +642,7 @@ BASE <IMicrosoftGraphContentType1>: contentType
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
           - `[Key <String>]`: Key for the key-value pair.
           - `[Value <String>]`: Value for the key-value pair.
-        - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
           - `[Relationship <String>]`: 
@@ -665,7 +665,7 @@ BASE <IMicrosoftGraphContentType1>: contentType
               - `[Scope <String>]`: 
               - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-            - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
             - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
           - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
         - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -829,7 +829,7 @@ BASETYPES <IMicrosoftGraphContentType1[]>: The collection of content types that 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
           - `[Key <String>]`: Key for the key-value pair.
           - `[Value <String>]`: Value for the key-value pair.
-        - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
           - `[Relationship <String>]`: 
@@ -852,7 +852,7 @@ BASETYPES <IMicrosoftGraphContentType1[]>: The collection of content types that 
               - `[Scope <String>]`: 
               - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-            - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
             - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
           - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
         - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -1017,7 +1017,7 @@ BODYPARAMETER <IMicrosoftGraphContentType1>: contentType
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
           - `[Key <String>]`: Key for the key-value pair.
           - `[Value <String>]`: Value for the key-value pair.
-        - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
           - `[Relationship <String>]`: 
@@ -1040,7 +1040,7 @@ BODYPARAMETER <IMicrosoftGraphContentType1>: contentType
               - `[Scope <String>]`: 
               - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-            - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
             - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
           - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
         - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -1200,7 +1200,7 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition[]>: Column order information in
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
         - `[Key <String>]`: Key for the key-value pair.
         - `[Value <String>]`: Value for the key-value pair.
-      - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
         - `[Relationship <String>]`: 
@@ -1223,7 +1223,7 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition[]>: Column order information in
             - `[Scope <String>]`: 
             - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-          - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
+          - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
           - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
         - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
       - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -1334,7 +1334,7 @@ COLUMNS <IMicrosoftGraphColumnDefinition[]>: The collection of column definition
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
         - `[Key <String>]`: Key for the key-value pair.
         - `[Value <String>]`: Value for the key-value pair.
-      - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
         - `[Relationship <String>]`: 
@@ -1357,7 +1357,7 @@ COLUMNS <IMicrosoftGraphColumnDefinition[]>: The collection of column definition
             - `[Scope <String>]`: 
             - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-          - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
+          - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
           - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
         - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
       - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -1475,7 +1475,7 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet>: documentSet
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
           - `[Key <String>]`: Key for the key-value pair.
           - `[Value <String>]`: Value for the key-value pair.
-        - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
           - `[Relationship <String>]`: 
@@ -1498,7 +1498,7 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet>: documentSet
               - `[Scope <String>]`: 
               - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-            - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
             - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
           - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
         - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -1564,6 +1564,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[GroupId1 <String>]`: key: id of group
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -1589,6 +1591,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[TermId1 <String>]`: key: id of term
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 ORDER <IMicrosoftGraphContentTypeOrder>: contentTypeOrder
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

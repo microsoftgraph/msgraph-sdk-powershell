@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Read-only.
 Nullable.
-Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+Supports $expand and $filter (/$count eq 0, /$count ne 0).
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-Expand
 ## DESCRIPTION
 Read-only.
 Nullable.
-Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+Supports $expand and $filter (/$count eq 0, /$count ne 0).
 
 ## EXAMPLES
 

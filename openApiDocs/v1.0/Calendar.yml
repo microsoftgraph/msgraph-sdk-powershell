@@ -59,31 +59,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-            calendarView:
-              operationId: groups.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-            events:
-              operationId: groups.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-            multiValueExtendedProperties:
-              operationId: groups.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-            singleValueExtendedProperties:
-              operationId: groups.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-            allowedCalendarSharingRoles:
-              operationId: groups.group.calendar.allowedCalendarSharingRoles
-            getSchedule:
-              operationId: groups.group.calendar.getSchedule
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -615,51 +590,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: groups.calendar.CalendarView.ListAttachments
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: groups.calendar.CalendarView.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: groups.calendar.CalendarView.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: groups.calendar.CalendarView.ListInstances
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: groups.calendar.CalendarView.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: groups.calendar.CalendarView.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: groups.group.calendar.calendarView.event.accept
-            cancel:
-              operationId: groups.group.calendar.calendarView.event.cancel
-            decline:
-              operationId: groups.group.calendar.calendarView.event.decline
-            dismissReminder:
-              operationId: groups.group.calendar.calendarView.event.dismissReminder
-            forward:
-              operationId: groups.group.calendar.calendarView.event.forward
-            snoozeReminder:
-              operationId: groups.group.calendar.calendarView.event.snoozeReminder
-            tentativelyAccept:
-              operationId: groups.group.calendar.calendarView.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -759,10 +689,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView_CreateAttachments
       parameters:
         - name: group-id
@@ -972,32 +902,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.calendar.calendarView.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: groups.calendar.calendarView.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            events:
-              operationId: groups.calendar.calendarView.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: groups.calendar.calendarView.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: groups.calendar.calendarView.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1557,57 +1461,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: groups.calendar.calendarView.Instances.ListAttachments
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: groups.calendar.calendarView.Instances.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: groups.calendar.calendarView.Instances.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: groups.calendar.calendarView.Instances.ListInstances
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: groups.calendar.calendarView.Instances.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: groups.calendar.calendarView.Instances.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: groups.group.calendar.calendarView.event.instances.event.accept
-            cancel:
-              operationId: groups.group.calendar.calendarView.event.instances.event.cancel
-            decline:
-              operationId: groups.group.calendar.calendarView.event.instances.event.decline
-            dismissReminder:
-              operationId: groups.group.calendar.calendarView.event.instances.event.dismissReminder
-            forward:
-              operationId: groups.group.calendar.calendarView.event.instances.event.forward
-            snoozeReminder:
-              operationId: groups.group.calendar.calendarView.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: groups.group.calendar.calendarView.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1715,10 +1568,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -1960,37 +1813,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.calendar.calendarView.instances.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: groups.calendar.calendarView.instances.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: groups.calendar.calendarView.instances.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: groups.calendar.calendarView.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: groups.calendar.calendarView.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3765,51 +3587,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: groups.calendar.Events.ListAttachments
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: groups.calendar.Events.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: groups.calendar.Events.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: groups.calendar.Events.ListInstances
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: groups.calendar.Events.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: groups.calendar.Events.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: groups.group.calendar.events.event.accept
-            cancel:
-              operationId: groups.group.calendar.events.event.cancel
-            decline:
-              operationId: groups.group.calendar.events.event.decline
-            dismissReminder:
-              operationId: groups.group.calendar.events.event.dismissReminder
-            forward:
-              operationId: groups.group.calendar.events.event.forward
-            snoozeReminder:
-              operationId: groups.group.calendar.events.event.snoozeReminder
-            tentativelyAccept:
-              operationId: groups.group.calendar.events.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3978,10 +3755,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events_CreateAttachments
       parameters:
         - name: group-id
@@ -4191,32 +3968,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.calendar.events.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: groups.calendar.events.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            events:
-              operationId: groups.calendar.events.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: groups.calendar.events.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: groups.calendar.events.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4776,57 +4527,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: groups.calendar.events.Instances.ListAttachments
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: groups.calendar.events.Instances.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: groups.calendar.events.Instances.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: groups.calendar.events.Instances.ListInstances
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: groups.calendar.events.Instances.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: groups.calendar.events.Instances.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: groups.group.calendar.events.event.instances.event.accept
-            cancel:
-              operationId: groups.group.calendar.events.event.instances.event.cancel
-            decline:
-              operationId: groups.group.calendar.events.event.instances.event.decline
-            dismissReminder:
-              operationId: groups.group.calendar.events.event.instances.event.dismissReminder
-            forward:
-              operationId: groups.group.calendar.events.event.instances.event.forward
-            snoozeReminder:
-              operationId: groups.group.calendar.events.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: groups.group.calendar.events.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4934,10 +4634,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -5179,37 +4879,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.calendar.events.instances.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: groups.calendar.events.instances.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: groups.calendar.events.instances.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: groups.calendar.events.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: groups.calendar.events.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7439,51 +7108,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: groups.CalendarView.ListAttachments
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: groups.CalendarView.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: groups.CalendarView.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: groups.CalendarView.ListInstances
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: groups.CalendarView.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: groups.CalendarView.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: groups.group.calendarView.event.accept
-            cancel:
-              operationId: groups.group.calendarView.event.cancel
-            decline:
-              operationId: groups.group.calendarView.event.decline
-            dismissReminder:
-              operationId: groups.group.calendarView.event.dismissReminder
-            forward:
-              operationId: groups.group.calendarView.event.forward
-            snoozeReminder:
-              operationId: groups.group.calendarView.event.snoozeReminder
-            tentativelyAccept:
-              operationId: groups.group.calendarView.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7583,10 +7207,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView_CreateAttachments
       parameters:
         - name: group-id
@@ -7796,32 +7420,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.calendarView.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: groups.calendarView.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            events:
-              operationId: groups.calendarView.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: groups.calendarView.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: groups.calendarView.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8381,57 +7979,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: groups.calendarView.Instances.ListAttachments
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: groups.calendarView.Instances.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: groups.calendarView.Instances.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: groups.calendarView.Instances.ListInstances
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: groups.calendarView.Instances.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: groups.calendarView.Instances.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: groups.group.calendarView.event.instances.event.accept
-            cancel:
-              operationId: groups.group.calendarView.event.instances.event.cancel
-            decline:
-              operationId: groups.group.calendarView.event.instances.event.decline
-            dismissReminder:
-              operationId: groups.group.calendarView.event.instances.event.dismissReminder
-            forward:
-              operationId: groups.group.calendarView.event.instances.event.forward
-            snoozeReminder:
-              operationId: groups.group.calendarView.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: groups.group.calendarView.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8539,10 +8086,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -8784,37 +8331,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.calendarView.instances.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: groups.calendarView.instances.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: groups.calendarView.instances.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: groups.calendarView.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: groups.calendarView.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10589,51 +10105,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: groups.Events.ListAttachments
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: groups.Events.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: groups.Events.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: groups.Events.ListInstances
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: groups.Events.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: groups.Events.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: groups.group.events.event.accept
-            cancel:
-              operationId: groups.group.events.event.cancel
-            decline:
-              operationId: groups.group.events.event.decline
-            dismissReminder:
-              operationId: groups.group.events.event.dismissReminder
-            forward:
-              operationId: groups.group.events.event.forward
-            snoozeReminder:
-              operationId: groups.group.events.event.snoozeReminder
-            tentativelyAccept:
-              operationId: groups.group.events.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10802,10 +10273,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events_CreateAttachments
       parameters:
         - name: group-id
@@ -11015,32 +10486,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.events.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: groups.events.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            events:
-              operationId: groups.events.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: groups.events.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: groups.events.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11600,57 +11045,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: groups.events.Instances.ListAttachments
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: groups.events.Instances.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: groups.events.Instances.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: groups.events.Instances.ListInstances
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: groups.events.Instances.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: groups.events.Instances.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: groups.group.events.event.instances.event.accept
-            cancel:
-              operationId: groups.group.events.event.instances.event.cancel
-            decline:
-              operationId: groups.group.events.event.instances.event.decline
-            dismissReminder:
-              operationId: groups.group.events.event.instances.event.dismissReminder
-            forward:
-              operationId: groups.group.events.event.instances.event.forward
-            snoozeReminder:
-              operationId: groups.group.events.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: groups.group.events.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11758,10 +11152,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -12003,37 +11397,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: groups.events.instances.Calendar.ListCalendarPermissions
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: groups.events.instances.Calendar.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: groups.events.instances.Calendar.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: groups.events.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: groups.events.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13764,31 +13127,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-            calendarView:
-              operationId: users.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-            events:
-              operationId: users.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-            multiValueExtendedProperties:
-              operationId: users.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-            singleValueExtendedProperties:
-              operationId: users.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-            allowedCalendarSharingRoles:
-              operationId: users.user.calendar.allowedCalendarSharingRoles
-            getSchedule:
-              operationId: users.user.calendar.getSchedule
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14351,51 +13689,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendar.CalendarView.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: users.calendar.CalendarView.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: users.calendar.CalendarView.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: users.calendar.CalendarView.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendar.CalendarView.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendar.CalendarView.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: users.user.calendar.calendarView.event.accept
-            cancel:
-              operationId: users.user.calendar.calendarView.event.cancel
-            decline:
-              operationId: users.user.calendar.calendarView.event.decline
-            dismissReminder:
-              operationId: users.user.calendar.calendarView.event.dismissReminder
-            forward:
-              operationId: users.user.calendar.calendarView.event.forward
-            snoozeReminder:
-              operationId: users.user.calendar.calendarView.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendar.calendarView.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14495,10 +13788,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -14708,32 +14001,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendar.calendarView.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: users.calendar.calendarView.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            events:
-              operationId: users.calendar.calendarView.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendar.calendarView.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendar.calendarView.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15293,57 +14560,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendar.calendarView.Instances.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: users.calendar.calendarView.Instances.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: users.calendar.calendarView.Instances.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: users.calendar.calendarView.Instances.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendar.calendarView.Instances.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendar.calendarView.Instances.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: users.user.calendar.calendarView.event.instances.event.accept
-            cancel:
-              operationId: users.user.calendar.calendarView.event.instances.event.cancel
-            decline:
-              operationId: users.user.calendar.calendarView.event.instances.event.decline
-            dismissReminder:
-              operationId: users.user.calendar.calendarView.event.instances.event.dismissReminder
-            forward:
-              operationId: users.user.calendar.calendarView.event.instances.event.forward
-            snoozeReminder:
-              operationId: users.user.calendar.calendarView.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendar.calendarView.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15451,10 +14667,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -15696,37 +14912,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendar.calendarView.instances.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: users.calendar.calendarView.instances.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: users.calendar.calendarView.instances.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendar.calendarView.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendar.calendarView.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17501,51 +16686,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendar.Events.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: users.calendar.Events.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: users.calendar.Events.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: users.calendar.Events.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendar.Events.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendar.Events.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: users.user.calendar.events.event.accept
-            cancel:
-              operationId: users.user.calendar.events.event.cancel
-            decline:
-              operationId: users.user.calendar.events.event.decline
-            dismissReminder:
-              operationId: users.user.calendar.events.event.dismissReminder
-            forward:
-              operationId: users.user.calendar.events.event.forward
-            snoozeReminder:
-              operationId: users.user.calendar.events.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendar.events.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17714,10 +16854,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events_CreateAttachments
       parameters:
         - name: user-id
@@ -17927,32 +17067,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendar.events.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: users.calendar.events.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            events:
-              operationId: users.calendar.events.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendar.events.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendar.events.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18512,57 +17626,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendar.events.Instances.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: users.calendar.events.Instances.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: users.calendar.events.Instances.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: users.calendar.events.Instances.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendar.events.Instances.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendar.events.Instances.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: users.user.calendar.events.event.instances.event.accept
-            cancel:
-              operationId: users.user.calendar.events.event.instances.event.cancel
-            decline:
-              operationId: users.user.calendar.events.event.instances.event.decline
-            dismissReminder:
-              operationId: users.user.calendar.events.event.instances.event.dismissReminder
-            forward:
-              operationId: users.user.calendar.events.event.instances.event.forward
-            snoozeReminder:
-              operationId: users.user.calendar.events.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendar.events.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18670,10 +17733,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -18915,37 +17978,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendar.events.instances.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: users.calendar.events.instances.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: users.calendar.events.instances.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendar.events.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendar.events.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21020,12 +20052,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendarGroup'
-          links:
-            calendars:
-              operationId: users.CalendarGroups.ListCalendars
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21319,41 +20345,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendarGroups.Calendars.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-            calendarView:
-              operationId: users.calendarGroups.Calendars.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-            events:
-              operationId: users.calendarGroups.Calendars.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.Calendars.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.Calendars.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-            allowedCalendarSharingRoles:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.allowedCalendarSharingRoles
-            getSchedule:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.getSchedule
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22050,63 +21041,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendarGroups.calendars.CalendarView.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: users.calendarGroups.calendars.CalendarView.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: users.calendarGroups.calendars.CalendarView.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: users.calendarGroups.calendars.CalendarView.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.CalendarView.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.CalendarView.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.accept
-            cancel:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.cancel
-            decline:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.decline
-            dismissReminder:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.dismissReminder
-            forward:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.forward
-            snoozeReminder:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22222,10 +21156,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -22499,42 +21433,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            events:
-              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23206,69 +22104,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendarGroups.calendars.calendarView.Instances.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: users.calendarGroups.calendars.calendarView.Instances.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: users.calendarGroups.calendars.calendarView.Instances.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: users.calendarGroups.calendars.calendarView.Instances.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.calendarView.Instances.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.calendarView.Instances.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.instances.event.accept
-            cancel:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.instances.event.cancel
-            decline:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.instances.event.decline
-            dismissReminder:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.instances.event.dismissReminder
-            forward:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.instances.event.forward
-            snoozeReminder:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23392,10 +22227,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -23701,47 +22536,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendarGroups.calendars.calendarView.instances.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: users.calendarGroups.calendars.calendarView.instances.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: users.calendarGroups.calendars.calendarView.instances.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.calendarView.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.calendarView.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25964,63 +24758,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendarGroups.calendars.Events.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: users.calendarGroups.calendars.Events.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: users.calendarGroups.calendars.Events.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: users.calendarGroups.calendars.Events.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.Events.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.Events.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.accept
-            cancel:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.cancel
-            decline:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.decline
-            dismissReminder:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.dismissReminder
-            forward:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.forward
-            snoozeReminder:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26237,10 +24974,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_CreateAttachments
       parameters:
         - name: user-id
@@ -26514,42 +25251,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendarGroups.calendars.events.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: users.calendarGroups.calendars.events.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            events:
-              operationId: users.calendarGroups.calendars.events.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.events.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.events.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27221,69 +25922,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendarGroups.calendars.events.Instances.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: users.calendarGroups.calendars.events.Instances.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: users.calendarGroups.calendars.events.Instances.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: users.calendarGroups.calendars.events.Instances.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.events.Instances.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.events.Instances.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.event.accept
-            cancel:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.event.cancel
-            decline:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.event.decline
-            dismissReminder:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.event.dismissReminder
-            forward:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.event.forward
-            snoozeReminder:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27407,10 +26045,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -27716,47 +26354,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendarGroups.calendars.events.instances.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: users.calendarGroups.calendars.events.instances.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: users.calendarGroups.calendars.events.instances.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.events.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendarGroups.calendars.events.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendarGroup-id: $request.path.calendarGroup-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30439,36 +29036,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.Calendars.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-            calendarView:
-              operationId: users.Calendars.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-            events:
-              operationId: users.Calendars.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-            multiValueExtendedProperties:
-              operationId: users.Calendars.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-            singleValueExtendedProperties:
-              operationId: users.Calendars.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-            allowedCalendarSharingRoles:
-              operationId: users.user.calendars.calendar.allowedCalendarSharingRoles
-            getSchedule:
-              operationId: users.user.calendars.calendar.getSchedule
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31125,57 +29692,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendars.CalendarView.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: users.calendars.CalendarView.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: users.calendars.CalendarView.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: users.calendars.CalendarView.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendars.CalendarView.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendars.CalendarView.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: users.user.calendars.calendar.calendarView.event.accept
-            cancel:
-              operationId: users.user.calendars.calendar.calendarView.event.cancel
-            decline:
-              operationId: users.user.calendars.calendar.calendarView.event.decline
-            dismissReminder:
-              operationId: users.user.calendars.calendar.calendarView.event.dismissReminder
-            forward:
-              operationId: users.user.calendars.calendar.calendarView.event.forward
-            snoozeReminder:
-              operationId: users.user.calendars.calendar.calendarView.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendars.calendar.calendarView.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31283,10 +29799,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -31528,37 +30044,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendars.calendarView.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: users.calendars.calendarView.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            events:
-              operationId: users.calendars.calendarView.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendars.calendarView.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendars.calendarView.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32174,63 +30659,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendars.calendarView.Instances.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: users.calendars.calendarView.Instances.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: users.calendars.calendarView.Instances.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: users.calendars.calendarView.Instances.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendars.calendarView.Instances.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendars.calendarView.Instances.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: users.user.calendars.calendar.calendarView.event.instances.event.accept
-            cancel:
-              operationId: users.user.calendars.calendar.calendarView.event.instances.event.cancel
-            decline:
-              operationId: users.user.calendars.calendar.calendarView.event.instances.event.decline
-            dismissReminder:
-              operationId: users.user.calendars.calendar.calendarView.event.instances.event.dismissReminder
-            forward:
-              operationId: users.user.calendars.calendar.calendarView.event.instances.event.forward
-            snoozeReminder:
-              operationId: users.user.calendars.calendar.calendarView.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendars.calendar.calendarView.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32346,10 +30774,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -32623,42 +31051,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendars.calendarView.instances.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: users.calendars.calendarView.instances.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: users.calendars.calendarView.instances.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendars.calendarView.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendars.calendarView.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34657,57 +33049,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendars.Events.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: users.calendars.Events.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: users.calendars.Events.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: users.calendars.Events.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendars.Events.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendars.Events.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: users.user.calendars.calendar.events.event.accept
-            cancel:
-              operationId: users.user.calendars.calendar.events.event.cancel
-            decline:
-              operationId: users.user.calendars.calendar.events.event.decline
-            dismissReminder:
-              operationId: users.user.calendars.calendar.events.event.dismissReminder
-            forward:
-              operationId: users.user.calendars.calendar.events.event.forward
-            snoozeReminder:
-              operationId: users.user.calendars.calendar.events.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendars.calendar.events.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34900,10 +33241,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events_CreateAttachments
       parameters:
         - name: user-id
@@ -35145,37 +33486,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendars.events.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: users.calendars.events.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            events:
-              operationId: users.calendars.events.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendars.events.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendars.events.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35791,63 +34101,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendars.events.Instances.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: users.calendars.events.Instances.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: users.calendars.events.Instances.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: users.calendars.events.Instances.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendars.events.Instances.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendars.events.Instances.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: users.user.calendars.calendar.events.event.instances.event.accept
-            cancel:
-              operationId: users.user.calendars.calendar.events.event.instances.event.cancel
-            decline:
-              operationId: users.user.calendars.calendar.events.event.instances.event.decline
-            dismissReminder:
-              operationId: users.user.calendars.calendar.events.event.instances.event.dismissReminder
-            forward:
-              operationId: users.user.calendars.calendar.events.event.instances.event.forward
-            snoozeReminder:
-              operationId: users.user.calendars.calendar.events.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendars.calendar.events.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35963,10 +34216,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -36240,42 +34493,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendars.events.instances.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: users.calendars.events.instances.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: users.calendars.events.instances.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendars.events.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendars.events.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                calendar-id: $request.path.calendar-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38785,51 +37002,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.CalendarView.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: users.CalendarView.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: users.CalendarView.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: users.CalendarView.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.CalendarView.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.CalendarView.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: users.user.calendarView.event.accept
-            cancel:
-              operationId: users.user.calendarView.event.cancel
-            decline:
-              operationId: users.user.calendarView.event.decline
-            dismissReminder:
-              operationId: users.user.calendarView.event.dismissReminder
-            forward:
-              operationId: users.user.calendarView.event.forward
-            snoozeReminder:
-              operationId: users.user.calendarView.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendarView.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38929,10 +37101,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -39142,32 +37314,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendarView.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: users.calendarView.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            events:
-              operationId: users.calendarView.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.calendarView.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.calendarView.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39727,57 +37873,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.calendarView.Instances.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: users.calendarView.Instances.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: users.calendarView.Instances.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: users.calendarView.Instances.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendarView.Instances.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendarView.Instances.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: users.user.calendarView.event.instances.event.accept
-            cancel:
-              operationId: users.user.calendarView.event.instances.event.cancel
-            decline:
-              operationId: users.user.calendarView.event.instances.event.decline
-            dismissReminder:
-              operationId: users.user.calendarView.event.instances.event.dismissReminder
-            forward:
-              operationId: users.user.calendarView.event.instances.event.forward
-            snoozeReminder:
-              operationId: users.user.calendarView.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.calendarView.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39885,10 +37980,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -40130,37 +38225,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.calendarView.instances.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: users.calendarView.instances.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: users.calendarView.instances.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.calendarView.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.calendarView.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41935,51 +39999,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.Events.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            calendar:
-              operationId: users.Events.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            extensions:
-              operationId: users.Events.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            instances:
-              operationId: users.Events.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.Events.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.Events.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            accept:
-              operationId: users.user.events.event.accept
-            cancel:
-              operationId: users.user.events.event.cancel
-            decline:
-              operationId: users.user.events.event.decline
-            dismissReminder:
-              operationId: users.user.events.event.dismissReminder
-            forward:
-              operationId: users.user.events.event.forward
-            snoozeReminder:
-              operationId: users.user.events.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.events.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42148,10 +40167,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events_CreateAttachments
       parameters:
         - name: user-id
@@ -42361,32 +40380,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.events.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            calendarView:
-              operationId: users.events.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            events:
-              operationId: users.events.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            multiValueExtendedProperties:
-              operationId: users.events.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-            singleValueExtendedProperties:
-              operationId: users.events.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42946,57 +40939,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
-          links:
-            attachments:
-              operationId: users.events.Instances.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendar:
-              operationId: users.events.Instances.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            extensions:
-              operationId: users.events.Instances.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            instances:
-              operationId: users.events.Instances.ListInstances
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.events.Instances.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.events.Instances.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            accept:
-              operationId: users.user.events.event.instances.event.accept
-            cancel:
-              operationId: users.user.events.event.instances.event.cancel
-            decline:
-              operationId: users.user.events.event.instances.event.decline
-            dismissReminder:
-              operationId: users.user.events.event.instances.event.dismissReminder
-            forward:
-              operationId: users.user.events.event.instances.event.forward
-            snoozeReminder:
-              operationId: users.user.events.event.instances.event.snoozeReminder
-            tentativelyAccept:
-              operationId: users.user.events.event.instances.event.tentativelyAccept
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43104,10 +41046,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -43349,37 +41291,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
-          links:
-            calendarPermissions:
-              operationId: users.events.instances.Calendar.ListCalendarPermissions
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            calendarView:
-              operationId: users.events.instances.Calendar.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            events:
-              operationId: users.events.instances.Calendar.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            multiValueExtendedProperties:
-              operationId: users.events.instances.Calendar.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
-            singleValueExtendedProperties:
-              operationId: users.events.instances.Calendar.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                event-id: $request.path.event-id
-                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

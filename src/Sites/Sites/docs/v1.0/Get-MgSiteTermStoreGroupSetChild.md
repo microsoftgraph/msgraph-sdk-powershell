@@ -12,7 +12,7 @@ Children terms of set in term [store].
 
 ## SYNTAX
 
-### List3 (Default)
+### List (Default)
 ```
 Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
@@ -21,20 +21,20 @@ Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <Stri
 
 ### Get
 ```
-Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <String> -StoreId <String>
- -TermId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <String> -TermId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <String> -StoreId <String>
- -TermId <String> -TermId1 <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+ -TermId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get3
+### Get2
 ```
-Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <String> -TermId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <String> -StoreId <String>
+ -TermId <String> -TermId1 <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -49,20 +49,20 @@ Get-MgSiteTermStoreGroupSetChild -InputObject <ISitesIdentity> [-ExpandProperty 
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity3
+### GetViaIdentity2
 ```
 Get-MgSiteTermStoreGroupSetChild -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### List
+### List1
 ```
 Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <String> -StoreId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### List1
+### List2
 ```
 Get-MgSiteTermStoreGroupSetChild -GroupId <String> -SetId <String> -SiteId <String> -StoreId <String>
  -TermId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
@@ -82,7 +82,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1, List3
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -98,7 +98,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1, List3
+Parameter Sets: List, List1, List2
 Aliases: CV
 
 Required: False
@@ -128,7 +128,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1, List3
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -143,7 +143,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, Get3, List, List1, List3
+Parameter Sets: Get, Get1, Get2, List, List1, List2
 Aliases:
 
 Required: True
@@ -159,7 +159,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1, GetViaIdentity3
+Parameter Sets: GetViaIdentity, GetViaIdentity1, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -174,7 +174,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1, List3
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -204,7 +204,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1, List3
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -219,7 +219,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, Get3, List, List1, List3
+Parameter Sets: Get, Get1, Get2, List, List1, List2
 Aliases:
 
 Required: True
@@ -234,7 +234,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, Get3, List, List1, List3
+Parameter Sets: Get, Get1, Get2, List, List1, List2
 Aliases:
 
 Required: True
@@ -249,7 +249,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1, List3
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -264,7 +264,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List1, List3
+Parameter Sets: List, List1, List2
 Aliases: OrderBy
 
 Required: False
@@ -279,7 +279,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List, List1
+Parameter Sets: Get1, Get2, List1, List2
 Aliases:
 
 Required: True
@@ -294,7 +294,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, Get3, List1
+Parameter Sets: Get, Get1, Get2, List2
 Aliases:
 
 Required: True
@@ -309,7 +309,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -324,7 +324,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1, List3
+Parameter Sets: List, List1, List2
 Aliases: Limit
 
 Required: False
@@ -365,6 +365,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[GroupId1 <String>]`: key: id of group
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -390,6 +392,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[TermId1 <String>]`: key: id of term
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 ## RELATED LINKS
 

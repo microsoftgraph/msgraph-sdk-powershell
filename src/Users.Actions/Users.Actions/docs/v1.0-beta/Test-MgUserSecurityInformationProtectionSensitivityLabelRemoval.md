@@ -8,7 +8,8 @@ schema: 2.0.0
 # Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval
 
 ## SYNOPSIS
-Invoke action evaluateRemoval
+Indicate to the consuming application what actions it should take to remove the label information.
+Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following:
 
 ## SYNTAX
 
@@ -43,7 +44,8 @@ Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -InputObject <IU
 ```
 
 ## DESCRIPTION
-Invoke action evaluateRemoval
+Indicate to the consuming application what actions it should take to remove the label information.
+Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following:
 
 ## EXAMPLES
 
@@ -284,8 +286,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

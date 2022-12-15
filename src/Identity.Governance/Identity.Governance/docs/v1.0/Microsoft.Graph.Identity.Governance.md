@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: f35ec8f5-414a-4b7f-863f-632ec69c9a32
+Module Guid: 7602d12c-8ae9-4cf8-a91c-6f2fa95e4d28
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -42,9 +42,6 @@ Each requirement object corresponds to an access package assignment policy that 
 
 ### [Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 A collection of stages in the approval decision.
-
-### [Get-MgEntitlementManagementAccessPackageAssignmentPolicy](Get-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
-Get assignmentPolicies from identityGovernance
 
 ### [Get-MgEntitlementManagementAccessPackageCatalog](Get-MgEntitlementManagementAccessPackageCatalog.md)
 Get catalog from identityGovernance
@@ -283,9 +280,6 @@ The access package will be added to an existing accessPackageCatalog.
 ### [New-MgEntitlementManagementAccessPackageAssignmentApprovalStage](New-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 Create new navigation property to stages for identityGovernance
 
-### [New-MgEntitlementManagementAccessPackageAssignmentPolicy](New-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
-Create new navigation property to assignmentPolicies for identityGovernance
-
 ### [New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Create new navigation property ref to incompatibleAccessPackages for identityGovernance
 
@@ -397,9 +391,6 @@ Delete navigation property accessPackageAssignmentApprovals for identityGovernan
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 Delete navigation property stages for identityGovernance
-
-### [Remove-MgEntitlementManagementAccessPackageAssignmentPolicy](Remove-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
-Delete navigation property assignmentPolicies for identityGovernance
 
 ### [Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Delete ref of navigation property incompatibleAccessPackages for identityGovernance

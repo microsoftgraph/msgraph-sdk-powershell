@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgExtractUserSecurityInformationProtectionSensitivityLabelContentLabel
 
 ## SYNOPSIS
-Invoke action extractContentLabel
+Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
+The contentInfo input is resolved to informationProtectionContentLabel.
 
 ## SYNTAX
 
@@ -42,7 +43,8 @@ Invoke-MgExtractUserSecurityInformationProtectionSensitivityLabelContentLabel
 ```
 
 ## DESCRIPTION
-Invoke action extractContentLabel
+Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
+The contentInfo input is resolved to informationProtectionContentLabel.
 
 ## EXAMPLES
 
@@ -250,8 +252,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

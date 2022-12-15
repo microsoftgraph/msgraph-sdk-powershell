@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: c243c0e2-fde3-409c-86c7-9ff5fd49604e
+Module Guid: dcb2bc0b-0467-4b93-8e83-c032bcbac3a5
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -284,7 +284,8 @@ Run an estimate of the number of emails and documents in the eDiscovery search.
 To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
 
 ### [Invoke-MgExtractSecurityInformationProtectionSensitivityLabelContentLabel](Invoke-MgExtractSecurityInformationProtectionSensitivityLabelContentLabel.md)
-Invoke action extractContentLabel
+Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
+The contentInfo input is resolved to informationProtectionContentLabel.
 
 ### [Invoke-MgReopenSecurityCaseEdiscoveryCase](Invoke-MgReopenSecurityCaseEdiscoveryCase.md)
 Reopen an eDiscovery case that was closed.
@@ -618,13 +619,19 @@ Cancel a security operation.
 Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 
 ### [Test-MgSecurityInformationProtectionSensitivityLabelApplication](Test-MgSecurityInformationProtectionSensitivityLabelApplication.md)
-Invoke action evaluateApplication
+Compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information.
+This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
+Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
 
 ### [Test-MgSecurityInformationProtectionSensitivityLabelClassificationResult](Test-MgSecurityInformationProtectionSensitivityLabelClassificationResult.md)
-Invoke action evaluateClassificationResults
+Use the classification results to compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information.
+This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.
+To evaluate based on classification results, provide the contentInfo, which includes existing content metadata key-value pairs, and classification results.
+The API returns an informationProtectionAction that contains one of more of the following:
 
 ### [Test-MgSecurityInformationProtectionSensitivityLabelRemoval](Test-MgSecurityInformationProtectionSensitivityLabelRemoval.md)
-Invoke action evaluateRemoval
+Indicate to the consuming application what actions it should take to remove the label information.
+Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following:
 
 ### [Update-MgSecurityAction](Update-MgSecurityAction.md)
 Update the navigation property securityActions in security

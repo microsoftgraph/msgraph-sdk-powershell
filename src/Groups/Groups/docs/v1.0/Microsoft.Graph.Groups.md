@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 9a7798e6-7aa6-41d4-a079-fa4ac12618a9
+Module Guid: 27fc4f9f-3c8b-4d45-9421-d523d96e3ff8
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -276,6 +276,7 @@ The owners of the group.
 Limited to 100 owners.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
+Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
@@ -284,6 +285,7 @@ The owners of the group.
 Limited to 100 owners.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
+Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
@@ -587,7 +589,10 @@ To get properties that are _not_ returned by default, do a GET operation and spe
 Create new navigation property ref to acceptedSenders for groups
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -961,8 +966,7 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Add a member to a security or Microsoft 365 group through the **members** navigation property.
-The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+Update the properties of a group object.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups

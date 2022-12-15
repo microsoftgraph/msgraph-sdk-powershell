@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: c59fea56-9468-43d5-b031-079c153778dc
+Module Guid: 5b523200-b57e-4044-9a8a-b6cf56b5e43a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -51,6 +51,27 @@ Nullable.
 Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
 Use the **id** property, which is the currency code, to specify the currency.
 
+### [Get-MgBusinessScenario](Get-MgBusinessScenario.md)
+Get businessScenarios from solutions
+
+### [Get-MgBusinessScenarioPlanner](Get-MgBusinessScenarioPlanner.md)
+Get planner from solutions
+
+### [Get-MgBusinessScenarioPlannerPlan](Get-MgBusinessScenarioPlannerPlan.md)
+Invoke action getPlan
+
+### [Get-MgBusinessScenarioPlannerPlanConfiguration](Get-MgBusinessScenarioPlannerPlanConfiguration.md)
+Get planConfiguration from solutions
+
+### [Get-MgBusinessScenarioPlannerPlanConfigurationLocalization](Get-MgBusinessScenarioPlannerPlanConfigurationLocalization.md)
+Get localizations from solutions
+
+### [Get-MgBusinessScenarioPlannerTask](Get-MgBusinessScenarioPlannerTask.md)
+Get tasks from solutions
+
+### [Get-MgBusinessScenarioPlannerTaskConfiguration](Get-MgBusinessScenarioPlannerTaskConfiguration.md)
+Get taskConfiguration from solutions
+
 ### [New-MgBookingBusiness](New-MgBookingBusiness.md)
 Create a new Microsoft Bookings business in a tenant.
 This is the first step in setting up a Bookings business where you must specify the business display name.
@@ -76,6 +97,15 @@ Create a new staff member in the specified bookingBusiness.
 
 ### [New-MgBookingCurrency](New-MgBookingCurrency.md)
 Add new entity to bookingCurrencies
+
+### [New-MgBusinessScenario](New-MgBusinessScenario.md)
+Create new navigation property to businessScenarios for solutions
+
+### [New-MgBusinessScenarioPlannerPlanConfigurationLocalization](New-MgBusinessScenarioPlannerPlanConfigurationLocalization.md)
+Create new navigation property to localizations for solutions
+
+### [New-MgBusinessScenarioPlannerTask](New-MgBusinessScenarioPlannerTask.md)
+Create new navigation property to tasks for solutions
 
 ### [Publish-MgBookingBusiness](Publish-MgBookingBusiness.md)
 Make the scheduling page of this business available to external customers.
@@ -104,6 +134,24 @@ Delete navigation property staffMembers for bookingBusinesses
 
 ### [Remove-MgBookingCurrency](Remove-MgBookingCurrency.md)
 Delete entity from bookingCurrencies
+
+### [Remove-MgBusinessScenario](Remove-MgBusinessScenario.md)
+Delete navigation property businessScenarios for solutions
+
+### [Remove-MgBusinessScenarioPlanner](Remove-MgBusinessScenarioPlanner.md)
+Delete navigation property planner for solutions
+
+### [Remove-MgBusinessScenarioPlannerPlanConfiguration](Remove-MgBusinessScenarioPlannerPlanConfiguration.md)
+Delete navigation property planConfiguration for solutions
+
+### [Remove-MgBusinessScenarioPlannerPlanConfigurationLocalization](Remove-MgBusinessScenarioPlannerPlanConfigurationLocalization.md)
+Delete navigation property localizations for solutions
+
+### [Remove-MgBusinessScenarioPlannerTask](Remove-MgBusinessScenarioPlannerTask.md)
+Delete navigation property tasks for solutions
+
+### [Remove-MgBusinessScenarioPlannerTaskConfiguration](Remove-MgBusinessScenarioPlannerTaskConfiguration.md)
+Delete navigation property taskConfiguration for solutions
 
 ### [Stop-MgBookingBusinessAppointment](Stop-MgBookingBusinessAppointment.md)
 Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
@@ -138,4 +186,22 @@ Update the navigation property staffMembers in bookingBusinesses
 
 ### [Update-MgBookingCurrency](Update-MgBookingCurrency.md)
 Update entity in bookingCurrencies
+
+### [Update-MgBusinessScenario](Update-MgBusinessScenario.md)
+Update the navigation property businessScenarios in solutions
+
+### [Update-MgBusinessScenarioPlanner](Update-MgBusinessScenarioPlanner.md)
+Update the navigation property planner in solutions
+
+### [Update-MgBusinessScenarioPlannerPlanConfiguration](Update-MgBusinessScenarioPlannerPlanConfiguration.md)
+Update the navigation property planConfiguration in solutions
+
+### [Update-MgBusinessScenarioPlannerPlanConfigurationLocalization](Update-MgBusinessScenarioPlannerPlanConfigurationLocalization.md)
+Update the navigation property localizations in solutions
+
+### [Update-MgBusinessScenarioPlannerTask](Update-MgBusinessScenarioPlannerTask.md)
+Update the navigation property tasks in solutions
+
+### [Update-MgBusinessScenarioPlannerTaskConfiguration](Update-MgBusinessScenarioPlannerTaskConfiguration.md)
+Update the navigation property taskConfiguration in solutions
 

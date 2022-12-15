@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.ManagedTenants
-Module Guid: 0b51ef06-c80f-41a6-b9b1-5f7d3b80456a
+Module Guid: eef86d4e-2fdb-4d04-b31d-8ca72bc7d04d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants
 Help Version: 1.0.0.0
 Locale: en-US
@@ -110,6 +110,9 @@ Get managementTemplateCollections from tenantRelationships
 ### [Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionManagementTemplate](Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionManagementTemplate.md)
 Get managementTemplates from tenantRelationships
 
+### [Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+Get managementTemplateCollectionTenantSummaries from tenantRelationships
+
 ### [Get-MgTenantRelationshipManagedTenantManagementTemplateStep](Get-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
 Get managementTemplateSteps from tenantRelationships
 
@@ -118,6 +121,9 @@ Get acceptedVersion from tenantRelationships
 
 ### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepManagementTemplate](Get-MgTenantRelationshipManagedTenantManagementTemplateStepManagementTemplate.md)
 Get managementTemplate from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Get-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+Get managementTemplateStepTenantSummaries from tenantRelationships
 
 ### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Get versions from tenantRelationships
@@ -224,8 +230,14 @@ Create new navigation property to managementTemplates for tenantRelationships
 ### [New-MgTenantRelationshipManagedTenantManagementTemplateCollection](New-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Create new navigation property to managementTemplateCollections for tenantRelationships
 
+### [New-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](New-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+Create new navigation property to managementTemplateCollectionTenantSummaries for tenantRelationships
+
 ### [New-MgTenantRelationshipManagedTenantManagementTemplateStep](New-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
 Create new navigation property to managementTemplateSteps for tenantRelationships
+
+### [New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+Create new navigation property to managementTemplateStepTenantSummaries for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](New-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Create new navigation property to managementTemplateStepVersions for tenantRelationships
@@ -323,8 +335,14 @@ Delete navigation property managementTemplates for tenantRelationships
 ### [Remove-MgTenantRelationshipManagedTenantManagementTemplateCollection](Remove-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Delete navigation property managementTemplateCollections for tenantRelationships
 
+### [Remove-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Remove-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+Delete navigation property managementTemplateCollectionTenantSummaries for tenantRelationships
+
 ### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStep](Remove-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
 Delete navigation property managementTemplateSteps for tenantRelationships
+
+### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Remove-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+Delete navigation property managementTemplateStepTenantSummaries for tenantRelationships
 
 ### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Delete navigation property managementTemplateStepVersions for tenantRelationships
@@ -422,8 +440,14 @@ Update the navigation property managementTemplates in tenantRelationships
 ### [Update-MgTenantRelationshipManagedTenantManagementTemplateCollection](Update-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Update the navigation property managementTemplateCollections in tenantRelationships
 
+### [Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+Update the navigation property managementTemplateCollectionTenantSummaries in tenantRelationships
+
 ### [Update-MgTenantRelationshipManagedTenantManagementTemplateStep](Update-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
 Update the navigation property managementTemplateSteps in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+Update the navigation property managementTemplateStepTenantSummaries in tenantRelationships
 
 ### [Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Update the navigation property managementTemplateStepVersions in tenantRelationships

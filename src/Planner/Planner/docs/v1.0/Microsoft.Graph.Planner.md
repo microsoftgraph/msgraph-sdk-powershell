@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: 29e52b99-5633-4ed3-adad-ba81b2d9cf15
+Module Guid: e7dc21ba-3b04-4110-b4c6-e468c2ec8075
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -138,7 +138,7 @@ Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
 Update the properties of **plannerBucketTaskBoardTaskFormat** object.
 
 ### [Update-MgPlannerTaskDetail](Update-MgPlannerTaskDetail.md)
-Update the properties of **plannertaskdetails** object.
+Update the properties of **plannerTaskDetails** object.
 
 ### [Update-MgPlannerTaskProgressTaskBoardFormat](Update-MgPlannerTaskProgressTaskBoardFormat.md)
 Update the properties of **plannerProgressTaskBoardTaskFormat** object.

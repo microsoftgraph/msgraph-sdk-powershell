@@ -112,75 +112,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagement'
-          links:
-            termsAndConditions:
-              operationId: deviceManagement.ListTermsAndConditions
-            auditEvents:
-              operationId: deviceManagement.ListAuditEvents
-            deviceCompliancePolicies:
-              operationId: deviceManagement.ListDeviceCompliancePolicies
-            deviceCompliancePolicyDeviceStateSummary:
-              operationId: deviceManagement.GetDeviceCompliancePolicyDeviceStateSummary
-            deviceCompliancePolicySettingStateSummaries:
-              operationId: deviceManagement.ListDeviceCompliancePolicySettingStateSummaries
-            deviceConfigurationDeviceStateSummaries:
-              operationId: deviceManagement.GetDeviceConfigurationDeviceStateSummaries
-            deviceConfigurations:
-              operationId: deviceManagement.ListDeviceConfigurations
-            iosUpdateStatuses:
-              operationId: deviceManagement.ListIosUpdateStatuses
-            softwareUpdateStatusSummary:
-              operationId: deviceManagement.GetSoftwareUpdateStatusSummary
-            complianceManagementPartners:
-              operationId: deviceManagement.ListComplianceManagementPartners
-            conditionalAccessSettings:
-              operationId: deviceManagement.GetConditionalAccessSettings
-            deviceCategories:
-              operationId: deviceManagement.ListDeviceCategories
-            deviceEnrollmentConfigurations:
-              operationId: deviceManagement.ListDeviceEnrollmentConfigurations
-            deviceManagementPartners:
-              operationId: deviceManagement.ListDeviceManagementPartners
-            exchangeConnectors:
-              operationId: deviceManagement.ListExchangeConnectors
-            mobileThreatDefenseConnectors:
-              operationId: deviceManagement.ListMobileThreatDefenseConnectors
-            applePushNotificationCertificate:
-              operationId: deviceManagement.GetApplePushNotificationCertificate
-            detectedApps:
-              operationId: deviceManagement.ListDetectedApps
-            managedDeviceOverview:
-              operationId: deviceManagement.GetManagedDeviceOverview
-            managedDevices:
-              operationId: deviceManagement.ListManagedDevices
-            importedWindowsAutopilotDeviceIdentities:
-              operationId: deviceManagement.ListImportedWindowsAutopilotDeviceIdentities
-            windowsAutopilotDeviceIdentities:
-              operationId: deviceManagement.ListWindowsAutopilotDeviceIdentities
-            notificationMessageTemplates:
-              operationId: deviceManagement.ListNotificationMessageTemplates
-            resourceOperations:
-              operationId: deviceManagement.ListResourceOperations
-            roleAssignments:
-              operationId: deviceManagement.ListRoleAssignments
-            roleDefinitions:
-              operationId: deviceManagement.ListRoleDefinitions
-            remoteAssistancePartners:
-              operationId: deviceManagement.ListRemoteAssistancePartners
-            reports:
-              operationId: deviceManagement.GetReports
-            telecomExpenseManagementPartners:
-              operationId: deviceManagement.ListTelecomExpenseManagementPartners
-            troubleshootingEvents:
-              operationId: deviceManagement.ListTroubleshootingEvents
-            windowsInformationProtectionAppLearningSummaries:
-              operationId: deviceManagement.ListWindowsInformationProtectionAppLearningSummaries
-            windowsInformationProtectionNetworkLearningSummaries:
-              operationId: deviceManagement.ListWindowsInformationProtectionNetworkLearningSummaries
-            getEffectivePermissions:
-              operationId: deviceManagement.getEffectivePermissions
-            verifyWindowsEnrollmentAutoDiscovery:
-              operationId: deviceManagement.verifyWindowsEnrollmentAutoDiscovery
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -358,11 +289,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.detectedApp'
-          links:
-            managedDevices:
-              operationId: deviceManagement.DetectedApps.ListManagedDevices
-              parameters:
-                detectedApp-id: $request.path.detectedApp-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -769,27 +695,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
-          links:
-            deviceCompliancePolicyStates:
-              operationId: deviceManagement.detectedApps.ManagedDevices.ListDeviceCompliancePolicyStates
-              parameters:
-                detectedApp-id: $request.path.detectedApp-id
-                managedDevice-id: $request.path.managedDevice-id
-            deviceConfigurationStates:
-              operationId: deviceManagement.detectedApps.ManagedDevices.ListDeviceConfigurationStates
-              parameters:
-                detectedApp-id: $request.path.detectedApp-id
-                managedDevice-id: $request.path.managedDevice-id
-            deviceCategory:
-              operationId: deviceManagement.detectedApps.ManagedDevices.GetDeviceCategory
-              parameters:
-                detectedApp-id: $request.path.detectedApp-id
-                managedDevice-id: $request.path.managedDevice-id
-            users:
-              operationId: deviceManagement.detectedApps.ManagedDevices.ListUsers
-              parameters:
-                detectedApp-id: $request.path.detectedApp-id
-                managedDevice-id: $request.path.managedDevice-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1161,39 +1066,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
-          links:
-            assignments:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListAssignments
-              parameters:
-                deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
-            deviceSettingStateSummaries:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListDeviceSettingStateSummaries
-              parameters:
-                deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
-            deviceStatuses:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListDeviceStatuses
-              parameters:
-                deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
-            deviceStatusOverview:
-              operationId: deviceManagement.DeviceCompliancePolicies.GetDeviceStatusOverview
-              parameters:
-                deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
-            scheduledActionsForRule:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsGraphFPreRule
-              parameters:
-                deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
-            userStatuses:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListUserStatuses
-              parameters:
-                deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
-            userStatusOverview:
-              operationId: deviceManagement.DeviceCompliancePolicies.GetUserStatusOverview
-              parameters:
-                deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
-            assign:
-              operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.assign
-            scheduleActionsForRules:
-              operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.scheduleActionsGraphFPreRules
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2264,12 +2136,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-          links:
-            scheduledActionConfigurations:
-              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsGraphFPreRule.ListScheduledActionConfigurations
-              parameters:
-                deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
-                deviceComplianceScheduledActionForRule-id: $request.path.deviceComplianceScheduledActionForRule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3237,11 +3103,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
-          links:
-            deviceComplianceSettingStates:
-              operationId: deviceManagement.DeviceCompliancePolicySettingStateSummaries.ListDeviceComplianceSettingStates
-              parameters:
-                deviceCompliancePolicySettingStateSummary-id: $request.path.deviceCompliancePolicySettingStateSummary-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3824,35 +3685,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
-          links:
-            assignments:
-              operationId: deviceManagement.DeviceConfigurations.ListAssignments
-              parameters:
-                deviceConfiguration-id: $request.path.deviceConfiguration-id
-            deviceSettingStateSummaries:
-              operationId: deviceManagement.DeviceConfigurations.ListDeviceSettingStateSummaries
-              parameters:
-                deviceConfiguration-id: $request.path.deviceConfiguration-id
-            deviceStatuses:
-              operationId: deviceManagement.DeviceConfigurations.ListDeviceStatuses
-              parameters:
-                deviceConfiguration-id: $request.path.deviceConfiguration-id
-            deviceStatusOverview:
-              operationId: deviceManagement.DeviceConfigurations.GetDeviceStatusOverview
-              parameters:
-                deviceConfiguration-id: $request.path.deviceConfiguration-id
-            userStatuses:
-              operationId: deviceManagement.DeviceConfigurations.ListUserStatuses
-              parameters:
-                deviceConfiguration-id: $request.path.deviceConfiguration-id
-            userStatusOverview:
-              operationId: deviceManagement.DeviceConfigurations.GetUserStatusOverview
-              parameters:
-                deviceConfiguration-id: $request.path.deviceConfiguration-id
-            assign:
-              operationId: deviceManagement.deviceConfigurations.deviceConfiguration.assign
-            getOmaSettingPlainTextValue:
-              operationId: deviceManagement.deviceConfigurations.deviceConfiguration.getOmaSettingPlainTextValue
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5520,59 +5352,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
-          links:
-            deviceCompliancePolicyStates:
-              operationId: deviceManagement.ManagedDevices.ListDeviceCompliancePolicyStates
-              parameters:
-                managedDevice-id: $request.path.managedDevice-id
-            deviceConfigurationStates:
-              operationId: deviceManagement.ManagedDevices.ListDeviceConfigurationStates
-              parameters:
-                managedDevice-id: $request.path.managedDevice-id
-            deviceCategory:
-              operationId: deviceManagement.ManagedDevices.GetDeviceCategory
-              parameters:
-                managedDevice-id: $request.path.managedDevice-id
-            users:
-              operationId: deviceManagement.ManagedDevices.ListUsers
-              parameters:
-                managedDevice-id: $request.path.managedDevice-id
-            bypassActivationLock:
-              operationId: deviceManagement.managedDevices.managedDevice.bypassActivationLock
-            cleanWindowsDevice:
-              operationId: deviceManagement.managedDevices.managedDevice.cleanWindowsDevice
-            deleteUserFromSharedAppleDevice:
-              operationId: deviceManagement.managedDevices.managedDevice.deleteUserFromSharedAppleDevice
-            disableLostMode:
-              operationId: deviceManagement.managedDevices.managedDevice.disableLostMode
-            locateDevice:
-              operationId: deviceManagement.managedDevices.managedDevice.locateDevice
-            logoutSharedAppleDeviceActiveUser:
-              operationId: deviceManagement.managedDevices.managedDevice.logoutSharedAppleDeviceActiveUser
-            rebootNow:
-              operationId: deviceManagement.managedDevices.managedDevice.rebootNow
-            recoverPasscode:
-              operationId: deviceManagement.managedDevices.managedDevice.recoverPasscode
-            remoteLock:
-              operationId: deviceManagement.managedDevices.managedDevice.remoteLock
-            requestRemoteAssistance:
-              operationId: deviceManagement.managedDevices.managedDevice.requestRemoteAssistance
-            resetPasscode:
-              operationId: deviceManagement.managedDevices.managedDevice.resetPasscode
-            retire:
-              operationId: deviceManagement.managedDevices.managedDevice.retire
-            shutDown:
-              operationId: deviceManagement.managedDevices.managedDevice.shutDown
-            syncDevice:
-              operationId: deviceManagement.managedDevices.managedDevice.syncDevice
-            updateWindowsDeviceAccount:
-              operationId: deviceManagement.managedDevices.managedDevice.updateWindowsDeviceAccount
-            windowsDefenderScan:
-              operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderScan
-            windowsDefenderUpdateSignatures:
-              operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderUpdateSignatures
-            wipe:
-              operationId: deviceManagement.managedDevices.managedDevice.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6758,13 +6537,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
-          links:
-            localizedNotificationMessages:
-              operationId: deviceManagement.NotificationMessageTemplates.ListLocalizedNotificationMessages
-              parameters:
-                notificationMessageTemplate-id: $request.path.notificationMessageTemplate-id
-            sendTestMessage:
-              operationId: deviceManagement.notificationMessageTemplates.notificationMessageTemplate.sendTestMessage
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10751,7 +10523,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, and counting empty collections).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -10927,7 +10699,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -10955,7 +10727,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             securityIdentifier:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
@@ -11095,7 +10867,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+              description: 'Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             ownedObjects:
               type: array
@@ -12775,7 +12547,7 @@ components:
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.'
+              description: 'The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.'
               format: uuid
               nullable: true
             principalType:
@@ -17237,7 +17009,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: Channel name as it will appear to the user in Microsoft Teams.
+              description: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
             email:
               type: string
               description: The email address for sending messages to the channel. Read-only.
@@ -17294,7 +17066,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
             assignedLicenses:
               type: array
               items:
@@ -17400,7 +17172,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
+              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -17484,7 +17256,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -18903,7 +18675,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -19601,11 +19373,13 @@ components:
         containerId:
           type: string
           description: The identifier of the resource that contains the plan.
+          nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
           description: The full canonical URL of the container.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerBucket:
@@ -19686,7 +19460,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -19716,7 +19490,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
+              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -20121,7 +19895,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -20172,7 +19946,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith,/$count eq 0, /$count ne 0).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -20181,7 +19955,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
+              description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
@@ -21821,7 +21595,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationCreatedOnBehalfOf
 
 ## SYNOPSIS
-Supports $filter (eq when counting empty collections).
+Supports $filter (/$count eq 0, /$count ne 0).
 Read-only.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Get-MgApplicationCreatedOnBehalfOf -InputObject <IApplicationsIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Supports $filter (eq when counting empty collections).
+Supports $filter (/$count eq 0, /$count ne 0).
 Read-only.
 
 ## EXAMPLES

@@ -52,17 +52,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudCommunications'
-          links:
-            calls:
-              operationId: communications.ListCalls
-            callRecords:
-              operationId: communications.ListCallRecords
-            onlineMeetings:
-              operationId: communications.ListOnlineMeetings
-            presences:
-              operationId: communications.ListPresences
-            getPresencesByUserId:
-              operationId: communications.getPresencesGraphBPreUserId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -250,11 +239,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
-          links:
-            sessions:
-              operationId: communications.CallRecords.ListSessions
-              parameters:
-                callRecord-id: $request.path.callRecord-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -495,12 +479,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.session'
-          links:
-            segments:
-              operationId: communications.callRecords.Sessions.ListSegments
-              parameters:
-                callRecord-id: $request.path.callRecord-id
-                session-id: $request.path.session-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1112,53 +1090,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.call'
-          links:
-            audioRoutingGroups:
-              operationId: communications.Calls.ListAudioRoutingGroups
-              parameters:
-                call-id: $request.path.call-id
-            contentSharingSessions:
-              operationId: communications.Calls.ListContentSharingSessions
-              parameters:
-                call-id: $request.path.call-id
-            operations:
-              operationId: communications.Calls.ListOperations
-              parameters:
-                call-id: $request.path.call-id
-            participants:
-              operationId: communications.Calls.ListParticipants
-              parameters:
-                call-id: $request.path.call-id
-            addLargeGalleryView:
-              operationId: communications.calls.call.addLargeGalleryView
-            answer:
-              operationId: communications.calls.call.answer
-            cancelMediaProcessing:
-              operationId: communications.calls.call.cancelMediaProcessing
-            changeScreenSharingRole:
-              operationId: communications.calls.call.changeScreenSharingRole
-            keepAlive:
-              operationId: communications.calls.call.keepAlive
-            mute:
-              operationId: communications.calls.call.mute
-            playPrompt:
-              operationId: communications.calls.call.playPrompt
-            record:
-              operationId: communications.calls.call.record
-            recordResponse:
-              operationId: communications.calls.call.recordResponse
-            redirect:
-              operationId: communications.calls.call.redirect
-            reject:
-              operationId: communications.calls.call.reject
-            subscribeToTone:
-              operationId: communications.calls.call.subscribeToTone
-            transfer:
-              operationId: communications.calls.call.transfer
-            unmute:
-              operationId: communications.calls.call.unmute
-            updateRecordingStatus:
-              operationId: communications.calls.call.updateRecordingStatus
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2815,13 +2746,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.participant'
-          links:
-            mute:
-              operationId: communications.calls.call.participants.participant.mute
-            startHoldMusic:
-              operationId: communications.calls.call.participants.participant.startHoldMusic
-            stopHoldMusic:
-              operationId: communications.calls.call.participants.participant.stopHoldMusic
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3051,10 +2975,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -3473,27 +3397,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-          links:
-            virtualAppointment:
-              operationId: communications.OnlineMeetings.GetVirtualAppointment
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            attendanceReports:
-              operationId: communications.OnlineMeetings.ListAttendanceReports
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            meetingAttendanceReport:
-              operationId: communications.OnlineMeetings.GetMeetingAttendanceReport
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            registration:
-              operationId: communications.OnlineMeetings.GetRegistration
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            transcripts:
-              operationId: communications.OnlineMeetings.ListTranscripts
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3781,12 +3684,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-          links:
-            attendanceRecords:
-              operationId: communications.onlineMeetings.AttendanceReports.ListAttendanceRecords
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
-                meetingAttendanceReport-id: $request.path.meetingAttendanceReport-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4265,11 +4162,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-          links:
-            attendanceRecords:
-              operationId: communications.onlineMeetings.MeetingAttendanceReport.ListAttendanceRecords
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4641,11 +4533,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4699,15 +4591,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
-          links:
-            registrants:
-              operationId: communications.onlineMeetings.Registration.ListRegistrants
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            customQuestions:
-              operationId: communications.onlineMeetings.Registration.ListCustomQuestions
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4745,11 +4628,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: communications.onlineMeetings_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -5517,6 +5400,8 @@ paths:
                 - availability desc
                 - outOfOfficeSettings
                 - outOfOfficeSettings desc
+                - statusMessage
+                - statusMessage desc
               type: string
         - name: $select
           in: query
@@ -5532,6 +5417,7 @@ paths:
                 - activity
                 - availability
                 - outOfOfficeSettings
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -5605,6 +5491,7 @@ paths:
                 - activity
                 - availability
                 - outOfOfficeSettings
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -5625,15 +5512,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
-          links:
-            clearPresence:
-              operationId: communications.presences.presence.clearPresence
-            clearUserPreferredPresence:
-              operationId: communications.presences.presence.clearUserPreferredPresence
-            setPresence:
-              operationId: communications.presences.presence.setPresence
-            setUserPreferredPresence:
-              operationId: communications.presences.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5791,6 +5669,39 @@ paths:
                   type: string
                   format: duration
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setStatusMessage':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action setStatusMessage
+      operationId: communications.presences_setStatusMessage
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                statusMessage:
+                  $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
               additionalProperties:
                 type: object
         required: true
@@ -6127,32 +6038,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-          links:
-            virtualAppointment:
-              operationId: users.OnlineMeetings.GetVirtualAppointment
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            attendanceReports:
-              operationId: users.OnlineMeetings.ListAttendanceReports
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            meetingAttendanceReport:
-              operationId: users.OnlineMeetings.GetMeetingAttendanceReport
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            registration:
-              operationId: users.OnlineMeetings.GetRegistration
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            transcripts:
-              operationId: users.OnlineMeetings.ListTranscripts
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6493,13 +6378,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-          links:
-            attendanceRecords:
-              operationId: users.onlineMeetings.AttendanceReports.ListAttendanceRecords
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
-                meetingAttendanceReport-id: $request.path.meetingAttendanceReport-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7055,12 +6933,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-          links:
-            attendanceRecords:
-              operationId: users.onlineMeetings.MeetingAttendanceReport.ListAttendanceRecords
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7501,11 +7373,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -7567,17 +7439,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
-          links:
-            registrants:
-              operationId: users.onlineMeetings.Registration.ListRegistrants
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
-            customQuestions:
-              operationId: users.onlineMeetings.Registration.ListCustomQuestions
-              parameters:
-                user-id: $request.path.user-id
-                onlineMeeting-id: $request.path.onlineMeeting-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7623,11 +7484,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: users.onlineMeetings_DeleteRegistration
       parameters:
         - name: user-id
@@ -8477,6 +8338,7 @@ paths:
                 - activity
                 - availability
                 - outOfOfficeSettings
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -8497,15 +8359,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
-          links:
-            clearPresence:
-              operationId: users.user.presence.clearPresence
-            clearUserPreferredPresence:
-              operationId: users.user.presence.clearUserPreferredPresence
-            setPresence:
-              operationId: users.user.presence.setPresence
-            setUserPreferredPresence:
-              operationId: users.user.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9177,6 +9030,8 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.onlineMeeting:
@@ -9529,6 +9384,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -10219,6 +10089,19 @@ components:
         upn:
           type: string
           description: User principal name of the participant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object

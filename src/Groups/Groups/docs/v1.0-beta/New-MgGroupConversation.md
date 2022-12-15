@@ -8,8 +8,10 @@ schema: 2.0.0
 # New-MgGroupConversation
 
 ## SYNOPSIS
-Create a new conversation by including a thread and a post.
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## SYNTAX
 
@@ -41,8 +43,10 @@ New-MgGroupConversation -InputObject <IGroupsIdentity> [-AdditionalProperties <H
 ```
 
 ## DESCRIPTION
-Create a new conversation by including a thread and a post.
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## EXAMPLES
 
@@ -430,6 +434,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -455,6 +461,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[Token <String>]`: Usage: token='{token}'
   - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 THREADS <IMicrosoftGraphConversationThread1[]>: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

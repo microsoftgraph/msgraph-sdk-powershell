@@ -13,13 +13,13 @@ This relationship can only be used to load a specific term set.
 
 ## SYNTAX
 
-### Get2 (Default)
+### Get (Default)
 ```
 Get-MgSiteTermStoreSet -SetId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgSiteTermStoreSet -SetId <String> -SiteId <String> -StoreId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -31,7 +31,7 @@ Get-MgSiteTermStoreSet -InputObject <ISitesIdentity> [-ExpandProperty <String[]>
  [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity1
 ```
 Get-MgSiteTermStoreSet -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -128,7 +128,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity2
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -188,7 +188,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -203,7 +203,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2, List
+Parameter Sets: Get, Get1, List
 Aliases:
 
 Required: True
@@ -248,7 +248,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -304,6 +304,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[GroupId1 <String>]`: key: id of group
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -329,6 +331,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[TermId1 <String>]`: key: id of term
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 ## RELATED LINKS
 

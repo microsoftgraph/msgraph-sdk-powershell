@@ -9,6 +9,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
+    "/security/alerts_v2": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/alerts_v2/{alert-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
     "/security/alerts/{alert-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Security.yml"
@@ -241,6 +249,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
+    "/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/microsoft.graph.security.purgeData": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
     "/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/noncustodialSources": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Security.yml"
@@ -278,6 +290,26 @@
       "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
     "/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/microsoft.graph.security.asHierarchy()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/incidents": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/incidents/{incident-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/incidents/{incident-id}/alerts": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/incidents/{incident-id}/alerts/{alert-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/microsoft.graph.security.runHuntingQuery": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: c67ed081-f8c2-4f61-b2ca-a7a1d8b8f93d
+Module Guid: e42894a4-059c-45ff-ab98-570f22253083
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -59,7 +59,7 @@ A list of categories defined for the user.
 Devices that are owned by the user.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgUserOwnedObject](Get-MgUserOwnedObject.md)
 Directory objects that are owned by the user.

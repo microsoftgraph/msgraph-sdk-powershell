@@ -11,7 +11,7 @@ schema: 2.0.0
 The owners of the group who can be users or service principals.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
-Supports $expand including nested $select.
+Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Get-MgGroupOwnerByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-
 The owners of the group who can be users or service principals.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
-Supports $expand including nested $select.
+Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ## EXAMPLES

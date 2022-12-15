@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: d9f51b22-30b4-4b76-8336-8a46c325ff3a
+Module Guid: 35fa73e9-665f-4670-8046-4a68196ffc13
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -520,7 +520,7 @@ Nullable.
 Invoke function getRecentNotebooks
 
 ### [Get-MgSiteTermStore](Get-MgSiteTermStore.md)
-The collection of termStores under this site.
+Read the properties and relationships of a store object.
 
 ### [Get-MgSiteTermStoreGroup](Get-MgSiteTermStoreGroup.md)
 Collection of all groups available in the term store.
@@ -1241,7 +1241,7 @@ Delete navigation property subscriptions for sites
 Delete navigation property permissions for sites
 
 ### [Remove-MgSiteTermStore](Remove-MgSiteTermStore.md)
-Delete navigation property termStores for sites
+Delete navigation property termStore for sites
 
 ### [Remove-MgSiteTermStoreGroup](Remove-MgSiteTermStoreGroup.md)
 Delete navigation property groups for sites
@@ -1548,7 +1548,7 @@ Invoke action onenotePatchContent
 Update the navigation property permissions in sites
 
 ### [Update-MgSiteTermStore](Update-MgSiteTermStore.md)
-Update the navigation property termStores in sites
+Update the properties of a store object.
 
 ### [Update-MgSiteTermStoreGroup](Update-MgSiteTermStoreGroup.md)
 Update the navigation property groups in sites

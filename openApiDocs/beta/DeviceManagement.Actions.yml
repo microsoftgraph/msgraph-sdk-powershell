@@ -11562,6 +11562,31 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.retryPartnerAgentInstallation':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action retryPartnerAgentInstallation
+      description: Retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_retryPartnerAgentInstallation
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot':
     post:
       tags:
@@ -11801,6 +11826,74 @@ paths:
             schema:
               type: object
               properties:
+                filter:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/virtualEndpoint/reports/microsoft.graph.getSharedUseLicenseUsageReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getSharedUseLicenseUsageReport
+      operationId: deviceManagement.virtualEndpoint.reports_getSharedUseLicenseUsageReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reportName:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcReportName'
                 filter:
                   type: string
                   nullable: true
@@ -14485,6 +14578,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcReportName:
+      title: cloudPcReportName
+      enum:
+        - remoteConnectionHistoricalReports
+        - dailyAggregatedRemoteConnectionReports
+        - totalAggregatedRemoteConnectionReports
+        - sharedUseLicenseUsageReport
+        - sharedUseLicenseUsageRealTimeReport
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcUserSettingAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

@@ -12,7 +12,7 @@ Update the navigation property relations in sites
 
 ## SYNTAX
 
-### UpdateExpanded2 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgSiteTermStoreGroupSetTermRelation -GroupId <String> -RelationId <String> -SetId <String>
  -SiteId <String> -TermId <String> [-AdditionalProperties <Hashtable>]
@@ -24,18 +24,18 @@ Update-MgSiteTermStoreGroupSetTermRelation -GroupId <String> -RelationId <String
 ### Update
 ```
 Update-MgSiteTermStoreGroupSetTermRelation -GroupId <String> -RelationId <String> -SetId <String>
- -SiteId <String> -StoreId <String> -TermId <String> -BodyParameter <IMicrosoftGraphTermStoreRelation1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update2
-```
-Update-MgSiteTermStoreGroupSetTermRelation -GroupId <String> -RelationId <String> -SetId <String>
- -SiteId <String> -TermId <String> -BodyParameter <IMicrosoftGraphTermStoreRelation1> [-PassThru] [-Confirm]
+ -SiteId <String> -TermId <String> -BodyParameter <IMicrosoftGraphTermStoreRelation> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateExpanded
+### Update1
+```
+Update-MgSiteTermStoreGroupSetTermRelation -GroupId <String> -RelationId <String> -SetId <String>
+ -SiteId <String> -StoreId <String> -TermId <String> -BodyParameter <IMicrosoftGraphTermStoreRelation>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateExpanded1
 ```
 Update-MgSiteTermStoreGroupSetTermRelation -GroupId <String> -RelationId <String> -SetId <String>
  -SiteId <String> -StoreId <String> -TermId <String> [-AdditionalProperties <Hashtable>]
@@ -47,13 +47,13 @@ Update-MgSiteTermStoreGroupSetTermRelation -GroupId <String> -RelationId <String
 ### UpdateViaIdentity
 ```
 Update-MgSiteTermStoreGroupSetTermRelation -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphTermStoreRelation1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStoreRelation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity2
+### UpdateViaIdentity1
 ```
 Update-MgSiteTermStoreGroupSetTermRelation -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphTermStoreRelation1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStoreRelation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -64,7 +64,7 @@ Update-MgSiteTermStoreGroupSetTermRelation -InputObject <ISitesIdentity> [-Addit
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded2
+### UpdateViaIdentityExpanded1
 ```
 Update-MgSiteTermStoreGroupSetTermRelation -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <String>] [-Relationship <String>]
@@ -84,7 +84,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -99,8 +99,8 @@ relation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreRelation1
-Parameter Sets: Update, Update2, UpdateViaIdentity, UpdateViaIdentity2
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreRelation
+Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -116,7 +116,7 @@ To construct, please use Get-Help -Online and see NOTES section for FROMTERM pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreTerm
-Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -131,7 +131,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update2, UpdateExpanded, UpdateExpanded2
+Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -147,7 +147,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -163,7 +163,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentity2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -193,7 +193,7 @@ key: id of relation
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update2, UpdateExpanded, UpdateExpanded2
+Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -224,7 +224,7 @@ To construct, please use Get-Help -Online and see NOTES section for SET properti
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreSet
-Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -239,7 +239,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update2, UpdateExpanded, UpdateExpanded2
+Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -254,7 +254,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update2, UpdateExpanded, UpdateExpanded2
+Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -269,7 +269,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -284,7 +284,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update2, UpdateExpanded, UpdateExpanded2
+Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -300,7 +300,7 @@ To construct, please use Get-Help -Online and see NOTES section for TOTERM prope
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreTerm
-Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -346,7 +346,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreRelation1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreRelation
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 
@@ -363,7 +363,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphTermStoreRelation1>: relation
+BODYPARAMETER <IMicrosoftGraphTermStoreRelation>: relation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -382,7 +382,7 @@ BODYPARAMETER <IMicrosoftGraphTermStoreRelation1>: relation
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
       - `[Key <String>]`: Key for the key-value pair.
       - `[Value <String>]`: Value for the key-value pair.
-    - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+    - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
     - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -402,7 +402,7 @@ BODYPARAMETER <IMicrosoftGraphTermStoreRelation1>: relation
         - `[Scope <String>]`: 
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+      - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
       - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
   - `[Relationship <String>]`: 
   - `[Set <IMicrosoftGraphTermStoreSet>]`: set
@@ -424,7 +424,7 @@ FROMTERM <IMicrosoftGraphTermStoreTerm>: term
   - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
     - `[Key <String>]`: Key for the key-value pair.
     - `[Value <String>]`: Value for the key-value pair.
-  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+  - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
     - `[Relationship <String>]`: 
@@ -447,7 +447,7 @@ FROMTERM <IMicrosoftGraphTermStoreTerm>: term
         - `[Scope <String>]`: 
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+      - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
       - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
     - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
   - `[Set <IMicrosoftGraphTermStoreSet>]`: set
@@ -463,6 +463,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[GroupId1 <String>]`: key: id of group
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -488,6 +490,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[TermId1 <String>]`: key: id of term
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 SET <IMicrosoftGraphTermStoreSet>: set
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -507,7 +510,7 @@ SET <IMicrosoftGraphTermStoreSet>: set
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
       - `[Key <String>]`: Key for the key-value pair.
       - `[Value <String>]`: Value for the key-value pair.
-    - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+    - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[Relationship <String>]`: 
@@ -529,7 +532,7 @@ SET <IMicrosoftGraphTermStoreSet>: set
     - `[Scope <String>]`: 
     - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
   - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+  - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
   - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
 
 TOTERM <IMicrosoftGraphTermStoreTerm>: term
@@ -548,7 +551,7 @@ TOTERM <IMicrosoftGraphTermStoreTerm>: term
   - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
     - `[Key <String>]`: Key for the key-value pair.
     - `[Value <String>]`: Value for the key-value pair.
-  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+  - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
     - `[Relationship <String>]`: 
@@ -571,7 +574,7 @@ TOTERM <IMicrosoftGraphTermStoreTerm>: term
         - `[Scope <String>]`: 
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+      - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
       - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
     - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
   - `[Set <IMicrosoftGraphTermStoreSet>]`: set
