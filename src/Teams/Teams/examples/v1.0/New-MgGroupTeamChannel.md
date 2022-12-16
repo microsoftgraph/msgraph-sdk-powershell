@@ -1,18 +1,27 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: List all channels
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannel -TeamId $teamId
 ```
+This example shows how to use the New-MgGroupTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: List all private channels
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Teams
 
-{{ Add output here }}
+Get-MgTeamChannel -TeamId $teamId -Filter "membershipType eq 'private'"
 ```
+This example shows how to use the New-MgGroupTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 3: List all shared channels
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannel -TeamId $teamId -Filter "membershipType eq 'shared'"
+```
+This example shows how to use the New-MgGroupTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

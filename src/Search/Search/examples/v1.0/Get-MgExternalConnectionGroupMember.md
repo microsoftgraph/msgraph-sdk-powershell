@@ -1,18 +1,42 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Add an Azure Active Directory user as a member
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Search
+
+$params = @{
+	Id = "e811976d-83df-4cbd-8b9b-5215b18aa874"
+	Type = "user"
+}
+
+New-MgExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
+This example shows how to use the Get-MgExternalConnectionGroupMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Add an Azure Active Directory group as a member
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Search
 
-{{ Add output here }}
+$params = @{
+	Id = "e5477431-1038-484e-bf69-1dfedb97a110"
+	Type = "group"
+}
+
+New-MgExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
+This example shows how to use the Get-MgExternalConnectionGroupMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 3: Add another external group as a member
+
+```powershellImport-Module Microsoft.Graph.Search
+
+$params = @{
+	Id = "1431b9c38ee647f6a"
+	Type = "externalGroup"
+}
+
+New-MgExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
+```
+This example shows how to use the Get-MgExternalConnectionGroupMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

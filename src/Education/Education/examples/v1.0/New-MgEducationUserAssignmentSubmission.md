@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get submissions
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Education
+
+Get-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
+This example shows how to use the New-MgEducationUserAssignmentSubmission Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Get submissions with $expand options
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Education
 
-{{ Add output here }}
+Get-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -ExpandProperty "outcomes"
 ```
-
-{{ Add description here }}
+This example shows how to use the New-MgEducationUserAssignmentSubmission Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

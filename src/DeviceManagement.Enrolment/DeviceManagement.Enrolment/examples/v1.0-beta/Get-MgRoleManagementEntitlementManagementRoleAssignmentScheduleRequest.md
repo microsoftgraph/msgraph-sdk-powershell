@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Retrieve role assignment requests
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.DeviceManagement.Enrolment
+
+Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest
 ```
+This example shows how to use the Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Retrieve specified properties of role assignment requests and expand the relationships
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.DeviceManagement.Enrolment
 
-{{ Add output here }}
+Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest -Property "principalId,action,roleDefinitionId" -ExpandProperty "roleDefinition,activatedUsing,principal,targetSchedule"
 ```
-
-{{ Add description here }}
+This example shows how to use the Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

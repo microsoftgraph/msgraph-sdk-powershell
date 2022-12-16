@@ -1,18 +1,36 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Code snippet
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgOrganizationBranding -OrganizationId $organizationId
 ```
+This example shows how to use the Set-MgOrganizationBrandingBannerLogo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Code snippet
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
 
-{{ Add output here }}
+Get-MgOrganizationBranding -OrganizationId $organizationId
 ```
+This example shows how to use the Set-MgOrganizationBrandingBannerLogo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 3: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgOrganizationBranding -OrganizationId $organizationId
+```
+This example shows how to use the Set-MgOrganizationBrandingBannerLogo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
+```
+This example shows how to use the Set-MgOrganizationBrandingBannerLogo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
