@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1:  List all appConsentRequests
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Identity.Governance
+
+Get-MgIdentityGovernanceAppConsentRequest
 ```
+This example shows how to use the New-MgIdentityGovernanceAppConsentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: List all appConsentRequests with at least one userConsentRequest whose status is InProgress
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Identity.Governance
 
-{{ Add output here }}
+Get-MgIdentityGovernanceAppConsentRequest -Filter "userConsentRequests/any (u:u/status eq 'InProgress')"
 ```
-
-{{ Add description here }}
+This example shows how to use the New-MgIdentityGovernanceAppConsentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
