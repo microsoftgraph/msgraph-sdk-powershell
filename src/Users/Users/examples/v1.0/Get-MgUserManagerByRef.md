@@ -1,18 +1,19 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get manager
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Users
+
+Get-MgUserManager -UserId $userId
 ```
+This example shows how to use the Get-MgUserManagerByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Get manager chain up to the root level
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Users
 
-{{ Add output here }}
+# A UPN can also be used as -UserId.
+Get-MgUser -UserId $userId -ExpandProperty "manager(`$levels=max;`$select=id,displayName)" -Property "id,displayName" -CountVariable CountVar -ConsistencyLevel eventual
 ```
-
-{{ Add description here }}
+This example shows how to use the Get-MgUserManagerByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
