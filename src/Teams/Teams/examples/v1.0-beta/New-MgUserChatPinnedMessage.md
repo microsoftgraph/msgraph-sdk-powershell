@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: List all the pinned messages in a chat
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgChatPinnedMessage -ChatId $chatId
 ```
+This example shows how to use the New-MgUserChatPinnedMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: List all the pinned messages in a chat along with the associated chat message
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Teams
 
-{{ Add output here }}
+Get-MgChatPinnedMessage -ChatId $chatId -ExpandProperty "message"
 ```
-
-{{ Add description here }}
+This example shows how to use the New-MgUserChatPinnedMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
