@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get serviceHealth resources
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Devices.ServiceAnnouncement
+
+Get-MgServiceAnnouncementHealthOverview
 ```
+This example shows how to use the New-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Include navigation property issues
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Devices.ServiceAnnouncement
 
-{{ Add output here }}
+Get-MgServiceAnnouncementHealthOverview -ExpandProperty "issues"
 ```
-
-{{ Add description here }}
+This example shows how to use the New-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
