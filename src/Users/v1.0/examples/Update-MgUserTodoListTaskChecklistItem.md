@@ -1,22 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Users
+$params = @{
+	DisplayName = "buy cake"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId -BodyParameter $params
 ```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgUserTodoListTaskChecklistItem Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

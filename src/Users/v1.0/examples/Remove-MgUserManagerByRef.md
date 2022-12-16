@@ -1,22 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Remove the manager of a user
+
 ```powershell
-{{ Add code here }}
+Remove-MgUserManagerByRef -UserId '8a7c50d3-fcbd-4727-a889-8ab232dfea01'
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command removes the manager of the specified user.

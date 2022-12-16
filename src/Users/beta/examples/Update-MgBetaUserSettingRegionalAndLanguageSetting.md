@@ -1,22 +1,21 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgUserSettingRegionalAndLanguageSetting Cmdlet
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Users
+$params = @{
+	AuthoringLanguages = @(
+		@{
+			Locale = "en-US"
+		}
+		@{
+			Locale = "es-MX"
+		}
+	)
+	DefaultRegionalFormat = @{
+		Locale = "en-US"
+	}
+}
+# A UPN can also be used as -UserId.
+Update-MgUserSettingRegionalAndLanguageSetting -UserId $userId -BodyParameter $params
 ```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgUserSettingRegionalAndLanguageSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

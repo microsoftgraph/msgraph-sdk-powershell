@@ -1,22 +1,15 @@
-### Example 1: {{ Add title here }}
+### Example 1: Remove a user
+
 ```powershell
-{{ Add code here }}
+Remove-MgUser -UserId '5c442efb-5e66-484a-936a-91b6810bed14'
 ```
 
-```output
-{{ Add output here }}
-```
+This example removes a user.
 
-{{ Add description here }}
+### Example 2: Remove a user with a confirmation
 
-### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Remove-MgUser -UserId '3f80a75e-750b-49aa-a6b0-d9bf6df7b4c6' -Confirm
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This examples removes a user after the user is prompted for a confirmation.
