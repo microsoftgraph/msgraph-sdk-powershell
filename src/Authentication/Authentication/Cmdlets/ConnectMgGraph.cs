@@ -48,8 +48,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(Mandatory = false, ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.Certificate)]
         public X509Certificate2 Certificate { get; set; }
 
-        [Parameter(Mandatory = false, ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.Credential)]
-        public PSCredential Credential { get; set; }
+        [Parameter(Mandatory = false, ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.ClientSecretCredential)]
+        [Alias("SecretCredential", "Credential")]
+        public PSCredential ClientSecretCredential { get; set; }
 
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, Position = 1, Mandatory = true, HelpMessage = HelpMessages.AccessToken)]
         public SecureString AccessToken { get; set; }
@@ -196,8 +197,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     case Constants.AppSecretCredentialParameterSet:
                         {
                             authContext.AuthType = AuthenticationType.AppOnly;
-                            authContext.ClientId = Credential.UserName;
-                            authContext.ClientSecret = Credential.Password;
+                            authContext.ClientId = ClientSecretCredential.UserName;
+                            authContext.ClientSecret = ClientSecretCredential.Password;
                             authContext.ClientSecret.MakeReadOnly();
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
                             authContext.TokenCredentialType = TokenCredentialType.ClientSecret;

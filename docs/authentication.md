@@ -67,9 +67,9 @@ Connect-MgGraph -EnvironmentVariable
 Using PSCredential object.
 
 ```PowerShell
-$ClientCredential = Get-Credential -Username "Client_Id"
+$ClientSecretCredential = Get-Credential -Username "Client_Id"
 # Enter client_secret in the password prompt.
-Connect-MgGraph -TenantId "Tenant_Id" -Credential $ClientCredential
+Connect-MgGraph -TenantId "Tenant_Id" -ClientSecretCredential $ClientSecretCredential
 ```
 
 Using environment variables.

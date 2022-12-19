@@ -95,9 +95,9 @@ Connect-MgGraph -Identity -ClientId "User_Assigned_Managed_identity_Client_Id"
 The new module adds support for client secret credentials by adding `-Credential` parameter to `Connect-MgGraph`.
 
 ```PowerShell
-$ClientCredential = Get-Credential -Username "Client_Id"
+$ClientSecretCredential = Get-Credential -Username "Client_Id"
 # Enter client_secret in the password prompt.
-Connect-MgGraph -TenantId "Tenant_Id" -Credential $ClientCredential
+Connect-MgGraph -TenantId "Tenant_Id" -ClientSecretCredential $ClientSecretCredential
 ```
 
 #### Certificate Credentials
