@@ -2,6 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System;
 using System.IO;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Core
@@ -20,5 +21,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
         internal const string AuthRecordName = "mg.authrecord.json";
         internal const int MaxAuthRetry = 2;
         internal static readonly string AuthRecordPath = Path.Combine(GraphDirectoryPath, AuthRecordName);
+    }
+
+    internal static class EnvironmentVariables
+    {
+        internal static string ClientId => Environment.GetEnvironmentVariable("AZURE_CLIENT_ID");
+        internal static string TenantId => Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
+        internal static string Username => Environment.GetEnvironmentVariable("AZURE_USERNAME");
+        internal static string Password => Environment.GetEnvironmentVariable("AZURE_PASSWORD");
+        internal static string ClientSecret => Environment.GetEnvironmentVariable("AZURE_CLIENT_SECRET");
+        internal static string ClientCertificatePath => Environment.GetEnvironmentVariable("AZURE_CLIENT_CERTIFICATE_PATH");
+        internal static string ClientCertificatePassword => Environment.GetEnvironmentVariable("AZURE_CLIENT_CERTIFICATE_PASSWORD");
+        internal static string ClientSendCertificateChain => Environment.GetEnvironmentVariable("AZURE_CLIENT_SEND_CERTIFICATE_CHAIN");
     }
 }

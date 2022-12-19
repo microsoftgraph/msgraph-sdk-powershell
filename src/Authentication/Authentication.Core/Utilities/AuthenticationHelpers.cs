@@ -10,7 +10,6 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
@@ -63,8 +62,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext))
             };
+            
+            if (IsAuthFlowNotSupported())
+            {
+                throw new Exception(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.AuthNotSupported, "Username and password"));
+            }
+
             var environmentCredential = new EnvironmentCredential(tokenCredentialOptions);
             return await Task.FromResult(environmentCredential).ConfigureAwait(false);
+        }
+
+        private static bool IsAuthFlowNotSupported()
+        {
+            return ((!string.IsNullOrEmpty(EnvironmentVariables.Username) && !string.IsNullOrEmpty(EnvironmentVariables.Password))
+                && (string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath)));
         }
 
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
@@ -85,7 +96,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            
+
             var userAccountId = authContext.ManagedIdentityId.StartsWith(Constants.DefaultMsiIdPrefix) ? null : authContext.ManagedIdentityId;
             return await Task.FromResult(new ManagedIdentityCredential(userAccountId)).ConfigureAwait(false);
         }
@@ -292,7 +303,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 if (TryFindCertificateBySubjectName(authContext.CertificateSubjectName, StoreLocation.CurrentUser, out X509Certificate2 certificate) ||
                     TryFindCertificateBySubjectName(authContext.CertificateSubjectName, StoreLocation.LocalMachine, out certificate))
-                        return certificate;
+                    return certificate;
                 else
                     throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.CertificateNotFound,
                         "subject name",
