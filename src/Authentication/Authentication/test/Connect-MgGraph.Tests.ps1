@@ -40,7 +40,7 @@ Describe 'Connect-MgGraph ParameterSets' {
     It 'Should have AppSecretCredentialParameterSet' {
         $AppSecretCredentialParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppSecretCredentialParameterSet'
         $AppSecretCredentialParameterSet | Should -Not -BeNull
-        @('Credential', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppSecretCredentialParameterSet.Parameters.Name
+        @('ClientSecretCredential', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppSecretCredentialParameterSet.Parameters.Name
         $MandatoryParameters = $AppSecretCredentialParameterSet.Parameters | Where-Object IsMandatory
         $MandatoryParameters | Should -HaveCount 0
     }

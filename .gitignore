@@ -360,3 +360,5 @@ MigrationBackup/
 
 #Custom Environment Files
 localenv.json
+*Microsoft.Graph.Authentication-TestResults.xml
+coverage.xml
