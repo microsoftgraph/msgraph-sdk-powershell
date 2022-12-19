@@ -79,8 +79,7 @@ steps:
       pwsh: true
       targetType: inline
       script: |
-        $nugetFeedName = '$(NUGETFEEDNAME)'
-        . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -Repository $nugetFeedName -BumpV1Module -BumpBetaModule -BumpAuthModule -Debug
+        . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -BumpV1Module -BumpBetaModule -BumpAuthModule -Debug
 
   - task: Bash@3
     displayName: Commit downloaded files
